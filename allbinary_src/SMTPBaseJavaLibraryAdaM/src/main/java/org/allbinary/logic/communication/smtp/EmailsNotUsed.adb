@@ -38,8 +38,8 @@ package body org.allbinary.logic.communication.smtp.EmailsNotUsed_Package is
    end Create;
 
    --  throws Exception
-   function toXmlNode (This : in out EmailsNotUsed; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out EmailsNotUsed; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       node : Node_Access;
       size : Integer;
       email : Email_Access;
@@ -78,7 +78,7 @@ package body org.allbinary.logic.communication.smtp.EmailsNotUsed_Package is
         end;
    end toXmlNode;
 
-   procedure toXmlNode (This : in out EmailsNotUsed; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out EmailsNotUsed; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := EmailsNotUsed'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

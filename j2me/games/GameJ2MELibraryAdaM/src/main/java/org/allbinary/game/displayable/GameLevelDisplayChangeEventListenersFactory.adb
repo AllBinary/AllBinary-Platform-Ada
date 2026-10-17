@@ -39,8 +39,8 @@ package body org.allbinary.game.displayable.GameLevelDisplayChangeEventListeners
         return GameLevelDisplayChangeEventListenersFactory_Package.instance;
    end getInstance;
 
-   procedure add (This : in out GameLevelDisplayChangeEventListenersFactory; displayChangeEventListener_Param : access DisplayChangeEventListener'Class) is
-      displayChangeEventListener : DisplayChangeEventListener_Access := DisplayChangeEventListener_Access (displayChangeEventListener_Param);
+   procedure add (This : in out GameLevelDisplayChangeEventListenersFactory; displayChangeEventListener_Param : access DisplayChangeEventListener_Package.DisplayChangeEventListener'Class) is
+      displayChangeEventListener : constant DisplayChangeEventListener_Access := DisplayChangeEventListener_Access (displayChangeEventListener_Param);
    begin
         This.list.add (displayChangeEventListener);
         DisplayChangeEventHandler_Package.getInstance.addListenerInterface (displayChangeEventListener);

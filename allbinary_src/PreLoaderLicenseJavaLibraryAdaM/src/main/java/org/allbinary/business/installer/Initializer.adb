@@ -57,8 +57,8 @@ package body org.allbinary.business.installer.Initializer_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out Initializer'Class; map_Param : access Map'Class) is
-      map : Map_Access := Map_Access (map_Param);
+   procedure Initialize (This : in out Initializer'Class; map_Param : access Map_Package.Map'Class) is
+      map : constant Map_Access := Map_Access (map_Param);
       stringBuffer : StringMaker_Access;
       hashMap : HashMap_Access;
       keys : Set_Access;
@@ -88,29 +88,29 @@ package body org.allbinary.business.installer.Initializer_Package is
         This.getFormData (hashMap);
    end Initialize;
 
-   function Create (map_Param : access Map'Class) return Initializer_Access is
+   function Create (map_Param : access Map_Package.Map'Class) return Initializer_Access is
       This : constant Initializer_Access := new Initializer;
    begin
       Initializer_Package.Initialize (This.all, map_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out Initializer'Class; initHashMap_Param : access HashMap'Class) is
-      initHashMap : HashMap_Access := HashMap_Access (initHashMap_Param);
+   procedure Initialize (This : in out Initializer'Class; initHashMap_Param : access HashMap_Package.HashMap'Class) is
+      initHashMap : constant HashMap_Access := HashMap_Access (initHashMap_Param);
    begin
       Initialize_Fields (This);
         This.getFormData (initHashMap);
    end Initialize;
 
-   function Create (initHashMap_Param : access HashMap'Class) return Initializer_Access is
+   function Create (initHashMap_Param : access HashMap_Package.HashMap'Class) return Initializer_Access is
       This : constant Initializer_Access := new Initializer;
    begin
       Initializer_Package.Initialize (This.all, initHashMap_Param);
       return This;
    end Create;
 
-   procedure getFormData (This : in out Initializer; hashMap_Param : access HashMap'Class) is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+   procedure getFormData (This : in out Initializer; hashMap_Param : access HashMap_Package.HashMap'Class) is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
       initializerData : InitializerData_Access;
    begin
         begin

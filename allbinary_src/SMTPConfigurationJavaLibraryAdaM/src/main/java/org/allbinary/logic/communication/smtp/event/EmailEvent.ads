@@ -41,8 +41,8 @@ package org.allbinary.logic.communication.smtp.event.EmailEvent_Package is
       attempts : Integer;
    end record;
 
-   procedure Initialize (This : in out EmailEvent'Class; emailEventHandler_Param : access Java_Object'Class; userEmailEventNameData_Param : access UserEmailEventNameData'Class; emailInfo_Param : access EmailInfo'Class; attempts : Integer);
-   function Create (emailEventHandler_Param : access Java_Object'Class; userEmailEventNameData_Param : access UserEmailEventNameData'Class; emailInfo_Param : access EmailInfo'Class; attempts : Integer) return EmailEvent_Access;
+   procedure Initialize (This : in out EmailEvent'Class; emailEventHandler_Param : access Java_Object'Class; userEmailEventNameData_Param : access UserEmailEventNameData_Package.UserEmailEventNameData'Class; emailInfo_Param : access EmailInfo_Package.EmailInfo'Class; attempts : Integer);
+   function Create (emailEventHandler_Param : access Java_Object'Class; userEmailEventNameData_Param : access UserEmailEventNameData_Package.UserEmailEventNameData'Class; emailInfo_Param : access EmailInfo_Package.EmailInfo'Class; attempts : Integer) return EmailEvent_Access;
    function getEmailInfo (This : in out EmailEvent) return EmailInfo_Access;
    function getAttempts (This : in out EmailEvent) return Integer;
    procedure setAttempts (This : in out EmailEvent; attempts : Integer);

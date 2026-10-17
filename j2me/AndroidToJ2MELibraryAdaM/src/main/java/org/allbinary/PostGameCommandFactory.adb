@@ -38,8 +38,8 @@ package body org.allbinary.PostGameCommandFactory_Package is
         return PostGameCommandFactory_Package.instance;
    end getInstance;
 
-   procedure addCommands (This : in out PostGameCommandFactory; canvas_Param : access MyCanvas'Class) is
-      canvas : MyCanvas_Access := MyCanvas_Access (canvas_Param);
+   procedure addCommands (This : in out PostGameCommandFactory; canvas_Param : access MyCanvas_Package.MyCanvas'Class) is
+      canvas : constant MyCanvas_Access := MyCanvas_Access (canvas_Param);
       operatingSystemInterface : GenericOperatingSystem_Access;
       gameCommandsFactory : GameCommandsFactory_Access;
    begin

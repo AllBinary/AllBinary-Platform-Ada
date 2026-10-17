@@ -52,18 +52,18 @@ package org.allbinary.logic.io.file.FileLockUtil_Package is
    procedure Initialize (This : in out FileLockUtil'Class);
    function Create return FileLockUtil_Access;
    function getInstance return FileLockUtil_Access;
-   function getAll (This : in out FileLockUtil; vector_Param : access BasicArrayList'Class; isReturnOnFailure : Boolean) return BasicArrayList_Access;
-   procedure getAll (This : in out FileLockUtil; vector_Param : access BasicArrayList'Class; isReturnOnFailure : Boolean);
-   function getAllPossible (This : in out FileLockUtil; vector_Param : access BasicArrayList'Class) return BasicArrayList_Access;
-   procedure getAllPossible (This : in out FileLockUtil; vector_Param : access BasicArrayList'Class);
-   function getAllOrNone (This : in out FileLockUtil; vector_Param : access BasicArrayList'Class) return BasicArrayList_Access;
-   procedure getAllOrNone (This : in out FileLockUtil; vector_Param : access BasicArrayList'Class);
-   function getLock (This : in out FileLockUtil; file_Param : access AbFile'Class) return FileLock_Access;
-   procedure getLock (This : in out FileLockUtil; file_Param : access AbFile'Class);
-   function getLock (This : in out FileLockUtil; fileOutputStream_Param : access AbFileOutputStream'Class) return FileLock_Access;
-   procedure getLock (This : in out FileLockUtil; fileOutputStream_Param : access AbFileOutputStream'Class);
-   function getLock (This : in out FileLockUtil; fileChannel_Param : access FileChannel'Class) return FileLock_Access;
-   procedure getLock (This : in out FileLockUtil; fileChannel_Param : access FileChannel'Class);
+   function getAll (This : in out FileLockUtil; vector_Param : access BasicArrayList_Package.BasicArrayList'Class; isReturnOnFailure : Boolean) return BasicArrayList_Access;
+   procedure getAll (This : in out FileLockUtil; vector_Param : access BasicArrayList_Package.BasicArrayList'Class; isReturnOnFailure : Boolean);
+   function getAllPossible (This : in out FileLockUtil; vector_Param : access BasicArrayList_Package.BasicArrayList'Class) return BasicArrayList_Access;
+   procedure getAllPossible (This : in out FileLockUtil; vector_Param : access BasicArrayList_Package.BasicArrayList'Class);
+   function getAllOrNone (This : in out FileLockUtil; vector_Param : access BasicArrayList_Package.BasicArrayList'Class) return BasicArrayList_Access;
+   procedure getAllOrNone (This : in out FileLockUtil; vector_Param : access BasicArrayList_Package.BasicArrayList'Class);
+   function getLock (This : in out FileLockUtil; file_Param : access AbFile_Package.AbFile'Class) return FileLock_Access;
+   procedure getLock (This : in out FileLockUtil; file_Param : access AbFile_Package.AbFile'Class);
+   function getLock (This : in out FileLockUtil; fileOutputStream_Param : access AbFileOutputStream_Package.AbFileOutputStream'Class) return FileLock_Access;
+   procedure getLock (This : in out FileLockUtil; fileOutputStream_Param : access AbFileOutputStream_Package.AbFileOutputStream'Class);
+   function getLock (This : in out FileLockUtil; fileChannel_Param : access FileChannel_Package.FileChannel'Class) return FileLock_Access;
+   procedure getLock (This : in out FileLockUtil; fileChannel_Param : access FileChannel_Package.FileChannel'Class);
 
 end org.allbinary.logic.io.file.FileLockUtil_Package;
 

@@ -25,8 +25,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GenericProfile'Class; node_Param : access Node'Class) is
-      node : Node_Access := Node_Access (node_Param);
+   procedure Initialize (This : in out GenericProfile'Class; node_Param : access Node_Package.Node'Class) is
+      node : constant Node_Access := Node_Access (node_Param);
       nodeList : NodeList_Access;
       profileNode : Node_Access;
       genericProfileDataWorkerType : GenericProfileDataWorkerType_Access;
@@ -47,7 +47,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         end loop;
    end Initialize;
 
-   function Create (node_Param : access Node'Class) return GenericProfile_Access is
+   function Create (node_Param : access Node_Package.Node'Class) return GenericProfile_Access is
       This : constant GenericProfile_Access := new GenericProfile;
    begin
       GenericProfile_Package.Initialize (This.all, node_Param);
@@ -73,23 +73,23 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         return This.vector;
    end getGenericProfileDataWorkerTypeVector;
 
-   procedure add (This : in out GenericProfile; genericProfileDataWorkerType_Param : access GenericProfileDataWorkerType'Class) is
-      genericProfileDataWorkerType : GenericProfileDataWorkerType_Access := GenericProfileDataWorkerType_Access (genericProfileDataWorkerType_Param);
+   procedure add (This : in out GenericProfile; genericProfileDataWorkerType_Param : access GenericProfileDataWorkerType_Package.GenericProfileDataWorkerType'Class) is
+      genericProfileDataWorkerType : constant GenericProfileDataWorkerType_Access := GenericProfileDataWorkerType_Access (genericProfileDataWorkerType_Param);
    begin
         if not (This.vector.contains (genericProfileDataWorkerType)) then
             This.vector.add (genericProfileDataWorkerType);
         end if;
    end add;
 
-   procedure remove (This : in out GenericProfile; genericProfileDataWorkerType_Param : access GenericProfileDataWorkerType'Class) is
-      genericProfileDataWorkerType : GenericProfileDataWorkerType_Access := GenericProfileDataWorkerType_Access (genericProfileDataWorkerType_Param);
+   procedure remove (This : in out GenericProfile; genericProfileDataWorkerType_Param : access GenericProfileDataWorkerType_Package.GenericProfileDataWorkerType'Class) is
+      genericProfileDataWorkerType : constant GenericProfileDataWorkerType_Access := GenericProfileDataWorkerType_Access (genericProfileDataWorkerType_Param);
    begin
         This.vector.remove (genericProfileDataWorkerType);
    end remove;
 
    --  throws Exception
-   function toXmlNode (This : in out GenericProfile; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out GenericProfile; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       node : Node_Access;
       size : Integer;
       genericProfileDataWorkerType : GenericProfileDataWorkerType_Access;
@@ -119,13 +119,13 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         return This.genericProfileActions;
    end getGenericProfileActions;
 
-   procedure setGenericProfileActions (This : in out GenericProfile; genericProfileActions_Param : access GenericProfileActions'Class) is
-      genericProfileActions : GenericProfileActions_Access := GenericProfileActions_Access (genericProfileActions_Param);
+   procedure setGenericProfileActions (This : in out GenericProfile; genericProfileActions_Param : access GenericProfileActions_Package.GenericProfileActions'Class) is
+      genericProfileActions : constant GenericProfileActions_Access := GenericProfileActions_Access (genericProfileActions_Param);
    begin
         This.genericProfileActions := genericProfileActions;
    end setGenericProfileActions;
 
-   procedure toXmlNode (This : in out GenericProfile; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out GenericProfile; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := GenericProfile'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

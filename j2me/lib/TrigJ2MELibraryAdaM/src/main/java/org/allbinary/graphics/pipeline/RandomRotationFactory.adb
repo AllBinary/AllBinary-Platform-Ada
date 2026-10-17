@@ -41,8 +41,8 @@ package body org.allbinary.graphics.pipeline.RandomRotationFactory_Package is
    end getInstance;
 
    --  throws Exception
-   function getInstanceList (This : in out RandomRotationFactory; vector_Param : access BasicArrayList'Class; howMuch : Integer) return BasicArrayList_Access is
-      vector : BasicArrayList_Access := BasicArrayList_Access (vector_Param);
+   function getInstanceList (This : in out RandomRotationFactory; vector_Param : access BasicArrayList_Package.BasicArrayList'Class; howMuch : Integer) return BasicArrayList_Access is
+      vector : constant BasicArrayList_Access := BasicArrayList_Access (vector_Param);
       graphicsPipe : BasicGraphicsPipeline_Access;
    begin
         graphicsPipe := BasicGraphicsPipeline_Package.Create (vector);
@@ -56,7 +56,7 @@ package body org.allbinary.graphics.pipeline.RandomRotationFactory_Package is
         return This.myRandomFactory.getNextInt ((howMuch) * (10));
    end getNextRandomAngle;
 
-   procedure getInstanceList (This : in out RandomRotationFactory; vector_Param : access BasicArrayList'Class; howMuch : Integer) is
+   procedure getInstanceList (This : in out RandomRotationFactory; vector_Param : access BasicArrayList_Package.BasicArrayList'Class; howMuch : Integer) is
       Java_Result : constant BasicArrayList_Access := RandomRotationFactory'Class (This).getInstanceList (vector_Param, howMuch);
       pragma Unreferenced (Java_Result);
    begin

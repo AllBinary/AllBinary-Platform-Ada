@@ -40,10 +40,10 @@ package org.allbinary.logic.visual.transform.data.TransformStoreDocumentFactory_
 
    procedure Initialize (This : in out TransformStoreDocumentFactory'Class);
    function Create return TransformStoreDocumentFactory_Access;
-   function getInstance (pageContext_Param : access PageContext'Class; weblisketSession_Param : access WeblisketSession'Class) return TransformDocumentInterface_Access;
-   procedure getInstance (pageContext_Param : access PageContext'Class; weblisketSession_Param : access WeblisketSession'Class);
-   function getInstance (searchRequest_Param : access SearchRequest'Class) return TransformDocumentInterface_Access;
-   procedure getInstance (searchRequest_Param : access SearchRequest'Class);
+   function getInstance (pageContext_Param : access PageContext_Package.PageContext'Class; weblisketSession_Param : access WeblisketSession_Package.WeblisketSession'Class) return TransformDocumentInterface_Access;
+   procedure getInstance (pageContext_Param : access PageContext_Package.PageContext'Class; weblisketSession_Param : access WeblisketSession_Package.WeblisketSession'Class);
+   function getInstance (searchRequest_Param : access SearchRequest_Package.SearchRequest'Class) return TransformDocumentInterface_Access;
+   procedure getInstance (searchRequest_Param : access SearchRequest_Package.SearchRequest'Class);
 
 end org.allbinary.logic.visual.transform.data.TransformStoreDocumentFactory_Package;
 

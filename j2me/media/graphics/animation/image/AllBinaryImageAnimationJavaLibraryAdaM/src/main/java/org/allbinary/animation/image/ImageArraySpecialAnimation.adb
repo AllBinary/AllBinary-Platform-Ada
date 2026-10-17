@@ -24,15 +24,15 @@ package body org.allbinary.animation.image.ImageArraySpecialAnimation_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ImageArraySpecialAnimation'Class; imageArray : Image_Access_Array_Access; animationBehavior_Param : access AnimationBehavior'Class) is
-      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
+   procedure Initialize (This : in out ImageArraySpecialAnimation'Class; imageArray : Image_Access_Array_Access; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) is
+      animationBehavior : constant AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
         ImageArrayAnimation_Package.Initialize (This, imageArray, animationBehavior);
         Initialize_Fields (This);
         This.reset;
    end Initialize;
 
-   function Create (imageArray : Image_Access_Array_Access; animationBehavior_Param : access AnimationBehavior'Class) return ImageArraySpecialAnimation_Access is
+   function Create (imageArray : Image_Access_Array_Access; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return ImageArraySpecialAnimation_Access is
       This : constant ImageArraySpecialAnimation_Access := new ImageArraySpecialAnimation;
    begin
       ImageArraySpecialAnimation_Package.Initialize (This.all, imageArray, animationBehavior_Param);
@@ -76,8 +76,8 @@ package body org.allbinary.animation.image.ImageArraySpecialAnimation_Package is
         end if;
    end isComplete;
 
-   procedure paintXY (This : in out ImageArraySpecialAnimation; graphics_Param : access Graphics'Class; x_Param : Integer; y_Param : Integer) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintXY (This : in out ImageArraySpecialAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x_Param : Integer; y_Param : Integer) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       x : Integer := x_Param;
       y : Integer := y_Param;
    begin

@@ -46,12 +46,12 @@ package org.allbinary.logic.io.StreamUtil_Package is
    procedure Initialize (This : in out StreamUtil'Class);
    function Create return StreamUtil_Access;
    function getInstance return StreamUtil_Access;
-   function get (This : in out StreamUtil; inputStream_Param : access InputStream'Class; outputStream_Param : access OutputStream'Class; buffer : Short_Short_Integer_Array_Access) return OutputStream_Access;
-   procedure get (This : in out StreamUtil; inputStream_Param : access InputStream'Class; outputStream_Param : access OutputStream'Class; buffer : Short_Short_Integer_Array_Access);
-   function getByteArray (This : in out StreamUtil; inputStream_Param : access InputStream'Class; outputStream2_Param : access ByteArrayOutputStream'Class; byteArray : Short_Short_Integer_Array_Access) return Short_Short_Integer_Array_Access;
-   procedure getByteArray (This : in out StreamUtil; inputStream_Param : access InputStream'Class; outputStream2_Param : access ByteArrayOutputStream'Class; byteArray : Short_Short_Integer_Array_Access);
-   function close (This : in out StreamUtil; closeable_Param : access Closeable'Class) return Boolean;
-   procedure close (This : in out StreamUtil; closeable_Param : access Closeable'Class);
+   function get (This : in out StreamUtil; inputStream_Param : access InputStream_Package.InputStream'Class; outputStream_Param : access OutputStream_Package.OutputStream'Class; buffer : Short_Short_Integer_Array_Access) return OutputStream_Access;
+   procedure get (This : in out StreamUtil; inputStream_Param : access InputStream_Package.InputStream'Class; outputStream_Param : access OutputStream_Package.OutputStream'Class; buffer : Short_Short_Integer_Array_Access);
+   function getByteArray (This : in out StreamUtil; inputStream_Param : access InputStream_Package.InputStream'Class; outputStream2_Param : access ByteArrayOutputStream_Package.ByteArrayOutputStream'Class; byteArray : Short_Short_Integer_Array_Access) return Short_Short_Integer_Array_Access;
+   procedure getByteArray (This : in out StreamUtil; inputStream_Param : access InputStream_Package.InputStream'Class; outputStream2_Param : access ByteArrayOutputStream_Package.ByteArrayOutputStream'Class; byteArray : Short_Short_Integer_Array_Access);
+   function close (This : in out StreamUtil; closeable_Param : access Closeable_Package.Closeable'Class) return Boolean;
+   procedure close (This : in out StreamUtil; closeable_Param : access Closeable_Package.Closeable'Class);
 
 end org.allbinary.logic.io.StreamUtil_Package;
 

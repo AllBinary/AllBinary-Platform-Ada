@@ -39,9 +39,9 @@ package body org.allbinary.canvas.FullScreenUtil_Package is
    end getInstance;
 
    --  throws Exception
-   procedure initOnRun (This : in out FullScreenUtil; fullScreenInterface_Param : access Canvas'Class; commandListener_Param : access CommandListener'Class) is
-      fullScreenInterface : Canvas_Access := Canvas_Access (fullScreenInterface_Param);
-      commandListener : CommandListener_Access := CommandListener_Access (commandListener_Param);
+   procedure initOnRun (This : in out FullScreenUtil; fullScreenInterface_Param : access Canvas_Package.Canvas'Class; commandListener_Param : access CommandListener_Package.CommandListener'Class) is
+      fullScreenInterface : constant Canvas_Access := Canvas_Access (fullScreenInterface_Param);
+      commandListener : constant CommandListener_Access := CommandListener_Access (commandListener_Param);
    begin
         (RunnableCanvas_Access (fullScreenInterface)).waitOnNotify (0);
         if (commandListener) /= (null) then
@@ -49,8 +49,8 @@ package body org.allbinary.canvas.FullScreenUtil_Package is
         end if;
    end initOnRun;
 
-   procedure init (This : in out FullScreenUtil; fullScreenInterface_Param : access Canvas'Class) is
-      fullScreenInterface : Canvas_Access := Canvas_Access (fullScreenInterface_Param);
+   procedure init (This : in out FullScreenUtil; fullScreenInterface_Param : access Canvas_Package.Canvas'Class) is
+      fullScreenInterface : constant Canvas_Access := Canvas_Access (fullScreenInterface_Param);
       mainFeatureFactory : MainFeatureFactory_Access;
       features : Features_Access;
    begin
@@ -75,8 +75,8 @@ package body org.allbinary.canvas.FullScreenUtil_Package is
         return False;
    end isScreenChange;
 
-   function isScreenChangeCanvas (This : in out FullScreenUtil; fullScreenInterface_Param : access Canvas'Class) return Boolean is
-      fullScreenInterface : Canvas_Access := Canvas_Access (fullScreenInterface_Param);
+   function isScreenChangeCanvas (This : in out FullScreenUtil; fullScreenInterface_Param : access Canvas_Package.Canvas'Class) return Boolean is
+      fullScreenInterface : constant Canvas_Access := Canvas_Access (fullScreenInterface_Param);
    begin
         return This.isScreenChange (fullScreenInterface.isFullScreenMode);
    end isScreenChangeCanvas;
@@ -88,7 +88,7 @@ package body org.allbinary.canvas.FullScreenUtil_Package is
       null;
    end isScreenChange;
 
-   procedure isScreenChangeCanvas (This : in out FullScreenUtil; fullScreenInterface_Param : access Canvas'Class) is
+   procedure isScreenChangeCanvas (This : in out FullScreenUtil; fullScreenInterface_Param : access Canvas_Package.Canvas'Class) is
       Java_Result : constant Boolean := FullScreenUtil'Class (This).isScreenChangeCanvas (fullScreenInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

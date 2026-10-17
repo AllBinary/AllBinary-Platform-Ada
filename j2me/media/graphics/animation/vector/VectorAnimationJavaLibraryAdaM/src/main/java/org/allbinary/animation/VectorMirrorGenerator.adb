@@ -87,8 +87,8 @@ package body org.allbinary.animation.VectorMirrorGenerator_Package is
    end getInstance;
 
    --  throws Exception
-   function getInstance (This : in out VectorMirrorGenerator; pointBasicArrayList_Param : access BasicArrayList'Class; width : Integer) return BasicArrayList_Access is
-      pointBasicArrayList : BasicArrayList_Access := BasicArrayList_Access (pointBasicArrayList_Param);
+   function getInstance (This : in out VectorMirrorGenerator; pointBasicArrayList_Param : access BasicArrayList_Package.BasicArrayList'Class; width : Integer) return BasicArrayList_Access is
+      pointBasicArrayList : constant BasicArrayList_Access := BasicArrayList_Access (pointBasicArrayList_Param);
       graphicsPipe : BasicGraphicsPipeline_Access;
    begin
         graphicsPipe := BasicGraphicsPipeline_Package.Create (pointBasicArrayList);
@@ -104,7 +104,7 @@ package body org.allbinary.animation.VectorMirrorGenerator_Package is
       null;
    end getInstance;
 
-   procedure getInstance (This : in out VectorMirrorGenerator; pointBasicArrayList_Param : access BasicArrayList'Class; width : Integer) is
+   procedure getInstance (This : in out VectorMirrorGenerator; pointBasicArrayList_Param : access BasicArrayList_Package.BasicArrayList'Class; width : Integer) is
       Java_Result : constant BasicArrayList_Access := VectorMirrorGenerator'Class (This).getInstance (pointBasicArrayList_Param, width);
       pragma Unreferenced (Java_Result);
    begin

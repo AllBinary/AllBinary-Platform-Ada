@@ -44,7 +44,7 @@ package org.allbinary.input.automation.actions.script.condition.processors.input
 
    procedure Initialize (This : in out KeyboardInputAutomationProcessor'Class);
    function Create return KeyboardInputAutomationProcessor_Access;
-   procedure process (keyActionScriptInputInterface_Param : access KeyboardActionScriptInputInterface'Class);
+   procedure process (keyActionScriptInputInterface_Param : access KeyboardActionScriptInputInterface_Package.KeyboardActionScriptInputInterface'Class);
 
 end org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardInputAutomationProcessor_Package;
 

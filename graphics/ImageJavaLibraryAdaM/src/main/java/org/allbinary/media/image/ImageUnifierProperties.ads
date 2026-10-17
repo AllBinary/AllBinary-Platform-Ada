@@ -45,7 +45,7 @@ package org.allbinary.media.image.ImageUnifierProperties_Package is
    function getColumns (This : in out ImageUnifierProperties) return Integer;
    procedure setColumns (This : in out ImageUnifierProperties; columns : Integer);
    function getImageUnifierCell (This : in out ImageUnifierProperties) return ImageUnifierCell_Access;
-   procedure setImageUnifierCell (This : in out ImageUnifierProperties; imageUnifierCell_Param : access ImageUnifierCell'Class);
+   procedure setImageUnifierCell (This : in out ImageUnifierProperties; imageUnifierCell_Param : access ImageUnifierCell_Package.ImageUnifierCell'Class);
 
 end org.allbinary.media.image.ImageUnifierProperties_Package;
 

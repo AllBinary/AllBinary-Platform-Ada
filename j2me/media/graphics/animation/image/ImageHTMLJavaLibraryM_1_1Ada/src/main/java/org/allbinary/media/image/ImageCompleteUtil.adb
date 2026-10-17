@@ -41,16 +41,16 @@ package body org.allbinary.media.image.ImageCompleteUtil_Package is
    end getInstance;
 
    --  throws Exception
-   procedure waitForImage (This : in out ImageCompleteUtil; image_Param : access Image'Class; name : Unbounded_String) is
-      image : Image_Access := Image_Access (image_Param);
+   procedure waitForImage (This : in out ImageCompleteUtil; image_Param : access Image_Package.Image'Class; name : Unbounded_String) is
+      image : constant Image_Access := Image_Access (image_Param);
    begin
         null;
    end waitForImage;
 
    --  throws Exception
-   function isReady_Case (This : in out ImageCompleteUtil; image_Param : access Image'Class; name : Unbounded_String; timeDelayHelper_Param : access TimeDelayHelper'Class) return Boolean is
-      image : Image_Access := Image_Access (image_Param);
-      timeDelayHelper : TimeDelayHelper_Access := TimeDelayHelper_Access (timeDelayHelper_Param);
+   function isReady_Case (This : in out ImageCompleteUtil; image_Param : access Image_Package.Image'Class; name : Unbounded_String; timeDelayHelper_Param : access TimeDelayHelper_Package.TimeDelayHelper'Class) return Boolean is
+      image : constant Image_Access := Image_Access (image_Param);
+      timeDelayHelper : constant TimeDelayHelper_Access := TimeDelayHelper_Access (timeDelayHelper_Param);
       playnImage : PlaynImage_Access;
       playnCoreImage : Image_Access;
       commonStrings : CommonStrings_Access;
@@ -84,7 +84,7 @@ package body org.allbinary.media.image.ImageCompleteUtil_Package is
         null;
    end waitForAll;
 
-   procedure isReady_Case (This : in out ImageCompleteUtil; image_Param : access Image'Class; name : Unbounded_String; timeDelayHelper_Param : access TimeDelayHelper'Class) is
+   procedure isReady_Case (This : in out ImageCompleteUtil; image_Param : access Image_Package.Image'Class; name : Unbounded_String; timeDelayHelper_Param : access TimeDelayHelper_Package.TimeDelayHelper'Class) is
       Java_Result : constant Boolean := ImageCompleteUtil'Class (This).isReady_Case (image_Param, name, timeDelayHelper_Param);
       pragma Unreferenced (Java_Result);
    begin

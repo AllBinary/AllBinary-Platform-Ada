@@ -38,15 +38,15 @@ package body org.allbinary.business.context.configuration.ContextConfiguration_P
       return This;
    end Create;
 
-   procedure Initialize (This : in out ContextConfiguration'Class; hashMap_Param : access HashMap'Class) is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+   procedure Initialize (This : in out ContextConfiguration'Class; hashMap_Param : access HashMap_Package.HashMap'Class) is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
       Initialize_Fields (This);
         This.logUtil.putF (This.commonStrings.START, ContextConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String ("ContextConfiguration(HashMap)"));
         This.setEmailServerConfigurationInterface (EmailServerConfigurationInterface_Access (EmailServerConfiguration_Package.Create (hashMap)));
    end Initialize;
 
-   function Create (hashMap_Param : access HashMap'Class) return ContextConfiguration_Access is
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return ContextConfiguration_Access is
       This : constant ContextConfiguration_Access := new ContextConfiguration;
    begin
       ContextConfiguration_Package.Initialize (This.all, hashMap_Param);
@@ -58,8 +58,8 @@ package body org.allbinary.business.context.configuration.ContextConfiguration_P
         return This.emailServerConfigurationInterface;
    end getEmailServerConfigurationInterface;
 
-   procedure setEmailServerConfigurationInterface (This : in out ContextConfiguration; emailServerConfigurationInterface_Param : access EmailServerConfigurationInterface'Class) is
-      emailServerConfigurationInterface : EmailServerConfigurationInterface_Access := EmailServerConfigurationInterface_Access (emailServerConfigurationInterface_Param);
+   procedure setEmailServerConfigurationInterface (This : in out ContextConfiguration; emailServerConfigurationInterface_Param : access EmailServerConfigurationInterface_Package.EmailServerConfigurationInterface'Class) is
+      emailServerConfigurationInterface : constant EmailServerConfigurationInterface_Access := EmailServerConfigurationInterface_Access (emailServerConfigurationInterface_Param);
    begin
         This.emailServerConfigurationInterface := emailServerConfigurationInterface;
    end setEmailServerConfigurationInterface;

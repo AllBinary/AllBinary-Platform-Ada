@@ -24,10 +24,10 @@ package org.allbinary.logic.control.crypt.file.CryptFileReader_Package is
 
    procedure Initialize (This : in out CryptFileReader'Class; decryptedExtension : Unbounded_String; encryptedExtension : Unbounded_String);
    function Create (decryptedExtension : Unbounded_String; encryptedExtension : Unbounded_String) return CryptFileReader_Access;
-   function get (This : in out CryptFileReader; fileAbPath_Param : access AbPath'Class) return Unbounded_String;
-   procedure get (This : in out CryptFileReader; fileAbPath_Param : access AbPath'Class);
-   function getInputStream (This : in out CryptFileReader; fileAbPath_Param : access AbPath'Class) return InputStream_Access;
-   procedure getInputStream (This : in out CryptFileReader; fileAbPath_Param : access AbPath'Class);
+   function get (This : in out CryptFileReader; fileAbPath_Param : access AbPath_Package.AbPath'Class) return Unbounded_String;
+   procedure get (This : in out CryptFileReader; fileAbPath_Param : access AbPath_Package.AbPath'Class);
+   function getInputStream (This : in out CryptFileReader; fileAbPath_Param : access AbPath_Package.AbPath'Class) return InputStream_Access;
+   procedure getInputStream (This : in out CryptFileReader; fileAbPath_Param : access AbPath_Package.AbPath'Class);
 
 end org.allbinary.logic.control.crypt.file.CryptFileReader_Package;
 

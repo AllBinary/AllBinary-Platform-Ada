@@ -64,9 +64,9 @@ package org.allbinary.game.configuration.persistance.KeyValuePersistance_Package
 
    procedure Initialize (This : in out KeyValuePersistance'Class; recordId : Unbounded_String);
    function Create (recordId : Unbounded_String) return KeyValuePersistance_Access;
-   procedure loadAll (This : in out KeyValuePersistance; abeClientInformation_Param : access AbeClientInformationInterface'Class);
-   procedure loadAllSize (This : in out KeyValuePersistance; abeClientInformation_Param : access AbeClientInformationInterface'Class; size : Integer);
-   procedure save (This : in out KeyValuePersistance; abeClientInformation_Param : access AbeClientInformationInterface'Class; hashtable_Param : access ABHashtable'Class);
+   procedure loadAll (This : in out KeyValuePersistance; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class);
+   procedure loadAllSize (This : in out KeyValuePersistance; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; size : Integer);
+   procedure save (This : in out KeyValuePersistance; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; hashtable_Param : access ABHashtable_Package.ABHashtable'Class);
    function get (This : in out KeyValuePersistance; index : Integer) return ABHashtable_Access;
    procedure get (This : in out KeyValuePersistance; index : Integer);
 

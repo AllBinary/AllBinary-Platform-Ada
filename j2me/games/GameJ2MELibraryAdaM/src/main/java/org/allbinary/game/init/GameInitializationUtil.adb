@@ -35,10 +35,10 @@ package body org.allbinary.game.init.GameInitializationUtil_Package is
 
 
    --  throws Exception
-   procedure initDemo (This : in out GameInitializationUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; canvas_Param : access MyCanvas'Class; gameInitializationInterfaceFactoryInterface_Param : access BasicBuildGameInitializerFactory'Class) is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      canvas : MyCanvas_Access := MyCanvas_Access (canvas_Param);
-      gameInitializationInterfaceFactoryInterface : BasicBuildGameInitializerFactory_Access := BasicBuildGameInitializerFactory_Access (gameInitializationInterfaceFactoryInterface_Param);
+   procedure initDemo (This : in out GameInitializationUtil; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; canvas_Param : access MyCanvas_Package.MyCanvas'Class; gameInitializationInterfaceFactoryInterface_Param : access BasicBuildGameInitializerFactory_Package.BasicBuildGameInitializerFactory'Class) is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      canvas : constant MyCanvas_Access := MyCanvas_Access (canvas_Param);
+      gameInitializationInterfaceFactoryInterface : constant BasicBuildGameInitializerFactory_Access := BasicBuildGameInitializerFactory_Access (gameInitializationInterfaceFactoryInterface_Param);
       mainFeatureFactory : MainFeatureFactory_Access;
       gameInitializationInterface : GameInitializationInterface_Access;
       features : Features_Access;
@@ -62,10 +62,10 @@ package body org.allbinary.game.init.GameInitializationUtil_Package is
    end initDemo;
 
    --  throws Exception
-   procedure initGame (This : in out GameInitializationUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; canvas_Param : access MyCanvas'Class; gameInitializationInterfaceFactoryInterface_Param : access BasicBuildGameInitializerFactory'Class) is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      canvas : MyCanvas_Access := MyCanvas_Access (canvas_Param);
-      gameInitializationInterfaceFactoryInterface : BasicBuildGameInitializerFactory_Access := BasicBuildGameInitializerFactory_Access (gameInitializationInterfaceFactoryInterface_Param);
+   procedure initGame (This : in out GameInitializationUtil; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; canvas_Param : access MyCanvas_Package.MyCanvas'Class; gameInitializationInterfaceFactoryInterface_Param : access BasicBuildGameInitializerFactory_Package.BasicBuildGameInitializerFactory'Class) is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      canvas : constant MyCanvas_Access := MyCanvas_Access (canvas_Param);
+      gameInitializationInterfaceFactoryInterface : constant BasicBuildGameInitializerFactory_Access := BasicBuildGameInitializerFactory_Access (gameInitializationInterfaceFactoryInterface_Param);
       gameInitializationInterface : GameInitializationInterface_Access;
       resourceLoadingLevelFactory : ResourceLoadingLevelFactory_Access;
    begin

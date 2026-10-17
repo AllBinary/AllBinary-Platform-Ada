@@ -37,9 +37,9 @@ package body org.allbinary.game.layer.unit.CollidableUnitBehavior_Package is
    end Create;
 
    --  throws Exception
-   procedure collideNone (This : in out CollidableUnitBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableCompositeLayer'Class) is
-      ownerLayer : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
-      collidableInterfaceCompositeInterface : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (collidableInterfaceCompositeInterface_Param);
+   procedure collideNone (This : in out CollidableUnitBehavior; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class) is
+      ownerLayer : constant CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
+      collidableInterfaceCompositeInterface : constant CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (collidableInterfaceCompositeInterface_Param);
       rtsLayer : AdvancedRTSGameLayer_Access;
    begin
         This.chase (ownerLayer, collidableInterfaceCompositeInterface);
@@ -50,9 +50,9 @@ package body org.allbinary.game.layer.unit.CollidableUnitBehavior_Package is
    end collideNone;
 
    --  throws Exception
-   function steer (This : in out CollidableUnitBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableCompositeLayer'Class) return Boolean is
-      ownerLayer : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
-      collidableInterfaceCompositeInterface : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (collidableInterfaceCompositeInterface_Param);
+   function steer (This : in out CollidableUnitBehavior; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class) return Boolean is
+      ownerLayer : constant CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
+      collidableInterfaceCompositeInterface : constant CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (collidableInterfaceCompositeInterface_Param);
       ownerUnitLayer : UnitLayer_Access;
       unitLayer : UnitLayer_Access;
       angleInfo2 : AngleInfo_Access;
@@ -74,9 +74,9 @@ package body org.allbinary.game.layer.unit.CollidableUnitBehavior_Package is
    end steer;
 
    --  throws Exception
-   procedure chase (This : in out CollidableUnitBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableCompositeLayer'Class) is
-      ownerLayer : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
-      collidableInterfaceCompositeInterface : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (collidableInterfaceCompositeInterface_Param);
+   procedure chase (This : in out CollidableUnitBehavior; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class) is
+      ownerLayer : constant CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
+      collidableInterfaceCompositeInterface : constant CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (collidableInterfaceCompositeInterface_Param);
       rtsLayer : AdvancedRTSGameLayer_Access;
       ownerUnitLayer : UnitLayer_Access;
       list : BasicArrayList_Access;
@@ -95,9 +95,9 @@ package body org.allbinary.game.layer.unit.CollidableUnitBehavior_Package is
    end chase;
 
    --  throws Exception
-   procedure collideUnit (This : in out CollidableUnitBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; unitLayer_Param : access UnitLayer'Class) is
-      ownerLayer : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
-      unitLayer : UnitLayer_Access := UnitLayer_Access (unitLayer_Param);
+   procedure collideUnit (This : in out CollidableUnitBehavior; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; unitLayer_Param : access UnitLayer_Package.UnitLayer'Class) is
+      ownerLayer : constant CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
+      unitLayer : constant UnitLayer_Access := UnitLayer_Access (unitLayer_Param);
       ownerUnitLayer : UnitLayer_Access;
       partialPositionList : BasicArrayList_Access;
       geographicMapCompositeInterface : GeographicMapCompositeInterface_Access;
@@ -158,7 +158,7 @@ package body org.allbinary.game.layer.unit.CollidableUnitBehavior_Package is
         end if;
    end collideUnit;
 
-   procedure steer (This : in out CollidableUnitBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableCompositeLayer'Class) is
+   procedure steer (This : in out CollidableUnitBehavior; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class) is
       Java_Result : constant Boolean := CollidableUnitBehavior'Class (This).steer (ownerLayer_Param, collidableInterfaceCompositeInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
@@ -190,7 +190,7 @@ package body org.allbinary.game.layer.unit.SimpleSteeringVisitor_Package is
 
     
    function visit (This : in out SimpleSteeringVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
       logUtil : LogUtil_Access;
       ownerLayer : CollidableCompositeLayer_Access;
       allbinaryLayer : CollidableCompositeLayer_Access;

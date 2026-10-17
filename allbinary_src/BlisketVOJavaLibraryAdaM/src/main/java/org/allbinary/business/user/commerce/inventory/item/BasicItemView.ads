@@ -59,10 +59,10 @@ package org.allbinary.business.user.commerce.inventory.item.BasicItemView_Packag
       vector : BasicArrayList_Access;
    end record;
 
-   procedure Initialize (This : in out BasicItemView'Class; itemInterface_Param : access ItemInterface'Class; vector_Param : access BasicArrayList'Class);
-   function Create (itemInterface_Param : access ItemInterface'Class; vector_Param : access BasicArrayList'Class) return BasicItemView_Access;
-   function toXmlNode (This : in out BasicItemView; document_Param : access Document'Class) return Node_Access;
-   procedure toXmlNode (This : in out BasicItemView; document_Param : access Document'Class);
+   procedure Initialize (This : in out BasicItemView'Class; itemInterface_Param : access ItemInterface_Package.ItemInterface'Class; vector_Param : access BasicArrayList_Package.BasicArrayList'Class);
+   function Create (itemInterface_Param : access ItemInterface_Package.ItemInterface'Class; vector_Param : access BasicArrayList_Package.BasicArrayList'Class) return BasicItemView_Access;
+   function toXmlNode (This : in out BasicItemView; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out BasicItemView; document_Param : access Document_Package.Document'Class);
    function toXmlDoc (This : in out BasicItemView) return Document_Access;
    function view (This : in out BasicItemView) return Unbounded_String;
 

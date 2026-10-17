@@ -25,7 +25,7 @@ package javax.microedition.lcdui.NullCommandListener_Package is
 
    procedure Initialize (This : in out NullCommandListener'Class);
    function Create return NullCommandListener_Access;
-   procedure commandAction (This : in out NullCommandListener; c_Param : access Command'Class; d_Param : access Displayable'Class);
+   procedure commandAction (This : in out NullCommandListener; c_Param : access Command_Package.Command'Class; d_Param : access Displayable_Package.Displayable'Class);
 
 end javax.microedition.lcdui.NullCommandListener_Package;
 

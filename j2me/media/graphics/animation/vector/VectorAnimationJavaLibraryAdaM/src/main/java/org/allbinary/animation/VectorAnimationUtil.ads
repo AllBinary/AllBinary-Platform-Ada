@@ -39,12 +39,12 @@ package org.allbinary.animation.VectorAnimationUtil_Package is
    procedure Initialize (This : in out VectorAnimationUtil'Class);
    function Create return VectorAnimationUtil_Access;
    function getInstance return VectorAnimationUtil_Access;
-   function toAnimationArrayFromListOfPointListWithPointsPerFrame (This : in out VectorAnimationUtil; vector_Param : access BasicArrayList'Class; pointsPerFrame : Integer) return Integer_Array_Access_Array_Access_Array_Access;
-   procedure toAnimationArrayFromListOfPointListWithPointsPerFrame (This : in out VectorAnimationUtil; vector_Param : access BasicArrayList'Class; pointsPerFrame : Integer);
-   function toAnimationArrayFromListOfPointList (This : in out VectorAnimationUtil; vector_Param : access BasicArrayList'Class) return Integer_Array_Access_Array_Access_Array_Access;
-   procedure toAnimationArrayFromListOfPointList (This : in out VectorAnimationUtil; vector_Param : access BasicArrayList'Class);
-   function toFrameArrayFromPointBasicArrayList (This : in out VectorAnimationUtil; list_Param : access BasicArrayList'Class) return Integer_Array_Access_Array_Access;
-   procedure toFrameArrayFromPointBasicArrayList (This : in out VectorAnimationUtil; list_Param : access BasicArrayList'Class);
+   function toAnimationArrayFromListOfPointListWithPointsPerFrame (This : in out VectorAnimationUtil; vector_Param : access BasicArrayList_Package.BasicArrayList'Class; pointsPerFrame : Integer) return Integer_Array_Access_Array_Access_Array_Access;
+   procedure toAnimationArrayFromListOfPointListWithPointsPerFrame (This : in out VectorAnimationUtil; vector_Param : access BasicArrayList_Package.BasicArrayList'Class; pointsPerFrame : Integer);
+   function toAnimationArrayFromListOfPointList (This : in out VectorAnimationUtil; vector_Param : access BasicArrayList_Package.BasicArrayList'Class) return Integer_Array_Access_Array_Access_Array_Access;
+   procedure toAnimationArrayFromListOfPointList (This : in out VectorAnimationUtil; vector_Param : access BasicArrayList_Package.BasicArrayList'Class);
+   function toFrameArrayFromPointBasicArrayList (This : in out VectorAnimationUtil; list_Param : access BasicArrayList_Package.BasicArrayList'Class) return Integer_Array_Access_Array_Access;
+   procedure toFrameArrayFromPointBasicArrayList (This : in out VectorAnimationUtil; list_Param : access BasicArrayList_Package.BasicArrayList'Class);
 
 end org.allbinary.animation.VectorAnimationUtil_Package;
 

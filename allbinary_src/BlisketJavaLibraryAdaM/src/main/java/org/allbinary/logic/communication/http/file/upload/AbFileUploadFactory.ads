@@ -55,10 +55,10 @@ package org.allbinary.logic.communication.http.file.upload.AbFileUploadFactory_P
    procedure Initialize (This : in out AbFileUploadFactory'Class);
    function Create return AbFileUploadFactory_Access;
    function getInstance return AbFileUploadFactory_Access;
-   function getFileItemStreamList (This : in out AbFileUploadFactory; httpServletRequest_Param : access HttpServletRequest'Class) return List_Access;
-   procedure getFileItemStreamList (This : in out AbFileUploadFactory; httpServletRequest_Param : access HttpServletRequest'Class);
-   function getFileItemList (This : in out AbFileUploadFactory; httpServletRequest_Param : access HttpServletRequest'Class) return List_Access;
-   procedure getFileItemList (This : in out AbFileUploadFactory; httpServletRequest_Param : access HttpServletRequest'Class);
+   function getFileItemStreamList (This : in out AbFileUploadFactory; httpServletRequest_Param : access HttpServletRequest_Package.HttpServletRequest'Class) return List_Access;
+   procedure getFileItemStreamList (This : in out AbFileUploadFactory; httpServletRequest_Param : access HttpServletRequest_Package.HttpServletRequest'Class);
+   function getFileItemList (This : in out AbFileUploadFactory; httpServletRequest_Param : access HttpServletRequest_Package.HttpServletRequest'Class) return List_Access;
+   procedure getFileItemList (This : in out AbFileUploadFactory; httpServletRequest_Param : access HttpServletRequest_Package.HttpServletRequest'Class);
 
 end org.allbinary.logic.communication.http.file.upload.AbFileUploadFactory_Package;
 

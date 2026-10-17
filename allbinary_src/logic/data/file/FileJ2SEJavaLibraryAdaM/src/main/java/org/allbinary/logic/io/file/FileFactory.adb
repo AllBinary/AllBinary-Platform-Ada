@@ -45,8 +45,8 @@ package body org.allbinary.logic.io.file.FileFactory_Package is
    end getInstance;
 
    --  throws Exception
-   function getInstance (This : in out FileFactory; file_Param : access AbFile'Class; childFilePath : Unbounded_String) return AbFile_Access is
-      file : AbFile_Access := AbFile_Access (file_Param);
+   function getInstance (This : in out FileFactory; file_Param : access AbFile_Package.AbFile'Class; childFilePath : Unbounded_String) return AbFile_Access is
+      file : constant AbFile_Access := AbFile_Access (file_Param);
    begin
         return AbFile_Package.createAbFileWithChild (file, childFilePath);
    end getInstance;
@@ -70,7 +70,7 @@ package body org.allbinary.logic.io.file.FileFactory_Package is
       null;
    end getInstance;
 
-   procedure getInstance (This : in out FileFactory; file_Param : access AbFile'Class; childFilePath : Unbounded_String) is
+   procedure getInstance (This : in out FileFactory; file_Param : access AbFile_Package.AbFile'Class; childFilePath : Unbounded_String) is
       Java_Result : constant AbFile_Access := FileFactory'Class (This).getInstance (file_Param, childFilePath);
       pragma Unreferenced (Java_Result);
    begin

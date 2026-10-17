@@ -33,8 +33,8 @@ package body org.allbinary.game.behavior.topview.placement.TileMapPlacementVisit
    end Create;
 
 
-   procedure visit (This : in out TileMapPlacementVisitor; lastMap_Param : access TiledMap'Class; mapData : Integer_Array_Access_Array_Access) is
-      lastMap : TiledMap_Access := TiledMap_Access (lastMap_Param);
+   procedure visit (This : in out TileMapPlacementVisitor; lastMap_Param : access TiledMap_Package.TiledMap'Class; mapData : Integer_Array_Access_Array_Access) is
+      lastMap : constant TiledMap_Access := TiledMap_Access (lastMap_Param);
    begin
         null;
    end visit;

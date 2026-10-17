@@ -39,8 +39,8 @@ package org.allbinary.android.input.api1.VirtualKeyboardAPI1_Package is
    MIN_API : Integer;
    MAX_API : Integer;
 
-   procedure Initialize (This : in out VirtualKeyboardAPI1'Class; activity_Param : access Activity'Class);
-   function Create (activity_Param : access Activity'Class) return VirtualKeyboardAPI1_Access;
+   procedure Initialize (This : in out VirtualKeyboardAPI1'Class; activity_Param : access Activity_Package.Activity'Class);
+   function Create (activity_Param : access Activity_Package.Activity'Class) return VirtualKeyboardAPI1_Access;
 
 end org.allbinary.android.input.api1.VirtualKeyboardAPI1_Package;
 

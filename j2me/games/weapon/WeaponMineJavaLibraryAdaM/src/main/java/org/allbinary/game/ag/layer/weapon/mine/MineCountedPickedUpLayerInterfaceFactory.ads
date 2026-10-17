@@ -65,8 +65,8 @@ package org.allbinary.game.ag.layer.weapon.mine.MineCountedPickedUpLayerInterfac
    procedure init;
    function getInstance return PickedUpLayerInterfaceFactoryInterface_Access;
    function getTotal (This : in out MineCountedPickedUpLayerInterfaceFactory) return Integer;
-   function getNextInstance (This : in out MineCountedPickedUpLayerInterfaceFactory; hashtable_Param : access ABHashtable'Class; x : Integer; y : Integer; z : Integer) return AllBinaryLayer_Access;
-   procedure getNextInstance (This : in out MineCountedPickedUpLayerInterfaceFactory; hashtable_Param : access ABHashtable'Class; x : Integer; y : Integer; z : Integer);
+   function getNextInstance (This : in out MineCountedPickedUpLayerInterfaceFactory; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; x : Integer; y : Integer; z : Integer) return AllBinaryLayer_Access;
+   procedure getNextInstance (This : in out MineCountedPickedUpLayerInterfaceFactory; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; x : Integer; y : Integer; z : Integer);
 
 end org.allbinary.game.ag.layer.weapon.mine.MineCountedPickedUpLayerInterfaceFactory_Package;
 

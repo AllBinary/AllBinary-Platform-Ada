@@ -35,9 +35,9 @@ package org.allbinary.game.health.HealthBarTwodAnimation_Package is
 
    type HealthBarTwodAnimation is new HealthBarAnimation with null record;
 
-   procedure Initialize (This : in out HealthBarTwodAnimation'Class; layerInterface_Param : access AllBinaryLayer'Class; location : Integer);
-   function Create (layerInterface_Param : access AllBinaryLayer'Class; location : Integer) return HealthBarTwodAnimation_Access;
-   procedure paintXY (This : in out HealthBarTwodAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
+   procedure Initialize (This : in out HealthBarTwodAnimation'Class; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; location : Integer);
+   function Create (layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; location : Integer) return HealthBarTwodAnimation_Access;
+   procedure paintXY (This : in out HealthBarTwodAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
 
 end org.allbinary.game.health.HealthBarTwodAnimation_Package;
 

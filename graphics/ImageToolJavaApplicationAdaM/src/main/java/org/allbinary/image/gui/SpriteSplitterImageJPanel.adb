@@ -46,8 +46,8 @@ package body org.allbinary.image.gui.SpriteSplitterImageJPanel_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out SpriteSplitterImageJPanel'Class; imageProcessorInput_Param : access ImageProcessorInput'Class) is
-      imageProcessorInput : ImageProcessorInput_Access := ImageProcessorInput_Access (imageProcessorInput_Param);
+   procedure Initialize (This : in out SpriteSplitterImageJPanel'Class; imageProcessorInput_Param : access ImageProcessorInput_Package.ImageProcessorInput'Class) is
+      imageProcessorInput : constant ImageProcessorInput_Access := ImageProcessorInput_Access (imageProcessorInput_Param);
    begin
         JPanel_Package.Initialize (This);
         Initialize_Fields (This);
@@ -55,7 +55,7 @@ package body org.allbinary.image.gui.SpriteSplitterImageJPanel_Package is
         This.imageProcessorInput := imageProcessorInput;
    end Initialize;
 
-   function Create (imageProcessorInput_Param : access ImageProcessorInput'Class) return SpriteSplitterImageJPanel_Access is
+   function Create (imageProcessorInput_Param : access ImageProcessorInput_Package.ImageProcessorInput'Class) return SpriteSplitterImageJPanel_Access is
       This : constant SpriteSplitterImageJPanel_Access := new SpriteSplitterImageJPanel;
    begin
       SpriteSplitterImageJPanel_Package.Initialize (This.all, imageProcessorInput_Param);
@@ -114,8 +114,8 @@ package body org.allbinary.image.gui.SpriteSplitterImageJPanel_Package is
         This.jLabel5 := JLabel_Package.Create;
         This.jPanel1 := JPanel_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure paint (This : in out ; graphics_Param : access Graphics'Class) is
---        graphics : Graphics_Access := Graphics_Access (graphics_Param);
+--     procedure paint (This : in out ; graphics_Param : access Graphics_Package.Graphics'Class) is
+--        graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
 --     begin
 --                  if (This.result) /= (null) then
 --                      graphics.drawImage (This.result, 0, 0, This.result.getWidth (null), This.result.getHeight (null), null);
@@ -152,8 +152,8 @@ package body org.allbinary.image.gui.SpriteSplitterImageJPanel_Package is
         This.writeOverOriginalJCheckBox.setText (To_Unbounded_String ("Write Over Original"));
         This.writeOverOriginalJCheckBox.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.writeOverOriginalJCheckBoxActionPerformed (evt);
 --     end actionPerformed;
@@ -161,8 +161,8 @@ package body org.allbinary.image.gui.SpriteSplitterImageJPanel_Package is
         This.widthReductionTextField.setText (CommonPhoneStrings_Package.getInstance.ZERO);
         This.widthReductionTextField.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.widthReductionTextFieldActionPerformed (evt);
 --     end actionPerformed;
@@ -178,8 +178,8 @@ package body org.allbinary.image.gui.SpriteSplitterImageJPanel_Package is
         This.generateJButton.setText (To_Unbounded_String ("Generate"));
         This.generateJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.generateJButtonActionPerformed (evt);
 --     end actionPerformed;
@@ -188,8 +188,8 @@ package body org.allbinary.image.gui.SpriteSplitterImageJPanel_Package is
         This.totalFramesJComboBox.setSelectedIndex (1);
         This.totalFramesJComboBox.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.totalFramesJComboBoxActionPerformed (evt);
 --     end actionPerformed;
@@ -198,8 +198,8 @@ package body org.allbinary.image.gui.SpriteSplitterImageJPanel_Package is
         This.totalAnimationsJComboBox.setSelectedIndex (3);
         This.totalAnimationsJComboBox.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.totalAnimationsJComboBoxActionPerformed (evt);
 --     end actionPerformed;
@@ -207,8 +207,8 @@ package body org.allbinary.image.gui.SpriteSplitterImageJPanel_Package is
         This.jLabel3.setText (To_Unbounded_String ("Type:"));
         This.spriteTypeJComboBox.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.spriteTypeJComboBoxActionPerformed (evt);
 --     end actionPerformed;
@@ -221,8 +221,8 @@ package body org.allbinary.image.gui.SpriteSplitterImageJPanel_Package is
         This.increaseWidthTextField.setText (CommonPhoneStrings_Package.getInstance.ZERO);
         This.increaseWidthTextField.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.increaseWidthTextFieldActionPerformed (evt);
 --     end actionPerformed;
@@ -235,20 +235,20 @@ package body org.allbinary.image.gui.SpriteSplitterImageJPanel_Package is
         layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addComponent (This.jPanel2, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.jLabel7).addComponent (This.increaseWidthTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 22, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addComponent (This.jLabel8).addComponent (This.increaseHeightTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE)).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.jLabel5).addComponent (This.widthReductionTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 22, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addComponent (This.jLabel6).addComponent (This.heightReductionTextField, javax_Package.swing.GroupLayout.PREFERRED_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.PREFERRED_SIZE))).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.writeOverOriginalJCheckBox).addComponent (This.generateJButton)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.jPanel1, javax_Package.swing.GroupLayout.DEFAULT_SIZE, javax_Package.swing.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE)));
    end initComponents;
 
-   procedure writeOverOriginalJCheckBoxActionPerformed (This : in out SpriteSplitterImageJPanel; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure writeOverOriginalJCheckBoxActionPerformed (This : in out SpriteSplitterImageJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         null;
    end writeOverOriginalJCheckBoxActionPerformed;
 
-   procedure generateJButtonActionPerformed (This : in out SpriteSplitterImageJPanel; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure generateJButtonActionPerformed (This : in out SpriteSplitterImageJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         This.process;
    end generateJButtonActionPerformed;
 
-   procedure spriteTypeJComboBoxActionPerformed (This : in out SpriteSplitterImageJPanel; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure spriteTypeJComboBoxActionPerformed (This : in out SpriteSplitterImageJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
       spriteSplitterUtil : SpriteSplitterUtil_Access;
    begin
         spriteSplitterUtil := SpriteSplitterUtil_Package.getInstance;
@@ -256,26 +256,26 @@ package body org.allbinary.image.gui.SpriteSplitterImageJPanel_Package is
         This.jLabel2.setText (spriteSplitterUtil.ANIMATIONS_LABELS ((This.spriteTypeJComboBox.getSelectedIndex) + (1)));
    end spriteTypeJComboBoxActionPerformed;
 
-   procedure totalAnimationsJComboBoxActionPerformed (This : in out SpriteSplitterImageJPanel; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure totalAnimationsJComboBoxActionPerformed (This : in out SpriteSplitterImageJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         null;
    end totalAnimationsJComboBoxActionPerformed;
 
-   procedure totalFramesJComboBoxActionPerformed (This : in out SpriteSplitterImageJPanel; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure totalFramesJComboBoxActionPerformed (This : in out SpriteSplitterImageJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         null;
    end totalFramesJComboBoxActionPerformed;
 
-   procedure widthReductionTextFieldActionPerformed (This : in out SpriteSplitterImageJPanel; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure widthReductionTextFieldActionPerformed (This : in out SpriteSplitterImageJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         null;
    end widthReductionTextFieldActionPerformed;
 
-   procedure increaseWidthTextFieldActionPerformed (This : in out SpriteSplitterImageJPanel; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure increaseWidthTextFieldActionPerformed (This : in out SpriteSplitterImageJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         null;
    end increaseWidthTextFieldActionPerformed;
@@ -285,15 +285,15 @@ package body org.allbinary.image.gui.SpriteSplitterImageJPanel_Package is
         return This.imageProcessorInput;
    end getImageProcessorInput;
 
-   procedure setImageProcessorInput (This : in out SpriteSplitterImageJPanel; imageProcessorInput_Param : access ImageProcessorInput'Class) is
-      imageProcessorInput : ImageProcessorInput_Access := ImageProcessorInput_Access (imageProcessorInput_Param);
+   procedure setImageProcessorInput (This : in out SpriteSplitterImageJPanel; imageProcessorInput_Param : access ImageProcessorInput_Package.ImageProcessorInput'Class) is
+      imageProcessorInput : constant ImageProcessorInput_Access := ImageProcessorInput_Access (imageProcessorInput_Param);
    begin
         This.imageProcessorInput := imageProcessorInput;
    end setImageProcessorInput;
 
    --  throws IOException
-   procedure visit (This : in out SpriteSplitterImageJPanel; generatedBufferedImage_Param : access BufferedImage'Class; name : Unbounded_String; index : Integer) is
-      generatedBufferedImage : BufferedImage_Access := BufferedImage_Access (generatedBufferedImage_Param);
+   procedure visit (This : in out SpriteSplitterImageJPanel; generatedBufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; name : Unbounded_String; index : Integer) is
+      generatedBufferedImage : constant BufferedImage_Access := BufferedImage_Access (generatedBufferedImage_Param);
       file : File_Access;
       filePath : Unbounded_String;
       extensionIndex : Integer;

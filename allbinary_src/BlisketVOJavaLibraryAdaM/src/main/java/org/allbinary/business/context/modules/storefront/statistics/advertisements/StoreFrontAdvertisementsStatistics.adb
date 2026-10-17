@@ -21,14 +21,14 @@ package body org.allbinary.business.context.modules.storefront.statistics.advert
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out StoreFrontAdvertisementsStatistics'Class; storeFrontInterface_Param : access StoreFrontInterface'Class) is
-      storeFrontInterface : StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
+   procedure Initialize (This : in out StoreFrontAdvertisementsStatistics'Class; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) is
+      storeFrontInterface : constant StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
    begin
       Initialize_Fields (This);
         null;
    end Initialize;
 
-   function Create (storeFrontInterface_Param : access StoreFrontInterface'Class) return StoreFrontAdvertisementsStatistics_Access is
+   function Create (storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) return StoreFrontAdvertisementsStatistics_Access is
       This : constant StoreFrontAdvertisementsStatistics_Access := new StoreFrontAdvertisementsStatistics;
    begin
       StoreFrontAdvertisementsStatistics_Package.Initialize (This.all, storeFrontInterface_Param);

@@ -64,19 +64,19 @@ package org.allbinary.image.gui.ResizeImageJPanel_Package is
       updateJButton : JButton_Access;
    end record;
 
-   procedure Initialize (This : in out ResizeImageJPanel'Class; imageProcessorInput_Param : access ImageProcessorInput'Class);
-   function Create (imageProcessorInput_Param : access ImageProcessorInput'Class) return ResizeImageJPanel_Access;
+   procedure Initialize (This : in out ResizeImageJPanel'Class; imageProcessorInput_Param : access ImageProcessorInput_Package.ImageProcessorInput'Class);
+   function Create (imageProcessorInput_Param : access ImageProcessorInput_Package.ImageProcessorInput'Class) return ResizeImageJPanel_Access;
    procedure process (This : in out ResizeImageJPanel);
    procedure update (This : in out ResizeImageJPanel);
    procedure updateFor16Above (This : in out ResizeImageJPanel);
    procedure updateFor16Below (This : in out ResizeImageJPanel);
    function getImageProcessorInput (This : in out ResizeImageJPanel) return ImageProcessorInput_Access;
-   procedure setImageProcessorInput (This : in out ResizeImageJPanel; imageProcessorInput_Param : access ImageProcessorInput'Class);
+   procedure setImageProcessorInput (This : in out ResizeImageJPanel; imageProcessorInput_Param : access ImageProcessorInput_Package.ImageProcessorInput'Class);
    procedure initComponents (This : in out ResizeImageJPanel);
-   procedure aboveJButtonActionPerformed (This : in out ResizeImageJPanel; evt_Param : access ActionEvent'Class);
-   procedure updateJButtonActionPerformed (This : in out ResizeImageJPanel; evt_Param : access ActionEvent'Class);
-   procedure adjustFor16AboveJButtonActionPerformed (This : in out ResizeImageJPanel; evt_Param : access ActionEvent'Class);
-   procedure adjustFor16BelowJButtonActionPerformed (This : in out ResizeImageJPanel; evt_Param : access ActionEvent'Class);
+   procedure aboveJButtonActionPerformed (This : in out ResizeImageJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
+   procedure updateJButtonActionPerformed (This : in out ResizeImageJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
+   procedure adjustFor16AboveJButtonActionPerformed (This : in out ResizeImageJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
+   procedure adjustFor16BelowJButtonActionPerformed (This : in out ResizeImageJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
 
 end org.allbinary.image.gui.ResizeImageJPanel_Package;
 

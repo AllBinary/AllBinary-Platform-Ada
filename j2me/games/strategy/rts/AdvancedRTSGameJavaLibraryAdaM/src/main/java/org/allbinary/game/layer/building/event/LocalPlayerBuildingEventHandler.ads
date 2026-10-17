@@ -43,7 +43,7 @@ package org.allbinary.game.layer.building.event.LocalPlayerBuildingEventHandler_
    procedure Initialize (This : in out LocalPlayerBuildingEventHandler'Class);
    function Create return LocalPlayerBuildingEventHandler_Access;
    function getInstance return LocalPlayerBuildingEventHandler_Access;
-   procedure process (This : in out LocalPlayerBuildingEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class);
+   procedure process (This : in out LocalPlayerBuildingEventHandler; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class);
 
 end org.allbinary.game.layer.building.event.LocalPlayerBuildingEventHandler_Package;
 

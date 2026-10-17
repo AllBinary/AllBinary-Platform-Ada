@@ -24,15 +24,15 @@ package body org.allbinary.data.tree.dom.DirectoryDataModel_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out DirectoryDataModel'Class; file_Param : access AbFile'Class) is
-      file : AbFile_Access := AbFile_Access (file_Param);
+   procedure Initialize (This : in out DirectoryDataModel'Class; file_Param : access AbFile_Package.AbFile'Class) is
+      file : constant AbFile_Access := AbFile_Access (file_Param);
    begin
       Initialize_Fields (This);
         This.fileBasicArrayList := Directory_Package.getInstance.search (file);
         This.transformDocumentInterface := TransformDocumentInterface_Access (TransformDocumentFactory_Package.getInstance);
    end Initialize;
 
-   function Create (file_Param : access AbFile'Class) return DirectoryDataModel_Access is
+   function Create (file_Param : access AbFile_Package.AbFile'Class) return DirectoryDataModel_Access is
       This : constant DirectoryDataModel_Access := new DirectoryDataModel;
    begin
       DirectoryDataModel_Package.Initialize (This.all, file_Param);
@@ -50,8 +50,8 @@ package body org.allbinary.data.tree.dom.DirectoryDataModel_Package is
         return null;
    end getTransformInfoInterface;
 
-   procedure setTransformDocumentInterface (This : in out DirectoryDataModel; transformDocumentInterface_Param : access TransformDocumentInterface'Class) is
-      transformDocumentInterface : TransformDocumentInterface_Access := TransformDocumentInterface_Access (transformDocumentInterface_Param);
+   procedure setTransformDocumentInterface (This : in out DirectoryDataModel; transformDocumentInterface_Param : access TransformDocumentInterface_Package.TransformDocumentInterface'Class) is
+      transformDocumentInterface : constant TransformDocumentInterface_Access := TransformDocumentInterface_Access (transformDocumentInterface_Param);
    begin
         This.transformDocumentInterface := transformDocumentInterface;
    end setTransformDocumentInterface;
@@ -62,8 +62,8 @@ package body org.allbinary.data.tree.dom.DirectoryDataModel_Package is
    end getTransformDocumentInterface;
 
    --  throws Exception
-   function toXmlNode (This : in out DirectoryDataModel; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out DirectoryDataModel; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       dirNode : Node_Access;
       size : Integer;
       nextFile : AbFile_Access;
@@ -97,7 +97,7 @@ package body org.allbinary.data.tree.dom.DirectoryDataModel_Package is
         return XmlDocumentHelper_Package.toString (This.getTransformDocumentInterface.getDoc);
    end view;
 
-   procedure toXmlNode (This : in out DirectoryDataModel; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out DirectoryDataModel; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := DirectoryDataModel'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

@@ -45,12 +45,12 @@ package org.allbinary.business.category.CategoryComponent_Package is
       NO_TYPE : Integer;
    end record;
 
-   procedure Initialize (This : in out CategoryComponent'Class; categoryInterface_Param : access CategoryInterface'Class);
-   function Create (categoryInterface_Param : access CategoryInterface'Class) return CategoryComponent_Access;
+   procedure Initialize (This : in out CategoryComponent'Class; categoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class);
+   function Create (categoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class) return CategoryComponent_Access;
    function getTypeId (This : in out CategoryComponent) return Integer;
    function getTransformDocumentInterface (This : in out CategoryComponent) return TransformDocumentInterface_Access;
    function getTransformInfoInterface (This : in out CategoryComponent) return TransformInfoInterface_Access;
-   procedure setTransformDocumentInterface (This : in out CategoryComponent; viewDocumentInterface_Param : access TransformDocumentInterface'Class);
+   procedure setTransformDocumentInterface (This : in out CategoryComponent; viewDocumentInterface_Param : access TransformDocumentInterface_Package.TransformDocumentInterface'Class);
    function toXmlDoc (This : in out CategoryComponent) return Document_Access;
    function view (This : in out CategoryComponent) return Unbounded_String;
 

@@ -36,8 +36,8 @@ package org.allbinary.data.tables.user.commerce.inventory.item.options.XmlOption
    type XmlOptionItemsEntityInterface_Access_Array is array (Natural range <>) of XmlOptionItemsEntityInterface_Access;
    type XmlOptionItemsEntityInterface_Access_Array_Access is access all XmlOptionItemsEntityInterface_Access_Array;
    procedure delete (This : in out XmlOptionItemsEntityInterface; value : Unbounded_String) is abstract;
-   procedure insert (This : in out XmlOptionItemsEntityInterface; values_Param : access BasicArrayList'Class) is abstract;
-   procedure update (This : in out XmlOptionItemsEntityInterface; updatedValues_Param : access HashMap'Class) is abstract;
+   procedure insert (This : in out XmlOptionItemsEntityInterface; values_Param : access BasicArrayList_Package.BasicArrayList'Class) is abstract;
+   procedure update (This : in out XmlOptionItemsEntityInterface; updatedValues_Param : access HashMap_Package.HashMap'Class) is abstract;
 
 end org.allbinary.data.tables.user.commerce.inventory.item.options.XmlOptionItemsEntityInterface_Package;
 

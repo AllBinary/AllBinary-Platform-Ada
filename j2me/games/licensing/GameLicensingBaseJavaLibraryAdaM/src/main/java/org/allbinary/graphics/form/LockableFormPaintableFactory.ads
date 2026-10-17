@@ -39,8 +39,8 @@ package org.allbinary.graphics.form.LockableFormPaintableFactory_Package is
 
    procedure Initialize (This : in out LockableFormPaintableFactory'Class; lockedIndex : Integer);
    function Create (lockedIndex : Integer) return LockableFormPaintableFactory_Access;
-   function getInstanceItemPaintable (This : in out LockableFormPaintableFactory; paintableForm_Param : access PaintableForm'Class) return ItemPaintable_Access;
-   procedure getInstanceItemPaintable (This : in out LockableFormPaintableFactory; paintableForm_Param : access PaintableForm'Class);
+   function getInstanceItemPaintable (This : in out LockableFormPaintableFactory; paintableForm_Param : access PaintableForm_Package.PaintableForm'Class) return ItemPaintable_Access;
+   procedure getInstanceItemPaintable (This : in out LockableFormPaintableFactory; paintableForm_Param : access PaintableForm_Package.PaintableForm'Class);
 
 end org.allbinary.graphics.form.LockableFormPaintableFactory_Package;
 

@@ -62,11 +62,11 @@ package org.allbinary.game.paint.help.HelpPaintable_Package is
       charHeight : Integer;
    end record;
 
-   procedure Initialize (This : in out HelpPaintable'Class; title : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; basicColor_Param : access BasicColor'Class);
-   function Create (title : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; basicColor_Param : access BasicColor'Class) return HelpPaintable_Access;
-   procedure updateMeasurement (This : in out HelpPaintable; graphics_Param : access Graphics'Class);
+   procedure Initialize (This : in out HelpPaintable'Class; title : Unbounded_String; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; basicColor_Param : access BasicColor_Package.BasicColor'Class);
+   function Create (title : Unbounded_String; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; basicColor_Param : access BasicColor_Package.BasicColor'Class) return HelpPaintable_Access;
+   procedure updateMeasurement (This : in out HelpPaintable; graphics_Param : access Graphics_Package.Graphics'Class);
    procedure setInputInfoP (This : in out HelpPaintable; inputInfo : Unbounded_String_Array_Access);
-   procedure paint (This : in out HelpPaintable; graphics_Param : access Graphics'Class);
+   procedure paint (This : in out HelpPaintable; graphics_Param : access Graphics_Package.Graphics'Class);
 
 end org.allbinary.game.paint.help.HelpPaintable_Package;
 

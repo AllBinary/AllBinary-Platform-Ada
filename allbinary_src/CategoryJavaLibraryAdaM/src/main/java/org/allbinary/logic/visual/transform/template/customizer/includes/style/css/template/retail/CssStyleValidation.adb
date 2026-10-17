@@ -37,30 +37,30 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.s
       return This;
    end Create;
 
-   procedure Initialize (This : in out CssStyleValidation'Class; document_Param : access Document'Class) is
-      document : Document_Access := Document_Access (document_Param);
+   procedure Initialize (This : in out CssStyleValidation'Class; document_Param : access Document_Package.Document'Class) is
+      document : constant Document_Access := Document_Access (document_Param);
    begin
       Validation_Package.Initialize (This);
       Initialize_Fields (This);
         This.cssStyleElementVector := StylesValidationFactory_Package.getInstance.getInstance (document);
    end Initialize;
 
-   function Create (document_Param : access Document'Class) return CssStyleValidation_Access is
+   function Create (document_Param : access Document_Package.Document'Class) return CssStyleValidation_Access is
       This : constant CssStyleValidation_Access := new CssStyleValidation;
    begin
       CssStyleValidation_Package.Initialize (This.all, document_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out CssStyleValidation'Class; hashMap_Param : access HashMap'Class) is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+   procedure Initialize (This : in out CssStyleValidation'Class; hashMap_Param : access HashMap_Package.HashMap'Class) is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
       Validation_Package.Initialize (This);
       Initialize_Fields (This);
         This.cssStyleElementVector := StylesValidationFactory_Package.getInstance (hashMap);
    end Initialize;
 
-   function Create (hashMap_Param : access HashMap'Class) return CssStyleValidation_Access is
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return CssStyleValidation_Access is
       This : constant CssStyleValidation_Access := new CssStyleValidation;
    begin
       CssStyleValidation_Package.Initialize (This.all, hashMap_Param);
@@ -126,15 +126,15 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.s
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out CssStyleValidation; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toValidationInfoNode (This : in out CssStyleValidation; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
 
    --  throws Exception
-   function toXmlNode (This : in out CssStyleValidation; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out CssStyleValidation; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       node : Node_Access;
       styleNode : Node_Access;
       size : Integer;
@@ -152,14 +152,14 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.s
         return node;
    end toXmlNode;
 
-   procedure toValidationInfoNode (This : in out CssStyleValidation; document_Param : access Document'Class) is
+   procedure toValidationInfoNode (This : in out CssStyleValidation; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := CssStyleValidation'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
 
-   procedure toXmlNode (This : in out CssStyleValidation; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out CssStyleValidation; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := CssStyleValidation'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

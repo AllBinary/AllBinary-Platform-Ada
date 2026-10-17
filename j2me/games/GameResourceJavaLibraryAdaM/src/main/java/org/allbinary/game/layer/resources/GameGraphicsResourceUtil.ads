@@ -61,8 +61,8 @@ package org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package is
    function Create return GameGraphicsResourceUtil_Access;
    function getInstance return GameGraphicsResourceUtil_Access;
    function getString (This : in out GameGraphicsResourceUtil) return Unbounded_String;
-   function getStringForFeature (This : in out GameGraphicsResourceUtil; graphicsFeature_Param : access GraphicsFeature'Class) return Unbounded_String;
-   procedure getStringForFeature (This : in out GameGraphicsResourceUtil; graphicsFeature_Param : access GraphicsFeature'Class);
+   function getStringForFeature (This : in out GameGraphicsResourceUtil; graphicsFeature_Param : access GraphicsFeature_Package.GraphicsFeature'Class) return Unbounded_String;
+   procedure getStringForFeature (This : in out GameGraphicsResourceUtil; graphicsFeature_Param : access GraphicsFeature_Package.GraphicsFeature'Class);
    function getName (This : in out GameGraphicsResourceUtil) return Unbounded_String;
 
 end org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package;

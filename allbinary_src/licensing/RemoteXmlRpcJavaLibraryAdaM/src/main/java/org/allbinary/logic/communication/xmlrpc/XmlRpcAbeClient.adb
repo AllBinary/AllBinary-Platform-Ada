@@ -43,8 +43,8 @@ package body org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out XmlRpcAbeClient'Class; clientInfo_Param : access AbeClientInformationInterface'Class; remoteMethod : Unbounded_String) is
-      clientInfo : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (clientInfo_Param);
+   procedure Initialize (This : in out XmlRpcAbeClient'Class; clientInfo_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; remoteMethod : Unbounded_String) is
+      clientInfo : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (clientInfo_Param);
       stringBuffer : StringMaker_Access;
    begin
       Initialize_Fields (This);
@@ -67,7 +67,7 @@ package body org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package is
         This.logUtil.putF (stringBuffer.toString, XmlRpcAbeClient_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
    end Initialize;
 
-   function Create (clientInfo_Param : access AbeClientInformationInterface'Class; remoteMethod : Unbounded_String) return XmlRpcAbeClient_Access is
+   function Create (clientInfo_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; remoteMethod : Unbounded_String) return XmlRpcAbeClient_Access is
       This : constant XmlRpcAbeClient_Access := new XmlRpcAbeClient;
    begin
       XmlRpcAbeClient_Package.Initialize (This.all, clientInfo_Param, remoteMethod);
@@ -76,7 +76,7 @@ package body org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package is
 
    --  throws Exception
    function get (This : in out XmlRpcAbeClient; anyType_Param : access Java_Object'Class) return Java_Object_Access is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         ForcedLogUtil_Package.log (This.commonStrings.NOT_IMPLEMENTED, XmlRpcAbeClient_Access'(This'Unchecked_Access));
         return NullUtil_Package.getInstance.NULL_OBJECT;
@@ -84,7 +84,7 @@ package body org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package is
 
    --  throws Exception
    function tryAnother (This : in out XmlRpcAbeClient; anyType_Param : access Java_Object'Class) return Java_Object_Access is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         if (This.getServer) < (This.getMaxServers) then
             This.setServer ((This.getServer) + (1));
@@ -109,8 +109,8 @@ package body org.allbinary.logic.communication.xmlrpc.XmlRpcAbeClient_Package is
         return This.client;
    end getClient;
 
-   procedure setClient (This : in out XmlRpcAbeClient; client_Param : access XmlRpcClient'Class) is
-      client : XmlRpcClient_Access := XmlRpcClient_Access (client_Param);
+   procedure setClient (This : in out XmlRpcAbeClient; client_Param : access XmlRpcClient_Package.XmlRpcClient'Class) is
+      client : constant XmlRpcClient_Access := XmlRpcClient_Access (client_Param);
    begin
         This.client := client;
    end setClient;

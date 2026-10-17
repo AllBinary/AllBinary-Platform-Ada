@@ -76,8 +76,8 @@ package body org.allbinary.business.init.LicenseInitInfo_Package is
         return This.serverList;
    end getServerList;
 
-   procedure setServerList (This : in out LicenseInitInfo; servers_Param : access BasicArrayList'Class) is
-      servers : BasicArrayList_Access := BasicArrayList_Access (servers_Param);
+   procedure setServerList (This : in out LicenseInitInfo; servers_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      servers : constant BasicArrayList_Access := BasicArrayList_Access (servers_Param);
    begin
         if (DebugFactory_Package.getInstance) = (NoDebug_Package.getInstance) then
             This.serverList := servers;

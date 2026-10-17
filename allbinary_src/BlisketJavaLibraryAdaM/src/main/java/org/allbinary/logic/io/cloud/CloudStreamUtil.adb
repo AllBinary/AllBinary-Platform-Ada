@@ -40,8 +40,8 @@ package body org.allbinary.logic.io.CloudStreamUtil_Package is
    end getInstance;
 
    --  throws Exception
-   function getFile (This : in out CloudStreamUtil; file_Param : access AbFile'Class) return InputStream_Access is
-      file : AbFile_Access := AbFile_Access (file_Param);
+   function getFile (This : in out CloudStreamUtil; file_Param : access AbFile_Package.AbFile'Class) return InputStream_Access is
+      file : constant AbFile_Access := AbFile_Access (file_Param);
       inputStream : InputStream_Access;
       available : Integer;
    begin
@@ -56,8 +56,8 @@ package body org.allbinary.logic.io.CloudStreamUtil_Package is
    end getFile;
 
    --  throws Exception
-   function getFileAnyWhere (This : in out CloudStreamUtil; file_Param : access AbFile'Class) return InputStream_Access is
-      file : AbFile_Access := AbFile_Access (file_Param);
+   function getFileAnyWhere (This : in out CloudStreamUtil; file_Param : access AbFile_Package.AbFile'Class) return InputStream_Access is
+      file : constant AbFile_Access := AbFile_Access (file_Param);
       inputStream : InputStream_Access;
       available : Integer;
    begin
@@ -80,8 +80,8 @@ package body org.allbinary.logic.io.CloudStreamUtil_Package is
    end getFileAnyWhere;
 
    --  throws Exception
-   function getFileLocal (This : in out CloudStreamUtil; file_Param : access AbFile'Class) return InputStream_Access is
-      file : AbFile_Access := AbFile_Access (file_Param);
+   function getFileLocal (This : in out CloudStreamUtil; file_Param : access AbFile_Package.AbFile'Class) return InputStream_Access is
+      file : constant AbFile_Access := AbFile_Access (file_Param);
       inputStream : InputStream_Access;
       available : Integer;
    begin
@@ -95,21 +95,21 @@ package body org.allbinary.logic.io.CloudStreamUtil_Package is
         return inputStream;
    end getFileLocal;
 
-   procedure getFile (This : in out CloudStreamUtil; file_Param : access AbFile'Class) is
+   procedure getFile (This : in out CloudStreamUtil; file_Param : access AbFile_Package.AbFile'Class) is
       Java_Result : constant InputStream_Access := CloudStreamUtil'Class (This).getFile (file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getFile;
 
-   procedure getFileAnyWhere (This : in out CloudStreamUtil; file_Param : access AbFile'Class) is
+   procedure getFileAnyWhere (This : in out CloudStreamUtil; file_Param : access AbFile_Package.AbFile'Class) is
       Java_Result : constant InputStream_Access := CloudStreamUtil'Class (This).getFileAnyWhere (file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getFileAnyWhere;
 
-   procedure getFileLocal (This : in out CloudStreamUtil; file_Param : access AbFile'Class) is
+   procedure getFileLocal (This : in out CloudStreamUtil; file_Param : access AbFile_Package.AbFile'Class) is
       Java_Result : constant InputStream_Access := CloudStreamUtil'Class (This).getFileLocal (file_Param);
       pragma Unreferenced (Java_Result);
    begin

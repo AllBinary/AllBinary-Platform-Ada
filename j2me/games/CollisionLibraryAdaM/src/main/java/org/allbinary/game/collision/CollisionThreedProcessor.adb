@@ -22,9 +22,9 @@ package body org.allbinary.game.collision.CollisionThreedProcessor_Package is
    end Create;
 
 
-   function isCollision (This : in out CollisionThreedProcessor; myLayer_Param : access AllBinaryLayer'Class; myLayer2_Param : access AllBinaryLayer'Class) return Boolean is
-      myLayer : AllBinaryLayer_Access := AllBinaryLayer_Access (myLayer_Param);
-      myLayer2 : AllBinaryLayer_Access := AllBinaryLayer_Access (myLayer2_Param);
+   function isCollision (This : in out CollisionThreedProcessor; myLayer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; myLayer2_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) return Boolean is
+      myLayer : constant AllBinaryLayer_Access := AllBinaryLayer_Access (myLayer_Param);
+      myLayer2 : constant AllBinaryLayer_Access := AllBinaryLayer_Access (myLayer2_Param);
    begin
         if ((((((myLayer2.getXP) >= (myLayer.getX2)) or else ((myLayer2.getYP) >= (myLayer.getY2))) or else ((myLayer2.getX2) <= (myLayer.getXP))) or else ((myLayer2.getY2) <= (myLayer.getYP))) or else ((myLayer2.getZP) < (myLayer.getZ2))) or else ((myLayer2.getZ2) > (myLayer.getZP)) then
             return False;
@@ -33,7 +33,7 @@ package body org.allbinary.game.collision.CollisionThreedProcessor_Package is
         end if;
    end isCollision;
 
-   procedure isCollision (This : in out CollisionThreedProcessor; myLayer_Param : access AllBinaryLayer'Class; myLayer2_Param : access AllBinaryLayer'Class) is
+   procedure isCollision (This : in out CollisionThreedProcessor; myLayer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; myLayer2_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
       Java_Result : constant Boolean := CollisionThreedProcessor'Class (This).isCollision (myLayer_Param, myLayer2_Param);
       pragma Unreferenced (Java_Result);
    begin

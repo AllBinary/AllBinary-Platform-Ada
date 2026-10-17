@@ -36,12 +36,12 @@ package org.allbinary.game.layer.BasicLayerPlacement_Package is
       height : Integer;
    end record;
 
-   procedure Initialize (This : in out BasicLayerPlacement'Class; layerType_Param : access LayerPlacementType'Class; width : Integer; height : Integer);
-   function Create (layerType_Param : access LayerPlacementType'Class; width : Integer; height : Integer) return BasicLayerPlacement_Access;
+   procedure Initialize (This : in out BasicLayerPlacement'Class; layerType_Param : access LayerPlacementType_Package.LayerPlacementType'Class; width : Integer; height : Integer);
+   function Create (layerType_Param : access LayerPlacementType_Package.LayerPlacementType'Class; width : Integer; height : Integer) return BasicLayerPlacement_Access;
    function getWidth (This : in out BasicLayerPlacement) return Integer;
    function getHeight (This : in out BasicLayerPlacement) return Integer;
    function getLayerType (This : in out BasicLayerPlacement) return LayerPlacementType_Access;
-   procedure setLayerType (This : in out BasicLayerPlacement; layerType_Param : access LayerPlacementType'Class);
+   procedure setLayerType (This : in out BasicLayerPlacement; layerType_Param : access LayerPlacementType_Package.LayerPlacementType'Class);
 
 end org.allbinary.game.layer.BasicLayerPlacement_Package;
 

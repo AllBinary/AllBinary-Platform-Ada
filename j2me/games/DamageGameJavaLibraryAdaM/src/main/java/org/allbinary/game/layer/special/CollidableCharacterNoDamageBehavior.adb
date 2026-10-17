@@ -34,9 +34,9 @@ package body org.allbinary.game.layer.special.CollidableCharacterNoDamageBehavio
    end Create;
 
    --  throws Exception
-   procedure collide (This : in out CollidableCharacterNoDamageBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableCompositeLayer'Class) is
-      ownerLayer : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
-      collidableInterfaceCompositeInterface : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (collidableInterfaceCompositeInterface_Param);
+   procedure collide (This : in out CollidableCharacterNoDamageBehavior; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class) is
+      ownerLayer : constant CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
+      collidableInterfaceCompositeInterface : constant CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (collidableInterfaceCompositeInterface_Param);
       collisionTypeFactory : CollisionTypeFactory_Access;
       collisionType : CollisionType_Access;
       collidableDestroyableDamageableLayer : CollidableDestroyableDamageableLayer_Access;
@@ -52,9 +52,9 @@ package body org.allbinary.game.layer.special.CollidableCharacterNoDamageBehavio
    end collide;
 
    --  throws Exception
-   procedure collideInterface (This : in out CollidableCharacterNoDamageBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface'Class) is
-      ownerLayer : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
-      collidableInterfaceCompositeInterface : CollidableInterfaceCompositeInterface_Access := CollidableInterfaceCompositeInterface_Access (collidableInterfaceCompositeInterface_Param);
+   procedure collideInterface (This : in out CollidableCharacterNoDamageBehavior; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface_Package.CollidableInterfaceCompositeInterface'Class) is
+      ownerLayer : constant CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
+      collidableInterfaceCompositeInterface : constant CollidableInterfaceCompositeInterface_Access := CollidableInterfaceCompositeInterface_Access (collidableInterfaceCompositeInterface_Param);
    begin
         ForcedLogUtil_Package.log (This.commonStrings.NOT_IMPLEMENTED, CollidableCharacterNoDamageBehavior_Access'(This'Unchecked_Access));
    end collideInterface;

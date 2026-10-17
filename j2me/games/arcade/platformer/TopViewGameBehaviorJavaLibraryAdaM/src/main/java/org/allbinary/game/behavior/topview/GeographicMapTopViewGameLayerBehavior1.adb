@@ -43,9 +43,9 @@ package body org.allbinary.game.behavior.topview.GeographicMapTopViewGameLayerBe
    end Create;
 
    --  throws Exception
-   procedure gravity (This : in out GeographicMapTopViewGameLayerBehavior1; velocityProperties_Param : access VelocityProperties'Class; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
-      velocityProperties : VelocityProperties_Access := VelocityProperties_Access (velocityProperties_Param);
-      geographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
+   procedure gravity (This : in out GeographicMapTopViewGameLayerBehavior1; velocityProperties_Param : access VelocityProperties_Package.VelocityProperties'Class; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
+      velocityProperties : constant VelocityProperties_Access := VelocityProperties_Access (velocityProperties_Param);
+      geographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
       hasSolidBlock : Boolean;
    begin
         if (geographicMapCellPosition) /= (SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION) then
@@ -62,8 +62,8 @@ package body org.allbinary.game.behavior.topview.GeographicMapTopViewGameLayerBe
    end gravity;
 
    --  throws Exception
-   function getPosition (This : in out GeographicMapTopViewGameLayerBehavior1; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; layer_Param : access AllBinaryLayer'Class; x : Integer; y : Integer) return GeographicMapCellPosition_Access is
-      layer : AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
+   function getPosition (This : in out GeographicMapTopViewGameLayerBehavior1; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; x : Integer; y : Integer) return GeographicMapCellPosition_Access is
+      layer : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
       xCellPosition : Integer;
       yCellPosition : Integer;
    begin
@@ -73,8 +73,8 @@ package body org.allbinary.game.behavior.topview.GeographicMapTopViewGameLayerBe
    end getPosition;
 
    --  throws Exception
-   function getLeftPosition (This : in out GeographicMapTopViewGameLayerBehavior1; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; layer_Param : access AllBinaryLayer'Class) return GeographicMapCellPosition_Access is
-      layer : AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
+   function getLeftPosition (This : in out GeographicMapTopViewGameLayerBehavior1; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) return GeographicMapCellPosition_Access is
+      layer : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
       xCellPosition : Integer;
       yCellPosition : Integer;
    begin
@@ -84,8 +84,8 @@ package body org.allbinary.game.behavior.topview.GeographicMapTopViewGameLayerBe
    end getLeftPosition;
 
    --  throws Exception
-   function getRightPosition (This : in out GeographicMapTopViewGameLayerBehavior1; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; layer_Param : access AllBinaryLayer'Class) return GeographicMapCellPosition_Access is
-      layer : AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
+   function getRightPosition (This : in out GeographicMapTopViewGameLayerBehavior1; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) return GeographicMapCellPosition_Access is
+      layer : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
       xCellPosition : Integer;
       yCellPosition : Integer;
    begin
@@ -95,9 +95,9 @@ package body org.allbinary.game.behavior.topview.GeographicMapTopViewGameLayerBe
    end getRightPosition;
 
    --  throws Exception
-   function getGeographicMapCellPositionIfNotSolidBlockOrOffMapLocation (This : in out GeographicMapTopViewGameLayerBehavior1; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; velocityProperties_Param : access VelocityProperties'Class; layer_Param : access AllBinaryLayer'Class; x : Integer; y : Integer) return GeographicMapCellPosition_Access is
-      velocityProperties : VelocityProperties_Access := VelocityProperties_Access (velocityProperties_Param);
-      layer : AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
+   function getGeographicMapCellPositionIfNotSolidBlockOrOffMapLocation (This : in out GeographicMapTopViewGameLayerBehavior1; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; velocityProperties_Param : access VelocityProperties_Package.VelocityProperties'Class; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; x : Integer; y : Integer) return GeographicMapCellPosition_Access is
+      velocityProperties : constant VelocityProperties_Access := VelocityProperties_Access (velocityProperties_Param);
+      layer : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
       geographicMapCellPosition : GeographicMapCellPosition_Access;
       possibleStepGeographicMapCellPosition : GeographicMapCellPosition_Access;
       tiledLayer : AllBinaryTiledLayer_Access;
@@ -125,10 +125,10 @@ package body org.allbinary.game.behavior.topview.GeographicMapTopViewGameLayerBe
    end getGeographicMapCellPositionIfNotSolidBlockOrOffMapLocation;
 
    --  throws Exception
-   procedure moveAndLand (This : in out GeographicMapTopViewGameLayerBehavior1; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class; velocityProperties_Param : access VelocityProperties'Class; layer_Param : access AllBinaryLayer'Class; x : Integer; y : Integer) is
-      geographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
-      velocityProperties : VelocityProperties_Access := VelocityProperties_Access (velocityProperties_Param);
-      layer : AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
+   procedure moveAndLand (This : in out GeographicMapTopViewGameLayerBehavior1; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; velocityProperties_Param : access VelocityProperties_Package.VelocityProperties'Class; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; x : Integer; y : Integer) is
+      geographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
+      velocityProperties : constant VelocityProperties_Access := VelocityProperties_Access (velocityProperties_Param);
+      layer : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
       topViewCharacterInterface : TopViewCharacterInterface_Access;
    begin
         if (geographicMapCellPosition) /= (SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION) then
@@ -140,9 +140,9 @@ package body org.allbinary.game.behavior.topview.GeographicMapTopViewGameLayerBe
    end moveAndLand;
 
    --  throws Exception
-   function move (This : in out GeographicMapTopViewGameLayerBehavior1; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; velocityProperties_Param : access VelocityProperties'Class; layer_Param : access AllBinaryLayer'Class; x : Integer; y : Integer) return Boolean is
-      velocityProperties : VelocityProperties_Access := VelocityProperties_Access (velocityProperties_Param);
-      layer : AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
+   function move (This : in out GeographicMapTopViewGameLayerBehavior1; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; velocityProperties_Param : access VelocityProperties_Package.VelocityProperties'Class; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; x : Integer; y : Integer) return Boolean is
+      velocityProperties : constant VelocityProperties_Access := VelocityProperties_Access (velocityProperties_Param);
+      layer : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
       geographicMapCellPosition : GeographicMapCellPosition_Access;
    begin
         geographicMapCellPosition := This.getGeographicMapCellPositionIfNotSolidBlockOrOffMapLocation (geographicMapInterfaceArray, geographicMapCellTypeArray, velocityProperties, layer, x, y);
@@ -155,9 +155,9 @@ package body org.allbinary.game.behavior.topview.GeographicMapTopViewGameLayerBe
    end move;
 
    --  throws Exception
-   procedure left (This : in out GeographicMapTopViewGameLayerBehavior1; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; velocityProperties_Param : access VelocityProperties'Class; layer_Param : access AllBinaryLayer'Class) is
-      velocityProperties : VelocityProperties_Access := VelocityProperties_Access (velocityProperties_Param);
-      layer : AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
+   procedure left (This : in out GeographicMapTopViewGameLayerBehavior1; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; velocityProperties_Param : access VelocityProperties_Package.VelocityProperties'Class; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
+      velocityProperties : constant VelocityProperties_Access := VelocityProperties_Access (velocityProperties_Param);
+      layer : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
       geographicMapCellPosition : GeographicMapCellPosition_Access;
       possibleStepGeographicMapCellPosition : GeographicMapCellPosition_Access;
       hasSolidBlock : Boolean;
@@ -183,9 +183,9 @@ package body org.allbinary.game.behavior.topview.GeographicMapTopViewGameLayerBe
    end left;
 
    --  throws Exception
-   procedure right (This : in out GeographicMapTopViewGameLayerBehavior1; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; velocityProperties_Param : access VelocityProperties'Class; layer_Param : access AllBinaryLayer'Class) is
-      velocityProperties : VelocityProperties_Access := VelocityProperties_Access (velocityProperties_Param);
-      layer : AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
+   procedure right (This : in out GeographicMapTopViewGameLayerBehavior1; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; velocityProperties_Param : access VelocityProperties_Package.VelocityProperties'Class; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
+      velocityProperties : constant VelocityProperties_Access := VelocityProperties_Access (velocityProperties_Param);
+      layer : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
       geographicMapCellPosition : GeographicMapCellPosition_Access;
       possibleStepGeographicMapCellPosition : GeographicMapCellPosition_Access;
       hasSolidBlock : Boolean;
@@ -210,35 +210,35 @@ package body org.allbinary.game.behavior.topview.GeographicMapTopViewGameLayerBe
         end if;
    end right;
 
-   procedure getPosition (This : in out GeographicMapTopViewGameLayerBehavior1; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; layer_Param : access AllBinaryLayer'Class; x : Integer; y : Integer) is
+   procedure getPosition (This : in out GeographicMapTopViewGameLayerBehavior1; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; x : Integer; y : Integer) is
       Java_Result : constant GeographicMapCellPosition_Access := GeographicMapTopViewGameLayerBehavior1'Class (This).getPosition (geographicMapInterfaceArray, layer_Param, x, y);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getPosition;
 
-   procedure getLeftPosition (This : in out GeographicMapTopViewGameLayerBehavior1; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; layer_Param : access AllBinaryLayer'Class) is
+   procedure getLeftPosition (This : in out GeographicMapTopViewGameLayerBehavior1; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
       Java_Result : constant GeographicMapCellPosition_Access := GeographicMapTopViewGameLayerBehavior1'Class (This).getLeftPosition (geographicMapInterfaceArray, layer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getLeftPosition;
 
-   procedure getRightPosition (This : in out GeographicMapTopViewGameLayerBehavior1; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; layer_Param : access AllBinaryLayer'Class) is
+   procedure getRightPosition (This : in out GeographicMapTopViewGameLayerBehavior1; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
       Java_Result : constant GeographicMapCellPosition_Access := GeographicMapTopViewGameLayerBehavior1'Class (This).getRightPosition (geographicMapInterfaceArray, layer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRightPosition;
 
-   procedure getGeographicMapCellPositionIfNotSolidBlockOrOffMapLocation (This : in out GeographicMapTopViewGameLayerBehavior1; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; velocityProperties_Param : access VelocityProperties'Class; layer_Param : access AllBinaryLayer'Class; x : Integer; y : Integer) is
+   procedure getGeographicMapCellPositionIfNotSolidBlockOrOffMapLocation (This : in out GeographicMapTopViewGameLayerBehavior1; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; velocityProperties_Param : access VelocityProperties_Package.VelocityProperties'Class; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; x : Integer; y : Integer) is
       Java_Result : constant GeographicMapCellPosition_Access := GeographicMapTopViewGameLayerBehavior1'Class (This).getGeographicMapCellPositionIfNotSolidBlockOrOffMapLocation (geographicMapInterfaceArray, geographicMapCellTypeArray, velocityProperties_Param, layer_Param, x, y);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getGeographicMapCellPositionIfNotSolidBlockOrOffMapLocation;
 
-   procedure move (This : in out GeographicMapTopViewGameLayerBehavior1; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; velocityProperties_Param : access VelocityProperties'Class; layer_Param : access AllBinaryLayer'Class; x : Integer; y : Integer) is
+   procedure move (This : in out GeographicMapTopViewGameLayerBehavior1; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; velocityProperties_Param : access VelocityProperties_Package.VelocityProperties'Class; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; x : Integer; y : Integer) is
       Java_Result : constant Boolean := GeographicMapTopViewGameLayerBehavior1'Class (This).move (geographicMapInterfaceArray, geographicMapCellTypeArray, velocityProperties_Param, layer_Param, x, y);
       pragma Unreferenced (Java_Result);
    begin

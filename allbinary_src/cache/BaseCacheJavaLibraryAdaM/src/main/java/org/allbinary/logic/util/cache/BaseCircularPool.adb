@@ -44,8 +44,8 @@ package body org.allbinary.logic.util.cache.BaseCircularPool_Package is
         return anyType;
    end getNextInstance;
 
-   procedure init (This : in out BaseCircularPool; allBinaryObjectFactoryInterface_Param : access AllBinaryObjectFactoryInterface'Class) is
-      allBinaryObjectFactoryInterface : AllBinaryObjectFactoryInterface_Access := AllBinaryObjectFactoryInterface_Access (allBinaryObjectFactoryInterface_Param);
+   procedure init (This : in out BaseCircularPool; allBinaryObjectFactoryInterface_Param : access AllBinaryObjectFactoryInterface_Package.AllBinaryObjectFactoryInterface'Class) is
+      allBinaryObjectFactoryInterface : constant AllBinaryObjectFactoryInterface_Access := AllBinaryObjectFactoryInterface_Access (allBinaryObjectFactoryInterface_Param);
       size : Integer;
       index : Integer;
    begin

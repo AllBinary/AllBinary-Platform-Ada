@@ -81,8 +81,8 @@ package org.allbinary.game.init.BaseGameInitialization_Package is
    procedure Initialize (This : in out BaseGameInitialization'Class; resourceInitializationArray : ResourceInitialization_Access_Array_Access; portion : Integer);
    function Create (resourceInitializationArray : ResourceInitialization_Access_Array_Access; portion : Integer) return BaseGameInitialization_Access;
    procedure initKey (This : in out BaseGameInitialization; portion : Integer);
-   procedure initKeyMapping (This : in out BaseGameInitialization; abeClientInformation_Param : access AbeClientInformationInterface'Class; portion : Integer);
-   procedure init (This : in out BaseGameInitialization; abeClientInformation_Param : access AbeClientInformationInterface'Class; commandListener_Param : access CommandListener'Class; level : Integer);
+   procedure initKeyMapping (This : in out BaseGameInitialization; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; portion : Integer);
+   procedure init (This : in out BaseGameInitialization; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; commandListener_Param : access CommandListener_Package.CommandListener'Class; level : Integer);
    procedure resourceInitialization (This : in out BaseGameInitialization; level : Integer);
    function resourceAnimationChange (This : in out BaseGameInitialization) return Boolean;
    procedure clearResources (This : in out BaseGameInitialization);

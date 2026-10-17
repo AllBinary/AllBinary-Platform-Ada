@@ -38,10 +38,10 @@ package body org.allbinary.game.score.remote.RemoteHighScoresProcessor_Package i
    end Create;
 
    --  throws Exception
-   procedure process (This : in out RemoteHighScoresProcessor; remoteHighScores_Param : access RemoteHighScores'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo'Class) is
-      remoteHighScores : RemoteHighScores_Access := RemoteHighScores_Access (remoteHighScores_Param);
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      gameInfo : GameInfo_Access := GameInfo_Access (gameInfo_Param);
+   procedure process (This : in out RemoteHighScoresProcessor; remoteHighScores_Param : access RemoteHighScores_Package.RemoteHighScores'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo_Package.GameInfo'Class) is
+      remoteHighScores : constant RemoteHighScores_Access := RemoteHighScores_Access (remoteHighScores_Param);
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      gameInfo : constant GameInfo_Access := GameInfo_Access (gameInfo_Param);
       gameInfoData : GameInfoData_Access;
       hashtable : ABHashtable_Access;
       displayInfoSingleton : DisplayInfoSingleton_Access;

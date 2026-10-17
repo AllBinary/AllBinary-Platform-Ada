@@ -79,11 +79,11 @@ package org.allbinary.game.input.MapSelectionGameInputProcessor_Package is
       abRunnable : ABRunnable_Access;
    end record;
 
-   procedure Initialize (This : in out MapSelectionGameInputProcessor'Class; gameCanvas_Param : access AllBinaryGameCanvas'Class; raceTrackGeographicMapInterfaceFactoryInterface_Param : access MultiLevelRaceTrackGeographicMapInterfaceFactoryInterface'Class; mapSelectorPaintable_Param : access PreGameSelectorPaintable'Class; lockedIndex : Integer);
-   function Create (gameCanvas_Param : access AllBinaryGameCanvas'Class; raceTrackGeographicMapInterfaceFactoryInterface_Param : access MultiLevelRaceTrackGeographicMapInterfaceFactoryInterface'Class; mapSelectorPaintable_Param : access PreGameSelectorPaintable'Class; lockedIndex : Integer) return MapSelectionGameInputProcessor_Access;
+   procedure Initialize (This : in out MapSelectionGameInputProcessor'Class; gameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class; raceTrackGeographicMapInterfaceFactoryInterface_Param : access MultiLevelRaceTrackGeographicMapInterfaceFactoryInterface_Package.MultiLevelRaceTrackGeographicMapInterfaceFactoryInterface'Class; mapSelectorPaintable_Param : access PreGameSelectorPaintable_Package.PreGameSelectorPaintable'Class; lockedIndex : Integer);
+   function Create (gameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class; raceTrackGeographicMapInterfaceFactoryInterface_Param : access MultiLevelRaceTrackGeographicMapInterfaceFactoryInterface_Package.MultiLevelRaceTrackGeographicMapInterfaceFactoryInterface'Class; mapSelectorPaintable_Param : access PreGameSelectorPaintable_Package.PreGameSelectorPaintable'Class; lockedIndex : Integer) return MapSelectionGameInputProcessor_Access;
    procedure process (This : in out MapSelectionGameInputProcessor);
-   procedure onInput (This : in out MapSelectionGameInputProcessor; list_Param : access BasicArrayList'Class);
-   procedure processInput (This : in out MapSelectionGameInputProcessor; layerManager_Param : access AllBinaryLayerManager'Class);
+   procedure onInput (This : in out MapSelectionGameInputProcessor; list_Param : access BasicArrayList_Package.BasicArrayList'Class);
+   procedure processInput (This : in out MapSelectionGameInputProcessor; layerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class);
    procedure initInputProcessors (This : in out MapSelectionGameInputProcessor);
    function getName (This : in out MapSelectionGameInputProcessor) return Unbounded_String;
    function getPlayerGameInput (This : in out MapSelectionGameInputProcessor) return PlayerGameInput_Access;

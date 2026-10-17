@@ -61,13 +61,13 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out DemoCanvas'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; commandListener_Param : access CommandListener'Class; highScoresFactoryInterface_Param : access HighScoresFactoryInterface'Class; paintable_Param : access Paintable'Class; overlayPaintable_Param : access InitUpdatePaintable'Class; gameInitializationInterfaceFactoryInterface_Param : access BasicBuildGameInitializerFactory'Class; isContinue : Boolean) is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      commandListener : CommandListener_Access := CommandListener_Access (commandListener_Param);
-      highScoresFactoryInterface : HighScoresFactoryInterface_Access := HighScoresFactoryInterface_Access (highScoresFactoryInterface_Param);
-      paintable : Paintable_Access := Paintable_Access (paintable_Param);
-      overlayPaintable : InitUpdatePaintable_Access := InitUpdatePaintable_Access (overlayPaintable_Param);
-      gameInitializationInterfaceFactoryInterface : BasicBuildGameInitializerFactory_Access := BasicBuildGameInitializerFactory_Access (gameInitializationInterfaceFactoryInterface_Param);
+   procedure Initialize (This : in out DemoCanvas'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; commandListener_Param : access CommandListener_Package.CommandListener'Class; highScoresFactoryInterface_Param : access HighScoresFactoryInterface_Package.HighScoresFactoryInterface'Class; paintable_Param : access Paintable_Package.Paintable'Class; overlayPaintable_Param : access InitUpdatePaintable_Package.InitUpdatePaintable'Class; gameInitializationInterfaceFactoryInterface_Param : access BasicBuildGameInitializerFactory_Package.BasicBuildGameInitializerFactory'Class; isContinue : Boolean) is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      commandListener : constant CommandListener_Access := CommandListener_Access (commandListener_Param);
+      highScoresFactoryInterface : constant HighScoresFactoryInterface_Access := HighScoresFactoryInterface_Access (highScoresFactoryInterface_Param);
+      paintable : constant Paintable_Access := Paintable_Access (paintable_Param);
+      overlayPaintable : constant InitUpdatePaintable_Access := InitUpdatePaintable_Access (overlayPaintable_Param);
+      gameInitializationInterfaceFactoryInterface : constant BasicBuildGameInitializerFactory_Access := BasicBuildGameInitializerFactory_Access (gameInitializationInterfaceFactoryInterface_Param);
    begin
         RunnableCanvas_Package.Initialize (This, commandListener, CurrentDisplayableFactory_Package.getInstance.DEFAULT_CHILD_NAME_LIST, True);
         Initialize_Fields (This);
@@ -90,21 +90,21 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
         DisplayChangeEventHandler_Package.getInstance.addListenerInterface (DemoCanvas_Access'(This'Unchecked_Access));
    end Initialize;
 
-   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; commandListener_Param : access CommandListener'Class; highScoresFactoryInterface_Param : access HighScoresFactoryInterface'Class; paintable_Param : access Paintable'Class; overlayPaintable_Param : access InitUpdatePaintable'Class; gameInitializationInterfaceFactoryInterface_Param : access BasicBuildGameInitializerFactory'Class; isContinue : Boolean) return DemoCanvas_Access is
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; commandListener_Param : access CommandListener_Package.CommandListener'Class; highScoresFactoryInterface_Param : access HighScoresFactoryInterface_Package.HighScoresFactoryInterface'Class; paintable_Param : access Paintable_Package.Paintable'Class; overlayPaintable_Param : access InitUpdatePaintable_Package.InitUpdatePaintable'Class; gameInitializationInterfaceFactoryInterface_Param : access BasicBuildGameInitializerFactory_Package.BasicBuildGameInitializerFactory'Class; isContinue : Boolean) return DemoCanvas_Access is
       This : constant DemoCanvas_Access := new DemoCanvas;
    begin
       DemoCanvas_Package.Initialize (This.all, abeClientInformation_Param, commandListener_Param, highScoresFactoryInterface_Param, paintable_Param, overlayPaintable_Param, gameInitializationInterfaceFactoryInterface_Param, isContinue);
       return This;
    end Create;
 
-   procedure onEvent (This : in out DemoCanvas; eventObject_Param : access AllBinaryEventObject'Class) is
-      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+   procedure onEvent (This : in out DemoCanvas; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
+      eventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
    begin
         ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, DemoCanvas_Access'(This'Unchecked_Access));
    end onEvent;
 
-   procedure onDisplayChangeEvent (This : in out DemoCanvas; displayChangeEvent_Param : access DisplayChangeEvent'Class) is
-      displayChangeEvent : DisplayChangeEvent_Access := DisplayChangeEvent_Access (displayChangeEvent_Param);
+   procedure onDisplayChangeEvent (This : in out DemoCanvas; displayChangeEvent_Param : access DisplayChangeEvent_Package.DisplayChangeEvent'Class) is
+      displayChangeEvent : constant DisplayChangeEvent_Access := DisplayChangeEvent_Access (displayChangeEvent_Param);
       scrollSelectionForm : ScrollSelectionForm_Access;
       formType : FormType_Access;
       rectangle : Rectangle_Access;
@@ -174,8 +174,8 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
         end if;
    end getCustomCommands;
 
-   procedure initCommands (This : in out DemoCanvas; cmdListener_Param : access CommandListener'Class) is
-      cmdListener : CommandListener_Access := CommandListener_Access (cmdListener_Param);
+   procedure initCommands (This : in out DemoCanvas; cmdListener_Param : access CommandListener_Package.CommandListener'Class) is
+      cmdListener : constant CommandListener_Access := CommandListener_Access (cmdListener_Param);
       commandArray : Java_Object_Access_Array_Access;
       size : Integer;
       index : Integer;
@@ -202,8 +202,8 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
         AllBinaryMediaManager_Package.init (EarlySoundsFactory_Package.getInstance);
    end mediaInit;
 
-   procedure itemStateChanged (This : in out DemoCanvas; item_Param : access Item'Class) is
-      item : Item_Access := Item_Access (item_Param);
+   procedure itemStateChanged (This : in out DemoCanvas; item_Param : access Item_Package.Item'Class) is
+      item : constant Item_Access := Item_Access (item_Param);
    begin
         ForcedLogUtil_Package.log (This.commonStrings.NOT_IMPLEMENTED, DemoCanvas_Access'(This'Unchecked_Access));
    end itemStateChanged;
@@ -363,8 +363,8 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
    end isGameOver;
 
    --  throws Exception
-   procedure setLoadStateHashtable (This : in out DemoCanvas; hashtable_Param : access ABHashtable'Class) is
-      hashtable : ABHashtable_Access := ABHashtable_Access (hashtable_Param);
+   procedure setLoadStateHashtable (This : in out DemoCanvas; hashtable_Param : access ABHashtable_Package.ABHashtable'Class) is
+      hashtable : constant ABHashtable_Access := ABHashtable_Access (hashtable_Param);
    begin
         This.logUtil.putF (To_Unbounded_String ("Trying to continue a demo lol - only continue a game canvas not the demo"), DemoCanvas_Access'(This'Unchecked_Access), To_Unbounded_String ("setLoadStateHashtable"));
    end setLoadStateHashtable;
@@ -388,8 +388,8 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
         null;
    end setHighScoreSubmitted;
 
-   procedure paint (This : in out DemoCanvas; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out DemoCanvas; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.paintableInterface.paint (graphics);
         This.paintedSpecialAnimationInterface.paintXY (graphics, 0, 0);
@@ -400,8 +400,8 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
         This.progressPaintable.paint (graphics);
    end paint;
 
-   procedure paintThreed (This : in out DemoCanvas; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintThreed (This : in out DemoCanvas; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.paintableInterface.paintThreed (graphics);
         This.paintedSpecialAnimationInterface.paintThreedXYZ (graphics, 0, 0, 0);
@@ -716,8 +716,8 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
         This.stopGameDemo;
    end end_Id;
 
-   procedure setGameState (This : in out DemoCanvas; gameState_Param : access GameState'Class) is
-      gameState : GameState_Access := GameState_Access (gameState_Param);
+   procedure setGameState (This : in out DemoCanvas; gameState_Param : access GameState_Package.GameState'Class) is
+      gameState : constant GameState_Access := GameState_Access (gameState_Param);
    begin
         null;
    end setGameState;
@@ -765,8 +765,8 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
         return This.realHighScoresPaintable;
    end getRealHighScoresPaintable;
 
-   procedure setSpecialAnimationInterface (This : in out DemoCanvas; specialAnimationInterface_Param : access SpecialAnimation'Class) is
-      specialAnimationInterface : SpecialAnimation_Access := SpecialAnimation_Access (specialAnimationInterface_Param);
+   procedure setSpecialAnimationInterface (This : in out DemoCanvas; specialAnimationInterface_Param : access SpecialAnimation_Package.SpecialAnimation'Class) is
+      specialAnimationInterface : constant SpecialAnimation_Access := SpecialAnimation_Access (specialAnimationInterface_Param);
    begin
         specialAnimationInterface.setFrame (0);
         This.specialAnimationInterface := specialAnimationInterface;
@@ -777,8 +777,8 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
         return This.specialAnimationInterface;
    end getSpecialAnimationInterface;
 
-   procedure setPaintableInterface (This : in out DemoCanvas; paintableInterface_Param : access PaintableInterface'Class) is
-      paintableInterface : PaintableInterface_Access := PaintableInterface_Access (paintableInterface_Param);
+   procedure setPaintableInterface (This : in out DemoCanvas; paintableInterface_Param : access PaintableInterface_Package.PaintableInterface'Class) is
+      paintableInterface : constant PaintableInterface_Access := PaintableInterface_Access (paintableInterface_Param);
    begin
         This.paintableInterface := paintableInterface;
    end setPaintableInterface;
@@ -788,8 +788,8 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
         return This.paintableInterface;
    end getPaintableInterface;
 
-   procedure setDefaultPaintableInterface (This : in out DemoCanvas; defaultPaintableInterface_Param : access Paintable'Class) is
-      defaultPaintableInterface : Paintable_Access := Paintable_Access (defaultPaintableInterface_Param);
+   procedure setDefaultPaintableInterface (This : in out DemoCanvas; defaultPaintableInterface_Param : access Paintable_Package.Paintable'Class) is
+      defaultPaintableInterface : constant Paintable_Access := Paintable_Access (defaultPaintableInterface_Param);
    begin
         This.defaultPaintableInterface := defaultPaintableInterface;
    end setDefaultPaintableInterface;
@@ -804,8 +804,8 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
         return This.highScoresFactoryInterface;
    end getHighScoresFactoryInterface;
 
-   procedure setMenuInputProcessor (This : in out DemoCanvas; menuInputProcessor_Param : access BasicMenuInputProcessor'Class) is
-      menuInputProcessor : BasicMenuInputProcessor_Access := BasicMenuInputProcessor_Access (menuInputProcessor_Param);
+   procedure setMenuInputProcessor (This : in out DemoCanvas; menuInputProcessor_Param : access BasicMenuInputProcessor_Package.BasicMenuInputProcessor'Class) is
+      menuInputProcessor : constant BasicMenuInputProcessor_Access := BasicMenuInputProcessor_Access (menuInputProcessor_Param);
    begin
         This.menuInputProcessor := menuInputProcessor;
    end setMenuInputProcessor;
@@ -820,8 +820,8 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
         return This.menuForm;
    end getMenuForm;
 
-   procedure setMenuForm (This : in out DemoCanvas; menuForm_Param : access ScrollSelectionForm'Class) is
-      menuForm : ScrollSelectionForm_Access := ScrollSelectionForm_Access (menuForm_Param);
+   procedure setMenuForm (This : in out DemoCanvas; menuForm_Param : access ScrollSelectionForm_Package.ScrollSelectionForm'Class) is
+      menuForm : constant ScrollSelectionForm_Access := ScrollSelectionForm_Access (menuForm_Param);
    begin
         This.menuForm := menuForm;
    end setMenuForm;
@@ -836,8 +836,8 @@ package body org.allbinary.game.displayable.canvas.DemoCanvas_Package is
         return This.overlayPaintable;
    end getOverlayPaintable;
 
-   procedure setBasicGameDemoPaintable (This : in out DemoCanvas; basicGameDemoPaintable_Param : access StatePaintable'Class) is
-      basicGameDemoPaintable : StatePaintable_Access := StatePaintable_Access (basicGameDemoPaintable_Param);
+   procedure setBasicGameDemoPaintable (This : in out DemoCanvas; basicGameDemoPaintable_Param : access StatePaintable_Package.StatePaintable'Class) is
+      basicGameDemoPaintable : constant StatePaintable_Access := StatePaintable_Access (basicGameDemoPaintable_Param);
    begin
         This.basicGameDemoPaintable := basicGameDemoPaintable;
    end setBasicGameDemoPaintable;

@@ -48,10 +48,10 @@ package org.allbinary.logic.communication.smtp.event.modules.event.user.UserEmai
       userInterface : UserInterface_Access;
    end record;
 
-   procedure Initialize (This : in out UserEmailEventListenerModule'Class; userInterface_Param : access UserInterface'Class);
-   function Create (userInterface_Param : access UserInterface'Class) return UserEmailEventListenerModule_Access;
-   procedure onEmailSendFailure (This : in out UserEmailEventListenerModule; emailEvent_Param : access EmailEvent'Class);
-   procedure onEmailSendRequest (This : in out UserEmailEventListenerModule; emailEvent_Param : access EmailEvent'Class);
+   procedure Initialize (This : in out UserEmailEventListenerModule'Class; userInterface_Param : access UserInterface_Package.UserInterface'Class);
+   function Create (userInterface_Param : access UserInterface_Package.UserInterface'Class) return UserEmailEventListenerModule_Access;
+   procedure onEmailSendFailure (This : in out UserEmailEventListenerModule; emailEvent_Param : access EmailEvent_Package.EmailEvent'Class);
+   procedure onEmailSendRequest (This : in out UserEmailEventListenerModule; emailEvent_Param : access EmailEvent_Package.EmailEvent'Class);
 
 end org.allbinary.logic.communication.smtp.event.modules.event.user.UserEmailEventListenerModule_Package;
 

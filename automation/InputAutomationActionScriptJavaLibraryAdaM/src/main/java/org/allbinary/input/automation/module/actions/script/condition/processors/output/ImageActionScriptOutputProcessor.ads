@@ -51,7 +51,7 @@ package org.allbinary.input.automation.module.actions.script.condition.processor
 
    procedure Initialize (This : in out ImageActionScriptOutputProcessor'Class);
    function Create return ImageActionScriptOutputProcessor_Access;
-   procedure process (imageActionScriptOutputInterface_Param : access ImageActionScriptOutputInterface'Class; frame : Long_Long_Integer);
+   procedure process (imageActionScriptOutputInterface_Param : access ImageActionScriptOutputInterface_Package.ImageActionScriptOutputInterface'Class; frame : Long_Long_Integer);
 
 end org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageActionScriptOutputProcessor_Package;
 

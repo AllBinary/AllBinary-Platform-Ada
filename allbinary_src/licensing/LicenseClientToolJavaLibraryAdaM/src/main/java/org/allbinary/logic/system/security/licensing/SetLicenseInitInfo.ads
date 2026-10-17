@@ -54,7 +54,7 @@ package org.allbinary.logic.system.security.licensing.SetLicenseInitInfo_Package
    procedure Initialize (This : in out SetLicenseInitInfo'Class; options : Unbounded_String_Array_Access);
    function Create (options : Unbounded_String_Array_Access) return SetLicenseInitInfo_Access;
    function getLicenseInitInfo (This : in out SetLicenseInitInfo) return LicenseInitInfo_Access;
-   procedure createNewLicenseInitInfo (This : in out SetLicenseInitInfo; licenceServerVector_Param : access BasicArrayList'Class);
+   procedure createNewLicenseInitInfo (This : in out SetLicenseInitInfo; licenceServerVector_Param : access BasicArrayList_Package.BasicArrayList'Class);
    procedure main (args : Unbounded_String_Array_Access);
 
 end org.allbinary.logic.system.security.licensing.SetLicenseInitInfo_Package;

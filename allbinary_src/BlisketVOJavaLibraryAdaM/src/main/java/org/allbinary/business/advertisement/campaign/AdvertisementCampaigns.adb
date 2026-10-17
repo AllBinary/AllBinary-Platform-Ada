@@ -22,22 +22,22 @@ package body org.allbinary.business.advertisement.campaign.AdvertisementCampaign
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AdvertisementCampaigns'Class; vector_Param : access BasicArrayList'Class) is
-      vector : BasicArrayList_Access := BasicArrayList_Access (vector_Param);
+   procedure Initialize (This : in out AdvertisementCampaigns'Class; vector_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      vector : constant BasicArrayList_Access := BasicArrayList_Access (vector_Param);
    begin
       Initialize_Fields (This);
         This.advertisementsVector := This.advertisementsVector;
    end Initialize;
 
-   function Create (vector_Param : access BasicArrayList'Class) return AdvertisementCampaigns_Access is
+   function Create (vector_Param : access BasicArrayList_Package.BasicArrayList'Class) return AdvertisementCampaigns_Access is
       This : constant AdvertisementCampaigns_Access := new AdvertisementCampaigns;
    begin
       AdvertisementCampaigns_Package.Initialize (This.all, vector_Param);
       return This;
    end Create;
 
-   procedure add (This : in out AdvertisementCampaigns; advertisementInterface_Param : access AdvertisementInterface'Class) is
-      advertisementInterface : AdvertisementInterface_Access := AdvertisementInterface_Access (advertisementInterface_Param);
+   procedure add (This : in out AdvertisementCampaigns; advertisementInterface_Param : access AdvertisementInterface_Package.AdvertisementInterface'Class) is
+      advertisementInterface : constant AdvertisementInterface_Access := AdvertisementInterface_Access (advertisementInterface_Param);
    begin
         This.advertisementsVector.add (advertisementInterface);
    end add;
@@ -57,8 +57,8 @@ package body org.allbinary.business.advertisement.campaign.AdvertisementCampaign
         return True;
    end isEnabled;
 
-   function search (This : in out AdvertisementCampaigns; advertisementSearchInterface_Param : access AdvertisementSearchInterface'Class) return AdvertisementsInterface_Access is
-      advertisementSearchInterface : AdvertisementSearchInterface_Access := AdvertisementSearchInterface_Access (advertisementSearchInterface_Param);
+   function search (This : in out AdvertisementCampaigns; advertisementSearchInterface_Param : access AdvertisementSearchInterface_Package.AdvertisementSearchInterface'Class) return AdvertisementsInterface_Access is
+      advertisementSearchInterface : constant AdvertisementSearchInterface_Access := AdvertisementSearchInterface_Access (advertisementSearchInterface_Param);
    begin
         return null;
    end search;
@@ -70,7 +70,7 @@ package body org.allbinary.business.advertisement.campaign.AdvertisementCampaign
       null;
    end get;
 
-   procedure search (This : in out AdvertisementCampaigns; advertisementSearchInterface_Param : access AdvertisementSearchInterface'Class) is
+   procedure search (This : in out AdvertisementCampaigns; advertisementSearchInterface_Param : access AdvertisementSearchInterface_Package.AdvertisementSearchInterface'Class) is
       Java_Result : constant AdvertisementsInterface_Access := AdvertisementCampaigns'Class (This).search (advertisementSearchInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

@@ -52,10 +52,10 @@ package org.allbinary.data.tree.category.CategoryPrivateTree_Package is
       categoryFactoryInterface : CategoryFactoryInterface_Access;
    end record;
 
-   procedure Initialize (This : in out CategoryPrivateTree'Class; categoryFactoryInterface_Param : access CategoryFactoryInterface'Class);
-   function Create (categoryFactoryInterface_Param : access CategoryFactoryInterface'Class) return CategoryPrivateTree_Access;
-   procedure save (This : in out CategoryPrivateTree; categoryInterface_Param : access CategoryInterface'Class);
-   procedure delete (This : in out CategoryPrivateTree; categoryInterface_Param : access CategoryInterface'Class);
+   procedure Initialize (This : in out CategoryPrivateTree'Class; categoryFactoryInterface_Param : access CategoryFactoryInterface_Package.CategoryFactoryInterface'Class);
+   function Create (categoryFactoryInterface_Param : access CategoryFactoryInterface_Package.CategoryFactoryInterface'Class) return CategoryPrivateTree_Access;
+   procedure save (This : in out CategoryPrivateTree; categoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class);
+   procedure delete (This : in out CategoryPrivateTree; categoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class);
 
 end org.allbinary.data.tree.category.CategoryPrivateTree_Package;
 

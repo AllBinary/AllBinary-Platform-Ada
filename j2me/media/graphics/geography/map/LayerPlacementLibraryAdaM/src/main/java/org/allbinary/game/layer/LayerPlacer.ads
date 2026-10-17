@@ -55,12 +55,12 @@ package org.allbinary.game.layer.LayerPlacer_Package is
       dimension : GPoint_Access;
    end record;
 
-   procedure Initialize (This : in out LayerPlacer'Class; layerInterfaceVisitor_Param : access LayerInterfaceVisitor'Class; dimension_Param : access GPoint'Class);
-   function Create (layerInterfaceVisitor_Param : access LayerInterfaceVisitor'Class; dimension_Param : access GPoint'Class) return LayerPlacer_Access;
-   procedure processList (This : in out LayerPlacer; list_Param : access BasicArrayList'Class);
-   procedure process (This : in out LayerPlacer; layerPlacementInterface_Param : access LayerPlacementInterface'Class);
-   function getPoint (This : in out LayerPlacer; layerPlacementInterface_Param : access LayerPlacementInterface'Class) return GPoint_Access;
-   procedure getPoint (This : in out LayerPlacer; layerPlacementInterface_Param : access LayerPlacementInterface'Class);
+   procedure Initialize (This : in out LayerPlacer'Class; layerInterfaceVisitor_Param : access LayerInterfaceVisitor_Package.LayerInterfaceVisitor'Class; dimension_Param : access GPoint_Package.GPoint'Class);
+   function Create (layerInterfaceVisitor_Param : access LayerInterfaceVisitor_Package.LayerInterfaceVisitor'Class; dimension_Param : access GPoint_Package.GPoint'Class) return LayerPlacer_Access;
+   procedure processList (This : in out LayerPlacer; list_Param : access BasicArrayList_Package.BasicArrayList'Class);
+   procedure process (This : in out LayerPlacer; layerPlacementInterface_Param : access LayerPlacementInterface_Package.LayerPlacementInterface'Class);
+   function getPoint (This : in out LayerPlacer; layerPlacementInterface_Param : access LayerPlacementInterface_Package.LayerPlacementInterface'Class) return GPoint_Access;
+   procedure getPoint (This : in out LayerPlacer; layerPlacementInterface_Param : access LayerPlacementInterface_Package.LayerPlacementInterface'Class);
 
 end org.allbinary.game.layer.LayerPlacer_Package;
 

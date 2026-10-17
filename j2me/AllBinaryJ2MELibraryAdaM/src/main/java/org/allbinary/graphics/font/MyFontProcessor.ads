@@ -36,12 +36,12 @@ package org.allbinary.graphics.font.MyFontProcessor_Package is
 
    procedure Initialize (This : in out MyFontProcessor'Class);
    function Create return MyFontProcessor_Access;
-   function defaultCharWidth (font_Param : access Font'Class) return Integer;
-   procedure defaultCharWidth (font_Param : access Font'Class);
-   function defaultStringWidth (font_Param : access Font'Class; size : Integer) return Integer;
-   procedure defaultStringWidth (font_Param : access Font'Class; size : Integer);
+   function defaultCharWidth (font_Param : access Font_Package.Font'Class) return Integer;
+   procedure defaultCharWidth (font_Param : access Font_Package.Font'Class);
+   function defaultStringWidth (font_Param : access Font_Package.Font'Class; size : Integer) return Integer;
+   procedure defaultStringWidth (font_Param : access Font_Package.Font'Class; size : Integer);
    function getInstance return MyFontProcessor_Access;
-   procedure process (This : in out MyFontProcessor; graphics_Param : access Graphics'Class);
+   procedure process (This : in out MyFontProcessor; graphics_Param : access Graphics_Package.Graphics'Class);
 
 end org.allbinary.graphics.font.MyFontProcessor_Package;
 

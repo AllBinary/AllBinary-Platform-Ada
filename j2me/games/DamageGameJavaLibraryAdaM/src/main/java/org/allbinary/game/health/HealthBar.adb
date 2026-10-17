@@ -24,10 +24,10 @@ package body org.allbinary.game.health.HealthBar_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out HealthBar'Class; layerInterface_Param : access AllBinaryLayer'Class; healthInterface_Param : access Health'Class; animationInterface_Param : access HealthBarAnimation'Class; direction : Integer) is
-      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
-      healthInterface : Health_Access := Health_Access (healthInterface_Param);
-      animationInterface : HealthBarAnimation_Access := HealthBarAnimation_Access (animationInterface_Param);
+   procedure Initialize (This : in out HealthBar'Class; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; healthInterface_Param : access Health_Package.Health'Class; animationInterface_Param : access HealthBarAnimation_Package.HealthBarAnimation'Class; direction : Integer) is
+      layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
+      healthInterface : constant Health_Access := Health_Access (healthInterface_Param);
+      animationInterface : constant HealthBarAnimation_Access := HealthBarAnimation_Access (animationInterface_Param);
    begin
       Paintable_Package.Initialize (This);
       Initialize_Fields (This);
@@ -38,7 +38,7 @@ package body org.allbinary.game.health.HealthBar_Package is
         This.onHealthChange;
    end Initialize;
 
-   function Create (layerInterface_Param : access AllBinaryLayer'Class; healthInterface_Param : access Health'Class; animationInterface_Param : access HealthBarAnimation'Class; direction : Integer) return HealthBar_Access is
+   function Create (layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; healthInterface_Param : access Health_Package.Health'Class; animationInterface_Param : access HealthBarAnimation_Package.HealthBarAnimation'Class; direction : Integer) return HealthBar_Access is
       This : constant HealthBar_Access := new HealthBar;
    begin
       HealthBar_Package.Initialize (This.all, layerInterface_Param, healthInterface_Param, animationInterface_Param, direction);
@@ -50,14 +50,14 @@ package body org.allbinary.game.health.HealthBar_Package is
         This.animationInterface.onHealthChange (((This.healthInterface.getHealth) * (This.allbinaryLayer.getWidth)) / (This.healthInterface.getMaxHealth));
    end onHealthChange;
 
-   procedure paint (This : in out HealthBar; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out HealthBar; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.animationInterface.paintXY (graphics, 0, 0);
    end paint;
 
-   procedure paintThreed (This : in out HealthBar; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintThreed (This : in out HealthBar; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.animationInterface.paintThreedXYZ (graphics, 0, 0, 0);
    end paintThreed;

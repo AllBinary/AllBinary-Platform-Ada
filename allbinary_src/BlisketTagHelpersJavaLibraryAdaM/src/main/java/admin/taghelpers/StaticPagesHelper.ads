@@ -45,8 +45,8 @@ package admin.taghelpers.StaticPagesHelper_Package is
       portion : Portion_Access;
    end record;
 
-   procedure Initialize (This : in out StaticPagesHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
-   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return StaticPagesHelper_Access;
+   procedure Initialize (This : in out StaticPagesHelper'Class; hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class);
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return StaticPagesHelper_Access;
    function drop (This : in out StaticPagesHelper) return Unbounded_String;
    function create (This : in out StaticPagesHelper) return Unbounded_String;
    function restore (This : in out StaticPagesHelper) return Unbounded_String;

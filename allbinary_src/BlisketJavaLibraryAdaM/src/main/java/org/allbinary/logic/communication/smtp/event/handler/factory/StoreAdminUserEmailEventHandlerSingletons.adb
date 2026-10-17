@@ -45,10 +45,10 @@ package body org.allbinary.logic.communication.smtp.event.handler.factory.StoreA
    end Create;
 
    --  throws Exception
-   function getInstance (This : in out StoreAdminUserEmailEventHandlerSingletons; userEmailEventNameData_Param : access UserEmailEventNameData'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; storeFrontInterface_Param : access StoreFrontInterface'Class) return UserEmailEventHandler_Access is
-      userEmailEventNameData : UserEmailEventNameData_Access := UserEmailEventNameData_Access (userEmailEventNameData_Param);
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      storeFrontInterface : StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
+   function getInstance (This : in out StoreAdminUserEmailEventHandlerSingletons; userEmailEventNameData_Param : access UserEmailEventNameData_Package.UserEmailEventNameData'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) return UserEmailEventHandler_Access is
+      userEmailEventNameData : constant UserEmailEventNameData_Access := UserEmailEventNameData_Access (userEmailEventNameData_Param);
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      storeFrontInterface : constant StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
       userEmailEventHandler : UserEmailEventHandler_Access;
       userVector : BasicArrayList_Access;
       newUserEmailEventHandler : UserEmailEventHandler_Access;
@@ -73,7 +73,7 @@ package body org.allbinary.logic.communication.smtp.event.handler.factory.StoreA
         end if;
    end getInstance;
 
-   procedure getInstance (This : in out StoreAdminUserEmailEventHandlerSingletons; userEmailEventNameData_Param : access UserEmailEventNameData'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; storeFrontInterface_Param : access StoreFrontInterface'Class) is
+   procedure getInstance (This : in out StoreAdminUserEmailEventHandlerSingletons; userEmailEventNameData_Param : access UserEmailEventNameData_Package.UserEmailEventNameData'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) is
       Java_Result : constant UserEmailEventHandler_Access := StoreAdminUserEmailEventHandlerSingletons'Class (This).getInstance (userEmailEventNameData_Param, abeClientInformation_Param, storeFrontInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

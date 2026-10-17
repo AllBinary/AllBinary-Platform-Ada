@@ -56,13 +56,13 @@ package views.generic_Id.address.shipping.UpdateTaxValidationView_Package is
 
    type UpdateTaxValidationView is new ShippingAddressView and ValidationComponentInterface with null record;
 
-   procedure Initialize (This : in out UpdateTaxValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return UpdateTaxValidationView_Access;
+   procedure Initialize (This : in out UpdateTaxValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return UpdateTaxValidationView_Access;
    function isValid (This : in out UpdateTaxValidationView) return Boolean;
    function validationInfo (This : in out UpdateTaxValidationView) return Unbounded_String;
    function toValidationInfoDoc (This : in out UpdateTaxValidationView) return Document_Access;
-   function toValidationInfoNode (This : in out UpdateTaxValidationView; document_Param : access Document'Class) return Node_Access;
-   procedure toValidationInfoNode (This : in out UpdateTaxValidationView; document_Param : access Document'Class);
+   function toValidationInfoNode (This : in out UpdateTaxValidationView; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out UpdateTaxValidationView; document_Param : access Document_Package.Document'Class);
 
 end views.generic_Id.address.shipping.UpdateTaxValidationView_Package;
 

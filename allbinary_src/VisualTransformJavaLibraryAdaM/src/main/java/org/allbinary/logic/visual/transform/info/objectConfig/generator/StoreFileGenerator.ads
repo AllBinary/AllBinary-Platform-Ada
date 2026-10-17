@@ -79,8 +79,8 @@ package org.allbinary.logic.visual.transform.info.objectConfig.generator.StoreFi
       file : AbFile_Access;
    end record;
 
-   procedure Initialize (This : in out StoreFileGenerator'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return StoreFileGenerator_Access;
+   procedure Initialize (This : in out StoreFileGenerator'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return StoreFileGenerator_Access;
    function process (This : in out StoreFileGenerator; input : Unbounded_String) return Unbounded_String;
    procedure process (This : in out StoreFileGenerator; input : Unbounded_String);
 

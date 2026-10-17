@@ -41,8 +41,8 @@ package body org.allbinary.graphics.draw.KeyValueDrawCharArray_Package is
       return This;
    end Create;
 
-   procedure updateMeasurement (This : in out KeyValueDrawCharArray; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure updateMeasurement (This : in out KeyValueDrawCharArray; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       labelWidth : Integer;
    begin
         labelWidth := (graphics.getFont.stringWidth (This.LABEL)) - (Length (This.LABEL));
@@ -50,8 +50,8 @@ package body org.allbinary.graphics.draw.KeyValueDrawCharArray_Package is
         This.myFontProcessor := MyFontProcessor_Package.getInstance;
    end updateMeasurement;
 
-   procedure paint (This : in out KeyValueDrawCharArray; graphics_Param : access Graphics'Class; y : Integer) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out KeyValueDrawCharArray; graphics_Param : access Graphics_Package.Graphics'Class; y : Integer) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.myFontProcessor.process (graphics);
         graphics.drawString (This.LABEL, This.labelX, y, 0);

@@ -44,8 +44,8 @@ package body org.allbinary.logic.visual.transform.template.customizer.bodies.tit
       return This;
    end Create;
 
-   procedure Initialize (This : in out TitleBodyValidation'Class; document_Param : access Document'Class) is
-      document : Document_Access := Document_Access (document_Param);
+   procedure Initialize (This : in out TitleBodyValidation'Class; document_Param : access Document_Package.Document'Class) is
+      document : constant Document_Access := Document_Access (document_Param);
       nodeList : NodeList_Access;
       aBodyNode : Node_Access;
       aBodyValueNode : Node_Access;
@@ -72,15 +72,15 @@ package body org.allbinary.logic.visual.transform.template.customizer.bodies.tit
         end loop;
    end Initialize;
 
-   function Create (document_Param : access Document'Class) return TitleBodyValidation_Access is
+   function Create (document_Param : access Document_Package.Document'Class) return TitleBodyValidation_Access is
       This : constant TitleBodyValidation_Access := new TitleBodyValidation;
    begin
       TitleBodyValidation_Package.Initialize (This.all, document_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out TitleBodyValidation'Class; hashMap_Param : access HashMap'Class) is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+   procedure Initialize (This : in out TitleBodyValidation'Class; hashMap_Param : access HashMap_Package.HashMap'Class) is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
       Validation_Package.Initialize (This);
       Initialize_Fields (This);
@@ -90,7 +90,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.bodies.tit
         This.getFormData (hashMap);
    end Initialize;
 
-   function Create (hashMap_Param : access HashMap'Class) return TitleBodyValidation_Access is
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return TitleBodyValidation_Access is
       This : constant TitleBodyValidation_Access := new TitleBodyValidation;
    begin
       TitleBodyValidation_Package.Initialize (This.all, hashMap_Param);
@@ -98,8 +98,8 @@ package body org.allbinary.logic.visual.transform.template.customizer.bodies.tit
    end Create;
 
    --  throws Exception
-   procedure getFormData (This : in out TitleBodyValidation; hashMap_Param : access HashMap'Class) is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+   procedure getFormData (This : in out TitleBodyValidation; hashMap_Param : access HashMap_Package.HashMap'Class) is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
         This.body_Id := Unbounded_String (hashMap.get (BodyData_Package.getInstance.NAME));
         This.titleValidation := TitleNotRequiredValidation_Package.Create (hashMap);
@@ -166,15 +166,15 @@ package body org.allbinary.logic.visual.transform.template.customizer.bodies.tit
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out TitleBodyValidation; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toValidationInfoNode (This : in out TitleBodyValidation; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
 
    --  throws Exception
-   function toXmlNode (This : in out TitleBodyValidation; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out TitleBodyValidation; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       node : Node_Access;
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
@@ -185,14 +185,14 @@ package body org.allbinary.logic.visual.transform.template.customizer.bodies.tit
         return node;
    end toXmlNode;
 
-   procedure toValidationInfoNode (This : in out TitleBodyValidation; document_Param : access Document'Class) is
+   procedure toValidationInfoNode (This : in out TitleBodyValidation; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := TitleBodyValidation'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
 
-   procedure toXmlNode (This : in out TitleBodyValidation; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out TitleBodyValidation; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := TitleBodyValidation'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

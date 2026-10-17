@@ -69,16 +69,16 @@ package org.allbinary.business.user.address.StreetAddress_Package is
 
    procedure Initialize (This : in out StreetAddress'Class);
    function Create return StreetAddress_Access;
-   procedure Initialize (This : in out StreetAddress'Class; node_Param : access Node'Class);
-   function Create (node_Param : access Node'Class) return StreetAddress_Access;
-   procedure Initialize (This : in out StreetAddress'Class; streetAddress_Param : access StreetAddress'Class);
-   function Create (streetAddress_Param : access StreetAddress'Class) return StreetAddress_Access;
-   procedure Initialize (This : in out StreetAddress'Class; request_Param : access HttpServletRequest'Class);
-   function Create (request_Param : access HttpServletRequest'Class) return StreetAddress_Access;
+   procedure Initialize (This : in out StreetAddress'Class; node_Param : access Node_Package.Node'Class);
+   function Create (node_Param : access Node_Package.Node'Class) return StreetAddress_Access;
+   procedure Initialize (This : in out StreetAddress'Class; streetAddress_Param : access StreetAddress_Package.StreetAddress'Class);
+   function Create (streetAddress_Param : access StreetAddress_Package.StreetAddress'Class) return StreetAddress_Access;
+   procedure Initialize (This : in out StreetAddress'Class; request_Param : access HttpServletRequest_Package.HttpServletRequest'Class);
+   function Create (request_Param : access HttpServletRequest_Package.HttpServletRequest'Class) return StreetAddress_Access;
    procedure Initialize (This : in out StreetAddress'Class; name : Unbounded_String; street : Unbounded_String; city : Unbounded_String; state : Unbounded_String; code : Unbounded_String; country : Unbounded_String);
    function Create (name : Unbounded_String; street : Unbounded_String; city : Unbounded_String; state : Unbounded_String; code : Unbounded_String; country : Unbounded_String) return StreetAddress_Access;
-   procedure Initialize (This : in out StreetAddress'Class; address_Param : access HashMap'Class);
-   function Create (address_Param : access HashMap'Class) return StreetAddress_Access;
+   procedure Initialize (This : in out StreetAddress'Class; address_Param : access HashMap_Package.HashMap'Class);
+   function Create (address_Param : access HashMap_Package.HashMap'Class) return StreetAddress_Access;
    procedure log (This : in out StreetAddress);
    procedure setId (This : in out StreetAddress; id : Unbounded_String);
    procedure setName (This : in out StreetAddress; name : Unbounded_String);
@@ -99,11 +99,11 @@ package org.allbinary.business.user.address.StreetAddress_Package is
    function isValid (This : in out StreetAddress) return Boolean;
    function validationInfo (This : in out StreetAddress) return Unbounded_String;
    function toValidationInfoDoc (This : in out StreetAddress) return Document_Access;
-   function toValidationInfoNode (This : in out StreetAddress; document_Param : access Document'Class) return Node_Access;
-   procedure toValidationInfoNode (This : in out StreetAddress; document_Param : access Document'Class);
+   function toValidationInfoNode (This : in out StreetAddress; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out StreetAddress; document_Param : access Document_Package.Document'Class);
    function toHashMap (This : in out StreetAddress) return HashMap_Access;
-   function toXmlNode (This : in out StreetAddress; document_Param : access Document'Class) return Node_Access;
-   procedure toXmlNode (This : in out StreetAddress; document_Param : access Document'Class);
+   function toXmlNode (This : in out StreetAddress; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out StreetAddress; document_Param : access Document_Package.Document'Class);
 
 end org.allbinary.business.user.address.StreetAddress_Package;
 

@@ -22,8 +22,8 @@ package body views.business.context.RootContextView_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out RootContextView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out RootContextView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
@@ -32,7 +32,7 @@ package body views.business.context.RootContextView_Package is
         end if;
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return RootContextView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return RootContextView_Access is
       This : constant RootContextView_Access := new RootContextView;
    begin
       RootContextView_Package.Initialize (This.all, transformInfoInterface_Param);

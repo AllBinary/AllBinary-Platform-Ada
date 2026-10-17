@@ -24,15 +24,15 @@ package body org.allbinary.animation.vector.LineAnimation_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out LineAnimation'Class; basicColor_Param : access BasicColor'Class) is
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+   procedure Initialize (This : in out LineAnimation'Class; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
       Animation_Package.Initialize (This);
       Initialize_Fields (This);
         This.setBasicColorP (basicColor);
    end Initialize;
 
-   function Create (basicColor_Param : access BasicColor'Class) return LineAnimation_Access is
+   function Create (basicColor_Param : access BasicColor_Package.BasicColor'Class) return LineAnimation_Access is
       This : constant LineAnimation_Access := new LineAnimation;
    begin
       LineAnimation_Package.Initialize (This.all, basicColor_Param);
@@ -61,8 +61,8 @@ package body org.allbinary.animation.vector.LineAnimation_Package is
         This.newLine := This.tempLine;
    end setPosition;
 
-   procedure paintXY (This : in out LineAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintXY (This : in out LineAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       currentLine : Integer_Array_Access_Array_Access;
    begin
         currentLine := This.line;

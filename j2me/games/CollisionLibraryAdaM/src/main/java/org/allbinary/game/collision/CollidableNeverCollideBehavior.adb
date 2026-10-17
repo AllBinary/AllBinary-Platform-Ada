@@ -33,43 +33,43 @@ package body org.allbinary.game.collision.CollidableNeverCollideBehavior_Package
       return This;
    end Create;
 
-   function isCollision (This : in out CollidableNeverCollideBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; allbinaryCollidableLayer_Param : access CollidableCompositeLayer'Class) return Boolean is
-      ownerLayer : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
-      allbinaryCollidableLayer : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (allbinaryCollidableLayer_Param);
+   function isCollision (This : in out CollidableNeverCollideBehavior; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; allbinaryCollidableLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class) return Boolean is
+      ownerLayer : constant CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
+      allbinaryCollidableLayer : constant CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (allbinaryCollidableLayer_Param);
    begin
         return False;
    end isCollision;
 
    --  throws Exception
-   procedure collide (This : in out CollidableNeverCollideBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; allbinaryCollidableLayer_Param : access CollidableCompositeLayer'Class) is
-      ownerLayer : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
-      allbinaryCollidableLayer : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (allbinaryCollidableLayer_Param);
+   procedure collide (This : in out CollidableNeverCollideBehavior; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; allbinaryCollidableLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class) is
+      ownerLayer : constant CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
+      allbinaryCollidableLayer : constant CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (allbinaryCollidableLayer_Param);
    begin
         null;
    end collide;
 
-   procedure collideInterface (This : in out CollidableNeverCollideBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface'Class) is
-      ownerLayer : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
-      collidableInterfaceCompositeInterface : CollidableInterfaceCompositeInterface_Access := CollidableInterfaceCompositeInterface_Access (collidableInterfaceCompositeInterface_Param);
+   procedure collideInterface (This : in out CollidableNeverCollideBehavior; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface_Package.CollidableInterfaceCompositeInterface'Class) is
+      ownerLayer : constant CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
+      collidableInterfaceCompositeInterface : constant CollidableInterfaceCompositeInterface_Access := CollidableInterfaceCompositeInterface_Access (collidableInterfaceCompositeInterface_Param);
    begin
         null;
    end collideInterface;
 
-   function isCollisionInterface (This : in out CollidableNeverCollideBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface'Class) return Boolean is
-      ownerLayer : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
-      collidableInterfaceCompositeInterface : CollidableInterfaceCompositeInterface_Access := CollidableInterfaceCompositeInterface_Access (collidableInterfaceCompositeInterface_Param);
+   function isCollisionInterface (This : in out CollidableNeverCollideBehavior; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface_Package.CollidableInterfaceCompositeInterface'Class) return Boolean is
+      ownerLayer : constant CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
+      collidableInterfaceCompositeInterface : constant CollidableInterfaceCompositeInterface_Access := CollidableInterfaceCompositeInterface_Access (collidableInterfaceCompositeInterface_Param);
    begin
         return False;
    end isCollisionInterface;
 
-   procedure isCollision (This : in out CollidableNeverCollideBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; allbinaryCollidableLayer_Param : access CollidableCompositeLayer'Class) is
+   procedure isCollision (This : in out CollidableNeverCollideBehavior; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; allbinaryCollidableLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class) is
       Java_Result : constant Boolean := CollidableNeverCollideBehavior'Class (This).isCollision (ownerLayer_Param, allbinaryCollidableLayer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isCollision;
 
-   procedure isCollisionInterface (This : in out CollidableNeverCollideBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface'Class) is
+   procedure isCollisionInterface (This : in out CollidableNeverCollideBehavior; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface_Package.CollidableInterfaceCompositeInterface'Class) is
       Java_Result : constant Boolean := CollidableNeverCollideBehavior'Class (This).isCollisionInterface (ownerLayer_Param, collidableInterfaceCompositeInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

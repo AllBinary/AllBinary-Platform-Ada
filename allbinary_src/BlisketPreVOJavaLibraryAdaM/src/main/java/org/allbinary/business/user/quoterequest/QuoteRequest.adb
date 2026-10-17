@@ -30,8 +30,8 @@ package body org.allbinary.business.user.quoterequest.QuoteRequest_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out QuoteRequest'Class; userName : Unbounded_String; request_Param : access HttpServletRequest'Class) is
-      request : HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
+   procedure Initialize (This : in out QuoteRequest'Class; userName : Unbounded_String; request_Param : access HttpServletRequest_Package.HttpServletRequest'Class) is
+      request : constant HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
       quoteRequestData : QuoteRequestData_Access;
    begin
       Initialize_Fields (This);
@@ -48,15 +48,15 @@ package body org.allbinary.business.user.quoterequest.QuoteRequest_Package is
         end if;
    end Initialize;
 
-   function Create (userName : Unbounded_String; request_Param : access HttpServletRequest'Class) return QuoteRequest_Access is
+   function Create (userName : Unbounded_String; request_Param : access HttpServletRequest_Package.HttpServletRequest'Class) return QuoteRequest_Access is
       This : constant QuoteRequest_Access := new QuoteRequest;
    begin
       QuoteRequest_Package.Initialize (This.all, userName, request_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out QuoteRequest'Class; hashMap_Param : access HashMap'Class) is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+   procedure Initialize (This : in out QuoteRequest'Class; hashMap_Param : access HashMap_Package.HashMap'Class) is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
       quoteRequestData : QuoteRequestData_Access;
    begin
       Initialize_Fields (This);
@@ -73,7 +73,7 @@ package body org.allbinary.business.user.quoterequest.QuoteRequest_Package is
         end if;
    end Initialize;
 
-   function Create (hashMap_Param : access HashMap'Class) return QuoteRequest_Access is
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return QuoteRequest_Access is
       This : constant QuoteRequest_Access := new QuoteRequest;
    begin
       QuoteRequest_Package.Initialize (This.all, hashMap_Param);

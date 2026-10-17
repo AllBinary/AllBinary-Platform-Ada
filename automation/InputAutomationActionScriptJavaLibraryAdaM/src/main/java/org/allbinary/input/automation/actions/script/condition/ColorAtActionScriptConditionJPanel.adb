@@ -46,8 +46,8 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ColorAtActionScriptConditionJPanel'Class; colorAtActionScriptConditionInterface_Param : access ColorAtActionScriptConditionInterface'Class) is
-      colorAtActionScriptConditionInterface : ColorAtActionScriptConditionInterface_Access := ColorAtActionScriptConditionInterface_Access (colorAtActionScriptConditionInterface_Param);
+   procedure Initialize (This : in out ColorAtActionScriptConditionJPanel'Class; colorAtActionScriptConditionInterface_Param : access ColorAtActionScriptConditionInterface_Package.ColorAtActionScriptConditionInterface'Class) is
+      colorAtActionScriptConditionInterface : constant ColorAtActionScriptConditionInterface_Access := ColorAtActionScriptConditionInterface_Access (colorAtActionScriptConditionInterface_Param);
    begin
       JPanel_Package.Initialize (This);
       Initialize_Fields (This);
@@ -57,7 +57,7 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
         This.set;
    end Initialize;
 
-   function Create (colorAtActionScriptConditionInterface_Param : access ColorAtActionScriptConditionInterface'Class) return ColorAtActionScriptConditionJPanel_Access is
+   function Create (colorAtActionScriptConditionInterface_Param : access ColorAtActionScriptConditionInterface_Package.ColorAtActionScriptConditionInterface'Class) return ColorAtActionScriptConditionJPanel_Access is
       This : constant ColorAtActionScriptConditionJPanel_Access := new ColorAtActionScriptConditionJPanel;
    begin
       ColorAtActionScriptConditionJPanel_Package.Initialize (This.all, colorAtActionScriptConditionInterface_Param);
@@ -107,8 +107,8 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
         return This.colorAtXJTextField;
    end getColorAtXJTextField;
 
-   procedure setColorAtXJTextField (This : in out ColorAtActionScriptConditionJPanel; colorAtXJTextField_Param : access JTextField'Class) is
-      colorAtXJTextField : JTextField_Access := JTextField_Access (colorAtXJTextField_Param);
+   procedure setColorAtXJTextField (This : in out ColorAtActionScriptConditionJPanel; colorAtXJTextField_Param : access JTextField_Package.JTextField'Class) is
+      colorAtXJTextField : constant JTextField_Access := JTextField_Access (colorAtXJTextField_Param);
    begin
         This.colorAtXJTextField := colorAtXJTextField;
    end setColorAtXJTextField;
@@ -118,8 +118,8 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
         return This.colorAtYJTextField;
    end getColorAtYJTextField;
 
-   procedure setColorAtYJTextField (This : in out ColorAtActionScriptConditionJPanel; colorAtYJTextField_Param : access JTextField'Class) is
-      colorAtYJTextField : JTextField_Access := JTextField_Access (colorAtYJTextField_Param);
+   procedure setColorAtYJTextField (This : in out ColorAtActionScriptConditionJPanel; colorAtYJTextField_Param : access JTextField_Package.JTextField'Class) is
+      colorAtYJTextField : constant JTextField_Access := JTextField_Access (colorAtYJTextField_Param);
    begin
         This.colorAtYJTextField := colorAtYJTextField;
    end setColorAtYJTextField;
@@ -129,8 +129,8 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
         return This.maxBlueJTextField;
    end getMaxBlueJTextField;
 
-   procedure setMaxBlueJTextField (This : in out ColorAtActionScriptConditionJPanel; maxBlueJTextField_Param : access JTextField'Class) is
-      maxBlueJTextField : JTextField_Access := JTextField_Access (maxBlueJTextField_Param);
+   procedure setMaxBlueJTextField (This : in out ColorAtActionScriptConditionJPanel; maxBlueJTextField_Param : access JTextField_Package.JTextField'Class) is
+      maxBlueJTextField : constant JTextField_Access := JTextField_Access (maxBlueJTextField_Param);
    begin
         This.maxBlueJTextField := maxBlueJTextField;
    end setMaxBlueJTextField;
@@ -140,8 +140,8 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
         return This.maxGreenJTextField;
    end getMaxGreenJTextField;
 
-   procedure setMaxGreenJTextField (This : in out ColorAtActionScriptConditionJPanel; maxGreenJTextField_Param : access JTextField'Class) is
-      maxGreenJTextField : JTextField_Access := JTextField_Access (maxGreenJTextField_Param);
+   procedure setMaxGreenJTextField (This : in out ColorAtActionScriptConditionJPanel; maxGreenJTextField_Param : access JTextField_Package.JTextField'Class) is
+      maxGreenJTextField : constant JTextField_Access := JTextField_Access (maxGreenJTextField_Param);
    begin
         This.maxGreenJTextField := maxGreenJTextField;
    end setMaxGreenJTextField;
@@ -151,8 +151,8 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
         return This.maxRedJTextField;
    end getMaxRedJTextField;
 
-   procedure setMaxRedJTextField (This : in out ColorAtActionScriptConditionJPanel; maxRedJTextField_Param : access JTextField'Class) is
-      maxRedJTextField : JTextField_Access := JTextField_Access (maxRedJTextField_Param);
+   procedure setMaxRedJTextField (This : in out ColorAtActionScriptConditionJPanel; maxRedJTextField_Param : access JTextField_Package.JTextField'Class) is
+      maxRedJTextField : constant JTextField_Access := JTextField_Access (maxRedJTextField_Param);
    begin
         This.maxRedJTextField := maxRedJTextField;
    end setMaxRedJTextField;
@@ -162,8 +162,8 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
         return This.minBlueJTextField;
    end getMinBlueJTextField;
 
-   procedure setMinBlueJTextField (This : in out ColorAtActionScriptConditionJPanel; minBlueJTextField_Param : access JTextField'Class) is
-      minBlueJTextField : JTextField_Access := JTextField_Access (minBlueJTextField_Param);
+   procedure setMinBlueJTextField (This : in out ColorAtActionScriptConditionJPanel; minBlueJTextField_Param : access JTextField_Package.JTextField'Class) is
+      minBlueJTextField : constant JTextField_Access := JTextField_Access (minBlueJTextField_Param);
    begin
         This.minBlueJTextField := minBlueJTextField;
    end setMinBlueJTextField;
@@ -173,8 +173,8 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
         return This.minGreenJTextField;
    end getMinGreenJTextField;
 
-   procedure setMinGreenJTextField (This : in out ColorAtActionScriptConditionJPanel; minGreenJTextField_Param : access JTextField'Class) is
-      minGreenJTextField : JTextField_Access := JTextField_Access (minGreenJTextField_Param);
+   procedure setMinGreenJTextField (This : in out ColorAtActionScriptConditionJPanel; minGreenJTextField_Param : access JTextField_Package.JTextField'Class) is
+      minGreenJTextField : constant JTextField_Access := JTextField_Access (minGreenJTextField_Param);
    begin
         This.minGreenJTextField := minGreenJTextField;
    end setMinGreenJTextField;
@@ -184,8 +184,8 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
         return This.minRedJTextField;
    end getMinRedJTextField;
 
-   procedure setMinRedJTextField (This : in out ColorAtActionScriptConditionJPanel; minRedJTextField_Param : access JTextField'Class) is
-      minRedJTextField : JTextField_Access := JTextField_Access (minRedJTextField_Param);
+   procedure setMinRedJTextField (This : in out ColorAtActionScriptConditionJPanel; minRedJTextField_Param : access JTextField_Package.JTextField'Class) is
+      minRedJTextField : constant JTextField_Access := JTextField_Access (minRedJTextField_Param);
    begin
         This.minRedJTextField := minRedJTextField;
    end setMinRedJTextField;
@@ -195,8 +195,8 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
         return This.yJLabel;
    end getYJLabel;
 
-   procedure setYJLabel (This : in out ColorAtActionScriptConditionJPanel; yJLabel_Param : access JLabel'Class) is
-      yJLabel : JLabel_Access := JLabel_Access (yJLabel_Param);
+   procedure setYJLabel (This : in out ColorAtActionScriptConditionJPanel; yJLabel_Param : access JLabel_Package.JLabel'Class) is
+      yJLabel : constant JLabel_Access := JLabel_Access (yJLabel_Param);
    begin
         This.yJLabel := yJLabel;
    end setYJLabel;
@@ -206,8 +206,8 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
         return This.colorAtActionJDialog;
    end getColorAtActionJDialog;
 
-   procedure setColorAtActionJDialog (This : in out ColorAtActionScriptConditionJPanel; colorAtActionJDialog_Param : access JDialog'Class) is
-      colorAtActionJDialog : JDialog_Access := JDialog_Access (colorAtActionJDialog_Param);
+   procedure setColorAtActionJDialog (This : in out ColorAtActionScriptConditionJPanel; colorAtActionJDialog_Param : access JDialog_Package.JDialog'Class) is
+      colorAtActionJDialog : constant JDialog_Access := JDialog_Access (colorAtActionJDialog_Param);
    begin
         This.colorAtActionJDialog := colorAtActionJDialog;
    end setColorAtActionJDialog;
@@ -252,8 +252,8 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
         This.okJButton.setText (To_Unbounded_String ("OK"));
         This.okJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.okJButtonActionPerformed (evt);
 --     end actionPerformed;
@@ -266,8 +266,8 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
         This.colorAtActionJButton.setText (To_Unbounded_String ("Edit"));
         This.colorAtActionJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.colorAtActionJButtonActionPerformed (evt);
 --     end actionPerformed;
@@ -279,15 +279,15 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
         layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.jLabel1).addComponent (This.colorAtActionJButton)));
    end initComponents;
 
-   procedure okJButtonActionPerformed (This : in out ColorAtActionScriptConditionJPanel; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure okJButtonActionPerformed (This : in out ColorAtActionScriptConditionJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         This.update;
         This.getColorAtActionJDialog.setVisible (False);
    end okJButtonActionPerformed;
 
-   procedure colorAtActionJButtonActionPerformed (This : in out ColorAtActionScriptConditionJPanel; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure colorAtActionJButtonActionPerformed (This : in out ColorAtActionScriptConditionJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         This.getColorAtActionJDialog.setVisible (True);
    end colorAtActionJButtonActionPerformed;

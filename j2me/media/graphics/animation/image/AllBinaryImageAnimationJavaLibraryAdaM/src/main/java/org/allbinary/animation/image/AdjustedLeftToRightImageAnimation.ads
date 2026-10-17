@@ -39,10 +39,10 @@ package org.allbinary.animation.image.AdjustedLeftToRightImageAnimation_Package 
       dy : Integer;
    end record;
 
-   procedure Initialize (This : in out AdjustedLeftToRightImageAnimation'Class; image_Param : access Image'Class; sequenceArray : Integer_Array_Access; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior'Class);
-   function Create (image_Param : access Image'Class; sequenceArray : Integer_Array_Access; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior'Class) return AdjustedLeftToRightImageAnimation_Access;
+   procedure Initialize (This : in out AdjustedLeftToRightImageAnimation'Class; image_Param : access Image_Package.Image'Class; sequenceArray : Integer_Array_Access; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class);
+   function Create (image_Param : access Image_Package.Image'Class; sequenceArray : Integer_Array_Access; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return AdjustedLeftToRightImageAnimation_Access;
    procedure init (This : in out AdjustedLeftToRightImageAnimation; dx : Integer; dy : Integer);
-   procedure paintXY (This : in out AdjustedLeftToRightImageAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
+   procedure paintXY (This : in out AdjustedLeftToRightImageAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
 
 end org.allbinary.animation.image.AdjustedLeftToRightImageAnimation_Package;
 

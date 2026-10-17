@@ -22,28 +22,28 @@ package body org.allbinary.logic.visual.media.ImageIOUtil_Package is
 
 
    --  throws Exception
-   function read (file_Param : access AbFile'Class) return BufferedImage_Access is
-      file : AbFile_Access := AbFile_Access (file_Param);
+   function read (file_Param : access AbFile_Package.AbFile'Class) return BufferedImage_Access is
+      file : constant AbFile_Access := AbFile_Access (file_Param);
    begin
         return ImageIO_Package.read (AbFileNativeUtil_Package.get (file));
    end read;
 
    --  throws Exception
-   function write (renderedImage_Param : access RenderedImage'Class; name : Unbounded_String; file_Param : access AbFile'Class) return Boolean is
-      renderedImage : RenderedImage_Access := RenderedImage_Access (renderedImage_Param);
-      file : AbFile_Access := AbFile_Access (file_Param);
+   function write (renderedImage_Param : access RenderedImage_Package.RenderedImage'Class; name : Unbounded_String; file_Param : access AbFile_Package.AbFile'Class) return Boolean is
+      renderedImage : constant RenderedImage_Access := RenderedImage_Access (renderedImage_Param);
+      file : constant AbFile_Access := AbFile_Access (file_Param);
    begin
         return ImageIO_Package.write (renderedImage, name, AbFileNativeUtil_Package.get (file));
    end write;
 
-   procedure read (file_Param : access AbFile'Class) is
+   procedure read (file_Param : access AbFile_Package.AbFile'Class) is
       Java_Result : constant BufferedImage_Access := read (file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end read;
 
-   procedure write (renderedImage_Param : access RenderedImage'Class; name : Unbounded_String; file_Param : access AbFile'Class) is
+   procedure write (renderedImage_Param : access RenderedImage_Package.RenderedImage'Class; name : Unbounded_String; file_Param : access AbFile_Package.AbFile'Class) is
       Java_Result : constant Boolean := write (renderedImage_Param, name, file_Param);
       pragma Unreferenced (Java_Result);
    begin

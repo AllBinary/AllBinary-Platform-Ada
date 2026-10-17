@@ -38,8 +38,8 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssProperty_Pac
       return This;
    end Create;
 
-   procedure Initialize (This : in out CssProperty'Class; node_Param : access Node'Class) is
-      node : Node_Access := Node_Access (node_Param);
+   procedure Initialize (This : in out CssProperty'Class; node_Param : access Node_Package.Node'Class) is
+      node : constant Node_Access := Node_Access (node_Param);
       propertyNode : Node_Access;
       propertyValuesNode : Node_Access;
    begin
@@ -53,7 +53,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssProperty_Pac
         This.cssPropertyValues := CssPropertyValues_Package.Create (propertyValuesNode);
    end Initialize;
 
-   function Create (node_Param : access Node'Class) return CssProperty_Access is
+   function Create (node_Param : access Node_Package.Node'Class) return CssProperty_Access is
       This : constant CssProperty_Access := new CssProperty;
    begin
       CssProperty_Package.Initialize (This.all, node_Param);
@@ -74,8 +74,8 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssProperty_Pac
    end toHashMap;
 
    --  throws Exception
-   function toXmlNode (This : in out CssProperty; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out CssProperty; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       hashMap : HashMap_Access;
       node : Node_Access;
    begin
@@ -88,7 +88,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssProperty_Pac
         return node;
    end toXmlNode;
 
-   procedure toXmlNode (This : in out CssProperty; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out CssProperty; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := CssProperty'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

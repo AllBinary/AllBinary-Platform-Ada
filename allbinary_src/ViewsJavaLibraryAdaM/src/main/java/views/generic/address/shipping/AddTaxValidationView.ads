@@ -64,13 +64,13 @@ package views.generic_Id.address.shipping.AddTaxValidationView_Package is
       logUtil : LogUtil_Access;
    end record;
 
-   procedure Initialize (This : in out AddTaxValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return AddTaxValidationView_Access;
+   procedure Initialize (This : in out AddTaxValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return AddTaxValidationView_Access;
    function isValid (This : in out AddTaxValidationView) return Boolean;
    function validationInfo (This : in out AddTaxValidationView) return Unbounded_String;
    function toValidationInfoDoc (This : in out AddTaxValidationView) return Document_Access;
-   function toValidationInfoNode (This : in out AddTaxValidationView; document_Param : access Document'Class) return Node_Access;
-   procedure toValidationInfoNode (This : in out AddTaxValidationView; document_Param : access Document'Class);
+   function toValidationInfoNode (This : in out AddTaxValidationView; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out AddTaxValidationView; document_Param : access Document_Package.Document'Class);
 
 end views.generic_Id.address.shipping.AddTaxValidationView_Package;
 

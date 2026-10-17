@@ -37,13 +37,13 @@ package org.allbinary.logic.util.cache.BasicArrayListPool_Package is
 
    type BasicArrayListPool is new AbstractArrayListPool with null record;
 
-   procedure Initialize (This : in out BasicArrayListPool'Class; cacheableInterfaceFactoryInterface_Param : access CacheableInterfaceFactoryInterface'Class);
-   function Create (cacheableInterfaceFactoryInterface_Param : access CacheableInterfaceFactoryInterface'Class) return BasicArrayListPool_Access;
+   procedure Initialize (This : in out BasicArrayListPool'Class; cacheableInterfaceFactoryInterface_Param : access CacheableInterfaceFactoryInterface_Package.CacheableInterfaceFactoryInterface'Class);
+   function Create (cacheableInterfaceFactoryInterface_Param : access CacheableInterfaceFactoryInterface_Package.CacheableInterfaceFactoryInterface'Class) return BasicArrayListPool_Access;
    procedure clear (This : in out BasicArrayListPool);
    function remove (This : in out BasicArrayListPool; key_Param : access Java_Object'Class) return CacheableInterface_Access;
    procedure remove (This : in out BasicArrayListPool; key_Param : access Java_Object'Class);
-   procedure addAll (This : in out BasicArrayListPool; usedList_Param : access BasicArrayList'Class);
-   procedure releaseUsedBackToPool (This : in out BasicArrayListPool; usedList_Param : access BasicArrayList'Class);
+   procedure addAll (This : in out BasicArrayListPool; usedList_Param : access BasicArrayList_Package.BasicArrayList'Class);
+   procedure releaseUsedBackToPool (This : in out BasicArrayListPool; usedList_Param : access BasicArrayList_Package.BasicArrayList'Class);
 
 end org.allbinary.logic.util.cache.BasicArrayListPool_Package;
 

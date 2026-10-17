@@ -68,8 +68,8 @@ package org.allbinary.logic.communication.http.file.upload.media.UploadMediaSing
    procedure isReaderMedia (This : in out UploadMediaSingleton; mediaFileType : Unbounded_String; aMediaType : Unbounded_String);
    function isWriterMedia (This : in out UploadMediaSingleton; mediaFileType : Unbounded_String; aMediaType : Unbounded_String) return Boolean;
    procedure isWriterMedia (This : in out UploadMediaSingleton; mediaFileType : Unbounded_String; aMediaType : Unbounded_String);
-   function isMedia (This : in out UploadMediaSingleton; mediaFileType : Unbounded_String; aMediaType : Unbounded_String; hashMap_Param : access HashMap'Class) return Boolean;
-   procedure isMedia (This : in out UploadMediaSingleton; mediaFileType : Unbounded_String; aMediaType : Unbounded_String; hashMap_Param : access HashMap'Class);
+   function isMedia (This : in out UploadMediaSingleton; mediaFileType : Unbounded_String; aMediaType : Unbounded_String; hashMap_Param : access HashMap_Package.HashMap'Class) return Boolean;
+   procedure isMedia (This : in out UploadMediaSingleton; mediaFileType : Unbounded_String; aMediaType : Unbounded_String; hashMap_Param : access HashMap_Package.HashMap'Class);
 
 end org.allbinary.logic.communication.http.file.upload.media.UploadMediaSingleton_Package;
 

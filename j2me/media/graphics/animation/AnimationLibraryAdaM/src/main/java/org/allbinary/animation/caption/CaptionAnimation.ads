@@ -41,11 +41,11 @@ package org.allbinary.animation.caption.CaptionAnimation_Package is
       dy : Integer;
    end record;
 
-   procedure Initialize (This : in out CaptionAnimation'Class; animationInterface_Param : access Animation'Class; overlayAnimationInterface_Param : access Animation'Class; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer);
-   function Create (animationInterface_Param : access Animation'Class; overlayAnimationInterface_Param : access Animation'Class; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer) return CaptionAnimation_Access;
+   procedure Initialize (This : in out CaptionAnimation'Class; animationInterface_Param : access Animation_Package.Animation'Class; overlayAnimationInterface_Param : access Animation_Package.Animation'Class; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer);
+   function Create (animationInterface_Param : access Animation_Package.Animation'Class; overlayAnimationInterface_Param : access Animation_Package.Animation'Class; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer) return CaptionAnimation_Access;
    procedure nextFrame (This : in out CaptionAnimation);
-   procedure paintXY (This : in out CaptionAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
-   procedure paintThreedXYZ (This : in out CaptionAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer; z : Integer);
+   procedure paintXY (This : in out CaptionAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
+   procedure paintThreedXYZ (This : in out CaptionAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer; z : Integer);
 
 end org.allbinary.animation.caption.CaptionAnimation_Package;
 

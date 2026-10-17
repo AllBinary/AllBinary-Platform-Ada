@@ -41,8 +41,8 @@ package org.allbinary.logic.visual.transform.StoreTransformer_Package is
 
    type StoreTransformer is new BasicTransformer with null record;
 
-   procedure Initialize (This : in out StoreTransformer'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
-   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) return StoreTransformer_Access;
+   procedure Initialize (This : in out StoreTransformer'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return StoreTransformer_Access;
 
 end org.allbinary.logic.visual.transform.StoreTransformer_Package;
 

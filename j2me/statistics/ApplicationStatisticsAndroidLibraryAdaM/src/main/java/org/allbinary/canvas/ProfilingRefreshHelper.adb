@@ -44,8 +44,8 @@ package body org.allbinary.canvas.ProfilingRefreshHelper_Package is
       return This;
    end Create;
 
-   procedure initView (This : in out ProfilingRefreshHelper; view_Param : access View'Class) is
-      view : View_Access := View_Access (view_Param);
+   procedure initView (This : in out ProfilingRefreshHelper; view_Param : access View_Package.View'Class) is
+      view : constant View_Access := View_Access (view_Param);
    begin
         AndroidGameStatistics (This).initView (view);
         This.frameProcessingTimeElapsed := This.getTimeDelayHelper.getStartTime;

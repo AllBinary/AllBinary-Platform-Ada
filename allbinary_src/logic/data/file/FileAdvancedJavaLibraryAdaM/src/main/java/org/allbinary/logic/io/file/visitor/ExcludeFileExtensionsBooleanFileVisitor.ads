@@ -36,12 +36,12 @@ package org.allbinary.logic.io.file.visitor.ExcludeFileExtensionsBooleanFileVisi
 
    type ExcludeFileExtensionsBooleanFileVisitor is new BooleanFileVisitor with null record;
 
-   procedure Initialize (This : in out ExcludeFileExtensionsBooleanFileVisitor'Class; filterStringBasicArrayList_Param : access BasicArrayList'Class);
-   function Create (filterStringBasicArrayList_Param : access BasicArrayList'Class) return ExcludeFileExtensionsBooleanFileVisitor_Access;
-   function visit (This : in out ExcludeFileExtensionsBooleanFileVisitor; file_Param : access AbFile'Class) return Boolean;
-   procedure visit (This : in out ExcludeFileExtensionsBooleanFileVisitor; file_Param : access AbFile'Class);
-   function visit (This : in out ExcludeFileExtensionsBooleanFileVisitor; file_Param : access AbFile'Class; fileNameString : Unbounded_String) return Boolean;
-   procedure visit (This : in out ExcludeFileExtensionsBooleanFileVisitor; file_Param : access AbFile'Class; fileNameString : Unbounded_String);
+   procedure Initialize (This : in out ExcludeFileExtensionsBooleanFileVisitor'Class; filterStringBasicArrayList_Param : access BasicArrayList_Package.BasicArrayList'Class);
+   function Create (filterStringBasicArrayList_Param : access BasicArrayList_Package.BasicArrayList'Class) return ExcludeFileExtensionsBooleanFileVisitor_Access;
+   function visit (This : in out ExcludeFileExtensionsBooleanFileVisitor; file_Param : access AbFile_Package.AbFile'Class) return Boolean;
+   procedure visit (This : in out ExcludeFileExtensionsBooleanFileVisitor; file_Param : access AbFile_Package.AbFile'Class);
+   function visit (This : in out ExcludeFileExtensionsBooleanFileVisitor; file_Param : access AbFile_Package.AbFile'Class; fileNameString : Unbounded_String) return Boolean;
+   procedure visit (This : in out ExcludeFileExtensionsBooleanFileVisitor; file_Param : access AbFile_Package.AbFile'Class; fileNameString : Unbounded_String);
 
 end org.allbinary.logic.io.file.visitor.ExcludeFileExtensionsBooleanFileVisitor_Package;
 

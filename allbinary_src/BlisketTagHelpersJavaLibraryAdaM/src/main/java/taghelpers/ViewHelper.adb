@@ -26,15 +26,15 @@ package body taghelpers.ViewHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ViewHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
-      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
+   procedure Initialize (This : in out ViewHelper'Class; hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
    begin
       Initialize_Fields (This);
         This.componentInterface := TransformFactory_Package.getInstance.getInstance (This.abeClientInformation, hashMap, pageContext);
    end Initialize;
 
-   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return ViewHelper_Access is
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return ViewHelper_Access is
       This : constant ViewHelper_Access := new ViewHelper;
    begin
       ViewHelper_Package.Initialize (This.all, hashMap_Param, pageContext_Param);
@@ -112,8 +112,8 @@ package body taghelpers.ViewHelper_Package is
         return null;
    end getTransformDocumentInterface;
 
-   procedure setTransformDocumentInterface (This : in out ViewHelper; viewDocumentInterface_Param : access TransformDocumentInterface'Class) is
-      viewDocumentInterface : TransformDocumentInterface_Access := TransformDocumentInterface_Access (viewDocumentInterface_Param);
+   procedure setTransformDocumentInterface (This : in out ViewHelper; viewDocumentInterface_Param : access TransformDocumentInterface_Package.TransformDocumentInterface'Class) is
+      viewDocumentInterface : constant TransformDocumentInterface_Access := TransformDocumentInterface_Access (viewDocumentInterface_Param);
    begin
         return;
    end setTransformDocumentInterface;

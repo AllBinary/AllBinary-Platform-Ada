@@ -42,8 +42,8 @@ package org.allbinary.input.media.image.InputImageIOInterfaceFactory_Package is
 
    procedure Initialize (This : in out InputImageIOInterfaceFactory'Class);
    function Create return InputImageIOInterfaceFactory_Access;
-   function getInstance (imageType_Param : access InputImageType'Class) return ImageIOInterface_Access;
-   procedure getInstance (imageType_Param : access InputImageType'Class);
+   function getInstance (imageType_Param : access InputImageType_Package.InputImageType'Class) return ImageIOInterface_Access;
+   procedure getInstance (imageType_Param : access InputImageType_Package.InputImageType'Class);
 
 end org.allbinary.input.media.image.InputImageIOInterfaceFactory_Package;
 

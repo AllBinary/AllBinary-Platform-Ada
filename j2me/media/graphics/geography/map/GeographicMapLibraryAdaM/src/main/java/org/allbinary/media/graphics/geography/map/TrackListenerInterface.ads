@@ -30,7 +30,7 @@ package org.allbinary.media.graphics.geography.map.TrackListenerInterface_Packag
    type TrackListenerInterface_Access is access all TrackListenerInterface'Class;
    type TrackListenerInterface_Access_Array is array (Natural range <>) of TrackListenerInterface_Access;
    type TrackListenerInterface_Access_Array_Access is access all TrackListenerInterface_Access_Array;
-   procedure finished (This : in out TrackListenerInterface; layerInterface_Param : access AllBinaryLayer'Class) is abstract;
+   procedure finished (This : in out TrackListenerInterface; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is abstract;
 
 end org.allbinary.media.graphics.geography.map.TrackListenerInterface_Package;
 

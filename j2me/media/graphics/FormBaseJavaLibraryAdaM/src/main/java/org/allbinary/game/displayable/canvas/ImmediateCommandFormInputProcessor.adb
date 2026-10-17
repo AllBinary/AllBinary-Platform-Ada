@@ -23,25 +23,25 @@ package body org.allbinary.game.displayable.canvas.ImmediateCommandFormInputProc
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ImmediateCommandFormInputProcessor'Class; gameKeyEventList_Param : access BasicArrayList'Class; playerInputId : Integer; gameCommandCanvas_Param : access GameCommandCanvas'Class; form_Param : access ScrollSelectionForm'Class) is
-      gameKeyEventList : BasicArrayList_Access := BasicArrayList_Access (gameKeyEventList_Param);
-      gameCommandCanvas : GameCommandCanvas_Access := GameCommandCanvas_Access (gameCommandCanvas_Param);
-      form : ScrollSelectionForm_Access := ScrollSelectionForm_Access (form_Param);
+   procedure Initialize (This : in out ImmediateCommandFormInputProcessor'Class; gameKeyEventList_Param : access BasicArrayList_Package.BasicArrayList'Class; playerInputId : Integer; gameCommandCanvas_Param : access GameCommandCanvas_Package.GameCommandCanvas'Class; form_Param : access ScrollSelectionForm_Package.ScrollSelectionForm'Class) is
+      gameKeyEventList : constant BasicArrayList_Access := BasicArrayList_Access (gameKeyEventList_Param);
+      gameCommandCanvas : constant GameCommandCanvas_Access := GameCommandCanvas_Access (gameCommandCanvas_Param);
+      form : constant ScrollSelectionForm_Access := ScrollSelectionForm_Access (form_Param);
    begin
         CommandFormInputProcessor_Package.Initialize (This, gameKeyEventList, playerInputId, gameCommandCanvas, form);
         Initialize_Fields (This);
         This.gameCommandCanvas := gameCommandCanvas;
    end Initialize;
 
-   function Create (gameKeyEventList_Param : access BasicArrayList'Class; playerInputId : Integer; gameCommandCanvas_Param : access GameCommandCanvas'Class; form_Param : access ScrollSelectionForm'Class) return ImmediateCommandFormInputProcessor_Access is
+   function Create (gameKeyEventList_Param : access BasicArrayList_Package.BasicArrayList'Class; playerInputId : Integer; gameCommandCanvas_Param : access GameCommandCanvas_Package.GameCommandCanvas'Class; form_Param : access ScrollSelectionForm_Package.ScrollSelectionForm'Class) return ImmediateCommandFormInputProcessor_Access is
       This : constant ImmediateCommandFormInputProcessor_Access := new ImmediateCommandFormInputProcessor;
    begin
       ImmediateCommandFormInputProcessor_Package.Initialize (This.all, gameKeyEventList_Param, playerInputId, gameCommandCanvas_Param, form_Param);
       return This;
    end Create;
 
-   procedure onPressGameKeyEvent (This : in out ImmediateCommandFormInputProcessor; gameKeyEvent_Param : access GameKeyEvent'Class) is
-      gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
+   procedure onPressGameKeyEvent (This : in out ImmediateCommandFormInputProcessor; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class) is
+      gameKeyEvent : constant GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         begin
             CommandFormInputProcessor (This).onPressGameKeyEvent (gameKeyEvent);
@@ -59,8 +59,8 @@ package body org.allbinary.game.displayable.canvas.ImmediateCommandFormInputProc
         end;
    end onPressGameKeyEvent;
 
-   procedure onDownGameKeyEvent (This : in out ImmediateCommandFormInputProcessor; gameKeyEvent_Param : access GameKeyEvent'Class) is
-      gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
+   procedure onDownGameKeyEvent (This : in out ImmediateCommandFormInputProcessor; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class) is
+      gameKeyEvent : constant GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         begin
             CommandFormInputProcessor (This).onDownGameKeyEvent (gameKeyEvent);
@@ -78,8 +78,8 @@ package body org.allbinary.game.displayable.canvas.ImmediateCommandFormInputProc
         end;
    end onDownGameKeyEvent;
 
-   procedure onUpGameKeyEvent (This : in out ImmediateCommandFormInputProcessor; gameKeyEvent_Param : access GameKeyEvent'Class) is
-      gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
+   procedure onUpGameKeyEvent (This : in out ImmediateCommandFormInputProcessor; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class) is
+      gameKeyEvent : constant GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         begin
             CommandFormInputProcessor (This).onUpGameKeyEvent (gameKeyEvent);
@@ -97,8 +97,8 @@ package body org.allbinary.game.displayable.canvas.ImmediateCommandFormInputProc
         end;
    end onUpGameKeyEvent;
 
-   procedure onMotionGestureEvent (This : in out ImmediateCommandFormInputProcessor; motionGestureEvent_Param : access MotionGestureEvent'Class) is
-      motionGestureEvent : MotionGestureEvent_Access := MotionGestureEvent_Access (motionGestureEvent_Param);
+   procedure onMotionGestureEvent (This : in out ImmediateCommandFormInputProcessor; motionGestureEvent_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is
+      motionGestureEvent : constant MotionGestureEvent_Access := MotionGestureEvent_Access (motionGestureEvent_Param);
    begin
         begin
             CommandFormInputProcessor (This).onMotionGestureEvent (motionGestureEvent);

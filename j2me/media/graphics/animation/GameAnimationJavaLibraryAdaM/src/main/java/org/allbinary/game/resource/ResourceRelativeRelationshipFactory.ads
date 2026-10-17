@@ -53,7 +53,7 @@ package org.allbinary.game.resource.ResourceRelativeRelationshipFactory_Package 
    procedure init (This : in out ResourceRelativeRelationshipFactory; level : Integer);
    function getResourceRelativeRelationshipList (This : in out ResourceRelativeRelationshipFactory; resource : Unbounded_String) return BasicArrayList_Access;
    procedure getResourceRelativeRelationshipList (This : in out ResourceRelativeRelationshipFactory; resource : Unbounded_String);
-   procedure addResourceRelativeRelationship (This : in out ResourceRelativeRelationshipFactory; resource : Unbounded_String; hardPoint_Param : access RelativeRelationship'Class);
+   procedure addResourceRelativeRelationship (This : in out ResourceRelativeRelationshipFactory; resource : Unbounded_String; hardPoint_Param : access RelativeRelationship_Package.RelativeRelationship'Class);
    function isLoadingLevel (This : in out ResourceRelativeRelationshipFactory; level : Integer) return Boolean;
    procedure isLoadingLevel (This : in out ResourceRelativeRelationshipFactory; level : Integer);
    function isFeature (This : in out ResourceRelativeRelationshipFactory) return Boolean;

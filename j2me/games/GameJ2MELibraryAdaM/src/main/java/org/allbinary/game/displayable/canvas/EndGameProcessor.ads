@@ -48,8 +48,8 @@ package org.allbinary.game.displayable.canvas.EndGameProcessor_Package is
       WAIT : Long_Long_Integer;
    end record;
 
-   procedure Initialize (This : in out EndGameProcessor'Class; gameCanvas_Param : access AllBinaryGameCanvas'Class);
-   function Create (gameCanvas_Param : access AllBinaryGameCanvas'Class) return EndGameProcessor_Access;
+   procedure Initialize (This : in out EndGameProcessor'Class; gameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class);
+   function Create (gameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class) return EndGameProcessor_Access;
    procedure process (This : in out EndGameProcessor);
 
 end org.allbinary.game.displayable.canvas.EndGameProcessor_Package;

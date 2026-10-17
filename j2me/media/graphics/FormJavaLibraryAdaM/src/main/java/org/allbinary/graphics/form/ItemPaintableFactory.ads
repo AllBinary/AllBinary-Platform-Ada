@@ -37,8 +37,8 @@ package org.allbinary.graphics.form.ItemPaintableFactory_Package is
    procedure Initialize (This : in out ItemPaintableFactory'Class);
    function Create return ItemPaintableFactory_Access;
    function getInstance return ItemPaintableFactory_Access;
-   function getInstanceItemPaintable (This : in out ItemPaintableFactory; paintableForm_Param : access PaintableForm'Class) return ItemPaintable_Access;
-   procedure getInstanceItemPaintable (This : in out ItemPaintableFactory; paintableForm_Param : access PaintableForm'Class);
+   function getInstanceItemPaintable (This : in out ItemPaintableFactory; paintableForm_Param : access PaintableForm_Package.PaintableForm'Class) return ItemPaintable_Access;
+   procedure getInstanceItemPaintable (This : in out ItemPaintableFactory; paintableForm_Param : access PaintableForm_Package.PaintableForm'Class);
 
 end org.allbinary.graphics.form.ItemPaintableFactory_Package;
 

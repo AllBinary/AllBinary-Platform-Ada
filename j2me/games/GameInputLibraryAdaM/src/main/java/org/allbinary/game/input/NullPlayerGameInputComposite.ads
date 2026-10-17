@@ -42,7 +42,7 @@ package org.allbinary.game.input.NullPlayerGameInputComposite_Package is
    procedure Initialize (This : in out NullPlayerGameInputComposite'Class);
    function Create return NullPlayerGameInputComposite_Access;
    function getName (This : in out NullPlayerGameInputComposite) return Unbounded_String;
-   procedure processInput (This : in out NullPlayerGameInputComposite; layerManager_Param : access AllBinaryLayerManager'Class);
+   procedure processInput (This : in out NullPlayerGameInputComposite; layerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class);
    procedure initInputProcessors (This : in out NullPlayerGameInputComposite);
    function getPlayerGameInput (This : in out NullPlayerGameInputComposite) return PlayerGameInput_Access;
 

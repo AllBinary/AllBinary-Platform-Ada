@@ -44,8 +44,8 @@ package views.business.context.modules.storefront.customizer.includes.style.css.
       styleValidationInterface : ValidationInterface_Access;
    end record;
 
-   procedure Initialize (This : in out CssCustomizerView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return CssCustomizerView_Access;
+   procedure Initialize (This : in out CssCustomizerView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return CssCustomizerView_Access;
    procedure addDomNodeInterfaces (This : in out CssCustomizerView);
    function view (This : in out CssCustomizerView) return Unbounded_String;
 

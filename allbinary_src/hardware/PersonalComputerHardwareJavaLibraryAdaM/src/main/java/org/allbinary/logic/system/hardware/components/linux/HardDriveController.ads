@@ -39,8 +39,8 @@ package org.allbinary.logic.system.hardware.components.linux.HardDriveController
 
    procedure Initialize (This : in out HardDriveController'Class; data : Unbounded_String);
    function Create (data : Unbounded_String) return HardDriveController_Access;
-   function compareTo (This : in out HardDriveController; componentInterface_Param : access HardwareComponentInterface'Class) return Boolean;
-   procedure compareTo (This : in out HardDriveController; componentInterface_Param : access HardwareComponentInterface'Class);
+   function compareTo (This : in out HardDriveController; componentInterface_Param : access HardwareComponentInterface_Package.HardwareComponentInterface'Class) return Boolean;
+   procedure compareTo (This : in out HardDriveController; componentInterface_Param : access HardwareComponentInterface_Package.HardwareComponentInterface'Class);
    function toString (This : in out HardDriveController) return Unbounded_String;
 
 end org.allbinary.logic.system.hardware.components.linux.HardDriveController_Package;

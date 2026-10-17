@@ -44,8 +44,8 @@ package org.allbinary.game.tracking.TrackingEventCircularStaticPool_Package is
    function Create return TrackingEventCircularStaticPool_Access;
    function getInstance return TrackingEventCircularStaticPool_Access;
    procedure init (This : in out TrackingEventCircularStaticPool);
-   function getNextInstance (This : in out TrackingEventCircularStaticPool; layerInterface_Param : access AllBinaryLayer'Class) return TrackingEvent_Access;
-   procedure getNextInstance (This : in out TrackingEventCircularStaticPool; layerInterface_Param : access AllBinaryLayer'Class);
+   function getNextInstance (This : in out TrackingEventCircularStaticPool; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) return TrackingEvent_Access;
+   procedure getNextInstance (This : in out TrackingEventCircularStaticPool; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class);
 
 end org.allbinary.game.tracking.TrackingEventCircularStaticPool_Package;
 

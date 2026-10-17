@@ -57,8 +57,8 @@ package org.allbinary.logic.communication.smtp.EmailsNotUsed_Package is
 
    procedure Initialize (This : in out EmailsNotUsed'Class);
    function Create return EmailsNotUsed_Access;
-   function toXmlNode (This : in out EmailsNotUsed; document_Param : access Document'Class) return Node_Access;
-   procedure toXmlNode (This : in out EmailsNotUsed; document_Param : access Document'Class);
+   function toXmlNode (This : in out EmailsNotUsed; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out EmailsNotUsed; document_Param : access Document_Package.Document'Class);
 
 end org.allbinary.logic.communication.smtp.EmailsNotUsed_Package;
 

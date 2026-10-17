@@ -22,8 +22,8 @@ package body tags.ModifyTag_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ModifyTag'Class; tagHelperFactoryInterface_Param : access TagHelperFactoryInterface'Class) is
-      tagHelperFactoryInterface : TagHelperFactoryInterface_Access := TagHelperFactoryInterface_Access (tagHelperFactoryInterface_Param);
+   procedure Initialize (This : in out ModifyTag'Class; tagHelperFactoryInterface_Param : access TagHelperFactoryInterface_Package.TagHelperFactoryInterface'Class) is
+      tagHelperFactoryInterface : constant TagHelperFactoryInterface_Access := TagHelperFactoryInterface_Access (tagHelperFactoryInterface_Param);
    begin
         HelperTag_Package.Initialize (This, tagHelperFactoryInterface);
         Initialize_Fields (This);
@@ -32,7 +32,7 @@ package body tags.ModifyTag_Package is
         end if;
    end Initialize;
 
-   function Create (tagHelperFactoryInterface_Param : access TagHelperFactoryInterface'Class) return ModifyTag_Access is
+   function Create (tagHelperFactoryInterface_Param : access TagHelperFactoryInterface_Package.TagHelperFactoryInterface'Class) return ModifyTag_Access is
       This : constant ModifyTag_Access := new ModifyTag;
    begin
       ModifyTag_Package.Initialize (This.all, tagHelperFactoryInterface_Param);

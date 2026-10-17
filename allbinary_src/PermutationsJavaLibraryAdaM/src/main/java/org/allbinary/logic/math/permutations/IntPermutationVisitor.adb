@@ -26,7 +26,7 @@ package body org.allbinary.logic.math.permutations.IntPermutationVisitor_Package
    end Create;
 
    function visit (This : in out IntPermutationVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         This.stringBuilder.delete (0, This.stringBuilder.length);
         This.print (This.data, This.stringBuilder);
@@ -40,8 +40,8 @@ package body org.allbinary.logic.math.permutations.IntPermutationVisitor_Package
         This.print (data, stringBuilder);
    end print;
 
-   procedure print (This : in out IntPermutationVisitor; data : Integer_Array_Access; stringBuilder_Param : access StringMaker'Class) is
-      stringBuilder : StringMaker_Access := StringMaker_Access (stringBuilder_Param);
+   procedure print (This : in out IntPermutationVisitor; data : Integer_Array_Access; stringBuilder_Param : access StringMaker_Package.StringMaker'Class) is
+      stringBuilder : constant StringMaker_Access := StringMaker_Access (stringBuilder_Param);
       commonSeps : CommonSeps_Access;
       size : Integer;
       i : Integer;

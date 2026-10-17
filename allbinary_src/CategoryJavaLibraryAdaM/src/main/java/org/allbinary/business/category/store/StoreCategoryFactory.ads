@@ -58,13 +58,13 @@ package org.allbinary.business.category.store.StoreCategoryFactory_Package is
       transformInfoInterface : TransformInfoInterface_Access;
    end record;
 
-   procedure Initialize (This : in out StoreCategoryFactory'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return StoreCategoryFactory_Access;
+   procedure Initialize (This : in out StoreCategoryFactory'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return StoreCategoryFactory_Access;
    function getRootInstance (This : in out StoreCategoryFactory) return CategoryInterface_Access;
-   function getRootInstance (This : in out StoreCategoryFactory; categoryPath_Param : access AbPath'Class) return CategoryInterface_Access;
-   procedure getRootInstance (This : in out StoreCategoryFactory; categoryPath_Param : access AbPath'Class);
-   function getRootInstanceFromNode (This : in out StoreCategoryFactory; node_Param : access Node'Class) return CategoryInterface_Access;
-   procedure getRootInstanceFromNode (This : in out StoreCategoryFactory; node_Param : access Node'Class);
+   function getRootInstance (This : in out StoreCategoryFactory; categoryPath_Param : access AbPath_Package.AbPath'Class) return CategoryInterface_Access;
+   procedure getRootInstance (This : in out StoreCategoryFactory; categoryPath_Param : access AbPath_Package.AbPath'Class);
+   function getRootInstanceFromNode (This : in out StoreCategoryFactory; node_Param : access Node_Package.Node'Class) return CategoryInterface_Access;
+   procedure getRootInstanceFromNode (This : in out StoreCategoryFactory; node_Param : access Node_Package.Node'Class);
 
 end org.allbinary.business.category.store.StoreCategoryFactory_Package;
 

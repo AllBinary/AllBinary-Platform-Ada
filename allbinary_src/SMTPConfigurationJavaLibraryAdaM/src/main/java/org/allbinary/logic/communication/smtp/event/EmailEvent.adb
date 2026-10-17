@@ -24,10 +24,10 @@ package body org.allbinary.logic.communication.smtp.event.EmailEvent_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out EmailEvent'Class; emailEventHandler_Param : access Java_Object'Class; userEmailEventNameData_Param : access UserEmailEventNameData'Class; emailInfo_Param : access EmailInfo'Class; attempts : Integer) is
-      emailEventHandler : Java_Object_Access := Java_Object_Access (emailEventHandler_Param);
-      userEmailEventNameData : UserEmailEventNameData_Access := UserEmailEventNameData_Access (userEmailEventNameData_Param);
-      emailInfo : EmailInfo_Access := EmailInfo_Access (emailInfo_Param);
+   procedure Initialize (This : in out EmailEvent'Class; emailEventHandler_Param : access Java_Object'Class; userEmailEventNameData_Param : access UserEmailEventNameData_Package.UserEmailEventNameData'Class; emailInfo_Param : access EmailInfo_Package.EmailInfo'Class; attempts : Integer) is
+      emailEventHandler : constant Java_Object_Access := Java_Object_Access (emailEventHandler_Param);
+      userEmailEventNameData : constant UserEmailEventNameData_Access := UserEmailEventNameData_Access (userEmailEventNameData_Param);
+      emailInfo : constant EmailInfo_Access := EmailInfo_Access (emailInfo_Param);
    begin
         EventObject_Package.Initialize (This, emailEventHandler);
         Initialize_Fields (This);
@@ -35,7 +35,7 @@ package body org.allbinary.logic.communication.smtp.event.EmailEvent_Package is
         This.emailInfo := emailInfo;
    end Initialize;
 
-   function Create (emailEventHandler_Param : access Java_Object'Class; userEmailEventNameData_Param : access UserEmailEventNameData'Class; emailInfo_Param : access EmailInfo'Class; attempts : Integer) return EmailEvent_Access is
+   function Create (emailEventHandler_Param : access Java_Object'Class; userEmailEventNameData_Param : access UserEmailEventNameData_Package.UserEmailEventNameData'Class; emailInfo_Param : access EmailInfo_Package.EmailInfo'Class; attempts : Integer) return EmailEvent_Access is
       This : constant EmailEvent_Access := new EmailEvent;
    begin
       EmailEvent_Package.Initialize (This.all, emailEventHandler_Param, userEmailEventNameData_Param, emailInfo_Param, attempts);

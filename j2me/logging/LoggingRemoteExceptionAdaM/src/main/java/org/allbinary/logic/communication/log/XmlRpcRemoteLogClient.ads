@@ -54,8 +54,8 @@ package org.allbinary.logic.communication.log.XmlRpcRemoteLogClient_Package is
       noCrypt : NoCrypt_Access;
    end record;
 
-   procedure Initialize (This : in out XmlRpcRemoteLogClient'Class; clientInfo_Param : access AbeClientInformationInterface'Class);
-   function Create (clientInfo_Param : access AbeClientInformationInterface'Class) return XmlRpcRemoteLogClient_Access;
+   procedure Initialize (This : in out XmlRpcRemoteLogClient'Class; clientInfo_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class);
+   function Create (clientInfo_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) return XmlRpcRemoteLogClient_Access;
    function get (This : in out XmlRpcRemoteLogClient; anyType_Param : access Java_Object'Class) return Java_Object_Access;
    procedure get (This : in out XmlRpcRemoteLogClient; anyType_Param : access Java_Object'Class);
 

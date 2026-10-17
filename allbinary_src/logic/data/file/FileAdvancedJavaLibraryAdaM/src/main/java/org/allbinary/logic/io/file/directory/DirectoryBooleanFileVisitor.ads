@@ -39,8 +39,8 @@ package org.allbinary.logic.io.file.directory.DirectoryBooleanFileVisitor_Packag
    function Create return DirectoryBooleanFileVisitor_Access;
    function visit (This : in out DirectoryBooleanFileVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access;
    procedure visit (This : in out DirectoryBooleanFileVisitor; anyType_Param : access Java_Object'Class);
-   function visit (This : in out DirectoryBooleanFileVisitor; file_Param : access AbFile'Class) return Boolean;
-   procedure visit (This : in out DirectoryBooleanFileVisitor; file_Param : access AbFile'Class);
+   function visit (This : in out DirectoryBooleanFileVisitor; file_Param : access AbFile_Package.AbFile'Class) return Boolean;
+   procedure visit (This : in out DirectoryBooleanFileVisitor; file_Param : access AbFile_Package.AbFile'Class);
 
 end org.allbinary.logic.io.file.directory.DirectoryBooleanFileVisitor_Package;
 

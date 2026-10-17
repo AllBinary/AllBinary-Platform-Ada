@@ -56,7 +56,7 @@ package org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurat
 
    procedure Initialize (This : in out MotionGestureConfiguration'Class);
    function Create return MotionGestureConfiguration_Access;
-   procedure addMotionGestureAction (This : in out MotionGestureConfiguration; list_Param : access BasicArrayList'Class; commandAction_Param : access CompleteMotionGestureInputEvent'Class);
+   procedure addMotionGestureAction (This : in out MotionGestureConfiguration; list_Param : access BasicArrayList_Package.BasicArrayList'Class; commandAction_Param : access CompleteMotionGestureInputEvent_Package.CompleteMotionGestureInputEvent'Class);
    procedure clearMotionGestureAction (This : in out MotionGestureConfiguration);
    function getAssociateCommandActionsList (This : in out MotionGestureConfiguration) return BasicArrayList_Access;
    function isDiagonalMotionGestureAllowed (This : in out MotionGestureConfiguration) return Boolean;
@@ -70,7 +70,7 @@ package org.allbinary.input.motion.gesture.configuration.MotionGestureConfigurat
    function getButton (This : in out MotionGestureConfiguration) return Unbounded_String;
    procedure setButton (This : in out MotionGestureConfiguration; button : Unbounded_String);
    function getColor (This : in out MotionGestureConfiguration) return BasicColor_Access;
-   procedure setColor (This : in out MotionGestureConfiguration; color_Param : access BasicColor'Class);
+   procedure setColor (This : in out MotionGestureConfiguration; color_Param : access BasicColor_Package.BasicColor'Class);
    function getMouseButtonMask (This : in out MotionGestureConfiguration) return Integer;
    procedure setMouseButtonMask (This : in out MotionGestureConfiguration; mouseButtonMask : Integer);
 

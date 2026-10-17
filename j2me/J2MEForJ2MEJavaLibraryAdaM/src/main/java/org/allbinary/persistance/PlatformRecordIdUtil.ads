@@ -43,8 +43,8 @@ package org.allbinary.persistance.PlatformRecordIdUtil_Package is
    procedure Initialize (This : in out PlatformRecordIdUtil'Class);
    function Create return PlatformRecordIdUtil_Access;
    function getInstance return PlatformRecordIdUtil_Access;
-   function getRecordId (This : in out PlatformRecordIdUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; baseRecordId : Unbounded_String) return Unbounded_String;
-   procedure getRecordId (This : in out PlatformRecordIdUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; baseRecordId : Unbounded_String);
+   function getRecordId (This : in out PlatformRecordIdUtil; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; baseRecordId : Unbounded_String) return Unbounded_String;
+   procedure getRecordId (This : in out PlatformRecordIdUtil; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; baseRecordId : Unbounded_String);
 
 end org.allbinary.persistance.PlatformRecordIdUtil_Package;
 

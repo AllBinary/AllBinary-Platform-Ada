@@ -43,7 +43,7 @@ package org.allbinary.graphics.displayable.event.LastDisplayChangeEventHandler_P
    procedure Initialize (This : in out LastDisplayChangeEventHandler'Class);
    function Create return LastDisplayChangeEventHandler_Access;
    function getInstance return LastDisplayChangeEventHandler_Access;
-   procedure process (This : in out LastDisplayChangeEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class);
+   procedure process (This : in out LastDisplayChangeEventHandler; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class);
 
 end org.allbinary.graphics.displayable.event.LastDisplayChangeEventHandler_Package;
 

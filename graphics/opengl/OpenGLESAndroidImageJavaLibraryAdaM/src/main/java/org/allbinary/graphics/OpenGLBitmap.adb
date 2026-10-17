@@ -11,7 +11,7 @@ package body org.allbinary.graphics.OpenGLBitmap_Package is
 
 
    procedure Initialize (This : in out OpenGLBitmap'Class; bitmap_Param : access Java_Object'Class) is
-      bitmap : Java_Object_Access := Java_Object_Access (bitmap_Param);
+      bitmap : constant Java_Object_Access := Java_Object_Access (bitmap_Param);
    begin
       PlatformBitmapBase_Package.Initialize (This);
       Initialize_Fields (This);

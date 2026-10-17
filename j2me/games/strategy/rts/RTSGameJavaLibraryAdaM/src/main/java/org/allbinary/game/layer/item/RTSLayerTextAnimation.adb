@@ -25,8 +25,8 @@ package body org.allbinary.game.layer.item.RTSLayerTextAnimation_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out RTSLayerTextAnimation'Class; text : Unbounded_String; image_Param : access Image'Class) is
-      image : Image_Access := Image_Access (image_Param);
+   procedure Initialize (This : in out RTSLayerTextAnimation'Class; text : Unbounded_String; image_Param : access Image_Package.Image'Class) is
+      image : constant Image_Access := Image_Access (image_Param);
    begin
       Animation_Package.Initialize (This);
       Initialize_Fields (This);
@@ -34,15 +34,15 @@ package body org.allbinary.game.layer.item.RTSLayerTextAnimation_Package is
         This.image := image;
    end Initialize;
 
-   function Create (text : Unbounded_String; image_Param : access Image'Class) return RTSLayerTextAnimation_Access is
+   function Create (text : Unbounded_String; image_Param : access Image_Package.Image'Class) return RTSLayerTextAnimation_Access is
       This : constant RTSLayerTextAnimation_Access := new RTSLayerTextAnimation;
    begin
       RTSLayerTextAnimation_Package.Initialize (This.all, text, image_Param);
       return This;
    end Create;
 
-   procedure updateMeasurement (This : in out RTSLayerTextAnimation; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure updateMeasurement (This : in out RTSLayerTextAnimation; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
    begin
         font := graphics.getFont;
@@ -50,8 +50,8 @@ package body org.allbinary.game.layer.item.RTSLayerTextAnimation_Package is
         This.myFontProcessor := MyFontProcessor_Package.getInstance;
    end updateMeasurement;
 
-   procedure paintXY (This : in out RTSLayerTextAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintXY (This : in out RTSLayerTextAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       adjustedCostY : Integer;
    begin
         This.myFontProcessor.process (graphics);

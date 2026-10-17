@@ -44,9 +44,9 @@ package body org.allbinary.animation.VectorExplosionGenerator_Package is
    end Create;
 
    --  throws Exception
-   function createList (This : in out VectorExplosionGenerator; list_Param : access BasicArrayList'Class; howMuch : Integer; type_Id_Param : access VectorExplosionType'Class) return BasicArrayList_Access is
-      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
-      type_Id : VectorExplosionType_Access := VectorExplosionType_Access (type_Id_Param);
+   function createList (This : in out VectorExplosionGenerator; list_Param : access BasicArrayList_Package.BasicArrayList'Class; howMuch : Integer; type_Id_Param : access VectorExplosionType_Package.VectorExplosionType'Class) return BasicArrayList_Access is
+      list : constant BasicArrayList_Access := BasicArrayList_Access (list_Param);
+      type_Id : constant VectorExplosionType_Access := VectorExplosionType_Access (type_Id_Param);
       point : GPoint_Access;
       size : Integer;
       points : Integer_Array_Access_Array_Access;
@@ -64,8 +64,8 @@ package body org.allbinary.animation.VectorExplosionGenerator_Package is
    end createList;
 
    --  throws Exception
-   function getInstance (This : in out VectorExplosionGenerator; points : Integer_Array_Access_Array_Access; howMuch : Integer; type_Id_Param : access VectorExplosionType'Class) return Integer_Array_Access_Array_Access_Array_Access is
-      type_Id : VectorExplosionType_Access := VectorExplosionType_Access (type_Id_Param);
+   function getInstance (This : in out VectorExplosionGenerator; points : Integer_Array_Access_Array_Access; howMuch : Integer; type_Id_Param : access VectorExplosionType_Package.VectorExplosionType'Class) return Integer_Array_Access_Array_Access_Array_Access is
+      type_Id : constant VectorExplosionType_Access := VectorExplosionType_Access (type_Id_Param);
       pointsBasicArrayList : BasicArrayList_Access;
       tempBasicArrayList : BasicArrayList_Access;
       newPoints : Integer_Array_Access_Array_Access_Array_Access;
@@ -77,8 +77,8 @@ package body org.allbinary.animation.VectorExplosionGenerator_Package is
    end getInstance;
 
    --  throws Exception
-   function getInstanceStartFrame (This : in out VectorExplosionGenerator; points : Integer_Array_Access_Array_Access; howMuch : Integer; type_Id_Param : access VectorExplosionType'Class; startFrame : Boolean) return BasicArrayList_Access is
-      type_Id : VectorExplosionType_Access := VectorExplosionType_Access (type_Id_Param);
+   function getInstanceStartFrame (This : in out VectorExplosionGenerator; points : Integer_Array_Access_Array_Access; howMuch : Integer; type_Id_Param : access VectorExplosionType_Package.VectorExplosionType'Class; startFrame : Boolean) return BasicArrayList_Access is
+      type_Id : constant VectorExplosionType_Access := VectorExplosionType_Access (type_Id_Param);
       pointsBasicArrayList : BasicArrayList_Access;
       frameIndex : Integer;
       tempBasicArrayList : BasicArrayList_Access;
@@ -111,9 +111,9 @@ package body org.allbinary.animation.VectorExplosionGenerator_Package is
    end getInstanceStartFrame;
 
    --  throws Exception
-   function createListFromPoints (This : in out VectorExplosionGenerator; tempBasicArrayList_Param : access BasicArrayList'Class; points : Integer_Array_Access_Array_Access; howMuch : Integer; type_Id_Param : access VectorExplosionType'Class) return BasicArrayList_Access is
-      tempBasicArrayList : BasicArrayList_Access := BasicArrayList_Access (tempBasicArrayList_Param);
-      type_Id : VectorExplosionType_Access := VectorExplosionType_Access (type_Id_Param);
+   function createListFromPoints (This : in out VectorExplosionGenerator; tempBasicArrayList_Param : access BasicArrayList_Package.BasicArrayList'Class; points : Integer_Array_Access_Array_Access; howMuch : Integer; type_Id_Param : access VectorExplosionType_Package.VectorExplosionType'Class) return BasicArrayList_Access is
+      tempBasicArrayList : constant BasicArrayList_Access := BasicArrayList_Access (tempBasicArrayList_Param);
+      type_Id : constant VectorExplosionType_Access := VectorExplosionType_Access (type_Id_Param);
       index : Integer;
       pointBasicArrayList : BasicArrayList_Access;
       sectionBasicArrayList : BasicArrayList_Access;
@@ -167,28 +167,28 @@ package body org.allbinary.animation.VectorExplosionGenerator_Package is
         return firstPointBasicArrayList;
    end createPointsBasicArrayList;
 
-   procedure createList (This : in out VectorExplosionGenerator; list_Param : access BasicArrayList'Class; howMuch : Integer; type_Id_Param : access VectorExplosionType'Class) is
+   procedure createList (This : in out VectorExplosionGenerator; list_Param : access BasicArrayList_Package.BasicArrayList'Class; howMuch : Integer; type_Id_Param : access VectorExplosionType_Package.VectorExplosionType'Class) is
       Java_Result : constant BasicArrayList_Access := VectorExplosionGenerator'Class (This).createList (list_Param, howMuch, type_Id_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createList;
 
-   procedure getInstance (This : in out VectorExplosionGenerator; points : Integer_Array_Access_Array_Access; howMuch : Integer; type_Id_Param : access VectorExplosionType'Class) is
+   procedure getInstance (This : in out VectorExplosionGenerator; points : Integer_Array_Access_Array_Access; howMuch : Integer; type_Id_Param : access VectorExplosionType_Package.VectorExplosionType'Class) is
       Java_Result : constant Integer_Array_Access_Array_Access_Array_Access := VectorExplosionGenerator'Class (This).getInstance (points, howMuch, type_Id_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
-   procedure getInstanceStartFrame (This : in out VectorExplosionGenerator; points : Integer_Array_Access_Array_Access; howMuch : Integer; type_Id_Param : access VectorExplosionType'Class; startFrame : Boolean) is
+   procedure getInstanceStartFrame (This : in out VectorExplosionGenerator; points : Integer_Array_Access_Array_Access; howMuch : Integer; type_Id_Param : access VectorExplosionType_Package.VectorExplosionType'Class; startFrame : Boolean) is
       Java_Result : constant BasicArrayList_Access := VectorExplosionGenerator'Class (This).getInstanceStartFrame (points, howMuch, type_Id_Param, startFrame);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstanceStartFrame;
 
-   procedure createListFromPoints (This : in out VectorExplosionGenerator; tempBasicArrayList_Param : access BasicArrayList'Class; points : Integer_Array_Access_Array_Access; howMuch : Integer; type_Id_Param : access VectorExplosionType'Class) is
+   procedure createListFromPoints (This : in out VectorExplosionGenerator; tempBasicArrayList_Param : access BasicArrayList_Package.BasicArrayList'Class; points : Integer_Array_Access_Array_Access; howMuch : Integer; type_Id_Param : access VectorExplosionType_Package.VectorExplosionType'Class) is
       Java_Result : constant BasicArrayList_Access := VectorExplosionGenerator'Class (This).createListFromPoints (tempBasicArrayList_Param, points, howMuch, type_Id_Param);
       pragma Unreferenced (Java_Result);
    begin

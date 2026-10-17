@@ -24,8 +24,8 @@ package body org.allbinary.game.displayable.canvas.PreGameSelectorPaintable_Pack
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PreGameSelectorPaintable'Class; title : Unbounded_String; preGameScrollSelectionForm_Param : access PreGameScrollSelectionForm'Class) is
-      preGameScrollSelectionForm : PreGameScrollSelectionForm_Access := PreGameScrollSelectionForm_Access (preGameScrollSelectionForm_Param);
+   procedure Initialize (This : in out PreGameSelectorPaintable'Class; title : Unbounded_String; preGameScrollSelectionForm_Param : access PreGameScrollSelectionForm_Package.PreGameScrollSelectionForm'Class) is
+      preGameScrollSelectionForm : constant PreGameScrollSelectionForm_Access := PreGameScrollSelectionForm_Access (preGameScrollSelectionForm_Param);
       displayInfo : DisplayInfoSingleton_Access;
    begin
       InitUpdatePaintable_Package.Initialize (This);
@@ -36,7 +36,7 @@ package body org.allbinary.game.displayable.canvas.PreGameSelectorPaintable_Pack
         This.preGameScrollSelectionForm := preGameScrollSelectionForm;
    end Initialize;
 
-   function Create (title : Unbounded_String; preGameScrollSelectionForm_Param : access PreGameScrollSelectionForm'Class) return PreGameSelectorPaintable_Access is
+   function Create (title : Unbounded_String; preGameScrollSelectionForm_Param : access PreGameScrollSelectionForm_Package.PreGameScrollSelectionForm'Class) return PreGameSelectorPaintable_Access is
       This : constant PreGameSelectorPaintable_Access := new PreGameSelectorPaintable;
    begin
       PreGameSelectorPaintable_Package.Initialize (This.all, title, preGameScrollSelectionForm_Param);
@@ -50,8 +50,8 @@ package body org.allbinary.game.displayable.canvas.PreGameSelectorPaintable_Pack
         This.canvasDrawLineString := CanvasDrawLineString_Package.Create (displayInfo.getLastHalfWidth, 0);
    end update;
 
-   procedure paint (This : in out PreGameSelectorPaintable; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out PreGameSelectorPaintable; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         graphics.setColor (BasicColorFactory_Package.getInstance.WHITE.intValue);
         This.canvasDrawLineString.paint (graphics, This.title, 0);

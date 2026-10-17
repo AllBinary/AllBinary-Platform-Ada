@@ -39,8 +39,8 @@ package body org.allbinary.logic.communication.http.file.upload.HttpFilePermissi
    end getInstance;
 
    --  throws Exception
-   procedure create (This : in out HttpFilePermissionsUtil; path_Param : access AbPath'Class) is
-      path : AbPath_Access := AbPath_Access (path_Param);
+   procedure create (This : in out HttpFilePermissionsUtil; path_Param : access AbPath_Package.AbPath'Class) is
+      path : constant AbPath_Access := AbPath_Access (path_Param);
       file : AbFile_Access;
    begin
         file := AbFile_Package.createAbFileFromAbPath (path);

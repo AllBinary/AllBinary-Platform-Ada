@@ -36,8 +36,8 @@ package org.allbinary.game.layer.special.SpecialGameInputInterfaceProcessor_Pack
       specialGameInputInterface : SpecialGameInputInterface_Access;
    end record;
 
-   procedure Initialize (This : in out SpecialGameInputInterfaceProcessor'Class; collidableDestroyableDamageableLayer_Param : access SpecialGameInputInterface'Class);
-   function Create (collidableDestroyableDamageableLayer_Param : access SpecialGameInputInterface'Class) return SpecialGameInputInterfaceProcessor_Access;
+   procedure Initialize (This : in out SpecialGameInputInterfaceProcessor'Class; collidableDestroyableDamageableLayer_Param : access SpecialGameInputInterface_Package.SpecialGameInputInterface'Class);
+   function Create (collidableDestroyableDamageableLayer_Param : access SpecialGameInputInterface_Package.SpecialGameInputInterface'Class) return SpecialGameInputInterfaceProcessor_Access;
 
 end org.allbinary.game.layer.special.SpecialGameInputInterfaceProcessor_Package;
 

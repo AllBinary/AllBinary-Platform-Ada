@@ -68,8 +68,8 @@ package org.allbinary.media.image.comparison.motion.TestInputForMotionRectangles
    procedure Initialize (This : in out TestInputForMotionRectanglesResultsWorker'Class);
    function Create return TestInputForMotionRectanglesResultsWorker_Access;
    function getMotionRectanglesVector (This : in out TestInputForMotionRectanglesResultsWorker) return BasicArrayList_Access;
-   procedure onMotionRectanglesImageComparisonResultsEvent (This : in out TestInputForMotionRectanglesResultsWorker; motionRectanglesImageComparisonResultsEvent_Param : access MotionRectanglesResultsEvent'Class);
-   procedure onEvent (This : in out TestInputForMotionRectanglesResultsWorker; allBinaryEventObject_Param : access AllBinaryEventObject'Class);
+   procedure onMotionRectanglesImageComparisonResultsEvent (This : in out TestInputForMotionRectanglesResultsWorker; motionRectanglesImageComparisonResultsEvent_Param : access MotionRectanglesResultsEvent_Package.MotionRectanglesResultsEvent'Class);
+   procedure onEvent (This : in out TestInputForMotionRectanglesResultsWorker; allBinaryEventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class);
    function isRunning (This : in out TestInputForMotionRectanglesResultsWorker) return Boolean;
    procedure setRunning (This : in out TestInputForMotionRectanglesResultsWorker; running : Boolean);
    procedure run (This : in out TestInputForMotionRectanglesResultsWorker);

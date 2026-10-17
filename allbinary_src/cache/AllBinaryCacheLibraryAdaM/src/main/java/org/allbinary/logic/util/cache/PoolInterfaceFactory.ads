@@ -37,8 +37,8 @@ package org.allbinary.logic.util.cache.PoolInterfaceFactory_Package is
 
    procedure Initialize (This : in out PoolInterfaceFactory'Class);
    function Create return PoolInterfaceFactory_Access;
-   function getInstance (cacheableInterfaceFactoryInterface_Param : access CacheableInterfaceFactoryInterface'Class; poolType_Param : access PoolType'Class; cachePolicy_Param : access CachePolicy'Class) return PoolInterface_Access;
-   procedure getInstance (cacheableInterfaceFactoryInterface_Param : access CacheableInterfaceFactoryInterface'Class; poolType_Param : access PoolType'Class; cachePolicy_Param : access CachePolicy'Class);
+   function getInstance (cacheableInterfaceFactoryInterface_Param : access CacheableInterfaceFactoryInterface_Package.CacheableInterfaceFactoryInterface'Class; poolType_Param : access PoolType_Package.PoolType'Class; cachePolicy_Param : access CachePolicy_Package.CachePolicy'Class) return PoolInterface_Access;
+   procedure getInstance (cacheableInterfaceFactoryInterface_Param : access CacheableInterfaceFactoryInterface_Package.CacheableInterfaceFactoryInterface'Class; poolType_Param : access PoolType_Package.PoolType'Class; cachePolicy_Param : access CachePolicy_Package.CachePolicy'Class);
 
 end org.allbinary.logic.util.cache.PoolInterfaceFactory_Package;
 

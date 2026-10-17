@@ -44,8 +44,8 @@ package body org.allbinary.game.layer.drop.PlacedLayerFactory_Package is
         return AllBinaryLayerFactoryInterface_Access (This.basicArrayListUtil.getRandom (This.list));
    end getRandomInstance;
 
-   procedure add (This : in out PlacedLayerFactory; layerInterfaceFactoryInterface_Param : access AllBinaryLayerFactoryInterface'Class) is
-      layerInterfaceFactoryInterface : AllBinaryLayerFactoryInterface_Access := AllBinaryLayerFactoryInterface_Access (layerInterfaceFactoryInterface_Param);
+   procedure add (This : in out PlacedLayerFactory; layerInterfaceFactoryInterface_Param : access AllBinaryLayerFactoryInterface_Package.AllBinaryLayerFactoryInterface'Class) is
+      layerInterfaceFactoryInterface : constant AllBinaryLayerFactoryInterface_Access := AllBinaryLayerFactoryInterface_Access (layerInterfaceFactoryInterface_Param);
    begin
         This.list.add (layerInterfaceFactoryInterface);
    end add;

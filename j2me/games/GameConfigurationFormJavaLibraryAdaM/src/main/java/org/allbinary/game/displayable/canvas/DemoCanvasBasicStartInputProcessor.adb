@@ -21,14 +21,14 @@ package body org.allbinary.game.displayable.canvas.DemoCanvasBasicStartInputProc
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out DemoCanvasBasicStartInputProcessor'Class; gameKeyEventList_Param : access BasicArrayList'Class; gameCanvas_Param : access RunnableCanvas'Class) is
-      gameKeyEventList : BasicArrayList_Access := BasicArrayList_Access (gameKeyEventList_Param);
-      gameCanvas : RunnableCanvas_Access := RunnableCanvas_Access (gameCanvas_Param);
+   procedure Initialize (This : in out DemoCanvasBasicStartInputProcessor'Class; gameKeyEventList_Param : access BasicArrayList_Package.BasicArrayList'Class; gameCanvas_Param : access RunnableCanvas_Package.RunnableCanvas'Class) is
+      gameKeyEventList : constant BasicArrayList_Access := BasicArrayList_Access (gameKeyEventList_Param);
+      gameCanvas : constant RunnableCanvas_Access := RunnableCanvas_Access (gameCanvas_Param);
    begin
         BasicMenuInputProcessor_Package.Initialize (This, gameKeyEventList, -(1), gameCanvas);
    end Initialize;
 
-   function Create (gameKeyEventList_Param : access BasicArrayList'Class; gameCanvas_Param : access RunnableCanvas'Class) return DemoCanvasBasicStartInputProcessor_Access is
+   function Create (gameKeyEventList_Param : access BasicArrayList_Package.BasicArrayList'Class; gameCanvas_Param : access RunnableCanvas_Package.RunnableCanvas'Class) return DemoCanvasBasicStartInputProcessor_Access is
       This : constant DemoCanvasBasicStartInputProcessor_Access := new DemoCanvasBasicStartInputProcessor;
    begin
       DemoCanvasBasicStartInputProcessor_Package.Initialize (This.all, gameKeyEventList_Param, gameCanvas_Param);

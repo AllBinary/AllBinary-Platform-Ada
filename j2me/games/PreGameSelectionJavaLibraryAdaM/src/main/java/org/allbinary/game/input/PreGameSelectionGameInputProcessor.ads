@@ -79,12 +79,12 @@ package org.allbinary.game.input.PreGameSelectionGameInputProcessor_Package is
       abRunnable : ABRunnable_Access;
    end record;
 
-   procedure Initialize (This : in out PreGameSelectionGameInputProcessor'Class; gameCanvas_Param : access AllBinaryGameCanvas'Class; preGameSelectorPaintable_Param : access PreGameSelectorPaintable'Class; nextGameState_Param : access GameState'Class; lockedIndex : Integer);
-   function Create (gameCanvas_Param : access AllBinaryGameCanvas'Class; preGameSelectorPaintable_Param : access PreGameSelectorPaintable'Class; nextGameState_Param : access GameState'Class; lockedIndex : Integer) return PreGameSelectionGameInputProcessor_Access;
+   procedure Initialize (This : in out PreGameSelectionGameInputProcessor'Class; gameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class; preGameSelectorPaintable_Param : access PreGameSelectorPaintable_Package.PreGameSelectorPaintable'Class; nextGameState_Param : access GameState_Package.GameState'Class; lockedIndex : Integer);
+   function Create (gameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class; preGameSelectorPaintable_Param : access PreGameSelectorPaintable_Package.PreGameSelectorPaintable'Class; nextGameState_Param : access GameState_Package.GameState'Class; lockedIndex : Integer) return PreGameSelectionGameInputProcessor_Access;
    procedure process (This : in out PreGameSelectionGameInputProcessor);
-   procedure onInput (This : in out PreGameSelectionGameInputProcessor; list_Param : access BasicArrayList'Class);
+   procedure onInput (This : in out PreGameSelectionGameInputProcessor; list_Param : access BasicArrayList_Package.BasicArrayList'Class);
    function getPreGameSelectorPaintable (This : in out PreGameSelectionGameInputProcessor) return PreGameSelectorPaintable_Access;
-   procedure processInput (This : in out PreGameSelectionGameInputProcessor; layerManager_Param : access AllBinaryLayerManager'Class);
+   procedure processInput (This : in out PreGameSelectionGameInputProcessor; layerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class);
    procedure initInputProcessors (This : in out PreGameSelectionGameInputProcessor);
    function getName (This : in out PreGameSelectionGameInputProcessor) return Unbounded_String;
    function getPlayerGameInput (This : in out PreGameSelectionGameInputProcessor) return PlayerGameInput_Access;

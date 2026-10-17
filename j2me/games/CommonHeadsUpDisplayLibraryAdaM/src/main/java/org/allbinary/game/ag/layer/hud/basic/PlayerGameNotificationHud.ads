@@ -87,19 +87,19 @@ package org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package 
       width : Integer;
    end record;
 
-   procedure Initialize (This : in out PlayerGameNotificationHud'Class; location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor'Class);
-   function Create (location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor'Class) return PlayerGameNotificationHud_Access;
-   procedure updateMeasurement (This : in out PlayerGameNotificationHud; graphics_Param : access Graphics'Class);
+   procedure Initialize (This : in out PlayerGameNotificationHud'Class; location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class);
+   function Create (location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) return PlayerGameNotificationHud_Access;
+   procedure updateMeasurement (This : in out PlayerGameNotificationHud; graphics_Param : access Graphics_Package.Graphics'Class);
    function getPoint (This : in out PlayerGameNotificationHud; x : Integer; y : Integer) return GPoint_Access;
    procedure getPoint (This : in out PlayerGameNotificationHud; x : Integer; y : Integer);
-   procedure add (This : in out PlayerGameNotificationHud; string_Id : Unbounded_String; seconds : Integer; basicColor_Param : access BasicColor'Class; permanent : Boolean);
+   procedure add (This : in out PlayerGameNotificationHud; string_Id : Unbounded_String; seconds : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class; permanent : Boolean);
    procedure processTick (This : in out PlayerGameNotificationHud);
    procedure setAndRemove (This : in out PlayerGameNotificationHud);
    procedure setAndRemoveProcess (This : in out PlayerGameNotificationHud);
    procedure setNextUnremoveable (This : in out PlayerGameNotificationHud);
    procedure setNextUnremoveableProcess (This : in out PlayerGameNotificationHud);
    procedure clear (This : in out PlayerGameNotificationHud);
-   procedure paint (This : in out PlayerGameNotificationHud; graphics_Param : access Graphics'Class);
+   procedure paint (This : in out PlayerGameNotificationHud; graphics_Param : access Graphics_Package.Graphics'Class);
 
 end org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Package;
 
@@ -164,8 +164,8 @@ package org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package is
       updateMeasurementProcessor : PlayerGameNotificationHud_Access;
    end record;
 
-   procedure Initialize (This : in out SetAndRemoveProcessor'Class; updateMeasurementProcessor_Param : access PlayerGameNotificationHud'Class);
-   function Create (updateMeasurementProcessor_Param : access PlayerGameNotificationHud'Class) return SetAndRemoveProcessor_Access;
+   procedure Initialize (This : in out SetAndRemoveProcessor'Class; updateMeasurementProcessor_Param : access PlayerGameNotificationHud_Package.PlayerGameNotificationHud'Class);
+   function Create (updateMeasurementProcessor_Param : access PlayerGameNotificationHud_Package.PlayerGameNotificationHud'Class) return SetAndRemoveProcessor_Access;
    procedure process (This : in out SetAndRemoveProcessor);
 
 end org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package;
@@ -231,8 +231,8 @@ package org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package 
       updateMeasurementProcessor : PlayerGameNotificationHud_Access;
    end record;
 
-   procedure Initialize (This : in out NextUnremoveableProcessor'Class; updateMeasurementProcessor_Param : access PlayerGameNotificationHud'Class);
-   function Create (updateMeasurementProcessor_Param : access PlayerGameNotificationHud'Class) return NextUnremoveableProcessor_Access;
+   procedure Initialize (This : in out NextUnremoveableProcessor'Class; updateMeasurementProcessor_Param : access PlayerGameNotificationHud_Package.PlayerGameNotificationHud'Class);
+   function Create (updateMeasurementProcessor_Param : access PlayerGameNotificationHud_Package.PlayerGameNotificationHud'Class) return NextUnremoveableProcessor_Access;
    procedure process (This : in out NextUnremoveableProcessor);
 
 end org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Package;

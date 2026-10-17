@@ -37,8 +37,8 @@ package org.allbinary.input.automation.PointHelper_Package is
 
    procedure Initialize (This : in out PointHelper'Class);
    function Create return PointHelper_Access;
-   function getCenterPoint (rectangle_Param : access Rectangle'Class) return Point_Access;
-   procedure getCenterPoint (rectangle_Param : access Rectangle'Class);
+   function getCenterPoint (rectangle_Param : access Rectangle_Package.Rectangle'Class) return Point_Access;
+   procedure getCenterPoint (rectangle_Param : access Rectangle_Package.Rectangle'Class);
 
 end org.allbinary.input.automation.PointHelper_Package;
 

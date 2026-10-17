@@ -38,8 +38,8 @@ package org.allbinary.game.input.RTSLayerFormFactory_Package is
 
    procedure Initialize (This : in out RTSLayerFormFactory'Class);
    function Create return RTSLayerFormFactory_Access;
-   function getInstance (This : in out RTSLayerFormFactory; rtsLayer_Param : access RTSLayer'Class) return ScrollSelectionForm_Access;
-   procedure getInstance (This : in out RTSLayerFormFactory; rtsLayer_Param : access RTSLayer'Class);
+   function getInstance (This : in out RTSLayerFormFactory; rtsLayer_Param : access RTSLayer_Package.RTSLayer'Class) return ScrollSelectionForm_Access;
+   procedure getInstance (This : in out RTSLayerFormFactory; rtsLayer_Param : access RTSLayer_Package.RTSLayer'Class);
 
 end org.allbinary.game.input.RTSLayerFormFactory_Package;
 

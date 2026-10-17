@@ -49,8 +49,8 @@ package taghelpers.StoreTagWorkFlowHelper_Package is
       storeWorkFlowInterface : StoreWorkFlowInterface_Access;
    end record;
 
-   procedure Initialize (This : in out StoreTagWorkFlowHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
-   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return StoreTagWorkFlowHelper_Access;
+   procedure Initialize (This : in out StoreTagWorkFlowHelper'Class; hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class);
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return StoreTagWorkFlowHelper_Access;
    function process (This : in out StoreTagWorkFlowHelper) return Integer;
 
 end taghelpers.StoreTagWorkFlowHelper_Package;

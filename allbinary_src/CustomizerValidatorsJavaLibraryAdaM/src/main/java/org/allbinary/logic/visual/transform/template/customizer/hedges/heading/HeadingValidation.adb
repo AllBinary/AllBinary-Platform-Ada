@@ -39,8 +39,8 @@ package body org.allbinary.logic.visual.transform.template.customizer.hedges.hea
       return This;
    end Create;
 
-   procedure Initialize (This : in out HeadingValidation'Class; document_Param : access Document'Class) is
-      document : Document_Access := Document_Access (document_Param);
+   procedure Initialize (This : in out HeadingValidation'Class; document_Param : access Document_Package.Document'Class) is
+      document : constant Document_Access := Document_Access (document_Param);
       headingNodeList : NodeList_Access;
       titleNode : Node_Access;
       logoNode : Node_Access;
@@ -54,22 +54,22 @@ package body org.allbinary.logic.visual.transform.template.customizer.hedges.hea
         This.logo := LogoValidation_Package.Create (logoNode);
    end Initialize;
 
-   function Create (document_Param : access Document'Class) return HeadingValidation_Access is
+   function Create (document_Param : access Document_Package.Document'Class) return HeadingValidation_Access is
       This : constant HeadingValidation_Access := new HeadingValidation;
    begin
       HeadingValidation_Package.Initialize (This.all, document_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out HeadingValidation'Class; hashMap_Param : access HashMap'Class) is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+   procedure Initialize (This : in out HeadingValidation'Class; hashMap_Param : access HashMap_Package.HashMap'Class) is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
       Validation_Package.Initialize (This);
       Initialize_Fields (This);
         This.getFormData (hashMap);
    end Initialize;
 
-   function Create (hashMap_Param : access HashMap'Class) return HeadingValidation_Access is
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return HeadingValidation_Access is
       This : constant HeadingValidation_Access := new HeadingValidation;
    begin
       HeadingValidation_Package.Initialize (This.all, hashMap_Param);
@@ -77,8 +77,8 @@ package body org.allbinary.logic.visual.transform.template.customizer.hedges.hea
    end Create;
 
    --  throws Exception
-   procedure getFormData (This : in out HeadingValidation; hashMap_Param : access HashMap'Class) is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+   procedure getFormData (This : in out HeadingValidation; hashMap_Param : access HashMap_Package.HashMap'Class) is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
         This.title := TitleValidation_Package.Create (hashMap);
         This.logo := LogoValidation_Package.Create (hashMap);
@@ -166,15 +166,15 @@ package body org.allbinary.logic.visual.transform.template.customizer.hedges.hea
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out HeadingValidation; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toValidationInfoNode (This : in out HeadingValidation; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
 
    --  throws Exception
-   function toXmlNode (This : in out HeadingValidation; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out HeadingValidation; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       node : Node_Access;
    begin
         node := document.createElement (HeadingData_Package.NAME);
@@ -183,14 +183,14 @@ package body org.allbinary.logic.visual.transform.template.customizer.hedges.hea
         return node;
    end toXmlNode;
 
-   procedure toValidationInfoNode (This : in out HeadingValidation; document_Param : access Document'Class) is
+   procedure toValidationInfoNode (This : in out HeadingValidation; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := HeadingValidation'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
 
-   procedure toXmlNode (This : in out HeadingValidation; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out HeadingValidation; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := HeadingValidation'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

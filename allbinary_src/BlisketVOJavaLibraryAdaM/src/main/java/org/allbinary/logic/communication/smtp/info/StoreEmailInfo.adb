@@ -23,8 +23,8 @@ package body org.allbinary.logic.communication.smtp.info.StoreEmailInfo_Package 
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out StoreEmailInfo'Class; storeFrontInterface_Param : access StoreFrontInterface'Class; subject : Unbounded_String; textBody : Unbounded_String) is
-      storeFrontInterface : StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
+   procedure Initialize (This : in out StoreEmailInfo'Class; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class; subject : Unbounded_String; textBody : Unbounded_String) is
+      storeFrontInterface : constant StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
       commonStrings : CommonStrings_Access;
    begin
         BasicEmailInfo_Package.Initialize (This, subject, textBody);
@@ -37,7 +37,7 @@ package body org.allbinary.logic.communication.smtp.info.StoreEmailInfo_Package 
         This.init;
    end Initialize;
 
-   function Create (storeFrontInterface_Param : access StoreFrontInterface'Class; subject : Unbounded_String; textBody : Unbounded_String) return StoreEmailInfo_Access is
+   function Create (storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class; subject : Unbounded_String; textBody : Unbounded_String) return StoreEmailInfo_Access is
       This : constant StoreEmailInfo_Access := new StoreEmailInfo;
    begin
       StoreEmailInfo_Package.Initialize (This.all, storeFrontInterface_Param, subject, textBody);

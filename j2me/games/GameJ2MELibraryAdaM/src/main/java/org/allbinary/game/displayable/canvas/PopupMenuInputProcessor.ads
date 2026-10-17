@@ -67,14 +67,14 @@ package org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Package is
       rectangle : Rectangle_Access;
    end record;
 
-   procedure Initialize (This : in out PopupMenuInputProcessor'Class; gameKeyEventList_Param : access BasicArrayList'Class; playerInputId : Integer; gameCanvas_Param : access MyCanvas'Class; rectangle_Param : access Rectangle'Class);
-   function Create (gameKeyEventList_Param : access BasicArrayList'Class; playerInputId : Integer; gameCanvas_Param : access MyCanvas'Class; rectangle_Param : access Rectangle'Class) return PopupMenuInputProcessor_Access;
-   procedure init (This : in out PopupMenuInputProcessor; rectangle_Param : access Rectangle'Class);
+   procedure Initialize (This : in out PopupMenuInputProcessor'Class; gameKeyEventList_Param : access BasicArrayList_Package.BasicArrayList'Class; playerInputId : Integer; gameCanvas_Param : access MyCanvas_Package.MyCanvas'Class; rectangle_Param : access Rectangle_Package.Rectangle'Class);
+   function Create (gameKeyEventList_Param : access BasicArrayList_Package.BasicArrayList'Class; playerInputId : Integer; gameCanvas_Param : access MyCanvas_Package.MyCanvas'Class; rectangle_Param : access Rectangle_Package.Rectangle'Class) return PopupMenuInputProcessor_Access;
+   procedure init (This : in out PopupMenuInputProcessor; rectangle_Param : access Rectangle_Package.Rectangle'Class);
    function processInput (This : in out PopupMenuInputProcessor; key : Integer) return Integer;
    procedure processInput (This : in out PopupMenuInputProcessor; key : Integer);
    function processInputList (This : in out PopupMenuInputProcessor) return Integer;
    function processMotionInputs (This : in out PopupMenuInputProcessor) return Integer;
-   procedure processMotionInput (This : in out PopupMenuInputProcessor; motionGestureEvent_Param : access MotionGestureEvent'Class);
+   procedure processMotionInput (This : in out PopupMenuInputProcessor; motionGestureEvent_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class);
 
 end org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Package;
 

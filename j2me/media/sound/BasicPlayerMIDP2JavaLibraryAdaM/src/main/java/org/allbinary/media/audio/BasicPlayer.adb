@@ -59,16 +59,16 @@ package body org.allbinary.media.audio.BasicPlayer_Package is
         null;
    end close;
 
-   procedure addPlayerListener (This : in out BasicPlayer; playerListener_Param : access PlayerListener'Class) is
-      playerListener : PlayerListener_Access := PlayerListener_Access (playerListener_Param);
+   procedure addPlayerListener (This : in out BasicPlayer; playerListener_Param : access PlayerListener_Package.PlayerListener'Class) is
+      playerListener : constant PlayerListener_Access := PlayerListener_Access (playerListener_Param);
    begin
         if not (This.listenersList.contains (playerListener)) then
             This.listenersList.add (playerListener);
         end if;
    end addPlayerListener;
 
-   procedure removePlayerListener (This : in out BasicPlayer; playerListener_Param : access PlayerListener'Class) is
-      playerListener : PlayerListener_Access := PlayerListener_Access (playerListener_Param);
+   procedure removePlayerListener (This : in out BasicPlayer; playerListener_Param : access PlayerListener_Package.PlayerListener'Class) is
+      playerListener : constant PlayerListener_Access := PlayerListener_Access (playerListener_Param);
    begin
         This.listenersList.remove (playerListener);
    end removePlayerListener;
@@ -98,8 +98,8 @@ package body org.allbinary.media.audio.BasicPlayer_Package is
         return This.timeBase;
    end getTimeBase;
 
-   procedure setTimeBase (This : in out BasicPlayer; timeBase_Param : access TimeBase'Class) is
-      timeBase : TimeBase_Access := TimeBase_Access (timeBase_Param);
+   procedure setTimeBase (This : in out BasicPlayer; timeBase_Param : access TimeBase_Package.TimeBase'Class) is
+      timeBase : constant TimeBase_Access := TimeBase_Access (timeBase_Param);
    begin
         This.timeBase := timeBase;
    end setTimeBase;

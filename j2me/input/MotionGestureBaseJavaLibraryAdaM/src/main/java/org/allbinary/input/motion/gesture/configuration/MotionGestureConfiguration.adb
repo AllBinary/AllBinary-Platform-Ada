@@ -42,9 +42,9 @@ package body org.allbinary.input.motion.gesture.configuration.MotionGestureConfi
       return This;
    end Create;
 
-   procedure addMotionGestureAction (This : in out MotionGestureConfiguration; list_Param : access BasicArrayList'Class; commandAction_Param : access CompleteMotionGestureInputEvent'Class) is
-      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
-      commandAction : CompleteMotionGestureInputEvent_Access := CompleteMotionGestureInputEvent_Access (commandAction_Param);
+   procedure addMotionGestureAction (This : in out MotionGestureConfiguration; list_Param : access BasicArrayList_Package.BasicArrayList'Class; commandAction_Param : access CompleteMotionGestureInputEvent_Package.CompleteMotionGestureInputEvent'Class) is
+      list : constant BasicArrayList_Access := BasicArrayList_Access (list_Param);
+      commandAction : constant CompleteMotionGestureInputEvent_Access := CompleteMotionGestureInputEvent_Access (commandAction_Param);
    begin
         This.activeCommands.add (MotionGestureToMotionGestureActionAssociation_Package.Create (list, commandAction));
    end addMotionGestureAction;
@@ -114,8 +114,8 @@ package body org.allbinary.input.motion.gesture.configuration.MotionGestureConfi
         return This.color;
    end getColor;
 
-   procedure setColor (This : in out MotionGestureConfiguration; color_Param : access BasicColor'Class) is
-      color : BasicColor_Access := BasicColor_Access (color_Param);
+   procedure setColor (This : in out MotionGestureConfiguration; color_Param : access BasicColor_Package.BasicColor'Class) is
+      color : constant BasicColor_Access := BasicColor_Access (color_Param);
    begin
         This.color := color;
    end setColor;

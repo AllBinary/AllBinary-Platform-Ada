@@ -55,18 +55,18 @@ package org.allbinary.input.automation.module.configuration.InputAutomationModul
       hashMap : HashMap_Access;
    end record;
 
-   procedure Initialize (This : in out InputAutomationModuleConfigurations'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; file_Param : access File'Class);
-   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; file_Param : access File'Class) return InputAutomationModuleConfigurations_Access;
-   procedure Initialize (This : in out InputAutomationModuleConfigurations'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; document_Param : access Document'Class);
-   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; document_Param : access Document'Class) return InputAutomationModuleConfigurations_Access;
-   procedure Initialize (This : in out InputAutomationModuleConfigurations'Class; inputAutomationModuleConfigurationList_Param : access List'Class);
-   function Create (inputAutomationModuleConfigurationList_Param : access List'Class) return InputAutomationModuleConfigurations_Access;
+   procedure Initialize (This : in out InputAutomationModuleConfigurations'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; file_Param : access File_Package.File'Class);
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; file_Param : access File_Package.File'Class) return InputAutomationModuleConfigurations_Access;
+   procedure Initialize (This : in out InputAutomationModuleConfigurations'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; document_Param : access Document_Package.Document'Class);
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; document_Param : access Document_Package.Document'Class) return InputAutomationModuleConfigurations_Access;
+   procedure Initialize (This : in out InputAutomationModuleConfigurations'Class; inputAutomationModuleConfigurationList_Param : access List_Package.List'Class);
+   function Create (inputAutomationModuleConfigurationList_Param : access List_Package.List'Class) return InputAutomationModuleConfigurations_Access;
    procedure Initialize (This : in out InputAutomationModuleConfigurations'Class);
    function Create return InputAutomationModuleConfigurations_Access;
-   procedure add (This : in out InputAutomationModuleConfigurations; inputAutomationModuleConfiguration_Param : access InputAutomationModuleConfiguration'Class);
-   procedure remove (This : in out InputAutomationModuleConfigurations; inputAutomationModuleConfiguration_Param : access InputAutomationModuleConfiguration'Class);
+   procedure add (This : in out InputAutomationModuleConfigurations; inputAutomationModuleConfiguration_Param : access InputAutomationModuleConfiguration_Package.InputAutomationModuleConfiguration'Class);
+   procedure remove (This : in out InputAutomationModuleConfigurations; inputAutomationModuleConfiguration_Param : access InputAutomationModuleConfiguration_Package.InputAutomationModuleConfiguration'Class);
    function getHashMap (This : in out InputAutomationModuleConfigurations) return HashMap_Access;
-   procedure setHashMap (This : in out InputAutomationModuleConfigurations; hashMap_Param : access HashMap'Class);
+   procedure setHashMap (This : in out InputAutomationModuleConfigurations; hashMap_Param : access HashMap_Package.HashMap'Class);
 
 end org.allbinary.input.automation.module.configuration.InputAutomationModuleConfigurations_Package;
 

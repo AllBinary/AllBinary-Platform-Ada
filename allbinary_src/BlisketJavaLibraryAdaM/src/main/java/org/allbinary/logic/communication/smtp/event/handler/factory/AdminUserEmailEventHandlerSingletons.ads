@@ -60,8 +60,8 @@ package org.allbinary.logic.communication.smtp.event.handler.factory.AdminUserEm
    procedure Initialize (This : in out AdminUserEmailEventHandlerSingletons'Class);
    function Create return AdminUserEmailEventHandlerSingletons_Access;
    function getInstance return AdminUserEmailEventHandlerSingletons_Access;
-   function getInstance (This : in out AdminUserEmailEventHandlerSingletons; abeClientInformation_Param : access AbeClientInformationInterface'Class; userEmailEventNameData_Param : access UserEmailEventNameData'Class) return UserEmailEventHandler_Access;
-   procedure getInstance (This : in out AdminUserEmailEventHandlerSingletons; abeClientInformation_Param : access AbeClientInformationInterface'Class; userEmailEventNameData_Param : access UserEmailEventNameData'Class);
+   function getInstance (This : in out AdminUserEmailEventHandlerSingletons; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; userEmailEventNameData_Param : access UserEmailEventNameData_Package.UserEmailEventNameData'Class) return UserEmailEventHandler_Access;
+   procedure getInstance (This : in out AdminUserEmailEventHandlerSingletons; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; userEmailEventNameData_Param : access UserEmailEventNameData_Package.UserEmailEventNameData'Class);
 
 end org.allbinary.logic.communication.smtp.event.handler.factory.AdminUserEmailEventHandlerSingletons_Package;
 

@@ -36,8 +36,8 @@ package body org.allbinary.business.advertisement.Advertisements_Package is
    end Create;
 
 
-   procedure addPage (This : in out Advertisements; advertisementProcessorInterface_Param : access AdvertisementProcessorInterface'Class) is
-      advertisementProcessorInterface : AdvertisementProcessorInterface_Access := AdvertisementProcessorInterface_Access (advertisementProcessorInterface_Param);
+   procedure addPage (This : in out Advertisements; advertisementProcessorInterface_Param : access AdvertisementProcessorInterface_Package.AdvertisementProcessorInterface'Class) is
+      advertisementProcessorInterface : constant AdvertisementProcessorInterface_Access := AdvertisementProcessorInterface_Access (advertisementProcessorInterface_Param);
    begin
         if not (This.pageList.contains (advertisementProcessorInterface)) then
             This.pageList.add (advertisementProcessorInterface);
@@ -83,8 +83,8 @@ package body org.allbinary.business.advertisement.Advertisements_Package is
         end loop;
    end stopAllPage;
 
-   procedure addBanner (This : in out Advertisements; advertisementProcessorInterface_Param : access AdvertisementProcessorInterface'Class) is
-      advertisementProcessorInterface : AdvertisementProcessorInterface_Access := AdvertisementProcessorInterface_Access (advertisementProcessorInterface_Param);
+   procedure addBanner (This : in out Advertisements; advertisementProcessorInterface_Param : access AdvertisementProcessorInterface_Package.AdvertisementProcessorInterface'Class) is
+      advertisementProcessorInterface : constant AdvertisementProcessorInterface_Access := AdvertisementProcessorInterface_Access (advertisementProcessorInterface_Param);
    begin
         if not (This.bannerList.contains (advertisementProcessorInterface)) then
             This.bannerList.add (advertisementProcessorInterface);

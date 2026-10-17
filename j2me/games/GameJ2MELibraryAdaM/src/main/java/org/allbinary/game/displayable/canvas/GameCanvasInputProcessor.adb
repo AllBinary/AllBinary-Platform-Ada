@@ -30,8 +30,8 @@ package body org.allbinary.game.displayable.canvas.GameCanvasInputProcessor_Pack
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GameCanvasInputProcessor'Class; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class) is
-      allBinaryGameCanvas : AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (allBinaryGameCanvas_Param);
+   procedure Initialize (This : in out GameCanvasInputProcessor'Class; allBinaryGameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class) is
+      allBinaryGameCanvas : constant AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (allBinaryGameCanvas_Param);
    begin
       InputProcessor_Package.Initialize (This);
       Initialize_Fields (This);
@@ -39,7 +39,7 @@ package body org.allbinary.game.displayable.canvas.GameCanvasInputProcessor_Pack
         This.inputToGameKeyMapping.init (This.allBinaryGameCanvas);
    end Initialize;
 
-   function Create (allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class) return GameCanvasInputProcessor_Access is
+   function Create (allBinaryGameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class) return GameCanvasInputProcessor_Access is
       This : constant GameCanvasInputProcessor_Access := new GameCanvasInputProcessor;
    begin
       GameCanvasInputProcessor_Package.Initialize (This.all, allBinaryGameCanvas_Param);
@@ -73,14 +73,14 @@ package body org.allbinary.game.displayable.canvas.GameCanvasInputProcessor_Pack
         end;
    end keyPressedByDevice;
 
-   procedure keyReleasedByDevice (This : in out GameCanvasInputProcessor; canvas_Param : access Canvas'Class; keyCode : Integer; deviceId : Integer) is
-      canvas : Canvas_Access := Canvas_Access (canvas_Param);
+   procedure keyReleasedByDevice (This : in out GameCanvasInputProcessor; canvas_Param : access Canvas_Package.Canvas'Class; keyCode : Integer; deviceId : Integer) is
+      canvas : constant Canvas_Access := Canvas_Access (canvas_Param);
    begin
         This.removeGameKeyEvent (canvas, keyCode, deviceId, False);
    end keyReleasedByDevice;
 
-   procedure removeGameKeyEvent (This : in out GameCanvasInputProcessor; canvas_Param : access Canvas'Class; keyCode : Integer; deviceId : Integer; repeated : Boolean) is
-      canvas : Canvas_Access := Canvas_Access (canvas_Param);
+   procedure removeGameKeyEvent (This : in out GameCanvasInputProcessor; canvas_Param : access Canvas_Package.Canvas'Class; keyCode : Integer; deviceId : Integer; repeated : Boolean) is
+      canvas : constant Canvas_Access := Canvas_Access (canvas_Param);
       gameKey : GameKey_Access;
       gameKeyEventSourceInterface : GameKeyEventSourceInterface_Access;
       gameKeyEvent : GameKeyEvent_Access;

@@ -33,9 +33,9 @@ package body org.allbinary.media.image.search.ImageComparisonSearch_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ImageComparisonSearch'Class; bufferedImage_Param : access BufferedImage'Class; bufferedImage2_Param : access BufferedImage'Class; tolerance : Integer) is
-      bufferedImage : BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
-      bufferedImage2 : BufferedImage_Access := BufferedImage_Access (bufferedImage2_Param);
+   procedure Initialize (This : in out ImageComparisonSearch'Class; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; bufferedImage2_Param : access BufferedImage_Package.BufferedImage'Class; tolerance : Integer) is
+      bufferedImage : constant BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
+      bufferedImage2 : constant BufferedImage_Access := BufferedImage_Access (bufferedImage2_Param);
       imageUtil : ImageUtil_Access;
    begin
       Initialize_Fields (This);
@@ -69,7 +69,7 @@ package body org.allbinary.media.image.search.ImageComparisonSearch_Package is
         end if;
    end Initialize;
 
-   function Create (bufferedImage_Param : access BufferedImage'Class; bufferedImage2_Param : access BufferedImage'Class; tolerance : Integer) return ImageComparisonSearch_Access is
+   function Create (bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; bufferedImage2_Param : access BufferedImage_Package.BufferedImage'Class; tolerance : Integer) return ImageComparisonSearch_Access is
       This : constant ImageComparisonSearch_Access := new ImageComparisonSearch;
    begin
       ImageComparisonSearch_Package.Initialize (This.all, bufferedImage_Param, bufferedImage2_Param, tolerance);
@@ -84,8 +84,8 @@ package body org.allbinary.media.image.search.ImageComparisonSearch_Package is
         return This.matchingPercent;
    end getMatchingPercent;
 
-   procedure add (This : in out ImageComparisonSearch; pixel_Param : access PixelDelta'Class) is
-      pixel : PixelDelta_Access := PixelDelta_Access (pixel_Param);
+   procedure add (This : in out ImageComparisonSearch; pixel_Param : access PixelDelta_Package.PixelDelta'Class) is
+      pixel : constant PixelDelta_Access := PixelDelta_Access (pixel_Param);
    begin
         This.nonMatchingPixelVector.add (pixel);
    end add;

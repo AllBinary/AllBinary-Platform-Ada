@@ -44,8 +44,8 @@ package org.allbinary.logic.communication.ftp.configuration.FtpConfigurationMapp
       ftpConfigurationInterface : FtpConfigurationInterface_Access;
    end record;
 
-   procedure Initialize (This : in out FtpConfigurationMapping'Class; ftpConfigurationInterface_Param : access FtpConfigurationInterface'Class);
-   function Create (ftpConfigurationInterface_Param : access FtpConfigurationInterface'Class) return FtpConfigurationMapping_Access;
+   procedure Initialize (This : in out FtpConfigurationMapping'Class; ftpConfigurationInterface_Param : access FtpConfigurationInterface_Package.FtpConfigurationInterface'Class);
+   function Create (ftpConfigurationInterface_Param : access FtpConfigurationInterface_Package.FtpConfigurationInterface'Class) return FtpConfigurationMapping_Access;
    function toHashMap (This : in out FtpConfigurationMapping) return HashMap_Access;
    function getKey (This : in out FtpConfigurationMapping) return Java_Object_Access;
    function toVector (This : in out FtpConfigurationMapping) return BasicArrayList_Access;

@@ -45,8 +45,8 @@ package org.allbinary.animation.image.ImageSegmentAnimation_Package is
       sequenceArray : Integer_Array_Access;
    end record;
 
-   procedure Initialize (This : in out ImageSegmentAnimation'Class; image_Param : access Image'Class; sequenceArray : Integer_Array_Access; animationBehavior_Param : access AnimationBehavior'Class);
-   function Create (image_Param : access Image'Class; sequenceArray : Integer_Array_Access; animationBehavior_Param : access AnimationBehavior'Class) return ImageSegmentAnimation_Access;
+   procedure Initialize (This : in out ImageSegmentAnimation'Class; image_Param : access Image_Package.Image'Class; sequenceArray : Integer_Array_Access; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class);
+   function Create (image_Param : access Image_Package.Image'Class; sequenceArray : Integer_Array_Access; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return ImageSegmentAnimation_Access;
    procedure nextFrame (This : in out ImageSegmentAnimation);
    procedure previousFrame (This : in out ImageSegmentAnimation);
    procedure setFrame (This : in out ImageSegmentAnimation; index : Integer);
@@ -54,7 +54,7 @@ package org.allbinary.animation.image.ImageSegmentAnimation_Package is
    function getSize (This : in out ImageSegmentAnimation) return Integer;
    procedure setSequence (This : in out ImageSegmentAnimation; sequenceArray : Integer_Array_Access);
    function getSequence (This : in out ImageSegmentAnimation) return Integer_Array_Access;
-   procedure paintXY (This : in out ImageSegmentAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
+   procedure paintXY (This : in out ImageSegmentAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
    function getStartX (This : in out ImageSegmentAnimation) return Integer;
    procedure setStartX (This : in out ImageSegmentAnimation; startX : Integer);
    function getStartY (This : in out ImageSegmentAnimation) return Integer;

@@ -43,9 +43,9 @@ package body org.allbinary.business.user.commerce.money.tax.TaxFactory_Package i
    end Create;
 
    --  throws Exception
-   function getInstance (This : in out TaxFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; storeFrontInterface_Param : access StoreFrontInterface'Class) return TaxModuleInterface_Access is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      storeFrontInterface : StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
+   function getInstance (This : in out TaxFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) return TaxModuleInterface_Access is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      storeFrontInterface : constant StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
       stringBuffer : StringMaker_Access;
       abPath : AbPath_Access;
       transformInfoObjectConfigData : TransformInfoObjectConfigData_Access;
@@ -94,7 +94,7 @@ package body org.allbinary.business.user.commerce.money.tax.TaxFactory_Package i
         return TaxModuleInterface_Access (SimpleStateTaxModule_Package.Create);
    end getInstance;
 
-   procedure getInstance (This : in out TaxFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; storeFrontInterface_Param : access StoreFrontInterface'Class) is
+   procedure getInstance (This : in out TaxFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) is
       Java_Result : constant TaxModuleInterface_Access := TaxFactory'Class (This).getInstance (abeClientInformation_Param, storeFrontInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

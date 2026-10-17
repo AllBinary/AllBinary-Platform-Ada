@@ -41,8 +41,8 @@ package body org.allbinary.android.input.motion.AnalogControllerHelper_Package i
    end Create;
 
    --  throws Exception
-   procedure right (This : in out AnalogControllerHelper; collidableDestroyableDamageableLayer_Param : access CollidableDestroyableDamageableLayer'Class; xAnalogValue : Integer) is
-      collidableDestroyableDamageableLayer : CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (collidableDestroyableDamageableLayer_Param);
+   procedure right (This : in out AnalogControllerHelper; collidableDestroyableDamageableLayer_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class; xAnalogValue : Integer) is
+      collidableDestroyableDamageableLayer : constant CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (collidableDestroyableDamageableLayer_Param);
    begin
         This.rightTimeElapsedHelper.delay_Id := (Java_Shift_Right_Arithmetic (((This.SCALE_VALUE) - (xAnalogValue)), This.reduceTimeFactor));
         if This.rightTimeElapsedHelper.isTimeTNT then
@@ -51,8 +51,8 @@ package body org.allbinary.android.input.motion.AnalogControllerHelper_Package i
    end right;
 
    --  throws Exception
-   procedure left (This : in out AnalogControllerHelper; collidableDestroyableDamageableLayer_Param : access CollidableDestroyableDamageableLayer'Class; xAnalogValue : Integer) is
-      collidableDestroyableDamageableLayer : CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (collidableDestroyableDamageableLayer_Param);
+   procedure left (This : in out AnalogControllerHelper; collidableDestroyableDamageableLayer_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class; xAnalogValue : Integer) is
+      collidableDestroyableDamageableLayer : constant CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (collidableDestroyableDamageableLayer_Param);
    begin
         This.leftTimeElapsedHelper.delay_Id := (Java_Shift_Right_Arithmetic (((This.SCALE_VALUE) + (xAnalogValue)), This.reduceTimeFactor));
         if This.leftTimeElapsedHelper.isTimeTNT then
@@ -61,8 +61,8 @@ package body org.allbinary.android.input.motion.AnalogControllerHelper_Package i
    end left;
 
    --  throws Exception
-   procedure up (This : in out AnalogControllerHelper; collidableDestroyableDamageableLayer_Param : access CollidableDestroyableDamageableLayer'Class; xAnalogValue : Integer) is
-      collidableDestroyableDamageableLayer : CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (collidableDestroyableDamageableLayer_Param);
+   procedure up (This : in out AnalogControllerHelper; collidableDestroyableDamageableLayer_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class; xAnalogValue : Integer) is
+      collidableDestroyableDamageableLayer : constant CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (collidableDestroyableDamageableLayer_Param);
    begin
         This.upTimeElapsedHelper.delay_Id := (Java_Shift_Right_Arithmetic (((This.SCALE_VALUE) - (xAnalogValue)), This.reduceTimeFactor));
         if This.upTimeElapsedHelper.isTimeTNT then
@@ -71,8 +71,8 @@ package body org.allbinary.android.input.motion.AnalogControllerHelper_Package i
    end up;
 
    --  throws Exception
-   procedure down (This : in out AnalogControllerHelper; collidableDestroyableDamageableLayer_Param : access CollidableDestroyableDamageableLayer'Class; xAnalogValue : Integer) is
-      collidableDestroyableDamageableLayer : CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (collidableDestroyableDamageableLayer_Param);
+   procedure down (This : in out AnalogControllerHelper; collidableDestroyableDamageableLayer_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class; xAnalogValue : Integer) is
+      collidableDestroyableDamageableLayer : constant CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (collidableDestroyableDamageableLayer_Param);
    begin
         This.downTimeElapsedHelper.delay_Id := (Java_Shift_Right_Arithmetic (((This.SCALE_VALUE) + (xAnalogValue)), This.reduceTimeFactor));
         if This.downTimeElapsedHelper.isTimeTNT then

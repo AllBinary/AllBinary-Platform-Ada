@@ -35,8 +35,8 @@ package body org.allbinary.game.health.HealthBarAnimationInterfaceFactory_Packag
    end Create;
 
    --  throws Exception
-   function getInstanceByLocation (This : in out HealthBarAnimationInterfaceFactory; layerInterface_Param : access AllBinaryLayer'Class; location : Integer) return HealthBarAnimation_Access is
-      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
+   function getInstanceByLocation (This : in out HealthBarAnimationInterfaceFactory; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; location : Integer) return HealthBarAnimation_Access is
+      layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         return HealthBarThreedAnimation_Package.Create (layerInterface, location);
    end getInstanceByLocation;
@@ -48,19 +48,19 @@ package body org.allbinary.game.health.HealthBarAnimationInterfaceFactory_Packag
    end getInstance;
 
    --  throws Exception
-   function getInstanceAnimation (This : in out HealthBarAnimationInterfaceFactory; animationInterface_Param : access Animation'Class) return Animation_Access is
-      animationInterface : Animation_Access := Animation_Access (animationInterface_Param);
+   function getInstanceAnimation (This : in out HealthBarAnimationInterfaceFactory; animationInterface_Param : access Animation_Package.Animation'Class) return Animation_Access is
+      animationInterface : constant Animation_Access := Animation_Access (animationInterface_Param);
    begin
         return null;
    end getInstanceAnimation;
 
-   procedure setInitialScale (This : in out HealthBarAnimationInterfaceFactory; scaleProperties_Param : access ScaleProperties'Class) is
-      scaleProperties : ScaleProperties_Access := ScaleProperties_Access (scaleProperties_Param);
+   procedure setInitialScale (This : in out HealthBarAnimationInterfaceFactory; scaleProperties_Param : access ScaleProperties_Package.ScaleProperties'Class) is
+      scaleProperties : constant ScaleProperties_Access := ScaleProperties_Access (scaleProperties_Param);
    begin
         null;
    end setInitialScale;
 
-   procedure getInstanceByLocation (This : in out HealthBarAnimationInterfaceFactory; layerInterface_Param : access AllBinaryLayer'Class; location : Integer) is
+   procedure getInstanceByLocation (This : in out HealthBarAnimationInterfaceFactory; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; location : Integer) is
       Java_Result : constant HealthBarAnimation_Access := HealthBarAnimationInterfaceFactory'Class (This).getInstanceByLocation (layerInterface_Param, location);
       pragma Unreferenced (Java_Result);
    begin
@@ -74,7 +74,7 @@ package body org.allbinary.game.health.HealthBarAnimationInterfaceFactory_Packag
       null;
    end getInstance;
 
-   procedure getInstanceAnimation (This : in out HealthBarAnimationInterfaceFactory; animationInterface_Param : access Animation'Class) is
+   procedure getInstanceAnimation (This : in out HealthBarAnimationInterfaceFactory; animationInterface_Param : access Animation_Package.Animation'Class) is
       Java_Result : constant Animation_Access := HealthBarAnimationInterfaceFactory'Class (This).getInstanceAnimation (animationInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

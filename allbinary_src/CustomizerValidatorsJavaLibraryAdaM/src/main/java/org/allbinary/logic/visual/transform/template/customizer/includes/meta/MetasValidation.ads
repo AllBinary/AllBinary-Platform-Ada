@@ -68,15 +68,15 @@ package org.allbinary.logic.visual.transform.template.customizer.includes.meta.M
 
    procedure Initialize (This : in out MetasValidation'Class; storeName : Unbounded_String);
    function Create (storeName : Unbounded_String) return MetasValidation_Access;
-   procedure Initialize (This : in out MetasValidation'Class; document_Param : access Document'Class);
-   function Create (document_Param : access Document'Class) return MetasValidation_Access;
+   procedure Initialize (This : in out MetasValidation'Class; document_Param : access Document_Package.Document'Class);
+   function Create (document_Param : access Document_Package.Document'Class) return MetasValidation_Access;
    function isValid (This : in out MetasValidation) return Boolean;
    function validationInfo (This : in out MetasValidation) return Unbounded_String;
    function toValidationInfoDoc (This : in out MetasValidation) return Document_Access;
-   function toValidationInfoNode (This : in out MetasValidation; document_Param : access Document'Class) return Node_Access;
-   procedure toValidationInfoNode (This : in out MetasValidation; document_Param : access Document'Class);
-   function toXmlNode (This : in out MetasValidation; document_Param : access Document'Class) return Node_Access;
-   procedure toXmlNode (This : in out MetasValidation; document_Param : access Document'Class);
+   function toValidationInfoNode (This : in out MetasValidation; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out MetasValidation; document_Param : access Document_Package.Document'Class);
+   function toXmlNode (This : in out MetasValidation; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out MetasValidation; document_Param : access Document_Package.Document'Class);
 
 end org.allbinary.logic.visual.transform.template.customizer.includes.meta.MetasValidation_Package;
 

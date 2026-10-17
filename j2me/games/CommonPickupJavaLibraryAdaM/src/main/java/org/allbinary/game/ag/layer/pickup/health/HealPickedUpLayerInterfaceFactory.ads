@@ -58,7 +58,7 @@ package org.allbinary.game.ag.layer.pickup.health.HealPickedUpLayerInterfaceFact
    procedure init;
    function getTotal (This : in out HealPickedUpLayerInterfaceFactory) return Integer;
    function getInstance return PickedUpLayerInterfaceFactoryInterface_Access;
-   procedure process (This : in out HealPickedUpLayerInterfaceFactory; sourceLayerInterface_Param : access AllBinaryLayer'Class);
+   procedure process (This : in out HealPickedUpLayerInterfaceFactory; sourceLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class);
 
 end org.allbinary.game.ag.layer.pickup.health.HealPickedUpLayerInterfaceFactory_Package;
 

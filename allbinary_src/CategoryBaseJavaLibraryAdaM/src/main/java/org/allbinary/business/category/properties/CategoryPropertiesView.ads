@@ -44,10 +44,10 @@ package org.allbinary.business.category.properties.CategoryPropertiesView_Packag
       categoryPropertiesInterface : CategoryPropertiesInterface_Access;
    end record;
 
-   procedure Initialize (This : in out CategoryPropertiesView'Class; categoryPropertiesInterface_Param : access CategoryPropertiesInterface'Class);
-   function Create (categoryPropertiesInterface_Param : access CategoryPropertiesInterface'Class) return CategoryPropertiesView_Access;
-   function toXmlNode (This : in out CategoryPropertiesView; document_Param : access Document'Class) return Node_Access;
-   procedure toXmlNode (This : in out CategoryPropertiesView; document_Param : access Document'Class);
+   procedure Initialize (This : in out CategoryPropertiesView'Class; categoryPropertiesInterface_Param : access CategoryPropertiesInterface_Package.CategoryPropertiesInterface'Class);
+   function Create (categoryPropertiesInterface_Param : access CategoryPropertiesInterface_Package.CategoryPropertiesInterface'Class) return CategoryPropertiesView_Access;
+   function toXmlNode (This : in out CategoryPropertiesView; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out CategoryPropertiesView; document_Param : access Document_Package.Document'Class);
 
 end org.allbinary.business.category.properties.CategoryPropertiesView_Package;
 

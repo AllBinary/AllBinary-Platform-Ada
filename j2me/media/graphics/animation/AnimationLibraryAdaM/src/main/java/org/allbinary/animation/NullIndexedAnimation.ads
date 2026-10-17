@@ -21,8 +21,8 @@ package org.allbinary.animation.NullIndexedAnimation_Package is
 
    type NullIndexedAnimation is new IndexedAnimation with null record;
 
-   procedure Initialize (This : in out NullIndexedAnimation'Class; animationBehavior_Param : access AnimationBehavior'Class);
-   function Create (animationBehavior_Param : access AnimationBehavior'Class) return NullIndexedAnimation_Access;
+   procedure Initialize (This : in out NullIndexedAnimation'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class);
+   function Create (animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return NullIndexedAnimation_Access;
    function getAnimationSize (This : in out NullIndexedAnimation) return Integer;
 
 end org.allbinary.animation.NullIndexedAnimation_Package;

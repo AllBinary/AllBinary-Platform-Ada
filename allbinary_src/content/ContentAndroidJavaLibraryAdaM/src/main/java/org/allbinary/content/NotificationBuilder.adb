@@ -33,15 +33,15 @@ package body org.allbinary.content.NotificationBuilder_Package is
    end Create;
 
 
-   function build (This : in out NotificationBuilder; context_Param : access Context'Class; command_Param : access Command'Class; message : Unbounded_String; integer_Id : Integer; pendingIntent_Param : access PendingIntent'Class) return Parcelable_Access is
-      context : Context_Access := Context_Access (context_Param);
-      command : Command_Access := Command_Access (command_Param);
-      pendingIntent : PendingIntent_Access := PendingIntent_Access (pendingIntent_Param);
+   function build (This : in out NotificationBuilder; context_Param : access Context_Package.Context'Class; command_Param : access Command_Package.Command'Class; message : Unbounded_String; integer_Id : Integer; pendingIntent_Param : access PendingIntent_Package.PendingIntent'Class) return Parcelable_Access is
+      context : constant Context_Access := Context_Access (context_Param);
+      command : constant Command_Access := Command_Access (command_Param);
+      pendingIntent : constant PendingIntent_Access := PendingIntent_Access (pendingIntent_Param);
    begin
         return NullParcelable_Package.NULL_PARCELABLE;
    end build;
 
-   procedure build (This : in out NotificationBuilder; context_Param : access Context'Class; command_Param : access Command'Class; message : Unbounded_String; integer_Id : Integer; pendingIntent_Param : access PendingIntent'Class) is
+   procedure build (This : in out NotificationBuilder; context_Param : access Context_Package.Context'Class; command_Param : access Command_Package.Command'Class; message : Unbounded_String; integer_Id : Integer; pendingIntent_Param : access PendingIntent_Package.PendingIntent'Class) is
       Java_Result : constant Parcelable_Access := NotificationBuilder'Class (This).build (context_Param, command_Param, message, integer_Id, pendingIntent_Param);
       pragma Unreferenced (Java_Result);
    begin

@@ -56,10 +56,10 @@ package org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas
    CLOSE : Command_Access;
    NAME : Unbounded_String;
 
-   procedure Initialize (This : in out GameInputMappingInstructionsCanvas'Class; commandListener_Param : access CommandListener'Class; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class);
-   function Create (commandListener_Param : access CommandListener'Class; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class) return GameInputMappingInstructionsCanvas_Access;
-   procedure initCommands (This : in out GameInputMappingInstructionsCanvas; cmdListener_Param : access CommandListener'Class);
-   procedure paint (This : in out GameInputMappingInstructionsCanvas; graphics_Param : access Graphics'Class);
+   procedure Initialize (This : in out GameInputMappingInstructionsCanvas'Class; commandListener_Param : access CommandListener_Package.CommandListener'Class; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager_Package.AllBinaryGameLayerManager'Class);
+   function Create (commandListener_Param : access CommandListener_Package.CommandListener'Class; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager_Package.AllBinaryGameLayerManager'Class) return GameInputMappingInstructionsCanvas_Access;
+   procedure initCommands (This : in out GameInputMappingInstructionsCanvas; cmdListener_Param : access CommandListener_Package.CommandListener'Class);
+   procedure paint (This : in out GameInputMappingInstructionsCanvas; graphics_Param : access Graphics_Package.Graphics'Class);
 
 end org.allbinary.game.displayable.canvas.GameInputMappingInstructionsCanvas_Package;
 

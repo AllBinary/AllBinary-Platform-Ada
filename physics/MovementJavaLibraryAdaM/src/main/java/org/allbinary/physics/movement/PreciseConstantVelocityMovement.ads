@@ -35,10 +35,10 @@ package org.allbinary.physics.movement.PreciseConstantVelocityMovement_Package i
       factorValue : Integer;
    end record;
 
-   procedure Initialize (This : in out PreciseConstantVelocityMovement'Class; basicDecimal_Param : access BasicDecimal'Class; velocityProperties_Param : access BasicVelocityProperties'Class);
-   function Create (basicDecimal_Param : access BasicDecimal'Class; velocityProperties_Param : access BasicVelocityProperties'Class) return PreciseConstantVelocityMovement_Access;
-   procedure init (This : in out PreciseConstantVelocityMovement; speedBasicDecimal_Param : access BasicDecimal'Class; angle : Integer; otherAngle : Integer);
-   procedure process (This : in out PreciseConstantVelocityMovement; layer_Param : access AllBinaryGameLayer'Class);
+   procedure Initialize (This : in out PreciseConstantVelocityMovement'Class; basicDecimal_Param : access BasicDecimal_Package.BasicDecimal'Class; velocityProperties_Param : access BasicVelocityProperties_Package.BasicVelocityProperties'Class);
+   function Create (basicDecimal_Param : access BasicDecimal_Package.BasicDecimal'Class; velocityProperties_Param : access BasicVelocityProperties_Package.BasicVelocityProperties'Class) return PreciseConstantVelocityMovement_Access;
+   procedure init (This : in out PreciseConstantVelocityMovement; speedBasicDecimal_Param : access BasicDecimal_Package.BasicDecimal'Class; angle : Integer; otherAngle : Integer);
+   procedure process (This : in out PreciseConstantVelocityMovement; layer_Param : access AllBinaryGameLayer_Package.AllBinaryGameLayer'Class);
 
 end org.allbinary.physics.movement.PreciseConstantVelocityMovement_Package;
 

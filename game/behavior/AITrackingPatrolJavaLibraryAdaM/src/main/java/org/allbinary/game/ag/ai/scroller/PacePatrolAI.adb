@@ -24,10 +24,10 @@ package body org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PacePatrolAI'Class; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) is
-      hashtable : ABHashtable_Access := ABHashtable_Access (hashtable_Param);
-      ownerLayerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
-      gameInput : GameInput_Access := GameInput_Access (gameInput_Param);
+   procedure Initialize (This : in out PacePatrolAI'Class; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) is
+      hashtable : constant ABHashtable_Access := ABHashtable_Access (hashtable_Param);
+      ownerLayerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
+      gameInput : constant GameInput_Access := GameInput_Access (gameInput_Param);
    begin
         BasePatrolAI_Package.Initialize (This, hashtable, ownerLayerInterface, gameInput);
         Initialize_Fields (This);
@@ -35,7 +35,7 @@ package body org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package is
         This.trackingList := BasicArrayListD_Package.Create;
    end Initialize;
 
-   function Create (hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return PacePatrolAI_Access is
+   function Create (hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) return PacePatrolAI_Access is
       This : constant PacePatrolAI_Access := new PacePatrolAI;
    begin
       PacePatrolAI_Package.Initialize (This.all, hashtable_Param, ownerLayerInterface_Param, gameInput_Param);
@@ -43,8 +43,8 @@ package body org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package is
    end Create;
 
    --  throws Exception
-   procedure processAI (This : in out PacePatrolAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class) is
-      allBinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
+   procedure processAI (This : in out PacePatrolAI; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class) is
+      allBinaryLayerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
       direction : Direction_Access;
       directionFactory : DirectionFactory_Access;
    begin
@@ -123,14 +123,14 @@ package body org.allbinary.game.ag.ai.scroller.PacePatrolAI_Package is
         null;
    end disable;
 
-   procedure onEvent (This : in out PacePatrolAI; eventObject_Param : access AllBinaryEventObject'Class) is
-      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+   procedure onEvent (This : in out PacePatrolAI; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
+      eventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
    begin
         ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, PacePatrolAI_Access'(This'Unchecked_Access));
    end onEvent;
 
-   procedure onMovement (This : in out PacePatrolAI; trackingEvent_Param : access TrackingEvent'Class) is
-      trackingEvent : TrackingEvent_Access := TrackingEvent_Access (trackingEvent_Param);
+   procedure onMovement (This : in out PacePatrolAI; trackingEvent_Param : access TrackingEvent_Package.TrackingEvent'Class) is
+      trackingEvent : constant TrackingEvent_Access := TrackingEvent_Access (trackingEvent_Param);
    begin
         This.trackingList.clear;
         This.trackingList.add (trackingEvent);

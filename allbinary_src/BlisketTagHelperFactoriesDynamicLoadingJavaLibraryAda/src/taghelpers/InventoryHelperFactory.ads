@@ -41,8 +41,8 @@ package taghelpers.InventoryHelperFactory_Package is
 
    procedure Initialize (This : in out InventoryHelperFactory'Class);
    function Create return InventoryHelperFactory_Access;
-   function getInstance (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return Java_Object_Access;
-   procedure getInstance (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function getInstance (hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return Java_Object_Access;
+   procedure getInstance (hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class);
 
 end taghelpers.InventoryHelperFactory_Package;
 

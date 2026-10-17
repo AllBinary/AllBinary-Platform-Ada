@@ -22,9 +22,9 @@ package body org.allbinary.animation.image.AllBinaryScreenRelationalImageAnimati
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AllBinaryScreenRelationalImageAnimationInterfaceFactory'Class; image_Param : access Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) is
-      image : Image_Access := Image_Access (image_Param);
-      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
+   procedure Initialize (This : in out AllBinaryScreenRelationalImageAnimationInterfaceFactory'Class; image_Param : access Image_Package.Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
+      image : constant Image_Access := Image_Access (image_Param);
+      animationBehaviorFactory : constant AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
       androidImageInterface : AndroidImageInterface_Access;
       scale : Float;
    begin
@@ -38,7 +38,7 @@ package body org.allbinary.animation.image.AllBinaryScreenRelationalImageAnimati
         This.lastImage := ImageScaleUtil_Package.getInstance.createImage (GameFeatureImageCacheFactory_Package.getInstance, This.getImage, scale, scale, False);
    end Initialize;
 
-   function Create (image_Param : access Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return AllBinaryScreenRelationalImageAnimationInterfaceFactory_Access is
+   function Create (image_Param : access Image_Package.Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return AllBinaryScreenRelationalImageAnimationInterfaceFactory_Access is
       This : constant AllBinaryScreenRelationalImageAnimationInterfaceFactory_Access := new AllBinaryScreenRelationalImageAnimationInterfaceFactory;
    begin
       AllBinaryScreenRelationalImageAnimationInterfaceFactory_Package.Initialize (This.all, image_Param, animationBehaviorFactory_Param);

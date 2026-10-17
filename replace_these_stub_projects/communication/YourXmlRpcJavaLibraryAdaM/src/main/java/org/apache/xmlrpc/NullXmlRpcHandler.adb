@@ -34,13 +34,13 @@ package body org.apache.xmlrpc.NullXmlRpcHandler_Package is
 
 
    --  throws Exception
-   function execute (This : in out NullXmlRpcHandler; method : Unbounded_String; params_Param : access BasicArrayList'Class) return Java_Object_Access is
-      params : BasicArrayList_Access := BasicArrayList_Access (params_Param);
+   function execute (This : in out NullXmlRpcHandler; method : Unbounded_String; params_Param : access BasicArrayList_Package.BasicArrayList'Class) return Java_Object_Access is
+      params : constant BasicArrayList_Access := BasicArrayList_Access (params_Param);
    begin
         return NullUtil_Package.getInstance.NULL_OBJECT;
    end execute;
 
-   procedure execute (This : in out NullXmlRpcHandler; method : Unbounded_String; params_Param : access BasicArrayList'Class) is
+   procedure execute (This : in out NullXmlRpcHandler; method : Unbounded_String; params_Param : access BasicArrayList_Package.BasicArrayList'Class) is
       Java_Result : constant Java_Object_Access := NullXmlRpcHandler'Class (This).execute (method, params_Param);
       pragma Unreferenced (Java_Result);
    begin

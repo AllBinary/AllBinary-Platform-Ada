@@ -22,15 +22,15 @@ package body org.allbinary.game.ag.ai.sequence.SequenceAI_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out SequenceAI'Class; artificialIntelligenceInterfaceArray : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) is
-      ownerLayerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
-      gameInput : GameInput_Access := GameInput_Access (gameInput_Param);
+   procedure Initialize (This : in out SequenceAI'Class; artificialIntelligenceInterfaceArray : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) is
+      ownerLayerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
+      gameInput : constant GameInput_Access := GameInput_Access (gameInput_Param);
    begin
         ArrayAI_Package.Initialize (This, artificialIntelligenceInterfaceArray, ownerLayerInterface, gameInput);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (artificialIntelligenceInterfaceArray : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return SequenceAI_Access is
+   function Create (artificialIntelligenceInterfaceArray : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) return SequenceAI_Access is
       This : constant SequenceAI_Access := new SequenceAI;
    begin
       SequenceAI_Package.Initialize (This.all, artificialIntelligenceInterfaceArray, ownerLayerInterface_Param, gameInput_Param);
@@ -38,8 +38,8 @@ package body org.allbinary.game.ag.ai.sequence.SequenceAI_Package is
    end Create;
 
    --  throws Exception
-   procedure processAI (This : in out SequenceAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class) is
-      allBinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
+   procedure processAI (This : in out SequenceAI; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class) is
+      allBinaryLayerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
    begin
         This.getArtificialIntelligenceInterface (This.index).processAI (allBinaryLayerManager);
    end processAI;

@@ -41,8 +41,8 @@ package body org.allbinary.media.image.analysis.ImageAnalysis_Package is
    end Create;
 
    --  throws Exception
-   function process (This : in out ImageAnalysis; bufferedImageArray : BufferedImage_Access_Array_Access; colorRangeInterface_Param : access ColorRangeInterface'Class) return ImageAnalysisResults_Access_Array_Access is
-      colorRangeInterface : ColorRangeInterface_Access := ColorRangeInterface_Access (colorRangeInterface_Param);
+   function process (This : in out ImageAnalysis; bufferedImageArray : BufferedImage_Access_Array_Access; colorRangeInterface_Param : access ColorRangeInterface_Package.ColorRangeInterface'Class) return ImageAnalysisResults_Access_Array_Access is
+      colorRangeInterface : constant ColorRangeInterface_Access := ColorRangeInterface_Access (colorRangeInterface_Param);
       commonStrings : CommonStrings_Access;
       imageAnalysisResultsArray : ImageAnalysisResults_Access_Array_Access;
       index : Integer;
@@ -57,9 +57,9 @@ package body org.allbinary.media.image.analysis.ImageAnalysis_Package is
    end process;
 
    --  throws Exception
-   function process (bufferedImage_Param : access BufferedImage'Class; colorRangeInterface_Param : access ColorRangeInterface'Class) return ImageAnalysisResults_Access is
-      bufferedImage : BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
-      colorRangeInterface : ColorRangeInterface_Access := ColorRangeInterface_Access (colorRangeInterface_Param);
+   function process (bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; colorRangeInterface_Param : access ColorRangeInterface_Package.ColorRangeInterface'Class) return ImageAnalysisResults_Access is
+      bufferedImage : constant BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
+      colorRangeInterface : constant ColorRangeInterface_Access := ColorRangeInterface_Access (colorRangeInterface_Param);
       imageAnalysisResults : ImageAnalysisResults_Access;
       redTotal : Long_Long_Integer;
       greenTotal : Long_Long_Integer;
@@ -96,10 +96,10 @@ package body org.allbinary.media.image.analysis.ImageAnalysis_Package is
         return imageAnalysisResults;
    end process;
 
-   procedure processColorRangeResults (imageAnalysisResults_Param : access ImageAnalysisResults'Class; colorRangeInterface_Param : access ColorRangeInterface'Class; color_Param : access Color'Class) is
-      imageAnalysisResults : ImageAnalysisResults_Access := ImageAnalysisResults_Access (imageAnalysisResults_Param);
-      colorRangeInterface : ColorRangeInterface_Access := ColorRangeInterface_Access (colorRangeInterface_Param);
-      color : Color_Access := Color_Access (color_Param);
+   procedure processColorRangeResults (imageAnalysisResults_Param : access ImageAnalysisResults_Package.ImageAnalysisResults'Class; colorRangeInterface_Param : access ColorRangeInterface_Package.ColorRangeInterface'Class; color_Param : access Color_Package.Color'Class) is
+      imageAnalysisResults : constant ImageAnalysisResults_Access := ImageAnalysisResults_Access (imageAnalysisResults_Param);
+      colorRangeInterface : constant ColorRangeInterface_Access := ColorRangeInterface_Access (colorRangeInterface_Param);
+      color : constant Color_Access := Color_Access (color_Param);
    begin
         if colorRangeInterface.isInRange (color) then
             imageAnalysisResults.getImageColorRangeResults.addMatchingPixelsChecked;
@@ -109,10 +109,10 @@ package body org.allbinary.media.image.analysis.ImageAnalysis_Package is
         imageAnalysisResults.getImageColorRangeResults.addTotalPixelsChecked;
    end processColorRangeResults;
 
-   procedure processImageColorResults (imageColorResults_Param : access ImageColorResults'Class; colorRangeInterface_Param : access ColorRangeInterface'Class; color_Param : access Color'Class) is
-      imageColorResults : ImageColorResults_Access := ImageColorResults_Access (imageColorResults_Param);
-      colorRangeInterface : ColorRangeInterface_Access := ColorRangeInterface_Access (colorRangeInterface_Param);
-      color : Color_Access := Color_Access (color_Param);
+   procedure processImageColorResults (imageColorResults_Param : access ImageColorResults_Package.ImageColorResults'Class; colorRangeInterface_Param : access ColorRangeInterface_Package.ColorRangeInterface'Class; color_Param : access Color_Package.Color'Class) is
+      imageColorResults : constant ImageColorResults_Access := ImageColorResults_Access (imageColorResults_Param);
+      colorRangeInterface : constant ColorRangeInterface_Access := ColorRangeInterface_Access (colorRangeInterface_Param);
+      color : constant Color_Access := Color_Access (color_Param);
    begin
         if (color.getRed) < (imageColorResults.getColorRange.getMinRed) then
             imageColorResults.getColorRange.setMinRed (color.getRed);
@@ -134,14 +134,14 @@ package body org.allbinary.media.image.analysis.ImageAnalysis_Package is
         end if;
    end processImageColorResults;
 
-   procedure process (This : in out ImageAnalysis; bufferedImageArray : BufferedImage_Access_Array_Access; colorRangeInterface_Param : access ColorRangeInterface'Class) is
+   procedure process (This : in out ImageAnalysis; bufferedImageArray : BufferedImage_Access_Array_Access; colorRangeInterface_Param : access ColorRangeInterface_Package.ColorRangeInterface'Class) is
       Java_Result : constant ImageAnalysisResults_Access_Array_Access := ImageAnalysis'Class (This).process (bufferedImageArray, colorRangeInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end process;
 
-   procedure process (bufferedImage_Param : access BufferedImage'Class; colorRangeInterface_Param : access ColorRangeInterface'Class) is
+   procedure process (bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; colorRangeInterface_Param : access ColorRangeInterface_Package.ColorRangeInterface'Class) is
       Java_Result : constant ImageAnalysisResults_Access := process (bufferedImage_Param, colorRangeInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

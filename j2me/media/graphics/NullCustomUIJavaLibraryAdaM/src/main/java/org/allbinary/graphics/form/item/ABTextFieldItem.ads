@@ -30,16 +30,16 @@ package org.allbinary.graphics.form.item.ABTextFieldItem_Package is
       font : Font_Access;
    end record;
 
-   procedure Initialize (This : in out ABTextFieldItem'Class; canvas_Param : access Canvas'Class; visitor_Param : access Visitor'Class; label : Unbounded_String; value : Unbounded_String; maxSize : Integer; layout : Integer; altText : Unbounded_String; font_Param : access Font'Class; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class);
-   function Create (canvas_Param : access Canvas'Class; visitor_Param : access Visitor'Class; label : Unbounded_String; value : Unbounded_String; maxSize : Integer; layout : Integer; altText : Unbounded_String; font_Param : access Font'Class; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return ABTextFieldItem_Access;
+   procedure Initialize (This : in out ABTextFieldItem'Class; canvas_Param : access Canvas_Package.Canvas'Class; visitor_Param : access Visitor_Package.Visitor'Class; label : Unbounded_String; value : Unbounded_String; maxSize : Integer; layout : Integer; altText : Unbounded_String; font_Param : access Font_Package.Font'Class; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class);
+   function Create (canvas_Param : access Canvas_Package.Canvas'Class; visitor_Param : access Visitor_Package.Visitor'Class; label : Unbounded_String; value : Unbounded_String; maxSize : Integer; layout : Integer; altText : Unbounded_String; font_Param : access Font_Package.Font'Class; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return ABTextFieldItem_Access;
    function getLabel (This : in out ABTextFieldItem) return Unbounded_String;
    procedure setLabel (This : in out ABTextFieldItem; label : Unbounded_String);
    function getString (This : in out ABTextFieldItem) return Unbounded_String;
    procedure setString (This : in out ABTextFieldItem; string_Id : Unbounded_String);
    procedure setFocus (This : in out ABTextFieldItem; state : Boolean);
    function getFontHeight (This : in out ABTextFieldItem) return Integer;
-   procedure setBackgroundBasicColorP (This : in out ABTextFieldItem; basicColor_Param : access BasicColor'Class);
-   procedure setForegroundBasicColorP (This : in out ABTextFieldItem; basicColor_Param : access BasicColor'Class);
+   procedure setBackgroundBasicColorP (This : in out ABTextFieldItem; basicColor_Param : access BasicColor_Package.BasicColor'Class);
+   procedure setForegroundBasicColorP (This : in out ABTextFieldItem; basicColor_Param : access BasicColor_Package.BasicColor'Class);
 
 end org.allbinary.graphics.form.item.ABTextFieldItem_Package;
 

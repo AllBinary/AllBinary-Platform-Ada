@@ -37,9 +37,9 @@ package org.allbinary.game.input.SelectedRTSLayersPlayerDowngradeGameInputProces
 
    type SelectedRTSLayersPlayerDowngradeGameInputProcessor is new SelectedRTSLayersPlayerGameInputProcessor with null record;
 
-   procedure Initialize (This : in out SelectedRTSLayersPlayerDowngradeGameInputProcessor'Class; selectedRTSLayersPlayerGameInput_Param : access SelectedRTSLayersPlayerGameInput'Class);
-   function Create (selectedRTSLayersPlayerGameInput_Param : access SelectedRTSLayersPlayerGameInput'Class) return SelectedRTSLayersPlayerDowngradeGameInputProcessor_Access;
-   procedure processEvent (This : in out SelectedRTSLayersPlayerDowngradeGameInputProcessor; allbinaryLayerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class);
+   procedure Initialize (This : in out SelectedRTSLayersPlayerDowngradeGameInputProcessor'Class; selectedRTSLayersPlayerGameInput_Param : access SelectedRTSLayersPlayerGameInput_Package.SelectedRTSLayersPlayerGameInput'Class);
+   function Create (selectedRTSLayersPlayerGameInput_Param : access SelectedRTSLayersPlayerGameInput_Package.SelectedRTSLayersPlayerGameInput'Class) return SelectedRTSLayersPlayerDowngradeGameInputProcessor_Access;
+   procedure processEvent (This : in out SelectedRTSLayersPlayerDowngradeGameInputProcessor; allbinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class);
 
 end org.allbinary.game.input.SelectedRTSLayersPlayerDowngradeGameInputProcessor_Package;
 

@@ -44,7 +44,7 @@ package org.allbinary.game.input.form.PrimaryWaypointHelper_Package is
    function Create return PrimaryWaypointHelper_Access;
    function getInstance return PrimaryWaypointHelper_Access;
    function getWaypointLayer (This : in out PrimaryWaypointHelper) return PathFindingLayerInterface_Access;
-   procedure setWaypointLayer (This : in out PrimaryWaypointHelper; waypointLayer_Param : access WaypointLayer'Class);
+   procedure setWaypointLayer (This : in out PrimaryWaypointHelper; waypointLayer_Param : access WaypointLayer_Package.WaypointLayer'Class);
 
 end org.allbinary.game.input.form.PrimaryWaypointHelper_Package;
 

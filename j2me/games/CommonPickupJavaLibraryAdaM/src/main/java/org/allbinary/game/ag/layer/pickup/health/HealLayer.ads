@@ -48,8 +48,8 @@ package org.allbinary.game.ag.layer.pickup.health.HealLayer_Package is
 
    procedure Initialize (This : in out HealLayer'Class);
    function Create return HealLayer_Access;
-   procedure paint (This : in out HealLayer; graphics_Param : access Graphics'Class);
-   procedure visit (This : in out HealLayer; healthInterface_Param : access HealthInterface'Class);
+   procedure paint (This : in out HealLayer; graphics_Param : access Graphics_Package.Graphics'Class);
+   procedure visit (This : in out HealLayer; healthInterface_Param : access HealthInterface_Package.HealthInterface'Class);
 
 end org.allbinary.game.ag.layer.pickup.health.HealLayer_Package;
 

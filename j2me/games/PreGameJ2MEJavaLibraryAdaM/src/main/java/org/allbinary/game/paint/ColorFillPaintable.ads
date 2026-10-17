@@ -39,9 +39,9 @@ package org.allbinary.game.paint.ColorFillPaintable_Package is
       displayInfoSingleton : DisplayInfoSingleton_Access;
    end record;
 
-   procedure Initialize (This : in out ColorFillPaintable'Class; basicColor_Param : access BasicColor'Class);
-   function Create (basicColor_Param : access BasicColor'Class) return ColorFillPaintable_Access;
-   procedure paint (This : in out ColorFillPaintable; graphics_Param : access Graphics'Class);
+   procedure Initialize (This : in out ColorFillPaintable'Class; basicColor_Param : access BasicColor_Package.BasicColor'Class);
+   function Create (basicColor_Param : access BasicColor_Package.BasicColor'Class) return ColorFillPaintable_Access;
+   procedure paint (This : in out ColorFillPaintable; graphics_Param : access Graphics_Package.Graphics'Class);
 
 end org.allbinary.game.paint.ColorFillPaintable_Package;
 

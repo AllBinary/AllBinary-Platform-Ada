@@ -33,20 +33,20 @@ package body org.allbinary.graphics.paint.Paintable_Package is
    end Create;
 
 
-   procedure setBasicColorP (This : in out Paintable; basicColor_Param : access BasicColor'Class) is
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+   procedure setBasicColorP (This : in out Paintable; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         null;
    end setBasicColorP;
 
-   procedure paint (This : in out Paintable; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out Paintable; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paint;
 
-   procedure paintThreed (This : in out Paintable; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintThreed (This : in out Paintable; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paintThreed;

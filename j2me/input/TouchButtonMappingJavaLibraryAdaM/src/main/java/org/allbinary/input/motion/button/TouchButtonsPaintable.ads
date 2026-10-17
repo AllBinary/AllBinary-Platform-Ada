@@ -47,9 +47,9 @@ package org.allbinary.input.motion.button.TouchButtonsPaintable_Package is
       touchButtonFactory : TouchButtonFactory_Access;
    end record;
 
-   procedure Initialize (This : in out TouchButtonsPaintable'Class; basicColor_Param : access BasicColor'Class);
-   function Create (basicColor_Param : access BasicColor'Class) return TouchButtonsPaintable_Access;
-   procedure paint (This : in out TouchButtonsPaintable; graphics_Param : access Graphics'Class);
+   procedure Initialize (This : in out TouchButtonsPaintable'Class; basicColor_Param : access BasicColor_Package.BasicColor'Class);
+   function Create (basicColor_Param : access BasicColor_Package.BasicColor'Class) return TouchButtonsPaintable_Access;
+   procedure paint (This : in out TouchButtonsPaintable; graphics_Param : access Graphics_Package.Graphics'Class);
 
 end org.allbinary.input.motion.button.TouchButtonsPaintable_Package;
 

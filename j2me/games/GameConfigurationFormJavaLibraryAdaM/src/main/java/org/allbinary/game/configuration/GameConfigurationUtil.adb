@@ -45,9 +45,9 @@ package body org.allbinary.game.configuration.GameConfigurationUtil_Package is
    end getInstance;
 
    --  throws Exception
-   procedure change (This : in out GameConfigurationUtil; gameOptionsForm_Param : access GameOptionsForm'Class; gauge_Param : access GameConfigurationGauge'Class) is
-      gameOptionsForm : GameOptionsForm_Access := GameOptionsForm_Access (gameOptionsForm_Param);
-      gauge : GameConfigurationGauge_Access := GameConfigurationGauge_Access (gauge_Param);
+   procedure change (This : in out GameConfigurationUtil; gameOptionsForm_Param : access GameOptionsForm_Package.GameOptionsForm'Class; gauge_Param : access GameConfigurationGauge_Package.GameConfigurationGauge'Class) is
+      gameOptionsForm : constant GameOptionsForm_Access := GameOptionsForm_Access (gameOptionsForm_Param);
+      gauge : constant GameConfigurationGauge_Access := GameConfigurationGauge_Access (gauge_Param);
       gameConfigurationSingleton : GameConfigurationSingleton_Access;
       gameConfiguration : GameConfiguration_Access;
    begin
@@ -58,8 +58,8 @@ package body org.allbinary.game.configuration.GameConfigurationUtil_Package is
    end change;
 
    --  throws Exception
-   procedure update (This : in out GameConfigurationUtil; gauge_Param : access GameConfigurationGauge'Class) is
-      gauge : GameConfigurationGauge_Access := GameConfigurationGauge_Access (gauge_Param);
+   procedure update (This : in out GameConfigurationUtil; gauge_Param : access GameConfigurationGauge_Package.GameConfigurationGauge'Class) is
+      gauge : constant GameConfigurationGauge_Access := GameConfigurationGauge_Access (gauge_Param);
       gameConfigurationSingleton : GameConfigurationSingleton_Access;
       gameConfiguration : GameConfiguration_Access;
       smallIntegerSingletonFactory : SmallIntegerSingletonFactory_Access;
@@ -82,8 +82,8 @@ package body org.allbinary.game.configuration.GameConfigurationUtil_Package is
    end update;
 
    --  throws Exception
-   procedure setDefault (This : in out GameConfigurationUtil; gauge_Param : access GameConfigurationGauge'Class) is
-      gauge : GameConfigurationGauge_Access := GameConfigurationGauge_Access (gauge_Param);
+   procedure setDefault (This : in out GameConfigurationUtil; gauge_Param : access GameConfigurationGauge_Package.GameConfigurationGauge'Class) is
+      gauge : constant GameConfigurationGauge_Access := GameConfigurationGauge_Access (gauge_Param);
       gameConfigurationSingleton : GameConfigurationSingleton_Access;
       gameConfiguration : GameConfiguration_Access;
       stringBuffer : StringMaker_Access;
@@ -101,9 +101,9 @@ package body org.allbinary.game.configuration.GameConfigurationUtil_Package is
    end setDefault;
 
    --  throws Exception
-   procedure updateChallange (This : in out GameConfigurationUtil; gameOptionsForm_Param : access GameOptionsForm'Class; gameConfiguration_Param : access GameConfiguration'Class) is
-      gameOptionsForm : GameOptionsForm_Access := GameOptionsForm_Access (gameOptionsForm_Param);
-      gameConfiguration : GameConfiguration_Access := GameConfiguration_Access (gameConfiguration_Param);
+   procedure updateChallange (This : in out GameConfigurationUtil; gameOptionsForm_Param : access GameOptionsForm_Package.GameOptionsForm'Class; gameConfiguration_Param : access GameConfiguration_Package.GameConfiguration'Class) is
+      gameOptionsForm : constant GameOptionsForm_Access := GameOptionsForm_Access (gameOptionsForm_Param);
+      gameConfiguration : constant GameConfiguration_Access := GameConfiguration_Access (gameConfiguration_Param);
       gameConfigurationSingleton : GameConfigurationSingleton_Access;
       gameConfigurationCentral : GameConfigurationCentral_Access;
       size : Integer;

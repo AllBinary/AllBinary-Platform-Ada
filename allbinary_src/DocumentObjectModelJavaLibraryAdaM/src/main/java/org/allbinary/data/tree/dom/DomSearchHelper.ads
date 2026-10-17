@@ -41,16 +41,16 @@ package org.allbinary.data.tree.dom.DomSearchHelper_Package is
 
    procedure Initialize (This : in out DomSearchHelper'Class);
    function Create return DomSearchHelper_Access;
-   function getNodeNoThrow (nodeName : Unbounded_String; nodeList_Param : access NodeList'Class) return Node_Access;
-   procedure getNodeNoThrow (nodeName : Unbounded_String; nodeList_Param : access NodeList'Class);
-   function getNode (nodeName : Unbounded_String; nodeList_Param : access NodeList'Class) return Node_Access;
-   procedure getNode (nodeName : Unbounded_String; nodeList_Param : access NodeList'Class);
-   function getChildNodeList (nodeName : Unbounded_String; nodeList_Param : access NodeList'Class) return NodeList_Access;
-   procedure getChildNodeList (nodeName : Unbounded_String; nodeList_Param : access NodeList'Class);
-   function getAllNodes (nodeName : Unbounded_String; nodeList_Param : access NodeList'Class) return BasicArrayList_Access;
-   procedure getAllNodes (nodeName : Unbounded_String; nodeList_Param : access NodeList'Class);
-   function getAllNodesNoThrow (nodeName : Unbounded_String; nodeList_Param : access NodeList'Class) return BasicArrayList_Access;
-   procedure getAllNodesNoThrow (nodeName : Unbounded_String; nodeList_Param : access NodeList'Class);
+   function getNodeNoThrow (nodeName : Unbounded_String; nodeList_Param : access NodeList_Package.NodeList'Class) return Node_Access;
+   procedure getNodeNoThrow (nodeName : Unbounded_String; nodeList_Param : access NodeList_Package.NodeList'Class);
+   function getNode (nodeName : Unbounded_String; nodeList_Param : access NodeList_Package.NodeList'Class) return Node_Access;
+   procedure getNode (nodeName : Unbounded_String; nodeList_Param : access NodeList_Package.NodeList'Class);
+   function getChildNodeList (nodeName : Unbounded_String; nodeList_Param : access NodeList_Package.NodeList'Class) return NodeList_Access;
+   procedure getChildNodeList (nodeName : Unbounded_String; nodeList_Param : access NodeList_Package.NodeList'Class);
+   function getAllNodes (nodeName : Unbounded_String; nodeList_Param : access NodeList_Package.NodeList'Class) return BasicArrayList_Access;
+   procedure getAllNodes (nodeName : Unbounded_String; nodeList_Param : access NodeList_Package.NodeList'Class);
+   function getAllNodesNoThrow (nodeName : Unbounded_String; nodeList_Param : access NodeList_Package.NodeList'Class) return BasicArrayList_Access;
+   procedure getAllNodesNoThrow (nodeName : Unbounded_String; nodeList_Param : access NodeList_Package.NodeList'Class);
 
 end org.allbinary.data.tree.dom.DomSearchHelper_Package;
 

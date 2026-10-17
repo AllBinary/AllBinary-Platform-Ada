@@ -58,7 +58,7 @@ package org.allbinary.game.ag.layer.pickup.life.LifePickedUpLayerInterfaceFactor
    procedure init;
    function getTotal (This : in out LifePickedUpLayerInterfaceFactory) return Integer;
    function getInstance return PickedUpLayerInterfaceFactoryInterface_Access;
-   procedure process (This : in out LifePickedUpLayerInterfaceFactory; sourceLayerInterface_Param : access AllBinaryLayer'Class);
+   procedure process (This : in out LifePickedUpLayerInterfaceFactory; sourceLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class);
 
 end org.allbinary.game.ag.layer.pickup.life.LifePickedUpLayerInterfaceFactory_Package;
 

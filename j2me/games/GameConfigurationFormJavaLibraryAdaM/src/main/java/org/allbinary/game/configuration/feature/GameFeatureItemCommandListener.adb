@@ -23,23 +23,23 @@ package body org.allbinary.game.configuration.feature.GameFeatureItemCommandList
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GameFeatureItemCommandListener'Class; gameOptionsForm_Param : access GameOptionsForm'Class) is
-      gameOptionsForm : GameOptionsForm_Access := GameOptionsForm_Access (gameOptionsForm_Param);
+   procedure Initialize (This : in out GameFeatureItemCommandListener'Class; gameOptionsForm_Param : access GameOptionsForm_Package.GameOptionsForm'Class) is
+      gameOptionsForm : constant GameOptionsForm_Access := GameOptionsForm_Access (gameOptionsForm_Param);
    begin
       Initialize_Fields (This);
         This.gameOptionsForm := gameOptionsForm;
    end Initialize;
 
-   function Create (gameOptionsForm_Param : access GameOptionsForm'Class) return GameFeatureItemCommandListener_Access is
+   function Create (gameOptionsForm_Param : access GameOptionsForm_Package.GameOptionsForm'Class) return GameFeatureItemCommandListener_Access is
       This : constant GameFeatureItemCommandListener_Access := new GameFeatureItemCommandListener;
    begin
       GameFeatureItemCommandListener_Package.Initialize (This.all, gameOptionsForm_Param);
       return This;
    end Create;
 
-   procedure commandAction (This : in out GameFeatureItemCommandListener; command_Param : access Command'Class; item_Param : access Item'Class) is
-      command : Command_Access := Command_Access (command_Param);
-      item : Item_Access := Item_Access (item_Param);
+   procedure commandAction (This : in out GameFeatureItemCommandListener; command_Param : access Command_Package.Command'Class; item_Param : access Item_Package.Item'Class) is
+      command : constant Command_Access := Command_Access (command_Param);
+      item : constant Item_Access := Item_Access (item_Param);
       itemLabel : Unbounded_String;
       commonStrings : CommonStrings_Access;
    begin

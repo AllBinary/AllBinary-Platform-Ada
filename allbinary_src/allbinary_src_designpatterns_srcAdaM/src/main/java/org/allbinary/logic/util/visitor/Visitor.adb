@@ -35,7 +35,7 @@ package body org.allbinary.logic.util.visitor.Visitor_Package is
 
 
    function visit (This : in out Visitor; anyType_Param : access Java_Object'Class) return Java_Object_Access is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         return This.nullUtil.NULL_OBJECT;
    end visit;

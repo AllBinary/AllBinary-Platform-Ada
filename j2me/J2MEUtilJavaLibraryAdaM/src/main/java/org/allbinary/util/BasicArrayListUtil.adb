@@ -41,22 +41,22 @@ package body org.allbinary.util.BasicArrayListUtil_Package is
         return BasicArrayListUtil_Package.instance;
    end getInstance;
 
-   function getRandom (This : in out BasicArrayListUtil; list_Param : access BasicArrayList'Class) return Java_Object_Access is
-      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
+   function getRandom (This : in out BasicArrayListUtil; list_Param : access BasicArrayList_Package.BasicArrayList'Class) return Java_Object_Access is
+      list : constant BasicArrayList_Access := BasicArrayList_Access (list_Param);
       i_random : Integer;
    begin
         i_random := This.getRandomIndex (list);
         return list.objectArray (i_random);
    end getRandom;
 
-   function getRandomIndex (This : in out BasicArrayListUtil; list_Param : access BasicArrayList'Class) return Integer is
-      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
+   function getRandomIndex (This : in out BasicArrayListUtil; list_Param : access BasicArrayList_Package.BasicArrayList'Class) return Integer is
+      list : constant BasicArrayList_Access := BasicArrayList_Access (list_Param);
    begin
         return This.myRandomFactory.getAbsoluteNextInt (list.size);
    end getRandomIndex;
 
-   procedure reverse_Id (This : in out BasicArrayListUtil; list_Param : access BasicArrayList'Class) is
-      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
+   procedure reverse_Id (This : in out BasicArrayListUtil; list_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      list : constant BasicArrayList_Access := BasicArrayList_Access (list_Param);
       lastMinusOneIndex : Integer;
       temp : Java_Object_Access;
       size : Integer;
@@ -75,8 +75,8 @@ package body org.allbinary.util.BasicArrayListUtil_Package is
         end loop;
    end reverse_Id;
 
-   function log (This : in out BasicArrayListUtil; list_Param : access BasicArrayList'Class) return Unbounded_String is
-      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
+   function log (This : in out BasicArrayListUtil; list_Param : access BasicArrayList_Package.BasicArrayList'Class) return Unbounded_String is
+      list : constant BasicArrayList_Access := BasicArrayList_Access (list_Param);
       S_LABEL : Unbounded_String;
       size : Integer;
       stringBuffer : StringMaker_Access;
@@ -120,21 +120,21 @@ package body org.allbinary.util.BasicArrayListUtil_Package is
         Ada.Text_IO.Put_Line (Java_Image (list.toString));
    end main;
 
-   procedure getRandom (This : in out BasicArrayListUtil; list_Param : access BasicArrayList'Class) is
+   procedure getRandom (This : in out BasicArrayListUtil; list_Param : access BasicArrayList_Package.BasicArrayList'Class) is
       Java_Result : constant Java_Object_Access := BasicArrayListUtil'Class (This).getRandom (list_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRandom;
 
-   procedure getRandomIndex (This : in out BasicArrayListUtil; list_Param : access BasicArrayList'Class) is
+   procedure getRandomIndex (This : in out BasicArrayListUtil; list_Param : access BasicArrayList_Package.BasicArrayList'Class) is
       Java_Result : constant Integer := BasicArrayListUtil'Class (This).getRandomIndex (list_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRandomIndex;
 
-   procedure log (This : in out BasicArrayListUtil; list_Param : access BasicArrayList'Class) is
+   procedure log (This : in out BasicArrayListUtil; list_Param : access BasicArrayList_Package.BasicArrayList'Class) is
       Java_Result : constant Unbounded_String := BasicArrayListUtil'Class (This).log (list_Param);
       pragma Unreferenced (Java_Result);
    begin

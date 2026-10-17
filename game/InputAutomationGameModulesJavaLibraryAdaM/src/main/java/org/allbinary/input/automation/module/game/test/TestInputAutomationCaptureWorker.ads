@@ -64,12 +64,12 @@ package org.allbinary.input.automation.module.game.test.TestInputAutomationCaptu
       IMAGE_NOT_AVAILABLE : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out TestInputAutomationCaptureWorker'Class; inputAutomationActionInterface_Param : access InputAutomationActionInterface'Class; genericProfileActions_Param : access GenericProfileActions'Class; imageComparatorConstraintsInterface_Param : access ImageComparatorConstraintsInterface'Class; motionRectangleConstraintsInterface_Param : access MotionRectangleConstraintsInterface'Class);
-   function Create (inputAutomationActionInterface_Param : access InputAutomationActionInterface'Class; genericProfileActions_Param : access GenericProfileActions'Class; imageComparatorConstraintsInterface_Param : access ImageComparatorConstraintsInterface'Class; motionRectangleConstraintsInterface_Param : access MotionRectangleConstraintsInterface'Class) return TestInputAutomationCaptureWorker_Access;
+   procedure Initialize (This : in out TestInputAutomationCaptureWorker'Class; inputAutomationActionInterface_Param : access InputAutomationActionInterface_Package.InputAutomationActionInterface'Class; genericProfileActions_Param : access GenericProfileActions_Package.GenericProfileActions'Class; imageComparatorConstraintsInterface_Param : access ImageComparatorConstraintsInterface_Package.ImageComparatorConstraintsInterface'Class; motionRectangleConstraintsInterface_Param : access MotionRectangleConstraintsInterface_Package.MotionRectangleConstraintsInterface'Class);
+   function Create (inputAutomationActionInterface_Param : access InputAutomationActionInterface_Package.InputAutomationActionInterface'Class; genericProfileActions_Param : access GenericProfileActions_Package.GenericProfileActions'Class; imageComparatorConstraintsInterface_Param : access ImageComparatorConstraintsInterface_Package.ImageComparatorConstraintsInterface'Class; motionRectangleConstraintsInterface_Param : access MotionRectangleConstraintsInterface_Package.MotionRectangleConstraintsInterface'Class) return TestInputAutomationCaptureWorker_Access;
    procedure processDataWorkerResults (This : in out TestInputAutomationCaptureWorker);
    procedure process (This : in out TestInputAutomationCaptureWorker);
    function getGenericProfileActions (This : in out TestInputAutomationCaptureWorker) return GenericProfileActions_Access;
-   procedure setGenericProfileActions (This : in out TestInputAutomationCaptureWorker; genericProfileActions_Param : access GenericProfileActions'Class);
+   procedure setGenericProfileActions (This : in out TestInputAutomationCaptureWorker; genericProfileActions_Param : access GenericProfileActions_Package.GenericProfileActions'Class);
 
 end org.allbinary.input.automation.module.game.test.TestInputAutomationCaptureWorker_Package;
 

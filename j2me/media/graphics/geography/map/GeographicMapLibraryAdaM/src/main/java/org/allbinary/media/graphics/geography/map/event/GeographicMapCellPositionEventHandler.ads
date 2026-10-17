@@ -53,12 +53,12 @@ package org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositi
    procedure Initialize (This : in out GeographicMapCellPositionEventHandler'Class);
    function Create return GeographicMapCellPositionEventHandler_Access;
    function getInstance return GeographicMapCellPositionEventHandler_Access;
-   procedure addListener (This : in out GeographicMapCellPositionEventHandler; miniMapLayer_Param : access MiniMapLayer'Class);
+   procedure addListener (This : in out GeographicMapCellPositionEventHandler; miniMapLayer_Param : access MiniMapLayer_Package.MiniMapLayer'Class);
    procedure removeAllListeners (This : in out GeographicMapCellPositionEventHandler);
-   procedure removeListener (This : in out GeographicMapCellPositionEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class);
-   procedure fireEvent (This : in out GeographicMapCellPositionEventHandler; eventObject_Param : access AllBinaryEventObject'Class);
-   procedure fireRemoveEvent (This : in out GeographicMapCellPositionEventHandler; eventObject_Param : access AllBinaryEventObject'Class);
-   procedure process (This : in out GeographicMapCellPositionEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class);
+   procedure removeListener (This : in out GeographicMapCellPositionEventHandler; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class);
+   procedure fireEvent (This : in out GeographicMapCellPositionEventHandler; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class);
+   procedure fireRemoveEvent (This : in out GeographicMapCellPositionEventHandler; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class);
+   procedure process (This : in out GeographicMapCellPositionEventHandler; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class);
 
 end org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventHandler_Package;
 

@@ -29,8 +29,8 @@ package body org.allbinary.graphics.opengles.OpenGLLogUtil_Package is
         return OpenGLLogUtil_Package.instance;
    end getInstance;
 
-   procedure logError (This : in out OpenGLLogUtil; gl_Param : access GL10'Class) is
-      gl : GL10_Access := GL10_Access (gl_Param);
+   procedure logError (This : in out OpenGLLogUtil; gl_Param : access GL10_Package.GL10'Class) is
+      gl : constant GL10_Access := GL10_Access (gl_Param);
       error : Integer;
       stringBuffer : StringMaker_Access;
       maxTextureSize : Integer_Array_Access;
@@ -54,9 +54,9 @@ package body org.allbinary.graphics.opengles.OpenGLLogUtil_Package is
         end if;
    end logError;
 
-   procedure logError (This : in out OpenGLLogUtil; gl_Param : access GL10'Class; image_Case_Param : access Image'Class) is
-      gl : GL10_Access := GL10_Access (gl_Param);
-      image_Case : Image_Access := Image_Access (image_Case_Param);
+   procedure logError (This : in out OpenGLLogUtil; gl_Param : access GL10_Package.GL10'Class; image_Case_Param : access Image_Package.Image'Class) is
+      gl : constant GL10_Access := GL10_Access (gl_Param);
+      image_Case : constant Image_Access := Image_Access (image_Case_Param);
       error : Integer;
       stringBuffer : StringMaker_Access;
       maxTextureSize : Integer_Array_Access;

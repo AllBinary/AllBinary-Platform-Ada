@@ -36,8 +36,8 @@ package org.allbinary.data.tables.user.commerce.inventory.item.downloads.Downloa
    type DownloadItemsEntityInterface_Access_Array is array (Natural range <>) of DownloadItemsEntityInterface_Access;
    type DownloadItemsEntityInterface_Access_Array_Access is access all DownloadItemsEntityInterface_Access_Array;
    procedure delete (This : in out DownloadItemsEntityInterface; value : Unbounded_String) is abstract;
-   procedure insert (This : in out DownloadItemsEntityInterface; values_Param : access BasicArrayList'Class) is abstract;
-   procedure update (This : in out DownloadItemsEntityInterface; updatedValues_Param : access HashMap'Class) is abstract;
+   procedure insert (This : in out DownloadItemsEntityInterface; values_Param : access BasicArrayList_Package.BasicArrayList'Class) is abstract;
+   procedure update (This : in out DownloadItemsEntityInterface; updatedValues_Param : access HashMap_Package.HashMap'Class) is abstract;
 
 end org.allbinary.data.tables.user.commerce.inventory.item.downloads.DownloadItemsEntityInterface_Package;
 

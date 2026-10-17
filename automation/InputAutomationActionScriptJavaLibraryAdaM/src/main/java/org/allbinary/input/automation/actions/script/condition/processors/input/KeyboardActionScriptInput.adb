@@ -27,8 +27,8 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out KeyboardActionScriptInput'Class; node_Param : access Node'Class) is
-      node : Node_Access := Node_Access (node_Param);
+   procedure Initialize (This : in out KeyboardActionScriptInput'Class; node_Param : access Node_Package.Node'Class) is
+      node : constant Node_Access := Node_Access (node_Param);
       actionNode : Node_Access;
       nodeList : NodeList_Access;
       vector : BasicArrayList_Access;
@@ -74,7 +74,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         This.keyboardActionScriptInputJPanel := KeyboardActionScriptInputJPanel_Package.Create (KeyboardActionScriptInput_Access'(This'Unchecked_Access));
    end Initialize;
 
-   function Create (node_Param : access Node'Class) return KeyboardActionScriptInput_Access is
+   function Create (node_Param : access Node_Package.Node'Class) return KeyboardActionScriptInput_Access is
       This : constant KeyboardActionScriptInput_Access := new KeyboardActionScriptInput;
    begin
       KeyboardActionScriptInput_Package.Initialize (This.all, node_Param);
@@ -240,8 +240,8 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    end toHashMap;
 
    --  throws Exception
-   function toXmlNode (This : in out KeyboardActionScriptInput; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out KeyboardActionScriptInput; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       node : Node_Access;
    begin
         node := BasicProfileActionScriptInput (This).toXmlNode (document);
@@ -290,7 +290,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
       null;
    end integerArrayValue;
 
-   procedure toXmlNode (This : in out KeyboardActionScriptInput; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out KeyboardActionScriptInput; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := KeyboardActionScriptInput'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

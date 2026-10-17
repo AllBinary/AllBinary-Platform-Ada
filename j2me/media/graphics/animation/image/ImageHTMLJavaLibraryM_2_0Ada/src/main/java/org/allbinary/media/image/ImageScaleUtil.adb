@@ -41,17 +41,17 @@ package body org.allbinary.media.image.ImageScaleUtil_Package is
    end Create;
 
    --  throws Exception
-   function createImage2 (This : in out ImageScaleUtil; imageCache_Param : access ImageCache'Class; originalImage_Param : access Image'Class; scaleNominatorX : Float; scaleDenominatorX : Float; scaleNominatorY : Float; scaleDenominatorY : Float; cached : Boolean) return Image_Access is
-      imageCache : ImageCache_Access := ImageCache_Access (imageCache_Param);
-      originalImage : Image_Access := Image_Access (originalImage_Param);
+   function createImage2 (This : in out ImageScaleUtil; imageCache_Param : access ImageCache_Package.ImageCache'Class; originalImage_Param : access Image_Package.Image'Class; scaleNominatorX : Float; scaleDenominatorX : Float; scaleNominatorY : Float; scaleDenominatorY : Float; cached : Boolean) return Image_Access is
+      imageCache : constant ImageCache_Access := ImageCache_Access (imageCache_Param);
+      originalImage : constant Image_Access := Image_Access (originalImage_Param);
    begin
         return This.createImage3 (imageCache, originalImage, scaleNominatorX, scaleDenominatorX, scaleNominatorY, scaleDenominatorY, cached, True);
    end createImage2;
 
    --  throws Exception
-   function createImage3 (This : in out ImageScaleUtil; imageCache_Param : access ImageCache'Class; originalImage_Param : access Image'Class; scaleNominatorX : Float; scaleDenominatorX : Float; scaleNominatorY : Float; scaleDenominatorY : Float; cached : Boolean; mutable : Boolean) return Image_Access is
-      imageCache : ImageCache_Access := ImageCache_Access (imageCache_Param);
-      originalImage : Image_Access := Image_Access (originalImage_Param);
+   function createImage3 (This : in out ImageScaleUtil; imageCache_Param : access ImageCache_Package.ImageCache'Class; originalImage_Param : access Image_Package.Image'Class; scaleNominatorX : Float; scaleDenominatorX : Float; scaleNominatorY : Float; scaleDenominatorY : Float; cached : Boolean; mutable : Boolean) return Image_Access is
+      imageCache : constant ImageCache_Access := ImageCache_Access (imageCache_Param);
+      originalImage : constant Image_Access := Image_Access (originalImage_Param);
       scaleX : Float;
       scaleY : Float;
    begin
@@ -61,16 +61,16 @@ package body org.allbinary.media.image.ImageScaleUtil_Package is
    end createImage3;
 
    --  throws Exception
-   function createImage (This : in out ImageScaleUtil; imageCache_Param : access ImageCache'Class; originalImage_Param : access Image'Class; scaleX : Float; scaleY : Float; cached : Boolean) return Image_Access is
-      imageCache : ImageCache_Access := ImageCache_Access (imageCache_Param);
-      originalImage : Image_Access := Image_Access (originalImage_Param);
+   function createImage (This : in out ImageScaleUtil; imageCache_Param : access ImageCache_Package.ImageCache'Class; originalImage_Param : access Image_Package.Image'Class; scaleX : Float; scaleY : Float; cached : Boolean) return Image_Access is
+      imageCache : constant ImageCache_Access := ImageCache_Access (imageCache_Param);
+      originalImage : constant Image_Access := Image_Access (originalImage_Param);
    begin
         return This.createImageInternal (originalImage, scaleX, scaleY);
    end createImage;
 
    --  throws Exception
-   function createImageInternal (This : in out ImageScaleUtil; originalImage_Param : access Image'Class; scaleX : Float; scaleY : Float) return Image_Access is
-      originalImage : Image_Access := Image_Access (originalImage_Param);
+   function createImageInternal (This : in out ImageScaleUtil; originalImage_Param : access Image_Package.Image'Class; scaleX : Float; scaleY : Float) return Image_Access is
+      originalImage : constant Image_Access := Image_Access (originalImage_Param);
       image : Image_Access;
       originalPlayNImage : CoreImage_Access;
       originalHTMLImage : PlaynImmutableImage_Access;
@@ -98,28 +98,28 @@ package body org.allbinary.media.image.ImageScaleUtil_Package is
         end if;
    end createImageInternal;
 
-   procedure createImage2 (This : in out ImageScaleUtil; imageCache_Param : access ImageCache'Class; originalImage_Param : access Image'Class; scaleNominatorX : Float; scaleDenominatorX : Float; scaleNominatorY : Float; scaleDenominatorY : Float; cached : Boolean) is
+   procedure createImage2 (This : in out ImageScaleUtil; imageCache_Param : access ImageCache_Package.ImageCache'Class; originalImage_Param : access Image_Package.Image'Class; scaleNominatorX : Float; scaleDenominatorX : Float; scaleNominatorY : Float; scaleDenominatorY : Float; cached : Boolean) is
       Java_Result : constant Image_Access := ImageScaleUtil'Class (This).createImage2 (imageCache_Param, originalImage_Param, scaleNominatorX, scaleDenominatorX, scaleNominatorY, scaleDenominatorY, cached);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createImage2;
 
-   procedure createImage3 (This : in out ImageScaleUtil; imageCache_Param : access ImageCache'Class; originalImage_Param : access Image'Class; scaleNominatorX : Float; scaleDenominatorX : Float; scaleNominatorY : Float; scaleDenominatorY : Float; cached : Boolean; mutable : Boolean) is
+   procedure createImage3 (This : in out ImageScaleUtil; imageCache_Param : access ImageCache_Package.ImageCache'Class; originalImage_Param : access Image_Package.Image'Class; scaleNominatorX : Float; scaleDenominatorX : Float; scaleNominatorY : Float; scaleDenominatorY : Float; cached : Boolean; mutable : Boolean) is
       Java_Result : constant Image_Access := ImageScaleUtil'Class (This).createImage3 (imageCache_Param, originalImage_Param, scaleNominatorX, scaleDenominatorX, scaleNominatorY, scaleDenominatorY, cached, mutable);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createImage3;
 
-   procedure createImage (This : in out ImageScaleUtil; imageCache_Param : access ImageCache'Class; originalImage_Param : access Image'Class; scaleX : Float; scaleY : Float; cached : Boolean) is
+   procedure createImage (This : in out ImageScaleUtil; imageCache_Param : access ImageCache_Package.ImageCache'Class; originalImage_Param : access Image_Package.Image'Class; scaleX : Float; scaleY : Float; cached : Boolean) is
       Java_Result : constant Image_Access := ImageScaleUtil'Class (This).createImage (imageCache_Param, originalImage_Param, scaleX, scaleY, cached);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createImage;
 
-   procedure createImageInternal (This : in out ImageScaleUtil; originalImage_Param : access Image'Class; scaleX : Float; scaleY : Float) is
+   procedure createImageInternal (This : in out ImageScaleUtil; originalImage_Param : access Image_Package.Image'Class; scaleX : Float; scaleY : Float) is
       Java_Result : constant Image_Access := ImageScaleUtil'Class (This).createImageInternal (originalImage_Param, scaleX, scaleY);
       pragma Unreferenced (Java_Result);
    begin

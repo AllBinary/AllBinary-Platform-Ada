@@ -52,8 +52,8 @@ package body org.allbinary.game.displayable.canvas.OverlayPaintable_Package is
         end;
    end update;
 
-   procedure paint (This : in out OverlayPaintable; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out OverlayPaintable; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paint;

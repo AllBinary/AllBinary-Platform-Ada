@@ -36,8 +36,8 @@ package org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCel
       geologicalResource : GeologicalResource_Access;
    end record;
 
-   procedure Initialize (This : in out GeologicalGeographicMapCellPosition'Class; column : Integer; row : Integer; columns : Integer; rows : Integer; width : Integer; height : Integer; geologicalResource_Param : access GeologicalResource'Class);
-   function Create (column : Integer; row : Integer; columns : Integer; rows : Integer; width : Integer; height : Integer; geologicalResource_Param : access GeologicalResource'Class) return GeologicalGeographicMapCellPosition_Access;
+   procedure Initialize (This : in out GeologicalGeographicMapCellPosition'Class; column : Integer; row : Integer; columns : Integer; rows : Integer; width : Integer; height : Integer; geologicalResource_Param : access GeologicalResource_Package.GeologicalResource'Class);
+   function Create (column : Integer; row : Integer; columns : Integer; rows : Integer; width : Integer; height : Integer; geologicalResource_Param : access GeologicalResource_Package.GeologicalResource'Class) return GeologicalGeographicMapCellPosition_Access;
    function getGeologicalResource (This : in out GeologicalGeographicMapCellPosition) return GeologicalResource_Access;
 
 end org.allbinary.game.layer.geological.resources.GeologicalGeographicMapCellPosition_Package;

@@ -24,8 +24,8 @@ package body org.allbinary.game.input.CompleteMotionGestureInputEvent_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CompleteMotionGestureInputEvent'Class; name : Unbounded_String; motionGestureInput_Param : access MotionGestureInput'Class) is
-      motionGestureInput : MotionGestureInput_Access := MotionGestureInput_Access (motionGestureInput_Param);
+   procedure Initialize (This : in out CompleteMotionGestureInputEvent'Class; name : Unbounded_String; motionGestureInput_Param : access MotionGestureInput_Package.MotionGestureInput'Class) is
+      motionGestureInput : constant MotionGestureInput_Access := MotionGestureInput_Access (motionGestureInput_Param);
       commonStrings : CommonStrings_Access;
    begin
         AllBinaryEventObject_Package.Initialize (This, motionGestureInput);
@@ -44,7 +44,7 @@ package body org.allbinary.game.input.CompleteMotionGestureInputEvent_Package is
         end;
    end Initialize;
 
-   function Create (name : Unbounded_String; motionGestureInput_Param : access MotionGestureInput'Class) return CompleteMotionGestureInputEvent_Access is
+   function Create (name : Unbounded_String; motionGestureInput_Param : access MotionGestureInput_Package.MotionGestureInput'Class) return CompleteMotionGestureInputEvent_Access is
       This : constant CompleteMotionGestureInputEvent_Access := new CompleteMotionGestureInputEvent;
    begin
       CompleteMotionGestureInputEvent_Package.Initialize (This.all, name, motionGestureInput_Param);
@@ -61,8 +61,8 @@ package body org.allbinary.game.input.CompleteMotionGestureInputEvent_Package is
         return This.name;
    end getName;
 
-   procedure setMotionGestureInput (This : in out CompleteMotionGestureInputEvent; motionGestureInput_Param : access MotionGestureInput'Class) is
-      motionGestureInput : MotionGestureInput_Access := MotionGestureInput_Access (motionGestureInput_Param);
+   procedure setMotionGestureInput (This : in out CompleteMotionGestureInputEvent; motionGestureInput_Param : access MotionGestureInput_Package.MotionGestureInput'Class) is
+      motionGestureInput : constant MotionGestureInput_Access := MotionGestureInput_Access (motionGestureInput_Param);
    begin
         This.motionGestureInput := motionGestureInput;
    end setMotionGestureInput;

@@ -58,26 +58,26 @@ package org.allbinary.graphics.form.CommandCurrentSelectionForm_Package is
       unSelectedAnimationArray : Animation_Access_Array_Access;
    end record;
 
-   procedure Initialize (This : in out CommandCurrentSelectionForm'Class; title : Unbounded_String; items : ABCustomItem_Access_Array_Access; border : Integer; moveForSmallScreen : Boolean; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class);
-   function Create (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; border : Integer; moveForSmallScreen : Boolean; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return CommandCurrentSelectionForm_Access;
-   procedure updateMeasurement (This : in out CommandCurrentSelectionForm; graphics_Param : access Graphics'Class);
+   procedure Initialize (This : in out CommandCurrentSelectionForm'Class; title : Unbounded_String; items : ABCustomItem_Access_Array_Access; border : Integer; moveForSmallScreen : Boolean; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class);
+   function Create (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; border : Integer; moveForSmallScreen : Boolean; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return CommandCurrentSelectionForm_Access;
+   procedure updateMeasurement (This : in out CommandCurrentSelectionForm; graphics_Param : access Graphics_Package.Graphics'Class);
    procedure initAnimations (This : in out CommandCurrentSelectionForm);
    procedure addAll (This : in out CommandCurrentSelectionForm; items : ABCustomItem_Access_Array_Access);
-   procedure addAt (This : in out CommandCurrentSelectionForm; index : Integer; item_Param : access ABCustomItem'Class);
-   procedure updateAll (This : in out CommandCurrentSelectionForm; graphics_Param : access Graphics'Class; items : ABCustomItem_Access_Array_Access);
-   procedure updateAt (This : in out CommandCurrentSelectionForm; index : Integer; item_Param : access ABCustomItem'Class);
+   procedure addAt (This : in out CommandCurrentSelectionForm; index : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class);
+   procedure updateAll (This : in out CommandCurrentSelectionForm; graphics_Param : access Graphics_Package.Graphics'Class; items : ABCustomItem_Access_Array_Access);
+   procedure updateAt (This : in out CommandCurrentSelectionForm; index : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class);
    function getSelectedCommand (This : in out CommandCurrentSelectionForm) return Command_Access;
-   function append (This : in out CommandCurrentSelectionForm; item_Param : access ABCustomItem'Class) return Integer;
-   procedure append (This : in out CommandCurrentSelectionForm; item_Param : access ABCustomItem'Class);
+   function append (This : in out CommandCurrentSelectionForm; item_Param : access ABCustomItem_Package.ABCustomItem'Class) return Integer;
+   procedure append (This : in out CommandCurrentSelectionForm; item_Param : access ABCustomItem_Package.ABCustomItem'Class);
    procedure delete (This : in out CommandCurrentSelectionForm; itemNum : Integer);
    procedure deleteAll (This : in out CommandCurrentSelectionForm);
-   procedure insert (This : in out CommandCurrentSelectionForm; itemNum : Integer; item_Param : access ABCustomItem'Class);
-   procedure set (This : in out CommandCurrentSelectionForm; itemNum : Integer; item_Param : access ABCustomItem'Class);
-   procedure paint (This : in out CommandCurrentSelectionForm; graphics_Param : access Graphics'Class);
-   function paintItem (This : in out CommandCurrentSelectionForm; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; x : Integer; y : Integer) return Integer;
-   procedure paintItem (This : in out CommandCurrentSelectionForm; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; x : Integer; y : Integer);
-   function paintUnselectedItem (This : in out CommandCurrentSelectionForm; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; x : Integer; y : Integer) return Integer;
-   procedure paintUnselectedItem (This : in out CommandCurrentSelectionForm; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; x : Integer; y : Integer);
+   procedure insert (This : in out CommandCurrentSelectionForm; itemNum : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class);
+   procedure set (This : in out CommandCurrentSelectionForm; itemNum : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class);
+   procedure paint (This : in out CommandCurrentSelectionForm; graphics_Param : access Graphics_Package.Graphics'Class);
+   function paintItem (This : in out CommandCurrentSelectionForm; graphics_Param : access Graphics_Package.Graphics'Class; index : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class; x : Integer; y : Integer) return Integer;
+   procedure paintItem (This : in out CommandCurrentSelectionForm; graphics_Param : access Graphics_Package.Graphics'Class; index : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class; x : Integer; y : Integer);
+   function paintUnselectedItem (This : in out CommandCurrentSelectionForm; graphics_Param : access Graphics_Package.Graphics'Class; index : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class; x : Integer; y : Integer) return Integer;
+   procedure paintUnselectedItem (This : in out CommandCurrentSelectionForm; graphics_Param : access Graphics_Package.Graphics'Class; index : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class; x : Integer; y : Integer);
 
 end org.allbinary.graphics.form.CommandCurrentSelectionForm_Package;
 

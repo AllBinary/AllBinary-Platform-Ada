@@ -65,9 +65,9 @@ package org.allbinary.bundle.logic.system.loader.CryptService_Package is
 
    procedure Initialize (This : in out CryptService'Class);
    function Create return CryptService_Access;
-   function getDecryptedInputStream (This : in out CryptService; abeClientInformation_Param : access AbeClientInformationInterface'Class; name : Unbounded_String; inputStream_Param : access InputStream'Class) return InputStream_Access;
-   procedure getDecryptedInputStream (This : in out CryptService; abeClientInformation_Param : access AbeClientInformationInterface'Class; name : Unbounded_String; inputStream_Param : access InputStream'Class);
-   procedure showLicenseDialog (This : in out CryptService; abeClientInformation_Param : access AbeClientInformationInterface'Class; e_Param : access Java_Throwable_Object'Class);
+   function getDecryptedInputStream (This : in out CryptService; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; name : Unbounded_String; inputStream_Param : access InputStream_Package.InputStream'Class) return InputStream_Access;
+   procedure getDecryptedInputStream (This : in out CryptService; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; name : Unbounded_String; inputStream_Param : access InputStream_Package.InputStream'Class);
+   procedure showLicenseDialog (This : in out CryptService; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; e_Param : access Java_Throwable_Object'Class);
 
 end org.allbinary.bundle.logic.system.loader.CryptService_Package;
 

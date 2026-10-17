@@ -24,8 +24,8 @@ package body org.allbinary.game.input.GameInputProcessorComposite_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GameInputProcessorComposite'Class; name : Unbounded_String; gameInputProcessorInterface_Param : access GameInputProcessorInterface'Class) is
-      gameInputProcessorInterface : GameInputProcessorInterface_Access := GameInputProcessorInterface_Access (gameInputProcessorInterface_Param);
+   procedure Initialize (This : in out GameInputProcessorComposite'Class; name : Unbounded_String; gameInputProcessorInterface_Param : access GameInputProcessorInterface_Package.GameInputProcessorInterface'Class) is
+      gameInputProcessorInterface : constant GameInputProcessorInterface_Access := GameInputProcessorInterface_Access (gameInputProcessorInterface_Param);
    begin
         PlayerGameInput_Package.Initialize (This, BasicArrayListD_Package.Create, BasicArrayListD_Package.Create, -(1));
         Initialize_Fields (This);
@@ -33,7 +33,7 @@ package body org.allbinary.game.input.GameInputProcessorComposite_Package is
         This.gameInputProcessorInterface := gameInputProcessorInterface;
    end Initialize;
 
-   function Create (name : Unbounded_String; gameInputProcessorInterface_Param : access GameInputProcessorInterface'Class) return GameInputProcessorComposite_Access is
+   function Create (name : Unbounded_String; gameInputProcessorInterface_Param : access GameInputProcessorInterface_Package.GameInputProcessorInterface'Class) return GameInputProcessorComposite_Access is
       This : constant GameInputProcessorComposite_Access := new GameInputProcessorComposite;
    begin
       GameInputProcessorComposite_Package.Initialize (This.all, name, gameInputProcessorInterface_Param);

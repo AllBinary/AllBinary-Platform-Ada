@@ -75,13 +75,13 @@ package org.allbinary.media.audio.music.MusicManager_Package is
       stopped : Boolean;
    end record;
 
-   procedure Initialize (This : in out MusicManager'Class; musicServiceClass : Ada.Tags.Tag; songList_Param : access BasicArrayList'Class);
-   function Create (musicServiceClass : Ada.Tags.Tag; songList_Param : access BasicArrayList'Class) return MusicManager_Access;
+   procedure Initialize (This : in out MusicManager'Class; musicServiceClass : Ada.Tags.Tag; songList_Param : access BasicArrayList_Package.BasicArrayList'Class);
+   function Create (musicServiceClass : Ada.Tags.Tag; songList_Param : access BasicArrayList_Package.BasicArrayList'Class) return MusicManager_Access;
    procedure startNewSong (This : in out MusicManager);
-   procedure nextSong (This : in out MusicManager; nextSongSound_Param : access Sound'Class; leftVolume : Integer; rightVolume : Integer);
+   procedure nextSong (This : in out MusicManager; nextSongSound_Param : access Sound_Package.Sound'Class; leftVolume : Integer; rightVolume : Integer);
    procedure reset (This : in out MusicManager);
    procedure process (This : in out MusicManager);
-   procedure waitForStateChange (This : in out MusicManager; endingCurrentSongSound_Param : access Sound'Class; startingCurrentSongSound_Param : access Sound'Class);
+   procedure waitForStateChange (This : in out MusicManager; endingCurrentSongSound_Param : access Sound_Package.Sound'Class; startingCurrentSongSound_Param : access Sound_Package.Sound'Class);
    procedure stop (This : in out MusicManager);
 
 end org.allbinary.media.audio.music.MusicManager_Package;
@@ -141,7 +141,7 @@ package org.allbinary.media.audio.music.MusicManagerPlayerListener_Package is
 
    procedure Initialize (This : in out MusicManagerPlayerListener'Class);
    function Create return MusicManagerPlayerListener_Access;
-   procedure playerUpdate (This : in out MusicManagerPlayerListener; player_Param : access Player'Class; event : Unbounded_String; eventData_Param : access Java_Object'Class);
+   procedure playerUpdate (This : in out MusicManagerPlayerListener; player_Param : access Player_Package.Player'Class; event : Unbounded_String; eventData_Param : access Java_Object'Class);
 
 end org.allbinary.media.audio.music.MusicManagerPlayerListener_Package;
 

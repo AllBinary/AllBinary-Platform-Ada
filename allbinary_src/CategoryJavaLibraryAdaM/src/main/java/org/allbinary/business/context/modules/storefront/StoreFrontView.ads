@@ -51,10 +51,10 @@ package org.allbinary.business.context.modules.storefront.StoreFrontView_Package
       storeFrontInterface : StoreFrontInterface_Access;
    end record;
 
-   procedure Initialize (This : in out StoreFrontView'Class; storeFrontInterface_Param : access StoreFrontInterface'Class);
-   function Create (storeFrontInterface_Param : access StoreFrontInterface'Class) return StoreFrontView_Access;
-   function toXmlNode (This : in out StoreFrontView; document_Param : access Document'Class) return Node_Access;
-   procedure toXmlNode (This : in out StoreFrontView; document_Param : access Document'Class);
+   procedure Initialize (This : in out StoreFrontView'Class; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class);
+   function Create (storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) return StoreFrontView_Access;
+   function toXmlNode (This : in out StoreFrontView; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out StoreFrontView; document_Param : access Document_Package.Document'Class);
 
 end org.allbinary.business.context.modules.storefront.StoreFrontView_Package;
 

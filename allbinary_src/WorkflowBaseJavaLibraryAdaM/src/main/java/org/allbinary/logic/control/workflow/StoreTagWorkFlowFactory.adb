@@ -41,10 +41,10 @@ package body org.allbinary.logic.control.workflow.StoreTagWorkFlowFactory_Packag
    end Create;
 
    --  throws Exception, LicensingException
-   function getInstance (This : in out StoreTagWorkFlowFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return StoreWorkFlowInterface_Access is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      propertiesHashMap : HashMap_Access := HashMap_Access (propertiesHashMap_Param);
-      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
+   function getInstance (This : in out StoreTagWorkFlowFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return StoreWorkFlowInterface_Access is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      propertiesHashMap : constant HashMap_Access := HashMap_Access (propertiesHashMap_Param);
+      pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
       workFlowClassName : Unbounded_String;
       stringBuffer : StringMaker_Access;
       commonStrings : CommonStrings_Access;
@@ -89,7 +89,7 @@ package body org.allbinary.logic.control.workflow.StoreTagWorkFlowFactory_Packag
         end;
    end getInstance;
 
-   procedure getInstance (This : in out StoreTagWorkFlowFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+   procedure getInstance (This : in out StoreTagWorkFlowFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is
       Java_Result : constant StoreWorkFlowInterface_Access := StoreTagWorkFlowFactory'Class (This).getInstance (abeClientInformation_Param, propertiesHashMap_Param, pageContext_Param);
       pragma Unreferenced (Java_Result);
    begin

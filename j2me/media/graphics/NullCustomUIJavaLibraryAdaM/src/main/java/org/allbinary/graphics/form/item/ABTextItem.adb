@@ -9,14 +9,14 @@ package body org.allbinary.graphics.form.item.ABTextItem_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ABTextItem'Class; label : Unbounded_String; layout : Integer; altText : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) is
-      backgroundBasicColor : BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
-      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
+   procedure Initialize (This : in out ABTextItem'Class; label : Unbounded_String; layout : Integer; altText : Unbounded_String; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      backgroundBasicColor : constant BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
+      foregroundBasicColor : constant BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
    begin
         CustomCustomItem_Package.Initialize (This, label, backgroundBasicColor, foregroundBasicColor);
    end Initialize;
 
-   function Create (label : Unbounded_String; layout : Integer; altText : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return ABTextItem_Access is
+   function Create (label : Unbounded_String; layout : Integer; altText : Unbounded_String; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return ABTextItem_Access is
       This : constant ABTextItem_Access := new ABTextItem;
    begin
       ABTextItem_Package.Initialize (This.all, label, layout, altText, backgroundBasicColor_Param, foregroundBasicColor_Param);
@@ -28,8 +28,8 @@ package body org.allbinary.graphics.form.item.ABTextItem_Package is
         null;
    end keyPressed;
 
-   procedure paintUnselected (This : in out ABTextItem; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintUnselected (This : in out ABTextItem; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paintUnselected;

@@ -49,8 +49,8 @@ package org.allbinary.game.layer.weapon.SimpleWeaponLayer_Package is
 
    type SimpleWeaponLayer is new WeaponLayer with null record;
 
-   procedure Initialize (This : in out SimpleWeaponLayer'Class; name : Unbounded_String; remoteInfo_Param : access RemoteInfo'Class; multiPlayerType : Integer; movement_Param : access Movement'Class; animationInterface_Param : access Animation'Class; destroyedAnimationInterface_Param : access Animation'Class; rectangle_Param : access Rectangle'Class; viewPosition_Param : access ViewPositionBase'Class);
-   function Create (name : Unbounded_String; remoteInfo_Param : access RemoteInfo'Class; multiPlayerType : Integer; movement_Param : access Movement'Class; animationInterface_Param : access Animation'Class; destroyedAnimationInterface_Param : access Animation'Class; rectangle_Param : access Rectangle'Class; viewPosition_Param : access ViewPositionBase'Class) return SimpleWeaponLayer_Access;
+   procedure Initialize (This : in out SimpleWeaponLayer'Class; name : Unbounded_String; remoteInfo_Param : access RemoteInfo_Package.RemoteInfo'Class; multiPlayerType : Integer; movement_Param : access Movement_Package.Movement'Class; animationInterface_Param : access Animation_Package.Animation'Class; destroyedAnimationInterface_Param : access Animation_Package.Animation'Class; rectangle_Param : access Rectangle_Package.Rectangle'Class; viewPosition_Param : access ViewPositionBase_Package.ViewPositionBase'Class);
+   function Create (name : Unbounded_String; remoteInfo_Param : access RemoteInfo_Package.RemoteInfo'Class; multiPlayerType : Integer; movement_Param : access Movement_Package.Movement'Class; animationInterface_Param : access Animation_Package.Animation'Class; destroyedAnimationInterface_Param : access Animation_Package.Animation'Class; rectangle_Param : access Rectangle_Package.Rectangle'Class; viewPosition_Param : access ViewPositionBase_Package.ViewPositionBase'Class) return SimpleWeaponLayer_Access;
    function createDestroyed return Animation_Access;
 
 end org.allbinary.game.layer.weapon.SimpleWeaponLayer_Package;

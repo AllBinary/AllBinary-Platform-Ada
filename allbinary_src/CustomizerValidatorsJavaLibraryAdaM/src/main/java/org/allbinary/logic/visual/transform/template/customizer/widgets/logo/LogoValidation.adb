@@ -42,8 +42,8 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
       return This;
    end Create;
 
-   procedure Initialize (This : in out LogoValidation'Class; node_Param : access Node'Class) is
-      node : Node_Access := Node_Access (node_Param);
+   procedure Initialize (This : in out LogoValidation'Class; node_Param : access Node_Package.Node'Class) is
+      node : constant Node_Access := Node_Access (node_Param);
    begin
       Validation_Package.Initialize (This);
       Initialize_Fields (This);
@@ -52,15 +52,15 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
         This.logoFile := DomSearchHelper_Package.getNode (LogoData_Package.getInstance.IMAGEFILENAME, node.getChildNodes).getNodeValue;
    end Initialize;
 
-   function Create (node_Param : access Node'Class) return LogoValidation_Access is
+   function Create (node_Param : access Node_Package.Node'Class) return LogoValidation_Access is
       This : constant LogoValidation_Access := new LogoValidation;
    begin
       LogoValidation_Package.Initialize (This.all, node_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out LogoValidation'Class; hashMap_Param : access HashMap'Class) is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+   procedure Initialize (This : in out LogoValidation'Class; hashMap_Param : access HashMap_Package.HashMap'Class) is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
       Validation_Package.Initialize (This);
       Initialize_Fields (This);
@@ -68,7 +68,7 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
         This.getFormData (hashMap);
    end Initialize;
 
-   function Create (hashMap_Param : access HashMap'Class) return LogoValidation_Access is
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return LogoValidation_Access is
       This : constant LogoValidation_Access := new LogoValidation;
    begin
       LogoValidation_Package.Initialize (This.all, hashMap_Param);
@@ -76,8 +76,8 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
    end Create;
 
    --  throws Exception
-   procedure getFormData (This : in out LogoValidation; hashMap_Param : access HashMap'Class) is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+   procedure getFormData (This : in out LogoValidation; hashMap_Param : access HashMap_Package.HashMap'Class) is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
       stringBuffer : StringMaker_Access;
    begin
         This.logoFileItem := FileItem_Access (hashMap.get (LogoData_Package.getInstance.IMAGE));
@@ -170,8 +170,8 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out LogoValidation; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toValidationInfoNode (This : in out LogoValidation; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
@@ -194,8 +194,8 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
    end toHashMap;
 
    --  throws Exception
-   function toXmlNode (This : in out LogoValidation; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out LogoValidation; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       hashMap : HashMap_Access;
    begin
         hashMap := This.toHashMap;
@@ -216,14 +216,14 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
         LogoImageFileUtil_Package.Create (This.logoAbPath, This.logoFile).saveFiles (This.logoFileItem);
    end processLogoFile;
 
-   procedure toValidationInfoNode (This : in out LogoValidation; document_Param : access Document'Class) is
+   procedure toValidationInfoNode (This : in out LogoValidation; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := LogoValidation'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
 
-   procedure toXmlNode (This : in out LogoValidation; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out LogoValidation; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := LogoValidation'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

@@ -58,8 +58,8 @@ package org.allbinary.game.ag.ai.scroller.TerrainPatrolAI_Package is
       CLIFF : BasicTerrainInfo_Access;
    end record;
 
-   procedure Initialize (This : in out TerrainPatrolAI'Class; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class);
-   function Create (hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return TerrainPatrolAI_Access;
+   procedure Initialize (This : in out TerrainPatrolAI'Class; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class);
+   function Create (hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) return TerrainPatrolAI_Access;
    procedure update (This : in out TerrainPatrolAI);
    procedure changeDirectionIfCliffReached (This : in out TerrainPatrolAI);
 

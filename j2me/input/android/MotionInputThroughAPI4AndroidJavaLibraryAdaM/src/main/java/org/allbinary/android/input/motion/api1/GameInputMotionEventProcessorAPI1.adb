@@ -45,8 +45,8 @@ package body org.allbinary.android.input.motion.api1.GameInputMotionEventProcess
       return This;
    end Create;
 
-   procedure process (This : in out GameInputMotionEventProcessorAPI1; motionEvent_Param : access MotionEvent'Class) is
-      motionEvent : MotionEvent_Access := MotionEvent_Access (motionEvent_Param);
+   procedure process (This : in out GameInputMotionEventProcessorAPI1; motionEvent_Param : access MotionEvent_Package.MotionEvent'Class) is
+      motionEvent : constant MotionEvent_Access := MotionEvent_Access (motionEvent_Param);
       x : Integer;
       y : Integer;
       action : Integer;

@@ -52,7 +52,7 @@ package org.allbinary.globals.Globals_Package is
    procedure Initialize (This : in out Globals'Class);
    function Create return Globals_Access;
    function getInstance return Globals_Access;
-   procedure init (This : in out Globals; classLoader_Param : access ClassLoader'Class; pathString : Unbounded_String);
+   procedure init (This : in out Globals; classLoader_Param : access ClassLoader_Package.ClassLoader'Class; pathString : Unbounded_String);
 
 end org.allbinary.globals.Globals_Package;
 

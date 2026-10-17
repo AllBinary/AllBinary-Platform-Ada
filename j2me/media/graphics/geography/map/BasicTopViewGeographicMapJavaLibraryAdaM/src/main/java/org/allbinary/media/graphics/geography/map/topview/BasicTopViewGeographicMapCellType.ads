@@ -52,12 +52,12 @@ package org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographi
       types : Integer_Array_Access;
    end record;
 
-   procedure Initialize (This : in out BasicTopViewGeographicMapCellType'Class; name : Unbounded_String; types_Param : access BasicArrayList'Class; cost : Integer);
-   function Create (name : Unbounded_String; types_Param : access BasicArrayList'Class; cost : Integer) return BasicTopViewGeographicMapCellType_Access;
+   procedure Initialize (This : in out BasicTopViewGeographicMapCellType'Class; name : Unbounded_String; types_Param : access BasicArrayList_Package.BasicArrayList'Class; cost : Integer);
+   function Create (name : Unbounded_String; types_Param : access BasicArrayList_Package.BasicArrayList'Class; cost : Integer) return BasicTopViewGeographicMapCellType_Access;
    function createType (name : Unbounded_String; type_Id : Integer; cost : Integer) return BasicTopViewGeographicMapCellType_Access;
    procedure createType (name : Unbounded_String; type_Id : Integer; cost : Integer);
-   function isType (This : in out BasicTopViewGeographicMapCellType; type_Id_Param : access GeographicMapCellType'Class) return Boolean;
-   procedure isType (This : in out BasicTopViewGeographicMapCellType; type_Id_Param : access GeographicMapCellType'Class);
+   function isType (This : in out BasicTopViewGeographicMapCellType; type_Id_Param : access GeographicMapCellType_Package.GeographicMapCellType'Class) return Boolean;
+   procedure isType (This : in out BasicTopViewGeographicMapCellType; type_Id_Param : access GeographicMapCellType_Package.GeographicMapCellType'Class);
    function hasType (This : in out BasicTopViewGeographicMapCellType; type_Id : Integer) return Boolean;
    procedure hasType (This : in out BasicTopViewGeographicMapCellType; type_Id : Integer);
    function getTypes (This : in out BasicTopViewGeographicMapCellType) return Integer_Array_Access;

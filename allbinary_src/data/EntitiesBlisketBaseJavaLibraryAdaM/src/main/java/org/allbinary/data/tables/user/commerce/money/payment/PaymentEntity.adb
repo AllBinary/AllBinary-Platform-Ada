@@ -167,8 +167,8 @@ package body org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity
         end;
    end remove;
 
-   procedure add (This : in out PaymentEntity; userName : Unbounded_String; paymentInterface_Param : access PaymentInterface'Class) is
-      paymentInterface : PaymentInterface_Access := PaymentInterface_Access (paymentInterface_Param);
+   procedure add (This : in out PaymentEntity; userName : Unbounded_String; paymentInterface_Param : access PaymentInterface_Package.PaymentInterface'Class) is
+      paymentInterface : constant PaymentInterface_Access := PaymentInterface_Access (paymentInterface_Param);
       vector : BasicArrayList_Access;
       random : Integer;
       calendar : Calendar_Access;

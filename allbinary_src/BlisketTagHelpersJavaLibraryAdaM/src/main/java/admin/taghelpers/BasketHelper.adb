@@ -27,9 +27,9 @@ package body admin.taghelpers.BasketHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasketHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
-      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
+   procedure Initialize (This : in out BasketHelper'Class; hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
       storeName : Unbounded_String;
    begin
       TagHelper_Package.Initialize (This);
@@ -43,7 +43,7 @@ package body admin.taghelpers.BasketHelper_Package is
         This.weblisketSession := WeblisketSession_Package.Create (hashMap, pageContext);
    end Initialize;
 
-   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return BasketHelper_Access is
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return BasketHelper_Access is
       This : constant BasketHelper_Access := new BasketHelper;
    begin
       BasketHelper_Package.Initialize (This.all, hashMap_Param, pageContext_Param);

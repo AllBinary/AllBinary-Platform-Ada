@@ -37,8 +37,8 @@ package org.allbinary.game.score.HighScoresCanvasNoInputProcessorFactory_Package
 
    procedure Initialize (This : in out HighScoresCanvasNoInputProcessorFactory'Class);
    function Create return HighScoresCanvasNoInputProcessorFactory_Access;
-   function getInstance (This : in out HighScoresCanvasNoInputProcessorFactory; highScoresCanvas_Param : access HighScoresCanvas'Class) return HighScoresCanvasInputProcessor_Access;
-   procedure getInstance (This : in out HighScoresCanvasNoInputProcessorFactory; highScoresCanvas_Param : access HighScoresCanvas'Class);
+   function getInstance (This : in out HighScoresCanvasNoInputProcessorFactory; highScoresCanvas_Param : access HighScoresCanvas_Package.HighScoresCanvas'Class) return HighScoresCanvasInputProcessor_Access;
+   procedure getInstance (This : in out HighScoresCanvasNoInputProcessorFactory; highScoresCanvas_Param : access HighScoresCanvas_Package.HighScoresCanvas'Class);
 
 end org.allbinary.game.score.HighScoresCanvasNoInputProcessorFactory_Package;
 

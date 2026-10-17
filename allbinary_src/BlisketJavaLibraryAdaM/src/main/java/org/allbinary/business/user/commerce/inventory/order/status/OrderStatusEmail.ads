@@ -72,8 +72,8 @@ package org.allbinary.business.user.commerce.inventory.order.status.OrderStatusE
       user : UserInterface_Access;
    end record;
 
-   procedure Initialize (This : in out OrderStatusEmail'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; orderHistory_Param : access OrderHistory'Class);
-   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; orderHistory_Param : access OrderHistory'Class) return OrderStatusEmail_Access;
+   procedure Initialize (This : in out OrderStatusEmail'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; orderHistory_Param : access OrderHistory_Package.OrderHistory'Class);
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; orderHistory_Param : access OrderHistory_Package.OrderHistory'Class) return OrderStatusEmail_Access;
    procedure process (This : in out OrderStatusEmail);
    procedure notifyStoreAdmin (This : in out OrderStatusEmail);
    procedure notifyUser (This : in out OrderStatusEmail);

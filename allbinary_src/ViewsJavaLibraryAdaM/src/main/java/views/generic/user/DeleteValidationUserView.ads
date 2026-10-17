@@ -55,13 +55,13 @@ package views.generic_Id.user.DeleteValidationUserView_Package is
       userName : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out DeleteValidationUserView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return DeleteValidationUserView_Access;
+   procedure Initialize (This : in out DeleteValidationUserView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return DeleteValidationUserView_Access;
    function isValid (This : in out DeleteValidationUserView) return Boolean;
    function validationInfo (This : in out DeleteValidationUserView) return Unbounded_String;
    function toValidationInfoDoc (This : in out DeleteValidationUserView) return Document_Access;
-   function toValidationInfoNode (This : in out DeleteValidationUserView; document_Param : access Document'Class) return Node_Access;
-   procedure toValidationInfoNode (This : in out DeleteValidationUserView; document_Param : access Document'Class);
+   function toValidationInfoNode (This : in out DeleteValidationUserView; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out DeleteValidationUserView; document_Param : access Document_Package.Document'Class);
 
 end views.generic_Id.user.DeleteValidationUserView_Package;
 

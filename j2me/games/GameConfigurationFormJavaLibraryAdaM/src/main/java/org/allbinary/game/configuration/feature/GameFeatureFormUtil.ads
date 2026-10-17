@@ -64,10 +64,10 @@ package org.allbinary.game.configuration.feature.GameFeatureFormUtil_Package is
    procedure Initialize (This : in out GameFeatureFormUtil'Class);
    function Create return GameFeatureFormUtil_Access;
    function getInstance return GameFeatureFormUtil_Access;
-   function getChoiceGroup (This : in out GameFeatureFormUtil; hashtable_Param : access ABHashtable'Class; name : Unbounded_String; option : Integer) return ChoiceGroup_Access;
-   procedure getChoiceGroup (This : in out GameFeatureFormUtil; hashtable_Param : access ABHashtable'Class; name : Unbounded_String; option : Integer);
-   procedure addChoiceGroup (This : in out GameFeatureFormUtil; form_Param : access CommandForm'Class; hashtable_Param : access ABHashtable'Class; option : Integer);
-   procedure setDefault (This : in out GameFeatureFormUtil; form_Param : access CommandForm'Class);
+   function getChoiceGroup (This : in out GameFeatureFormUtil; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; name : Unbounded_String; option : Integer) return ChoiceGroup_Access;
+   procedure getChoiceGroup (This : in out GameFeatureFormUtil; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; name : Unbounded_String; option : Integer);
+   procedure addChoiceGroup (This : in out GameFeatureFormUtil; form_Param : access CommandForm_Package.CommandForm'Class; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; option : Integer);
+   procedure setDefault (This : in out GameFeatureFormUtil; form_Param : access CommandForm_Package.CommandForm'Class);
 
 end org.allbinary.game.configuration.feature.GameFeatureFormUtil_Package;
 

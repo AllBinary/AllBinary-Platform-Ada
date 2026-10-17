@@ -41,9 +41,9 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
       return This;
    end Create;
 
-   procedure rotateImage (This : in out ImageRotationUtil; originalImage_Param : access Image'Class; image_Param : access Image'Class; totalAngle : Integer) is
-      originalImage : Image_Access := Image_Access (originalImage_Param);
-      image : Image_Access := Image_Access (image_Param);
+   procedure rotateImage (This : in out ImageRotationUtil; originalImage_Param : access Image_Package.Image'Class; image_Param : access Image_Package.Image'Class; totalAngle : Integer) is
+      originalImage : constant Image_Access := Image_Access (originalImage_Param);
+      image : constant Image_Access := Image_Access (image_Param);
       originalImage2 : Image_Access;
       openGLESImage : OpenGLESImage_Access;
       originalSwtImage : Image_Access;
@@ -75,13 +75,13 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
    end rotateImage;
 
    --  throws Exception
-   function createRotatedImage (This : in out ImageRotationUtil; originalImage_Param : access Image'Class; rotationInDegrees : Integer) return Image_Access is
-      originalImage : Image_Access := Image_Access (originalImage_Param);
+   function createRotatedImage (This : in out ImageRotationUtil; originalImage_Param : access Image_Package.Image'Class; rotationInDegrees : Integer) return Image_Access is
+      originalImage : constant Image_Access := Image_Access (originalImage_Param);
    begin
         return originalImage;
    end createRotatedImage;
 
-   procedure createRotatedImage (This : in out ImageRotationUtil; originalImage_Param : access Image'Class; rotationInDegrees : Integer) is
+   procedure createRotatedImage (This : in out ImageRotationUtil; originalImage_Param : access Image_Package.Image'Class; rotationInDegrees : Integer) is
       Java_Result : constant Image_Access := ImageRotationUtil'Class (This).createRotatedImage (originalImage_Param, rotationInDegrees);
       pragma Unreferenced (Java_Result);
    begin

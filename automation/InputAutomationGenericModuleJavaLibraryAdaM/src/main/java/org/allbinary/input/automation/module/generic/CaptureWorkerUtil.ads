@@ -45,7 +45,7 @@ package org.allbinary.input.automation.module.generic_Id.CaptureWorkerUtil_Packa
 
    procedure Initialize (This : in out CaptureWorkerUtil'Class);
    function Create return CaptureWorkerUtil_Access;
-   procedure processProfileActionConditions (vector_Param : access BasicArrayList'Class; frame : Long_Long_Integer);
+   procedure processProfileActionConditions (vector_Param : access BasicArrayList_Package.BasicArrayList'Class; frame : Long_Long_Integer);
 
 end org.allbinary.input.automation.module.generic_Id.CaptureWorkerUtil_Package;
 

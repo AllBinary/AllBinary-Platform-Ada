@@ -38,10 +38,10 @@ package org.allbinary.business.user.modules.admin.store.order.review.ReviewOrder
 
    procedure Initialize (This : in out ReviewOrderStoreAdminUser'Class);
    function Create return ReviewOrderStoreAdminUser_Access;
-   procedure Initialize (This : in out ReviewOrderStoreAdminUser'Class; userHashMap_Param : access HashMap'Class);
-   function Create (userHashMap_Param : access HashMap'Class) return ReviewOrderStoreAdminUser_Access;
-   procedure validateSession (This : in out ReviewOrderStoreAdminUser; weblisketSession_Param : access WeblisketSessionInterface'Class);
-   procedure updateSession (This : in out ReviewOrderStoreAdminUser; weblisketSession_Param : access WeblisketSessionInterface'Class);
+   procedure Initialize (This : in out ReviewOrderStoreAdminUser'Class; userHashMap_Param : access HashMap_Package.HashMap'Class);
+   function Create (userHashMap_Param : access HashMap_Package.HashMap'Class) return ReviewOrderStoreAdminUser_Access;
+   procedure validateSession (This : in out ReviewOrderStoreAdminUser; weblisketSession_Param : access WeblisketSessionInterface_Package.WeblisketSessionInterface'Class);
+   procedure updateSession (This : in out ReviewOrderStoreAdminUser; weblisketSession_Param : access WeblisketSessionInterface_Package.WeblisketSessionInterface'Class);
 
 end org.allbinary.business.user.modules.admin.store.order.review.ReviewOrderStoreAdminUser_Package;
 

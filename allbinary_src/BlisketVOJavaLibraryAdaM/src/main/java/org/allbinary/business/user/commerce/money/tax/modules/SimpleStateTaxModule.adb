@@ -43,9 +43,9 @@ package body org.allbinary.business.user.commerce.money.tax.modules.SimpleStateT
    end Create;
 
    --  throws Exception
-   function getTaxRate (This : in out SimpleStateTaxModule; streetAddress_Param : access StreetAddress'Class; storeFrontInterface_Param : access StoreFrontInterface'Class) return Float is
-      streetAddress : StreetAddress_Access := StreetAddress_Access (streetAddress_Param);
-      storeFrontInterface : StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
+   function getTaxRate (This : in out SimpleStateTaxModule; streetAddress_Param : access StreetAddress_Package.StreetAddress'Class; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) return Float is
+      streetAddress : constant StreetAddress_Access := StreetAddress_Access (streetAddress_Param);
+      storeFrontInterface : constant StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
       fileAbPath : AbPath_Access;
       data : Unbounded_String;
       state : Unbounded_String;
@@ -91,9 +91,9 @@ package body org.allbinary.business.user.commerce.money.tax.modules.SimpleStateT
         return 0;
    end getTaxRate;
 
-   function isValid (This : in out SimpleStateTaxModule; streetAddress_Param : access StreetAddress'Class; storeFrontInterface_Param : access StoreFrontInterface'Class) return Boolean is
-      streetAddress : StreetAddress_Access := StreetAddress_Access (streetAddress_Param);
-      storeFrontInterface : StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
+   function isValid (This : in out SimpleStateTaxModule; streetAddress_Param : access StreetAddress_Package.StreetAddress'Class; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) return Boolean is
+      streetAddress : constant StreetAddress_Access := StreetAddress_Access (streetAddress_Param);
+      storeFrontInterface : constant StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
       fileAbPath : AbPath_Access;
       data : Unbounded_String;
       country : Unbounded_String;
@@ -160,14 +160,14 @@ package body org.allbinary.business.user.commerce.money.tax.modules.SimpleStateT
         end;
    end isValid;
 
-   procedure getTaxRate (This : in out SimpleStateTaxModule; streetAddress_Param : access StreetAddress'Class; storeFrontInterface_Param : access StoreFrontInterface'Class) is
+   procedure getTaxRate (This : in out SimpleStateTaxModule; streetAddress_Param : access StreetAddress_Package.StreetAddress'Class; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) is
       Java_Result : constant Float := SimpleStateTaxModule'Class (This).getTaxRate (streetAddress_Param, storeFrontInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getTaxRate;
 
-   procedure isValid (This : in out SimpleStateTaxModule; streetAddress_Param : access StreetAddress'Class; storeFrontInterface_Param : access StoreFrontInterface'Class) is
+   procedure isValid (This : in out SimpleStateTaxModule; streetAddress_Param : access StreetAddress_Package.StreetAddress'Class; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) is
       Java_Result : constant Boolean := SimpleStateTaxModule'Class (This).isValid (streetAddress_Param, storeFrontInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

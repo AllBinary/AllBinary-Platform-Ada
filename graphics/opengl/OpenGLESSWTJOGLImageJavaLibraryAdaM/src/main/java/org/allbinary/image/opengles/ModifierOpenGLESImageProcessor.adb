@@ -39,8 +39,8 @@ package body org.allbinary.image.opengles.ModifierOpenGLESImageProcessor_Package
         return ModifierOpenGLESImageProcessor_Package.instanceC;
    end getInstance;
 
-   procedure colorMask (This : in out ModifierOpenGLESImageProcessor; gl_Param : access GL10'Class; red : Float; green : Float; blue : Float; alpha : Float) is
-      gl : GL10_Access := GL10_Access (gl_Param);
+   procedure colorMask (This : in out ModifierOpenGLESImageProcessor; gl_Param : access GL10_Package.GL10'Class; red : Float; green : Float; blue : Float; alpha : Float) is
+      gl : constant GL10_Access := GL10_Access (gl_Param);
    begin
         gl.glColor4f (red, green, blue, alpha);
    end colorMask;

@@ -79,7 +79,7 @@ package org.allbinary.data.tables.user.commerce.money.payment.PaymentEntity_Pack
    function getDefault (This : in out PaymentEntity; userName : Unbounded_String) return PaymentInterface_Access;
    procedure getDefault (This : in out PaymentEntity; userName : Unbounded_String);
    procedure remove (This : in out PaymentEntity; userName : Unbounded_String; index : Integer);
-   procedure add (This : in out PaymentEntity; userName : Unbounded_String; paymentInterface_Param : access PaymentInterface'Class);
+   procedure add (This : in out PaymentEntity; userName : Unbounded_String; paymentInterface_Param : access PaymentInterface_Package.PaymentInterface'Class);
    function createTableStatement (This : in out PaymentEntity) return Unbounded_String;
    function createTable (This : in out PaymentEntity) return Unbounded_String;
    function drop (This : in out PaymentEntity) return Unbounded_String;

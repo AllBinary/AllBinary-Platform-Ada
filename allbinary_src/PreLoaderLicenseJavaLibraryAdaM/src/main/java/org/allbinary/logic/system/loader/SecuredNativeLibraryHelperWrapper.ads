@@ -41,10 +41,10 @@ package org.allbinary.logic.system.loader.SecuredNativeLibraryHelperWrapper_Pack
       securedNativeLibraryInterface : SecuredNativeLibraryInterface_Access;
    end record;
 
-   procedure Initialize (This : in out SecuredNativeLibraryHelperWrapper'Class; securedNativeLibraryInterface_Param : access SecuredNativeLibraryInterface'Class);
-   function Create (securedNativeLibraryInterface_Param : access SecuredNativeLibraryInterface'Class) return SecuredNativeLibraryHelperWrapper_Access;
-   function unlock (This : in out SecuredNativeLibraryHelperWrapper; abeClientInformation_Param : access AbeClientInformationInterface'Class) return Boolean;
-   procedure unlock (This : in out SecuredNativeLibraryHelperWrapper; abeClientInformation_Param : access AbeClientInformationInterface'Class);
+   procedure Initialize (This : in out SecuredNativeLibraryHelperWrapper'Class; securedNativeLibraryInterface_Param : access SecuredNativeLibraryInterface_Package.SecuredNativeLibraryInterface'Class);
+   function Create (securedNativeLibraryInterface_Param : access SecuredNativeLibraryInterface_Package.SecuredNativeLibraryInterface'Class) return SecuredNativeLibraryHelperWrapper_Access;
+   function unlock (This : in out SecuredNativeLibraryHelperWrapper; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) return Boolean;
+   procedure unlock (This : in out SecuredNativeLibraryHelperWrapper; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class);
 
 end org.allbinary.logic.system.loader.SecuredNativeLibraryHelperWrapper_Package;
 

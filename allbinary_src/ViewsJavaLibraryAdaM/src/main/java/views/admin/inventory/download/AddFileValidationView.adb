@@ -23,14 +23,14 @@ package body views.admin.inventory.download.AddFileValidationView_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AddFileValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out AddFileValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         DownloadableInventoryItemView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return AddFileValidationView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return AddFileValidationView_Access is
       This : constant AddFileValidationView_Access := new AddFileValidationView;
    begin
       AddFileValidationView_Package.Initialize (This.all, transformInfoInterface_Param);
@@ -181,8 +181,8 @@ package body views.admin.inventory.download.AddFileValidationView_Package is
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out AddFileValidationView; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toValidationInfoNode (This : in out AddFileValidationView; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
@@ -331,8 +331,8 @@ package body views.admin.inventory.download.AddFileValidationView_Package is
         return True;
    end isValid;
 
-   procedure validationInfo (This : in out AddFileValidationView; stringBuffer_Param : access StringMaker'Class; fileName : Unbounded_String; size : Long_Long_Integer) is
-      stringBuffer : StringMaker_Access := StringMaker_Access (stringBuffer_Param);
+   procedure validationInfo (This : in out AddFileValidationView; stringBuffer_Param : access StringMaker_Package.StringMaker'Class; fileName : Unbounded_String; size : Long_Long_Integer) is
+      stringBuffer : constant StringMaker_Access := StringMaker_Access (stringBuffer_Param);
       fileData : FileData_Access;
    begin
         fileData := FileData_Package.getInstance;
@@ -359,7 +359,7 @@ package body views.admin.inventory.download.AddFileValidationView_Package is
         end if;
    end validationInfo;
 
-   procedure toValidationInfoNode (This : in out AddFileValidationView; document_Param : access Document'Class) is
+   procedure toValidationInfoNode (This : in out AddFileValidationView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := AddFileValidationView'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

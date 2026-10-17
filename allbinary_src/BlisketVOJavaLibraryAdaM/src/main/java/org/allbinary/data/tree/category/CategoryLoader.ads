@@ -63,22 +63,22 @@ package org.allbinary.data.tree.category.CategoryLoader_Package is
       logUtil : LogUtil_Access;
    end record;
 
-   procedure Initialize (This : in out CategoryLoader'Class; categoryFactoryInterface_Param : access CategoryFactoryInterface'Class);
-   function Create (categoryFactoryInterface_Param : access CategoryFactoryInterface'Class) return CategoryLoader_Access;
-   function getDoc (This : in out CategoryLoader; categoryInterface_Param : access CategoryInterface'Class) return Document_Access;
-   procedure getDoc (This : in out CategoryLoader; categoryInterface_Param : access CategoryInterface'Class);
-   function get (This : in out CategoryLoader; categoryInterface_Param : access CategoryInterface'Class) return CategoryInterface_Access;
-   procedure get (This : in out CategoryLoader; categoryInterface_Param : access CategoryInterface'Class);
-   function get (This : in out CategoryLoader; document_Param : access Document'Class) return CategoryInterface_Access;
-   procedure get (This : in out CategoryLoader; document_Param : access Document'Class);
-   function getAll (This : in out CategoryLoader; categoryInterface_Param : access CategoryInterface'Class) return CategoryInterface_Access;
-   procedure getAll (This : in out CategoryLoader; categoryInterface_Param : access CategoryInterface'Class);
-   function getAll (This : in out CategoryLoader; document_Param : access Document'Class) return CategoryInterface_Access;
-   procedure getAll (This : in out CategoryLoader; document_Param : access Document'Class);
-   function getAll (This : in out CategoryLoader; parentCategoryInterface_Param : access CategoryInterface'Class; categoryNodeList_Param : access NodeList'Class) return CategoryInterface_Access;
-   procedure getAll (This : in out CategoryLoader; parentCategoryInterface_Param : access CategoryInterface'Class; categoryNodeList_Param : access NodeList'Class);
-   function addProperties (This : in out CategoryLoader; loadedCategoryInterface_Param : access CategoryInterface'Class; categoryNodeList_Param : access NodeList'Class) return CategoryInterface_Access;
-   procedure addProperties (This : in out CategoryLoader; loadedCategoryInterface_Param : access CategoryInterface'Class; categoryNodeList_Param : access NodeList'Class);
+   procedure Initialize (This : in out CategoryLoader'Class; categoryFactoryInterface_Param : access CategoryFactoryInterface_Package.CategoryFactoryInterface'Class);
+   function Create (categoryFactoryInterface_Param : access CategoryFactoryInterface_Package.CategoryFactoryInterface'Class) return CategoryLoader_Access;
+   function getDoc (This : in out CategoryLoader; categoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class) return Document_Access;
+   procedure getDoc (This : in out CategoryLoader; categoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class);
+   function get (This : in out CategoryLoader; categoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class) return CategoryInterface_Access;
+   procedure get (This : in out CategoryLoader; categoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class);
+   function get (This : in out CategoryLoader; document_Param : access Document_Package.Document'Class) return CategoryInterface_Access;
+   procedure get (This : in out CategoryLoader; document_Param : access Document_Package.Document'Class);
+   function getAll (This : in out CategoryLoader; categoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class) return CategoryInterface_Access;
+   procedure getAll (This : in out CategoryLoader; categoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class);
+   function getAll (This : in out CategoryLoader; document_Param : access Document_Package.Document'Class) return CategoryInterface_Access;
+   procedure getAll (This : in out CategoryLoader; document_Param : access Document_Package.Document'Class);
+   function getAll (This : in out CategoryLoader; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; categoryNodeList_Param : access NodeList_Package.NodeList'Class) return CategoryInterface_Access;
+   procedure getAll (This : in out CategoryLoader; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; categoryNodeList_Param : access NodeList_Package.NodeList'Class);
+   function addProperties (This : in out CategoryLoader; loadedCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; categoryNodeList_Param : access NodeList_Package.NodeList'Class) return CategoryInterface_Access;
+   procedure addProperties (This : in out CategoryLoader; loadedCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; categoryNodeList_Param : access NodeList_Package.NodeList'Class);
 
 end org.allbinary.data.tree.category.CategoryLoader_Package;
 

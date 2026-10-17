@@ -30,7 +30,7 @@ package org.allbinary.business.advertisement.campaign.AdvertisementCampaignsInte
    type AdvertisementCampaignsInterface_Access is access all AdvertisementCampaignsInterface'Class;
    type AdvertisementCampaignsInterface_Access_Array is array (Natural range <>) of AdvertisementCampaignsInterface_Access;
    type AdvertisementCampaignsInterface_Access_Array_Access is access all AdvertisementCampaignsInterface_Access_Array;
-   procedure add (This : in out AdvertisementCampaignsInterface; advertisementInterface_Param : access AdvertisementInterface'Class) is abstract;
+   procedure add (This : in out AdvertisementCampaignsInterface; advertisementInterface_Param : access AdvertisementInterface_Package.AdvertisementInterface'Class) is abstract;
    function get (This : in out AdvertisementCampaignsInterface; index : Integer) return AdvertisementInterface_Access is abstract;
    function size (This : in out AdvertisementCampaignsInterface) return Integer is abstract;
    function isEnabled (This : in out AdvertisementCampaignsInterface) return Boolean is abstract;

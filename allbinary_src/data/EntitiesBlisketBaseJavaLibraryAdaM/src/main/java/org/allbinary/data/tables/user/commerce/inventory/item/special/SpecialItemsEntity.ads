@@ -57,11 +57,11 @@ package org.allbinary.data.tables.user.commerce.inventory.item.special.SpecialIt
 
    procedure Initialize (This : in out SpecialItemsEntity'Class);
    function Create return SpecialItemsEntity_Access;
-   procedure insert (This : in out SpecialItemsEntity; values_Param : access BasicArrayList'Class);
+   procedure insert (This : in out SpecialItemsEntity; values_Param : access BasicArrayList_Package.BasicArrayList'Class);
    procedure delete (This : in out SpecialItemsEntity; value : Unbounded_String);
    function createTableStatement (This : in out SpecialItemsEntity) return Unbounded_String;
    function createTable (This : in out SpecialItemsEntity) return Unbounded_String;
-   procedure update (This : in out SpecialItemsEntity; updatedValues_Param : access HashMap'Class);
+   procedure update (This : in out SpecialItemsEntity; updatedValues_Param : access HashMap_Package.HashMap'Class);
    function dropTable (This : in out SpecialItemsEntity) return Unbounded_String;
 
 end org.allbinary.data.tables.user.commerce.inventory.item.special.SpecialItemsEntity_Package;

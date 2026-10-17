@@ -59,10 +59,10 @@ package org.allbinary.media.image.search.ImageComparisonSearch_Package is
       matchingPercent : Float;
    end record;
 
-   procedure Initialize (This : in out ImageComparisonSearch'Class; bufferedImage_Param : access BufferedImage'Class; bufferedImage2_Param : access BufferedImage'Class; tolerance : Integer);
-   function Create (bufferedImage_Param : access BufferedImage'Class; bufferedImage2_Param : access BufferedImage'Class; tolerance : Integer) return ImageComparisonSearch_Access;
+   procedure Initialize (This : in out ImageComparisonSearch'Class; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; bufferedImage2_Param : access BufferedImage_Package.BufferedImage'Class; tolerance : Integer);
+   function Create (bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; bufferedImage2_Param : access BufferedImage_Package.BufferedImage'Class; tolerance : Integer) return ImageComparisonSearch_Access;
    function getMatchingPercent (This : in out ImageComparisonSearch) return Float;
-   procedure add (This : in out ImageComparisonSearch; pixel_Param : access PixelDelta'Class);
+   procedure add (This : in out ImageComparisonSearch; pixel_Param : access PixelDelta_Package.PixelDelta'Class);
    function getNonMatchingPixelVector (This : in out ImageComparisonSearch) return BasicArrayList_Access;
    function toString (This : in out ImageComparisonSearch) return Unbounded_String;
    function getBufferedImages (This : in out ImageComparisonSearch) return BufferedImage_Access_Array_Access;

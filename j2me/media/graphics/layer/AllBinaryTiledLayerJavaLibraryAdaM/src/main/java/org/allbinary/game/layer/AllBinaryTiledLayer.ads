@@ -57,8 +57,8 @@ package org.allbinary.game.layer.AllBinaryTiledLayer_Package is
    procedure setCells (This : in out AllBinaryTiledLayer; mapTwoDArray : Integer_Array_Access_Array_Access);
    procedure updateCells (This : in out AllBinaryTiledLayer; mapTwoDArray : Integer_Array_Access_Array_Access; fromTileId : Integer; toTileId : Integer);
    function getName (This : in out AllBinaryTiledLayer) return Unbounded_String;
-   procedure paint (This : in out AllBinaryTiledLayer; graphics_Param : access Graphics'Class);
-   procedure paintThreed (This : in out AllBinaryTiledLayer; graphics_Param : access Graphics'Class);
+   procedure paint (This : in out AllBinaryTiledLayer; graphics_Param : access Graphics_Package.Graphics'Class);
+   procedure paintThreed (This : in out AllBinaryTiledLayer; graphics_Param : access Graphics_Package.Graphics'Class);
    function getX2 (This : in out AllBinaryTiledLayer) return Integer;
    function getY2 (This : in out AllBinaryTiledLayer) return Integer;
    function getZ2 (This : in out AllBinaryTiledLayer) return Integer;

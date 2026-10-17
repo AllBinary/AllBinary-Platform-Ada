@@ -52,8 +52,8 @@ package org.allbinary.logic.visual.transform.info.TransformInfoObjectFactory_Pac
    procedure Initialize (This : in out TransformInfoObjectFactory'Class);
    function Create return TransformInfoObjectFactory_Access;
    function getInstance return TransformInfoObjectFactory_Access;
-   function getInstance (This : in out TransformInfoObjectFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) return TransformInterface_Access;
-   procedure getInstance (This : in out TransformInfoObjectFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function getInstance (This : in out TransformInfoObjectFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return TransformInterface_Access;
+   procedure getInstance (This : in out TransformInfoObjectFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
 
 end org.allbinary.logic.visual.transform.info.TransformInfoObjectFactory_Package;
 

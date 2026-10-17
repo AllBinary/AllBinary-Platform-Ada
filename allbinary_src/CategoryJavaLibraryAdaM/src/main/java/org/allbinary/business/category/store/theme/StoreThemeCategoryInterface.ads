@@ -42,7 +42,7 @@ package org.allbinary.business.category.store.theme.StoreThemeCategoryInterface_
    type StoreThemeCategoryInterface_Access is access all StoreThemeCategoryInterface'Class;
    type StoreThemeCategoryInterface_Access_Array is array (Natural range <>) of StoreThemeCategoryInterface_Access;
    type StoreThemeCategoryInterface_Access_Array_Access is access all StoreThemeCategoryInterface_Access_Array;
-   procedure addTheme (This : in out StoreThemeCategoryInterface; themeValidation_Param : access ThemeValidation'Class) is abstract;
+   procedure addTheme (This : in out StoreThemeCategoryInterface; themeValidation_Param : access ThemeValidation_Package.ThemeValidation'Class) is abstract;
    function getThemes (This : in out StoreThemeCategoryInterface) return BasicArrayList_Access is abstract;
 
 end org.allbinary.business.category.store.theme.StoreThemeCategoryInterface_Package;

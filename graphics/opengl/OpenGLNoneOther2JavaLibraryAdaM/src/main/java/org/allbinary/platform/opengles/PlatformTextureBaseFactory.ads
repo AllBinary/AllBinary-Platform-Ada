@@ -40,7 +40,7 @@ package org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package is
 
    procedure Initialize (This : in out PlatformTextureBaseFactory'Class);
    function Create return PlatformTextureBaseFactory_Access;
-   procedure load (This : in out PlatformTextureBaseFactory; gl_Param : access GL10'Class; target : Integer; level : Integer; image_Param : access Image'Class; border : Integer; flip : Boolean);
+   procedure load (This : in out PlatformTextureBaseFactory; gl_Param : access GL10_Package.GL10'Class; target : Integer; level : Integer; image_Param : access Image_Package.Image'Class; border : Integer; flip : Boolean);
 
 end org.allbinary.platform.opengles.PlatformTextureBaseFactory_Package;
 

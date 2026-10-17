@@ -202,8 +202,8 @@ package body org.allbinary.graphics.opengles.OpenGLConfiguration_Package is
    end init;
 
    --  throws Exception
-   procedure update (This : in out OpenGLConfiguration; gameFeature_Param : access Feature'Class; colorLocked : Boolean) is
-      gameFeature : Feature_Access := Feature_Access (gameFeature_Param);
+   procedure update (This : in out OpenGLConfiguration; gameFeature_Param : access Feature_Package.Feature'Class; colorLocked : Boolean) is
+      gameFeature : constant Feature_Access := Feature_Access (gameFeature_Param);
       features : Features_Access;
       openGLFeatureFactory : OpenGLFeatureFactory_Access;
       modified : Boolean;
@@ -278,8 +278,8 @@ package body org.allbinary.graphics.opengles.OpenGLConfiguration_Package is
         return This.opengl;
    end isOpenGL;
 
-   procedure setImageColor (This : in out OpenGLConfiguration; imageColor_Param : access OpenGLFeature'Class) is
-      imageColor : OpenGLFeature_Access := OpenGLFeature_Access (imageColor_Param);
+   procedure setImageColor (This : in out OpenGLConfiguration; imageColor_Param : access OpenGLFeature_Package.OpenGLFeature'Class) is
+      imageColor : constant OpenGLFeature_Access := OpenGLFeature_Access (imageColor_Param);
    begin
         This.imageColor := imageColor;
    end setImageColor;
@@ -289,8 +289,8 @@ package body org.allbinary.graphics.opengles.OpenGLConfiguration_Package is
         return This.imageColor;
    end getImageColor;
 
-   procedure setColor (This : in out OpenGLConfiguration; color_Param : access OpenGLFeature'Class) is
-      color : OpenGLFeature_Access := OpenGLFeature_Access (color_Param);
+   procedure setColor (This : in out OpenGLConfiguration; color_Param : access OpenGLFeature_Package.OpenGLFeature'Class) is
+      color : constant OpenGLFeature_Access := OpenGLFeature_Access (color_Param);
    begin
         This.color := color;
    end setColor;
@@ -300,8 +300,8 @@ package body org.allbinary.graphics.opengles.OpenGLConfiguration_Package is
         return This.color;
    end getColor;
 
-   procedure setVersionSelector (This : in out OpenGLConfiguration; versionSelector_Param : access OpenGLFeature'Class) is
-      versionSelector : OpenGLFeature_Access := OpenGLFeature_Access (versionSelector_Param);
+   procedure setVersionSelector (This : in out OpenGLConfiguration; versionSelector_Param : access OpenGLFeature_Package.OpenGLFeature'Class) is
+      versionSelector : constant OpenGLFeature_Access := OpenGLFeature_Access (versionSelector_Param);
    begin
         This.versionSelector := versionSelector;
    end setVersionSelector;
@@ -311,8 +311,8 @@ package body org.allbinary.graphics.opengles.OpenGLConfiguration_Package is
         return This.versionSelector;
    end getVersionSelector;
 
-   procedure setType (This : in out OpenGLConfiguration; type_Id_Param : access OpenGLFeature'Class) is
-      type_Id : OpenGLFeature_Access := OpenGLFeature_Access (type_Id_Param);
+   procedure setType (This : in out OpenGLConfiguration; type_Id_Param : access OpenGLFeature_Package.OpenGLFeature'Class) is
+      type_Id : constant OpenGLFeature_Access := OpenGLFeature_Access (type_Id_Param);
    begin
         This.type_Id := type_Id;
    end setType;

@@ -43,9 +43,9 @@ package org.allbinary.game.displayable.canvas.NoMenuInputProcessor_Package is
    procedure Initialize (This : in out NoMenuInputProcessor'Class);
    function Create return NoMenuInputProcessor_Access;
    function getInstance return NoMenuInputProcessor_Access;
-   procedure onDownGameKeyEvent (This : in out NoMenuInputProcessor; gameKeyEvent_Param : access GameKeyEvent'Class);
-   procedure onUpGameKeyEvent (This : in out NoMenuInputProcessor; gameKeyEvent_Param : access GameKeyEvent'Class);
-   procedure onMotionGestureEvent (This : in out NoMenuInputProcessor; motionGestureEvent_Param : access MotionGestureEvent'Class);
+   procedure onDownGameKeyEvent (This : in out NoMenuInputProcessor; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class);
+   procedure onUpGameKeyEvent (This : in out NoMenuInputProcessor; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class);
+   procedure onMotionGestureEvent (This : in out NoMenuInputProcessor; motionGestureEvent_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class);
 
 end org.allbinary.game.displayable.canvas.NoMenuInputProcessor_Package;
 

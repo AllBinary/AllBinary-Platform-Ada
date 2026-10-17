@@ -39,9 +39,9 @@ package body org.allbinary.util.HashtableUtil_Package is
         return HashtableUtil_Package.instance;
    end getInstance;
 
-   procedure putAll (This : in out HashtableUtil; fromHashtable_Param : access ABHashtable'Class; hashtable_Param : access ABHashtable'Class) is
-      fromHashtable : ABHashtable_Access := ABHashtable_Access (fromHashtable_Param);
-      hashtable : ABHashtable_Access := ABHashtable_Access (hashtable_Param);
+   procedure putAll (This : in out HashtableUtil; fromHashtable_Param : access ABHashtable_Package.ABHashtable'Class; hashtable_Param : access ABHashtable_Package.ABHashtable'Class) is
+      fromHashtable : constant ABHashtable_Access := ABHashtable_Access (fromHashtable_Param);
+      hashtable : constant ABHashtable_Access := ABHashtable_Access (hashtable_Param);
       enumeration : Enumeration_Access;
       keyCanBeNull : Java_Object_Access;
       valueCanBeNull : Java_Object_Access;
@@ -60,8 +60,8 @@ package body org.allbinary.util.HashtableUtil_Package is
         end loop;
    end putAll;
 
-   function getKeysAsArray (This : in out HashtableUtil; hashtable_Param : access ABHashtable'Class) return Java_Object_Access_Array_Access is
-      hashtable : ABHashtable_Access := ABHashtable_Access (hashtable_Param);
+   function getKeysAsArray (This : in out HashtableUtil; hashtable_Param : access ABHashtable_Package.ABHashtable'Class) return Java_Object_Access_Array_Access is
+      hashtable : constant ABHashtable_Access := ABHashtable_Access (hashtable_Param);
       objectArray : Java_Object_Access_Array_Access;
       index : Integer;
       enumeration : Enumeration_Access;
@@ -75,8 +75,8 @@ package body org.allbinary.util.HashtableUtil_Package is
         return objectArray;
    end getKeysAsArray;
 
-   function getKeysAsList (This : in out HashtableUtil; hashtable_Param : access ABHashtable'Class) return BasicArrayList_Access is
-      hashtable : ABHashtable_Access := ABHashtable_Access (hashtable_Param);
+   function getKeysAsList (This : in out HashtableUtil; hashtable_Param : access ABHashtable_Package.ABHashtable'Class) return BasicArrayList_Access is
+      hashtable : constant ABHashtable_Access := ABHashtable_Access (hashtable_Param);
       list : BasicArrayList_Access;
       enumeration : Enumeration_Access;
    begin
@@ -88,14 +88,14 @@ package body org.allbinary.util.HashtableUtil_Package is
         return list;
    end getKeysAsList;
 
-   procedure getKeysAsArray (This : in out HashtableUtil; hashtable_Param : access ABHashtable'Class) is
+   procedure getKeysAsArray (This : in out HashtableUtil; hashtable_Param : access ABHashtable_Package.ABHashtable'Class) is
       Java_Result : constant Java_Object_Access_Array_Access := HashtableUtil'Class (This).getKeysAsArray (hashtable_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getKeysAsArray;
 
-   procedure getKeysAsList (This : in out HashtableUtil; hashtable_Param : access ABHashtable'Class) is
+   procedure getKeysAsList (This : in out HashtableUtil; hashtable_Param : access ABHashtable_Package.ABHashtable'Class) is
       Java_Result : constant BasicArrayList_Access := HashtableUtil'Class (This).getKeysAsList (hashtable_Param);
       pragma Unreferenced (Java_Result);
    begin

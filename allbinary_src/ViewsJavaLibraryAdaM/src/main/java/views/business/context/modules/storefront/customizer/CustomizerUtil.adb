@@ -41,9 +41,9 @@ package body views.business.context.modules.storefront.customizer.CustomizerUtil
    end Create;
 
    --  throws Exception
-   function getTransformInfoInterfaceToCustomize (This : in out CustomizerUtil; customizerTransformInfoInterface_Param : access TransformInfoInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) return TransformInfoInterface_Access is
-      customizerTransformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (customizerTransformInfoInterface_Param);
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   function getTransformInfoInterfaceToCustomize (This : in out CustomizerUtil; customizerTransformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return TransformInfoInterface_Access is
+      customizerTransformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (customizerTransformInfoInterface_Param);
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
       transformInfoEntityInterface : TransformInfoEntity_Access;
       viewName : Unbounded_String;
       httpTransformInfoInterface : TransformInfoHttpInterface_Access;
@@ -60,9 +60,9 @@ package body views.business.context.modules.storefront.customizer.CustomizerUtil
    end getTransformInfoInterfaceToCustomize;
 
    --  throws Exception
-   function getTransformInfoObjectConfigComponentNodesToCustomize (This : in out CustomizerUtil; customizerTransformInfoInterface_Param : access TransformInfoInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) return BasicArrayList_Access is
-      customizerTransformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (customizerTransformInfoInterface_Param);
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   function getTransformInfoObjectConfigComponentNodesToCustomize (This : in out CustomizerUtil; customizerTransformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return BasicArrayList_Access is
+      customizerTransformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (customizerTransformInfoInterface_Param);
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
       transformInfoEntityInterface : TransformInfoEntity_Access;
       viewName : Unbounded_String;
       httpTransformInfoInterface : TransformInfoHttpInterface_Access;
@@ -79,8 +79,8 @@ package body views.business.context.modules.storefront.customizer.CustomizerUtil
    end getTransformInfoObjectConfigComponentNodesToCustomize;
 
    --  throws Exception
-   function getTransformInfoObjectConfigComponentNodes (This : in out CustomizerUtil; transformInfoInterface_Param : access TransformInfoInterface'Class) return BasicArrayList_Access is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   function getTransformInfoObjectConfigComponentNodes (This : in out CustomizerUtil; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return BasicArrayList_Access is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
       transformInfoObjectConfigInterface : TransformInfoObjectConfigInterface_Access;
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
@@ -91,8 +91,8 @@ package body views.business.context.modules.storefront.customizer.CustomizerUtil
    end getTransformInfoObjectConfigComponentNodes;
 
    --  throws Exception
-   function getTransformInfoObjectConfigGroupComponentNodes (This : in out CustomizerUtil; transformInfoInterface_Param : access TransformInfoInterface'Class) return BasicArrayList_Access is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   function getTransformInfoObjectConfigGroupComponentNodes (This : in out CustomizerUtil; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return BasicArrayList_Access is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
       transformInfoObjectConfigInterface : TransformInfoObjectConfigInterface_Access;
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
@@ -103,9 +103,9 @@ package body views.business.context.modules.storefront.customizer.CustomizerUtil
    end getTransformInfoObjectConfigGroupComponentNodes;
 
    --  throws Exception
-   procedure insert (This : in out CustomizerUtil; transformInfoInterface_Param : access TransformInfoInterface'Class; domNodeInterface_Param : access DomNodeInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
-      domNodeInterface : DomNodeInterface_Access := DomNodeInterface_Access (domNodeInterface_Param);
+   procedure insert (This : in out CustomizerUtil; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; domNodeInterface_Param : access DomNodeInterface_Package.DomNodeInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+      domNodeInterface : constant DomNodeInterface_Access := DomNodeInterface_Access (domNodeInterface_Param);
       transformInfoEntityInterface : TransformInfoEntity_Access;
       allViewsToBeModified : BasicArrayList_Access;
       document : Document_Access;
@@ -176,8 +176,8 @@ package body views.business.context.modules.storefront.customizer.CustomizerUtil
    end insert;
 
    --  throws Exception
-   procedure write (This : in out CustomizerUtil; specifiedTransformInfoInterface_Param : access TransformInfoInterface'Class; documentString : Unbounded_String) is
-      specifiedTransformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (specifiedTransformInfoInterface_Param);
+   procedure write (This : in out CustomizerUtil; specifiedTransformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; documentString : Unbounded_String) is
+      specifiedTransformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (specifiedTransformInfoInterface_Param);
       transformInfoEntityInterface : TransformInfoEntity_Access;
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
@@ -189,8 +189,8 @@ package body views.business.context.modules.storefront.customizer.CustomizerUtil
    end write;
 
    --  throws Exception
-   function getViewDataForComponentsInObjectConfig (This : in out CustomizerUtil; transformInfoInterface_Param : access TransformInfoInterface'Class) return Document_Access is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   function getViewDataForComponentsInObjectConfig (This : in out CustomizerUtil; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return Document_Access is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
       transformInfoObjectConfigInterface : TransformInfoObjectConfigInterface_Access;
       allViewsToBeModified : BasicArrayList_Access;
       transformInfoEntityInterface : TransformInfoEntity_Access;
@@ -218,35 +218,35 @@ package body views.business.context.modules.storefront.customizer.CustomizerUtil
         Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Components Specified in ObjectConfig")));
    end getViewDataForComponentsInObjectConfig;
 
-   procedure getTransformInfoInterfaceToCustomize (This : in out CustomizerUtil; customizerTransformInfoInterface_Param : access TransformInfoInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+   procedure getTransformInfoInterfaceToCustomize (This : in out CustomizerUtil; customizerTransformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
       Java_Result : constant TransformInfoInterface_Access := CustomizerUtil'Class (This).getTransformInfoInterfaceToCustomize (customizerTransformInfoInterface_Param, transformInfoInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getTransformInfoInterfaceToCustomize;
 
-   procedure getTransformInfoObjectConfigComponentNodesToCustomize (This : in out CustomizerUtil; customizerTransformInfoInterface_Param : access TransformInfoInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+   procedure getTransformInfoObjectConfigComponentNodesToCustomize (This : in out CustomizerUtil; customizerTransformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
       Java_Result : constant BasicArrayList_Access := CustomizerUtil'Class (This).getTransformInfoObjectConfigComponentNodesToCustomize (customizerTransformInfoInterface_Param, transformInfoInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getTransformInfoObjectConfigComponentNodesToCustomize;
 
-   procedure getTransformInfoObjectConfigComponentNodes (This : in out CustomizerUtil; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+   procedure getTransformInfoObjectConfigComponentNodes (This : in out CustomizerUtil; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
       Java_Result : constant BasicArrayList_Access := CustomizerUtil'Class (This).getTransformInfoObjectConfigComponentNodes (transformInfoInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getTransformInfoObjectConfigComponentNodes;
 
-   procedure getTransformInfoObjectConfigGroupComponentNodes (This : in out CustomizerUtil; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+   procedure getTransformInfoObjectConfigGroupComponentNodes (This : in out CustomizerUtil; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
       Java_Result : constant BasicArrayList_Access := CustomizerUtil'Class (This).getTransformInfoObjectConfigGroupComponentNodes (transformInfoInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getTransformInfoObjectConfigGroupComponentNodes;
 
-   procedure getViewDataForComponentsInObjectConfig (This : in out CustomizerUtil; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+   procedure getViewDataForComponentsInObjectConfig (This : in out CustomizerUtil; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
       Java_Result : constant Document_Access := CustomizerUtil'Class (This).getViewDataForComponentsInObjectConfig (transformInfoInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

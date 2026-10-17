@@ -73,14 +73,14 @@ package org.allbinary.data.resource.ResourceUtil_Package is
    function getInstance return ResourceUtil_Access;
    procedure setLoadingPaths (This : in out ResourceUtil; path : Unbounded_String; ext : Unbounded_String);
    function getContext (This : in out ResourceUtil) return Context_Access;
-   procedure setContextFromActivity (This : in out ResourceUtil; activity_Param : access Activity'Class);
-   procedure setContext (This : in out ResourceUtil; aContext_Param : access Context'Class);
+   procedure setContextFromActivity (This : in out ResourceUtil; activity_Param : access Activity_Package.Activity'Class);
+   procedure setContext (This : in out ResourceUtil; aContext_Param : access Context_Package.Context'Class);
    function getResourceId (This : in out ResourceUtil; resource : Unbounded_String) return Integer;
    procedure getResourceId (This : in out ResourceUtil; resource : Unbounded_String);
    procedure addResource (This : in out ResourceUtil; resource : Unbounded_String; value : Integer);
    function containsDuplicate (This : in out ResourceUtil; resource : Unbounded_String; value : Integer) return Boolean;
    procedure containsDuplicate (This : in out ResourceUtil; resource : Unbounded_String; value : Integer);
-   procedure setResources (This : in out ResourceUtil; resources_Param : access Resources'Class);
+   procedure setResources (This : in out ResourceUtil; resources_Param : access Resources_Package.Resources'Class);
    function getResourceAsStream (This : in out ResourceUtil; resource : Unbounded_String) return InputStream_Access;
    procedure getResourceAsStream (This : in out ResourceUtil; resource : Unbounded_String);
 

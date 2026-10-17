@@ -39,8 +39,8 @@ package body org.allbinary.game.input.InputProcessor_Package is
         null;
    end keyPressedByDevice;
 
-   procedure keyReleasedByDevice (This : in out InputProcessor; canvas_Param : access Canvas'Class; keyCode : Integer; deviceId : Integer) is
-      canvas : Canvas_Access := Canvas_Access (canvas_Param);
+   procedure keyReleasedByDevice (This : in out InputProcessor; canvas_Param : access Canvas_Package.Canvas'Class; keyCode : Integer; deviceId : Integer) is
+      canvas : constant Canvas_Access := Canvas_Access (canvas_Param);
    begin
         null;
    end keyReleasedByDevice;

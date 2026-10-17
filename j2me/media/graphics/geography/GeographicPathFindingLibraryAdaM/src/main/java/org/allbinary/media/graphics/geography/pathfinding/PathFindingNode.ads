@@ -46,10 +46,10 @@ package org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Packa
       geographicMapCellPosition : GeographicMapCellPosition_Access;
    end record;
 
-   procedure Initialize (This : in out PathFindingNode'Class; parent_Param : access Java_Object'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class);
-   function Create (parent_Param : access Java_Object'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return PathFindingNode_Access;
+   procedure Initialize (This : in out PathFindingNode'Class; parent_Param : access Java_Object'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class);
+   function Create (parent_Param : access Java_Object'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) return PathFindingNode_Access;
    function getParentP (This : in out PathFindingNode) return PathFindingNode_Access;
-   procedure setGeographicMapCellPositionP (This : in out PathFindingNode; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class);
+   procedure setGeographicMapCellPositionP (This : in out PathFindingNode; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class);
    function toString (This : in out PathFindingNode) return Unbounded_String;
 
 end org.allbinary.media.graphics.geography.pathfinding.PathFindingNode_Package;

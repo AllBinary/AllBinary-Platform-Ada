@@ -42,8 +42,8 @@ package body org.allbinary.input.automation.configuration.InputAutomationConfigu
    end Create;
 
    --  throws Exception
-   procedure init (This : in out InputAutomationConfigurationFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class) is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+   procedure init (This : in out InputAutomationConfigurationFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       INPUT_AUTOMATION_CONFIGURATION : Unbounded_String;

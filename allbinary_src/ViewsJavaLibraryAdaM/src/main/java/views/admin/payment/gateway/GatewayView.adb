@@ -22,22 +22,22 @@ package body views.admin.payment.gateway.GatewayView_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GatewayView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out GatewayView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         PaymentGatewayViewAbstract_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return GatewayView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return GatewayView_Access is
       This : constant GatewayView_Access := new GatewayView;
    begin
       GatewayView_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
-   procedure getFormData (This : in out GatewayView; request_Param : access HttpServletRequest'Class) is
-      request : HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
+   procedure getFormData (This : in out GatewayView; request_Param : access HttpServletRequest_Package.HttpServletRequest'Class) is
+      request : constant HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
    begin
         PaymentGatewayViewAbstract (This).getFormData (request);
         if StringValidationUtil_Package.getInstance.isEmpty (This.getPaymentGatewayPrimaryKey.getName) then

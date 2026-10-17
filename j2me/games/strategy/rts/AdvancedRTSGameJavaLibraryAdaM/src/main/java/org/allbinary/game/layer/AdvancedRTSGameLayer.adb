@@ -36,20 +36,20 @@ package body org.allbinary.game.layer.AdvancedRTSGameLayer_Package is
         return AdvancedRTSGameLayer_Package.Create (RemoteInfo_Package.REMOTE_INFO, NullPathFindingLayer_Package.NULL_PATH_FINDING_LAYER, AdvancedRTSProperties_Package.createPropertiesSimulated, GroupFactory_Package.getInstance.NULL_GROUP_ARRAY, StringUtil_Package.getInstance.EMPTY_STRING, StringUtil_Package.getInstance.EMPTY_STRING, Health_Package.NULL_HEALTH, NullRTSFormInputFactory_Package.getInstance, nullAnimationInterfaceFactoryInterface, nullIndexedAnimationInterfaceFactoryInterface, nullAnimationInterfaceFactoryInterface, nullAnimationInterfaceFactoryInterface, nullIndexedAnimationInterfaceFactoryInterface, NullIndexedAnimationFactory_Package.getFactoryInstance, RectangleFactory_Package.SINGLETON, 0, 0, TileLayerPositionIntoViewPosition_Package.Create);
    end createSimulated;
 
-   procedure Initialize (This : in out AdvancedRTSGameLayer'Class; remoteInfo_Param : access RemoteInfo'Class; parentLayer_Param : access PathFindingLayerInterface'Class; advancedRTSProperties_Param : access AdvancedRTSProperties'Class; groupInterface : Group_Access_Array_Access; rootName : Unbounded_String; name : Unbounded_String; healthInterface_Param : access Health'Class; rtsFormInput_Param : access RTSFormInput'Class; animationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface'Class; emptyAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface'Class; baseAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface'Class; buildAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface'Class; verticleBuildAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface'Class; proceduralAnimationInterfaceFactoryInterface_Param : access ProceduralAnimationInterfaceFactoryInterface'Class; rectangle_Param : access Rectangle'Class; x : Integer; y : Integer; viewPosition_Param : access ViewPositionBase'Class) is
-      remoteInfo : RemoteInfo_Access := RemoteInfo_Access (remoteInfo_Param);
-      parentLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (parentLayer_Param);
-      advancedRTSProperties : AdvancedRTSProperties_Access := AdvancedRTSProperties_Access (advancedRTSProperties_Param);
-      healthInterface : Health_Access := Health_Access (healthInterface_Param);
-      rtsFormInput : RTSFormInput_Access := RTSFormInput_Access (rtsFormInput_Param);
-      animationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access := AnimationInterfaceFactoryInterface_Access (animationInterfaceFactoryInterface_Param);
-      emptyAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access := AnimationInterfaceFactoryInterface_Access (emptyAnimationInterfaceFactoryInterface_Param);
-      baseAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access := AnimationInterfaceFactoryInterface_Access (baseAnimationInterfaceFactoryInterface_Param);
-      buildAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access := AnimationInterfaceFactoryInterface_Access (buildAnimationInterfaceFactoryInterface_Param);
-      verticleBuildAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access := AnimationInterfaceFactoryInterface_Access (verticleBuildAnimationInterfaceFactoryInterface_Param);
-      proceduralAnimationInterfaceFactoryInterface : ProceduralAnimationInterfaceFactoryInterface_Access := ProceduralAnimationInterfaceFactoryInterface_Access (proceduralAnimationInterfaceFactoryInterface_Param);
-      rectangle : Rectangle_Access := Rectangle_Access (rectangle_Param);
-      viewPosition : ViewPositionBase_Access := ViewPositionBase_Access (viewPosition_Param);
+   procedure Initialize (This : in out AdvancedRTSGameLayer'Class; remoteInfo_Param : access RemoteInfo_Package.RemoteInfo'Class; parentLayer_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class; advancedRTSProperties_Param : access AdvancedRTSProperties_Package.AdvancedRTSProperties'Class; groupInterface : Group_Access_Array_Access; rootName : Unbounded_String; name : Unbounded_String; healthInterface_Param : access Health_Package.Health'Class; rtsFormInput_Param : access RTSFormInput_Package.RTSFormInput'Class; animationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface_Package.AnimationInterfaceFactoryInterface'Class; emptyAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface_Package.AnimationInterfaceFactoryInterface'Class; baseAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface_Package.AnimationInterfaceFactoryInterface'Class; buildAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface_Package.AnimationInterfaceFactoryInterface'Class; verticleBuildAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface_Package.AnimationInterfaceFactoryInterface'Class; proceduralAnimationInterfaceFactoryInterface_Param : access ProceduralAnimationInterfaceFactoryInterface_Package.ProceduralAnimationInterfaceFactoryInterface'Class; rectangle_Param : access Rectangle_Package.Rectangle'Class; x : Integer; y : Integer; viewPosition_Param : access ViewPositionBase_Package.ViewPositionBase'Class) is
+      remoteInfo : constant RemoteInfo_Access := RemoteInfo_Access (remoteInfo_Param);
+      parentLayer : constant PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (parentLayer_Param);
+      advancedRTSProperties : constant AdvancedRTSProperties_Access := AdvancedRTSProperties_Access (advancedRTSProperties_Param);
+      healthInterface : constant Health_Access := Health_Access (healthInterface_Param);
+      rtsFormInput : constant RTSFormInput_Access := RTSFormInput_Access (rtsFormInput_Param);
+      animationInterfaceFactoryInterface : constant AnimationInterfaceFactoryInterface_Access := AnimationInterfaceFactoryInterface_Access (animationInterfaceFactoryInterface_Param);
+      emptyAnimationInterfaceFactoryInterface : constant AnimationInterfaceFactoryInterface_Access := AnimationInterfaceFactoryInterface_Access (emptyAnimationInterfaceFactoryInterface_Param);
+      baseAnimationInterfaceFactoryInterface : constant AnimationInterfaceFactoryInterface_Access := AnimationInterfaceFactoryInterface_Access (baseAnimationInterfaceFactoryInterface_Param);
+      buildAnimationInterfaceFactoryInterface : constant AnimationInterfaceFactoryInterface_Access := AnimationInterfaceFactoryInterface_Access (buildAnimationInterfaceFactoryInterface_Param);
+      verticleBuildAnimationInterfaceFactoryInterface : constant AnimationInterfaceFactoryInterface_Access := AnimationInterfaceFactoryInterface_Access (verticleBuildAnimationInterfaceFactoryInterface_Param);
+      proceduralAnimationInterfaceFactoryInterface : constant ProceduralAnimationInterfaceFactoryInterface_Access := ProceduralAnimationInterfaceFactoryInterface_Access (proceduralAnimationInterfaceFactoryInterface_Param);
+      rectangle : constant Rectangle_Access := Rectangle_Access (rectangle_Param);
+      viewPosition : constant ViewPositionBase_Access := ViewPositionBase_Access (viewPosition_Param);
    begin
         RTSLayer_Package.Initialize (This, remoteInfo, groupInterface, rootName, name, healthInterface, rtsFormInput, animationInterfaceFactoryInterface, emptyAnimationInterfaceFactoryInterface, baseAnimationInterfaceFactoryInterface, buildAnimationInterfaceFactoryInterface, verticleBuildAnimationInterfaceFactoryInterface, proceduralAnimationInterfaceFactoryInterface, rectangle, x, y, viewPosition);
         Initialize_Fields (This);
@@ -61,7 +61,7 @@ package body org.allbinary.game.layer.AdvancedRTSGameLayer_Package is
         This.setParentLayer (parentLayer);
    end Initialize;
 
-   function Create (remoteInfo_Param : access RemoteInfo'Class; parentLayer_Param : access PathFindingLayerInterface'Class; advancedRTSProperties_Param : access AdvancedRTSProperties'Class; groupInterface : Group_Access_Array_Access; rootName : Unbounded_String; name : Unbounded_String; healthInterface_Param : access Health'Class; rtsFormInput_Param : access RTSFormInput'Class; animationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface'Class; emptyAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface'Class; baseAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface'Class; buildAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface'Class; verticleBuildAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface'Class; proceduralAnimationInterfaceFactoryInterface_Param : access ProceduralAnimationInterfaceFactoryInterface'Class; rectangle_Param : access Rectangle'Class; x : Integer; y : Integer; viewPosition_Param : access ViewPositionBase'Class) return AdvancedRTSGameLayer_Access is
+   function Create (remoteInfo_Param : access RemoteInfo_Package.RemoteInfo'Class; parentLayer_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class; advancedRTSProperties_Param : access AdvancedRTSProperties_Package.AdvancedRTSProperties'Class; groupInterface : Group_Access_Array_Access; rootName : Unbounded_String; name : Unbounded_String; healthInterface_Param : access Health_Package.Health'Class; rtsFormInput_Param : access RTSFormInput_Package.RTSFormInput'Class; animationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface_Package.AnimationInterfaceFactoryInterface'Class; emptyAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface_Package.AnimationInterfaceFactoryInterface'Class; baseAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface_Package.AnimationInterfaceFactoryInterface'Class; buildAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface_Package.AnimationInterfaceFactoryInterface'Class; verticleBuildAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface_Package.AnimationInterfaceFactoryInterface'Class; proceduralAnimationInterfaceFactoryInterface_Param : access ProceduralAnimationInterfaceFactoryInterface_Package.ProceduralAnimationInterfaceFactoryInterface'Class; rectangle_Param : access Rectangle_Package.Rectangle'Class; x : Integer; y : Integer; viewPosition_Param : access ViewPositionBase_Package.ViewPositionBase'Class) return AdvancedRTSGameLayer_Access is
       This : constant AdvancedRTSGameLayer_Access := new AdvancedRTSGameLayer;
    begin
       AdvancedRTSGameLayer_Package.Initialize (This.all, remoteInfo_Param, parentLayer_Param, advancedRTSProperties_Param, groupInterface, rootName, name, healthInterface_Param, rtsFormInput_Param, animationInterfaceFactoryInterface_Param, emptyAnimationInterfaceFactoryInterface_Param, baseAnimationInterfaceFactoryInterface_Param, buildAnimationInterfaceFactoryInterface_Param, verticleBuildAnimationInterfaceFactoryInterface_Param, proceduralAnimationInterfaceFactoryInterface_Param, rectangle_Param, x, y, viewPosition_Param);
@@ -69,15 +69,15 @@ package body org.allbinary.game.layer.AdvancedRTSGameLayer_Package is
    end Create;
 
    --  throws Exception
-   procedure updateWaypointBehavior (This : in out AdvancedRTSGameLayer; geographicMapInterface_Param : access BasicGeographicMap'Class) is
-      geographicMapInterface : BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
+   procedure updateWaypointBehavior (This : in out AdvancedRTSGameLayer; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class) is
+      geographicMapInterface : constant BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
    begin
         RTSLayer (This).updateWaypointBehavior (geographicMapInterface);
         This.getWaypointBehavior.getWaypoint.setAllBinaryGameLayerManager (This.allBinaryGameLayerManagerP);
    end updateWaypointBehavior;
 
-   procedure initVisibility (This : in out AdvancedRTSGameLayer; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class) is
-      rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
+   procedure initVisibility (This : in out AdvancedRTSGameLayer; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface_Package.RTSPlayerLayerInterface'Class) is
+      rtsPlayerLayerInterface : constant RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
       advancedRTSPlayerLayerInterface : AdvancedRTSPlayerLayerInterface_Access;
    begin
         advancedRTSPlayerLayerInterface := AdvancedRTSPlayerLayerInterface_Access (rtsPlayerLayerInterface);
@@ -89,8 +89,8 @@ package body org.allbinary.game.layer.AdvancedRTSGameLayer_Package is
    end initVisibility;
 
    --  throws Exception
-   procedure construct (This : in out AdvancedRTSGameLayer; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class) is
-      rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
+   procedure construct (This : in out AdvancedRTSGameLayer; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface_Package.RTSPlayerLayerInterface'Class) is
+      rtsPlayerLayerInterface : constant RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
    begin
         RTSLayer (This).construct (rtsPlayerLayerInterface);
         This.initVisibility (rtsPlayerLayerInterface);
@@ -114,8 +114,8 @@ package body org.allbinary.game.layer.AdvancedRTSGameLayer_Package is
         return This.parentLayer;
    end getParentLayer;
 
-   procedure setParentLayer (This : in out AdvancedRTSGameLayer; parentLayer_Param : access PathFindingLayerInterface'Class) is
-      parentLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (parentLayer_Param);
+   procedure setParentLayer (This : in out AdvancedRTSGameLayer; parentLayer_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class) is
+      parentLayer : constant PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (parentLayer_Param);
    begin
         This.parentLayer := parentLayer;
    end setParentLayer;
@@ -125,8 +125,8 @@ package body org.allbinary.game.layer.AdvancedRTSGameLayer_Package is
         return WaypointBehaviorBase_Access (This.waypointBehaviorBase);
    end getWaypointBehavior;
 
-   procedure setWaypointBehavior (This : in out AdvancedRTSGameLayer; unitWaypointHelper_Param : access WaypointBehaviorBase'Class) is
-      unitWaypointHelper : WaypointBehaviorBase_Access := WaypointBehaviorBase_Access (unitWaypointHelper_Param);
+   procedure setWaypointBehavior (This : in out AdvancedRTSGameLayer; unitWaypointHelper_Param : access WaypointBehaviorBase_Package.WaypointBehaviorBase'Class) is
+      unitWaypointHelper : constant WaypointBehaviorBase_Access := WaypointBehaviorBase_Access (unitWaypointHelper_Param);
    begin
         This.waypointBehaviorBase := unitWaypointHelper;
    end setWaypointBehavior;
@@ -167,9 +167,9 @@ package body org.allbinary.game.layer.AdvancedRTSGameLayer_Package is
    end isWaypointListEmptyOrOnlyTargets;
 
    --  throws Exception
-   function buildingChase (This : in out AdvancedRTSGameLayer; allbinaryLayer_Param : access AllBinaryLayer'Class; cellPosition_Param : access GeographicMapCellPosition'Class) return Boolean is
-      allbinaryLayer : AllBinaryLayer_Access := AllBinaryLayer_Access (allbinaryLayer_Param);
-      cellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (cellPosition_Param);
+   function buildingChase (This : in out AdvancedRTSGameLayer; allbinaryLayer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; cellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) return Boolean is
+      allbinaryLayer : constant AllBinaryLayer_Access := AllBinaryLayer_Access (allbinaryLayer_Param);
+      cellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (cellPosition_Param);
       geographicMapCellPosition : GeographicMapCellPosition_Access;
       buildingDirection : Direction_Access;
       angleInfo : AngleInfo_Access;
@@ -274,8 +274,8 @@ package body org.allbinary.game.layer.AdvancedRTSGameLayer_Package is
         end if;
    end setSelected;
 
-   procedure onDestroyed (This : in out AdvancedRTSGameLayer; destroyedEvent_Param : access DestroyedEvent'Class) is
-      destroyedEvent : DestroyedEvent_Access := DestroyedEvent_Access (destroyedEvent_Param);
+   procedure onDestroyed (This : in out AdvancedRTSGameLayer; destroyedEvent_Param : access DestroyedEvent_Package.DestroyedEvent'Class) is
+      destroyedEvent : constant DestroyedEvent_Access := DestroyedEvent_Access (destroyedEvent_Param);
       layerInterface : AllBinaryLayer_Access;
       waypoint : WaypointBase_Access;
    begin
@@ -296,7 +296,7 @@ package body org.allbinary.game.layer.AdvancedRTSGameLayer_Package is
         end;
    end onDestroyed;
 
-   procedure buildingChase (This : in out AdvancedRTSGameLayer; allbinaryLayer_Param : access AllBinaryLayer'Class; cellPosition_Param : access GeographicMapCellPosition'Class) is
+   procedure buildingChase (This : in out AdvancedRTSGameLayer; allbinaryLayer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; cellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
       Java_Result : constant Boolean := AdvancedRTSGameLayer'Class (This).buildingChase (allbinaryLayer_Param, cellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin

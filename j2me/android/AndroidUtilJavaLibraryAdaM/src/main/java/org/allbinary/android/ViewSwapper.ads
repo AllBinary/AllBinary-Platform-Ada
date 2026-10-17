@@ -32,8 +32,8 @@ package org.allbinary.android.ViewSwapper_Package is
    end record;
    NULL_VIEW_ARRAY : View_Access_Array_Access;
 
-   procedure Initialize (This : in out ViewSwapper'Class; activity_Param : access Activity'Class; rootViewId : Integer);
-   function Create (activity_Param : access Activity'Class; rootViewId : Integer) return ViewSwapper_Access;
+   procedure Initialize (This : in out ViewSwapper'Class; activity_Param : access Activity_Package.Activity'Class; rootViewId : Integer);
+   function Create (activity_Param : access Activity_Package.Activity'Class; rootViewId : Integer) return ViewSwapper_Access;
    procedure setMainViews (This : in out ViewSwapper; viewArray : View_Access_Array_Access);
    procedure setTopViewArray (This : in out ViewSwapper; topViewArray : View_Access_Array_Access);
    procedure setMainView (This : in out ViewSwapper; id : Integer);

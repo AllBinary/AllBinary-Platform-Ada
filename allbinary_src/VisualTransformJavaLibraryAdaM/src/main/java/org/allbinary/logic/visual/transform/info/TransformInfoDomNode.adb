@@ -24,8 +24,8 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Pack
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TransformInfoDomNode'Class; node_Param : access Node'Class) is
-      node : Node_Access := Node_Access (node_Param);
+   procedure Initialize (This : in out TransformInfoDomNode'Class; node_Param : access Node_Package.Node'Class) is
+      node : constant Node_Access := Node_Access (node_Param);
       transformInfoData : TransformInfoData_Access;
       attributes : NamedNodeMap_Access;
       attrNode : Attr_Access;
@@ -90,37 +90,37 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Pack
         end if;
    end Initialize;
 
-   function Create (node_Param : access Node'Class) return TransformInfoDomNode_Access is
+   function Create (node_Param : access Node_Package.Node'Class) return TransformInfoDomNode_Access is
       This : constant TransformInfoDomNode_Access := new TransformInfoDomNode;
    begin
       TransformInfoDomNode_Package.Initialize (This.all, node_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out TransformInfoDomNode'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out TransformInfoDomNode'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
       Initialize_Fields (This);
         This.transformInfoInterface := transformInfoInterface;
         This.mappedName := transformInfoInterface.getName;
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return TransformInfoDomNode_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return TransformInfoDomNode_Access is
       This : constant TransformInfoDomNode_Access := new TransformInfoDomNode;
    begin
       TransformInfoDomNode_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out TransformInfoDomNode'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; mappedName : Unbounded_String) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out TransformInfoDomNode'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; mappedName : Unbounded_String) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
       Initialize_Fields (This);
         This.transformInfoInterface := transformInfoInterface;
         This.mappedName := mappedName;
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; mappedName : Unbounded_String) return TransformInfoDomNode_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; mappedName : Unbounded_String) return TransformInfoDomNode_Access is
       This : constant TransformInfoDomNode_Access := new TransformInfoDomNode;
    begin
       TransformInfoDomNode_Package.Initialize (This.all, transformInfoInterface_Param, mappedName);

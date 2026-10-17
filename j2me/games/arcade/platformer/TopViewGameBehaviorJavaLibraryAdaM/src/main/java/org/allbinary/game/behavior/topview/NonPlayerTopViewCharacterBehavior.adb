@@ -37,10 +37,10 @@ package body org.allbinary.game.behavior.topview.NonPlayerTopViewCharacterBehavi
 
 
    --  throws Exception
-   procedure terrainEvent (This : in out NonPlayerTopViewCharacterBehavior; layer_Param : access AllBinaryLayer'Class; direction_Param : access Direction'Class; x : Integer; y : Integer; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
-      layer : AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
-      direction : Direction_Access := Direction_Access (direction_Param);
-      geographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
+   procedure terrainEvent (This : in out NonPlayerTopViewCharacterBehavior; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; direction_Param : access Direction_Package.Direction'Class; x : Integer; y : Integer; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
+      layer : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
+      direction : constant Direction_Access := Direction_Access (direction_Param);
+      geographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
       maxColumns : Integer;
       nextTerrainGeographicMapCellPosition : GeographicMapCellPosition_Access;
       geographicMapCellPositionFactory : BasicGeographicMapCellPositionFactory_Access;
@@ -65,8 +65,8 @@ package body org.allbinary.game.behavior.topview.NonPlayerTopViewCharacterBehavi
         end if;
    end terrainEvent;
 
-   procedure terrainMove (This : in out NonPlayerTopViewCharacterBehavior; layer_Param : access AllBinaryLayer'Class; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; x : Integer; y : Integer) is
-      layer : AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
+   procedure terrainMove (This : in out NonPlayerTopViewCharacterBehavior; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; x : Integer; y : Integer) is
+      layer : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
    begin
         layer.moveDXY (x, y);
    end terrainMove;

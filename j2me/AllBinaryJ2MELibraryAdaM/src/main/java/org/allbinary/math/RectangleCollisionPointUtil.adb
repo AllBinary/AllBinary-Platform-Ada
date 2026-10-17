@@ -34,8 +34,8 @@ package body org.allbinary.math.RectangleCollisionPointUtil_Package is
       return This;
    end Create;
 
-   function allPointsInside (rectX1 : Integer; rectY1 : Integer; rectX2 : Integer; rectY2 : Integer; list_Param : access BasicArrayList'Class) return Boolean is
-      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
+   function allPointsInside (rectX1 : Integer; rectY1 : Integer; rectX2 : Integer; rectY2 : Integer; list_Param : access BasicArrayList_Package.BasicArrayList'Class) return Boolean is
+      list : constant BasicArrayList_Access := BasicArrayList_Access (list_Param);
       rectangleCollisionUtil : RectangleCollisionUtil_Access;
       point : GPoint_Access;
       index : Integer;
@@ -52,8 +52,8 @@ package body org.allbinary.math.RectangleCollisionPointUtil_Package is
         return True;
    end allPointsInside;
 
-   function allPointsInsideCell (rectX1 : Integer; rectY1 : Integer; rectX2 : Integer; rectY2 : Integer; list_Param : access BasicArrayList'Class; xCellSize : Integer; yCellSize : Integer) return Boolean is
-      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
+   function allPointsInsideCell (rectX1 : Integer; rectY1 : Integer; rectX2 : Integer; rectY2 : Integer; list_Param : access BasicArrayList_Package.BasicArrayList'Class; xCellSize : Integer; yCellSize : Integer) return Boolean is
+      list : constant BasicArrayList_Access := BasicArrayList_Access (list_Param);
       rectangleCollisionUtil : RectangleCollisionUtil_Access;
       point : GPoint_Access;
       index : Integer;
@@ -70,14 +70,14 @@ package body org.allbinary.math.RectangleCollisionPointUtil_Package is
         return True;
    end allPointsInsideCell;
 
-   procedure allPointsInside (rectX1 : Integer; rectY1 : Integer; rectX2 : Integer; rectY2 : Integer; list_Param : access BasicArrayList'Class) is
+   procedure allPointsInside (rectX1 : Integer; rectY1 : Integer; rectX2 : Integer; rectY2 : Integer; list_Param : access BasicArrayList_Package.BasicArrayList'Class) is
       Java_Result : constant Boolean := allPointsInside (rectX1, rectY1, rectX2, rectY2, list_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end allPointsInside;
 
-   procedure allPointsInsideCell (rectX1 : Integer; rectY1 : Integer; rectX2 : Integer; rectY2 : Integer; list_Param : access BasicArrayList'Class; xCellSize : Integer; yCellSize : Integer) is
+   procedure allPointsInsideCell (rectX1 : Integer; rectY1 : Integer; rectX2 : Integer; rectY2 : Integer; list_Param : access BasicArrayList_Package.BasicArrayList'Class; xCellSize : Integer; yCellSize : Integer) is
       Java_Result : constant Boolean := allPointsInsideCell (rectX1, rectY1, rectX2, rectY2, list_Param, xCellSize, yCellSize);
       pragma Unreferenced (Java_Result);
    begin

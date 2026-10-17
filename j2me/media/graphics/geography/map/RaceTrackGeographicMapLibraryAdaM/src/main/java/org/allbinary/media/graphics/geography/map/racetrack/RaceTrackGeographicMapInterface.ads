@@ -33,9 +33,9 @@ package org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographic
    type RaceTrackGeographicMapInterface_Access_Array is array (Natural range <>) of RaceTrackGeographicMapInterface_Access;
    type RaceTrackGeographicMapInterface_Access_Array_Access is access all RaceTrackGeographicMapInterface_Access_Array;
    function getRaceTrackInfo (This : in out RaceTrackGeographicMapInterface) return RaceTrackInfo_Access is abstract;
-   procedure setRaceTrackInfo (This : in out RaceTrackGeographicMapInterface; aRaceTrackInfo_Param : access RaceTrackInfo'Class) is abstract;
+   procedure setRaceTrackInfo (This : in out RaceTrackGeographicMapInterface; aRaceTrackInfo_Param : access RaceTrackInfo_Package.RaceTrackInfo'Class) is abstract;
    function getRaceTrackData (This : in out RaceTrackGeographicMapInterface) return RaceTrackData_Access is abstract;
-   procedure setRaceTrackData (This : in out RaceTrackGeographicMapInterface; raceTrackData_Param : access RaceTrackData'Class) is abstract;
+   procedure setRaceTrackData (This : in out RaceTrackGeographicMapInterface; raceTrackData_Param : access RaceTrackData_Package.RaceTrackData'Class) is abstract;
 
 end org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeographicMapInterface_Package;
 

@@ -37,10 +37,10 @@ package org.allbinary.media.image.comparison.motion.MotionRectanglesResultsEvent
       motionRectangles : MotionRectangles_Access;
    end record;
 
-   procedure Initialize (This : in out MotionRectanglesResultsEvent'Class; anyType_Param : access Java_Object'Class; frame : Long_Long_Integer; motionRectangles_Param : access MotionRectangles'Class);
-   function Create (anyType_Param : access Java_Object'Class; frame : Long_Long_Integer; motionRectangles_Param : access MotionRectangles'Class) return MotionRectanglesResultsEvent_Access;
+   procedure Initialize (This : in out MotionRectanglesResultsEvent'Class; anyType_Param : access Java_Object'Class; frame : Long_Long_Integer; motionRectangles_Param : access MotionRectangles_Package.MotionRectangles'Class);
+   function Create (anyType_Param : access Java_Object'Class; frame : Long_Long_Integer; motionRectangles_Param : access MotionRectangles_Package.MotionRectangles'Class) return MotionRectanglesResultsEvent_Access;
    function getMotionRectangles (This : in out MotionRectanglesResultsEvent) return MotionRectangles_Access;
-   procedure setMotionRectangles (This : in out MotionRectanglesResultsEvent; motionRectangles_Param : access MotionRectangles'Class);
+   procedure setMotionRectangles (This : in out MotionRectanglesResultsEvent; motionRectangles_Param : access MotionRectangles_Package.MotionRectangles'Class);
    function getFrame (This : in out MotionRectanglesResultsEvent) return Long_Long_Integer;
 
 end org.allbinary.media.image.comparison.motion.MotionRectanglesResultsEvent_Package;

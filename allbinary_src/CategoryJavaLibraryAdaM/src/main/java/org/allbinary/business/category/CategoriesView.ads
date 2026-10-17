@@ -41,10 +41,10 @@ package org.allbinary.business.category.CategoriesView_Package is
       categoryInterface : CategoryInterface_Access;
    end record;
 
-   procedure Initialize (This : in out CategoriesView'Class; categoryInterface_Param : access CategoryInterface'Class);
-   function Create (categoryInterface_Param : access CategoryInterface'Class) return CategoriesView_Access;
-   function toXmlNode (This : in out CategoriesView; document_Param : access Document'Class) return Node_Access;
-   procedure toXmlNode (This : in out CategoriesView; document_Param : access Document'Class);
+   procedure Initialize (This : in out CategoriesView'Class; categoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class);
+   function Create (categoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class) return CategoriesView_Access;
+   function toXmlNode (This : in out CategoriesView; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out CategoriesView; document_Param : access Document_Package.Document'Class);
 
 end org.allbinary.business.category.CategoriesView_Package;
 

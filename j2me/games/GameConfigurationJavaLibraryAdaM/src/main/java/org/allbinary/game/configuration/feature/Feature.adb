@@ -42,8 +42,8 @@ package body org.allbinary.game.configuration.feature.Feature_Package is
         return Feature_Access (Feature_Package.hashtable.get (name));
    end getInstance;
 
-   procedure add (name : Unbounded_String; gameFeature_Param : access Feature'Class) is
-      gameFeature : Feature_Access := Feature_Access (gameFeature_Param);
+   procedure add (name : Unbounded_String; gameFeature_Param : access Feature_Package.Feature'Class) is
+      gameFeature : constant Feature_Access := Feature_Access (gameFeature_Param);
    begin
         Feature_Package.hashtable.put (name, gameFeature);
    end add;

@@ -73,37 +73,37 @@ package body org.allbinary.logic.util.event.handler.BasicEventHandler_Package is
         This.eventListenerInterfaceList := BasicArrayListD_Package.Create;
    end removeAllListeners;
 
-   procedure addListenerSingleThreaded (This : in out BasicEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class) is
-      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
+   procedure addListenerSingleThreaded (This : in out BasicEventHandler; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class) is
+      eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
         if not (This.eventListenerInterfaceList.contains (eventListenerInterface)) then
             This.eventListenerInterfaceList.add (eventListenerInterface);
         end if;
    end addListenerSingleThreaded;
 
-   procedure addListenerInterface (This : in out BasicEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class) is
-      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
+   procedure addListenerInterface (This : in out BasicEventHandler; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class) is
+      eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
         if not (This.eventListenerInterfaceList.contains (eventListenerInterface)) then
             This.eventListenerInterfaceList.add (eventListenerInterface);
         end if;
    end addListenerInterface;
 
-   procedure removeListenerSingleThreaded (This : in out BasicEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class) is
-      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
+   procedure removeListenerSingleThreaded (This : in out BasicEventHandler; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class) is
+      eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
         This.eventListenerInterfaceList.remove (eventListenerInterface);
    end removeListenerSingleThreaded;
 
-   procedure removeListener (This : in out BasicEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class) is
-      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
+   procedure removeListener (This : in out BasicEventHandler; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class) is
+      eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
         This.eventListenerInterfaceList.remove (eventListenerInterface);
    end removeListener;
 
    --  throws Exception
-   procedure fireEvent (This : in out BasicEventHandler; eventObject_Param : access AllBinaryEventObject'Class) is
-      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+   procedure fireEvent (This : in out BasicEventHandler; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
+      eventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
       index : Integer;
       eventListenerInterface : EventListenerInterface_Access;
       commonStrings : CommonStrings_Access;
@@ -128,9 +128,9 @@ package body org.allbinary.logic.util.event.handler.BasicEventHandler_Package is
    end fireEvent;
 
    --  throws Exception
-   procedure process (This : in out BasicEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class) is
-      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
-      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
+   procedure process (This : in out BasicEventHandler; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class) is
+      eventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+      eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
         eventListenerInterface.onEvent (eventObject);
    end process;

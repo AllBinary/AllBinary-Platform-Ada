@@ -34,20 +34,20 @@ package body org.allbinary.android.activity.MidletActivityBase_Package is
    end Create;
 
 
-   procedure onGameFeatureChange (This : in out MidletActivityBase; gameFeatureEvent_Param : access GameFeatureEvent'Class) is
-      gameFeatureEvent : GameFeatureEvent_Access := GameFeatureEvent_Access (gameFeatureEvent_Param);
+   procedure onGameFeatureChange (This : in out MidletActivityBase; gameFeatureEvent_Param : access GameFeatureEvent_Package.GameFeatureEvent'Class) is
+      gameFeatureEvent : constant GameFeatureEvent_Access := GameFeatureEvent_Access (gameFeatureEvent_Param);
    begin
         null;
    end onGameFeatureChange;
 
-   procedure onEvent (This : in out MidletActivityBase; eventObject_Param : access AllBinaryEventObject'Class) is
-      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+   procedure onEvent (This : in out MidletActivityBase; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
+      eventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
    begin
         null;
    end onEvent;
 
-   procedure onGameInitialized (This : in out MidletActivityBase; gameInitializedEvent_Param : access GameInitializedEvent'Class) is
-      gameInitializedEvent : GameInitializedEvent_Access := GameInitializedEvent_Access (gameInitializedEvent_Param);
+   procedure onGameInitialized (This : in out MidletActivityBase; gameInitializedEvent_Param : access GameInitializedEvent_Package.GameInitializedEvent'Class) is
+      gameInitializedEvent : constant GameInitializedEvent_Access := GameInitializedEvent_Access (gameInitializedEvent_Param);
    begin
         null;
    end onGameInitialized;
@@ -80,19 +80,19 @@ package body org.allbinary.android.activity.MidletActivityBase_Package is
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end getView;
 
-   procedure setKeyInputView (This : in out MidletActivityBase; keyInputView_Param : access View'Class) is
-      keyInputView : View_Access := View_Access (keyInputView_Param);
+   procedure setKeyInputView (This : in out MidletActivityBase; keyInputView_Param : access View_Package.View'Class) is
+      keyInputView : constant View_Access := View_Access (keyInputView_Param);
    begin
         null;
    end setKeyInputView;
 
-   function onGenericMotionEvent (This : in out MidletActivityBase; event_Param : access MotionEvent'Class) return Boolean is
-      event : MotionEvent_Access := MotionEvent_Access (event_Param);
+   function onGenericMotionEvent (This : in out MidletActivityBase; event_Param : access MotionEvent_Package.MotionEvent'Class) return Boolean is
+      event : constant MotionEvent_Access := MotionEvent_Access (event_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end onGenericMotionEvent;
 
-   procedure onGenericMotionEvent (This : in out MidletActivityBase; event_Param : access MotionEvent'Class) is
+   procedure onGenericMotionEvent (This : in out MidletActivityBase; event_Param : access MotionEvent_Package.MotionEvent'Class) is
       Java_Result : constant Boolean := MidletActivityBase'Class (This).onGenericMotionEvent (event_Param);
       pragma Unreferenced (Java_Result);
    begin

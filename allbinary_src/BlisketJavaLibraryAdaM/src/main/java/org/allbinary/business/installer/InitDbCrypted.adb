@@ -28,14 +28,14 @@ package body org.allbinary.business.installer.InitDbCrypted_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out InitDbCrypted'Class; databaseConnectionInfoInterface_Param : access DatabaseConnectionInfoInterface'Class) is
-      databaseConnectionInfoInterface : DatabaseConnectionInfoInterface_Access := DatabaseConnectionInfoInterface_Access (databaseConnectionInfoInterface_Param);
+   procedure Initialize (This : in out InitDbCrypted'Class; databaseConnectionInfoInterface_Param : access DatabaseConnectionInfoInterface_Package.DatabaseConnectionInfoInterface'Class) is
+      databaseConnectionInfoInterface : constant DatabaseConnectionInfoInterface_Access := DatabaseConnectionInfoInterface_Access (databaseConnectionInfoInterface_Param);
    begin
         AbDatabaseManagement_Package.Initialize (This, DbConnectionInfo_Access (databaseConnectionInfoInterface));
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (databaseConnectionInfoInterface_Param : access DatabaseConnectionInfoInterface'Class) return InitDbCrypted_Access is
+   function Create (databaseConnectionInfoInterface_Param : access DatabaseConnectionInfoInterface_Package.DatabaseConnectionInfoInterface'Class) return InitDbCrypted_Access is
       This : constant InitDbCrypted_Access := new InitDbCrypted;
    begin
       InitDbCrypted_Package.Initialize (This.all, databaseConnectionInfoInterface_Param);

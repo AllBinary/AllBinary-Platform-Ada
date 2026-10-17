@@ -49,7 +49,7 @@ package body org.allbinary.view.ViewPositionBase_Package is
    end getZ2;
 
    procedure setAllbinaryLayer (This : in out ViewPositionBase; allbinaryLayer_Param : access Java_Object'Class) is
-      allbinaryLayer : Java_Object_Access := Java_Object_Access (allbinaryLayer_Param);
+      allbinaryLayer : constant Java_Object_Access := Java_Object_Access (allbinaryLayer_Param);
    begin
         null;
    end setAllbinaryLayer;

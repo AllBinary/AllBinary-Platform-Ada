@@ -86,8 +86,8 @@ package body org.allbinary.game.combat.weapon.WeaponProperties_Package is
         return This.speed;
    end getSpeed;
 
-   procedure setSpeed (This : in out WeaponProperties; speed_Param : access BasicDecimal'Class) is
-      speed : BasicDecimal_Access := BasicDecimal_Access (speed_Param);
+   procedure setSpeed (This : in out WeaponProperties; speed_Param : access BasicDecimal_Package.BasicDecimal'Class) is
+      speed : constant BasicDecimal_Access := BasicDecimal_Access (speed_Param);
    begin
         This.speed := speed;
    end setSpeed;

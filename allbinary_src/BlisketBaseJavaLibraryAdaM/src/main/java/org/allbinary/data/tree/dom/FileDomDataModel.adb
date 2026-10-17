@@ -22,14 +22,14 @@ package body org.allbinary.data.tree.dom.FileDomDataModel_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out FileDomDataModel'Class; file_Param : access AbFile'Class) is
-      file : AbFile_Access := AbFile_Access (file_Param);
+   procedure Initialize (This : in out FileDomDataModel'Class; file_Param : access AbFile_Package.AbFile'Class) is
+      file : constant AbFile_Access := AbFile_Access (file_Param);
    begin
       Initialize_Fields (This);
         This.file := file;
    end Initialize;
 
-   function Create (file_Param : access AbFile'Class) return FileDomDataModel_Access is
+   function Create (file_Param : access AbFile_Package.AbFile'Class) return FileDomDataModel_Access is
       This : constant FileDomDataModel_Access := new FileDomDataModel;
    begin
       FileDomDataModel_Package.Initialize (This.all, file_Param);
@@ -37,8 +37,8 @@ package body org.allbinary.data.tree.dom.FileDomDataModel_Package is
    end Create;
 
    --  throws Exception
-   function toXmlNode (This : in out FileDomDataModel; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out FileDomDataModel; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       tableMappingInterface : TableMappingInterface_Access;
       hashMap : HashMap_Access;
    begin
@@ -47,7 +47,7 @@ package body org.allbinary.data.tree.dom.FileDomDataModel_Package is
         return ModDomHelper_Package.createNodeWithValueNodes (document, To_Unbounded_String ("file"), hashMap);
    end toXmlNode;
 
-   procedure toXmlNode (This : in out FileDomDataModel; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out FileDomDataModel; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := FileDomDataModel'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

@@ -44,7 +44,7 @@ package org.allbinary.game.configuration.event.GameInitializedEvent_Package is
    function Create (anyType_Param : access Java_Object'Class) return GameInitializedEvent_Access;
    procedure setLevel (This : in out GameInitializedEvent; level : Integer);
    function getLevel (This : in out GameInitializedEvent) return Integer;
-   procedure setResourceLoadingLevel (This : in out GameInitializedEvent; resourceLoadingLevel_Param : access ResourceLoadingLevel'Class);
+   procedure setResourceLoadingLevel (This : in out GameInitializedEvent; resourceLoadingLevel_Param : access ResourceLoadingLevel_Package.ResourceLoadingLevel'Class);
    function getResourceLoadingLevel (This : in out GameInitializedEvent) return ResourceLoadingLevel_Access;
 
 end org.allbinary.game.configuration.event.GameInitializedEvent_Package;

@@ -39,13 +39,13 @@ package body org.allbinary.image.opengles.OpenGLESImageExclusionUtil_Package is
         return OpenGLESImageExclusionUtil_Package.instance;
    end getInstance;
 
-   function isCustomScaling (This : in out OpenGLESImageExclusionUtil; image_Param : access Image'Class) return Boolean is
-      image : Image_Access := Image_Access (image_Param);
+   function isCustomScaling (This : in out OpenGLESImageExclusionUtil; image_Param : access Image_Package.Image'Class) return Boolean is
+      image : constant Image_Access := Image_Access (image_Param);
    begin
         return False;
    end isCustomScaling;
 
-   procedure isCustomScaling (This : in out OpenGLESImageExclusionUtil; image_Param : access Image'Class) is
+   procedure isCustomScaling (This : in out OpenGLESImageExclusionUtil; image_Param : access Image_Package.Image'Class) is
       Java_Result : constant Boolean := OpenGLESImageExclusionUtil'Class (This).isCustomScaling (image_Param);
       pragma Unreferenced (Java_Result);
    begin

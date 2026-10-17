@@ -43,8 +43,8 @@ package taghelpers.transform.info.TransformInfoHelperFactory_Package is
 
    procedure Initialize (This : in out TransformInfoHelperFactory'Class);
    function Create return TransformInfoHelperFactory_Access;
-   function getInstance (This : in out TransformInfoHelperFactory; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return Java_Object_Access;
-   procedure getInstance (This : in out TransformInfoHelperFactory; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function getInstance (This : in out TransformInfoHelperFactory; hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return Java_Object_Access;
+   procedure getInstance (This : in out TransformInfoHelperFactory; hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class);
 
 end taghelpers.transform.info.TransformInfoHelperFactory_Package;
 

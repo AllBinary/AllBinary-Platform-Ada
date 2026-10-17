@@ -38,8 +38,8 @@ package body org.allbinary.game.paint.ColorFillPaintableFactory_Package is
         return ColorFillPaintableFactory_Package.instance;
    end getInstance;
 
-   function getInstance (This : in out ColorFillPaintableFactory; basicColor_Param : access BasicColor'Class; forThreedCanvas : Boolean) return ColorFillBasePaintable_Access is
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+   function getInstance (This : in out ColorFillPaintableFactory; basicColor_Param : access BasicColor_Package.BasicColor'Class; forThreedCanvas : Boolean) return ColorFillBasePaintable_Access is
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
       operatingSystem : GenericOperatingSystem_Access;
    begin
         operatingSystem := OperatingSystemFactory_Package.getInstance.getOperatingSystemInstance;
@@ -50,7 +50,7 @@ package body org.allbinary.game.paint.ColorFillPaintableFactory_Package is
         end if;
    end getInstance;
 
-   procedure getInstance (This : in out ColorFillPaintableFactory; basicColor_Param : access BasicColor'Class; forThreedCanvas : Boolean) is
+   procedure getInstance (This : in out ColorFillPaintableFactory; basicColor_Param : access BasicColor_Package.BasicColor'Class; forThreedCanvas : Boolean) is
       Java_Result : constant ColorFillBasePaintable_Access := ColorFillPaintableFactory'Class (This).getInstance (basicColor_Param, forThreedCanvas);
       pragma Unreferenced (Java_Result);
    begin

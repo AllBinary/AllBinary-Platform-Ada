@@ -41,8 +41,8 @@ package body org.allbinary.logic.communication.http.file.upload.AbFileUploadFact
    end Create;
 
    --  throws Exception
-   function getFileItemStreamList (This : in out AbFileUploadFactory; httpServletRequest_Param : access HttpServletRequest'Class) return List_Access is
-      httpServletRequest : HttpServletRequest_Access := HttpServletRequest_Access (httpServletRequest_Param);
+   function getFileItemStreamList (This : in out AbFileUploadFactory; httpServletRequest_Param : access HttpServletRequest_Package.HttpServletRequest'Class) return List_Access is
+      httpServletRequest : constant HttpServletRequest_Access := HttpServletRequest_Access (httpServletRequest_Param);
       fileUpload : AbFileUpload_Access;
       iterator : FileItemIterator_Access;
       items : List_Access;
@@ -76,8 +76,8 @@ package body org.allbinary.logic.communication.http.file.upload.AbFileUploadFact
    end getFileItemStreamList;
 
    --  throws Exception
-   function getFileItemList (This : in out AbFileUploadFactory; httpServletRequest_Param : access HttpServletRequest'Class) return List_Access is
-      httpServletRequest : HttpServletRequest_Access := HttpServletRequest_Access (httpServletRequest_Param);
+   function getFileItemList (This : in out AbFileUploadFactory; httpServletRequest_Param : access HttpServletRequest_Package.HttpServletRequest'Class) return List_Access is
+      httpServletRequest : constant HttpServletRequest_Access := HttpServletRequest_Access (httpServletRequest_Param);
       abFileUpload : AbFileUpload_Access;
       commonStrings : CommonStrings_Access;
    begin
@@ -98,14 +98,14 @@ package body org.allbinary.logic.communication.http.file.upload.AbFileUploadFact
         end;
    end getFileItemList;
 
-   procedure getFileItemStreamList (This : in out AbFileUploadFactory; httpServletRequest_Param : access HttpServletRequest'Class) is
+   procedure getFileItemStreamList (This : in out AbFileUploadFactory; httpServletRequest_Param : access HttpServletRequest_Package.HttpServletRequest'Class) is
       Java_Result : constant List_Access := AbFileUploadFactory'Class (This).getFileItemStreamList (httpServletRequest_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getFileItemStreamList;
 
-   procedure getFileItemList (This : in out AbFileUploadFactory; httpServletRequest_Param : access HttpServletRequest'Class) is
+   procedure getFileItemList (This : in out AbFileUploadFactory; httpServletRequest_Param : access HttpServletRequest_Package.HttpServletRequest'Class) is
       Java_Result : constant List_Access := AbFileUploadFactory'Class (This).getFileItemList (httpServletRequest_Param);
       pragma Unreferenced (Java_Result);
    begin

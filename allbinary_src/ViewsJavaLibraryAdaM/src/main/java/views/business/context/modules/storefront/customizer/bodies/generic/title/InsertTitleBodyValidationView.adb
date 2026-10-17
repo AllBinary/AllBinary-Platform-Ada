@@ -22,8 +22,8 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out InsertTitleBodyValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out InsertTitleBodyValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
       requestHashMap : HashMap_Access;
    begin
         TitleBodyCustomizerView_Package.Initialize (This, transformInfoInterface);
@@ -32,7 +32,7 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
         This.titleBody := TitleBodyValidation_Package.Create (requestHashMap);
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return InsertTitleBodyValidationView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return InsertTitleBodyValidationView_Access is
       This : constant InsertTitleBodyValidationView_Access := new InsertTitleBodyValidationView;
    begin
       InsertTitleBodyValidationView_Package.Initialize (This.all, transformInfoInterface_Param);
@@ -95,8 +95,8 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out InsertTitleBodyValidationView; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toValidationInfoNode (This : in out InsertTitleBodyValidationView; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
@@ -119,7 +119,7 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
         end;
    end view;
 
-   procedure toValidationInfoNode (This : in out InsertTitleBodyValidationView; document_Param : access Document'Class) is
+   procedure toValidationInfoNode (This : in out InsertTitleBodyValidationView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := InsertTitleBodyValidationView'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

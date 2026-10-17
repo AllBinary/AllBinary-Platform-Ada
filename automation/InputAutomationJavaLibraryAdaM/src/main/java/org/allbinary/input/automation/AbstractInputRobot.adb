@@ -23,14 +23,14 @@ package body org.allbinary.input.automation.AbstractInputRobot_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AbstractInputRobot'Class; helpSet_Param : access HelpSet'Class) is
-      helpSet : HelpSet_Access := HelpSet_Access (helpSet_Param);
+   procedure Initialize (This : in out AbstractInputRobot'Class; helpSet_Param : access HelpSet_Package.HelpSet'Class) is
+      helpSet : constant HelpSet_Access := HelpSet_Access (helpSet_Param);
    begin
       Initialize_Fields (This);
         This.setHelpSet (helpSet);
    end Initialize;
 
-   function Create (helpSet_Param : access HelpSet'Class) return AbstractInputRobot_Access is
+   function Create (helpSet_Param : access HelpSet_Package.HelpSet'Class) return AbstractInputRobot_Access is
       This : constant AbstractInputRobot_Access := new AbstractInputRobot;
    begin
       AbstractInputRobot_Package.Initialize (This.all, helpSet_Param);
@@ -42,16 +42,16 @@ package body org.allbinary.input.automation.AbstractInputRobot_Package is
         return This.helpSet;
    end getHelpSet;
 
-   procedure mouseMove (This : in out AbstractInputRobot; point_Param : access Point'Class) is
-      point : Point_Access := Point_Access (point_Param);
+   procedure mouseMove (This : in out AbstractInputRobot; point_Param : access Point_Package.Point'Class) is
+      point : constant Point_Access := Point_Access (point_Param);
    begin
         This.mouseMove (point.x, point.y);
         This.logUtil.putF (To_Unbounded_String ("Moved Mouse To: x: ") & Java_Image (point.x) & To_Unbounded_String (" y: ") & Java_Image (point.y), AbstractInputRobot_Access'(This'Unchecked_Access), To_Unbounded_String ("moveMouse"));
    end mouseMove;
 
    --  throws Exception
-   procedure mouseMoveToTarget (This : in out AbstractInputRobot; rectangle_Param : access Rectangle'Class; x : Integer; y : Integer) is
-      rectangle : Rectangle_Access := Rectangle_Access (rectangle_Param);
+   procedure mouseMoveToTarget (This : in out AbstractInputRobot; rectangle_Param : access Rectangle_Package.Rectangle'Class; x : Integer; y : Integer) is
+      rectangle : constant Rectangle_Access := Rectangle_Access (rectangle_Param);
       point : Point_Access;
    begin
         point := PointHelper_Package.getCenterPoint (rectangle);
@@ -60,8 +60,8 @@ package body org.allbinary.input.automation.AbstractInputRobot_Package is
    end mouseMoveToTarget;
 
    --  throws Exception
-   procedure mouseMoveToTarget (This : in out AbstractInputRobot; rectangle_Param : access Rectangle'Class) is
-      rectangle : Rectangle_Access := Rectangle_Access (rectangle_Param);
+   procedure mouseMoveToTarget (This : in out AbstractInputRobot; rectangle_Param : access Rectangle_Package.Rectangle'Class) is
+      rectangle : constant Rectangle_Access := Rectangle_Access (rectangle_Param);
    begin
         This.mouseMoveToTarget (rectangle, 0, 0);
    end mouseMoveToTarget;
@@ -71,8 +71,8 @@ package body org.allbinary.input.automation.AbstractInputRobot_Package is
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end mouseMove;
 
-   procedure setHelpSet (This : in out AbstractInputRobot; helpSet_Param : access HelpSet'Class) is
-      helpSet : HelpSet_Access := HelpSet_Access (helpSet_Param);
+   procedure setHelpSet (This : in out AbstractInputRobot; helpSet_Param : access HelpSet_Package.HelpSet'Class) is
+      helpSet : constant HelpSet_Access := HelpSet_Access (helpSet_Param);
    begin
         This.helpSet := helpSet;
    end setHelpSet;

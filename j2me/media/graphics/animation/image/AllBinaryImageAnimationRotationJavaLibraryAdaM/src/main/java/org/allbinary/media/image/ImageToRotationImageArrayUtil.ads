@@ -37,8 +37,8 @@ package org.allbinary.media.image.ImageToRotationImageArrayUtil_Package is
    procedure Initialize (This : in out ImageToRotationImageArrayUtil'Class);
    function Create return ImageToRotationImageArrayUtil_Access;
    function getInstance return ImageToRotationImageArrayUtil_Access;
-   function generate (This : in out ImageToRotationImageArrayUtil; image_Param : access Image'Class; angleIncrement : Integer; totalAngle : Integer) return Image_Access_Array_Access;
-   procedure generate (This : in out ImageToRotationImageArrayUtil; image_Param : access Image'Class; angleIncrement : Integer; totalAngle : Integer);
+   function generate (This : in out ImageToRotationImageArrayUtil; image_Param : access Image_Package.Image'Class; angleIncrement : Integer; totalAngle : Integer) return Image_Access_Array_Access;
+   procedure generate (This : in out ImageToRotationImageArrayUtil; image_Param : access Image_Package.Image'Class; angleIncrement : Integer; totalAngle : Integer);
 
 end org.allbinary.media.image.ImageToRotationImageArrayUtil_Package;
 

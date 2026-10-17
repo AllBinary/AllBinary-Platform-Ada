@@ -28,16 +28,16 @@ package body org.allbinary.animation.image.BaseImageAnimationFactory_Package is
 
 
    --  throws Exception
-   function createFactoryBase (image_Param : access Image'Class; sequenceArray : Integer_Array_Access; width : Integer; height : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return BaseImageAnimationFactory_Access is
-      image : Image_Access := Image_Access (image_Param);
-      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
+   function createFactoryBase (image_Param : access Image_Package.Image'Class; sequenceArray : Integer_Array_Access; width : Integer; height : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return BaseImageAnimationFactory_Access is
+      image : constant Image_Access := Image_Access (image_Param);
+      animationBehaviorFactory : constant AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
    begin
         return BaseImageAnimationFactory_Package.Create (image, sequenceArray, width, height, 0, 0, animationBehaviorFactory);
    end createFactoryBase;
 
-   procedure Initialize (This : in out BaseImageAnimationFactory'Class; image_Param : access Image'Class; sequenceArray : Integer_Array_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) is
-      image : Image_Access := Image_Access (image_Param);
-      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
+   procedure Initialize (This : in out BaseImageAnimationFactory'Class; image_Param : access Image_Package.Image'Class; sequenceArray : Integer_Array_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
+      image : constant Image_Access := Image_Access (image_Param);
+      animationBehaviorFactory : constant AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
    begin
       Initialize_Fields (This);
         This.animationFactoryInitializationVisitor := AnimationFactoryInitializationVisitor_Package.Create;
@@ -50,7 +50,7 @@ package body org.allbinary.animation.image.BaseImageAnimationFactory_Package is
         This.animationFactoryInitializationVisitor.dy := dy;
    end Initialize;
 
-   function Create (image_Param : access Image'Class; sequenceArray : Integer_Array_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return BaseImageAnimationFactory_Access is
+   function Create (image_Param : access Image_Package.Image'Class; sequenceArray : Integer_Array_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return BaseImageAnimationFactory_Access is
       This : constant BaseImageAnimationFactory_Access := new BaseImageAnimationFactory;
    begin
       BaseImageAnimationFactory_Package.Initialize (This.all, image_Param, sequenceArray, width, height, dx, dy, animationBehaviorFactory_Param);
@@ -73,8 +73,8 @@ package body org.allbinary.animation.image.BaseImageAnimationFactory_Package is
         return This.sequenceArray;
    end getSequenceArray;
 
-   procedure setInitialScale (This : in out BaseImageAnimationFactory; scaleProperties_Param : access ScaleProperties'Class) is
-      scaleProperties : ScaleProperties_Access := ScaleProperties_Access (scaleProperties_Param);
+   procedure setInitialScale (This : in out BaseImageAnimationFactory; scaleProperties_Param : access ScaleProperties_Package.ScaleProperties'Class) is
+      scaleProperties : constant ScaleProperties_Access := ScaleProperties_Access (scaleProperties_Param);
    begin
         This.scaleProperties := scaleProperties;
         if This.scaleProperties.shouldScale then
@@ -111,7 +111,7 @@ package body org.allbinary.animation.image.BaseImageAnimationFactory_Package is
         return stringBuffer.toString;
    end toString;
 
-   procedure createFactoryBase (image_Param : access Image'Class; sequenceArray : Integer_Array_Access; width : Integer; height : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) is
+   procedure createFactoryBase (image_Param : access Image_Package.Image'Class; sequenceArray : Integer_Array_Access; width : Integer; height : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
       Java_Result : constant BaseImageAnimationFactory_Access := createFactoryBase (image_Param, sequenceArray, width, height, animationBehaviorFactory_Param);
       pragma Unreferenced (Java_Result);
    begin

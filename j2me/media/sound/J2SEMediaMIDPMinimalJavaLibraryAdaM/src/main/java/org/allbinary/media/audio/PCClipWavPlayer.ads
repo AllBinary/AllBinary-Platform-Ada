@@ -62,15 +62,15 @@ package org.allbinary.media.audio.PCClipWavPlayer_Package is
       clip : Clip_Access;
    end record;
 
-   procedure Initialize (This : in out PCClipWavPlayer'Class; inputStream_Param : access InputStream'Class);
-   function Create (inputStream_Param : access InputStream'Class) return PCClipWavPlayer_Access;
+   procedure Initialize (This : in out PCClipWavPlayer'Class; inputStream_Param : access InputStream_Package.InputStream'Class);
+   function Create (inputStream_Param : access InputStream_Package.InputStream'Class) return PCClipWavPlayer_Access;
    procedure close (This : in out PCClipWavPlayer);
    procedure close2 (This : in out PCClipWavPlayer);
    function getContentType (This : in out PCClipWavPlayer) return Unbounded_String;
    procedure start (This : in out PCClipWavPlayer);
    procedure start2 (This : in out PCClipWavPlayer);
-   function create (This : in out PCClipWavPlayer; audioInputStream_Param : access AudioInputStream'Class) return Clip_Access;
-   procedure create (This : in out PCClipWavPlayer; audioInputStream_Param : access AudioInputStream'Class);
+   function create (This : in out PCClipWavPlayer; audioInputStream_Param : access AudioInputStream_Package.AudioInputStream'Class) return Clip_Access;
+   procedure create (This : in out PCClipWavPlayer; audioInputStream_Param : access AudioInputStream_Package.AudioInputStream'Class);
    procedure stop (This : in out PCClipWavPlayer);
    procedure stop2 (This : in out PCClipWavPlayer);
    function getControl (This : in out PCClipWavPlayer; controlType : Unbounded_String) return Control_Access;
@@ -80,7 +80,7 @@ package org.allbinary.media.audio.PCClipWavPlayer_Package is
    function getVolume (This : in out PCClipWavPlayer) return Float;
    procedure setVolumeF (This : in out PCClipWavPlayer; volume : Float);
    function getDuration (This : in out PCClipWavPlayer) return Long_Long_Integer;
-   procedure update (This : in out PCClipWavPlayer; event_Param : access LineEvent'Class);
+   procedure update (This : in out PCClipWavPlayer; event_Param : access LineEvent_Package.LineEvent'Class);
 
 end org.allbinary.media.audio.PCClipWavPlayer_Package;
 

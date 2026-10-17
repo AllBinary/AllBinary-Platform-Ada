@@ -49,10 +49,10 @@ package org.allbinary.layer.AllBinaryLayerManager_Package is
    function getLayerProcessorArray (This : in out AllBinaryLayerManager) return LayerProcessor_Access_Array_Access;
    procedure setLayerProcessorArray (This : in out AllBinaryLayerManager; layerProcessorArray : LayerProcessor_Access_Array_Access);
    procedure log (This : in out AllBinaryLayerManager);
-   procedure append (This : in out AllBinaryLayerManager; layerInterface_Param : access AllBinaryLayer'Class);
-   procedure appendAt (This : in out AllBinaryLayerManager; layerInterface_Param : access AllBinaryLayer'Class; index : Integer);
-   procedure appendProcessors (This : in out AllBinaryLayerManager; layerInterface_Param : access AllBinaryLayer'Class);
-   procedure remove (This : in out AllBinaryLayerManager; layerInterface_Param : access AllBinaryLayer'Class);
+   procedure append (This : in out AllBinaryLayerManager; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class);
+   procedure appendAt (This : in out AllBinaryLayerManager; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; index : Integer);
+   procedure appendProcessors (This : in out AllBinaryLayerManager; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class);
+   procedure remove (This : in out AllBinaryLayerManager; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class);
    procedure process (This : in out AllBinaryLayerManager);
    procedure cleanup (This : in out AllBinaryLayerManager);
 

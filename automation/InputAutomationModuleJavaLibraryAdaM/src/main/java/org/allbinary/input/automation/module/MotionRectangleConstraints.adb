@@ -48,8 +48,8 @@ package body org.allbinary.input.automation.module.MotionRectangleConstraints_Pa
         return This.maxDimension;
    end getMaxDimension;
 
-   function isTooSmall (This : in out MotionRectangleConstraints; rectangle_Param : access Rectangle'Class) return Boolean is
-      rectangle : Rectangle_Access := Rectangle_Access (rectangle_Param);
+   function isTooSmall (This : in out MotionRectangleConstraints; rectangle_Param : access Rectangle_Package.Rectangle'Class) return Boolean is
+      rectangle : constant Rectangle_Access := Rectangle_Access (rectangle_Param);
    begin
         if ((rectangle.width) < (This.getMinDimension.width)) or else ((rectangle.height) < (This.getMinDimension.height)) then
             return True;
@@ -58,8 +58,8 @@ package body org.allbinary.input.automation.module.MotionRectangleConstraints_Pa
         end if;
    end isTooSmall;
 
-   function isAreaTooSmall (This : in out MotionRectangleConstraints; rectangle_Param : access Rectangle'Class) return Boolean is
-      rectangle : Rectangle_Access := Rectangle_Access (rectangle_Param);
+   function isAreaTooSmall (This : in out MotionRectangleConstraints; rectangle_Param : access Rectangle_Package.Rectangle'Class) return Boolean is
+      rectangle : constant Rectangle_Access := Rectangle_Access (rectangle_Param);
    begin
         if ((rectangle.width) * (rectangle.height)) < (This.getMinArea) then
             return True;
@@ -68,8 +68,8 @@ package body org.allbinary.input.automation.module.MotionRectangleConstraints_Pa
         end if;
    end isAreaTooSmall;
 
-   function isTooBig (This : in out MotionRectangleConstraints; rectangle_Param : access Rectangle'Class) return Boolean is
-      rectangle : Rectangle_Access := Rectangle_Access (rectangle_Param);
+   function isTooBig (This : in out MotionRectangleConstraints; rectangle_Param : access Rectangle_Package.Rectangle'Class) return Boolean is
+      rectangle : constant Rectangle_Access := Rectangle_Access (rectangle_Param);
    begin
         if ((rectangle.width) > (This.getMaxDimension.width)) or else ((rectangle.height) > (This.getMaxDimension.height)) then
             return True;
@@ -79,21 +79,21 @@ package body org.allbinary.input.automation.module.MotionRectangleConstraints_Pa
    end isTooBig;
 
    --  throws Exception
-   function isValid (This : in out MotionRectangleConstraints; frame : Long_Long_Integer; bufferedImage_Param : access BufferedImage'Class; rectangle_Param : access Rectangle'Class) return Boolean is
-      bufferedImage : BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
-      rectangle : Rectangle_Access := Rectangle_Access (rectangle_Param);
+   function isValid (This : in out MotionRectangleConstraints; frame : Long_Long_Integer; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; rectangle_Param : access Rectangle_Package.Rectangle'Class) return Boolean is
+      bufferedImage : constant BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
+      rectangle : constant Rectangle_Access := Rectangle_Access (rectangle_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end isValid;
 
-   procedure setMinDimension (This : in out MotionRectangleConstraints; minDimension_Param : access Dimension'Class) is
-      minDimension : Dimension_Access := Dimension_Access (minDimension_Param);
+   procedure setMinDimension (This : in out MotionRectangleConstraints; minDimension_Param : access Dimension_Package.Dimension'Class) is
+      minDimension : constant Dimension_Access := Dimension_Access (minDimension_Param);
    begin
         This.minDimension := minDimension;
    end setMinDimension;
 
-   procedure setMaxDimension (This : in out MotionRectangleConstraints; maxDimension_Param : access Dimension'Class) is
-      maxDimension : Dimension_Access := Dimension_Access (maxDimension_Param);
+   procedure setMaxDimension (This : in out MotionRectangleConstraints; maxDimension_Param : access Dimension_Package.Dimension'Class) is
+      maxDimension : constant Dimension_Access := Dimension_Access (maxDimension_Param);
    begin
         This.maxDimension := maxDimension;
    end setMaxDimension;
@@ -118,28 +118,28 @@ package body org.allbinary.input.automation.module.MotionRectangleConstraints_Pa
         This.minArea := minArea;
    end setMinArea;
 
-   procedure isTooSmall (This : in out MotionRectangleConstraints; rectangle_Param : access Rectangle'Class) is
+   procedure isTooSmall (This : in out MotionRectangleConstraints; rectangle_Param : access Rectangle_Package.Rectangle'Class) is
       Java_Result : constant Boolean := MotionRectangleConstraints'Class (This).isTooSmall (rectangle_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isTooSmall;
 
-   procedure isAreaTooSmall (This : in out MotionRectangleConstraints; rectangle_Param : access Rectangle'Class) is
+   procedure isAreaTooSmall (This : in out MotionRectangleConstraints; rectangle_Param : access Rectangle_Package.Rectangle'Class) is
       Java_Result : constant Boolean := MotionRectangleConstraints'Class (This).isAreaTooSmall (rectangle_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isAreaTooSmall;
 
-   procedure isTooBig (This : in out MotionRectangleConstraints; rectangle_Param : access Rectangle'Class) is
+   procedure isTooBig (This : in out MotionRectangleConstraints; rectangle_Param : access Rectangle_Package.Rectangle'Class) is
       Java_Result : constant Boolean := MotionRectangleConstraints'Class (This).isTooBig (rectangle_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isTooBig;
 
-   procedure isValid (This : in out MotionRectangleConstraints; frame : Long_Long_Integer; bufferedImage_Param : access BufferedImage'Class; rectangle_Param : access Rectangle'Class) is
+   procedure isValid (This : in out MotionRectangleConstraints; frame : Long_Long_Integer; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; rectangle_Param : access Rectangle_Package.Rectangle'Class) is
       Java_Result : constant Boolean := MotionRectangleConstraints'Class (This).isValid (frame, bufferedImage_Param, rectangle_Param);
       pragma Unreferenced (Java_Result);
    begin

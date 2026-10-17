@@ -117,7 +117,7 @@ package org.allbinary.logic.visual.transform.info.TransformInfo_Package is
    function Create (name : Unbounded_String) return TransformInfo_Access;
    procedure Initialize (This : in out TransformInfo'Class; name : Unbounded_String; objectFileName : Unbounded_String; objectConfigFileName : Unbounded_String; templateFileName : Unbounded_String; dataFileName : Unbounded_String);
    function Create (name : Unbounded_String; objectFileName : Unbounded_String; objectConfigFileName : Unbounded_String; templateFileName : Unbounded_String; dataFileName : Unbounded_String) return TransformInfo_Access;
-   procedure override (This : in out TransformInfo; hashMap_Param : access HashMap'Class);
+   procedure override (This : in out TransformInfo; hashMap_Param : access HashMap_Package.HashMap'Class);
    function log (This : in out TransformInfo) return Unbounded_String;
    procedure setName (This : in out TransformInfo; value : Unbounded_String);
    procedure setStoreName (This : in out TransformInfo; value : Unbounded_String);
@@ -149,7 +149,7 @@ package org.allbinary.logic.visual.transform.info.TransformInfo_Package is
    procedure setChild (This : in out TransformInfo);
    function isChild (This : in out TransformInfo) return Boolean;
    function getObjectConfigInterface (This : in out TransformInfo) return TransformInfoObjectConfigInterface_Access;
-   procedure setObjectConfigInterface (This : in out TransformInfo; objectConfigInterface_Param : access TransformInfoObjectConfigInterface'Class);
+   procedure setObjectConfigInterface (This : in out TransformInfo; objectConfigInterface_Param : access TransformInfoObjectConfigInterface_Package.TransformInfoObjectConfigInterface'Class);
 
 end org.allbinary.logic.visual.transform.info.TransformInfo_Package;
 

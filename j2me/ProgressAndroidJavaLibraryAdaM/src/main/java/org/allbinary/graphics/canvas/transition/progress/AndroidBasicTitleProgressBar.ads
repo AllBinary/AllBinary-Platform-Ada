@@ -99,13 +99,13 @@ package org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitleProgr
    RESOURCE : Unbounded_String;
    background : Integer;
 
-   procedure Initialize (This : in out AndroidBasicTitleProgressBar'Class; title : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class);
-   function Create (title : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return AndroidBasicTitleProgressBar_Access;
+   procedure Initialize (This : in out AndroidBasicTitleProgressBar'Class; title : Unbounded_String; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class);
+   function Create (title : Unbounded_String; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return AndroidBasicTitleProgressBar_Access;
    procedure init (This : in out AndroidBasicTitleProgressBar);
-   procedure initActivity (This : in out AndroidBasicTitleProgressBar; activity_Param : access Activity'Class);
+   procedure initActivity (This : in out AndroidBasicTitleProgressBar; activity_Param : access Activity_Package.Activity'Class);
    procedure updateCurrent (This : in out AndroidBasicTitleProgressBar);
-   procedure onEvent (This : in out AndroidBasicTitleProgressBar; eventObject_Param : access AllBinaryEventObject'Class);
-   procedure onDisplayChangeEvent (This : in out AndroidBasicTitleProgressBar; displayChangeEvent_Param : access DisplayChangeEvent'Class);
+   procedure onEvent (This : in out AndroidBasicTitleProgressBar; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class);
+   procedure onDisplayChangeEvent (This : in out AndroidBasicTitleProgressBar; displayChangeEvent_Param : access DisplayChangeEvent_Package.DisplayChangeEvent'Class);
    procedure loadProgressImages (This : in out AndroidBasicTitleProgressBar);
    function isInitialized (This : in out AndroidBasicTitleProgressBar) return Boolean;
    procedure start (This : in out AndroidBasicTitleProgressBar);
@@ -116,11 +116,11 @@ package org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitleProgr
    procedure setValue (This : in out AndroidBasicTitleProgressBar; value : Integer);
    procedure waitUntilDisplayed (This : in out AndroidBasicTitleProgressBar);
    procedure setImages (This : in out AndroidBasicTitleProgressBar; index : Integer; lastWidth : Integer; lastHeight : Integer);
-   procedure initOpenGL (This : in out AndroidBasicTitleProgressBar; graphics_Param : access Graphics'Class);
-   procedure update (This : in out AndroidBasicTitleProgressBar; graphics_Param : access Graphics'Class);
+   procedure initOpenGL (This : in out AndroidBasicTitleProgressBar; graphics_Param : access Graphics_Package.Graphics'Class);
+   procedure update (This : in out AndroidBasicTitleProgressBar; graphics_Param : access Graphics_Package.Graphics'Class);
    function getImage (This : in out AndroidBasicTitleProgressBar; index : Integer) return Image_Access;
    procedure getImage (This : in out AndroidBasicTitleProgressBar; index : Integer);
-   procedure paint2 (This : in out AndroidBasicTitleProgressBar; graphics_Param : access Graphics'Class);
+   procedure paint2 (This : in out AndroidBasicTitleProgressBar; graphics_Param : access Graphics_Package.Graphics'Class);
    procedure setBackgroundResource (background : Integer);
    procedure setBackground (This : in out AndroidBasicTitleProgressBar; background : Boolean);
    procedure setPortion (This : in out AndroidBasicTitleProgressBar; portion : Integer);

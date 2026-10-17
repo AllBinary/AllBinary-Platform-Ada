@@ -31,7 +31,7 @@ package org.allbinary.graphics.displayable.event.DisplayChangeEventListener_Pack
    type DisplayChangeEventListener_Access is access all DisplayChangeEventListener'Class;
    type DisplayChangeEventListener_Access_Array is array (Natural range <>) of DisplayChangeEventListener_Access;
    type DisplayChangeEventListener_Access_Array_Access is access all DisplayChangeEventListener_Access_Array;
-   procedure onDisplayChangeEvent (This : in out DisplayChangeEventListener; displayChangeEvent_Param : access DisplayChangeEvent'Class) is abstract;
+   procedure onDisplayChangeEvent (This : in out DisplayChangeEventListener; displayChangeEvent_Param : access DisplayChangeEvent_Package.DisplayChangeEvent'Class) is abstract;
 
 end org.allbinary.graphics.displayable.event.DisplayChangeEventListener_Package;
 

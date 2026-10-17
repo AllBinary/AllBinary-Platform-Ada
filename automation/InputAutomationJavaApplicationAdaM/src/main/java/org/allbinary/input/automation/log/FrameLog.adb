@@ -42,8 +42,8 @@ package body org.allbinary.input.automation.log.FrameLog_Package is
         This.infoStringBuffer.append (infoString);
    end addInfo;
 
-   procedure addActions (This : in out FrameLog; vectorOfStrings_Param : access BasicArrayList'Class) is
-      vectorOfStrings : BasicArrayList_Access := BasicArrayList_Access (vectorOfStrings_Param);
+   procedure addActions (This : in out FrameLog; vectorOfStrings_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      vectorOfStrings : constant BasicArrayList_Access := BasicArrayList_Access (vectorOfStrings_Param);
       size : Integer;
       index : Integer;
    begin

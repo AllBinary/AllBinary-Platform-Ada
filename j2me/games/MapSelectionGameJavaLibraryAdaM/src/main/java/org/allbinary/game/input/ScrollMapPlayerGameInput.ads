@@ -74,8 +74,8 @@ package org.allbinary.game.input.ScrollMapPlayerGameInput_Package is
       scrollMapEvent : ScrollMapEvent_Access;
    end record;
 
-   procedure Initialize (This : in out ScrollMapPlayerGameInput'Class; geographicMapInterface_Param : access BasicGeographicMap'Class; list_Param : access BasicArrayList'Class; playerInputId : Integer);
-   function Create (geographicMapInterface_Param : access BasicGeographicMap'Class; list_Param : access BasicArrayList'Class; playerInputId : Integer) return ScrollMapPlayerGameInput_Access;
+   procedure Initialize (This : in out ScrollMapPlayerGameInput'Class; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; list_Param : access BasicArrayList_Package.BasicArrayList'Class; playerInputId : Integer);
+   function Create (geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; list_Param : access BasicArrayList_Package.BasicArrayList'Class; playerInputId : Integer) return ScrollMapPlayerGameInput_Access;
    procedure move (This : in out ScrollMapPlayerGameInput; dx : Integer; dy : Integer);
    procedure init (This : in out ScrollMapPlayerGameInput);
    procedure scrollMiddleX (This : in out ScrollMapPlayerGameInput);
@@ -86,7 +86,7 @@ package org.allbinary.game.input.ScrollMapPlayerGameInput_Package is
    procedure left (This : in out ScrollMapPlayerGameInput);
    procedure initInputProcessors (This : in out ScrollMapPlayerGameInput);
    procedure processInputKey (This : in out ScrollMapPlayerGameInput; key : Integer);
-   procedure processInput (This : in out ScrollMapPlayerGameInput; layerManager_Param : access AllBinaryLayerManager'Class);
+   procedure processInput (This : in out ScrollMapPlayerGameInput; layerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class);
    function getSpecialHeight (This : in out ScrollMapPlayerGameInput) return Integer;
    function getSpecialWidth (This : in out ScrollMapPlayerGameInput) return Integer;
    function keepOnMapMaxY (This : in out ScrollMapPlayerGameInput; newY : Integer) return Boolean;

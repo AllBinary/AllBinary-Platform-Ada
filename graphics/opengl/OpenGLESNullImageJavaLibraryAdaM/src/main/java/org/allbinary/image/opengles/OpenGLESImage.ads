@@ -61,13 +61,13 @@ package org.allbinary.image.opengles.OpenGLESImage_Package is
    texture2dList : BasicArrayList_Access;
    TYPE_Id : Integer;
 
-   procedure Initialize (This : in out OpenGLESImage'Class; image_Param : access Image'Class; bitmapFactory_Param : access PlatformBitmapBaseFactory'Class; textureFactory_Param : access PlatformTextureBaseFactory'Class);
-   function Create (image_Param : access Image'Class; bitmapFactory_Param : access PlatformBitmapBaseFactory'Class; textureFactory_Param : access PlatformTextureBaseFactory'Class) return OpenGLESImage_Access;
-   procedure set (This : in out OpenGLESImage; gl_Param : access GL'Class);
-   function initTexture (This : in out OpenGLESImage; gl_Param : access GL10'Class) return Boolean;
-   procedure initTexture (This : in out OpenGLESImage; gl_Param : access GL10'Class);
-   procedure drawRegion (This : in out OpenGLESImage; gl_Param : access GL10'Class; viewHeight : Integer; x_src : Float; y_src : Float; width : Float; height : Float; x : Integer; y : Integer; z : Integer);
-   procedure draw (This : in out OpenGLESImage; gl_Param : access GL10'Class; x : Integer; y : Integer; z : Integer);
+   procedure Initialize (This : in out OpenGLESImage'Class; image_Param : access Image_Package.Image'Class; bitmapFactory_Param : access PlatformBitmapBaseFactory_Package.PlatformBitmapBaseFactory'Class; textureFactory_Param : access PlatformTextureBaseFactory_Package.PlatformTextureBaseFactory'Class);
+   function Create (image_Param : access Image_Package.Image'Class; bitmapFactory_Param : access PlatformBitmapBaseFactory_Package.PlatformBitmapBaseFactory'Class; textureFactory_Param : access PlatformTextureBaseFactory_Package.PlatformTextureBaseFactory'Class) return OpenGLESImage_Access;
+   procedure set (This : in out OpenGLESImage; gl_Param : access GL_Package.GL'Class);
+   function initTexture (This : in out OpenGLESImage; gl_Param : access GL10_Package.GL10'Class) return Boolean;
+   procedure initTexture (This : in out OpenGLESImage; gl_Param : access GL10_Package.GL10'Class);
+   procedure drawRegion (This : in out OpenGLESImage; gl_Param : access GL10_Package.GL10'Class; viewHeight : Integer; x_src : Float; y_src : Float; width : Float; height : Float; x : Integer; y : Integer; z : Integer);
+   procedure draw (This : in out OpenGLESImage; gl_Param : access GL10_Package.GL10'Class; x : Integer; y : Integer; z : Integer);
    function getType (This : in out OpenGLESImage) return Integer;
 
 end org.allbinary.image.opengles.OpenGLESImage_Package;

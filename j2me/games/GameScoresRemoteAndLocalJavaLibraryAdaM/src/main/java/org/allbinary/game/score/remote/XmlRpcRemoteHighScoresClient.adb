@@ -23,8 +23,8 @@ package body org.allbinary.game.score.remote.XmlRpcRemoteHighScoresClient_Packag
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out XmlRpcRemoteHighScoresClient'Class; clientInfo_Param : access AbeClientInformationInterface'Class; page : Unbounded_String; remoteMethod : Unbounded_String) is
-      clientInfo : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (clientInfo_Param);
+   procedure Initialize (This : in out XmlRpcRemoteHighScoresClient'Class; clientInfo_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; page : Unbounded_String; remoteMethod : Unbounded_String) is
+      clientInfo : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (clientInfo_Param);
    begin
         XmlRpcAbeClient_Package.Initialize (This, clientInfo, remoteMethod);
         Initialize_Fields (This);
@@ -32,7 +32,7 @@ package body org.allbinary.game.score.remote.XmlRpcRemoteHighScoresClient_Packag
         This.setServer (0);
    end Initialize;
 
-   function Create (clientInfo_Param : access AbeClientInformationInterface'Class; page : Unbounded_String; remoteMethod : Unbounded_String) return XmlRpcRemoteHighScoresClient_Access is
+   function Create (clientInfo_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; page : Unbounded_String; remoteMethod : Unbounded_String) return XmlRpcRemoteHighScoresClient_Access is
       This : constant XmlRpcRemoteHighScoresClient_Access := new XmlRpcRemoteHighScoresClient;
    begin
       XmlRpcRemoteHighScoresClient_Package.Initialize (This.all, clientInfo_Param, page, remoteMethod);
@@ -40,9 +40,9 @@ package body org.allbinary.game.score.remote.XmlRpcRemoteHighScoresClient_Packag
    end Create;
 
    --  throws Exception
-   function get (This : in out XmlRpcRemoteHighScoresClient; anyType_Param : access Java_Object'Class; cryptInterface_Param : access CryptInterface'Class) return Java_Object_Access is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
-      cryptInterface : CryptInterface_Access := CryptInterface_Access (cryptInterface_Param);
+   function get (This : in out XmlRpcRemoteHighScoresClient; anyType_Param : access Java_Object'Class; cryptInterface_Param : access CryptInterface_Package.CryptInterface'Class) return Java_Object_Access is
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
+      cryptInterface : constant CryptInterface_Access := CryptInterface_Access (cryptInterface_Param);
       param : BasicArrayList_Access;
       serverUrl : Unbounded_String;
       index : Integer;
@@ -87,7 +87,7 @@ package body org.allbinary.game.score.remote.XmlRpcRemoteHighScoresClient_Packag
         end;
    end get;
 
-   procedure get (This : in out XmlRpcRemoteHighScoresClient; anyType_Param : access Java_Object'Class; cryptInterface_Param : access CryptInterface'Class) is
+   procedure get (This : in out XmlRpcRemoteHighScoresClient; anyType_Param : access Java_Object'Class; cryptInterface_Param : access CryptInterface_Package.CryptInterface'Class) is
       Java_Result : constant Java_Object_Access := XmlRpcRemoteHighScoresClient'Class (This).get (anyType_Param, cryptInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

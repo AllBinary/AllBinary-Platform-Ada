@@ -56,8 +56,8 @@ package org.allbinary.media.image.comparison.ChangedPixelsUtil_Package is
 
    procedure Initialize (This : in out ChangedPixelsUtil'Class);
    function Create return ChangedPixelsUtil_Access;
-   function generateBufferedImageChacheables (imageComparisonInfo_Param : access ImageComparisonResult'Class) return BufferedImageCacheable_Access_Array_Access;
-   procedure generateBufferedImageChacheables (imageComparisonInfo_Param : access ImageComparisonResult'Class);
+   function generateBufferedImageChacheables (imageComparisonInfo_Param : access ImageComparisonResult_Package.ImageComparisonResult'Class) return BufferedImageCacheable_Access_Array_Access;
+   procedure generateBufferedImageChacheables (imageComparisonInfo_Param : access ImageComparisonResult_Package.ImageComparisonResult'Class);
 
 end org.allbinary.media.image.comparison.ChangedPixelsUtil_Package;
 

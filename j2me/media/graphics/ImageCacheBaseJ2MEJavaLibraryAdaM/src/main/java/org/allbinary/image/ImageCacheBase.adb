@@ -51,7 +51,7 @@ package body org.allbinary.image.ImageCacheBase_Package is
    end Create;
 
    function getImage (This : in out ImageCacheBase; resourceId_Param : access Java_Object'Class) return Image_Access is
-      resourceId : Java_Object_Access := Java_Object_Access (resourceId_Param);
+      resourceId : constant Java_Object_Access := Java_Object_Access (resourceId_Param);
       imageCanBeNull : Java_Object_Access;
    begin
         imageCanBeNull := This.hashtable.get (resourceId);
@@ -107,7 +107,7 @@ package body org.allbinary.image.ImageCacheBase_Package is
 
    --  throws Exception
    function getWithKey (This : in out ImageCacheBase; key_Param : access Java_Object'Class) return Image_Access is
-      key : Java_Object_Access := Java_Object_Access (key_Param);
+      key : constant Java_Object_Access := Java_Object_Access (key_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end getWithKey;
@@ -119,9 +119,9 @@ package body org.allbinary.image.ImageCacheBase_Package is
    end createImage;
 
    --  throws Exception
-   function createImageFromInputStream (This : in out ImageCacheBase; key_Param : access Java_Object'Class; inputStream_Param : access InputStream'Class) return Image_Access is
-      key : Java_Object_Access := Java_Object_Access (key_Param);
-      inputStream : InputStream_Access := InputStream_Access (inputStream_Param);
+   function createImageFromInputStream (This : in out ImageCacheBase; key_Param : access Java_Object'Class; inputStream_Param : access InputStream_Package.InputStream'Class) return Image_Access is
+      key : constant Java_Object_Access := Java_Object_Access (key_Param);
+      inputStream : constant InputStream_Access := InputStream_Access (inputStream_Param);
    begin
         return This.imageFactory.createImageFromInputStream (key, inputStream);
    end createImageFromInputStream;
@@ -158,8 +158,8 @@ package body org.allbinary.image.ImageCacheBase_Package is
         return This.hashtable;
    end getHashtableP;
 
-   procedure init (This : in out ImageCacheBase; image_Param : access Image'Class) is
-      image : Image_Access := Image_Access (image_Param);
+   procedure init (This : in out ImageCacheBase; image_Param : access Image_Package.Image'Class) is
+      image : constant Image_Access := Image_Access (image_Param);
    begin
         null;
    end init;
@@ -211,7 +211,7 @@ package body org.allbinary.image.ImageCacheBase_Package is
       null;
    end createImage;
 
-   procedure createImageFromInputStream (This : in out ImageCacheBase; key_Param : access Java_Object'Class; inputStream_Param : access InputStream'Class) is
+   procedure createImageFromInputStream (This : in out ImageCacheBase; key_Param : access Java_Object'Class; inputStream_Param : access InputStream_Package.InputStream'Class) is
       Java_Result : constant Image_Access := ImageCacheBase'Class (This).createImageFromInputStream (key_Param, inputStream_Param);
       pragma Unreferenced (Java_Result);
    begin

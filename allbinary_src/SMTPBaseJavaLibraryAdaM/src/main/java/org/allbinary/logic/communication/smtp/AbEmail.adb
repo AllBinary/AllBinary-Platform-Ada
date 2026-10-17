@@ -62,8 +62,8 @@ package body org.allbinary.logic.communication.smtp.AbEmail_Package is
    end toHashMap;
 
    --  throws Exception
-   function toXmlNode (This : in out AbEmail; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out AbEmail; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
    begin
         return This.email.toXmlNode (document);
    end toXmlNode;
@@ -79,7 +79,7 @@ package body org.allbinary.logic.communication.smtp.AbEmail_Package is
         return This.email.toXmlDoc;
    end toXmlDoc;
 
-   procedure toXmlNode (This : in out AbEmail; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out AbEmail; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := AbEmail'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

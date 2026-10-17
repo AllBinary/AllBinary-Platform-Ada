@@ -26,15 +26,15 @@ package body org.allbinary.game.score.displayable.HighScoreTextBox_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out HighScoreTextBox'Class; highScoresFactoryInterface_Param : access HighScoresFactoryInterface'Class; highScoresHelper_Param : access HighScoresHelperBaseInterface'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo'Class; cmdListener_Param : access CommandListener'Class; name : Unbounded_String; highScore_Param : access HighScore'Class; backgrounBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) is
-      highScoresFactoryInterface : HighScoresFactoryInterface_Access := HighScoresFactoryInterface_Access (highScoresFactoryInterface_Param);
-      highScoresHelper : HighScoresHelperBaseInterface_Access := HighScoresHelperBaseInterface_Access (highScoresHelper_Param);
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      gameInfo : GameInfo_Access := GameInfo_Access (gameInfo_Param);
-      cmdListener : CommandListener_Access := CommandListener_Access (cmdListener_Param);
-      highScore : HighScore_Access := HighScore_Access (highScore_Param);
-      backgrounBasicColor : BasicColor_Access := BasicColor_Access (backgrounBasicColor_Param);
-      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
+   procedure Initialize (This : in out HighScoreTextBox'Class; highScoresFactoryInterface_Param : access HighScoresFactoryInterface_Package.HighScoresFactoryInterface'Class; highScoresHelper_Param : access HighScoresHelperBaseInterface_Package.HighScoresHelperBaseInterface'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo_Package.GameInfo'Class; cmdListener_Param : access CommandListener_Package.CommandListener'Class; name : Unbounded_String; highScore_Param : access HighScore_Package.HighScore'Class; backgrounBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      highScoresFactoryInterface : constant HighScoresFactoryInterface_Access := HighScoresFactoryInterface_Access (highScoresFactoryInterface_Param);
+      highScoresHelper : constant HighScoresHelperBaseInterface_Access := HighScoresHelperBaseInterface_Access (highScoresHelper_Param);
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      gameInfo : constant GameInfo_Access := GameInfo_Access (gameInfo_Param);
+      cmdListener : constant CommandListener_Access := CommandListener_Access (cmdListener_Param);
+      highScore : constant HighScore_Access := HighScore_Access (highScore_Param);
+      backgrounBasicColor : constant BasicColor_Access := BasicColor_Access (backgrounBasicColor_Param);
+      foregroundBasicColor : constant BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
       operatingSystemInterface : GenericOperatingSystem_Access;
       username : Unbounded_String;
    begin
@@ -52,15 +52,15 @@ package body org.allbinary.game.score.displayable.HighScoreTextBox_Package is
         end if;
    end Initialize;
 
-   function Create (highScoresFactoryInterface_Param : access HighScoresFactoryInterface'Class; highScoresHelper_Param : access HighScoresHelperBaseInterface'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo'Class; cmdListener_Param : access CommandListener'Class; name : Unbounded_String; highScore_Param : access HighScore'Class; backgrounBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return HighScoreTextBox_Access is
+   function Create (highScoresFactoryInterface_Param : access HighScoresFactoryInterface_Package.HighScoresFactoryInterface'Class; highScoresHelper_Param : access HighScoresHelperBaseInterface_Package.HighScoresHelperBaseInterface'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo_Package.GameInfo'Class; cmdListener_Param : access CommandListener_Package.CommandListener'Class; name : Unbounded_String; highScore_Param : access HighScore_Package.HighScore'Class; backgrounBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return HighScoreTextBox_Access is
       This : constant HighScoreTextBox_Access := new HighScoreTextBox;
    begin
       HighScoreTextBox_Package.Initialize (This.all, highScoresFactoryInterface_Param, highScoresHelper_Param, abeClientInformation_Param, gameInfo_Param, cmdListener_Param, name, highScore_Param, backgrounBasicColor_Param, foregroundBasicColor_Param);
       return This;
    end Create;
 
-   procedure initCommands (This : in out HighScoreTextBox; cmdListener_Param : access CommandListener'Class) is
-      cmdListener : CommandListener_Access := CommandListener_Access (cmdListener_Param);
+   procedure initCommands (This : in out HighScoreTextBox; cmdListener_Param : access CommandListener_Package.CommandListener'Class) is
+      cmdListener : constant CommandListener_Access := CommandListener_Access (cmdListener_Param);
    begin
         This.removeAllCommands;
         PostGameCommandFactory_Package.getInstance.addCommands (HighScoreTextBox_Access'(This'Unchecked_Access));
@@ -102,8 +102,8 @@ package body org.allbinary.game.score.displayable.HighScoreTextBox_Package is
         CustomTextBox (This).update;
    end update;
 
-   procedure paint (This : in out HighScoreTextBox; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out HighScoreTextBox; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         CustomTextBox (This).paint (graphics);
         This.paintable.paint (graphics);

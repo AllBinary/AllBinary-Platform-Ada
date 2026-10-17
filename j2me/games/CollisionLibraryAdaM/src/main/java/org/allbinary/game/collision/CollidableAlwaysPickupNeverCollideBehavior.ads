@@ -38,8 +38,8 @@ package org.allbinary.game.collision.CollidableAlwaysPickupNeverCollideBehavior_
 
    procedure Initialize (This : in out CollidableAlwaysPickupNeverCollideBehavior'Class);
    function Create return CollidableAlwaysPickupNeverCollideBehavior_Access;
-   function getCollisionTypeWith (This : in out CollidableAlwaysPickupNeverCollideBehavior; layerInterface_Param : access AllBinaryLayer'Class) return CollisionType_Access;
-   procedure getCollisionTypeWith (This : in out CollidableAlwaysPickupNeverCollideBehavior; layerInterface_Param : access AllBinaryLayer'Class);
+   function getCollisionTypeWith (This : in out CollidableAlwaysPickupNeverCollideBehavior; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) return CollisionType_Access;
+   procedure getCollisionTypeWith (This : in out CollidableAlwaysPickupNeverCollideBehavior; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class);
 
 end org.allbinary.game.collision.CollidableAlwaysPickupNeverCollideBehavior_Package;
 

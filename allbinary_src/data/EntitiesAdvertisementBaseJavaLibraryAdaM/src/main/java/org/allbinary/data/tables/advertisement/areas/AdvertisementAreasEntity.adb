@@ -115,8 +115,8 @@ package body org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEnt
         return returnStr;
    end createTable;
 
-   procedure update (This : in out AdvertisementAreasEntity; updatedValues_Param : access HashMap'Class) is
-      updatedValues : HashMap_Access := HashMap_Access (updatedValues_Param);
+   procedure update (This : in out AdvertisementAreasEntity; updatedValues_Param : access HashMap_Package.HashMap'Class) is
+      updatedValues : constant HashMap_Access := HashMap_Access (updatedValues_Param);
    begin
         AbSqlBean (This).updateWhere (AdvertisementAreaData_Package.getInstance.NAME, Unbounded_String (updatedValues.get (AdvertisementAreaData_Package.getInstance.NAME)), updatedValues);
    end update;

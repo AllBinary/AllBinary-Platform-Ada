@@ -38,26 +38,26 @@ package body org.allbinary.image.opengles.OpenGLESImageProcessor_Package is
         return OpenGLESImageProcessor_Package.instance;
    end getInstance;
 
-   procedure translate (This : in out OpenGLESImageProcessor; gl_Param : access GL10'Class; translateX : Float; translateY : Float) is
-      gl : GL10_Access := GL10_Access (gl_Param);
+   procedure translate (This : in out OpenGLESImageProcessor; gl_Param : access GL10_Package.GL10'Class; translateX : Float; translateY : Float) is
+      gl : constant GL10_Access := GL10_Access (gl_Param);
    begin
         gl.glTranslatef (translateX, translateY, 0);
    end translate;
 
-   procedure rotate (This : in out OpenGLESImageProcessor; gl_Param : access GL10'Class; angle : Float) is
-      gl : GL10_Access := GL10_Access (gl_Param);
+   procedure rotate (This : in out OpenGLESImageProcessor; gl_Param : access GL10_Package.GL10'Class; angle : Float) is
+      gl : constant GL10_Access := GL10_Access (gl_Param);
    begin
         gl.glRotatef (-(angle), 0, 0, 1);
    end rotate;
 
-   procedure scale (This : in out OpenGLESImageProcessor; gl_Param : access GL10'Class; scaleX : Float; scaleY : Float) is
-      gl : GL10_Access := GL10_Access (gl_Param);
+   procedure scale (This : in out OpenGLESImageProcessor; gl_Param : access GL10_Package.GL10'Class; scaleX : Float; scaleY : Float) is
+      gl : constant GL10_Access := GL10_Access (gl_Param);
    begin
         gl.glScalef (scaleX, scaleY, 1);
    end scale;
 
-   procedure colorMask (This : in out OpenGLESImageProcessor; gl_Param : access GL10'Class; red : Float; green : Float; blue : Float; alpha : Float) is
-      gl : GL10_Access := GL10_Access (gl_Param);
+   procedure colorMask (This : in out OpenGLESImageProcessor; gl_Param : access GL10_Package.GL10'Class; red : Float; green : Float; blue : Float; alpha : Float) is
+      gl : constant GL10_Access := GL10_Access (gl_Param);
    begin
         null;
    end colorMask;

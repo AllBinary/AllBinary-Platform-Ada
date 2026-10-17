@@ -39,16 +39,16 @@ package body org.allbinary.graphics.color.BasicColorSetUtil_Package is
       return This;
    end Create;
 
-   procedure setBasicColorP (This : in out BasicColorSetUtil; graphics_Param : access Graphics'Class; basicColor_Param : access BasicColor'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+   procedure setBasicColorP (This : in out BasicColorSetUtil; graphics_Param : access Graphics_Package.Graphics'Class; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         graphics.setColor (basicColor.intValue);
    end setBasicColorP;
 
-   procedure setBasicColorP3 (This : in out BasicColorSetUtil; graphics_Param : access Graphics'Class; basicColor_Param : access BasicColor'Class; value : Integer) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+   procedure setBasicColorP3 (This : in out BasicColorSetUtil; graphics_Param : access Graphics_Package.Graphics'Class; basicColor_Param : access BasicColor_Package.BasicColor'Class; value : Integer) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         graphics.setColor (value);
    end setBasicColorP3;

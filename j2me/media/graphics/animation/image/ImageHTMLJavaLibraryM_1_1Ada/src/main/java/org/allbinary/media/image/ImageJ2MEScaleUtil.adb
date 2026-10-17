@@ -54,8 +54,8 @@ package body org.allbinary.media.image.ImageJ2MEScaleUtil_Package is
    end scaleArray;
 
    --  throws Exception
-   function scale (This : in out ImageJ2MEScaleUtil; image_Param : access Image'Class; width : Integer; height : Integer) return Image_Access is
-      image : Image_Access := Image_Access (image_Param);
+   function scale (This : in out ImageJ2MEScaleUtil; image_Param : access Image_Package.Image'Class; width : Integer; height : Integer) return Image_Access is
+      image : constant Image_Access := Image_Access (image_Param);
       originalPlayNImage : Image_Access;
       originalHTMLImage : PlaynImmutableImage_Access;
       scaledImage : Image_Access;
@@ -86,7 +86,7 @@ package body org.allbinary.media.image.ImageJ2MEScaleUtil_Package is
       null;
    end scaleArray;
 
-   procedure scale (This : in out ImageJ2MEScaleUtil; image_Param : access Image'Class; width : Integer; height : Integer) is
+   procedure scale (This : in out ImageJ2MEScaleUtil; image_Param : access Image_Package.Image'Class; width : Integer; height : Integer) is
       Java_Result : constant Image_Access := ImageJ2MEScaleUtil'Class (This).scale (image_Param, width, height);
       pragma Unreferenced (Java_Result);
    begin

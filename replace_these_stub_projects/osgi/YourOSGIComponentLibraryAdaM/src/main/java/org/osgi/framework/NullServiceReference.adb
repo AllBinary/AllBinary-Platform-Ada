@@ -44,7 +44,7 @@ package body org.osgi.framework.NullServiceReference_Package is
    end getPropertyKeys;
 
    function compareTo (This : in out NullServiceReference; o_Param : access Java_Object'Class) return Integer is
-      o : Java_Object_Access := Java_Object_Access (o_Param);
+      o : constant Java_Object_Access := Java_Object_Access (o_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end compareTo;

@@ -36,7 +36,7 @@ package org.allbinary.game.health.HealthInterface_Package is
    function getMaxHealth (This : in out HealthInterface) return Integer is abstract;
    procedure setMaxHealth (This : in out HealthInterface; maxHealth : Integer) is abstract;
    function getHealth (This : in out HealthInterface) return Integer is abstract;
-   procedure addListener (This : in out HealthInterface; healthListenerInterface_Param : access HealthListenerInterface'Class) is abstract;
+   procedure addListener (This : in out HealthInterface; healthListenerInterface_Param : access HealthListenerInterface_Package.HealthListenerInterface'Class) is abstract;
 
 end org.allbinary.game.health.HealthInterface_Package;
 

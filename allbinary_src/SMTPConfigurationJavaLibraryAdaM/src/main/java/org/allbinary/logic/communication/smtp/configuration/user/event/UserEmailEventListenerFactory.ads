@@ -42,8 +42,8 @@ package org.allbinary.logic.communication.smtp.configuration.user.event.UserEmai
 
    procedure Initialize (This : in out UserEmailEventListenerFactory'Class);
    function Create return UserEmailEventListenerFactory_Access;
-   function getInstance (abeClientInformation_Param : access AbeClientInformationInterface'Class; userEmailEventConfigurationInterface_Param : access UserEmailEventConfigurationInterface'Class; userInterface_Param : access UserInterface'Class) return UserEmailEventListenerInterface_Access;
-   procedure getInstance (abeClientInformation_Param : access AbeClientInformationInterface'Class; userEmailEventConfigurationInterface_Param : access UserEmailEventConfigurationInterface'Class; userInterface_Param : access UserInterface'Class);
+   function getInstance (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; userEmailEventConfigurationInterface_Param : access UserEmailEventConfigurationInterface_Package.UserEmailEventConfigurationInterface'Class; userInterface_Param : access UserInterface_Package.UserInterface'Class) return UserEmailEventListenerInterface_Access;
+   procedure getInstance (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; userEmailEventConfigurationInterface_Param : access UserEmailEventConfigurationInterface_Package.UserEmailEventConfigurationInterface'Class; userInterface_Param : access UserInterface_Package.UserInterface'Class);
 
 end org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventListenerFactory_Package;
 

@@ -47,8 +47,8 @@ package org.allbinary.game.ag.ai.scroller.PacePatrolAIFactory_Package is
 
    procedure Initialize (This : in out PacePatrolAIFactory'Class);
    function Create return PacePatrolAIFactory_Access;
-   function getInstance (This : in out PacePatrolAIFactory; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return ArtificialIntelligenceInterface_Access;
-   procedure getInstance (This : in out PacePatrolAIFactory; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class);
+   function getInstance (This : in out PacePatrolAIFactory; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) return ArtificialIntelligenceInterface_Access;
+   procedure getInstance (This : in out PacePatrolAIFactory; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class);
 
 end org.allbinary.game.ag.ai.scroller.PacePatrolAIFactory_Package;
 

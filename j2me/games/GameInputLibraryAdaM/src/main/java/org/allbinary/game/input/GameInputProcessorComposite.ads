@@ -45,8 +45,8 @@ package org.allbinary.game.input.GameInputProcessorComposite_Package is
       NAME_LABEL : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out GameInputProcessorComposite'Class; name : Unbounded_String; gameInputProcessorInterface_Param : access GameInputProcessorInterface'Class);
-   function Create (name : Unbounded_String; gameInputProcessorInterface_Param : access GameInputProcessorInterface'Class) return GameInputProcessorComposite_Access;
+   procedure Initialize (This : in out GameInputProcessorComposite'Class; name : Unbounded_String; gameInputProcessorInterface_Param : access GameInputProcessorInterface_Package.GameInputProcessorInterface'Class);
+   function Create (name : Unbounded_String; gameInputProcessorInterface_Param : access GameInputProcessorInterface_Package.GameInputProcessorInterface'Class) return GameInputProcessorComposite_Access;
    procedure update (This : in out GameInputProcessorComposite);
    function toString (This : in out GameInputProcessorComposite) return Unbounded_String;
 

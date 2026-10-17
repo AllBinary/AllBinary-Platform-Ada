@@ -52,8 +52,8 @@ package views.compound.CompoundTransform_Package is
       abeClientInformation : AbeClientInformationInterface_Access;
    end record;
 
-   procedure Initialize (This : in out CompoundTransform'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return CompoundTransform_Access;
+   procedure Initialize (This : in out CompoundTransform'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return CompoundTransform_Access;
 
 end views.compound.CompoundTransform_Package;
 

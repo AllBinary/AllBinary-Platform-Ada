@@ -56,14 +56,14 @@ package org.allbinary.animation.VectorExplosionGenerator_Package is
    procedure Initialize (This : in out VectorExplosionGenerator'Class);
    function Create return VectorExplosionGenerator_Access;
    function getInstance return VectorExplosionGenerator_Access;
-   function createList (This : in out VectorExplosionGenerator; list_Param : access BasicArrayList'Class; howMuch : Integer; type_Id_Param : access VectorExplosionType'Class) return BasicArrayList_Access;
-   procedure createList (This : in out VectorExplosionGenerator; list_Param : access BasicArrayList'Class; howMuch : Integer; type_Id_Param : access VectorExplosionType'Class);
-   function getInstance (This : in out VectorExplosionGenerator; points : Integer_Array_Access_Array_Access; howMuch : Integer; type_Id_Param : access VectorExplosionType'Class) return Integer_Array_Access_Array_Access_Array_Access;
-   procedure getInstance (This : in out VectorExplosionGenerator; points : Integer_Array_Access_Array_Access; howMuch : Integer; type_Id_Param : access VectorExplosionType'Class);
-   function getInstanceStartFrame (This : in out VectorExplosionGenerator; points : Integer_Array_Access_Array_Access; howMuch : Integer; type_Id_Param : access VectorExplosionType'Class; startFrame : Boolean) return BasicArrayList_Access;
-   procedure getInstanceStartFrame (This : in out VectorExplosionGenerator; points : Integer_Array_Access_Array_Access; howMuch : Integer; type_Id_Param : access VectorExplosionType'Class; startFrame : Boolean);
-   function createListFromPoints (This : in out VectorExplosionGenerator; tempBasicArrayList_Param : access BasicArrayList'Class; points : Integer_Array_Access_Array_Access; howMuch : Integer; type_Id_Param : access VectorExplosionType'Class) return BasicArrayList_Access;
-   procedure createListFromPoints (This : in out VectorExplosionGenerator; tempBasicArrayList_Param : access BasicArrayList'Class; points : Integer_Array_Access_Array_Access; howMuch : Integer; type_Id_Param : access VectorExplosionType'Class);
+   function createList (This : in out VectorExplosionGenerator; list_Param : access BasicArrayList_Package.BasicArrayList'Class; howMuch : Integer; type_Id_Param : access VectorExplosionType_Package.VectorExplosionType'Class) return BasicArrayList_Access;
+   procedure createList (This : in out VectorExplosionGenerator; list_Param : access BasicArrayList_Package.BasicArrayList'Class; howMuch : Integer; type_Id_Param : access VectorExplosionType_Package.VectorExplosionType'Class);
+   function getInstance (This : in out VectorExplosionGenerator; points : Integer_Array_Access_Array_Access; howMuch : Integer; type_Id_Param : access VectorExplosionType_Package.VectorExplosionType'Class) return Integer_Array_Access_Array_Access_Array_Access;
+   procedure getInstance (This : in out VectorExplosionGenerator; points : Integer_Array_Access_Array_Access; howMuch : Integer; type_Id_Param : access VectorExplosionType_Package.VectorExplosionType'Class);
+   function getInstanceStartFrame (This : in out VectorExplosionGenerator; points : Integer_Array_Access_Array_Access; howMuch : Integer; type_Id_Param : access VectorExplosionType_Package.VectorExplosionType'Class; startFrame : Boolean) return BasicArrayList_Access;
+   procedure getInstanceStartFrame (This : in out VectorExplosionGenerator; points : Integer_Array_Access_Array_Access; howMuch : Integer; type_Id_Param : access VectorExplosionType_Package.VectorExplosionType'Class; startFrame : Boolean);
+   function createListFromPoints (This : in out VectorExplosionGenerator; tempBasicArrayList_Param : access BasicArrayList_Package.BasicArrayList'Class; points : Integer_Array_Access_Array_Access; howMuch : Integer; type_Id_Param : access VectorExplosionType_Package.VectorExplosionType'Class) return BasicArrayList_Access;
+   procedure createListFromPoints (This : in out VectorExplosionGenerator; tempBasicArrayList_Param : access BasicArrayList_Package.BasicArrayList'Class; points : Integer_Array_Access_Array_Access; howMuch : Integer; type_Id_Param : access VectorExplosionType_Package.VectorExplosionType'Class);
    function createPointsBasicArrayList (This : in out VectorExplosionGenerator; points : Integer_Array_Access_Array_Access) return BasicArrayList_Access;
    procedure createPointsBasicArrayList (This : in out VectorExplosionGenerator; points : Integer_Array_Access_Array_Access);
 

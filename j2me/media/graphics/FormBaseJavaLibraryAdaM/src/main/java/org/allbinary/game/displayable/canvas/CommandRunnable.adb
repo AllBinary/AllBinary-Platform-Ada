@@ -25,16 +25,16 @@ package body org.allbinary.game.displayable.canvas.CommandRunnable_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CommandRunnable'Class; commandFormInputProcessor_Param : access CommandFormInputProcessor'Class; command_Param : access Command'Class) is
-      commandFormInputProcessor : CommandFormInputProcessor_Access := CommandFormInputProcessor_Access (commandFormInputProcessor_Param);
-      command : Command_Access := Command_Access (command_Param);
+   procedure Initialize (This : in out CommandRunnable'Class; commandFormInputProcessor_Param : access CommandFormInputProcessor_Package.CommandFormInputProcessor'Class; command_Param : access Command_Package.Command'Class) is
+      commandFormInputProcessor : constant CommandFormInputProcessor_Access := CommandFormInputProcessor_Access (commandFormInputProcessor_Param);
+      command : constant Command_Access := Command_Access (command_Param);
    begin
       Initialize_Fields (This);
         This.commandFormInputProcessor := commandFormInputProcessor;
         This.command := command;
    end Initialize;
 
-   function Create (commandFormInputProcessor_Param : access CommandFormInputProcessor'Class; command_Param : access Command'Class) return CommandRunnable_Access is
+   function Create (commandFormInputProcessor_Param : access CommandFormInputProcessor_Package.CommandFormInputProcessor'Class; command_Param : access Command_Package.Command'Class) return CommandRunnable_Access is
       This : constant CommandRunnable_Access := new CommandRunnable;
    begin
       CommandRunnable_Package.Initialize (This.all, commandFormInputProcessor_Param, command_Param);

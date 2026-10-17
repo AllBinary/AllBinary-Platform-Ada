@@ -70,7 +70,7 @@ package org.allbinary.data.tables.advertisement.AdvertisementsEntity_Package is
    procedure get (This : in out AdvertisementsEntity; storeName : Unbounded_String; advertismentName : Unbounded_String);
    function createTableStatement (This : in out AdvertisementsEntity) return Unbounded_String;
    function createTable (This : in out AdvertisementsEntity) return Unbounded_String;
-   procedure update (This : in out AdvertisementsEntity; updatedValues_Param : access HashMap'Class);
+   procedure update (This : in out AdvertisementsEntity; updatedValues_Param : access HashMap_Package.HashMap'Class);
    function dropTable (This : in out AdvertisementsEntity) return Unbounded_String;
 
 end org.allbinary.data.tables.advertisement.AdvertisementsEntity_Package;

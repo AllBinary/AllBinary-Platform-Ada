@@ -44,8 +44,8 @@ package org.allbinary.game.media.graphics.geography.map.racetrack.SimplePathFind
 
    procedure Initialize (This : in out SimplePathFinderGraphVisitorFactory'Class; edgeMinimum : Integer; minPathWeight : Integer; maxPathWeight : Integer);
    function Create (edgeMinimum : Integer; minPathWeight : Integer; maxPathWeight : Integer) return SimplePathFinderGraphVisitorFactory_Access;
-   function getInstance (This : in out SimplePathFinderGraphVisitorFactory; geographicMapInterface_Param : access BasicGeographicMap'Class) return PathFinderGraphVisitorBase_Access;
-   procedure getInstance (This : in out SimplePathFinderGraphVisitorFactory; geographicMapInterface_Param : access BasicGeographicMap'Class);
+   function getInstance (This : in out SimplePathFinderGraphVisitorFactory; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class) return PathFinderGraphVisitorBase_Access;
+   procedure getInstance (This : in out SimplePathFinderGraphVisitorFactory; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class);
 
 end org.allbinary.game.media.graphics.geography.map.racetrack.SimplePathFinderGraphVisitorFactory_Package;
 

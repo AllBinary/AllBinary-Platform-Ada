@@ -50,14 +50,14 @@ package org.allbinary.logic.communication.ftp.configuration.FtpConfigurationView
       ftpConfigurationInterface : FtpConfigurationInterface_Access;
    end record;
 
-   procedure Initialize (This : in out FtpConfigurationView'Class; node_Param : access Node'Class);
-   function Create (node_Param : access Node'Class) return FtpConfigurationView_Access;
-   procedure Initialize (This : in out FtpConfigurationView'Class; ftpConfigurationInterface_Param : access FtpConfigurationInterface'Class);
-   function Create (ftpConfigurationInterface_Param : access FtpConfigurationInterface'Class) return FtpConfigurationView_Access;
-   function toXmlNode (This : in out FtpConfigurationView; document_Param : access Document'Class) return Node_Access;
-   procedure toXmlNode (This : in out FtpConfigurationView; document_Param : access Document'Class);
+   procedure Initialize (This : in out FtpConfigurationView'Class; node_Param : access Node_Package.Node'Class);
+   function Create (node_Param : access Node_Package.Node'Class) return FtpConfigurationView_Access;
+   procedure Initialize (This : in out FtpConfigurationView'Class; ftpConfigurationInterface_Param : access FtpConfigurationInterface_Package.FtpConfigurationInterface'Class);
+   function Create (ftpConfigurationInterface_Param : access FtpConfigurationInterface_Package.FtpConfigurationInterface'Class) return FtpConfigurationView_Access;
+   function toXmlNode (This : in out FtpConfigurationView; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out FtpConfigurationView; document_Param : access Document_Package.Document'Class);
    function getFtpConfigurationInterface (This : in out FtpConfigurationView) return FtpConfigurationInterface_Access;
-   procedure setFtpConfigurationInterface (This : in out FtpConfigurationView; ftpConfigurationInterface_Param : access FtpConfigurationInterface'Class);
+   procedure setFtpConfigurationInterface (This : in out FtpConfigurationView; ftpConfigurationInterface_Param : access FtpConfigurationInterface_Package.FtpConfigurationInterface'Class);
 
 end org.allbinary.logic.communication.ftp.configuration.FtpConfigurationView_Package;
 

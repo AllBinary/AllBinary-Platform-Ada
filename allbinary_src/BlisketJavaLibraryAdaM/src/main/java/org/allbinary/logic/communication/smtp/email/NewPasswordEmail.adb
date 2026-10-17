@@ -26,9 +26,9 @@ package body org.allbinary.logic.communication.smtp.email.NewPasswordEmail_Packa
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out NewPasswordEmail'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; userInterface_Param : access UserInterface'Class; newPassword : Unbounded_String) is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      userInterface : UserInterface_Access := UserInterface_Access (userInterface_Param);
+   procedure Initialize (This : in out NewPasswordEmail'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; userInterface_Param : access UserInterface_Package.UserInterface'Class; newPassword : Unbounded_String) is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      userInterface : constant UserInterface_Access := UserInterface_Access (userInterface_Param);
    begin
       Initialize_Fields (This);
         This.abeClientInformation := abeClientInformation;
@@ -36,7 +36,7 @@ package body org.allbinary.logic.communication.smtp.email.NewPasswordEmail_Packa
         This.newPassword := newPassword;
    end Initialize;
 
-   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; userInterface_Param : access UserInterface'Class; newPassword : Unbounded_String) return NewPasswordEmail_Access is
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; userInterface_Param : access UserInterface_Package.UserInterface'Class; newPassword : Unbounded_String) return NewPasswordEmail_Access is
       This : constant NewPasswordEmail_Access := new NewPasswordEmail;
    begin
       NewPasswordEmail_Package.Initialize (This.all, abeClientInformation_Param, userInterface_Param, newPassword);

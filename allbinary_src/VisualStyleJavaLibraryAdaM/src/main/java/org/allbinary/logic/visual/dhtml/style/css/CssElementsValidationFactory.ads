@@ -45,10 +45,10 @@ package org.allbinary.logic.visual.dhtml.style.css.CssElementsValidationFactory_
 
    procedure Initialize (This : in out CssElementsValidationFactory'Class);
    function Create return CssElementsValidationFactory_Access;
-   function getInstance (cssElementStyleNodeList_Param : access BasicArrayList'Class) return BasicArrayList_Access;
-   procedure getInstance (cssElementStyleNodeList_Param : access BasicArrayList'Class);
-   function getInstance (hashMap_Param : access HashMap'Class) return BasicArrayList_Access;
-   procedure getInstance (hashMap_Param : access HashMap'Class);
+   function getInstance (cssElementStyleNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class) return BasicArrayList_Access;
+   procedure getInstance (cssElementStyleNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class);
+   function getInstance (hashMap_Param : access HashMap_Package.HashMap'Class) return BasicArrayList_Access;
+   procedure getInstance (hashMap_Param : access HashMap_Package.HashMap'Class);
 
 end org.allbinary.logic.visual.dhtml.style.css.CssElementsValidationFactory_Package;
 

@@ -49,15 +49,15 @@ package body org.allbinary.input.media.image.capture.SaveCapturedImageWorker_Pac
         This.running := running;
    end setRunning;
 
-   procedure onCaptureEvent (This : in out SaveCapturedImageWorker; capturedImageEvent_Param : access CapturedImageWorkerResultsEvent'Class) is
-      capturedImageEvent : CapturedImageWorkerResultsEvent_Access := CapturedImageWorkerResultsEvent_Access (capturedImageEvent_Param);
+   procedure onCaptureEvent (This : in out SaveCapturedImageWorker; capturedImageEvent_Param : access CapturedImageWorkerResultsEvent_Package.CapturedImageWorkerResultsEvent'Class) is
+      capturedImageEvent : constant CapturedImageWorkerResultsEvent_Access := CapturedImageWorkerResultsEvent_Access (capturedImageEvent_Param);
    begin
         This.capturedImageWorkerResultsEventVector.add (capturedImageEvent);
         This.run;
    end onCaptureEvent;
 
-   procedure onEvent (This : in out SaveCapturedImageWorker; allBinaryEventObject_Param : access AllBinaryEventObject'Class) is
-      allBinaryEventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (allBinaryEventObject_Param);
+   procedure onEvent (This : in out SaveCapturedImageWorker; allBinaryEventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
+      allBinaryEventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (allBinaryEventObject_Param);
    begin
         This.onCaptureEvent (CapturedImageWorkerResultsEvent_Access (allBinaryEventObject));
    end onEvent;

@@ -38,8 +38,8 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
       return This;
    end Create;
 
-   procedure Initialize (This : in out NameSpaceRequestParams'Class; httpServletRequest_Param : access HttpServletRequest'Class) is
-      httpServletRequest : HttpServletRequest_Access := HttpServletRequest_Access (httpServletRequest_Param);
+   procedure Initialize (This : in out NameSpaceRequestParams'Class; httpServletRequest_Param : access HttpServletRequest_Package.HttpServletRequest'Class) is
+      httpServletRequest : constant HttpServletRequest_Access := HttpServletRequest_Access (httpServletRequest_Param);
    begin
         RequestParams_Package.Initialize (This, httpServletRequest);
         Initialize_Fields (This);
@@ -48,15 +48,15 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
         end if;
    end Initialize;
 
-   function Create (httpServletRequest_Param : access HttpServletRequest'Class) return NameSpaceRequestParams_Access is
+   function Create (httpServletRequest_Param : access HttpServletRequest_Package.HttpServletRequest'Class) return NameSpaceRequestParams_Access is
       This : constant NameSpaceRequestParams_Access := new NameSpaceRequestParams;
    begin
       NameSpaceRequestParams_Package.Initialize (This.all, httpServletRequest_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out NameSpaceRequestParams'Class; pageContext_Param : access PageContext'Class) is
-      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
+   procedure Initialize (This : in out NameSpaceRequestParams'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is
+      pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
    begin
         RequestParams_Package.Initialize (This, pageContext);
         Initialize_Fields (This);
@@ -65,7 +65,7 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
         end if;
    end Initialize;
 
-   function Create (pageContext_Param : access PageContext'Class) return NameSpaceRequestParams_Access is
+   function Create (pageContext_Param : access PageContext_Package.PageContext'Class) return NameSpaceRequestParams_Access is
       This : constant NameSpaceRequestParams_Access := new NameSpaceRequestParams;
    begin
       NameSpaceRequestParams_Package.Initialize (This.all, pageContext_Param);
@@ -73,9 +73,9 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
    end Create;
 
    --  throws Exception
-   function createPackageNode (This : in out NameSpaceRequestParams; document_Param : access Document'Class; packageName : Unbounded_String; packagePropertiesHashMap_Param : access HashMap'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
-      packagePropertiesHashMap : HashMap_Access := HashMap_Access (packagePropertiesHashMap_Param);
+   function createPackageNode (This : in out NameSpaceRequestParams; document_Param : access Document_Package.Document'Class; packageName : Unbounded_String; packagePropertiesHashMap_Param : access HashMap_Package.HashMap'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
+      packagePropertiesHashMap : constant HashMap_Access := HashMap_Access (packagePropertiesHashMap_Param);
       node : Node_Access;
       propertyKeySet : Set_Access;
       propertyKeySetArray : Java_Object_Access_Array_Access;
@@ -99,10 +99,10 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
    end createPackageNode;
 
    --  throws Exception
-   function createPackageMultiNode (This : in out NameSpaceRequestParams; document_Param : access Document'Class; nameSpaceRequestParam_Param : access NameSpaceRequestParam'Class; packageName : Unbounded_String; packagePropertiesHashMap_Param : access HashMap'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
-      nameSpaceRequestParam : NameSpaceRequestParam_Access := NameSpaceRequestParam_Access (nameSpaceRequestParam_Param);
-      packagePropertiesHashMap : HashMap_Access := HashMap_Access (packagePropertiesHashMap_Param);
+   function createPackageMultiNode (This : in out NameSpaceRequestParams; document_Param : access Document_Package.Document'Class; nameSpaceRequestParam_Param : access NameSpaceRequestParam_Package.NameSpaceRequestParam'Class; packageName : Unbounded_String; packagePropertiesHashMap_Param : access HashMap_Package.HashMap'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
+      nameSpaceRequestParam : constant NameSpaceRequestParam_Access := NameSpaceRequestParam_Access (nameSpaceRequestParam_Param);
+      packagePropertiesHashMap : constant HashMap_Access := HashMap_Access (packagePropertiesHashMap_Param);
       beginIndex : Integer;
       indexValue : Unbounded_String;
       multiElementPackage : Unbounded_String;
@@ -129,9 +129,9 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
    end createPackageMultiNode;
 
    --  throws Exception
-   function getRootNode (This : in out NameSpaceRequestParams; rootElementPackage : Unbounded_String; packagePropertiesHashMap_Param : access HashMap'Class; document_Param : access Document'Class) return Node_Access is
-      packagePropertiesHashMap : HashMap_Access := HashMap_Access (packagePropertiesHashMap_Param);
-      document : Document_Access := Document_Access (document_Param);
+   function getRootNode (This : in out NameSpaceRequestParams; rootElementPackage : Unbounded_String; packagePropertiesHashMap_Param : access HashMap_Package.HashMap'Class; document_Param : access Document_Package.Document'Class) return Node_Access is
+      packagePropertiesHashMap : constant HashMap_Access := HashMap_Access (packagePropertiesHashMap_Param);
+      document : constant Document_Access := Document_Access (document_Param);
       rootNode : Node_Access;
       node : Node_Access;
    begin
@@ -155,10 +155,10 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
    end getRootNode;
 
    --  throws Exception
-   function addNewProperties (This : in out NameSpaceRequestParams; document_Param : access Document'Class; node_Param : access Node'Class; nextPackagePropertiesHashMap_Param : access HashMap'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
-      node : Node_Access := Node_Access (node_Param);
-      nextPackagePropertiesHashMap : HashMap_Access := HashMap_Access (nextPackagePropertiesHashMap_Param);
+   function addNewProperties (This : in out NameSpaceRequestParams; document_Param : access Document_Package.Document'Class; node_Param : access Node_Package.Node'Class; nextPackagePropertiesHashMap_Param : access HashMap_Package.HashMap'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
+      node : constant Node_Access := Node_Access (node_Param);
+      nextPackagePropertiesHashMap : constant HashMap_Access := HashMap_Access (nextPackagePropertiesHashMap_Param);
       propertyNameSet : Set_Access;
       propertyNameSetArray : Java_Object_Access_Array_Access;
       size : Integer;
@@ -202,9 +202,9 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
    end addNewProperties;
 
    --  throws Exception
-   function isElementValueTextNodeEqual (This : in out NameSpaceRequestParams; nextPackagePropertiesHashMap_Param : access HashMap'Class; node_Param : access Node'Class) return Boolean is
-      nextPackagePropertiesHashMap : HashMap_Access := HashMap_Access (nextPackagePropertiesHashMap_Param);
-      node : Node_Access := Node_Access (node_Param);
+   function isElementValueTextNodeEqual (This : in out NameSpaceRequestParams; nextPackagePropertiesHashMap_Param : access HashMap_Package.HashMap'Class; node_Param : access Node_Package.Node'Class) return Boolean is
+      nextPackagePropertiesHashMap : constant HashMap_Access := HashMap_Access (nextPackagePropertiesHashMap_Param);
+      node : constant Node_Access := Node_Access (node_Param);
       propertyValue : Unbounded_String;
       valueNode : Node_Access;
       existingElementNodeTextNodeValue : Unbounded_String;
@@ -229,9 +229,9 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
    end isElementValueTextNodeEqual;
 
    --  throws Exception
-   function isElementValueTextNodeUnique (This : in out NameSpaceRequestParams; nextPackagePropertiesHashMap_Param : access HashMap'Class; elementNodeVector_Param : access BasicArrayList'Class) return Integer is
-      nextPackagePropertiesHashMap : HashMap_Access := HashMap_Access (nextPackagePropertiesHashMap_Param);
-      elementNodeVector : BasicArrayList_Access := BasicArrayList_Access (elementNodeVector_Param);
+   function isElementValueTextNodeUnique (This : in out NameSpaceRequestParams; nextPackagePropertiesHashMap_Param : access HashMap_Package.HashMap'Class; elementNodeVector_Param : access BasicArrayList_Package.BasicArrayList'Class) return Integer is
+      nextPackagePropertiesHashMap : constant HashMap_Access := HashMap_Access (nextPackagePropertiesHashMap_Param);
+      elementNodeVector : constant BasicArrayList_Access := BasicArrayList_Access (elementNodeVector_Param);
       size : Integer;
       existingElementNode : Node_Access;
       index : Integer;
@@ -250,10 +250,10 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
    end isElementValueTextNodeUnique;
 
    --  throws Exception
-   function addChildren (This : in out NameSpaceRequestParams; document_Param : access Document'Class; rootNode_Param : access Node'Class; nameSpaceRequestParam_Param : access NameSpaceRequestParam'Class) return Document_Access is
-      document : Document_Access := Document_Access (document_Param);
-      rootNode : Node_Access := Node_Access (rootNode_Param);
-      nameSpaceRequestParam : NameSpaceRequestParam_Access := NameSpaceRequestParam_Access (nameSpaceRequestParam_Param);
+   function addChildren (This : in out NameSpaceRequestParams; document_Param : access Document_Package.Document'Class; rootNode_Param : access Node_Package.Node'Class; nameSpaceRequestParam_Param : access NameSpaceRequestParam_Package.NameSpaceRequestParam'Class) return Document_Access is
+      document : constant Document_Access := Document_Access (document_Param);
+      rootNode : constant Node_Access := Node_Access (rootNode_Param);
+      nameSpaceRequestParam : constant NameSpaceRequestParam_Access := NameSpaceRequestParam_Access (nameSpaceRequestParam_Param);
       node : Node_Access;
       packageVector : BasicArrayList_Access;
       size : Integer;
@@ -312,8 +312,8 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
    end addChildren;
 
    --  throws Exception
-   function addNameSpace (This : in out NameSpaceRequestParams; key : Unbounded_String; value : Unbounded_String; document_Param : access Document'Class) return Document_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function addNameSpace (This : in out NameSpaceRequestParams; key : Unbounded_String; value : Unbounded_String; document_Param : access Document_Package.Document'Class) return Document_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       nameSpaceRequestParam : NameSpaceRequestParam_Access;
       packageVector : BasicArrayList_Access;
       size : Integer;
@@ -397,56 +397,56 @@ package body org.allbinary.logic.communication.http.request.NameSpaceRequestPara
         return hashMap;
    end toHashMap;
 
-   procedure createPackageNode (This : in out NameSpaceRequestParams; document_Param : access Document'Class; packageName : Unbounded_String; packagePropertiesHashMap_Param : access HashMap'Class) is
+   procedure createPackageNode (This : in out NameSpaceRequestParams; document_Param : access Document_Package.Document'Class; packageName : Unbounded_String; packagePropertiesHashMap_Param : access HashMap_Package.HashMap'Class) is
       Java_Result : constant Node_Access := NameSpaceRequestParams'Class (This).createPackageNode (document_Param, packageName, packagePropertiesHashMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createPackageNode;
 
-   procedure createPackageMultiNode (This : in out NameSpaceRequestParams; document_Param : access Document'Class; nameSpaceRequestParam_Param : access NameSpaceRequestParam'Class; packageName : Unbounded_String; packagePropertiesHashMap_Param : access HashMap'Class) is
+   procedure createPackageMultiNode (This : in out NameSpaceRequestParams; document_Param : access Document_Package.Document'Class; nameSpaceRequestParam_Param : access NameSpaceRequestParam_Package.NameSpaceRequestParam'Class; packageName : Unbounded_String; packagePropertiesHashMap_Param : access HashMap_Package.HashMap'Class) is
       Java_Result : constant Node_Access := NameSpaceRequestParams'Class (This).createPackageMultiNode (document_Param, nameSpaceRequestParam_Param, packageName, packagePropertiesHashMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createPackageMultiNode;
 
-   procedure getRootNode (This : in out NameSpaceRequestParams; rootElementPackage : Unbounded_String; packagePropertiesHashMap_Param : access HashMap'Class; document_Param : access Document'Class) is
+   procedure getRootNode (This : in out NameSpaceRequestParams; rootElementPackage : Unbounded_String; packagePropertiesHashMap_Param : access HashMap_Package.HashMap'Class; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := NameSpaceRequestParams'Class (This).getRootNode (rootElementPackage, packagePropertiesHashMap_Param, document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRootNode;
 
-   procedure addNewProperties (This : in out NameSpaceRequestParams; document_Param : access Document'Class; node_Param : access Node'Class; nextPackagePropertiesHashMap_Param : access HashMap'Class) is
+   procedure addNewProperties (This : in out NameSpaceRequestParams; document_Param : access Document_Package.Document'Class; node_Param : access Node_Package.Node'Class; nextPackagePropertiesHashMap_Param : access HashMap_Package.HashMap'Class) is
       Java_Result : constant Node_Access := NameSpaceRequestParams'Class (This).addNewProperties (document_Param, node_Param, nextPackagePropertiesHashMap_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end addNewProperties;
 
-   procedure isElementValueTextNodeEqual (This : in out NameSpaceRequestParams; nextPackagePropertiesHashMap_Param : access HashMap'Class; node_Param : access Node'Class) is
+   procedure isElementValueTextNodeEqual (This : in out NameSpaceRequestParams; nextPackagePropertiesHashMap_Param : access HashMap_Package.HashMap'Class; node_Param : access Node_Package.Node'Class) is
       Java_Result : constant Boolean := NameSpaceRequestParams'Class (This).isElementValueTextNodeEqual (nextPackagePropertiesHashMap_Param, node_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isElementValueTextNodeEqual;
 
-   procedure isElementValueTextNodeUnique (This : in out NameSpaceRequestParams; nextPackagePropertiesHashMap_Param : access HashMap'Class; elementNodeVector_Param : access BasicArrayList'Class) is
+   procedure isElementValueTextNodeUnique (This : in out NameSpaceRequestParams; nextPackagePropertiesHashMap_Param : access HashMap_Package.HashMap'Class; elementNodeVector_Param : access BasicArrayList_Package.BasicArrayList'Class) is
       Java_Result : constant Integer := NameSpaceRequestParams'Class (This).isElementValueTextNodeUnique (nextPackagePropertiesHashMap_Param, elementNodeVector_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isElementValueTextNodeUnique;
 
-   procedure addChildren (This : in out NameSpaceRequestParams; document_Param : access Document'Class; rootNode_Param : access Node'Class; nameSpaceRequestParam_Param : access NameSpaceRequestParam'Class) is
+   procedure addChildren (This : in out NameSpaceRequestParams; document_Param : access Document_Package.Document'Class; rootNode_Param : access Node_Package.Node'Class; nameSpaceRequestParam_Param : access NameSpaceRequestParam_Package.NameSpaceRequestParam'Class) is
       Java_Result : constant Document_Access := NameSpaceRequestParams'Class (This).addChildren (document_Param, rootNode_Param, nameSpaceRequestParam_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end addChildren;
 
-   procedure addNameSpace (This : in out NameSpaceRequestParams; key : Unbounded_String; value : Unbounded_String; document_Param : access Document'Class) is
+   procedure addNameSpace (This : in out NameSpaceRequestParams; key : Unbounded_String; value : Unbounded_String; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Document_Access := NameSpaceRequestParams'Class (This).addNameSpace (key, value, document_Param);
       pragma Unreferenced (Java_Result);
    begin

@@ -30,8 +30,8 @@ package body views.admin.orderhistory.UserNameOrderHistoryView_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out UserNameOrderHistoryView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out UserNameOrderHistoryView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
@@ -44,7 +44,7 @@ package body views.admin.orderhistory.UserNameOrderHistoryView_Package is
         This.cancelled := This.request.getParameter (OrderHistoryData_Package.CANCELLEDNAME);
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return UserNameOrderHistoryView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return UserNameOrderHistoryView_Access is
       This : constant UserNameOrderHistoryView_Access := new UserNameOrderHistoryView;
    begin
       UserNameOrderHistoryView_Package.Initialize (This.all, transformInfoInterface_Param);
@@ -75,8 +75,8 @@ package body views.admin.orderhistory.UserNameOrderHistoryView_Package is
         end;
    end view;
 
-   function toXmlNode (This : in out UserNameOrderHistoryView; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out UserNameOrderHistoryView; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       node : Node_Access;
       orderHistoryEntity : OrderHistoryEntity_Access;
       orderReviewVector : BasicArrayList_Access;
@@ -136,8 +136,8 @@ package body views.admin.orderhistory.UserNameOrderHistoryView_Package is
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out UserNameOrderHistoryView; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toValidationInfoNode (This : in out UserNameOrderHistoryView; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
@@ -153,14 +153,14 @@ package body views.admin.orderhistory.UserNameOrderHistoryView_Package is
         return To_Unbounded_String ("Unknown Error<br />");
    end validationInfo;
 
-   procedure toXmlNode (This : in out UserNameOrderHistoryView; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out UserNameOrderHistoryView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := UserNameOrderHistoryView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toXmlNode;
 
-   procedure toValidationInfoNode (This : in out UserNameOrderHistoryView; document_Param : access Document'Class) is
+   procedure toValidationInfoNode (This : in out UserNameOrderHistoryView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := UserNameOrderHistoryView'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

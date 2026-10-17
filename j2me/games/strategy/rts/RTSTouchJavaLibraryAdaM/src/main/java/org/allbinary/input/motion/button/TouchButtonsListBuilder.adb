@@ -35,8 +35,8 @@ package body org.allbinary.input.motion.button.TouchButtonsListBuilder_Package i
    end Create;
 
 
-   procedure addList (This : in out TouchButtonsListBuilder; list_Param : access BasicArrayList'Class) is
-      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
+   procedure addList (This : in out TouchButtonsListBuilder; list_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      list : constant BasicArrayList_Access := BasicArrayList_Access (list_Param);
       size : Integer;
       baseTouchInput : BaseTouchInput_Access;
       index : Integer;
@@ -49,8 +49,8 @@ package body org.allbinary.input.motion.button.TouchButtonsListBuilder_Package i
         end loop;
    end addList;
 
-   procedure add (This : in out TouchButtonsListBuilder; baseTouchInput_Param : access BaseTouchInput'Class) is
-      baseTouchInput : BaseTouchInput_Access := BaseTouchInput_Access (baseTouchInput_Param);
+   procedure add (This : in out TouchButtonsListBuilder; baseTouchInput_Param : access BaseTouchInput_Package.BaseTouchInput'Class) is
+      baseTouchInput : constant BaseTouchInput_Access := BaseTouchInput_Access (baseTouchInput_Param);
    begin
         This.baseTouchInputList.add (baseTouchInput);
    end add;

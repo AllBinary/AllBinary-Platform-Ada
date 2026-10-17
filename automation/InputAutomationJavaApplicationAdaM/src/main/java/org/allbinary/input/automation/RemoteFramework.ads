@@ -32,8 +32,8 @@ package org.allbinary.input.automation.RemoteFramework_Package is
    type RemoteFramework_Access_Array is array (Natural range <>) of RemoteFramework_Access;
    type RemoteFramework_Access_Array_Access is access all RemoteFramework_Access_Array;
    function connect (This : in out RemoteFramework; host : Unbounded_String) return BundleContext_Access is abstract;
-   procedure disconnect (This : in out RemoteFramework; bc_Param : access BundleContext'Class) is abstract;
-   function getSystemProperties (This : in out RemoteFramework; bc_Param : access BundleContext'Class) return Map_Access is abstract;
+   procedure disconnect (This : in out RemoteFramework; bc_Param : access BundleContext_Package.BundleContext'Class) is abstract;
+   function getSystemProperties (This : in out RemoteFramework; bc_Param : access BundleContext_Package.BundleContext'Class) return Map_Access is abstract;
 
 end org.allbinary.input.automation.RemoteFramework_Package;
 

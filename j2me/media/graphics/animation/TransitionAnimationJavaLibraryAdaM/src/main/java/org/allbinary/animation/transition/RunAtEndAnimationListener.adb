@@ -22,14 +22,14 @@ package body org.allbinary.animation.transition.RunAtEndAnimationListener_Packag
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out RunAtEndAnimationListener'Class; runnable_Param : access Runnable'Class) is
-      runnable : Runnable_Access := Runnable_Access (runnable_Param);
+   procedure Initialize (This : in out RunAtEndAnimationListener'Class; runnable_Param : access Runnable_Package.Runnable'Class) is
+      runnable : constant Runnable_Access := Runnable_Access (runnable_Param);
    begin
       Initialize_Fields (This);
         This.runnable := runnable;
    end Initialize;
 
-   function Create (runnable_Param : access Runnable'Class) return RunAtEndAnimationListener_Access is
+   function Create (runnable_Param : access Runnable_Package.Runnable'Class) return RunAtEndAnimationListener_Access is
       This : constant RunAtEndAnimationListener_Access := new RunAtEndAnimationListener;
    begin
       RunAtEndAnimationListener_Package.Initialize (This.all, runnable_Param);

@@ -87,10 +87,10 @@ package admin.taghelpers.CategoryRequestHelper_Package is
    end record;
    categoryRequest : Unbounded_String;
 
-   procedure Initialize (This : in out CategoryRequestHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
-   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return CategoryRequestHelper_Access;
+   procedure Initialize (This : in out CategoryRequestHelper'Class; hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class);
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return CategoryRequestHelper_Access;
    procedure getXmlData (This : in out CategoryRequestHelper);
-   procedure setCategoryLoader (This : in out CategoryRequestHelper; requestNode_Param : access Node'Class);
+   procedure setCategoryLoader (This : in out CategoryRequestHelper; requestNode_Param : access Node_Package.Node'Class);
    function insert (This : in out CategoryRequestHelper) return Unbounded_String;
    function delete (This : in out CategoryRequestHelper) return Unbounded_String;
    function viewCategory (This : in out CategoryRequestHelper) return Unbounded_String;

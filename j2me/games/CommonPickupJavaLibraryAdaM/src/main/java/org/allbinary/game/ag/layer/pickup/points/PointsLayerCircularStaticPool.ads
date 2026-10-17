@@ -40,9 +40,9 @@ package org.allbinary.game.ag.layer.pickup.points.PointsLayerCircularStaticPool_
 
    type PointsLayerCircularStaticPool is new AllBinaryLayerCircularPool with null record;
 
-   procedure Initialize (This : in out PointsLayerCircularStaticPool'Class; allbinaryLayerFactoryInterface_Param : access AllBinaryLayerFactoryInterface'Class; total : Integer);
-   function Create (allbinaryLayerFactoryInterface_Param : access AllBinaryLayerFactoryInterface'Class; total : Integer) return PointsLayerCircularStaticPool_Access;
-   procedure visit (This : in out PointsLayerCircularStaticPool; sourceLayerInterface_Param : access AllBinaryLayer'Class);
+   procedure Initialize (This : in out PointsLayerCircularStaticPool'Class; allbinaryLayerFactoryInterface_Param : access AllBinaryLayerFactoryInterface_Package.AllBinaryLayerFactoryInterface'Class; total : Integer);
+   function Create (allbinaryLayerFactoryInterface_Param : access AllBinaryLayerFactoryInterface_Package.AllBinaryLayerFactoryInterface'Class; total : Integer) return PointsLayerCircularStaticPool_Access;
+   procedure visit (This : in out PointsLayerCircularStaticPool; sourceLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class);
 
 end org.allbinary.game.ag.layer.pickup.points.PointsLayerCircularStaticPool_Package;
 

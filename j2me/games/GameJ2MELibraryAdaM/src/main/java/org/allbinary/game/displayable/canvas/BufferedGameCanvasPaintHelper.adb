@@ -27,15 +27,15 @@ package body org.allbinary.game.displayable.canvas.BufferedGameCanvasPaintHelper
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BufferedGameCanvasPaintHelper'Class; gameCanvas_Param : access AllBinaryGameCanvas'Class) is
-      gameCanvas : AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (gameCanvas_Param);
+   procedure Initialize (This : in out BufferedGameCanvasPaintHelper'Class; gameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class) is
+      gameCanvas : constant AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (gameCanvas_Param);
    begin
       ProcessPaintable_Package.Initialize (This);
       Initialize_Fields (This);
         Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Longer Used")));
    end Initialize;
 
-   function Create (gameCanvas_Param : access AllBinaryGameCanvas'Class) return BufferedGameCanvasPaintHelper_Access is
+   function Create (gameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class) return BufferedGameCanvasPaintHelper_Access is
       This : constant BufferedGameCanvasPaintHelper_Access := new BufferedGameCanvasPaintHelper;
    begin
       BufferedGameCanvasPaintHelper_Package.Initialize (This.all, gameCanvas_Param);
@@ -51,8 +51,8 @@ package body org.allbinary.game.displayable.canvas.BufferedGameCanvasPaintHelper
         This.drawCircularIndexUtil.next;
    end process;
 
-   procedure paint (This : in out BufferedGameCanvasPaintHelper; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out BufferedGameCanvasPaintHelper; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.previousImage := This.offScreenImage (This.drawCircularIndexUtil.getIndex);
         graphics.drawImage (This.previousImage, 0, 0, This.anchor);

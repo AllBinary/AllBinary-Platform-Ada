@@ -22,17 +22,17 @@ package body org.allbinary.graphics.form.item.CommandTextItem_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CommandTextItem'Class; command_Param : access Command'Class; layout : Integer; altText : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) is
-      command : Command_Access := Command_Access (command_Param);
-      backgroundBasicColor : BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
-      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
+   procedure Initialize (This : in out CommandTextItem'Class; command_Param : access Command_Package.Command'Class; layout : Integer; altText : Unbounded_String; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      command : constant Command_Access := Command_Access (command_Param);
+      backgroundBasicColor : constant BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
+      foregroundBasicColor : constant BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
    begin
         ABTextItem_Package.Initialize (This, command.getLabel, layout, altText, backgroundBasicColor, foregroundBasicColor);
         Initialize_Fields (This);
         This.command := command;
    end Initialize;
 
-   function Create (command_Param : access Command'Class; layout : Integer; altText : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return CommandTextItem_Access is
+   function Create (command_Param : access Command_Package.Command'Class; layout : Integer; altText : Unbounded_String; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return CommandTextItem_Access is
       This : constant CommandTextItem_Access := new CommandTextItem;
    begin
       CommandTextItem_Package.Initialize (This.all, command_Param, layout, altText, backgroundBasicColor_Param, foregroundBasicColor_Param);

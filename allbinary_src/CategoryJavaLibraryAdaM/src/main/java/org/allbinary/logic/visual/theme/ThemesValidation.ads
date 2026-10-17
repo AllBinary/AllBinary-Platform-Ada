@@ -51,17 +51,17 @@ package org.allbinary.logic.visual.theme.ThemesValidation_Package is
 
    procedure Initialize (This : in out ThemesValidation'Class);
    function Create return ThemesValidation_Access;
-   procedure Initialize (This : in out ThemesValidation'Class; node_Param : access Node'Class);
-   function Create (node_Param : access Node'Class) return ThemesValidation_Access;
-   procedure Initialize (This : in out ThemesValidation'Class; hashMap_Param : access HashMap'Class);
-   function Create (hashMap_Param : access HashMap'Class) return ThemesValidation_Access;
+   procedure Initialize (This : in out ThemesValidation'Class; node_Param : access Node_Package.Node'Class);
+   function Create (node_Param : access Node_Package.Node'Class) return ThemesValidation_Access;
+   procedure Initialize (This : in out ThemesValidation'Class; hashMap_Param : access HashMap_Package.HashMap'Class);
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return ThemesValidation_Access;
    function isValid (This : in out ThemesValidation) return Boolean;
    function validationInfo (This : in out ThemesValidation) return Unbounded_String;
    function toValidationInfoDoc (This : in out ThemesValidation) return Document_Access;
-   function toValidationInfoNode (This : in out ThemesValidation; document_Param : access Document'Class) return Node_Access;
-   procedure toValidationInfoNode (This : in out ThemesValidation; document_Param : access Document'Class);
-   function toXmlNode (This : in out ThemesValidation; document_Param : access Document'Class) return Node_Access;
-   procedure toXmlNode (This : in out ThemesValidation; document_Param : access Document'Class);
+   function toValidationInfoNode (This : in out ThemesValidation; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out ThemesValidation; document_Param : access Document_Package.Document'Class);
+   function toXmlNode (This : in out ThemesValidation; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out ThemesValidation; document_Param : access Document_Package.Document'Class);
 
 end org.allbinary.logic.visual.theme.ThemesValidation_Package;
 

@@ -23,8 +23,8 @@ package org.allbinary.game.collision.CollisionProcessor_Package is
 
    procedure Initialize (This : in out CollisionProcessor'Class);
    function Create return CollisionProcessor_Access;
-   function isCollision (This : in out CollisionProcessor; myLayer_Param : access AllBinaryLayer'Class; myLayer2_Param : access AllBinaryLayer'Class) return Boolean;
-   procedure isCollision (This : in out CollisionProcessor; myLayer_Param : access AllBinaryLayer'Class; myLayer2_Param : access AllBinaryLayer'Class);
+   function isCollision (This : in out CollisionProcessor; myLayer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; myLayer2_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) return Boolean;
+   procedure isCollision (This : in out CollisionProcessor; myLayer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; myLayer2_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class);
 
 end org.allbinary.game.collision.CollisionProcessor_Package;
 

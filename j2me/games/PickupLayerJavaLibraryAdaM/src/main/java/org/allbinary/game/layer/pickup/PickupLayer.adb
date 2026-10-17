@@ -24,12 +24,12 @@ package body org.allbinary.game.layer.pickup.PickupLayer_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PickupLayer'Class; name : Unbounded_String; remoteInfo_Param : access RemoteInfo'Class; total : Integer; pickedUpLayerInterfaceFactoryInterface_Param : access PickedUpLayerInterfaceFactoryInterface'Class; animationInterface_Param : access Animation'Class; rectangle_Param : access Rectangle'Class; viewPosition_Param : access ViewPositionBase'Class) is
-      remoteInfo : RemoteInfo_Access := RemoteInfo_Access (remoteInfo_Param);
-      pickedUpLayerInterfaceFactoryInterface : PickedUpLayerInterfaceFactoryInterface_Access := PickedUpLayerInterfaceFactoryInterface_Access (pickedUpLayerInterfaceFactoryInterface_Param);
-      animationInterface : Animation_Access := Animation_Access (animationInterface_Param);
-      rectangle : Rectangle_Access := Rectangle_Access (rectangle_Param);
-      viewPosition : ViewPositionBase_Access := ViewPositionBase_Access (viewPosition_Param);
+   procedure Initialize (This : in out PickupLayer'Class; name : Unbounded_String; remoteInfo_Param : access RemoteInfo_Package.RemoteInfo'Class; total : Integer; pickedUpLayerInterfaceFactoryInterface_Param : access PickedUpLayerInterfaceFactoryInterface_Package.PickedUpLayerInterfaceFactoryInterface'Class; animationInterface_Param : access Animation_Package.Animation'Class; rectangle_Param : access Rectangle_Package.Rectangle'Class; viewPosition_Param : access ViewPositionBase_Package.ViewPositionBase'Class) is
+      remoteInfo : constant RemoteInfo_Access := RemoteInfo_Access (remoteInfo_Param);
+      pickedUpLayerInterfaceFactoryInterface : constant PickedUpLayerInterfaceFactoryInterface_Access := PickedUpLayerInterfaceFactoryInterface_Access (pickedUpLayerInterfaceFactoryInterface_Param);
+      animationInterface : constant Animation_Access := Animation_Access (animationInterface_Param);
+      rectangle : constant Rectangle_Access := Rectangle_Access (rectangle_Param);
+      viewPosition : constant ViewPositionBase_Access := ViewPositionBase_Access (viewPosition_Param);
    begin
         MultiPlayerGameLayer_Package.Initialize (This, remoteInfo, BasicGroupFactory_Package.getInstance.NONE_ARRAY, name, rectangle, viewPosition);
         Initialize_Fields (This);
@@ -39,16 +39,16 @@ package body org.allbinary.game.layer.pickup.PickupLayer_Package is
         This.init (pickedUpLayerInterfaceFactoryInterface, animationInterface);
    end Initialize;
 
-   function Create (name : Unbounded_String; remoteInfo_Param : access RemoteInfo'Class; total : Integer; pickedUpLayerInterfaceFactoryInterface_Param : access PickedUpLayerInterfaceFactoryInterface'Class; animationInterface_Param : access Animation'Class; rectangle_Param : access Rectangle'Class; viewPosition_Param : access ViewPositionBase'Class) return PickupLayer_Access is
+   function Create (name : Unbounded_String; remoteInfo_Param : access RemoteInfo_Package.RemoteInfo'Class; total : Integer; pickedUpLayerInterfaceFactoryInterface_Param : access PickedUpLayerInterfaceFactoryInterface_Package.PickedUpLayerInterfaceFactoryInterface'Class; animationInterface_Param : access Animation_Package.Animation'Class; rectangle_Param : access Rectangle_Package.Rectangle'Class; viewPosition_Param : access ViewPositionBase_Package.ViewPositionBase'Class) return PickupLayer_Access is
       This : constant PickupLayer_Access := new PickupLayer;
    begin
       PickupLayer_Package.Initialize (This.all, name, remoteInfo_Param, total, pickedUpLayerInterfaceFactoryInterface_Param, animationInterface_Param, rectangle_Param, viewPosition_Param);
       return This;
    end Create;
 
-   procedure init (This : in out PickupLayer; pickedUpLayerInterfaceFactoryInterface_Param : access PickedUpLayerInterfaceFactoryInterface'Class; animationInterface_Param : access Animation'Class) is
-      pickedUpLayerInterfaceFactoryInterface : PickedUpLayerInterfaceFactoryInterface_Access := PickedUpLayerInterfaceFactoryInterface_Access (pickedUpLayerInterfaceFactoryInterface_Param);
-      animationInterface : Animation_Access := Animation_Access (animationInterface_Param);
+   procedure init (This : in out PickupLayer; pickedUpLayerInterfaceFactoryInterface_Param : access PickedUpLayerInterfaceFactoryInterface_Package.PickedUpLayerInterfaceFactoryInterface'Class; animationInterface_Param : access Animation_Package.Animation'Class) is
+      pickedUpLayerInterfaceFactoryInterface : constant PickedUpLayerInterfaceFactoryInterface_Access := PickedUpLayerInterfaceFactoryInterface_Access (pickedUpLayerInterfaceFactoryInterface_Param);
+      animationInterface : constant Animation_Access := Animation_Access (animationInterface_Param);
    begin
         This.pickedUpLayerInterfaceFactoryInterface := pickedUpLayerInterfaceFactoryInterface;
         This.animationInterface := animationInterface;
@@ -60,8 +60,8 @@ package body org.allbinary.game.layer.pickup.PickupLayer_Package is
         This.setPosition (x, y, z);
    end initXYZ;
 
-   procedure paint (This : in out PickupLayer; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out PickupLayer; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       viewPosition : ViewPositionBase_Access;
       viewX : Integer;
       viewY : Integer;
@@ -72,8 +72,8 @@ package body org.allbinary.game.layer.pickup.PickupLayer_Package is
         This.animationInterface.paintXY (graphics, viewX, viewY);
    end paint;
 
-   procedure paintThreed (This : in out PickupLayer; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintThreed (This : in out PickupLayer; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       viewPosition : ViewPositionBase_Access;
       viewX : Integer;
       viewY : Integer;
@@ -118,8 +118,8 @@ package body org.allbinary.game.layer.pickup.PickupLayer_Package is
    end getDamage;
 
    --  throws Exception
-   procedure set (This : in out PickupLayer; gl_Param : access GL'Class) is
-      gl : GL_Access := GL_Access (gl_Param);
+   procedure set (This : in out PickupLayer; gl_Param : access GL_Package.GL'Class) is
+      gl : constant GL_Access := GL_Access (gl_Param);
       openGLSurfaceChangedInterface : OpenGLSurfaceChangedInterface_Access;
    begin
         openGLSurfaceChangedInterface := OpenGLSurfaceChangedInterface_Access (This.animationInterface);

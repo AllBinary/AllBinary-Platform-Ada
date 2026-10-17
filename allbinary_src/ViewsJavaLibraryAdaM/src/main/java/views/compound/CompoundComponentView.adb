@@ -22,14 +22,14 @@ package body views.compound.CompoundComponentView_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CompoundComponentView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out CompoundComponentView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return CompoundComponentView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return CompoundComponentView_Access is
       This : constant CompoundComponentView_Access := new CompoundComponentView;
    begin
       CompoundComponentView_Package.Initialize (This.all, transformInfoInterface_Param);

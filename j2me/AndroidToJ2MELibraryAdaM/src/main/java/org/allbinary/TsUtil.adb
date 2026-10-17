@@ -39,14 +39,14 @@ package body org.allbinary.TsUtil_Package is
    end getInstance;
 
    function hashCode (This : in out TsUtil; anyType_Param : access Java_Object'Class) return Integer is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         return anyType.hashCode;
    end hashCode;
 
    --  throws InterruptedException
    procedure waitFor (This : in out TsUtil; any_Param : access Java_Object'Class; timeoutMillis : Long_Long_Integer) is
-      any : Java_Object_Access := Java_Object_Access (any_Param);
+      any : constant Java_Object_Access := Java_Object_Access (any_Param);
       anyType : Java_Object_Access;
    begin
         anyType := Java_Object_Access (any);
@@ -55,7 +55,7 @@ package body org.allbinary.TsUtil_Package is
 
    --  throws RecordStoreNotOpenException, InvalidRecordIDException, RecordStoreException
    function getRecord (This : in out TsUtil; anyType_Param : access Java_Object'Class; recordId : Integer) return Short_Short_Integer_Array_Access is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
       recordStore : RecordStore_Access;
       data : Short_Short_Integer_Array_Access;
    begin
@@ -79,14 +79,14 @@ package body org.allbinary.TsUtil_Package is
    end equalIgnoreCase;
 
    function equalsNotstring (This : in out TsUtil; anyType_Param : access Java_Object'Class; object2_Param : access Java_Object'Class) return Boolean is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
-      object2 : Java_Object_Access := Java_Object_Access (object2_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
+      object2 : constant Java_Object_Access := Java_Object_Access (object2_Param);
    begin
         return anyType.equals (object2);
    end equalsNotstring;
 
    function getClassClassLoader (This : in out TsUtil; anyType_Param : access Java_Object'Class) return ClassLoader_Access is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         return anyType.all'Tag.getClassLoader;
    end getClassClassLoader;
@@ -106,8 +106,8 @@ package body org.allbinary.TsUtil_Package is
         return string_Id.getBytes;
    end getByteArray;
 
-   function isItemListener (This : in out TsUtil; owner_Param : access Displayable'Class) return Boolean is
-      owner : Displayable_Access := Displayable_Access (owner_Param);
+   function isItemListener (This : in out TsUtil; owner_Param : access Displayable_Package.Displayable'Class) return Boolean is
+      owner : constant Displayable_Access := Displayable_Access (owner_Param);
    begin
         if (owner.all in Form_Package.Form'Class) then
             return True;
@@ -184,7 +184,7 @@ package body org.allbinary.TsUtil_Package is
       null;
    end getByteArray;
 
-   procedure isItemListener (This : in out TsUtil; owner_Param : access Displayable'Class) is
+   procedure isItemListener (This : in out TsUtil; owner_Param : access Displayable_Package.Displayable'Class) is
       Java_Result : constant Boolean := TsUtil'Class (This).isItemListener (owner_Param);
       pragma Unreferenced (Java_Result);
    begin

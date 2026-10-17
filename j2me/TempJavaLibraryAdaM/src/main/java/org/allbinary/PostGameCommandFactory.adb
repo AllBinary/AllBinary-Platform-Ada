@@ -38,8 +38,8 @@ package body org.allbinary.PostGameCommandFactory_Package is
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end getInstance;
 
-   procedure addCommands (This : in out PostGameCommandFactory; canvas_Param : access Canvas'Class) is
-      canvas : Canvas_Access := Canvas_Access (canvas_Param);
+   procedure addCommands (This : in out PostGameCommandFactory; canvas_Param : access Canvas_Package.Canvas'Class) is
+      canvas : constant Canvas_Access := Canvas_Access (canvas_Param);
    begin
         null;
    end addCommands;

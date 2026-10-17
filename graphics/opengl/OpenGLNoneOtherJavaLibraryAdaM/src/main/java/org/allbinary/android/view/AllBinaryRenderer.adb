@@ -38,8 +38,8 @@ package body org.allbinary.android.view.AllBinaryRenderer_Package is
         return AllBinaryRenderer_Package.instance;
    end getInstance;
 
-   procedure setRunnable (This : in out AllBinaryRenderer; runnable_Param : access Runnable'Class) is
-      runnable : Runnable_Access := Runnable_Access (runnable_Param);
+   procedure setRunnable (This : in out AllBinaryRenderer; runnable_Param : access Runnable_Package.Runnable'Class) is
+      runnable : constant Runnable_Access := Runnable_Access (runnable_Param);
    begin
         null;
    end setRunnable;

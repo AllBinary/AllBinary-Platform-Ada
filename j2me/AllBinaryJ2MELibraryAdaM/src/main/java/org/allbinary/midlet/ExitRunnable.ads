@@ -46,8 +46,8 @@ package org.allbinary.midlet.ExitRunnable_Package is
       isProgress : Boolean;
    end record;
 
-   procedure Initialize (This : in out ExitRunnable'Class; midlet_Param : access AllBinaryMidlet'Class; processor_Param : access Processor'Class; isProgress : Boolean);
-   function Create (midlet_Param : access AllBinaryMidlet'Class; processor_Param : access Processor'Class; isProgress : Boolean) return ExitRunnable_Access;
+   procedure Initialize (This : in out ExitRunnable'Class; midlet_Param : access AllBinaryMidlet_Package.AllBinaryMidlet'Class; processor_Param : access Processor_Package.Processor'Class; isProgress : Boolean);
+   function Create (midlet_Param : access AllBinaryMidlet_Package.AllBinaryMidlet'Class; processor_Param : access Processor_Package.Processor'Class; isProgress : Boolean) return ExitRunnable_Access;
    procedure run (This : in out ExitRunnable);
 
 end org.allbinary.midlet.ExitRunnable_Package;

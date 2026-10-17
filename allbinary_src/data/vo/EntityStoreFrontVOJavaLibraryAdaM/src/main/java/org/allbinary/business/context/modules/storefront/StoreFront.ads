@@ -143,21 +143,21 @@ package org.allbinary.business.context.modules.storefront.StoreFront_Package is
 
    procedure Initialize (This : in out StoreFront'Class);
    function Create return StoreFront_Access;
-   procedure Initialize (This : in out StoreFront'Class; request_Param : access HttpServletRequest'Class);
-   function Create (request_Param : access HttpServletRequest'Class) return StoreFront_Access;
-   procedure Initialize (This : in out StoreFront'Class; hashMap_Param : access HashMap'Class);
-   function Create (hashMap_Param : access HashMap'Class) return StoreFront_Access;
+   procedure Initialize (This : in out StoreFront'Class; request_Param : access HttpServletRequest_Package.HttpServletRequest'Class);
+   function Create (request_Param : access HttpServletRequest_Package.HttpServletRequest'Class) return StoreFront_Access;
+   procedure Initialize (This : in out StoreFront'Class; hashMap_Param : access HashMap_Package.HashMap'Class);
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return StoreFront_Access;
    function isColumn (This : in out StoreFront; columnName : Unbounded_String) return Boolean;
    procedure isColumn (This : in out StoreFront; columnName : Unbounded_String);
-   function createPath (This : in out StoreFront; key : Unbounded_String; hashMap_Param : access HashMap'Class) return AbPath_Access;
-   procedure createPath (This : in out StoreFront; key : Unbounded_String; hashMap_Param : access HashMap'Class);
-   function createPath (This : in out StoreFront; append : Unbounded_String; key : Unbounded_String; hashMap_Param : access HashMap'Class) return AbPath_Access;
-   procedure createPath (This : in out StoreFront; append : Unbounded_String; key : Unbounded_String; hashMap_Param : access HashMap'Class);
-   function get (This : in out StoreFront; key : Unbounded_String; hashMap_Param : access HashMap'Class) return Unbounded_String;
-   procedure get (This : in out StoreFront; key : Unbounded_String; hashMap_Param : access HashMap'Class);
-   function create (This : in out StoreFront; append : Unbounded_String; key : Unbounded_String; hashMap_Param : access HashMap'Class) return Unbounded_String;
-   procedure create (This : in out StoreFront; append : Unbounded_String; key : Unbounded_String; hashMap_Param : access HashMap'Class);
-   procedure getFormData (This : in out StoreFront; storeHashMap_Param : access HashMap'Class);
+   function createPath (This : in out StoreFront; key : Unbounded_String; hashMap_Param : access HashMap_Package.HashMap'Class) return AbPath_Access;
+   procedure createPath (This : in out StoreFront; key : Unbounded_String; hashMap_Param : access HashMap_Package.HashMap'Class);
+   function createPath (This : in out StoreFront; append : Unbounded_String; key : Unbounded_String; hashMap_Param : access HashMap_Package.HashMap'Class) return AbPath_Access;
+   procedure createPath (This : in out StoreFront; append : Unbounded_String; key : Unbounded_String; hashMap_Param : access HashMap_Package.HashMap'Class);
+   function get (This : in out StoreFront; key : Unbounded_String; hashMap_Param : access HashMap_Package.HashMap'Class) return Unbounded_String;
+   procedure get (This : in out StoreFront; key : Unbounded_String; hashMap_Param : access HashMap_Package.HashMap'Class);
+   function create (This : in out StoreFront; append : Unbounded_String; key : Unbounded_String; hashMap_Param : access HashMap_Package.HashMap'Class) return Unbounded_String;
+   procedure create (This : in out StoreFront; append : Unbounded_String; key : Unbounded_String; hashMap_Param : access HashMap_Package.HashMap'Class);
+   procedure getFormData (This : in out StoreFront; storeHashMap_Param : access HashMap_Package.HashMap'Class);
    function isNameValid (This : in out StoreFront) return Boolean;
    function isValid (This : in out StoreFront) return Boolean;
    function nameValidationInfo (This : in out StoreFront) return Unbounded_String;
@@ -223,14 +223,14 @@ package org.allbinary.business.context.modules.storefront.StoreFront_Package is
    procedure setTestFtpPath (This : in out StoreFront; value : Unbounded_String);
    function createDirectories (This : in out StoreFront) return Boolean;
    procedure install (This : in out StoreFront; current : Integer; total : Integer);
-   procedure installViews (This : in out StoreFront; fromDirectoryAbPath_Param : access AbPath'Class; toDirectoryAbPath_Param : access AbPath'Class; current : Integer; total : Integer);
-   procedure installResources (This : in out StoreFront; fromDirectoryAbPath_Param : access AbPath'Class; current : Integer; total : Integer);
-   procedure installMedia (This : in out StoreFront; fromDirectoryAbPath_Param : access AbPath'Class; current : Integer; total : Integer);
+   procedure installViews (This : in out StoreFront; fromDirectoryAbPath_Param : access AbPath_Package.AbPath'Class; toDirectoryAbPath_Param : access AbPath_Package.AbPath'Class; current : Integer; total : Integer);
+   procedure installResources (This : in out StoreFront; fromDirectoryAbPath_Param : access AbPath_Package.AbPath'Class; current : Integer; total : Integer);
+   procedure installMedia (This : in out StoreFront; fromDirectoryAbPath_Param : access AbPath_Package.AbPath'Class; current : Integer; total : Integer);
    function toVector (This : in out StoreFront) return BasicArrayList_Access;
    function toHashMap (This : in out StoreFront) return HashMap_Access;
    function getKey (This : in out StoreFront) return Java_Object_Access;
    function getContextConfigurationInterface (This : in out StoreFront) return ContextConfigurationInterface_Access;
-   procedure setContextConfigurationInterface (This : in out StoreFront; contextConfigurationInterface_Param : access ContextConfigurationInterface'Class);
+   procedure setContextConfigurationInterface (This : in out StoreFront; contextConfigurationInterface_Param : access ContextConfigurationInterface_Package.ContextConfigurationInterface'Class);
 
 end org.allbinary.business.context.modules.storefront.StoreFront_Package;
 

@@ -29,14 +29,14 @@ package body org.allbinary.math.AngleInfo_Package is
         return AngleInfo_Package.Create (AngleIncrementInfoFactory_Package.getInstance.getAt (angleIncrement));
    end getInstance;
 
-   procedure Initialize (This : in out AngleInfo'Class; angleIncrementInfo_Param : access AngleIncrementInfo'Class) is
-      angleIncrementInfo : AngleIncrementInfo_Access := AngleIncrementInfo_Access (angleIncrementInfo_Param);
+   procedure Initialize (This : in out AngleInfo'Class; angleIncrementInfo_Param : access AngleIncrementInfo_Package.AngleIncrementInfo'Class) is
+      angleIncrementInfo : constant AngleIncrementInfo_Access := AngleIncrementInfo_Access (angleIncrementInfo_Param);
    begin
       Initialize_Fields (This);
         This.angleIncrementInfo := angleIncrementInfo;
    end Initialize;
 
-   function Create (angleIncrementInfo_Param : access AngleIncrementInfo'Class) return AngleInfo_Access is
+   function Create (angleIncrementInfo_Param : access AngleIncrementInfo_Package.AngleIncrementInfo'Class) return AngleInfo_Access is
       This : constant AngleInfo_Access := new AngleInfo;
    begin
       AngleInfo_Package.Initialize (This.all, angleIncrementInfo_Param);

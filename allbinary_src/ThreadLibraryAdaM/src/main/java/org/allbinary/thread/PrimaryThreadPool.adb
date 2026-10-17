@@ -38,21 +38,21 @@ package body org.allbinary.thread.PrimaryThreadPool_Package is
       return This;
    end Create;
 
-   procedure runTask (This : in out PrimaryThreadPool; task_Id_Param : access Runnable'Class) is
-      task_Id : Runnable_Access := Runnable_Access (task_Id_Param);
+   procedure runTask (This : in out PrimaryThreadPool; task_Id_Param : access Runnable_Package.Runnable'Class) is
+      task_Id : constant Runnable_Access := Runnable_Access (task_Id_Param);
    begin
         This.logUtil.putF (StringMaker_Package.Create.append (StringUtil_Package.getInstance.toString (task_Id)).appendlong (Long_Long_Integer (Java_Current_Time_Millis)).toString, PrimaryThreadPool_Access'(This'Unchecked_Access), This.threadPoolStrings.ADD_TASK);
         ThreadPool (This).runTask (task_Id);
    end runTask;
 
-   procedure startTask (This : in out PrimaryThreadPool; task_Id_Param : access Runnable'Class) is
-      task_Id : Runnable_Access := Runnable_Access (task_Id_Param);
+   procedure startTask (This : in out PrimaryThreadPool; task_Id_Param : access Runnable_Package.Runnable'Class) is
+      task_Id : constant Runnable_Access := Runnable_Access (task_Id_Param);
    begin
         This.logUtil.putF (StringMaker_Package.Create.append (This.threadPoolStrings.START_TASK).append (StringUtil_Package.getInstance.toString (task_Id)).toString, PrimaryThreadPool_Access'(This'Unchecked_Access), This.commonStrings.RUN);
    end startTask;
 
-   procedure completedTask (This : in out PrimaryThreadPool; task_Id_Param : access Runnable'Class) is
-      task_Id : Runnable_Access := Runnable_Access (task_Id_Param);
+   procedure completedTask (This : in out PrimaryThreadPool; task_Id_Param : access Runnable_Package.Runnable'Class) is
+      task_Id : constant Runnable_Access := Runnable_Access (task_Id_Param);
    begin
         This.logUtil.putF (StringMaker_Package.Create.append (This.threadPoolStrings.COMPLETE_TASK).append (StringUtil_Package.getInstance.toString (task_Id)).toString, PrimaryThreadPool_Access'(This'Unchecked_Access), This.commonStrings.RUN);
    end completedTask;

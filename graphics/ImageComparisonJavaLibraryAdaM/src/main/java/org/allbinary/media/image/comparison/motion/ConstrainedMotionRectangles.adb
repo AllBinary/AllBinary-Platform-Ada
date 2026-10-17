@@ -23,16 +23,16 @@ package body org.allbinary.media.image.comparison.motion.ConstrainedMotionRectan
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ConstrainedMotionRectangles'Class; motionRectangleConstraintsInterface_Param : access MotionRectangleConstraintsInterface'Class; motionRectangles_Param : access MotionRectangles'Class) is
-      motionRectangleConstraintsInterface : MotionRectangleConstraintsInterface_Access := MotionRectangleConstraintsInterface_Access (motionRectangleConstraintsInterface_Param);
-      motionRectangles : MotionRectangles_Access := MotionRectangles_Access (motionRectangles_Param);
+   procedure Initialize (This : in out ConstrainedMotionRectangles'Class; motionRectangleConstraintsInterface_Param : access MotionRectangleConstraintsInterface_Package.MotionRectangleConstraintsInterface'Class; motionRectangles_Param : access MotionRectangles_Package.MotionRectangles'Class) is
+      motionRectangleConstraintsInterface : constant MotionRectangleConstraintsInterface_Access := MotionRectangleConstraintsInterface_Access (motionRectangleConstraintsInterface_Param);
+      motionRectangles : constant MotionRectangles_Access := MotionRectangles_Access (motionRectangles_Param);
    begin
         MotionRectangles_Package.Initialize (This, NAME, motionRectangles.getImageComparisonResult);
         Initialize_Fields (This);
         This.setMotionRectangleConstraintsInterface (motionRectangleConstraintsInterface);
    end Initialize;
 
-   function Create (motionRectangleConstraintsInterface_Param : access MotionRectangleConstraintsInterface'Class; motionRectangles_Param : access MotionRectangles'Class) return ConstrainedMotionRectangles_Access is
+   function Create (motionRectangleConstraintsInterface_Param : access MotionRectangleConstraintsInterface_Package.MotionRectangleConstraintsInterface'Class; motionRectangles_Param : access MotionRectangles_Package.MotionRectangles'Class) return ConstrainedMotionRectangles_Access is
       This : constant ConstrainedMotionRectangles_Access := new ConstrainedMotionRectangles;
    begin
       ConstrainedMotionRectangles_Package.Initialize (This.all, motionRectangleConstraintsInterface_Param, motionRectangles_Param);
@@ -40,8 +40,8 @@ package body org.allbinary.media.image.comparison.motion.ConstrainedMotionRectan
    end Create;
 
    --  throws Exception
-   procedure applyMotionRectangleConstraints (This : in out ConstrainedMotionRectangles; motionRectangles_Param : access MotionRectangles'Class) is
-      motionRectangles : MotionRectangles_Access := MotionRectangles_Access (motionRectangles_Param);
+   procedure applyMotionRectangleConstraints (This : in out ConstrainedMotionRectangles; motionRectangles_Param : access MotionRectangles_Package.MotionRectangles'Class) is
+      motionRectangles : constant MotionRectangles_Access := MotionRectangles_Access (motionRectangles_Param);
       bufferedImageArray : BufferedImage_Access_Array_Access;
       bufferedImage : BufferedImage_Access;
       vector : BasicArrayList_Access;
@@ -93,8 +93,8 @@ package body org.allbinary.media.image.comparison.motion.ConstrainedMotionRectan
         return This.motionRectangleConstraintsInterface;
    end getMotionRectangleConstraintsInterface;
 
-   procedure setMotionRectangleConstraintsInterface (This : in out ConstrainedMotionRectangles; motionRectangleConstraintsInterface_Param : access MotionRectangleConstraintsInterface'Class) is
-      motionRectangleConstraintsInterface : MotionRectangleConstraintsInterface_Access := MotionRectangleConstraintsInterface_Access (motionRectangleConstraintsInterface_Param);
+   procedure setMotionRectangleConstraintsInterface (This : in out ConstrainedMotionRectangles; motionRectangleConstraintsInterface_Param : access MotionRectangleConstraintsInterface_Package.MotionRectangleConstraintsInterface'Class) is
+      motionRectangleConstraintsInterface : constant MotionRectangleConstraintsInterface_Access := MotionRectangleConstraintsInterface_Access (motionRectangleConstraintsInterface_Param);
    begin
         This.motionRectangleConstraintsInterface := motionRectangleConstraintsInterface;
    end setMotionRectangleConstraintsInterface;

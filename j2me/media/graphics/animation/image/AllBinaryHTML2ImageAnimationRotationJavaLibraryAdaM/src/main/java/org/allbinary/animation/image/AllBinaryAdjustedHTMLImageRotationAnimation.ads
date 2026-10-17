@@ -41,14 +41,14 @@ package org.allbinary.animation.image.AllBinaryAdjustedHTMLImageRotationAnimatio
       dy : Integer;
    end record;
 
-   procedure Initialize (This : in out AllBinaryAdjustedHTMLImageRotationAnimation'Class; originalImage_Param : access Image'Class; image_Param : access Image'Class; angleInfo_Param : access AngleInfo'Class; totalAngle : Short_Integer; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior'Class);
-   function Create (originalImage_Param : access Image'Class; image_Param : access Image'Class; angleInfo_Param : access AngleInfo'Class; totalAngle : Short_Integer; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior'Class) return AllBinaryAdjustedHTMLImageRotationAnimation_Access;
+   procedure Initialize (This : in out AllBinaryAdjustedHTMLImageRotationAnimation'Class; originalImage_Param : access Image_Package.Image'Class; image_Param : access Image_Package.Image'Class; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; totalAngle : Short_Integer; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class);
+   function Create (originalImage_Param : access Image_Package.Image'Class; image_Param : access Image_Package.Image'Class; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; totalAngle : Short_Integer; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return AllBinaryAdjustedHTMLImageRotationAnimation_Access;
    procedure init (This : in out AllBinaryAdjustedHTMLImageRotationAnimation; dx : Integer; dy : Integer);
    procedure setDx (This : in out AllBinaryAdjustedHTMLImageRotationAnimation; dx : Integer);
    function getDx (This : in out AllBinaryAdjustedHTMLImageRotationAnimation) return Integer;
    procedure setDy (This : in out AllBinaryAdjustedHTMLImageRotationAnimation; dy : Integer);
    function getDy (This : in out AllBinaryAdjustedHTMLImageRotationAnimation) return Integer;
-   procedure paintXY (This : in out AllBinaryAdjustedHTMLImageRotationAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
+   procedure paintXY (This : in out AllBinaryAdjustedHTMLImageRotationAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
 
 end org.allbinary.animation.image.AllBinaryAdjustedHTMLImageRotationAnimation_Package;
 

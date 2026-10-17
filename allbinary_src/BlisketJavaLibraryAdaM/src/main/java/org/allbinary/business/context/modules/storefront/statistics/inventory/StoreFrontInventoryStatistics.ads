@@ -53,8 +53,8 @@ package org.allbinary.business.context.modules.storefront.statistics.inventory.S
       totalInventorySaleValueMoney : Money_Access;
    end record;
 
-   procedure Initialize (This : in out StoreFrontInventoryStatistics'Class; storeFrontInterface_Param : access StoreFrontInterface'Class);
-   function Create (storeFrontInterface_Param : access StoreFrontInterface'Class) return StoreFrontInventoryStatistics_Access;
+   procedure Initialize (This : in out StoreFrontInventoryStatistics'Class; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class);
+   function Create (storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) return StoreFrontInventoryStatistics_Access;
    function getNumber (This : in out StoreFrontInventoryStatistics) return Long_Long_Integer;
    function getTotal (This : in out StoreFrontInventoryStatistics) return Money_Access;
    function toHashMap (This : in out StoreFrontInventoryStatistics) return HashMap_Access;

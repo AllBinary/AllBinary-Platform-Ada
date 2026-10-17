@@ -37,14 +37,14 @@ package body org.allbinary.util.ImmutableBasicArrayList_Package is
    end Create;
 
    function add (This : in out ImmutableBasicArrayList; e_Param : access Java_Object'Class) return Boolean is
-      e : Java_Object_Access := Java_Object_Access (e_Param);
+      e : constant Java_Object_Access := Java_Object_Access (e_Param);
    begin
         ForcedLogUtil_Package.log (This.name, ImmutableBasicArrayList_Access'(This'Unchecked_Access));
         return True;
    end add;
 
    procedure addAt (This : in out ImmutableBasicArrayList; index : Integer; element_Param : access Java_Object'Class) is
-      element : Java_Object_Access := Java_Object_Access (element_Param);
+      element : constant Java_Object_Access := Java_Object_Access (element_Param);
    begin
         ForcedLogUtil_Package.log (This.name, ImmutableBasicArrayList_Access'(This'Unchecked_Access));
    end addAt;

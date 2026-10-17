@@ -23,9 +23,9 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategory_Pack
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out StoreThemeCategory'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; categoryPropertiesFactoryInterface_Param : access CategoryPropertiesFactoryInterface'Class; level : Integer) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
-      categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access := CategoryPropertiesFactoryInterface_Access (categoryPropertiesFactoryInterface_Param);
+   procedure Initialize (This : in out StoreThemeCategory'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; categoryPropertiesFactoryInterface_Param : access CategoryPropertiesFactoryInterface_Package.CategoryPropertiesFactoryInterface'Class; level : Integer) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+      categoryPropertiesFactoryInterface : constant CategoryPropertiesFactoryInterface_Access := CategoryPropertiesFactoryInterface_Access (categoryPropertiesFactoryInterface_Param);
    begin
         Category_Package.Initialize (This, categoryPropertiesFactoryInterface, level);
         Initialize_Fields (This);
@@ -33,18 +33,18 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategory_Pack
         This.themeVector := BasicArrayListD_Package.Create;
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; categoryPropertiesFactoryInterface_Param : access CategoryPropertiesFactoryInterface'Class; level : Integer) return StoreThemeCategory_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; categoryPropertiesFactoryInterface_Param : access CategoryPropertiesFactoryInterface_Package.CategoryPropertiesFactoryInterface'Class; level : Integer) return StoreThemeCategory_Access is
       This : constant StoreThemeCategory_Access := new StoreThemeCategory;
    begin
       StoreThemeCategory_Package.Initialize (This.all, transformInfoInterface_Param, categoryPropertiesFactoryInterface_Param, level);
       return This;
    end Create;
 
-   procedure Initialize (This : in out StoreThemeCategory'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class; categoryPropertiesFactoryInterface_Param : access CategoryPropertiesFactoryInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
-      rootCategoryInterface : CategoryInterface_Access := CategoryInterface_Access (rootCategoryInterface_Param);
-      parentCategoryInterface : CategoryInterface_Access := CategoryInterface_Access (parentCategoryInterface_Param);
-      categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access := CategoryPropertiesFactoryInterface_Access (categoryPropertiesFactoryInterface_Param);
+   procedure Initialize (This : in out StoreThemeCategory'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; rootCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; categoryPropertiesFactoryInterface_Param : access CategoryPropertiesFactoryInterface_Package.CategoryPropertiesFactoryInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+      rootCategoryInterface : constant CategoryInterface_Access := CategoryInterface_Access (rootCategoryInterface_Param);
+      parentCategoryInterface : constant CategoryInterface_Access := CategoryInterface_Access (parentCategoryInterface_Param);
+      categoryPropertiesFactoryInterface : constant CategoryPropertiesFactoryInterface_Access := CategoryPropertiesFactoryInterface_Access (categoryPropertiesFactoryInterface_Param);
    begin
         Category_Package.Initialize (This, rootCategoryInterface, parentCategoryInterface, categoryPropertiesFactoryInterface);
         Initialize_Fields (This);
@@ -52,17 +52,17 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategory_Pack
         This.themeVector := BasicArrayListD_Package.Create;
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class; categoryPropertiesFactoryInterface_Param : access CategoryPropertiesFactoryInterface'Class) return StoreThemeCategory_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; rootCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; categoryPropertiesFactoryInterface_Param : access CategoryPropertiesFactoryInterface_Package.CategoryPropertiesFactoryInterface'Class) return StoreThemeCategory_Access is
       This : constant StoreThemeCategory_Access := new StoreThemeCategory;
    begin
       StoreThemeCategory_Package.Initialize (This.all, transformInfoInterface_Param, rootCategoryInterface_Param, parentCategoryInterface_Param, categoryPropertiesFactoryInterface_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out StoreThemeCategory'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; node_Param : access Node'Class; categoryPropertiesFactoryInterface_Param : access CategoryPropertiesFactoryInterface'Class; level : Integer) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
-      node : Node_Access := Node_Access (node_Param);
-      categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access := CategoryPropertiesFactoryInterface_Access (categoryPropertiesFactoryInterface_Param);
+   procedure Initialize (This : in out StoreThemeCategory'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; node_Param : access Node_Package.Node'Class; categoryPropertiesFactoryInterface_Param : access CategoryPropertiesFactoryInterface_Package.CategoryPropertiesFactoryInterface'Class; level : Integer) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+      node : constant Node_Access := Node_Access (node_Param);
+      categoryPropertiesFactoryInterface : constant CategoryPropertiesFactoryInterface_Access := CategoryPropertiesFactoryInterface_Access (categoryPropertiesFactoryInterface_Param);
    begin
         Category_Package.Initialize (This, categoryPropertiesFactoryInterface, level);
         Initialize_Fields (This);
@@ -71,19 +71,19 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategory_Pack
         This.addThemes (node);
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; node_Param : access Node'Class; categoryPropertiesFactoryInterface_Param : access CategoryPropertiesFactoryInterface'Class; level : Integer) return StoreThemeCategory_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; node_Param : access Node_Package.Node'Class; categoryPropertiesFactoryInterface_Param : access CategoryPropertiesFactoryInterface_Package.CategoryPropertiesFactoryInterface'Class; level : Integer) return StoreThemeCategory_Access is
       This : constant StoreThemeCategory_Access := new StoreThemeCategory;
    begin
       StoreThemeCategory_Package.Initialize (This.all, transformInfoInterface_Param, node_Param, categoryPropertiesFactoryInterface_Param, level);
       return This;
    end Create;
 
-   procedure Initialize (This : in out StoreThemeCategory'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; node_Param : access Node'Class; rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class; categoryPropertiesFactoryInterface_Param : access CategoryPropertiesFactoryInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
-      node : Node_Access := Node_Access (node_Param);
-      rootCategoryInterface : CategoryInterface_Access := CategoryInterface_Access (rootCategoryInterface_Param);
-      parentCategoryInterface : CategoryInterface_Access := CategoryInterface_Access (parentCategoryInterface_Param);
-      categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access := CategoryPropertiesFactoryInterface_Access (categoryPropertiesFactoryInterface_Param);
+   procedure Initialize (This : in out StoreThemeCategory'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; node_Param : access Node_Package.Node'Class; rootCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; categoryPropertiesFactoryInterface_Param : access CategoryPropertiesFactoryInterface_Package.CategoryPropertiesFactoryInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+      node : constant Node_Access := Node_Access (node_Param);
+      rootCategoryInterface : constant CategoryInterface_Access := CategoryInterface_Access (rootCategoryInterface_Param);
+      parentCategoryInterface : constant CategoryInterface_Access := CategoryInterface_Access (parentCategoryInterface_Param);
+      categoryPropertiesFactoryInterface : constant CategoryPropertiesFactoryInterface_Access := CategoryPropertiesFactoryInterface_Access (categoryPropertiesFactoryInterface_Param);
    begin
         Category_Package.Initialize (This, rootCategoryInterface, parentCategoryInterface, categoryPropertiesFactoryInterface);
         Initialize_Fields (This);
@@ -92,7 +92,7 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategory_Pack
         This.addThemes (node);
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; node_Param : access Node'Class; rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class; categoryPropertiesFactoryInterface_Param : access CategoryPropertiesFactoryInterface'Class) return StoreThemeCategory_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; node_Param : access Node_Package.Node'Class; rootCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; categoryPropertiesFactoryInterface_Param : access CategoryPropertiesFactoryInterface_Package.CategoryPropertiesFactoryInterface'Class) return StoreThemeCategory_Access is
       This : constant StoreThemeCategory_Access := new StoreThemeCategory;
    begin
       StoreThemeCategory_Package.Initialize (This.all, transformInfoInterface_Param, node_Param, rootCategoryInterface_Param, parentCategoryInterface_Param, categoryPropertiesFactoryInterface_Param);
@@ -105,8 +105,8 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategory_Pack
    end getTransformInfoInterface;
 
    --  throws Exception
-   procedure addThemes (This : in out StoreThemeCategory; node_Param : access Node'Class) is
-      node : Node_Access := Node_Access (node_Param);
+   procedure addThemes (This : in out StoreThemeCategory; node_Param : access Node_Package.Node'Class) is
+      node : constant Node_Access := Node_Access (node_Param);
       themesNode : Node_Access;
       nodeList : NodeList_Access;
       themeNode : Node_Access;
@@ -122,8 +122,8 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategory_Pack
         end loop;
    end addThemes;
 
-   procedure addTheme (This : in out StoreThemeCategory; themeValidation_Param : access ThemeValidation'Class) is
-      themeValidation : ThemeValidation_Access := ThemeValidation_Access (themeValidation_Param);
+   procedure addTheme (This : in out StoreThemeCategory; themeValidation_Param : access ThemeValidation_Package.ThemeValidation'Class) is
+      themeValidation : constant ThemeValidation_Access := ThemeValidation_Access (themeValidation_Param);
    begin
         This.themeVector.add (themeValidation);
    end addTheme;

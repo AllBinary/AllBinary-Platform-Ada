@@ -59,8 +59,8 @@ package org.allbinary.data.tree.dom.ContextUriResolver_Package is
       basicURIResolver : BasicUriResolver_Access;
    end record;
 
-   procedure Initialize (This : in out ContextUriResolver'Class; basicURIResolver_Param : access BasicUriResolver'Class);
-   function Create (basicURIResolver_Param : access BasicUriResolver'Class) return ContextUriResolver_Access;
+   procedure Initialize (This : in out ContextUriResolver'Class; basicURIResolver_Param : access BasicUriResolver_Package.BasicUriResolver'Class);
+   function Create (basicURIResolver_Param : access BasicUriResolver_Package.BasicUriResolver'Class) return ContextUriResolver_Access;
    function resolve (This : in out ContextUriResolver; href : Unbounded_String; base : Unbounded_String) return Source_Access;
    procedure resolve (This : in out ContextUriResolver; href : Unbounded_String; base : Unbounded_String);
    function toString (This : in out ContextUriResolver) return Unbounded_String;

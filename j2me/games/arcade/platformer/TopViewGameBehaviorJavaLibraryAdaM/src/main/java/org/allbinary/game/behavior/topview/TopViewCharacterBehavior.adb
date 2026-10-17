@@ -34,16 +34,16 @@ package body org.allbinary.game.behavior.topview.TopViewCharacterBehavior_Packag
 
 
    --  throws Exception
-   procedure terrainEvent (This : in out TopViewCharacterBehavior; layer_Param : access AllBinaryLayer'Class; direction_Param : access Direction'Class; x : Integer; y : Integer; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
-      layer : AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
-      direction : Direction_Access := Direction_Access (direction_Param);
-      geographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
+   procedure terrainEvent (This : in out TopViewCharacterBehavior; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; direction_Param : access Direction_Package.Direction'Class; x : Integer; y : Integer; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
+      layer : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
+      direction : constant Direction_Access := Direction_Access (direction_Param);
+      geographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
    begin
         null;
    end terrainEvent;
 
-   procedure terrainMove (This : in out TopViewCharacterBehavior; layer_Param : access AllBinaryLayer'Class; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; x : Integer; y : Integer) is
-      layer : AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
+   procedure terrainMove (This : in out TopViewCharacterBehavior; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; x : Integer; y : Integer) is
+      layer : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
    begin
         null;
    end terrainMove;

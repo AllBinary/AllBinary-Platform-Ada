@@ -46,8 +46,8 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out KeyboardActionScriptInputJPanel'Class; keyActionScriptInputInterface_Param : access KeyboardActionScriptInputInterface'Class) is
-      keyActionScriptInputInterface : KeyboardActionScriptInputInterface_Access := KeyboardActionScriptInputInterface_Access (keyActionScriptInputInterface_Param);
+   procedure Initialize (This : in out KeyboardActionScriptInputJPanel'Class; keyActionScriptInputInterface_Param : access KeyboardActionScriptInputInterface_Package.KeyboardActionScriptInputInterface'Class) is
+      keyActionScriptInputInterface : constant KeyboardActionScriptInputInterface_Access := KeyboardActionScriptInputInterface_Access (keyActionScriptInputInterface_Param);
       defaultComboBoxModel : DefaultComboBoxModel_Access;
    begin
       JPanel_Package.Initialize (This);
@@ -77,7 +77,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         This.set;
    end Initialize;
 
-   function Create (keyActionScriptInputInterface_Param : access KeyboardActionScriptInputInterface'Class) return KeyboardActionScriptInputJPanel_Access is
+   function Create (keyActionScriptInputInterface_Param : access KeyboardActionScriptInputInterface_Package.KeyboardActionScriptInputInterface'Class) return KeyboardActionScriptInputJPanel_Access is
       This : constant KeyboardActionScriptInputJPanel_Access := new KeyboardActionScriptInputJPanel;
    begin
       KeyboardActionScriptInputJPanel_Package.Initialize (This.all, keyActionScriptInputInterface_Param);
@@ -140,8 +140,8 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         return This.keyActionJDialog;
    end getKeyActionJDialog;
 
-   procedure setKeyActionJDialog (This : in out KeyboardActionScriptInputJPanel; keyActionJDialog_Param : access JDialog'Class) is
-      keyActionJDialog : JDialog_Access := JDialog_Access (keyActionJDialog_Param);
+   procedure setKeyActionJDialog (This : in out KeyboardActionScriptInputJPanel; keyActionJDialog_Param : access JDialog_Package.JDialog'Class) is
+      keyActionJDialog : constant JDialog_Access := JDialog_Access (keyActionJDialog_Param);
    begin
         This.keyActionJDialog := keyActionJDialog;
    end setKeyActionJDialog;
@@ -178,8 +178,8 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         This.addKeyJLabel.setText (To_Unbounded_String ("Add Key:"));
         This.keyNameJComboBox.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.keyNameJComboBoxActionPerformed (evt);
 --     end actionPerformed;
@@ -196,8 +196,8 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         This.pressJRadioButton.setMargin (Insets_Package.Create (0, 0, 0, 0));
         This.pressJRadioButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.pressJRadioButtonActionPerformed (evt);
 --     end actionPerformed;
@@ -207,8 +207,8 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         This.releaseJRadioButton.setMargin (Insets_Package.Create (0, 0, 0, 0));
         This.releaseJRadioButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.releaseJRadioButtonActionPerformed (evt);
 --     end actionPerformed;
@@ -219,8 +219,8 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         This.normalJRadioButton.setMargin (Insets_Package.Create (0, 0, 0, 0));
         This.normalJRadioButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.normalJRadioButtonActionPerformed (evt);
 --     end actionPerformed;
@@ -231,8 +231,8 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         This.simultaneousJRadioButton.setMargin (Insets_Package.Create (0, 0, 0, 0));
         This.simultaneousJRadioButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.simultaneousJRadioButtonActionPerformed (evt);
 --     end actionPerformed;
@@ -242,8 +242,8 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         This.sequenceJRadioButton.setMargin (Insets_Package.Create (0, 0, 0, 0));
         This.sequenceJRadioButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.sequenceJRadioButtonActionPerformed (evt);
 --     end actionPerformed;
@@ -252,8 +252,8 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         This.okJButton.setHorizontalTextPosition (javax_Package.swing.SwingConstants.CENTER);
         This.okJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.okJButtonActionPerformed (evt);
 --     end actionPerformed;
@@ -261,8 +261,8 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         This.jPanel1.add (This.okJButton);
         This.keyIntegerJComboBox.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.keyIntegerJComboBoxActionPerformed (evt);
 --     end actionPerformed;
@@ -275,8 +275,8 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         This.keyActionJButton.setText (To_Unbounded_String ("Edit"));
         This.keyActionJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.keyActionJButtonActionPerformed (evt);
 --     end actionPerformed;
@@ -297,15 +297,15 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         end if;
    end prependText;
 
-   procedure keyIntegerJComboBoxActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure keyIntegerJComboBoxActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         This.keyIntegerJComboBox.getSelectedIndex;
         This.keyNameJComboBox.setSelectedIndex (This.keyIntegerJComboBox.getSelectedIndex);
    end keyIntegerJComboBoxActionPerformed;
 
-   procedure sequenceJRadioButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure sequenceJRadioButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         if This.sequenceJRadioButton.isSelected then
             This.delayJTextField.setText (CommonPhoneStrings_Package.getInstance.ONE);
@@ -313,8 +313,8 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         end if;
    end sequenceJRadioButtonActionPerformed;
 
-   procedure simultaneousJRadioButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure simultaneousJRadioButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         if This.simultaneousJRadioButton.isSelected then
             This.delayJTextField.setText (CommonPhoneStrings_Package.getInstance.ZERO);
@@ -322,8 +322,8 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         end if;
    end simultaneousJRadioButtonActionPerformed;
 
-   procedure keyNameJComboBoxActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure keyNameJComboBoxActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
       integer_Id : Integer;
    begin
         integer_Id := This.getSelectedKey;
@@ -331,8 +331,8 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         This.keyIntegerJComboBox.setSelectedIndex (This.keyNameJComboBox.getSelectedIndex);
    end keyNameJComboBoxActionPerformed;
 
-   procedure okJButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure okJButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         begin
             This.update;
@@ -347,14 +347,14 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         end;
    end okJButtonActionPerformed;
 
-   procedure keyActionJButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure keyActionJButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         This.getKeyActionJDialog.setVisible (True);
    end keyActionJButtonActionPerformed;
 
-   procedure normalJRadioButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure normalJRadioButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         if This.normalJRadioButton.isSelected then
             This.keyActionScriptInputInterface.setNormal;
@@ -363,8 +363,8 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         end if;
    end normalJRadioButtonActionPerformed;
 
-   procedure releaseJRadioButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure releaseJRadioButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         if This.releaseJRadioButton.isSelected then
             This.keyActionScriptInputInterface.setRelease (True);
@@ -374,8 +374,8 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         end if;
    end releaseJRadioButtonActionPerformed;
 
-   procedure pressJRadioButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure pressJRadioButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         if This.pressJRadioButton.isSelected then
             This.keyActionScriptInputInterface.setPress (True);

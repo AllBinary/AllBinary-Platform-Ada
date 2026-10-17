@@ -36,10 +36,10 @@ package org.allbinary.graphics.color.ColorUtil_Package is
    procedure Initialize (This : in out ColorUtil'Class);
    function Create return ColorUtil_Access;
    function getInstance return ColorUtil_Access;
-   function isGreyishOrWhiteLike (This : in out ColorUtil; color_Param : access Color'Class) return Boolean;
-   procedure isGreyishOrWhiteLike (This : in out ColorUtil; color_Param : access Color'Class);
-   function isDark (This : in out ColorUtil; color_Param : access Color'Class) return Boolean;
-   procedure isDark (This : in out ColorUtil; color_Param : access Color'Class);
+   function isGreyishOrWhiteLike (This : in out ColorUtil; color_Param : access Color_Package.Color'Class) return Boolean;
+   procedure isGreyishOrWhiteLike (This : in out ColorUtil; color_Param : access Color_Package.Color'Class);
+   function isDark (This : in out ColorUtil; color_Param : access Color_Package.Color'Class) return Boolean;
+   procedure isDark (This : in out ColorUtil; color_Param : access Color_Package.Color'Class);
 
 end org.allbinary.graphics.color.ColorUtil_Package;
 

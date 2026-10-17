@@ -62,13 +62,13 @@ package org.allbinary.animation.image.VectorToImageArrayRotationAnimationFactory
       angleIncrement : Integer;
    end record;
 
-   procedure Initialize (This : in out VectorToImageArrayRotationAnimationFactory'Class; vectorInfo_Param : access VectorInfo'Class; basicColor_Param : access BasicColor'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class);
-   function Create (vectorInfo_Param : access VectorInfo'Class; basicColor_Param : access BasicColor'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return VectorToImageArrayRotationAnimationFactory_Access;
+   procedure Initialize (This : in out VectorToImageArrayRotationAnimationFactory'Class; vectorInfo_Param : access VectorInfo_Package.VectorInfo'Class; basicColor_Param : access BasicColor_Package.BasicColor'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class);
+   function Create (vectorInfo_Param : access VectorInfo_Package.VectorInfo'Class; basicColor_Param : access BasicColor_Package.BasicColor'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return VectorToImageArrayRotationAnimationFactory_Access;
    procedure init (This : in out VectorToImageArrayRotationAnimationFactory);
    function getInstance (This : in out VectorToImageArrayRotationAnimationFactory; instanceId : Integer) return Animation_Access;
    procedure getInstance (This : in out VectorToImageArrayRotationAnimationFactory; instanceId : Integer);
    function getAngleIncrement (This : in out VectorToImageArrayRotationAnimationFactory) return Integer;
-   procedure setInitialScale (This : in out VectorToImageArrayRotationAnimationFactory; scaleProperties_Param : access ScaleProperties'Class);
+   procedure setInitialScale (This : in out VectorToImageArrayRotationAnimationFactory; scaleProperties_Param : access ScaleProperties_Package.ScaleProperties'Class);
 
 end org.allbinary.animation.image.VectorToImageArrayRotationAnimationFactory_Package;
 

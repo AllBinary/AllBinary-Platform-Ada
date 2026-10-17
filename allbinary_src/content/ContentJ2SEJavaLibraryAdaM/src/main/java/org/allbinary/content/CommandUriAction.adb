@@ -41,14 +41,14 @@ package body org.allbinary.content.CommandUriAction_Package is
         return CommandUriAction_Package.instance;
    end getInstance;
 
-   procedure add (This : in out CommandUriAction; command_Param : access Command'Class; url : Unbounded_String) is
-      command : Command_Access := Command_Access (command_Param);
+   procedure add (This : in out CommandUriAction; command_Param : access Command_Package.Command'Class; url : Unbounded_String) is
+      command : constant Command_Access := Command_Access (command_Param);
    begin
         This.hashtable.put (command, url);
    end add;
 
-   procedure process (This : in out CommandUriAction; command_Param : access Command'Class) is
-      command : Command_Access := Command_Access (command_Param);
+   procedure process (This : in out CommandUriAction; command_Param : access Command_Package.Command'Class) is
+      command : constant Command_Access := Command_Access (command_Param);
    begin
         begin
             null;
@@ -62,15 +62,15 @@ package body org.allbinary.content.CommandUriAction_Package is
         end;
    end process;
 
-   function getIntent (This : in out CommandUriAction; command_Param : access Command'Class) return Intent_Access is
-      command : Command_Access := Command_Access (command_Param);
+   function getIntent (This : in out CommandUriAction; command_Param : access Command_Package.Command'Class) return Intent_Access is
+      command : constant Command_Access := Command_Access (command_Param);
       url : Unbounded_String;
    begin
         url := Unbounded_String (This.hashtable.get (command));
         return This.intent;
    end getIntent;
 
-   procedure getIntent (This : in out CommandUriAction; command_Param : access Command'Class) is
+   procedure getIntent (This : in out CommandUriAction; command_Param : access Command_Package.Command'Class) is
       Java_Result : constant Intent_Access := CommandUriAction'Class (This).getIntent (command_Param);
       pragma Unreferenced (Java_Result);
    begin

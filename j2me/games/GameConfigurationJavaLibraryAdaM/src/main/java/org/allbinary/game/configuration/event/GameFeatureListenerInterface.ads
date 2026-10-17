@@ -31,7 +31,7 @@ package org.allbinary.game.configuration.event.GameFeatureListenerInterface_Pack
    type GameFeatureListenerInterface_Access is access all GameFeatureListenerInterface'Class;
    type GameFeatureListenerInterface_Access_Array is array (Natural range <>) of GameFeatureListenerInterface_Access;
    type GameFeatureListenerInterface_Access_Array_Access is access all GameFeatureListenerInterface_Access_Array;
-   procedure onGameFeatureChange (This : in out GameFeatureListenerInterface; gameFeatureEvent_Param : access GameFeatureEvent'Class) is abstract;
+   procedure onGameFeatureChange (This : in out GameFeatureListenerInterface; gameFeatureEvent_Param : access GameFeatureEvent_Package.GameFeatureEvent'Class) is abstract;
 
 end org.allbinary.game.configuration.event.GameFeatureListenerInterface_Package;
 

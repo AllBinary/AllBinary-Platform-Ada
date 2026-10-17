@@ -35,8 +35,8 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    end Create;
 
    --  throws Exception
-   procedure process (keyActionScriptInputInterface_Param : access KeyboardActionScriptInputInterface'Class) is
-      keyActionScriptInputInterface : KeyboardActionScriptInputInterface_Access := KeyboardActionScriptInputInterface_Access (keyActionScriptInputInterface_Param);
+   procedure process (keyActionScriptInputInterface_Param : access KeyboardActionScriptInputInterface_Package.KeyboardActionScriptInputInterface'Class) is
+      keyActionScriptInputInterface : constant KeyboardActionScriptInputInterface_Access := KeyboardActionScriptInputInterface_Access (keyActionScriptInputInterface_Param);
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       inputRobotInterface : InputRobotInterface_Access;

@@ -65,8 +65,8 @@ package org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package is
    procedure init (This : in out XmlDocumentHelper; indent : Integer; ignoreDeclaration : Boolean);
    function format (This : in out XmlDocumentHelper; xmlString : Unbounded_String) return Unbounded_String;
    procedure format (This : in out XmlDocumentHelper; xmlString : Unbounded_String);
-   function toString (document_Param : access Document'Class) return Unbounded_String;
-   procedure toString (document_Param : access Document'Class);
+   function toString (document_Param : access Document_Package.Document'Class) return Unbounded_String;
+   procedure toString (document_Param : access Document_Package.Document'Class);
 
 end org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package;
 

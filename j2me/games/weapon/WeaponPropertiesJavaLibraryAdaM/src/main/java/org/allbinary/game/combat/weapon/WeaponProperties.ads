@@ -60,7 +60,7 @@ package org.allbinary.game.combat.weapon.WeaponProperties_Package is
    procedure setTargetingTime (This : in out WeaponProperties; targetingTime : Long_Long_Integer);
    function getTargetingTime (This : in out WeaponProperties) return Long_Long_Integer;
    function getSpeed (This : in out WeaponProperties) return BasicDecimal_Access;
-   procedure setSpeed (This : in out WeaponProperties; speed_Param : access BasicDecimal'Class);
+   procedure setSpeed (This : in out WeaponProperties; speed_Param : access BasicDecimal_Package.BasicDecimal'Class);
    function getDamageI (This : in out WeaponProperties; range_Case_Id : Integer) return Integer;
    procedure getDamageI (This : in out WeaponProperties; range_Case_Id : Integer);
    function toStringArray (This : in out WeaponProperties) return Unbounded_String_Array_Access;

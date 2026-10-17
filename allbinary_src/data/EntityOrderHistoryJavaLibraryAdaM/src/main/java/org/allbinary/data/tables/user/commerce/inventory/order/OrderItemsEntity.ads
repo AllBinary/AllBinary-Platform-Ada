@@ -91,7 +91,7 @@ package org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsEntity
 
    procedure Initialize (This : in out OrderItemsEntity'Class);
    function Create return OrderItemsEntity_Access;
-   procedure insert (This : in out OrderItemsEntity; userName : Unbounded_String; order_Param : access OrderInterface'Class);
+   procedure insert (This : in out OrderItemsEntity; userName : Unbounded_String; order_Param : access OrderInterface_Package.OrderInterface'Class);
    procedure setStatus (This : in out OrderItemsEntity; orderId : Unbounded_String; groupId : Unbounded_String; status : Unbounded_String);
    function isEverythingShipped (This : in out OrderItemsEntity; orderId : Unbounded_String) return Boolean;
    procedure isEverythingShipped (This : in out OrderItemsEntity; orderId : Unbounded_String);

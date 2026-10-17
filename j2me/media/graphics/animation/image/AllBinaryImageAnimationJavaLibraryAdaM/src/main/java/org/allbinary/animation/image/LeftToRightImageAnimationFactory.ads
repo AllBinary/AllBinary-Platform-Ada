@@ -39,8 +39,8 @@ package org.allbinary.animation.image.LeftToRightImageAnimationFactory_Package i
 
    type LeftToRightImageAnimationFactory is new BaseImageAnimationFactory with null record;
 
-   procedure Initialize (This : in out LeftToRightImageAnimationFactory'Class; image_Param : access Image'Class; sequenceArray : Integer_Array_Access; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class);
-   function Create (image_Param : access Image'Class; sequenceArray : Integer_Array_Access; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return LeftToRightImageAnimationFactory_Access;
+   procedure Initialize (This : in out LeftToRightImageAnimationFactory'Class; image_Param : access Image_Package.Image'Class; sequenceArray : Integer_Array_Access; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class);
+   function Create (image_Param : access Image_Package.Image'Class; sequenceArray : Integer_Array_Access; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return LeftToRightImageAnimationFactory_Access;
    function getInstance (This : in out LeftToRightImageAnimationFactory; instanceId : Integer) return Animation_Access;
    procedure getInstance (This : in out LeftToRightImageAnimationFactory; instanceId : Integer);
 

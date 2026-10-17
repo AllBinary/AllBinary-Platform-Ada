@@ -36,10 +36,10 @@ package org.allbinary.collision.RectangleCollisionUtil_Package is
 
    procedure Initialize (This : in out RectangleCollisionUtil'Class);
    function Create return RectangleCollisionUtil_Access;
-   function isCollision (rectangle_Param : access Rectangle'Class; point_Param : access GPoint'Class) return Boolean;
-   procedure isCollision (rectangle_Param : access Rectangle'Class; point_Param : access GPoint'Class);
-   function isCollision (rectangle1_Param : access Rectangle'Class; rectangle2_Param : access Rectangle'Class) return Boolean;
-   procedure isCollision (rectangle1_Param : access Rectangle'Class; rectangle2_Param : access Rectangle'Class);
+   function isCollision (rectangle_Param : access Rectangle_Package.Rectangle'Class; point_Param : access GPoint_Package.GPoint'Class) return Boolean;
+   procedure isCollision (rectangle_Param : access Rectangle_Package.Rectangle'Class; point_Param : access GPoint_Package.GPoint'Class);
+   function isCollision (rectangle1_Param : access Rectangle_Package.Rectangle'Class; rectangle2_Param : access Rectangle_Package.Rectangle'Class) return Boolean;
+   procedure isCollision (rectangle1_Param : access Rectangle_Package.Rectangle'Class; rectangle2_Param : access Rectangle_Package.Rectangle'Class);
    function isCollision (rectX1 : Integer; rectY1 : Integer; rectX2 : Integer; rectY2 : Integer; rect2X1 : Integer; rect2Y1 : Integer; rect2X2 : Integer; rect2Y2 : Integer) return Boolean;
    procedure isCollision (rectX1 : Integer; rectY1 : Integer; rectX2 : Integer; rectY2 : Integer; rect2X1 : Integer; rect2Y1 : Integer; rect2X2 : Integer; rect2Y2 : Integer);
 

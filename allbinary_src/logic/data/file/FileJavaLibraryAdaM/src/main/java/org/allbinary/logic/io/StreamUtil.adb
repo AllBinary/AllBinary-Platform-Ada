@@ -41,9 +41,9 @@ package body org.allbinary.logic.io.StreamUtil_Package is
    end Create;
 
    --  throws Exception
-   function get (This : in out StreamUtil; inputStream_Param : access InputStream'Class; outputStream_Param : access OutputStream'Class; buffer : Short_Short_Integer_Array_Access) return OutputStream_Access is
-      inputStream : InputStream_Access := InputStream_Access (inputStream_Param);
-      outputStream : OutputStream_Access := OutputStream_Access (outputStream_Param);
+   function get (This : in out StreamUtil; inputStream_Param : access InputStream_Package.InputStream'Class; outputStream_Param : access OutputStream_Package.OutputStream'Class; buffer : Short_Short_Integer_Array_Access) return OutputStream_Access is
+      inputStream : constant InputStream_Access := InputStream_Access (inputStream_Param);
+      outputStream : constant OutputStream_Access := OutputStream_Access (outputStream_Param);
       len : Integer;
    begin
         len := 0;
@@ -60,9 +60,9 @@ package body org.allbinary.logic.io.StreamUtil_Package is
    end get;
 
    --  throws Exception
-   function getByteArray (This : in out StreamUtil; inputStream_Param : access InputStream'Class; outputStream2_Param : access ByteArrayOutputStream'Class; byteArray : Short_Short_Integer_Array_Access) return Short_Short_Integer_Array_Access is
-      inputStream : InputStream_Access := InputStream_Access (inputStream_Param);
-      outputStream2 : ByteArrayOutputStream_Access := ByteArrayOutputStream_Access (outputStream2_Param);
+   function getByteArray (This : in out StreamUtil; inputStream_Param : access InputStream_Package.InputStream'Class; outputStream2_Param : access ByteArrayOutputStream_Package.ByteArrayOutputStream'Class; byteArray : Short_Short_Integer_Array_Access) return Short_Short_Integer_Array_Access is
+      inputStream : constant InputStream_Access := InputStream_Access (inputStream_Param);
+      outputStream2 : constant ByteArrayOutputStream_Access := ByteArrayOutputStream_Access (outputStream2_Param);
       outputStream : ByteArrayOutputStream_Access;
    begin
         outputStream := outputStream2;
@@ -83,8 +83,8 @@ package body org.allbinary.logic.io.StreamUtil_Package is
         end;
    end getByteArray;
 
-   function close (This : in out StreamUtil; closeable_Param : access Closeable'Class) return Boolean is
-      closeable : Closeable_Access := Closeable_Access (closeable_Param);
+   function close (This : in out StreamUtil; closeable_Param : access Closeable_Package.Closeable'Class) return Boolean is
+      closeable : constant Closeable_Access := Closeable_Access (closeable_Param);
       commonStrings : CommonStrings_Access;
    begin
         begin
@@ -104,21 +104,21 @@ package body org.allbinary.logic.io.StreamUtil_Package is
         end;
    end close;
 
-   procedure get (This : in out StreamUtil; inputStream_Param : access InputStream'Class; outputStream_Param : access OutputStream'Class; buffer : Short_Short_Integer_Array_Access) is
+   procedure get (This : in out StreamUtil; inputStream_Param : access InputStream_Package.InputStream'Class; outputStream_Param : access OutputStream_Package.OutputStream'Class; buffer : Short_Short_Integer_Array_Access) is
       Java_Result : constant OutputStream_Access := StreamUtil'Class (This).get (inputStream_Param, outputStream_Param, buffer);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end get;
 
-   procedure getByteArray (This : in out StreamUtil; inputStream_Param : access InputStream'Class; outputStream2_Param : access ByteArrayOutputStream'Class; byteArray : Short_Short_Integer_Array_Access) is
+   procedure getByteArray (This : in out StreamUtil; inputStream_Param : access InputStream_Package.InputStream'Class; outputStream2_Param : access ByteArrayOutputStream_Package.ByteArrayOutputStream'Class; byteArray : Short_Short_Integer_Array_Access) is
       Java_Result : constant Short_Short_Integer_Array_Access := StreamUtil'Class (This).getByteArray (inputStream_Param, outputStream2_Param, byteArray);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getByteArray;
 
-   procedure close (This : in out StreamUtil; closeable_Param : access Closeable'Class) is
+   procedure close (This : in out StreamUtil; closeable_Param : access Closeable_Package.Closeable'Class) is
       Java_Result : constant Boolean := StreamUtil'Class (This).close (closeable_Param);
       pragma Unreferenced (Java_Result);
    begin

@@ -39,9 +39,9 @@ package body org.allbinary.servlet.file.DownloadFileServlet_Package is
 
 
    --  throws ServletException, IOException
-   procedure processRequest (This : in out DownloadFileServlet; request_Param : access HttpServletRequest'Class; response_Param : access HttpServletResponse'Class) is
-      request : HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
-      response : HttpServletResponse_Access := HttpServletResponse_Access (response_Param);
+   procedure processRequest (This : in out DownloadFileServlet; request_Param : access HttpServletRequest_Package.HttpServletRequest'Class; response_Param : access HttpServletResponse_Package.HttpServletResponse'Class) is
+      request : constant HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
+      response : constant HttpServletResponse_Access := HttpServletResponse_Access (response_Param);
       inputStream : InputStream_Access;
       requestPath : Unbounded_String;
       beginIndex : Integer;
@@ -118,17 +118,17 @@ package body org.allbinary.servlet.file.DownloadFileServlet_Package is
    end processRequest;
 
    --  throws ServletException, IOException
-   procedure doGet (This : in out DownloadFileServlet; request_Param : access HttpServletRequest'Class; response_Param : access HttpServletResponse'Class) is
-      request : HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
-      response : HttpServletResponse_Access := HttpServletResponse_Access (response_Param);
+   procedure doGet (This : in out DownloadFileServlet; request_Param : access HttpServletRequest_Package.HttpServletRequest'Class; response_Param : access HttpServletResponse_Package.HttpServletResponse'Class) is
+      request : constant HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
+      response : constant HttpServletResponse_Access := HttpServletResponse_Access (response_Param);
    begin
         This.processRequest (request, response);
    end doGet;
 
    --  throws ServletException, IOException
-   procedure doPost (This : in out DownloadFileServlet; request_Param : access HttpServletRequest'Class; response_Param : access HttpServletResponse'Class) is
-      request : HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
-      response : HttpServletResponse_Access := HttpServletResponse_Access (response_Param);
+   procedure doPost (This : in out DownloadFileServlet; request_Param : access HttpServletRequest_Package.HttpServletRequest'Class; response_Param : access HttpServletResponse_Package.HttpServletResponse'Class) is
+      request : constant HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
+      response : constant HttpServletResponse_Access := HttpServletResponse_Access (response_Param);
    begin
         This.processRequest (request, response);
    end doPost;

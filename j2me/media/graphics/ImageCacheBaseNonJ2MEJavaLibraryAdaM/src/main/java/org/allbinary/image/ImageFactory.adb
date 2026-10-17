@@ -51,9 +51,9 @@ package body org.allbinary.image.ImageFactory_Package is
    end createImage;
 
    --  throws Exception
-   function createImageFromInputStream (This : in out ImageFactory; key_Param : access Java_Object'Class; inputStream_Param : access InputStream'Class) return Image_Access is
-      key : Java_Object_Access := Java_Object_Access (key_Param);
-      inputStream : InputStream_Access := InputStream_Access (inputStream_Param);
+   function createImageFromInputStream (This : in out ImageFactory; key_Param : access Java_Object'Class; inputStream_Param : access InputStream_Package.InputStream'Class) return Image_Access is
+      key : constant Java_Object_Access := Java_Object_Access (key_Param);
+      inputStream : constant InputStream_Access := InputStream_Access (inputStream_Param);
       image : Image_Access;
    begin
         image := Image_Package.createImageFromInputStream (inputStream);
@@ -61,8 +61,8 @@ package body org.allbinary.image.ImageFactory_Package is
    end createImageFromInputStream;
 
    --  throws Exception
-   function createImageFromInputStream (This : in out ImageFactory; inputStream_Param : access InputStream'Class) return Image_Access is
-      inputStream : InputStream_Access := InputStream_Access (inputStream_Param);
+   function createImageFromInputStream (This : in out ImageFactory; inputStream_Param : access InputStream_Package.InputStream'Class) return Image_Access is
+      inputStream : constant InputStream_Access := InputStream_Access (inputStream_Param);
    begin
         return Image_Package.createImageFromInputStream (inputStream);
    end createImageFromInputStream;
@@ -81,14 +81,14 @@ package body org.allbinary.image.ImageFactory_Package is
       null;
    end createImage;
 
-   procedure createImageFromInputStream (This : in out ImageFactory; key_Param : access Java_Object'Class; inputStream_Param : access InputStream'Class) is
+   procedure createImageFromInputStream (This : in out ImageFactory; key_Param : access Java_Object'Class; inputStream_Param : access InputStream_Package.InputStream'Class) is
       Java_Result : constant Image_Access := ImageFactory'Class (This).createImageFromInputStream (key_Param, inputStream_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createImageFromInputStream;
 
-   procedure createImageFromInputStream (This : in out ImageFactory; inputStream_Param : access InputStream'Class) is
+   procedure createImageFromInputStream (This : in out ImageFactory; inputStream_Param : access InputStream_Package.InputStream'Class) is
       Java_Result : constant Image_Access := ImageFactory'Class (This).createImageFromInputStream (inputStream_Param);
       pragma Unreferenced (Java_Result);
    begin

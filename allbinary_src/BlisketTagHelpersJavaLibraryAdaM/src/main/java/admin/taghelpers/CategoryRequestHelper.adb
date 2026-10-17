@@ -29,9 +29,9 @@ package body admin.taghelpers.CategoryRequestHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CategoryRequestHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
-      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
+   procedure Initialize (This : in out CategoryRequestHelper'Class; hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
    begin
       ModifyTable_Package.Initialize (This);
       Initialize_Fields (This);
@@ -52,7 +52,7 @@ package body admin.taghelpers.CategoryRequestHelper_Package is
         end;
    end Initialize;
 
-   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return CategoryRequestHelper_Access is
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return CategoryRequestHelper_Access is
       This : constant CategoryRequestHelper_Access := new CategoryRequestHelper;
    begin
       CategoryRequestHelper_Package.Initialize (This.all, hashMap_Param, pageContext_Param);
@@ -132,8 +132,8 @@ package body admin.taghelpers.CategoryRequestHelper_Package is
    end getXmlData;
 
    --  throws Exception
-   procedure setCategoryLoader (This : in out CategoryRequestHelper; requestNode_Param : access Node'Class) is
-      requestNode : Node_Access := Node_Access (requestNode_Param);
+   procedure setCategoryLoader (This : in out CategoryRequestHelper; requestNode_Param : access Node_Package.Node'Class) is
+      requestNode : constant Node_Access := Node_Access (requestNode_Param);
       storeNameNode : Node_Access;
       storeName : Unbounded_String;
       storeFrontInterface : StoreFrontInterface_Access;

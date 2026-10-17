@@ -43,12 +43,12 @@ package org.allbinary.math.LayerDistanceUtil_Package is
    procedure Initialize (This : in out LayerDistanceUtil'Class);
    function Create return LayerDistanceUtil_Access;
    function getInstance return LayerDistanceUtil_Access;
-   function getDistance (This : in out LayerDistanceUtil; layerInterface_Param : access AllBinaryLayer'Class; layerInterface2_Param : access AllBinaryLayer'Class) return Integer;
-   procedure getDistance (This : in out LayerDistanceUtil; layerInterface_Param : access AllBinaryLayer'Class; layerInterface2_Param : access AllBinaryLayer'Class);
-   function getDistance3D (This : in out LayerDistanceUtil; layerInterface_Param : access AllBinaryLayer'Class; layerInterface2_Param : access AllBinaryLayer'Class) return Integer;
-   procedure getDistance3D (This : in out LayerDistanceUtil; layerInterface_Param : access AllBinaryLayer'Class; layerInterface2_Param : access AllBinaryLayer'Class);
-   function getDistanceAt (This : in out LayerDistanceUtil; layerInterface_Param : access AllBinaryLayer'Class; point_Param : access GPoint'Class) return Integer;
-   procedure getDistanceAt (This : in out LayerDistanceUtil; layerInterface_Param : access AllBinaryLayer'Class; point_Param : access GPoint'Class);
+   function getDistance (This : in out LayerDistanceUtil; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; layerInterface2_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) return Integer;
+   procedure getDistance (This : in out LayerDistanceUtil; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; layerInterface2_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class);
+   function getDistance3D (This : in out LayerDistanceUtil; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; layerInterface2_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) return Integer;
+   procedure getDistance3D (This : in out LayerDistanceUtil; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; layerInterface2_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class);
+   function getDistanceAt (This : in out LayerDistanceUtil; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; point_Param : access GPoint_Package.GPoint'Class) return Integer;
+   procedure getDistanceAt (This : in out LayerDistanceUtil; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; point_Param : access GPoint_Package.GPoint'Class);
 
 end org.allbinary.math.LayerDistanceUtil_Package;
 

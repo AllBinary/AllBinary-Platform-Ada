@@ -52,8 +52,8 @@ package org.allbinary.logic.control.search.SearchParams_Package is
       endPage : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out SearchParams'Class; request_Param : access HttpServletRequest'Class);
-   function Create (request_Param : access HttpServletRequest'Class) return SearchParams_Access;
+   procedure Initialize (This : in out SearchParams'Class; request_Param : access HttpServletRequest_Package.HttpServletRequest'Class);
+   function Create (request_Param : access HttpServletRequest_Package.HttpServletRequest'Class) return SearchParams_Access;
    procedure add (This : in out SearchParams; column : Unbounded_String; value : Unbounded_String);
    procedure setOrder (This : in out SearchParams; value : Unbounded_String);
    procedure setSortBy (This : in out SearchParams; value : Unbounded_String);
@@ -69,16 +69,16 @@ package org.allbinary.logic.control.search.SearchParams_Package is
    function getEndPage (This : in out SearchParams) return Unbounded_String;
    function getStartPageInt (This : in out SearchParams) return Integer;
    function getEndPageInt (This : in out SearchParams) return Integer;
-   function getParamsNode (This : in out SearchParams; document_Param : access Document'Class) return Node_Access;
-   procedure getParamsNode (This : in out SearchParams; document_Param : access Document'Class);
-   function getFieldsNode (This : in out SearchParams; document_Param : access Document'Class) return Node_Access;
-   procedure getFieldsNode (This : in out SearchParams; document_Param : access Document'Class);
-   function getOrderNode (This : in out SearchParams; document_Param : access Document'Class) return Node_Access;
-   procedure getOrderNode (This : in out SearchParams; document_Param : access Document'Class);
-   function getSortByNode (This : in out SearchParams; document_Param : access Document'Class) return Node_Access;
-   procedure getSortByNode (This : in out SearchParams; document_Param : access Document'Class);
-   function getLengthNode (This : in out SearchParams; document_Param : access Document'Class) return Node_Access;
-   procedure getLengthNode (This : in out SearchParams; document_Param : access Document'Class);
+   function getParamsNode (This : in out SearchParams; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure getParamsNode (This : in out SearchParams; document_Param : access Document_Package.Document'Class);
+   function getFieldsNode (This : in out SearchParams; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure getFieldsNode (This : in out SearchParams; document_Param : access Document_Package.Document'Class);
+   function getOrderNode (This : in out SearchParams; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure getOrderNode (This : in out SearchParams; document_Param : access Document_Package.Document'Class);
+   function getSortByNode (This : in out SearchParams; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure getSortByNode (This : in out SearchParams; document_Param : access Document_Package.Document'Class);
+   function getLengthNode (This : in out SearchParams; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure getLengthNode (This : in out SearchParams; document_Param : access Document_Package.Document'Class);
 
 end org.allbinary.logic.control.search.SearchParams_Package;
 

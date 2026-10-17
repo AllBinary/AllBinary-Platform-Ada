@@ -58,7 +58,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
       return This;
    end Create;
 
-   procedure Initialize (This : in out TransactionResult'Class; keyValuePairs_Param : access HashMap'Class) is
+   procedure Initialize (This : in out TransactionResult'Class; keyValuePairs_Param : access HashMap_Package.HashMap'Class) is
       keyValuePairs : HashMap_Access := HashMap_Access (keyValuePairs_Param);
    begin
       Initialize_Fields (This);
@@ -66,7 +66,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
         This.result := To_Unbounded_String ("Needs to have the hashmap converted to string for other constructor");
    end Initialize;
 
-   function Create (keyValuePairs_Param : access HashMap'Class) return TransactionResult_Access is
+   function Create (keyValuePairs_Param : access HashMap_Package.HashMap'Class) return TransactionResult_Access is
       This : constant TransactionResult_Access := new TransactionResult;
    begin
       TransactionResult_Package.Initialize (This.all, keyValuePairs_Param);

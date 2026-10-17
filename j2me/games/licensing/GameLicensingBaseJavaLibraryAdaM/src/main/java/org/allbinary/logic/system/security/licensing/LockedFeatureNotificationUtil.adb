@@ -47,8 +47,8 @@ package body org.allbinary.logic.system.security.licensing.LockedFeatureNotifica
    end fire;
 
    --  throws Exception
-   procedure fireWithColor (This : in out LockedFeatureNotificationUtil; basicColor_Param : access BasicColor'Class) is
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+   procedure fireWithColor (This : in out LockedFeatureNotificationUtil; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         PrimaryPlayerQueueFactory_Package.getInstance.add (ErrorSound_Package.getInstance);
         This.gameNotificationEvent.setBasicColorP (basicColor);

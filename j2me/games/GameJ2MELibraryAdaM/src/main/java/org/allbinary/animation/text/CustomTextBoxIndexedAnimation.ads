@@ -54,18 +54,18 @@ package org.allbinary.animation.text.CustomTextBoxIndexedAnimation_Package is
       textChangeListener : TextChangeListener_Access;
    end record;
 
-   procedure Initialize (This : in out CustomTextBoxIndexedAnimation'Class; customTextBox_Param : access CustomTextBox'Class);
-   function Create (customTextBox_Param : access CustomTextBox'Class) return CustomTextBoxIndexedAnimation_Access;
-   procedure setBasicColorP (This : in out CustomTextBoxIndexedAnimation; basicColor_Param : access BasicColor'Class);
-   procedure setBackgroundBasicColorP (This : in out CustomTextBoxIndexedAnimation; basicColor_Param : access BasicColor'Class);
-   procedure setTextWithOnMeasure (This : in out CustomTextBoxIndexedAnimation; text : Unbounded_String; textChangeListener_Param : access TextChangeListener'Class);
-   procedure updateMeasurement (This : in out CustomTextBoxIndexedAnimation; graphics_Param : access Graphics'Class);
+   procedure Initialize (This : in out CustomTextBoxIndexedAnimation'Class; customTextBox_Param : access CustomTextBox_Package.CustomTextBox'Class);
+   function Create (customTextBox_Param : access CustomTextBox_Package.CustomTextBox'Class) return CustomTextBoxIndexedAnimation_Access;
+   procedure setBasicColorP (This : in out CustomTextBoxIndexedAnimation; basicColor_Param : access BasicColor_Package.BasicColor'Class);
+   procedure setBackgroundBasicColorP (This : in out CustomTextBoxIndexedAnimation; basicColor_Param : access BasicColor_Package.BasicColor'Class);
+   procedure setTextWithOnMeasure (This : in out CustomTextBoxIndexedAnimation; text : Unbounded_String; textChangeListener_Param : access TextChangeListener_Package.TextChangeListener'Class);
+   procedure updateMeasurement (This : in out CustomTextBoxIndexedAnimation; graphics_Param : access Graphics_Package.Graphics'Class);
    procedure setText (This : in out CustomTextBoxIndexedAnimation; text : Unbounded_String);
    function getText (This : in out CustomTextBoxIndexedAnimation) return Unbounded_String;
    procedure onEventRaw (This : in out CustomTextBoxIndexedAnimation; keyCode : Integer; deviceId : Integer; repeated : Boolean);
    function getFontHeight (This : in out CustomTextBoxIndexedAnimation) return Integer;
-   procedure paintXY (This : in out CustomTextBoxIndexedAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
-   procedure paintThreedXYZ (This : in out CustomTextBoxIndexedAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer; z : Integer);
+   procedure paintXY (This : in out CustomTextBoxIndexedAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
+   procedure paintThreedXYZ (This : in out CustomTextBoxIndexedAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer; z : Integer);
 
 end org.allbinary.animation.text.CustomTextBoxIndexedAnimation_Package;
 

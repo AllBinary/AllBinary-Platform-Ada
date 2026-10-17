@@ -47,15 +47,15 @@ package org.allbinary.media.image.comparison.pixel.PixelDelta_Package is
       key : Java_Object_Access;
    end record;
 
-   procedure Initialize (This : in out PixelDelta'Class; point_Param : access GPoint'Class; colorDelta_Param : access ColorDelta'Class);
-   function Create (point_Param : access GPoint'Class; colorDelta_Param : access ColorDelta'Class) return PixelDelta_Access;
+   procedure Initialize (This : in out PixelDelta'Class; point_Param : access GPoint_Package.GPoint'Class; colorDelta_Param : access ColorDelta_Package.ColorDelta'Class);
+   function Create (point_Param : access GPoint_Package.GPoint'Class; colorDelta_Param : access ColorDelta_Package.ColorDelta'Class) return PixelDelta_Access;
    function getKey (This : in out PixelDelta) return Java_Object_Access;
-   function getKey (point_Param : access GPoint'Class; colorDelta_Param : access ColorDelta'Class) return Java_Object_Access;
-   procedure getKey (point_Param : access GPoint'Class; colorDelta_Param : access ColorDelta'Class);
+   function getKey (point_Param : access GPoint_Package.GPoint'Class; colorDelta_Param : access ColorDelta_Package.ColorDelta'Class) return Java_Object_Access;
+   procedure getKey (point_Param : access GPoint_Package.GPoint'Class; colorDelta_Param : access ColorDelta_Package.ColorDelta'Class);
    function getPoint (This : in out PixelDelta) return GPoint_Access;
-   procedure setPoint (This : in out PixelDelta; point_Param : access GPoint'Class);
+   procedure setPoint (This : in out PixelDelta; point_Param : access GPoint_Package.GPoint'Class);
    function getColorDelta (This : in out PixelDelta) return ColorDelta_Access;
-   procedure setColorDelta (This : in out PixelDelta; colorDelta_Param : access ColorDelta'Class);
+   procedure setColorDelta (This : in out PixelDelta; colorDelta_Param : access ColorDelta_Package.ColorDelta'Class);
    function toString (This : in out PixelDelta) return Unbounded_String;
 
 end org.allbinary.media.image.comparison.pixel.PixelDelta_Package;

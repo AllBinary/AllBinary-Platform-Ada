@@ -47,8 +47,8 @@ package org.allbinary.media.graphics.geography.map.racetrack.RaceTrackStartPoint
 
    procedure Initialize (This : in out RaceTrackStartPointUtil'Class);
    function Create return RaceTrackStartPointUtil_Access;
-   function get (geographicMapInterface_Param : access BasicGeographicMap'Class; pathFindingInfo_Param : access PathFindingInfo'Class; index : Integer) return GPoint_Access;
-   procedure get (geographicMapInterface_Param : access BasicGeographicMap'Class; pathFindingInfo_Param : access PathFindingInfo'Class; index : Integer);
+   function get (geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; pathFindingInfo_Param : access PathFindingInfo_Package.PathFindingInfo'Class; index : Integer) return GPoint_Access;
+   procedure get (geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; pathFindingInfo_Param : access PathFindingInfo_Package.PathFindingInfo'Class; index : Integer);
 
 end org.allbinary.media.graphics.geography.map.racetrack.RaceTrackStartPointUtil_Package;
 

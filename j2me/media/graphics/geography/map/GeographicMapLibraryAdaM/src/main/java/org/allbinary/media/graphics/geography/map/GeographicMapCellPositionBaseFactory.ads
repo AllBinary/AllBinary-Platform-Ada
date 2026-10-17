@@ -35,8 +35,8 @@ package org.allbinary.media.graphics.geography.map.GeographicMapCellPositionBase
 
    procedure Initialize (This : in out GeographicMapCellPositionBaseFactory'Class);
    function Create return GeographicMapCellPositionBaseFactory_Access;
-   function getInstance (This : in out GeographicMapCellPositionBaseFactory; geographicMapInterface_Param : access BasicGeographicMap'Class) return BasicGeographicMapCellPositionFactory_Access;
-   procedure getInstance (This : in out GeographicMapCellPositionBaseFactory; geographicMapInterface_Param : access BasicGeographicMap'Class);
+   function getInstance (This : in out GeographicMapCellPositionBaseFactory; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class) return BasicGeographicMapCellPositionFactory_Access;
+   procedure getInstance (This : in out GeographicMapCellPositionBaseFactory; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class);
 
 end org.allbinary.media.graphics.geography.map.GeographicMapCellPositionBaseFactory_Package;
 

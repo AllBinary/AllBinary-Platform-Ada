@@ -67,33 +67,33 @@ package org.allbinary.input.automation.actions.script.condition.ColorAtActionScr
       yJLabel : JLabel_Access;
    end record;
 
-   procedure Initialize (This : in out ColorAtActionScriptConditionJPanel'Class; colorAtActionScriptConditionInterface_Param : access ColorAtActionScriptConditionInterface'Class);
-   function Create (colorAtActionScriptConditionInterface_Param : access ColorAtActionScriptConditionInterface'Class) return ColorAtActionScriptConditionJPanel_Access;
+   procedure Initialize (This : in out ColorAtActionScriptConditionJPanel'Class; colorAtActionScriptConditionInterface_Param : access ColorAtActionScriptConditionInterface_Package.ColorAtActionScriptConditionInterface'Class);
+   function Create (colorAtActionScriptConditionInterface_Param : access ColorAtActionScriptConditionInterface_Package.ColorAtActionScriptConditionInterface'Class) return ColorAtActionScriptConditionJPanel_Access;
    procedure set (This : in out ColorAtActionScriptConditionJPanel);
    procedure update (This : in out ColorAtActionScriptConditionJPanel);
    function getColorAtXJTextField (This : in out ColorAtActionScriptConditionJPanel) return JTextField_Access;
-   procedure setColorAtXJTextField (This : in out ColorAtActionScriptConditionJPanel; colorAtXJTextField_Param : access JTextField'Class);
+   procedure setColorAtXJTextField (This : in out ColorAtActionScriptConditionJPanel; colorAtXJTextField_Param : access JTextField_Package.JTextField'Class);
    function getColorAtYJTextField (This : in out ColorAtActionScriptConditionJPanel) return JTextField_Access;
-   procedure setColorAtYJTextField (This : in out ColorAtActionScriptConditionJPanel; colorAtYJTextField_Param : access JTextField'Class);
+   procedure setColorAtYJTextField (This : in out ColorAtActionScriptConditionJPanel; colorAtYJTextField_Param : access JTextField_Package.JTextField'Class);
    function getMaxBlueJTextField (This : in out ColorAtActionScriptConditionJPanel) return JTextField_Access;
-   procedure setMaxBlueJTextField (This : in out ColorAtActionScriptConditionJPanel; maxBlueJTextField_Param : access JTextField'Class);
+   procedure setMaxBlueJTextField (This : in out ColorAtActionScriptConditionJPanel; maxBlueJTextField_Param : access JTextField_Package.JTextField'Class);
    function getMaxGreenJTextField (This : in out ColorAtActionScriptConditionJPanel) return JTextField_Access;
-   procedure setMaxGreenJTextField (This : in out ColorAtActionScriptConditionJPanel; maxGreenJTextField_Param : access JTextField'Class);
+   procedure setMaxGreenJTextField (This : in out ColorAtActionScriptConditionJPanel; maxGreenJTextField_Param : access JTextField_Package.JTextField'Class);
    function getMaxRedJTextField (This : in out ColorAtActionScriptConditionJPanel) return JTextField_Access;
-   procedure setMaxRedJTextField (This : in out ColorAtActionScriptConditionJPanel; maxRedJTextField_Param : access JTextField'Class);
+   procedure setMaxRedJTextField (This : in out ColorAtActionScriptConditionJPanel; maxRedJTextField_Param : access JTextField_Package.JTextField'Class);
    function getMinBlueJTextField (This : in out ColorAtActionScriptConditionJPanel) return JTextField_Access;
-   procedure setMinBlueJTextField (This : in out ColorAtActionScriptConditionJPanel; minBlueJTextField_Param : access JTextField'Class);
+   procedure setMinBlueJTextField (This : in out ColorAtActionScriptConditionJPanel; minBlueJTextField_Param : access JTextField_Package.JTextField'Class);
    function getMinGreenJTextField (This : in out ColorAtActionScriptConditionJPanel) return JTextField_Access;
-   procedure setMinGreenJTextField (This : in out ColorAtActionScriptConditionJPanel; minGreenJTextField_Param : access JTextField'Class);
+   procedure setMinGreenJTextField (This : in out ColorAtActionScriptConditionJPanel; minGreenJTextField_Param : access JTextField_Package.JTextField'Class);
    function getMinRedJTextField (This : in out ColorAtActionScriptConditionJPanel) return JTextField_Access;
-   procedure setMinRedJTextField (This : in out ColorAtActionScriptConditionJPanel; minRedJTextField_Param : access JTextField'Class);
+   procedure setMinRedJTextField (This : in out ColorAtActionScriptConditionJPanel; minRedJTextField_Param : access JTextField_Package.JTextField'Class);
    function getYJLabel (This : in out ColorAtActionScriptConditionJPanel) return JLabel_Access;
-   procedure setYJLabel (This : in out ColorAtActionScriptConditionJPanel; yJLabel_Param : access JLabel'Class);
+   procedure setYJLabel (This : in out ColorAtActionScriptConditionJPanel; yJLabel_Param : access JLabel_Package.JLabel'Class);
    function getColorAtActionJDialog (This : in out ColorAtActionScriptConditionJPanel) return JDialog_Access;
-   procedure setColorAtActionJDialog (This : in out ColorAtActionScriptConditionJPanel; colorAtActionJDialog_Param : access JDialog'Class);
+   procedure setColorAtActionJDialog (This : in out ColorAtActionScriptConditionJPanel; colorAtActionJDialog_Param : access JDialog_Package.JDialog'Class);
    procedure initComponents (This : in out ColorAtActionScriptConditionJPanel);
-   procedure okJButtonActionPerformed (This : in out ColorAtActionScriptConditionJPanel; evt_Param : access ActionEvent'Class);
-   procedure colorAtActionJButtonActionPerformed (This : in out ColorAtActionScriptConditionJPanel; evt_Param : access ActionEvent'Class);
+   procedure okJButtonActionPerformed (This : in out ColorAtActionScriptConditionJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
+   procedure colorAtActionJButtonActionPerformed (This : in out ColorAtActionScriptConditionJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
 
 end org.allbinary.input.automation.actions.script.condition.ColorAtActionScriptConditionJPanel_Package;
 

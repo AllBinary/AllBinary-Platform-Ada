@@ -26,23 +26,23 @@ package body org.allbinary.game.layer.RTSLayerCompositePaintable_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out RTSLayerCompositePaintable'Class; upgradableRTSLayerHudPaintable_Param : access UpgradableRTSLayerHudPaintable'Class) is
-      upgradableRTSLayerHudPaintable : UpgradableRTSLayerHudPaintable_Access := UpgradableRTSLayerHudPaintable_Access (upgradableRTSLayerHudPaintable_Param);
+   procedure Initialize (This : in out RTSLayerCompositePaintable'Class; upgradableRTSLayerHudPaintable_Param : access UpgradableRTSLayerHudPaintable_Package.UpgradableRTSLayerHudPaintable'Class) is
+      upgradableRTSLayerHudPaintable : constant UpgradableRTSLayerHudPaintable_Access := UpgradableRTSLayerHudPaintable_Access (upgradableRTSLayerHudPaintable_Param);
    begin
       Paintable_Package.Initialize (This);
       Initialize_Fields (This);
         This.upgradableRTSLayerHudPaintable := upgradableRTSLayerHudPaintable;
    end Initialize;
 
-   function Create (upgradableRTSLayerHudPaintable_Param : access UpgradableRTSLayerHudPaintable'Class) return RTSLayerCompositePaintable_Access is
+   function Create (upgradableRTSLayerHudPaintable_Param : access UpgradableRTSLayerHudPaintable_Package.UpgradableRTSLayerHudPaintable'Class) return RTSLayerCompositePaintable_Access is
       This : constant RTSLayerCompositePaintable_Access := new RTSLayerCompositePaintable;
    begin
       RTSLayerCompositePaintable_Package.Initialize (This.all, upgradableRTSLayerHudPaintable_Param);
       return This;
    end Create;
 
-   procedure update (This : in out RTSLayerCompositePaintable; rtsLayer_Param : access RTSLayer'Class) is
-      rtsLayer : RTSLayer_Access := RTSLayer_Access (rtsLayer_Param);
+   procedure update (This : in out RTSLayerCompositePaintable; rtsLayer_Param : access RTSLayer_Package.RTSLayer'Class) is
+      rtsLayer : constant RTSLayer_Access := RTSLayer_Access (rtsLayer_Param);
    begin
         if rtsLayer.isUpgradeable then
             This.setUpgradeCost (StringMaker_Package.Create.append (This.UPGRADE).appendint (Integer (rtsLayer.getUpgradeCost)).toString);
@@ -56,8 +56,8 @@ package body org.allbinary.game.layer.RTSLayerCompositePaintable_Package is
         end if;
    end update;
 
-   procedure paint (This : in out RTSLayerCompositePaintable; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out RTSLayerCompositePaintable; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         graphics.drawString (This.getDownGradeCost, This.upgradableRTSLayerHudPaintable.textX, This.upgradableRTSLayerHudPaintable.costY1, 0);
         graphics.drawString (This.getUpgradeCost, This.upgradableRTSLayerHudPaintable.textX, This.upgradableRTSLayerHudPaintable.costY, 0);

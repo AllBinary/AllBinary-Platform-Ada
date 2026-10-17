@@ -81,8 +81,8 @@ package body org.allbinary.thread.ThreadPool_Package is
         end if;
    end init;
 
-   procedure runTaskWithPriority (This : in out ThreadPool; task_Id_Param : access PriorityRunnable'Class) is
-      task_Id : PriorityRunnable_Access := PriorityRunnable_Access (task_Id_Param);
+   procedure runTaskWithPriority (This : in out ThreadPool; task_Id_Param : access PriorityRunnable_Package.PriorityRunnable'Class) is
+      task_Id : constant PriorityRunnable_Access := PriorityRunnable_Access (task_Id_Param);
       size : Integer;
       runnable : PriorityRunnable_Access;
       lowerPriorityRunnable : PriorityRunnable_Access;
@@ -111,8 +111,8 @@ package body org.allbinary.thread.ThreadPool_Package is
         end if;
    end runTaskWithPriority;
 
-   procedure runTask (This : in out ThreadPool; task_Id_Param : access Runnable'Class) is
-      task_Id : Runnable_Access := Runnable_Access (task_Id_Param);
+   procedure runTask (This : in out ThreadPool; task_Id_Param : access Runnable_Package.Runnable'Class) is
+      task_Id : constant Runnable_Access := Runnable_Access (task_Id_Param);
    begin
         if not (This.isAlive) then
             This.init;
@@ -180,14 +180,14 @@ package body org.allbinary.thread.ThreadPool_Package is
         end if;
    end threadStopped;
 
-   procedure startTask (This : in out ThreadPool; task_Id_Param : access Runnable'Class) is
-      task_Id : Runnable_Access := Runnable_Access (task_Id_Param);
+   procedure startTask (This : in out ThreadPool; task_Id_Param : access Runnable_Package.Runnable'Class) is
+      task_Id : constant Runnable_Access := Runnable_Access (task_Id_Param);
    begin
         null;
    end startTask;
 
-   procedure completedTask (This : in out ThreadPool; task_Id_Param : access Runnable'Class) is
-      task_Id : Runnable_Access := Runnable_Access (task_Id_Param);
+   procedure completedTask (This : in out ThreadPool; task_Id_Param : access Runnable_Package.Runnable'Class) is
+      task_Id : constant Runnable_Access := Runnable_Access (task_Id_Param);
    begin
         null;
    end completedTask;

@@ -61,9 +61,9 @@ package body org.allbinary.input.DirectionalAnalogLocationInputProcessor_Package
       return This;
    end Create;
 
-   procedure process (This : in out DirectionalAnalogLocationInputProcessor; allbinaryLayerManager_Param : access AllBinaryLayerManager'Class; analogLocationInput_Param : access AnalogLocationInput'Class) is
-      allbinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allbinaryLayerManager_Param);
-      analogLocationInput : AnalogLocationInput_Access := AnalogLocationInput_Access (analogLocationInput_Param);
+   procedure process (This : in out DirectionalAnalogLocationInputProcessor; allbinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; analogLocationInput_Param : access AnalogLocationInput_Package.AnalogLocationInput'Class) is
+      allbinaryLayerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allbinaryLayerManager_Param);
+      analogLocationInput : constant AnalogLocationInput_Access := AnalogLocationInput_Access (analogLocationInput_Param);
       customGPoint : CustomGPoint_Access;
       x : Integer;
       y : Integer;

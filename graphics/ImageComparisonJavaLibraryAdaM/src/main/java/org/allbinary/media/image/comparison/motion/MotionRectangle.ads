@@ -42,12 +42,12 @@ package org.allbinary.media.image.comparison.motion.MotionRectangle_Package is
       pixelDeltaVector : BasicArrayList_Access;
    end record;
 
-   procedure Initialize (This : in out MotionRectangle'Class; rectangle_Param : access Rectangle'Class);
-   function Create (rectangle_Param : access Rectangle'Class) return MotionRectangle_Access;
+   procedure Initialize (This : in out MotionRectangle'Class; rectangle_Param : access Rectangle_Package.Rectangle'Class);
+   function Create (rectangle_Param : access Rectangle_Package.Rectangle'Class) return MotionRectangle_Access;
    function getRectangle (This : in out MotionRectangle) return Rectangle_Access;
-   procedure setRectangle (This : in out MotionRectangle; rectangle_Param : access Rectangle'Class);
+   procedure setRectangle (This : in out MotionRectangle; rectangle_Param : access Rectangle_Package.Rectangle'Class);
    function getPixelDeltaVector (This : in out MotionRectangle) return BasicArrayList_Access;
-   procedure setPixelDeltaVector (This : in out MotionRectangle; pixelDeltaVector_Param : access BasicArrayList'Class);
+   procedure setPixelDeltaVector (This : in out MotionRectangle; pixelDeltaVector_Param : access BasicArrayList_Package.BasicArrayList'Class);
    function clone (This : in out MotionRectangle) return Java_Object_Access;
 
 end org.allbinary.media.image.comparison.motion.MotionRectangle_Package;

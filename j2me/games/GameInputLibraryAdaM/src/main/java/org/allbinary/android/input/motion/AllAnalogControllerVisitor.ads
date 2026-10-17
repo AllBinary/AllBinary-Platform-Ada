@@ -43,7 +43,7 @@ package org.allbinary.android.input.motion.AllAnalogControllerVisitor_Package is
 
    procedure Initialize (This : in out AllAnalogControllerVisitor'Class);
    function Create return AllAnalogControllerVisitor_Access;
-   procedure process (This : in out AllAnalogControllerVisitor; allbinaryLayerManager_Param : access AllBinaryLayerManager'Class; analogLocationInputProcessor_Param : access AnalogLocationInputProcessor'Class);
+   procedure process (This : in out AllAnalogControllerVisitor; allbinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; analogLocationInputProcessor_Param : access AnalogLocationInputProcessor_Package.AnalogLocationInputProcessor'Class);
 
 end org.allbinary.android.input.motion.AllAnalogControllerVisitor_Package;
 

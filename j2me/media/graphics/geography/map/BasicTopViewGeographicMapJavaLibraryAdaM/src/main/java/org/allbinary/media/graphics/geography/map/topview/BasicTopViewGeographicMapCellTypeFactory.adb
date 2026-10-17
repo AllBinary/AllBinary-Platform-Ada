@@ -29,8 +29,8 @@ package body org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeog
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasicTopViewGeographicMapCellTypeFactory'Class; tileTypeToTileIdsMap_Param : access ABHashtable'Class; maxTileId : Integer) is
-      tileTypeToTileIdsMap : ABHashtable_Access := ABHashtable_Access (tileTypeToTileIdsMap_Param);
+   procedure Initialize (This : in out BasicTopViewGeographicMapCellTypeFactory'Class; tileTypeToTileIdsMap_Param : access ABHashtable_Package.ABHashtable'Class; maxTileId : Integer) is
+      tileTypeToTileIdsMap : constant ABHashtable_Access := ABHashtable_Access (tileTypeToTileIdsMap_Param);
       commonStrings : CommonStrings_Access;
       basicTopViewGeographicMapStrings : BasicTopViewGeographicMapStrings_Access;
       geographicMapCellTypeFactory : GeographicMapCellTypeFactory_Access;
@@ -123,7 +123,7 @@ package body org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeog
         end if;
    end Initialize;
 
-   function Create (tileTypeToTileIdsMap_Param : access ABHashtable'Class; maxTileId : Integer) return BasicTopViewGeographicMapCellTypeFactory_Access is
+   function Create (tileTypeToTileIdsMap_Param : access ABHashtable_Package.ABHashtable'Class; maxTileId : Integer) return BasicTopViewGeographicMapCellTypeFactory_Access is
       This : constant BasicTopViewGeographicMapCellTypeFactory_Access := new BasicTopViewGeographicMapCellTypeFactory;
    begin
       BasicTopViewGeographicMapCellTypeFactory_Package.Initialize (This.all, tileTypeToTileIdsMap_Param, maxTileId);
@@ -145,8 +145,8 @@ package body org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeog
         return This.FLOOR_CELL_TYPE.getTypes (0);
    end getEmptyType;
 
-   function isPath (This : in out BasicTopViewGeographicMapCellTypeFactory; cellType_Param : access GeographicMapCellType'Class) return Boolean is
-      cellType : GeographicMapCellType_Access := GeographicMapCellType_Access (cellType_Param);
+   function isPath (This : in out BasicTopViewGeographicMapCellTypeFactory; cellType_Param : access GeographicMapCellType_Package.GeographicMapCellType'Class) return Boolean is
+      cellType : constant GeographicMapCellType_Access := GeographicMapCellType_Access (cellType_Param);
    begin
         if This.FLOOR_CELL_TYPE.isType (cellType) then
             return True;
@@ -159,7 +159,7 @@ package body org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeog
         return StringMaker_Package.Create.append (To_Unbounded_String ("key: WALL/BLOCK_CELL_TYPE: ")).append (This.BLOCK_CELL_TYPE.toString).append (To_Unbounded_String ("key: FLOOR_CELL_TYPE: ")).append (This.FLOOR_CELL_TYPE.toString).append (To_Unbounded_String ("key: OTHER_CELL_TYPE: ")).append (This.OTHER_CELL_TYPE.toString).append (To_Unbounded_String ("key: OFF_MAP_CELL_TYPE: ")).append (This.OFF_MAP_CELL_TYPE.toString).append (To_Unbounded_String ("key: DOOR_CELL_TYPE: ")).append (This.DOOR_CELL_TYPE.toString).append (To_Unbounded_String ("key: STAIRS_DOWN_CELL_TYPE: ")).append (This.STAIRS_DOWN_CELL_TYPE.toString).append (To_Unbounded_String ("key: STAIRS_UP_CELL_TYPE: ")).append (This.STAIRS_UP_CELL_TYPE.toString).toString;
    end toString;
 
-   procedure isPath (This : in out BasicTopViewGeographicMapCellTypeFactory; cellType_Param : access GeographicMapCellType'Class) is
+   procedure isPath (This : in out BasicTopViewGeographicMapCellTypeFactory; cellType_Param : access GeographicMapCellType_Package.GeographicMapCellType'Class) is
       Java_Result : constant Boolean := BasicTopViewGeographicMapCellTypeFactory'Class (This).isPath (cellType_Param);
       pragma Unreferenced (Java_Result);
    begin

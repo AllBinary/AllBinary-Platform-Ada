@@ -62,13 +62,13 @@ package org.allbinary.image.opengles.OpenGLImageCache_Package is
    procedure Initialize (This : in out OpenGLImageCache'Class);
    function Create return OpenGLImageCache_Access;
    procedure addListener (This : in out OpenGLImageCache; renderer_Param : access Java_Object'Class);
-   procedure update (This : in out OpenGLImageCache; gl_Param : access GL10'Class);
+   procedure update (This : in out OpenGLImageCache; gl_Param : access GL10_Package.GL10'Class);
    function createImage (This : in out OpenGLImageCache; caller : Unbounded_String; width_Param : Integer; height_Param : Integer) return Image_Access;
    procedure createImage (This : in out OpenGLImageCache; caller : Unbounded_String; width_Param : Integer; height_Param : Integer);
-   function createImageFromInputStream (This : in out OpenGLImageCache; key_Param : access Java_Object'Class; inputStream_Param : access InputStream'Class) return Image_Access;
-   procedure createImageFromInputStream (This : in out OpenGLImageCache; key_Param : access Java_Object'Class; inputStream_Param : access InputStream'Class);
+   function createImageFromInputStream (This : in out OpenGLImageCache; key_Param : access Java_Object'Class; inputStream_Param : access InputStream_Package.InputStream'Class) return Image_Access;
+   procedure createImageFromInputStream (This : in out OpenGLImageCache; key_Param : access Java_Object'Class; inputStream_Param : access InputStream_Package.InputStream'Class);
    function getGlP (This : in out OpenGLImageCache) return GL10_Access;
-   procedure init (This : in out OpenGLImageCache; image_Param : access Image'Class);
+   procedure init (This : in out OpenGLImageCache; image_Param : access Image_Package.Image'Class);
 
 end org.allbinary.image.opengles.OpenGLImageCache_Package;
 

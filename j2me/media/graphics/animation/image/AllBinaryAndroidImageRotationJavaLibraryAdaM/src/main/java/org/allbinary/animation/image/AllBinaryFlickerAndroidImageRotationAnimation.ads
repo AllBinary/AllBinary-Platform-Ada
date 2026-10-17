@@ -53,10 +53,10 @@ package org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationAnimat
       originalImage : Image_Access;
    end record;
 
-   procedure Initialize (This : in out AllBinaryFlickerAndroidImageRotationAnimation'Class; originalImage_Param : access Image'Class; image_Param : access Image'Class; angleInfo_Param : access AngleInfo'Class; totalAngle : Short_Integer; animationBehavior_Param : access AnimationBehavior'Class);
-   function Create (originalImage_Param : access Image'Class; image_Param : access Image'Class; angleInfo_Param : access AngleInfo'Class; totalAngle : Short_Integer; animationBehavior_Param : access AnimationBehavior'Class) return AllBinaryFlickerAndroidImageRotationAnimation_Access;
-   procedure setBasicColorP (This : in out AllBinaryFlickerAndroidImageRotationAnimation; basicColor_Param : access BasicColor'Class);
-   procedure changeBasicColor (This : in out AllBinaryFlickerAndroidImageRotationAnimation; basicColor_Param : access BasicColor'Class);
+   procedure Initialize (This : in out AllBinaryFlickerAndroidImageRotationAnimation'Class; originalImage_Param : access Image_Package.Image'Class; image_Param : access Image_Package.Image'Class; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; totalAngle : Short_Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class);
+   function Create (originalImage_Param : access Image_Package.Image'Class; image_Param : access Image_Package.Image'Class; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; totalAngle : Short_Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return AllBinaryFlickerAndroidImageRotationAnimation_Access;
+   procedure setBasicColorP (This : in out AllBinaryFlickerAndroidImageRotationAnimation; basicColor_Param : access BasicColor_Package.BasicColor'Class);
+   procedure changeBasicColor (This : in out AllBinaryFlickerAndroidImageRotationAnimation; basicColor_Param : access BasicColor_Package.BasicColor'Class);
    procedure setAlpha (This : in out AllBinaryFlickerAndroidImageRotationAnimation; alpha : Integer);
    procedure nextRotation (This : in out AllBinaryFlickerAndroidImageRotationAnimation);
    procedure previousRotation (This : in out AllBinaryFlickerAndroidImageRotationAnimation);

@@ -16,11 +16,11 @@ package body org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_P
 
 
    --  throws Exception
-   function createForm (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; rectangle_Param : access Rectangle'Class; formType_Param : access FormType'Class; border : Integer; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return ScrollSelectionForm_Access is
-      rectangle : Rectangle_Access := Rectangle_Access (rectangle_Param);
-      formType : FormType_Access := FormType_Access (formType_Param);
-      backgroundBasicColor : BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
-      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
+   function createForm (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; rectangle_Param : access Rectangle_Package.Rectangle'Class; formType_Param : access FormType_Package.FormType'Class; border : Integer; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return ScrollSelectionForm_Access is
+      rectangle : constant Rectangle_Access := Rectangle_Access (rectangle_Param);
+      formType : constant FormType_Access := FormType_Access (formType_Param);
+      backgroundBasicColor : constant BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
+      foregroundBasicColor : constant BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
       scrollSelectionForm : ScrollSelectionForm_Access;
    begin
         scrollSelectionForm := MultipleScrollSelectionHorizontalForm_Package.Create (title, items, ItemPaintableFactory_Package.getInstance, border, backgroundBasicColor, foregroundBasicColor);
@@ -28,10 +28,10 @@ package body org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_P
         return scrollSelectionForm;
    end createForm;
 
-   procedure Initialize (This : in out MultipleScrollSelectionHorizontalForm'Class; title : Unbounded_String; items : ABCustomItem_Access_Array_Access; formPaintableFactory_Param : access ItemPaintableFactory'Class; border : Integer; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) is
-      formPaintableFactory : ItemPaintableFactory_Access := ItemPaintableFactory_Access (formPaintableFactory_Param);
-      backgroundBasicColor : BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
-      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
+   procedure Initialize (This : in out MultipleScrollSelectionHorizontalForm'Class; title : Unbounded_String; items : ABCustomItem_Access_Array_Access; formPaintableFactory_Param : access ItemPaintableFactory_Package.ItemPaintableFactory'Class; border : Integer; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      formPaintableFactory : constant ItemPaintableFactory_Access := ItemPaintableFactory_Access (formPaintableFactory_Param);
+      backgroundBasicColor : constant BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
+      foregroundBasicColor : constant BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
    begin
         ScrollSelectionForm_Package.Initialize (This, title, items, formPaintableFactory, border, 3, backgroundBasicColor, foregroundBasicColor);
         Initialize_Fields (This);
@@ -43,24 +43,24 @@ package body org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_P
         end if;
    end Initialize;
 
-   function Create (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; formPaintableFactory_Param : access ItemPaintableFactory'Class; border : Integer; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return MultipleScrollSelectionHorizontalForm_Access is
+   function Create (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; formPaintableFactory_Param : access ItemPaintableFactory_Package.ItemPaintableFactory'Class; border : Integer; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return MultipleScrollSelectionHorizontalForm_Access is
       This : constant MultipleScrollSelectionHorizontalForm_Access := new MultipleScrollSelectionHorizontalForm;
    begin
       MultipleScrollSelectionHorizontalForm_Package.Initialize (This.all, title, items, formPaintableFactory_Param, border, backgroundBasicColor_Param, foregroundBasicColor_Param);
       return This;
    end Create;
 
-   procedure fillRect (This : in out MultipleScrollSelectionHorizontalForm; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure fillRect (This : in out MultipleScrollSelectionHorizontalForm; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         graphics.setColor (This.backgroundColor);
         graphics.fillRect (This.x, This.y, This.rectangle.getWidth, This.rectangle.getHeight);
    end fillRect;
 
    --  throws Exception
-   procedure init (This : in out MultipleScrollSelectionHorizontalForm; rectangle_Param : access Rectangle'Class; formType_Param : access FormType'Class) is
-      rectangle : Rectangle_Access := Rectangle_Access (rectangle_Param);
-      formType : FormType_Access := FormType_Access (formType_Param);
+   procedure init (This : in out MultipleScrollSelectionHorizontalForm; rectangle_Param : access Rectangle_Package.Rectangle'Class; formType_Param : access FormType_Package.FormType'Class) is
+      rectangle : constant Rectangle_Access := Rectangle_Access (rectangle_Param);
+      formType : constant FormType_Access := FormType_Access (formType_Param);
       formTypeFactory : FormTypeFactory_Access;
    begin
         ScrollSelectionForm (This).init (rectangle, formType);
@@ -76,8 +76,8 @@ package body org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_P
         end if;
    end init;
 
-   procedure updateMeasurement (This : in out MultipleScrollSelectionHorizontalForm; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure updateMeasurement (This : in out MultipleScrollSelectionHorizontalForm; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
    begin
         font := graphics.getFont;
@@ -86,9 +86,9 @@ package body org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_P
    end updateMeasurement;
 
    --  throws Exception
-   function paintHorizontal (This : in out MultipleScrollSelectionHorizontalForm; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; dx_Param : Integer; dy : Integer) return Integer is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
-      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
+   function paintHorizontal (This : in out MultipleScrollSelectionHorizontalForm; graphics_Param : access Graphics_Package.Graphics'Class; index : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class; dx_Param : Integer; dy : Integer) return Integer is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
+      item : constant ABCustomItem_Access := ABCustomItem_Access (item_Param);
       dx : Integer := dx_Param;
       dx2 : Integer;
    begin
@@ -99,9 +99,9 @@ package body org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_P
    end paintHorizontal;
 
    --  throws Exception
-   function paintVertical (This : in out MultipleScrollSelectionHorizontalForm; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; dx : Integer; dy : Integer) return Integer is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
-      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
+   function paintVertical (This : in out MultipleScrollSelectionHorizontalForm; graphics_Param : access Graphics_Package.Graphics'Class; index : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class; dx : Integer; dy : Integer) return Integer is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
+      item : constant ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
         This.paintItem (graphics, index, item, dx, dy);
         This.paintable.paint (graphics, index, dx, dy);
@@ -113,8 +113,8 @@ package body org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_P
         return This.getSelectedIndex;
    end getStartIndex;
 
-   procedure paint (This : in out MultipleScrollSelectionHorizontalForm; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out MultipleScrollSelectionHorizontalForm; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       start : Integer;
       size : Integer;
       dx : Integer;
@@ -153,21 +153,21 @@ package body org.allbinary.graphics.form.MultipleScrollSelectionHorizontalForm_P
         end;
    end paint;
 
-   procedure createForm (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; rectangle_Param : access Rectangle'Class; formType_Param : access FormType'Class; border : Integer; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) is
+   procedure createForm (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; rectangle_Param : access Rectangle_Package.Rectangle'Class; formType_Param : access FormType_Package.FormType'Class; border : Integer; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) is
       Java_Result : constant ScrollSelectionForm_Access := createForm (title, items, rectangle_Param, formType_Param, border, backgroundBasicColor_Param, foregroundBasicColor_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createForm;
 
-   procedure paintHorizontal (This : in out MultipleScrollSelectionHorizontalForm; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; dx_Param : Integer; dy : Integer) is
+   procedure paintHorizontal (This : in out MultipleScrollSelectionHorizontalForm; graphics_Param : access Graphics_Package.Graphics'Class; index : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class; dx_Param : Integer; dy : Integer) is
       Java_Result : constant Integer := MultipleScrollSelectionHorizontalForm'Class (This).paintHorizontal (graphics_Param, index, item_Param, dx_Param, dy);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end paintHorizontal;
 
-   procedure paintVertical (This : in out MultipleScrollSelectionHorizontalForm; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; dx : Integer; dy : Integer) is
+   procedure paintVertical (This : in out MultipleScrollSelectionHorizontalForm; graphics_Param : access Graphics_Package.Graphics'Class; index : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class; dx : Integer; dy : Integer) is
       Java_Result : constant Integer := MultipleScrollSelectionHorizontalForm'Class (This).paintVertical (graphics_Param, index, item_Param, dx, dy);
       pragma Unreferenced (Java_Result);
    begin
@@ -186,15 +186,15 @@ package body org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPa
    end Initialize_Fields;
 
     
-   procedure Initialize (This : in out MultipleScrollSelectionFormHorizontalPaintable'Class; multipleScrollSelectionForm_Param : access MultipleScrollSelectionHorizontalForm'Class) is
-      multipleScrollSelectionForm : MultipleScrollSelectionHorizontalForm_Access := MultipleScrollSelectionHorizontalForm_Access (multipleScrollSelectionForm_Param);
+   procedure Initialize (This : in out MultipleScrollSelectionFormHorizontalPaintable'Class; multipleScrollSelectionForm_Param : access MultipleScrollSelectionHorizontalForm_Package.MultipleScrollSelectionHorizontalForm'Class) is
+      multipleScrollSelectionForm : constant MultipleScrollSelectionHorizontalForm_Access := MultipleScrollSelectionHorizontalForm_Access (multipleScrollSelectionForm_Param);
    begin
       ItemIndexPaintable_Package.Initialize (This);
       Initialize_Fields (This);
             This.multipleScrollSelectionForm := multipleScrollSelectionForm;
    end Initialize;
 
-   function Create (multipleScrollSelectionForm_Param : access MultipleScrollSelectionHorizontalForm'Class) return MultipleScrollSelectionFormHorizontalPaintable_Access is
+   function Create (multipleScrollSelectionForm_Param : access MultipleScrollSelectionHorizontalForm_Package.MultipleScrollSelectionHorizontalForm'Class) return MultipleScrollSelectionFormHorizontalPaintable_Access is
       This : constant MultipleScrollSelectionFormHorizontalPaintable_Access := new MultipleScrollSelectionFormHorizontalPaintable;
    begin
       MultipleScrollSelectionFormHorizontalPaintable_Package.Initialize (This.all, multipleScrollSelectionForm_Param);
@@ -202,14 +202,14 @@ package body org.allbinary.graphics.form.MultipleScrollSelectionFormHorizontalPa
    end Create;
     
    --  throws Exception
-   function paint (This : in out MultipleScrollSelectionFormHorizontalPaintable; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; dx : Integer; dy : Integer) return Integer is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
-      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
+   function paint (This : in out MultipleScrollSelectionFormHorizontalPaintable; graphics_Param : access Graphics_Package.Graphics'Class; index : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class; dx : Integer; dy : Integer) return Integer is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
+      item : constant ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
             return This.multipleScrollSelectionForm.paintHorizontal (graphics, index, item, dx, dy);
    end paint;
 
-   procedure paint (This : in out MultipleScrollSelectionFormHorizontalPaintable; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; dx : Integer; dy : Integer) is
+   procedure paint (This : in out MultipleScrollSelectionFormHorizontalPaintable; graphics_Param : access Graphics_Package.Graphics'Class; index : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class; dx : Integer; dy : Integer) is
       Java_Result : constant Integer := MultipleScrollSelectionFormHorizontalPaintable'Class (This).paint (graphics_Param, index, item_Param, dx, dy);
       pragma Unreferenced (Java_Result);
    begin
@@ -228,15 +228,15 @@ package body org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPain
    end Initialize_Fields;
 
     
-   procedure Initialize (This : in out MultipleScrollSelectionFormVerticalPaintable'Class; multipleScrollSelectionForm_Param : access MultipleScrollSelectionHorizontalForm'Class) is
-      multipleScrollSelectionForm : MultipleScrollSelectionHorizontalForm_Access := MultipleScrollSelectionHorizontalForm_Access (multipleScrollSelectionForm_Param);
+   procedure Initialize (This : in out MultipleScrollSelectionFormVerticalPaintable'Class; multipleScrollSelectionForm_Param : access MultipleScrollSelectionHorizontalForm_Package.MultipleScrollSelectionHorizontalForm'Class) is
+      multipleScrollSelectionForm : constant MultipleScrollSelectionHorizontalForm_Access := MultipleScrollSelectionHorizontalForm_Access (multipleScrollSelectionForm_Param);
    begin
       ItemIndexPaintable_Package.Initialize (This);
       Initialize_Fields (This);
             This.multipleScrollSelectionForm := multipleScrollSelectionForm;
    end Initialize;
 
-   function Create (multipleScrollSelectionForm_Param : access MultipleScrollSelectionHorizontalForm'Class) return MultipleScrollSelectionFormVerticalPaintable_Access is
+   function Create (multipleScrollSelectionForm_Param : access MultipleScrollSelectionHorizontalForm_Package.MultipleScrollSelectionHorizontalForm'Class) return MultipleScrollSelectionFormVerticalPaintable_Access is
       This : constant MultipleScrollSelectionFormVerticalPaintable_Access := new MultipleScrollSelectionFormVerticalPaintable;
    begin
       MultipleScrollSelectionFormVerticalPaintable_Package.Initialize (This.all, multipleScrollSelectionForm_Param);
@@ -244,14 +244,14 @@ package body org.allbinary.graphics.form.MultipleScrollSelectionFormVerticalPain
    end Create;
     
    --  throws Exception
-   function paint (This : in out MultipleScrollSelectionFormVerticalPaintable; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; dx : Integer; dy : Integer) return Integer is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
-      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
+   function paint (This : in out MultipleScrollSelectionFormVerticalPaintable; graphics_Param : access Graphics_Package.Graphics'Class; index : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class; dx : Integer; dy : Integer) return Integer is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
+      item : constant ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
             return This.multipleScrollSelectionForm.paintVertical (graphics, index, item, dx, dy);
    end paint;
 
-   procedure paint (This : in out MultipleScrollSelectionFormVerticalPaintable; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; dx : Integer; dy : Integer) is
+   procedure paint (This : in out MultipleScrollSelectionFormVerticalPaintable; graphics_Param : access Graphics_Package.Graphics'Class; index : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class; dx : Integer; dy : Integer) is
       Java_Result : constant Integer := MultipleScrollSelectionFormVerticalPaintable'Class (This).paint (graphics_Param, index, item_Param, dx, dy);
       pragma Unreferenced (Java_Result);
    begin

@@ -31,7 +31,7 @@ package org.allbinary.input.event.VirtualKeyboardEventListenerInterface_Package 
    type VirtualKeyboardEventListenerInterface_Access is access all VirtualKeyboardEventListenerInterface'Class;
    type VirtualKeyboardEventListenerInterface_Access_Array is array (Natural range <>) of VirtualKeyboardEventListenerInterface_Access;
    type VirtualKeyboardEventListenerInterface_Access_Array_Access is access all VirtualKeyboardEventListenerInterface_Access_Array;
-   procedure onVirtualKeyboardEvent (This : in out VirtualKeyboardEventListenerInterface; virtualKeyboardEvent_Param : access VirtualKeyboardEvent'Class) is abstract;
+   procedure onVirtualKeyboardEvent (This : in out VirtualKeyboardEventListenerInterface; virtualKeyboardEvent_Param : access VirtualKeyboardEvent_Package.VirtualKeyboardEvent'Class) is abstract;
 
 end org.allbinary.input.event.VirtualKeyboardEventListenerInterface_Package;
 

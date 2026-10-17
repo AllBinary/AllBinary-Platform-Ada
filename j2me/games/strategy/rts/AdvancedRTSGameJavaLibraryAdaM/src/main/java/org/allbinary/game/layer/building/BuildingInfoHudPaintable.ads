@@ -69,11 +69,11 @@ package org.allbinary.game.layer.building.BuildingInfoHudPaintable_Package is
    procedure Initialize (This : in out BuildingInfoHudPaintable'Class);
    function Create return BuildingInfoHudPaintable_Access;
    function getInstance return BuildingInfoHudPaintable_Access;
-   procedure updateMeasurement (This : in out BuildingInfoHudPaintable; graphics_Param : access Graphics'Class);
-   procedure setBasicColorP (This : in out BuildingInfoHudPaintable; basicColor_Param : access BasicColor'Class);
-   procedure paint (This : in out BuildingInfoHudPaintable; graphics_Param : access Graphics'Class);
+   procedure updateMeasurement (This : in out BuildingInfoHudPaintable; graphics_Param : access Graphics_Package.Graphics'Class);
+   procedure setBasicColorP (This : in out BuildingInfoHudPaintable; basicColor_Param : access BasicColor_Package.BasicColor'Class);
+   procedure paint (This : in out BuildingInfoHudPaintable; graphics_Param : access Graphics_Package.Graphics'Class);
    procedure updateSelectionInfo (This : in out BuildingInfoHudPaintable);
-   procedure setRtsLayer (This : in out BuildingInfoHudPaintable; rtsLayer_Param : access PathFindingLayerInterface'Class);
+   procedure setRtsLayer (This : in out BuildingInfoHudPaintable; rtsLayer_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class);
 
 end org.allbinary.game.layer.building.BuildingInfoHudPaintable_Package;
 

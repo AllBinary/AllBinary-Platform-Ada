@@ -40,8 +40,8 @@ package org.allbinary.business.user.modules.admin.store.order.adjust.AdjustOrder
    procedure Initialize (This : in out AdjustOrderStoreAdminUserFactory'Class);
    function Create return AdjustOrderStoreAdminUserFactory_Access;
    function getInstance (This : in out AdjustOrderStoreAdminUserFactory) return UserInterface_Access;
-   function getInstance (This : in out AdjustOrderStoreAdminUserFactory; hashMap_Param : access HashMap'Class) return UserInterface_Access;
-   procedure getInstance (This : in out AdjustOrderStoreAdminUserFactory; hashMap_Param : access HashMap'Class);
+   function getInstance (This : in out AdjustOrderStoreAdminUserFactory; hashMap_Param : access HashMap_Package.HashMap'Class) return UserInterface_Access;
+   procedure getInstance (This : in out AdjustOrderStoreAdminUserFactory; hashMap_Param : access HashMap_Package.HashMap'Class);
 
 end org.allbinary.business.user.modules.admin.store.order.adjust.AdjustOrderStoreAdminUserFactory_Package;
 

@@ -25,8 +25,8 @@ package body org.allbinary.business.context.modules.storefront.statistics.RealTi
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out RealTimeStoreFrontStatistics'Class; storeFrontInterface_Param : access StoreFrontInterface'Class) is
-      storeFrontInterface : StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
+   procedure Initialize (This : in out RealTimeStoreFrontStatistics'Class; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) is
+      storeFrontInterface : constant StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
    begin
       Initialize_Fields (This);
         This.storeFrontAdvertisementsStatisticsInterface := StoreFrontAdvertisementsStatisticsInterface_Access (StoreFrontAdvertisementsStatistics_Package.Create (storeFrontInterface));
@@ -35,7 +35,7 @@ package body org.allbinary.business.context.modules.storefront.statistics.RealTi
         This.storeFrontOrderHistoryStatisticsInterface := StoreFrontOrdersHistoryStatisticsInterface_Access (StoreFrontOrdersHistoryStatistics_Package.Create (storeFrontInterface));
    end Initialize;
 
-   function Create (storeFrontInterface_Param : access StoreFrontInterface'Class) return RealTimeStoreFrontStatistics_Access is
+   function Create (storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) return RealTimeStoreFrontStatistics_Access is
       This : constant RealTimeStoreFrontStatistics_Access := new RealTimeStoreFrontStatistics;
    begin
       RealTimeStoreFrontStatistics_Package.Initialize (This.all, storeFrontInterface_Param);

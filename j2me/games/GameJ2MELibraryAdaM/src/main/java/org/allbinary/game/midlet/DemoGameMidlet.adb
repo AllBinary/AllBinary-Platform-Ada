@@ -21,13 +21,13 @@ package body org.allbinary.game.midlet.DemoGameMidlet_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out DemoGameMidlet'Class; clientInformationFactory_Param : access ClientInformationFactory'Class) is
-      clientInformationFactory : ClientInformationFactory_Access := ClientInformationFactory_Access (clientInformationFactory_Param);
+   procedure Initialize (This : in out DemoGameMidlet'Class; clientInformationFactory_Param : access ClientInformationFactory_Package.ClientInformationFactory'Class) is
+      clientInformationFactory : constant ClientInformationFactory_Access := ClientInformationFactory_Access (clientInformationFactory_Param);
    begin
         GameMidlet_Package.Initialize (This, clientInformationFactory);
    end Initialize;
 
-   function Create (clientInformationFactory_Param : access ClientInformationFactory'Class) return DemoGameMidlet_Access is
+   function Create (clientInformationFactory_Param : access ClientInformationFactory_Package.ClientInformationFactory'Class) return DemoGameMidlet_Access is
       This : constant DemoGameMidlet_Access := new DemoGameMidlet;
    begin
       DemoGameMidlet_Package.Initialize (This.all, clientInformationFactory_Param);
@@ -59,8 +59,8 @@ package body org.allbinary.game.midlet.DemoGameMidlet_Package is
    end createDemoGameCanvasRunnableInterface;
 
    --  throws Exception
-   function createGameCanvasRunnable (This : in out DemoGameMidlet; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class) return GameCanvasRunnableInterface_Access is
-      allBinaryGameLayerManager : AllBinaryGameLayerManager_Access := AllBinaryGameLayerManager_Access (allBinaryGameLayerManager_Param);
+   function createGameCanvasRunnable (This : in out DemoGameMidlet; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager_Package.AllBinaryGameLayerManager'Class) return GameCanvasRunnableInterface_Access is
+      allBinaryGameLayerManager : constant AllBinaryGameLayerManager_Access := AllBinaryGameLayerManager_Access (allBinaryGameLayerManager_Param);
    begin
         Java_Throw (Java_New_Exception ("Exception", This.commonStrings.NOT_IMPLEMENTED));
    end createGameCanvasRunnable;
@@ -112,7 +112,7 @@ package body org.allbinary.game.midlet.DemoGameMidlet_Package is
         return True;
    end isReady;
 
-   procedure createGameCanvasRunnable (This : in out DemoGameMidlet; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class) is
+   procedure createGameCanvasRunnable (This : in out DemoGameMidlet; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager_Package.AllBinaryGameLayerManager'Class) is
       Java_Result : constant GameCanvasRunnableInterface_Access := DemoGameMidlet'Class (This).createGameCanvasRunnable (allBinaryGameLayerManager_Param);
       pragma Unreferenced (Java_Result);
    begin

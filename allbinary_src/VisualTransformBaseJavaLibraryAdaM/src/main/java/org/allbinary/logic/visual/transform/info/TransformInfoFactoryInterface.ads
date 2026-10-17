@@ -31,7 +31,7 @@ package org.allbinary.logic.visual.transform.info.TransformInfoFactoryInterface_
    type TransformInfoFactoryInterface_Access is access all TransformInfoFactoryInterface'Class;
    type TransformInfoFactoryInterface_Access_Array is array (Natural range <>) of TransformInfoFactoryInterface_Access;
    type TransformInfoFactoryInterface_Access_Array_Access is access all TransformInfoFactoryInterface_Access_Array;
-   function getInstance (This : in out TransformInfoFactoryInterface; databaseHashMap_Param : access HashMap'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return TransformInfoInterface_Access is abstract;
+   function getInstance (This : in out TransformInfoFactoryInterface; databaseHashMap_Param : access HashMap_Package.HashMap'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return TransformInfoInterface_Access is abstract;
 
 end org.allbinary.logic.visual.transform.info.TransformInfoFactoryInterface_Package;
 

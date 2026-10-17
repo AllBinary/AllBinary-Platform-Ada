@@ -43,8 +43,8 @@ package org.allbinary.logic.communication.sql.AbSqlTable_Package is
       DROPPED_SUCCESS : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out AbSqlTable'Class; databaseConnectionInfoInterface_Param : access DbConnectionInfo'Class);
-   function Create (databaseConnectionInfoInterface_Param : access DbConnectionInfo'Class) return AbSqlTable_Access;
+   procedure Initialize (This : in out AbSqlTable'Class; databaseConnectionInfoInterface_Param : access DbConnectionInfo_Package.DbConnectionInfo'Class);
+   function Create (databaseConnectionInfoInterface_Param : access DbConnectionInfo_Package.DbConnectionInfo'Class) return AbSqlTable_Access;
    procedure setTableName (This : in out AbSqlTable; tableName : Unbounded_String);
    function getTableName (This : in out AbSqlTable) return Unbounded_String;
    function createTable (This : in out AbSqlTable; data : Unbounded_String) return Unbounded_String;

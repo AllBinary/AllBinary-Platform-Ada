@@ -38,8 +38,8 @@ package org.allbinary.graphics.form.ItemIndexPaintable_Package is
    procedure Initialize (This : in out ItemIndexPaintable'Class);
    function Create return ItemIndexPaintable_Access;
    function getInstance return ItemIndexPaintable_Access;
-   function paint (This : in out ItemIndexPaintable; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; dx : Integer; dy : Integer) return Integer;
-   procedure paint (This : in out ItemIndexPaintable; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; dx : Integer; dy : Integer);
+   function paint (This : in out ItemIndexPaintable; graphics_Param : access Graphics_Package.Graphics'Class; index : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class; dx : Integer; dy : Integer) return Integer;
+   procedure paint (This : in out ItemIndexPaintable; graphics_Param : access Graphics_Package.Graphics'Class; index : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class; dx : Integer; dy : Integer);
 
 end org.allbinary.graphics.form.ItemIndexPaintable_Package;
 

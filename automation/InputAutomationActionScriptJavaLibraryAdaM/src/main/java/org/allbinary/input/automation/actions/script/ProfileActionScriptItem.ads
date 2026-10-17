@@ -59,16 +59,16 @@ package org.allbinary.input.automation.actions.script.ProfileActionScriptItem_Pa
    NEW_JOYSTICK_INPUT : Unbounded_String;
    NEW_IMAGE_OUTPUT : Unbounded_String;
 
-   procedure Initialize (This : in out ProfileActionScriptItem'Class; label : Unbounded_String; node_Param : access Node'Class);
-   function Create (label : Unbounded_String; node_Param : access Node'Class) return ProfileActionScriptItem_Access;
+   procedure Initialize (This : in out ProfileActionScriptItem'Class; label : Unbounded_String; node_Param : access Node_Package.Node'Class);
+   function Create (label : Unbounded_String; node_Param : access Node_Package.Node'Class) return ProfileActionScriptItem_Access;
    procedure Initialize (This : in out ProfileActionScriptItem'Class; label : Unbounded_String);
    function Create (label : Unbounded_String) return ProfileActionScriptItem_Access;
    procedure init (This : in out ProfileActionScriptItem);
    procedure process (This : in out ProfileActionScriptItem; frame : Long_Long_Integer);
    function getJPopupMenu (This : in out ProfileActionScriptItem) return JPopupMenu_Access;
    procedure showDialog (This : in out ProfileActionScriptItem);
-   procedure actionPerformed (This : in out ProfileActionScriptItem; actionEvent_Param : access ActionEvent'Class);
-   procedure setJPopupMenu (This : in out ProfileActionScriptItem; jPopupMenu_Param : access JPopupMenu'Class);
+   procedure actionPerformed (This : in out ProfileActionScriptItem; actionEvent_Param : access ActionEvent_Package.ActionEvent'Class);
+   procedure setJPopupMenu (This : in out ProfileActionScriptItem; jPopupMenu_Param : access JPopupMenu_Package.JPopupMenu'Class);
 
 end org.allbinary.input.automation.actions.script.ProfileActionScriptItem_Package;
 

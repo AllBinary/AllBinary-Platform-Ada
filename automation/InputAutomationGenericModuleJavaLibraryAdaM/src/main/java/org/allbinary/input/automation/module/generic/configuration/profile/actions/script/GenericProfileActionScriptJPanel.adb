@@ -56,8 +56,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         return This.genericProfileActionScript;
    end getGenericProfileActionScript;
 
-   procedure setGenericProfileActionScript (This : in out GenericProfileActionScriptJPanel; genericProfileActionScript_Param : access GenericProfileActionScript'Class) is
-      genericProfileActionScript : GenericProfileActionScript_Access := GenericProfileActionScript_Access (genericProfileActionScript_Param);
+   procedure setGenericProfileActionScript (This : in out GenericProfileActionScriptJPanel; genericProfileActionScript_Param : access GenericProfileActionScript_Package.GenericProfileActionScript'Class) is
+      genericProfileActionScript : constant GenericProfileActionScript_Access := GenericProfileActionScript_Access (genericProfileActionScript_Param);
    begin
         This.genericProfileActionScript := genericProfileActionScript;
    end setGenericProfileActionScript;
@@ -67,8 +67,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         return This.actionScriptJTree;
    end getActionScriptJTree;
 
-   procedure setActionScriptJTree (This : in out GenericProfileActionScriptJPanel; actionScriptJTree_Param : access JTree'Class) is
-      actionScriptJTree : JTree_Access := JTree_Access (actionScriptJTree_Param);
+   procedure setActionScriptJTree (This : in out GenericProfileActionScriptJPanel; actionScriptJTree_Param : access JTree_Package.JTree'Class) is
+      actionScriptJTree : constant JTree_Access := JTree_Access (actionScriptJTree_Param);
    begin
         This.actionScriptJTree := actionScriptJTree;
    end setActionScriptJTree;
@@ -81,14 +81,14 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         This.actionScriptJTree.setPreferredSize (Dimension_Package.Create (500, 500));
         This.actionScriptJTree.addMouseListener (MouseAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure mouseClicked (This : in out ; evt_Param : access MouseEvent'Class) is
---        evt : MouseEvent_Access := MouseEvent_Access (evt_Param);
+--     procedure mouseClicked (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
+--        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
 --                  This.actionScriptJTreeMouseClicked (evt);
 --     end mouseClicked;
 --              
---     procedure mouseReleased (This : in out ; evt_Param : access MouseEvent'Class) is
---        evt : MouseEvent_Access := MouseEvent_Access (evt_Param);
+--     procedure mouseReleased (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
+--        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
 --                  This.actionScriptJTreeMouseReleased (evt);
 --     end mouseReleased;
@@ -97,8 +97,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         This.add (This.jScrollPane1);
    end initComponents;
 
-   procedure actionScriptJTreeMouseReleased (This : in out GenericProfileActionScriptJPanel; evt_Param : access MouseEvent'Class) is
-      evt : MouseEvent_Access := MouseEvent_Access (evt_Param);
+   procedure actionScriptJTreeMouseReleased (This : in out GenericProfileActionScriptJPanel; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
+      evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
       button : Integer;
       treePath : TreePath_Access;
       anyType : Java_Object_Access;
@@ -119,8 +119,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         end if;
    end actionScriptJTreeMouseReleased;
 
-   procedure actionScriptJTreeMouseClicked (This : in out GenericProfileActionScriptJPanel; evt_Param : access MouseEvent'Class) is
-      evt : MouseEvent_Access := MouseEvent_Access (evt_Param);
+   procedure actionScriptJTreeMouseClicked (This : in out GenericProfileActionScriptJPanel; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
+      evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
    begin
         null;
    end actionScriptJTreeMouseClicked;

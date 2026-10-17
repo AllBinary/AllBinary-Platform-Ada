@@ -23,16 +23,16 @@ package body views.admin.payment.gateway.PaymentGatewayComponent_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PaymentGatewayComponent'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; paymentGatewayInterface_Param : access PaymentGatewayInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
-      paymentGatewayInterface : PaymentGatewayInterface_Access := PaymentGatewayInterface_Access (paymentGatewayInterface_Param);
+   procedure Initialize (This : in out PaymentGatewayComponent'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; paymentGatewayInterface_Param : access PaymentGatewayInterface_Package.PaymentGatewayInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+      paymentGatewayInterface : constant PaymentGatewayInterface_Access := PaymentGatewayInterface_Access (paymentGatewayInterface_Param);
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
         This.paymentGatewayInterface := paymentGatewayInterface;
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; paymentGatewayInterface_Param : access PaymentGatewayInterface'Class) return PaymentGatewayComponent_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; paymentGatewayInterface_Param : access PaymentGatewayInterface_Package.PaymentGatewayInterface'Class) return PaymentGatewayComponent_Access is
       This : constant PaymentGatewayComponent_Access := new PaymentGatewayComponent;
    begin
       PaymentGatewayComponent_Package.Initialize (This.all, transformInfoInterface_Param, paymentGatewayInterface_Param);

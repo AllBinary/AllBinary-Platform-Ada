@@ -50,9 +50,9 @@ package body org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Pa
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ProgressCanvas'Class; title : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) is
-      backgroundBasicColor : BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
-      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
+   procedure Initialize (This : in out ProgressCanvas'Class; title : Unbounded_String; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      backgroundBasicColor : constant BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
+      foregroundBasicColor : constant BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
    begin
         RunnableCanvas_Package.Initialize (This, NullCommandListener_Package.NULL_COMMAND_LISTENER, CanvasStrings_Package.getInstance.EMPTY_CHILD_NAME_LIST, False);
         Initialize_Fields (This);
@@ -60,15 +60,15 @@ package body org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Pa
         This.gauge := ABCustomGaugeItem_Package.Create (StringUtil_Package.getInstance.EMPTY_STRING, Integer (This.maxValue), 0, backgroundBasicColor, foregroundBasicColor);
    end Initialize;
 
-   function Create (title : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return ProgressCanvas_Access is
+   function Create (title : Unbounded_String; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return ProgressCanvas_Access is
       This : constant ProgressCanvas_Access := new ProgressCanvas;
    begin
       ProgressCanvas_Package.Initialize (This.all, title, backgroundBasicColor_Param, foregroundBasicColor_Param);
       return This;
    end Create;
 
-   procedure updateMeasurement (This : in out ProgressCanvas; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure updateMeasurement (This : in out ProgressCanvas; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
    begin
         font := graphics.getFont;
@@ -76,21 +76,21 @@ package body org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Pa
         This.myFontProcessor := MyFontProcessor_Package.getInstance;
    end updateMeasurement;
 
-   procedure init (This : in out ProgressCanvas; gameMidlet_Param : access AllBinaryMidlet'Class) is
-      gameMidlet : AllBinaryMidlet_Access := AllBinaryMidlet_Access (gameMidlet_Param);
+   procedure init (This : in out ProgressCanvas; gameMidlet_Param : access AllBinaryMidlet_Package.AllBinaryMidlet'Class) is
+      gameMidlet : constant AllBinaryMidlet_Access := AllBinaryMidlet_Access (gameMidlet_Param);
    begin
         This.allbinaryMidlet := gameMidlet;
    end init;
 
    --  throws Exception
-   procedure update (This : in out ProgressCanvas; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure update (This : in out ProgressCanvas; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end update;
 
-   procedure initCommands (This : in out ProgressCanvas; cmdListener_Param : access CommandListener'Class) is
-      cmdListener : CommandListener_Access := CommandListener_Access (cmdListener_Param);
+   procedure initCommands (This : in out ProgressCanvas; cmdListener_Param : access CommandListener_Package.CommandListener'Class) is
+      cmdListener : constant CommandListener_Access := CommandListener_Access (cmdListener_Param);
    begin
         null;
    end initCommands;
@@ -194,14 +194,14 @@ package body org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Pa
         This.gauge.setValue (Float (value));
    end setValue;
 
-   procedure paint (This : in out ProgressCanvas; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out ProgressCanvas; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.paintable.paint (graphics);
    end paint;
 
-   procedure paint2 (This : in out ProgressCanvas; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint2 (This : in out ProgressCanvas; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.myFontProcessor.process (graphics);
         graphics.setColor (This.backgroundBasicColor.intValue);
@@ -210,8 +210,8 @@ package body org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Pa
         This.hasPainted := True;
    end paint2;
 
-   procedure paintThreed (This : in out ProgressCanvas; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintThreed (This : in out ProgressCanvas; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paintThreed;
@@ -253,23 +253,23 @@ package body org.allbinary.graphics.canvas.transition.progress.ProgressPaintable
    end Initialize_Fields;
 
     
-   procedure Initialize (This : in out ProgressPaintable'Class; progressCanvas_Param : access ProgressCanvas'Class) is
-      progressCanvas : ProgressCanvas_Access := ProgressCanvas_Access (progressCanvas_Param);
+   procedure Initialize (This : in out ProgressPaintable'Class; progressCanvas_Param : access ProgressCanvas_Package.ProgressCanvas'Class) is
+      progressCanvas : constant ProgressCanvas_Access := ProgressCanvas_Access (progressCanvas_Param);
    begin
       Paintable_Package.Initialize (This);
       Initialize_Fields (This);
             This.progressCanvas := progressCanvas;
    end Initialize;
 
-   function Create (progressCanvas_Param : access ProgressCanvas'Class) return ProgressPaintable_Access is
+   function Create (progressCanvas_Param : access ProgressCanvas_Package.ProgressCanvas'Class) return ProgressPaintable_Access is
       This : constant ProgressPaintable_Access := new ProgressPaintable;
    begin
       ProgressPaintable_Package.Initialize (This.all, progressCanvas_Param);
       return This;
    end Create;
     
-   procedure paint (This : in out ProgressPaintable; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out ProgressPaintable; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
             This.progressCanvas.paint2 (graphics);
    end paint;

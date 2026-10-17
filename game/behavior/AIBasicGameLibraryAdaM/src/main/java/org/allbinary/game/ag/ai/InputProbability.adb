@@ -25,8 +25,8 @@ package body org.allbinary.game.ag.ai.InputProbability_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out InputProbability'Class; likelyhoodIntegerArray : Integer_Array_Access_Array_Access; repeatLikelyhoodIntegerArray : Integer_Array_Access; max : Integer; timeDelayHelper_Param : access TimeDelayHelper'Class) is
-      timeDelayHelper : TimeDelayHelper_Access := TimeDelayHelper_Access (timeDelayHelper_Param);
+   procedure Initialize (This : in out InputProbability'Class; likelyhoodIntegerArray : Integer_Array_Access_Array_Access; repeatLikelyhoodIntegerArray : Integer_Array_Access; max : Integer; timeDelayHelper_Param : access TimeDelayHelper_Package.TimeDelayHelper'Class) is
+      timeDelayHelper : constant TimeDelayHelper_Access := TimeDelayHelper_Access (timeDelayHelper_Param);
    begin
       Initialize_Fields (This);
         This.likelyhoodIntegerArray := likelyhoodIntegerArray;
@@ -35,7 +35,7 @@ package body org.allbinary.game.ag.ai.InputProbability_Package is
         This.timeDelayHelper := timeDelayHelper;
    end Initialize;
 
-   function Create (likelyhoodIntegerArray : Integer_Array_Access_Array_Access; repeatLikelyhoodIntegerArray : Integer_Array_Access; max : Integer; timeDelayHelper_Param : access TimeDelayHelper'Class) return InputProbability_Access is
+   function Create (likelyhoodIntegerArray : Integer_Array_Access_Array_Access; repeatLikelyhoodIntegerArray : Integer_Array_Access; max : Integer; timeDelayHelper_Param : access TimeDelayHelper_Package.TimeDelayHelper'Class) return InputProbability_Access is
       This : constant InputProbability_Access := new InputProbability;
    begin
       InputProbability_Package.Initialize (This.all, likelyhoodIntegerArray, repeatLikelyhoodIntegerArray, max, timeDelayHelper_Param);

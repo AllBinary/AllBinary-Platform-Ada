@@ -46,8 +46,8 @@ package body org.allbinary.logic.communication.log.LogUtil_Package is
         PreLogUtil_Package.put (To_Unbounded_String ("Loggin Initialized"), LogUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("init()"));
    end init;
 
-   procedure putL (This : in out LogUtil; log_Param : access Log'Class) is
-      log : Log_Access := Log_Access (log_Param);
+   procedure putL (This : in out LogUtil; log_Param : access Log_Package.Log'Class) is
+      log : constant Log_Access := Log_Access (log_Param);
       exception_Id : Java_Object_Access;
       specialMessage : Unbounded_String;
       anyType : Java_Object_Access;
@@ -81,8 +81,8 @@ package body org.allbinary.logic.communication.log.LogUtil_Package is
    end putL;
 
    procedure put (This : in out LogUtil; specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String; exception_Id_Param : access Java_Object'Class) is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
-      exception_Id : Java_Object_Access := Java_Object_Access (exception_Id_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
+      exception_Id : constant Java_Object_Access := Java_Object_Access (exception_Id_Param);
       className : Unbounded_String;
       clazz : Ada.Tags.Tag;
       message : Unbounded_String;

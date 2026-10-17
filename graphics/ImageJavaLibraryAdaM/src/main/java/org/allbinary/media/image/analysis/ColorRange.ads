@@ -58,8 +58,8 @@ package org.allbinary.media.image.analysis.ColorRange_Package is
    procedure setMinBlue (This : in out ColorRange; minBlue : Integer);
    function getMaxBlue (This : in out ColorRange) return Integer;
    procedure setMaxBlue (This : in out ColorRange; maxBlue : Integer);
-   function isInRange (This : in out ColorRange; color_Param : access Color'Class) return Boolean;
-   procedure isInRange (This : in out ColorRange; color_Param : access Color'Class);
+   function isInRange (This : in out ColorRange; color_Param : access Color_Package.Color'Class) return Boolean;
+   procedure isInRange (This : in out ColorRange; color_Param : access Color_Package.Color'Class);
    function toString (This : in out ColorRange) return Unbounded_String;
 
 end org.allbinary.media.image.analysis.ColorRange_Package;

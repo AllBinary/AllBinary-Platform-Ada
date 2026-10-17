@@ -52,12 +52,12 @@ package org.allbinary.game.input.event.UpKeyEventHandlerBase_Package is
 
    procedure Initialize (This : in out UpKeyEventHandlerBase'Class);
    function Create return UpKeyEventHandlerBase_Access;
-   procedure addListener (This : in out UpKeyEventHandlerBase; playerGameInput_Param : access PlayerGameInput'Class);
+   procedure addListener (This : in out UpKeyEventHandlerBase; playerGameInput_Param : access PlayerGameInput_Package.PlayerGameInput'Class);
    procedure removeAllListeners (This : in out UpKeyEventHandlerBase);
-   procedure removeListenerSingleThreaded (This : in out UpKeyEventHandlerBase; eventListenerInterface_Param : access EventListenerInterface'Class);
-   procedure removeListener (This : in out UpKeyEventHandlerBase; eventListenerInterface_Param : access EventListenerInterface'Class);
+   procedure removeListenerSingleThreaded (This : in out UpKeyEventHandlerBase; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class);
+   procedure removeListener (This : in out UpKeyEventHandlerBase; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class);
    procedure fireEventForInteger (This : in out UpKeyEventHandlerBase; eventObject : Integer);
-   procedure processForInteger (This : in out UpKeyEventHandlerBase; eventObject : Integer; eventListenerInterface_Param : access EventListenerInterface'Class);
+   procedure processForInteger (This : in out UpKeyEventHandlerBase; eventObject : Integer; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class);
    function toString (This : in out UpKeyEventHandlerBase) return Unbounded_String;
 
 end org.allbinary.game.input.event.UpKeyEventHandlerBase_Package;

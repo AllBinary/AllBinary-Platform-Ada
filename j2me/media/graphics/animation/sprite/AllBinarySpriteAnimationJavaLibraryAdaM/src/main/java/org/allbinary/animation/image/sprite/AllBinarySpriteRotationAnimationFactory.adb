@@ -23,9 +23,9 @@ package body org.allbinary.animation.image.sprite.AllBinarySpriteRotationAnimati
 
 
    --  throws Exception
-   function createWHDY (image_Param : access Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return AllBinarySpriteRotationAnimationFactory_Access is
-      image : Image_Access := Image_Access (image_Param);
-      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
+   function createWHDY (image_Param : access Image_Package.Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return AllBinarySpriteRotationAnimationFactory_Access is
+      image : constant Image_Access := Image_Access (image_Param);
+      animationBehaviorFactory : constant AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
       spriteRotationAnimationFactory : AllBinarySpriteRotationAnimationFactory_Access;
    begin
         spriteRotationAnimationFactory := AllBinarySpriteRotationAnimationFactory_Package.Create (image, PrimitiveIntUtil_Package.getArrayInstance, (Java_Shift_Right_Arithmetic (image.getHeight, 2)), (Java_Shift_Right_Arithmetic (image.getHeight, 2)), 0, 0, animationBehaviorFactory);
@@ -34,17 +34,17 @@ package body org.allbinary.animation.image.sprite.AllBinarySpriteRotationAnimati
    end createWHDY;
 
    --  throws Exception
-   function createWH (image_Param : access Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return AllBinarySpriteRotationAnimationFactory_Access is
-      image : Image_Access := Image_Access (image_Param);
-      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
+   function createWH (image_Param : access Image_Package.Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return AllBinarySpriteRotationAnimationFactory_Access is
+      image : constant Image_Access := Image_Access (image_Param);
+      animationBehaviorFactory : constant AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
    begin
         return AllBinarySpriteRotationAnimationFactory_Package.createWHDY (image, 0, 0, animationBehaviorFactory);
    end createWH;
 
    --  throws Exception
-   function createDXY (image_Param : access Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return AllBinarySpriteRotationAnimationFactory_Access is
-      image : Image_Access := Image_Access (image_Param);
-      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
+   function createDXY (image_Param : access Image_Package.Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return AllBinarySpriteRotationAnimationFactory_Access is
+      image : constant Image_Access := Image_Access (image_Param);
+      animationBehaviorFactory : constant AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
       spriteRotationAnimationFactory : AllBinarySpriteRotationAnimationFactory_Access;
    begin
         spriteRotationAnimationFactory := AllBinarySpriteRotationAnimationFactory_Package.Create (image, PrimitiveIntUtil_Package.getArrayInstance, image.getHeight, image.getHeight, 0, 0, animationBehaviorFactory);
@@ -53,9 +53,9 @@ package body org.allbinary.animation.image.sprite.AllBinarySpriteRotationAnimati
    end createDXY;
 
    --  throws Exception
-   function createDXYQ (image_Param : access Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return AllBinarySpriteRotationAnimationFactory_Access is
-      image : Image_Access := Image_Access (image_Param);
-      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
+   function createDXYQ (image_Param : access Image_Package.Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return AllBinarySpriteRotationAnimationFactory_Access is
+      image : constant Image_Access := Image_Access (image_Param);
+      animationBehaviorFactory : constant AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
       spriteRotationAnimationFactory : AllBinarySpriteRotationAnimationFactory_Access;
    begin
         spriteRotationAnimationFactory := AllBinarySpriteRotationAnimationFactory_Package.Create (image, PrimitiveIntUtil_Package.getArrayInstance, (Java_Shift_Right_Arithmetic (image.getHeight, 2)), (Java_Shift_Right_Arithmetic (image.getHeight, 2)), 0, 0, animationBehaviorFactory);
@@ -64,24 +64,24 @@ package body org.allbinary.animation.image.sprite.AllBinarySpriteRotationAnimati
    end createDXYQ;
 
    --  throws Exception
-   function createQ (image_Param : access Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return AllBinarySpriteRotationAnimationFactory_Access is
-      image : Image_Access := Image_Access (image_Param);
-      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
+   function createQ (image_Param : access Image_Package.Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return AllBinarySpriteRotationAnimationFactory_Access is
+      image : constant Image_Access := Image_Access (image_Param);
+      animationBehaviorFactory : constant AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
    begin
         return AllBinarySpriteRotationAnimationFactory_Package.Create (image, PrimitiveIntUtil_Package.getArrayInstance, (Java_Shift_Right_Arithmetic (image.getHeight, 2)), (Java_Shift_Right_Arithmetic (image.getHeight, 2)), 0, 0, animationBehaviorFactory);
    end createQ;
 
    --  throws Exception
-   function createWHF (image_Param : access Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return AllBinarySpriteRotationAnimationFactory_Access is
-      image : Image_Access := Image_Access (image_Param);
-      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
+   function createWHF (image_Param : access Image_Package.Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return AllBinarySpriteRotationAnimationFactory_Access is
+      image : constant Image_Access := Image_Access (image_Param);
+      animationBehaviorFactory : constant AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
    begin
         return AllBinarySpriteRotationAnimationFactory_Package.Create (image, PrimitiveIntUtil_Package.getArrayInstance, image.getHeight, image.getHeight, 0, 0, animationBehaviorFactory);
    end createWHF;
 
-   procedure Initialize (This : in out AllBinarySpriteRotationAnimationFactory'Class; image_Param : access Image'Class; sequenceArray : Integer_Array_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) is
-      image : Image_Access := Image_Access (image_Param);
-      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
+   procedure Initialize (This : in out AllBinarySpriteRotationAnimationFactory'Class; image_Param : access Image_Package.Image'Class; sequenceArray : Integer_Array_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
+      image : constant Image_Access := Image_Access (image_Param);
+      animationBehaviorFactory : constant AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
    begin
         BaseImageAnimationFactory_Package.Initialize (This, image, sequenceArray, width, height, dx, dy, animationBehaviorFactory);
         Initialize_Fields (This);
@@ -90,7 +90,7 @@ package body org.allbinary.animation.image.sprite.AllBinarySpriteRotationAnimati
         end if;
    end Initialize;
 
-   function Create (image_Param : access Image'Class; sequenceArray : Integer_Array_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return AllBinarySpriteRotationAnimationFactory_Access is
+   function Create (image_Param : access Image_Package.Image'Class; sequenceArray : Integer_Array_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return AllBinarySpriteRotationAnimationFactory_Access is
       This : constant AllBinarySpriteRotationAnimationFactory_Access := new AllBinarySpriteRotationAnimationFactory;
    begin
       AllBinarySpriteRotationAnimationFactory_Package.Initialize (This.all, image_Param, sequenceArray, width, height, dx, dy, animationBehaviorFactory_Param);
@@ -123,48 +123,48 @@ package body org.allbinary.animation.image.sprite.AllBinarySpriteRotationAnimati
    end getInstance;
 
    --  throws Exception
-   function getInstanceAnimation (This : in out AllBinarySpriteRotationAnimationFactory; animationInterface_Param : access Animation'Class) return Animation_Access is
-      animationInterface : Animation_Access := Animation_Access (animationInterface_Param);
+   function getInstanceAnimation (This : in out AllBinarySpriteRotationAnimationFactory; animationInterface_Param : access Animation_Package.Animation'Class) return Animation_Access is
+      animationInterface : constant Animation_Access := Animation_Access (animationInterface_Param);
    begin
         return This.getInstance (0);
    end getInstanceAnimation;
 
-   procedure createWHDY (image_Param : access Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) is
+   procedure createWHDY (image_Param : access Image_Package.Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
       Java_Result : constant AllBinarySpriteRotationAnimationFactory_Access := createWHDY (image_Param, dx, dy, animationBehaviorFactory_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createWHDY;
 
-   procedure createWH (image_Param : access Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) is
+   procedure createWH (image_Param : access Image_Package.Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
       Java_Result : constant AllBinarySpriteRotationAnimationFactory_Access := createWH (image_Param, animationBehaviorFactory_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createWH;
 
-   procedure createDXY (image_Param : access Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) is
+   procedure createDXY (image_Param : access Image_Package.Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
       Java_Result : constant AllBinarySpriteRotationAnimationFactory_Access := createDXY (image_Param, dx, dy, animationBehaviorFactory_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createDXY;
 
-   procedure createDXYQ (image_Param : access Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) is
+   procedure createDXYQ (image_Param : access Image_Package.Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
       Java_Result : constant AllBinarySpriteRotationAnimationFactory_Access := createDXYQ (image_Param, dx, dy, animationBehaviorFactory_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createDXYQ;
 
-   procedure createQ (image_Param : access Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) is
+   procedure createQ (image_Param : access Image_Package.Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
       Java_Result : constant AllBinarySpriteRotationAnimationFactory_Access := createQ (image_Param, animationBehaviorFactory_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createQ;
 
-   procedure createWHF (image_Param : access Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) is
+   procedure createWHF (image_Param : access Image_Package.Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
       Java_Result : constant AllBinarySpriteRotationAnimationFactory_Access := createWHF (image_Param, animationBehaviorFactory_Param);
       pragma Unreferenced (Java_Result);
    begin
@@ -178,7 +178,7 @@ package body org.allbinary.animation.image.sprite.AllBinarySpriteRotationAnimati
       null;
    end getInstance;
 
-   procedure getInstanceAnimation (This : in out AllBinarySpriteRotationAnimationFactory; animationInterface_Param : access Animation'Class) is
+   procedure getInstanceAnimation (This : in out AllBinarySpriteRotationAnimationFactory; animationInterface_Param : access Animation_Package.Animation'Class) is
       Java_Result : constant Animation_Access := AllBinarySpriteRotationAnimationFactory'Class (This).getInstanceAnimation (animationInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

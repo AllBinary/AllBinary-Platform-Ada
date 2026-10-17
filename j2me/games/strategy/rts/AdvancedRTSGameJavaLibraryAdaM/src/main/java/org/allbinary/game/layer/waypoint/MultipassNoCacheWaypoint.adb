@@ -23,16 +23,16 @@ package body org.allbinary.game.layer.waypoint.MultipassNoCacheWaypoint_Package 
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out MultipassNoCacheWaypoint'Class; ownerLayer_Param : access PathFindingLayerInterface'Class; sound_Param : access Sound'Class) is
-      ownerLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (ownerLayer_Param);
-      sound : Sound_Access := Sound_Access (sound_Param);
+   procedure Initialize (This : in out MultipassNoCacheWaypoint'Class; ownerLayer_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class; sound_Param : access Sound_Package.Sound'Class) is
+      ownerLayer : constant PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (ownerLayer_Param);
+      sound : constant Sound_Access := Sound_Access (sound_Param);
    begin
         WaypointBase_Package.Initialize (This, sound);
         Initialize_Fields (This);
         This.ownerLayer := ownerLayer;
    end Initialize;
 
-   function Create (ownerLayer_Param : access PathFindingLayerInterface'Class; sound_Param : access Sound'Class) return MultipassNoCacheWaypoint_Access is
+   function Create (ownerLayer_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class; sound_Param : access Sound_Package.Sound'Class) return MultipassNoCacheWaypoint_Access is
       This : constant MultipassNoCacheWaypoint_Access := new MultipassNoCacheWaypoint;
    begin
       MultipassNoCacheWaypoint_Package.Initialize (This.all, ownerLayer_Param, sound_Param);
@@ -40,8 +40,8 @@ package body org.allbinary.game.layer.waypoint.MultipassNoCacheWaypoint_Package 
    end Create;
 
    --  throws Exception
-   procedure setAllBinaryGameLayerManager (This : in out MultipassNoCacheWaypoint; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class) is
-      allBinaryGameLayerManager : AllBinaryGameLayerManager_Access := AllBinaryGameLayerManager_Access (allBinaryGameLayerManager_Param);
+   procedure setAllBinaryGameLayerManager (This : in out MultipassNoCacheWaypoint; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager_Package.AllBinaryGameLayerManager'Class) is
+      allBinaryGameLayerManager : constant AllBinaryGameLayerManager_Access := AllBinaryGameLayerManager_Access (allBinaryGameLayerManager_Param);
    begin
         WaypointBase (This).setAllBinaryGameLayerManager (allBinaryGameLayerManager);
    end setAllBinaryGameLayerManager;
@@ -52,8 +52,8 @@ package body org.allbinary.game.layer.waypoint.MultipassNoCacheWaypoint_Package 
    end releaseCachedPaths;
 
    --  throws Exception
-   function getPathFindingInfo (This : in out MultipassNoCacheWaypoint; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return PathFindingInfo_Access is
-      geographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
+   function getPathFindingInfo (This : in out MultipassNoCacheWaypoint; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) return PathFindingInfo_Access is
+      geographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
       startGeographicMapCellPosition : GeographicMapCellPosition_Access;
       endGeographicMapCellPosition : GeographicMapCellPosition_Access;
       geographicMapCompositeInterface : GeographicMapCompositeInterface_Access;
@@ -90,10 +90,10 @@ package body org.allbinary.game.layer.waypoint.MultipassNoCacheWaypoint_Package 
    end getPathFindingInfo;
 
    --  throws Exception
-   function getPathsList (This : in out MultipassNoCacheWaypoint; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class; pathFindingInfo_Param : access PathFindingInfo'Class; multipassState_Param : access MultipassState'Class) return BasicArrayList_Access is
-      geographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
-      pathFindingInfo : PathFindingInfo_Access := PathFindingInfo_Access (pathFindingInfo_Param);
-      multipassState : MultipassState_Access := MultipassState_Access (multipassState_Param);
+   function getPathsList (This : in out MultipassNoCacheWaypoint; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; pathFindingInfo_Param : access PathFindingInfo_Package.PathFindingInfo'Class; multipassState_Param : access MultipassState_Package.MultipassState'Class) return BasicArrayList_Access is
+      geographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
+      pathFindingInfo : constant PathFindingInfo_Access := PathFindingInfo_Access (pathFindingInfo_Param);
+      multipassState : constant MultipassState_Access := MultipassState_Access (multipassState_Param);
       geographicMapCompositeInterface : GeographicMapCompositeInterface_Access;
       geographicMapInterface : BasicGeographicMap_Access;
       list : BasicArrayList_Access;
@@ -127,8 +127,8 @@ package body org.allbinary.game.layer.waypoint.MultipassNoCacheWaypoint_Package 
    end getPathsList;
 
    --  throws Exception
-   function getEndGeographicMapCellPosition (This : in out MultipassNoCacheWaypoint; startGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return GeographicMapCellPosition_Access is
-      startGeographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (startGeographicMapCellPosition_Param);
+   function getEndGeographicMapCellPosition (This : in out MultipassNoCacheWaypoint; startGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) return GeographicMapCellPosition_Access is
+      startGeographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (startGeographicMapCellPosition_Param);
       endList : BasicArrayList_Access;
       endGeographicMapCellPosition : GeographicMapCellPosition_Access;
       index : Integer;
@@ -146,15 +146,15 @@ package body org.allbinary.game.layer.waypoint.MultipassNoCacheWaypoint_Package 
         return endGeographicMapCellPosition;
    end getEndGeographicMapCellPosition;
 
-   procedure onEvent (This : in out MultipassNoCacheWaypoint; eventObject_Param : access AllBinaryEventObject'Class) is
-      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+   procedure onEvent (This : in out MultipassNoCacheWaypoint; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
+      eventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
    begin
         ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, MultipassNoCacheWaypoint_Access'(This'Unchecked_Access));
    end onEvent;
 
    --  throws Exception
-   procedure onBuildingEvent (This : in out MultipassNoCacheWaypoint; event_Param : access RTSLayerEvent'Class) is
-      event : RTSLayerEvent_Access := RTSLayerEvent_Access (event_Param);
+   procedure onBuildingEvent (This : in out MultipassNoCacheWaypoint; event_Param : access RTSLayerEvent_Package.RTSLayerEvent'Class) is
+      event : constant RTSLayerEvent_Access := RTSLayerEvent_Access (event_Param);
    begin
         null;
    end onBuildingEvent;
@@ -165,8 +165,8 @@ package body org.allbinary.game.layer.waypoint.MultipassNoCacheWaypoint_Package 
    end reset;
 
    --  throws Exception
-   procedure visit (This : in out MultipassNoCacheWaypoint; unitLayer_Param : access PathFindingLayerInterface'Class) is
-      unitLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (unitLayer_Param);
+   procedure visit (This : in out MultipassNoCacheWaypoint; unitLayer_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class) is
+      unitLayer : constant PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (unitLayer_Param);
       size : Integer;
       unitWaypointBehavior : UnitWaypointBehavior_Access;
       rtsLayer : CollidableDestroyableDamageableLayer_Access;
@@ -190,21 +190,21 @@ package body org.allbinary.game.layer.waypoint.MultipassNoCacheWaypoint_Package 
         end if;
    end visit;
 
-   procedure getPathFindingInfo (This : in out MultipassNoCacheWaypoint; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+   procedure getPathFindingInfo (This : in out MultipassNoCacheWaypoint; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
       Java_Result : constant PathFindingInfo_Access := MultipassNoCacheWaypoint'Class (This).getPathFindingInfo (geographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getPathFindingInfo;
 
-   procedure getPathsList (This : in out MultipassNoCacheWaypoint; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class; pathFindingInfo_Param : access PathFindingInfo'Class; multipassState_Param : access MultipassState'Class) is
+   procedure getPathsList (This : in out MultipassNoCacheWaypoint; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; pathFindingInfo_Param : access PathFindingInfo_Package.PathFindingInfo'Class; multipassState_Param : access MultipassState_Package.MultipassState'Class) is
       Java_Result : constant BasicArrayList_Access := MultipassNoCacheWaypoint'Class (This).getPathsList (geographicMapCellPosition_Param, pathFindingInfo_Param, multipassState_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getPathsList;
 
-   procedure getEndGeographicMapCellPosition (This : in out MultipassNoCacheWaypoint; startGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+   procedure getEndGeographicMapCellPosition (This : in out MultipassNoCacheWaypoint; startGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
       Java_Result : constant GeographicMapCellPosition_Access := MultipassNoCacheWaypoint'Class (This).getEndGeographicMapCellPosition (startGeographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin

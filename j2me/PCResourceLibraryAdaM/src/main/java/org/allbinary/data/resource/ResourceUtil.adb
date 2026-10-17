@@ -48,8 +48,8 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
         This.ext := ext;
    end setLoadingPaths;
 
-   procedure setClassLoader (This : in out ResourceUtil; classLoader_Param : access ClassLoader'Class) is
-      classLoader : ClassLoader_Access := ClassLoader_Access (classLoader_Param);
+   procedure setClassLoader (This : in out ResourceUtil; classLoader_Param : access ClassLoader_Package.ClassLoader'Class) is
+      classLoader : constant ClassLoader_Access := ClassLoader_Access (classLoader_Param);
    begin
         null;
    end setClassLoader;

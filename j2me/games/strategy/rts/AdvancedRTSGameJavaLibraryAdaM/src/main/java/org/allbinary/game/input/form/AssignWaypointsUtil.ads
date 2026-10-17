@@ -59,7 +59,7 @@ package org.allbinary.game.input.form.AssignWaypointsUtil_Package is
    procedure Initialize (This : in out AssignWaypointsUtil'Class);
    function Create return AssignWaypointsUtil_Access;
    function getInstance return AssignWaypointsUtil_Access;
-   procedure set (This : in out AssignWaypointsUtil; unitLayer_Param : access UnitLayer'Class; ownerAdvancedRTSGameLayer_Param : access AdvancedRTSGameLayer'Class);
+   procedure set (This : in out AssignWaypointsUtil; unitLayer_Param : access UnitLayer_Package.UnitLayer'Class; ownerAdvancedRTSGameLayer_Param : access AdvancedRTSGameLayer_Package.AdvancedRTSGameLayer'Class);
 
 end org.allbinary.game.input.form.AssignWaypointsUtil_Package;
 

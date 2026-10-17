@@ -34,8 +34,8 @@ package org.allbinary.logic.system.loader.NativeLibraryClassLoader_Package is
       message : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out NativeLibraryClassLoader'Class; parent_Param : access ClassLoader'Class);
-   function Create (parent_Param : access ClassLoader'Class) return NativeLibraryClassLoader_Access;
+   procedure Initialize (This : in out NativeLibraryClassLoader'Class; parent_Param : access ClassLoader_Package.ClassLoader'Class);
+   function Create (parent_Param : access ClassLoader_Package.ClassLoader'Class) return NativeLibraryClassLoader_Access;
 
 end org.allbinary.logic.system.loader.NativeLibraryClassLoader_Package;
 

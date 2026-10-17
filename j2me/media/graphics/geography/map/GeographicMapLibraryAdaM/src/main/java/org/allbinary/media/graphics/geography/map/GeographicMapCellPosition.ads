@@ -44,7 +44,7 @@ package org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Pac
    function Create (column : Integer; row : Integer; columns : Integer; rows : Integer; width : Integer; height : Integer) return GeographicMapCellPosition_Access;
    function getPoint (This : in out GeographicMapCellPosition) return GPoint_Access;
    function getMidPoint (This : in out GeographicMapCellPosition) return GPoint_Access;
-   procedure setMidPoint (This : in out GeographicMapCellPosition; midPoint_Param : access GPoint'Class);
+   procedure setMidPoint (This : in out GeographicMapCellPosition; midPoint_Param : access GPoint_Package.GPoint'Class);
 
 end org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
 

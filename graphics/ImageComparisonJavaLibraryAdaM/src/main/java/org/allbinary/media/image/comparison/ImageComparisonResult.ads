@@ -64,10 +64,10 @@ package org.allbinary.media.image.comparison.ImageComparisonResult_Package is
       matchingPercent : Float;
    end record;
 
-   procedure Initialize (This : in out ImageComparisonResult'Class; name : Unbounded_String; bufferedImage_Param : access BufferedImage'Class; bufferedImage2_Param : access BufferedImage'Class; frameOne : Long_Long_Integer; frameTwo : Long_Long_Integer; tolerance : Integer);
-   function Create (name : Unbounded_String; bufferedImage_Param : access BufferedImage'Class; bufferedImage2_Param : access BufferedImage'Class; frameOne : Long_Long_Integer; frameTwo : Long_Long_Integer; tolerance : Integer) return ImageComparisonResult_Access;
+   procedure Initialize (This : in out ImageComparisonResult'Class; name : Unbounded_String; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; bufferedImage2_Param : access BufferedImage_Package.BufferedImage'Class; frameOne : Long_Long_Integer; frameTwo : Long_Long_Integer; tolerance : Integer);
+   function Create (name : Unbounded_String; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; bufferedImage2_Param : access BufferedImage_Package.BufferedImage'Class; frameOne : Long_Long_Integer; frameTwo : Long_Long_Integer; tolerance : Integer) return ImageComparisonResult_Access;
    function getMatchingPercent (This : in out ImageComparisonResult) return Float;
-   procedure add (This : in out ImageComparisonResult; pixel_Param : access PixelDelta'Class);
+   procedure add (This : in out ImageComparisonResult; pixel_Param : access PixelDelta_Package.PixelDelta'Class);
    function getNonMatchingPixelVector (This : in out ImageComparisonResult) return BasicArrayList_Access;
    function toString (This : in out ImageComparisonResult) return Unbounded_String;
    function getBufferedImages (This : in out ImageComparisonResult) return BufferedImage_Access_Array_Access;

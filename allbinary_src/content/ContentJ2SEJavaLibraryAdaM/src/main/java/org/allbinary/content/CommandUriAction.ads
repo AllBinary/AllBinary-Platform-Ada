@@ -49,10 +49,10 @@ package org.allbinary.content.CommandUriAction_Package is
    procedure Initialize (This : in out CommandUriAction'Class);
    function Create return CommandUriAction_Access;
    function getInstance return CommandUriAction_Access;
-   procedure add (This : in out CommandUriAction; command_Param : access Command'Class; url : Unbounded_String);
-   procedure process (This : in out CommandUriAction; command_Param : access Command'Class);
-   function getIntent (This : in out CommandUriAction; command_Param : access Command'Class) return Intent_Access;
-   procedure getIntent (This : in out CommandUriAction; command_Param : access Command'Class);
+   procedure add (This : in out CommandUriAction; command_Param : access Command_Package.Command'Class; url : Unbounded_String);
+   procedure process (This : in out CommandUriAction; command_Param : access Command_Package.Command'Class);
+   function getIntent (This : in out CommandUriAction; command_Param : access Command_Package.Command'Class) return Intent_Access;
+   procedure getIntent (This : in out CommandUriAction; command_Param : access Command_Package.Command'Class);
 
 end org.allbinary.content.CommandUriAction_Package;
 

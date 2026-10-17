@@ -33,13 +33,13 @@ package body org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellP
    end Create;
 
 
-   function getInstance (This : in out SimpleGeographicMapCellPositionFactory; geographicMapInterface_Param : access BasicGeographicMap'Class; i_column : Integer; i_row : Integer; columns : Integer; rows : Integer; width : Integer; height : Integer) return GeographicMapCellPosition_Access is
-      geographicMapInterface : BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
+   function getInstance (This : in out SimpleGeographicMapCellPositionFactory; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; i_column : Integer; i_row : Integer; columns : Integer; rows : Integer; width : Integer; height : Integer) return GeographicMapCellPosition_Access is
+      geographicMapInterface : constant BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
    begin
         return GeographicMapCellPosition_Package.Create (i_column, i_row, columns, rows, width, height);
    end getInstance;
 
-   procedure getInstance (This : in out SimpleGeographicMapCellPositionFactory; geographicMapInterface_Param : access BasicGeographicMap'Class; i_column : Integer; i_row : Integer; columns : Integer; rows : Integer; width : Integer; height : Integer) is
+   procedure getInstance (This : in out SimpleGeographicMapCellPositionFactory; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; i_column : Integer; i_row : Integer; columns : Integer; rows : Integer; width : Integer; height : Integer) is
       Java_Result : constant GeographicMapCellPosition_Access := SimpleGeographicMapCellPositionFactory'Class (This).getInstance (geographicMapInterface_Param, i_column, i_row, columns, rows, width, height);
       pragma Unreferenced (Java_Result);
    begin

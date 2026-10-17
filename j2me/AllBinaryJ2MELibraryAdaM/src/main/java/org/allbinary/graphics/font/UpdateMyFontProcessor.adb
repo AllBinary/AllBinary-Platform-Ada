@@ -22,23 +22,23 @@ package body org.allbinary.graphics.font.UpdateMyFontProcessor_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out UpdateMyFontProcessor'Class; keyValueDrawCharArray_Param : access UpdateMyFontInterface'Class) is
-      keyValueDrawCharArray : UpdateMyFontInterface_Access := UpdateMyFontInterface_Access (keyValueDrawCharArray_Param);
+   procedure Initialize (This : in out UpdateMyFontProcessor'Class; keyValueDrawCharArray_Param : access UpdateMyFontInterface_Package.UpdateMyFontInterface'Class) is
+      keyValueDrawCharArray : constant UpdateMyFontInterface_Access := UpdateMyFontInterface_Access (keyValueDrawCharArray_Param);
    begin
       MyFontProcessor_Package.Initialize (This);
       Initialize_Fields (This);
         This.updateMeasurementProcessor := keyValueDrawCharArray;
    end Initialize;
 
-   function Create (keyValueDrawCharArray_Param : access UpdateMyFontInterface'Class) return UpdateMyFontProcessor_Access is
+   function Create (keyValueDrawCharArray_Param : access UpdateMyFontInterface_Package.UpdateMyFontInterface'Class) return UpdateMyFontProcessor_Access is
       This : constant UpdateMyFontProcessor_Access := new UpdateMyFontProcessor;
    begin
       UpdateMyFontProcessor_Package.Initialize (This.all, keyValueDrawCharArray_Param);
       return This;
    end Create;
 
-   procedure process (This : in out UpdateMyFontProcessor; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure process (This : in out UpdateMyFontProcessor; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.updateMeasurementProcessor.updateMeasurement (graphics);
    end process;

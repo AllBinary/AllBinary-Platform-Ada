@@ -38,7 +38,7 @@ package org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package
    type TransformInfoInterface_Access_Array is array (Natural range <>) of TransformInfoInterface_Access;
    type TransformInfoInterface_Access_Array_Access is access all TransformInfoInterface_Access_Array;
    function log (This : in out TransformInfoInterface) return Unbounded_String is abstract;
-   procedure override (This : in out TransformInfoInterface; hashMap_Param : access HashMap'Class) is abstract;
+   procedure override (This : in out TransformInfoInterface; hashMap_Param : access HashMap_Package.HashMap'Class) is abstract;
    function getName (This : in out TransformInfoInterface) return Unbounded_String is abstract;
    procedure setStoreName (This : in out TransformInfoInterface; value : Unbounded_String) is abstract;
    function getStoreName (This : in out TransformInfoInterface) return Unbounded_String is abstract;
@@ -53,7 +53,7 @@ package org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package
    procedure setName (This : in out TransformInfoInterface; value : Unbounded_String) is abstract;
    procedure setObjectFile (This : in out TransformInfoInterface; value : Unbounded_String) is abstract;
    procedure setObject (This : in out TransformInfoInterface; anyType_Param : access Java_Object'Class) is abstract;
-   procedure setObjectConfigInterface (This : in out TransformInfoInterface; transformInfoObjectConfigInterface_Param : access TransformInfoObjectConfigInterface'Class) is abstract;
+   procedure setObjectConfigInterface (This : in out TransformInfoInterface; transformInfoObjectConfigInterface_Param : access TransformInfoObjectConfigInterface_Package.TransformInfoObjectConfigInterface'Class) is abstract;
    function getObjectConfigInterface (This : in out TransformInfoInterface) return TransformInfoObjectConfigInterface_Access is abstract;
    procedure setTemplateFile (This : in out TransformInfoInterface; value : Unbounded_String) is abstract;
    procedure setTemplate (This : in out TransformInfoInterface; value : Unbounded_String) is abstract;

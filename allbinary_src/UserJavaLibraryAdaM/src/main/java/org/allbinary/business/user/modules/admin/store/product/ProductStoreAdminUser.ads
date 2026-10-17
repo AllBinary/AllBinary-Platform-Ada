@@ -38,10 +38,10 @@ package org.allbinary.business.user.modules.admin.store.product.ProductStoreAdmi
 
    procedure Initialize (This : in out ProductStoreAdminUser'Class);
    function Create return ProductStoreAdminUser_Access;
-   procedure Initialize (This : in out ProductStoreAdminUser'Class; userHashMap_Param : access HashMap'Class);
-   function Create (userHashMap_Param : access HashMap'Class) return ProductStoreAdminUser_Access;
-   procedure validateSession (This : in out ProductStoreAdminUser; weblisketSession_Param : access WeblisketSessionInterface'Class);
-   procedure updateSession (This : in out ProductStoreAdminUser; weblisketSession_Param : access WeblisketSessionInterface'Class);
+   procedure Initialize (This : in out ProductStoreAdminUser'Class; userHashMap_Param : access HashMap_Package.HashMap'Class);
+   function Create (userHashMap_Param : access HashMap_Package.HashMap'Class) return ProductStoreAdminUser_Access;
+   procedure validateSession (This : in out ProductStoreAdminUser; weblisketSession_Param : access WeblisketSessionInterface_Package.WeblisketSessionInterface'Class);
+   procedure updateSession (This : in out ProductStoreAdminUser; weblisketSession_Param : access WeblisketSessionInterface_Package.WeblisketSessionInterface'Class);
 
 end org.allbinary.business.user.modules.admin.store.product.ProductStoreAdminUser_Package;
 

@@ -46,50 +46,50 @@ package body org.allbinary.game.input.PlatformKeyFactory_Package is
         return PCGameKey_Package.getString (keyCode);
    end getString;
 
-   function isSubmission (This : in out PlatformKeyFactory; input_Param : access Input'Class) return Boolean is
-      input : Input_Access := Input_Access (input_Param);
+   function isSubmission (This : in out PlatformKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean is
+      input : constant Input_Access := Input_Access (input_Param);
    begin
         return PCKeyFactory_Package.getInstance.isSubmission (input);
    end isSubmission;
 
-   function isDelete (This : in out PlatformKeyFactory; input_Param : access Input'Class) return Boolean is
-      input : Input_Access := Input_Access (input_Param);
+   function isDelete (This : in out PlatformKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean is
+      input : constant Input_Access := Input_Access (input_Param);
    begin
         return PCKeyFactory_Package.getInstance.isDelete (input);
    end isDelete;
 
-   function isBackSpace (This : in out PlatformKeyFactory; input_Param : access Input'Class) return Boolean is
-      input : Input_Access := Input_Access (input_Param);
+   function isBackSpace (This : in out PlatformKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean is
+      input : constant Input_Access := Input_Access (input_Param);
    begin
         return PCKeyFactory_Package.getInstance.isBackSpace (input);
    end isBackSpace;
 
-   function isUp (This : in out PlatformKeyFactory; input_Param : access Input'Class) return Boolean is
-      input : Input_Access := Input_Access (input_Param);
+   function isUp (This : in out PlatformKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean is
+      input : constant Input_Access := Input_Access (input_Param);
    begin
         return PCKeyFactory_Package.getInstance.isUp (input);
    end isUp;
 
-   function isDown (This : in out PlatformKeyFactory; input_Param : access Input'Class) return Boolean is
-      input : Input_Access := Input_Access (input_Param);
+   function isDown (This : in out PlatformKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean is
+      input : constant Input_Access := Input_Access (input_Param);
    begin
         return PCKeyFactory_Package.getInstance.isDown (input);
    end isDown;
 
-   function isEnter (This : in out PlatformKeyFactory; input_Param : access Input'Class) return Boolean is
-      input : Input_Access := Input_Access (input_Param);
+   function isEnter (This : in out PlatformKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean is
+      input : constant Input_Access := Input_Access (input_Param);
    begin
         return PCKeyFactory_Package.getInstance.isEnter (input);
    end isEnter;
 
-   function isLeft (This : in out PlatformKeyFactory; input_Param : access Input'Class) return Boolean is
-      input : Input_Access := Input_Access (input_Param);
+   function isLeft (This : in out PlatformKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean is
+      input : constant Input_Access := Input_Access (input_Param);
    begin
         return PCKeyFactory_Package.getInstance.isLeft (input);
    end isLeft;
 
-   function isRight (This : in out PlatformKeyFactory; input_Param : access Input'Class) return Boolean is
-      input : Input_Access := Input_Access (input_Param);
+   function isRight (This : in out PlatformKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean is
+      input : constant Input_Access := Input_Access (input_Param);
    begin
         return PCKeyFactory_Package.getInstance.isRight (input);
    end isRight;
@@ -101,56 +101,56 @@ package body org.allbinary.game.input.PlatformKeyFactory_Package is
       null;
    end getString;
 
-   procedure isSubmission (This : in out PlatformKeyFactory; input_Param : access Input'Class) is
+   procedure isSubmission (This : in out PlatformKeyFactory; input_Param : access Input_Package.Input'Class) is
       Java_Result : constant Boolean := PlatformKeyFactory'Class (This).isSubmission (input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isSubmission;
 
-   procedure isDelete (This : in out PlatformKeyFactory; input_Param : access Input'Class) is
+   procedure isDelete (This : in out PlatformKeyFactory; input_Param : access Input_Package.Input'Class) is
       Java_Result : constant Boolean := PlatformKeyFactory'Class (This).isDelete (input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isDelete;
 
-   procedure isBackSpace (This : in out PlatformKeyFactory; input_Param : access Input'Class) is
+   procedure isBackSpace (This : in out PlatformKeyFactory; input_Param : access Input_Package.Input'Class) is
       Java_Result : constant Boolean := PlatformKeyFactory'Class (This).isBackSpace (input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isBackSpace;
 
-   procedure isUp (This : in out PlatformKeyFactory; input_Param : access Input'Class) is
+   procedure isUp (This : in out PlatformKeyFactory; input_Param : access Input_Package.Input'Class) is
       Java_Result : constant Boolean := PlatformKeyFactory'Class (This).isUp (input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isUp;
 
-   procedure isDown (This : in out PlatformKeyFactory; input_Param : access Input'Class) is
+   procedure isDown (This : in out PlatformKeyFactory; input_Param : access Input_Package.Input'Class) is
       Java_Result : constant Boolean := PlatformKeyFactory'Class (This).isDown (input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isDown;
 
-   procedure isEnter (This : in out PlatformKeyFactory; input_Param : access Input'Class) is
+   procedure isEnter (This : in out PlatformKeyFactory; input_Param : access Input_Package.Input'Class) is
       Java_Result : constant Boolean := PlatformKeyFactory'Class (This).isEnter (input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isEnter;
 
-   procedure isLeft (This : in out PlatformKeyFactory; input_Param : access Input'Class) is
+   procedure isLeft (This : in out PlatformKeyFactory; input_Param : access Input_Package.Input'Class) is
       Java_Result : constant Boolean := PlatformKeyFactory'Class (This).isLeft (input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isLeft;
 
-   procedure isRight (This : in out PlatformKeyFactory; input_Param : access Input'Class) is
+   procedure isRight (This : in out PlatformKeyFactory; input_Param : access Input_Package.Input'Class) is
       Java_Result : constant Boolean := PlatformKeyFactory'Class (This).isRight (input_Param);
       pragma Unreferenced (Java_Result);
    begin

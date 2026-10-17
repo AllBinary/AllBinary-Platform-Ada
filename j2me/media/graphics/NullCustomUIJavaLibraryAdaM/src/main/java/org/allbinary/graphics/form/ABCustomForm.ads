@@ -34,22 +34,22 @@ package org.allbinary.graphics.form.ABCustomForm_Package is
       commonStrings : CommonStrings_Access;
    end record;
 
-   procedure Initialize (This : in out ABCustomForm'Class; title : Unbounded_String; items : ABCustomItem_Access_Array_Access; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class);
-   function Create (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return ABCustomForm_Access;
+   procedure Initialize (This : in out ABCustomForm'Class; title : Unbounded_String; items : ABCustomItem_Access_Array_Access; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class);
+   function Create (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return ABCustomForm_Access;
    function getAllitems (This : in out ABCustomForm) return ABCustomItem_Access_Array_Access;
    function size (This : in out ABCustomForm) return Integer;
    procedure setSelectedIndex (This : in out ABCustomForm; index : Integer);
    function getSelectedIndex (This : in out ABCustomForm) return Integer;
    procedure deleteAll (This : in out ABCustomForm);
    procedure delete (This : in out ABCustomForm; itemNum : Integer);
-   function append (This : in out ABCustomForm; item_Param : access ABCustomItem'Class) return Integer;
-   procedure append (This : in out ABCustomForm; item_Param : access ABCustomItem'Class);
-   procedure insert (This : in out ABCustomForm; itemNum : Integer; item_Param : access ABCustomItem'Class);
-   procedure set (This : in out ABCustomForm; itemNum : Integer; item_Param : access ABCustomItem'Class);
+   function append (This : in out ABCustomForm; item_Param : access ABCustomItem_Package.ABCustomItem'Class) return Integer;
+   procedure append (This : in out ABCustomForm; item_Param : access ABCustomItem_Package.ABCustomItem'Class);
+   procedure insert (This : in out ABCustomForm; itemNum : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class);
+   procedure set (This : in out ABCustomForm; itemNum : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class);
    function get (This : in out ABCustomForm; itemNum : Integer) return ABCustomItem_Access;
    procedure get (This : in out ABCustomForm; itemNum : Integer);
    function getWidth (This : in out ABCustomForm) return Integer;
-   procedure paint (This : in out ABCustomForm; graphics_Param : access Graphics'Class);
+   procedure paint (This : in out ABCustomForm; graphics_Param : access Graphics_Package.Graphics'Class);
    function getTitle (This : in out ABCustomForm) return Unbounded_String;
 
 end org.allbinary.graphics.form.ABCustomForm_Package;

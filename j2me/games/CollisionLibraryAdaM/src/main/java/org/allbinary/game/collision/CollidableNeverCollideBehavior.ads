@@ -37,12 +37,12 @@ package org.allbinary.game.collision.CollidableNeverCollideBehavior_Package is
 
    procedure Initialize (This : in out CollidableNeverCollideBehavior'Class; isCollidable : Boolean);
    function Create (isCollidable : Boolean) return CollidableNeverCollideBehavior_Access;
-   function isCollision (This : in out CollidableNeverCollideBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; allbinaryCollidableLayer_Param : access CollidableCompositeLayer'Class) return Boolean;
-   procedure isCollision (This : in out CollidableNeverCollideBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; allbinaryCollidableLayer_Param : access CollidableCompositeLayer'Class);
-   procedure collide (This : in out CollidableNeverCollideBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; allbinaryCollidableLayer_Param : access CollidableCompositeLayer'Class);
-   procedure collideInterface (This : in out CollidableNeverCollideBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface'Class);
-   function isCollisionInterface (This : in out CollidableNeverCollideBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface'Class) return Boolean;
-   procedure isCollisionInterface (This : in out CollidableNeverCollideBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface'Class);
+   function isCollision (This : in out CollidableNeverCollideBehavior; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; allbinaryCollidableLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class) return Boolean;
+   procedure isCollision (This : in out CollidableNeverCollideBehavior; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; allbinaryCollidableLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class);
+   procedure collide (This : in out CollidableNeverCollideBehavior; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; allbinaryCollidableLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class);
+   procedure collideInterface (This : in out CollidableNeverCollideBehavior; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface_Package.CollidableInterfaceCompositeInterface'Class);
+   function isCollisionInterface (This : in out CollidableNeverCollideBehavior; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface_Package.CollidableInterfaceCompositeInterface'Class) return Boolean;
+   procedure isCollisionInterface (This : in out CollidableNeverCollideBehavior; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface_Package.CollidableInterfaceCompositeInterface'Class);
 
 end org.allbinary.game.collision.CollidableNeverCollideBehavior_Package;
 

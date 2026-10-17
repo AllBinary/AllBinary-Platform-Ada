@@ -33,8 +33,8 @@ package org.allbinary.logic.io.AbDataInputStream_Package is
 
    type AbDataInputStream is new DataInputStream with null record;
 
-   procedure Initialize (This : in out AbDataInputStream'Class; out_Id_Param : access InputStream'Class);
-   function Create (out_Id_Param : access InputStream'Class) return AbDataInputStream_Access;
+   procedure Initialize (This : in out AbDataInputStream'Class; out_Id_Param : access InputStream_Package.InputStream'Class);
+   function Create (out_Id_Param : access InputStream_Package.InputStream'Class) return AbDataInputStream_Access;
 
 end org.allbinary.logic.io.AbDataInputStream_Package;
 

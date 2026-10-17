@@ -33,8 +33,8 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTracksPath
    end Create;
 
 
-   procedure printPath (This : in out RaceTracksPathPrinter; list_Param : access BasicArrayList'Class) is
-      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
+   procedure printPath (This : in out RaceTracksPathPrinter; list_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      list : constant BasicArrayList_Access := BasicArrayList_Access (list_Param);
       size : Integer;
       anyType : Java_Object_Access;
       index : Integer;
@@ -46,8 +46,8 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTracksPath
         end loop;
    end printPath;
 
-   procedure printPaths (This : in out RaceTracksPathPrinter; list_Param : access BasicArrayList'Class) is
-      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
+   procedure printPaths (This : in out RaceTracksPathPrinter; list_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      list : constant BasicArrayList_Access := BasicArrayList_Access (list_Param);
       size : Integer;
       index : Integer;
    begin

@@ -79,8 +79,8 @@ package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
         null;
    end requireInitialization;
 
-   procedure initCapabilities (This : in out OpenGLCapabilities; gl_Param : access GL10'Class) is
-      gl : GL10_Access := GL10_Access (gl_Param);
+   procedure initCapabilities (This : in out OpenGLCapabilities; gl_Param : access GL10_Package.GL10'Class) is
+      gl : constant GL10_Access := GL10_Access (gl_Param);
       METHOD_NAME : Unbounded_String;
       features : Features_Access;
       openGLFeatureFactory : OpenGLFeatureFactory_Access;
@@ -208,8 +208,8 @@ package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
         end;
    end initCapabilities;
 
-   function isExtension (This : in out OpenGLCapabilities; gameFeature_Param : access OpenGLFeature'Class) return Boolean is
-      gameFeature : OpenGLFeature_Access := OpenGLFeature_Access (gameFeature_Param);
+   function isExtension (This : in out OpenGLCapabilities; gameFeature_Param : access OpenGLFeature_Package.OpenGLFeature'Class) return Boolean is
+      gameFeature : constant OpenGLFeature_Access := OpenGLFeature_Access (gameFeature_Param);
       index : Integer;
    begin
         index := (Index (This.glExtensions, To_String (gameFeature.getName)) - 1);
@@ -332,7 +332,7 @@ package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
         return stringBuffer.toString;
    end toString;
 
-   procedure isExtension (This : in out OpenGLCapabilities; gameFeature_Param : access OpenGLFeature'Class) is
+   procedure isExtension (This : in out OpenGLCapabilities; gameFeature_Param : access OpenGLFeature_Package.OpenGLFeature'Class) is
       Java_Result : constant Boolean := OpenGLCapabilities'Class (This).isExtension (gameFeature_Param);
       pragma Unreferenced (Java_Result);
    begin

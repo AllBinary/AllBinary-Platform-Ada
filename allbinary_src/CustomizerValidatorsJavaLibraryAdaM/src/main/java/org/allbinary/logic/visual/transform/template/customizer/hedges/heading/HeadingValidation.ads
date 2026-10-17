@@ -63,18 +63,18 @@ package org.allbinary.logic.visual.transform.template.customizer.hedges.heading.
 
    procedure Initialize (This : in out HeadingValidation'Class);
    function Create return HeadingValidation_Access;
-   procedure Initialize (This : in out HeadingValidation'Class; document_Param : access Document'Class);
-   function Create (document_Param : access Document'Class) return HeadingValidation_Access;
-   procedure Initialize (This : in out HeadingValidation'Class; hashMap_Param : access HashMap'Class);
-   function Create (hashMap_Param : access HashMap'Class) return HeadingValidation_Access;
-   procedure getFormData (This : in out HeadingValidation; hashMap_Param : access HashMap'Class);
+   procedure Initialize (This : in out HeadingValidation'Class; document_Param : access Document_Package.Document'Class);
+   function Create (document_Param : access Document_Package.Document'Class) return HeadingValidation_Access;
+   procedure Initialize (This : in out HeadingValidation'Class; hashMap_Param : access HashMap_Package.HashMap'Class);
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return HeadingValidation_Access;
+   procedure getFormData (This : in out HeadingValidation; hashMap_Param : access HashMap_Package.HashMap'Class);
    function isValid (This : in out HeadingValidation) return Boolean;
    function validationInfo (This : in out HeadingValidation) return Unbounded_String;
    function toValidationInfoDoc (This : in out HeadingValidation) return Document_Access;
-   function toValidationInfoNode (This : in out HeadingValidation; document_Param : access Document'Class) return Node_Access;
-   procedure toValidationInfoNode (This : in out HeadingValidation; document_Param : access Document'Class);
-   function toXmlNode (This : in out HeadingValidation; document_Param : access Document'Class) return Node_Access;
-   procedure toXmlNode (This : in out HeadingValidation; document_Param : access Document'Class);
+   function toValidationInfoNode (This : in out HeadingValidation; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out HeadingValidation; document_Param : access Document_Package.Document'Class);
+   function toXmlNode (This : in out HeadingValidation; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out HeadingValidation; document_Param : access Document_Package.Document'Class);
 
 end org.allbinary.logic.visual.transform.template.customizer.hedges.heading.HeadingValidation_Package;
 

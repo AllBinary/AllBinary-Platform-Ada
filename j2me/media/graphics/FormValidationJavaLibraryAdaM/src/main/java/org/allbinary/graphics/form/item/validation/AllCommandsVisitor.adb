@@ -36,7 +36,7 @@ package body org.allbinary.graphics.form.item.validation.AllCommandsVisitor_Pack
    end Create;
 
    function visit (This : in out AllCommandsVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         return BooleanFactory_Package.getInstance.TRUE;
    end visit;

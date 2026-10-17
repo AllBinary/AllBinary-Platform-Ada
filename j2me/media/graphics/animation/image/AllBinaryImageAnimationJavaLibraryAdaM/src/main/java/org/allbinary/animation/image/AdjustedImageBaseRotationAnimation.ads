@@ -41,10 +41,10 @@ package org.allbinary.animation.image.AdjustedImageBaseRotationAnimation_Package
       dy : Integer;
    end record;
 
-   procedure Initialize (This : in out AdjustedImageBaseRotationAnimation'Class; image_Param : access Image'Class; angleInfo_Param : access AngleInfo'Class; totalAngle : Short_Integer; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior'Class);
-   function Create (image_Param : access Image'Class; angleInfo_Param : access AngleInfo'Class; totalAngle : Short_Integer; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior'Class) return AdjustedImageBaseRotationAnimation_Access;
+   procedure Initialize (This : in out AdjustedImageBaseRotationAnimation'Class; image_Param : access Image_Package.Image'Class; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; totalAngle : Short_Integer; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class);
+   function Create (image_Param : access Image_Package.Image'Class; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; totalAngle : Short_Integer; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return AdjustedImageBaseRotationAnimation_Access;
    procedure init (This : in out AdjustedImageBaseRotationAnimation; dx : Integer; dy : Integer);
-   procedure paintXY (This : in out AdjustedImageBaseRotationAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
+   procedure paintXY (This : in out AdjustedImageBaseRotationAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
 
 end org.allbinary.animation.image.AdjustedImageBaseRotationAnimation_Package;
 

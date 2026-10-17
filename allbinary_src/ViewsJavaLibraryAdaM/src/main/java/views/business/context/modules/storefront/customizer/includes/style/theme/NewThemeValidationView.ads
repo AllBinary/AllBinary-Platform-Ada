@@ -53,14 +53,14 @@ package views.business.context.modules.storefront.customizer.includes.style.them
       logUtil : LogUtil_Access;
    end record;
 
-   procedure Initialize (This : in out NewThemeValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return NewThemeValidationView_Access;
+   procedure Initialize (This : in out NewThemeValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return NewThemeValidationView_Access;
    function toXmlDoc (This : in out NewThemeValidationView) return Document_Access;
    function isValid (This : in out NewThemeValidationView) return Boolean;
    function validationInfo (This : in out NewThemeValidationView) return Unbounded_String;
    function toValidationInfoDoc (This : in out NewThemeValidationView) return Document_Access;
-   function toValidationInfoNode (This : in out NewThemeValidationView; document_Param : access Document'Class) return Node_Access;
-   procedure toValidationInfoNode (This : in out NewThemeValidationView; document_Param : access Document'Class);
+   function toValidationInfoNode (This : in out NewThemeValidationView; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out NewThemeValidationView; document_Param : access Document_Package.Document'Class);
    function view (This : in out NewThemeValidationView) return Unbounded_String;
 
 end views.business.context.modules.storefront.customizer.includes.style.theme.NewThemeValidationView_Package;

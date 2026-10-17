@@ -51,8 +51,8 @@ package org.allbinary.business.context.configuration.ContextConfigurationInterfa
    procedure Initialize (This : in out ContextConfigurationInterfaceFactory'Class);
    function Create return ContextConfigurationInterfaceFactory_Access;
    function getInstance return ContextConfigurationInterfaceFactory_Access;
-   function getInstance (This : in out ContextConfigurationInterfaceFactory; document_Param : access Document'Class) return ContextConfigurationInterface_Access;
-   procedure getInstance (This : in out ContextConfigurationInterfaceFactory; document_Param : access Document'Class);
+   function getInstance (This : in out ContextConfigurationInterfaceFactory; document_Param : access Document_Package.Document'Class) return ContextConfigurationInterface_Access;
+   procedure getInstance (This : in out ContextConfigurationInterfaceFactory; document_Param : access Document_Package.Document'Class);
    function getInstance (This : in out ContextConfigurationInterfaceFactory; contextName : Unbounded_String) return ContextConfigurationInterface_Access;
    procedure getInstance (This : in out ContextConfigurationInterfaceFactory; contextName : Unbounded_String);
 

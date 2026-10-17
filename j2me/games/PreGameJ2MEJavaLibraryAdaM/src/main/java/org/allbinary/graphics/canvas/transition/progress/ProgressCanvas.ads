@@ -97,12 +97,12 @@ package org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package
       ADD_EARLY_PORTION : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out ProgressCanvas'Class; title : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class);
-   function Create (title : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return ProgressCanvas_Access;
-   procedure updateMeasurement (This : in out ProgressCanvas; graphics_Param : access Graphics'Class);
-   procedure init (This : in out ProgressCanvas; gameMidlet_Param : access AllBinaryMidlet'Class);
-   procedure update (This : in out ProgressCanvas; graphics_Param : access Graphics'Class);
-   procedure initCommands (This : in out ProgressCanvas; cmdListener_Param : access CommandListener'Class);
+   procedure Initialize (This : in out ProgressCanvas'Class; title : Unbounded_String; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class);
+   function Create (title : Unbounded_String; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return ProgressCanvas_Access;
+   procedure updateMeasurement (This : in out ProgressCanvas; graphics_Param : access Graphics_Package.Graphics'Class);
+   procedure init (This : in out ProgressCanvas; gameMidlet_Param : access AllBinaryMidlet_Package.AllBinaryMidlet'Class);
+   procedure update (This : in out ProgressCanvas; graphics_Param : access Graphics_Package.Graphics'Class);
+   procedure initCommands (This : in out ProgressCanvas; cmdListener_Param : access CommandListener_Package.CommandListener'Class);
    function getMaxValue (This : in out ProgressCanvas) return Float;
    procedure start (This : in out ProgressCanvas);
    procedure startBackground (This : in out ProgressCanvas; background : Boolean);
@@ -116,9 +116,9 @@ package org.allbinary.graphics.canvas.transition.progress.ProgressCanvas_Package
    procedure addPortion (This : in out ProgressCanvas; value : Integer; text_Case : Unbounded_String; index : Integer);
    procedure addNormalPortion (This : in out ProgressCanvas; value : Integer; text_Case : Unbounded_String);
    procedure setValue (This : in out ProgressCanvas; value : Integer);
-   procedure paint (This : in out ProgressCanvas; graphics_Param : access Graphics'Class);
-   procedure paint2 (This : in out ProgressCanvas; graphics_Param : access Graphics'Class);
-   procedure paintThreed (This : in out ProgressCanvas; graphics_Param : access Graphics'Class);
+   procedure paint (This : in out ProgressCanvas; graphics_Param : access Graphics_Package.Graphics'Class);
+   procedure paint2 (This : in out ProgressCanvas; graphics_Param : access Graphics_Package.Graphics'Class);
+   procedure paintThreed (This : in out ProgressCanvas; graphics_Param : access Graphics_Package.Graphics'Class);
    function getValue (This : in out ProgressCanvas) return Float;
    procedure setText (This : in out ProgressCanvas; text_Case : Unbounded_String);
    function getText (This : in out ProgressCanvas) return Unbounded_String;
@@ -192,9 +192,9 @@ package org.allbinary.graphics.canvas.transition.progress.ProgressPaintable_Pack
       progressCanvas : ProgressCanvas_Access;
    end record;
 
-   procedure Initialize (This : in out ProgressPaintable'Class; progressCanvas_Param : access ProgressCanvas'Class);
-   function Create (progressCanvas_Param : access ProgressCanvas'Class) return ProgressPaintable_Access;
-   procedure paint (This : in out ProgressPaintable; graphics_Param : access Graphics'Class);
+   procedure Initialize (This : in out ProgressPaintable'Class; progressCanvas_Param : access ProgressCanvas_Package.ProgressCanvas'Class);
+   function Create (progressCanvas_Param : access ProgressCanvas_Package.ProgressCanvas'Class) return ProgressPaintable_Access;
+   procedure paint (This : in out ProgressPaintable; graphics_Param : access Graphics_Package.Graphics'Class);
 
 end org.allbinary.graphics.canvas.transition.progress.ProgressPaintable_Package;
 

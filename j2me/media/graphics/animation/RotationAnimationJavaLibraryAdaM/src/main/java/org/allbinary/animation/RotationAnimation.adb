@@ -25,10 +25,10 @@ package body org.allbinary.animation.RotationAnimation_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out RotationAnimation'Class; angleInfo_Param : access AngleInfo'Class; circularIndexUtil_Param : access CircularIndexUtil'Class; animationBehavior_Param : access AnimationBehavior'Class) is
-      angleInfo : AngleInfo_Access := AngleInfo_Access (angleInfo_Param);
-      circularIndexUtil : CircularIndexUtil_Access := CircularIndexUtil_Access (circularIndexUtil_Param);
-      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
+   procedure Initialize (This : in out RotationAnimation'Class; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; circularIndexUtil_Param : access CircularIndexUtil_Package.CircularIndexUtil'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) is
+      angleInfo : constant AngleInfo_Access := AngleInfo_Access (angleInfo_Param);
+      circularIndexUtil : constant CircularIndexUtil_Access := CircularIndexUtil_Access (circularIndexUtil_Param);
+      animationBehavior : constant AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
         IndexedAnimation_Package.Initialize (This, animationBehavior);
         Initialize_Fields (This);
@@ -36,7 +36,7 @@ package body org.allbinary.animation.RotationAnimation_Package is
         This.circularIndexUtil := circularIndexUtil;
    end Initialize;
 
-   function Create (angleInfo_Param : access AngleInfo'Class; circularIndexUtil_Param : access CircularIndexUtil'Class; animationBehavior_Param : access AnimationBehavior'Class) return RotationAnimation_Access is
+   function Create (angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; circularIndexUtil_Param : access CircularIndexUtil_Package.CircularIndexUtil'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return RotationAnimation_Access is
       This : constant RotationAnimation_Access := new RotationAnimation;
    begin
       RotationAnimation_Package.Initialize (This.all, angleInfo_Param, circularIndexUtil_Param, animationBehavior_Param);
@@ -81,22 +81,22 @@ package body org.allbinary.animation.RotationAnimation_Package is
         This.angleInfo.adjustAngle (newFrame);
    end setFrame;
 
-   procedure setFrameByDirection (This : in out RotationAnimation; direction_Param : access Direction'Class) is
-      direction : Direction_Access := Direction_Access (direction_Param);
+   procedure setFrameByDirection (This : in out RotationAnimation; direction_Param : access Direction_Package.Direction'Class) is
+      direction : constant Direction_Access := Direction_Access (direction_Param);
       angle : Angle_Access;
    begin
         angle := This.directionUtil.getFrameAngle (direction);
         This.adjustFrameToAngle (angle);
    end setFrameByDirection;
 
-   procedure setFrameToAngle (This : in out RotationAnimation; angle_Param : access Angle'Class) is
-      angle : Angle_Access := Angle_Access (angle_Param);
+   procedure setFrameToAngle (This : in out RotationAnimation; angle_Param : access Angle_Package.Angle'Class) is
+      angle : constant Angle_Access := Angle_Access (angle_Param);
    begin
         This.adjustFrameToAngle (angle);
    end setFrameToAngle;
 
-   procedure adjustFrameToAngle (This : in out RotationAnimation; angle_Param : access Angle'Class) is
-      angle : Angle_Access := Angle_Access (angle_Param);
+   procedure adjustFrameToAngle (This : in out RotationAnimation; angle_Param : access Angle_Package.Angle'Class) is
+      angle : constant Angle_Access := Angle_Access (angle_Param);
    begin
         This.adjustFrame (angle.getValue);
    end adjustFrameToAngle;

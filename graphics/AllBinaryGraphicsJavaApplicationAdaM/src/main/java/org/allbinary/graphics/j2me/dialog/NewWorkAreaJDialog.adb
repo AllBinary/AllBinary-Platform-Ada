@@ -26,9 +26,9 @@ package body org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out NewWorkAreaJDialog'Class; parent_Param : access MyFrame'Class; modal : Boolean; dimension_Param : access Dimension'Class; newName : Unbounded_String) is
-      parent : MyFrame_Access := MyFrame_Access (parent_Param);
-      dimension : Dimension_Access := Dimension_Access (dimension_Param);
+   procedure Initialize (This : in out NewWorkAreaJDialog'Class; parent_Param : access MyFrame_Package.MyFrame'Class; modal : Boolean; dimension_Param : access Dimension_Package.Dimension'Class; newName : Unbounded_String) is
+      parent : constant MyFrame_Access := MyFrame_Access (parent_Param);
+      dimension : constant Dimension_Access := Dimension_Access (dimension_Param);
       submitButton : JButton_Access;
    begin
         JDialog_Package.Initialize (This, Frame_Access (parent), modal);
@@ -43,8 +43,8 @@ package body org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package is
             submitButton := JButton_Package.Create (To_Unbounded_String ("Ok"));
             submitButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --                  
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                      begin
 --                          This.disposeNewDialog;
@@ -80,7 +80,7 @@ package body org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package is
         end;
    end Initialize;
 
-   function Create (parent_Param : access MyFrame'Class; modal : Boolean; dimension_Param : access Dimension'Class; newName : Unbounded_String) return NewWorkAreaJDialog_Access is
+   function Create (parent_Param : access MyFrame_Package.MyFrame'Class; modal : Boolean; dimension_Param : access Dimension_Package.Dimension'Class; newName : Unbounded_String) return NewWorkAreaJDialog_Access is
       This : constant NewWorkAreaJDialog_Access := new NewWorkAreaJDialog;
    begin
       NewWorkAreaJDialog_Package.Initialize (This.all, parent_Param, modal, dimension_Param, newName);
@@ -119,8 +119,8 @@ package body org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package is
    begin
         This.addWindowListener (WindowAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure windowClosing (This : in out ; evt_Param : access WindowEvent'Class) is
---        evt : WindowEvent_Access := WindowEvent_Access (evt_Param);
+--     procedure windowClosing (This : in out ; evt_Param : access WindowEvent_Package.WindowEvent'Class) is
+--        evt : constant WindowEvent_Access := WindowEvent_Access (evt_Param);
 --     begin
 --                  This.closeDialog (evt);
 --     end windowClosing;
@@ -128,8 +128,8 @@ package body org.allbinary.graphics.j2me.dialog.NewWorkAreaJDialog_Package is
         This.pack;
    end initComponents;
 
-   procedure closeDialog (This : in out NewWorkAreaJDialog; evt_Param : access WindowEvent'Class) is
-      evt : WindowEvent_Access := WindowEvent_Access (evt_Param);
+   procedure closeDialog (This : in out NewWorkAreaJDialog; evt_Param : access WindowEvent_Package.WindowEvent'Class) is
+      evt : constant WindowEvent_Access := WindowEvent_Access (evt_Param);
    begin
         This.setVisible (False);
         This.dispose;

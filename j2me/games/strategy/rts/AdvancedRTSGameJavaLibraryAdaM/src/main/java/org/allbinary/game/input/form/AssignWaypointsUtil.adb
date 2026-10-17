@@ -40,9 +40,9 @@ package body org.allbinary.game.input.form.AssignWaypointsUtil_Package is
         return AssignWaypointsUtil_Package.instance;
    end getInstance;
 
-   procedure set (This : in out AssignWaypointsUtil; unitLayer_Param : access UnitLayer'Class; ownerAdvancedRTSGameLayer_Param : access AdvancedRTSGameLayer'Class) is
-      unitLayer : UnitLayer_Access := UnitLayer_Access (unitLayer_Param);
-      ownerAdvancedRTSGameLayer : AdvancedRTSGameLayer_Access := AdvancedRTSGameLayer_Access (ownerAdvancedRTSGameLayer_Param);
+   procedure set (This : in out AssignWaypointsUtil; unitLayer_Param : access UnitLayer_Package.UnitLayer'Class; ownerAdvancedRTSGameLayer_Param : access AdvancedRTSGameLayer_Package.AdvancedRTSGameLayer'Class) is
+      unitLayer : constant UnitLayer_Access := UnitLayer_Access (unitLayer_Param);
+      ownerAdvancedRTSGameLayer : constant AdvancedRTSGameLayer_Access := AdvancedRTSGameLayer_Access (ownerAdvancedRTSGameLayer_Param);
       list : BasicArrayList_Access;
       unitWaypointBehavior : UnitWaypointBehavior_Access;
       waypointLayer : RTSLayer_Access;

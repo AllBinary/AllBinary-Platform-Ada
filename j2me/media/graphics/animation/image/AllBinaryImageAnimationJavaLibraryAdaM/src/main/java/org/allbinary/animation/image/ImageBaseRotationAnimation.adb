@@ -23,17 +23,17 @@ package body org.allbinary.animation.image.ImageBaseRotationAnimation_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ImageBaseRotationAnimation'Class; image_Param : access Image'Class; angleInfo_Param : access AngleInfo'Class; totalAngle : Short_Integer; animationBehavior_Param : access AnimationBehavior'Class) is
-      image : Image_Access := Image_Access (image_Param);
-      angleInfo : AngleInfo_Access := AngleInfo_Access (angleInfo_Param);
-      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
+   procedure Initialize (This : in out ImageBaseRotationAnimation'Class; image_Param : access Image_Package.Image'Class; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; totalAngle : Short_Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) is
+      image : constant Image_Access := Image_Access (image_Param);
+      angleInfo : constant AngleInfo_Access := AngleInfo_Access (angleInfo_Param);
+      animationBehavior : constant AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
         RotationAnimation_Package.Initialize (This, angleInfo, CircularIndexUtil_Package.createInstance ((totalAngle) / (angleInfo.getAngleIncrementInfo.getAngleIncrement)), animationBehavior);
         Initialize_Fields (This);
         This.image := image;
    end Initialize;
 
-   function Create (image_Param : access Image'Class; angleInfo_Param : access AngleInfo'Class; totalAngle : Short_Integer; animationBehavior_Param : access AnimationBehavior'Class) return ImageBaseRotationAnimation_Access is
+   function Create (image_Param : access Image_Package.Image'Class; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; totalAngle : Short_Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return ImageBaseRotationAnimation_Access is
       This : constant ImageBaseRotationAnimation_Access := new ImageBaseRotationAnimation;
    begin
       ImageBaseRotationAnimation_Package.Initialize (This.all, image_Param, angleInfo_Param, totalAngle, animationBehavior_Param);
@@ -56,8 +56,8 @@ package body org.allbinary.animation.image.ImageBaseRotationAnimation_Package is
         return PrimitiveIntUtil_Package.getArrayInstance;
    end getSequence;
 
-   procedure paintXY (This : in out ImageBaseRotationAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintXY (This : in out ImageBaseRotationAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         graphics.drawImage (This.image, x, y, This.anchor);
    end paintXY;

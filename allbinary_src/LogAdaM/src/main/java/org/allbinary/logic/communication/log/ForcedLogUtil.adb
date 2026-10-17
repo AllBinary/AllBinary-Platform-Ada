@@ -34,7 +34,7 @@ package body org.allbinary.logic.communication.log.ForcedLogUtil_Package is
 
 
    procedure log (message : Unbounded_String; anyType_Param : access Java_Object'Class) is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         begin
             Java_Throw (Java_New_Exception ("Exception", message));

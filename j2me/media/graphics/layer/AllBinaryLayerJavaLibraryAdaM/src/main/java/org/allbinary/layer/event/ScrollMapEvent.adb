@@ -24,7 +24,7 @@ package body org.allbinary.layer.event.ScrollMapEvent_Package is
 
 
    procedure Initialize (This : in out ScrollMapEvent'Class; anyType_Param : access Java_Object'Class) is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         AllBinaryEventObject_Package.Initialize (This, anyType);
         Initialize_Fields (This);

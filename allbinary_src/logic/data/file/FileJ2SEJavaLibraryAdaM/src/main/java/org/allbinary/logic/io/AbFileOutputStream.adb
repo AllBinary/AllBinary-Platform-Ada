@@ -22,15 +22,15 @@ package body org.allbinary.logic.io.AbFileOutputStream_Package is
 
 
    --  throws FileNotFoundException
-   function createFromAbFile (file_Param : access AbFile'Class) return AbFileOutputStream_Access is
-      file : AbFile_Access := AbFile_Access (file_Param);
+   function createFromAbFile (file_Param : access AbFile_Package.AbFile'Class) return AbFileOutputStream_Access is
+      file : constant AbFile_Access := AbFile_Access (file_Param);
    begin
         return AbFileOutputStream_Package.Create (file.getPath, False);
    end createFromAbFile;
 
    --  throws FileNotFoundException
-   function createFromAbFileAppend (file_Param : access AbFile'Class; append : Boolean) return AbFileOutputStream_Access is
-      file : AbFile_Access := AbFile_Access (file_Param);
+   function createFromAbFileAppend (file_Param : access AbFile_Package.AbFile'Class; append : Boolean) return AbFileOutputStream_Access is
+      file : constant AbFile_Access := AbFile_Access (file_Param);
    begin
         return AbFileOutputStream_Package.Create (file.getPath, append);
    end createFromAbFileAppend;
@@ -59,14 +59,14 @@ package body org.allbinary.logic.io.AbFileOutputStream_Package is
       return This;
    end Create;
 
-   procedure createFromAbFile (file_Param : access AbFile'Class) is
+   procedure createFromAbFile (file_Param : access AbFile_Package.AbFile'Class) is
       Java_Result : constant AbFileOutputStream_Access := createFromAbFile (file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createFromAbFile;
 
-   procedure createFromAbFileAppend (file_Param : access AbFile'Class; append : Boolean) is
+   procedure createFromAbFileAppend (file_Param : access AbFile_Package.AbFile'Class; append : Boolean) is
       Java_Result : constant AbFileOutputStream_Access := createFromAbFileAppend (file_Param, append);
       pragma Unreferenced (Java_Result);
    begin

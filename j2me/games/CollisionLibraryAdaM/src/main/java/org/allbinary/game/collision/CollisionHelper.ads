@@ -37,12 +37,12 @@ package org.allbinary.game.collision.CollisionHelper_Package is
       sourceLayerInterface : AllBinaryLayer_Access;
    end record;
 
-   procedure Initialize (This : in out CollisionHelper'Class; sourceLayerInterface_Param : access AllBinaryLayer'Class);
-   function Create (sourceLayerInterface_Param : access AllBinaryLayer'Class) return CollisionHelper_Access;
-   function isCollidable (This : in out CollisionHelper; layerInterface_Param : access CollidableCompositeLayer'Class) return Boolean;
-   procedure isCollidable (This : in out CollisionHelper; layerInterface_Param : access CollidableCompositeLayer'Class);
+   procedure Initialize (This : in out CollisionHelper'Class; sourceLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class);
+   function Create (sourceLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) return CollisionHelper_Access;
+   function isCollidable (This : in out CollisionHelper; layerInterface_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class) return Boolean;
+   procedure isCollidable (This : in out CollisionHelper; layerInterface_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class);
    function getOwnerLayerInterface (This : in out CollisionHelper) return AllBinaryLayer_Access;
-   procedure setOwnerLayerInterface (This : in out CollisionHelper; sourceLayerInterface_Param : access AllBinaryLayer'Class);
+   procedure setOwnerLayerInterface (This : in out CollisionHelper; sourceLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class);
 
 end org.allbinary.game.collision.CollisionHelper_Package;
 

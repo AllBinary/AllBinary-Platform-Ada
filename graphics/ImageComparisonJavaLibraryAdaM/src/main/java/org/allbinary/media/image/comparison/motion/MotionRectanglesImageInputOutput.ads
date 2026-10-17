@@ -81,7 +81,7 @@ package org.allbinary.media.image.comparison.motion.MotionRectanglesImageInputOu
    procedure Initialize (This : in out MotionRectanglesImageInputOutput'Class);
    function Create return MotionRectanglesImageInputOutput_Access;
    procedure save (This : in out MotionRectanglesImageInputOutput; frame : Long_Long_Integer);
-   procedure save (This : in out MotionRectanglesImageInputOutput; motionRectangles_Param : access MotionRectangles'Class; frame : Long_Long_Integer);
+   procedure save (This : in out MotionRectanglesImageInputOutput; motionRectangles_Param : access MotionRectangles_Package.MotionRectangles'Class; frame : Long_Long_Integer);
 
 end org.allbinary.media.image.comparison.motion.MotionRectanglesImageInputOutput_Package;
 

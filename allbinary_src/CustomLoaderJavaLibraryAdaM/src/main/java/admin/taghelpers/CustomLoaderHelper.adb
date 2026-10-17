@@ -23,15 +23,15 @@ package body admin.taghelpers.CustomLoaderHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CustomLoaderHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
-      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
+   procedure Initialize (This : in out CustomLoaderHelper'Class; hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
    begin
       Initialize_Fields (This);
         null;
    end Initialize;
 
-   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return CustomLoaderHelper_Access is
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return CustomLoaderHelper_Access is
       This : constant CustomLoaderHelper_Access := new CustomLoaderHelper;
    begin
       CustomLoaderHelper_Package.Initialize (This.all, hashMap_Param, pageContext_Param);

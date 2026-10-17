@@ -64,13 +64,13 @@ package org.allbinary.animation.text.TextAnimation_Package is
       textChangeListener : TextChangeListener_Access;
    end record;
 
-   procedure Initialize (This : in out TextAnimation'Class; text : Unbounded_String; animationBehavior_Param : access AnimationBehavior'Class);
-   function Create (text : Unbounded_String; animationBehavior_Param : access AnimationBehavior'Class) return TextAnimation_Access;
-   procedure updateMeasurement (This : in out TextAnimation; graphics_Param : access Graphics'Class);
+   procedure Initialize (This : in out TextAnimation'Class; text : Unbounded_String; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class);
+   function Create (text : Unbounded_String; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return TextAnimation_Access;
+   procedure updateMeasurement (This : in out TextAnimation; graphics_Param : access Graphics_Package.Graphics'Class);
    procedure nextFrame (This : in out TextAnimation);
-   procedure paintXY (This : in out TextAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
-   procedure paintXYNoUpdate (This : in out TextAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
-   procedure setTextWithOnMeasure (This : in out TextAnimation; text : Unbounded_String; textChangeListener_Param : access TextChangeListener'Class);
+   procedure paintXY (This : in out TextAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
+   procedure paintXYNoUpdate (This : in out TextAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
+   procedure setTextWithOnMeasure (This : in out TextAnimation; text : Unbounded_String; textChangeListener_Param : access TextChangeListener_Package.TextChangeListener'Class);
    procedure setText (This : in out TextAnimation; text : Unbounded_String);
    function getTextArray (This : in out TextAnimation) return Unbounded_String_Array_Access;
    function getFontHeight (This : in out TextAnimation) return Integer;

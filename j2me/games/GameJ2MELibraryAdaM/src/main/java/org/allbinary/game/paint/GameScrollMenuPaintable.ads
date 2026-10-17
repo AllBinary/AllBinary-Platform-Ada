@@ -51,11 +51,11 @@ package org.allbinary.game.paint.GameScrollMenuPaintable_Package is
 
    type GameScrollMenuPaintable is new BasicGameDemoPaintable and ColorChangeListener with null record;
 
-   procedure Initialize (This : in out GameScrollMenuPaintable'Class; mainDemoStatePaintable_Param : access Paintable'Class; ownershipPaintable_Param : access Paintable'Class; helpPaintableInterface_Param : access Paintable'Class; basicColor_Param : access BasicColor'Class);
-   function Create (mainDemoStatePaintable_Param : access Paintable'Class; ownershipPaintable_Param : access Paintable'Class; helpPaintableInterface_Param : access Paintable'Class; basicColor_Param : access BasicColor'Class) return GameScrollMenuPaintable_Access;
+   procedure Initialize (This : in out GameScrollMenuPaintable'Class; mainDemoStatePaintable_Param : access Paintable_Package.Paintable'Class; ownershipPaintable_Param : access Paintable_Package.Paintable'Class; helpPaintableInterface_Param : access Paintable_Package.Paintable'Class; basicColor_Param : access BasicColor_Package.BasicColor'Class);
+   function Create (mainDemoStatePaintable_Param : access Paintable_Package.Paintable'Class; ownershipPaintable_Param : access Paintable_Package.Paintable'Class; helpPaintableInterface_Param : access Paintable_Package.Paintable'Class; basicColor_Param : access BasicColor_Package.BasicColor'Class) return GameScrollMenuPaintable_Access;
    procedure setState (This : in out GameScrollMenuPaintable; state : Integer);
-   procedure onEvent (This : in out GameScrollMenuPaintable; eventObject_Param : access AllBinaryEventObject'Class);
-   procedure setColor (This : in out GameScrollMenuPaintable; basicColor_Param : access BasicColor'Class);
+   procedure onEvent (This : in out GameScrollMenuPaintable; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class);
+   procedure setColor (This : in out GameScrollMenuPaintable; basicColor_Param : access BasicColor_Package.BasicColor'Class);
 
 end org.allbinary.game.paint.GameScrollMenuPaintable_Package;
 

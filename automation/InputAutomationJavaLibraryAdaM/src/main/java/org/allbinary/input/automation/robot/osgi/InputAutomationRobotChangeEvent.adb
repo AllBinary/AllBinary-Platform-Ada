@@ -22,14 +22,14 @@ package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotChang
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out InputAutomationRobotChangeEvent'Class; inputAutomationRobotInterfaceWrapper_Param : access InputAutomationRobotInterfaceWrapper'Class) is
-      inputAutomationRobotInterfaceWrapper : InputAutomationRobotInterfaceWrapper_Access := InputAutomationRobotInterfaceWrapper_Access (inputAutomationRobotInterfaceWrapper_Param);
+   procedure Initialize (This : in out InputAutomationRobotChangeEvent'Class; inputAutomationRobotInterfaceWrapper_Param : access InputAutomationRobotInterfaceWrapper_Package.InputAutomationRobotInterfaceWrapper'Class) is
+      inputAutomationRobotInterfaceWrapper : constant InputAutomationRobotInterfaceWrapper_Access := InputAutomationRobotInterfaceWrapper_Access (inputAutomationRobotInterfaceWrapper_Param);
    begin
       Initialize_Fields (This);
         This.setInputAutomationRobotInterfaceWrapper (inputAutomationRobotInterfaceWrapper);
    end Initialize;
 
-   function Create (inputAutomationRobotInterfaceWrapper_Param : access InputAutomationRobotInterfaceWrapper'Class) return InputAutomationRobotChangeEvent_Access is
+   function Create (inputAutomationRobotInterfaceWrapper_Param : access InputAutomationRobotInterfaceWrapper_Package.InputAutomationRobotInterfaceWrapper'Class) return InputAutomationRobotChangeEvent_Access is
       This : constant InputAutomationRobotChangeEvent_Access := new InputAutomationRobotChangeEvent;
    begin
       InputAutomationRobotChangeEvent_Package.Initialize (This.all, inputAutomationRobotInterfaceWrapper_Param);
@@ -41,8 +41,8 @@ package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotChang
         return This.inputAutomationRobotInterfaceWrapper;
    end getInputAutomationRobotInterfaceWrapper;
 
-   procedure setInputAutomationRobotInterfaceWrapper (This : in out InputAutomationRobotChangeEvent; inputAutomationRobotInterfaceWrapper_Param : access InputAutomationRobotInterfaceWrapper'Class) is
-      inputAutomationRobotInterfaceWrapper : InputAutomationRobotInterfaceWrapper_Access := InputAutomationRobotInterfaceWrapper_Access (inputAutomationRobotInterfaceWrapper_Param);
+   procedure setInputAutomationRobotInterfaceWrapper (This : in out InputAutomationRobotChangeEvent; inputAutomationRobotInterfaceWrapper_Param : access InputAutomationRobotInterfaceWrapper_Package.InputAutomationRobotInterfaceWrapper'Class) is
+      inputAutomationRobotInterfaceWrapper : constant InputAutomationRobotInterfaceWrapper_Access := InputAutomationRobotInterfaceWrapper_Access (inputAutomationRobotInterfaceWrapper_Param);
    begin
         This.inputAutomationRobotInterfaceWrapper := inputAutomationRobotInterfaceWrapper;
    end setInputAutomationRobotInterfaceWrapper;

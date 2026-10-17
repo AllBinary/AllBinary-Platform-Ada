@@ -40,8 +40,8 @@ package org.allbinary.business.user.modules.admin.store.payment.PaymentStoreAdmi
    procedure Initialize (This : in out PaymentStoreAdminUserFactory'Class);
    function Create return PaymentStoreAdminUserFactory_Access;
    function getInstance (This : in out PaymentStoreAdminUserFactory) return UserInterface_Access;
-   function getInstance (This : in out PaymentStoreAdminUserFactory; hashMap_Param : access HashMap'Class) return UserInterface_Access;
-   procedure getInstance (This : in out PaymentStoreAdminUserFactory; hashMap_Param : access HashMap'Class);
+   function getInstance (This : in out PaymentStoreAdminUserFactory; hashMap_Param : access HashMap_Package.HashMap'Class) return UserInterface_Access;
+   procedure getInstance (This : in out PaymentStoreAdminUserFactory; hashMap_Param : access HashMap_Package.HashMap'Class);
 
 end org.allbinary.business.user.modules.admin.store.payment.PaymentStoreAdminUserFactory_Package;
 

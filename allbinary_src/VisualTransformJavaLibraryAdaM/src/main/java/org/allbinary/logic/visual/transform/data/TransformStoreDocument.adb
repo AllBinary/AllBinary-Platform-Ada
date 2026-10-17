@@ -22,9 +22,9 @@ package body org.allbinary.logic.visual.transform.data.TransformStoreDocument_Pa
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TransformStoreDocument'Class; pageContext_Param : access PageContext'Class; weblisketSession_Param : access WeblisketSession'Class) is
-      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
-      weblisketSession : WeblisketSession_Access := WeblisketSession_Access (weblisketSession_Param);
+   procedure Initialize (This : in out TransformStoreDocument'Class; pageContext_Param : access PageContext_Package.PageContext'Class; weblisketSession_Param : access WeblisketSession_Package.WeblisketSession'Class) is
+      pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
+      weblisketSession : constant WeblisketSession_Access := WeblisketSession_Access (weblisketSession_Param);
       storeName : Unbounded_String;
    begin
         TransformHttpRequestDocument_Package.Initialize (This, pageContext, weblisketSession);
@@ -49,15 +49,15 @@ package body org.allbinary.logic.visual.transform.data.TransformStoreDocument_Pa
         end;
    end Initialize;
 
-   function Create (pageContext_Param : access PageContext'Class; weblisketSession_Param : access WeblisketSession'Class) return TransformStoreDocument_Access is
+   function Create (pageContext_Param : access PageContext_Package.PageContext'Class; weblisketSession_Param : access WeblisketSession_Package.WeblisketSession'Class) return TransformStoreDocument_Access is
       This : constant TransformStoreDocument_Access := new TransformStoreDocument;
    begin
       TransformStoreDocument_Package.Initialize (This.all, pageContext_Param, weblisketSession_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out TransformStoreDocument'Class; searchRequest_Param : access SearchRequest'Class) is
-      searchRequest : SearchRequest_Access := SearchRequest_Access (searchRequest_Param);
+   procedure Initialize (This : in out TransformStoreDocument'Class; searchRequest_Param : access SearchRequest_Package.SearchRequest'Class) is
+      searchRequest : constant SearchRequest_Access := SearchRequest_Access (searchRequest_Param);
    begin
         TransformHttpRequestDocument_Package.Initialize (This, searchRequest);
         Initialize_Fields (This);
@@ -77,7 +77,7 @@ package body org.allbinary.logic.visual.transform.data.TransformStoreDocument_Pa
         end;
    end Initialize;
 
-   function Create (searchRequest_Param : access SearchRequest'Class) return TransformStoreDocument_Access is
+   function Create (searchRequest_Param : access SearchRequest_Package.SearchRequest'Class) return TransformStoreDocument_Access is
       This : constant TransformStoreDocument_Access := new TransformStoreDocument;
    begin
       TransformStoreDocument_Package.Initialize (This.all, searchRequest_Param);

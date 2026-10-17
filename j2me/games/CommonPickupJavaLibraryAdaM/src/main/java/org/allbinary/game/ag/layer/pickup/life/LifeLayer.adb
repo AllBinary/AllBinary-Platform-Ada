@@ -33,14 +33,14 @@ package body org.allbinary.game.ag.layer.pickup.life.LifeLayer_Package is
       return This;
    end Create;
 
-   procedure paint (This : in out LifeLayer; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out LifeLayer; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paint;
 
-   procedure visit (This : in out LifeLayer; lifeInterface_Param : access Life'Class) is
-      lifeInterface : Life_Access := Life_Access (lifeInterface_Param);
+   procedure visit (This : in out LifeLayer; lifeInterface_Param : access Life_Package.Life'Class) is
+      lifeInterface : constant Life_Access := Life_Access (lifeInterface_Param);
    begin
         lifeInterface.add (Short_Integer (1));
    end visit;

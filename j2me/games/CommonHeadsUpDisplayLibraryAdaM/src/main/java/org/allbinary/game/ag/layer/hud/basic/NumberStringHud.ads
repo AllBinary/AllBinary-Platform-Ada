@@ -56,16 +56,16 @@ package org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package is
       valueTotalDigits : Integer;
    end record;
 
-   procedure Initialize (This : in out NumberStringHud'Class; prependString : Unbounded_String; max : Integer; location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor'Class);
-   function Create (prependString : Unbounded_String; max : Integer; location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor'Class) return NumberStringHud_Access;
-   procedure updateMeasurement (This : in out NumberStringHud; graphics_Param : access Graphics'Class);
+   procedure Initialize (This : in out NumberStringHud'Class; prependString : Unbounded_String; max : Integer; location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class);
+   function Create (prependString : Unbounded_String; max : Integer; location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) return NumberStringHud_Access;
+   procedure updateMeasurement (This : in out NumberStringHud; graphics_Param : access Graphics_Package.Graphics'Class);
    function get (This : in out NumberStringHud) return Integer;
    procedure add (This : in out NumberStringHud; value : Integer);
    procedure set (This : in out NumberStringHud; value : Integer);
    procedure reduce (This : in out NumberStringHud; value : Integer);
-   procedure paint (This : in out NumberStringHud; graphics_Param : access Graphics'Class);
-   procedure paintXY (This : in out NumberStringHud; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
-   procedure paintThreed (This : in out NumberStringHud; graphics_Param : access Graphics'Class);
+   procedure paint (This : in out NumberStringHud; graphics_Param : access Graphics_Package.Graphics'Class);
+   procedure paintXY (This : in out NumberStringHud; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
+   procedure paintThreed (This : in out NumberStringHud; graphics_Param : access Graphics_Package.Graphics'Class);
 
 end org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package;
 

@@ -34,7 +34,7 @@ package org.allbinary.device.LoadTextures_Package is
 
    procedure Initialize (This : in out LoadTextures'Class);
    function Create return LoadTextures_Access;
-   procedure load (This : in out LoadTextures; gl_Param : access GL10'Class);
+   procedure load (This : in out LoadTextures; gl_Param : access GL10_Package.GL10'Class);
 
 end org.allbinary.device.LoadTextures_Package;
 

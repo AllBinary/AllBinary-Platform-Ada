@@ -63,12 +63,12 @@ package org.allbinary.logic.visual.transform.TransformFactory_Package is
    procedure Initialize (This : in out TransformFactory'Class);
    function Create return TransformFactory_Access;
    function getInstance return TransformFactory_Access;
-   function getInstance (This : in out TransformFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; viewName : Unbounded_String; ownerTransformInfoInterface_Param : access TransformInfoInterface'Class) return TransformInterface_Access;
-   procedure getInstance (This : in out TransformFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; viewName : Unbounded_String; ownerTransformInfoInterface_Param : access TransformInfoInterface'Class);
-   function getInstance (This : in out TransformFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return TransformInterface_Access;
-   procedure getInstance (This : in out TransformFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
-   function getInstance (This : in out TransformFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) return TransformInterface_Access;
-   procedure getInstance (This : in out TransformFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function getInstance (This : in out TransformFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; viewName : Unbounded_String; ownerTransformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return TransformInterface_Access;
+   procedure getInstance (This : in out TransformFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; viewName : Unbounded_String; ownerTransformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
+   function getInstance (This : in out TransformFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return TransformInterface_Access;
+   procedure getInstance (This : in out TransformFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class);
+   function getInstance (This : in out TransformFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return TransformInterface_Access;
+   procedure getInstance (This : in out TransformFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
 
 end org.allbinary.logic.visual.transform.TransformFactory_Package;
 

@@ -22,29 +22,29 @@ package body org.allbinary.graphics.paint.AnimationCompositePaintable_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AnimationCompositePaintable'Class; animationInterface_Param : access Animation'Class) is
-      animationInterface : Animation_Access := Animation_Access (animationInterface_Param);
+   procedure Initialize (This : in out AnimationCompositePaintable'Class; animationInterface_Param : access Animation_Package.Animation'Class) is
+      animationInterface : constant Animation_Access := Animation_Access (animationInterface_Param);
    begin
       InitUpdatePaintable_Package.Initialize (This);
       Initialize_Fields (This);
         This.animationInterface := animationInterface;
    end Initialize;
 
-   function Create (animationInterface_Param : access Animation'Class) return AnimationCompositePaintable_Access is
+   function Create (animationInterface_Param : access Animation_Package.Animation'Class) return AnimationCompositePaintable_Access is
       This : constant AnimationCompositePaintable_Access := new AnimationCompositePaintable;
    begin
       AnimationCompositePaintable_Package.Initialize (This.all, animationInterface_Param);
       return This;
    end Create;
 
-   procedure paint (This : in out AnimationCompositePaintable; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out AnimationCompositePaintable; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.animationInterface.paintXY (graphics, 0, 0);
    end paint;
 
-   procedure paintThreed (This : in out AnimationCompositePaintable; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintThreed (This : in out AnimationCompositePaintable; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.animationInterface.paintThreedXYZ (graphics, 0, 0, 0);
    end paintThreed;

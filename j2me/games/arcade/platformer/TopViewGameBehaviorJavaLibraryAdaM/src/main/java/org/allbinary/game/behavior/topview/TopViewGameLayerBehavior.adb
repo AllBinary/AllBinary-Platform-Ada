@@ -48,8 +48,8 @@ package body org.allbinary.game.behavior.topview.TopViewGameLayerBehavior_Packag
         end if;
    end gravity;
 
-   procedure land (This : in out TopViewGameLayerBehavior; velocityProperties_Param : access VelocityProperties'Class) is
-      velocityProperties : VelocityProperties_Access := VelocityProperties_Access (velocityProperties_Param);
+   procedure land (This : in out TopViewGameLayerBehavior; velocityProperties_Param : access VelocityProperties_Package.VelocityProperties'Class) is
+      velocityProperties : constant VelocityProperties_Access := VelocityProperties_Access (velocityProperties_Param);
    begin
         velocityProperties.getVelocityYBasicDecimalP.setint (0);
         This.landReset;
@@ -63,10 +63,10 @@ package body org.allbinary.game.behavior.topview.TopViewGameLayerBehavior_Packag
         This.isJumpOver := False;
    end landReset;
 
-   procedure up (This : in out TopViewGameLayerBehavior; velocityProperties_Param : access VelocityProperties'Class; acceleration_Param : access BasicAccelerationProperties'Class; jumpBehavior_Param : access InitialJumpBehavior'Class; accelerationMultiplier : Integer) is
-      velocityProperties : VelocityProperties_Access := VelocityProperties_Access (velocityProperties_Param);
-      acceleration : BasicAccelerationProperties_Access := BasicAccelerationProperties_Access (acceleration_Param);
-      jumpBehavior : InitialJumpBehavior_Access := InitialJumpBehavior_Access (jumpBehavior_Param);
+   procedure up (This : in out TopViewGameLayerBehavior; velocityProperties_Param : access VelocityProperties_Package.VelocityProperties'Class; acceleration_Param : access BasicAccelerationProperties_Package.BasicAccelerationProperties'Class; jumpBehavior_Param : access InitialJumpBehavior_Package.InitialJumpBehavior'Class; accelerationMultiplier : Integer) is
+      velocityProperties : constant VelocityProperties_Access := VelocityProperties_Access (velocityProperties_Param);
+      acceleration : constant BasicAccelerationProperties_Access := BasicAccelerationProperties_Access (acceleration_Param);
+      jumpBehavior : constant InitialJumpBehavior_Access := InitialJumpBehavior_Access (jumpBehavior_Param);
       acceleration2 : Integer;
    begin
         if not (This.isJumpOver) then
@@ -87,8 +87,8 @@ package body org.allbinary.game.behavior.topview.TopViewGameLayerBehavior_Packag
         end if;
    end up;
 
-   procedure inputFrames (This : in out TopViewGameLayerBehavior; velocityProperties_Param : access VelocityProperties'Class) is
-      velocityProperties : VelocityProperties_Access := VelocityProperties_Access (velocityProperties_Param);
+   procedure inputFrames (This : in out TopViewGameLayerBehavior; velocityProperties_Param : access VelocityProperties_Package.VelocityProperties'Class) is
+      velocityProperties : constant VelocityProperties_Access := VelocityProperties_Access (velocityProperties_Param);
    begin
         if ((This.gravityActionIndex) > (0)) and then ((velocityProperties.getVelocityYBasicDecimalP.getUnscaled) > (0)) then
             This.isJumpOver := True;

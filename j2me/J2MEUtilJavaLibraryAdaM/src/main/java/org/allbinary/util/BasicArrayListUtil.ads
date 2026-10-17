@@ -56,13 +56,13 @@ package org.allbinary.util.BasicArrayListUtil_Package is
    procedure Initialize (This : in out BasicArrayListUtil'Class);
    function Create return BasicArrayListUtil_Access;
    function getInstance return BasicArrayListUtil_Access;
-   function getRandom (This : in out BasicArrayListUtil; list_Param : access BasicArrayList'Class) return Java_Object_Access;
-   procedure getRandom (This : in out BasicArrayListUtil; list_Param : access BasicArrayList'Class);
-   function getRandomIndex (This : in out BasicArrayListUtil; list_Param : access BasicArrayList'Class) return Integer;
-   procedure getRandomIndex (This : in out BasicArrayListUtil; list_Param : access BasicArrayList'Class);
-   procedure reverse_Id (This : in out BasicArrayListUtil; list_Param : access BasicArrayList'Class);
-   function log (This : in out BasicArrayListUtil; list_Param : access BasicArrayList'Class) return Unbounded_String;
-   procedure log (This : in out BasicArrayListUtil; list_Param : access BasicArrayList'Class);
+   function getRandom (This : in out BasicArrayListUtil; list_Param : access BasicArrayList_Package.BasicArrayList'Class) return Java_Object_Access;
+   procedure getRandom (This : in out BasicArrayListUtil; list_Param : access BasicArrayList_Package.BasicArrayList'Class);
+   function getRandomIndex (This : in out BasicArrayListUtil; list_Param : access BasicArrayList_Package.BasicArrayList'Class) return Integer;
+   procedure getRandomIndex (This : in out BasicArrayListUtil; list_Param : access BasicArrayList_Package.BasicArrayList'Class);
+   procedure reverse_Id (This : in out BasicArrayListUtil; list_Param : access BasicArrayList_Package.BasicArrayList'Class);
+   function log (This : in out BasicArrayListUtil; list_Param : access BasicArrayList_Package.BasicArrayList'Class) return Unbounded_String;
+   procedure log (This : in out BasicArrayListUtil; list_Param : access BasicArrayList_Package.BasicArrayList'Class);
    function getImmutableInstance (This : in out BasicArrayListUtil) return BasicArrayList_Access;
    procedure main (args : Unbounded_String_Array_Access);
 

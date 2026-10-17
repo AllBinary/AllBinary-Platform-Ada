@@ -24,14 +24,14 @@ package body org.allbinary.data.tree.dom.ContextUriResolver_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ContextUriResolver'Class; basicURIResolver_Param : access BasicUriResolver'Class) is
-      basicURIResolver : BasicUriResolver_Access := BasicUriResolver_Access (basicURIResolver_Param);
+   procedure Initialize (This : in out ContextUriResolver'Class; basicURIResolver_Param : access BasicUriResolver_Package.BasicUriResolver'Class) is
+      basicURIResolver : constant BasicUriResolver_Access := BasicUriResolver_Access (basicURIResolver_Param);
    begin
       Initialize_Fields (This);
         This.basicURIResolver := basicURIResolver;
    end Initialize;
 
-   function Create (basicURIResolver_Param : access BasicUriResolver'Class) return ContextUriResolver_Access is
+   function Create (basicURIResolver_Param : access BasicUriResolver_Package.BasicUriResolver'Class) return ContextUriResolver_Access is
       This : constant ContextUriResolver_Access := new ContextUriResolver;
    begin
       ContextUriResolver_Package.Initialize (This.all, basicURIResolver_Param);

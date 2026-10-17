@@ -44,9 +44,9 @@ package org.allbinary.game.layer.hud.basic.ImageHealthGraphic_Package is
       image : Image_Access_Array_Access;
    end record;
 
-   procedure Initialize (This : in out ImageHealthGraphic'Class; animationInterface_Param : access AnimationInterface'Class; healthInterface_Param : access HealthInterface'Class; location : Integer; direction : Integer);
-   function Create (animationInterface_Param : access AnimationInterface'Class; healthInterface_Param : access HealthInterface'Class; location : Integer; direction : Integer) return ImageHealthGraphic_Access;
-   procedure paint (This : in out ImageHealthGraphic; graphics_Param : access Graphics'Class);
+   procedure Initialize (This : in out ImageHealthGraphic'Class; animationInterface_Param : access AnimationInterface_Package.AnimationInterface'Class; healthInterface_Param : access HealthInterface_Package.HealthInterface'Class; location : Integer; direction : Integer);
+   function Create (animationInterface_Param : access AnimationInterface_Package.AnimationInterface'Class; healthInterface_Param : access HealthInterface_Package.HealthInterface'Class; location : Integer; direction : Integer) return ImageHealthGraphic_Access;
+   procedure paint (This : in out ImageHealthGraphic; graphics_Param : access Graphics_Package.Graphics'Class);
 
 end org.allbinary.game.layer.hud.basic.ImageHealthGraphic_Package;
 

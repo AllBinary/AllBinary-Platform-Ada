@@ -40,8 +40,8 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
       return This;
    end Create;
 
-   procedure add (This : in out PaymentGatewayEntity; paymentGatewayInterface_Param : access PaymentGatewayInterface'Class) is
-      paymentGatewayInterface : PaymentGatewayInterface_Access := PaymentGatewayInterface_Access (paymentGatewayInterface_Param);
+   procedure add (This : in out PaymentGatewayEntity; paymentGatewayInterface_Param : access PaymentGatewayInterface_Package.PaymentGatewayInterface'Class) is
+      paymentGatewayInterface : constant PaymentGatewayInterface_Access := PaymentGatewayInterface_Access (paymentGatewayInterface_Param);
       vector : BasicArrayList_Access;
       calendar : Calendar_Access;
       time : Unbounded_String;
@@ -73,8 +73,8 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
         end;
    end add;
 
-   procedure update (This : in out PaymentGatewayEntity; paymentGatewayInterface_Param : access PaymentGatewayInterface'Class) is
-      paymentGatewayInterface : PaymentGatewayInterface_Access := PaymentGatewayInterface_Access (paymentGatewayInterface_Param);
+   procedure update (This : in out PaymentGatewayEntity; paymentGatewayInterface_Param : access PaymentGatewayInterface_Package.PaymentGatewayInterface'Class) is
+      paymentGatewayInterface : constant PaymentGatewayInterface_Access := PaymentGatewayInterface_Access (paymentGatewayInterface_Param);
       calendar : Calendar_Access;
       time : Unbounded_String;
       whereKeyValuePairs : HashMap_Access;
@@ -107,8 +107,8 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
         end;
    end update;
 
-   function getPaymentGatewayInterface (This : in out PaymentGatewayEntity; storeName : Unbounded_String; paymentType_Param : access BasicPaymentType'Class) return PaymentGatewayInterface_Access is
-      paymentType : BasicPaymentType_Access := BasicPaymentType_Access (paymentType_Param);
+   function getPaymentGatewayInterface (This : in out PaymentGatewayEntity; storeName : Unbounded_String; paymentType_Param : access BasicPaymentType_Package.BasicPaymentType'Class) return PaymentGatewayInterface_Access is
+      paymentType : constant BasicPaymentType_Access := BasicPaymentType_Access (paymentType_Param);
       paymentGatewayHashMap : HashMap_Access;
       whereKeyAndValue : HashMap_Access;
       userName : Unbounded_String;
@@ -215,8 +215,8 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
         end;
    end findPaymentTypeVectorByStore;
 
-   procedure remove (This : in out PaymentGatewayEntity; storeName : Unbounded_String; paymentType_Param : access BasicPaymentType'Class) is
-      paymentType : BasicPaymentType_Access := BasicPaymentType_Access (paymentType_Param);
+   procedure remove (This : in out PaymentGatewayEntity; storeName : Unbounded_String; paymentType_Param : access BasicPaymentType_Package.BasicPaymentType'Class) is
+      paymentType : constant BasicPaymentType_Access := BasicPaymentType_Access (paymentType_Param);
       whereHashMap : HashMap_Access;
    begin
         begin
@@ -332,7 +332,7 @@ package body org.allbinary.data.tables.user.commerce.money.payment.gateway.Payme
         return AbSqlBean (This).dropTable;
    end dropTable;
 
-   procedure getPaymentGatewayInterface (This : in out PaymentGatewayEntity; storeName : Unbounded_String; paymentType_Param : access BasicPaymentType'Class) is
+   procedure getPaymentGatewayInterface (This : in out PaymentGatewayEntity; storeName : Unbounded_String; paymentType_Param : access BasicPaymentType_Package.BasicPaymentType'Class) is
       Java_Result : constant PaymentGatewayInterface_Access := PaymentGatewayEntity'Class (This).getPaymentGatewayInterface (storeName, paymentType_Param);
       pragma Unreferenced (Java_Result);
    begin

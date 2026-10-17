@@ -40,12 +40,12 @@ package org.allbinary.game.displayable.canvas.BaseMenuBehavior_Package is
    procedure Initialize (This : in out BaseMenuBehavior'Class);
    function Create return BaseMenuBehavior_Access;
    function getInstance return BaseMenuBehavior_Access;
-   procedure onDisplayChangeEvent (This : in out BaseMenuBehavior; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class; displayChangeEvent_Param : access DisplayChangeEvent'Class);
-   procedure initSpecialPaint (This : in out BaseMenuBehavior; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class);
-   procedure initMenu (This : in out BaseMenuBehavior; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class);
-   procedure updateMenu (This : in out BaseMenuBehavior; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class);
-   procedure popupMenu (This : in out BaseMenuBehavior; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class);
-   procedure closeMenu (This : in out BaseMenuBehavior; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class);
+   procedure onDisplayChangeEvent (This : in out BaseMenuBehavior; allBinaryGameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class; displayChangeEvent_Param : access DisplayChangeEvent_Package.DisplayChangeEvent'Class);
+   procedure initSpecialPaint (This : in out BaseMenuBehavior; allBinaryGameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class);
+   procedure initMenu (This : in out BaseMenuBehavior; allBinaryGameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class);
+   procedure updateMenu (This : in out BaseMenuBehavior; allBinaryGameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class);
+   procedure popupMenu (This : in out BaseMenuBehavior; allBinaryGameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class);
+   procedure closeMenu (This : in out BaseMenuBehavior; allBinaryGameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class);
 
 end org.allbinary.game.displayable.canvas.BaseMenuBehavior_Package;
 

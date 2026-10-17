@@ -43,10 +43,10 @@ package org.allbinary.logic.communication.http.file.upload.AbFileUpload_Package 
 
    type AbFileUpload is new FileUpload with null record;
 
-   procedure Initialize (This : in out AbFileUpload'Class; fileItemFactory_Param : access FileItemFactory'Class);
-   function Create (fileItemFactory_Param : access FileItemFactory'Class) return AbFileUpload_Access;
-   function getItemIterator (This : in out AbFileUpload; request_Param : access HttpServletRequest'Class) return FileItemIterator_Access;
-   procedure getItemIterator (This : in out AbFileUpload; request_Param : access HttpServletRequest'Class);
+   procedure Initialize (This : in out AbFileUpload'Class; fileItemFactory_Param : access FileItemFactory_Package.FileItemFactory'Class);
+   function Create (fileItemFactory_Param : access FileItemFactory_Package.FileItemFactory'Class) return AbFileUpload_Access;
+   function getItemIterator (This : in out AbFileUpload; request_Param : access HttpServletRequest_Package.HttpServletRequest'Class) return FileItemIterator_Access;
+   procedure getItemIterator (This : in out AbFileUpload; request_Param : access HttpServletRequest_Package.HttpServletRequest'Class);
 
 end org.allbinary.logic.communication.http.file.upload.AbFileUpload_Package;
 

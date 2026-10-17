@@ -23,7 +23,7 @@ package body org.allbinary.logic.control.workflow.StoreWorkFlowWrapper_Package i
 
 
    procedure Initialize (This : in out StoreWorkFlowWrapper'Class; anyType_Param : access Java_Object'Class) is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         WorkFlowWrapper_Package.Initialize (This, anyType);
         Initialize_Fields (This);

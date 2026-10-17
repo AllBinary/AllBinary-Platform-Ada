@@ -23,10 +23,10 @@ package body org.allbinary.input.automation.module.TestInputAutomationActionWork
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TestInputAutomationActionWorker'Class; sleep : Integer; inputAutomationActionInterface_Param : access InputAutomationActionInterface'Class; imageComparatorConstraintsInterface_Param : access ImageComparatorConstraintsInterface'Class; motionRectangleConstraintsInterface_Param : access MotionRectangleConstraintsInterface'Class) is
-      inputAutomationActionInterface : InputAutomationActionInterface_Access := InputAutomationActionInterface_Access (inputAutomationActionInterface_Param);
-      imageComparatorConstraintsInterface : ImageComparatorConstraintsInterface_Access := ImageComparatorConstraintsInterface_Access (imageComparatorConstraintsInterface_Param);
-      motionRectangleConstraintsInterface : MotionRectangleConstraintsInterface_Access := MotionRectangleConstraintsInterface_Access (motionRectangleConstraintsInterface_Param);
+   procedure Initialize (This : in out TestInputAutomationActionWorker'Class; sleep : Integer; inputAutomationActionInterface_Param : access InputAutomationActionInterface_Package.InputAutomationActionInterface'Class; imageComparatorConstraintsInterface_Param : access ImageComparatorConstraintsInterface_Package.ImageComparatorConstraintsInterface'Class; motionRectangleConstraintsInterface_Param : access MotionRectangleConstraintsInterface_Package.MotionRectangleConstraintsInterface'Class) is
+      inputAutomationActionInterface : constant InputAutomationActionInterface_Access := InputAutomationActionInterface_Access (inputAutomationActionInterface_Param);
+      imageComparatorConstraintsInterface : constant ImageComparatorConstraintsInterface_Access := ImageComparatorConstraintsInterface_Access (imageComparatorConstraintsInterface_Param);
+      motionRectangleConstraintsInterface : constant MotionRectangleConstraintsInterface_Access := MotionRectangleConstraintsInterface_Access (motionRectangleConstraintsInterface_Param);
    begin
         AbstractInputAutomationWorker_Package.Initialize (This, inputAutomationActionInterface);
         Initialize_Fields (This);
@@ -34,7 +34,7 @@ package body org.allbinary.input.automation.module.TestInputAutomationActionWork
         This.sleep := sleep;
    end Initialize;
 
-   function Create (sleep : Integer; inputAutomationActionInterface_Param : access InputAutomationActionInterface'Class; imageComparatorConstraintsInterface_Param : access ImageComparatorConstraintsInterface'Class; motionRectangleConstraintsInterface_Param : access MotionRectangleConstraintsInterface'Class) return TestInputAutomationActionWorker_Access is
+   function Create (sleep : Integer; inputAutomationActionInterface_Param : access InputAutomationActionInterface_Package.InputAutomationActionInterface'Class; imageComparatorConstraintsInterface_Param : access ImageComparatorConstraintsInterface_Package.ImageComparatorConstraintsInterface'Class; motionRectangleConstraintsInterface_Param : access MotionRectangleConstraintsInterface_Package.MotionRectangleConstraintsInterface'Class) return TestInputAutomationActionWorker_Access is
       This : constant TestInputAutomationActionWorker_Access := new TestInputAutomationActionWorker;
    begin
       TestInputAutomationActionWorker_Package.Initialize (This.all, sleep, inputAutomationActionInterface_Param, imageComparatorConstraintsInterface_Param, motionRectangleConstraintsInterface_Param);

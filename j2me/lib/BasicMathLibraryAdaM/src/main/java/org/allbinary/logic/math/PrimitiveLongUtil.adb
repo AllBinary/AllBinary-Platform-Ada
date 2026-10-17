@@ -43,7 +43,7 @@ package body org.allbinary.logic.math.PrimitiveLongUtil_Package is
    end createPowerOfTen;
 
    procedure Initialize (This : in out PrimitiveLongUtil'Class; powerOfTen : Integer; unused_Param : access Java_Object'Class) is
-      unused : Java_Object_Access := Java_Object_Access (unused_Param);
+      unused : constant Java_Object_Access := Java_Object_Access (unused_Param);
    begin
       Initialize_Fields (This);
         This.maxDigits := MathUtil_Package.getInstance.getTotalDigits (powerOfTen);

@@ -40,9 +40,9 @@ package org.allbinary.game.ag.ai.sequence.ComboSequenceAI_Package is
 
    type ComboSequenceAI is new SequenceAI with null record;
 
-   procedure Initialize (This : in out ComboSequenceAI'Class; artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class);
-   function Create (artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return ComboSequenceAI_Access;
-   procedure processAI (This : in out ComboSequenceAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class);
+   procedure Initialize (This : in out ComboSequenceAI'Class; artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class);
+   function Create (artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) return ComboSequenceAI_Access;
+   procedure processAI (This : in out ComboSequenceAI; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class);
 
 end org.allbinary.game.ag.ai.sequence.ComboSequenceAI_Package;
 

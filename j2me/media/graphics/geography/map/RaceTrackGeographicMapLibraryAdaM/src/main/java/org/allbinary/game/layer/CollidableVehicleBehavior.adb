@@ -38,9 +38,9 @@ package body org.allbinary.game.layer.CollidableVehicleBehavior_Package is
    end Create;
 
    --  throws Exception
-   procedure collide (This : in out CollidableVehicleBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableCompositeLayer'Class) is
-      ownerLayer : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
-      collidableInterfaceCompositeInterface : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (collidableInterfaceCompositeInterface_Param);
+   procedure collide (This : in out CollidableVehicleBehavior; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class) is
+      ownerLayer : constant CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
+      collidableInterfaceCompositeInterface : constant CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (collidableInterfaceCompositeInterface_Param);
       collisionTypeFactory : CollisionTypeFactory_Access;
       collisionType : CollisionType_Access;
       collidableDestroyableDamageableLayer : CollidableDestroyableDamageableLayer_Access;
@@ -57,16 +57,16 @@ package body org.allbinary.game.layer.CollidableVehicleBehavior_Package is
         end if;
    end collide;
 
-   procedure collideInterface (This : in out CollidableVehicleBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface'Class) is
-      ownerLayer : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
-      collidableInterfaceCompositeInterface : CollidableInterfaceCompositeInterface_Access := CollidableInterfaceCompositeInterface_Access (collidableInterfaceCompositeInterface_Param);
+   procedure collideInterface (This : in out CollidableVehicleBehavior; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface_Package.CollidableInterfaceCompositeInterface'Class) is
+      ownerLayer : constant CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
+      collidableInterfaceCompositeInterface : constant CollidableInterfaceCompositeInterface_Access := CollidableInterfaceCompositeInterface_Access (collidableInterfaceCompositeInterface_Param);
    begin
         ForcedLogUtil_Package.log (To_Unbounded_String ("Don't Use Interface Version It Is Slower"), CollidableVehicleBehavior_Access'(This'Unchecked_Access));
    end collideInterface;
 
-   procedure collideVehicle (This : in out CollidableVehicleBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; vehiclePropertiesCompositeInterface_Param : access VehiclePropertiesCompositeInterface'Class) is
-      ownerLayer : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
-      vehiclePropertiesCompositeInterface : VehiclePropertiesCompositeInterface_Access := VehiclePropertiesCompositeInterface_Access (vehiclePropertiesCompositeInterface_Param);
+   procedure collideVehicle (This : in out CollidableVehicleBehavior; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; vehiclePropertiesCompositeInterface_Param : access VehiclePropertiesCompositeInterface_Package.VehiclePropertiesCompositeInterface'Class) is
+      ownerLayer : constant CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
+      vehiclePropertiesCompositeInterface : constant VehiclePropertiesCompositeInterface_Access := VehiclePropertiesCompositeInterface_Access (vehiclePropertiesCompositeInterface_Param);
       ownerVehicleLayerInterface : VehiclePropertiesCompositeInterface_Access;
       ownerVehicleProperties : VehicleProperties_Access;
       vehicleProperties : VehicleProperties_Access;
@@ -97,8 +97,8 @@ package body org.allbinary.game.layer.CollidableVehicleBehavior_Package is
         This.totalImpactVelocity := (impactVelocityX) + (impactVelocityY);
    end collideVehicle;
 
-   procedure collideFriction (This : in out CollidableVehicleBehavior; vehiclePropertiesCompositeInterface_Param : access VehiclePropertiesCompositeInterface'Class) is
-      vehiclePropertiesCompositeInterface : VehiclePropertiesCompositeInterface_Access := VehiclePropertiesCompositeInterface_Access (vehiclePropertiesCompositeInterface_Param);
+   procedure collideFriction (This : in out CollidableVehicleBehavior; vehiclePropertiesCompositeInterface_Param : access VehiclePropertiesCompositeInterface_Package.VehiclePropertiesCompositeInterface'Class) is
+      vehiclePropertiesCompositeInterface : constant VehiclePropertiesCompositeInterface_Access := VehiclePropertiesCompositeInterface_Access (vehiclePropertiesCompositeInterface_Param);
       vehicleFrictionProperties : VehicleFrictionProperties_Access;
    begin
         vehicleFrictionProperties := vehiclePropertiesCompositeInterface.getVehicleProperties.getVehicleFrictionProperties;

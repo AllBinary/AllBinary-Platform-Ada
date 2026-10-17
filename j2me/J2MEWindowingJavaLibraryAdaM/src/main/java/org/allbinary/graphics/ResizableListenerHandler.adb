@@ -38,8 +38,8 @@ package body org.allbinary.graphics.ResizableListenerHandler_Package is
         return ResizableListenerHandler_Package.instance;
    end getInstance;
 
-   procedure setListener (This : in out ResizableListenerHandler; resizableListenerInterface_Param : access ResizableListenerInterface'Class) is
-      resizableListenerInterface : ResizableListenerInterface_Access := ResizableListenerInterface_Access (resizableListenerInterface_Param);
+   procedure setListener (This : in out ResizableListenerHandler; resizableListenerInterface_Param : access ResizableListenerInterface_Package.ResizableListenerInterface'Class) is
+      resizableListenerInterface : constant ResizableListenerInterface_Access := ResizableListenerInterface_Access (resizableListenerInterface_Param);
    begin
         null;
    end setListener;

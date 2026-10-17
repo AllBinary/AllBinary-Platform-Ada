@@ -26,8 +26,8 @@ package body org.allbinary.business.advertisement.area.AdvertisementArea_Package
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AdvertisementArea'Class; hashMap_Param : access HashMap'Class) is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+   procedure Initialize (This : in out AdvertisementArea'Class; hashMap_Param : access HashMap_Package.HashMap'Class) is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
       constraintsDomString : Unbounded_String;
       document : Document_Access;
    begin
@@ -41,7 +41,7 @@ package body org.allbinary.business.advertisement.area.AdvertisementArea_Package
         This.campaign := Unbounded_String (hashMap.get (AdvertisementCampaignData_Package.getInstance.NAME));
    end Initialize;
 
-   function Create (hashMap_Param : access HashMap'Class) return AdvertisementArea_Access is
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return AdvertisementArea_Access is
       This : constant AdvertisementArea_Access := new AdvertisementArea;
    begin
       AdvertisementArea_Package.Initialize (This.all, hashMap_Param);
@@ -88,8 +88,8 @@ package body org.allbinary.business.advertisement.area.AdvertisementArea_Package
         This.description := description;
    end setDescription;
 
-   procedure setConstraints (This : in out AdvertisementArea; advertisementConstraintsInterface_Param : access AdvertisementAreaConstraintsInterface'Class) is
-      advertisementConstraintsInterface : AdvertisementAreaConstraintsInterface_Access := AdvertisementAreaConstraintsInterface_Access (advertisementConstraintsInterface_Param);
+   procedure setConstraints (This : in out AdvertisementArea; advertisementConstraintsInterface_Param : access AdvertisementAreaConstraintsInterface_Package.AdvertisementAreaConstraintsInterface'Class) is
+      advertisementConstraintsInterface : constant AdvertisementAreaConstraintsInterface_Access := AdvertisementAreaConstraintsInterface_Access (advertisementConstraintsInterface_Param);
    begin
         This.advertisementAreaConstraintsInterface := This.advertisementAreaConstraintsInterface;
    end setConstraints;

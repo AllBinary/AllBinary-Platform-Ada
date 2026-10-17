@@ -23,24 +23,24 @@ package body org.allbinary.graphics.form.item.CommandTextItemArrayFactory_Packag
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CommandTextItemArrayFactory'Class; visitorInterface_Param : access Visitor'Class) is
-      visitorInterface : Visitor_Access := Visitor_Access (visitorInterface_Param);
+   procedure Initialize (This : in out CommandTextItemArrayFactory'Class; visitorInterface_Param : access Visitor_Package.Visitor'Class) is
+      visitorInterface : constant Visitor_Access := Visitor_Access (visitorInterface_Param);
    begin
       Initialize_Fields (This);
         This.visitorInterface := visitorInterface;
    end Initialize;
 
-   function Create (visitorInterface_Param : access Visitor'Class) return CommandTextItemArrayFactory_Access is
+   function Create (visitorInterface_Param : access Visitor_Package.Visitor'Class) return CommandTextItemArrayFactory_Access is
       This : constant CommandTextItemArrayFactory_Access := new CommandTextItemArrayFactory;
    begin
       CommandTextItemArrayFactory_Package.Initialize (This.all, visitorInterface_Param);
       return This;
    end Create;
 
-   function getInstance (This : in out CommandTextItemArrayFactory; vector_Param : access Java_Object'Class; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return ABCustomItem_Access_Array_Access is
-      vector : Java_Object_Access := Java_Object_Access (vector_Param);
-      backgroundBasicColor : BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
-      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
+   function getInstance (This : in out CommandTextItemArrayFactory; vector_Param : access Java_Object'Class; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return ABCustomItem_Access_Array_Access is
+      vector : constant Java_Object_Access := Java_Object_Access (vector_Param);
+      backgroundBasicColor : constant BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
+      foregroundBasicColor : constant BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
       vectorUtil : VectorUtil_Access;
       size : Integer;
       textItem : CommandTextItem_Access;
@@ -82,7 +82,7 @@ package body org.allbinary.graphics.form.item.CommandTextItemArrayFactory_Packag
         return textItemArray;
    end getInstance;
 
-   procedure getInstance (This : in out CommandTextItemArrayFactory; vector_Param : access Java_Object'Class; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) is
+   procedure getInstance (This : in out CommandTextItemArrayFactory; vector_Param : access Java_Object'Class; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) is
       Java_Result : constant ABCustomItem_Access_Array_Access := CommandTextItemArrayFactory'Class (This).getInstance (vector_Param, backgroundBasicColor_Param, foregroundBasicColor_Param);
       pragma Unreferenced (Java_Result);
    begin

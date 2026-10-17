@@ -36,28 +36,28 @@ package body org.allbinary.business.category.properties.CategoryPropertiesFactor
       return This;
    end Create;
 
-   procedure Initialize (This : in out CategoryPropertiesFactory'Class; node_Param : access Node'Class) is
-      node : Node_Access := Node_Access (node_Param);
+   procedure Initialize (This : in out CategoryPropertiesFactory'Class; node_Param : access Node_Package.Node'Class) is
+      node : constant Node_Access := Node_Access (node_Param);
    begin
       Initialize_Fields (This);
         This.categoryPropertiesInterface := CategoryPropertiesInterface_Access (CategoryProperties_Package.Create (node));
    end Initialize;
 
-   function Create (node_Param : access Node'Class) return CategoryPropertiesFactory_Access is
+   function Create (node_Param : access Node_Package.Node'Class) return CategoryPropertiesFactory_Access is
       This : constant CategoryPropertiesFactory_Access := new CategoryPropertiesFactory;
    begin
       CategoryPropertiesFactory_Package.Initialize (This.all, node_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out CategoryPropertiesFactory'Class; categoryPropertiesHashMap_Param : access HashMap'Class) is
-      categoryPropertiesHashMap : HashMap_Access := HashMap_Access (categoryPropertiesHashMap_Param);
+   procedure Initialize (This : in out CategoryPropertiesFactory'Class; categoryPropertiesHashMap_Param : access HashMap_Package.HashMap'Class) is
+      categoryPropertiesHashMap : constant HashMap_Access := HashMap_Access (categoryPropertiesHashMap_Param);
    begin
       Initialize_Fields (This);
         This.categoryPropertiesInterface := CategoryPropertiesInterface_Access (CategoryProperties_Package.Create (categoryPropertiesHashMap));
    end Initialize;
 
-   function Create (categoryPropertiesHashMap_Param : access HashMap'Class) return CategoryPropertiesFactory_Access is
+   function Create (categoryPropertiesHashMap_Param : access HashMap_Package.HashMap'Class) return CategoryPropertiesFactory_Access is
       This : constant CategoryPropertiesFactory_Access := new CategoryPropertiesFactory;
    begin
       CategoryPropertiesFactory_Package.Initialize (This.all, categoryPropertiesHashMap_Param);

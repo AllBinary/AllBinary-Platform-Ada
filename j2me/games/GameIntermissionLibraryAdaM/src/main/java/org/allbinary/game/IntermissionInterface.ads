@@ -34,7 +34,7 @@ package org.allbinary.game.IntermissionInterface_Package is
    function getTimeDelayHelper (This : in out IntermissionInterface) return TimeDelayHelper_Access is abstract;
    function isEnabled (This : in out IntermissionInterface) return Boolean is abstract;
    procedure setEnabled (This : in out IntermissionInterface; value : Boolean) is abstract;
-   procedure setListener (This : in out IntermissionInterface; enableListener_Param : access IntermissionEnableListenerInterface'Class) is abstract;
+   procedure setListener (This : in out IntermissionInterface; enableListener_Param : access IntermissionEnableListenerInterface_Package.IntermissionEnableListenerInterface'Class) is abstract;
 
 end org.allbinary.game.IntermissionInterface_Package;
 

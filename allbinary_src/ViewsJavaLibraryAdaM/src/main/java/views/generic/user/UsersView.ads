@@ -56,10 +56,10 @@ package views.generic_Id.user.UsersView_Package is
       userVector : BasicArrayList_Access;
    end record;
 
-   procedure Initialize (This : in out UsersView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return UsersView_Access;
-   function toXmlNode (This : in out UsersView; document_Param : access Document'Class) return Node_Access;
-   procedure toXmlNode (This : in out UsersView; document_Param : access Document'Class);
+   procedure Initialize (This : in out UsersView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return UsersView_Access;
+   function toXmlNode (This : in out UsersView; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out UsersView; document_Param : access Document_Package.Document'Class);
    procedure addDomNodeInterfaces (This : in out UsersView);
    function view (This : in out UsersView) return Unbounded_String;
 

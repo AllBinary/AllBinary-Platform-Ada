@@ -21,14 +21,14 @@ package body org.allbinary.animation.image.TopToBottomImageAnimationFactory_Pack
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TopToBottomImageAnimationFactory'Class; image_Param : access Image'Class; sequenceArray : Integer_Array_Access; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) is
-      image : Image_Access := Image_Access (image_Param);
-      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
+   procedure Initialize (This : in out TopToBottomImageAnimationFactory'Class; image_Param : access Image_Package.Image'Class; sequenceArray : Integer_Array_Access; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
+      image : constant Image_Access := Image_Access (image_Param);
+      animationBehaviorFactory : constant AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
    begin
         BaseImageAnimationFactory_Package.Initialize (This, image, sequenceArray, image.getWidth, image.getHeight, 0, 0, animationBehaviorFactory);
    end Initialize;
 
-   function Create (image_Param : access Image'Class; sequenceArray : Integer_Array_Access; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return TopToBottomImageAnimationFactory_Access is
+   function Create (image_Param : access Image_Package.Image'Class; sequenceArray : Integer_Array_Access; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return TopToBottomImageAnimationFactory_Access is
       This : constant TopToBottomImageAnimationFactory_Access := new TopToBottomImageAnimationFactory;
    begin
       TopToBottomImageAnimationFactory_Package.Initialize (This.all, image_Param, sequenceArray, animationBehaviorFactory_Param);

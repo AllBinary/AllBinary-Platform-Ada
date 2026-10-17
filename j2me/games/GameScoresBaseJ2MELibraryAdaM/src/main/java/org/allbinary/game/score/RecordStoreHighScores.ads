@@ -86,18 +86,18 @@ package org.allbinary.game.score.RecordStoreHighScores_Package is
    end record;
    hashTable : ABHashtable_Access;
 
-   procedure Initialize (This : in out RecordStoreHighScores'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo'Class; name : Unbounded_String; heading : Unbounded_String; columnTwoHeading : Unbounded_String; recordComparatorInterface_Param : access RecordComparator'Class);
-   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo'Class; name : Unbounded_String; heading : Unbounded_String; columnTwoHeading : Unbounded_String; recordComparatorInterface_Param : access RecordComparator'Class) return RecordStoreHighScores_Access;
-   function getInstance (abeClientInformation_Param : access AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo'Class; highScoreName : Unbounded_String; heading : Unbounded_String; columnTwoHeading : Unbounded_String; recordComparatorInterface_Param : access RecordComparator'Class) return HighScores_Access;
-   procedure getInstance (abeClientInformation_Param : access AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo'Class; highScoreName : Unbounded_String; heading : Unbounded_String; columnTwoHeading : Unbounded_String; recordComparatorInterface_Param : access RecordComparator'Class);
-   function getRecordId (This : in out RecordStoreHighScores; abeClientInformation_Param : access AbeClientInformationInterface'Class) return Unbounded_String;
-   procedure getRecordId (This : in out RecordStoreHighScores; abeClientInformation_Param : access AbeClientInformationInterface'Class);
-   procedure addHighScore (This : in out RecordStoreHighScores; newHighScore_Param : access HighScore'Class);
+   procedure Initialize (This : in out RecordStoreHighScores'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo_Package.GameInfo'Class; name : Unbounded_String; heading : Unbounded_String; columnTwoHeading : Unbounded_String; recordComparatorInterface_Param : access RecordComparator_Package.RecordComparator'Class);
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo_Package.GameInfo'Class; name : Unbounded_String; heading : Unbounded_String; columnTwoHeading : Unbounded_String; recordComparatorInterface_Param : access RecordComparator_Package.RecordComparator'Class) return RecordStoreHighScores_Access;
+   function getInstance (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo_Package.GameInfo'Class; highScoreName : Unbounded_String; heading : Unbounded_String; columnTwoHeading : Unbounded_String; recordComparatorInterface_Param : access RecordComparator_Package.RecordComparator'Class) return HighScores_Access;
+   procedure getInstance (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo_Package.GameInfo'Class; highScoreName : Unbounded_String; heading : Unbounded_String; columnTwoHeading : Unbounded_String; recordComparatorInterface_Param : access RecordComparator_Package.RecordComparator'Class);
+   function getRecordId (This : in out RecordStoreHighScores; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) return Unbounded_String;
+   procedure getRecordId (This : in out RecordStoreHighScores; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class);
+   procedure addHighScore (This : in out RecordStoreHighScores; newHighScore_Param : access HighScore_Package.HighScore'Class);
    procedure removeLowestHighScore (This : in out RecordStoreHighScores);
    procedure load (This : in out RecordStoreHighScores);
    function isTooManyHighScores (This : in out RecordStoreHighScores) return Boolean;
-   function isBestScore (This : in out RecordStoreHighScores; newHighScore_Param : access HighScore'Class) return Boolean;
-   procedure isBestScore (This : in out RecordStoreHighScores; newHighScore_Param : access HighScore'Class);
+   function isBestScore (This : in out RecordStoreHighScores; newHighScore_Param : access HighScore_Package.HighScore'Class) return Boolean;
+   procedure isBestScore (This : in out RecordStoreHighScores; newHighScore_Param : access HighScore_Package.HighScore'Class);
    function toString (This : in out RecordStoreHighScores) return Unbounded_String;
 
 end org.allbinary.game.score.RecordStoreHighScores_Package;

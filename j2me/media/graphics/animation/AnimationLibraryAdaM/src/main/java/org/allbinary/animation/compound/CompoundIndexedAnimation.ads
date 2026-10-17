@@ -47,8 +47,8 @@ package org.allbinary.animation.compound.CompoundIndexedAnimation_Package is
       animationInterfaceArray : Animation_Access_Array_Access;
    end record;
 
-   procedure Initialize (This : in out CompoundIndexedAnimation'Class; animationInterfaceArray : Animation_Access_Array_Access; animationBehavior_Param : access AnimationBehavior'Class);
-   function Create (animationInterfaceArray : Animation_Access_Array_Access; animationBehavior_Param : access AnimationBehavior'Class) return CompoundIndexedAnimation_Access;
+   procedure Initialize (This : in out CompoundIndexedAnimation'Class; animationInterfaceArray : Animation_Access_Array_Access; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class);
+   function Create (animationInterfaceArray : Animation_Access_Array_Access; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return CompoundIndexedAnimation_Access;
    procedure setFrame (This : in out CompoundIndexedAnimation; index : Integer);
    function getFrame (This : in out CompoundIndexedAnimation) return Integer;
    function getSize (This : in out CompoundIndexedAnimation) return Integer;
@@ -56,15 +56,15 @@ package org.allbinary.animation.compound.CompoundIndexedAnimation_Package is
    procedure setSequence (This : in out CompoundIndexedAnimation; sequence : Integer_Array_Access);
    function getSequence (This : in out CompoundIndexedAnimation) return Integer_Array_Access;
    procedure nextFrame (This : in out CompoundIndexedAnimation);
-   procedure paintXY (This : in out CompoundIndexedAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
-   procedure paintThreedXYZ (This : in out CompoundIndexedAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer; z : Integer);
+   procedure paintXY (This : in out CompoundIndexedAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
+   procedure paintThreedXYZ (This : in out CompoundIndexedAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer; z : Integer);
    function getCurrentAnimation (This : in out CompoundIndexedAnimation) return IndexedAnimation_Access;
    procedure nextAnimation (This : in out CompoundIndexedAnimation);
    procedure previousAnimation (This : in out CompoundIndexedAnimation);
    procedure setAnimation (This : in out CompoundIndexedAnimation; index : Integer);
    function getAnimationInterfaceArray (This : in out CompoundIndexedAnimation) return Animation_Access_Array_Access;
    procedure setAnimationInterfaceArray (This : in out CompoundIndexedAnimation; animationInterfaceArray : Animation_Access_Array_Access);
-   procedure set (This : in out CompoundIndexedAnimation; gl_Param : access GL'Class);
+   procedure set (This : in out CompoundIndexedAnimation; gl_Param : access GL_Package.GL'Class);
 
 end org.allbinary.animation.compound.CompoundIndexedAnimation_Package;
 

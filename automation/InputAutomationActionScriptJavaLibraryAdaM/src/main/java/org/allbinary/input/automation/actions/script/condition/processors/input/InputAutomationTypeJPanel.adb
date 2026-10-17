@@ -42,8 +42,8 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         return This.inputAutomationTypeJComboBox;
    end getInputAutomationTypeJComboBox;
 
-   procedure setInputAutomationTypeJComboBox (This : in out InputAutomationTypeJPanel; inputAutomationTypeJComboBox_Param : access JComboBox'Class) is
-      inputAutomationTypeJComboBox : JComboBox_Access := JComboBox_Access (inputAutomationTypeJComboBox_Param);
+   procedure setInputAutomationTypeJComboBox (This : in out InputAutomationTypeJPanel; inputAutomationTypeJComboBox_Param : access JComboBox_Package.JComboBox'Class) is
+      inputAutomationTypeJComboBox : constant JComboBox_Access := JComboBox_Access (inputAutomationTypeJComboBox_Param);
    begin
         This.inputAutomationTypeJComboBox := inputAutomationTypeJComboBox;
    end setInputAutomationTypeJComboBox;

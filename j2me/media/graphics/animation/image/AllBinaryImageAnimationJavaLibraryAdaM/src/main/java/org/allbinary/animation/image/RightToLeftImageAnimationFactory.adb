@@ -21,14 +21,14 @@ package body org.allbinary.animation.image.RightToLeftImageAnimationFactory_Pack
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out RightToLeftImageAnimationFactory'Class; image_Param : access Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) is
-      image : Image_Access := Image_Access (image_Param);
-      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
+   procedure Initialize (This : in out RightToLeftImageAnimationFactory'Class; image_Param : access Image_Package.Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
+      image : constant Image_Access := Image_Access (image_Param);
+      animationBehaviorFactory : constant AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
    begin
         BaseImageAnimationFactory_Package.Initialize (This, image, PrimitiveIntUtil_Package.getArrayInstance, image.getWidth, image.getHeight, dx, dy, animationBehaviorFactory);
    end Initialize;
 
-   function Create (image_Param : access Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return RightToLeftImageAnimationFactory_Access is
+   function Create (image_Param : access Image_Package.Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return RightToLeftImageAnimationFactory_Access is
       This : constant RightToLeftImageAnimationFactory_Access := new RightToLeftImageAnimationFactory;
    begin
       RightToLeftImageAnimationFactory_Package.Initialize (This.all, image_Param, dx, dy, animationBehaviorFactory_Param);

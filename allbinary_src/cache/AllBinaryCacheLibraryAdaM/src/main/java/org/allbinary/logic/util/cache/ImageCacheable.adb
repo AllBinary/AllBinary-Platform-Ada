@@ -23,7 +23,7 @@ package body org.allbinary.logic.util.cache.ImageCacheable_Package is
 
 
    procedure Initialize (This : in out ImageCacheable'Class; name : Unbounded_String; anyType_Param : access Java_Object'Class) is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
       Initialize_Fields (This);
         null;

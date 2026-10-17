@@ -47,10 +47,10 @@ package org.allbinary.game.displayable.canvas.GameCanvasRunnableInterface_Packag
    procedure setHighScoreSubmitted (This : in out GameCanvasRunnableInterface; highScoreSubmitted : Boolean) is abstract;
    procedure processGameOver (This : in out GameCanvasRunnableInterface) is abstract;
    function isGameOver (This : in out GameCanvasRunnableInterface) return Boolean is abstract;
-   procedure initCommands (This : in out GameCanvasRunnableInterface; cmdListener_Param : access CommandListener'Class) is abstract;
+   procedure initCommands (This : in out GameCanvasRunnableInterface; cmdListener_Param : access CommandListener_Package.CommandListener'Class) is abstract;
    function getCurrentStateHashtable (This : in out GameCanvasRunnableInterface) return ABHashtable_Access is abstract;
    function getLoadStateHashtable (This : in out GameCanvasRunnableInterface) return ABHashtable_Access is abstract;
-   procedure setLoadStateHashtable (This : in out GameCanvasRunnableInterface; hashtable_Param : access ABHashtable'Class) is abstract;
+   procedure setLoadStateHashtable (This : in out GameCanvasRunnableInterface; hashtable_Param : access ABHashtable_Package.ABHashtable'Class) is abstract;
    function getType (This : in out GameCanvasRunnableInterface) return Integer is abstract;
 
 end org.allbinary.game.displayable.canvas.GameCanvasRunnableInterface_Package;

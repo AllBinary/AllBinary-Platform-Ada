@@ -39,7 +39,7 @@ package org.allbinary.layer.AllBinaryLayerCircularPool_Package is
 
    procedure Initialize (This : in out AllBinaryLayerCircularPool'Class);
    function Create return AllBinaryLayerCircularPool_Access;
-   procedure initAllBinaryLayerCircularPool (This : in out AllBinaryLayerCircularPool; allbinaryLayerFactoryInterface_Param : access AllBinaryLayerFactoryInterface'Class; total : Integer);
+   procedure initAllBinaryLayerCircularPool (This : in out AllBinaryLayerCircularPool; allbinaryLayerFactoryInterface_Param : access AllBinaryLayerFactoryInterface_Package.AllBinaryLayerFactoryInterface'Class; total : Integer);
 
 end org.allbinary.layer.AllBinaryLayerCircularPool_Package;
 

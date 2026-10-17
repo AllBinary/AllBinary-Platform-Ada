@@ -57,8 +57,8 @@ package org.allbinary.logic.io.BufferedWriterUtil_Package is
    function Create return BufferedWriterUtil_Access;
    function getInstance return BufferedWriterUtil_Access;
    procedure overwrite (This : in out BufferedWriterUtil; path : Unbounded_String; data : Unbounded_String);
-   procedure overwrite (This : in out BufferedWriterUtil; abFile_Param : access AbFile'Class; data : Unbounded_String);
-   procedure write (This : in out BufferedWriterUtil; abFile_Param : access AbFile'Class; data : Unbounded_String);
+   procedure overwrite (This : in out BufferedWriterUtil; abFile_Param : access AbFile_Package.AbFile'Class; data : Unbounded_String);
+   procedure write (This : in out BufferedWriterUtil; abFile_Param : access AbFile_Package.AbFile'Class; data : Unbounded_String);
 
 end org.allbinary.logic.io.BufferedWriterUtil_Package;
 

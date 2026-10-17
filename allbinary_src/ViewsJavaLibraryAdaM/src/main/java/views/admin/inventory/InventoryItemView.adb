@@ -29,8 +29,8 @@ package body views.admin.inventory.InventoryItemView_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out InventoryItemView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out InventoryItemView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
@@ -38,22 +38,22 @@ package body views.admin.inventory.InventoryItemView_Package is
         This.getFormData;
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return InventoryItemView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return InventoryItemView_Access is
       This : constant InventoryItemView_Access := new InventoryItemView;
    begin
       InventoryItemView_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out InventoryItemView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; empty : Unbounded_String) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out InventoryItemView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; empty : Unbounded_String) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
         This.request := HttpServletRequest_Access (This.getPageContext.getRequest);
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; empty : Unbounded_String) return InventoryItemView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; empty : Unbounded_String) return InventoryItemView_Access is
       This : constant InventoryItemView_Access := new InventoryItemView;
    begin
       InventoryItemView_Package.Initialize (This.all, transformInfoInterface_Param, empty);
@@ -161,8 +161,8 @@ package body views.admin.inventory.InventoryItemView_Package is
         end loop;
    end processImageFiles;
 
-   procedure setRequestHashMap (This : in out InventoryItemView; requestHashMap_Param : access HashMap'Class) is
-      requestHashMap : HashMap_Access := HashMap_Access (requestHashMap_Param);
+   procedure setRequestHashMap (This : in out InventoryItemView; requestHashMap_Param : access HashMap_Package.HashMap'Class) is
+      requestHashMap : constant HashMap_Access := HashMap_Access (requestHashMap_Param);
    begin
         This.requestHashMap := requestHashMap;
    end setRequestHashMap;

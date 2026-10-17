@@ -40,15 +40,15 @@ package org.allbinary.animation.vector.AdjustedCircleAnimation_Package is
       yAdjustment : Integer;
    end record;
 
-   procedure Initialize (This : in out AdjustedCircleAnimation'Class; width : Integer; height : Integer; basicColor_Param : access BasicColor'Class);
-   function Create (width : Integer; height : Integer; basicColor_Param : access BasicColor'Class) return AdjustedCircleAnimation_Access;
-   function createAnimation (width : Integer; height : Integer; xAdjustment : Integer; yAdjustment : Integer; basicColor_Param : access BasicColor'Class) return AdjustedCircleAnimation_Access;
-   procedure createAnimation (width : Integer; height : Integer; xAdjustment : Integer; yAdjustment : Integer; basicColor_Param : access BasicColor'Class);
-   function createW (width : Integer; height : Integer; innerWidth : Integer; basicColor_Param : access BasicColor'Class) return AdjustedCircleAnimation_Access;
-   procedure createW (width : Integer; height : Integer; innerWidth : Integer; basicColor_Param : access BasicColor'Class);
+   procedure Initialize (This : in out AdjustedCircleAnimation'Class; width : Integer; height : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class);
+   function Create (width : Integer; height : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) return AdjustedCircleAnimation_Access;
+   function createAnimation (width : Integer; height : Integer; xAdjustment : Integer; yAdjustment : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) return AdjustedCircleAnimation_Access;
+   procedure createAnimation (width : Integer; height : Integer; xAdjustment : Integer; yAdjustment : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class);
+   function createW (width : Integer; height : Integer; innerWidth : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) return AdjustedCircleAnimation_Access;
+   procedure createW (width : Integer; height : Integer; innerWidth : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class);
    procedure initXY (This : in out AdjustedCircleAnimation; xAdjustment : Integer; yAdjustment : Integer);
    procedure init (This : in out AdjustedCircleAnimation; innerWidth : Integer);
-   procedure paintXY (This : in out AdjustedCircleAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
+   procedure paintXY (This : in out AdjustedCircleAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
 
 end org.allbinary.animation.vector.AdjustedCircleAnimation_Package;
 

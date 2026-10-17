@@ -46,13 +46,13 @@ package org.allbinary.logic.visual.dhtml.style.css.CssElementValidation_Package 
 
    procedure Initialize (This : in out CssElementValidation'Class);
    function Create return CssElementValidation_Access;
-   procedure Initialize (This : in out CssElementValidation'Class; node_Param : access Node'Class);
-   function Create (node_Param : access Node'Class) return CssElementValidation_Access;
+   procedure Initialize (This : in out CssElementValidation'Class; node_Param : access Node_Package.Node'Class);
+   function Create (node_Param : access Node_Package.Node'Class) return CssElementValidation_Access;
    function isValid (This : in out CssElementValidation) return Boolean;
    function validationInfo (This : in out CssElementValidation) return Unbounded_String;
    function toValidationInfoDoc (This : in out CssElementValidation) return Document_Access;
-   function toValidationInfoNode (This : in out CssElementValidation; document_Param : access Document'Class) return Node_Access;
-   procedure toValidationInfoNode (This : in out CssElementValidation; document_Param : access Document'Class);
+   function toValidationInfoNode (This : in out CssElementValidation; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out CssElementValidation; document_Param : access Document_Package.Document'Class);
 
 end org.allbinary.logic.visual.dhtml.style.css.CssElementValidation_Package;
 

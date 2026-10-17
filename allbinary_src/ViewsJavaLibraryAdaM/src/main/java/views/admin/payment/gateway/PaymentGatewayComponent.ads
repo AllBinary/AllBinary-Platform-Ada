@@ -50,8 +50,8 @@ package views.admin.payment.gateway.PaymentGatewayComponent_Package is
       paymentGatewayInterface : PaymentGatewayInterface_Access;
    end record;
 
-   procedure Initialize (This : in out PaymentGatewayComponent'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; paymentGatewayInterface_Param : access PaymentGatewayInterface'Class);
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; paymentGatewayInterface_Param : access PaymentGatewayInterface'Class) return PaymentGatewayComponent_Access;
+   procedure Initialize (This : in out PaymentGatewayComponent'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; paymentGatewayInterface_Param : access PaymentGatewayInterface_Package.PaymentGatewayInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; paymentGatewayInterface_Param : access PaymentGatewayInterface_Package.PaymentGatewayInterface'Class) return PaymentGatewayComponent_Access;
    procedure addDomNodeInterfaces (This : in out PaymentGatewayComponent);
    function view (This : in out PaymentGatewayComponent) return Unbounded_String;
 

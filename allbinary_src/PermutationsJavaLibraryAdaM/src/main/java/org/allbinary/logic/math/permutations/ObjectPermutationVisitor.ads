@@ -37,7 +37,7 @@ package org.allbinary.logic.math.permutations.ObjectPermutationVisitor_Package i
    function visit (This : in out ObjectPermutationVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access;
    procedure visit (This : in out ObjectPermutationVisitor; anyType_Param : access Java_Object'Class);
    procedure print (This : in out ObjectPermutationVisitor; data : Java_Object_Access_Array_Access);
-   procedure print (This : in out ObjectPermutationVisitor; data : Java_Object_Access_Array_Access; stringBuilder_Param : access StringMaker'Class);
+   procedure print (This : in out ObjectPermutationVisitor; data : Java_Object_Access_Array_Access; stringBuilder_Param : access StringMaker_Package.StringMaker'Class);
 
 end org.allbinary.logic.math.permutations.ObjectPermutationVisitor_Package;
 

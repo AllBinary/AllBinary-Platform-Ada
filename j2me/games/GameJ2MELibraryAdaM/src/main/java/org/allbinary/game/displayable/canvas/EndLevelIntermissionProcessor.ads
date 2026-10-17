@@ -36,8 +36,8 @@ package org.allbinary.game.displayable.canvas.EndLevelIntermissionProcessor_Pack
       gameCanvas : AllBinaryGameCanvas_Access;
    end record;
 
-   procedure Initialize (This : in out EndLevelIntermissionProcessor'Class; gameCanvas_Param : access AllBinaryGameCanvas'Class);
-   function Create (gameCanvas_Param : access AllBinaryGameCanvas'Class) return EndLevelIntermissionProcessor_Access;
+   procedure Initialize (This : in out EndLevelIntermissionProcessor'Class; gameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class);
+   function Create (gameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class) return EndLevelIntermissionProcessor_Access;
    procedure process (This : in out EndLevelIntermissionProcessor);
 
 end org.allbinary.game.displayable.canvas.EndLevelIntermissionProcessor_Package;

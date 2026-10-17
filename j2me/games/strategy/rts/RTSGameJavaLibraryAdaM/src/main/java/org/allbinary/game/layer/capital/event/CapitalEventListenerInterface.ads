@@ -30,7 +30,7 @@ package org.allbinary.game.layer.capital.event.CapitalEventListenerInterface_Pac
    type CapitalEventListenerInterface_Access is access all CapitalEventListenerInterface'Class;
    type CapitalEventListenerInterface_Access_Array is array (Natural range <>) of CapitalEventListenerInterface_Access;
    type CapitalEventListenerInterface_Access_Array_Access is access all CapitalEventListenerInterface_Access_Array;
-   procedure onCapitalChangeEvent (This : in out CapitalEventListenerInterface; event_Param : access CapitalEvent'Class) is abstract;
+   procedure onCapitalChangeEvent (This : in out CapitalEventListenerInterface; event_Param : access CapitalEvent_Package.CapitalEvent'Class) is abstract;
 
 end org.allbinary.game.layer.capital.event.CapitalEventListenerInterface_Package;
 

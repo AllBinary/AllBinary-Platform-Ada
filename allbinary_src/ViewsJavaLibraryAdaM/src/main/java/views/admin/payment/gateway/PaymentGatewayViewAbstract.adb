@@ -22,23 +22,23 @@ package body views.admin.payment.gateway.PaymentGatewayViewAbstract_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PaymentGatewayViewAbstract'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out PaymentGatewayViewAbstract'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         TransformInfoHttpComposite_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
         This.getFormData (HttpServletRequest_Access (This.getPageContext.getRequest));
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return PaymentGatewayViewAbstract_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return PaymentGatewayViewAbstract_Access is
       This : constant PaymentGatewayViewAbstract_Access := new PaymentGatewayViewAbstract;
    begin
       PaymentGatewayViewAbstract_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
-   procedure getFormData (This : in out PaymentGatewayViewAbstract; request_Param : access HttpServletRequest'Class) is
-      request : HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
+   procedure getFormData (This : in out PaymentGatewayViewAbstract; request_Param : access HttpServletRequest_Package.HttpServletRequest'Class) is
+      request : constant HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
       storeName : Unbounded_String;
       gatewayName : Unbounded_String;
    begin
@@ -52,8 +52,8 @@ package body views.admin.payment.gateway.PaymentGatewayViewAbstract_Package is
         return This.paymentGatewayPrimaryKey;
    end getPaymentGatewayPrimaryKey;
 
-   procedure setPaymentGatewayPrimaryKey (This : in out PaymentGatewayViewAbstract; paymentGatewayPrimaryKey_Param : access PaymentGatewayPrimaryKey'Class) is
-      paymentGatewayPrimaryKey : PaymentGatewayPrimaryKey_Access := PaymentGatewayPrimaryKey_Access (paymentGatewayPrimaryKey_Param);
+   procedure setPaymentGatewayPrimaryKey (This : in out PaymentGatewayViewAbstract; paymentGatewayPrimaryKey_Param : access PaymentGatewayPrimaryKey_Package.PaymentGatewayPrimaryKey'Class) is
+      paymentGatewayPrimaryKey : constant PaymentGatewayPrimaryKey_Access := PaymentGatewayPrimaryKey_Access (paymentGatewayPrimaryKey_Param);
    begin
         This.paymentGatewayPrimaryKey := paymentGatewayPrimaryKey;
    end setPaymentGatewayPrimaryKey;

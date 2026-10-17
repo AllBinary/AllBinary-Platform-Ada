@@ -35,8 +35,8 @@ package body org.allbinary.graphics.opengles.renderer.AllBinaryRendererBase3_Pac
 
 
    --  throws Exception
-   procedure update (This : in out AllBinaryRendererBase3; gl_Param : access GL10'Class) is
-      gl : GL10_Access := GL10_Access (gl_Param);
+   procedure update (This : in out AllBinaryRendererBase3; gl_Param : access GL10_Package.GL10'Class) is
+      gl : constant GL10_Access := GL10_Access (gl_Param);
       openGLESImage : OpenGLESImage_Access;
    begin
         while (This.list.size) > (0) loop
@@ -47,8 +47,8 @@ package body org.allbinary.graphics.opengles.renderer.AllBinaryRendererBase3_Pac
         end loop;
    end update;
 
-   procedure add (This : in out AllBinaryRendererBase3; image_Param : access Image'Class) is
-      image : Image_Access := Image_Access (image_Param);
+   procedure add (This : in out AllBinaryRendererBase3; image_Param : access Image_Package.Image'Class) is
+      image : constant Image_Access := Image_Access (image_Param);
    begin
         This.list.add (image);
    end add;

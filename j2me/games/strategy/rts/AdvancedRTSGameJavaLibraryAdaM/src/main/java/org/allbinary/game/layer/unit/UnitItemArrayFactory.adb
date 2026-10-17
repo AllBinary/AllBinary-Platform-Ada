@@ -38,9 +38,9 @@ package body org.allbinary.game.layer.unit.UnitItemArrayFactory_Package is
    end Create;
 
    --  throws Exception
-   function createFlagItem (This : in out UnitItemArrayFactory; flagResources_Param : access FlagGameResources'Class; layerInterfaceFactoryInterface_Param : access LayerInterfaceFactoryInterface'Class) return ABCustomItem_Access is
-      flagResources : FlagGameResources_Access := FlagGameResources_Access (flagResources_Param);
-      layerInterfaceFactoryInterface : LayerInterfaceFactoryInterface_Access := LayerInterfaceFactoryInterface_Access (layerInterfaceFactoryInterface_Param);
+   function createFlagItem (This : in out UnitItemArrayFactory; flagResources_Param : access FlagGameResources_Package.FlagGameResources'Class; layerInterfaceFactoryInterface_Param : access LayerInterfaceFactoryInterface_Package.LayerInterfaceFactoryInterface'Class) return ABCustomItem_Access is
+      flagResources : constant FlagGameResources_Access := FlagGameResources_Access (flagResources_Param);
+      layerInterfaceFactoryInterface : constant LayerInterfaceFactoryInterface_Access := LayerInterfaceFactoryInterface_Access (layerInterfaceFactoryInterface_Param);
       name : Unbounded_String;
       index : Integer;
    begin
@@ -53,9 +53,9 @@ package body org.allbinary.game.layer.unit.UnitItemArrayFactory_Package is
    end createFlagItem;
 
    --  throws Exception
-   function createNamedFlagItem (This : in out UnitItemArrayFactory; flagResources_Param : access FlagGameResources'Class; name : Unbounded_String; layerInterfaceFactoryInterface_Param : access LayerInterfaceFactoryInterface'Class) return ABCustomItem_Access is
-      flagResources : FlagGameResources_Access := FlagGameResources_Access (flagResources_Param);
-      layerInterfaceFactoryInterface : LayerInterfaceFactoryInterface_Access := LayerInterfaceFactoryInterface_Access (layerInterfaceFactoryInterface_Param);
+   function createNamedFlagItem (This : in out UnitItemArrayFactory; flagResources_Param : access FlagGameResources_Package.FlagGameResources'Class; name : Unbounded_String; layerInterfaceFactoryInterface_Param : access LayerInterfaceFactoryInterface_Package.LayerInterfaceFactoryInterface'Class) return ABCustomItem_Access is
+      flagResources : constant FlagGameResources_Access := FlagGameResources_Access (flagResources_Param);
+      layerInterfaceFactoryInterface : constant LayerInterfaceFactoryInterface_Access := LayerInterfaceFactoryInterface_Access (layerInterfaceFactoryInterface_Param);
       IMAGE_CACHE : ImageCache_Access;
       image : Image_Access;
       item : ABCustomItem_Access;
@@ -77,8 +77,8 @@ package body org.allbinary.game.layer.unit.UnitItemArrayFactory_Package is
         return This.resources;
    end getResources;
 
-   function indexOf (This : in out UnitItemArrayFactory; basicGameResources_Param : access BasicGameResources'Class) return Integer is
-      basicGameResources : BasicGameResources_Access := BasicGameResources_Access (basicGameResources_Param);
+   function indexOf (This : in out UnitItemArrayFactory; basicGameResources_Param : access BasicGameResources_Package.BasicGameResources'Class) return Integer is
+      basicGameResources : constant BasicGameResources_Access := BasicGameResources_Access (basicGameResources_Param);
       index : Integer;
    begin
         for index in reverse 0 .. (This.resources'Length) - (1) loop
@@ -89,21 +89,21 @@ package body org.allbinary.game.layer.unit.UnitItemArrayFactory_Package is
         return -(1);
    end indexOf;
 
-   procedure createFlagItem (This : in out UnitItemArrayFactory; flagResources_Param : access FlagGameResources'Class; layerInterfaceFactoryInterface_Param : access LayerInterfaceFactoryInterface'Class) is
+   procedure createFlagItem (This : in out UnitItemArrayFactory; flagResources_Param : access FlagGameResources_Package.FlagGameResources'Class; layerInterfaceFactoryInterface_Param : access LayerInterfaceFactoryInterface_Package.LayerInterfaceFactoryInterface'Class) is
       Java_Result : constant ABCustomItem_Access := UnitItemArrayFactory'Class (This).createFlagItem (flagResources_Param, layerInterfaceFactoryInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createFlagItem;
 
-   procedure createNamedFlagItem (This : in out UnitItemArrayFactory; flagResources_Param : access FlagGameResources'Class; name : Unbounded_String; layerInterfaceFactoryInterface_Param : access LayerInterfaceFactoryInterface'Class) is
+   procedure createNamedFlagItem (This : in out UnitItemArrayFactory; flagResources_Param : access FlagGameResources_Package.FlagGameResources'Class; name : Unbounded_String; layerInterfaceFactoryInterface_Param : access LayerInterfaceFactoryInterface_Package.LayerInterfaceFactoryInterface'Class) is
       Java_Result : constant ABCustomItem_Access := UnitItemArrayFactory'Class (This).createNamedFlagItem (flagResources_Param, name, layerInterfaceFactoryInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createNamedFlagItem;
 
-   procedure indexOf (This : in out UnitItemArrayFactory; basicGameResources_Param : access BasicGameResources'Class) is
+   procedure indexOf (This : in out UnitItemArrayFactory; basicGameResources_Param : access BasicGameResources_Package.BasicGameResources'Class) is
       Java_Result : constant Integer := UnitItemArrayFactory'Class (This).indexOf (basicGameResources_Param);
       pragma Unreferenced (Java_Result);
    begin

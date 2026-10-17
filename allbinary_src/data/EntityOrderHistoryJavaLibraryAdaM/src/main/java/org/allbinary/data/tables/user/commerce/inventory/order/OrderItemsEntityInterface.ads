@@ -41,8 +41,8 @@ package org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsEntity
    procedure setStatus (This : in out OrderItemsEntityInterface; orderId : Unbounded_String; groupId : Unbounded_String; status : Unbounded_String) is abstract;
    function isEverythingShipped (This : in out OrderItemsEntityInterface; orderId : Unbounded_String) return Boolean is abstract;
    function getBasketReview (This : in out OrderItemsEntityInterface; orderId : Unbounded_String) return BasketReview_Access is abstract;
-   procedure insert (This : in out OrderItemsEntityInterface; userName : Unbounded_String; order_Param : access OrderInterface'Class) is abstract;
-   procedure insert (This : in out OrderItemsEntityInterface; values_Param : access BasicArrayList'Class) is abstract;
+   procedure insert (This : in out OrderItemsEntityInterface; userName : Unbounded_String; order_Param : access OrderInterface_Package.OrderInterface'Class) is abstract;
+   procedure insert (This : in out OrderItemsEntityInterface; values_Param : access BasicArrayList_Package.BasicArrayList'Class) is abstract;
 
 end org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsEntityInterface_Package;
 

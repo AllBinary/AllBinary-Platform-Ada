@@ -23,16 +23,16 @@ package body org.allbinary.business.context.modules.storefront.statistics.RealTi
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out RealTimeStoreFrontStatisticsView'Class; storeFrontStatisticsInterface_Param : access StoreFrontStatisticsInterface'Class; userRole_Param : access UserRole'Class) is
-      storeFrontStatisticsInterface : StoreFrontStatisticsInterface_Access := StoreFrontStatisticsInterface_Access (storeFrontStatisticsInterface_Param);
-      userRole : UserRole_Access := UserRole_Access (userRole_Param);
+   procedure Initialize (This : in out RealTimeStoreFrontStatisticsView'Class; storeFrontStatisticsInterface_Param : access StoreFrontStatisticsInterface_Package.StoreFrontStatisticsInterface'Class; userRole_Param : access UserRole_Package.UserRole'Class) is
+      storeFrontStatisticsInterface : constant StoreFrontStatisticsInterface_Access := StoreFrontStatisticsInterface_Access (storeFrontStatisticsInterface_Param);
+      userRole : constant UserRole_Access := UserRole_Access (userRole_Param);
    begin
       Initialize_Fields (This);
         This.storeFrontStatisticsInterface := storeFrontStatisticsInterface;
         This.userRole := userRole;
    end Initialize;
 
-   function Create (storeFrontStatisticsInterface_Param : access StoreFrontStatisticsInterface'Class; userRole_Param : access UserRole'Class) return RealTimeStoreFrontStatisticsView_Access is
+   function Create (storeFrontStatisticsInterface_Param : access StoreFrontStatisticsInterface_Package.StoreFrontStatisticsInterface'Class; userRole_Param : access UserRole_Package.UserRole'Class) return RealTimeStoreFrontStatisticsView_Access is
       This : constant RealTimeStoreFrontStatisticsView_Access := new RealTimeStoreFrontStatisticsView;
    begin
       RealTimeStoreFrontStatisticsView_Package.Initialize (This.all, storeFrontStatisticsInterface_Param, userRole_Param);
@@ -40,8 +40,8 @@ package body org.allbinary.business.context.modules.storefront.statistics.RealTi
    end Create;
 
    --  throws Exception
-   function toXmlNode (This : in out RealTimeStoreFrontStatisticsView; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out RealTimeStoreFrontStatisticsView; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       node : Node_Access;
       storeFrontAdvertisementsStatisticsInterface : StoreFrontAdvertisementsStatisticsInterface_Access;
       storeFrontAdvertisementsStatisticsDomNodeInterface : DomNodeInterface_Access;
@@ -70,7 +70,7 @@ package body org.allbinary.business.context.modules.storefront.statistics.RealTi
         return node;
    end toXmlNode;
 
-   procedure toXmlNode (This : in out RealTimeStoreFrontStatisticsView; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out RealTimeStoreFrontStatisticsView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := RealTimeStoreFrontStatisticsView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

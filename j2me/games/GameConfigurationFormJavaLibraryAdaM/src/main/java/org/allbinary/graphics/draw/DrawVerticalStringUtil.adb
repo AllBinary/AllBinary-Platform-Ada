@@ -43,8 +43,8 @@ package body org.allbinary.graphics.draw.DrawVerticalStringUtil_Package is
         return DrawVerticalStringUtil_Package.instance;
    end getInstance;
 
-   procedure updateMeasurement (This : in out DrawVerticalStringUtil; graphics_Param : access Graphics'Class; string_Id : Unbounded_String) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure updateMeasurement (This : in out DrawVerticalStringUtil; graphics_Param : access Graphics_Package.Graphics'Class; string_Id : Unbounded_String) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       openGLFeatureUtil : OpenGLFeatureUtil_Access;
       font : Font_Access;
       size : Integer;
@@ -78,8 +78,8 @@ package body org.allbinary.graphics.draw.DrawVerticalStringUtil_Package is
         This.offsetXArray := offsetXArray;
    end updateMeasurement;
 
-   procedure paintVerticle (This : in out DrawVerticalStringUtil; graphics_Param : access Graphics'Class; string_Id : Unbounded_String; x : Integer; y : Integer; anchor : Integer) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintVerticle (This : in out DrawVerticalStringUtil; graphics_Param : access Graphics_Package.Graphics'Class; string_Id : Unbounded_String; x : Integer; y : Integer; anchor : Integer) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       size : Integer;
       aChar : Character;
       index : Integer;
@@ -92,8 +92,8 @@ package body org.allbinary.graphics.draw.DrawVerticalStringUtil_Package is
         end loop;
    end paintVerticle;
 
-   procedure drawCenterString (This : in out DrawVerticalStringUtil; graphics_Param : access Graphics'Class; string_Id : Unbounded_String; offset : Integer; length : Integer; x : Integer; y : Integer) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure drawCenterString (This : in out DrawVerticalStringUtil; graphics_Param : access Graphics_Package.Graphics'Class; string_Id : Unbounded_String; offset : Integer; length : Integer; x : Integer; y : Integer) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       width : Integer;
    begin
         width := (Java_Shift_Right_Arithmetic (graphics.getFont.substringWidth (string_Id, offset, length), 1));
@@ -109,8 +109,8 @@ package body org.allbinary.graphics.draw.DrawVerticalStringUtil_Package is
         end;
    end drawCenterString;
 
-   procedure drawCenterStrings (This : in out DrawVerticalStringUtil; graphics_Param : access Graphics'Class; stringArray : Unbounded_String_Array_Access; maxWidth : Integer; x : Integer; y : Integer) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure drawCenterStrings (This : in out DrawVerticalStringUtil; graphics_Param : access Graphics_Package.Graphics'Class; stringArray : Unbounded_String_Array_Access; maxWidth : Integer; x : Integer; y : Integer) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       extraLines : Integer;
       string_Id : Unbounded_String;
       width : Integer;

@@ -42,7 +42,7 @@ package org.allbinary.graphics.opengles.OpenGLVersionValidator_Package is
    function isGL31OrHigher (This : in out OpenGLVersionValidator) return Boolean;
    function isAvailable (This : in out OpenGLVersionValidator; glVersionRequired : Unbounded_String) return Boolean;
    procedure isAvailable (This : in out OpenGLVersionValidator; glVersionRequired : Unbounded_String);
-   procedure setShaderComposite (This : in out OpenGLVersionValidator; shaderComposite_Param : access ShaderComposite'Class; anyType_Param : access Java_Object'Class);
+   procedure setShaderComposite (This : in out OpenGLVersionValidator; shaderComposite_Param : access ShaderComposite_Package.ShaderComposite'Class; anyType_Param : access Java_Object'Class);
 
 end org.allbinary.graphics.opengles.OpenGLVersionValidator_Package;
 

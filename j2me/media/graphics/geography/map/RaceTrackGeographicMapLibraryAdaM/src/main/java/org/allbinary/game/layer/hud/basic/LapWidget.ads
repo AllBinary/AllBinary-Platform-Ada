@@ -46,10 +46,10 @@ package org.allbinary.game.layer.hud.basic.LapWidget_Package is
       string_Id : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out LapWidget'Class; location : Integer; direction : Integer; basicColor_Param : access BasicColor'Class);
-   function Create (location : Integer; direction : Integer; basicColor_Param : access BasicColor'Class) return LapWidget_Access;
-   procedure update (This : in out LapWidget; lapInfo_Param : access LapInfo'Class);
-   procedure paint (This : in out LapWidget; graphics_Param : access Graphics'Class);
+   procedure Initialize (This : in out LapWidget'Class; location : Integer; direction : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class);
+   function Create (location : Integer; direction : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) return LapWidget_Access;
+   procedure update (This : in out LapWidget; lapInfo_Param : access LapInfo_Package.LapInfo'Class);
+   procedure paint (This : in out LapWidget; graphics_Param : access Graphics_Package.Graphics'Class);
 
 end org.allbinary.game.layer.hud.basic.LapWidget_Package;
 

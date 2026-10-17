@@ -23,14 +23,14 @@ package body org.allbinary.android.input.api3.HideVirtualKeyboardRunnable_Packag
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out HideVirtualKeyboardRunnable'Class; activity_Param : access Activity'Class) is
-      activity : Activity_Access := Activity_Access (activity_Param);
+   procedure Initialize (This : in out HideVirtualKeyboardRunnable'Class; activity_Param : access Activity_Package.Activity'Class) is
+      activity : constant Activity_Access := Activity_Access (activity_Param);
    begin
       Initialize_Fields (This);
         This.activity := activity;
    end Initialize;
 
-   function Create (activity_Param : access Activity'Class) return HideVirtualKeyboardRunnable_Access is
+   function Create (activity_Param : access Activity_Package.Activity'Class) return HideVirtualKeyboardRunnable_Access is
       This : constant HideVirtualKeyboardRunnable_Access := new HideVirtualKeyboardRunnable;
    begin
       HideVirtualKeyboardRunnable_Package.Initialize (This.all, activity_Param);

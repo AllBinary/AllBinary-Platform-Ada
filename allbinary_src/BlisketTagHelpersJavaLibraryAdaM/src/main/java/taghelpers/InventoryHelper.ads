@@ -74,8 +74,8 @@ package taghelpers.InventoryHelper_Package is
       searchRequest : SearchRequest_Access;
    end record;
 
-   procedure Initialize (This : in out InventoryHelper'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
-   function Create (propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return InventoryHelper_Access;
+   procedure Initialize (This : in out InventoryHelper'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class);
+   function Create (propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return InventoryHelper_Access;
    procedure getFormData (This : in out InventoryHelper);
    function viewSummary (This : in out InventoryHelper) return Unbounded_String;
    function search (This : in out InventoryHelper) return Unbounded_String;

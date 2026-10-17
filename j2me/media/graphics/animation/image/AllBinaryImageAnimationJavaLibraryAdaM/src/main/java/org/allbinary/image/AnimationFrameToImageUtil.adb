@@ -39,8 +39,8 @@ package body org.allbinary.image.AnimationFrameToImageUtil_Package is
    end getInstance;
 
    --  throws Exception
-   function getInstanceTranslate (This : in out AnimationFrameToImageUtil; width : Integer; height : Integer; animationInterface_Param : access Animation'Class) return Image_Access is
-      animationInterface : Animation_Access := Animation_Access (animationInterface_Param);
+   function getInstanceTranslate (This : in out AnimationFrameToImageUtil; width : Integer; height : Integer; animationInterface_Param : access Animation_Package.Animation'Class) return Image_Access is
+      animationInterface : constant Animation_Access := Animation_Access (animationInterface_Param);
       image : Image_Access;
       graphics : Graphics_Access;
       tranlateX : Integer;
@@ -57,8 +57,8 @@ package body org.allbinary.image.AnimationFrameToImageUtil_Package is
    end getInstanceTranslate;
 
    --  throws Exception
-   function getInstanceWH (This : in out AnimationFrameToImageUtil; width : Integer; height : Integer; animationInterface_Param : access Animation'Class) return Image_Access is
-      animationInterface : Animation_Access := Animation_Access (animationInterface_Param);
+   function getInstanceWH (This : in out AnimationFrameToImageUtil; width : Integer; height : Integer; animationInterface_Param : access Animation_Package.Animation'Class) return Image_Access is
+      animationInterface : constant Animation_Access := Animation_Access (animationInterface_Param);
       image : Image_Access;
       graphics : Graphics_Access;
    begin
@@ -68,14 +68,14 @@ package body org.allbinary.image.AnimationFrameToImageUtil_Package is
         return image;
    end getInstanceWH;
 
-   procedure getInstanceTranslate (This : in out AnimationFrameToImageUtil; width : Integer; height : Integer; animationInterface_Param : access Animation'Class) is
+   procedure getInstanceTranslate (This : in out AnimationFrameToImageUtil; width : Integer; height : Integer; animationInterface_Param : access Animation_Package.Animation'Class) is
       Java_Result : constant Image_Access := AnimationFrameToImageUtil'Class (This).getInstanceTranslate (width, height, animationInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstanceTranslate;
 
-   procedure getInstanceWH (This : in out AnimationFrameToImageUtil; width : Integer; height : Integer; animationInterface_Param : access Animation'Class) is
+   procedure getInstanceWH (This : in out AnimationFrameToImageUtil; width : Integer; height : Integer; animationInterface_Param : access Animation_Package.Animation'Class) is
       Java_Result : constant Image_Access := AnimationFrameToImageUtil'Class (This).getInstanceWH (width, height, animationInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

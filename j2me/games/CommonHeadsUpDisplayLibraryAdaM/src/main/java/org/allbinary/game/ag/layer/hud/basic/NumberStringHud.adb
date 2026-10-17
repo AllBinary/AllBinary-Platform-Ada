@@ -29,8 +29,8 @@ package body org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out NumberStringHud'Class; prependString : Unbounded_String; max : Integer; location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor'Class) is
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+   procedure Initialize (This : in out NumberStringHud'Class; prependString : Unbounded_String; max : Integer; location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         BasicHud_Package.Initialize (This, location, direction, bufferZone, basicColor);
         Initialize_Fields (This);
@@ -45,15 +45,15 @@ package body org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package is
         end if;
    end Initialize;
 
-   function Create (prependString : Unbounded_String; max : Integer; location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor'Class) return NumberStringHud_Access is
+   function Create (prependString : Unbounded_String; max : Integer; location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) return NumberStringHud_Access is
       This : constant NumberStringHud_Access := new NumberStringHud;
    begin
       NumberStringHud_Package.Initialize (This.all, prependString, max, location, direction, bufferZone, basicColor_Param);
       return This;
    end Create;
 
-   procedure updateMeasurement (This : in out NumberStringHud; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure updateMeasurement (This : in out NumberStringHud; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
    begin
         font := graphics.getFont;
@@ -86,14 +86,14 @@ package body org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package is
         This.set ((This.value) - (value));
    end reduce;
 
-   procedure paint (This : in out NumberStringHud; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out NumberStringHud; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         BasicHud (This).paintDX (graphics, This.PREPEND_STRING, 0, This.PREPEND_STRING'Length, This.valueString, 0, This.valueTotalDigits, This.offset);
    end paint;
 
-   procedure paintXY (This : in out NumberStringHud; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintXY (This : in out NumberStringHud; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       charArray : Character_Array_Access;
       len : Integer;
       charArray2 : Character_Array_Access;
@@ -109,8 +109,8 @@ package body org.allbinary.game.ag.layer.hud.basic.NumberStringHud_Package is
         graphics.drawChars (charArray2, 0, len2, (x) - (This.offset), y, 0);
    end paintXY;
 
-   procedure paintThreed (This : in out NumberStringHud; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintThreed (This : in out NumberStringHud; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paintThreed;

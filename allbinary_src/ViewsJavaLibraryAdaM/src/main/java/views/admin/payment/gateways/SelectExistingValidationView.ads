@@ -42,16 +42,16 @@ package views.admin.payment.gateways.SelectExistingValidationView_Package is
 
    type SelectExistingValidationView is new HttpStoreComponentView and ValidationComponentInterface with null record;
 
-   procedure Initialize (This : in out SelectExistingValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return SelectExistingValidationView_Access;
+   procedure Initialize (This : in out SelectExistingValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return SelectExistingValidationView_Access;
    function isValid (This : in out SelectExistingValidationView) return Boolean;
    function toValidationInfoDoc (This : in out SelectExistingValidationView) return Document_Access;
-   function toValidationInfoNode (This : in out SelectExistingValidationView; document_Param : access Document'Class) return Node_Access;
-   procedure toValidationInfoNode (This : in out SelectExistingValidationView; document_Param : access Document'Class);
+   function toValidationInfoNode (This : in out SelectExistingValidationView; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out SelectExistingValidationView; document_Param : access Document_Package.Document'Class);
    function validationInfo (This : in out SelectExistingValidationView) return Unbounded_String;
    function toXmlDoc (This : in out SelectExistingValidationView) return Document_Access;
-   function toXmlNode (This : in out SelectExistingValidationView; document_Param : access Document'Class) return Node_Access;
-   procedure toXmlNode (This : in out SelectExistingValidationView; document_Param : access Document'Class);
+   function toXmlNode (This : in out SelectExistingValidationView; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out SelectExistingValidationView; document_Param : access Document_Package.Document'Class);
    function view (This : in out SelectExistingValidationView) return Unbounded_String;
 
 end views.admin.payment.gateways.SelectExistingValidationView_Package;

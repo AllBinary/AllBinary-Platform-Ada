@@ -24,10 +24,10 @@ package body org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactory_Packa
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PickedUpLayerInterfaceFactory'Class; pickeUpLayerType_Param : access PickedUpLayerType'Class; iconLayer_Param : access IconLayer'Class; animationInterface_Param : access Animation'Class) is
-      pickeUpLayerType : PickedUpLayerType_Access := PickedUpLayerType_Access (pickeUpLayerType_Param);
-      iconLayer : IconLayer_Access := IconLayer_Access (iconLayer_Param);
-      animationInterface : Animation_Access := Animation_Access (animationInterface_Param);
+   procedure Initialize (This : in out PickedUpLayerInterfaceFactory'Class; pickeUpLayerType_Param : access PickedUpLayerType_Package.PickedUpLayerType'Class; iconLayer_Param : access IconLayer_Package.IconLayer'Class; animationInterface_Param : access Animation_Package.Animation'Class) is
+      pickeUpLayerType : constant PickedUpLayerType_Access := PickedUpLayerType_Access (pickeUpLayerType_Param);
+      iconLayer : constant IconLayer_Access := IconLayer_Access (iconLayer_Param);
+      animationInterface : constant Animation_Access := Animation_Access (animationInterface_Param);
    begin
       PickedUpLayerInterfaceFactoryBase_Package.Initialize (This);
       Initialize_Fields (This);
@@ -36,7 +36,7 @@ package body org.allbinary.game.layer.pickup.PickedUpLayerInterfaceFactory_Packa
         This.iconLayer := iconLayer;
    end Initialize;
 
-   function Create (pickeUpLayerType_Param : access PickedUpLayerType'Class; iconLayer_Param : access IconLayer'Class; animationInterface_Param : access Animation'Class) return PickedUpLayerInterfaceFactory_Access is
+   function Create (pickeUpLayerType_Param : access PickedUpLayerType_Package.PickedUpLayerType'Class; iconLayer_Param : access IconLayer_Package.IconLayer'Class; animationInterface_Param : access Animation_Package.Animation'Class) return PickedUpLayerInterfaceFactory_Access is
       This : constant PickedUpLayerInterfaceFactory_Access := new PickedUpLayerInterfaceFactory;
    begin
       PickedUpLayerInterfaceFactory_Package.Initialize (This.all, pickeUpLayerType_Param, iconLayer_Param, animationInterface_Param);

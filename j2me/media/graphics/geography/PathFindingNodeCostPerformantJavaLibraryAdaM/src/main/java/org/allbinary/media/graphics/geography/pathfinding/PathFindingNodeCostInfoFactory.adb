@@ -36,19 +36,19 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeC
    end Create;
 
    --  throws Exception
-   procedure create (This : in out PathFindingNodeCostInfoFactory; geographicMapInterface_Param : access BasicGeographicMap'Class; goingToGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class; costFromStart : Long_Long_Integer; costToEnd : Long_Long_Integer) is
-      geographicMapInterface : BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
-      goingToGeographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (goingToGeographicMapCellPosition_Param);
-      geographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
+   procedure create (This : in out PathFindingNodeCostInfoFactory; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; goingToGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; costFromStart : Long_Long_Integer; costToEnd : Long_Long_Integer) is
+      geographicMapInterface : constant BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
+      goingToGeographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (goingToGeographicMapCellPosition_Param);
+      geographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
    begin
         null;
    end create;
 
    --  throws Exception
-   function getTotalCost (This : in out PathFindingNodeCostInfoFactory; geographicMapInterface_Param : access BasicGeographicMap'Class; comingFromGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return Long_Long_Integer is
-      geographicMapInterface : BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
-      comingFromGeographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (comingFromGeographicMapCellPosition_Param);
-      geographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
+   function getTotalCost (This : in out PathFindingNodeCostInfoFactory; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; comingFromGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) return Long_Long_Integer is
+      geographicMapInterface : constant BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
+      comingFromGeographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (comingFromGeographicMapCellPosition_Param);
+      geographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
       geographicMapCellType : GeographicMapCellType_Access;
       geographicMapCellType2 : GeographicMapCellType_Access;
       raceTrackGeographicMapCellType : RaceTrackGeographicMapCellType_Access;
@@ -61,7 +61,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeC
         return (Long_Long_Integer (raceTrackGeographicMapCellType.getTravelCost)) + (raceTrackGeographicMapCellType2.getTravelCost);
    end getTotalCost;
 
-   procedure getTotalCost (This : in out PathFindingNodeCostInfoFactory; geographicMapInterface_Param : access BasicGeographicMap'Class; comingFromGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+   procedure getTotalCost (This : in out PathFindingNodeCostInfoFactory; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; comingFromGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
       Java_Result : constant Long_Long_Integer := PathFindingNodeCostInfoFactory'Class (This).getTotalCost (geographicMapInterface_Param, comingFromGeographicMapCellPosition_Param, geographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin

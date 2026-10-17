@@ -36,10 +36,10 @@ package org.allbinary.game.midlet.DemoGameMidletEvent_Package is
       demoGameMidletState : DemoGameMidletState_Access;
    end record;
 
-   procedure Initialize (This : in out DemoGameMidletEvent'Class; anyType_Param : access Java_Object'Class; demoGameMidletState_Param : access DemoGameMidletState'Class);
-   function Create (anyType_Param : access Java_Object'Class; demoGameMidletState_Param : access DemoGameMidletState'Class) return DemoGameMidletEvent_Access;
+   procedure Initialize (This : in out DemoGameMidletEvent'Class; anyType_Param : access Java_Object'Class; demoGameMidletState_Param : access DemoGameMidletState_Package.DemoGameMidletState'Class);
+   function Create (anyType_Param : access Java_Object'Class; demoGameMidletState_Param : access DemoGameMidletState_Package.DemoGameMidletState'Class) return DemoGameMidletEvent_Access;
    procedure init (This : in out DemoGameMidletEvent; anyType_Param : access Java_Object'Class);
-   procedure setDemoGameMidletState (This : in out DemoGameMidletEvent; demoGameMidletState_Param : access DemoGameMidletState'Class);
+   procedure setDemoGameMidletState (This : in out DemoGameMidletEvent; demoGameMidletState_Param : access DemoGameMidletState_Package.DemoGameMidletState'Class);
    function getDemoGameMidletState (This : in out DemoGameMidletEvent) return DemoGameMidletState_Access;
 
 end org.allbinary.game.midlet.DemoGameMidletEvent_Package;

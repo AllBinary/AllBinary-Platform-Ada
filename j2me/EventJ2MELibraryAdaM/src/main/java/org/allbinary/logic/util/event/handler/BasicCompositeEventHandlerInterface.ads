@@ -30,7 +30,7 @@ package org.allbinary.logic.util.event.handler.BasicCompositeEventHandlerInterfa
    type BasicCompositeEventHandlerInterface_Access_Array is array (Natural range <>) of BasicCompositeEventHandlerInterface_Access;
    type BasicCompositeEventHandlerInterface_Access_Array_Access is access all BasicCompositeEventHandlerInterface_Access_Array;
    function getEventHandler (This : in out BasicCompositeEventHandlerInterface) return BasicEventHandlerInterface_Access is abstract;
-   procedure setEventHandler (This : in out BasicCompositeEventHandlerInterface; basicEventHandlerInterface_Param : access BasicEventHandlerInterface'Class) is abstract;
+   procedure setEventHandler (This : in out BasicCompositeEventHandlerInterface; basicEventHandlerInterface_Param : access BasicEventHandlerInterface_Package.BasicEventHandlerInterface'Class) is abstract;
 
 end org.allbinary.logic.util.event.handler.BasicCompositeEventHandlerInterface_Package;
 

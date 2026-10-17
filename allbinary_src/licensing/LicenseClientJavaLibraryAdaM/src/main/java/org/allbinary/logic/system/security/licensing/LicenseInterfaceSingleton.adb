@@ -38,8 +38,8 @@ package body org.allbinary.logic.system.security.licensing.LicenseInterfaceSingl
         return LicenseInterfaceSingleton_Package.licenseInterface;
    end getInstance;
 
-   procedure init (licenseInterface_Param : access AbeLicenseInterface'Class) is
-      licenseInterface : AbeLicenseInterface_Access := AbeLicenseInterface_Access (licenseInterface_Param);
+   procedure init (licenseInterface_Param : access AbeLicenseInterface_Package.AbeLicenseInterface'Class) is
+      licenseInterface : constant AbeLicenseInterface_Access := AbeLicenseInterface_Access (licenseInterface_Param);
    begin
         if (licenseInterface) /= (null) then
             LicenseInterfaceSingleton_Package.licenseInterface := licenseInterface;

@@ -49,8 +49,8 @@ package org.allbinary.logic.string_Id.tokens.UniqueTokens_Package is
 
    procedure Initialize (This : in out UniqueTokens'Class);
    function Create return UniqueTokens_Access;
-   function getWhithoutDashesAndSkipNumberOnlyTokens (This : in out UniqueTokens; stringVector_Param : access BasicArrayList'Class) return HashSet_Access;
-   procedure getWhithoutDashesAndSkipNumberOnlyTokens (This : in out UniqueTokens; stringVector_Param : access BasicArrayList'Class);
+   function getWhithoutDashesAndSkipNumberOnlyTokens (This : in out UniqueTokens; stringVector_Param : access BasicArrayList_Package.BasicArrayList'Class) return HashSet_Access;
+   procedure getWhithoutDashesAndSkipNumberOnlyTokens (This : in out UniqueTokens; stringVector_Param : access BasicArrayList_Package.BasicArrayList'Class);
    function numberOnly (This : in out UniqueTokens; subCleaningString : Unbounded_String) return Boolean;
    procedure numberOnly (This : in out UniqueTokens; subCleaningString : Unbounded_String);
    function isSpecialCharacter (This : in out UniqueTokens; subCleaningString : Unbounded_String) return Boolean;

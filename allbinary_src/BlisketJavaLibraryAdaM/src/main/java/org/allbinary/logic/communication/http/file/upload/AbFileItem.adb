@@ -96,15 +96,15 @@ package body org.allbinary.logic.communication.http.file.upload.AbFileItem_Packa
    end getString;
 
    --  throws Exception
-   procedure write (This : in out AbFileItem; file_Param : access File'Class) is
-      file : File_Access := File_Access (file_Param);
+   procedure write (This : in out AbFileItem; file_Param : access File_Package.File'Class) is
+      file : constant File_Access := File_Access (file_Param);
    begin
         Java_Throw (Java_New_Exception ("Exception", This.commonStrings.NOT_IMPLEMENTED));
    end write;
 
    --  throws Exception
-   procedure write (This : in out AbFileItem; file_Param : access AbFile'Class) is
-      file : AbFile_Access := AbFile_Access (file_Param);
+   procedure write (This : in out AbFileItem; file_Param : access AbFile_Package.AbFile'Class) is
+      file : constant AbFile_Access := AbFile_Access (file_Param);
    begin
         Java_Throw (Java_New_Exception ("Exception", This.commonStrings.NOT_IMPLEMENTED));
    end write;
@@ -149,8 +149,8 @@ package body org.allbinary.logic.communication.http.file.upload.AbFileItem_Packa
         Java_Throw (Java_New_Exception ("RuntimeException", This.commonStrings.NOT_IMPLEMENTED));
    end getHeaders;
 
-   procedure setHeaders (This : in out AbFileItem; fih_Param : access FileItemHeaders'Class) is
-      fih : FileItemHeaders_Access := FileItemHeaders_Access (fih_Param);
+   procedure setHeaders (This : in out AbFileItem; fih_Param : access FileItemHeaders_Package.FileItemHeaders'Class) is
+      fih : constant FileItemHeaders_Access := FileItemHeaders_Access (fih_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException", This.commonStrings.NOT_IMPLEMENTED));
    end setHeaders;

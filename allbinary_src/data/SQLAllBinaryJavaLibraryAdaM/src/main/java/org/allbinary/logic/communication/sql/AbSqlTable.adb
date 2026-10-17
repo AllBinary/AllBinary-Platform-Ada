@@ -27,14 +27,14 @@ package body org.allbinary.logic.communication.sql.AbSqlTable_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AbSqlTable'Class; databaseConnectionInfoInterface_Param : access DbConnectionInfo'Class) is
-      databaseConnectionInfoInterface : DbConnectionInfo_Access := DbConnectionInfo_Access (databaseConnectionInfoInterface_Param);
+   procedure Initialize (This : in out AbSqlTable'Class; databaseConnectionInfoInterface_Param : access DbConnectionInfo_Package.DbConnectionInfo'Class) is
+      databaseConnectionInfoInterface : constant DbConnectionInfo_Access := DbConnectionInfo_Access (databaseConnectionInfoInterface_Param);
    begin
         AbSqlBasic_Package.Initialize (This, databaseConnectionInfoInterface);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (databaseConnectionInfoInterface_Param : access DbConnectionInfo'Class) return AbSqlTable_Access is
+   function Create (databaseConnectionInfoInterface_Param : access DbConnectionInfo_Package.DbConnectionInfo'Class) return AbSqlTable_Access is
       This : constant AbSqlTable_Access := new AbSqlTable;
    begin
       AbSqlTable_Package.Initialize (This.all, databaseConnectionInfoInterface_Param);

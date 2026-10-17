@@ -38,25 +38,25 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
         return ImageModifierUtil_Package.instance;
    end getInstanceOrCreate;
 
-   procedure setColor (This : in out ImageModifierUtil; unusedOriginalImage_Param : access Image'Class; image_Param : access Image'Class; imageIndex : Integer; basicColor_Param : access BasicColor'Class) is
-      unusedOriginalImage : Image_Access := Image_Access (unusedOriginalImage_Param);
-      image : Image_Access := Image_Access (image_Param);
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+   procedure setColor (This : in out ImageModifierUtil; unusedOriginalImage_Param : access Image_Package.Image'Class; image_Param : access Image_Package.Image'Class; imageIndex : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      unusedOriginalImage : constant Image_Access := Image_Access (unusedOriginalImage_Param);
+      image : constant Image_Access := Image_Access (image_Param);
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         null;
    end setColor;
 
-   procedure changeColor (This : in out ImageModifierUtil; unusedOriginalImage_Param : access Image'Class; image_Param : access Image'Class; imageIndex : Integer; basicColor_Param : access BasicColor'Class) is
-      unusedOriginalImage : Image_Access := Image_Access (unusedOriginalImage_Param);
-      image : Image_Access := Image_Access (image_Param);
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+   procedure changeColor (This : in out ImageModifierUtil; unusedOriginalImage_Param : access Image_Package.Image'Class; image_Param : access Image_Package.Image'Class; imageIndex : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      unusedOriginalImage : constant Image_Access := Image_Access (unusedOriginalImage_Param);
+      image : constant Image_Access := Image_Access (image_Param);
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         null;
    end changeColor;
 
-   procedure setAlpha (This : in out ImageModifierUtil; originalImage_Param : access Image'Class; image_Param : access Image'Class; imageIndex : Integer; alphaInt : Integer) is
-      originalImage : Image_Access := Image_Access (originalImage_Param);
-      image : Image_Access := Image_Access (image_Param);
+   procedure setAlpha (This : in out ImageModifierUtil; originalImage_Param : access Image_Package.Image'Class; image_Param : access Image_Package.Image'Class; imageIndex : Integer; alphaInt : Integer) is
+      originalImage : constant Image_Access := Image_Access (originalImage_Param);
+      image : constant Image_Access := Image_Access (image_Param);
    begin
         null;
    end setAlpha;
@@ -66,8 +66,8 @@ package body org.allbinary.media.image.ImageModifierUtil_Package is
         return originalImageArray;
    end getImageArray;
 
-   procedure handleImage (This : in out ImageModifierUtil; imageArray : Image_Access_Array_Access; index : Integer; image_Param : access Image'Class) is
-      image : Image_Access := Image_Access (image_Param);
+   procedure handleImage (This : in out ImageModifierUtil; imageArray : Image_Access_Array_Access; index : Integer; image_Param : access Image_Package.Image'Class) is
+      image : constant Image_Access := Image_Access (image_Param);
    begin
         null;
    end handleImage;

@@ -24,8 +24,8 @@ package body org.allbinary.game.layer.AllBinaryJ2METiledLayer_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AllBinaryJ2METiledLayer'Class; dataId : Integer; tiledLayer_Param : access TiledLayer'Class; mapTwoDArray : Integer_Array_Access_Array_Access; debugColor : Integer) is
-      tiledLayer : TiledLayer_Access := TiledLayer_Access (tiledLayer_Param);
+   procedure Initialize (This : in out AllBinaryJ2METiledLayer'Class; dataId : Integer; tiledLayer_Param : access TiledLayer_Package.TiledLayer'Class; mapTwoDArray : Integer_Array_Access_Array_Access; debugColor : Integer) is
+      tiledLayer : constant TiledLayer_Access := TiledLayer_Access (tiledLayer_Param);
    begin
         AllBinaryTiledLayer_Package.Initialize (This, dataId, tiledLayer.getWidth, tiledLayer.getHeight, tiledLayer.getCellWidth, tiledLayer.getCellHeight);
         Initialize_Fields (This);
@@ -34,21 +34,21 @@ package body org.allbinary.game.layer.AllBinaryJ2METiledLayer_Package is
         This.setCells (mapTwoDArray);
    end Initialize;
 
-   function Create (dataId : Integer; tiledLayer_Param : access TiledLayer'Class; mapTwoDArray : Integer_Array_Access_Array_Access; debugColor : Integer) return AllBinaryJ2METiledLayer_Access is
+   function Create (dataId : Integer; tiledLayer_Param : access TiledLayer_Package.TiledLayer'Class; mapTwoDArray : Integer_Array_Access_Array_Access; debugColor : Integer) return AllBinaryJ2METiledLayer_Access is
       This : constant AllBinaryJ2METiledLayer_Access := new AllBinaryJ2METiledLayer;
    begin
       AllBinaryJ2METiledLayer_Package.Initialize (This.all, dataId, tiledLayer_Param, mapTwoDArray, debugColor);
       return This;
    end Create;
 
-   procedure paint (This : in out AllBinaryJ2METiledLayer; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out AllBinaryJ2METiledLayer; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.tiledLayerP.paint (graphics);
    end paint;
 
-   procedure paintDebug (This : in out AllBinaryJ2METiledLayer; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintDebug (This : in out AllBinaryJ2METiledLayer; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
       x : Integer;
       y : Integer;

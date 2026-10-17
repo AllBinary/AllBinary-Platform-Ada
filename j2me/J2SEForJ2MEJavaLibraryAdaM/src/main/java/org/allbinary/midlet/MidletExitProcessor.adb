@@ -22,15 +22,15 @@ package body org.allbinary.midlet.MidletExitProcessor_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out MidletExitProcessor'Class; midlet_Param : access MIDlet'Class) is
-      midlet : MIDlet_Access := MIDlet_Access (midlet_Param);
+   procedure Initialize (This : in out MidletExitProcessor'Class; midlet_Param : access MIDlet_Package.MIDlet'Class) is
+      midlet : constant MIDlet_Access := MIDlet_Access (midlet_Param);
    begin
       Processor_Package.Initialize (This);
       Initialize_Fields (This);
         This.midlet := midlet;
    end Initialize;
 
-   function Create (midlet_Param : access MIDlet'Class) return MidletExitProcessor_Access is
+   function Create (midlet_Param : access MIDlet_Package.MIDlet'Class) return MidletExitProcessor_Access is
       This : constant MidletExitProcessor_Access := new MidletExitProcessor;
    begin
       MidletExitProcessor_Package.Initialize (This.all, midlet_Param);

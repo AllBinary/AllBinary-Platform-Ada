@@ -53,8 +53,8 @@ package org.allbinary.game.midlet.DemoRunnable_Package is
       startDemoGameMidletEvent : DemoGameMidletEvent_Access;
    end record;
 
-   procedure Initialize (This : in out DemoRunnable'Class; demoGameMidlet_Param : access DemoGameMidlet'Class);
-   function Create (demoGameMidlet_Param : access DemoGameMidlet'Class) return DemoRunnable_Access;
+   procedure Initialize (This : in out DemoRunnable'Class; demoGameMidlet_Param : access DemoGameMidlet_Package.DemoGameMidlet'Class);
+   function Create (demoGameMidlet_Param : access DemoGameMidlet_Package.DemoGameMidlet'Class) return DemoRunnable_Access;
    procedure run (This : in out DemoRunnable);
 
 end org.allbinary.game.midlet.DemoRunnable_Package;

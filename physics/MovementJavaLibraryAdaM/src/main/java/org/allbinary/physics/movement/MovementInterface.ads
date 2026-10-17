@@ -32,8 +32,8 @@ package org.allbinary.physics.movement.MovementInterface_Package is
    type MovementInterface_Access is access all MovementInterface'Class;
    type MovementInterface_Access_Array is array (Natural range <>) of MovementInterface_Access;
    type MovementInterface_Access_Array_Access is access all MovementInterface_Access_Array;
-   procedure init (This : in out MovementInterface; speedBasicDecimal_Param : access BasicDecimal'Class; angle : Integer; otherAngle : Integer) is abstract;
-   procedure process (This : in out MovementInterface; layer_Param : access AllBinaryGameLayer'Class) is abstract;
+   procedure init (This : in out MovementInterface; speedBasicDecimal_Param : access BasicDecimal_Package.BasicDecimal'Class; angle : Integer; otherAngle : Integer) is abstract;
+   procedure process (This : in out MovementInterface; layer_Param : access AllBinaryGameLayer_Package.AllBinaryGameLayer'Class) is abstract;
    procedure stop (This : in out MovementInterface) is abstract;
 
 end org.allbinary.physics.movement.MovementInterface_Package;

@@ -44,13 +44,13 @@ package org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTyp
    procedure Initialize (This : in out BasicPaymentTypeUtil'Class);
    function Create return BasicPaymentTypeUtil_Access;
    function getInstance return BasicPaymentTypeUtil_Access;
-   procedure add (This : in out BasicPaymentTypeUtil; paymentType_Param : access BasicPaymentType'Class);
+   procedure add (This : in out BasicPaymentTypeUtil; paymentType_Param : access BasicPaymentType_Package.BasicPaymentType'Class);
    function get (This : in out BasicPaymentTypeUtil; paymentTypeString : Unbounded_String) return BasicPaymentType_Access;
    procedure get (This : in out BasicPaymentTypeUtil; paymentTypeString : Unbounded_String);
-   function isContain (This : in out BasicPaymentTypeUtil; paymentType_Param : access BasicPaymentType'Class) return Boolean;
-   procedure isContain (This : in out BasicPaymentTypeUtil; paymentType_Param : access BasicPaymentType'Class);
-   function difference (This : in out BasicPaymentTypeUtil; a_PaymentTypeVector_Param : access BasicArrayList'Class) return BasicArrayList_Access;
-   procedure difference (This : in out BasicPaymentTypeUtil; a_PaymentTypeVector_Param : access BasicArrayList'Class);
+   function isContain (This : in out BasicPaymentTypeUtil; paymentType_Param : access BasicPaymentType_Package.BasicPaymentType'Class) return Boolean;
+   procedure isContain (This : in out BasicPaymentTypeUtil; paymentType_Param : access BasicPaymentType_Package.BasicPaymentType'Class);
+   function difference (This : in out BasicPaymentTypeUtil; a_PaymentTypeVector_Param : access BasicArrayList_Package.BasicArrayList'Class) return BasicArrayList_Access;
+   procedure difference (This : in out BasicPaymentTypeUtil; a_PaymentTypeVector_Param : access BasicArrayList_Package.BasicArrayList'Class);
 
 end org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTypeUtil_Package;
 

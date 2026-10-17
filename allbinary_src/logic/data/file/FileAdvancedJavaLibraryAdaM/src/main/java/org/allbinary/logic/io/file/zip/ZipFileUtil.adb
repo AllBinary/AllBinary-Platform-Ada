@@ -40,8 +40,8 @@ package body org.allbinary.logic.io.file.zip.ZipFileUtil_Package is
         return ZipFileUtil_Package.instance;
    end getInstance;
 
-   procedure create (This : in out ZipFileUtil; outFilename : Unbounded_String; fileBasicArrayList_Param : access BasicArrayList'Class) is
-      fileBasicArrayList : BasicArrayList_Access := BasicArrayList_Access (fileBasicArrayList_Param);
+   procedure create (This : in out ZipFileUtil; outFilename : Unbounded_String; fileBasicArrayList_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      fileBasicArrayList : constant BasicArrayList_Access := BasicArrayList_Access (fileBasicArrayList_Param);
       zipFile : AbFile_Access;
       outputStream : ZipOutputStream_Access;
       streamUtil : StreamUtil_Access;
@@ -105,8 +105,8 @@ package body org.allbinary.logic.io.file.zip.ZipFileUtil_Package is
    end create;
 
    --  throws Exception
-   procedure unzip (This : in out ZipFileUtil; path : Unbounded_String; zipFile_Param : access AbFile'Class; fileName : Unbounded_String) is
-      zipFile : AbFile_Access := AbFile_Access (zipFile_Param);
+   procedure unzip (This : in out ZipFileUtil; path : Unbounded_String; zipFile_Param : access AbFile_Package.AbFile'Class; fileName : Unbounded_String) is
+      zipFile : constant AbFile_Access := AbFile_Access (zipFile_Param);
       buffer : Short_Short_Integer_Array_Access;
       inputStream : ZipInputStream_Access;
       zipEntry : ZipEntry_Access;

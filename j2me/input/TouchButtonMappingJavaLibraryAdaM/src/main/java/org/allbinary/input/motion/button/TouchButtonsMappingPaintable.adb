@@ -25,8 +25,8 @@ package body org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Pack
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TouchButtonsMappingPaintable'Class; basicColor_Param : access BasicColor'Class) is
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+   procedure Initialize (This : in out TouchButtonsMappingPaintable'Class; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
       Paintable_Package.Initialize (This);
       Initialize_Fields (This);
@@ -34,7 +34,7 @@ package body org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Pack
         This.init;
    end Initialize;
 
-   function Create (basicColor_Param : access BasicColor'Class) return TouchButtonsMappingPaintable_Access is
+   function Create (basicColor_Param : access BasicColor_Package.BasicColor'Class) return TouchButtonsMappingPaintable_Access is
       This : constant TouchButtonsMappingPaintable_Access := new TouchButtonsMappingPaintable;
    begin
       TouchButtonsMappingPaintable_Package.Initialize (This.all, basicColor_Param);
@@ -80,8 +80,8 @@ package body org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Pack
         return paintableTable;
    end createPaintableTable;
 
-   procedure paint (This : in out TouchButtonsMappingPaintable; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out TouchButtonsMappingPaintable; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       totalColumns : Integer;
       totalRows : Integer;
       rowIndex : Integer;

@@ -25,9 +25,9 @@ package body admin.taghelpers.QuoteRequestHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out QuoteRequestHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
-      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
+   procedure Initialize (This : in out QuoteRequestHelper'Class; hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
       request : HttpServletRequest_Access;
       storeName : Unbounded_String;
    begin
@@ -42,7 +42,7 @@ package body admin.taghelpers.QuoteRequestHelper_Package is
         end if;
    end Initialize;
 
-   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return QuoteRequestHelper_Access is
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return QuoteRequestHelper_Access is
       This : constant QuoteRequestHelper_Access := new QuoteRequestHelper;
    begin
       QuoteRequestHelper_Package.Initialize (This.all, hashMap_Param, pageContext_Param);

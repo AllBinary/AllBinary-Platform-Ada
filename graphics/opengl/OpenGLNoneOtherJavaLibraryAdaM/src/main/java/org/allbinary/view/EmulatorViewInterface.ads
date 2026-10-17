@@ -18,9 +18,9 @@ package org.allbinary.view.EmulatorViewInterface_Package is
    type EmulatorViewInterface_Access is access all EmulatorViewInterface'Class;
    type EmulatorViewInterface_Access_Array is array (Natural range <>) of EmulatorViewInterface_Access;
    type EmulatorViewInterface_Access_Array_Access is access all EmulatorViewInterface_Access_Array;
-   procedure setMidlet (This : in out EmulatorViewInterface; midlet_Param : access MIDlet'Class) is abstract;
+   procedure setMidlet (This : in out EmulatorViewInterface; midlet_Param : access MIDlet_Package.MIDlet'Class) is abstract;
    procedure onEmulatorInitComplete (This : in out EmulatorViewInterface; midletActivity_Param : access Java_Object'Class) is abstract;
-   procedure onSetDisplayable (This : in out EmulatorViewInterface; displayable_Param : access Displayable'Class) is abstract;
+   procedure onSetDisplayable (This : in out EmulatorViewInterface; displayable_Param : access Displayable_Package.Displayable'Class) is abstract;
 
 end org.allbinary.view.EmulatorViewInterface_Package;
 

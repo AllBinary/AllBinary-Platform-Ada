@@ -31,7 +31,7 @@ package org.allbinary.animation.VectorAnimationFactoryInterface_Package is
    type VectorAnimationFactoryInterface_Access is access all VectorAnimationFactoryInterface'Class;
    type VectorAnimationFactoryInterface_Access_Array is array (Natural range <>) of VectorAnimationFactoryInterface_Access;
    type VectorAnimationFactoryInterface_Access_Array_Access is access all VectorAnimationFactoryInterface_Access_Array;
-   function getInstance (This : in out VectorAnimationFactoryInterface; points : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor'Class) return VectorAnimation_Access is abstract;
+   function getInstance (This : in out VectorAnimationFactoryInterface; points : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor_Package.BasicColor'Class) return VectorAnimation_Access is abstract;
 
 end org.allbinary.animation.VectorAnimationFactoryInterface_Package;
 

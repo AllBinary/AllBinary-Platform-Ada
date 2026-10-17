@@ -41,7 +41,7 @@ package org.allbinary.canvas.CustomGameMenuUtil_Package is
 
    procedure Initialize (This : in out CustomGameMenuUtil'Class);
    function Create return CustomGameMenuUtil_Access;
-   procedure add (canvas_Param : access MyCanvas'Class);
+   procedure add (canvas_Param : access MyCanvas_Package.MyCanvas'Class);
 
 end org.allbinary.canvas.CustomGameMenuUtil_Package;
 

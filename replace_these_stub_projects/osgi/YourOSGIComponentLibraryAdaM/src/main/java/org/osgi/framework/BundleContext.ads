@@ -22,8 +22,8 @@ package org.osgi.framework.BundleContext_Package is
    type BundleContext_Access_Array_Access is access all BundleContext_Access_Array;
    function getBundles (This : in out BundleContext) return Bundle_Access_Array_Access is abstract;
    function installBundle (This : in out BundleContext; location : Unbounded_String) return Bundle_Access is abstract;
-   function registerService (This : in out BundleContext; clazz : Unbounded_String; service_Param : access Java_Object'Class; properties_Param : access Dictionary'Class) return ServiceRegistration_Access is abstract;
-   function getService (This : in out BundleContext; reference_Param : access ServiceReference'Class) return Java_Object_Access is abstract;
+   function registerService (This : in out BundleContext; clazz : Unbounded_String; service_Param : access Java_Object'Class; properties_Param : access Dictionary_Package.Dictionary'Class) return ServiceRegistration_Access is abstract;
+   function getService (This : in out BundleContext; reference_Param : access ServiceReference_Package.ServiceReference'Class) return Java_Object_Access is abstract;
    function getServiceReferences (This : in out BundleContext; clazz : Unbounded_String; filter : Unbounded_String) return ServiceReference_Access_Array_Access is abstract;
    function getServiceReference (This : in out BundleContext; clazz : Unbounded_String) return ServiceReference_Access is abstract;
 

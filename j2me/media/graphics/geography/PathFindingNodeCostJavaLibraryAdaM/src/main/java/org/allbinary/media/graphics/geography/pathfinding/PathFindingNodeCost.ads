@@ -46,12 +46,12 @@ package org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCost_P
    end record;
    NULL_PATH_FINDING_NODE_COST_ARRAY_ARRAY : PathFindingNodeCost_Access_Array_Access_Array_Access;
 
-   procedure Initialize (This : in out PathFindingNodeCost'Class; parent_Param : access Java_Object'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class; pathFindingNodeCostInfo_Param : access PathFindingNodeCostInfo'Class);
-   function Create (parent_Param : access Java_Object'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class; pathFindingNodeCostInfo_Param : access PathFindingNodeCostInfo'Class) return PathFindingNodeCost_Access;
+   procedure Initialize (This : in out PathFindingNodeCost'Class; parent_Param : access Java_Object'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; pathFindingNodeCostInfo_Param : access PathFindingNodeCostInfo_Package.PathFindingNodeCostInfo'Class);
+   function Create (parent_Param : access Java_Object'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; pathFindingNodeCostInfo_Param : access PathFindingNodeCostInfo_Package.PathFindingNodeCostInfo'Class) return PathFindingNodeCost_Access;
    function getPathFindingNodeCostInfo (This : in out PathFindingNodeCost) return PathFindingNodeCostInfo_Access;
-   procedure setPathFindingNodeCostInfo (This : in out PathFindingNodeCost; pathFindingNodeCostInfo_Param : access PathFindingNodeCostInfo'Class);
-   function compareTo (This : in out PathFindingNodeCost; pathFindingNodeCost_Param : access PathFindingNodeCost'Class) return Integer;
-   procedure compareTo (This : in out PathFindingNodeCost; pathFindingNodeCost_Param : access PathFindingNodeCost'Class);
+   procedure setPathFindingNodeCostInfo (This : in out PathFindingNodeCost; pathFindingNodeCostInfo_Param : access PathFindingNodeCostInfo_Package.PathFindingNodeCostInfo'Class);
+   function compareTo (This : in out PathFindingNodeCost; pathFindingNodeCost_Param : access PathFindingNodeCost_Package.PathFindingNodeCost'Class) return Integer;
+   procedure compareTo (This : in out PathFindingNodeCost; pathFindingNodeCost_Param : access PathFindingNodeCost_Package.PathFindingNodeCost'Class);
    function toString (This : in out PathFindingNodeCost) return Unbounded_String;
 
 end org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCost_Package;

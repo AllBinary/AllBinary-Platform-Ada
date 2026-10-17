@@ -72,14 +72,14 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
       return This;
    end Create;
 
-   procedure helpSetAdded (This : in out InputAutomationJFrame; helpSetEvent_Param : access HelpSetEvent'Class) is
-      helpSetEvent : HelpSetEvent_Access := HelpSetEvent_Access (helpSetEvent_Param);
+   procedure helpSetAdded (This : in out InputAutomationJFrame; helpSetEvent_Param : access HelpSetEvent_Package.HelpSetEvent'Class) is
+      helpSetEvent : constant HelpSetEvent_Access := HelpSetEvent_Access (helpSetEvent_Param);
    begin
         This.helpSet.add (helpSetEvent.getHelpSet);
    end helpSetAdded;
 
-   procedure helpSetRemoved (This : in out InputAutomationJFrame; helpSetEvent_Param : access HelpSetEvent'Class) is
-      helpSetEvent : HelpSetEvent_Access := HelpSetEvent_Access (helpSetEvent_Param);
+   procedure helpSetRemoved (This : in out InputAutomationJFrame; helpSetEvent_Param : access HelpSetEvent_Package.HelpSetEvent'Class) is
+      helpSetEvent : constant HelpSetEvent_Access := HelpSetEvent_Access (helpSetEvent_Param);
    begin
         This.helpSet.remove (helpSetEvent.getHelpSet);
    end helpSetRemoved;
@@ -139,28 +139,28 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         This.setResizable (False);
         This.addWindowFocusListener (WindowFocusListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure windowGainedFocus (This : in out ; evt_Param : access WindowEvent'Class) is
---        evt : WindowEvent_Access := WindowEvent_Access (evt_Param);
+--     procedure windowGainedFocus (This : in out ; evt_Param : access WindowEvent_Package.WindowEvent'Class) is
+--        evt : constant WindowEvent_Access := WindowEvent_Access (evt_Param);
 --     begin
 --                  This.formWindowGainedFocus (evt);
 --     end windowGainedFocus;
 --              
---     procedure windowLostFocus (This : in out ; evt_Param : access WindowEvent'Class) is
---        evt : WindowEvent_Access := WindowEvent_Access (evt_Param);
+--     procedure windowLostFocus (This : in out ; evt_Param : access WindowEvent_Package.WindowEvent'Class) is
+--        evt : constant WindowEvent_Access := WindowEvent_Access (evt_Param);
 --     begin
 --                  This.formWindowLostFocus (evt);
 --     end windowLostFocus;
 );
         This.addFocusListener (FocusAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure focusGained (This : in out ; evt_Param : access FocusEvent'Class) is
---        evt : FocusEvent_Access := FocusEvent_Access (evt_Param);
+--     procedure focusGained (This : in out ; evt_Param : access FocusEvent_Package.FocusEvent'Class) is
+--        evt : constant FocusEvent_Access := FocusEvent_Access (evt_Param);
 --     begin
 --                  This.formFocusGained (evt);
 --     end focusGained;
 --              
---     procedure focusLost (This : in out ; evt_Param : access FocusEvent'Class) is
---        evt : FocusEvent_Access := FocusEvent_Access (evt_Param);
+--     procedure focusLost (This : in out ; evt_Param : access FocusEvent_Package.FocusEvent'Class) is
+--        evt : constant FocusEvent_Access := FocusEvent_Access (evt_Param);
 --     begin
 --                  This.formFocusLost (evt);
 --     end focusLost;
@@ -169,8 +169,8 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         This.inputAutomationModuleJList.setMinimumSize (Dimension_Package.Create (200, 0));
         This.inputAutomationModuleJList.addListSelectionListener (ListSelectionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure valueChanged (This : in out ; evt_Param : access ListSelectionEvent'Class) is
---        evt : ListSelectionEvent_Access := ListSelectionEvent_Access (evt_Param);
+--     procedure valueChanged (This : in out ; evt_Param : access ListSelectionEvent_Package.ListSelectionEvent'Class) is
+--        evt : constant ListSelectionEvent_Access := ListSelectionEvent_Access (evt_Param);
 --     begin
 --                  This.inputAutomationModuleJListValueChanged (evt);
 --     end valueChanged;
@@ -191,8 +191,8 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         This.startJMenuItem.setText (This.commonStrings.START);
         This.startJMenuItem.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.startJMenuItemActionPerformed (evt);
 --     end actionPerformed;
@@ -201,8 +201,8 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         This.stopJMenuItem.setText (To_Unbounded_String ("Stop"));
         This.stopJMenuItem.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.stopJMenuItemActionPerformed (evt);
 --     end actionPerformed;
@@ -212,8 +212,8 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         This.optionsJMenu.setText (To_Unbounded_String ("Options"));
         This.optionsJMenu.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.optionsJMenuActionPerformed (evt);
 --     end actionPerformed;
@@ -223,8 +223,8 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         This.stopOnFocusJCheckBoxMenuItem.setLabel (To_Unbounded_String ("Stop Module On Focus"));
         This.stopOnFocusJCheckBoxMenuItem.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.stopOnFocusJCheckBoxMenuItemActionPerformed (evt);
 --     end actionPerformed;
@@ -235,8 +235,8 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         This.helpJMenuItem.setText (To_Unbounded_String ("Help"));
         This.helpJMenuItem.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.helpJMenuItemActionPerformed (evt);
 --     end actionPerformed;
@@ -245,8 +245,8 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         This.updatesJMenuItem.setText (To_Unbounded_String ("Updates"));
         This.updatesJMenuItem.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.updatesJMenuItemActionPerformed (evt);
 --     end actionPerformed;
@@ -255,8 +255,8 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         This.subscriptionJMenuItem.setText (To_Unbounded_String ("Subscription"));
         This.subscriptionJMenuItem.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.subscriptionJMenuItemActionPerformed (evt);
 --     end actionPerformed;
@@ -265,8 +265,8 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         This.modulesJMenuItem.setText (To_Unbounded_String ("Module Manager"));
         This.modulesJMenuItem.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.modulesJMenuItemActionPerformed (evt);
 --     end actionPerformed;
@@ -275,8 +275,8 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         This.aboutJMenuItem.setText (To_Unbounded_String ("About"));
         This.aboutJMenuItem.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.aboutJMenuItemActionPerformed (evt);
 --     end actionPerformed;
@@ -291,8 +291,8 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         This.pack;
    end initComponents;
 
-   procedure subscriptionJMenuItemActionPerformed (This : in out InputAutomationJFrame; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure subscriptionJMenuItemActionPerformed (This : in out InputAutomationJFrame; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         begin
             Desktop_Package.getDesktop.browse (This.uri);
@@ -306,8 +306,8 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         end;
    end subscriptionJMenuItemActionPerformed;
 
-   procedure updatesJMenuItemActionPerformed (This : in out InputAutomationJFrame; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure updatesJMenuItemActionPerformed (This : in out InputAutomationJFrame; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         begin
             Desktop_Package.getDesktop.browse (This.uri);
@@ -321,8 +321,8 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         end;
    end updatesJMenuItemActionPerformed;
 
-   procedure aboutJMenuItemActionPerformed (This : in out InputAutomationJFrame; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure aboutJMenuItemActionPerformed (This : in out InputAutomationJFrame; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
       textJDialog : JDialog_Access;
    begin
         textJDialog := BasicTextJDialog_Package.Create (To_Unbounded_String ("Copyright (c) 2002-2007 AllBinary"));
@@ -330,8 +330,8 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         textJDialog.setLocationRelativeTo (InputAutomationJFrame_Access'(This'Unchecked_Access));
    end aboutJMenuItemActionPerformed;
 
-   procedure modulesJMenuItemActionPerformed (This : in out InputAutomationJFrame; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure modulesJMenuItemActionPerformed (This : in out InputAutomationJFrame; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         begin
             DesktopBundle_Package.Create.start;
@@ -345,32 +345,32 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         end;
    end modulesJMenuItemActionPerformed;
 
-   procedure helpJMenuItemActionPerformed (This : in out InputAutomationJFrame; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure helpJMenuItemActionPerformed (This : in out InputAutomationJFrame; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         JavaHelpUtil_Package.getInstance.show (This.helpSet);
    end helpJMenuItemActionPerformed;
 
-   procedure stopOnFocusJCheckBoxMenuItemActionPerformed (This : in out InputAutomationJFrame; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure stopOnFocusJCheckBoxMenuItemActionPerformed (This : in out InputAutomationJFrame; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         null;
    end stopOnFocusJCheckBoxMenuItemActionPerformed;
 
-   procedure optionsJMenuActionPerformed (This : in out InputAutomationJFrame; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure optionsJMenuActionPerformed (This : in out InputAutomationJFrame; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         null;
    end optionsJMenuActionPerformed;
 
-   procedure formWindowLostFocus (This : in out InputAutomationJFrame; evt_Param : access WindowEvent'Class) is
-      evt : WindowEvent_Access := WindowEvent_Access (evt_Param);
+   procedure formWindowLostFocus (This : in out InputAutomationJFrame; evt_Param : access WindowEvent_Package.WindowEvent'Class) is
+      evt : constant WindowEvent_Access := WindowEvent_Access (evt_Param);
    begin
         This.logUtil.putF (To_Unbounded_String ("Nothing"), InputAutomationJFrame_Access'(This'Unchecked_Access), To_Unbounded_String ("focusLost"));
    end formWindowLostFocus;
 
-   procedure formWindowGainedFocus (This : in out InputAutomationJFrame; evt_Param : access WindowEvent'Class) is
-      evt : WindowEvent_Access := WindowEvent_Access (evt_Param);
+   procedure formWindowGainedFocus (This : in out InputAutomationJFrame; evt_Param : access WindowEvent_Package.WindowEvent'Class) is
+      evt : constant WindowEvent_Access := WindowEvent_Access (evt_Param);
    begin
         if This.stopOnFocusJCheckBoxMenuItem.isSelected then
             This.logUtil.putF (To_Unbounded_String ("Stopping"), InputAutomationJFrame_Access'(This'Unchecked_Access), To_Unbounded_String ("focusGained"));
@@ -380,20 +380,20 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         end if;
    end formWindowGainedFocus;
 
-   procedure formFocusLost (This : in out InputAutomationJFrame; evt_Param : access FocusEvent'Class) is
-      evt : FocusEvent_Access := FocusEvent_Access (evt_Param);
+   procedure formFocusLost (This : in out InputAutomationJFrame; evt_Param : access FocusEvent_Package.FocusEvent'Class) is
+      evt : constant FocusEvent_Access := FocusEvent_Access (evt_Param);
    begin
         null;
    end formFocusLost;
 
-   procedure formFocusGained (This : in out InputAutomationJFrame; evt_Param : access FocusEvent'Class) is
-      evt : FocusEvent_Access := FocusEvent_Access (evt_Param);
+   procedure formFocusGained (This : in out InputAutomationJFrame; evt_Param : access FocusEvent_Package.FocusEvent'Class) is
+      evt : constant FocusEvent_Access := FocusEvent_Access (evt_Param);
    begin
         null;
    end formFocusGained;
 
-   procedure inputAutomationModuleJListValueChanged (This : in out InputAutomationJFrame; evt_Param : access ListSelectionEvent'Class) is
-      evt : ListSelectionEvent_Access := ListSelectionEvent_Access (evt_Param);
+   procedure inputAutomationModuleJListValueChanged (This : in out InputAutomationJFrame; evt_Param : access ListSelectionEvent_Package.ListSelectionEvent'Class) is
+      evt : constant ListSelectionEvent_Access := ListSelectionEvent_Access (evt_Param);
       gameAutomationRobotModuleNameString : Unbounded_String;
       layout : GroupLayout_Access;
    begin
@@ -421,8 +421,8 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         end;
    end inputAutomationModuleJListValueChanged;
 
-   procedure stopJMenuItemActionPerformed (This : in out InputAutomationJFrame; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure stopJMenuItemActionPerformed (This : in out InputAutomationJFrame; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         if (This.runnableInterface) /= (null) then
             This.runnableInterface.setRunning (False);
@@ -432,8 +432,8 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         end if;
    end stopJMenuItemActionPerformed;
 
-   procedure startJMenuItemActionPerformed (This : in out InputAutomationJFrame; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure startJMenuItemActionPerformed (This : in out InputAutomationJFrame; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         begin
             This.logUtil.putF (To_Unbounded_String ("Starting"), InputAutomationJFrame_Access'(This'Unchecked_Access), To_Unbounded_String ("startJMenuItemActionPerformed"));
@@ -473,8 +473,8 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         InputAutomationJFrame_Package.INPUTAUTOMATION_JFRAME.setVisible (False);
    end destroy;
 
-   procedure create (inputAutomationBundleActivatorListenerInterface_Param : access InputAutomationBundleActivatorListenerInterface'Class) is
-      inputAutomationBundleActivatorListenerInterface : InputAutomationBundleActivatorListenerInterface_Access := InputAutomationBundleActivatorListenerInterface_Access (inputAutomationBundleActivatorListenerInterface_Param);
+   procedure create (inputAutomationBundleActivatorListenerInterface_Param : access InputAutomationBundleActivatorListenerInterface_Package.InputAutomationBundleActivatorListenerInterface'Class) is
+      inputAutomationBundleActivatorListenerInterface : constant InputAutomationBundleActivatorListenerInterface_Access := InputAutomationBundleActivatorListenerInterface_Access (inputAutomationBundleActivatorListenerInterface_Param);
       appUrlGlobals : AppUrlGlobals_Access;
    begin
         LogConfigTypeFactory_Package.getInstance;
@@ -522,14 +522,14 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         return This.automationModuleConfigurationJPanel;
    end getAutomationModuleConfigurationJPanel;
 
-   procedure setAutomationModuleConfigurationJPanel (This : in out InputAutomationJFrame; automationModuleConfigurationJPanel_Param : access JPanel'Class) is
-      automationModuleConfigurationJPanel : JPanel_Access := JPanel_Access (automationModuleConfigurationJPanel_Param);
+   procedure setAutomationModuleConfigurationJPanel (This : in out InputAutomationJFrame; automationModuleConfigurationJPanel_Param : access JPanel_Package.JPanel'Class) is
+      automationModuleConfigurationJPanel : constant JPanel_Access := JPanel_Access (automationModuleConfigurationJPanel_Param);
    begin
         This.automationModuleConfigurationJPanel := automationModuleConfigurationJPanel;
    end setAutomationModuleConfigurationJPanel;
 
-   procedure onAdd (This : in out InputAutomationJFrame; inputAutomationRobotChangeEvent_Param : access InputAutomationRobotChangeEvent'Class) is
-      inputAutomationRobotChangeEvent : InputAutomationRobotChangeEvent_Access := InputAutomationRobotChangeEvent_Access (inputAutomationRobotChangeEvent_Param);
+   procedure onAdd (This : in out InputAutomationJFrame; inputAutomationRobotChangeEvent_Param : access InputAutomationRobotChangeEvent_Package.InputAutomationRobotChangeEvent'Class) is
+      inputAutomationRobotChangeEvent : constant InputAutomationRobotChangeEvent_Access := InputAutomationRobotChangeEvent_Access (inputAutomationRobotChangeEvent_Param);
    begin
         begin
             This.logUtil.putF (This.commonStrings.START, InputAutomationJFrame_Access'(This'Unchecked_Access), To_Unbounded_String ("onAdd"));
@@ -544,8 +544,8 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         end;
    end onAdd;
 
-   procedure onRemove (This : in out InputAutomationJFrame; inputAutomationRobotChangeEvent_Param : access InputAutomationRobotChangeEvent'Class) is
-      inputAutomationRobotChangeEvent : InputAutomationRobotChangeEvent_Access := InputAutomationRobotChangeEvent_Access (inputAutomationRobotChangeEvent_Param);
+   procedure onRemove (This : in out InputAutomationJFrame; inputAutomationRobotChangeEvent_Param : access InputAutomationRobotChangeEvent_Package.InputAutomationRobotChangeEvent'Class) is
+      inputAutomationRobotChangeEvent : constant InputAutomationRobotChangeEvent_Access := InputAutomationRobotChangeEvent_Access (inputAutomationRobotChangeEvent_Param);
    begin
         begin
             This.logUtil.putF (This.commonStrings.START, InputAutomationJFrame_Access'(This'Unchecked_Access), To_Unbounded_String ("onRemove"));
@@ -560,8 +560,8 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         end;
    end onRemove;
 
-   procedure onAdd (This : in out InputAutomationJFrame; inputAutomationConfigurationChangeEvent_Param : access InputAutomationConfigurationModuleChangeEvent'Class) is
-      inputAutomationConfigurationChangeEvent : InputAutomationConfigurationModuleChangeEvent_Access := InputAutomationConfigurationModuleChangeEvent_Access (inputAutomationConfigurationChangeEvent_Param);
+   procedure onAdd (This : in out InputAutomationJFrame; inputAutomationConfigurationChangeEvent_Param : access InputAutomationConfigurationModuleChangeEvent_Package.InputAutomationConfigurationModuleChangeEvent'Class) is
+      inputAutomationConfigurationChangeEvent : constant InputAutomationConfigurationModuleChangeEvent_Access := InputAutomationConfigurationModuleChangeEvent_Access (inputAutomationConfigurationChangeEvent_Param);
    begin
         begin
             This.logUtil.putF (This.commonStrings.START, InputAutomationJFrame_Access'(This'Unchecked_Access), To_Unbounded_String ("onAdd"));
@@ -577,8 +577,8 @@ package body org.allbinary.input.automation.InputAutomationJFrame_Package is
         end;
    end onAdd;
 
-   procedure onRemove (This : in out InputAutomationJFrame; inputAutomationConfigurationChangeEvent_Param : access InputAutomationConfigurationModuleChangeEvent'Class) is
-      inputAutomationConfigurationChangeEvent : InputAutomationConfigurationModuleChangeEvent_Access := InputAutomationConfigurationModuleChangeEvent_Access (inputAutomationConfigurationChangeEvent_Param);
+   procedure onRemove (This : in out InputAutomationJFrame; inputAutomationConfigurationChangeEvent_Param : access InputAutomationConfigurationModuleChangeEvent_Package.InputAutomationConfigurationModuleChangeEvent'Class) is
+      inputAutomationConfigurationChangeEvent : constant InputAutomationConfigurationModuleChangeEvent_Access := InputAutomationConfigurationModuleChangeEvent_Access (inputAutomationConfigurationChangeEvent_Param);
       inputAutomationConfiguration : InputAutomationConfiguration_Access;
       inputAutomationModuleConfigurationList : List_Access;
       logUtil : LogUtil_Access;

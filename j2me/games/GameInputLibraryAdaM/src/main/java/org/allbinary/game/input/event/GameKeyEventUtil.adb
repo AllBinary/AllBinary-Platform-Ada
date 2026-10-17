@@ -35,7 +35,7 @@ package body org.allbinary.game.input.event.GameKeyEventUtil_Package is
    end Create;
 
    function getKey (anyType_Param : access Java_Object'Class) return Integer is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
       gameKeyEvent : GameKeyEvent_Access;
    begin
         gameKeyEvent := GameKeyEvent_Access (anyType);

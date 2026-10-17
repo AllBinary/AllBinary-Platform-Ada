@@ -40,8 +40,8 @@ package org.allbinary.image.opengles.OpenGLESGL11ExtImageFactory_Package is
 
    procedure Initialize (This : in out OpenGLESGL11ExtImageFactory'Class);
    function Create return OpenGLESGL11ExtImageFactory_Access;
-   function getInstance (This : in out OpenGLESGL11ExtImageFactory; image_Param : access Image'Class; bitmapFactory_Param : access PlatformBitmapBaseFactory'Class; textureFactory_Param : access PlatformTextureBaseFactory'Class) return Image_Access;
-   procedure getInstance (This : in out OpenGLESGL11ExtImageFactory; image_Param : access Image'Class; bitmapFactory_Param : access PlatformBitmapBaseFactory'Class; textureFactory_Param : access PlatformTextureBaseFactory'Class);
+   function getInstance (This : in out OpenGLESGL11ExtImageFactory; image_Param : access Image_Package.Image'Class; bitmapFactory_Param : access PlatformBitmapBaseFactory_Package.PlatformBitmapBaseFactory'Class; textureFactory_Param : access PlatformTextureBaseFactory_Package.PlatformTextureBaseFactory'Class) return Image_Access;
+   procedure getInstance (This : in out OpenGLESGL11ExtImageFactory; image_Param : access Image_Package.Image'Class; bitmapFactory_Param : access PlatformBitmapBaseFactory_Package.PlatformBitmapBaseFactory'Class; textureFactory_Param : access PlatformTextureBaseFactory_Package.PlatformTextureBaseFactory'Class);
 
 end org.allbinary.image.opengles.OpenGLESGL11ExtImageFactory_Package;
 

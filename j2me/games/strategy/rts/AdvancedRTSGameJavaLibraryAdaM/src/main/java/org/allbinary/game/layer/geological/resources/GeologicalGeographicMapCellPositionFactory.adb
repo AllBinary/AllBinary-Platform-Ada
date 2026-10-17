@@ -36,8 +36,8 @@ package body org.allbinary.game.layer.geological.resources.GeologicalGeographicM
    end Create;
 
    --  throws Exception
-   function getInstance (This : in out GeologicalGeographicMapCellPositionFactory; geographicMapInterface_Param : access BasicGeographicMap'Class; i_column : Integer; i_row : Integer; columns : Integer; rows : Integer; width : Integer; height : Integer) return GeographicMapCellPosition_Access is
-      geographicMapInterface : BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
+   function getInstance (This : in out GeologicalGeographicMapCellPositionFactory; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; i_column : Integer; i_row : Integer; columns : Integer; rows : Integer; width : Integer; height : Integer) return GeographicMapCellPosition_Access is
+      geographicMapInterface : constant BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
       tiledLayer : AllBinaryTiledLayer_Access;
       resources : Integer;
    begin
@@ -46,7 +46,7 @@ package body org.allbinary.game.layer.geological.resources.GeologicalGeographicM
         return GeologicalGeographicMapCellPosition_Package.Create (i_column, i_row, columns, rows, width, height, GeologicalResource_Package.Create (resources));
    end getInstance;
 
-   procedure getInstance (This : in out GeologicalGeographicMapCellPositionFactory; geographicMapInterface_Param : access BasicGeographicMap'Class; i_column : Integer; i_row : Integer; columns : Integer; rows : Integer; width : Integer; height : Integer) is
+   procedure getInstance (This : in out GeologicalGeographicMapCellPositionFactory; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; i_column : Integer; i_row : Integer; columns : Integer; rows : Integer; width : Integer; height : Integer) is
       Java_Result : constant GeographicMapCellPosition_Access := GeologicalGeographicMapCellPositionFactory'Class (This).getInstance (geographicMapInterface_Param, i_column, i_row, columns, rows, width, height);
       pragma Unreferenced (Java_Result);
    begin

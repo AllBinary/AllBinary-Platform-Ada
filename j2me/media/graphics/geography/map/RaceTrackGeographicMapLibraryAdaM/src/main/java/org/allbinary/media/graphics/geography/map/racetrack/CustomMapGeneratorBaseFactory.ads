@@ -37,8 +37,8 @@ package org.allbinary.media.graphics.geography.map.racetrack.CustomMapGeneratorB
    procedure Initialize (This : in out CustomMapGeneratorBaseFactory'Class);
    function Create return CustomMapGeneratorBaseFactory_Access;
    function getInstance return CustomMapGeneratorBaseFactory_Access;
-   function create (This : in out CustomMapGeneratorBaseFactory; raceTrackGeographicMap_Param : access RaceTrackGeographicMap'Class) return CustomMapGeneratorBase_Access;
-   procedure create (This : in out CustomMapGeneratorBaseFactory; raceTrackGeographicMap_Param : access RaceTrackGeographicMap'Class);
+   function create (This : in out CustomMapGeneratorBaseFactory; raceTrackGeographicMap_Param : access RaceTrackGeographicMap_Package.RaceTrackGeographicMap'Class) return CustomMapGeneratorBase_Access;
+   procedure create (This : in out CustomMapGeneratorBaseFactory; raceTrackGeographicMap_Param : access RaceTrackGeographicMap_Package.RaceTrackGeographicMap'Class);
 
 end org.allbinary.media.graphics.geography.map.racetrack.CustomMapGeneratorBaseFactory_Package;
 

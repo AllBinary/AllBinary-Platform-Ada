@@ -73,8 +73,8 @@ package body org.allbinary.game.input.GameKeyMappingFactory_Package is
         return This.intKeyToGameKey (key);
    end getGameKey;
 
-   procedure setGameKey (This : in out GameKeyMappingFactory; gameKey_Param : access GameKey'Class) is
-      gameKey : GameKey_Access := GameKey_Access (gameKey_Param);
+   procedure setGameKey (This : in out GameKeyMappingFactory; gameKey_Param : access GameKey_Package.GameKey'Class) is
+      gameKey : constant GameKey_Access := GameKey_Access (gameKey_Param);
    begin
         This.intKeyToGameKey (gameKey.getId) := gameKey;
    end setGameKey;

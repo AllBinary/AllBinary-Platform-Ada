@@ -44,14 +44,14 @@ package org.allbinary.animation.image.sprite.AllBinarySpriteRotationAnimation_Pa
 
    type AllBinarySpriteRotationAnimation is new HackRotationSpriteIndexedAnimation with null record;
 
-   procedure Initialize (This : in out AllBinarySpriteRotationAnimation'Class; sprite_Param : access Sprite'Class; image_Param : access Image'Class; animationBehavior_Param : access AnimationBehavior'Class);
-   function Create (sprite_Param : access Sprite'Class; image_Param : access Image'Class; animationBehavior_Param : access AnimationBehavior'Class) return AllBinarySpriteRotationAnimation_Access;
+   procedure Initialize (This : in out AllBinarySpriteRotationAnimation'Class; sprite_Param : access Sprite_Package.Sprite'Class; image_Param : access Image_Package.Image'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class);
+   function Create (sprite_Param : access Sprite_Package.Sprite'Class; image_Param : access Image_Package.Image'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return AllBinarySpriteRotationAnimation_Access;
    procedure nextRotation (This : in out AllBinarySpriteRotationAnimation);
    procedure previousRotation (This : in out AllBinarySpriteRotationAnimation);
-   procedure setFrameByDirection (This : in out AllBinarySpriteRotationAnimation; direction_Param : access Direction'Class);
-   procedure setFrameToAngle (This : in out AllBinarySpriteRotationAnimation; angle_Param : access Angle'Class);
+   procedure setFrameByDirection (This : in out AllBinarySpriteRotationAnimation; direction_Param : access Direction_Package.Direction'Class);
+   procedure setFrameToAngle (This : in out AllBinarySpriteRotationAnimation; angle_Param : access Angle_Package.Angle'Class);
    procedure setFrame (This : in out AllBinarySpriteRotationAnimation; index : Integer);
-   procedure adjustFrameToAngle (This : in out AllBinarySpriteRotationAnimation; angle_Param : access Angle'Class);
+   procedure adjustFrameToAngle (This : in out AllBinarySpriteRotationAnimation; angle_Param : access Angle_Package.Angle'Class);
    procedure adjustFrame (This : in out AllBinarySpriteRotationAnimation; angle : Short_Integer);
 
 end org.allbinary.animation.image.sprite.AllBinarySpriteRotationAnimation_Package;

@@ -25,8 +25,8 @@ package body org.allbinary.image.gui.CreateIconImagesJPanel_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CreateIconImagesJPanel'Class; imageProcessorInput_Param : access ImageProcessorInput'Class) is
-      imageProcessorInput : ImageProcessorInput_Access := ImageProcessorInput_Access (imageProcessorInput_Param);
+   procedure Initialize (This : in out CreateIconImagesJPanel'Class; imageProcessorInput_Param : access ImageProcessorInput_Package.ImageProcessorInput'Class) is
+      imageProcessorInput : constant ImageProcessorInput_Access := ImageProcessorInput_Access (imageProcessorInput_Param);
       numberStringArray : Unbounded_String_Array_Access;
       index : Integer;
       araster : Raster_Access;
@@ -48,7 +48,7 @@ package body org.allbinary.image.gui.CreateIconImagesJPanel_Package is
         end if;
    end Initialize;
 
-   function Create (imageProcessorInput_Param : access ImageProcessorInput'Class) return CreateIconImagesJPanel_Access is
+   function Create (imageProcessorInput_Param : access ImageProcessorInput_Package.ImageProcessorInput'Class) return CreateIconImagesJPanel_Access is
       This : constant CreateIconImagesJPanel_Access := new CreateIconImagesJPanel;
    begin
       CreateIconImagesJPanel_Package.Initialize (This.all, imageProcessorInput_Param);
@@ -133,8 +133,8 @@ package body org.allbinary.image.gui.CreateIconImagesJPanel_Package is
         return This.imageProcessorInput;
    end getImageProcessorInput;
 
-   procedure setImageProcessorInput (This : in out CreateIconImagesJPanel; imageProcessorInput_Param : access ImageProcessorInput'Class) is
-      imageProcessorInput : ImageProcessorInput_Access := ImageProcessorInput_Access (imageProcessorInput_Param);
+   procedure setImageProcessorInput (This : in out CreateIconImagesJPanel; imageProcessorInput_Param : access ImageProcessorInput_Package.ImageProcessorInput'Class) is
+      imageProcessorInput : constant ImageProcessorInput_Access := ImageProcessorInput_Access (imageProcessorInput_Param);
    begin
         This.imageProcessorInput := imageProcessorInput;
    end setImageProcessorInput;
@@ -146,8 +146,8 @@ package body org.allbinary.image.gui.CreateIconImagesJPanel_Package is
         This.aboveJButton.setText (To_Unbounded_String ("Process"));
         This.aboveJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.aboveJButtonActionPerformed (evt);
 --     end actionPerformed;
@@ -158,8 +158,8 @@ package body org.allbinary.image.gui.CreateIconImagesJPanel_Package is
         layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addContainerGap.addComponent (This.aboveJButton).addContainerGap (286, Short_Package.MAX_VALUE)));
    end initComponents;
 
-   procedure aboveJButtonActionPerformed (This : in out CreateIconImagesJPanel; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure aboveJButtonActionPerformed (This : in out CreateIconImagesJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         This.process;
    end aboveJButtonActionPerformed;

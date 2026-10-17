@@ -30,7 +30,7 @@ package org.allbinary.thread.ThreadObjectUtil_Package is
    procedure notifyObject (This : in out ThreadObjectUtil; anyType_Param : access Java_Object'Class);
    procedure waitObject (This : in out ThreadObjectUtil; anyType_Param : access Java_Object'Class);
    procedure waitObjectFor (This : in out ThreadObjectUtil; anyType_Param : access Java_Object'Class; delay_Id : Long_Long_Integer);
-   procedure processThread (This : in out ThreadObjectUtil; runnable_Param : access Runnable'Class);
+   procedure processThread (This : in out ThreadObjectUtil; runnable_Param : access Runnable_Package.Runnable'Class);
 
 end org.allbinary.thread.ThreadObjectUtil_Package;
 

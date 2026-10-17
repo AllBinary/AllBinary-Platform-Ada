@@ -45,7 +45,7 @@ package org.allbinary.canvas.ProfilingRefreshHelper_Package is
    procedure Initialize (This : in out ProfilingRefreshHelper'Class);
    function Create return ProfilingRefreshHelper_Access;
    function getInstance return AndroidGameStatistics_Access;
-   procedure initView (This : in out ProfilingRefreshHelper; view_Param : access View'Class);
+   procedure initView (This : in out ProfilingRefreshHelper; view_Param : access View_Package.View'Class);
    procedure nextFrame (This : in out ProfilingRefreshHelper);
    function toString (This : in out ProfilingRefreshHelper) return Unbounded_String;
 

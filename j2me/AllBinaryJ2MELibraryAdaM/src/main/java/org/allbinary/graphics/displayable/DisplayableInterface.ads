@@ -30,11 +30,11 @@ package org.allbinary.graphics.displayable.DisplayableInterface_Package is
    type DisplayableInterface_Access is access all DisplayableInterface'Class;
    type DisplayableInterface_Access_Array is array (Natural range <>) of DisplayableInterface_Access;
    type DisplayableInterface_Access_Array_Access is access all DisplayableInterface_Access_Array;
-   procedure addCommand (This : in out DisplayableInterface; cmd_Param : access Command'Class) is abstract;
+   procedure addCommand (This : in out DisplayableInterface; cmd_Param : access Command_Package.Command'Class) is abstract;
    function getHeight (This : in out DisplayableInterface) return Integer is abstract;
    function getWidth (This : in out DisplayableInterface) return Integer is abstract;
-   procedure removeCommand (This : in out DisplayableInterface; cmd_Param : access Command'Class) is abstract;
-   procedure setCommandListener (This : in out DisplayableInterface; l_Param : access CommandListener'Class) is abstract;
+   procedure removeCommand (This : in out DisplayableInterface; cmd_Param : access Command_Package.Command'Class) is abstract;
+   procedure setCommandListener (This : in out DisplayableInterface; l_Param : access CommandListener_Package.CommandListener'Class) is abstract;
 
 end org.allbinary.graphics.displayable.DisplayableInterface_Package;
 

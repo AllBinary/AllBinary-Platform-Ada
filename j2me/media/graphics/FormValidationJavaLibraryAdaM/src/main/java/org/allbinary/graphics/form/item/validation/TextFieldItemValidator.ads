@@ -48,8 +48,8 @@ package org.allbinary.graphics.form.item.validation.TextFieldItemValidator_Packa
       allowOnEmpty : Boolean;
    end record;
 
-   procedure Initialize (This : in out TextFieldItemValidator'Class; textFieldItem_Param : access ABTextFieldItem'Class; min : Integer; max : Integer; allowOnEmpty : Boolean);
-   function Create (textFieldItem_Param : access ABTextFieldItem'Class; min : Integer; max : Integer; allowOnEmpty : Boolean) return TextFieldItemValidator_Access;
+   procedure Initialize (This : in out TextFieldItemValidator'Class; textFieldItem_Param : access ABTextFieldItem_Package.ABTextFieldItem'Class; min : Integer; max : Integer; allowOnEmpty : Boolean);
+   function Create (textFieldItem_Param : access ABTextFieldItem_Package.ABTextFieldItem'Class; min : Integer; max : Integer; allowOnEmpty : Boolean) return TextFieldItemValidator_Access;
    function isValid (This : in out TextFieldItemValidator) return Boolean;
    function toList (This : in out TextFieldItemValidator) return BasicArrayList_Access;
 

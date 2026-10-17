@@ -69,15 +69,15 @@ package org.allbinary.image.gui.RotationImageJPanel_Package is
       writeOverOriginalJCheckBox : JCheckBox_Access;
    end record;
 
-   procedure Initialize (This : in out RotationImageJPanel'Class; imageProcessorInput_Param : access ImageProcessorInput'Class);
-   function Create (imageProcessorInput_Param : access ImageProcessorInput'Class) return RotationImageJPanel_Access;
+   procedure Initialize (This : in out RotationImageJPanel'Class; imageProcessorInput_Param : access ImageProcessorInput_Package.ImageProcessorInput'Class);
+   function Create (imageProcessorInput_Param : access ImageProcessorInput_Package.ImageProcessorInput'Class) return RotationImageJPanel_Access;
    procedure process (This : in out RotationImageJPanel);
    procedure initComponents (This : in out RotationImageJPanel);
-   procedure generateJButtonActionPerformed (This : in out RotationImageJPanel; evt_Param : access ActionEvent'Class);
-   procedure totalAngleJComboBoxActionPerformed (This : in out RotationImageJPanel; evt_Param : access ActionEvent'Class);
+   procedure generateJButtonActionPerformed (This : in out RotationImageJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
+   procedure totalAngleJComboBoxActionPerformed (This : in out RotationImageJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
    function getImageProcessorInput (This : in out RotationImageJPanel) return ImageProcessorInput_Access;
-   procedure setImageProcessorInput (This : in out RotationImageJPanel; imageProcessorInput_Param : access ImageProcessorInput'Class);
-   procedure visit (This : in out RotationImageJPanel; generatedBufferedImage_Param : access BufferedImage'Class; name : Unbounded_String; index : Integer);
+   procedure setImageProcessorInput (This : in out RotationImageJPanel; imageProcessorInput_Param : access ImageProcessorInput_Package.ImageProcessorInput'Class);
+   procedure visit (This : in out RotationImageJPanel; generatedBufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; name : Unbounded_String; index : Integer);
 
 end org.allbinary.image.gui.RotationImageJPanel_Package;
 

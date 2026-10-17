@@ -28,9 +28,9 @@ package body org.allbinary.game.layer.PathAnimation_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PathAnimation'Class; pathFindingLayer_Param : access PathFindingLayerInterface'Class; linePathAnimation_Param : access LinePathAnimation'Class) is
-      pathFindingLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (pathFindingLayer_Param);
-      linePathAnimation : LinePathAnimation_Access := LinePathAnimation_Access (linePathAnimation_Param);
+   procedure Initialize (This : in out PathAnimation'Class; pathFindingLayer_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class; linePathAnimation_Param : access LinePathAnimation_Package.LinePathAnimation'Class) is
+      pathFindingLayer : constant PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (pathFindingLayer_Param);
+      linePathAnimation : constant LinePathAnimation_Access := LinePathAnimation_Access (linePathAnimation_Param);
    begin
       Animation_Package.Initialize (This);
       Initialize_Fields (This);
@@ -38,7 +38,7 @@ package body org.allbinary.game.layer.PathAnimation_Package is
         This.linePathAnimation := linePathAnimation;
    end Initialize;
 
-   function Create (pathFindingLayer_Param : access PathFindingLayerInterface'Class; linePathAnimation_Param : access LinePathAnimation'Class) return PathAnimation_Access is
+   function Create (pathFindingLayer_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class; linePathAnimation_Param : access LinePathAnimation_Package.LinePathAnimation'Class) return PathAnimation_Access is
       This : constant PathAnimation_Access := new PathAnimation;
    begin
       PathAnimation_Package.Initialize (This.all, pathFindingLayer_Param, linePathAnimation_Param);
@@ -46,8 +46,8 @@ package body org.allbinary.game.layer.PathAnimation_Package is
    end Create;
 
    --  throws Exception
-   procedure setAllBinaryGameLayerManager (This : in out PathAnimation; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class) is
-      allBinaryGameLayerManager : AllBinaryGameLayerManager_Access := AllBinaryGameLayerManager_Access (allBinaryGameLayerManager_Param);
+   procedure setAllBinaryGameLayerManager (This : in out PathAnimation; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager_Package.AllBinaryGameLayerManager'Class) is
+      allBinaryGameLayerManager : constant AllBinaryGameLayerManager_Access := AllBinaryGameLayerManager_Access (allBinaryGameLayerManager_Param);
    begin
         This.allBinaryGameLayerManagerP := allBinaryGameLayerManager;
    end setAllBinaryGameLayerManager;
@@ -58,8 +58,8 @@ package body org.allbinary.game.layer.PathAnimation_Package is
         null;
    end nextFrame;
 
-   procedure paintXY (This : in out PathAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintXY (This : in out PathAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       waypointBehaviorBase : WaypointBehaviorBase_Access;
       geographicMapCellHistory : GeographicMapCellHistory_Access;
       list : BasicArrayList_Access;

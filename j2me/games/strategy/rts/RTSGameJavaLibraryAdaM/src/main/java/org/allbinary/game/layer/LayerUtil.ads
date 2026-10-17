@@ -44,8 +44,8 @@ package org.allbinary.game.layer.LayerUtil_Package is
 
    procedure Initialize (This : in out LayerUtil'Class);
    function Create return LayerUtil_Access;
-   function toString (hashtable_Case_Param : access ABHashtable'Class; x : Integer; y : Integer; z : Integer) return Unbounded_String;
-   procedure toString (hashtable_Case_Param : access ABHashtable'Class; x : Integer; y : Integer; z : Integer);
+   function toString (hashtable_Case_Param : access ABHashtable_Package.ABHashtable'Class; x : Integer; y : Integer; z : Integer) return Unbounded_String;
+   procedure toString (hashtable_Case_Param : access ABHashtable_Package.ABHashtable'Class; x : Integer; y : Integer; z : Integer);
 
 end org.allbinary.game.layer.LayerUtil_Package;
 

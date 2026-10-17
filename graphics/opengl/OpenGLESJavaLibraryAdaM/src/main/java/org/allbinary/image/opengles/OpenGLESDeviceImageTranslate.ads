@@ -41,8 +41,8 @@ package org.allbinary.image.opengles.OpenGLESDeviceImageTranslate_Package is
 
    procedure Initialize (This : in out OpenGLESDeviceImageTranslate'Class);
    function Create return OpenGLESDeviceImageTranslate_Access;
-   procedure translate (This : in out OpenGLESDeviceImageTranslate; gl_Param : access GL10'Class; openGLESImage_Param : access OpenGLESImage'Class; x : Float; y : Float);
-   procedure translate2 (This : in out OpenGLESDeviceImageTranslate; gl_Param : access GL10'Class; openGLESImage_Param : access OpenGLESImage'Class);
+   procedure translate (This : in out OpenGLESDeviceImageTranslate; gl_Param : access GL10_Package.GL10'Class; openGLESImage_Param : access OpenGLESImage_Package.OpenGLESImage'Class; x : Float; y : Float);
+   procedure translate2 (This : in out OpenGLESDeviceImageTranslate; gl_Param : access GL10_Package.GL10'Class; openGLESImage_Param : access OpenGLESImage_Package.OpenGLESImage'Class);
 
 end org.allbinary.image.opengles.OpenGLESDeviceImageTranslate_Package;
 

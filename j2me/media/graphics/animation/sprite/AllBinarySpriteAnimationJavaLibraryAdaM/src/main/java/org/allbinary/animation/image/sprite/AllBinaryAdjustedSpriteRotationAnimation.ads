@@ -40,9 +40,9 @@ package org.allbinary.animation.image.sprite.AllBinaryAdjustedSpriteRotationAnim
       dy : Integer;
    end record;
 
-   procedure Initialize (This : in out AllBinaryAdjustedSpriteRotationAnimation'Class; sprite_Param : access Sprite'Class; image_Param : access Image'Class; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior'Class);
-   function Create (sprite_Param : access Sprite'Class; image_Param : access Image'Class; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior'Class) return AllBinaryAdjustedSpriteRotationAnimation_Access;
-   procedure paintXY (This : in out AllBinaryAdjustedSpriteRotationAnimation; g_Param : access Graphics'Class; x : Integer; y : Integer);
+   procedure Initialize (This : in out AllBinaryAdjustedSpriteRotationAnimation'Class; sprite_Param : access Sprite_Package.Sprite'Class; image_Param : access Image_Package.Image'Class; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class);
+   function Create (sprite_Param : access Sprite_Package.Sprite'Class; image_Param : access Image_Package.Image'Class; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return AllBinaryAdjustedSpriteRotationAnimation_Access;
+   procedure paintXY (This : in out AllBinaryAdjustedSpriteRotationAnimation; g_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
 
 end org.allbinary.animation.image.sprite.AllBinaryAdjustedSpriteRotationAnimation_Package;
 

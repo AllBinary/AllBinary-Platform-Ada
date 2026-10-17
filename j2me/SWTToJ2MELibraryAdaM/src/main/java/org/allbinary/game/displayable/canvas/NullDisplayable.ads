@@ -31,7 +31,7 @@ package org.allbinary.game.displayable.canvas.NullDisplayable_Package is
    procedure Initialize (This : in out NullDisplayable'Class);
    function Create return NullDisplayable_Access;
    function getInstance return NullDisplayable_Access;
-   procedure paint (This : in out NullDisplayable; graphics_Param : access Graphics'Class);
+   procedure paint (This : in out NullDisplayable; graphics_Param : access Graphics_Package.Graphics'Class);
 
 end org.allbinary.game.displayable.canvas.NullDisplayable_Package;
 

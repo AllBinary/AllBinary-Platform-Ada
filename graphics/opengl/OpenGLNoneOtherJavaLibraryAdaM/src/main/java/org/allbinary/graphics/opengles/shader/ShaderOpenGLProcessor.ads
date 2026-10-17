@@ -24,11 +24,11 @@ package org.allbinary.graphics.opengles.shader.ShaderOpenGLProcessor_Package is
 
    procedure Initialize (This : in out ShaderOpenGLProcessor'Class);
    function Create return ShaderOpenGLProcessor_Access;
-   procedure process0 (This : in out ShaderOpenGLProcessor; gl_Param : access GL10'Class);
-   procedure process1 (This : in out ShaderOpenGLProcessor; gl_Param : access GL10'Class);
-   procedure process (This : in out ShaderOpenGLProcessor; gl_Param : access GL10'Class);
-   procedure process2 (This : in out ShaderOpenGLProcessor; gl_Param : access GL10'Class);
-   procedure process3 (This : in out ShaderOpenGLProcessor; gl_Param : access GL10'Class);
+   procedure process0 (This : in out ShaderOpenGLProcessor; gl_Param : access GL10_Package.GL10'Class);
+   procedure process1 (This : in out ShaderOpenGLProcessor; gl_Param : access GL10_Package.GL10'Class);
+   procedure process (This : in out ShaderOpenGLProcessor; gl_Param : access GL10_Package.GL10'Class);
+   procedure process2 (This : in out ShaderOpenGLProcessor; gl_Param : access GL10_Package.GL10'Class);
+   procedure process3 (This : in out ShaderOpenGLProcessor; gl_Param : access GL10_Package.GL10'Class);
 
 end org.allbinary.graphics.opengles.shader.ShaderOpenGLProcessor_Package;
 

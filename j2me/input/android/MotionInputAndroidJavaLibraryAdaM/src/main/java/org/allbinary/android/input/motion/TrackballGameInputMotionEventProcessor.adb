@@ -43,8 +43,8 @@ package body org.allbinary.android.input.motion.TrackballGameInputMotionEventPro
       return This;
    end Create;
 
-   procedure process (This : in out TrackballGameInputMotionEventProcessor; motionEvent_Param : access MotionEvent'Class) is
-      motionEvent : MotionEvent_Access := MotionEvent_Access (motionEvent_Param);
+   procedure process (This : in out TrackballGameInputMotionEventProcessor; motionEvent_Param : access MotionEvent_Package.MotionEvent'Class) is
+      motionEvent : constant MotionEvent_Access := MotionEvent_Access (motionEvent_Param);
       x : Float;
       y : Float;
    begin

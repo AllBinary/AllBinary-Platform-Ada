@@ -51,8 +51,8 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
    end Create;
 
    --  throws Exception
-   function createImageForRotation (This : in out ImageCopyUtil; originalImage_Param : access Image'Class) return Image_Access is
-      originalImage : Image_Access := Image_Access (originalImage_Param);
+   function createImageForRotation (This : in out ImageCopyUtil; originalImage_Param : access Image_Package.Image'Class) return Image_Access is
+      originalImage : constant Image_Access := Image_Access (originalImage_Param);
       image : Image_Access;
    begin
         if This.features.isFeature (This.openGLFeatureFactory.OPENGL) then
@@ -65,8 +65,8 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
    end createImageForRotation;
 
    --  throws Exception
-   function createImage (This : in out ImageCopyUtil; originalImage_Param : access Image'Class) return Image_Access is
-      originalImage : Image_Access := Image_Access (originalImage_Param);
+   function createImage (This : in out ImageCopyUtil; originalImage_Param : access Image_Package.Image'Class) return Image_Access is
+      originalImage : constant Image_Access := Image_Access (originalImage_Param);
       originalImage2 : Image_Access;
       openGLESImage : OpenGLESImage_Access;
       image : Image_Access;
@@ -97,8 +97,8 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
    end createImage;
 
    --  throws Exception
-   function createImageWH (This : in out ImageCopyUtil; originalImage_Param : access Image'Class; width : Integer; height : Integer; mutable : Boolean) return Image_Access is
-      originalImage : Image_Access := Image_Access (originalImage_Param);
+   function createImageWH (This : in out ImageCopyUtil; originalImage_Param : access Image_Package.Image'Class; width : Integer; height : Integer; mutable : Boolean) return Image_Access is
+      originalImage : constant Image_Access := Image_Access (originalImage_Param);
       originalImage2 : Image_Access;
       openGLESImage : OpenGLESImage_Access;
       image : Image_Access;
@@ -151,8 +151,8 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
    end createImageWH;
 
    --  throws Exception
-   function createImage2 (This : in out ImageCopyUtil; originalImage_Param : access Image'Class; width : Integer; height : Integer; mutable : Boolean) return Image_Access is
-      originalImage : Image_Access := Image_Access (originalImage_Param);
+   function createImage2 (This : in out ImageCopyUtil; originalImage_Param : access Image_Package.Image'Class; width : Integer; height : Integer; mutable : Boolean) return Image_Access is
+      originalImage : constant Image_Access := Image_Access (originalImage_Param);
       originalImage2 : Image_Access;
       image : Image_Access;
       originalImmutableImage : SwtImmutableImage_Access;
@@ -248,8 +248,8 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
    end createImage2;
 
    --  throws Exception
-   function createImageScale (This : in out ImageCopyUtil; originalImage_Param : access Image'Class; canvasScale : Float; resize : Boolean) return Image_Access is
-      originalImage : Image_Access := Image_Access (originalImage_Param);
+   function createImageScale (This : in out ImageCopyUtil; originalImage_Param : access Image_Package.Image'Class; canvasScale : Float; resize : Boolean) return Image_Access is
+      originalImage : constant Image_Access := Image_Access (originalImage_Param);
       newWidth : Integer;
       newHeight : Integer;
       image : Image_Access;
@@ -322,35 +322,35 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
         end if;
    end createImageScale;
 
-   procedure createImageForRotation (This : in out ImageCopyUtil; originalImage_Param : access Image'Class) is
+   procedure createImageForRotation (This : in out ImageCopyUtil; originalImage_Param : access Image_Package.Image'Class) is
       Java_Result : constant Image_Access := ImageCopyUtil'Class (This).createImageForRotation (originalImage_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createImageForRotation;
 
-   procedure createImage (This : in out ImageCopyUtil; originalImage_Param : access Image'Class) is
+   procedure createImage (This : in out ImageCopyUtil; originalImage_Param : access Image_Package.Image'Class) is
       Java_Result : constant Image_Access := ImageCopyUtil'Class (This).createImage (originalImage_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createImage;
 
-   procedure createImageWH (This : in out ImageCopyUtil; originalImage_Param : access Image'Class; width : Integer; height : Integer; mutable : Boolean) is
+   procedure createImageWH (This : in out ImageCopyUtil; originalImage_Param : access Image_Package.Image'Class; width : Integer; height : Integer; mutable : Boolean) is
       Java_Result : constant Image_Access := ImageCopyUtil'Class (This).createImageWH (originalImage_Param, width, height, mutable);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createImageWH;
 
-   procedure createImage2 (This : in out ImageCopyUtil; originalImage_Param : access Image'Class; width : Integer; height : Integer; mutable : Boolean) is
+   procedure createImage2 (This : in out ImageCopyUtil; originalImage_Param : access Image_Package.Image'Class; width : Integer; height : Integer; mutable : Boolean) is
       Java_Result : constant Image_Access := ImageCopyUtil'Class (This).createImage2 (originalImage_Param, width, height, mutable);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createImage2;
 
-   procedure createImageScale (This : in out ImageCopyUtil; originalImage_Param : access Image'Class; canvasScale : Float; resize : Boolean) is
+   procedure createImageScale (This : in out ImageCopyUtil; originalImage_Param : access Image_Package.Image'Class; canvasScale : Float; resize : Boolean) is
       Java_Result : constant Image_Access := ImageCopyUtil'Class (This).createImageScale (originalImage_Param, canvasScale, resize);
       pragma Unreferenced (Java_Result);
    begin

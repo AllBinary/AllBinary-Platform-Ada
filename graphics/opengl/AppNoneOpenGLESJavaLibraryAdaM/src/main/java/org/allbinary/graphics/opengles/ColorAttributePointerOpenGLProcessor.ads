@@ -38,7 +38,7 @@ package org.allbinary.graphics.opengles.ColorAttributePointerOpenGLProcessor_Pac
    procedure Initialize (This : in out ColorAttributePointerOpenGLProcessor'Class);
    function Create return ColorAttributePointerOpenGLProcessor_Access;
    function getInstance return ColorAttributePointerOpenGLProcessor_Access;
-   procedure process (This : in out ColorAttributePointerOpenGLProcessor; gl_Param : access GL10'Class; anyType_Param : access Java_Object'Class);
+   procedure process (This : in out ColorAttributePointerOpenGLProcessor; gl_Param : access GL10_Package.GL10'Class; anyType_Param : access Java_Object'Class);
 
 end org.allbinary.graphics.opengles.ColorAttributePointerOpenGLProcessor_Package;
 

@@ -37,13 +37,13 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationModuleOSG
    end Create;
 
    function visit (This : in out InputAutomationModuleOSGIServiceVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         return This.visit (OSGIServiceInterface_Access (anyType));
    end visit;
 
-   function visit (This : in out InputAutomationModuleOSGIServiceVisitor; osgiServiceInterface_Param : access OSGIServiceInterface'Class) return Boolean is
-      osgiServiceInterface : OSGIServiceInterface_Access := OSGIServiceInterface_Access (osgiServiceInterface_Param);
+   function visit (This : in out InputAutomationModuleOSGIServiceVisitor; osgiServiceInterface_Param : access OSGIServiceInterface_Package.OSGIServiceInterface'Class) return Boolean is
+      osgiServiceInterface : constant OSGIServiceInterface_Access := OSGIServiceInterface_Access (osgiServiceInterface_Param);
       inputAutomationModuleService : InputAutomationModuleService_Access;
       inputAutomationModuleInterfaceArray : InputAutomationModuleFactoryInterface_Access_Array_Access;
       index : Integer;
@@ -73,7 +73,7 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationModuleOSG
       null;
    end visit;
 
-   procedure visit (This : in out InputAutomationModuleOSGIServiceVisitor; osgiServiceInterface_Param : access OSGIServiceInterface'Class) is
+   procedure visit (This : in out InputAutomationModuleOSGIServiceVisitor; osgiServiceInterface_Param : access OSGIServiceInterface_Package.OSGIServiceInterface'Class) is
       Java_Result : constant Boolean := InputAutomationModuleOSGIServiceVisitor'Class (This).visit (osgiServiceInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

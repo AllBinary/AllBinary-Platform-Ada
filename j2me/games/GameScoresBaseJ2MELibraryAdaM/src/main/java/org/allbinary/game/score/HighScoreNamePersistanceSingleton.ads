@@ -84,14 +84,14 @@ package org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package is
    function Create return HighScoreNamePersistanceSingleton_Access;
    function getInstance return HighScoreNamePersistanceSingleton_Access;
    procedure clear (This : in out HighScoreNamePersistanceSingleton);
-   procedure deleteAll (This : in out HighScoreNamePersistanceSingleton; abeClientInformation_Param : access AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo'Class);
-   function getRecordId (This : in out HighScoreNamePersistanceSingleton; abeClientInformation_Param : access AbeClientInformationInterface'Class) return Unbounded_String;
-   procedure getRecordId (This : in out HighScoreNamePersistanceSingleton; abeClientInformation_Param : access AbeClientInformationInterface'Class);
-   procedure delete (This : in out HighScoreNamePersistanceSingleton; abeClientInformation_Param : access AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo'Class; deleteId : Integer);
+   procedure deleteAll (This : in out HighScoreNamePersistanceSingleton; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo_Package.GameInfo'Class);
+   function getRecordId (This : in out HighScoreNamePersistanceSingleton; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) return Unbounded_String;
+   procedure getRecordId (This : in out HighScoreNamePersistanceSingleton; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class);
+   procedure delete (This : in out HighScoreNamePersistanceSingleton; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo_Package.GameInfo'Class; deleteId : Integer);
    function getIds (This : in out HighScoreNamePersistanceSingleton) return BasicArrayList_Access;
-   function load (This : in out HighScoreNamePersistanceSingleton; abeClientInformation_Param : access AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo'Class) return Unbounded_String;
-   procedure load (This : in out HighScoreNamePersistanceSingleton; abeClientInformation_Param : access AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo'Class);
-   procedure save (This : in out HighScoreNamePersistanceSingleton; abeClientInformation_Param : access AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo'Class; name : Unbounded_String);
+   function load (This : in out HighScoreNamePersistanceSingleton; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo_Package.GameInfo'Class) return Unbounded_String;
+   procedure load (This : in out HighScoreNamePersistanceSingleton; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo_Package.GameInfo'Class);
+   procedure save (This : in out HighScoreNamePersistanceSingleton; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo_Package.GameInfo'Class; name : Unbounded_String);
 
 end org.allbinary.game.score.HighScoreNamePersistanceSingleton_Package;
 

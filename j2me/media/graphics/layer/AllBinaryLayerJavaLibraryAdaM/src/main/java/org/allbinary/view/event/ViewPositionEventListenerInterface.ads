@@ -31,7 +31,7 @@ package org.allbinary.view.event.ViewPositionEventListenerInterface_Package is
    type ViewPositionEventListenerInterface_Access is access all ViewPositionEventListenerInterface'Class;
    type ViewPositionEventListenerInterface_Access_Array is array (Natural range <>) of ViewPositionEventListenerInterface_Access;
    type ViewPositionEventListenerInterface_Access_Array_Access is access all ViewPositionEventListenerInterface_Access_Array;
-   procedure onChangeEvent (This : in out ViewPositionEventListenerInterface; layerManagerEvent_Param : access ViewPositionEvent'Class) is abstract;
+   procedure onChangeEvent (This : in out ViewPositionEventListenerInterface; layerManagerEvent_Param : access ViewPositionEvent_Package.ViewPositionEvent'Class) is abstract;
 
 end org.allbinary.view.event.ViewPositionEventListenerInterface_Package;
 

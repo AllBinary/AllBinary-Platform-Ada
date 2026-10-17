@@ -39,26 +39,26 @@ package body org.allbinary.business.init.InitInfo2_Package is
         return InitInfo2_Package.instance;
    end getInstance;
 
-   function isTestHtmlPathValid (This : in out InitInfo2; value_Param : access AbPath'Class) return Boolean is
-      value : AbPath_Access := AbPath_Access (value_Param);
+   function isTestHtmlPathValid (This : in out InitInfo2; value_Param : access AbPath_Package.AbPath'Class) return Boolean is
+      value : constant AbPath_Access := AbPath_Access (value_Param);
    begin
         return This.directory.create (value);
    end isTestHtmlPathValid;
 
-   function isMainPathValid (This : in out InitInfo2; value_Param : access AbPath'Class) return Boolean is
-      value : AbPath_Access := AbPath_Access (value_Param);
+   function isMainPathValid (This : in out InitInfo2; value_Param : access AbPath_Package.AbPath'Class) return Boolean is
+      value : constant AbPath_Access := AbPath_Access (value_Param);
    begin
         return This.directory.create (value);
    end isMainPathValid;
 
-   procedure isTestHtmlPathValid (This : in out InitInfo2; value_Param : access AbPath'Class) is
+   procedure isTestHtmlPathValid (This : in out InitInfo2; value_Param : access AbPath_Package.AbPath'Class) is
       Java_Result : constant Boolean := InitInfo2'Class (This).isTestHtmlPathValid (value_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isTestHtmlPathValid;
 
-   procedure isMainPathValid (This : in out InitInfo2; value_Param : access AbPath'Class) is
+   procedure isMainPathValid (This : in out InitInfo2; value_Param : access AbPath_Package.AbPath'Class) is
       Java_Result : constant Boolean := InitInfo2'Class (This).isMainPathValid (value_Param);
       pragma Unreferenced (Java_Result);
    begin

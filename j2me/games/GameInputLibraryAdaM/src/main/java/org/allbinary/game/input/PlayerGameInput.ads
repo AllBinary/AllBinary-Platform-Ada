@@ -54,15 +54,15 @@ package org.allbinary.game.input.PlayerGameInput_Package is
       playerInputId : Integer;
    end record;
 
-   procedure Initialize (This : in out PlayerGameInput'Class; gameKeyEventList_Param : access BasicArrayList'Class; removalGameKeyEventList_Param : access BasicArrayList'Class; playerInputId : Integer);
-   function Create (gameKeyEventList_Param : access BasicArrayList'Class; removalGameKeyEventList_Param : access BasicArrayList'Class; playerInputId : Integer) return PlayerGameInput_Access;
-   procedure onPressGameKeyEvent (This : in out PlayerGameInput; gameKeyEvent_Param : access GameKeyEvent'Class);
-   procedure onDownGameKeyEvent (This : in out PlayerGameInput; gameKeyEvent_Param : access GameKeyEvent'Class);
-   procedure onDownKeyEvent (This : in out PlayerGameInput; gameKeyEvent_Param : access GameKeyEvent'Class);
+   procedure Initialize (This : in out PlayerGameInput'Class; gameKeyEventList_Param : access BasicArrayList_Package.BasicArrayList'Class; removalGameKeyEventList_Param : access BasicArrayList_Package.BasicArrayList'Class; playerInputId : Integer);
+   function Create (gameKeyEventList_Param : access BasicArrayList_Package.BasicArrayList'Class; removalGameKeyEventList_Param : access BasicArrayList_Package.BasicArrayList'Class; playerInputId : Integer) return PlayerGameInput_Access;
+   procedure onPressGameKeyEvent (This : in out PlayerGameInput; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class);
+   procedure onDownGameKeyEvent (This : in out PlayerGameInput; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class);
+   procedure onDownKeyEvent (This : in out PlayerGameInput; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class);
    procedure onDownKey (This : in out PlayerGameInput; gameKeyEvent : Integer);
-   procedure onUpGameKeyEvent (This : in out PlayerGameInput; gameKeyEvent_Param : access GameKeyEvent'Class);
+   procedure onUpGameKeyEvent (This : in out PlayerGameInput; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class);
    procedure onUpKeyEvent (This : in out PlayerGameInput; gameKeyEvent : Integer);
-   procedure onEvent (This : in out PlayerGameInput; eventObject_Param : access AllBinaryEventObject'Class);
+   procedure onEvent (This : in out PlayerGameInput; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class);
    function getPlayerInputId (This : in out PlayerGameInput) return Integer;
 
 end org.allbinary.game.input.PlayerGameInput_Package;

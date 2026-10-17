@@ -24,11 +24,11 @@ package body org.allbinary.game.ag.ai.BoundBounceAI_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BoundBounceAI'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class; layerBounds_Param : access LayerBounds'Class; boundsVisitorInterface_Param : access BoundsVisitorInterface'Class) is
-      ownerLayerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
-      gameInput : GameInput_Access := GameInput_Access (gameInput_Param);
-      layerBounds : LayerBounds_Access := LayerBounds_Access (layerBounds_Param);
-      boundsVisitorInterface : BoundsVisitorInterface_Access := BoundsVisitorInterface_Access (boundsVisitorInterface_Param);
+   procedure Initialize (This : in out BoundBounceAI'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class; layerBounds_Param : access LayerBounds_Package.LayerBounds'Class; boundsVisitorInterface_Param : access BoundsVisitorInterface_Package.BoundsVisitorInterface'Class) is
+      ownerLayerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
+      gameInput : constant GameInput_Access := GameInput_Access (gameInput_Param);
+      layerBounds : constant LayerBounds_Access := LayerBounds_Access (layerBounds_Param);
+      boundsVisitorInterface : constant BoundsVisitorInterface_Access := BoundsVisitorInterface_Access (boundsVisitorInterface_Param);
    begin
         BasicAI_Package.Initialize (This, ownerLayerInterface, gameInput);
         Initialize_Fields (This);
@@ -36,15 +36,15 @@ package body org.allbinary.game.ag.ai.BoundBounceAI_Package is
         This.boundsVisitorInterface := boundsVisitorInterface;
    end Initialize;
 
-   function Create (ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class; layerBounds_Param : access LayerBounds'Class; boundsVisitorInterface_Param : access BoundsVisitorInterface'Class) return BoundBounceAI_Access is
+   function Create (ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class; layerBounds_Param : access LayerBounds_Package.LayerBounds'Class; boundsVisitorInterface_Param : access BoundsVisitorInterface_Package.BoundsVisitorInterface'Class) return BoundBounceAI_Access is
       This : constant BoundBounceAI_Access := new BoundBounceAI;
    begin
       BoundBounceAI_Package.Initialize (This.all, ownerLayerInterface_Param, gameInput_Param, layerBounds_Param, boundsVisitorInterface_Param);
       return This;
    end Create;
 
-   procedure paint (This : in out BoundBounceAI; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out BoundBounceAI; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       rectange : Rectangle_Access;
    begin
         rectange := This.layerBounds.getRectangleP;
@@ -52,8 +52,8 @@ package body org.allbinary.game.ag.ai.BoundBounceAI_Package is
    end paint;
 
    --  throws Exception
-   procedure processAI (This : in out BoundBounceAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class) is
-      allBinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
+   procedure processAI (This : in out BoundBounceAI; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class) is
+      allBinaryLayerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
    begin
         This.layerBounds.visit (This.boundsVisitorInterface);
    end processAI;

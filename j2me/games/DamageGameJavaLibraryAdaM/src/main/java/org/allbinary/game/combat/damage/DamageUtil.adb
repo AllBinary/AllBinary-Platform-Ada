@@ -42,17 +42,17 @@ package body org.allbinary.game.combat.damage.DamageUtil_Package is
    end Create;
 
    --  throws Exception
-   procedure process (This : in out DamageUtil; damageableInterface_Param : access DamageableInterface'Class; damageableInterface2_Param : access DamageableInterface'Class) is
-      damageableInterface : DamageableInterface_Access := DamageableInterface_Access (damageableInterface_Param);
-      damageableInterface2 : DamageableInterface_Access := DamageableInterface_Access (damageableInterface2_Param);
+   procedure process (This : in out DamageUtil; damageableInterface_Param : access DamageableInterface_Package.DamageableInterface'Class; damageableInterface2_Param : access DamageableInterface_Package.DamageableInterface'Class) is
+      damageableInterface : constant DamageableInterface_Access := DamageableInterface_Access (damageableInterface_Param);
+      damageableInterface2 : constant DamageableInterface_Access := DamageableInterface_Access (damageableInterface2_Param);
    begin
         damageableInterface.damage (damageableInterface2.getDamage (0), 0);
    end process;
 
    --  throws Exception
-   procedure debugDamage (This : in out DamageUtil; collidableInterfaceCompositeInterface1_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableCompositeLayer'Class) is
-      collidableInterfaceCompositeInterface1 : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (collidableInterfaceCompositeInterface1_Param);
-      collidableInterfaceCompositeInterface : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (collidableInterfaceCompositeInterface_Param);
+   procedure debugDamage (This : in out DamageUtil; collidableInterfaceCompositeInterface1_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class) is
+      collidableInterfaceCompositeInterface1 : constant CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (collidableInterfaceCompositeInterface1_Param);
+      collidableInterfaceCompositeInterface : constant CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (collidableInterfaceCompositeInterface_Param);
       collidableDestroyableDamageableLayer : CollidableDestroyableDamageableLayer_Access;
       damage : Integer;
       stringBuffer : StringMaker_Access;

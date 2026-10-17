@@ -86,8 +86,8 @@ package admin.tags.FileAuthenticationTag_Package is
    procedure setUserName (This : in out FileAuthenticationTag; userName : Unbounded_String);
    procedure setPassword (This : in out FileAuthenticationTag; value : Unbounded_String);
    procedure setNewPassword (This : in out FileAuthenticationTag; value : Unbounded_String);
-   procedure setRoles (This : in out FileAuthenticationTag; values_Param : access BasicArrayList'Class);
-   procedure makeSessionValid (This : in out FileAuthenticationTag; storedRole_Param : access BasicUserRole'Class; userName : Unbounded_String);
+   procedure setRoles (This : in out FileAuthenticationTag; values_Param : access BasicArrayList_Package.BasicArrayList'Class);
+   procedure makeSessionValid (This : in out FileAuthenticationTag; storedRole_Param : access BasicUserRole_Package.BasicUserRole'Class; userName : Unbounded_String);
    procedure getFormData (This : in out FileAuthenticationTag);
    procedure nextAttempt (This : in out FileAuthenticationTag);
    function changePassword (This : in out FileAuthenticationTag) return Boolean;

@@ -38,14 +38,14 @@ package body org.allbinary.game.input.NoPlayerGameInput_Package is
       return This;
    end Create;
 
-   procedure onDownGameKeyEvent (This : in out NoPlayerGameInput; gameKeyEvent_Param : access GameKeyEvent'Class) is
-      gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
+   procedure onDownGameKeyEvent (This : in out NoPlayerGameInput; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class) is
+      gameKeyEvent : constant GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         null;
    end onDownGameKeyEvent;
 
-   procedure onUpGameKeyEvent (This : in out NoPlayerGameInput; gameKeyEvent_Param : access GameKeyEvent'Class) is
-      gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
+   procedure onUpGameKeyEvent (This : in out NoPlayerGameInput; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class) is
+      gameKeyEvent : constant GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         null;
    end onUpGameKeyEvent;

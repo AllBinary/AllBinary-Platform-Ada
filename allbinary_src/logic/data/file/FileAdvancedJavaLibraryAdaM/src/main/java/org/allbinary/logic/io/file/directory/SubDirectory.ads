@@ -47,16 +47,16 @@ package org.allbinary.logic.io.file.directory.SubDirectory_Package is
    procedure Initialize (This : in out SubDirectory'Class);
    function Create return SubDirectory_Access;
    function getInstance return SubDirectory_Access;
-   function search (This : in out SubDirectory; fileFilter_Param : access FileFilter'Class; file_Param : access AbFile'Class) return BasicArrayList_Access;
-   procedure search (This : in out SubDirectory; fileFilter_Param : access FileFilter'Class; file_Param : access AbFile'Class);
-   function search (This : in out SubDirectory; file_Param : access AbFile'Class) return BasicArrayList_Access;
-   procedure search (This : in out SubDirectory; file_Param : access AbFile'Class);
-   function search (This : in out SubDirectory; searchValue : Unbounded_String; file_Param : access AbFile'Class) return BasicArrayList_Access;
-   procedure search (This : in out SubDirectory; searchValue : Unbounded_String; file_Param : access AbFile'Class);
-   function search (This : in out SubDirectory; level : Integer; file_Param : access AbFile'Class) return BasicArrayList_Access;
-   procedure search (This : in out SubDirectory; level : Integer; file_Param : access AbFile'Class);
-   function toString (files_Param : access BasicArrayList'Class) return Unbounded_String;
-   procedure toString (files_Param : access BasicArrayList'Class);
+   function search (This : in out SubDirectory; fileFilter_Param : access FileFilter_Package.FileFilter'Class; file_Param : access AbFile_Package.AbFile'Class) return BasicArrayList_Access;
+   procedure search (This : in out SubDirectory; fileFilter_Param : access FileFilter_Package.FileFilter'Class; file_Param : access AbFile_Package.AbFile'Class);
+   function search (This : in out SubDirectory; file_Param : access AbFile_Package.AbFile'Class) return BasicArrayList_Access;
+   procedure search (This : in out SubDirectory; file_Param : access AbFile_Package.AbFile'Class);
+   function search (This : in out SubDirectory; searchValue : Unbounded_String; file_Param : access AbFile_Package.AbFile'Class) return BasicArrayList_Access;
+   procedure search (This : in out SubDirectory; searchValue : Unbounded_String; file_Param : access AbFile_Package.AbFile'Class);
+   function search (This : in out SubDirectory; level : Integer; file_Param : access AbFile_Package.AbFile'Class) return BasicArrayList_Access;
+   procedure search (This : in out SubDirectory; level : Integer; file_Param : access AbFile_Package.AbFile'Class);
+   function toString (files_Param : access BasicArrayList_Package.BasicArrayList'Class) return Unbounded_String;
+   procedure toString (files_Param : access BasicArrayList_Package.BasicArrayList'Class);
 
 end org.allbinary.logic.io.file.directory.SubDirectory_Package;
 

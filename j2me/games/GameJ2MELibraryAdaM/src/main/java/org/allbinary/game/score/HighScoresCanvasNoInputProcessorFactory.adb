@@ -33,13 +33,13 @@ package body org.allbinary.game.score.HighScoresCanvasNoInputProcessorFactory_Pa
    end Create;
 
 
-   function getInstance (This : in out HighScoresCanvasNoInputProcessorFactory; highScoresCanvas_Param : access HighScoresCanvas'Class) return HighScoresCanvasInputProcessor_Access is
-      highScoresCanvas : HighScoresCanvas_Access := HighScoresCanvas_Access (highScoresCanvas_Param);
+   function getInstance (This : in out HighScoresCanvasNoInputProcessorFactory; highScoresCanvas_Param : access HighScoresCanvas_Package.HighScoresCanvas'Class) return HighScoresCanvasInputProcessor_Access is
+      highScoresCanvas : constant HighScoresCanvas_Access := HighScoresCanvas_Access (highScoresCanvas_Param);
    begin
         return HighScoresCanvasInputProcessor_Package.Create (highScoresCanvas);
    end getInstance;
 
-   procedure getInstance (This : in out HighScoresCanvasNoInputProcessorFactory; highScoresCanvas_Param : access HighScoresCanvas'Class) is
+   procedure getInstance (This : in out HighScoresCanvasNoInputProcessorFactory; highScoresCanvas_Param : access HighScoresCanvas_Package.HighScoresCanvas'Class) is
       Java_Result : constant HighScoresCanvasInputProcessor_Access := HighScoresCanvasNoInputProcessorFactory'Class (This).getInstance (highScoresCanvas_Param);
       pragma Unreferenced (Java_Result);
    begin

@@ -35,8 +35,8 @@ package org.allbinary.logic.io.file.AbFileNativeUtil_Package is
 
    procedure Initialize (This : in out AbFileNativeUtil'Class);
    function Create return AbFileNativeUtil_Access;
-   function get (file_Param : access AbFile'Class) return File_Access;
-   procedure get (file_Param : access AbFile'Class);
+   function get (file_Param : access AbFile_Package.AbFile'Class) return File_Access;
+   procedure get (file_Param : access AbFile_Package.AbFile'Class);
 
 end org.allbinary.logic.io.file.AbFileNativeUtil_Package;
 

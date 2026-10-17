@@ -38,13 +38,13 @@ package body org.allbinary.graphics.displayable.screen.DisplayPointScalar_Packag
         return DisplayPointScalar_Package.instance;
    end getInstance;
 
-   function process (This : in out DisplayPointScalar; point_Param : access GPoint'Class) return GPoint_Access is
-      point : GPoint_Access := GPoint_Access (point_Param);
+   function process (This : in out DisplayPointScalar; point_Param : access GPoint_Package.GPoint'Class) return GPoint_Access is
+      point : constant GPoint_Access := GPoint_Access (point_Param);
    begin
         return point;
    end process;
 
-   procedure process (This : in out DisplayPointScalar; point_Param : access GPoint'Class) is
+   procedure process (This : in out DisplayPointScalar; point_Param : access GPoint_Package.GPoint'Class) is
       Java_Result : constant GPoint_Access := DisplayPointScalar'Class (This).process (point_Param);
       pragma Unreferenced (Java_Result);
    begin

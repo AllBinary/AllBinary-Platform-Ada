@@ -57,8 +57,8 @@ package org.allbinary.input.automation.robot.NullInputRobot_Package is
    procedure mouseMove (This : in out NullInputRobot; x : Integer; y : Integer);
    procedure mousePress (This : in out NullInputRobot; buttons : Integer);
    procedure mouseRelease (This : in out NullInputRobot; buttons : Integer);
-   function createScreenCapture (This : in out NullInputRobot; screenRect_Param : access Rectangle'Class) return BufferedImage_Access;
-   procedure createScreenCapture (This : in out NullInputRobot; screenRect_Param : access Rectangle'Class);
+   function createScreenCapture (This : in out NullInputRobot; screenRect_Param : access Rectangle_Package.Rectangle'Class) return BufferedImage_Access;
+   procedure createScreenCapture (This : in out NullInputRobot; screenRect_Param : access Rectangle_Package.Rectangle'Class);
    procedure delay_Id (This : in out NullInputRobot; ms : Integer);
    function getAutoDelay (This : in out NullInputRobot) return Integer;
    function getPixelColor (This : in out NullInputRobot; x : Integer; y : Integer) return Color_Access;

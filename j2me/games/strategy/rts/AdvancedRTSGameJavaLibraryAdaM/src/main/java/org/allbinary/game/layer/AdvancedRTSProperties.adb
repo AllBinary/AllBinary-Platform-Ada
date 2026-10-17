@@ -35,10 +35,10 @@ package body org.allbinary.game.layer.AdvancedRTSProperties_Package is
         return AdvancedRTSProperties_Package.Create (ShakeAnimationListenerFactory_Package.getInstance, AllBinaryVibration_Package.getInstance, (GameConfigurationCentral_Package.getInstance.VIBRATION.getValue.intValue) * (100), WaypointBehaviorBase_Package.Create);
    end createProperties;
 
-   procedure Initialize (This : in out AdvancedRTSProperties'Class; shakeListener_Param : access ShakeAnimationListener'Class; vibration_Param : access AllBinaryVibrationME'Class; duration : Integer; waypointBehaviorBase_Param : access TickableInterface'Class) is
-      shakeListener : ShakeAnimationListener_Access := ShakeAnimationListener_Access (shakeListener_Param);
-      vibration : AllBinaryVibrationME_Access := AllBinaryVibrationME_Access (vibration_Param);
-      waypointBehaviorBase : TickableInterface_Access := TickableInterface_Access (waypointBehaviorBase_Param);
+   procedure Initialize (This : in out AdvancedRTSProperties'Class; shakeListener_Param : access ShakeAnimationListener_Package.ShakeAnimationListener'Class; vibration_Param : access AllBinaryVibrationME_Package.AllBinaryVibrationME'Class; duration : Integer; waypointBehaviorBase_Param : access TickableInterface_Package.TickableInterface'Class) is
+      shakeListener : constant ShakeAnimationListener_Access := ShakeAnimationListener_Access (shakeListener_Param);
+      vibration : constant AllBinaryVibrationME_Access := AllBinaryVibrationME_Access (vibration_Param);
+      waypointBehaviorBase : constant TickableInterface_Access := TickableInterface_Access (waypointBehaviorBase_Param);
    begin
       Initialize_Fields (This);
         This.shakeListener := shakeListener;
@@ -47,7 +47,7 @@ package body org.allbinary.game.layer.AdvancedRTSProperties_Package is
         This.waypointBehaviorBase := waypointBehaviorBase;
    end Initialize;
 
-   function Create (shakeListener_Param : access ShakeAnimationListener'Class; vibration_Param : access AllBinaryVibrationME'Class; duration : Integer; waypointBehaviorBase_Param : access TickableInterface'Class) return AdvancedRTSProperties_Access is
+   function Create (shakeListener_Param : access ShakeAnimationListener_Package.ShakeAnimationListener'Class; vibration_Param : access AllBinaryVibrationME_Package.AllBinaryVibrationME'Class; duration : Integer; waypointBehaviorBase_Param : access TickableInterface_Package.TickableInterface'Class) return AdvancedRTSProperties_Access is
       This : constant AdvancedRTSProperties_Access := new AdvancedRTSProperties;
    begin
       AdvancedRTSProperties_Package.Initialize (This.all, shakeListener_Param, vibration_Param, duration, waypointBehaviorBase_Param);

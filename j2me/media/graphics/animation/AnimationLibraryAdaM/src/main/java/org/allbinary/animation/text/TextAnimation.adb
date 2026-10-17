@@ -28,23 +28,23 @@ package body org.allbinary.animation.text.TextAnimation_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TextAnimation'Class; text : Unbounded_String; animationBehavior_Param : access AnimationBehavior'Class) is
-      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
+   procedure Initialize (This : in out TextAnimation'Class; text : Unbounded_String; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) is
+      animationBehavior : constant AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
         IndexedAnimation_Package.Initialize (This, animationBehavior);
         Initialize_Fields (This);
         This.setText (text);
    end Initialize;
 
-   function Create (text : Unbounded_String; animationBehavior_Param : access AnimationBehavior'Class) return TextAnimation_Access is
+   function Create (text : Unbounded_String; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return TextAnimation_Access is
       This : constant TextAnimation_Access := new TextAnimation;
    begin
       TextAnimation_Package.Initialize (This.all, text, animationBehavior_Param);
       return This;
    end Create;
 
-   procedure updateMeasurement (This : in out TextAnimation; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure updateMeasurement (This : in out TextAnimation; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
       adjustedFontHeight : Integer;
    begin
@@ -63,15 +63,15 @@ package body org.allbinary.animation.text.TextAnimation_Package is
         null;
    end nextFrame;
 
-   procedure paintXY (This : in out TextAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintXY (This : in out TextAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.myFontProcessor.process (graphics);
         This.paintXYNoUpdate (graphics, x, y);
    end paintXY;
 
-   procedure paintXYNoUpdate (This : in out TextAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintXYNoUpdate (This : in out TextAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       size : Integer;
       index : Integer;
    begin
@@ -82,8 +82,8 @@ package body org.allbinary.animation.text.TextAnimation_Package is
         end loop;
    end paintXYNoUpdate;
 
-   procedure setTextWithOnMeasure (This : in out TextAnimation; text : Unbounded_String; textChangeListener_Param : access TextChangeListener'Class) is
-      textChangeListener : TextChangeListener_Access := TextChangeListener_Access (textChangeListener_Param);
+   procedure setTextWithOnMeasure (This : in out TextAnimation; text : Unbounded_String; textChangeListener_Param : access TextChangeListener_Package.TextChangeListener'Class) is
+      textChangeListener : constant TextChangeListener_Access := TextChangeListener_Access (textChangeListener_Param);
    begin
         This.setText (text);
         This.textChangeListener := textChangeListener;

@@ -116,8 +116,8 @@ package body org.allbinary.logic.communication.http.file.upload.media.UploadMedi
         return This.isMedia (mediaFileType, aMediaType, This.writerFileTypesHashMap);
    end isWriterMedia;
 
-   function isMedia (This : in out UploadMediaSingleton; mediaFileType : Unbounded_String; aMediaType : Unbounded_String; hashMap_Param : access HashMap'Class) return Boolean is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+   function isMedia (This : in out UploadMediaSingleton; mediaFileType : Unbounded_String; aMediaType : Unbounded_String; hashMap_Param : access HashMap_Package.HashMap'Class) return Boolean is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
       mediaType : Unbounded_String;
    begin
         if hashMap.containsKey (mediaFileType) then
@@ -174,7 +174,7 @@ package body org.allbinary.logic.communication.http.file.upload.media.UploadMedi
       null;
    end isWriterMedia;
 
-   procedure isMedia (This : in out UploadMediaSingleton; mediaFileType : Unbounded_String; aMediaType : Unbounded_String; hashMap_Param : access HashMap'Class) is
+   procedure isMedia (This : in out UploadMediaSingleton; mediaFileType : Unbounded_String; aMediaType : Unbounded_String; hashMap_Param : access HashMap_Package.HashMap'Class) is
       Java_Result : constant Boolean := UploadMediaSingleton'Class (This).isMedia (mediaFileType, aMediaType, hashMap_Param);
       pragma Unreferenced (Java_Result);
    begin

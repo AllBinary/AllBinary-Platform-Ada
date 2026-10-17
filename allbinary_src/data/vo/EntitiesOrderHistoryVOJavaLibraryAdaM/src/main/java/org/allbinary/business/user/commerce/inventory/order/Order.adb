@@ -31,8 +31,8 @@ package body org.allbinary.business.user.commerce.inventory.order.Order_Package 
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out Order'Class; basket_Param : access BasketInterface'Class) is
-      basket : BasketInterface_Access := BasketInterface_Access (basket_Param);
+   procedure Initialize (This : in out Order'Class; basket_Param : access BasketInterface_Package.BasketInterface'Class) is
+      basket : constant BasketInterface_Access := BasketInterface_Access (basket_Param);
    begin
       Initialize_Fields (This);
         This.basket := basket;
@@ -40,15 +40,15 @@ package body org.allbinary.business.user.commerce.inventory.order.Order_Package 
         This.shippingType := StringUtil_Package.getInstance.EMPTY_STRING;
    end Initialize;
 
-   function Create (basket_Param : access BasketInterface'Class) return Order_Access is
+   function Create (basket_Param : access BasketInterface_Package.BasketInterface'Class) return Order_Access is
       This : constant Order_Access := new Order;
    begin
       Order_Package.Initialize (This.all, basket_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out Order'Class; storeName : Unbounded_String; basket_Param : access BasketInterface'Class; id : Unbounded_String; shippingType : Unbounded_String; special : Unbounded_String; paymentMethod : Unbounded_String) is
-      basket : BasketInterface_Access := BasketInterface_Access (basket_Param);
+   procedure Initialize (This : in out Order'Class; storeName : Unbounded_String; basket_Param : access BasketInterface_Package.BasketInterface'Class; id : Unbounded_String; shippingType : Unbounded_String; special : Unbounded_String; paymentMethod : Unbounded_String) is
+      basket : constant BasketInterface_Access := BasketInterface_Access (basket_Param);
    begin
       Initialize_Fields (This);
         This.storeName := storeName;
@@ -59,7 +59,7 @@ package body org.allbinary.business.user.commerce.inventory.order.Order_Package 
         This.paymentMethod := paymentMethod;
    end Initialize;
 
-   function Create (storeName : Unbounded_String; basket_Param : access BasketInterface'Class; id : Unbounded_String; shippingType : Unbounded_String; special : Unbounded_String; paymentMethod : Unbounded_String) return Order_Access is
+   function Create (storeName : Unbounded_String; basket_Param : access BasketInterface_Package.BasketInterface'Class; id : Unbounded_String; shippingType : Unbounded_String; special : Unbounded_String; paymentMethod : Unbounded_String) return Order_Access is
       This : constant Order_Access := new Order;
    begin
       Order_Package.Initialize (This.all, storeName, basket_Param, id, shippingType, special, paymentMethod);
@@ -194,8 +194,8 @@ package body org.allbinary.business.user.commerce.inventory.order.Order_Package 
         return To_Unbounded_String ("Create your own Order.viewOrder");
    end viewOrder;
 
-   function emailOrder (This : in out Order; userName : Unbounded_String; paymentMethod : Unbounded_String; storeFrontInterface_Param : access StoreFrontInterface'Class) return Unbounded_String is
-      storeFrontInterface : StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
+   function emailOrder (This : in out Order; userName : Unbounded_String; paymentMethod : Unbounded_String; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) return Unbounded_String is
+      storeFrontInterface : constant StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
    begin
         return To_Unbounded_String ("Create your own Order.emailOrder");
    end emailOrder;
@@ -217,8 +217,8 @@ package body org.allbinary.business.user.commerce.inventory.order.Order_Package 
    end toHashMapOrder;
 
    --  throws Exception
-   function toXmlNode (This : in out Order; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out Order; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       hashMap : HashMap_Access;
       keySet : Set_Access;
       keyArray : Java_Object_Access_Array_Access;
@@ -256,14 +256,14 @@ package body org.allbinary.business.user.commerce.inventory.order.Order_Package 
       null;
    end viewOrder;
 
-   procedure emailOrder (This : in out Order; userName : Unbounded_String; paymentMethod : Unbounded_String; storeFrontInterface_Param : access StoreFrontInterface'Class) is
+   procedure emailOrder (This : in out Order; userName : Unbounded_String; paymentMethod : Unbounded_String; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) is
       Java_Result : constant Unbounded_String := Order'Class (This).emailOrder (userName, paymentMethod, storeFrontInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end emailOrder;
 
-   procedure toXmlNode (This : in out Order; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out Order; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := Order'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

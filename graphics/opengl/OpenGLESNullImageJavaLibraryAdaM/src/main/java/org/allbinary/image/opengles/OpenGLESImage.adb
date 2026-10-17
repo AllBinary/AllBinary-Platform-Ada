@@ -27,10 +27,10 @@ package body org.allbinary.image.opengles.OpenGLESImage_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out OpenGLESImage'Class; image_Param : access Image'Class; bitmapFactory_Param : access PlatformBitmapBaseFactory'Class; textureFactory_Param : access PlatformTextureBaseFactory'Class) is
-      image : Image_Access := Image_Access (image_Param);
-      bitmapFactory : PlatformBitmapBaseFactory_Access := PlatformBitmapBaseFactory_Access (bitmapFactory_Param);
-      textureFactory : PlatformTextureBaseFactory_Access := PlatformTextureBaseFactory_Access (textureFactory_Param);
+   procedure Initialize (This : in out OpenGLESImage'Class; image_Param : access Image_Package.Image'Class; bitmapFactory_Param : access PlatformBitmapBaseFactory_Package.PlatformBitmapBaseFactory'Class; textureFactory_Param : access PlatformTextureBaseFactory_Package.PlatformTextureBaseFactory'Class) is
+      image : constant Image_Access := Image_Access (image_Param);
+      bitmapFactory : constant PlatformBitmapBaseFactory_Access := PlatformBitmapBaseFactory_Access (bitmapFactory_Param);
+      textureFactory : constant PlatformTextureBaseFactory_Access := PlatformTextureBaseFactory_Access (textureFactory_Param);
    begin
       Image_Package.Initialize (This);
       Initialize_Fields (This);
@@ -38,7 +38,7 @@ package body org.allbinary.image.opengles.OpenGLESImage_Package is
         This.textureFactory := textureFactory;
    end Initialize;
 
-   function Create (image_Param : access Image'Class; bitmapFactory_Param : access PlatformBitmapBaseFactory'Class; textureFactory_Param : access PlatformTextureBaseFactory'Class) return OpenGLESImage_Access is
+   function Create (image_Param : access Image_Package.Image'Class; bitmapFactory_Param : access PlatformBitmapBaseFactory_Package.PlatformBitmapBaseFactory'Class; textureFactory_Param : access PlatformTextureBaseFactory_Package.PlatformTextureBaseFactory'Class) return OpenGLESImage_Access is
       This : constant OpenGLESImage_Access := new OpenGLESImage;
    begin
       OpenGLESImage_Package.Initialize (This.all, image_Param, bitmapFactory_Param, textureFactory_Param);
@@ -46,26 +46,26 @@ package body org.allbinary.image.opengles.OpenGLESImage_Package is
    end Create;
 
    --  throws Exception
-   procedure set (This : in out OpenGLESImage; gl_Param : access GL'Class) is
-      gl : GL_Access := GL_Access (gl_Param);
+   procedure set (This : in out OpenGLESImage; gl_Param : access GL_Package.GL'Class) is
+      gl : constant GL_Access := GL_Access (gl_Param);
    begin
         Java_Throw (Java_New_Exception ("Exception", This.commonStrings.NOT_IMPLEMENTED));
    end set;
 
-   function initTexture (This : in out OpenGLESImage; gl_Param : access GL10'Class) return Boolean is
-      gl : GL10_Access := GL10_Access (gl_Param);
+   function initTexture (This : in out OpenGLESImage; gl_Param : access GL10_Package.GL10'Class) return Boolean is
+      gl : constant GL10_Access := GL10_Access (gl_Param);
    begin
         return False;
    end initTexture;
 
-   procedure drawRegion (This : in out OpenGLESImage; gl_Param : access GL10'Class; viewHeight : Integer; x_src : Float; y_src : Float; width : Float; height : Float; x : Integer; y : Integer; z : Integer) is
-      gl : GL10_Access := GL10_Access (gl_Param);
+   procedure drawRegion (This : in out OpenGLESImage; gl_Param : access GL10_Package.GL10'Class; viewHeight : Integer; x_src : Float; y_src : Float; width : Float; height : Float; x : Integer; y : Integer; z : Integer) is
+      gl : constant GL10_Access := GL10_Access (gl_Param);
    begin
         null;
    end drawRegion;
 
-   procedure draw (This : in out OpenGLESImage; gl_Param : access GL10'Class; x : Integer; y : Integer; z : Integer) is
-      gl : GL10_Access := GL10_Access (gl_Param);
+   procedure draw (This : in out OpenGLESImage; gl_Param : access GL10_Package.GL10'Class; x : Integer; y : Integer; z : Integer) is
+      gl : constant GL10_Access := GL10_Access (gl_Param);
    begin
         null;
    end draw;
@@ -75,7 +75,7 @@ package body org.allbinary.image.opengles.OpenGLESImage_Package is
         return OpenGLESImage_Package.TYPE_Id;
    end getType;
 
-   procedure initTexture (This : in out OpenGLESImage; gl_Param : access GL10'Class) is
+   procedure initTexture (This : in out OpenGLESImage; gl_Param : access GL10_Package.GL10'Class) is
       Java_Result : constant Boolean := OpenGLESImage'Class (This).initTexture (gl_Param);
       pragma Unreferenced (Java_Result);
    begin

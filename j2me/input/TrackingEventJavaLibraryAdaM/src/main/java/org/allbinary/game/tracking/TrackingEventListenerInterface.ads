@@ -31,7 +31,7 @@ package org.allbinary.game.tracking.TrackingEventListenerInterface_Package is
    type TrackingEventListenerInterface_Access is access all TrackingEventListenerInterface'Class;
    type TrackingEventListenerInterface_Access_Array is array (Natural range <>) of TrackingEventListenerInterface_Access;
    type TrackingEventListenerInterface_Access_Array_Access is access all TrackingEventListenerInterface_Access_Array;
-   procedure onMovement (This : in out TrackingEventListenerInterface; trackingEvent_Param : access TrackingEvent'Class) is abstract;
+   procedure onMovement (This : in out TrackingEventListenerInterface; trackingEvent_Param : access TrackingEvent_Package.TrackingEvent'Class) is abstract;
 
 end org.allbinary.game.tracking.TrackingEventListenerInterface_Package;
 

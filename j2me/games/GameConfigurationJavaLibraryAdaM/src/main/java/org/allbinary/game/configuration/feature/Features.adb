@@ -49,8 +49,8 @@ package body org.allbinary.game.configuration.feature.Features_Package is
    end Create;
 
    --  throws Exception
-   procedure addDefault (This : in out Features; gameFeature_Param : access Feature'Class) is
-      gameFeature : Feature_Access := Feature_Access (gameFeature_Param);
+   procedure addDefault (This : in out Features; gameFeature_Param : access Feature_Package.Feature'Class) is
+      gameFeature : constant Feature_Access := Feature_Access (gameFeature_Param);
    begin
         This.add (gameFeature);
         if not (This.defaultList.contains (gameFeature)) then
@@ -59,8 +59,8 @@ package body org.allbinary.game.configuration.feature.Features_Package is
    end addDefault;
 
    --  throws Exception
-   procedure add (This : in out Features; gameFeature_Param : access Feature'Class) is
-      gameFeature : Feature_Access := Feature_Access (gameFeature_Param);
+   procedure add (This : in out Features; gameFeature_Param : access Feature_Package.Feature'Class) is
+      gameFeature : constant Feature_Access := Feature_Access (gameFeature_Param);
    begin
         if not (This.list.contains (gameFeature)) then
             This.logUtil.putF (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.START_LABEL).append (gameFeature.toString).toString, Features_Access'(This'Unchecked_Access), This.commonStrings.ADD);
@@ -70,8 +70,8 @@ package body org.allbinary.game.configuration.feature.Features_Package is
    end add;
 
    --  throws Exception
-   procedure removeDefault (This : in out Features; gameFeature_Param : access Feature'Class) is
-      gameFeature : Feature_Access := Feature_Access (gameFeature_Param);
+   procedure removeDefault (This : in out Features; gameFeature_Param : access Feature_Package.Feature'Class) is
+      gameFeature : constant Feature_Access := Feature_Access (gameFeature_Param);
    begin
         This.logUtil.putF (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.START_LABEL).append (gameFeature.toString).toString, Features_Access'(This'Unchecked_Access), To_Unbounded_String ("removeDefault"));
         This.remove (gameFeature);
@@ -79,8 +79,8 @@ package body org.allbinary.game.configuration.feature.Features_Package is
    end removeDefault;
 
    --  throws Exception
-   procedure remove (This : in out Features; gameFeature_Param : access Feature'Class) is
-      gameFeature : Feature_Access := Feature_Access (gameFeature_Param);
+   procedure remove (This : in out Features; gameFeature_Param : access Feature_Package.Feature'Class) is
+      gameFeature : constant Feature_Access := Feature_Access (gameFeature_Param);
    begin
         if This.list.contains (gameFeature) then
             This.logUtil.putF (This.commonStrings.START, Features_Access'(This'Unchecked_Access), This.commonStrings.REMOVE);
@@ -130,21 +130,21 @@ package body org.allbinary.game.configuration.feature.Features_Package is
         end;
    end init;
 
-   function isDefault (This : in out Features; gameFeature_Param : access Feature'Class) return Boolean is
-      gameFeature : Feature_Access := Feature_Access (gameFeature_Param);
+   function isDefault (This : in out Features; gameFeature_Param : access Feature_Package.Feature'Class) return Boolean is
+      gameFeature : constant Feature_Access := Feature_Access (gameFeature_Param);
    begin
         return This.defaultList.contains (gameFeature);
    end isDefault;
 
-   function isFeature (This : in out Features; gameFeature_Param : access Feature'Class) return Boolean is
-      gameFeature : Feature_Access := Feature_Access (gameFeature_Param);
+   function isFeature (This : in out Features; gameFeature_Param : access Feature_Package.Feature'Class) return Boolean is
+      gameFeature : constant Feature_Access := Feature_Access (gameFeature_Param);
    begin
         return This.list.contains (gameFeature);
    end isFeature;
 
    --  throws Exception
-   procedure toggle (This : in out Features; gameFeature_Param : access Feature'Class) is
-      gameFeature : Feature_Access := Feature_Access (gameFeature_Param);
+   procedure toggle (This : in out Features; gameFeature_Param : access Feature_Package.Feature'Class) is
+      gameFeature : constant Feature_Access := Feature_Access (gameFeature_Param);
    begin
         if This.isFeature (gameFeature) then
             This.remove (gameFeature);
@@ -153,14 +153,14 @@ package body org.allbinary.game.configuration.feature.Features_Package is
         end if;
    end toggle;
 
-   procedure isDefault (This : in out Features; gameFeature_Param : access Feature'Class) is
+   procedure isDefault (This : in out Features; gameFeature_Param : access Feature_Package.Feature'Class) is
       Java_Result : constant Boolean := Features'Class (This).isDefault (gameFeature_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isDefault;
 
-   procedure isFeature (This : in out Features; gameFeature_Param : access Feature'Class) is
+   procedure isFeature (This : in out Features; gameFeature_Param : access Feature_Package.Feature'Class) is
       Java_Result : constant Boolean := Features'Class (This).isFeature (gameFeature_Param);
       pragma Unreferenced (Java_Result);
    begin

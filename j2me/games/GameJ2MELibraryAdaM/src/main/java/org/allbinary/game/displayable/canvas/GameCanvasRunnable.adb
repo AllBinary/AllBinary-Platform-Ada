@@ -25,15 +25,15 @@ package body org.allbinary.game.displayable.canvas.GameCanvasRunnable_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GameCanvasRunnable'Class; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class) is
-      allBinaryGameCanvas : AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (allBinaryGameCanvas_Param);
+   procedure Initialize (This : in out GameCanvasRunnable'Class; allBinaryGameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class) is
+      allBinaryGameCanvas : constant AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (allBinaryGameCanvas_Param);
    begin
       GameRunnable_Package.Initialize (This);
       Initialize_Fields (This);
         This.allBinaryGameCanvas := allBinaryGameCanvas;
    end Initialize;
 
-   function Create (allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class) return GameCanvasRunnable_Access is
+   function Create (allBinaryGameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class) return GameCanvasRunnable_Access is
       This : constant GameCanvasRunnable_Access := new GameCanvasRunnable;
    begin
       GameCanvasRunnable_Package.Initialize (This.all, allBinaryGameCanvas_Param);

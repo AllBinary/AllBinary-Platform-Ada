@@ -37,22 +37,22 @@ package javax.microedition.khronos.opengles.GL11Ext_Package is
    procedure glCurrentPaletteMatrixOES (This : in out GL11Ext; matrixpaletteindex : Integer) is abstract;
    procedure glDrawTexfOES (This : in out GL11Ext; x : Float; y : Float; z : Float; width : Float; height : Float) is abstract;
    procedure glDrawTexfvOES (This : in out GL11Ext; coords : Float_Array_Access; offset : Integer) is abstract;
-   procedure glDrawTexfvOES (This : in out GL11Ext; coords_Param : access FloatBuffer'Class) is abstract;
+   procedure glDrawTexfvOES (This : in out GL11Ext; coords_Param : access FloatBuffer_Package.FloatBuffer'Class) is abstract;
    procedure glDrawTexiOES (This : in out GL11Ext; x : Integer; y : Integer; z : Integer; width : Integer; height : Integer) is abstract;
    procedure glDrawTexivOES (This : in out GL11Ext; coords : Integer_Array_Access; offset : Integer) is abstract;
-   procedure glDrawTexivOES (This : in out GL11Ext; coords_Param : access IntBuffer'Class) is abstract;
+   procedure glDrawTexivOES (This : in out GL11Ext; coords_Param : access IntBuffer_Package.IntBuffer'Class) is abstract;
    procedure glDrawTexsOES (This : in out GL11Ext; x : Short_Integer; y : Short_Integer; z : Short_Integer; width : Short_Integer; height : Short_Integer) is abstract;
    procedure glDrawTexsvOES (This : in out GL11Ext; coords : Short_Integer_Array_Access; offset : Integer) is abstract;
-   procedure glDrawTexsvOES (This : in out GL11Ext; coords_Param : access ShortBuffer'Class) is abstract;
+   procedure glDrawTexsvOES (This : in out GL11Ext; coords_Param : access ShortBuffer_Package.ShortBuffer'Class) is abstract;
    procedure glDrawTexxOES (This : in out GL11Ext; x : Integer; y : Integer; z : Integer; width : Integer; height : Integer) is abstract;
    procedure glDrawTexxvOES (This : in out GL11Ext; coords : Integer_Array_Access; offset : Integer) is abstract;
-   procedure glDrawTexxvOES (This : in out GL11Ext; coords_Param : access IntBuffer'Class) is abstract;
+   procedure glDrawTexxvOES (This : in out GL11Ext; coords_Param : access IntBuffer_Package.IntBuffer'Class) is abstract;
    procedure glEnable (This : in out GL11Ext; cap : Integer) is abstract;
    procedure glEnableClientState (This : in out GL11Ext; array_Id : Integer) is abstract;
    procedure glLoadPaletteFromModelViewMatrixOES (This : in out GL11Ext) is abstract;
-   procedure glMatrixIndexPointerOES (This : in out GL11Ext; size : Integer; type_Id : Integer; stride : Integer; pointer_Param : access Buffer'Class) is abstract;
+   procedure glMatrixIndexPointerOES (This : in out GL11Ext; size : Integer; type_Id : Integer; stride : Integer; pointer_Param : access Buffer_Package.Buffer'Class) is abstract;
    procedure glMatrixIndexPointerOES (This : in out GL11Ext; size : Integer; type_Id : Integer; stride : Integer; offset : Integer) is abstract;
-   procedure glWeightPointerOES (This : in out GL11Ext; size : Integer; type_Id : Integer; stride : Integer; pointer_Param : access Buffer'Class) is abstract;
+   procedure glWeightPointerOES (This : in out GL11Ext; size : Integer; type_Id : Integer; stride : Integer; pointer_Param : access Buffer_Package.Buffer'Class) is abstract;
    procedure glWeightPointerOES (This : in out GL11Ext; size : Integer; type_Id : Integer; stride : Integer; offset : Integer) is abstract;
 
 end javax.microedition.khronos.opengles.GL11Ext_Package;

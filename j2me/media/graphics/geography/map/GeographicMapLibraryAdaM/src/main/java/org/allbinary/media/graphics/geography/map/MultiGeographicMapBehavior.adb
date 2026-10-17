@@ -34,8 +34,8 @@ package body org.allbinary.media.graphics.geography.map.MultiGeographicMapBehavi
 
 
    --  throws Exception
-   function getCellTypeAt (This : in out MultiGeographicMapBehavior; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return GeographicMapCellType_Access_Array_Access is
-      geographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
+   function getCellTypeAt (This : in out MultiGeographicMapBehavior; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) return GeographicMapCellType_Access_Array_Access is
+      geographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
       size : Integer;
       cellType : GeographicMapCellType_Access;
       index : Integer;
@@ -50,7 +50,7 @@ package body org.allbinary.media.graphics.geography.map.MultiGeographicMapBehavi
         return geographicMapCellTypeArray;
    end getCellTypeAt;
 
-   procedure getCellTypeAt (This : in out MultiGeographicMapBehavior; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+   procedure getCellTypeAt (This : in out MultiGeographicMapBehavior; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
       Java_Result : constant GeographicMapCellType_Access_Array_Access := MultiGeographicMapBehavior'Class (This).getCellTypeAt (geographicMapInterfaceArray, geographicMapCellTypeArray, geographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin

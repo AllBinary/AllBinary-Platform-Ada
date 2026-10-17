@@ -23,9 +23,9 @@ package body org.allbinary.game.ag.ai.UpDownVectorAI_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out UpDownVectorAI'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) is
-      ownerLayerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
-      gameInput : GameInput_Access := GameInput_Access (gameInput_Param);
+   procedure Initialize (This : in out UpDownVectorAI'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) is
+      ownerLayerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
+      gameInput : constant GameInput_Access := GameInput_Access (gameInput_Param);
       velocityInterfaceCompositeInterface : VelocityInterfaceCompositeInterface_Access;
    begin
         BasicAI_Package.Initialize (This, ownerLayerInterface, gameInput);
@@ -35,7 +35,7 @@ package body org.allbinary.game.ag.ai.UpDownVectorAI_Package is
         This.velocityInterface.getVelocityYBasicDecimalP.setint (0);
    end Initialize;
 
-   function Create (ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return UpDownVectorAI_Access is
+   function Create (ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) return UpDownVectorAI_Access is
       This : constant UpDownVectorAI_Access := new UpDownVectorAI;
    begin
       UpDownVectorAI_Package.Initialize (This.all, ownerLayerInterface_Param, gameInput_Param);
@@ -43,8 +43,8 @@ package body org.allbinary.game.ag.ai.UpDownVectorAI_Package is
    end Create;
 
    --  throws Exception
-   procedure processAI (This : in out UpDownVectorAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class) is
-      allBinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
+   procedure processAI (This : in out UpDownVectorAI; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class) is
+      allBinaryLayerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
       y : Integer;
       basicDecimal : BasicDecimal_Access;
    begin

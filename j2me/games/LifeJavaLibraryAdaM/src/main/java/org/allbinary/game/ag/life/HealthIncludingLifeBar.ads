@@ -52,13 +52,13 @@ package org.allbinary.game.ag.life.HealthIncludingLifeBar_Package is
       allbinaryLayer : AllBinaryLayer_Access;
    end record;
 
-   procedure Initialize (This : in out HealthIncludingLifeBar'Class; layerInterface_Param : access AllBinaryLayer'Class; life_Param : access Life'Class; healthInterface_Param : access Health'Class; animationInterface_Param : access HealthBarAnimation'Class; direction : Integer);
-   function Create (layerInterface_Param : access AllBinaryLayer'Class; life_Param : access Life'Class; healthInterface_Param : access Health'Class; animationInterface_Param : access HealthBarAnimation'Class; direction : Integer) return HealthIncludingLifeBar_Access;
-   function createHealthIncludingLifeBar (layerInterface_Param : access AllBinaryLayer'Class; life_Param : access Life'Class; healthInterface_Param : access Health'Class; location : Integer; direction : Integer) return HealthIncludingLifeBar_Access;
-   procedure createHealthIncludingLifeBar (layerInterface_Param : access AllBinaryLayer'Class; life_Param : access Life'Class; healthInterface_Param : access Health'Class; location : Integer; direction : Integer);
+   procedure Initialize (This : in out HealthIncludingLifeBar'Class; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; life_Param : access Life_Package.Life'Class; healthInterface_Param : access Health_Package.Health'Class; animationInterface_Param : access HealthBarAnimation_Package.HealthBarAnimation'Class; direction : Integer);
+   function Create (layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; life_Param : access Life_Package.Life'Class; healthInterface_Param : access Health_Package.Health'Class; animationInterface_Param : access HealthBarAnimation_Package.HealthBarAnimation'Class; direction : Integer) return HealthIncludingLifeBar_Access;
+   function createHealthIncludingLifeBar (layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; life_Param : access Life_Package.Life'Class; healthInterface_Param : access Health_Package.Health'Class; location : Integer; direction : Integer) return HealthIncludingLifeBar_Access;
+   procedure createHealthIncludingLifeBar (layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; life_Param : access Life_Package.Life'Class; healthInterface_Param : access Health_Package.Health'Class; location : Integer; direction : Integer);
    procedure onHealthChange (This : in out HealthIncludingLifeBar);
-   procedure paint (This : in out HealthIncludingLifeBar; graphics_Param : access Graphics'Class);
-   procedure paintThreed (This : in out HealthIncludingLifeBar; graphics_Param : access Graphics'Class);
+   procedure paint (This : in out HealthIncludingLifeBar; graphics_Param : access Graphics_Package.Graphics'Class);
+   procedure paintThreed (This : in out HealthIncludingLifeBar; graphics_Param : access Graphics_Package.Graphics'Class);
 
 end org.allbinary.game.ag.life.HealthIncludingLifeBar_Package;
 

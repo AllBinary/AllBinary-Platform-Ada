@@ -39,8 +39,8 @@ package body org.allbinary.game.input.NullPlayerGameInputComposite_Package is
    end getName;
 
    --  throws Exception
-   procedure processInput (This : in out NullPlayerGameInputComposite; layerManager_Param : access AllBinaryLayerManager'Class) is
-      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+   procedure processInput (This : in out NullPlayerGameInputComposite; layerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class) is
+      layerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
    begin
         null;
    end processInput;

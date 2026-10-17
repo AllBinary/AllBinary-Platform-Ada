@@ -35,7 +35,7 @@ package body org.allbinary.media.image.io.IIOImageCacheableFactory_Package is
    end Create;
 
    function getInstance (This : in out IIOImageCacheableFactory; key_Param : access Java_Object'Class) return CacheableInterface_Access is
-      key : Java_Object_Access := Java_Object_Access (key_Param);
+      key : constant Java_Object_Access := Java_Object_Access (key_Param);
    begin
         return IIOImageCacheable_Package.Create (Unbounded_String (key));
    end getInstance;

@@ -33,9 +33,9 @@ package org.allbinary.data.tree.category.CategoryLoaderInterface_Package is
    type CategoryLoaderInterface_Access is access all CategoryLoaderInterface'Class;
    type CategoryLoaderInterface_Access_Array is array (Natural range <>) of CategoryLoaderInterface_Access;
    type CategoryLoaderInterface_Access_Array_Access is access all CategoryLoaderInterface_Access_Array;
-   function getDoc (This : in out CategoryLoaderInterface; categoryInterface_Param : access CategoryInterface'Class) return Document_Access is abstract;
-   function get (This : in out CategoryLoaderInterface; categoryInterface_Param : access CategoryInterface'Class) return CategoryInterface_Access is abstract;
-   function getAll (This : in out CategoryLoaderInterface; categoryInterface_Param : access CategoryInterface'Class) return CategoryInterface_Access is abstract;
+   function getDoc (This : in out CategoryLoaderInterface; categoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class) return Document_Access is abstract;
+   function get (This : in out CategoryLoaderInterface; categoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class) return CategoryInterface_Access is abstract;
+   function getAll (This : in out CategoryLoaderInterface; categoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class) return CategoryInterface_Access is abstract;
 
 end org.allbinary.data.tree.category.CategoryLoaderInterface_Package;
 

@@ -44,8 +44,8 @@ package org.allbinary.logic.communication.smtp.configuration.server.EmailServerC
       emailServerConfigurationInterface : EmailServerConfigurationInterface_Access;
    end record;
 
-   procedure Initialize (This : in out EmailServerConfigurationMapping'Class; emailServerConfigurationInterface_Param : access EmailServerConfigurationInterface'Class);
-   function Create (emailServerConfigurationInterface_Param : access EmailServerConfigurationInterface'Class) return EmailServerConfigurationMapping_Access;
+   procedure Initialize (This : in out EmailServerConfigurationMapping'Class; emailServerConfigurationInterface_Param : access EmailServerConfigurationInterface_Package.EmailServerConfigurationInterface'Class);
+   function Create (emailServerConfigurationInterface_Param : access EmailServerConfigurationInterface_Package.EmailServerConfigurationInterface'Class) return EmailServerConfigurationMapping_Access;
    function toHashMap (This : in out EmailServerConfigurationMapping) return HashMap_Access;
    function getKey (This : in out EmailServerConfigurationMapping) return Java_Object_Access;
    function toVector (This : in out EmailServerConfigurationMapping) return BasicArrayList_Access;

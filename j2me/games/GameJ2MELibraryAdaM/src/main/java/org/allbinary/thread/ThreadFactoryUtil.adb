@@ -39,20 +39,20 @@ package body org.allbinary.thread.ThreadFactoryUtil_Package is
         return ThreadFactoryUtil_Package.instance;
    end getInstance;
 
-   function getInstanceGameCanvasRunnable (This : in out ThreadFactoryUtil; runnable_Param : access GameCanvasRunnableInterface'Class) return Thread_Access is
-      runnable : GameCanvasRunnableInterface_Access := GameCanvasRunnableInterface_Access (runnable_Param);
+   function getInstanceGameCanvasRunnable (This : in out ThreadFactoryUtil; runnable_Param : access GameCanvasRunnableInterface_Package.GameCanvasRunnableInterface'Class) return Thread_Access is
+      runnable : constant GameCanvasRunnableInterface_Access := GameCanvasRunnableInterface_Access (runnable_Param);
    begin
         return This.getInstanceType (runnable, runnable.getType);
    end getInstanceGameCanvasRunnable;
 
-   function getInstanceForRunnable (This : in out ThreadFactoryUtil; runnable_Param : access ABRunnable'Class) return Thread_Access is
-      runnable : ABRunnable_Access := ABRunnable_Access (runnable_Param);
+   function getInstanceForRunnable (This : in out ThreadFactoryUtil; runnable_Param : access ABRunnable_Package.ABRunnable'Class) return Thread_Access is
+      runnable : constant ABRunnable_Access := ABRunnable_Access (runnable_Param);
    begin
         return This.getInstanceType (runnable, runnable.getType);
    end getInstanceForRunnable;
 
-   function getInstanceType (This : in out ThreadFactoryUtil; runnable_Param : access Runnable'Class; type_Id : Integer) return Thread_Access is
-      runnable : Runnable_Access := Runnable_Access (runnable_Param);
+   function getInstanceType (This : in out ThreadFactoryUtil; runnable_Param : access Runnable_Package.Runnable'Class; type_Id : Integer) return Thread_Access is
+      runnable : constant Runnable_Access := Runnable_Access (runnable_Param);
       commonStrings : CommonStrings_Access;
       primaryThreadPool : ThreadPool_Access;
       demoGameSingleThreadStartRunnable : RunnableCanvasSingleThreadStartRunnable_Access;
@@ -76,27 +76,27 @@ package body org.allbinary.thread.ThreadFactoryUtil_Package is
         return thread;
    end getInstanceType;
 
-   procedure start (This : in out ThreadFactoryUtil; thread_Param : access Thread'Class) is
-      thread : Thread_Access := Thread_Access (thread_Param);
+   procedure start (This : in out ThreadFactoryUtil; thread_Param : access Thread_Package.Thread'Class) is
+      thread : constant Thread_Access := Thread_Access (thread_Param);
    begin
         thread.start;
    end start;
 
-   procedure getInstanceGameCanvasRunnable (This : in out ThreadFactoryUtil; runnable_Param : access GameCanvasRunnableInterface'Class) is
+   procedure getInstanceGameCanvasRunnable (This : in out ThreadFactoryUtil; runnable_Param : access GameCanvasRunnableInterface_Package.GameCanvasRunnableInterface'Class) is
       Java_Result : constant Thread_Access := ThreadFactoryUtil'Class (This).getInstanceGameCanvasRunnable (runnable_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstanceGameCanvasRunnable;
 
-   procedure getInstanceForRunnable (This : in out ThreadFactoryUtil; runnable_Param : access ABRunnable'Class) is
+   procedure getInstanceForRunnable (This : in out ThreadFactoryUtil; runnable_Param : access ABRunnable_Package.ABRunnable'Class) is
       Java_Result : constant Thread_Access := ThreadFactoryUtil'Class (This).getInstanceForRunnable (runnable_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstanceForRunnable;
 
-   procedure getInstanceType (This : in out ThreadFactoryUtil; runnable_Param : access Runnable'Class; type_Id : Integer) is
+   procedure getInstanceType (This : in out ThreadFactoryUtil; runnable_Param : access Runnable_Package.Runnable'Class; type_Id : Integer) is
       Java_Result : constant Thread_Access := ThreadFactoryUtil'Class (This).getInstanceType (runnable_Param, type_Id);
       pragma Unreferenced (Java_Result);
    begin

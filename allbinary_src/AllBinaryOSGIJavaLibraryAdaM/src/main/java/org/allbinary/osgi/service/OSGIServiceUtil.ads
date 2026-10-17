@@ -51,8 +51,8 @@ package org.allbinary.osgi.service.OSGIServiceUtil_Package is
    procedure Initialize (This : in out OSGIServiceUtil'Class);
    function Create return OSGIServiceUtil_Access;
    function getInstance return OSGIServiceUtil_Access;
-   function getServicesObjectVector (This : in out OSGIServiceUtil; bundleContext_Param : access BundleContext'Class; serviceReferences : ServiceReference_Access_Array_Access) return BasicArrayList_Access;
-   procedure getServicesObjectVector (This : in out OSGIServiceUtil; bundleContext_Param : access BundleContext'Class; serviceReferences : ServiceReference_Access_Array_Access);
+   function getServicesObjectVector (This : in out OSGIServiceUtil; bundleContext_Param : access BundleContext_Package.BundleContext'Class; serviceReferences : ServiceReference_Access_Array_Access) return BasicArrayList_Access;
+   procedure getServicesObjectVector (This : in out OSGIServiceUtil; bundleContext_Param : access BundleContext_Package.BundleContext'Class; serviceReferences : ServiceReference_Access_Array_Access);
 
 end org.allbinary.osgi.service.OSGIServiceUtil_Package;
 

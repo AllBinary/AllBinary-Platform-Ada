@@ -27,10 +27,10 @@ package body org.allbinary.game.score.remote.RemoteHighScores_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out RemoteHighScores'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; softwareInformation_Param : access SoftwareInformation'Class; gameInfo_Param : access GameInfo'Class; heading : Unbounded_String; columnTwoHeading : Unbounded_String; ascending_Case : Boolean; preload : Boolean) is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      softwareInformation : SoftwareInformation_Access := SoftwareInformation_Access (softwareInformation_Param);
-      gameInfo : GameInfo_Access := GameInfo_Access (gameInfo_Param);
+   procedure Initialize (This : in out RemoteHighScores'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; softwareInformation_Param : access SoftwareInformation_Package.SoftwareInformation'Class; gameInfo_Param : access GameInfo_Package.GameInfo'Class; heading : Unbounded_String; columnTwoHeading : Unbounded_String; ascending_Case : Boolean; preload : Boolean) is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      softwareInformation : constant SoftwareInformation_Access := SoftwareInformation_Access (softwareInformation_Param);
+      gameInfo : constant GameInfo_Access := GameInfo_Access (gameInfo_Param);
    begin
         HighScores_Package.Initialize (This, gameInfo.toString, heading, columnTwoHeading);
         Initialize_Fields (This);
@@ -42,25 +42,25 @@ package body org.allbinary.game.score.remote.RemoteHighScores_Package is
         end if;
    end Initialize;
 
-   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; softwareInformation_Param : access SoftwareInformation'Class; gameInfo_Param : access GameInfo'Class; heading : Unbounded_String; columnTwoHeading : Unbounded_String; ascending_Case : Boolean; preload : Boolean) return RemoteHighScores_Access is
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; softwareInformation_Param : access SoftwareInformation_Package.SoftwareInformation'Class; gameInfo_Param : access GameInfo_Package.GameInfo'Class; heading : Unbounded_String; columnTwoHeading : Unbounded_String; ascending_Case : Boolean; preload : Boolean) return RemoteHighScores_Access is
       This : constant RemoteHighScores_Access := new RemoteHighScores;
    begin
       RemoteHighScores_Package.Initialize (This.all, abeClientInformation_Param, softwareInformation_Param, gameInfo_Param, heading, columnTwoHeading, ascending_Case, preload);
       return This;
    end Create;
 
-   function getInstance (abeClientInformation_Param : access AbeClientInformationInterface'Class; softwareInformation_Param : access SoftwareInformation'Class; gameInfo_Param : access GameInfo'Class; heading : Unbounded_String; columnTwoHeading : Unbounded_String; isAscending : Boolean) return HighScores_Access is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      softwareInformation : SoftwareInformation_Access := SoftwareInformation_Access (softwareInformation_Param);
-      gameInfo : GameInfo_Access := GameInfo_Access (gameInfo_Param);
+   function getInstance (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; softwareInformation_Param : access SoftwareInformation_Package.SoftwareInformation'Class; gameInfo_Param : access GameInfo_Package.GameInfo'Class; heading : Unbounded_String; columnTwoHeading : Unbounded_String; isAscending : Boolean) return HighScores_Access is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      softwareInformation : constant SoftwareInformation_Access := SoftwareInformation_Access (softwareInformation_Param);
+      gameInfo : constant GameInfo_Access := GameInfo_Access (gameInfo_Param);
    begin
         return RemoteHighScores_Package.getInstancePreload (abeClientInformation, softwareInformation, gameInfo, heading, columnTwoHeading, isAscending, True);
    end getInstance;
 
-   function getInstancePreload (abeClientInformation_Param : access AbeClientInformationInterface'Class; softwareInformation_Param : access SoftwareInformation'Class; gameInfo_Param : access GameInfo'Class; heading : Unbounded_String; columnTwoHeading : Unbounded_String; isAscending : Boolean; preload : Boolean) return HighScores_Access is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      softwareInformation : SoftwareInformation_Access := SoftwareInformation_Access (softwareInformation_Param);
-      gameInfo : GameInfo_Access := GameInfo_Access (gameInfo_Param);
+   function getInstancePreload (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; softwareInformation_Param : access SoftwareInformation_Package.SoftwareInformation'Class; gameInfo_Param : access GameInfo_Package.GameInfo'Class; heading : Unbounded_String; columnTwoHeading : Unbounded_String; isAscending : Boolean; preload : Boolean) return HighScores_Access is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      softwareInformation : constant SoftwareInformation_Access := SoftwareInformation_Access (softwareInformation_Param);
+      gameInfo : constant GameInfo_Access := GameInfo_Access (gameInfo_Param);
       logUtil : LogUtil_Access;
       highScores : HighScores_Access;
       commonStrings : CommonStrings_Access;
@@ -85,14 +85,14 @@ package body org.allbinary.game.score.remote.RemoteHighScores_Package is
         end;
    end getInstancePreload;
 
-   procedure addHighScore (This : in out RemoteHighScores; newHighScore_Param : access HighScore'Class) is
-      newHighScore : HighScore_Access := HighScore_Access (newHighScore_Param);
+   procedure addHighScore (This : in out RemoteHighScores; newHighScore_Param : access HighScore_Package.HighScore'Class) is
+      newHighScore : constant HighScore_Access := HighScore_Access (newHighScore_Param);
    begin
         RemoteHighScoresSubmissionProcessorFactory_Package.getInstance.process (RemoteHighScores_Access'(This'Unchecked_Access), This.abeClientInformation, newHighScore);
    end addHighScore;
 
-   procedure update (This : in out RemoteHighScores; hashtable_Param : access ABHashtable'Class) is
-      hashtable : ABHashtable_Access := ABHashtable_Access (hashtable_Param);
+   procedure update (This : in out RemoteHighScores; hashtable_Param : access ABHashtable_Package.ABHashtable'Class) is
+      hashtable : constant ABHashtable_Access := ABHashtable_Access (hashtable_Param);
       vector : BasicArrayList_Access;
       NEXT_ELEMENT : Unbounded_String;
       commonStrings : CommonStrings_Access;
@@ -145,14 +145,14 @@ package body org.allbinary.game.score.remote.RemoteHighScores_Package is
         return This.softwareInformation;
    end getSoftwareInformation;
 
-   procedure getInstance (abeClientInformation_Param : access AbeClientInformationInterface'Class; softwareInformation_Param : access SoftwareInformation'Class; gameInfo_Param : access GameInfo'Class; heading : Unbounded_String; columnTwoHeading : Unbounded_String; isAscending : Boolean) is
+   procedure getInstance (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; softwareInformation_Param : access SoftwareInformation_Package.SoftwareInformation'Class; gameInfo_Param : access GameInfo_Package.GameInfo'Class; heading : Unbounded_String; columnTwoHeading : Unbounded_String; isAscending : Boolean) is
       Java_Result : constant HighScores_Access := getInstance (abeClientInformation_Param, softwareInformation_Param, gameInfo_Param, heading, columnTwoHeading, isAscending);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
-   procedure getInstancePreload (abeClientInformation_Param : access AbeClientInformationInterface'Class; softwareInformation_Param : access SoftwareInformation'Class; gameInfo_Param : access GameInfo'Class; heading : Unbounded_String; columnTwoHeading : Unbounded_String; isAscending : Boolean; preload : Boolean) is
+   procedure getInstancePreload (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; softwareInformation_Param : access SoftwareInformation_Package.SoftwareInformation'Class; gameInfo_Param : access GameInfo_Package.GameInfo'Class; heading : Unbounded_String; columnTwoHeading : Unbounded_String; isAscending : Boolean; preload : Boolean) is
       Java_Result : constant HighScores_Access := getInstancePreload (abeClientInformation_Param, softwareInformation_Param, gameInfo_Param, heading, columnTwoHeading, isAscending, preload);
       pragma Unreferenced (Java_Result);
    begin

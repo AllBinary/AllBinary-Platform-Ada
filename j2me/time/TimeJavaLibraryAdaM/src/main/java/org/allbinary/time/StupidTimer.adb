@@ -25,8 +25,8 @@ package body org.allbinary.time.StupidTimer_Package is
    end Create;
 
 
-   function visitBool (This : in out StupidTimer; visitorInterface_Param : access Visitor'Class) return Boolean is
-      visitorInterface : Visitor_Access := Visitor_Access (visitorInterface_Param);
+   function visitBool (This : in out StupidTimer; visitorInterface_Param : access Visitor_Package.Visitor'Class) return Boolean is
+      visitorInterface : constant Visitor_Access := Visitor_Access (visitorInterface_Param);
       result : Boolean;
       result2 : Boolean;
    begin
@@ -36,9 +36,9 @@ package body org.allbinary.time.StupidTimer_Package is
    end visitBool;
 
    --  throws Exception
-   procedure visit (This : in out StupidTimer; visitorInterface_Param : access Visitor'Class; timeDelayHelper_Param : access TimeDelayHelper'Class) is
-      visitorInterface : Visitor_Access := Visitor_Access (visitorInterface_Param);
-      timeDelayHelper : TimeDelayHelper_Access := TimeDelayHelper_Access (timeDelayHelper_Param);
+   procedure visit (This : in out StupidTimer; visitorInterface_Param : access Visitor_Package.Visitor'Class; timeDelayHelper_Param : access TimeDelayHelper_Package.TimeDelayHelper'Class) is
+      visitorInterface : constant Visitor_Access := Visitor_Access (visitorInterface_Param);
+      timeDelayHelper : constant TimeDelayHelper_Access := TimeDelayHelper_Access (timeDelayHelper_Param);
       tookTooLong : Boolean;
       WAITING_FOR : Unbounded_String;
       index : Integer;
@@ -75,7 +75,7 @@ package body org.allbinary.time.StupidTimer_Package is
         end;
    end stopWaiting;
 
-   procedure visitBool (This : in out StupidTimer; visitorInterface_Param : access Visitor'Class) is
+   procedure visitBool (This : in out StupidTimer; visitorInterface_Param : access Visitor_Package.Visitor'Class) is
       Java_Result : constant Boolean := StupidTimer'Class (This).visitBool (visitorInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

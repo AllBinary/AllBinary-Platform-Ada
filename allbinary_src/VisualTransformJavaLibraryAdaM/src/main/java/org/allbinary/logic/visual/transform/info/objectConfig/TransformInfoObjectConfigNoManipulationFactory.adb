@@ -41,9 +41,9 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
    end Create;
 
    --  throws Exception
-   function getInstance (This : in out TransformInfoObjectConfigNoManipulationFactory; transformInfoInterface_Param : access TransformInfoInterface'Class; objectConfigFileAbPath_Param : access AbPath'Class) return TransformInfoObjectConfigInterface_Access is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
-      objectConfigFileAbPath : AbPath_Access := AbPath_Access (objectConfigFileAbPath_Param);
+   function getInstance (This : in out TransformInfoObjectConfigNoManipulationFactory; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; objectConfigFileAbPath_Param : access AbPath_Package.AbPath'Class) return TransformInfoObjectConfigInterface_Access is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+      objectConfigFileAbPath : constant AbPath_Access := AbPath_Access (objectConfigFileAbPath_Param);
       transformInfoObjectConfigData : TransformInfoObjectConfigData_Access;
       data : Unbounded_String;
       commonStrings : CommonStrings_Access;
@@ -66,7 +66,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
         end;
    end getInstance;
 
-   procedure getInstance (This : in out TransformInfoObjectConfigNoManipulationFactory; transformInfoInterface_Param : access TransformInfoInterface'Class; objectConfigFileAbPath_Param : access AbPath'Class) is
+   procedure getInstance (This : in out TransformInfoObjectConfigNoManipulationFactory; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; objectConfigFileAbPath_Param : access AbPath_Package.AbPath'Class) is
       Java_Result : constant TransformInfoObjectConfigInterface_Access := TransformInfoObjectConfigNoManipulationFactory'Class (This).getInstance (transformInfoInterface_Param, objectConfigFileAbPath_Param);
       pragma Unreferenced (Java_Result);
    begin

@@ -22,14 +22,14 @@ package body org.allbinary.business.context.configuration.ContextConfigurationDo
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ContextConfigurationDomDocumentMapping'Class; contextConfigurationInterface_Param : access ContextConfigurationInterface'Class) is
-      contextConfigurationInterface : ContextConfigurationInterface_Access := ContextConfigurationInterface_Access (contextConfigurationInterface_Param);
+   procedure Initialize (This : in out ContextConfigurationDomDocumentMapping'Class; contextConfigurationInterface_Param : access ContextConfigurationInterface_Package.ContextConfigurationInterface'Class) is
+      contextConfigurationInterface : constant ContextConfigurationInterface_Access := ContextConfigurationInterface_Access (contextConfigurationInterface_Param);
    begin
       Initialize_Fields (This);
         This.contextConfigurationInterface := contextConfigurationInterface;
    end Initialize;
 
-   function Create (contextConfigurationInterface_Param : access ContextConfigurationInterface'Class) return ContextConfigurationDomDocumentMapping_Access is
+   function Create (contextConfigurationInterface_Param : access ContextConfigurationInterface_Package.ContextConfigurationInterface'Class) return ContextConfigurationDomDocumentMapping_Access is
       This : constant ContextConfigurationDomDocumentMapping_Access := new ContextConfigurationDomDocumentMapping;
    begin
       ContextConfigurationDomDocumentMapping_Package.Initialize (This.all, contextConfigurationInterface_Param);

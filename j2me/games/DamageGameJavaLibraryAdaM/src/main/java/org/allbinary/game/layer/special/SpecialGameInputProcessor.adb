@@ -22,15 +22,15 @@ package body org.allbinary.game.layer.special.SpecialGameInputProcessor_Package 
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out SpecialGameInputProcessor'Class; collidableDestroyableDamageableLayer_Param : access CollidableDestroyableDamageableLayer'Class) is
-      collidableDestroyableDamageableLayer : CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (collidableDestroyableDamageableLayer_Param);
+   procedure Initialize (This : in out SpecialGameInputProcessor'Class; collidableDestroyableDamageableLayer_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class) is
+      collidableDestroyableDamageableLayer : constant CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (collidableDestroyableDamageableLayer_Param);
    begin
       GameInputProcessor_Package.Initialize (This);
       Initialize_Fields (This);
         This.collidableDestroyableDamageableLayer := collidableDestroyableDamageableLayer;
    end Initialize;
 
-   function Create (collidableDestroyableDamageableLayer_Param : access CollidableDestroyableDamageableLayer'Class) return SpecialGameInputProcessor_Access is
+   function Create (collidableDestroyableDamageableLayer_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class) return SpecialGameInputProcessor_Access is
       This : constant SpecialGameInputProcessor_Access := new SpecialGameInputProcessor;
    begin
       SpecialGameInputProcessor_Package.Initialize (This.all, collidableDestroyableDamageableLayer_Param);

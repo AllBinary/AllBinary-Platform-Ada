@@ -61,10 +61,10 @@ package org.allbinary.game.combat.canvas.CombatGameCanvas_Package is
    type CombatGameCanvas is new AllBinaryGameCanvas with null record;
    basicLayerProcessor : BasicLayerProcessor_Access_Array_Access;
 
-   procedure Initialize (This : in out CombatGameCanvas'Class; cmdListener_Param : access CommandListener'Class; gameLayerManager_Param : access AllBinaryGameLayerManager'Class; highScoresFactoryInterface_Param : access HighScoresFactoryInterface'Class; gameInitializationInterfaceFactoryInterface_Param : access BasicBuildGameInitializerFactory'Class; buffered : Boolean);
-   function Create (cmdListener_Param : access CommandListener'Class; gameLayerManager_Param : access AllBinaryGameLayerManager'Class; highScoresFactoryInterface_Param : access HighScoresFactoryInterface'Class; gameInitializationInterfaceFactoryInterface_Param : access BasicBuildGameInitializerFactory'Class; buffered : Boolean) return CombatGameCanvas_Access;
+   procedure Initialize (This : in out CombatGameCanvas'Class; cmdListener_Param : access CommandListener_Package.CommandListener'Class; gameLayerManager_Param : access AllBinaryGameLayerManager_Package.AllBinaryGameLayerManager'Class; highScoresFactoryInterface_Param : access HighScoresFactoryInterface_Package.HighScoresFactoryInterface'Class; gameInitializationInterfaceFactoryInterface_Param : access BasicBuildGameInitializerFactory_Package.BasicBuildGameInitializerFactory'Class; buffered : Boolean);
+   function Create (cmdListener_Param : access CommandListener_Package.CommandListener'Class; gameLayerManager_Param : access AllBinaryGameLayerManager_Package.AllBinaryGameLayerManager'Class; highScoresFactoryInterface_Param : access HighScoresFactoryInterface_Package.HighScoresFactoryInterface'Class; gameInitializationInterfaceFactoryInterface_Param : access BasicBuildGameInitializerFactory_Package.BasicBuildGameInitializerFactory'Class; buffered : Boolean) return CombatGameCanvas_Access;
    procedure CombatGameCanvas_init (This : in out CombatGameCanvas);
-   procedure initApp (This : in out CombatGameCanvas; abeClientInformation_Param : access AbeClientInformationInterface'Class);
+   procedure initApp (This : in out CombatGameCanvas; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class);
    procedure initConfigurablePortion (This : in out CombatGameCanvas; portion : Integer);
    procedure processPlayingGame (This : in out CombatGameCanvas);
    procedure cleanupGame (This : in out CombatGameCanvas);

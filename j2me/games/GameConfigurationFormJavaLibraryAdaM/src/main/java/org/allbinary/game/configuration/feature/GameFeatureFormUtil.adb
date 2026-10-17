@@ -40,8 +40,8 @@ package body org.allbinary.game.configuration.feature.GameFeatureFormUtil_Packag
         return GameFeatureFormUtil_Package.instance;
    end getInstance;
 
-   function getChoiceGroup (This : in out GameFeatureFormUtil; hashtable_Param : access ABHashtable'Class; name : Unbounded_String; option : Integer) return ChoiceGroup_Access is
-      hashtable : ABHashtable_Access := ABHashtable_Access (hashtable_Param);
+   function getChoiceGroup (This : in out GameFeatureFormUtil; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; name : Unbounded_String; option : Integer) return ChoiceGroup_Access is
+      hashtable : constant ABHashtable_Access := ABHashtable_Access (hashtable_Param);
       stringMaker : StringMaker_Access;
       choiceGroup : ChoiceGroup_Access;
       list : BasicArrayList_Access;
@@ -71,9 +71,9 @@ package body org.allbinary.game.configuration.feature.GameFeatureFormUtil_Packag
         return choiceGroup;
    end getChoiceGroup;
 
-   procedure addChoiceGroup (This : in out GameFeatureFormUtil; form_Param : access CommandForm'Class; hashtable_Param : access ABHashtable'Class; option : Integer) is
-      form : CommandForm_Access := CommandForm_Access (form_Param);
-      hashtable : ABHashtable_Access := ABHashtable_Access (hashtable_Param);
+   procedure addChoiceGroup (This : in out GameFeatureFormUtil; form_Param : access CommandForm_Package.CommandForm'Class; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; option : Integer) is
+      form : constant CommandForm_Access := CommandForm_Access (form_Param);
+      hashtable : constant ABHashtable_Access := ABHashtable_Access (hashtable_Param);
       stringMaker : StringMaker_Access;
       ADDING_CHOICE_GROUP : Unbounded_String;
       ADD_CHOICE_GROUP : Unbounded_String;
@@ -97,8 +97,8 @@ package body org.allbinary.game.configuration.feature.GameFeatureFormUtil_Packag
    end addChoiceGroup;
 
    --  throws Exception
-   procedure setDefault (This : in out GameFeatureFormUtil; form_Param : access CommandForm'Class) is
-      form : CommandForm_Access := CommandForm_Access (form_Param);
+   procedure setDefault (This : in out GameFeatureFormUtil; form_Param : access CommandForm_Package.CommandForm'Class) is
+      form : constant CommandForm_Access := CommandForm_Access (form_Param);
       size : Integer;
       item : Item_Access;
       index : Integer;
@@ -114,7 +114,7 @@ package body org.allbinary.game.configuration.feature.GameFeatureFormUtil_Packag
         end loop;
    end setDefault;
 
-   procedure getChoiceGroup (This : in out GameFeatureFormUtil; hashtable_Param : access ABHashtable'Class; name : Unbounded_String; option : Integer) is
+   procedure getChoiceGroup (This : in out GameFeatureFormUtil; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; name : Unbounded_String; option : Integer) is
       Java_Result : constant ChoiceGroup_Access := GameFeatureFormUtil'Class (This).getChoiceGroup (hashtable_Param, name, option);
       pragma Unreferenced (Java_Result);
    begin

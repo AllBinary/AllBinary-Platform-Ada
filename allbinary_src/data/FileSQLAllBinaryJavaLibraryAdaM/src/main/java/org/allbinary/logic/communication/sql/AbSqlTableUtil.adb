@@ -97,8 +97,8 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
         end;
    end getOutputStream;
 
-   function backupFile (This : in out AbSqlTableUtil; path_Param : access AbPath'Class; backupPath : Unbounded_String; tableName : Unbounded_String) return Boolean is
-      path : AbPath_Access := AbPath_Access (path_Param);
+   function backupFile (This : in out AbSqlTableUtil; path_Param : access AbPath_Package.AbPath'Class; backupPath : Unbounded_String; tableName : Unbounded_String) return Boolean is
+      path : constant AbPath_Access := AbPath_Access (path_Param);
       calendar : Calendar_Access;
       timeLong : Long_Long_Integer;
       time : Unbounded_String;
@@ -169,8 +169,8 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
         return stringBuffer.toString;
    end convertNewLines;
 
-   function backupTable (This : in out AbSqlTableUtil; abSqlTable_Param : access AbSqlTable'Class) return Unbounded_String is
-      abSqlTable : AbSqlTable_Access := AbSqlTable_Access (abSqlTable_Param);
+   function backupTable (This : in out AbSqlTableUtil; abSqlTable_Param : access AbSqlTable_Package.AbSqlTable'Class) return Unbounded_String is
+      abSqlTable : constant AbSqlTable_Access := AbSqlTable_Access (abSqlTable_Param);
       tableName : Unbounded_String;
       count : Integer;
       sqlStatement : Unbounded_String;
@@ -232,9 +232,9 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
         end;
    end backupTable;
 
-   function restoreTable (This : in out AbSqlTableUtil; abSqlTable_Param : access AbSqlTable'Class; portion_Param : access Portion'Class) return Unbounded_String is
-      abSqlTable : AbSqlTable_Access := AbSqlTable_Access (abSqlTable_Param);
-      portion : Portion_Access := Portion_Access (portion_Param);
+   function restoreTable (This : in out AbSqlTableUtil; abSqlTable_Param : access AbSqlTable_Package.AbSqlTable'Class; portion_Param : access Portion_Package.Portion'Class) return Unbounded_String is
+      abSqlTable : constant AbSqlTable_Access := AbSqlTable_Access (abSqlTable_Param);
+      portion : constant Portion_Access := Portion_Access (portion_Param);
       tableName : Unbounded_String;
       path : Unbounded_String;
       current : Integer;
@@ -313,7 +313,7 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
       null;
    end getOutputStream;
 
-   procedure backupFile (This : in out AbSqlTableUtil; path_Param : access AbPath'Class; backupPath : Unbounded_String; tableName : Unbounded_String) is
+   procedure backupFile (This : in out AbSqlTableUtil; path_Param : access AbPath_Package.AbPath'Class; backupPath : Unbounded_String; tableName : Unbounded_String) is
       Java_Result : constant Boolean := AbSqlTableUtil'Class (This).backupFile (path_Param, backupPath, tableName);
       pragma Unreferenced (Java_Result);
    begin
@@ -327,14 +327,14 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
       null;
    end convertNewLines;
 
-   procedure backupTable (This : in out AbSqlTableUtil; abSqlTable_Param : access AbSqlTable'Class) is
+   procedure backupTable (This : in out AbSqlTableUtil; abSqlTable_Param : access AbSqlTable_Package.AbSqlTable'Class) is
       Java_Result : constant Unbounded_String := AbSqlTableUtil'Class (This).backupTable (abSqlTable_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end backupTable;
 
-   procedure restoreTable (This : in out AbSqlTableUtil; abSqlTable_Param : access AbSqlTable'Class; portion_Param : access Portion'Class) is
+   procedure restoreTable (This : in out AbSqlTableUtil; abSqlTable_Param : access AbSqlTable_Package.AbSqlTable'Class; portion_Param : access Portion_Package.Portion'Class) is
       Java_Result : constant Unbounded_String := AbSqlTableUtil'Class (This).restoreTable (abSqlTable_Param, portion_Param);
       pragma Unreferenced (Java_Result);
    begin

@@ -43,9 +43,9 @@ package org.allbinary.game.ag.ai.SpinnerAI_Package is
       direction : Integer_Array_Access;
    end record;
 
-   procedure Initialize (This : in out SpinnerAI'Class; direction : Integer_Array_Access; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class);
-   function Create (direction : Integer_Array_Access; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return SpinnerAI_Access;
-   procedure processAI (This : in out SpinnerAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class);
+   procedure Initialize (This : in out SpinnerAI'Class; direction : Integer_Array_Access; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class);
+   function Create (direction : Integer_Array_Access; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) return SpinnerAI_Access;
+   procedure processAI (This : in out SpinnerAI; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class);
 
 end org.allbinary.game.ag.ai.SpinnerAI_Package;
 

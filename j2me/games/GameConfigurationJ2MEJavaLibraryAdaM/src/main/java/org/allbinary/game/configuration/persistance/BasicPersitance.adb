@@ -42,15 +42,15 @@ package body org.allbinary.game.configuration.persistance.BasicPersitance_Packag
    end Create;
 
    --  throws Exception
-   procedure deleteRecoreStore (This : in out BasicPersitance; abeClientInformation_Param : access AbeClientInformationInterface'Class) is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+   procedure deleteRecoreStore (This : in out BasicPersitance; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
    begin
         RecordStore_Package.deleteRecordStore (This.getRecordId (abeClientInformation));
    end deleteRecoreStore;
 
    --  throws Exception
-   procedure deleteAll (This : in out BasicPersitance; abeClientInformation_Param : access AbeClientInformationInterface'Class) is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+   procedure deleteAll (This : in out BasicPersitance; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
       size : Integer;
       integer_Id : Integer;
       index : Integer;
@@ -64,8 +64,8 @@ package body org.allbinary.game.configuration.persistance.BasicPersitance_Packag
    end deleteAll;
 
    --  throws Exception
-   procedure delete (This : in out BasicPersitance; abeClientInformation_Param : access AbeClientInformationInterface'Class; deleteId : Integer) is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+   procedure delete (This : in out BasicPersitance; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; deleteId : Integer) is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
       recordStore : RecordStore_Access;
    begin
         recordStore := NullRecordStore_Package.NULL_RECORD_STORE;
@@ -90,8 +90,8 @@ package body org.allbinary.game.configuration.persistance.BasicPersitance_Packag
         end;
    end delete;
 
-   function getRecordId (This : in out BasicPersitance; abeClientInformation_Param : access AbeClientInformationInterface'Class) return Unbounded_String is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+   function getRecordId (This : in out BasicPersitance; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) return Unbounded_String is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
    begin
         return This.platformRecordIdUtil.getRecordId (abeClientInformation, This.recordId);
    end getRecordId;
@@ -112,7 +112,7 @@ package body org.allbinary.game.configuration.persistance.BasicPersitance_Packag
         This.idList.clear;
    end clear;
 
-   procedure getRecordId (This : in out BasicPersitance; abeClientInformation_Param : access AbeClientInformationInterface'Class) is
+   procedure getRecordId (This : in out BasicPersitance; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) is
       Java_Result : constant Unbounded_String := BasicPersitance'Class (This).getRecordId (abeClientInformation_Param);
       pragma Unreferenced (Java_Result);
    begin

@@ -46,8 +46,8 @@ package org.allbinary.logic.visual.transform.info.TransformInfoHttpSearch_Packag
 
    type TransformInfoHttpSearch is new TransformInfoHttp with null record;
 
-   procedure Initialize (This : in out TransformInfoHttpSearch'Class; searchRequest_Param : access SearchRequest'Class);
-   function Create (searchRequest_Param : access SearchRequest'Class) return TransformInfoHttpSearch_Access;
+   procedure Initialize (This : in out TransformInfoHttpSearch'Class; searchRequest_Param : access SearchRequest_Package.SearchRequest'Class);
+   function Create (searchRequest_Param : access SearchRequest_Package.SearchRequest'Class) return TransformInfoHttpSearch_Access;
    function getPath (This : in out TransformInfoHttpSearch) return Unbounded_String;
    function getTemplateFilePath (This : in out TransformInfoHttpSearch) return AbPath_Access;
    function getObjectConfigFilePath (This : in out TransformInfoHttpSearch) return AbPath_Access;

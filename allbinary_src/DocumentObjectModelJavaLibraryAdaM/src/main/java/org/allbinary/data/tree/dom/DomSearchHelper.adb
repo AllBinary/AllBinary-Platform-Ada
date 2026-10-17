@@ -34,8 +34,8 @@ package body org.allbinary.data.tree.dom.DomSearchHelper_Package is
       return This;
    end Create;
 
-   function getNodeNoThrow (nodeName : Unbounded_String; nodeList_Param : access NodeList'Class) return Node_Access is
-      nodeList : NodeList_Access := NodeList_Access (nodeList_Param);
+   function getNodeNoThrow (nodeName : Unbounded_String; nodeList_Param : access NodeList_Package.NodeList'Class) return Node_Access is
+      nodeList : constant NodeList_Access := NodeList_Access (nodeList_Param);
       numberOfNodes : Integer;
       node : Node_Access;
       index : Integer;
@@ -51,8 +51,8 @@ package body org.allbinary.data.tree.dom.DomSearchHelper_Package is
    end getNodeNoThrow;
 
    --  throws Exception
-   function getNode (nodeName : Unbounded_String; nodeList_Param : access NodeList'Class) return Node_Access is
-      nodeList : NodeList_Access := NodeList_Access (nodeList_Param);
+   function getNode (nodeName : Unbounded_String; nodeList_Param : access NodeList_Package.NodeList'Class) return Node_Access is
+      nodeList : constant NodeList_Access := NodeList_Access (nodeList_Param);
       node : Node_Access;
    begin
         node := DomSearchHelper_Package.getNodeNoThrow (nodeName, nodeList);
@@ -64,8 +64,8 @@ package body org.allbinary.data.tree.dom.DomSearchHelper_Package is
    end getNode;
 
    --  throws Exception
-   function getChildNodeList (nodeName : Unbounded_String; nodeList_Param : access NodeList'Class) return NodeList_Access is
-      nodeList : NodeList_Access := NodeList_Access (nodeList_Param);
+   function getChildNodeList (nodeName : Unbounded_String; nodeList_Param : access NodeList_Package.NodeList'Class) return NodeList_Access is
+      nodeList : constant NodeList_Access := NodeList_Access (nodeList_Param);
       node : Node_Access;
    begin
         node := DomSearchHelper_Package.getNode (nodeName, nodeList);
@@ -73,8 +73,8 @@ package body org.allbinary.data.tree.dom.DomSearchHelper_Package is
    end getChildNodeList;
 
    --  throws Exception
-   function getAllNodes (nodeName : Unbounded_String; nodeList_Param : access NodeList'Class) return BasicArrayList_Access is
-      nodeList : NodeList_Access := NodeList_Access (nodeList_Param);
+   function getAllNodes (nodeName : Unbounded_String; nodeList_Param : access NodeList_Package.NodeList'Class) return BasicArrayList_Access is
+      nodeList : constant NodeList_Access := NodeList_Access (nodeList_Param);
       vector : BasicArrayList_Access;
    begin
         vector := DomSearchHelper_Package.getAllNodesNoThrow (nodeName, nodeList);
@@ -85,8 +85,8 @@ package body org.allbinary.data.tree.dom.DomSearchHelper_Package is
         end if;
    end getAllNodes;
 
-   function getAllNodesNoThrow (nodeName : Unbounded_String; nodeList_Param : access NodeList'Class) return BasicArrayList_Access is
-      nodeList : NodeList_Access := NodeList_Access (nodeList_Param);
+   function getAllNodesNoThrow (nodeName : Unbounded_String; nodeList_Param : access NodeList_Package.NodeList'Class) return BasicArrayList_Access is
+      nodeList : constant NodeList_Access := NodeList_Access (nodeList_Param);
       nodeVector : BasicArrayList_Access;
       numberOfNodes : Integer;
       node : Node_Access;
@@ -103,35 +103,35 @@ package body org.allbinary.data.tree.dom.DomSearchHelper_Package is
         return nodeVector;
    end getAllNodesNoThrow;
 
-   procedure getNodeNoThrow (nodeName : Unbounded_String; nodeList_Param : access NodeList'Class) is
+   procedure getNodeNoThrow (nodeName : Unbounded_String; nodeList_Param : access NodeList_Package.NodeList'Class) is
       Java_Result : constant Node_Access := getNodeNoThrow (nodeName, nodeList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getNodeNoThrow;
 
-   procedure getNode (nodeName : Unbounded_String; nodeList_Param : access NodeList'Class) is
+   procedure getNode (nodeName : Unbounded_String; nodeList_Param : access NodeList_Package.NodeList'Class) is
       Java_Result : constant Node_Access := getNode (nodeName, nodeList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getNode;
 
-   procedure getChildNodeList (nodeName : Unbounded_String; nodeList_Param : access NodeList'Class) is
+   procedure getChildNodeList (nodeName : Unbounded_String; nodeList_Param : access NodeList_Package.NodeList'Class) is
       Java_Result : constant NodeList_Access := getChildNodeList (nodeName, nodeList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getChildNodeList;
 
-   procedure getAllNodes (nodeName : Unbounded_String; nodeList_Param : access NodeList'Class) is
+   procedure getAllNodes (nodeName : Unbounded_String; nodeList_Param : access NodeList_Package.NodeList'Class) is
       Java_Result : constant BasicArrayList_Access := getAllNodes (nodeName, nodeList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getAllNodes;
 
-   procedure getAllNodesNoThrow (nodeName : Unbounded_String; nodeList_Param : access NodeList'Class) is
+   procedure getAllNodesNoThrow (nodeName : Unbounded_String; nodeList_Param : access NodeList_Package.NodeList'Class) is
       Java_Result : constant BasicArrayList_Access := getAllNodesNoThrow (nodeName, nodeList_Param);
       pragma Unreferenced (Java_Result);
    begin

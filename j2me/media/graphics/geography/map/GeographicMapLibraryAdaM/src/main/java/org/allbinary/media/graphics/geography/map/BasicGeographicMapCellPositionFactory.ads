@@ -51,14 +51,14 @@ package org.allbinary.media.graphics.geography.map.BasicGeographicMapCellPositio
       tiledLayer : AllBinaryTiledLayer_Access;
    end record;
 
-   procedure Initialize (This : in out BasicGeographicMapCellPositionFactory'Class; geographicMapInterface_Param : access BasicGeographicMap'Class);
-   function Create (geographicMapInterface_Param : access BasicGeographicMap'Class) return BasicGeographicMapCellPositionFactory_Access;
+   procedure Initialize (This : in out BasicGeographicMapCellPositionFactory'Class; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class);
+   function Create (geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class) return BasicGeographicMapCellPositionFactory_Access;
    procedure init (This : in out BasicGeographicMapCellPositionFactory);
-   procedure visit (This : in out BasicGeographicMapCellPositionFactory; geographicMapCelPositionFactoryInitVisitorInterface_Param : access GeographicMapCellPositionFactoryInitVisitorInterface'Class);
+   procedure visit (This : in out BasicGeographicMapCellPositionFactory; geographicMapCelPositionFactoryInitVisitorInterface_Param : access GeographicMapCellPositionFactoryInitVisitorInterface_Package.GeographicMapCellPositionFactoryInitVisitorInterface'Class);
    function getAt (This : in out BasicGeographicMapCellPositionFactory; i_column : Integer; i_row : Integer) return GeographicMapCellPosition_Access;
    procedure getAt (This : in out BasicGeographicMapCellPositionFactory; i_column : Integer; i_row : Integer);
-   function getInstance (This : in out BasicGeographicMapCellPositionFactory; anotherMapGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return GeographicMapCellPosition_Access;
-   procedure getInstance (This : in out BasicGeographicMapCellPositionFactory; anotherMapGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class);
+   function getInstance (This : in out BasicGeographicMapCellPositionFactory; anotherMapGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) return GeographicMapCellPosition_Access;
+   procedure getInstance (This : in out BasicGeographicMapCellPositionFactory; anotherMapGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class);
    function createInstance (This : in out BasicGeographicMapCellPositionFactory; i_column : Integer; i_row : Integer; width : Integer; height : Integer) return GeographicMapCellPosition_Access;
    procedure createInstance (This : in out BasicGeographicMapCellPositionFactory; i_column : Integer; i_row : Integer; width : Integer; height : Integer);
    function getColumns (This : in out BasicGeographicMapCellPositionFactory) return Integer;

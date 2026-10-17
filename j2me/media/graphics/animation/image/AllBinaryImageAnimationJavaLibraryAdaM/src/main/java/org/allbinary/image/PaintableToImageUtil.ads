@@ -39,8 +39,8 @@ package org.allbinary.image.PaintableToImageUtil_Package is
 
    procedure Initialize (This : in out PaintableToImageUtil'Class);
    function Create return PaintableToImageUtil_Access;
-   function getImage (paintableInterface_Param : access PaintableInterface'Class; width : Integer; height : Integer) return Image_Access;
-   procedure getImage (paintableInterface_Param : access PaintableInterface'Class; width : Integer; height : Integer);
+   function getImage (paintableInterface_Param : access PaintableInterface_Package.PaintableInterface'Class; width : Integer; height : Integer) return Image_Access;
+   procedure getImage (paintableInterface_Param : access PaintableInterface_Package.PaintableInterface'Class; width : Integer; height : Integer);
 
 end org.allbinary.image.PaintableToImageUtil_Package;
 

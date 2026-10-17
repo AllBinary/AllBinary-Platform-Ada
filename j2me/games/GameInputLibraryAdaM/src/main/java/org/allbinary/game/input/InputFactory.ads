@@ -54,7 +54,7 @@ package org.allbinary.game.input.InputFactory_Package is
    procedure Initialize (This : in out InputFactory'Class);
    function Create return InputFactory_Access;
    function getInstance return InputFactory_Access;
-   procedure add (This : in out InputFactory; id : Integer; input_Param : access Input'Class);
+   procedure add (This : in out InputFactory; id : Integer; input_Param : access Input_Package.Input'Class);
    function getInstanceById (This : in out InputFactory; id_Param : Integer) return Input_Access;
    procedure getInstanceById (This : in out InputFactory; id_Param : Integer);
 

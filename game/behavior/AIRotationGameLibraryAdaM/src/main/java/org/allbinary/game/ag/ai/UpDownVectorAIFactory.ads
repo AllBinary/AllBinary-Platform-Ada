@@ -44,8 +44,8 @@ package org.allbinary.game.ag.ai.UpDownVectorAIFactory_Package is
 
    procedure Initialize (This : in out UpDownVectorAIFactory'Class);
    function Create return UpDownVectorAIFactory_Access;
-   function getInstance (This : in out UpDownVectorAIFactory; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return ArtificialIntelligenceInterface_Access;
-   procedure getInstance (This : in out UpDownVectorAIFactory; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class);
+   function getInstance (This : in out UpDownVectorAIFactory; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) return ArtificialIntelligenceInterface_Access;
+   procedure getInstance (This : in out UpDownVectorAIFactory; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class);
 
 end org.allbinary.game.ag.ai.UpDownVectorAIFactory_Package;
 

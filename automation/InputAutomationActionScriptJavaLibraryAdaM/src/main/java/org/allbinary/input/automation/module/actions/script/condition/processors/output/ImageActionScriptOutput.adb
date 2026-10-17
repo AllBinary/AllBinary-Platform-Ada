@@ -26,8 +26,8 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ImageActionScriptOutput'Class; node_Param : access Node'Class) is
-      node : Node_Access := Node_Access (node_Param);
+   procedure Initialize (This : in out ImageActionScriptOutput'Class; node_Param : access Node_Package.Node'Class) is
+      node : constant Node_Access := Node_Access (node_Param);
       actionNode : Node_Access;
       nodeList : NodeList_Access;
       childNode : Node_Access;
@@ -61,7 +61,7 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
         This.actionScriptOutputJPanel := ImageActionScriptOutputJPanel_Package.Create (ImageActionScriptOutput_Access'(This'Unchecked_Access));
    end Initialize;
 
-   function Create (node_Param : access Node'Class) return ImageActionScriptOutput_Access is
+   function Create (node_Param : access Node_Package.Node'Class) return ImageActionScriptOutput_Access is
       This : constant ImageActionScriptOutput_Access := new ImageActionScriptOutput;
    begin
       ImageActionScriptOutput_Package.Initialize (This.all, node_Param);
@@ -100,8 +100,8 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
    end toHashMap;
 
    --  throws Exception
-   function toXmlNode (This : in out ImageActionScriptOutput; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out ImageActionScriptOutput; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       node : Node_Access;
       newNode : Node_Access;
    begin
@@ -166,13 +166,13 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
         return This.imageTypes;
    end getImageTypes;
 
-   procedure setImageTypes (This : in out ImageActionScriptOutput; imageTypes_Param : access ImageTypes'Class) is
-      imageTypes : ImageTypes_Access := ImageTypes_Access (imageTypes_Param);
+   procedure setImageTypes (This : in out ImageActionScriptOutput; imageTypes_Param : access ImageTypes_Package.ImageTypes'Class) is
+      imageTypes : constant ImageTypes_Access := ImageTypes_Access (imageTypes_Param);
    begin
         This.imageTypes := imageTypes;
    end setImageTypes;
 
-   procedure toXmlNode (This : in out ImageActionScriptOutput; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out ImageActionScriptOutput; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := ImageActionScriptOutput'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

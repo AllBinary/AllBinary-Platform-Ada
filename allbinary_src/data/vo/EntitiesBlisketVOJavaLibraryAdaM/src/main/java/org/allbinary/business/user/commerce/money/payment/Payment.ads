@@ -69,10 +69,10 @@ package org.allbinary.business.user.commerce.money.payment.Payment_Package is
       isDefault : Boolean;
    end record;
 
-   procedure Initialize (This : in out Payment'Class; payment_Param : access HashMap'Class);
-   function Create (payment_Param : access HashMap'Class) return Payment_Access;
-   procedure Initialize (This : in out Payment'Class; request_Param : access ServletRequest'Class);
-   function Create (request_Param : access ServletRequest'Class) return Payment_Access;
+   procedure Initialize (This : in out Payment'Class; payment_Param : access HashMap_Package.HashMap'Class);
+   function Create (payment_Param : access HashMap_Package.HashMap'Class) return Payment_Access;
+   procedure Initialize (This : in out Payment'Class; request_Param : access ServletRequest_Package.ServletRequest'Class);
+   function Create (request_Param : access ServletRequest_Package.ServletRequest'Class) return Payment_Access;
    procedure Initialize (This : in out Payment'Class);
    function Create return Payment_Access;
    function isValid (This : in out Payment) return Boolean;
@@ -108,13 +108,13 @@ package org.allbinary.business.user.commerce.money.payment.Payment_Package is
    function getLastFour (This : in out Payment) return Unbounded_String;
    function isDefault (This : in out Payment) return Boolean;
    function toHashMap (This : in out Payment) return HashMap_Access;
-   function toXmlNode (This : in out Payment; document_Param : access Document'Class) return Node_Access;
-   procedure toXmlNode (This : in out Payment; document_Param : access Document'Class);
+   function toXmlNode (This : in out Payment; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out Payment; document_Param : access Document_Package.Document'Class);
    function toXmlDoc (This : in out Payment) return Document_Access;
    function view (This : in out Payment) return Unbounded_String;
    function toValidationInfoDoc (This : in out Payment) return Document_Access;
-   function toValidationInfoNode (This : in out Payment; document_Param : access Document'Class) return Node_Access;
-   procedure toValidationInfoNode (This : in out Payment; document_Param : access Document'Class);
+   function toValidationInfoNode (This : in out Payment; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out Payment; document_Param : access Document_Package.Document'Class);
    function validationInfo (This : in out Payment) return Unbounded_String;
 
 end org.allbinary.business.user.commerce.money.payment.Payment_Package;

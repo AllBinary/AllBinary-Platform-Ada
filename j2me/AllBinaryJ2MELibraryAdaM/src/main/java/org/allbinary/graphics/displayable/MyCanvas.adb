@@ -32,8 +32,8 @@ package body org.allbinary.graphics.displayable.MyCanvas_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out MyCanvas'Class; name : Unbounded_String; childNameList_Param : access BasicArrayList'Class) is
-      childNameList : BasicArrayList_Access := BasicArrayList_Access (childNameList_Param);
+   procedure Initialize (This : in out MyCanvas'Class; name : Unbounded_String; childNameList_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      childNameList : constant BasicArrayList_Access := BasicArrayList_Access (childNameList_Param);
    begin
       Canvas_Package.Initialize (This);
       Initialize_Fields (This);
@@ -44,7 +44,7 @@ package body org.allbinary.graphics.displayable.MyCanvas_Package is
         This.commandStack := StdUtil_Package.getInstance.createStack;
    end Initialize;
 
-   function Create (name : Unbounded_String; childNameList_Param : access BasicArrayList'Class) return MyCanvas_Access is
+   function Create (name : Unbounded_String; childNameList_Param : access BasicArrayList_Package.BasicArrayList'Class) return MyCanvas_Access is
       This : constant MyCanvas_Access := new MyCanvas;
    begin
       MyCanvas_Package.Initialize (This.all, name, childNameList_Param);
@@ -67,14 +67,14 @@ package body org.allbinary.graphics.displayable.MyCanvas_Package is
         return This.commandStack;
    end getCommandStack;
 
-   function isCommand (This : in out MyCanvas; command_Param : access Command'Class) return Boolean is
-      command : Command_Access := Command_Access (command_Param);
+   function isCommand (This : in out MyCanvas; command_Param : access Command_Package.Command'Class) return Boolean is
+      command : constant Command_Access := Command_Access (command_Param);
    begin
         return This.commandStack.contains (command);
    end isCommand;
 
-   procedure addCommand (This : in out MyCanvas; command_Param : access Command'Class) is
-      command : Command_Access := Command_Access (command_Param);
+   procedure addCommand (This : in out MyCanvas; command_Param : access Command_Package.Command'Class) is
+      command : constant Command_Access := Command_Access (command_Param);
    begin
         if not (This.commandStack.contains (command)) then
             This.commandStack.push (command);
@@ -82,8 +82,8 @@ package body org.allbinary.graphics.displayable.MyCanvas_Package is
         end if;
    end addCommand;
 
-   procedure removeCommand (This : in out MyCanvas; command_Param : access Command'Class) is
-      command : Command_Access := Command_Access (command_Param);
+   procedure removeCommand (This : in out MyCanvas; command_Param : access Command_Package.Command'Class) is
+      command : constant Command_Access := Command_Access (command_Param);
    begin
         This.commandStack.removeElement (command);
         Canvas (This).removeCommand (command);
@@ -99,8 +99,8 @@ package body org.allbinary.graphics.displayable.MyCanvas_Package is
         end loop;
    end removeAllCommands;
 
-   procedure setCommandListener (This : in out MyCanvas; l_Param : access CommandListener'Class) is
-      l : CommandListener_Access := CommandListener_Access (l_Param);
+   procedure setCommandListener (This : in out MyCanvas; l_Param : access CommandListener_Package.CommandListener'Class) is
+      l : constant CommandListener_Access := CommandListener_Access (l_Param);
    begin
         Canvas (This).setCommandListener (l);
         This.commandListener := l;
@@ -143,20 +143,20 @@ package body org.allbinary.graphics.displayable.MyCanvas_Package is
         This.displayInfo.process;
    end process;
 
-   procedure paint (This : in out MyCanvas; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out MyCanvas; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paint;
 
-   procedure draw (This : in out MyCanvas; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure draw (This : in out MyCanvas; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end draw;
 
-   function hasChild (This : in out MyCanvas; displayable_Param : access MyCanvas'Class) return Boolean is
-      displayable : MyCanvas_Access := MyCanvas_Access (displayable_Param);
+   function hasChild (This : in out MyCanvas; displayable_Param : access MyCanvas_Package.MyCanvas'Class) return Boolean is
+      displayable : constant MyCanvas_Access := MyCanvas_Access (displayable_Param);
    begin
         return This.childNameList.contains (displayable.name);
    end hasChild;
@@ -201,20 +201,20 @@ package body org.allbinary.graphics.displayable.MyCanvas_Package is
         This.touchME.pointerReleased (x, y);
    end pointerReleased;
 
-   procedure nextSong (This : in out MyCanvas; nextSongSound_Param : access Sound'Class; leftVolume : Integer; rightVolume : Integer) is
-      nextSongSound : Sound_Access := Sound_Access (nextSongSound_Param);
+   procedure nextSong (This : in out MyCanvas; nextSongSound_Param : access Sound_Package.Sound'Class; leftVolume : Integer; rightVolume : Integer) is
+      nextSongSound : constant Sound_Access := Sound_Access (nextSongSound_Param);
    begin
         null;
    end nextSong;
 
-   procedure isCommand (This : in out MyCanvas; command_Param : access Command'Class) is
+   procedure isCommand (This : in out MyCanvas; command_Param : access Command_Package.Command'Class) is
       Java_Result : constant Boolean := MyCanvas'Class (This).isCommand (command_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isCommand;
 
-   procedure hasChild (This : in out MyCanvas; displayable_Param : access MyCanvas'Class) is
+   procedure hasChild (This : in out MyCanvas; displayable_Param : access MyCanvas_Package.MyCanvas'Class) is
       Java_Result : constant Boolean := MyCanvas'Class (This).hasChild (displayable_Param);
       pragma Unreferenced (Java_Result);
    begin

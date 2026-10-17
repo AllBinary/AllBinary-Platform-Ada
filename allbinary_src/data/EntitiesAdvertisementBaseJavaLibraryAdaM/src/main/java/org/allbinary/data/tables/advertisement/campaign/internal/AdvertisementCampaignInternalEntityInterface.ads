@@ -36,8 +36,8 @@ package org.allbinary.data.tables.advertisement.campaign.internal.AdvertisementC
    type AdvertisementCampaignInternalEntityInterface_Access_Array is array (Natural range <>) of AdvertisementCampaignInternalEntityInterface_Access;
    type AdvertisementCampaignInternalEntityInterface_Access_Array_Access is access all AdvertisementCampaignInternalEntityInterface_Access_Array;
    procedure delete (This : in out AdvertisementCampaignInternalEntityInterface; value : Unbounded_String) is abstract;
-   procedure insert (This : in out AdvertisementCampaignInternalEntityInterface; values_Param : access BasicArrayList'Class) is abstract;
-   procedure update (This : in out AdvertisementCampaignInternalEntityInterface; updatedValues_Param : access HashMap'Class) is abstract;
+   procedure insert (This : in out AdvertisementCampaignInternalEntityInterface; values_Param : access BasicArrayList_Package.BasicArrayList'Class) is abstract;
+   procedure update (This : in out AdvertisementCampaignInternalEntityInterface; updatedValues_Param : access HashMap_Package.HashMap'Class) is abstract;
 
 end org.allbinary.data.tables.advertisement.campaign.internal.AdvertisementCampaignInternalEntityInterface_Package;
 

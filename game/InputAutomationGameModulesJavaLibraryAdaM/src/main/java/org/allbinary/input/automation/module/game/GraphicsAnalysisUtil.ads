@@ -42,8 +42,8 @@ package org.allbinary.input.automation.module.game.GraphicsAnalysisUtil_Package 
 
    procedure Initialize (This : in out GraphicsAnalysisUtil'Class);
    function Create return GraphicsAnalysisUtil_Access;
-   function getNominator (bufferedImage_Param : access BufferedImage'Class; min_x : Integer; max_x : Integer; y : Integer) return Long_Float;
-   procedure getNominator (bufferedImage_Param : access BufferedImage'Class; min_x : Integer; max_x : Integer; y : Integer);
+   function getNominator (bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; min_x : Integer; max_x : Integer; y : Integer) return Long_Float;
+   procedure getNominator (bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; min_x : Integer; max_x : Integer; y : Integer);
 
 end org.allbinary.input.automation.module.game.GraphicsAnalysisUtil_Package;
 

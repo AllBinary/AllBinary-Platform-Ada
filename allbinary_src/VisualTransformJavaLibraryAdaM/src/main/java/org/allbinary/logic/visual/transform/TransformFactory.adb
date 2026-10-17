@@ -42,9 +42,9 @@ package body org.allbinary.logic.visual.transform.TransformFactory_Package is
    end Create;
 
    --  throws Exception
-   function getInstance (This : in out TransformFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; viewName : Unbounded_String; ownerTransformInfoInterface_Param : access TransformInfoInterface'Class) return TransformInterface_Access is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      ownerTransformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (ownerTransformInfoInterface_Param);
+   function getInstance (This : in out TransformFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; viewName : Unbounded_String; ownerTransformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return TransformInterface_Access is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      ownerTransformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (ownerTransformInfoInterface_Param);
       ownerTransformInfoHttpInterface : TransformInfoHttpInterface_Access;
       transformInfoEntity : TransformInfoEntity_Access;
       transformInfoInterface : TransformInfoInterface_Access;
@@ -80,10 +80,10 @@ package body org.allbinary.logic.visual.transform.TransformFactory_Package is
    end getInstance;
 
    --  throws Exception
-   function getInstance (This : in out TransformFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return TransformInterface_Access is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      propertiesHashMap : HashMap_Access := HashMap_Access (propertiesHashMap_Param);
-      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
+   function getInstance (This : in out TransformFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return TransformInterface_Access is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      propertiesHashMap : constant HashMap_Access := HashMap_Access (propertiesHashMap_Param);
+      pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
       transformInfoData : TransformInfoData_Access;
       transformInfoEntity : TransformInfoEntity_Access;
       transformInfoInterface : TransformInfoInterface_Access;
@@ -125,9 +125,9 @@ package body org.allbinary.logic.visual.transform.TransformFactory_Package is
    end getInstance;
 
    --  throws Exception
-   function getInstance (This : in out TransformFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) return TransformInterface_Access is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   function getInstance (This : in out TransformFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return TransformInterface_Access is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
       anyType : Java_Object_Access;
    begin
         begin
@@ -152,21 +152,21 @@ package body org.allbinary.logic.visual.transform.TransformFactory_Package is
         end;
    end getInstance;
 
-   procedure getInstance (This : in out TransformFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; viewName : Unbounded_String; ownerTransformInfoInterface_Param : access TransformInfoInterface'Class) is
+   procedure getInstance (This : in out TransformFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; viewName : Unbounded_String; ownerTransformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
       Java_Result : constant TransformInterface_Access := TransformFactory'Class (This).getInstance (abeClientInformation_Param, viewName, ownerTransformInfoInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
-   procedure getInstance (This : in out TransformFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+   procedure getInstance (This : in out TransformFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is
       Java_Result : constant TransformInterface_Access := TransformFactory'Class (This).getInstance (abeClientInformation_Param, propertiesHashMap_Param, pageContext_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
-   procedure getInstance (This : in out TransformFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+   procedure getInstance (This : in out TransformFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
       Java_Result : constant TransformInterface_Access := TransformFactory'Class (This).getInstance (abeClientInformation_Param, transformInfoInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

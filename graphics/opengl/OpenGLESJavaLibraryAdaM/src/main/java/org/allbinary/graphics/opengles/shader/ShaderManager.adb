@@ -45,27 +45,27 @@ package body org.allbinary.graphics.opengles.shader.ShaderManager_Package is
       return This;
    end Create;
 
-   function load (This : in out ShaderManager; gl_Param : access GL10'Class; resource : Unbounded_String; shaderAsStringArray : Unbounded_String_Array_Access; shaderType : Integer) return Integer is
-      gl : GL10_Access := GL10_Access (gl_Param);
+   function load (This : in out ShaderManager; gl_Param : access GL10_Package.GL10'Class; resource : Unbounded_String; shaderAsStringArray : Unbounded_String_Array_Access; shaderType : Integer) return Integer is
+      gl : constant GL10_Access := GL10_Access (gl_Param);
    begin
         return -(1);
    end load;
 
-   function loadShader (This : in out ShaderManager; gl_Param : access GL10'Class; resource : Unbounded_String; stringList_Param : access BasicArrayList'Class; shaderType : Integer) return Integer is
-      gl : GL10_Access := GL10_Access (gl_Param);
-      stringList : BasicArrayList_Access := BasicArrayList_Access (stringList_Param);
+   function loadShader (This : in out ShaderManager; gl_Param : access GL10_Package.GL10'Class; resource : Unbounded_String; stringList_Param : access BasicArrayList_Package.BasicArrayList'Class; shaderType : Integer) return Integer is
+      gl : constant GL10_Access := GL10_Access (gl_Param);
+      stringList : constant BasicArrayList_Access := BasicArrayList_Access (stringList_Param);
    begin
         return -(1);
    end loadShader;
 
-   procedure load (This : in out ShaderManager; gl_Param : access GL10'Class; resource : Unbounded_String; shaderAsStringArray : Unbounded_String_Array_Access; shaderType : Integer) is
+   procedure load (This : in out ShaderManager; gl_Param : access GL10_Package.GL10'Class; resource : Unbounded_String; shaderAsStringArray : Unbounded_String_Array_Access; shaderType : Integer) is
       Java_Result : constant Integer := ShaderManager'Class (This).load (gl_Param, resource, shaderAsStringArray, shaderType);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end load;
 
-   procedure loadShader (This : in out ShaderManager; gl_Param : access GL10'Class; resource : Unbounded_String; stringList_Param : access BasicArrayList'Class; shaderType : Integer) is
+   procedure loadShader (This : in out ShaderManager; gl_Param : access GL10_Package.GL10'Class; resource : Unbounded_String; stringList_Param : access BasicArrayList_Package.BasicArrayList'Class; shaderType : Integer) is
       Java_Result : constant Integer := ShaderManager'Class (This).loadShader (gl_Param, resource, stringList_Param, shaderType);
       pragma Unreferenced (Java_Result);
    begin

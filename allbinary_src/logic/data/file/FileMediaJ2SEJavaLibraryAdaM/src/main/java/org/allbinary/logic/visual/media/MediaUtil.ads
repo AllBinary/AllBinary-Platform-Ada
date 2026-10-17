@@ -46,9 +46,9 @@ package org.allbinary.logic.visual.media.MediaUtil_Package is
    procedure Initialize (This : in out MediaUtil'Class);
    function Create return MediaUtil_Access;
    function getInstance return MediaUtil_Access;
-   procedure saveImageFile (This : in out MediaUtil; originalImageFile_Param : access AbFile'Class; newImageFileName : Unbounded_String; category : Unbounded_String; mediaData_Param : access MediaData'Class; newWidth : Integer; newHeight : Integer);
-   function getImageBufferPropertyHashMap (bufferedImage_Param : access BufferedImage'Class) return HashMap_Access;
-   procedure getImageBufferPropertyHashMap (bufferedImage_Param : access BufferedImage'Class);
+   procedure saveImageFile (This : in out MediaUtil; originalImageFile_Param : access AbFile_Package.AbFile'Class; newImageFileName : Unbounded_String; category : Unbounded_String; mediaData_Param : access MediaData_Package.MediaData'Class; newWidth : Integer; newHeight : Integer);
+   function getImageBufferPropertyHashMap (bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class) return HashMap_Access;
+   procedure getImageBufferPropertyHashMap (bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class);
 
 end org.allbinary.logic.visual.media.MediaUtil_Package;
 

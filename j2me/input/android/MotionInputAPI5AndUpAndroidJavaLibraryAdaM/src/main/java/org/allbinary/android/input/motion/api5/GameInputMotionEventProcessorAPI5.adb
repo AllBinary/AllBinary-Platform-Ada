@@ -66,8 +66,8 @@ package body org.allbinary.android.input.motion.api5.GameInputMotionEventProcess
         end if;
    end isValid;
 
-   procedure process (This : in out GameInputMotionEventProcessorAPI5; motionEvent_Param : access MotionEvent'Class) is
-      motionEvent : MotionEvent_Access := MotionEvent_Access (motionEvent_Param);
+   procedure process (This : in out GameInputMotionEventProcessorAPI5; motionEvent_Param : access MotionEvent_Package.MotionEvent'Class) is
+      motionEvent : constant MotionEvent_Access := MotionEvent_Access (motionEvent_Param);
       action : Integer;
       total : Integer;
       message : Unbounded_String;

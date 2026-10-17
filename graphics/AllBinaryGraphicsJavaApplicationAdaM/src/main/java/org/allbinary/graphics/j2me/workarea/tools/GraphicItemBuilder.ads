@@ -38,8 +38,8 @@ package org.allbinary.graphics.j2me.workarea.tools.GraphicItemBuilder_Package is
 
    procedure Initialize (This : in out GraphicItemBuilder'Class);
    function Create return GraphicItemBuilder_Access;
-   function getInstance (node_Param : access Node'Class) return GraphicItemInterface_Access;
-   procedure getInstance (node_Param : access Node'Class);
+   function getInstance (node_Param : access Node_Package.Node'Class) return GraphicItemInterface_Access;
+   procedure getInstance (node_Param : access Node_Package.Node'Class);
 
 end org.allbinary.graphics.j2me.workarea.tools.GraphicItemBuilder_Package;
 

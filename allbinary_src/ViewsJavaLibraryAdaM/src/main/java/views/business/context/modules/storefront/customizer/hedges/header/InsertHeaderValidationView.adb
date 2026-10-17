@@ -23,8 +23,8 @@ package body views.business.context.modules.storefront.customizer.hedges.header.
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out InsertHeaderValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out InsertHeaderValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
       multipartRequestHashMap : HashMap_Access;
       storeFrontInterface : StoreFrontInterface_Access;
       fullPath : Unbounded_String;
@@ -38,7 +38,7 @@ package body views.business.context.modules.storefront.customizer.hedges.header.
         This.heading := HeadingValidation_Package.Create (multipartRequestHashMap);
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return InsertHeaderValidationView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return InsertHeaderValidationView_Access is
       This : constant InsertHeaderValidationView_Access := new InsertHeaderValidationView;
    begin
       InsertHeaderValidationView_Package.Initialize (This.all, transformInfoInterface_Param);
@@ -101,13 +101,13 @@ package body views.business.context.modules.storefront.customizer.hedges.header.
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out InsertHeaderValidationView; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toValidationInfoNode (This : in out InsertHeaderValidationView; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
 
-   procedure toValidationInfoNode (This : in out InsertHeaderValidationView; document_Param : access Document'Class) is
+   procedure toValidationInfoNode (This : in out InsertHeaderValidationView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := InsertHeaderValidationView'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

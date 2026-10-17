@@ -22,7 +22,7 @@ package body org.allbinary.view.event.ViewPositionEvent_Package is
 
 
    procedure Initialize (This : in out ViewPositionEvent'Class; anyType_Param : access Java_Object'Class) is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         AllBinaryEventObject_Package.Initialize (This, anyType);
    end Initialize;

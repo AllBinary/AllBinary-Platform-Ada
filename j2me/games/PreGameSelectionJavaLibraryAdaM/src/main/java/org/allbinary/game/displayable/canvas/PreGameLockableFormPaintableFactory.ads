@@ -44,8 +44,8 @@ package org.allbinary.game.displayable.canvas.PreGameLockableFormPaintableFactor
 
    procedure Initialize (This : in out PreGameLockableFormPaintableFactory'Class; lockedIndex : Integer);
    function Create (lockedIndex : Integer) return PreGameLockableFormPaintableFactory_Access;
-   function getInstanceItemPaintable (This : in out PreGameLockableFormPaintableFactory; paintableForm_Param : access PaintableForm'Class) return ItemPaintable_Access;
-   procedure getInstanceItemPaintable (This : in out PreGameLockableFormPaintableFactory; paintableForm_Param : access PaintableForm'Class);
+   function getInstanceItemPaintable (This : in out PreGameLockableFormPaintableFactory; paintableForm_Param : access PaintableForm_Package.PaintableForm'Class) return ItemPaintable_Access;
+   procedure getInstanceItemPaintable (This : in out PreGameLockableFormPaintableFactory; paintableForm_Param : access PaintableForm_Package.PaintableForm'Class);
 
 end org.allbinary.game.displayable.canvas.PreGameLockableFormPaintableFactory_Package;
 

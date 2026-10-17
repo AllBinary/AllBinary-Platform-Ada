@@ -40,8 +40,8 @@ package body org.allbinary.business.context.configuration.ContextConfigurationIn
    end Create;
 
    --  throws Exception
-   function getInstance (This : in out ContextConfigurationInterfaceFactory; document_Param : access Document'Class) return ContextConfigurationInterface_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function getInstance (This : in out ContextConfigurationInterfaceFactory; document_Param : access Document_Package.Document'Class) return ContextConfigurationInterface_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       contextConfigurationData : ContextConfigurationData_Access;
       contextConfigurationNode : Node_Access;
    begin
@@ -64,7 +64,7 @@ package body org.allbinary.business.context.configuration.ContextConfigurationIn
         return This.getInstance (document);
    end getInstance;
 
-   procedure getInstance (This : in out ContextConfigurationInterfaceFactory; document_Param : access Document'Class) is
+   procedure getInstance (This : in out ContextConfigurationInterfaceFactory; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant ContextConfigurationInterface_Access := ContextConfigurationInterfaceFactory'Class (This).getInstance (document_Param);
       pragma Unreferenced (Java_Result);
    begin

@@ -62,8 +62,8 @@ package org.allbinary.game.input.InputPersistance_Package is
 
    procedure Initialize (This : in out InputPersistance'Class; name : Unbounded_String);
    function Create (name : Unbounded_String) return InputPersistance_Access;
-   procedure loadAll (This : in out InputPersistance; abeClientInformation_Param : access AbeClientInformationInterface'Class);
-   procedure save (This : in out InputPersistance; abeClientInformation_Param : access AbeClientInformationInterface'Class; hashtable_Param : access ABHashtable'Class);
+   procedure loadAll (This : in out InputPersistance; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class);
+   procedure save (This : in out InputPersistance; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; hashtable_Param : access ABHashtable_Package.ABHashtable'Class);
 
 end org.allbinary.game.input.InputPersistance_Package;
 

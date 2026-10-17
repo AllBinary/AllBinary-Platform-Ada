@@ -51,8 +51,8 @@ package org.allbinary.android.input.api3.ShowVirtualKeyboardRunnable_Package is
       activity : Activity_Access;
    end record;
 
-   procedure Initialize (This : in out ShowVirtualKeyboardRunnable'Class; activity_Param : access Activity'Class);
-   function Create (activity_Param : access Activity'Class) return ShowVirtualKeyboardRunnable_Access;
+   procedure Initialize (This : in out ShowVirtualKeyboardRunnable'Class; activity_Param : access Activity_Package.Activity'Class);
+   function Create (activity_Param : access Activity_Package.Activity'Class) return ShowVirtualKeyboardRunnable_Access;
    procedure run (This : in out ShowVirtualKeyboardRunnable);
 
 end org.allbinary.android.input.api3.ShowVirtualKeyboardRunnable_Package;

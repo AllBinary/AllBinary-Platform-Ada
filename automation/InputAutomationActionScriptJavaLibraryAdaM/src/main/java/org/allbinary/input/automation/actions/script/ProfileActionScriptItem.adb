@@ -24,8 +24,8 @@ package body org.allbinary.input.automation.actions.script.ProfileActionScriptIt
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ProfileActionScriptItem'Class; label : Unbounded_String; node_Param : access Node'Class) is
-      node : Node_Access := Node_Access (node_Param);
+   procedure Initialize (This : in out ProfileActionScriptItem'Class; label : Unbounded_String; node_Param : access Node_Package.Node'Class) is
+      node : constant Node_Access := Node_Access (node_Param);
    begin
         DefaultMutableTreeNode_Package.Initialize (This, label);
         Initialize_Fields (This);
@@ -33,7 +33,7 @@ package body org.allbinary.input.automation.actions.script.ProfileActionScriptIt
         This.logUtil.putF (To_Unbounded_String ("Label: ") & label, ProfileActionScriptItem_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
    end Initialize;
 
-   function Create (label : Unbounded_String; node_Param : access Node'Class) return ProfileActionScriptItem_Access is
+   function Create (label : Unbounded_String; node_Param : access Node_Package.Node'Class) return ProfileActionScriptItem_Access is
       This : constant ProfileActionScriptItem_Access := new ProfileActionScriptItem;
    begin
       ProfileActionScriptItem_Package.Initialize (This.all, label, node_Param);
@@ -84,16 +84,16 @@ package body org.allbinary.input.automation.actions.script.ProfileActionScriptIt
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end showDialog;
 
-   procedure actionPerformed (This : in out ProfileActionScriptItem; actionEvent_Param : access ActionEvent'Class) is
-      actionEvent : ActionEvent_Access := ActionEvent_Access (actionEvent_Param);
+   procedure actionPerformed (This : in out ProfileActionScriptItem; actionEvent_Param : access ActionEvent_Package.ActionEvent'Class) is
+      actionEvent : constant ActionEvent_Access := ActionEvent_Access (actionEvent_Param);
    begin
         if (actionEvent.getActionCommand.compareTo (ProfileActionScriptItem_Package.EDIT)) = (0) then
             This.showDialog;
         end if;
    end actionPerformed;
 
-   procedure setJPopupMenu (This : in out ProfileActionScriptItem; jPopupMenu_Param : access JPopupMenu'Class) is
-      jPopupMenu : JPopupMenu_Access := JPopupMenu_Access (jPopupMenu_Param);
+   procedure setJPopupMenu (This : in out ProfileActionScriptItem; jPopupMenu_Param : access JPopupMenu_Package.JPopupMenu'Class) is
+      jPopupMenu : constant JPopupMenu_Access := JPopupMenu_Access (jPopupMenu_Param);
    begin
         This.jPopupMenu := jPopupMenu;
    end setJPopupMenu;

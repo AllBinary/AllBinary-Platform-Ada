@@ -36,8 +36,8 @@ package body org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Pac
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PlayerGameNotificationHud'Class; location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor'Class) is
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+   procedure Initialize (This : in out PlayerGameNotificationHud'Class; location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
       gameNotificationEventHandler : GameNotificationEventHandler_Access;
    begin
         GameNotificationHud_Package.Initialize (This, location, direction, bufferZone, basicColor);
@@ -48,15 +48,15 @@ package body org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Pac
         gameNotificationEventHandler.addListenerInterface (PlayerGameNotificationHud_Access'(This'Unchecked_Access));
    end Initialize;
 
-   function Create (location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor'Class) return PlayerGameNotificationHud_Access is
+   function Create (location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) return PlayerGameNotificationHud_Access is
       This : constant PlayerGameNotificationHud_Access := new PlayerGameNotificationHud;
    begin
       PlayerGameNotificationHud_Package.Initialize (This.all, location, direction, bufferZone, basicColor_Param);
       return This;
    end Create;
 
-   procedure updateMeasurement (This : in out PlayerGameNotificationHud; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure updateMeasurement (This : in out PlayerGameNotificationHud; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
@@ -87,8 +87,8 @@ package body org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Pac
         return This.point;
    end getPoint;
 
-   procedure add (This : in out PlayerGameNotificationHud; string_Id : Unbounded_String; seconds : Integer; basicColor_Param : access BasicColor'Class; permanent : Boolean) is
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+   procedure add (This : in out PlayerGameNotificationHud; string_Id : Unbounded_String; seconds : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class; permanent : Boolean) is
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         if permanent.booleanValue then
             if (This.lastString) /= (string_Id) then
@@ -177,8 +177,8 @@ package body org.allbinary.game.ag.layer.hud.basic.PlayerGameNotificationHud_Pac
         This.permanentGameNotification.clear;
    end clear;
 
-   procedure paint (This : in out PlayerGameNotificationHud; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out PlayerGameNotificationHud; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.myFontProcessor.process (graphics);
         GameNotificationHud (This).paintString (graphics, This.string_Id);
@@ -203,15 +203,15 @@ package body org.allbinary.game.ag.layer.hud.basic.SetAndRemoveProcessor_Package
    end Initialize_Fields;
 
     
-   procedure Initialize (This : in out SetAndRemoveProcessor'Class; updateMeasurementProcessor_Param : access PlayerGameNotificationHud'Class) is
-      updateMeasurementProcessor : PlayerGameNotificationHud_Access := PlayerGameNotificationHud_Access (updateMeasurementProcessor_Param);
+   procedure Initialize (This : in out SetAndRemoveProcessor'Class; updateMeasurementProcessor_Param : access PlayerGameNotificationHud_Package.PlayerGameNotificationHud'Class) is
+      updateMeasurementProcessor : constant PlayerGameNotificationHud_Access := PlayerGameNotificationHud_Access (updateMeasurementProcessor_Param);
    begin
       Processor_Package.Initialize (This);
       Initialize_Fields (This);
             This.updateMeasurementProcessor := updateMeasurementProcessor;
    end Initialize;
 
-   function Create (updateMeasurementProcessor_Param : access PlayerGameNotificationHud'Class) return SetAndRemoveProcessor_Access is
+   function Create (updateMeasurementProcessor_Param : access PlayerGameNotificationHud_Package.PlayerGameNotificationHud'Class) return SetAndRemoveProcessor_Access is
       This : constant SetAndRemoveProcessor_Access := new SetAndRemoveProcessor;
    begin
       SetAndRemoveProcessor_Package.Initialize (This.all, updateMeasurementProcessor_Param);
@@ -236,15 +236,15 @@ package body org.allbinary.game.ag.layer.hud.basic.NextUnremoveableProcessor_Pac
    end Initialize_Fields;
 
     
-   procedure Initialize (This : in out NextUnremoveableProcessor'Class; updateMeasurementProcessor_Param : access PlayerGameNotificationHud'Class) is
-      updateMeasurementProcessor : PlayerGameNotificationHud_Access := PlayerGameNotificationHud_Access (updateMeasurementProcessor_Param);
+   procedure Initialize (This : in out NextUnremoveableProcessor'Class; updateMeasurementProcessor_Param : access PlayerGameNotificationHud_Package.PlayerGameNotificationHud'Class) is
+      updateMeasurementProcessor : constant PlayerGameNotificationHud_Access := PlayerGameNotificationHud_Access (updateMeasurementProcessor_Param);
    begin
       Processor_Package.Initialize (This);
       Initialize_Fields (This);
             This.updateMeasurementProcessor := updateMeasurementProcessor;
    end Initialize;
 
-   function Create (updateMeasurementProcessor_Param : access PlayerGameNotificationHud'Class) return NextUnremoveableProcessor_Access is
+   function Create (updateMeasurementProcessor_Param : access PlayerGameNotificationHud_Package.PlayerGameNotificationHud'Class) return NextUnremoveableProcessor_Access is
       This : constant NextUnremoveableProcessor_Access := new NextUnremoveableProcessor;
    begin
       NextUnremoveableProcessor_Package.Initialize (This.all, updateMeasurementProcessor_Param);

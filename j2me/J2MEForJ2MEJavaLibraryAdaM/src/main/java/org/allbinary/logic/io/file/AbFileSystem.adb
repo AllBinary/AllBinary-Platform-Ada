@@ -68,7 +68,7 @@ package body org.allbinary.logic.io.file.AbFileSystem_Package is
    end readAsString;
 
    function close (This : in out AbFileSystem; closeable_Param : access Java_Object'Class) return Boolean is
-      closeable : Java_Object_Access := Java_Object_Access (closeable_Param);
+      closeable : constant Java_Object_Access := Java_Object_Access (closeable_Param);
       inputStream : InputStream_Access;
    begin
         begin

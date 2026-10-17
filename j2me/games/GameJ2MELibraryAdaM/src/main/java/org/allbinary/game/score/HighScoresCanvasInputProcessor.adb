@@ -22,15 +22,15 @@ package body org.allbinary.game.score.HighScoresCanvasInputProcessor_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out HighScoresCanvasInputProcessor'Class; highScoresCanvas_Param : access HighScoresCanvas'Class) is
-      highScoresCanvas : HighScoresCanvas_Access := HighScoresCanvas_Access (highScoresCanvas_Param);
+   procedure Initialize (This : in out HighScoresCanvasInputProcessor'Class; highScoresCanvas_Param : access HighScoresCanvas_Package.HighScoresCanvas'Class) is
+      highScoresCanvas : constant HighScoresCanvas_Access := HighScoresCanvas_Access (highScoresCanvas_Param);
    begin
         PlayerGameInput_Package.Initialize (This, BasicArrayListD_Package.Create, BasicArrayListD_Package.Create, -(1));
         Initialize_Fields (This);
         This.highScoresCanvas := highScoresCanvas;
    end Initialize;
 
-   function Create (highScoresCanvas_Param : access HighScoresCanvas'Class) return HighScoresCanvasInputProcessor_Access is
+   function Create (highScoresCanvas_Param : access HighScoresCanvas_Package.HighScoresCanvas'Class) return HighScoresCanvasInputProcessor_Access is
       This : constant HighScoresCanvasInputProcessor_Access := new HighScoresCanvasInputProcessor;
    begin
       HighScoresCanvasInputProcessor_Package.Initialize (This.all, highScoresCanvas_Param);
@@ -47,29 +47,29 @@ package body org.allbinary.game.score.HighScoresCanvasInputProcessor_Package is
         null;
    end close;
 
-   procedure onPressGameKeyEvent (This : in out HighScoresCanvasInputProcessor; gameKeyEvent_Param : access GameKeyEvent'Class) is
-      gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
+   procedure onPressGameKeyEvent (This : in out HighScoresCanvasInputProcessor; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class) is
+      gameKeyEvent : constant GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         PlayerGameInput (This).onPressGameKeyEvent (gameKeyEvent);
         This.update;
    end onPressGameKeyEvent;
 
-   procedure onDownGameKeyEvent (This : in out HighScoresCanvasInputProcessor; gameKeyEvent_Param : access GameKeyEvent'Class) is
-      gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
+   procedure onDownGameKeyEvent (This : in out HighScoresCanvasInputProcessor; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class) is
+      gameKeyEvent : constant GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         PlayerGameInput (This).onDownGameKeyEvent (gameKeyEvent);
         This.update;
    end onDownGameKeyEvent;
 
-   procedure onUpGameKeyEvent (This : in out HighScoresCanvasInputProcessor; gameKeyEvent_Param : access GameKeyEvent'Class) is
-      gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
+   procedure onUpGameKeyEvent (This : in out HighScoresCanvasInputProcessor; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class) is
+      gameKeyEvent : constant GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         PlayerGameInput (This).onUpGameKeyEvent (gameKeyEvent);
         This.update;
    end onUpGameKeyEvent;
 
-   procedure paint (This : in out HighScoresCanvasInputProcessor; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out HighScoresCanvasInputProcessor; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paint;

@@ -60,8 +60,8 @@ package body admin.tags.TableTag_Package is
         return False;
    end isEnabled;
 
-   procedure setTagHelperFactory (This : in out TableTag; tagHelperFactoryInterface_Param : access TagHelperFactoryInterface'Class) is
-      tagHelperFactoryInterface : TagHelperFactoryInterface_Access := TagHelperFactoryInterface_Access (tagHelperFactoryInterface_Param);
+   procedure setTagHelperFactory (This : in out TableTag; tagHelperFactoryInterface_Param : access TagHelperFactoryInterface_Package.TagHelperFactoryInterface'Class) is
+      tagHelperFactoryInterface : constant TagHelperFactoryInterface_Access := TagHelperFactoryInterface_Access (tagHelperFactoryInterface_Param);
    begin
         This.tagHelperFactoryInterface := tagHelperFactoryInterface;
    end setTagHelperFactory;
@@ -71,8 +71,8 @@ package body admin.tags.TableTag_Package is
         return This.tagHelperFactoryInterface;
    end getTagHelperFactoryInterface;
 
-   procedure setTagRequestHelperFactory (This : in out TableTag; tagHelperFactoryInterface_Param : access TagHelperFactoryInterface'Class) is
-      tagHelperFactoryInterface : TagHelperFactoryInterface_Access := TagHelperFactoryInterface_Access (tagHelperFactoryInterface_Param);
+   procedure setTagRequestHelperFactory (This : in out TableTag; tagHelperFactoryInterface_Param : access TagHelperFactoryInterface_Package.TagHelperFactoryInterface'Class) is
+      tagHelperFactoryInterface : constant TagHelperFactoryInterface_Access := TagHelperFactoryInterface_Access (tagHelperFactoryInterface_Param);
    begin
         This.tagRequestHelperFactoryInterface := tagHelperFactoryInterface;
    end setTagRequestHelperFactory;

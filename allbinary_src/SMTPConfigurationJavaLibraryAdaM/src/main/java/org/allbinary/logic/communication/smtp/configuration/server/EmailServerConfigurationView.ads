@@ -50,13 +50,13 @@ package org.allbinary.logic.communication.smtp.configuration.server.EmailServerC
       emailServerConfigurationInterface : EmailServerConfigurationInterface_Access;
    end record;
 
-   procedure Initialize (This : in out EmailServerConfigurationView'Class; node_Param : access Node'Class);
-   function Create (node_Param : access Node'Class) return EmailServerConfigurationView_Access;
-   procedure Initialize (This : in out EmailServerConfigurationView'Class; emailServerConfigurationInterface_Param : access EmailServerConfigurationInterface'Class);
-   function Create (emailServerConfigurationInterface_Param : access EmailServerConfigurationInterface'Class) return EmailServerConfigurationView_Access;
+   procedure Initialize (This : in out EmailServerConfigurationView'Class; node_Param : access Node_Package.Node'Class);
+   function Create (node_Param : access Node_Package.Node'Class) return EmailServerConfigurationView_Access;
+   procedure Initialize (This : in out EmailServerConfigurationView'Class; emailServerConfigurationInterface_Param : access EmailServerConfigurationInterface_Package.EmailServerConfigurationInterface'Class);
+   function Create (emailServerConfigurationInterface_Param : access EmailServerConfigurationInterface_Package.EmailServerConfigurationInterface'Class) return EmailServerConfigurationView_Access;
    function getEmailConfigurationInterface (This : in out EmailServerConfigurationView) return EmailServerConfigurationInterface_Access;
-   function toXmlNode (This : in out EmailServerConfigurationView; document_Param : access Document'Class) return Node_Access;
-   procedure toXmlNode (This : in out EmailServerConfigurationView; document_Param : access Document'Class);
+   function toXmlNode (This : in out EmailServerConfigurationView; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out EmailServerConfigurationView; document_Param : access Document_Package.Document'Class);
 
 end org.allbinary.logic.communication.smtp.configuration.server.EmailServerConfigurationView_Package;
 

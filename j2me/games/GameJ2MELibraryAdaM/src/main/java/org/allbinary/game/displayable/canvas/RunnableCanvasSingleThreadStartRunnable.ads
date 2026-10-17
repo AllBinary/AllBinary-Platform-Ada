@@ -41,8 +41,8 @@ package org.allbinary.game.displayable.canvas.RunnableCanvasSingleThreadStartRun
       runnableCanvas : RunnableCanvas_Access;
    end record;
 
-   procedure Initialize (This : in out RunnableCanvasSingleThreadStartRunnable'Class; demoCanvas_Param : access RunnableCanvas'Class);
-   function Create (demoCanvas_Param : access RunnableCanvas'Class) return RunnableCanvasSingleThreadStartRunnable_Access;
+   procedure Initialize (This : in out RunnableCanvasSingleThreadStartRunnable'Class; demoCanvas_Param : access RunnableCanvas_Package.RunnableCanvas'Class);
+   function Create (demoCanvas_Param : access RunnableCanvas_Package.RunnableCanvas'Class) return RunnableCanvasSingleThreadStartRunnable_Access;
    procedure run (This : in out RunnableCanvasSingleThreadStartRunnable);
    procedure processLoopSleep (This : in out RunnableCanvasSingleThreadStartRunnable);
 

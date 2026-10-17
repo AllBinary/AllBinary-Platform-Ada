@@ -76,7 +76,7 @@ package org.allbinary.game.configuration.GameConfigurationCentral_Package is
    procedure Initialize (This : in out GameConfigurationCentral'Class);
    function Create return GameConfigurationCentral_Access;
    function getInstance return GameConfigurationCentral_Access;
-   procedure load (This : in out GameConfigurationCentral; abeClientInformation_Param : access AbeClientInformationInterface'Class);
+   procedure load (This : in out GameConfigurationCentral; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class);
    procedure setGameControlFidelity (This : in out GameConfigurationCentral; gameControlFidelity : Integer);
    function getGameControlFidelity (This : in out GameConfigurationCentral) return Integer;
    function toString (This : in out GameConfigurationCentral) return Unbounded_String;

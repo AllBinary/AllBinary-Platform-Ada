@@ -46,11 +46,11 @@ package org.allbinary.business.advertisement.Advertisements_Package is
 
    procedure Initialize (This : in out Advertisements'Class);
    function Create return Advertisements_Access;
-   procedure addPage (This : in out Advertisements; advertisementProcessorInterface_Param : access AdvertisementProcessorInterface'Class);
+   procedure addPage (This : in out Advertisements; advertisementProcessorInterface_Param : access AdvertisementProcessorInterface_Package.AdvertisementProcessorInterface'Class);
    procedure startRandomPage (This : in out Advertisements);
    procedure processRandomPage (This : in out Advertisements);
    procedure stopAllPage (This : in out Advertisements);
-   procedure addBanner (This : in out Advertisements; advertisementProcessorInterface_Param : access AdvertisementProcessorInterface'Class);
+   procedure addBanner (This : in out Advertisements; advertisementProcessorInterface_Param : access AdvertisementProcessorInterface_Package.AdvertisementProcessorInterface'Class);
    procedure startAll (This : in out Advertisements);
    procedure stopAllBanner (This : in out Advertisements);
    function getBanner (This : in out Advertisements; index : Integer) return AdvertisementProcessorInterface_Access;

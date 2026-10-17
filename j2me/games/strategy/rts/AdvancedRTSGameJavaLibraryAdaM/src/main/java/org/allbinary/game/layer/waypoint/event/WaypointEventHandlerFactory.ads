@@ -37,8 +37,8 @@ package org.allbinary.game.layer.waypoint.event.WaypointEventHandlerFactory_Pack
 
    procedure Initialize (This : in out WaypointEventHandlerFactory'Class);
    function Create return WaypointEventHandlerFactory_Access;
-   function getInstance (groupInterface_Param : access Group'Class) return WaypointEventHandler_Access;
-   procedure getInstance (groupInterface_Param : access Group'Class);
+   function getInstance (groupInterface_Param : access Group_Package.Group'Class) return WaypointEventHandler_Access;
+   procedure getInstance (groupInterface_Param : access Group_Package.Group'Class);
    procedure removeAll;
 
 end org.allbinary.game.layer.waypoint.event.WaypointEventHandlerFactory_Package;

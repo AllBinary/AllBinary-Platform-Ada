@@ -41,8 +41,8 @@ package body org.allbinary.logic.visual.dhtml.style.StylesValidationFactory_Pack
    end Create;
 
    --  throws Exception
-   function getInstance (This : in out StylesValidationFactory; document_Param : access Document'Class) return BasicArrayList_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function getInstance (This : in out StylesValidationFactory; document_Param : access Document_Package.Document'Class) return BasicArrayList_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       commonStrings : CommonStrings_Access;
       nodeList : NodeList_Access;
       stylesNode : Node_Access;
@@ -82,22 +82,22 @@ package body org.allbinary.logic.visual.dhtml.style.StylesValidationFactory_Pack
    end getInstance;
 
    --  throws Exception
-   function getInstance (hashMap_Param : access HashMap'Class) return BasicArrayList_Access is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+   function getInstance (hashMap_Param : access HashMap_Package.HashMap'Class) return BasicArrayList_Access is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
       stylesDocument : Document_Access;
    begin
         stylesDocument := Document_Access (hashMap.get (NameSpaceRequestParamData_Package.DOCUMENT));
         return StylesValidationFactory_Package.getInstance.getInstance (stylesDocument);
    end getInstance;
 
-   procedure getInstance (This : in out StylesValidationFactory; document_Param : access Document'Class) is
+   procedure getInstance (This : in out StylesValidationFactory; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant BasicArrayList_Access := StylesValidationFactory'Class (This).getInstance (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
-   procedure getInstance (hashMap_Param : access HashMap'Class) is
+   procedure getInstance (hashMap_Param : access HashMap_Package.HashMap'Class) is
       Java_Result : constant BasicArrayList_Access := getInstance (hashMap_Param);
       pragma Unreferenced (Java_Result);
    begin

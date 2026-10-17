@@ -58,13 +58,13 @@ package org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographi
       maxTileId : Integer;
    end record;
 
-   procedure Initialize (This : in out BasicTopViewGeographicMapCellTypeFactory'Class; tileTypeToTileIdsMap_Param : access ABHashtable'Class; maxTileId : Integer);
-   function Create (tileTypeToTileIdsMap_Param : access ABHashtable'Class; maxTileId : Integer) return BasicTopViewGeographicMapCellTypeFactory_Access;
+   procedure Initialize (This : in out BasicTopViewGeographicMapCellTypeFactory'Class; tileTypeToTileIdsMap_Param : access ABHashtable_Package.ABHashtable'Class; maxTileId : Integer);
+   function Create (tileTypeToTileIdsMap_Param : access ABHashtable_Package.ABHashtable'Class; maxTileId : Integer) return BasicTopViewGeographicMapCellTypeFactory_Access;
    function getStartType (This : in out BasicTopViewGeographicMapCellTypeFactory) return Integer;
    function getEndType (This : in out BasicTopViewGeographicMapCellTypeFactory) return Integer;
    function getEmptyType (This : in out BasicTopViewGeographicMapCellTypeFactory) return Integer;
-   function isPath (This : in out BasicTopViewGeographicMapCellTypeFactory; cellType_Param : access GeographicMapCellType'Class) return Boolean;
-   procedure isPath (This : in out BasicTopViewGeographicMapCellTypeFactory; cellType_Param : access GeographicMapCellType'Class);
+   function isPath (This : in out BasicTopViewGeographicMapCellTypeFactory; cellType_Param : access GeographicMapCellType_Package.GeographicMapCellType'Class) return Boolean;
+   procedure isPath (This : in out BasicTopViewGeographicMapCellTypeFactory; cellType_Param : access GeographicMapCellType_Package.GeographicMapCellType'Class);
    function toString (This : in out BasicTopViewGeographicMapCellTypeFactory) return Unbounded_String;
 
 end org.allbinary.media.graphics.geography.map.topview.BasicTopViewGeographicMapCellTypeFactory_Package;

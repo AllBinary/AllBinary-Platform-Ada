@@ -35,13 +35,13 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyVali
    end Create;
 
    --  throws Exception
-   function getInstance (node_Param : access Node'Class) return ValidationInterface_Access is
-      node : Node_Access := Node_Access (node_Param);
+   function getInstance (node_Param : access Node_Package.Node'Class) return ValidationInterface_Access is
+      node : constant Node_Access := Node_Access (node_Param);
    begin
         return ValidationInterface_Access (FontFamilyValidation_Package.Create (node));
    end getInstance;
 
-   procedure getInstance (node_Param : access Node'Class) is
+   procedure getInstance (node_Param : access Node_Package.Node'Class) is
       Java_Result : constant ValidationInterface_Access := getInstance (node_Param);
       pragma Unreferenced (Java_Result);
    begin

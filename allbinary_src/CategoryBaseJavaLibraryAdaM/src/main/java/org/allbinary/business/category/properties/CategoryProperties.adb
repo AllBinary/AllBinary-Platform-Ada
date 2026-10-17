@@ -36,28 +36,28 @@ package body org.allbinary.business.category.properties.CategoryProperties_Packa
       return This;
    end Create;
 
-   procedure Initialize (This : in out CategoryProperties'Class; node_Param : access Node'Class) is
-      node : Node_Access := Node_Access (node_Param);
+   procedure Initialize (This : in out CategoryProperties'Class; node_Param : access Node_Package.Node'Class) is
+      node : constant Node_Access := Node_Access (node_Param);
    begin
       Initialize_Fields (This);
         This.category := CategoryUtil_Package.getNameFromNode (node);
    end Initialize;
 
-   function Create (node_Param : access Node'Class) return CategoryProperties_Access is
+   function Create (node_Param : access Node_Package.Node'Class) return CategoryProperties_Access is
       This : constant CategoryProperties_Access := new CategoryProperties;
    begin
       CategoryProperties_Package.Initialize (This.all, node_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out CategoryProperties'Class; categoryPropertiesHashMap_Param : access HashMap'Class) is
-      categoryPropertiesHashMap : HashMap_Access := HashMap_Access (categoryPropertiesHashMap_Param);
+   procedure Initialize (This : in out CategoryProperties'Class; categoryPropertiesHashMap_Param : access HashMap_Package.HashMap'Class) is
+      categoryPropertiesHashMap : constant HashMap_Access := HashMap_Access (categoryPropertiesHashMap_Param);
    begin
       Initialize_Fields (This);
         This.category := Java_New_String (Unbounded_String (categoryPropertiesHashMap.get (CategoryData_Package.getInstance.NAME)));
    end Initialize;
 
-   function Create (categoryPropertiesHashMap_Param : access HashMap'Class) return CategoryProperties_Access is
+   function Create (categoryPropertiesHashMap_Param : access HashMap_Package.HashMap'Class) return CategoryProperties_Access is
       This : constant CategoryProperties_Access := new CategoryProperties;
    begin
       CategoryProperties_Package.Initialize (This.all, categoryPropertiesHashMap_Param);
@@ -85,8 +85,8 @@ package body org.allbinary.business.category.properties.CategoryProperties_Packa
    end getValue;
 
    --  throws Exception
-   function getPath (This : in out CategoryProperties; categoryHierarchyInterface_Param : access CategoryHierarchyInterface'Class) return AbPath_Access is
-      categoryHierarchyInterface : CategoryHierarchyInterface_Access := CategoryHierarchyInterface_Access (categoryHierarchyInterface_Param);
+   function getPath (This : in out CategoryProperties; categoryHierarchyInterface_Param : access CategoryHierarchyInterface_Package.CategoryHierarchyInterface'Class) return AbPath_Access is
+      categoryHierarchyInterface : constant CategoryHierarchyInterface_Access := CategoryHierarchyInterface_Access (categoryHierarchyInterface_Param);
       abPathData : AbPathData_Access;
       pathStringBuffer : StringMaker_Access;
       list : BasicArrayList_Access;
@@ -183,8 +183,8 @@ package body org.allbinary.business.category.properties.CategoryProperties_Packa
    end toValidationInfoDoc;
 
    --  throws Exception
-   function toValidationInfoNode (This : in out CategoryProperties; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toValidationInfoNode (This : in out CategoryProperties; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
@@ -195,14 +195,14 @@ package body org.allbinary.business.category.properties.CategoryProperties_Packa
         return Null_Unbounded_String;
    end validationInfo;
 
-   procedure getPath (This : in out CategoryProperties; categoryHierarchyInterface_Param : access CategoryHierarchyInterface'Class) is
+   procedure getPath (This : in out CategoryProperties; categoryHierarchyInterface_Param : access CategoryHierarchyInterface_Package.CategoryHierarchyInterface'Class) is
       Java_Result : constant AbPath_Access := CategoryProperties'Class (This).getPath (categoryHierarchyInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getPath;
 
-   procedure toValidationInfoNode (This : in out CategoryProperties; document_Param : access Document'Class) is
+   procedure toValidationInfoNode (This : in out CategoryProperties; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := CategoryProperties'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

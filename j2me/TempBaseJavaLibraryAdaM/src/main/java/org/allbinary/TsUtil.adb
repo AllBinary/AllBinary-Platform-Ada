@@ -39,14 +39,14 @@ package body org.allbinary.TsUtil_Package is
    end getInstance;
 
    function hashCode (This : in out TsUtil; anyType_Param : access Java_Object'Class) return Integer is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         return anyType.hashCode;
    end hashCode;
 
    --  throws InterruptedException
    procedure waitFor (This : in out TsUtil; any_Param : access Java_Object'Class; timeoutMillis : Long_Long_Integer) is
-      any : Java_Object_Access := Java_Object_Access (any_Param);
+      any : constant Java_Object_Access := Java_Object_Access (any_Param);
       anyType : Java_Object_Access;
    begin
         anyType := Java_Object_Access (any);

@@ -24,8 +24,8 @@ package body org.allbinary.data.tree.category.CategoryModifierTree_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CategoryModifierTree'Class; categoryFactoryInterface_Param : access CategoryFactoryInterface'Class) is
-      categoryFactoryInterface : CategoryFactoryInterface_Access := CategoryFactoryInterface_Access (categoryFactoryInterface_Param);
+   procedure Initialize (This : in out CategoryModifierTree'Class; categoryFactoryInterface_Param : access CategoryFactoryInterface_Package.CategoryFactoryInterface'Class) is
+      categoryFactoryInterface : constant CategoryFactoryInterface_Access := CategoryFactoryInterface_Access (categoryFactoryInterface_Param);
    begin
         CategoryPrivateTree_Package.Initialize (This, categoryFactoryInterface);
         Initialize_Fields (This);
@@ -34,16 +34,16 @@ package body org.allbinary.data.tree.category.CategoryModifierTree_Package is
         end if;
    end Initialize;
 
-   function Create (categoryFactoryInterface_Param : access CategoryFactoryInterface'Class) return CategoryModifierTree_Access is
+   function Create (categoryFactoryInterface_Param : access CategoryFactoryInterface_Package.CategoryFactoryInterface'Class) return CategoryModifierTree_Access is
       This : constant CategoryModifierTree_Access := new CategoryModifierTree;
    begin
       CategoryModifierTree_Package.Initialize (This.all, categoryFactoryInterface_Param);
       return This;
    end Create;
 
-   procedure insert (This : in out CategoryModifierTree; parentCategoryInterface_Param : access CategoryInterface'Class; newChildCategoryInterface_Param : access CategoryInterface'Class) is
-      parentCategoryInterface : CategoryInterface_Access := CategoryInterface_Access (parentCategoryInterface_Param);
-      newChildCategoryInterface : CategoryInterface_Access := CategoryInterface_Access (newChildCategoryInterface_Param);
+   procedure insert (This : in out CategoryModifierTree; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; newChildCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class) is
+      parentCategoryInterface : constant CategoryInterface_Access := CategoryInterface_Access (parentCategoryInterface_Param);
+      newChildCategoryInterface : constant CategoryInterface_Access := CategoryInterface_Access (newChildCategoryInterface_Param);
       directoryToBeCreatedAbPath : AbPath_Access;
    begin
         begin
@@ -74,9 +74,9 @@ package body org.allbinary.data.tree.category.CategoryModifierTree_Package is
         end;
    end insert;
 
-   procedure delete (This : in out CategoryModifierTree; parentCategoryInterface_Param : access CategoryInterface'Class; existingChildCategoryInterface_Param : access CategoryInterface'Class) is
-      parentCategoryInterface : CategoryInterface_Access := CategoryInterface_Access (parentCategoryInterface_Param);
-      existingChildCategoryInterface : CategoryInterface_Access := CategoryInterface_Access (existingChildCategoryInterface_Param);
+   procedure delete (This : in out CategoryModifierTree; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; existingChildCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class) is
+      parentCategoryInterface : constant CategoryInterface_Access := CategoryInterface_Access (parentCategoryInterface_Param);
+      existingChildCategoryInterface : constant CategoryInterface_Access := CategoryInterface_Access (existingChildCategoryInterface_Param);
       directoryToBeDeletedAbPath : AbPath_Access;
    begin
         begin

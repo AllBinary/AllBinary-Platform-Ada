@@ -23,15 +23,15 @@ package body views.business.context.modules.storefront.customizer.includes.meta.
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out MetaView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out MetaView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
         This.metasValidation := MetasValidation_Package.Create (This.getWeblisketSession.getStoreName);
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return MetaView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return MetaView_Access is
       This : constant MetaView_Access := new MetaView;
    begin
       MetaView_Package.Initialize (This.all, transformInfoInterface_Param);
@@ -44,8 +44,8 @@ package body views.business.context.modules.storefront.customizer.includes.meta.
    end addDomNodeInterfaces;
 
    --  throws Exception
-   function toXmlNode (This : in out MetaView; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out MetaView; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
    begin
         begin
             return This.metasValidation.toXmlNode (document);
@@ -81,7 +81,7 @@ package body views.business.context.modules.storefront.customizer.includes.meta.
         end;
    end view;
 
-   procedure toXmlNode (This : in out MetaView; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out MetaView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := MetaView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

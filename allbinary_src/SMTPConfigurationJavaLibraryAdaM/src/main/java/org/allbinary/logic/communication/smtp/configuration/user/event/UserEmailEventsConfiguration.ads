@@ -55,13 +55,13 @@ package org.allbinary.logic.communication.smtp.configuration.user.event.UserEmai
 
    procedure Initialize (This : in out UserEmailEventsConfiguration'Class);
    function Create return UserEmailEventsConfiguration_Access;
-   procedure Initialize (This : in out UserEmailEventsConfiguration'Class; hashMap_Param : access HashMap'Class);
-   function Create (hashMap_Param : access HashMap'Class) return UserEmailEventsConfiguration_Access;
+   procedure Initialize (This : in out UserEmailEventsConfiguration'Class; hashMap_Param : access HashMap_Package.HashMap'Class);
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return UserEmailEventsConfiguration_Access;
    procedure init (This : in out UserEmailEventsConfiguration);
    function getEventConfigurationHashMap (This : in out UserEmailEventsConfiguration) return HashMap_Access;
-   procedure addUserEmailEventConfiguration (This : in out UserEmailEventsConfiguration; userEmailEventConfigurationInterface_Param : access UserEmailEventConfigurationInterface'Class);
-   function getEventListener (This : in out UserEmailEventsConfiguration; abeClientInformation_Param : access AbeClientInformationInterface'Class; userEmailEventNameData_Param : access UserEmailEventNameData'Class; userInterface_Param : access UserInterface'Class) return UserEmailEventListenerInterface_Access;
-   procedure getEventListener (This : in out UserEmailEventsConfiguration; abeClientInformation_Param : access AbeClientInformationInterface'Class; userEmailEventNameData_Param : access UserEmailEventNameData'Class; userInterface_Param : access UserInterface'Class);
+   procedure addUserEmailEventConfiguration (This : in out UserEmailEventsConfiguration; userEmailEventConfigurationInterface_Param : access UserEmailEventConfigurationInterface_Package.UserEmailEventConfigurationInterface'Class);
+   function getEventListener (This : in out UserEmailEventsConfiguration; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; userEmailEventNameData_Param : access UserEmailEventNameData_Package.UserEmailEventNameData'Class; userInterface_Param : access UserInterface_Package.UserInterface'Class) return UserEmailEventListenerInterface_Access;
+   procedure getEventListener (This : in out UserEmailEventsConfiguration; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; userEmailEventNameData_Param : access UserEmailEventNameData_Package.UserEmailEventNameData'Class; userInterface_Param : access UserInterface_Package.UserInterface'Class);
 
 end org.allbinary.logic.communication.smtp.configuration.user.event.UserEmailEventsConfiguration_Package;
 

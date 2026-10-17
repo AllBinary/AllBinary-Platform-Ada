@@ -21,13 +21,13 @@ package body org.allbinary.game.input.RTSPlayerRightGameInputProcessor_Package i
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out RTSPlayerRightGameInputProcessor'Class; rtsPlayerGameInput_Param : access RTSPlayerGameInput'Class) is
-      rtsPlayerGameInput : RTSPlayerGameInput_Access := RTSPlayerGameInput_Access (rtsPlayerGameInput_Param);
+   procedure Initialize (This : in out RTSPlayerRightGameInputProcessor'Class; rtsPlayerGameInput_Param : access RTSPlayerGameInput_Package.RTSPlayerGameInput'Class) is
+      rtsPlayerGameInput : constant RTSPlayerGameInput_Access := RTSPlayerGameInput_Access (rtsPlayerGameInput_Param);
    begin
         RTSPlayerGameInputProcessor_Package.Initialize (This, rtsPlayerGameInput);
    end Initialize;
 
-   function Create (rtsPlayerGameInput_Param : access RTSPlayerGameInput'Class) return RTSPlayerRightGameInputProcessor_Access is
+   function Create (rtsPlayerGameInput_Param : access RTSPlayerGameInput_Package.RTSPlayerGameInput'Class) return RTSPlayerRightGameInputProcessor_Access is
       This : constant RTSPlayerRightGameInputProcessor_Access := new RTSPlayerRightGameInputProcessor;
    begin
       RTSPlayerRightGameInputProcessor_Package.Initialize (This.all, rtsPlayerGameInput_Param);
@@ -35,9 +35,9 @@ package body org.allbinary.game.input.RTSPlayerRightGameInputProcessor_Package i
    end Create;
 
    --  throws Exception
-   procedure processEvent (This : in out RTSPlayerRightGameInputProcessor; allbinaryLayerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class) is
-      allbinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allbinaryLayerManager_Param);
-      gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
+   procedure processEvent (This : in out RTSPlayerRightGameInputProcessor; allbinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class) is
+      allbinaryLayerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allbinaryLayerManager_Param);
+      gameKeyEvent : constant GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         This.rtsPlayerGameInput.right;
    end processEvent;

@@ -51,13 +51,13 @@ package org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeograph
       maxTileId : Integer;
    end record;
 
-   procedure Initialize (This : in out BasicPlatormGeographicMapCellTypeFactory'Class; tileTypeToTileIdsMap_Param : access ABHashtable'Class; maxTileId : Integer);
-   function Create (tileTypeToTileIdsMap_Param : access ABHashtable'Class; maxTileId : Integer) return BasicPlatormGeographicMapCellTypeFactory_Access;
+   procedure Initialize (This : in out BasicPlatormGeographicMapCellTypeFactory'Class; tileTypeToTileIdsMap_Param : access ABHashtable_Package.ABHashtable'Class; maxTileId : Integer);
+   function Create (tileTypeToTileIdsMap_Param : access ABHashtable_Package.ABHashtable'Class; maxTileId : Integer) return BasicPlatormGeographicMapCellTypeFactory_Access;
    function getStartType (This : in out BasicPlatormGeographicMapCellTypeFactory) return Integer;
    function getEndType (This : in out BasicPlatormGeographicMapCellTypeFactory) return Integer;
    function getEmptyType (This : in out BasicPlatormGeographicMapCellTypeFactory) return Integer;
-   function isPath (This : in out BasicPlatormGeographicMapCellTypeFactory; cellType_Param : access GeographicMapCellType'Class) return Boolean;
-   procedure isPath (This : in out BasicPlatormGeographicMapCellTypeFactory; cellType_Param : access GeographicMapCellType'Class);
+   function isPath (This : in out BasicPlatormGeographicMapCellTypeFactory; cellType_Param : access GeographicMapCellType_Package.GeographicMapCellType'Class) return Boolean;
+   procedure isPath (This : in out BasicPlatormGeographicMapCellTypeFactory; cellType_Param : access GeographicMapCellType_Package.GeographicMapCellType'Class);
 
 end org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeographicMapCellTypeFactory_Package;
 

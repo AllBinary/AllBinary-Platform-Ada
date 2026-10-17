@@ -67,8 +67,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    end Create;
 
    --  throws Exception
-   procedure initProfiles (This : in out GenericProfiles; node_Param : access Node'Class) is
-      node : Node_Access := Node_Access (node_Param);
+   procedure initProfiles (This : in out GenericProfiles; node_Param : access Node_Package.Node'Class) is
+      node : constant Node_Access := Node_Access (node_Param);
       nodeList : NodeList_Access;
       profileNameNode : Node_Access;
       genericProfile : GenericProfile_Access;
@@ -122,8 +122,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    end remove;
 
    --  throws Exception
-   function toXmlNode (This : in out GenericProfiles; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out GenericProfiles; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       node : Node_Access;
       set : Set_Access;
       nameArray : Java_Object_Access_Array_Access;
@@ -172,7 +172,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
       null;
    end get;
 
-   procedure toXmlNode (This : in out GenericProfiles; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out GenericProfiles; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := GenericProfiles'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

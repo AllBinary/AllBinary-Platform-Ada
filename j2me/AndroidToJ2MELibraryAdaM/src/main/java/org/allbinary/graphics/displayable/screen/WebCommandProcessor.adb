@@ -42,10 +42,10 @@ package body org.allbinary.graphics.displayable.screen.WebCommandProcessor_Packa
         return WebCommandProcessor_Package.instance;
    end getInstance;
 
-   procedure process (This : in out WebCommandProcessor; midletCommandListener_Param : access CommandListener'Class; command_Param : access Command'Class; canvas_Param : access Canvas'Class) is
-      midletCommandListener : CommandListener_Access := CommandListener_Access (midletCommandListener_Param);
-      command : Command_Access := Command_Access (command_Param);
-      canvas : Canvas_Access := Canvas_Access (canvas_Param);
+   procedure process (This : in out WebCommandProcessor; midletCommandListener_Param : access CommandListener_Package.CommandListener'Class; command_Param : access Command_Package.Command'Class; canvas_Param : access Canvas_Package.Canvas'Class) is
+      midletCommandListener : constant CommandListener_Access := CommandListener_Access (midletCommandListener_Param);
+      command : constant Command_Access := Command_Access (command_Param);
+      canvas : constant Canvas_Access := Canvas_Access (canvas_Param);
       context : Context_Access;
       intent : Intent_Access;
       commonStrings : CommonStrings_Access;

@@ -56,10 +56,10 @@ package org.allbinary.game.configuration.GameConfigurationUtil_Package is
    procedure Initialize (This : in out GameConfigurationUtil'Class);
    function Create return GameConfigurationUtil_Access;
    function getInstance return GameConfigurationUtil_Access;
-   procedure change (This : in out GameConfigurationUtil; gameOptionsForm_Param : access GameOptionsForm'Class; gauge_Param : access GameConfigurationGauge'Class);
-   procedure update (This : in out GameConfigurationUtil; gauge_Param : access GameConfigurationGauge'Class);
-   procedure setDefault (This : in out GameConfigurationUtil; gauge_Param : access GameConfigurationGauge'Class);
-   procedure updateChallange (This : in out GameConfigurationUtil; gameOptionsForm_Param : access GameOptionsForm'Class; gameConfiguration_Param : access GameConfiguration'Class);
+   procedure change (This : in out GameConfigurationUtil; gameOptionsForm_Param : access GameOptionsForm_Package.GameOptionsForm'Class; gauge_Param : access GameConfigurationGauge_Package.GameConfigurationGauge'Class);
+   procedure update (This : in out GameConfigurationUtil; gauge_Param : access GameConfigurationGauge_Package.GameConfigurationGauge'Class);
+   procedure setDefault (This : in out GameConfigurationUtil; gauge_Param : access GameConfigurationGauge_Package.GameConfigurationGauge'Class);
+   procedure updateChallange (This : in out GameConfigurationUtil; gameOptionsForm_Param : access GameOptionsForm_Package.GameOptionsForm'Class; gameConfiguration_Param : access GameConfiguration_Package.GameConfiguration'Class);
    procedure updateCompetitionValue (This : in out GameConfigurationUtil);
    function getCompetitionValue (This : in out GameConfigurationUtil) return Integer;
 

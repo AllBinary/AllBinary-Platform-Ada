@@ -70,14 +70,14 @@ package org.allbinary.game.layer.unit.UnitItemArrayFactory_Package is
 
    procedure Initialize (This : in out UnitItemArrayFactory'Class; resources : BasicGameResources_Access_Array_Access);
    function Create (resources : BasicGameResources_Access_Array_Access) return UnitItemArrayFactory_Access;
-   function createFlagItem (This : in out UnitItemArrayFactory; flagResources_Param : access FlagGameResources'Class; layerInterfaceFactoryInterface_Param : access LayerInterfaceFactoryInterface'Class) return ABCustomItem_Access;
-   procedure createFlagItem (This : in out UnitItemArrayFactory; flagResources_Param : access FlagGameResources'Class; layerInterfaceFactoryInterface_Param : access LayerInterfaceFactoryInterface'Class);
-   function createNamedFlagItem (This : in out UnitItemArrayFactory; flagResources_Param : access FlagGameResources'Class; name : Unbounded_String; layerInterfaceFactoryInterface_Param : access LayerInterfaceFactoryInterface'Class) return ABCustomItem_Access;
-   procedure createNamedFlagItem (This : in out UnitItemArrayFactory; flagResources_Param : access FlagGameResources'Class; name : Unbounded_String; layerInterfaceFactoryInterface_Param : access LayerInterfaceFactoryInterface'Class);
+   function createFlagItem (This : in out UnitItemArrayFactory; flagResources_Param : access FlagGameResources_Package.FlagGameResources'Class; layerInterfaceFactoryInterface_Param : access LayerInterfaceFactoryInterface_Package.LayerInterfaceFactoryInterface'Class) return ABCustomItem_Access;
+   procedure createFlagItem (This : in out UnitItemArrayFactory; flagResources_Param : access FlagGameResources_Package.FlagGameResources'Class; layerInterfaceFactoryInterface_Param : access LayerInterfaceFactoryInterface_Package.LayerInterfaceFactoryInterface'Class);
+   function createNamedFlagItem (This : in out UnitItemArrayFactory; flagResources_Param : access FlagGameResources_Package.FlagGameResources'Class; name : Unbounded_String; layerInterfaceFactoryInterface_Param : access LayerInterfaceFactoryInterface_Package.LayerInterfaceFactoryInterface'Class) return ABCustomItem_Access;
+   procedure createNamedFlagItem (This : in out UnitItemArrayFactory; flagResources_Param : access FlagGameResources_Package.FlagGameResources'Class; name : Unbounded_String; layerInterfaceFactoryInterface_Param : access LayerInterfaceFactoryInterface_Package.LayerInterfaceFactoryInterface'Class);
    function getItems (This : in out UnitItemArrayFactory) return ABCustomItem_Access_Array_Access;
    function getResources (This : in out UnitItemArrayFactory) return BasicGameResources_Access_Array_Access;
-   function indexOf (This : in out UnitItemArrayFactory; basicGameResources_Param : access BasicGameResources'Class) return Integer;
-   procedure indexOf (This : in out UnitItemArrayFactory; basicGameResources_Param : access BasicGameResources'Class);
+   function indexOf (This : in out UnitItemArrayFactory; basicGameResources_Param : access BasicGameResources_Package.BasicGameResources'Class) return Integer;
+   procedure indexOf (This : in out UnitItemArrayFactory; basicGameResources_Param : access BasicGameResources_Package.BasicGameResources'Class);
 
 end org.allbinary.game.layer.unit.UnitItemArrayFactory_Package;
 

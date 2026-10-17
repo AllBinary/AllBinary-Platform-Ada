@@ -55,11 +55,11 @@ package org.allbinary.graphics.paint.SimpleTextPaintable_Package is
       anchor : Integer;
    end record;
 
-   procedure Initialize (This : in out SimpleTextPaintable'Class; text : Unbounded_String; basicColor_Param : access BasicColor'Class);
-   function Create (text : Unbounded_String; basicColor_Param : access BasicColor'Class) return SimpleTextPaintable_Access;
-   procedure updateMeasurement (This : in out SimpleTextPaintable; graphics_Param : access Graphics'Class);
-   procedure paint (This : in out SimpleTextPaintable; graphics_Param : access Graphics'Class);
-   procedure setBasicColorP (This : in out SimpleTextPaintable; basicColor_Param : access BasicColor'Class);
+   procedure Initialize (This : in out SimpleTextPaintable'Class; text : Unbounded_String; basicColor_Param : access BasicColor_Package.BasicColor'Class);
+   function Create (text : Unbounded_String; basicColor_Param : access BasicColor_Package.BasicColor'Class) return SimpleTextPaintable_Access;
+   procedure updateMeasurement (This : in out SimpleTextPaintable; graphics_Param : access Graphics_Package.Graphics'Class);
+   procedure paint (This : in out SimpleTextPaintable; graphics_Param : access Graphics_Package.Graphics'Class);
+   procedure setBasicColorP (This : in out SimpleTextPaintable; basicColor_Param : access BasicColor_Package.BasicColor'Class);
    function getBasicColorP (This : in out SimpleTextPaintable) return BasicColor_Access;
    procedure setText (This : in out SimpleTextPaintable; text : Unbounded_String);
    function getText (This : in out SimpleTextPaintable) return Unbounded_String;

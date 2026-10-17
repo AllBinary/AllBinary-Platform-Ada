@@ -63,10 +63,10 @@ package views.admin.payment.gateways.PaymentGatewaysView_Package is
       paymentGatewayVector : BasicArrayList_Access;
    end record;
 
-   procedure Initialize (This : in out PaymentGatewaysView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; gatewayVector_Param : access BasicArrayList'Class);
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; gatewayVector_Param : access BasicArrayList'Class) return PaymentGatewaysView_Access;
-   function toXmlNode (This : in out PaymentGatewaysView; document_Param : access Document'Class) return Node_Access;
-   procedure toXmlNode (This : in out PaymentGatewaysView; document_Param : access Document'Class);
+   procedure Initialize (This : in out PaymentGatewaysView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; gatewayVector_Param : access BasicArrayList_Package.BasicArrayList'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; gatewayVector_Param : access BasicArrayList_Package.BasicArrayList'Class) return PaymentGatewaysView_Access;
+   function toXmlNode (This : in out PaymentGatewaysView; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out PaymentGatewaysView; document_Param : access Document_Package.Document'Class);
    procedure addDomNodeInterfaces (This : in out PaymentGatewaysView);
    function view (This : in out PaymentGatewaysView) return Unbounded_String;
 

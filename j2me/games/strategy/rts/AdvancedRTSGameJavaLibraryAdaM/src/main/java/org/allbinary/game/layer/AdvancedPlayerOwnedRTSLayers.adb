@@ -42,69 +42,69 @@ package body org.allbinary.game.layer.AdvancedPlayerOwnedRTSLayers_Package is
    end Create;
 
 
-   procedure addUnit (This : in out AdvancedPlayerOwnedRTSLayers; rtsLayer_Param : access RTSLayer'Class) is
-      rtsLayer : RTSLayer_Access := RTSLayer_Access (rtsLayer_Param);
+   procedure addUnit (This : in out AdvancedPlayerOwnedRTSLayers; rtsLayer_Param : access RTSLayer_Package.RTSLayer'Class) is
+      rtsLayer : constant RTSLayer_Access := RTSLayer_Access (rtsLayer_Param);
    begin
         This.unitsList.add (rtsLayer);
         This.rtsLayerList.add (rtsLayer);
    end addUnit;
 
-   procedure addWaypoint (This : in out AdvancedPlayerOwnedRTSLayers; rtsLayer_Param : access RTSLayer'Class) is
-      rtsLayer : RTSLayer_Access := RTSLayer_Access (rtsLayer_Param);
+   procedure addWaypoint (This : in out AdvancedPlayerOwnedRTSLayers; rtsLayer_Param : access RTSLayer_Package.RTSLayer'Class) is
+      rtsLayer : constant RTSLayer_Access := RTSLayer_Access (rtsLayer_Param);
    begin
         This.waypointsList.add (rtsLayer);
         This.rtsLayerList.add (rtsLayer);
    end addWaypoint;
 
-   procedure addBase (This : in out AdvancedPlayerOwnedRTSLayers; rtsLayer_Param : access RTSLayer'Class) is
-      rtsLayer : RTSLayer_Access := RTSLayer_Access (rtsLayer_Param);
+   procedure addBase (This : in out AdvancedPlayerOwnedRTSLayers; rtsLayer_Param : access RTSLayer_Package.RTSLayer'Class) is
+      rtsLayer : constant RTSLayer_Access := RTSLayer_Access (rtsLayer_Param);
    begin
         This.baseList.add (rtsLayer);
         This.buildingList.add (rtsLayer);
         This.rtsLayerList.add (rtsLayer);
    end addBase;
 
-   procedure addGarrison (This : in out AdvancedPlayerOwnedRTSLayers; rtsLayer_Param : access RTSLayer'Class) is
-      rtsLayer : RTSLayer_Access := RTSLayer_Access (rtsLayer_Param);
+   procedure addGarrison (This : in out AdvancedPlayerOwnedRTSLayers; rtsLayer_Param : access RTSLayer_Package.RTSLayer'Class) is
+      rtsLayer : constant RTSLayer_Access := RTSLayer_Access (rtsLayer_Param);
    begin
         This.garrisonList.add (rtsLayer);
         This.buildingList.add (rtsLayer);
         This.rtsLayerList.add (rtsLayer);
    end addGarrison;
 
-   procedure addHouse (This : in out AdvancedPlayerOwnedRTSLayers; rtsLayer_Param : access RTSLayer'Class) is
-      rtsLayer : RTSLayer_Access := RTSLayer_Access (rtsLayer_Param);
+   procedure addHouse (This : in out AdvancedPlayerOwnedRTSLayers; rtsLayer_Param : access RTSLayer_Package.RTSLayer'Class) is
+      rtsLayer : constant RTSLayer_Access := RTSLayer_Access (rtsLayer_Param);
    begin
         This.houseList.add (rtsLayer);
         This.buildingList.add (rtsLayer);
         This.rtsLayerList.add (rtsLayer);
    end addHouse;
 
-   procedure addLab (This : in out AdvancedPlayerOwnedRTSLayers; rtsLayer_Param : access RTSLayer'Class) is
-      rtsLayer : RTSLayer_Access := RTSLayer_Access (rtsLayer_Param);
+   procedure addLab (This : in out AdvancedPlayerOwnedRTSLayers; rtsLayer_Param : access RTSLayer_Package.RTSLayer'Class) is
+      rtsLayer : constant RTSLayer_Access := RTSLayer_Access (rtsLayer_Param);
    begin
         This.labList.add (rtsLayer);
         This.buildingList.add (rtsLayer);
         This.rtsLayerList.add (rtsLayer);
    end addLab;
 
-   procedure addFactory (This : in out AdvancedPlayerOwnedRTSLayers; rtsLayer_Param : access RTSLayer'Class) is
-      rtsLayer : RTSLayer_Access := RTSLayer_Access (rtsLayer_Param);
+   procedure addFactory (This : in out AdvancedPlayerOwnedRTSLayers; rtsLayer_Param : access RTSLayer_Package.RTSLayer'Class) is
+      rtsLayer : constant RTSLayer_Access := RTSLayer_Access (rtsLayer_Param);
    begin
         This.factoryList.add (rtsLayer);
         This.buildingList.add (rtsLayer);
         This.rtsLayerList.add (rtsLayer);
    end addFactory;
 
-   procedure removeUnit (This : in out AdvancedPlayerOwnedRTSLayers; gameLayer_Param : access AllBinaryGameLayer'Class) is
-      gameLayer : AllBinaryGameLayer_Access := AllBinaryGameLayer_Access (gameLayer_Param);
+   procedure removeUnit (This : in out AdvancedPlayerOwnedRTSLayers; gameLayer_Param : access AllBinaryGameLayer_Package.AllBinaryGameLayer'Class) is
+      gameLayer : constant AllBinaryGameLayer_Access := AllBinaryGameLayer_Access (gameLayer_Param);
    begin
         This.unitsList.remove (gameLayer);
         This.rtsLayerList.remove (gameLayer);
    end removeUnit;
 
-   procedure removeWaypoint (This : in out AdvancedPlayerOwnedRTSLayers; gameLayer_Param : access AllBinaryGameLayer'Class) is
-      gameLayer : AllBinaryGameLayer_Access := AllBinaryGameLayer_Access (gameLayer_Param);
+   procedure removeWaypoint (This : in out AdvancedPlayerOwnedRTSLayers; gameLayer_Param : access AllBinaryGameLayer_Package.AllBinaryGameLayer'Class) is
+      gameLayer : constant AllBinaryGameLayer_Access := AllBinaryGameLayer_Access (gameLayer_Param);
    begin
         This.waypointsList.remove (gameLayer);
         This.rtsLayerList.remove (gameLayer);
@@ -150,8 +150,8 @@ package body org.allbinary.game.layer.AdvancedPlayerOwnedRTSLayers_Package is
         return ((((This.baseList.size) + (This.garrisonList.size)) + (This.houseList.size)) + (This.labList.size)) + (This.factoryList.size);
    end getTotalBuildings;
 
-   procedure removeBuilding (This : in out AdvancedPlayerOwnedRTSLayers; layerInterface_Param : access AllBinaryGameLayer'Class) is
-      layerInterface : AllBinaryGameLayer_Access := AllBinaryGameLayer_Access (layerInterface_Param);
+   procedure removeBuilding (This : in out AdvancedPlayerOwnedRTSLayers; layerInterface_Param : access AllBinaryGameLayer_Package.AllBinaryGameLayer'Class) is
+      layerInterface : constant AllBinaryGameLayer_Access := AllBinaryGameLayer_Access (layerInterface_Param);
    begin
         This.buildingList.add (layerInterface);
         if This.getBaseList.remove (layerInterface) then

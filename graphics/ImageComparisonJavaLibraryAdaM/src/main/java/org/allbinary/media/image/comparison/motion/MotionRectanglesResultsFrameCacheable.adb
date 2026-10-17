@@ -23,15 +23,15 @@ package body org.allbinary.media.image.comparison.motion.MotionRectanglesResults
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out MotionRectanglesResultsFrameCacheable'Class; motionRectangles_Param : access MotionRectangles'Class; frame : Long_Long_Integer) is
-      motionRectangles : MotionRectangles_Access := MotionRectangles_Access (motionRectangles_Param);
+   procedure Initialize (This : in out MotionRectanglesResultsFrameCacheable'Class; motionRectangles_Param : access MotionRectangles_Package.MotionRectangles'Class; frame : Long_Long_Integer) is
+      motionRectangles : constant MotionRectangles_Access := MotionRectangles_Access (motionRectangles_Param);
    begin
       Initialize_Fields (This);
         This.frame := frame;
         This.setMotionRectangles (motionRectangles);
    end Initialize;
 
-   function Create (motionRectangles_Param : access MotionRectangles'Class; frame : Long_Long_Integer) return MotionRectanglesResultsFrameCacheable_Access is
+   function Create (motionRectangles_Param : access MotionRectangles_Package.MotionRectangles'Class; frame : Long_Long_Integer) return MotionRectanglesResultsFrameCacheable_Access is
       This : constant MotionRectanglesResultsFrameCacheable_Access := new MotionRectanglesResultsFrameCacheable;
    begin
       MotionRectanglesResultsFrameCacheable_Package.Initialize (This.all, motionRectangles_Param, frame);
@@ -48,8 +48,8 @@ package body org.allbinary.media.image.comparison.motion.MotionRectanglesResults
         return This.motionRectangles;
    end getMotionRectangles;
 
-   procedure setMotionRectangles (This : in out MotionRectanglesResultsFrameCacheable; motionRectangles_Param : access MotionRectangles'Class) is
-      motionRectangles : MotionRectangles_Access := MotionRectangles_Access (motionRectangles_Param);
+   procedure setMotionRectangles (This : in out MotionRectanglesResultsFrameCacheable; motionRectangles_Param : access MotionRectangles_Package.MotionRectangles'Class) is
+      motionRectangles : constant MotionRectangles_Access := MotionRectangles_Access (motionRectangles_Param);
    begin
         This.motionRectangles := motionRectangles;
    end setMotionRectangles;

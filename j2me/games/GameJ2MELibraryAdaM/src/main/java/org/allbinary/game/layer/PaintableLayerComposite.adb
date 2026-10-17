@@ -36,8 +36,8 @@ package body org.allbinary.game.layer.PaintableLayerComposite_Package is
       return This;
    end Create;
 
-   procedure paint (This : in out PaintableLayerComposite; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out PaintableLayerComposite; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       index : Integer;
    begin
         index := This.paintableArray'Length;
@@ -46,8 +46,8 @@ package body org.allbinary.game.layer.PaintableLayerComposite_Package is
         end loop;
    end paint;
 
-   procedure paintThreed (This : in out PaintableLayerComposite; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintThreed (This : in out PaintableLayerComposite; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       paintableInterface : PaintableInterface_Access;
       index : Integer;
    begin

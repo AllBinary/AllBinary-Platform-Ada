@@ -22,15 +22,15 @@ package body org.allbinary.game.layer.capital.HudCapital_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out HudCapital'Class; moneyGraphic_Param : access NumberStringHud'Class) is
-      moneyGraphic : NumberStringHud_Access := NumberStringHud_Access (moneyGraphic_Param);
+   procedure Initialize (This : in out HudCapital'Class; moneyGraphic_Param : access NumberStringHud_Package.NumberStringHud'Class) is
+      moneyGraphic : constant NumberStringHud_Access := NumberStringHud_Access (moneyGraphic_Param);
    begin
       Capital_Package.Initialize (This);
       Initialize_Fields (This);
         This.capitalGraphic := moneyGraphic;
    end Initialize;
 
-   function Create (moneyGraphic_Param : access NumberStringHud'Class) return HudCapital_Access is
+   function Create (moneyGraphic_Param : access NumberStringHud_Package.NumberStringHud'Class) return HudCapital_Access is
       This : constant HudCapital_Access := new HudCapital;
    begin
       HudCapital_Package.Initialize (This.all, moneyGraphic_Param);

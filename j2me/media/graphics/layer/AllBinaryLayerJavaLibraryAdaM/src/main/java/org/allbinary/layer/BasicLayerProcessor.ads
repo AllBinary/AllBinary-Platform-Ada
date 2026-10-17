@@ -47,8 +47,8 @@ package org.allbinary.layer.BasicLayerProcessor_Package is
 
    procedure Initialize (This : in out BasicLayerProcessor'Class);
    function Create return BasicLayerProcessor_Access;
-   procedure add (This : in out BasicLayerProcessor; layerInterface_Param : access AllBinaryLayer'Class);
-   procedure process (This : in out BasicLayerProcessor; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class);
+   procedure add (This : in out BasicLayerProcessor; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class);
+   procedure process (This : in out BasicLayerProcessor; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class);
    function getList (This : in out BasicLayerProcessor) return BasicArrayList_Access;
 
 end org.allbinary.layer.BasicLayerProcessor_Package;

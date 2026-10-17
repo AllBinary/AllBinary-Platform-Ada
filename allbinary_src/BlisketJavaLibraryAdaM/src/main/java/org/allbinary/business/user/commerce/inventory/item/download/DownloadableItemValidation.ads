@@ -49,13 +49,13 @@ package org.allbinary.business.user.commerce.inventory.item.download.Downloadabl
       downloadableItem : DownloadableItem_Access;
    end record;
 
-   procedure Initialize (This : in out DownloadableItemValidation'Class; downloadableItem_Param : access DownloadableItem'Class);
-   function Create (downloadableItem_Param : access DownloadableItem'Class) return DownloadableItemValidation_Access;
+   procedure Initialize (This : in out DownloadableItemValidation'Class; downloadableItem_Param : access DownloadableItem_Package.DownloadableItem'Class);
+   function Create (downloadableItem_Param : access DownloadableItem_Package.DownloadableItem'Class) return DownloadableItemValidation_Access;
    function isValid (This : in out DownloadableItemValidation) return Boolean;
    function validationInfo (This : in out DownloadableItemValidation) return Unbounded_String;
    function toValidationInfoDoc (This : in out DownloadableItemValidation) return Document_Access;
-   function toValidationInfoNode (This : in out DownloadableItemValidation; document_Param : access Document'Class) return Node_Access;
-   procedure toValidationInfoNode (This : in out DownloadableItemValidation; document_Param : access Document'Class);
+   function toValidationInfoNode (This : in out DownloadableItemValidation; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out DownloadableItemValidation; document_Param : access Document_Package.Document'Class);
 
 end org.allbinary.business.user.commerce.inventory.item.download.DownloadableItemValidation_Package;
 

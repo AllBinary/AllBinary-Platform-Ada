@@ -52,8 +52,8 @@ package body org.allbinary.game.ag.layer.pickup.health.HealPickedUpLayerInterfac
    end getInstance;
 
    --  throws Exception
-   procedure process (This : in out HealPickedUpLayerInterfaceFactory; sourceLayerInterface_Param : access AllBinaryLayer'Class) is
-      sourceLayerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (sourceLayerInterface_Param);
+   procedure process (This : in out HealPickedUpLayerInterfaceFactory; sourceLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
+      sourceLayerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (sourceLayerInterface_Param);
    begin
         This.pool.visit (sourceLayerInterface);
    end process;

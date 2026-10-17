@@ -42,10 +42,10 @@ package org.allbinary.business.user.commerce.inventory.item.ItemFactoryUnused_Pa
 
    procedure Initialize (This : in out ItemFactoryUnused'Class);
    function Create return ItemFactoryUnused_Access;
-   function getInstance (hashMap_Param : access HashMap'Class) return TableMappingInterface_Access;
-   procedure getInstance (hashMap_Param : access HashMap'Class);
-   function getInstance (request_Param : access HttpServletRequest'Class) return TableMappingInterface_Access;
-   procedure getInstance (request_Param : access HttpServletRequest'Class);
+   function getInstance (hashMap_Param : access HashMap_Package.HashMap'Class) return TableMappingInterface_Access;
+   procedure getInstance (hashMap_Param : access HashMap_Package.HashMap'Class);
+   function getInstance (request_Param : access HttpServletRequest_Package.HttpServletRequest'Class) return TableMappingInterface_Access;
+   procedure getInstance (request_Param : access HttpServletRequest_Package.HttpServletRequest'Class);
 
 end org.allbinary.business.user.commerce.inventory.item.ItemFactoryUnused_Package;
 

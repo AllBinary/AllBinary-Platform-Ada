@@ -23,17 +23,17 @@ package body org.allbinary.animation.image.VectorToImageArrayRotationAnimationFa
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out VectorToImageArrayRotationAnimationFactory'Class; vectorInfo_Param : access VectorInfo'Class; basicColor_Param : access BasicColor'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) is
-      vectorInfo : VectorInfo_Access := VectorInfo_Access (vectorInfo_Param);
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
-      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
+   procedure Initialize (This : in out VectorToImageArrayRotationAnimationFactory'Class; vectorInfo_Param : access VectorInfo_Package.VectorInfo'Class; basicColor_Param : access BasicColor_Package.BasicColor'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
+      vectorInfo : constant VectorInfo_Access := VectorInfo_Access (vectorInfo_Param);
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
+      animationBehaviorFactory : constant AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
    begin
         BaseImageAnimationFactory_Package.Initialize (This, AnimationFrameToImageUtil_Package.getInstance.getInstanceTranslate (vectorInfo.getWidth, vectorInfo.getHeight, VectorAnimation_Package.createVectorAnimation (vectorInfo.getPoints, basicColor, animationBehaviorFactory.getOrCreateInstance)), PrimitiveIntUtil_Package.getArrayInstance, 0, 0, 0, 0, animationBehaviorFactory);
         Initialize_Fields (This);
         This.init;
    end Initialize;
 
-   function Create (vectorInfo_Param : access VectorInfo'Class; basicColor_Param : access BasicColor'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return VectorToImageArrayRotationAnimationFactory_Access is
+   function Create (vectorInfo_Param : access VectorInfo_Package.VectorInfo'Class; basicColor_Param : access BasicColor_Package.BasicColor'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return VectorToImageArrayRotationAnimationFactory_Access is
       This : constant VectorToImageArrayRotationAnimationFactory_Access := new VectorToImageArrayRotationAnimationFactory;
    begin
       VectorToImageArrayRotationAnimationFactory_Package.Initialize (This.all, vectorInfo_Param, basicColor_Param, animationBehaviorFactory_Param);
@@ -64,8 +64,8 @@ package body org.allbinary.animation.image.VectorToImageArrayRotationAnimationFa
         return This.angleIncrement;
    end getAngleIncrement;
 
-   procedure setInitialScale (This : in out VectorToImageArrayRotationAnimationFactory; scaleProperties_Param : access ScaleProperties'Class) is
-      scaleProperties : ScaleProperties_Access := ScaleProperties_Access (scaleProperties_Param);
+   procedure setInitialScale (This : in out VectorToImageArrayRotationAnimationFactory; scaleProperties_Param : access ScaleProperties_Package.ScaleProperties'Class) is
+      scaleProperties : constant ScaleProperties_Access := ScaleProperties_Access (scaleProperties_Param);
    begin
         null;
    end setInitialScale;

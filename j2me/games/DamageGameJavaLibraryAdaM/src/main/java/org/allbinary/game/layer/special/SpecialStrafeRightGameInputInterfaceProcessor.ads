@@ -37,9 +37,9 @@ package org.allbinary.game.layer.special.SpecialStrafeRightGameInputInterfacePro
 
    type SpecialStrafeRightGameInputInterfaceProcessor is new SpecialGameInputInterfaceProcessor with null record;
 
-   procedure Initialize (This : in out SpecialStrafeRightGameInputInterfaceProcessor'Class; collidableDestroyableDamageableLayer_Param : access SpecialGameInputInterface'Class);
-   function Create (collidableDestroyableDamageableLayer_Param : access SpecialGameInputInterface'Class) return SpecialStrafeRightGameInputInterfaceProcessor_Access;
-   procedure processEvent (This : in out SpecialStrafeRightGameInputInterfaceProcessor; allbinaryLayerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class);
+   procedure Initialize (This : in out SpecialStrafeRightGameInputInterfaceProcessor'Class; collidableDestroyableDamageableLayer_Param : access SpecialGameInputInterface_Package.SpecialGameInputInterface'Class);
+   function Create (collidableDestroyableDamageableLayer_Param : access SpecialGameInputInterface_Package.SpecialGameInputInterface'Class) return SpecialStrafeRightGameInputInterfaceProcessor_Access;
+   procedure processEvent (This : in out SpecialStrafeRightGameInputInterfaceProcessor; allbinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class);
 
 end org.allbinary.game.layer.special.SpecialStrafeRightGameInputInterfaceProcessor_Package;
 

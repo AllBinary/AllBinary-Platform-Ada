@@ -41,8 +41,8 @@ package org.allbinary.logic.system.security.crypt.jcehelper.SecretComposite_Pack
       key : Short_Short_Integer_Array_Access;
    end record;
 
-   procedure Initialize (This : in out SecretComposite'Class; secretKey_Param : access SecretKey'Class; cipher_Param : access Cipher'Class; key : Short_Short_Integer_Array_Access);
-   function Create (secretKey_Param : access SecretKey'Class; cipher_Param : access Cipher'Class; key : Short_Short_Integer_Array_Access) return SecretComposite_Access;
+   procedure Initialize (This : in out SecretComposite'Class; secretKey_Param : access SecretKey_Package.SecretKey'Class; cipher_Param : access Cipher_Package.Cipher'Class; key : Short_Short_Integer_Array_Access);
+   function Create (secretKey_Param : access SecretKey_Package.SecretKey'Class; cipher_Param : access Cipher_Package.Cipher'Class; key : Short_Short_Integer_Array_Access) return SecretComposite_Access;
    function encrypt (This : in out SecretComposite; array_Id_Param : Short_Short_Integer_Array_Access) return Short_Short_Integer_Array_Access;
    procedure encrypt (This : in out SecretComposite; array_Id_Param : Short_Short_Integer_Array_Access);
    function decrypt (This : in out SecretComposite; array_Id : Short_Short_Integer_Array_Access) return Short_Short_Integer_Array_Access;

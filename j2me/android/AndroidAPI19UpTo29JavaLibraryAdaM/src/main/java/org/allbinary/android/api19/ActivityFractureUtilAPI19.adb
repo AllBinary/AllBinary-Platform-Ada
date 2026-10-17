@@ -39,8 +39,8 @@ package body org.allbinary.android.api19.ActivityFractureUtilAPI19_Package is
         return ActivityFractureUtilAPI19_Package.instance19;
    end getInstance;
 
-   procedure setFullScreen (This : in out ActivityFractureUtilAPI19; activity_Param : access Activity'Class) is
-      activity : Activity_Access := Activity_Access (activity_Param);
+   procedure setFullScreen (This : in out ActivityFractureUtilAPI19; activity_Param : access Activity_Package.Activity'Class) is
+      activity : constant Activity_Access := Activity_Access (activity_Param);
       decorView : View_Access;
       visibility : Integer;
    begin

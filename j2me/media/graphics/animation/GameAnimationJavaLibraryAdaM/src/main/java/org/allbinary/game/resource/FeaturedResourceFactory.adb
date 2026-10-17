@@ -94,8 +94,8 @@ package body org.allbinary.game.resource.FeaturedResourceFactory_Package is
         This.list.clear;
    end clear;
 
-   procedure add (This : in out FeaturedResourceFactory; featureInterface_Param : access GameFeatureControlledInterface'Class) is
-      featureInterface : GameFeatureControlledInterface_Access := GameFeatureControlledInterface_Access (featureInterface_Param);
+   procedure add (This : in out FeaturedResourceFactory; featureInterface_Param : access GameFeatureControlledInterface_Package.GameFeatureControlledInterface'Class) is
+      featureInterface : constant GameFeatureControlledInterface_Access := GameFeatureControlledInterface_Access (featureInterface_Param);
    begin
         This.logUtil.putF (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.START_LABEL).append (StringUtil_Package.getInstance.toString (featureInterface)).toString, FeaturedResourceFactory_Access'(This'Unchecked_Access), This.commonStrings.ADD);
         This.list.add (featureInterface);

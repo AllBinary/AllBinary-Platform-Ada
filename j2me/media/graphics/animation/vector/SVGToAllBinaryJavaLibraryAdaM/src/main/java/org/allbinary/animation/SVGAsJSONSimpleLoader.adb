@@ -99,10 +99,10 @@ package body org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
    end load;
 
    --  throws Exception
-   procedure addShapes (This : in out SVGAsJSONSimpleLoader; pointVector_Param : access BasicArrayList'Class; value_Param : access Java_Object'Class; shapeType_Param : access ShapeType'Class) is
-      pointVector : BasicArrayList_Access := BasicArrayList_Access (pointVector_Param);
-      value : Java_Object_Access := Java_Object_Access (value_Param);
-      shapeType : ShapeType_Access := ShapeType_Access (shapeType_Param);
+   procedure addShapes (This : in out SVGAsJSONSimpleLoader; pointVector_Param : access BasicArrayList_Package.BasicArrayList'Class; value_Param : access Java_Object'Class; shapeType_Param : access ShapeType_Package.ShapeType'Class) is
+      pointVector : constant BasicArrayList_Access := BasicArrayList_Access (pointVector_Param);
+      value : constant Java_Object_Access := Java_Object_Access (value_Param);
+      shapeType : constant ShapeType_Access := ShapeType_Access (shapeType_Param);
       array_Id : JSONArray_Access;
       size : Integer;
       index : Integer;
@@ -119,10 +119,10 @@ package body org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
    end addShapes;
 
    --  throws Exception
-   procedure addShape (This : in out SVGAsJSONSimpleLoader; pointVector_Param : access BasicArrayList'Class; value_Param : access Java_Object'Class; shapeType_Param : access ShapeType'Class) is
-      pointVector : BasicArrayList_Access := BasicArrayList_Access (pointVector_Param);
-      value : Java_Object_Access := Java_Object_Access (value_Param);
-      shapeType : ShapeType_Access := ShapeType_Access (shapeType_Param);
+   procedure addShape (This : in out SVGAsJSONSimpleLoader; pointVector_Param : access BasicArrayList_Package.BasicArrayList'Class; value_Param : access Java_Object'Class; shapeType_Param : access ShapeType_Package.ShapeType'Class) is
+      pointVector : constant BasicArrayList_Access := BasicArrayList_Access (pointVector_Param);
+      value : constant Java_Object_Access := Java_Object_Access (value_Param);
+      shapeType : constant ShapeType_Access := ShapeType_Access (shapeType_Param);
       shape : JSONObject_Access;
    begin
         shape := This.asObject (value, shapeType.getName);
@@ -136,9 +136,9 @@ package body org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
    end addShape;
 
    --  throws Exception
-   procedure addLine (This : in out SVGAsJSONSimpleLoader; pointVector_Param : access BasicArrayList'Class; line_Param : access JSONObject'Class) is
-      pointVector : BasicArrayList_Access := BasicArrayList_Access (pointVector_Param);
-      line : JSONObject_Access := JSONObject_Access (line_Param);
+   procedure addLine (This : in out SVGAsJSONSimpleLoader; pointVector_Param : access BasicArrayList_Package.BasicArrayList'Class; line_Param : access JSONObject_Package.JSONObject'Class) is
+      pointVector : constant BasicArrayList_Access := BasicArrayList_Access (pointVector_Param);
+      line : constant JSONObject_Access := JSONObject_Access (line_Param);
    begin
         This.addPoint (pointVector, This.readInt (line, This.KEY_X1), This.readInt (line, This.KEY_Y1));
         This.addPoint (pointVector, This.readInt (line, This.KEY_X2), This.readInt (line, This.KEY_Y2));
@@ -146,9 +146,9 @@ package body org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
    end addLine;
 
    --  throws Exception
-   procedure addCircle (This : in out SVGAsJSONSimpleLoader; pointVector_Param : access BasicArrayList'Class; circle_Param : access JSONObject'Class) is
-      pointVector : BasicArrayList_Access := BasicArrayList_Access (pointVector_Param);
-      circle : JSONObject_Access := JSONObject_Access (circle_Param);
+   procedure addCircle (This : in out SVGAsJSONSimpleLoader; pointVector_Param : access BasicArrayList_Package.BasicArrayList'Class; circle_Param : access JSONObject_Package.JSONObject'Class) is
+      pointVector : constant BasicArrayList_Access := BasicArrayList_Access (pointVector_Param);
+      circle : constant JSONObject_Access := JSONObject_Access (circle_Param);
       cx : Integer;
       cy : Integer;
       radius : Integer;
@@ -170,9 +170,9 @@ package body org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
    end addCircle;
 
    --  throws Exception
-   procedure addRectangle (This : in out SVGAsJSONSimpleLoader; pointVector_Param : access BasicArrayList'Class; rectangle_Param : access JSONObject'Class) is
-      pointVector : BasicArrayList_Access := BasicArrayList_Access (pointVector_Param);
-      rectangle : JSONObject_Access := JSONObject_Access (rectangle_Param);
+   procedure addRectangle (This : in out SVGAsJSONSimpleLoader; pointVector_Param : access BasicArrayList_Package.BasicArrayList'Class; rectangle_Param : access JSONObject_Package.JSONObject'Class) is
+      pointVector : constant BasicArrayList_Access := BasicArrayList_Access (pointVector_Param);
+      rectangle : constant JSONObject_Access := JSONObject_Access (rectangle_Param);
       x : Integer;
       y : Integer;
       width : Integer;
@@ -190,21 +190,21 @@ package body org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
         This.addSeparator (pointVector);
    end addRectangle;
 
-   procedure addPoint (This : in out SVGAsJSONSimpleLoader; pointVector_Param : access BasicArrayList'Class; x : Integer; y : Integer) is
-      pointVector : BasicArrayList_Access := BasicArrayList_Access (pointVector_Param);
+   procedure addPoint (This : in out SVGAsJSONSimpleLoader; pointVector_Param : access BasicArrayList_Package.BasicArrayList'Class; x : Integer; y : Integer) is
+      pointVector : constant BasicArrayList_Access := BasicArrayList_Access (pointVector_Param);
    begin
         pointVector.add (new Integer_Array'(x, y));
    end addPoint;
 
-   procedure addSeparator (This : in out SVGAsJSONSimpleLoader; pointVector_Param : access BasicArrayList'Class) is
-      pointVector : BasicArrayList_Access := BasicArrayList_Access (pointVector_Param);
+   procedure addSeparator (This : in out SVGAsJSONSimpleLoader; pointVector_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      pointVector : constant BasicArrayList_Access := BasicArrayList_Access (pointVector_Param);
    begin
         pointVector.add (new Integer_Array'(This.SHAPE_SEPARATOR (0), This.SHAPE_SEPARATOR (1)));
    end addSeparator;
 
    --  throws Exception
-   function readInt (This : in out SVGAsJSONSimpleLoader; anyType_Param : access JSONObject'Class; key : Unbounded_String) return Integer is
-      anyType : JSONObject_Access := JSONObject_Access (anyType_Param);
+   function readInt (This : in out SVGAsJSONSimpleLoader; anyType_Param : access JSONObject_Package.JSONObject'Class; key : Unbounded_String) return Integer is
+      anyType : constant JSONObject_Access := JSONObject_Access (anyType_Param);
       value : Java_Object_Access;
    begin
         value := anyType.get (key);
@@ -214,8 +214,8 @@ package body org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
         return This.toInt (value, key);
    end readInt;
 
-   function readInt (This : in out SVGAsJSONSimpleLoader; anyType_Param : access JSONObject'Class; key : Unbounded_String; defaultValue : Integer) return Integer is
-      anyType : JSONObject_Access := JSONObject_Access (anyType_Param);
+   function readInt (This : in out SVGAsJSONSimpleLoader; anyType_Param : access JSONObject_Package.JSONObject'Class; key : Unbounded_String; defaultValue : Integer) return Integer is
+      anyType : constant JSONObject_Access := JSONObject_Access (anyType_Param);
       value : Java_Object_Access;
    begin
         begin
@@ -235,7 +235,7 @@ package body org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
    end readInt;
 
    function toInt (This : in out SVGAsJSONSimpleLoader; value_Param : access Java_Object'Class; key : Unbounded_String) return Integer is
-      value : Java_Object_Access := Java_Object_Access (value_Param);
+      value : constant Java_Object_Access := Java_Object_Access (value_Param);
    begin
         if (value.all in Number_Package.Number'Class) then
             return Integer (Long_Long_Integer (Long_Float'Rounding ((Number_Access (value)).doubleValue)));
@@ -247,7 +247,7 @@ package body org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
    end toInt;
 
    function asObject (This : in out SVGAsJSONSimpleLoader; value_Param : access Java_Object'Class; name : Unbounded_String) return JSONObject_Access is
-      value : Java_Object_Access := Java_Object_Access (value_Param);
+      value : constant Java_Object_Access := Java_Object_Access (value_Param);
    begin
         if (value.all in JSONObject_Package.JSONObject'Class) then
             return JSONObject_Access (value);
@@ -255,8 +255,8 @@ package body org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
         Java_Throw (Java_New_Exception ("IllegalArgumentException", This.ERROR_EXPECTED_OBJECT_PREFIX & name));
    end asObject;
 
-   function toPoints (This : in out SVGAsJSONSimpleLoader; pointVector_Param : access BasicArrayList'Class) return Integer_Array_Access_Array_Access is
-      pointVector : BasicArrayList_Access := BasicArrayList_Access (pointVector_Param);
+   function toPoints (This : in out SVGAsJSONSimpleLoader; pointVector_Param : access BasicArrayList_Package.BasicArrayList'Class) return Integer_Array_Access_Array_Access is
+      pointVector : constant BasicArrayList_Access := BasicArrayList_Access (pointVector_Param);
       points : Integer_Array_Access_Array_Access;
       point : Integer_Array_Access;
       index : Integer;
@@ -303,14 +303,14 @@ package body org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
       null;
    end load;
 
-   procedure readInt (This : in out SVGAsJSONSimpleLoader; anyType_Param : access JSONObject'Class; key : Unbounded_String) is
+   procedure readInt (This : in out SVGAsJSONSimpleLoader; anyType_Param : access JSONObject_Package.JSONObject'Class; key : Unbounded_String) is
       Java_Result : constant Integer := SVGAsJSONSimpleLoader'Class (This).readInt (anyType_Param, key);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end readInt;
 
-   procedure readInt (This : in out SVGAsJSONSimpleLoader; anyType_Param : access JSONObject'Class; key : Unbounded_String; defaultValue : Integer) is
+   procedure readInt (This : in out SVGAsJSONSimpleLoader; anyType_Param : access JSONObject_Package.JSONObject'Class; key : Unbounded_String; defaultValue : Integer) is
       Java_Result : constant Integer := SVGAsJSONSimpleLoader'Class (This).readInt (anyType_Param, key, defaultValue);
       pragma Unreferenced (Java_Result);
    begin
@@ -331,7 +331,7 @@ package body org.allbinary.animation.SVGAsJSONSimpleLoader_Package is
       null;
    end asObject;
 
-   procedure toPoints (This : in out SVGAsJSONSimpleLoader; pointVector_Param : access BasicArrayList'Class) is
+   procedure toPoints (This : in out SVGAsJSONSimpleLoader; pointVector_Param : access BasicArrayList_Package.BasicArrayList'Class) is
       Java_Result : constant Integer_Array_Access_Array_Access := SVGAsJSONSimpleLoader'Class (This).toPoints (pointVector_Param);
       pragma Unreferenced (Java_Result);
    begin

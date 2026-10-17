@@ -33,14 +33,14 @@ package body org.allbinary.game.displayable.canvas.DemoCanvasProgressUtil_Packag
    end Create;
 
 
-   procedure showProgress (demoCanvas_Param : access DemoCanvas'Class) is
-      demoCanvas : DemoCanvas_Access := DemoCanvas_Access (demoCanvas_Param);
+   procedure showProgress (demoCanvas_Param : access DemoCanvas_Package.DemoCanvas'Class) is
+      demoCanvas : constant DemoCanvas_Access := DemoCanvas_Access (demoCanvas_Param);
    begin
         DemoCanvasProgressUtil_Package.showProgressOptionallyInTheBackground (demoCanvas, False);
    end showProgress;
 
-   procedure showProgressOptionallyInTheBackground (demoCanvas_Param : access DemoCanvas'Class; background : Boolean) is
-      demoCanvas : DemoCanvas_Access := DemoCanvas_Access (demoCanvas_Param);
+   procedure showProgressOptionallyInTheBackground (demoCanvas_Param : access DemoCanvas_Package.DemoCanvas'Class; background : Boolean) is
+      demoCanvas : constant DemoCanvas_Access := DemoCanvas_Access (demoCanvas_Param);
       progressCanvas : ProgressCanvas_Access;
       paintableArray : PaintableInterface_Access_Array_Access;
    begin

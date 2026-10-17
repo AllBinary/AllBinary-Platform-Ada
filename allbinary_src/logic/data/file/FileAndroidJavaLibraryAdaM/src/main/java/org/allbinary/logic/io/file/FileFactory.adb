@@ -22,14 +22,14 @@ package body org.allbinary.logic.io.file.FileFactory_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out FileFactory'Class; context_Param : access Context'Class) is
-      context : Context_Access := Context_Access (context_Param);
+   procedure Initialize (This : in out FileFactory'Class; context_Param : access Context_Package.Context'Class) is
+      context : constant Context_Access := Context_Access (context_Param);
    begin
       Initialize_Fields (This);
         This.context := context;
    end Initialize;
 
-   function Create (context_Param : access Context'Class) return FileFactory_Access is
+   function Create (context_Param : access Context_Package.Context'Class) return FileFactory_Access is
       This : constant FileFactory_Access := new FileFactory;
    begin
       FileFactory_Package.Initialize (This.all, context_Param);
@@ -69,8 +69,8 @@ package body org.allbinary.logic.io.file.FileFactory_Package is
    end getFile;
 
    --  throws Exception
-   function getInstance (This : in out FileFactory; file_Param : access AbFile'Class; childFilePath : Unbounded_String) return AbFile_Access is
-      file : AbFile_Access := AbFile_Access (file_Param);
+   function getInstance (This : in out FileFactory; file_Param : access AbFile_Package.AbFile'Class; childFilePath : Unbounded_String) return AbFile_Access is
+      file : constant AbFile_Access := AbFile_Access (file_Param);
    begin
         return AbFile_Package.createAbFileWithChild (file, childFilePath);
    end getInstance;
@@ -89,7 +89,7 @@ package body org.allbinary.logic.io.file.FileFactory_Package is
       null;
    end getFile;
 
-   procedure getInstance (This : in out FileFactory; file_Param : access AbFile'Class; childFilePath : Unbounded_String) is
+   procedure getInstance (This : in out FileFactory; file_Param : access AbFile_Package.AbFile'Class; childFilePath : Unbounded_String) is
       Java_Result : constant AbFile_Access := FileFactory'Class (This).getInstance (file_Param, childFilePath);
       pragma Unreferenced (Java_Result);
    begin

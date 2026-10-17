@@ -41,8 +41,8 @@ package admin.taghelpers.BasicGroupItemsRequestHelperFactory_Package is
 
    procedure Initialize (This : in out BasicGroupItemsRequestHelperFactory'Class);
    function Create return BasicGroupItemsRequestHelperFactory_Access;
-   function getInstance (This : in out BasicGroupItemsRequestHelperFactory; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return Java_Object_Access;
-   procedure getInstance (This : in out BasicGroupItemsRequestHelperFactory; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function getInstance (This : in out BasicGroupItemsRequestHelperFactory; hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return Java_Object_Access;
+   procedure getInstance (This : in out BasicGroupItemsRequestHelperFactory; hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class);
 
 end admin.taghelpers.BasicGroupItemsRequestHelperFactory_Package;
 

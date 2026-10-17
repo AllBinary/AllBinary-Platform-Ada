@@ -50,8 +50,8 @@ package org.allbinary.graphics.form.item.validation.NumberTextFieldItemValidator
       maxChars : Integer;
    end record;
 
-   procedure Initialize (This : in out NumberTextFieldItemValidator'Class; textFieldItem_Param : access ABTextFieldItem'Class; maxChars : Integer; min : Integer; max : Integer);
-   function Create (textFieldItem_Param : access ABTextFieldItem'Class; maxChars : Integer; min : Integer; max : Integer) return NumberTextFieldItemValidator_Access;
+   procedure Initialize (This : in out NumberTextFieldItemValidator'Class; textFieldItem_Param : access ABTextFieldItem_Package.ABTextFieldItem'Class; maxChars : Integer; min : Integer; max : Integer);
+   function Create (textFieldItem_Param : access ABTextFieldItem_Package.ABTextFieldItem'Class; maxChars : Integer; min : Integer; max : Integer) return NumberTextFieldItemValidator_Access;
    function isNumberValid (This : in out NumberTextFieldItemValidator; value : Integer) return Boolean;
    procedure isNumberValid (This : in out NumberTextFieldItemValidator; value : Integer);
    function toNumberVector (This : in out NumberTextFieldItemValidator; value : Integer) return BasicArrayList_Access;

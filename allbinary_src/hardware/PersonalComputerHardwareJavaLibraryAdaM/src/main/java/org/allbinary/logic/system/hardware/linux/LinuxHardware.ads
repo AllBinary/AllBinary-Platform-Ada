@@ -111,7 +111,7 @@ package org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
    procedure Initialize (This : in out LinuxHardware'Class);
    function Create return LinuxHardware_Access;
    procedure init (This : in out LinuxHardware; filePath : Unbounded_String);
-   procedure init (This : in out LinuxHardware; lineNumberReader_Param : access LineNumberReader'Class; filePath : Unbounded_String);
+   procedure init (This : in out LinuxHardware; lineNumberReader_Param : access LineNumberReader_Package.LineNumberReader'Class; filePath : Unbounded_String);
    function getMultimedia (This : in out LinuxHardware; index : Integer) return MediaInterface_Access;
    procedure getMultimedia (This : in out LinuxHardware; index : Integer);
    function getBridge (This : in out LinuxHardware; index : Integer) return BridgeInterface_Access;
@@ -137,10 +137,10 @@ package org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
    function getComponent (This : in out LinuxHardware; index : Integer) return HardwareComponentInterface_Access;
    procedure getComponent (This : in out LinuxHardware; index : Integer);
    function toString (This : in out LinuxHardware) return Unbounded_String;
-   function compareTo (This : in out LinuxHardware; hardwareInterface_Param : access HardwareInterface'Class) return Boolean;
-   procedure compareTo (This : in out LinuxHardware; hardwareInterface_Param : access HardwareInterface'Class);
-   function difference (This : in out LinuxHardware; hardwareInterface_Param : access HardwareInterface'Class) return ABHashtable_Access;
-   procedure difference (This : in out LinuxHardware; hardwareInterface_Param : access HardwareInterface'Class);
+   function compareTo (This : in out LinuxHardware; hardwareInterface_Param : access HardwareInterface_Package.HardwareInterface'Class) return Boolean;
+   procedure compareTo (This : in out LinuxHardware; hardwareInterface_Param : access HardwareInterface_Package.HardwareInterface'Class);
+   function difference (This : in out LinuxHardware; hardwareInterface_Param : access HardwareInterface_Package.HardwareInterface'Class) return ABHashtable_Access;
+   procedure difference (This : in out LinuxHardware; hardwareInterface_Param : access HardwareInterface_Package.HardwareInterface'Class);
    function isNextHardware (This : in out LinuxHardware; nextLine : Unbounded_String) return Boolean;
    procedure isNextHardware (This : in out LinuxHardware; nextLine : Unbounded_String);
 

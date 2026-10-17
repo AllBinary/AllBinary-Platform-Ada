@@ -55,14 +55,14 @@ package body org.allbinary.logic.string_Id.regex.replace.Replace_Package is
       return This;
    end Create;
 
-   procedure Initialize (This : in out Replace'Class; hashMap_Param : access HashMap'Class) is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+   procedure Initialize (This : in out Replace'Class; hashMap_Param : access HashMap_Package.HashMap'Class) is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
       Initialize_Fields (This);
         This.hashMap := hashMap;
    end Initialize;
 
-   function Create (hashMap_Param : access HashMap'Class) return Replace_Access is
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return Replace_Access is
       This : constant Replace_Access := new Replace;
    begin
       Replace_Package.Initialize (This.all, hashMap_Param);

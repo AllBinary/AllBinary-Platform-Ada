@@ -23,14 +23,14 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GenericBodyCustomizerView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out GenericBodyCustomizerView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return GenericBodyCustomizerView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return GenericBodyCustomizerView_Access is
       This : constant GenericBodyCustomizerView_Access := new GenericBodyCustomizerView;
    begin
       GenericBodyCustomizerView_Package.Initialize (This.all, transformInfoInterface_Param);
@@ -45,8 +45,8 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
    end addDomNodeInterfaces;
 
    --  throws Exception
-   function toXmlNode (This : in out GenericBodyCustomizerView; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out GenericBodyCustomizerView; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       pageName : Unbounded_String;
    begin
         pageName := TransformTemplateCustomizerUtil_Package.getInstance.getPageNameHack (This.getTransformInfoInterface.getName, This.getWeblisketSession.getStoreName);
@@ -79,7 +79,7 @@ package body views.business.context.modules.storefront.customizer.bodies.generic
         end;
    end view;
 
-   procedure toXmlNode (This : in out GenericBodyCustomizerView; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out GenericBodyCustomizerView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := GenericBodyCustomizerView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

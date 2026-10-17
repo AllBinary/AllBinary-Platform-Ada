@@ -21,13 +21,13 @@ package body org.allbinary.animation.image.ImageAnimationSingletonInterfaceFacto
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ImageAnimationSingletonInterfaceFactory'Class; animationInterface_Param : access Animation'Class; width : Integer; height : Integer) is
-      animationInterface : Animation_Access := Animation_Access (animationInterface_Param);
+   procedure Initialize (This : in out ImageAnimationSingletonInterfaceFactory'Class; animationInterface_Param : access Animation_Package.Animation'Class; width : Integer; height : Integer) is
+      animationInterface : constant Animation_Access := Animation_Access (animationInterface_Param);
    begin
         SingletonAnimationInterfaceFactory_Package.Initialize (This, ImageAnimation_Package.Create (AnimationFrameToImageUtil_Package.getInstance.getInstanceWH (width, height, animationInterface), AnimationBehavior_Package.getInstance));
    end Initialize;
 
-   function Create (animationInterface_Param : access Animation'Class; width : Integer; height : Integer) return ImageAnimationSingletonInterfaceFactory_Access is
+   function Create (animationInterface_Param : access Animation_Package.Animation'Class; width : Integer; height : Integer) return ImageAnimationSingletonInterfaceFactory_Access is
       This : constant ImageAnimationSingletonInterfaceFactory_Access := new ImageAnimationSingletonInterfaceFactory;
    begin
       ImageAnimationSingletonInterfaceFactory_Package.Initialize (This.all, animationInterface_Param, width, height);

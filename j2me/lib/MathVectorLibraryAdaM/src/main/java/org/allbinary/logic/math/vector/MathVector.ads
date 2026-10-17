@@ -38,8 +38,8 @@ package org.allbinary.logic.math.vector.MathVector_Package is
       resultBasicDecimal : BasicDecimal_Access;
    end record;
 
-   procedure Initialize (This : in out MathVector'Class; magnitudeBasicDecimal_Param : access BasicDecimal'Class; direction : Integer);
-   function Create (magnitudeBasicDecimal_Param : access BasicDecimal'Class; direction : Integer) return MathVector_Access;
+   procedure Initialize (This : in out MathVector'Class; magnitudeBasicDecimal_Param : access BasicDecimal_Package.BasicDecimal'Class; direction : Integer);
+   function Create (magnitudeBasicDecimal_Param : access BasicDecimal_Package.BasicDecimal'Class; direction : Integer) return MathVector_Access;
    function getMagnitude (This : in out MathVector) return BasicDecimal_Access;
    function getDirection (This : in out MathVector) return Integer;
    function getResult (This : in out MathVector) return BasicDecimal_Access;

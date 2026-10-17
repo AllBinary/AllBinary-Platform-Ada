@@ -24,9 +24,9 @@ package body org.allbinary.animation.VectorRotationAnimationInterfaceFactory_Pac
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out VectorRotationAnimationInterfaceFactory'Class; currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) is
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
-      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
+   procedure Initialize (This : in out VectorRotationAnimationInterfaceFactory'Class; currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor_Package.BasicColor'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
+      animationBehaviorFactory : constant AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
    begin
       Initialize_Fields (This);
         This.currentPoints := currentPoints;
@@ -34,7 +34,7 @@ package body org.allbinary.animation.VectorRotationAnimationInterfaceFactory_Pac
         This.animationBehaviorFactory := animationBehaviorFactory;
    end Initialize;
 
-   function Create (currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return VectorRotationAnimationInterfaceFactory_Access is
+   function Create (currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor_Package.BasicColor'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return VectorRotationAnimationInterfaceFactory_Access is
       This : constant VectorRotationAnimationInterfaceFactory_Access := new VectorRotationAnimationInterfaceFactory;
    begin
       VectorRotationAnimationInterfaceFactory_Package.Initialize (This.all, currentPoints, basicColor_Param, animationBehaviorFactory_Param);
@@ -47,8 +47,8 @@ package body org.allbinary.animation.VectorRotationAnimationInterfaceFactory_Pac
         return VectorRotationAnimation_Package.Create (This.currentPoints, This.getBasicColorP, This.animationBehaviorFactory.getOrCreateInstance);
    end getInstance;
 
-   procedure setBasicColorP (This : in out VectorRotationAnimationInterfaceFactory; basicColor_Param : access BasicColor'Class) is
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+   procedure setBasicColorP (This : in out VectorRotationAnimationInterfaceFactory; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         This.basicColor := basicColor;
    end setBasicColorP;
@@ -58,8 +58,8 @@ package body org.allbinary.animation.VectorRotationAnimationInterfaceFactory_Pac
         return This.basicColor;
    end getBasicColorP;
 
-   procedure setInitialScale (This : in out VectorRotationAnimationInterfaceFactory; scaleProperties_Param : access ScaleProperties'Class) is
-      scaleProperties : ScaleProperties_Access := ScaleProperties_Access (scaleProperties_Param);
+   procedure setInitialScale (This : in out VectorRotationAnimationInterfaceFactory; scaleProperties_Param : access ScaleProperties_Package.ScaleProperties'Class) is
+      scaleProperties : constant ScaleProperties_Access := ScaleProperties_Access (scaleProperties_Param);
    begin
         null;
    end setInitialScale;

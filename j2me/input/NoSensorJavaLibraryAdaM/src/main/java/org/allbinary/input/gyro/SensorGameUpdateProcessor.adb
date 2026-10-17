@@ -34,8 +34,8 @@ package body org.allbinary.input.gyro.SensorGameUpdateProcessor_Package is
    end Create;
 
 
-   procedure setInputSensor (This : in out SensorGameUpdateProcessor; inputSensor_Param : access AllBinarySensor'Class) is
-      inputSensor : AllBinarySensor_Access := AllBinarySensor_Access (inputSensor_Param);
+   procedure setInputSensor (This : in out SensorGameUpdateProcessor; inputSensor_Param : access AllBinarySensor_Package.AllBinarySensor'Class) is
+      inputSensor : constant AllBinarySensor_Access := AllBinarySensor_Access (inputSensor_Param);
    begin
         This.inputSensor := inputSensor;
    end setInputSensor;
@@ -47,14 +47,14 @@ package body org.allbinary.input.gyro.SensorGameUpdateProcessor_Package is
 
    --  throws Exception
    procedure process (This : in out SensorGameUpdateProcessor; anyType_Param : access Java_Object'Class) is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         null;
    end process;
 
    --  throws Exception
    procedure sendNotifications (This : in out SensorGameUpdateProcessor; anyType_Param : access Java_Object'Class) is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         null;
    end sendNotifications;

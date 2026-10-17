@@ -43,16 +43,16 @@ package org.allbinary.media.image.comparison.motion.AllMotionRectangles_Package 
    type AllMotionRectangles is new MotionRectangles with null record;
    NAME : Unbounded_String;
 
-   procedure Initialize (This : in out AllMotionRectangles'Class; imageComparisonResult_Param : access ImageComparisonResult'Class);
-   function Create (imageComparisonResult_Param : access ImageComparisonResult'Class) return AllMotionRectangles_Access;
-   procedure createMotionRectangles (This : in out AllMotionRectangles; imageComparisonInfo_Param : access ImageComparisonResult'Class);
-   function addPixelDeltaToExistingMotionRectangle (This : in out AllMotionRectangles; pixelDelta_Param : access PixelDelta'Class) return Boolean;
-   procedure addPixelDeltaToExistingMotionRectangle (This : in out AllMotionRectangles; pixelDelta_Param : access PixelDelta'Class);
-   procedure addPixelDeltaToAMotionRectangle (This : in out AllMotionRectangles; pixelDelta_Param : access PixelDelta'Class);
-   function shouldPixelDeltaPartOfMotionRectangle (This : in out AllMotionRectangles; motionRectangle_Param : access MotionRectangle'Class; pixelDelta_Param : access PixelDelta'Class) return Boolean;
-   procedure shouldPixelDeltaPartOfMotionRectangle (This : in out AllMotionRectangles; motionRectangle_Param : access MotionRectangle'Class; pixelDelta_Param : access PixelDelta'Class);
-   function isPixelDeltaLikelyPartOfMotionRectangle (This : in out AllMotionRectangles; motionRectangle_Param : access MotionRectangle'Class; pixelDelta_Param : access PixelDelta'Class) return Boolean;
-   procedure isPixelDeltaLikelyPartOfMotionRectangle (This : in out AllMotionRectangles; motionRectangle_Param : access MotionRectangle'Class; pixelDelta_Param : access PixelDelta'Class);
+   procedure Initialize (This : in out AllMotionRectangles'Class; imageComparisonResult_Param : access ImageComparisonResult_Package.ImageComparisonResult'Class);
+   function Create (imageComparisonResult_Param : access ImageComparisonResult_Package.ImageComparisonResult'Class) return AllMotionRectangles_Access;
+   procedure createMotionRectangles (This : in out AllMotionRectangles; imageComparisonInfo_Param : access ImageComparisonResult_Package.ImageComparisonResult'Class);
+   function addPixelDeltaToExistingMotionRectangle (This : in out AllMotionRectangles; pixelDelta_Param : access PixelDelta_Package.PixelDelta'Class) return Boolean;
+   procedure addPixelDeltaToExistingMotionRectangle (This : in out AllMotionRectangles; pixelDelta_Param : access PixelDelta_Package.PixelDelta'Class);
+   procedure addPixelDeltaToAMotionRectangle (This : in out AllMotionRectangles; pixelDelta_Param : access PixelDelta_Package.PixelDelta'Class);
+   function shouldPixelDeltaPartOfMotionRectangle (This : in out AllMotionRectangles; motionRectangle_Param : access MotionRectangle_Package.MotionRectangle'Class; pixelDelta_Param : access PixelDelta_Package.PixelDelta'Class) return Boolean;
+   procedure shouldPixelDeltaPartOfMotionRectangle (This : in out AllMotionRectangles; motionRectangle_Param : access MotionRectangle_Package.MotionRectangle'Class; pixelDelta_Param : access PixelDelta_Package.PixelDelta'Class);
+   function isPixelDeltaLikelyPartOfMotionRectangle (This : in out AllMotionRectangles; motionRectangle_Param : access MotionRectangle_Package.MotionRectangle'Class; pixelDelta_Param : access PixelDelta_Package.PixelDelta'Class) return Boolean;
+   procedure isPixelDeltaLikelyPartOfMotionRectangle (This : in out AllMotionRectangles; motionRectangle_Param : access MotionRectangle_Package.MotionRectangle'Class; pixelDelta_Param : access PixelDelta_Package.PixelDelta'Class);
 
 end org.allbinary.media.image.comparison.motion.AllMotionRectangles_Package;
 

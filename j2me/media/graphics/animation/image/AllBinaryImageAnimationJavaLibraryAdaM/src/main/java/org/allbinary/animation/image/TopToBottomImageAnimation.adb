@@ -23,9 +23,9 @@ package body org.allbinary.animation.image.TopToBottomImageAnimation_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TopToBottomImageAnimation'Class; image_Param : access Image'Class; sequenceArray : Integer_Array_Access; animationBehavior_Param : access AnimationBehavior'Class) is
-      image : Image_Access := Image_Access (image_Param);
-      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
+   procedure Initialize (This : in out TopToBottomImageAnimation'Class; image_Param : access Image_Package.Image'Class; sequenceArray : Integer_Array_Access; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) is
+      image : constant Image_Access := Image_Access (image_Param);
+      animationBehavior : constant AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
         ImageSegmentAnimation_Package.Initialize (This, image, sequenceArray, animationBehavior);
         Initialize_Fields (This);
@@ -35,7 +35,7 @@ package body org.allbinary.animation.image.TopToBottomImageAnimation_Package is
         end if;
    end Initialize;
 
-   function Create (image_Param : access Image'Class; sequenceArray : Integer_Array_Access; animationBehavior_Param : access AnimationBehavior'Class) return TopToBottomImageAnimation_Access is
+   function Create (image_Param : access Image_Package.Image'Class; sequenceArray : Integer_Array_Access; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return TopToBottomImageAnimation_Access is
       This : constant TopToBottomImageAnimation_Access := new TopToBottomImageAnimation;
    begin
       TopToBottomImageAnimation_Package.Initialize (This.all, image_Param, sequenceArray, animationBehavior_Param);
@@ -73,8 +73,8 @@ package body org.allbinary.animation.image.TopToBottomImageAnimation_Package is
         This.currentHeight := ((This.getDrawHeight) * (This.getFrame)) / (This.getSize);
    end update;
 
-   procedure paintXY (This : in out TopToBottomImageAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintXY (This : in out TopToBottomImageAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         graphics.drawRegion (This.getImage, This.getStartX, This.getStartY, This.getDrawWidth, This.currentHeight, Sprite_Package.TRANS_NONE, x, y, This.anchor);
    end paintXY;

@@ -60,8 +60,8 @@ package org.allbinary.TsUtil_Package is
    procedure toNumber (This : in out TsUtil; value : Integer);
    function getByteArray (This : in out TsUtil; string_Id : Unbounded_String) return Short_Short_Integer_Array_Access;
    procedure getByteArray (This : in out TsUtil; string_Id : Unbounded_String);
-   function isItemListener (This : in out TsUtil; owner_Param : access Displayable'Class) return Boolean;
-   procedure isItemListener (This : in out TsUtil; owner_Param : access Displayable'Class);
+   function isItemListener (This : in out TsUtil; owner_Param : access Displayable_Package.Displayable'Class) return Boolean;
+   procedure isItemListener (This : in out TsUtil; owner_Param : access Displayable_Package.Displayable'Class);
    procedure gc (This : in out TsUtil);
 
 end org.allbinary.TsUtil_Package;

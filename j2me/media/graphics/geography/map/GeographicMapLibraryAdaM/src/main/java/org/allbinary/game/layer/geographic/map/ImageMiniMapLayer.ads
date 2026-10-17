@@ -46,10 +46,10 @@ package org.allbinary.game.layer.geographic.map.ImageMiniMapLayer_Package is
       anchor : Integer;
    end record;
 
-   procedure Initialize (This : in out ImageMiniMapLayer'Class; geographicMapInterface_Param : access BasicGeographicMap'Class; viewPosition_Param : access ViewPositionBase'Class);
-   function Create (geographicMapInterface_Param : access BasicGeographicMap'Class; viewPosition_Param : access ViewPositionBase'Class) return ImageMiniMapLayer_Access;
+   procedure Initialize (This : in out ImageMiniMapLayer'Class; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; viewPosition_Param : access ViewPositionBase_Package.ViewPositionBase'Class);
+   function Create (geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; viewPosition_Param : access ViewPositionBase_Package.ViewPositionBase'Class) return ImageMiniMapLayer_Access;
    procedure init (This : in out ImageMiniMapLayer);
-   procedure paint (This : in out ImageMiniMapLayer; graphics_Param : access Graphics'Class);
+   procedure paint (This : in out ImageMiniMapLayer; graphics_Param : access Graphics_Package.Graphics'Class);
 
 end org.allbinary.game.layer.geographic.map.ImageMiniMapLayer_Package;
 

@@ -24,8 +24,8 @@ package body org.allbinary.gui.dialog.BasicTextJDialog_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasicTextJDialog'Class; parent_Param : access Frame'Class; modal : Boolean; text : Unbounded_String) is
-      parent : Frame_Access := Frame_Access (parent_Param);
+   procedure Initialize (This : in out BasicTextJDialog'Class; parent_Param : access Frame_Package.Frame'Class; modal : Boolean; text : Unbounded_String) is
+      parent : constant Frame_Access := Frame_Access (parent_Param);
    begin
         JDialog_Package.Initialize (This, parent, modal);
         Initialize_Fields (This);
@@ -33,7 +33,7 @@ package body org.allbinary.gui.dialog.BasicTextJDialog_Package is
         This.setText (text);
    end Initialize;
 
-   function Create (parent_Param : access Frame'Class; modal : Boolean; text : Unbounded_String) return BasicTextJDialog_Access is
+   function Create (parent_Param : access Frame_Package.Frame'Class; modal : Boolean; text : Unbounded_String) return BasicTextJDialog_Access is
       This : constant BasicTextJDialog_Access := new BasicTextJDialog;
    begin
       BasicTextJDialog_Package.Initialize (This.all, parent_Param, modal, text);
@@ -45,8 +45,8 @@ package body org.allbinary.gui.dialog.BasicTextJDialog_Package is
         This.textJLabel.setText (text);
    end setText;
 
-   procedure addCloseListener (This : in out BasicTextJDialog; closeListenerInterface_Param : access CloseJDialogListenerInterface'Class) is
-      closeListenerInterface : CloseJDialogListenerInterface_Access := CloseJDialogListenerInterface_Access (closeListenerInterface_Param);
+   procedure addCloseListener (This : in out BasicTextJDialog; closeListenerInterface_Param : access CloseJDialogListenerInterface_Package.CloseJDialogListenerInterface'Class) is
+      closeListenerInterface : constant CloseJDialogListenerInterface_Access := CloseJDialogListenerInterface_Access (closeListenerInterface_Param);
    begin
         This.closeListenerInterface := closeListenerInterface;
    end addCloseListener;
@@ -75,8 +75,8 @@ package body org.allbinary.gui.dialog.BasicTextJDialog_Package is
         This.jButton1.setText (To_Unbounded_String ("OK"));
         This.jButton1.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.jButton1ActionPerformed (evt);
 --     end actionPerformed;
@@ -89,8 +89,8 @@ package body org.allbinary.gui.dialog.BasicTextJDialog_Package is
         This.pack;
    end initComponents;
 
-   procedure jButton1ActionPerformed (This : in out BasicTextJDialog; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure jButton1ActionPerformed (This : in out BasicTextJDialog; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         This.setVisible (False);
         if (This.closeListenerInterface) /= (null) then

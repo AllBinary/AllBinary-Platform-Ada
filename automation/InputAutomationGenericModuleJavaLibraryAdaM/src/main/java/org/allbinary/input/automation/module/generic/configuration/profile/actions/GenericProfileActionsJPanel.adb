@@ -73,8 +73,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         This.okNewProfileActionJButton.setText (To_Unbounded_String ("Ok"));
         This.okNewProfileActionJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.okNewProfileActionJButtonActionPerformed (evt);
 --     end actionPerformed;
@@ -86,8 +86,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         This.genericProfileActionsJPanel.setPreferredSize (Dimension_Package.Create (10000, 10000));
         This.genericProfileActionsJList.addListSelectionListener (ListSelectionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure valueChanged (This : in out ; evt_Param : access ListSelectionEvent'Class) is
---        evt : ListSelectionEvent_Access := ListSelectionEvent_Access (evt_Param);
+--     procedure valueChanged (This : in out ; evt_Param : access ListSelectionEvent_Package.ListSelectionEvent'Class) is
+--        evt : constant ListSelectionEvent_Access := ListSelectionEvent_Access (evt_Param);
 --     begin
 --                  This.genericProfileActionsJListValueChanged (evt);
 --     end valueChanged;
@@ -96,8 +96,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         This.newActionJButton.setText (To_Unbounded_String ("New"));
         This.newActionJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.newActionJButtonActionPerformed (evt);
 --     end actionPerformed;
@@ -105,8 +105,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         This.deleteActionJButton.setText (To_Unbounded_String ("Delete"));
         This.deleteActionJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.deleteActionJButtonActionPerformed (evt);
 --     end actionPerformed;
@@ -114,8 +114,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         This.saveJButton.setText (To_Unbounded_String ("Save"));
         This.saveJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.saveJButtonActionPerformed (evt);
 --     end actionPerformed;
@@ -144,8 +144,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         end if;
    end setModel;
 
-   procedure saveJButtonActionPerformed (This : in out GenericProfileActionsJPanel; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure saveJButtonActionPerformed (This : in out GenericProfileActionsJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         begin
             This.getGenericProfileActions.save;
@@ -176,8 +176,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         end if;
    end updateProfileActionUI;
 
-   procedure genericProfileActionsJListValueChanged (This : in out GenericProfileActionsJPanel; evt_Param : access ListSelectionEvent'Class) is
-      evt : ListSelectionEvent_Access := ListSelectionEvent_Access (evt_Param);
+   procedure genericProfileActionsJListValueChanged (This : in out GenericProfileActionsJPanel; evt_Param : access ListSelectionEvent_Package.ListSelectionEvent'Class) is
+      evt : constant ListSelectionEvent_Access := ListSelectionEvent_Access (evt_Param);
       profileActionNameString : Unbounded_String;
    begin
         begin
@@ -193,8 +193,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         end;
    end genericProfileActionsJListValueChanged;
 
-   procedure okNewProfileActionJButtonActionPerformed (This : in out GenericProfileActionsJPanel; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure okNewProfileActionJButtonActionPerformed (This : in out GenericProfileActionsJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
       newActionName : Unbounded_String;
    begin
         begin
@@ -214,8 +214,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         end;
    end okNewProfileActionJButtonActionPerformed;
 
-   procedure deleteActionJButtonActionPerformed (This : in out GenericProfileActionsJPanel; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure deleteActionJButtonActionPerformed (This : in out GenericProfileActionsJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
       anyType : Java_Object_Access_Array_Access;
       nextSelectedValueString : Unbounded_String;
       index : Integer;
@@ -255,8 +255,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         return This.genericProfileActionJPanel;
    end getGenericProfileActionJPanel;
 
-   procedure setGenericProfileActionJPanel (This : in out GenericProfileActionsJPanel; genericProfileActionJPanel_Param : access GenericProfileActionJPanel'Class) is
-      genericProfileActionJPanel : GenericProfileActionJPanel_Access := GenericProfileActionJPanel_Access (genericProfileActionJPanel_Param);
+   procedure setGenericProfileActionJPanel (This : in out GenericProfileActionsJPanel; genericProfileActionJPanel_Param : access GenericProfileActionJPanel_Package.GenericProfileActionJPanel'Class) is
+      genericProfileActionJPanel : constant GenericProfileActionJPanel_Access := GenericProfileActionJPanel_Access (genericProfileActionJPanel_Param);
    begin
         This.genericProfileActionJPanel := genericProfileActionJPanel;
    end setGenericProfileActionJPanel;
@@ -266,14 +266,14 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         return This.genericProfileActions;
    end getGenericProfileActions;
 
-   procedure setGenericProfileActions (This : in out GenericProfileActionsJPanel; genericProfileActions_Param : access GenericProfileActions'Class) is
-      genericProfileActions : GenericProfileActions_Access := GenericProfileActions_Access (genericProfileActions_Param);
+   procedure setGenericProfileActions (This : in out GenericProfileActionsJPanel; genericProfileActions_Param : access GenericProfileActions_Package.GenericProfileActions'Class) is
+      genericProfileActions : constant GenericProfileActions_Access := GenericProfileActions_Access (genericProfileActions_Param);
    begin
         This.genericProfileActions := genericProfileActions;
    end setGenericProfileActions;
 
-   procedure newActionJButtonActionPerformed (This : in out GenericProfileActionsJPanel; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure newActionJButtonActionPerformed (This : in out GenericProfileActionsJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         This.newProfileActionJDialog.setVisible (True);
    end newActionJButtonActionPerformed;

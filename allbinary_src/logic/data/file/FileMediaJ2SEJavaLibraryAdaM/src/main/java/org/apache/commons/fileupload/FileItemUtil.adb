@@ -35,15 +35,15 @@ package body org.apache.commons.fileupload.FileItemUtil_Package is
    end getString;
 
    --  throws Exception
-   function getString (This : in out FileItemUtil; fileItem_Param : access FileItemStream'Class) return Unbounded_String is
-      fileItem : FileItemStream_Access := FileItemStream_Access (fileItem_Param);
+   function getString (This : in out FileItemUtil; fileItem_Param : access FileItemStream_Package.FileItemStream'Class) return Unbounded_String is
+      fileItem : constant FileItemStream_Access := FileItemStream_Access (fileItem_Param);
    begin
         return Java_New_String (This.getBytes (fileItem), This.DEFAULT_CHARSET);
    end getString;
 
    --  throws Exception
-   function getBytes (This : in out FileItemUtil; fileItem_Param : access FileItemStream'Class) return Short_Short_Integer_Array_Access is
-      fileItem : FileItemStream_Access := FileItemStream_Access (fileItem_Param);
+   function getBytes (This : in out FileItemUtil; fileItem_Param : access FileItemStream_Package.FileItemStream'Class) return Short_Short_Integer_Array_Access is
+      fileItem : constant FileItemStream_Access := FileItemStream_Access (fileItem_Param);
       streamUtil : StreamUtil_Access;
       inputStream : InputStream_Access;
       outputStream : ByteArrayOutputStream_Access;
@@ -76,9 +76,9 @@ package body org.apache.commons.fileupload.FileItemUtil_Package is
    end getBytes;
 
    --  throws Exception
-   procedure write (This : in out FileItemUtil; fileItem_Param : access FileItem'Class; file_Param : access AbFile'Class) is
-      fileItem : FileItem_Access := FileItem_Access (fileItem_Param);
-      file : AbFile_Access := AbFile_Access (file_Param);
+   procedure write (This : in out FileItemUtil; fileItem_Param : access FileItem_Package.FileItem'Class; file_Param : access AbFile_Package.AbFile'Class) is
+      fileItem : constant FileItem_Access := FileItem_Access (fileItem_Param);
+      file : constant AbFile_Access := AbFile_Access (file_Param);
    begin
         fileItem.write (AbFileNativeUtil_Package.get (file));
    end write;
@@ -90,14 +90,14 @@ package body org.apache.commons.fileupload.FileItemUtil_Package is
       null;
    end getString;
 
-   procedure getString (This : in out FileItemUtil; fileItem_Param : access FileItemStream'Class) is
+   procedure getString (This : in out FileItemUtil; fileItem_Param : access FileItemStream_Package.FileItemStream'Class) is
       Java_Result : constant Unbounded_String := FileItemUtil'Class (This).getString (fileItem_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getString;
 
-   procedure getBytes (This : in out FileItemUtil; fileItem_Param : access FileItemStream'Class) is
+   procedure getBytes (This : in out FileItemUtil; fileItem_Param : access FileItemStream_Package.FileItemStream'Class) is
       Java_Result : constant Short_Short_Integer_Array_Access := FileItemUtil'Class (This).getBytes (fileItem_Param);
       pragma Unreferenced (Java_Result);
    begin

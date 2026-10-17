@@ -68,14 +68,14 @@ package body admin.tags.FileAuthenticationTag_Package is
         This.newPassword := value;
    end setNewPassword;
 
-   procedure setRoles (This : in out FileAuthenticationTag; values_Param : access BasicArrayList'Class) is
-      values : BasicArrayList_Access := BasicArrayList_Access (values_Param);
+   procedure setRoles (This : in out FileAuthenticationTag; values_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      values : constant BasicArrayList_Access := BasicArrayList_Access (values_Param);
    begin
         This.roles := values;
    end setRoles;
 
-   procedure makeSessionValid (This : in out FileAuthenticationTag; storedRole_Param : access BasicUserRole'Class; userName : Unbounded_String) is
-      storedRole : BasicUserRole_Access := BasicUserRole_Access (storedRole_Param);
+   procedure makeSessionValid (This : in out FileAuthenticationTag; storedRole_Param : access BasicUserRole_Package.BasicUserRole'Class; userName : Unbounded_String) is
+      storedRole : constant BasicUserRole_Access := BasicUserRole_Access (storedRole_Param);
    begin
         This.weblisketSession.setAuthenticated;
         This.weblisketSession.setRole (storedRole);

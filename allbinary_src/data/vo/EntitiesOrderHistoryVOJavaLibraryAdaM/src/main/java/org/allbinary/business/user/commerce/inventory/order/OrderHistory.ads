@@ -87,25 +87,25 @@ package org.allbinary.business.user.commerce.inventory.order.OrderHistory_Packag
       total : Money_Access;
    end record;
 
-   procedure Initialize (This : in out OrderHistory'Class; basketInterface_Param : access BasketInterface'Class);
-   function Create (basketInterface_Param : access BasketInterface'Class) return OrderHistory_Access;
-   procedure Initialize (This : in out OrderHistory'Class; basketInterface_Param : access BasketInterface'Class; orderHistory_Param : access OrderHistory'Class);
-   function Create (basketInterface_Param : access BasketInterface'Class; orderHistory_Param : access OrderHistory'Class) return OrderHistory_Access;
-   procedure Initialize (This : in out OrderHistory'Class; basketInterface_Param : access BasketInterface'Class; orderHistoryHashMap_Param : access HashMap'Class);
-   function Create (basketInterface_Param : access BasketInterface'Class; orderHistoryHashMap_Param : access HashMap'Class) return OrderHistory_Access;
+   procedure Initialize (This : in out OrderHistory'Class; basketInterface_Param : access BasketInterface_Package.BasketInterface'Class);
+   function Create (basketInterface_Param : access BasketInterface_Package.BasketInterface'Class) return OrderHistory_Access;
+   procedure Initialize (This : in out OrderHistory'Class; basketInterface_Param : access BasketInterface_Package.BasketInterface'Class; orderHistory_Param : access OrderHistory_Package.OrderHistory'Class);
+   function Create (basketInterface_Param : access BasketInterface_Package.BasketInterface'Class; orderHistory_Param : access OrderHistory_Package.OrderHistory'Class) return OrderHistory_Access;
+   procedure Initialize (This : in out OrderHistory'Class; basketInterface_Param : access BasketInterface_Package.BasketInterface'Class; orderHistoryHashMap_Param : access HashMap_Package.HashMap'Class);
+   function Create (basketInterface_Param : access BasketInterface_Package.BasketInterface'Class; orderHistoryHashMap_Param : access HashMap_Package.HashMap'Class) return OrderHistory_Access;
    procedure setUserName (This : in out OrderHistory; value : Unbounded_String);
-   procedure setDefaultShippingAddress (This : in out OrderHistory; shippingAddress_Param : access StreetAddress'Class);
-   procedure setBillingAddress (This : in out OrderHistory; billingAddress_Param : access StreetAddress'Class);
-   procedure setPaymentInfo (This : in out OrderHistory; payment_Param : access Payment'Class);
+   procedure setDefaultShippingAddress (This : in out OrderHistory; shippingAddress_Param : access StreetAddress_Package.StreetAddress'Class);
+   procedure setBillingAddress (This : in out OrderHistory; billingAddress_Param : access StreetAddress_Package.StreetAddress'Class);
+   procedure setPaymentInfo (This : in out OrderHistory; payment_Param : access Payment_Package.Payment'Class);
    procedure setShipDate (This : in out OrderHistory; value : Unbounded_String);
    procedure setOrderDate (This : in out OrderHistory; value : Unbounded_String);
    procedure setTransDate (This : in out OrderHistory; value : Unbounded_String);
    procedure setCancelDate (This : in out OrderHistory; value : Unbounded_String);
    procedure setStatus (This : in out OrderHistory; value : Unbounded_String);
-   procedure setSubTotal (This : in out OrderHistory; value_Param : access Money'Class);
-   procedure setShippingCost (This : in out OrderHistory; value_Param : access Money'Class);
-   procedure setTaxes (This : in out OrderHistory; value_Param : access Money'Class);
-   procedure setTotal (This : in out OrderHistory; value_Param : access Money'Class);
+   procedure setSubTotal (This : in out OrderHistory; value_Param : access Money_Package.Money'Class);
+   procedure setShippingCost (This : in out OrderHistory; value_Param : access Money_Package.Money'Class);
+   procedure setTaxes (This : in out OrderHistory; value_Param : access Money_Package.Money'Class);
+   procedure setTotal (This : in out OrderHistory; value_Param : access Money_Package.Money'Class);
    function getUserName (This : in out OrderHistory) return Unbounded_String;
    function getShippingAddress (This : in out OrderHistory) return StreetAddress_Access;
    function getBillingAddress (This : in out OrderHistory) return StreetAddress_Access;
@@ -120,8 +120,8 @@ package org.allbinary.business.user.commerce.inventory.order.OrderHistory_Packag
    function getTaxes (This : in out OrderHistory) return Money_Access;
    function getTotal (This : in out OrderHistory) return Money_Access;
    function toHashMap (This : in out OrderHistory) return HashMap_Access;
-   function toXmlNode (This : in out OrderHistory; document_Param : access Document'Class) return Node_Access;
-   procedure toXmlNode (This : in out OrderHistory; document_Param : access Document'Class);
+   function toXmlNode (This : in out OrderHistory; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out OrderHistory; document_Param : access Document_Package.Document'Class);
 
 end org.allbinary.business.user.commerce.inventory.order.OrderHistory_Package;
 

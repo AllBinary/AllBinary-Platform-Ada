@@ -46,7 +46,7 @@ package org.allbinary.game.configuration.feature.InGameFeatureChoiceGroups_Packa
    function getExclusiveInstance return InGameFeatureChoiceGroups_Access;
    function getMultipleInstance return InGameFeatureChoiceGroups_Access;
    function get (This : in out InGameFeatureChoiceGroups) return ABHashtable_Access;
-   procedure add (This : in out InGameFeatureChoiceGroups; name : Unbounded_String; list_Param : access BasicArrayList'Class);
+   procedure add (This : in out InGameFeatureChoiceGroups; name : Unbounded_String; list_Param : access BasicArrayList_Package.BasicArrayList'Class);
 
 end org.allbinary.game.configuration.feature.InGameFeatureChoiceGroups_Package;
 

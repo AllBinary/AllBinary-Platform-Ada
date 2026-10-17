@@ -59,19 +59,19 @@ package org.allbinary.game.displayable.canvas.NullGameCanvasRunnable_Package is
    procedure setHighScoreSubmitted (This : in out NullGameCanvasRunnable; highScoreSubmitted : Boolean);
    procedure processGameOver (This : in out NullGameCanvasRunnable);
    function isGameOver (This : in out NullGameCanvasRunnable) return Boolean;
-   procedure initCommands (This : in out NullGameCanvasRunnable; cmdListener_Param : access CommandListener'Class);
+   procedure initCommands (This : in out NullGameCanvasRunnable; cmdListener_Param : access CommandListener_Package.CommandListener'Class);
    function getCurrentStateHashtable (This : in out NullGameCanvasRunnable) return ABHashtable_Access;
    function getLoadStateHashtable (This : in out NullGameCanvasRunnable) return ABHashtable_Access;
-   procedure setLoadStateHashtable (This : in out NullGameCanvasRunnable; hashtable_Param : access ABHashtable'Class);
+   procedure setLoadStateHashtable (This : in out NullGameCanvasRunnable; hashtable_Param : access ABHashtable_Package.ABHashtable'Class);
    function getType (This : in out NullGameCanvasRunnable) return Integer;
-   procedure setGameState (This : in out NullGameCanvasRunnable; gameState_Param : access GameState'Class);
+   procedure setGameState (This : in out NullGameCanvasRunnable; gameState_Param : access GameState_Package.GameState'Class);
    function getGameState (This : in out NullGameCanvasRunnable) return GameState_Access;
-   procedure itemStateChanged (This : in out NullGameCanvasRunnable; item_Param : access Item'Class);
-   procedure paint (This : in out NullGameCanvasRunnable; graphics_Param : access Graphics'Class);
-   procedure paintThreed (This : in out NullGameCanvasRunnable; graphics_Param : access Graphics'Class);
+   procedure itemStateChanged (This : in out NullGameCanvasRunnable; item_Param : access Item_Package.Item'Class);
+   procedure paint (This : in out NullGameCanvasRunnable; graphics_Param : access Graphics_Package.Graphics'Class);
+   procedure paintThreed (This : in out NullGameCanvasRunnable; graphics_Param : access Graphics_Package.Graphics'Class);
    function isRunning (This : in out NullGameCanvasRunnable) return Boolean;
    procedure setRunning (This : in out NullGameCanvasRunnable; isRunning : Boolean);
-   procedure setThread (This : in out NullGameCanvasRunnable; thread_Param : access Thread'Class);
+   procedure setThread (This : in out NullGameCanvasRunnable; thread_Param : access Thread_Package.Thread'Class);
    procedure run (This : in out NullGameCanvasRunnable);
 
 end org.allbinary.game.displayable.canvas.NullGameCanvasRunnable_Package;

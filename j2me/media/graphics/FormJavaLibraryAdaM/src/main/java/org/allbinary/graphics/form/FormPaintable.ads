@@ -37,9 +37,9 @@ package org.allbinary.graphics.form.FormPaintable_Package is
       form : PaintableForm_Access;
    end record;
 
-   procedure Initialize (This : in out FormPaintable'Class; form_Param : access PaintableForm'Class);
-   function Create (form_Param : access PaintableForm'Class) return FormPaintable_Access;
-   procedure paint (This : in out FormPaintable; graphics_Param : access Graphics'Class);
+   procedure Initialize (This : in out FormPaintable'Class; form_Param : access PaintableForm_Package.PaintableForm'Class);
+   function Create (form_Param : access PaintableForm_Package.PaintableForm'Class) return FormPaintable_Access;
+   procedure paint (This : in out FormPaintable; graphics_Param : access Graphics_Package.Graphics'Class);
    function getForm (This : in out FormPaintable) return PaintableForm_Access;
 
 end org.allbinary.graphics.form.FormPaintable_Package;

@@ -43,10 +43,10 @@ package org.allbinary.logic.visual.transform.info.TransformInfoInterfaceView_Pac
       transformInfoInterface : TransformInfoInterface_Access;
    end record;
 
-   procedure Initialize (This : in out TransformInfoInterfaceView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return TransformInfoInterfaceView_Access;
-   function toXmlNode (This : in out TransformInfoInterfaceView; document_Param : access Document'Class) return Node_Access;
-   procedure toXmlNode (This : in out TransformInfoInterfaceView; document_Param : access Document'Class);
+   procedure Initialize (This : in out TransformInfoInterfaceView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return TransformInfoInterfaceView_Access;
+   function toXmlNode (This : in out TransformInfoInterfaceView; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out TransformInfoInterfaceView; document_Param : access Document_Package.Document'Class);
 
 end org.allbinary.logic.visual.transform.info.TransformInfoInterfaceView_Package;
 

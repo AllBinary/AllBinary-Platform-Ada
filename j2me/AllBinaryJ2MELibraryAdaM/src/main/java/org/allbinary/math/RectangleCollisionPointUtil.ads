@@ -38,10 +38,10 @@ package org.allbinary.math.RectangleCollisionPointUtil_Package is
 
    procedure Initialize (This : in out RectangleCollisionPointUtil'Class);
    function Create return RectangleCollisionPointUtil_Access;
-   function allPointsInside (rectX1 : Integer; rectY1 : Integer; rectX2 : Integer; rectY2 : Integer; list_Param : access BasicArrayList'Class) return Boolean;
-   procedure allPointsInside (rectX1 : Integer; rectY1 : Integer; rectX2 : Integer; rectY2 : Integer; list_Param : access BasicArrayList'Class);
-   function allPointsInsideCell (rectX1 : Integer; rectY1 : Integer; rectX2 : Integer; rectY2 : Integer; list_Param : access BasicArrayList'Class; xCellSize : Integer; yCellSize : Integer) return Boolean;
-   procedure allPointsInsideCell (rectX1 : Integer; rectY1 : Integer; rectX2 : Integer; rectY2 : Integer; list_Param : access BasicArrayList'Class; xCellSize : Integer; yCellSize : Integer);
+   function allPointsInside (rectX1 : Integer; rectY1 : Integer; rectX2 : Integer; rectY2 : Integer; list_Param : access BasicArrayList_Package.BasicArrayList'Class) return Boolean;
+   procedure allPointsInside (rectX1 : Integer; rectY1 : Integer; rectX2 : Integer; rectY2 : Integer; list_Param : access BasicArrayList_Package.BasicArrayList'Class);
+   function allPointsInsideCell (rectX1 : Integer; rectY1 : Integer; rectX2 : Integer; rectY2 : Integer; list_Param : access BasicArrayList_Package.BasicArrayList'Class; xCellSize : Integer; yCellSize : Integer) return Boolean;
+   procedure allPointsInsideCell (rectX1 : Integer; rectY1 : Integer; rectX2 : Integer; rectY2 : Integer; list_Param : access BasicArrayList_Package.BasicArrayList'Class; xCellSize : Integer; yCellSize : Integer);
 
 end org.allbinary.math.RectangleCollisionPointUtil_Package;
 

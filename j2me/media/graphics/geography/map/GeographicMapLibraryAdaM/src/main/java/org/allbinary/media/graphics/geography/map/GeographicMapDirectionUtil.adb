@@ -43,9 +43,9 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapDirectionUt
    end Create;
 
    --  throws Exception
-   function getDirectionFromCellPositionToAdjacentCellPosition (This : in out GeographicMapDirectionUtil; fromGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class; toGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return Direction_Access is
-      fromGeographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (fromGeographicMapCellPosition_Param);
-      toGeographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (toGeographicMapCellPosition_Param);
+   function getDirectionFromCellPositionToAdjacentCellPosition (This : in out GeographicMapDirectionUtil; fromGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; toGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) return Direction_Access is
+      fromGeographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (fromGeographicMapCellPosition_Param);
+      toGeographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (toGeographicMapCellPosition_Param);
       fromColumn : Integer;
       fromRow : Integer;
       goColumn : Integer;
@@ -74,9 +74,9 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapDirectionUt
    end getDirectionFromCellPositionToAdjacentCellPosition;
 
    --  throws Exception
-   function getEightDirectionFromCellPositionToAdjacentCellPosition (This : in out GeographicMapDirectionUtil; fromGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class; toGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return Direction_Access is
-      fromGeographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (fromGeographicMapCellPosition_Param);
-      toGeographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (toGeographicMapCellPosition_Param);
+   function getEightDirectionFromCellPositionToAdjacentCellPosition (This : in out GeographicMapDirectionUtil; fromGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; toGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) return Direction_Access is
+      fromGeographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (fromGeographicMapCellPosition_Param);
+      toGeographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (toGeographicMapCellPosition_Param);
       fromColumn : Integer;
       fromRow : Integer;
       goColumn : Integer;
@@ -121,9 +121,9 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapDirectionUt
    end getEightDirectionFromCellPositionToAdjacentCellPosition;
 
    --  throws Exception
-   function getDirectionFromCellPositionToCellPosition (This : in out GeographicMapDirectionUtil; fromGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class; toGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return Direction_Access is
-      fromGeographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (fromGeographicMapCellPosition_Param);
-      toGeographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (toGeographicMapCellPosition_Param);
+   function getDirectionFromCellPositionToCellPosition (This : in out GeographicMapDirectionUtil; fromGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; toGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) return Direction_Access is
+      fromGeographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (fromGeographicMapCellPosition_Param);
+      toGeographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (toGeographicMapCellPosition_Param);
       fromColumn : Integer;
       fromRow : Integer;
       goColumn : Integer;
@@ -153,9 +153,9 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapDirectionUt
    end getDirectionFromCellPositionToCellPosition;
 
    --  throws Exception
-   function getEightDirectionFromCellPositionToCellPosition (This : in out GeographicMapDirectionUtil; fromGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class; toGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return Direction_Access is
-      fromGeographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (fromGeographicMapCellPosition_Param);
-      toGeographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (toGeographicMapCellPosition_Param);
+   function getEightDirectionFromCellPositionToCellPosition (This : in out GeographicMapDirectionUtil; fromGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; toGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) return Direction_Access is
+      fromGeographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (fromGeographicMapCellPosition_Param);
+      toGeographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (toGeographicMapCellPosition_Param);
       fromColumn : Integer;
       fromRow : Integer;
       goColumn : Integer;
@@ -201,28 +201,28 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapDirectionUt
         Java_Throw (Java_New_Exception ("Exception", stringBuffer.toString));
    end getEightDirectionFromCellPositionToCellPosition;
 
-   procedure getDirectionFromCellPositionToAdjacentCellPosition (This : in out GeographicMapDirectionUtil; fromGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class; toGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+   procedure getDirectionFromCellPositionToAdjacentCellPosition (This : in out GeographicMapDirectionUtil; fromGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; toGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
       Java_Result : constant Direction_Access := GeographicMapDirectionUtil'Class (This).getDirectionFromCellPositionToAdjacentCellPosition (fromGeographicMapCellPosition_Param, toGeographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getDirectionFromCellPositionToAdjacentCellPosition;
 
-   procedure getEightDirectionFromCellPositionToAdjacentCellPosition (This : in out GeographicMapDirectionUtil; fromGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class; toGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+   procedure getEightDirectionFromCellPositionToAdjacentCellPosition (This : in out GeographicMapDirectionUtil; fromGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; toGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
       Java_Result : constant Direction_Access := GeographicMapDirectionUtil'Class (This).getEightDirectionFromCellPositionToAdjacentCellPosition (fromGeographicMapCellPosition_Param, toGeographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getEightDirectionFromCellPositionToAdjacentCellPosition;
 
-   procedure getDirectionFromCellPositionToCellPosition (This : in out GeographicMapDirectionUtil; fromGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class; toGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+   procedure getDirectionFromCellPositionToCellPosition (This : in out GeographicMapDirectionUtil; fromGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; toGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
       Java_Result : constant Direction_Access := GeographicMapDirectionUtil'Class (This).getDirectionFromCellPositionToCellPosition (fromGeographicMapCellPosition_Param, toGeographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getDirectionFromCellPositionToCellPosition;
 
-   procedure getEightDirectionFromCellPositionToCellPosition (This : in out GeographicMapDirectionUtil; fromGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class; toGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+   procedure getEightDirectionFromCellPositionToCellPosition (This : in out GeographicMapDirectionUtil; fromGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; toGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
       Java_Result : constant Direction_Access := GeographicMapDirectionUtil'Class (This).getEightDirectionFromCellPositionToCellPosition (fromGeographicMapCellPosition_Param, toGeographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin

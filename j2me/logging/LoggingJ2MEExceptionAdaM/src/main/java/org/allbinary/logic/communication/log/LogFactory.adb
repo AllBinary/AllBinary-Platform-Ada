@@ -43,14 +43,14 @@ package body org.allbinary.logic.communication.log.LogFactory_Package is
    end getInstanceD;
 
    function getInstance (specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String; exception_Id_Param : access Java_Object'Class) return Log_Access is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
-      exception_Id : Java_Object_Access := Java_Object_Access (exception_Id_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
+      exception_Id : constant Java_Object_Access := Java_Object_Access (exception_Id_Param);
    begin
         return Log_Package.Create (specialMessage, anyType, functionName, exception_Id);
    end getInstance;
 
    function getInstanceF (specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String) return Log_Access is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         return LogFactory_Package.LOG;
    end getInstanceF;

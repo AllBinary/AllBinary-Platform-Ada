@@ -40,8 +40,8 @@ package body admin.taghelpers.AuthenticationHelperUtil_Package is
    end getInstance;
 
    --  throws Exception
-   function isAuthorized (This : in out AuthenticationHelperUtil; authenticationHelper_Param : access AuthenticationHelper'Class; filePath : Unbounded_String) return Boolean is
-      authenticationHelper : AuthenticationHelper_Access := AuthenticationHelper_Access (authenticationHelper_Param);
+   function isAuthorized (This : in out AuthenticationHelperUtil; authenticationHelper_Param : access AuthenticationHelper_Package.AuthenticationHelper'Class; filePath : Unbounded_String) return Boolean is
+      authenticationHelper : constant AuthenticationHelper_Access := AuthenticationHelper_Access (authenticationHelper_Param);
       endIndex : Integer;
       fullPath : AbPath_Access;
       downloadFilePermissions : HttpFilePermissions_Access;
@@ -71,7 +71,7 @@ package body admin.taghelpers.AuthenticationHelperUtil_Package is
         end if;
    end isAuthorized;
 
-   procedure isAuthorized (This : in out AuthenticationHelperUtil; authenticationHelper_Param : access AuthenticationHelper'Class; filePath : Unbounded_String) is
+   procedure isAuthorized (This : in out AuthenticationHelperUtil; authenticationHelper_Param : access AuthenticationHelper_Package.AuthenticationHelper'Class; filePath : Unbounded_String) is
       Java_Result : constant Boolean := AuthenticationHelperUtil'Class (This).isAuthorized (authenticationHelper_Param, filePath);
       pragma Unreferenced (Java_Result);
    begin

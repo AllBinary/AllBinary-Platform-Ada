@@ -32,7 +32,7 @@ package org.allbinary.android.activity.ViewCompositeInterface_Package is
    type ViewCompositeInterface_Access_Array_Access is access all ViewCompositeInterface_Access_Array;
    function getRootView (This : in out ViewCompositeInterface) return View_Access is abstract;
    function getView (This : in out ViewCompositeInterface) return View_Access is abstract;
-   procedure runOnUiThread (This : in out ViewCompositeInterface; action_Param : access Runnable'Class) is abstract;
+   procedure runOnUiThread (This : in out ViewCompositeInterface; action_Param : access Runnable_Package.Runnable'Class) is abstract;
 
 end org.allbinary.android.activity.ViewCompositeInterface_Package;
 

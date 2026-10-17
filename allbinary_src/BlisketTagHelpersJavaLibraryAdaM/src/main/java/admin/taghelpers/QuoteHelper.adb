@@ -26,9 +26,9 @@ package body admin.taghelpers.QuoteHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out QuoteHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
-      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
+   procedure Initialize (This : in out QuoteHelper'Class; hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
       storeName : Unbounded_String;
    begin
       BasicTable_Package.Initialize (This);
@@ -43,7 +43,7 @@ package body admin.taghelpers.QuoteHelper_Package is
         This.portion := Portion_Package.Create (hashMap);
    end Initialize;
 
-   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return QuoteHelper_Access is
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return QuoteHelper_Access is
       This : constant QuoteHelper_Access := new QuoteHelper;
    begin
       QuoteHelper_Package.Initialize (This.all, hashMap_Param, pageContext_Param);
@@ -51,8 +51,8 @@ package body admin.taghelpers.QuoteHelper_Package is
    end Create;
 
    --  throws Exception
-   procedure emailUser (This : in out QuoteHelper; quoteRequest_Param : access QuoteRequest'Class) is
-      quoteRequest : QuoteRequest_Access := QuoteRequest_Access (quoteRequest_Param);
+   procedure emailUser (This : in out QuoteHelper; quoteRequest_Param : access QuoteRequest_Package.QuoteRequest'Class) is
+      quoteRequest : constant QuoteRequest_Access := QuoteRequest_Access (quoteRequest_Param);
       user : UserInterface_Access;
       userEmailSubject : Unbounded_String;
       stringBuffer : StringMaker_Access;
@@ -75,8 +75,8 @@ package body admin.taghelpers.QuoteHelper_Package is
    end emailUser;
 
    --  throws Exception
-   procedure emailAdmins (This : in out QuoteHelper; quoteRequest_Param : access QuoteRequest'Class) is
-      quoteRequest : QuoteRequest_Access := QuoteRequest_Access (quoteRequest_Param);
+   procedure emailAdmins (This : in out QuoteHelper; quoteRequest_Param : access QuoteRequest_Package.QuoteRequest'Class) is
+      quoteRequest : constant QuoteRequest_Access := QuoteRequest_Access (quoteRequest_Param);
       adminEmailSubject : Unbounded_String;
       stringBuffer : StringMaker_Access;
       adminEmailTextBody : Unbounded_String;

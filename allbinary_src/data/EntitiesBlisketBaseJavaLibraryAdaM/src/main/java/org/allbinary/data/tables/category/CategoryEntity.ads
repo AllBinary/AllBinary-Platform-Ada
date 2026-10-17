@@ -56,15 +56,15 @@ package org.allbinary.data.tables.category.CategoryEntity_Package is
       tableName : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out CategoryEntity'Class; categoryFactoryInterface_Param : access CategoryFactoryInterface'Class);
-   function Create (categoryFactoryInterface_Param : access CategoryFactoryInterface'Class) return CategoryEntity_Access;
+   procedure Initialize (This : in out CategoryEntity'Class; categoryFactoryInterface_Param : access CategoryFactoryInterface_Package.CategoryFactoryInterface'Class);
+   function Create (categoryFactoryInterface_Param : access CategoryFactoryInterface_Package.CategoryFactoryInterface'Class) return CategoryEntity_Access;
    procedure Initialize (This : in out CategoryEntity'Class);
    function Create return CategoryEntity_Access;
-   procedure insert (This : in out CategoryEntity; category_Param : access Category'Class);
+   procedure insert (This : in out CategoryEntity; category_Param : access Category_Package.Category'Class);
    procedure delete (This : in out CategoryEntity; value : Unbounded_String);
    function createTableStatement (This : in out CategoryEntity) return Unbounded_String;
    function createTable (This : in out CategoryEntity) return Unbounded_String;
-   procedure update (This : in out CategoryEntity; updatedValues_Param : access HashMap'Class);
+   procedure update (This : in out CategoryEntity; updatedValues_Param : access HashMap_Package.HashMap'Class);
    function dropTable (This : in out CategoryEntity) return Unbounded_String;
 
 end org.allbinary.data.tables.category.CategoryEntity_Package;

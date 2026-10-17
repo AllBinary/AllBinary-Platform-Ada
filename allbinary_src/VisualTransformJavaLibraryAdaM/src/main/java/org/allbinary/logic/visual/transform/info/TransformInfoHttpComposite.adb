@@ -24,8 +24,8 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpComposit
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TransformInfoHttpComposite'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out TransformInfoHttpComposite'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
       Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
@@ -34,7 +34,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpComposit
         This.transformInfoInterface := TransformInfoHttpInterface_Access (transformInfoInterface);
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return TransformInfoHttpComposite_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return TransformInfoHttpComposite_Access is
       This : constant TransformInfoHttpComposite_Access := new TransformInfoHttpComposite;
    begin
       TransformInfoHttpComposite_Package.Initialize (This.all, transformInfoInterface_Param);

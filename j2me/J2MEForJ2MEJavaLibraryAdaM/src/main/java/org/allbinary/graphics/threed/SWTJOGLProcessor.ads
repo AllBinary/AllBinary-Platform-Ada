@@ -49,20 +49,20 @@ package org.allbinary.graphics.threed.SWTJOGLProcessor_Package is
    procedure onSurfaceChanged (This : in out SWTJOGLProcessor);
    procedure onSurfaceChangedWH (This : in out SWTJOGLProcessor; width : Integer; height : Integer);
    procedure addListener (This : in out SWTJOGLProcessor);
-   procedure addListeners (This : in out SWTJOGLProcessor; midlet_Param : access MIDlet'Class);
+   procedure addListeners (This : in out SWTJOGLProcessor; midlet_Param : access MIDlet_Package.MIDlet'Class);
    procedure run (This : in out SWTJOGLProcessor);
    procedure clear (This : in out SWTJOGLProcessor);
    procedure setCustom (This : in out SWTJOGLProcessor; width : Integer; height : Integer; ratio : Float);
-   procedure setRatioProcessor (This : in out SWTJOGLProcessor; ratioProcessor_Param : access RatioProcessor'Class);
+   procedure setRatioProcessor (This : in out SWTJOGLProcessor; ratioProcessor_Param : access RatioProcessor_Package.RatioProcessor'Class);
    function isPortraitRatioProcessor (This : in out SWTJOGLProcessor) return Boolean;
-   function charWidth (This : in out SWTJOGLProcessor; font_Param : access Font'Class; ch : Character) return Integer;
-   procedure charWidth (This : in out SWTJOGLProcessor; font_Param : access Font'Class; ch : Character);
-   function charsWidth (This : in out SWTJOGLProcessor; font_Param : access Font'Class; ch : Character_Array_Access; offset : Integer; length : Integer) return Integer;
-   procedure charsWidth (This : in out SWTJOGLProcessor; font_Param : access Font'Class; ch : Character_Array_Access; offset : Integer; length : Integer);
-   function stringWidth (This : in out SWTJOGLProcessor; font_Param : access Font'Class; str : Unbounded_String) return Integer;
-   procedure stringWidth (This : in out SWTJOGLProcessor; font_Param : access Font'Class; str : Unbounded_String);
-   function substringWidth (This : in out SWTJOGLProcessor; font_Param : access Font'Class; str : Unbounded_String; offset : Integer; len : Integer) return Integer;
-   procedure substringWidth (This : in out SWTJOGLProcessor; font_Param : access Font'Class; str : Unbounded_String; offset : Integer; len : Integer);
+   function charWidth (This : in out SWTJOGLProcessor; font_Param : access Font_Package.Font'Class; ch : Character) return Integer;
+   procedure charWidth (This : in out SWTJOGLProcessor; font_Param : access Font_Package.Font'Class; ch : Character);
+   function charsWidth (This : in out SWTJOGLProcessor; font_Param : access Font_Package.Font'Class; ch : Character_Array_Access; offset : Integer; length : Integer) return Integer;
+   procedure charsWidth (This : in out SWTJOGLProcessor; font_Param : access Font_Package.Font'Class; ch : Character_Array_Access; offset : Integer; length : Integer);
+   function stringWidth (This : in out SWTJOGLProcessor; font_Param : access Font_Package.Font'Class; str : Unbounded_String) return Integer;
+   procedure stringWidth (This : in out SWTJOGLProcessor; font_Param : access Font_Package.Font'Class; str : Unbounded_String);
+   function substringWidth (This : in out SWTJOGLProcessor; font_Param : access Font_Package.Font'Class; str : Unbounded_String; offset : Integer; len : Integer) return Integer;
+   procedure substringWidth (This : in out SWTJOGLProcessor; font_Param : access Font_Package.Font'Class; str : Unbounded_String; offset : Integer; len : Integer);
 
 end org.allbinary.graphics.threed.SWTJOGLProcessor_Package;
 

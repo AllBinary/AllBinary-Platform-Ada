@@ -47,9 +47,9 @@ package org.allbinary.media.image.ImageCompleteUtil_Package is
    procedure Initialize (This : in out ImageCompleteUtil'Class);
    function Create return ImageCompleteUtil_Access;
    function getInstance return ImageCompleteUtil_Access;
-   procedure waitForImage (This : in out ImageCompleteUtil; image_Param : access Image'Class; name : Unbounded_String);
-   function isReady_Case (This : in out ImageCompleteUtil; image_Param : access Image'Class; name : Unbounded_String; timeDelayHelper_Param : access TimeDelayHelper'Class) return Boolean;
-   procedure isReady_Case (This : in out ImageCompleteUtil; image_Param : access Image'Class; name : Unbounded_String; timeDelayHelper_Param : access TimeDelayHelper'Class);
+   procedure waitForImage (This : in out ImageCompleteUtil; image_Param : access Image_Package.Image'Class; name : Unbounded_String);
+   function isReady_Case (This : in out ImageCompleteUtil; image_Param : access Image_Package.Image'Class; name : Unbounded_String; timeDelayHelper_Param : access TimeDelayHelper_Package.TimeDelayHelper'Class) return Boolean;
+   procedure isReady_Case (This : in out ImageCompleteUtil; image_Param : access Image_Package.Image'Class; name : Unbounded_String; timeDelayHelper_Param : access TimeDelayHelper_Package.TimeDelayHelper'Class);
    procedure handleTimeout (This : in out ImageCompleteUtil; name : Unbounded_String);
    procedure waitForAll (This : in out ImageCompleteUtil);
 

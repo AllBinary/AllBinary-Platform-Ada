@@ -28,16 +28,16 @@ package body org.allbinary.game.ag.layer.hud.basic.time.TimeHudWidget_Package is
 
 
    --  throws Exception
-   function getInstance (location : Integer; direction : Integer; basicColor_Param : access BasicColor'Class; timer_Param : access Timer'Class) return TimeHudWidget_Access is
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
-      timer : Timer_Access := Timer_Access (timer_Param);
+   function getInstance (location : Integer; direction : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class; timer_Param : access Timer_Package.Timer'Class) return TimeHudWidget_Access is
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
+      timer : constant Timer_Access := Timer_Access (timer_Param);
    begin
         return TimeHudWidget_Package.Create (location, direction, 2, basicColor, timer);
    end getInstance;
 
-   procedure Initialize (This : in out TimeHudWidget'Class; location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor'Class; timer_Param : access Timer'Class) is
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
-      timer : Timer_Access := Timer_Access (timer_Param);
+   procedure Initialize (This : in out TimeHudWidget'Class; location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class; timer_Param : access Timer_Package.Timer'Class) is
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
+      timer : constant Timer_Access := Timer_Access (timer_Param);
    begin
         BasicHud_Package.Initialize (This, location, direction, bufferZone, basicColor);
         Initialize_Fields (This);
@@ -46,15 +46,15 @@ package body org.allbinary.game.ag.layer.hud.basic.time.TimeHudWidget_Package is
         This.updateMaxHeight := 14;
    end Initialize;
 
-   function Create (location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor'Class; timer_Param : access Timer'Class) return TimeHudWidget_Access is
+   function Create (location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class; timer_Param : access Timer_Package.Timer'Class) return TimeHudWidget_Access is
       This : constant TimeHudWidget_Access := new TimeHudWidget;
    begin
       TimeHudWidget_Package.Initialize (This.all, location, direction, bufferZone, basicColor_Param, timer_Param);
       return This;
    end Create;
 
-   procedure updateMeasurement (This : in out TimeHudWidget; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure updateMeasurement (This : in out TimeHudWidget; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
    begin
         font := graphics.getFont;
@@ -80,13 +80,13 @@ package body org.allbinary.game.ag.layer.hud.basic.time.TimeHudWidget_Package is
         return This.timer;
    end getTimer;
 
-   procedure paint (This : in out TimeHudWidget; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out TimeHudWidget; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         BasicHud (This).paintDX (graphics, This.TIME_CHAR_ARRAY, 0, This.TIME_CHAR_ARRAY'Length, This.string_Id, 0, This.totalDigits, This.offset);
    end paint;
 
-   procedure getInstance (location : Integer; direction : Integer; basicColor_Param : access BasicColor'Class; timer_Param : access Timer'Class) is
+   procedure getInstance (location : Integer; direction : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class; timer_Param : access Timer_Package.Timer'Class) is
       Java_Result : constant TimeHudWidget_Access := getInstance (location, direction, basicColor_Param, timer_Param);
       pragma Unreferenced (Java_Result);
    begin

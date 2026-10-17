@@ -79,8 +79,8 @@ package body org.allbinary.business.init.InitInfo_Package is
         end;
    end set;
 
-   procedure set (This : in out InitInfo; hashMap_Param : access HashMap'Class) is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+   procedure set (This : in out InitInfo; hashMap_Param : access HashMap_Package.HashMap'Class) is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
         begin
             This.testing_Case := Unbounded_String (hashMap.get (This.TESTING));
@@ -194,26 +194,26 @@ package body org.allbinary.business.init.InitInfo_Package is
         This.testing_Case := value;
    end setTesting;
 
-   procedure setTestHtmlPath (This : in out InitInfo; value_Param : access AbPath'Class) is
-      value : AbPath_Access := AbPath_Access (value_Param);
+   procedure setTestHtmlPath (This : in out InitInfo; value_Param : access AbPath_Package.AbPath'Class) is
+      value : constant AbPath_Access := AbPath_Access (value_Param);
    begin
         This.testHtmlPath_Case := value;
    end setTestHtmlPath;
 
-   procedure setMainPath (This : in out InitInfo; value_Param : access AbPath'Class) is
-      value : AbPath_Access := AbPath_Access (value_Param);
+   procedure setMainPath (This : in out InitInfo; value_Param : access AbPath_Package.AbPath'Class) is
+      value : constant AbPath_Access := AbPath_Access (value_Param);
    begin
         This.mainPath_Case := value;
    end setMainPath;
 
-   function isMainPathValid (This : in out InitInfo; abPath_Param : access AbPath'Class) return Boolean is
-      abPath : AbPath_Access := AbPath_Access (abPath_Param);
+   function isMainPathValid (This : in out InitInfo; abPath_Param : access AbPath_Package.AbPath'Class) return Boolean is
+      abPath : constant AbPath_Access := AbPath_Access (abPath_Param);
    begin
         return True;
    end isMainPathValid;
 
-   function isTestHtmlPathValid (This : in out InitInfo; abPath_Param : access AbPath'Class) return Boolean is
-      abPath : AbPath_Access := AbPath_Access (abPath_Param);
+   function isTestHtmlPathValid (This : in out InitInfo; abPath_Param : access AbPath_Package.AbPath'Class) return Boolean is
+      abPath : constant AbPath_Access := AbPath_Access (abPath_Param);
    begin
         return True;
    end isTestHtmlPathValid;
@@ -234,14 +234,14 @@ package body org.allbinary.business.init.InitInfo_Package is
         return hashMap;
    end toHashMap;
 
-   procedure isMainPathValid (This : in out InitInfo; abPath_Param : access AbPath'Class) is
+   procedure isMainPathValid (This : in out InitInfo; abPath_Param : access AbPath_Package.AbPath'Class) is
       Java_Result : constant Boolean := InitInfo'Class (This).isMainPathValid (abPath_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isMainPathValid;
 
-   procedure isTestHtmlPathValid (This : in out InitInfo; abPath_Param : access AbPath'Class) is
+   procedure isTestHtmlPathValid (This : in out InitInfo; abPath_Param : access AbPath_Package.AbPath'Class) is
       Java_Result : constant Boolean := InitInfo'Class (This).isTestHtmlPathValid (abPath_Param);
       pragma Unreferenced (Java_Result);
    begin

@@ -39,14 +39,14 @@ package org.allbinary.image.opengles.OpenGLImageUtilBase_Package is
 
    procedure Initialize (This : in out OpenGLImageUtilBase'Class);
    function Create return OpenGLImageUtilBase_Access;
-   function paint (This : in out OpenGLImageUtilBase; alphaBitmap_Param : access OpenGLBitmap'Class; originalBitmap_Param : access OpenGLBitmap'Class; index : Integer) return OpenGLBitmap_Access;
-   procedure paint (This : in out OpenGLImageUtilBase; alphaBitmap_Param : access OpenGLBitmap'Class; originalBitmap_Param : access OpenGLBitmap'Class; index : Integer);
-   function paint (This : in out OpenGLImageUtilBase; colorBitmap_Param : access OpenGLBitmap'Class; originalBitmap_Param : access OpenGLBitmap'Class; alpha : Integer; basicColor_Param : access BasicColor'Class) return OpenGLBitmap_Access;
-   procedure paint (This : in out OpenGLImageUtilBase; colorBitmap_Param : access OpenGLBitmap'Class; originalBitmap_Param : access OpenGLBitmap'Class; alpha : Integer; basicColor_Param : access BasicColor'Class);
+   function paint (This : in out OpenGLImageUtilBase; alphaBitmap_Param : access OpenGLBitmap_Package.OpenGLBitmap'Class; originalBitmap_Param : access OpenGLBitmap_Package.OpenGLBitmap'Class; index : Integer) return OpenGLBitmap_Access;
+   procedure paint (This : in out OpenGLImageUtilBase; alphaBitmap_Param : access OpenGLBitmap_Package.OpenGLBitmap'Class; originalBitmap_Param : access OpenGLBitmap_Package.OpenGLBitmap'Class; index : Integer);
+   function paint (This : in out OpenGLImageUtilBase; colorBitmap_Param : access OpenGLBitmap_Package.OpenGLBitmap'Class; originalBitmap_Param : access OpenGLBitmap_Package.OpenGLBitmap'Class; alpha : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) return OpenGLBitmap_Access;
+   procedure paint (This : in out OpenGLImageUtilBase; colorBitmap_Param : access OpenGLBitmap_Package.OpenGLBitmap'Class; originalBitmap_Param : access OpenGLBitmap_Package.OpenGLBitmap'Class; alpha : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class);
    function createImage (This : in out OpenGLImageUtilBase; name : Unbounded_String) return OpenGLBitmap_Access;
    procedure createImage (This : in out OpenGLImageUtilBase; name : Unbounded_String);
-   function createImageFromInputStream (This : in out OpenGLImageUtilBase; inputStream_Param : access InputStream'Class) return OpenGLBitmap_Access;
-   procedure createImageFromInputStream (This : in out OpenGLImageUtilBase; inputStream_Param : access InputStream'Class);
+   function createImageFromInputStream (This : in out OpenGLImageUtilBase; inputStream_Param : access InputStream_Package.InputStream'Class) return OpenGLBitmap_Access;
+   procedure createImageFromInputStream (This : in out OpenGLImageUtilBase; inputStream_Param : access InputStream_Package.InputStream'Class);
 
 end org.allbinary.image.opengles.OpenGLImageUtilBase_Package;
 

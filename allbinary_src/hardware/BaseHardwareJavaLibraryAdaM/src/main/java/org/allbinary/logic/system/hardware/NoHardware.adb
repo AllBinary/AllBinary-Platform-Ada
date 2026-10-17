@@ -48,14 +48,14 @@ package body org.allbinary.logic.system.hardware.NoHardware_Package is
         return To_Unbounded_String ("No Hardware");
    end toString;
 
-   function compareTo (This : in out NoHardware; hardwareInterface_Param : access HardwareInterface'Class) return Boolean is
-      hardwareInterface : HardwareInterface_Access := HardwareInterface_Access (hardwareInterface_Param);
+   function compareTo (This : in out NoHardware; hardwareInterface_Param : access HardwareInterface_Package.HardwareInterface'Class) return Boolean is
+      hardwareInterface : constant HardwareInterface_Access := HardwareInterface_Access (hardwareInterface_Param);
    begin
         return True;
    end compareTo;
 
-   function difference (This : in out NoHardware; hardwareInterface_Param : access HardwareInterface'Class) return ABHashtable_Access is
-      hardwareInterface : HardwareInterface_Access := HardwareInterface_Access (hardwareInterface_Param);
+   function difference (This : in out NoHardware; hardwareInterface_Param : access HardwareInterface_Package.HardwareInterface'Class) return ABHashtable_Access is
+      hardwareInterface : constant HardwareInterface_Access := HardwareInterface_Access (hardwareInterface_Param);
    begin
         return StdUtil_Package.getInstance.NULL_TABLE;
    end difference;
@@ -67,14 +67,14 @@ package body org.allbinary.logic.system.hardware.NoHardware_Package is
       null;
    end getComponent;
 
-   procedure compareTo (This : in out NoHardware; hardwareInterface_Param : access HardwareInterface'Class) is
+   procedure compareTo (This : in out NoHardware; hardwareInterface_Param : access HardwareInterface_Package.HardwareInterface'Class) is
       Java_Result : constant Boolean := NoHardware'Class (This).compareTo (hardwareInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end compareTo;
 
-   procedure difference (This : in out NoHardware; hardwareInterface_Param : access HardwareInterface'Class) is
+   procedure difference (This : in out NoHardware; hardwareInterface_Param : access HardwareInterface_Package.HardwareInterface'Class) is
       Java_Result : constant ABHashtable_Access := NoHardware'Class (This).difference (hardwareInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

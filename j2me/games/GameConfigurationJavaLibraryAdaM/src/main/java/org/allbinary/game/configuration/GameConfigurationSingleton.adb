@@ -52,8 +52,8 @@ package body org.allbinary.game.configuration.GameConfigurationSingleton_Package
         return This.list;
    end getOptionsBasicArrayList;
 
-   procedure add (This : in out GameConfigurationSingleton; gameConfiguration_Param : access GameConfiguration'Class) is
-      gameConfiguration : GameConfiguration_Access := GameConfiguration_Access (gameConfiguration_Param);
+   procedure add (This : in out GameConfigurationSingleton; gameConfiguration_Param : access GameConfiguration_Package.GameConfiguration'Class) is
+      gameConfiguration : constant GameConfiguration_Access := GameConfiguration_Access (gameConfiguration_Param);
    begin
         This.list.add (gameConfiguration);
    end add;

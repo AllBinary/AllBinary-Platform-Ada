@@ -95,9 +95,9 @@ package org.allbinary.game.input.form.UnitRTSFormInput_Package is
 
    procedure Initialize (This : in out UnitRTSFormInput'Class; groupInterface : Group_Access_Array_Access);
    function Create (groupInterface : Group_Access_Array_Access) return UnitRTSFormInput_Access;
-   procedure setAllBinaryGameLayerManager (This : in out UnitRTSFormInput; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class);
-   procedure processGameSpecific (This : in out UnitRTSFormInput; associatedRtsLayer_Param : access CollidableDestroyableDamageableLayer'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager'Class; item_Param : access ABCustomItem'Class; itemIndex : Integer);
-   procedure attemptBuild (This : in out UnitRTSFormInput; associatedRtsLayer_Param : access RTSLayer'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager'Class; layerInterface_Param : access RTSLayer'Class; itemIndex : Integer);
+   procedure setAllBinaryGameLayerManager (This : in out UnitRTSFormInput; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager_Package.AllBinaryGameLayerManager'Class);
+   procedure processGameSpecific (This : in out UnitRTSFormInput; associatedRtsLayer_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface_Package.RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; item_Param : access ABCustomItem_Package.ABCustomItem'Class; itemIndex : Integer);
+   procedure attemptBuild (This : in out UnitRTSFormInput; associatedRtsLayer_Param : access RTSLayer_Package.RTSLayer'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface_Package.RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; layerInterface_Param : access RTSLayer_Package.RTSLayer'Class; itemIndex : Integer);
 
 end org.allbinary.game.input.form.UnitRTSFormInput_Package;
 

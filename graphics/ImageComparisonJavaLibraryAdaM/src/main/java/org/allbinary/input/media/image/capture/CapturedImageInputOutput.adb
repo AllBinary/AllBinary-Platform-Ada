@@ -45,8 +45,8 @@ package body org.allbinary.input.media.image.capture.CapturedImageInputOutput_Pa
         This.save (capturedBufferedImageCacheable.getBufferedImage, frame);
    end save;
 
-   procedure save (This : in out CapturedImageInputOutput; bufferedImage_Param : access BufferedImage'Class; frame : Long_Long_Integer) is
-      bufferedImage : BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
+   procedure save (This : in out CapturedImageInputOutput; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; frame : Long_Long_Integer) is
+      bufferedImage : constant BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
       commonStrings : CommonStrings_Access;
       imageUtil : ImageUtil_Access;
       filePathStringBuffer : StringMaker_Access;

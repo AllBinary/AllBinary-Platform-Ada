@@ -53,12 +53,12 @@ package org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewa
       paymentGatewayInterface : PaymentGatewayInterface_Access;
    end record;
 
-   procedure Initialize (This : in out PaymentGatewayView'Class; paymentGatewayInterface_Param : access PaymentGatewayInterface'Class);
-   function Create (paymentGatewayInterface_Param : access PaymentGatewayInterface'Class) return PaymentGatewayView_Access;
+   procedure Initialize (This : in out PaymentGatewayView'Class; paymentGatewayInterface_Param : access PaymentGatewayInterface_Package.PaymentGatewayInterface'Class);
+   function Create (paymentGatewayInterface_Param : access PaymentGatewayInterface_Package.PaymentGatewayInterface'Class) return PaymentGatewayView_Access;
    function getPaymentGatewayInterface (This : in out PaymentGatewayView) return PaymentGatewayInterface_Access;
    function toHashMap (This : in out PaymentGatewayView) return HashMap_Access;
-   function toXmlNode (This : in out PaymentGatewayView; document_Param : access Document'Class) return Node_Access;
-   procedure toXmlNode (This : in out PaymentGatewayView; document_Param : access Document'Class);
+   function toXmlNode (This : in out PaymentGatewayView; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out PaymentGatewayView; document_Param : access Document_Package.Document'Class);
 
 end org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayView_Package;
 

@@ -48,8 +48,8 @@ package body org.allbinary.game.paint.OwnershipPaintable_Package is
       return This;
    end Create;
 
-   procedure updateMeasurement (This : in out OwnershipPaintable; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure updateMeasurement (This : in out OwnershipPaintable; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
    begin
         font := graphics.getFont;
@@ -58,8 +58,8 @@ package body org.allbinary.game.paint.OwnershipPaintable_Package is
         This.myFontProcessor := MyFontProcessor_Package.getInstance;
    end updateMeasurement;
 
-   procedure setBasicColorP (This : in out OwnershipPaintable; basicColor_Param : access BasicColor'Class) is
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+   procedure setBasicColorP (This : in out OwnershipPaintable; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         This.basicColor := basicColor;
         This.color := basicColor.intValue;
@@ -70,8 +70,8 @@ package body org.allbinary.game.paint.OwnershipPaintable_Package is
         return This.basicColor;
    end getBasicColorP;
 
-   procedure paint (This : in out OwnershipPaintable; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out OwnershipPaintable; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       halfWidth : Integer;
       height : Integer;
    begin

@@ -51,8 +51,8 @@ package body org.allbinary.media.graphics.geography.pathfinding.BasicGeographicM
         end if;
    end getPaths;
 
-   procedure release (This : in out BasicGeographicMapExtractedPathsCacheFactory; list_Param : access BasicArrayList'Class) is
-      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
+   procedure release (This : in out BasicGeographicMapExtractedPathsCacheFactory; list_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      list : constant BasicArrayList_Access := BasicArrayList_Access (list_Param);
       index : Integer;
    begin
         for index in reverse 0 .. (list.size) - (1) loop

@@ -41,8 +41,8 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.processo
    end Create;
 
    --  throws Exception
-   function getInstance (This : in out PaymentProcessorInterfaceFactory; transformInfoInterface_Param : access TransformInfoInterface'Class) return PaymentProcessorInterface_Access is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   function getInstance (This : in out PaymentProcessorInterfaceFactory; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return PaymentProcessorInterface_Access is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
       paymentTransactionInterface : PaymentTransactionInterface_Access;
       gatewayName : Unbounded_String;
       paymentType : PaymentType_Access;
@@ -72,7 +72,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.processo
         end;
    end getInstance;
 
-   procedure getInstance (This : in out PaymentProcessorInterfaceFactory; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+   procedure getInstance (This : in out PaymentProcessorInterfaceFactory; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
       Java_Result : constant PaymentProcessorInterface_Access := PaymentProcessorInterfaceFactory'Class (This).getInstance (transformInfoInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

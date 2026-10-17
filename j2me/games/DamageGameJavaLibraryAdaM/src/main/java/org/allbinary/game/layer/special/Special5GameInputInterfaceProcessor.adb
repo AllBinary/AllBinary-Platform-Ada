@@ -21,13 +21,13 @@ package body org.allbinary.game.layer.special.Special5GameInputInterfaceProcesso
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out Special5GameInputInterfaceProcessor'Class; collidableDestroyableDamageableLayer_Param : access SpecialGameInputInterface'Class) is
-      collidableDestroyableDamageableLayer : SpecialGameInputInterface_Access := SpecialGameInputInterface_Access (collidableDestroyableDamageableLayer_Param);
+   procedure Initialize (This : in out Special5GameInputInterfaceProcessor'Class; collidableDestroyableDamageableLayer_Param : access SpecialGameInputInterface_Package.SpecialGameInputInterface'Class) is
+      collidableDestroyableDamageableLayer : constant SpecialGameInputInterface_Access := SpecialGameInputInterface_Access (collidableDestroyableDamageableLayer_Param);
    begin
         SpecialGameInputInterfaceProcessor_Package.Initialize (This, collidableDestroyableDamageableLayer);
    end Initialize;
 
-   function Create (collidableDestroyableDamageableLayer_Param : access SpecialGameInputInterface'Class) return Special5GameInputInterfaceProcessor_Access is
+   function Create (collidableDestroyableDamageableLayer_Param : access SpecialGameInputInterface_Package.SpecialGameInputInterface'Class) return Special5GameInputInterfaceProcessor_Access is
       This : constant Special5GameInputInterfaceProcessor_Access := new Special5GameInputInterfaceProcessor;
    begin
       Special5GameInputInterfaceProcessor_Package.Initialize (This.all, collidableDestroyableDamageableLayer_Param);
@@ -35,9 +35,9 @@ package body org.allbinary.game.layer.special.Special5GameInputInterfaceProcesso
    end Create;
 
    --  throws Exception
-   procedure processEvent (This : in out Special5GameInputInterfaceProcessor; allbinaryLayerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class) is
-      allbinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allbinaryLayerManager_Param);
-      gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
+   procedure processEvent (This : in out Special5GameInputInterfaceProcessor; allbinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class) is
+      allbinaryLayerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allbinaryLayerManager_Param);
+      gameKeyEvent : constant GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         This.specialGameInputInterface.special5 (allbinaryLayerManager, gameKeyEvent);
    end processEvent;

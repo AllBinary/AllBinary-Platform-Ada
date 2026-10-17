@@ -41,9 +41,9 @@ package org.allbinary.game.input.GameInputLayerProcessor_Package is
 
    procedure Initialize (This : in out GameInputLayerProcessor'Class);
    function Create return GameInputLayerProcessor_Access;
-   procedure processAt (This : in out GameInputLayerProcessor; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class; layerInterface_Param : access AllBinaryLayer'Class; index : Integer);
-   function isProcessorLayer (This : in out GameInputLayerProcessor; layerInterface_Param : access AllBinaryLayer'Class) return Boolean;
-   procedure isProcessorLayer (This : in out GameInputLayerProcessor; layerInterface_Param : access AllBinaryLayer'Class);
+   procedure processAt (This : in out GameInputLayerProcessor; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; index : Integer);
+   function isProcessorLayer (This : in out GameInputLayerProcessor; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) return Boolean;
+   procedure isProcessorLayer (This : in out GameInputLayerProcessor; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class);
 
 end org.allbinary.game.input.GameInputLayerProcessor_Package;
 

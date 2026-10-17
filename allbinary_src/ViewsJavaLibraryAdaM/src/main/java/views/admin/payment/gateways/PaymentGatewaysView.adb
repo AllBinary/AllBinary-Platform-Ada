@@ -23,16 +23,16 @@ package body views.admin.payment.gateways.PaymentGatewaysView_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PaymentGatewaysView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; gatewayVector_Param : access BasicArrayList'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
-      gatewayVector : BasicArrayList_Access := BasicArrayList_Access (gatewayVector_Param);
+   procedure Initialize (This : in out PaymentGatewaysView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; gatewayVector_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+      gatewayVector : constant BasicArrayList_Access := BasicArrayList_Access (gatewayVector_Param);
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
         This.paymentGatewayVector := gatewayVector;
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; gatewayVector_Param : access BasicArrayList'Class) return PaymentGatewaysView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; gatewayVector_Param : access BasicArrayList_Package.BasicArrayList'Class) return PaymentGatewaysView_Access is
       This : constant PaymentGatewaysView_Access := new PaymentGatewaysView;
    begin
       PaymentGatewaysView_Package.Initialize (This.all, transformInfoInterface_Param, gatewayVector_Param);
@@ -40,8 +40,8 @@ package body views.admin.payment.gateways.PaymentGatewaysView_Package is
    end Create;
 
    --  throws Exception
-   function toXmlNode (This : in out PaymentGatewaysView; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out PaymentGatewaysView; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       storeName : Unbounded_String;
       paymentGatewaysNode : Node_Access;
       size : Integer;
@@ -100,7 +100,7 @@ package body views.admin.payment.gateways.PaymentGatewaysView_Package is
         end;
    end view;
 
-   procedure toXmlNode (This : in out PaymentGatewaysView; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out PaymentGatewaysView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := PaymentGatewaysView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

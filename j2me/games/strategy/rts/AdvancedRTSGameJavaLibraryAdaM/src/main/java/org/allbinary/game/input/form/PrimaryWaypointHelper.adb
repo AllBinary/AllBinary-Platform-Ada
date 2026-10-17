@@ -45,8 +45,8 @@ package body org.allbinary.game.input.form.PrimaryWaypointHelper_Package is
         return This.waypointLayer;
    end getWaypointLayer;
 
-   procedure setWaypointLayer (This : in out PrimaryWaypointHelper; waypointLayer_Param : access WaypointLayer'Class) is
-      waypointLayer : WaypointLayer_Access := WaypointLayer_Access (waypointLayer_Param);
+   procedure setWaypointLayer (This : in out PrimaryWaypointHelper; waypointLayer_Param : access WaypointLayer_Package.WaypointLayer'Class) is
+      waypointLayer : constant WaypointLayer_Access := WaypointLayer_Access (waypointLayer_Param);
    begin
         This.waypointLayer := waypointLayer;
    end setWaypointLayer;

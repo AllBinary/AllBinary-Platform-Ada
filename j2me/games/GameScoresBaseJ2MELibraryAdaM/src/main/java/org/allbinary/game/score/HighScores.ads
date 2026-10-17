@@ -51,16 +51,16 @@ package org.allbinary.game.score.HighScores_Package is
 
    procedure Initialize (This : in out HighScores'Class; name : Unbounded_String; heading : Unbounded_String; columnTwoHeading : Unbounded_String);
    function Create (name : Unbounded_String; heading : Unbounded_String; columnTwoHeading : Unbounded_String) return HighScores_Access;
-   procedure setList (This : in out HighScores; orderedHighScoresList_Param : access BasicArrayList'Class);
+   procedure setList (This : in out HighScores; orderedHighScoresList_Param : access BasicArrayList_Package.BasicArrayList'Class);
    function getList (This : in out HighScores) return BasicArrayList_Access;
    function getName (This : in out HighScores) return Unbounded_String;
    function getTotal (This : in out HighScores) return Integer;
-   procedure addHighScore (This : in out HighScores; newHighScore_Param : access HighScore'Class);
+   procedure addHighScore (This : in out HighScores; newHighScore_Param : access HighScore_Package.HighScore'Class);
    function getHeading (This : in out HighScores) return Unbounded_String;
    function getColumnOneHeading (This : in out HighScores) return Unbounded_String;
    function getColumnTwoHeading (This : in out HighScores) return Unbounded_String;
-   function isBestScore (This : in out HighScores; newHighScore_Param : access HighScore'Class) return Boolean;
-   procedure isBestScore (This : in out HighScores; newHighScore_Param : access HighScore'Class);
+   function isBestScore (This : in out HighScores; newHighScore_Param : access HighScore_Package.HighScore'Class) return Boolean;
+   procedure isBestScore (This : in out HighScores; newHighScore_Param : access HighScore_Package.HighScore'Class);
    function toString (This : in out HighScores) return Unbounded_String;
 
 end org.allbinary.game.score.HighScores_Package;

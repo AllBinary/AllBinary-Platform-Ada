@@ -44,15 +44,15 @@ package body org.allbinary.media.image.comparison.motion.TestInputForMotionRecta
         return This.motionRectanglesVector;
    end getMotionRectanglesVector;
 
-   procedure onMotionRectanglesImageComparisonResultsEvent (This : in out TestInputForMotionRectanglesResultsWorker; motionRectanglesImageComparisonResultsEvent_Param : access MotionRectanglesResultsEvent'Class) is
-      motionRectanglesImageComparisonResultsEvent : MotionRectanglesResultsEvent_Access := MotionRectanglesResultsEvent_Access (motionRectanglesImageComparisonResultsEvent_Param);
+   procedure onMotionRectanglesImageComparisonResultsEvent (This : in out TestInputForMotionRectanglesResultsWorker; motionRectanglesImageComparisonResultsEvent_Param : access MotionRectanglesResultsEvent_Package.MotionRectanglesResultsEvent'Class) is
+      motionRectanglesImageComparisonResultsEvent : constant MotionRectanglesResultsEvent_Access := MotionRectanglesResultsEvent_Access (motionRectanglesImageComparisonResultsEvent_Param);
    begin
         This.getMotionRectanglesVector.add (motionRectanglesImageComparisonResultsEvent.getMotionRectangles);
         This.run;
    end onMotionRectanglesImageComparisonResultsEvent;
 
-   procedure onEvent (This : in out TestInputForMotionRectanglesResultsWorker; allBinaryEventObject_Param : access AllBinaryEventObject'Class) is
-      allBinaryEventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (allBinaryEventObject_Param);
+   procedure onEvent (This : in out TestInputForMotionRectanglesResultsWorker; allBinaryEventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
+      allBinaryEventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (allBinaryEventObject_Param);
    begin
         This.onMotionRectanglesImageComparisonResultsEvent (MotionRectanglesResultsEvent_Access (allBinaryEventObject));
    end onEvent;

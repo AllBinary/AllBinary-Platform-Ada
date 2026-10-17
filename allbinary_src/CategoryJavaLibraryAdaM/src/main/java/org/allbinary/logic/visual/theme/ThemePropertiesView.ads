@@ -43,10 +43,10 @@ package org.allbinary.logic.visual.theme.ThemePropertiesView_Package is
       themeInterface : ThemeInterface_Access;
    end record;
 
-   procedure Initialize (This : in out ThemePropertiesView'Class; themeInterface_Param : access ThemeInterface'Class);
-   function Create (themeInterface_Param : access ThemeInterface'Class) return ThemePropertiesView_Access;
-   function toXmlNode (This : in out ThemePropertiesView; document_Param : access Document'Class) return Node_Access;
-   procedure toXmlNode (This : in out ThemePropertiesView; document_Param : access Document'Class);
+   procedure Initialize (This : in out ThemePropertiesView'Class; themeInterface_Param : access ThemeInterface_Package.ThemeInterface'Class);
+   function Create (themeInterface_Param : access ThemeInterface_Package.ThemeInterface'Class) return ThemePropertiesView_Access;
+   function toXmlNode (This : in out ThemePropertiesView; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out ThemePropertiesView; document_Param : access Document_Package.Document'Class);
 
 end org.allbinary.logic.visual.theme.ThemePropertiesView_Package;
 

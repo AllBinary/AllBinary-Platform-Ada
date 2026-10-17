@@ -38,15 +38,15 @@ package body org.allbinary.media.image.comparison.SaveImageComparisonWorker_Pack
       return This;
    end Create;
 
-   procedure onImageComparisonResultsEvent (This : in out SaveImageComparisonWorker; imageComparisonResultsEvent_Param : access ImageComparisonResultsEvent'Class) is
-      imageComparisonResultsEvent : ImageComparisonResultsEvent_Access := ImageComparisonResultsEvent_Access (imageComparisonResultsEvent_Param);
+   procedure onImageComparisonResultsEvent (This : in out SaveImageComparisonWorker; imageComparisonResultsEvent_Param : access ImageComparisonResultsEvent_Package.ImageComparisonResultsEvent'Class) is
+      imageComparisonResultsEvent : constant ImageComparisonResultsEvent_Access := ImageComparisonResultsEvent_Access (imageComparisonResultsEvent_Param);
    begin
         This.imageComparisonInfoVector.add (imageComparisonResultsEvent);
         This.run;
    end onImageComparisonResultsEvent;
 
-   procedure onEvent (This : in out SaveImageComparisonWorker; allBinaryEventObject_Param : access AllBinaryEventObject'Class) is
-      allBinaryEventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (allBinaryEventObject_Param);
+   procedure onEvent (This : in out SaveImageComparisonWorker; allBinaryEventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
+      allBinaryEventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (allBinaryEventObject_Param);
    begin
         This.onImageComparisonResultsEvent (ImageComparisonResultsEvent_Access (allBinaryEventObject));
    end onEvent;

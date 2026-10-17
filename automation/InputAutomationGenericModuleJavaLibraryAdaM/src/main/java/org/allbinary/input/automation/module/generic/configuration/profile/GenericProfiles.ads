@@ -74,14 +74,14 @@ package org.allbinary.input.automation.module.generic_Id.configuration.profile.G
 
    procedure Initialize (This : in out GenericProfiles'Class; fileName : Unbounded_String);
    function Create (fileName : Unbounded_String) return GenericProfiles_Access;
-   procedure initProfiles (This : in out GenericProfiles; node_Param : access Node'Class);
+   procedure initProfiles (This : in out GenericProfiles; node_Param : access Node_Package.Node'Class);
    function getDefaultListModelHelper (This : in out GenericProfiles) return DefaultListModelHelper_Access;
    function get (This : in out GenericProfiles; name : Unbounded_String) return GenericProfile_Access;
    procedure get (This : in out GenericProfiles; name : Unbounded_String);
    procedure add (This : in out GenericProfiles; name : Unbounded_String);
    procedure remove (This : in out GenericProfiles; name : Unbounded_String);
-   function toXmlNode (This : in out GenericProfiles; document_Param : access Document'Class) return Node_Access;
-   procedure toXmlNode (This : in out GenericProfiles; document_Param : access Document'Class);
+   function toXmlNode (This : in out GenericProfiles; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out GenericProfiles; document_Param : access Document_Package.Document'Class);
    function toXmlDoc (This : in out GenericProfiles) return Document_Access;
    procedure save (This : in out GenericProfiles);
 

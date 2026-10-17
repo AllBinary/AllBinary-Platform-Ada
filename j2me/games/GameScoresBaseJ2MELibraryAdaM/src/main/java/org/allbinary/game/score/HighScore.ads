@@ -46,8 +46,8 @@ package org.allbinary.game.score.HighScore_Package is
       scoreString : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out HighScore'Class; id : Integer; name : Unbounded_String; gameInfo_Param : access GameInfo'Class; score : Long_Long_Integer);
-   function Create (id : Integer; name : Unbounded_String; gameInfo_Param : access GameInfo'Class; score : Long_Long_Integer) return HighScore_Access;
+   procedure Initialize (This : in out HighScore'Class; id : Integer; name : Unbounded_String; gameInfo_Param : access GameInfo_Package.GameInfo'Class; score : Long_Long_Integer);
+   function Create (id : Integer; name : Unbounded_String; gameInfo_Param : access GameInfo_Package.GameInfo'Class; score : Long_Long_Integer) return HighScore_Access;
    function getId (This : in out HighScore) return Integer;
    function getName (This : in out HighScore) return Unbounded_String;
    function getScore (This : in out HighScore) return Long_Long_Integer;

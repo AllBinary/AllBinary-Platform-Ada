@@ -61,25 +61,25 @@ package org.allbinary.business.category.store.theme.StoreThemeCategoryFactory_Pa
       transformInfoInterface : TransformInfoInterface_Access;
    end record;
 
-   procedure Initialize (This : in out StoreThemeCategoryFactory'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return StoreThemeCategoryFactory_Access;
+   procedure Initialize (This : in out StoreThemeCategoryFactory'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return StoreThemeCategoryFactory_Access;
    function getRootInstance (This : in out StoreThemeCategoryFactory) return CategoryInterface_Access;
-   function getRootInstance (This : in out StoreThemeCategoryFactory; categoryAbPath_Param : access AbPath'Class) return CategoryInterface_Access;
-   procedure getRootInstance (This : in out StoreThemeCategoryFactory; categoryAbPath_Param : access AbPath'Class);
-   function getRootInstanceFromNode (This : in out StoreThemeCategoryFactory; node_Param : access Node'Class) return CategoryInterface_Access;
-   procedure getRootInstanceFromNode (This : in out StoreThemeCategoryFactory; node_Param : access Node'Class);
+   function getRootInstance (This : in out StoreThemeCategoryFactory; categoryAbPath_Param : access AbPath_Package.AbPath'Class) return CategoryInterface_Access;
+   procedure getRootInstance (This : in out StoreThemeCategoryFactory; categoryAbPath_Param : access AbPath_Package.AbPath'Class);
+   function getRootInstanceFromNode (This : in out StoreThemeCategoryFactory; node_Param : access Node_Package.Node'Class) return CategoryInterface_Access;
+   procedure getRootInstanceFromNode (This : in out StoreThemeCategoryFactory; node_Param : access Node_Package.Node'Class);
    function getInstance (This : in out StoreThemeCategoryFactory; categoryPath : Unbounded_String; level : Integer) return CategoryInterface_Access;
    procedure getInstance (This : in out StoreThemeCategoryFactory; categoryPath : Unbounded_String; level : Integer);
-   function getInstance (This : in out StoreThemeCategoryFactory; rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class; categoryPath : Unbounded_String) return CategoryInterface_Access;
-   procedure getInstance (This : in out StoreThemeCategoryFactory; rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class; categoryPath : Unbounded_String);
-   function getInstance (This : in out StoreThemeCategoryFactory; node_Param : access Node'Class; level : Integer) return CategoryInterface_Access;
-   procedure getInstance (This : in out StoreThemeCategoryFactory; node_Param : access Node'Class; level : Integer);
-   function getInstance (This : in out StoreThemeCategoryFactory; rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class; node_Param : access Node'Class) return CategoryInterface_Access;
-   procedure getInstance (This : in out StoreThemeCategoryFactory; rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class; node_Param : access Node'Class);
-   function getInstance (This : in out StoreThemeCategoryFactory; categoryPropertiesHashMap_Param : access HashMap'Class; level : Integer) return CategoryInterface_Access;
-   procedure getInstance (This : in out StoreThemeCategoryFactory; categoryPropertiesHashMap_Param : access HashMap'Class; level : Integer);
-   function getInstance (This : in out StoreThemeCategoryFactory; rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class; categoryPropertiesHashMap_Param : access HashMap'Class) return CategoryInterface_Access;
-   procedure getInstance (This : in out StoreThemeCategoryFactory; rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class; categoryPropertiesHashMap_Param : access HashMap'Class);
+   function getInstance (This : in out StoreThemeCategoryFactory; rootCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; categoryPath : Unbounded_String) return CategoryInterface_Access;
+   procedure getInstance (This : in out StoreThemeCategoryFactory; rootCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; categoryPath : Unbounded_String);
+   function getInstance (This : in out StoreThemeCategoryFactory; node_Param : access Node_Package.Node'Class; level : Integer) return CategoryInterface_Access;
+   procedure getInstance (This : in out StoreThemeCategoryFactory; node_Param : access Node_Package.Node'Class; level : Integer);
+   function getInstance (This : in out StoreThemeCategoryFactory; rootCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; node_Param : access Node_Package.Node'Class) return CategoryInterface_Access;
+   procedure getInstance (This : in out StoreThemeCategoryFactory; rootCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; node_Param : access Node_Package.Node'Class);
+   function getInstance (This : in out StoreThemeCategoryFactory; categoryPropertiesHashMap_Param : access HashMap_Package.HashMap'Class; level : Integer) return CategoryInterface_Access;
+   procedure getInstance (This : in out StoreThemeCategoryFactory; categoryPropertiesHashMap_Param : access HashMap_Package.HashMap'Class; level : Integer);
+   function getInstance (This : in out StoreThemeCategoryFactory; rootCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; categoryPropertiesHashMap_Param : access HashMap_Package.HashMap'Class) return CategoryInterface_Access;
+   procedure getInstance (This : in out StoreThemeCategoryFactory; rootCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; categoryPropertiesHashMap_Param : access HashMap_Package.HashMap'Class);
 
 end org.allbinary.business.category.store.theme.StoreThemeCategoryFactory_Package;
 

@@ -23,7 +23,7 @@ package body org.allbinary.logic.util.event.AllBinaryEventObject_Package is
 
 
    procedure Initialize (This : in out AllBinaryEventObject'Class; anyType_Param : access Java_Object'Class) is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
       Initialize_Fields (This);
         This.source := anyType;
@@ -42,7 +42,7 @@ package body org.allbinary.logic.util.event.AllBinaryEventObject_Package is
    end getSource;
 
    procedure setSource (This : in out AllBinaryEventObject; source_Param : access Java_Object'Class) is
-      source : Java_Object_Access := Java_Object_Access (source_Param);
+      source : constant Java_Object_Access := Java_Object_Access (source_Param);
    begin
         This.source := source;
    end setSource;

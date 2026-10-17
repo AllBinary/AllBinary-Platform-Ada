@@ -22,14 +22,14 @@ package body org.allbinary.business.advertisement.campaign.AdvertisementCampaign
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AdvertisementCampaign'Class; hashMap_Param : access HashMap'Class) is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+   procedure Initialize (This : in out AdvertisementCampaign'Class; hashMap_Param : access HashMap_Package.HashMap'Class) is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
       Initialize_Fields (This);
         This.hashMap := hashMap;
    end Initialize;
 
-   function Create (hashMap_Param : access HashMap'Class) return AdvertisementCampaign_Access is
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return AdvertisementCampaign_Access is
       This : constant AdvertisementCampaign_Access := new AdvertisementCampaign;
    begin
       AdvertisementCampaign_Package.Initialize (This.all, hashMap_Param);
@@ -56,13 +56,13 @@ package body org.allbinary.business.advertisement.campaign.AdvertisementCampaign
         This.hashMap.put (AdvertisementCampaignData_Package.getInstance.NAME, name);
    end setName;
 
-   function search (This : in out AdvertisementCampaign; advertisementSearchInterface_Param : access AdvertisementSearchInterface'Class) return AdvertisementsInterface_Access is
-      advertisementSearchInterface : AdvertisementSearchInterface_Access := AdvertisementSearchInterface_Access (advertisementSearchInterface_Param);
+   function search (This : in out AdvertisementCampaign; advertisementSearchInterface_Param : access AdvertisementSearchInterface_Package.AdvertisementSearchInterface'Class) return AdvertisementsInterface_Access is
+      advertisementSearchInterface : constant AdvertisementSearchInterface_Access := AdvertisementSearchInterface_Access (advertisementSearchInterface_Param);
    begin
         return null;
    end search;
 
-   procedure search (This : in out AdvertisementCampaign; advertisementSearchInterface_Param : access AdvertisementSearchInterface'Class) is
+   procedure search (This : in out AdvertisementCampaign; advertisementSearchInterface_Param : access AdvertisementSearchInterface_Package.AdvertisementSearchInterface'Class) is
       Java_Result : constant AdvertisementsInterface_Access := AdvertisementCampaign'Class (This).search (advertisementSearchInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

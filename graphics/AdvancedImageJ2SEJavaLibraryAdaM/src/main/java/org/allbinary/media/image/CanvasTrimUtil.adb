@@ -41,9 +41,9 @@ package body org.allbinary.media.image.CanvasTrimUtil_Package is
    end getInstance;
 
    --  throws IOException
-   procedure process (This : in out CanvasTrimUtil; imageProcessorInput_Param : access ImageProcessorInput'Class; cutCanvasFromLeftReduction : Integer; cutCanvasFromTopReduction : Integer; cutCanvasFromRightReduction : Integer; cutCanvasFromBottomReduction : Integer; visitor_Param : access ImageProcessedVisitor'Class) is
-      imageProcessorInput : ImageProcessorInput_Access := ImageProcessorInput_Access (imageProcessorInput_Param);
-      visitor : ImageProcessedVisitor_Access := ImageProcessedVisitor_Access (visitor_Param);
+   procedure process (This : in out CanvasTrimUtil; imageProcessorInput_Param : access ImageProcessorInput_Package.ImageProcessorInput'Class; cutCanvasFromLeftReduction : Integer; cutCanvasFromTopReduction : Integer; cutCanvasFromRightReduction : Integer; cutCanvasFromBottomReduction : Integer; visitor_Param : access ImageProcessedVisitor_Package.ImageProcessedVisitor'Class) is
+      imageProcessorInput : constant ImageProcessorInput_Access := ImageProcessorInput_Access (imageProcessorInput_Param);
+      visitor : constant ImageProcessedVisitor_Access := ImageProcessedVisitor_Access (visitor_Param);
       bufferedImageArray : BufferedImage_Access_Array_Access;
       subBufferedImageArray : BufferedImage_Access_Array_Access;
       size : Integer;

@@ -45,8 +45,8 @@ package org.allbinary.logic.visual.transform.info.TransformInfoHttpComposite_Pac
       transformInfoInterface : TransformInfoHttpInterface_Access;
    end record;
 
-   procedure Initialize (This : in out TransformInfoHttpComposite'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return TransformInfoHttpComposite_Access;
+   procedure Initialize (This : in out TransformInfoHttpComposite'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return TransformInfoHttpComposite_Access;
    function getTransformInfoInterface (This : in out TransformInfoHttpComposite) return TransformInfoInterface_Access;
    function getWeblisketSession (This : in out TransformInfoHttpComposite) return WeblisketSession_Access;
    function getPageContext (This : in out TransformInfoHttpComposite) return PageContext_Access;

@@ -48,17 +48,17 @@ package org.allbinary.input.automation.actions.script.condition.TimeIntervalActi
       titleJLabel : JLabel_Access;
    end record;
 
-   procedure Initialize (This : in out TimeIntervalActionScriptConditionJPanel'Class; timeIntervalActionScriptConditionInterface_Param : access TimeIntervalActionScriptConditionInterface'Class);
-   function Create (timeIntervalActionScriptConditionInterface_Param : access TimeIntervalActionScriptConditionInterface'Class) return TimeIntervalActionScriptConditionJPanel_Access;
+   procedure Initialize (This : in out TimeIntervalActionScriptConditionJPanel'Class; timeIntervalActionScriptConditionInterface_Param : access TimeIntervalActionScriptConditionInterface_Package.TimeIntervalActionScriptConditionInterface'Class);
+   function Create (timeIntervalActionScriptConditionInterface_Param : access TimeIntervalActionScriptConditionInterface_Package.TimeIntervalActionScriptConditionInterface'Class) return TimeIntervalActionScriptConditionJPanel_Access;
    procedure set (This : in out TimeIntervalActionScriptConditionJPanel);
    procedure update (This : in out TimeIntervalActionScriptConditionJPanel);
    function getTimeIntervalJTextField (This : in out TimeIntervalActionScriptConditionJPanel) return JTextField_Access;
-   procedure setTimeIntervalJTextField (This : in out TimeIntervalActionScriptConditionJPanel; timeIntervalJTextField_Param : access JTextField'Class);
+   procedure setTimeIntervalJTextField (This : in out TimeIntervalActionScriptConditionJPanel; timeIntervalJTextField_Param : access JTextField_Package.JTextField'Class);
    function getTimeIntervalActionJDialog (This : in out TimeIntervalActionScriptConditionJPanel) return JDialog_Access;
-   procedure setTimeIntervalActionJDialog (This : in out TimeIntervalActionScriptConditionJPanel; timeIntervalActionJDialog_Param : access JDialog'Class);
+   procedure setTimeIntervalActionJDialog (This : in out TimeIntervalActionScriptConditionJPanel; timeIntervalActionJDialog_Param : access JDialog_Package.JDialog'Class);
    procedure initComponents (This : in out TimeIntervalActionScriptConditionJPanel);
-   procedure okJButtonActionPerformed (This : in out TimeIntervalActionScriptConditionJPanel; evt_Param : access ActionEvent'Class);
-   procedure timeIntervalActionJButtonActionPerformed (This : in out TimeIntervalActionScriptConditionJPanel; evt_Param : access ActionEvent'Class);
+   procedure okJButtonActionPerformed (This : in out TimeIntervalActionScriptConditionJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
+   procedure timeIntervalActionJButtonActionPerformed (This : in out TimeIntervalActionScriptConditionJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
 
 end org.allbinary.input.automation.actions.script.condition.TimeIntervalActionScriptConditionJPanel_Package;
 

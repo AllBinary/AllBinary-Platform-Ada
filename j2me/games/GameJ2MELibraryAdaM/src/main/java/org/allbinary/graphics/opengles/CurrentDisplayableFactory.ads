@@ -96,16 +96,16 @@ package org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package is
    procedure Initialize (This : in out CurrentDisplayableFactory'Class);
    function Create return CurrentDisplayableFactory_Access;
    function getInstance return CurrentDisplayableFactory_Access;
-   procedure setMyCanvas (This : in out CurrentDisplayableFactory; displayable_Param : access MyCanvas'Class);
-   procedure setDisplayable (This : in out CurrentDisplayableFactory; displayable_Param : access Displayable'Class);
-   procedure setOpenGlReadydisplayable (This : in out CurrentDisplayableFactory; openGlReadydisplayable_Param : access Displayable'Class);
+   procedure setMyCanvas (This : in out CurrentDisplayableFactory; displayable_Param : access MyCanvas_Package.MyCanvas'Class);
+   procedure setDisplayable (This : in out CurrentDisplayableFactory; displayable_Param : access Displayable_Package.Displayable'Class);
+   procedure setOpenGlReadydisplayable (This : in out CurrentDisplayableFactory; openGlReadydisplayable_Param : access Displayable_Package.Displayable'Class);
    function getOpenGlReadydisplayable (This : in out CurrentDisplayableFactory) return Displayable_Access;
-   procedure setRunnable (This : in out CurrentDisplayableFactory; runnable_Case_Param : access GameRunnable'Class);
+   procedure setRunnable (This : in out CurrentDisplayableFactory; runnable_Case_Param : access GameRunnable_Package.GameRunnable'Class);
    procedure clearRunnable (This : in out CurrentDisplayableFactory);
    procedure update (This : in out CurrentDisplayableFactory);
    function getDisplayable (This : in out CurrentDisplayableFactory) return Displayable_Access;
    function getUsedRunnable (This : in out CurrentDisplayableFactory) return GameRunnable_Access;
-   procedure setUsedRunnable (This : in out CurrentDisplayableFactory; usedRunnable_Param : access GameRunnable'Class);
+   procedure setUsedRunnable (This : in out CurrentDisplayableFactory; usedRunnable_Param : access GameRunnable_Package.GameRunnable'Class);
 
 end org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package;
 

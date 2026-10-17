@@ -69,12 +69,12 @@ package views.HttpComponentView_Package is
       NO_TYPE : Integer;
    end record;
 
-   procedure Initialize (This : in out HttpComponentView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return HttpComponentView_Access;
+   procedure Initialize (This : in out HttpComponentView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return HttpComponentView_Access;
    function getTypeId (This : in out HttpComponentView) return Integer;
    function getTransformDocumentInterface (This : in out HttpComponentView) return TransformDocumentInterface_Access;
-   procedure setTransformDocumentInterface (This : in out HttpComponentView; transformDocumentInterface_Param : access TransformDocumentInterface'Class);
-   procedure addDomNodeInterface (This : in out HttpComponentView; domNodeInterface_Param : access DomNodeInterface'Class);
+   procedure setTransformDocumentInterface (This : in out HttpComponentView; transformDocumentInterface_Param : access TransformDocumentInterface_Package.TransformDocumentInterface'Class);
+   procedure addDomNodeInterface (This : in out HttpComponentView; domNodeInterface_Param : access DomNodeInterface_Package.DomNodeInterface'Class);
    function toXmlDoc (This : in out HttpComponentView) return Document_Access;
    function getDoc (This : in out HttpComponentView) return Document_Access;
    function view (This : in out HttpComponentView) return Unbounded_String;

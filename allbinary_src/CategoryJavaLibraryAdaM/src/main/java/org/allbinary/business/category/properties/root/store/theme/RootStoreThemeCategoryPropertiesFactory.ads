@@ -50,14 +50,14 @@ package org.allbinary.business.category.properties.root.store.theme.RootStoreThe
       categoryPropertiesInterface : CategoryPropertiesInterface_Access;
    end record;
 
-   procedure Initialize (This : in out RootStoreThemeCategoryPropertiesFactory'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return RootStoreThemeCategoryPropertiesFactory_Access;
-   procedure Initialize (This : in out RootStoreThemeCategoryPropertiesFactory'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; abPath_Param : access AbPath'Class);
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; abPath_Param : access AbPath'Class) return RootStoreThemeCategoryPropertiesFactory_Access;
-   procedure Initialize (This : in out RootStoreThemeCategoryPropertiesFactory'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; node_Param : access Node'Class);
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; node_Param : access Node'Class) return RootStoreThemeCategoryPropertiesFactory_Access;
-   procedure Initialize (This : in out RootStoreThemeCategoryPropertiesFactory'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; categoryPropertiesHashMap_Param : access HashMap'Class);
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; categoryPropertiesHashMap_Param : access HashMap'Class) return RootStoreThemeCategoryPropertiesFactory_Access;
+   procedure Initialize (This : in out RootStoreThemeCategoryPropertiesFactory'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return RootStoreThemeCategoryPropertiesFactory_Access;
+   procedure Initialize (This : in out RootStoreThemeCategoryPropertiesFactory'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; abPath_Param : access AbPath_Package.AbPath'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; abPath_Param : access AbPath_Package.AbPath'Class) return RootStoreThemeCategoryPropertiesFactory_Access;
+   procedure Initialize (This : in out RootStoreThemeCategoryPropertiesFactory'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; node_Param : access Node_Package.Node'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; node_Param : access Node_Package.Node'Class) return RootStoreThemeCategoryPropertiesFactory_Access;
+   procedure Initialize (This : in out RootStoreThemeCategoryPropertiesFactory'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; categoryPropertiesHashMap_Param : access HashMap_Package.HashMap'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; categoryPropertiesHashMap_Param : access HashMap_Package.HashMap'Class) return RootStoreThemeCategoryPropertiesFactory_Access;
    function getInstance (This : in out RootStoreThemeCategoryPropertiesFactory) return CategoryPropertiesInterface_Access;
 
 end org.allbinary.business.category.properties.root.store.theme.RootStoreThemeCategoryPropertiesFactory_Package;

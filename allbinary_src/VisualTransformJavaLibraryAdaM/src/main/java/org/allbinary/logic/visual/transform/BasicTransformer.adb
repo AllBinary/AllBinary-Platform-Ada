@@ -24,9 +24,9 @@ package body org.allbinary.logic.visual.transform.BasicTransformer_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasicTransformer'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out BasicTransformer'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         AbTransformer_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
@@ -34,7 +34,7 @@ package body org.allbinary.logic.visual.transform.BasicTransformer_Package is
         This.setTemplateAsInputStream;
    end Initialize;
 
-   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) return BasicTransformer_Access is
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return BasicTransformer_Access is
       This : constant BasicTransformer_Access := new BasicTransformer;
    begin
       BasicTransformer_Package.Initialize (This.all, abeClientInformation_Param, transformInfoInterface_Param);
@@ -42,8 +42,8 @@ package body org.allbinary.logic.visual.transform.BasicTransformer_Package is
    end Create;
 
    --  throws Exception
-   procedure setEncryptedTemplateFileAsInputStream (This : in out BasicTransformer; file_Param : access AbFile'Class) is
-      file : AbFile_Access := AbFile_Access (file_Param);
+   procedure setEncryptedTemplateFileAsInputStream (This : in out BasicTransformer; file_Param : access AbFile_Package.AbFile'Class) is
+      file : constant AbFile_Access := AbFile_Access (file_Param);
       outputStream : ByteArrayOutputStream_Access;
       inputStream : AbFileInputStream_Access;
       abCrypt : AbCrypt_Access;

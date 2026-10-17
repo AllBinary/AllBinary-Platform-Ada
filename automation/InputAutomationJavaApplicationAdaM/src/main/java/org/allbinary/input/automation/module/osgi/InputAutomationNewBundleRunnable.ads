@@ -79,9 +79,9 @@ package org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunna
    INPUT_AUTMATION_MODULE_BUNDLE_JAR_PATH : Unbounded_String;
    MODULES_START_LEVEL : Integer;
 
-   procedure Initialize (This : in out InputAutomationNewBundleRunnable'Class; inputAutomationBundleActivator_Param : access InputAutomationBundleActivator'Class);
-   function Create (inputAutomationBundleActivator_Param : access InputAutomationBundleActivator'Class) return InputAutomationNewBundleRunnable_Access;
-   procedure setThread (This : in out InputAutomationNewBundleRunnable; thread_Param : access Thread'Class);
+   procedure Initialize (This : in out InputAutomationNewBundleRunnable'Class; inputAutomationBundleActivator_Param : access InputAutomationBundleActivator_Package.InputAutomationBundleActivator'Class);
+   function Create (inputAutomationBundleActivator_Param : access InputAutomationBundleActivator_Package.InputAutomationBundleActivator'Class) return InputAutomationNewBundleRunnable_Access;
+   procedure setThread (This : in out InputAutomationNewBundleRunnable; thread_Param : access Thread_Package.Thread'Class);
    function isRunning (This : in out InputAutomationNewBundleRunnable) return Boolean;
    procedure setRunning (This : in out InputAutomationNewBundleRunnable; running : Boolean);
    procedure updateModules (This : in out InputAutomationNewBundleRunnable);
@@ -91,8 +91,8 @@ package org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunna
    function isInstalled (This : in out InputAutomationNewBundleRunnable; symbolicName : Unbounded_String) return Boolean;
    procedure isInstalled (This : in out InputAutomationNewBundleRunnable; symbolicName : Unbounded_String);
    function findNewModules (This : in out InputAutomationNewBundleRunnable) return BasicArrayList_Access;
-   function install (This : in out InputAutomationNewBundleRunnable; url_Param : access URL'Class) return Bundle_Access;
-   procedure install (This : in out InputAutomationNewBundleRunnable; url_Param : access URL'Class);
+   function install (This : in out InputAutomationNewBundleRunnable; url_Param : access URL_Package.URL'Class) return Bundle_Access;
+   procedure install (This : in out InputAutomationNewBundleRunnable; url_Param : access URL_Package.URL'Class);
    procedure run (This : in out InputAutomationNewBundleRunnable);
 
 end org.allbinary.input.automation.module.osgi.InputAutomationNewBundleRunnable_Package;

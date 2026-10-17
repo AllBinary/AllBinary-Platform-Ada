@@ -45,13 +45,13 @@ package org.allbinary.game.health.HealthBarAnimationInterfaceFactory_Package is
 
    procedure Initialize (This : in out HealthBarAnimationInterfaceFactory'Class);
    function Create return HealthBarAnimationInterfaceFactory_Access;
-   function getInstanceByLocation (This : in out HealthBarAnimationInterfaceFactory; layerInterface_Param : access AllBinaryLayer'Class; location : Integer) return HealthBarAnimation_Access;
-   procedure getInstanceByLocation (This : in out HealthBarAnimationInterfaceFactory; layerInterface_Param : access AllBinaryLayer'Class; location : Integer);
+   function getInstanceByLocation (This : in out HealthBarAnimationInterfaceFactory; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; location : Integer) return HealthBarAnimation_Access;
+   procedure getInstanceByLocation (This : in out HealthBarAnimationInterfaceFactory; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; location : Integer);
    function getInstance (This : in out HealthBarAnimationInterfaceFactory; instanceId : Integer) return Animation_Access;
    procedure getInstance (This : in out HealthBarAnimationInterfaceFactory; instanceId : Integer);
-   function getInstanceAnimation (This : in out HealthBarAnimationInterfaceFactory; animationInterface_Param : access Animation'Class) return Animation_Access;
-   procedure getInstanceAnimation (This : in out HealthBarAnimationInterfaceFactory; animationInterface_Param : access Animation'Class);
-   procedure setInitialScale (This : in out HealthBarAnimationInterfaceFactory; scaleProperties_Param : access ScaleProperties'Class);
+   function getInstanceAnimation (This : in out HealthBarAnimationInterfaceFactory; animationInterface_Param : access Animation_Package.Animation'Class) return Animation_Access;
+   procedure getInstanceAnimation (This : in out HealthBarAnimationInterfaceFactory; animationInterface_Param : access Animation_Package.Animation'Class);
+   procedure setInitialScale (This : in out HealthBarAnimationInterfaceFactory; scaleProperties_Param : access ScaleProperties_Package.ScaleProperties'Class);
 
 end org.allbinary.game.health.HealthBarAnimationInterfaceFactory_Package;
 

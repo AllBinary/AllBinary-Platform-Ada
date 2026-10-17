@@ -27,8 +27,8 @@ package body org.allbinary.game.combat.damage.AnimationDamageFloaters_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AnimationDamageFloaters'Class; layerInterface_Param : access AllBinaryLayer'Class; animationInterfaceArray : IndexedAnimation_Access_Array_Access; dx : Integer; dy : Integer) is
-      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
+   procedure Initialize (This : in out AnimationDamageFloaters'Class; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; animationInterfaceArray : IndexedAnimation_Access_Array_Access; dx : Integer; dy : Integer) is
+      layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
       index : Integer;
    begin
       DamageFloaters_Package.Initialize (This);
@@ -43,7 +43,7 @@ package body org.allbinary.game.combat.damage.AnimationDamageFloaters_Package is
         This.dy := dy;
    end Initialize;
 
-   function Create (layerInterface_Param : access AllBinaryLayer'Class; animationInterfaceArray : IndexedAnimation_Access_Array_Access; dx : Integer; dy : Integer) return AnimationDamageFloaters_Access is
+   function Create (layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; animationInterfaceArray : IndexedAnimation_Access_Array_Access; dx : Integer; dy : Integer) return AnimationDamageFloaters_Access is
       This : constant AnimationDamageFloaters_Access := new AnimationDamageFloaters;
    begin
       AnimationDamageFloaters_Package.Initialize (This.all, layerInterface_Param, animationInterfaceArray, dx, dy);
@@ -58,8 +58,8 @@ package body org.allbinary.game.combat.damage.AnimationDamageFloaters_Package is
         This.circularIndexUtil.next;
    end add;
 
-   procedure paint (This : in out AnimationDamageFloaters; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out AnimationDamageFloaters; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       viewPosition : ViewPositionBase_Access;
       x : Integer;
       y : Integer;

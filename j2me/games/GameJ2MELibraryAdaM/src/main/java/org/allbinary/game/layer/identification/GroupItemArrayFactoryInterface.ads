@@ -32,7 +32,7 @@ package org.allbinary.game.layer.identification.GroupItemArrayFactoryInterface_P
    type GroupItemArrayFactoryInterface_Access is access all GroupItemArrayFactoryInterface'Class;
    type GroupItemArrayFactoryInterface_Access_Array is array (Natural range <>) of GroupItemArrayFactoryInterface_Access;
    type GroupItemArrayFactoryInterface_Access_Array_Access is access all GroupItemArrayFactoryInterface_Access_Array;
-   function getInstance (This : in out GroupItemArrayFactoryInterface; groupInterface_Param : access Group'Class) return ABCustomItem_Access_Array_Access is abstract;
+   function getInstance (This : in out GroupItemArrayFactoryInterface; groupInterface_Param : access Group_Package.Group'Class) return ABCustomItem_Access_Array_Access is abstract;
 
 end org.allbinary.game.layer.identification.GroupItemArrayFactoryInterface_Package;
 

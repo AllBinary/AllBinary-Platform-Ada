@@ -34,28 +34,28 @@ package body org.apache.xmlrpc.XmlRpcClient_Package is
    end setBasicAuthentication;
 
    --  throws XmlRpcException, IOException
-   function execute (This : in out XmlRpcClient; method : Unbounded_String; params_Param : access BasicArrayList'Class) return Java_Object_Access is
-      params : BasicArrayList_Access := BasicArrayList_Access (params_Param);
+   function execute (This : in out XmlRpcClient; method : Unbounded_String; params_Param : access BasicArrayList_Package.BasicArrayList'Class) return Java_Object_Access is
+      params : constant BasicArrayList_Access := BasicArrayList_Access (params_Param);
    begin
         return NullUtil_Package.getInstance.NULL_OBJECT;
    end execute;
 
    --  throws XmlRpcException, IOException
-   function execute (This : in out XmlRpcClient; method : Unbounded_String; params_Param : access BasicArrayList'Class; cryptInterface_Param : access CryptInterface'Class) return Java_Object_Access is
-      params : BasicArrayList_Access := BasicArrayList_Access (params_Param);
-      cryptInterface : CryptInterface_Access := CryptInterface_Access (cryptInterface_Param);
+   function execute (This : in out XmlRpcClient; method : Unbounded_String; params_Param : access BasicArrayList_Package.BasicArrayList'Class; cryptInterface_Param : access CryptInterface_Package.CryptInterface'Class) return Java_Object_Access is
+      params : constant BasicArrayList_Access := BasicArrayList_Access (params_Param);
+      cryptInterface : constant CryptInterface_Access := CryptInterface_Access (cryptInterface_Param);
    begin
         return NullUtil_Package.getInstance.NULL_OBJECT;
    end execute;
 
-   procedure execute (This : in out XmlRpcClient; method : Unbounded_String; params_Param : access BasicArrayList'Class) is
+   procedure execute (This : in out XmlRpcClient; method : Unbounded_String; params_Param : access BasicArrayList_Package.BasicArrayList'Class) is
       Java_Result : constant Java_Object_Access := XmlRpcClient'Class (This).execute (method, params_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end execute;
 
-   procedure execute (This : in out XmlRpcClient; method : Unbounded_String; params_Param : access BasicArrayList'Class; cryptInterface_Param : access CryptInterface'Class) is
+   procedure execute (This : in out XmlRpcClient; method : Unbounded_String; params_Param : access BasicArrayList_Package.BasicArrayList'Class; cryptInterface_Param : access CryptInterface_Package.CryptInterface'Class) is
       Java_Result : constant Java_Object_Access := XmlRpcClient'Class (This).execute (method, params_Param, cryptInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

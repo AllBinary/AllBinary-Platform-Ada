@@ -25,9 +25,9 @@ package body org.allbinary.game.layer.hud.event.GameNotificationEvent_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GameNotificationEvent'Class; anyType_Param : access Java_Object'Class; string_Id : Unbounded_String; seconds : Integer; basicColor_Param : access BasicColor'Class; permanent : Boolean) is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+   procedure Initialize (This : in out GameNotificationEvent'Class; anyType_Param : access Java_Object'Class; string_Id : Unbounded_String; seconds : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class; permanent : Boolean) is
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         AllBinaryEventObject_Package.Initialize (This, anyType);
         Initialize_Fields (This);
@@ -37,7 +37,7 @@ package body org.allbinary.game.layer.hud.event.GameNotificationEvent_Package is
         This.removeable := permanent;
    end Initialize;
 
-   function Create (anyType_Param : access Java_Object'Class; string_Id : Unbounded_String; seconds : Integer; basicColor_Param : access BasicColor'Class; permanent : Boolean) return GameNotificationEvent_Access is
+   function Create (anyType_Param : access Java_Object'Class; string_Id : Unbounded_String; seconds : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class; permanent : Boolean) return GameNotificationEvent_Access is
       This : constant GameNotificationEvent_Access := new GameNotificationEvent;
    begin
       GameNotificationEvent_Package.Initialize (This.all, anyType_Param, string_Id, seconds, basicColor_Param, permanent);
@@ -69,8 +69,8 @@ package body org.allbinary.game.layer.hud.event.GameNotificationEvent_Package is
         This.string_Id := string_Id;
    end setString;
 
-   procedure setBasicColorP (This : in out GameNotificationEvent; basicColor_Param : access BasicColor'Class) is
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+   procedure setBasicColorP (This : in out GameNotificationEvent; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         This.basicColor := basicColor;
    end setBasicColorP;

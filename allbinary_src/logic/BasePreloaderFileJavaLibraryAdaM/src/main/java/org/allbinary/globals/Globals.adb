@@ -40,8 +40,8 @@ package body org.allbinary.globals.Globals_Package is
       return This;
    end Create;
 
-   procedure init (This : in out Globals; classLoader_Param : access ClassLoader'Class; pathString : Unbounded_String) is
-      classLoader : ClassLoader_Access := ClassLoader_Access (classLoader_Param);
+   procedure init (This : in out Globals; classLoader_Param : access ClassLoader_Package.ClassLoader'Class; pathString : Unbounded_String) is
+      classLoader : constant ClassLoader_Access := ClassLoader_Access (classLoader_Param);
       commonStrings : CommonStrings_Access;
       appUrlGlobals : AppUrlGlobals_Access;
       stringBuffer : StringMaker_Access;

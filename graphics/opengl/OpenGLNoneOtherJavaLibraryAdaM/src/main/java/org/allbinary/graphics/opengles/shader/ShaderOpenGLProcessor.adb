@@ -23,32 +23,32 @@ package body org.allbinary.graphics.opengles.shader.ShaderOpenGLProcessor_Packag
       return This;
    end Create;
 
-   procedure process0 (This : in out ShaderOpenGLProcessor; gl_Param : access GL10'Class) is
-      gl : GL10_Access := GL10_Access (gl_Param);
+   procedure process0 (This : in out ShaderOpenGLProcessor; gl_Param : access GL10_Package.GL10'Class) is
+      gl : constant GL10_Access := GL10_Access (gl_Param);
    begin
         null;
    end process0;
 
-   procedure process1 (This : in out ShaderOpenGLProcessor; gl_Param : access GL10'Class) is
-      gl : GL10_Access := GL10_Access (gl_Param);
+   procedure process1 (This : in out ShaderOpenGLProcessor; gl_Param : access GL10_Package.GL10'Class) is
+      gl : constant GL10_Access := GL10_Access (gl_Param);
    begin
         null;
    end process1;
 
-   procedure process (This : in out ShaderOpenGLProcessor; gl_Param : access GL10'Class) is
-      gl : GL10_Access := GL10_Access (gl_Param);
+   procedure process (This : in out ShaderOpenGLProcessor; gl_Param : access GL10_Package.GL10'Class) is
+      gl : constant GL10_Access := GL10_Access (gl_Param);
    begin
         null;
    end process;
 
-   procedure process2 (This : in out ShaderOpenGLProcessor; gl_Param : access GL10'Class) is
-      gl : GL10_Access := GL10_Access (gl_Param);
+   procedure process2 (This : in out ShaderOpenGLProcessor; gl_Param : access GL10_Package.GL10'Class) is
+      gl : constant GL10_Access := GL10_Access (gl_Param);
    begin
         null;
    end process2;
 
-   procedure process3 (This : in out ShaderOpenGLProcessor; gl_Param : access GL10'Class) is
-      gl : GL10_Access := GL10_Access (gl_Param);
+   procedure process3 (This : in out ShaderOpenGLProcessor; gl_Param : access GL10_Package.GL10'Class) is
+      gl : constant GL10_Access := GL10_Access (gl_Param);
    begin
         null;
    end process3;

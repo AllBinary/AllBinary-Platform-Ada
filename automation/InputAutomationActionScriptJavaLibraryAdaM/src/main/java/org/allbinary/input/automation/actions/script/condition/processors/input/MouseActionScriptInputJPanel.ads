@@ -73,17 +73,17 @@ package org.allbinary.input.automation.actions.script.condition.processors.input
       titleJLabel : JLabel_Access;
    end record;
 
-   procedure Initialize (This : in out MouseActionScriptInputJPanel'Class; mouseActionScriptInputInterface_Param : access MouseActionScriptInputInterface'Class);
-   function Create (mouseActionScriptInputInterface_Param : access MouseActionScriptInputInterface'Class) return MouseActionScriptInputJPanel_Access;
+   procedure Initialize (This : in out MouseActionScriptInputJPanel'Class; mouseActionScriptInputInterface_Param : access MouseActionScriptInputInterface_Package.MouseActionScriptInputInterface'Class);
+   function Create (mouseActionScriptInputInterface_Param : access MouseActionScriptInputInterface_Package.MouseActionScriptInputInterface'Class) return MouseActionScriptInputJPanel_Access;
    procedure set (This : in out MouseActionScriptInputJPanel);
    procedure updateInputType (This : in out MouseActionScriptInputJPanel);
    procedure update (This : in out MouseActionScriptInputJPanel);
    function getMouseActionJDialog (This : in out MouseActionScriptInputJPanel) return JDialog_Access;
-   procedure setMouseActionJDialog (This : in out MouseActionScriptInputJPanel; mouseActionJDialog_Param : access JDialog'Class);
+   procedure setMouseActionJDialog (This : in out MouseActionScriptInputJPanel; mouseActionJDialog_Param : access JDialog_Package.JDialog'Class);
    procedure initComponents (This : in out MouseActionScriptInputJPanel);
-   procedure button2JCheckBoxActionPerformed (This : in out MouseActionScriptInputJPanel; evt_Param : access ActionEvent'Class);
-   procedure okJButtonActionPerformed (This : in out MouseActionScriptInputJPanel; evt_Param : access ActionEvent'Class);
-   procedure mouseActionJButtonActionPerformed (This : in out MouseActionScriptInputJPanel; evt_Param : access ActionEvent'Class);
+   procedure button2JCheckBoxActionPerformed (This : in out MouseActionScriptInputJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
+   procedure okJButtonActionPerformed (This : in out MouseActionScriptInputJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
+   procedure mouseActionJButtonActionPerformed (This : in out MouseActionScriptInputJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
 
 end org.allbinary.input.automation.actions.script.condition.processors.input.MouseActionScriptInputJPanel_Package;
 

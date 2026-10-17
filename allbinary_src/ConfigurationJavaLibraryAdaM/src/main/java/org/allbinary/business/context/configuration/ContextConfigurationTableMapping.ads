@@ -44,8 +44,8 @@ package org.allbinary.business.context.configuration.ContextConfigurationTableMa
       contextConfigurationInterface : ContextConfigurationInterface_Access;
    end record;
 
-   procedure Initialize (This : in out ContextConfigurationTableMapping'Class; contextConfigurationInterface_Param : access ContextConfigurationInterface'Class);
-   function Create (contextConfigurationInterface_Param : access ContextConfigurationInterface'Class) return ContextConfigurationTableMapping_Access;
+   procedure Initialize (This : in out ContextConfigurationTableMapping'Class; contextConfigurationInterface_Param : access ContextConfigurationInterface_Package.ContextConfigurationInterface'Class);
+   function Create (contextConfigurationInterface_Param : access ContextConfigurationInterface_Package.ContextConfigurationInterface'Class) return ContextConfigurationTableMapping_Access;
    function toHashMap (This : in out ContextConfigurationTableMapping) return HashMap_Access;
    function getKey (This : in out ContextConfigurationTableMapping) return Java_Object_Access;
    function toVector (This : in out ContextConfigurationTableMapping) return BasicArrayList_Access;

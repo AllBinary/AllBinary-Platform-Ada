@@ -31,7 +31,7 @@ package org.allbinary.game.layer.building.event.BuildingEventListenerInterface_P
    type BuildingEventListenerInterface_Access is access all BuildingEventListenerInterface'Class;
    type BuildingEventListenerInterface_Access_Array is array (Natural range <>) of BuildingEventListenerInterface_Access;
    type BuildingEventListenerInterface_Access_Array_Access is access all BuildingEventListenerInterface_Access_Array;
-   procedure onBuildingEvent (This : in out BuildingEventListenerInterface; event_Param : access RTSLayerEvent'Class) is abstract;
+   procedure onBuildingEvent (This : in out BuildingEventListenerInterface; event_Param : access RTSLayerEvent_Package.RTSLayerEvent'Class) is abstract;
 
 end org.allbinary.game.layer.building.event.BuildingEventListenerInterface_Package;
 

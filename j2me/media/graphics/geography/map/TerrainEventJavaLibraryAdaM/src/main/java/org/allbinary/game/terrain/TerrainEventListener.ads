@@ -35,8 +35,8 @@ package org.allbinary.game.terrain.TerrainEventListener_Package is
 
    procedure Initialize (This : in out TerrainEventListener'Class);
    function Create return TerrainEventListener_Access;
-   procedure onEvent (This : in out TerrainEventListener; eventObject_Param : access AllBinaryEventObject'Class);
-   procedure onTerrainEvent (This : in out TerrainEventListener; terrainEvent_Param : access TerrainEvent'Class);
+   procedure onEvent (This : in out TerrainEventListener; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class);
+   procedure onTerrainEvent (This : in out TerrainEventListener; terrainEvent_Param : access TerrainEvent_Package.TerrainEvent'Class);
    function getList (This : in out TerrainEventListener) return BasicArrayList_Access;
 
 end org.allbinary.game.terrain.TerrainEventListener_Package;

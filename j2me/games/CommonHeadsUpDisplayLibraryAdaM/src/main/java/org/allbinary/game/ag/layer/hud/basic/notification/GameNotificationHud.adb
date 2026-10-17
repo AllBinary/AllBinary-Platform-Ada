@@ -23,29 +23,29 @@ package body org.allbinary.game.ag.layer.hud.basic.notification.GameNotification
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GameNotificationHud'Class; location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor'Class) is
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+   procedure Initialize (This : in out GameNotificationHud'Class; location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         BasicHud_Package.Initialize (This, location, direction, bufferZone, basicColor);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor'Class) return GameNotificationHud_Access is
+   function Create (location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) return GameNotificationHud_Access is
       This : constant GameNotificationHud_Access := new GameNotificationHud;
    begin
       GameNotificationHud_Package.Initialize (This.all, location, direction, bufferZone, basicColor_Param);
       return This;
    end Create;
 
-   procedure onEvent (This : in out GameNotificationHud; eventObject_Param : access AllBinaryEventObject'Class) is
-      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+   procedure onEvent (This : in out GameNotificationHud; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
+      eventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
    begin
         ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, GameNotificationHud_Access'(This'Unchecked_Access));
    end onEvent;
 
    --  throws Exception
-   procedure onGameNotificationEvent (This : in out GameNotificationHud; gameNotificationEvent_Param : access GameNotificationEvent'Class) is
-      gameNotificationEvent : GameNotificationEvent_Access := GameNotificationEvent_Access (gameNotificationEvent_Param);
+   procedure onGameNotificationEvent (This : in out GameNotificationHud; gameNotificationEvent_Param : access GameNotificationEvent_Package.GameNotificationEvent'Class) is
+      gameNotificationEvent : constant GameNotificationEvent_Access := GameNotificationEvent_Access (gameNotificationEvent_Param);
    begin
         if (This.lastGameNotificationEvent) /= (gameNotificationEvent) then
             This.lastGameNotificationEvent := gameNotificationEvent;
@@ -54,8 +54,8 @@ package body org.allbinary.game.ag.layer.hud.basic.notification.GameNotification
         This.add (gameNotificationEvent.getString, gameNotificationEvent.getSeconds, gameNotificationEvent.getBasicColorP, gameNotificationEvent.getPermanent);
    end onGameNotificationEvent;
 
-   procedure add (This : in out GameNotificationHud; string_Id : Unbounded_String; seconds : Integer; basicColor_Param : access BasicColor'Class; permanent : Boolean) is
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+   procedure add (This : in out GameNotificationHud; string_Id : Unbounded_String; seconds : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class; permanent : Boolean) is
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         null;
    end add;
@@ -66,8 +66,8 @@ package body org.allbinary.game.ag.layer.hud.basic.notification.GameNotification
         null;
    end processTick;
 
-   procedure paint (This : in out GameNotificationHud; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out GameNotificationHud; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paint;

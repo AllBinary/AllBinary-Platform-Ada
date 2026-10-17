@@ -40,8 +40,8 @@ package body org.allbinary.data.CamelCaseUtil_Package is
    end getInstance;
 
    --  throws Exception
-   function getAsCamelCase (This : in out CamelCaseUtil; string_Id : Unbounded_String; stringBuilder_Param : access StringMaker'Class) return Unbounded_String is
-      stringBuilder : StringMaker_Access := StringMaker_Access (stringBuilder_Param);
+   function getAsCamelCase (This : in out CamelCaseUtil; string_Id : Unbounded_String; stringBuilder_Param : access StringMaker_Package.StringMaker'Class) return Unbounded_String is
+      stringBuilder : constant StringMaker_Access := StringMaker_Access (stringBuilder_Param);
       stringValidationUtil : StringValidationUtil_Access;
       list : BasicArrayList_Access;
       tokenizer : Tokenizer_Access;
@@ -67,7 +67,7 @@ package body org.allbinary.data.CamelCaseUtil_Package is
         return stringBuilder.toString;
    end getAsCamelCase;
 
-   procedure getAsCamelCase (This : in out CamelCaseUtil; string_Id : Unbounded_String; stringBuilder_Param : access StringMaker'Class) is
+   procedure getAsCamelCase (This : in out CamelCaseUtil; string_Id : Unbounded_String; stringBuilder_Param : access StringMaker_Package.StringMaker'Class) is
       Java_Result : constant Unbounded_String := CamelCaseUtil'Class (This).getAsCamelCase (string_Id, stringBuilder_Param);
       pragma Unreferenced (Java_Result);
    begin

@@ -45,8 +45,8 @@ package org.allbinary.game.ag.ai.InputProbability_Package is
    end record;
    INPUT_PROBABILITY : Integer;
 
-   procedure Initialize (This : in out InputProbability'Class; likelyhoodIntegerArray : Integer_Array_Access_Array_Access; repeatLikelyhoodIntegerArray : Integer_Array_Access; max : Integer; timeDelayHelper_Param : access TimeDelayHelper'Class);
-   function Create (likelyhoodIntegerArray : Integer_Array_Access_Array_Access; repeatLikelyhoodIntegerArray : Integer_Array_Access; max : Integer; timeDelayHelper_Param : access TimeDelayHelper'Class) return InputProbability_Access;
+   procedure Initialize (This : in out InputProbability'Class; likelyhoodIntegerArray : Integer_Array_Access_Array_Access; repeatLikelyhoodIntegerArray : Integer_Array_Access; max : Integer; timeDelayHelper_Param : access TimeDelayHelper_Package.TimeDelayHelper'Class);
+   function Create (likelyhoodIntegerArray : Integer_Array_Access_Array_Access; repeatLikelyhoodIntegerArray : Integer_Array_Access; max : Integer; timeDelayHelper_Param : access TimeDelayHelper_Package.TimeDelayHelper'Class) return InputProbability_Access;
    function getLikelyhoodIntegerArray (This : in out InputProbability) return Integer_Array_Access_Array_Access;
    function getRepeatLikelyhoodIntegerArray (This : in out InputProbability) return Integer_Array_Access;
    function getMax (This : in out InputProbability) return Integer;

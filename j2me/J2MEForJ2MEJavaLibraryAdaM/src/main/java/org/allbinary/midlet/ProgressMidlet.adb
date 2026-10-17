@@ -22,8 +22,8 @@ package body org.allbinary.midlet.ProgressMidlet_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ProgressMidlet'Class; clientInformationFactory_Param : access ClientInformationFactory'Class) is
-      clientInformationFactory : ClientInformationFactory_Access := ClientInformationFactory_Access (clientInformationFactory_Param);
+   procedure Initialize (This : in out ProgressMidlet'Class; clientInformationFactory_Param : access ClientInformationFactory_Package.ClientInformationFactory'Class) is
+      clientInformationFactory : constant ClientInformationFactory_Access := ClientInformationFactory_Access (clientInformationFactory_Param);
    begin
       AllBinaryMidlet_Package.Initialize (This);
       Initialize_Fields (This);
@@ -31,7 +31,7 @@ package body org.allbinary.midlet.ProgressMidlet_Package is
         This.abeClientInformation := clientInformationFactory.getInstance;
    end Initialize;
 
-   function Create (clientInformationFactory_Param : access ClientInformationFactory'Class) return ProgressMidlet_Access is
+   function Create (clientInformationFactory_Param : access ClientInformationFactory_Package.ClientInformationFactory'Class) return ProgressMidlet_Access is
       This : constant ProgressMidlet_Access := new ProgressMidlet;
    begin
       ProgressMidlet_Package.Initialize (This.all, clientInformationFactory_Param);

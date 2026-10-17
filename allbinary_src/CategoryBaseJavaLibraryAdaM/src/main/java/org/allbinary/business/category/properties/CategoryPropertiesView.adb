@@ -22,14 +22,14 @@ package body org.allbinary.business.category.properties.CategoryPropertiesView_P
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CategoryPropertiesView'Class; categoryPropertiesInterface_Param : access CategoryPropertiesInterface'Class) is
-      categoryPropertiesInterface : CategoryPropertiesInterface_Access := CategoryPropertiesInterface_Access (categoryPropertiesInterface_Param);
+   procedure Initialize (This : in out CategoryPropertiesView'Class; categoryPropertiesInterface_Param : access CategoryPropertiesInterface_Package.CategoryPropertiesInterface'Class) is
+      categoryPropertiesInterface : constant CategoryPropertiesInterface_Access := CategoryPropertiesInterface_Access (categoryPropertiesInterface_Param);
    begin
       Initialize_Fields (This);
         This.categoryPropertiesInterface := categoryPropertiesInterface;
    end Initialize;
 
-   function Create (categoryPropertiesInterface_Param : access CategoryPropertiesInterface'Class) return CategoryPropertiesView_Access is
+   function Create (categoryPropertiesInterface_Param : access CategoryPropertiesInterface_Package.CategoryPropertiesInterface'Class) return CategoryPropertiesView_Access is
       This : constant CategoryPropertiesView_Access := new CategoryPropertiesView;
    begin
       CategoryPropertiesView_Package.Initialize (This.all, categoryPropertiesInterface_Param);
@@ -37,8 +37,8 @@ package body org.allbinary.business.category.properties.CategoryPropertiesView_P
    end Create;
 
    --  throws Exception
-   function toXmlNode (This : in out CategoryPropertiesView; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out CategoryPropertiesView; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       categoryNode : Node_Access;
       newCategoryNode : Element_Access;
    begin
@@ -48,7 +48,7 @@ package body org.allbinary.business.category.properties.CategoryPropertiesView_P
         return categoryNode;
    end toXmlNode;
 
-   procedure toXmlNode (This : in out CategoryPropertiesView; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out CategoryPropertiesView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := CategoryPropertiesView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

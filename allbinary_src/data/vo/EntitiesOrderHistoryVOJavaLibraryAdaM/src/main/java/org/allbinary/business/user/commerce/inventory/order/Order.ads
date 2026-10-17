@@ -72,10 +72,10 @@ package org.allbinary.business.user.commerce.inventory.order.Order_Package is
       storeCancelComment : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out Order'Class; basket_Param : access BasketInterface'Class);
-   function Create (basket_Param : access BasketInterface'Class) return Order_Access;
-   procedure Initialize (This : in out Order'Class; storeName : Unbounded_String; basket_Param : access BasketInterface'Class; id : Unbounded_String; shippingType : Unbounded_String; special : Unbounded_String; paymentMethod : Unbounded_String);
-   function Create (storeName : Unbounded_String; basket_Param : access BasketInterface'Class; id : Unbounded_String; shippingType : Unbounded_String; special : Unbounded_String; paymentMethod : Unbounded_String) return Order_Access;
+   procedure Initialize (This : in out Order'Class; basket_Param : access BasketInterface_Package.BasketInterface'Class);
+   function Create (basket_Param : access BasketInterface_Package.BasketInterface'Class) return Order_Access;
+   procedure Initialize (This : in out Order'Class; storeName : Unbounded_String; basket_Param : access BasketInterface_Package.BasketInterface'Class; id : Unbounded_String; shippingType : Unbounded_String; special : Unbounded_String; paymentMethod : Unbounded_String);
+   function Create (storeName : Unbounded_String; basket_Param : access BasketInterface_Package.BasketInterface'Class; id : Unbounded_String; shippingType : Unbounded_String; special : Unbounded_String; paymentMethod : Unbounded_String) return Order_Access;
    function isIdValid (This : in out Order) return Boolean;
    function isValid (This : in out Order) return Boolean;
    function getIdValidationInfo (This : in out Order) return Unbounded_String;
@@ -102,11 +102,11 @@ package org.allbinary.business.user.commerce.inventory.order.Order_Package is
    procedure reviewOrder (This : in out Order; paymentMethod : Unbounded_String);
    function viewOrder (This : in out Order; paymentMethod : Unbounded_String) return Unbounded_String;
    procedure viewOrder (This : in out Order; paymentMethod : Unbounded_String);
-   function emailOrder (This : in out Order; userName : Unbounded_String; paymentMethod : Unbounded_String; storeFrontInterface_Param : access StoreFrontInterface'Class) return Unbounded_String;
-   procedure emailOrder (This : in out Order; userName : Unbounded_String; paymentMethod : Unbounded_String; storeFrontInterface_Param : access StoreFrontInterface'Class);
+   function emailOrder (This : in out Order; userName : Unbounded_String; paymentMethod : Unbounded_String; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) return Unbounded_String;
+   procedure emailOrder (This : in out Order; userName : Unbounded_String; paymentMethod : Unbounded_String; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class);
    function toHashMapOrder (This : in out Order) return HashMap_Access;
-   function toXmlNode (This : in out Order; document_Param : access Document'Class) return Node_Access;
-   procedure toXmlNode (This : in out Order; document_Param : access Document'Class);
+   function toXmlNode (This : in out Order; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out Order; document_Param : access Document_Package.Document'Class);
 
 end org.allbinary.business.user.commerce.inventory.order.Order_Package;
 

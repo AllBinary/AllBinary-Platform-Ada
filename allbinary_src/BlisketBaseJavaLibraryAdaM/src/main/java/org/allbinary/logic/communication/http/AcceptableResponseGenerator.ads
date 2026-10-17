@@ -43,8 +43,8 @@ package org.allbinary.logic.communication.http.AcceptableResponseGenerator_Packa
    procedure Initialize (This : in out AcceptableResponseGenerator'Class);
    function Create return AcceptableResponseGenerator_Access;
    function getInstance return AcceptableResponseGenerator_Access;
-   function get (This : in out AcceptableResponseGenerator; httpServletRequest_Param : access HttpServletRequest'Class) return Unbounded_String;
-   procedure get (This : in out AcceptableResponseGenerator; httpServletRequest_Param : access HttpServletRequest'Class);
+   function get (This : in out AcceptableResponseGenerator; httpServletRequest_Param : access HttpServletRequest_Package.HttpServletRequest'Class) return Unbounded_String;
+   procedure get (This : in out AcceptableResponseGenerator; httpServletRequest_Param : access HttpServletRequest_Package.HttpServletRequest'Class);
 
 end org.allbinary.logic.communication.http.AcceptableResponseGenerator_Package;
 

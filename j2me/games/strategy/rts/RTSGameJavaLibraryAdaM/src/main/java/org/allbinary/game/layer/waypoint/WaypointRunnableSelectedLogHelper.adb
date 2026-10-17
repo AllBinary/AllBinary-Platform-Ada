@@ -41,14 +41,14 @@ package body org.allbinary.game.layer.waypoint.WaypointRunnableSelectedLogHelper
         return WaypointRunnableSelectedLogHelper_Package.instanceC;
    end getInstance;
 
-   procedure start (This : in out WaypointRunnableSelectedLogHelper; pathFindingLayerInterface_Param : access PathFindingLayerInterface'Class) is
-      pathFindingLayerInterface : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (pathFindingLayerInterface_Param);
+   procedure start (This : in out WaypointRunnableSelectedLogHelper; pathFindingLayerInterface_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class) is
+      pathFindingLayerInterface : constant PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (pathFindingLayerInterface_Param);
    begin
         This.logUtil.putF (StringMaker_Package.Create.append (pathFindingLayerInterface.getName).append (This.commonStrings.START_RUNNABLE).toString, WaypointRunnableSelectedLogHelper_Access'(This'Unchecked_Access), This.commonStrings.RUN);
    end start;
 
-   procedure end_Id (This : in out WaypointRunnableSelectedLogHelper; pathFindingLayerInterface_Param : access PathFindingLayerInterface'Class) is
-      pathFindingLayerInterface : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (pathFindingLayerInterface_Param);
+   procedure end_Id (This : in out WaypointRunnableSelectedLogHelper; pathFindingLayerInterface_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class) is
+      pathFindingLayerInterface : constant PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (pathFindingLayerInterface_Param);
    begin
         This.logUtil.putF (StringMaker_Package.Create.append (pathFindingLayerInterface.getName).append (This.commonStrings.END_RUNNABLE).toString, WaypointRunnableSelectedLogHelper_Access'(This'Unchecked_Access), This.commonStrings.RUN);
    end end_Id;

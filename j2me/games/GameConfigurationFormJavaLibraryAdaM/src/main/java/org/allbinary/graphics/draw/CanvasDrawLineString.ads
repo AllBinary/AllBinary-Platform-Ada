@@ -49,8 +49,8 @@ package org.allbinary.graphics.draw.CanvasDrawLineString_Package is
 
    procedure Initialize (This : in out CanvasDrawLineString'Class; x : Integer; y : Integer);
    function Create (x : Integer; y : Integer) return CanvasDrawLineString_Access;
-   procedure updateMeasurement (This : in out CanvasDrawLineString; graphics_Param : access Graphics'Class);
-   procedure paint (This : in out CanvasDrawLineString; graphics_Param : access Graphics'Class; string_Id : Unbounded_String; line : Integer);
+   procedure updateMeasurement (This : in out CanvasDrawLineString; graphics_Param : access Graphics_Package.Graphics'Class);
+   procedure paint (This : in out CanvasDrawLineString; graphics_Param : access Graphics_Package.Graphics'Class; string_Id : Unbounded_String; line : Integer);
 
 end org.allbinary.graphics.draw.CanvasDrawLineString_Package;
 

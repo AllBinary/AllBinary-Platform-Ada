@@ -33,13 +33,13 @@ package body org.allbinary.game.input.RTSPlayerGameInput_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out RTSPlayerGameInput'Class; gameCanvas_Param : access AllBinaryGameCanvas'Class; inputList_Param : access BasicArrayList'Class; playerInputId : Integer; towerInfoPaintable_Param : access RTSLayerInfoPaintable'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerPositionFinderInterface_Param : access LayerPositionFinderInterface'Class; selectRTSLayerVisitorFactoryInterface_Param : access SelectRTSLayerVisitorFactoryInterface'Class) is
-      gameCanvas : AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (gameCanvas_Param);
-      inputList : BasicArrayList_Access := BasicArrayList_Access (inputList_Param);
-      towerInfoPaintable : RTSLayerInfoPaintable_Access := RTSLayerInfoPaintable_Access (towerInfoPaintable_Param);
-      rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
-      layerPositionFinderInterface : LayerPositionFinderInterface_Access := LayerPositionFinderInterface_Access (layerPositionFinderInterface_Param);
-      selectRTSLayerVisitorFactoryInterface : SelectRTSLayerVisitorFactoryInterface_Access := SelectRTSLayerVisitorFactoryInterface_Access (selectRTSLayerVisitorFactoryInterface_Param);
+   procedure Initialize (This : in out RTSPlayerGameInput'Class; gameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class; inputList_Param : access BasicArrayList_Package.BasicArrayList'Class; playerInputId : Integer; towerInfoPaintable_Param : access RTSLayerInfoPaintable_Package.RTSLayerInfoPaintable'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface_Package.RTSPlayerLayerInterface'Class; layerPositionFinderInterface_Param : access LayerPositionFinderInterface_Package.LayerPositionFinderInterface'Class; selectRTSLayerVisitorFactoryInterface_Param : access SelectRTSLayerVisitorFactoryInterface_Package.SelectRTSLayerVisitorFactoryInterface'Class) is
+      gameCanvas : constant AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (gameCanvas_Param);
+      inputList : constant BasicArrayList_Access := BasicArrayList_Access (inputList_Param);
+      towerInfoPaintable : constant RTSLayerInfoPaintable_Access := RTSLayerInfoPaintable_Access (towerInfoPaintable_Param);
+      rtsPlayerLayerInterface : constant RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
+      layerPositionFinderInterface : constant LayerPositionFinderInterface_Access := LayerPositionFinderInterface_Access (layerPositionFinderInterface_Param);
+      selectRTSLayerVisitorFactoryInterface : constant SelectRTSLayerVisitorFactoryInterface_Access := SelectRTSLayerVisitorFactoryInterface_Access (selectRTSLayerVisitorFactoryInterface_Param);
       geographicMapCompositeInterface : GeographicMapCompositeInterface_Access;
       geographicMapInterface : BasicGeographicMap_Access;
    begin
@@ -60,7 +60,7 @@ package body org.allbinary.game.input.RTSPlayerGameInput_Package is
         This.layerPositionFinderInterface := layerPositionFinderInterface;
    end Initialize;
 
-   function Create (gameCanvas_Param : access AllBinaryGameCanvas'Class; inputList_Param : access BasicArrayList'Class; playerInputId : Integer; towerInfoPaintable_Param : access RTSLayerInfoPaintable'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerPositionFinderInterface_Param : access LayerPositionFinderInterface'Class; selectRTSLayerVisitorFactoryInterface_Param : access SelectRTSLayerVisitorFactoryInterface'Class) return RTSPlayerGameInput_Access is
+   function Create (gameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class; inputList_Param : access BasicArrayList_Package.BasicArrayList'Class; playerInputId : Integer; towerInfoPaintable_Param : access RTSLayerInfoPaintable_Package.RTSLayerInfoPaintable'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface_Package.RTSPlayerLayerInterface'Class; layerPositionFinderInterface_Param : access LayerPositionFinderInterface_Package.LayerPositionFinderInterface'Class; selectRTSLayerVisitorFactoryInterface_Param : access SelectRTSLayerVisitorFactoryInterface_Package.SelectRTSLayerVisitorFactoryInterface'Class) return RTSPlayerGameInput_Access is
       This : constant RTSPlayerGameInput_Access := new RTSPlayerGameInput;
    begin
       RTSPlayerGameInput_Package.Initialize (This.all, gameCanvas_Param, inputList_Param, playerInputId, towerInfoPaintable_Param, rtsPlayerLayerInterface_Param, layerPositionFinderInterface_Param, selectRTSLayerVisitorFactoryInterface_Param);
@@ -68,8 +68,8 @@ package body org.allbinary.game.input.RTSPlayerGameInput_Package is
    end Create;
 
    --  throws Exception
-   procedure setAllBinaryGameLayerManager (This : in out RTSPlayerGameInput; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class) is
-      allBinaryGameLayerManager : AllBinaryGameLayerManager_Access := AllBinaryGameLayerManager_Access (allBinaryGameLayerManager_Param);
+   procedure setAllBinaryGameLayerManager (This : in out RTSPlayerGameInput; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager_Package.AllBinaryGameLayerManager'Class) is
+      allBinaryGameLayerManager : constant AllBinaryGameLayerManager_Access := AllBinaryGameLayerManager_Access (allBinaryGameLayerManager_Param);
    begin
         This.selectedRTSLayerPlayerGameInput.setAllBinaryGameLayerManager (allBinaryGameLayerManager);
         if (This.selectedRtsFormInput) /= (NullRTSFormInputFactory_Package.getInstance) then
@@ -77,8 +77,8 @@ package body org.allbinary.game.input.RTSPlayerGameInput_Package is
         end if;
    end setAllBinaryGameLayerManager;
 
-   procedure onDisplayChangeEvent (This : in out RTSPlayerGameInput; displayChangeEvent_Param : access DisplayChangeEvent'Class) is
-      displayChangeEvent : DisplayChangeEvent_Access := DisplayChangeEvent_Access (displayChangeEvent_Param);
+   procedure onDisplayChangeEvent (This : in out RTSPlayerGameInput; displayChangeEvent_Param : access DisplayChangeEvent_Package.DisplayChangeEvent'Class) is
+      displayChangeEvent : constant DisplayChangeEvent_Access := DisplayChangeEvent_Access (displayChangeEvent_Param);
    begin
         begin
             This.logUtil.putF (This.commonStrings.START, RTSPlayerGameInput_Access'(This'Unchecked_Access), To_Unbounded_String ("onDisplayChangeEvent"));
@@ -123,8 +123,8 @@ package body org.allbinary.game.input.RTSPlayerGameInput_Package is
    end initInputProcessors;
 
    --  throws Exception
-   procedure processInput (This : in out RTSPlayerGameInput; layerManager_Param : access AllBinaryLayerManager'Class) is
-      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+   procedure processInput (This : in out RTSPlayerGameInput; layerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class) is
+      layerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
       size : Integer;
       key : Integer;
       gameKeyEvent : GameKeyEvent_Access;
@@ -158,15 +158,15 @@ package body org.allbinary.game.input.RTSPlayerGameInput_Package is
    end processInput;
 
    --  throws Exception
-   procedure processMotionInput (This : in out RTSPlayerGameInput; layerManager_Param : access AllBinaryLayerManager'Class) is
-      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+   procedure processMotionInput (This : in out RTSPlayerGameInput; layerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class) is
+      layerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
    begin
         null;
    end processMotionInput;
 
    --  throws Exception
-   procedure select_Id (This : in out RTSPlayerGameInput; motionGestureEvent_Param : access MotionGestureEvent'Class) is
-      motionGestureEvent : MotionGestureEvent_Access := MotionGestureEvent_Access (motionGestureEvent_Param);
+   procedure select_Id (This : in out RTSPlayerGameInput; motionGestureEvent_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is
+      motionGestureEvent : constant MotionGestureEvent_Access := MotionGestureEvent_Access (motionGestureEvent_Param);
       point : GPoint_Access;
       geographicMapCompositeInterface : GeographicMapCompositeInterface_Access;
       geographicMapInterface : BasicGeographicMap_Access;
@@ -202,15 +202,15 @@ package body org.allbinary.game.input.RTSPlayerGameInput_Package is
    end select_Id;
 
    --  throws Exception
-   procedure setSelectedRTSLayer (This : in out RTSPlayerGameInput; rtsLayer_Param : access CollidableDestroyableDamageableLayer'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
-      rtsLayer : CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (rtsLayer_Param);
-      geographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
+   procedure setSelectedRTSLayer (This : in out RTSPlayerGameInput; rtsLayer_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
+      rtsLayer : constant CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (rtsLayer_Param);
+      geographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
    begin
         This.getSelectedBuildingPlayerGameInput.setSelectedRTSLayer (rtsLayer);
    end setSelectedRTSLayer;
 
-   procedure paint (This : in out RTSPlayerGameInput; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out RTSPlayerGameInput; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       geographicMapCellPosition : GeographicMapCellPosition_Access;
       geographicMapCompositeInterface : GeographicMapCompositeInterface_Access;
       geographicMapInterface : BasicGeographicMap_Access;
@@ -260,8 +260,8 @@ package body org.allbinary.game.input.RTSPlayerGameInput_Package is
         return This.selectedRtsFormInput;
    end getSelectedRtsFormInput;
 
-   procedure setSelectedRtsFormInput (This : in out RTSPlayerGameInput; selectedRtsFormInput_Param : access RTSFormInput'Class) is
-      selectedRtsFormInput : RTSFormInput_Access := RTSFormInput_Access (selectedRtsFormInput_Param);
+   procedure setSelectedRtsFormInput (This : in out RTSPlayerGameInput; selectedRtsFormInput_Param : access RTSFormInput_Package.RTSFormInput'Class) is
+      selectedRtsFormInput : constant RTSFormInput_Access := RTSFormInput_Access (selectedRtsFormInput_Param);
    begin
         This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("RTSFormInput: ")).append (StringUtil_Package.getInstance.toString (selectedRtsFormInput)).toString, RTSPlayerGameInput_Access'(This'Unchecked_Access), To_Unbounded_String ("setSelectedRtsFormInput"));
         This.selectedRtsFormInput := selectedRtsFormInput;

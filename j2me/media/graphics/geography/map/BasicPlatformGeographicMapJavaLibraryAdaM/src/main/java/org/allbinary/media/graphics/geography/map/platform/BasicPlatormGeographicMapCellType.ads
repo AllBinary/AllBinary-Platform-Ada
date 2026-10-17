@@ -41,12 +41,12 @@ package org.allbinary.media.graphics.geography.map.platform.BasicPlatormGeograph
       types : Integer_Array_Access;
    end record;
 
-   procedure Initialize (This : in out BasicPlatormGeographicMapCellType'Class; types_Param : access BasicArrayList'Class);
-   function Create (types_Param : access BasicArrayList'Class) return BasicPlatormGeographicMapCellType_Access;
+   procedure Initialize (This : in out BasicPlatormGeographicMapCellType'Class; types_Param : access BasicArrayList_Package.BasicArrayList'Class);
+   function Create (types_Param : access BasicArrayList_Package.BasicArrayList'Class) return BasicPlatormGeographicMapCellType_Access;
    function createType (type_Id : Integer) return BasicPlatormGeographicMapCellType_Access;
    procedure createType (type_Id : Integer);
-   function isType (This : in out BasicPlatormGeographicMapCellType; type_Id_Param : access GeographicMapCellType'Class) return Boolean;
-   procedure isType (This : in out BasicPlatormGeographicMapCellType; type_Id_Param : access GeographicMapCellType'Class);
+   function isType (This : in out BasicPlatormGeographicMapCellType; type_Id_Param : access GeographicMapCellType_Package.GeographicMapCellType'Class) return Boolean;
+   procedure isType (This : in out BasicPlatormGeographicMapCellType; type_Id_Param : access GeographicMapCellType_Package.GeographicMapCellType'Class);
    function hasType (This : in out BasicPlatormGeographicMapCellType; type_Id : Integer) return Boolean;
    procedure hasType (This : in out BasicPlatormGeographicMapCellType; type_Id : Integer);
 

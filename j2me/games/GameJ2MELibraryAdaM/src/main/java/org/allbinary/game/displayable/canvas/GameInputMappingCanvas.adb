@@ -30,11 +30,11 @@ package body org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Packag
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GameInputMappingCanvas'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; commandListener_Param : access CommandListener'Class; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class; helpPaintable_Param : access HelpPaintable'Class) is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      commandListener : CommandListener_Access := CommandListener_Access (commandListener_Param);
-      allBinaryGameLayerManager : AllBinaryGameLayerManager_Access := AllBinaryGameLayerManager_Access (allBinaryGameLayerManager_Param);
-      helpPaintable : HelpPaintable_Access := HelpPaintable_Access (helpPaintable_Param);
+   procedure Initialize (This : in out GameInputMappingCanvas'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; commandListener_Param : access CommandListener_Package.CommandListener'Class; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager_Package.AllBinaryGameLayerManager'Class; helpPaintable_Param : access HelpPaintable_Package.HelpPaintable'Class) is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      commandListener : constant CommandListener_Access := CommandListener_Access (commandListener_Param);
+      allBinaryGameLayerManager : constant AllBinaryGameLayerManager_Access := AllBinaryGameLayerManager_Access (allBinaryGameLayerManager_Param);
+      helpPaintable : constant HelpPaintable_Access := HelpPaintable_Access (helpPaintable_Param);
    begin
         GameCommandCanvas_Package.Initialize (This, commandListener, GameInputMappingCanvas_Package.NAME, allBinaryGameLayerManager.getBackgroundBasicColor, allBinaryGameLayerManager.getForegroundBasicColor);
         Initialize_Fields (This);
@@ -49,7 +49,7 @@ package body org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Packag
         This.colorFillPaintable := ColorFillPaintableFactory_Package.getInstance.getInstance (allBinaryGameLayerManager.getBackgroundBasicColor, False);
    end Initialize;
 
-   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; commandListener_Param : access CommandListener'Class; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class; helpPaintable_Param : access HelpPaintable'Class) return GameInputMappingCanvas_Access is
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; commandListener_Param : access CommandListener_Package.CommandListener'Class; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager_Package.AllBinaryGameLayerManager'Class; helpPaintable_Param : access HelpPaintable_Package.HelpPaintable'Class) return GameInputMappingCanvas_Access is
       This : constant GameInputMappingCanvas_Access := new GameInputMappingCanvas;
    begin
       GameInputMappingCanvas_Package.Initialize (This.all, abeClientInformation_Param, commandListener_Param, allBinaryGameLayerManager_Param, helpPaintable_Param);
@@ -66,8 +66,8 @@ package body org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Packag
         This.update;
    end close;
 
-   procedure initCommands (This : in out GameInputMappingCanvas; cmdListener_Param : access CommandListener'Class) is
-      cmdListener : CommandListener_Access := CommandListener_Access (cmdListener_Param);
+   procedure initCommands (This : in out GameInputMappingCanvas; cmdListener_Param : access CommandListener_Package.CommandListener'Class) is
+      cmdListener : constant CommandListener_Access := CommandListener_Access (cmdListener_Param);
    begin
         This.removeAllCommands;
         This.addCommand (GameCommandsFactory_Package.getInstance.CLOSE_AND_SHOW_GAME_CANVAS);
@@ -102,7 +102,7 @@ package body org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Packag
       input : Input_Access;
    begin
         begin
-            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Raw Device Key Code: ")).append (Integer_Package.toHexString (keyCode)).toString, GameInputMappingCanvas_Access'(This'Unchecked_Access), This.gameInputStrings.ADD_KEY_EVENT);
+            This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Raw Device Key Code: ")).append (To_Unbounded_String (Java_To_Unsigned_String (keyCode, 16))).toString, GameInputMappingCanvas_Access'(This'Unchecked_Access), This.gameInputStrings.ADD_KEY_EVENT);
             gameKey := This.inputToGameKeyMapping.getInstanceForCanvas (GameInputMappingCanvas_Access'(This'Unchecked_Access), keyCode);
             input := This.inputFactory.getInstanceById (keyCode);
             This.processInputMapping (gameKey, input);
@@ -117,9 +117,9 @@ package body org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Packag
    end addGameKey;
 
    --  throws Exception
-   procedure processInputMapping (This : in out GameInputMappingCanvas; gameKey_Param : access GameKey'Class; input_Param : access Input'Class) is
-      gameKey : GameKey_Access := GameKey_Access (gameKey_Param);
-      input : Input_Access := Input_Access (input_Param);
+   procedure processInputMapping (This : in out GameInputMappingCanvas; gameKey_Param : access GameKey_Package.GameKey'Class; input_Param : access Input_Package.Input'Class) is
+      gameKey : constant GameKey_Access := GameKey_Access (gameKey_Param);
+      input : constant Input_Access := Input_Access (input_Param);
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
@@ -135,8 +135,8 @@ package body org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Packag
         end if;
    end processInputMapping;
 
-   procedure setSelectedAction (This : in out GameInputMappingCanvas; gameKey_Param : access GameKey'Class) is
-      gameKey : GameKey_Access := GameKey_Access (gameKey_Param);
+   procedure setSelectedAction (This : in out GameInputMappingCanvas; gameKey_Param : access GameKey_Package.GameKey'Class) is
+      gameKey : constant GameKey_Access := GameKey_Access (gameKey_Param);
    begin
         This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Selected GameKey: ")).append (This.stringUtil.toString (gameKey)).toString, GameInputMappingCanvas_Access'(This'Unchecked_Access), To_Unbounded_String ("setSelectedAction"));
         This.selectedGameKey := gameKey;
@@ -146,9 +146,9 @@ package body org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Packag
    end setSelectedAction;
 
    --  throws Exception
-   procedure gameActionCrud (This : in out GameInputMappingCanvas; gameKey_Param : access GameKey'Class; input_Param : access Input'Class) is
-      gameKey : GameKey_Access := GameKey_Access (gameKey_Param);
-      input : Input_Access := Input_Access (input_Param);
+   procedure gameActionCrud (This : in out GameInputMappingCanvas; gameKey_Param : access GameKey_Package.GameKey'Class; input_Param : access Input_Package.Input'Class) is
+      gameKey : constant GameKey_Access := GameKey_Access (gameKey_Param);
+      input : constant Input_Access := Input_Access (input_Param);
       stringBuffer : StringMaker_Access;
       list : BasicArrayList_Access;
       isInputAlreadyMappedToSelectedAction : Boolean;
@@ -178,9 +178,9 @@ package body org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Packag
    end gameActionCrud;
 
    --  throws Exception
-   procedure addNewMapping (This : in out GameInputMappingCanvas; gameKey_Param : access GameKey'Class; input_Param : access Input'Class) is
-      gameKey : GameKey_Access := GameKey_Access (gameKey_Param);
-      input : Input_Access := Input_Access (input_Param);
+   procedure addNewMapping (This : in out GameInputMappingCanvas; gameKey_Param : access GameKey_Package.GameKey'Class; input_Param : access Input_Package.Input'Class) is
+      gameKey : constant GameKey_Access := GameKey_Access (gameKey_Param);
+      input : constant Input_Access := Input_Access (input_Param);
       METHOD_NAME : Unbounded_String;
       isInputAlreadyMapped : Boolean;
       stringBuffer : StringMaker_Access;
@@ -244,8 +244,8 @@ package body org.allbinary.game.displayable.canvas.GameInputMappingCanvas_Packag
         This.repaintBehavior.onChangeRepaint (GameInputMappingCanvas_Access'(This'Unchecked_Access));
    end update;
 
-   procedure paint (This : in out GameInputMappingCanvas; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out GameInputMappingCanvas; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.colorFillPaintable.paint (graphics);
         This.helpPaintable.paint (graphics);

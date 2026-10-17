@@ -45,20 +45,20 @@ package org.allbinary.layer.LayerManager_Package is
       anyType : SynchObject_Access;
    end record;
 
-   procedure Initialize (This : in out LayerManager'Class; layerManagerLogging_Param : access LayerManagerLoggingBase'Class);
-   function Create (layerManagerLogging_Param : access LayerManagerLoggingBase'Class) return LayerManager_Access;
-   function contains (This : in out LayerManager; layerInterface_Param : access AllBinaryLayer'Class) return Boolean;
-   procedure contains (This : in out LayerManager; layerInterface_Param : access AllBinaryLayer'Class);
-   procedure update (This : in out LayerManager; layerInterface_Param : access AllBinaryLayer'Class);
-   procedure insert (This : in out LayerManager; layerInterface_Param : access AllBinaryLayer'Class);
-   procedure append (This : in out LayerManager; layerInterface_Param : access AllBinaryLayer'Class);
-   procedure appendAt (This : in out LayerManager; layerInterface_Param : access AllBinaryLayer'Class; index : Integer);
-   procedure remove (This : in out LayerManager; layerInterface_Param : access AllBinaryLayer'Class);
+   procedure Initialize (This : in out LayerManager'Class; layerManagerLogging_Param : access LayerManagerLoggingBase_Package.LayerManagerLoggingBase'Class);
+   function Create (layerManagerLogging_Param : access LayerManagerLoggingBase_Package.LayerManagerLoggingBase'Class) return LayerManager_Access;
+   function contains (This : in out LayerManager; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) return Boolean;
+   procedure contains (This : in out LayerManager; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class);
+   procedure update (This : in out LayerManager; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class);
+   procedure insert (This : in out LayerManager; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class);
+   procedure append (This : in out LayerManager; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class);
+   procedure appendAt (This : in out LayerManager; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; index : Integer);
+   procedure remove (This : in out LayerManager; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class);
    function getLayerAt (This : in out LayerManager; index : Integer) return Layer_Access;
    procedure getLayerAt (This : in out LayerManager; index : Integer);
    function getSize (This : in out LayerManager) return Integer;
    procedure cleanup (This : in out LayerManager);
-   procedure paint (This : in out LayerManager; g_Param : access Graphics'Class; x : Integer; y : Integer);
+   procedure paint (This : in out LayerManager; g_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
 
 end org.allbinary.layer.LayerManager_Package;
 

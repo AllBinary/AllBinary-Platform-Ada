@@ -35,8 +35,8 @@ package org.allbinary.game.input.ScrollMapGameInputProcessor_Package is
       scrollMapPlayerGameInput : ScrollMapPlayerGameInput_Access;
    end record;
 
-   procedure Initialize (This : in out ScrollMapGameInputProcessor'Class; scrollMapPlayerGameInput_Param : access ScrollMapPlayerGameInput'Class);
-   function Create (scrollMapPlayerGameInput_Param : access ScrollMapPlayerGameInput'Class) return ScrollMapGameInputProcessor_Access;
+   procedure Initialize (This : in out ScrollMapGameInputProcessor'Class; scrollMapPlayerGameInput_Param : access ScrollMapPlayerGameInput_Package.ScrollMapPlayerGameInput'Class);
+   function Create (scrollMapPlayerGameInput_Param : access ScrollMapPlayerGameInput_Package.ScrollMapPlayerGameInput'Class) return ScrollMapGameInputProcessor_Access;
 
 end org.allbinary.game.input.ScrollMapGameInputProcessor_Package;
 

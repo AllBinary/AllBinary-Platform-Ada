@@ -60,11 +60,11 @@ package views.generic_Id.order.OrderView_Package is
       basketReview : BasketReview_Access;
    end record;
 
-   procedure Initialize (This : in out OrderView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return OrderView_Access;
+   procedure Initialize (This : in out OrderView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return OrderView_Access;
    procedure getFormData (This : in out OrderView);
-   function toXmlNode (This : in out OrderView; document_Param : access Document'Class) return Node_Access;
-   procedure toXmlNode (This : in out OrderView; document_Param : access Document'Class);
+   function toXmlNode (This : in out OrderView; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out OrderView; document_Param : access Document_Package.Document'Class);
    procedure addDomNodeInterfaces (This : in out OrderView);
    function view (This : in out OrderView) return Unbounded_String;
 

@@ -62,9 +62,9 @@ package org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_Packa
    function getOverPassGeographicMapCellPositionArray (This : in out RaceTrackData) return CellPosition_Access_Array_Access;
    procedure setOverPassGeographicMapCellPositionArray (This : in out RaceTrackData; overPassGeographicMapCellPositionArray : CellPosition_Access_Array_Access);
    function getTileSetImage (This : in out RaceTrackData) return Image_Access;
-   procedure setTileSetImage (This : in out RaceTrackData; tileSetImage_Param : access Image'Class);
+   procedure setTileSetImage (This : in out RaceTrackData; tileSetImage_Param : access Image_Package.Image'Class);
    function getMiniTileSetImage (This : in out RaceTrackData) return Image_Access;
-   procedure setMiniTileSetImage (This : in out RaceTrackData; miniTileSetImage_Param : access Image'Class);
+   procedure setMiniTileSetImage (This : in out RaceTrackData; miniTileSetImage_Param : access Image_Package.Image'Class);
    function getMiniCellWidth (This : in out RaceTrackData) return Integer;
    procedure setMiniCellWidth (This : in out RaceTrackData; miniCellWidth : Integer);
    function getMiniCellHeight (This : in out RaceTrackData) return Integer;

@@ -55,8 +55,8 @@ package org.allbinary.animation.VectorMirrorGenerator_Package is
    function getInstance return VectorMirrorGenerator_Access;
    function getInstance (This : in out VectorMirrorGenerator; points : Integer_Array_Access_Array_Access_Array_Access; width : Integer) return Integer_Array_Access_Array_Access_Array_Access;
    procedure getInstance (This : in out VectorMirrorGenerator; points : Integer_Array_Access_Array_Access_Array_Access; width : Integer);
-   function getInstance (This : in out VectorMirrorGenerator; pointBasicArrayList_Param : access BasicArrayList'Class; width : Integer) return BasicArrayList_Access;
-   procedure getInstance (This : in out VectorMirrorGenerator; pointBasicArrayList_Param : access BasicArrayList'Class; width : Integer);
+   function getInstance (This : in out VectorMirrorGenerator; pointBasicArrayList_Param : access BasicArrayList_Package.BasicArrayList'Class; width : Integer) return BasicArrayList_Access;
+   procedure getInstance (This : in out VectorMirrorGenerator; pointBasicArrayList_Param : access BasicArrayList_Package.BasicArrayList'Class; width : Integer);
 
 end org.allbinary.animation.VectorMirrorGenerator_Package;
 

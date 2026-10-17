@@ -45,8 +45,8 @@ package org.allbinary.image.ChoiceGroupImageUtil_Package is
    function Create return ChoiceGroupImageUtil_Access;
    function getInstance return ChoiceGroupImageUtil_Access;
    procedure init (This : in out ChoiceGroupImageUtil);
-   procedure update (This : in out ChoiceGroupImageUtil; gl_Param : access GL'Class);
-   procedure update (This : in out ChoiceGroupImageUtil; graphics_Param : access Graphics'Class);
+   procedure update (This : in out ChoiceGroupImageUtil; gl_Param : access GL_Package.GL'Class);
+   procedure update (This : in out ChoiceGroupImageUtil; graphics_Param : access Graphics_Package.Graphics'Class);
 
 end org.allbinary.image.ChoiceGroupImageUtil_Package;
 

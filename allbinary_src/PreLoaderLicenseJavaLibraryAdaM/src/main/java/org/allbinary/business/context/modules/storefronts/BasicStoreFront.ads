@@ -78,8 +78,8 @@ package org.allbinary.business.context.modules.storefronts.BasicStoreFront_Packa
 
    procedure Initialize (This : in out BasicStoreFront'Class);
    function Create return BasicStoreFront_Access;
-   procedure Initialize (This : in out BasicStoreFront'Class; storeHashMap_Param : access HashMap'Class);
-   function Create (storeHashMap_Param : access HashMap'Class) return BasicStoreFront_Access;
+   procedure Initialize (This : in out BasicStoreFront'Class; storeHashMap_Param : access HashMap_Package.HashMap'Class);
+   function Create (storeHashMap_Param : access HashMap_Package.HashMap'Class) return BasicStoreFront_Access;
    function getTestHtmlPath (This : in out BasicStoreFront) return Unbounded_String;
    function getCurrentHostName (This : in out BasicStoreFront) return Unbounded_String;
    function getCurrentHostNamePath (This : in out BasicStoreFront) return Unbounded_String;

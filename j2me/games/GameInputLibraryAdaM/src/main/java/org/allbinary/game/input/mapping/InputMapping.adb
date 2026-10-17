@@ -59,9 +59,9 @@ package body org.allbinary.game.input.mapping.InputMapping_Package is
         This.mappedList.clear;
    end removeAll;
 
-   procedure remove (This : in out InputMapping; input_Param : access Input'Class; mappedToInput_Param : access Input'Class) is
-      input : Input_Access := Input_Access (input_Param);
-      mappedToInput : Input_Access := Input_Access (mappedToInput_Param);
+   procedure remove (This : in out InputMapping; input_Param : access Input_Package.Input'Class; mappedToInput_Param : access Input_Package.Input'Class) is
+      input : constant Input_Access := Input_Access (input_Param);
+      mappedToInput : constant Input_Access := Input_Access (mappedToInput_Param);
       stringBuffer : StringMaker_Access;
       stringUtil : StringUtil_Access;
       list : BasicArrayList_Access;
@@ -94,15 +94,15 @@ package body org.allbinary.game.input.mapping.InputMapping_Package is
    end remove;
 
    --  throws Exception
-   procedure addMapping (This : in out InputMapping; inputToGameKeyMapping_Param : access InputToGameKeyMapping'Class) is
-      inputToGameKeyMapping : InputToGameKeyMapping_Access := InputToGameKeyMapping_Access (inputToGameKeyMapping_Param);
+   procedure addMapping (This : in out InputMapping; inputToGameKeyMapping_Param : access InputToGameKeyMapping_Package.InputToGameKeyMapping'Class) is
+      inputToGameKeyMapping : constant InputToGameKeyMapping_Access := InputToGameKeyMapping_Access (inputToGameKeyMapping_Param);
    begin
         Java_Throw (Java_New_Exception ("Exception", This.commonStrings.NOT_IMPLEMENTED));
    end addMapping;
 
-   procedure add (This : in out InputMapping; input_Param : access Input'Class; mappedToInput_Param : access Input'Class) is
-      input : Input_Access := Input_Access (input_Param);
-      mappedToInput : Input_Access := Input_Access (mappedToInput_Param);
+   procedure add (This : in out InputMapping; input_Param : access Input_Package.Input'Class; mappedToInput_Param : access Input_Package.Input'Class) is
+      input : constant Input_Access := Input_Access (input_Param);
+      mappedToInput : constant Input_Access := Input_Access (mappedToInput_Param);
       list : BasicArrayList_Access;
    begin
         list := This.getMappedInput (input);
@@ -112,14 +112,14 @@ package body org.allbinary.game.input.mapping.InputMapping_Package is
         end if;
    end add;
 
-   function isMapped (This : in out InputMapping; input_Param : access Input'Class) return Boolean is
-      input : Input_Access := Input_Access (input_Param);
+   function isMapped (This : in out InputMapping; input_Param : access Input_Package.Input'Class) return Boolean is
+      input : constant Input_Access := Input_Access (input_Param);
    begin
         return This.mappedList.contains (input);
    end isMapped;
 
-   function getMappedInput (This : in out InputMapping; id_Param : access Input'Class) return BasicArrayList_Access is
-      id : Input_Access := Input_Access (id_Param);
+   function getMappedInput (This : in out InputMapping; id_Param : access Input_Package.Input'Class) return BasicArrayList_Access is
+      id : constant Input_Access := Input_Access (id_Param);
       mappingInputCanBeNullList : Java_Object_Access;
       list : BasicArrayList_Access;
    begin
@@ -137,14 +137,14 @@ package body org.allbinary.game.input.mapping.InputMapping_Package is
         return This.hashtable;
    end getHashtable;
 
-   procedure isMapped (This : in out InputMapping; input_Param : access Input'Class) is
+   procedure isMapped (This : in out InputMapping; input_Param : access Input_Package.Input'Class) is
       Java_Result : constant Boolean := InputMapping'Class (This).isMapped (input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isMapped;
 
-   procedure getMappedInput (This : in out InputMapping; id_Param : access Input'Class) is
+   procedure getMappedInput (This : in out InputMapping; id_Param : access Input_Package.Input'Class) is
       Java_Result : constant BasicArrayList_Access := InputMapping'Class (This).getMappedInput (id_Param);
       pragma Unreferenced (Java_Result);
    begin

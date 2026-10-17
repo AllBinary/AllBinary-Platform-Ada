@@ -33,14 +33,14 @@ package body org.allbinary.graphics.font.MyFontProcessor_Package is
    end Create;
 
 
-   function defaultCharWidth (font_Param : access Font'Class) return Integer is
-      font : Font_Access := Font_Access (font_Param);
+   function defaultCharWidth (font_Param : access Font_Package.Font'Class) return Integer is
+      font : constant Font_Access := Font_Access (font_Param);
    begin
         return font.charWidth ('C');
    end defaultCharWidth;
 
-   function defaultStringWidth (font_Param : access Font'Class; size : Integer) return Integer is
-      font : Font_Access := Font_Access (font_Param);
+   function defaultStringWidth (font_Param : access Font_Package.Font'Class; size : Integer) return Integer is
+      font : constant Font_Access := Font_Access (font_Param);
    begin
         return (MyFontProcessor_Package.defaultCharWidth (font)) * (size);
    end defaultStringWidth;
@@ -50,20 +50,20 @@ package body org.allbinary.graphics.font.MyFontProcessor_Package is
         return MyFontProcessor_Package.instance;
    end getInstance;
 
-   procedure process (This : in out MyFontProcessor; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure process (This : in out MyFontProcessor; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end process;
 
-   procedure defaultCharWidth (font_Param : access Font'Class) is
+   procedure defaultCharWidth (font_Param : access Font_Package.Font'Class) is
       Java_Result : constant Integer := defaultCharWidth (font_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end defaultCharWidth;
 
-   procedure defaultStringWidth (font_Param : access Font'Class; size : Integer) is
+   procedure defaultStringWidth (font_Param : access Font_Package.Font'Class; size : Integer) is
       Java_Result : constant Integer := defaultStringWidth (font_Param, size);
       pragma Unreferenced (Java_Result);
    begin

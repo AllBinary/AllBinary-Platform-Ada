@@ -21,13 +21,13 @@ package body org.allbinary.game.layer.special.SpecialFireGameInputProcessor_Pack
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out SpecialFireGameInputProcessor'Class; collidableDestroyableDamageableLayer_Param : access CollidableDestroyableDamageableLayer'Class) is
-      collidableDestroyableDamageableLayer : CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (collidableDestroyableDamageableLayer_Param);
+   procedure Initialize (This : in out SpecialFireGameInputProcessor'Class; collidableDestroyableDamageableLayer_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class) is
+      collidableDestroyableDamageableLayer : constant CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (collidableDestroyableDamageableLayer_Param);
    begin
         SpecialGameInputProcessor_Package.Initialize (This, collidableDestroyableDamageableLayer);
    end Initialize;
 
-   function Create (collidableDestroyableDamageableLayer_Param : access CollidableDestroyableDamageableLayer'Class) return SpecialFireGameInputProcessor_Access is
+   function Create (collidableDestroyableDamageableLayer_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class) return SpecialFireGameInputProcessor_Access is
       This : constant SpecialFireGameInputProcessor_Access := new SpecialFireGameInputProcessor;
    begin
       SpecialFireGameInputProcessor_Package.Initialize (This.all, collidableDestroyableDamageableLayer_Param);
@@ -35,9 +35,9 @@ package body org.allbinary.game.layer.special.SpecialFireGameInputProcessor_Pack
    end Create;
 
    --  throws Exception
-   procedure processEvent (This : in out SpecialFireGameInputProcessor; allbinaryLayerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class) is
-      allbinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allbinaryLayerManager_Param);
-      gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
+   procedure processEvent (This : in out SpecialFireGameInputProcessor; allbinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class) is
+      allbinaryLayerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allbinaryLayerManager_Param);
+      gameKeyEvent : constant GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         This.collidableDestroyableDamageableLayer.fire (allbinaryLayerManager, gameKeyEvent);
    end processEvent;

@@ -27,9 +27,9 @@ package body workflows.template.data.BasicWorkFlow_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasicWorkFlow'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
-      propertiesHashMap : HashMap_Access := HashMap_Access (propertiesHashMap_Param);
-      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
+   procedure Initialize (This : in out BasicWorkFlow'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is
+      propertiesHashMap : constant HashMap_Access := HashMap_Access (propertiesHashMap_Param);
+      pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
    begin
       Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.WORKFLOW) then
@@ -40,7 +40,7 @@ package body workflows.template.data.BasicWorkFlow_Package is
         This.validationDomNodeInterface := ValidationComponentInterface_Access (TransformFactory_Package.getInstance.getInstance (This.abeClientInformation, propertiesHashMap, pageContext));
    end Initialize;
 
-   function Create (propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return BasicWorkFlow_Access is
+   function Create (propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return BasicWorkFlow_Access is
       This : constant BasicWorkFlow_Access := new BasicWorkFlow;
    begin
       BasicWorkFlow_Package.Initialize (This.all, propertiesHashMap_Param, pageContext_Param);

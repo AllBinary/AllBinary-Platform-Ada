@@ -23,36 +23,36 @@ package body org.allbinary.game.displayable.canvas.BasicMenuInputProcessor_Packa
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasicMenuInputProcessor'Class; gameKeyEventList_Param : access BasicArrayList'Class; playerInputId : Integer; gameCanvas_Param : access Canvas'Class) is
-      gameKeyEventList : BasicArrayList_Access := BasicArrayList_Access (gameKeyEventList_Param);
-      gameCanvas : Canvas_Access := Canvas_Access (gameCanvas_Param);
+   procedure Initialize (This : in out BasicMenuInputProcessor'Class; gameKeyEventList_Param : access BasicArrayList_Package.BasicArrayList'Class; playerInputId : Integer; gameCanvas_Param : access Canvas_Package.Canvas'Class) is
+      gameKeyEventList : constant BasicArrayList_Access := BasicArrayList_Access (gameKeyEventList_Param);
+      gameCanvas : constant Canvas_Access := Canvas_Access (gameCanvas_Param);
    begin
         PlayerGameInput_Package.Initialize (This, gameKeyEventList, BasicArrayListD_Package.Create, playerInputId);
         Initialize_Fields (This);
         This.canvas := gameCanvas;
    end Initialize;
 
-   function Create (gameKeyEventList_Param : access BasicArrayList'Class; playerInputId : Integer; gameCanvas_Param : access Canvas'Class) return BasicMenuInputProcessor_Access is
+   function Create (gameKeyEventList_Param : access BasicArrayList_Package.BasicArrayList'Class; playerInputId : Integer; gameCanvas_Param : access Canvas_Package.Canvas'Class) return BasicMenuInputProcessor_Access is
       This : constant BasicMenuInputProcessor_Access := new BasicMenuInputProcessor;
    begin
       BasicMenuInputProcessor_Package.Initialize (This.all, gameKeyEventList_Param, playerInputId, gameCanvas_Param);
       return This;
    end Create;
 
-   procedure onMotionGestureEvent (This : in out BasicMenuInputProcessor; motionGestureEvent_Param : access MotionGestureEvent'Class) is
-      motionGestureEvent : MotionGestureEvent_Access := MotionGestureEvent_Access (motionGestureEvent_Param);
+   procedure onMotionGestureEvent (This : in out BasicMenuInputProcessor; motionGestureEvent_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is
+      motionGestureEvent : constant MotionGestureEvent_Access := MotionGestureEvent_Access (motionGestureEvent_Param);
    begin
         This.motionGestureEventList.add (motionGestureEvent);
    end onMotionGestureEvent;
 
-   procedure onScrolledMotionGestureEvent (This : in out BasicMenuInputProcessor; motionGestureEvent_Param : access MotionGestureEvent'Class) is
-      motionGestureEvent : MotionGestureEvent_Access := MotionGestureEvent_Access (motionGestureEvent_Param);
+   procedure onScrolledMotionGestureEvent (This : in out BasicMenuInputProcessor; motionGestureEvent_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is
+      motionGestureEvent : constant MotionGestureEvent_Access := MotionGestureEvent_Access (motionGestureEvent_Param);
    begin
         null;
    end onScrolledMotionGestureEvent;
 
-   procedure setCanvas (This : in out BasicMenuInputProcessor; canvas_Param : access MyCanvas'Class) is
-      canvas : MyCanvas_Access := MyCanvas_Access (canvas_Param);
+   procedure setCanvas (This : in out BasicMenuInputProcessor; canvas_Param : access MyCanvas_Package.MyCanvas'Class) is
+      canvas : constant MyCanvas_Access := MyCanvas_Access (canvas_Param);
    begin
         This.canvas := canvas;
    end setCanvas;

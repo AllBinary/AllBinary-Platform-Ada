@@ -36,7 +36,7 @@ package body org.allbinary.graphics.form.item.validation.TextItemVisitor_Package
    end Create;
 
    function visit (This : in out TextItemVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
       value : Unbounded_String;
    begin
         value := Unbounded_String (anyType);

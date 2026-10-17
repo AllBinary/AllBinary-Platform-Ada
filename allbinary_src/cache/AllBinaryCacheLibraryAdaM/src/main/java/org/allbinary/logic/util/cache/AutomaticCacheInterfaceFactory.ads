@@ -37,8 +37,8 @@ package org.allbinary.logic.util.cache.AutomaticCacheInterfaceFactory_Package is
 
    procedure Initialize (This : in out AutomaticCacheInterfaceFactory'Class);
    function Create return AutomaticCacheInterfaceFactory_Access;
-   function getInstance (cacheableInterfaceFactoryInterface_Param : access CacheableInterfaceFactoryInterface'Class; cacheType_Param : access CacheType'Class; cachePolicy_Param : access CachePolicy'Class) return AutomaticCacheInterface_Access;
-   procedure getInstance (cacheableInterfaceFactoryInterface_Param : access CacheableInterfaceFactoryInterface'Class; cacheType_Param : access CacheType'Class; cachePolicy_Param : access CachePolicy'Class);
+   function getInstance (cacheableInterfaceFactoryInterface_Param : access CacheableInterfaceFactoryInterface_Package.CacheableInterfaceFactoryInterface'Class; cacheType_Param : access CacheType_Package.CacheType'Class; cachePolicy_Param : access CachePolicy_Package.CachePolicy'Class) return AutomaticCacheInterface_Access;
+   procedure getInstance (cacheableInterfaceFactoryInterface_Param : access CacheableInterfaceFactoryInterface_Package.CacheableInterfaceFactoryInterface'Class; cacheType_Param : access CacheType_Package.CacheType'Class; cachePolicy_Param : access CachePolicy_Package.CachePolicy'Class);
 
 end org.allbinary.logic.util.cache.AutomaticCacheInterfaceFactory_Package;
 

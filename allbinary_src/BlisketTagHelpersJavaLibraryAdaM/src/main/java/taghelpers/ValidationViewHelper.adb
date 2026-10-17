@@ -23,9 +23,9 @@ package body taghelpers.ValidationViewHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ValidationViewHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
-      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
+   procedure Initialize (This : in out ValidationViewHelper'Class; hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
    begin
         ViewHelper_Package.Initialize (This, hashMap, pageContext);
         Initialize_Fields (This);
@@ -35,7 +35,7 @@ package body taghelpers.ValidationViewHelper_Package is
         end if;
    end Initialize;
 
-   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return ValidationViewHelper_Access is
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return ValidationViewHelper_Access is
       This : constant ValidationViewHelper_Access := new ValidationViewHelper;
    begin
       ValidationViewHelper_Package.Initialize (This.all, hashMap_Param, pageContext_Param);
@@ -96,8 +96,8 @@ package body taghelpers.ValidationViewHelper_Package is
         end;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out ValidationViewHelper; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toValidationInfoNode (This : in out ValidationViewHelper; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
    begin
         begin
             return This.viewInterface.toValidationInfoNode (document);
@@ -114,7 +114,7 @@ package body taghelpers.ValidationViewHelper_Package is
         end;
    end toValidationInfoNode;
 
-   procedure toValidationInfoNode (This : in out ValidationViewHelper; document_Param : access Document'Class) is
+   procedure toValidationInfoNode (This : in out ValidationViewHelper; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := ValidationViewHelper'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

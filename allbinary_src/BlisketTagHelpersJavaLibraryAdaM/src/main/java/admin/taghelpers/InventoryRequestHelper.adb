@@ -24,9 +24,9 @@ package body admin.taghelpers.InventoryRequestHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out InventoryRequestHelper'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
-      propertiesHashMap : HashMap_Access := HashMap_Access (propertiesHashMap_Param);
-      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
+   procedure Initialize (This : in out InventoryRequestHelper'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is
+      propertiesHashMap : constant HashMap_Access := HashMap_Access (propertiesHashMap_Param);
+      pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
       inventoryTag : HelperTag_Access;
       itemView : InventoryItemView_Access;
    begin
@@ -37,7 +37,7 @@ package body admin.taghelpers.InventoryRequestHelper_Package is
         This.itemInterface := itemView.getItemInterface;
    end Initialize;
 
-   function Create (propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return InventoryRequestHelper_Access is
+   function Create (propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return InventoryRequestHelper_Access is
       This : constant InventoryRequestHelper_Access := new InventoryRequestHelper;
    begin
       InventoryRequestHelper_Package.Initialize (This.all, propertiesHashMap_Param, pageContext_Param);

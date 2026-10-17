@@ -40,9 +40,9 @@ package body org.allbinary.game.rts.technology.event.TechEventHandler_Package is
    end getInstance;
 
    --  throws Exception
-   procedure process (This : in out TechEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class) is
-      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
-      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
+   procedure process (This : in out TechEventHandler; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class) is
+      eventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+      eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
       techEventListenerInterface : TechEventListenerInterface_Access;
    begin
         techEventListenerInterface := (TechEventListenerInterface_Access (eventListenerInterface));

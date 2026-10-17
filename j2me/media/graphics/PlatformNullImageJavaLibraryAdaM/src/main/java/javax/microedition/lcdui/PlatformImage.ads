@@ -43,18 +43,18 @@ package javax.microedition.lcdui.PlatformImage_Package is
    procedure getSurfaceWidth (This : in out PlatformImage; graphicsSurface2_Param : access Java_Object'Class; width : Integer);
    function getSurfaceHeight (This : in out PlatformImage; graphicsSurface2_Param : access Java_Object'Class; height : Integer) return Integer;
    procedure getSurfaceHeight (This : in out PlatformImage; graphicsSurface2_Param : access Java_Object'Class; height : Integer);
-   function getWidth (This : in out PlatformImage; image_Param : access Image'Class; width : Integer) return Integer;
-   procedure getWidth (This : in out PlatformImage; image_Param : access Image'Class; width : Integer);
-   function getHeight (This : in out PlatformImage; image_Param : access Image'Class; height : Integer) return Integer;
-   procedure getHeight (This : in out PlatformImage; image_Param : access Image'Class; height : Integer);
-   function getGraphics (This : in out PlatformImage; graphicsSurface_Param : access Java_Object'Class; width : Integer; height : Integer; image_Param : access Image'Class) return Graphics_Access;
-   procedure getGraphics (This : in out PlatformImage; graphicsSurface_Param : access Java_Object'Class; width : Integer; height : Integer; image_Param : access Image'Class);
-   procedure drawImage (This : in out PlatformImage; image_Param : access Image'Class; x : Integer; y : Integer; anchor : Integer; g2_Param : access Graphics'Class; g_Param : access Java_Object'Class);
-   procedure drawRegion (This : in out PlatformImage; image_Param : access Image'Class; x_src : Integer; y_src : Integer; width : Integer; height : Integer; transform : Integer; x_dst : Integer; y_dst : Integer; anchor : Integer; g_Param : access Graphics'Class);
-   procedure getRGB (This : in out PlatformImage; argb : Integer_Array_Access; offset : Integer; scanlength : Integer; x : Integer; y : Integer; width : Integer; height : Integer; image_Param : access Image'Class);
-   procedure setRGB (This : in out PlatformImage; argb : Integer_Array_Access; offset : Integer; scanlength : Integer; x : Integer; y : Integer; width : Integer; height : Integer; image_Param : access Image'Class);
-   function getData (This : in out PlatformImage; image_Param : access Image'Class) return Integer_Array_Access;
-   procedure getData (This : in out PlatformImage; image_Param : access Image'Class);
+   function getWidth (This : in out PlatformImage; image_Param : access Image_Package.Image'Class; width : Integer) return Integer;
+   procedure getWidth (This : in out PlatformImage; image_Param : access Image_Package.Image'Class; width : Integer);
+   function getHeight (This : in out PlatformImage; image_Param : access Image_Package.Image'Class; height : Integer) return Integer;
+   procedure getHeight (This : in out PlatformImage; image_Param : access Image_Package.Image'Class; height : Integer);
+   function getGraphics (This : in out PlatformImage; graphicsSurface_Param : access Java_Object'Class; width : Integer; height : Integer; image_Param : access Image_Package.Image'Class) return Graphics_Access;
+   procedure getGraphics (This : in out PlatformImage; graphicsSurface_Param : access Java_Object'Class; width : Integer; height : Integer; image_Param : access Image_Package.Image'Class);
+   procedure drawImage (This : in out PlatformImage; image_Param : access Image_Package.Image'Class; x : Integer; y : Integer; anchor : Integer; g2_Param : access Graphics_Package.Graphics'Class; g_Param : access Java_Object'Class);
+   procedure drawRegion (This : in out PlatformImage; image_Param : access Image_Package.Image'Class; x_src : Integer; y_src : Integer; width : Integer; height : Integer; transform : Integer; x_dst : Integer; y_dst : Integer; anchor : Integer; g_Param : access Graphics_Package.Graphics'Class);
+   procedure getRGB (This : in out PlatformImage; argb : Integer_Array_Access; offset : Integer; scanlength : Integer; x : Integer; y : Integer; width : Integer; height : Integer; image_Param : access Image_Package.Image'Class);
+   procedure setRGB (This : in out PlatformImage; argb : Integer_Array_Access; offset : Integer; scanlength : Integer; x : Integer; y : Integer; width : Integer; height : Integer; image_Param : access Image_Package.Image'Class);
+   function getData (This : in out PlatformImage; image_Param : access Image_Package.Image'Class) return Integer_Array_Access;
+   procedure getData (This : in out PlatformImage; image_Param : access Image_Package.Image'Class);
 
 end javax.microedition.lcdui.PlatformImage_Package;
 

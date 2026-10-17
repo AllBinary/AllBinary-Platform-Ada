@@ -32,7 +32,7 @@ package org.allbinary.game.tick.TickableInterface_Package is
    type TickableInterface_Access is access all TickableInterface'Class;
    type TickableInterface_Access_Array is array (Natural range <>) of TickableInterface_Access;
    type TickableInterface_Access_Array_Access is access all TickableInterface_Access_Array;
-   procedure processTick (This : in out TickableInterface; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class) is abstract;
+   procedure processTick (This : in out TickableInterface; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class) is abstract;
 
 end org.allbinary.game.tick.TickableInterface_Package;
 

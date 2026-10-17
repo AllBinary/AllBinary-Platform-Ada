@@ -24,8 +24,8 @@ package body org.allbinary.graphics.Rectangle_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out Rectangle'Class; point_Param : access GPoint'Class; width : Integer; height : Integer) is
-      point : GPoint_Access := GPoint_Access (point_Param);
+   procedure Initialize (This : in out Rectangle'Class; point_Param : access GPoint_Package.GPoint'Class; width : Integer; height : Integer) is
+      point : constant GPoint_Access := GPoint_Access (point_Param);
    begin
       Initialize_Fields (This);
         This.point := point;
@@ -33,7 +33,7 @@ package body org.allbinary.graphics.Rectangle_Package is
         This.height := height;
    end Initialize;
 
-   function Create (point_Param : access GPoint'Class; width : Integer; height : Integer) return Rectangle_Access is
+   function Create (point_Param : access GPoint_Package.GPoint'Class; width : Integer; height : Integer) return Rectangle_Access is
       This : constant Rectangle_Access := new Rectangle;
    begin
       Rectangle_Package.Initialize (This.all, point_Param, width, height);
@@ -45,8 +45,8 @@ package body org.allbinary.graphics.Rectangle_Package is
         return This.point;
    end getPoint;
 
-   procedure setPoint (This : in out Rectangle; point_Param : access GPoint'Class) is
-      point : GPoint_Access := GPoint_Access (point_Param);
+   procedure setPoint (This : in out Rectangle; point_Param : access GPoint_Package.GPoint'Class) is
+      point : constant GPoint_Access := GPoint_Access (point_Param);
    begin
         This.point := point;
    end setPoint;

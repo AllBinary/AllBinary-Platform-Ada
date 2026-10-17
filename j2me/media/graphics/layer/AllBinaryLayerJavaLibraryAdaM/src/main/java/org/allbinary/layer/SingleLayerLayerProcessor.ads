@@ -38,7 +38,7 @@ package org.allbinary.layer.SingleLayerLayerProcessor_Package is
 
    procedure Initialize (This : in out SingleLayerLayerProcessor'Class);
    function Create return SingleLayerLayerProcessor_Access;
-   procedure process (This : in out SingleLayerLayerProcessor; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class);
+   procedure process (This : in out SingleLayerLayerProcessor; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class);
 
 end org.allbinary.layer.SingleLayerLayerProcessor_Package;
 

@@ -23,15 +23,15 @@ package body org.allbinary.media.image.comparison.ImageComparisonResultFrameCach
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ImageComparisonResultFrameCacheable'Class; imageComparisonResult_Param : access ImageComparisonResult'Class; frame : Long_Long_Integer) is
-      imageComparisonResult : ImageComparisonResult_Access := ImageComparisonResult_Access (imageComparisonResult_Param);
+   procedure Initialize (This : in out ImageComparisonResultFrameCacheable'Class; imageComparisonResult_Param : access ImageComparisonResult_Package.ImageComparisonResult'Class; frame : Long_Long_Integer) is
+      imageComparisonResult : constant ImageComparisonResult_Access := ImageComparisonResult_Access (imageComparisonResult_Param);
    begin
       Initialize_Fields (This);
         This.setImageComparisonResult (imageComparisonResult);
         This.frame := frame;
    end Initialize;
 
-   function Create (imageComparisonResult_Param : access ImageComparisonResult'Class; frame : Long_Long_Integer) return ImageComparisonResultFrameCacheable_Access is
+   function Create (imageComparisonResult_Param : access ImageComparisonResult_Package.ImageComparisonResult'Class; frame : Long_Long_Integer) return ImageComparisonResultFrameCacheable_Access is
       This : constant ImageComparisonResultFrameCacheable_Access := new ImageComparisonResultFrameCacheable;
    begin
       ImageComparisonResultFrameCacheable_Package.Initialize (This.all, imageComparisonResult_Param, frame);
@@ -58,8 +58,8 @@ package body org.allbinary.media.image.comparison.ImageComparisonResultFrameCach
         return This.imageComparisonResult;
    end getImageComparisonResult;
 
-   procedure setImageComparisonResult (This : in out ImageComparisonResultFrameCacheable; imageComparisonResult_Param : access ImageComparisonResult'Class) is
-      imageComparisonResult : ImageComparisonResult_Access := ImageComparisonResult_Access (imageComparisonResult_Param);
+   procedure setImageComparisonResult (This : in out ImageComparisonResultFrameCacheable; imageComparisonResult_Param : access ImageComparisonResult_Package.ImageComparisonResult'Class) is
+      imageComparisonResult : constant ImageComparisonResult_Access := ImageComparisonResult_Access (imageComparisonResult_Param);
    begin
         This.imageComparisonResult := imageComparisonResult;
    end setImageComparisonResult;

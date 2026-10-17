@@ -43,9 +43,9 @@ package org.allbinary.media.image.io.IIOImageCacheable_Package is
    procedure Initialize (This : in out IIOImageCacheable'Class; key : Unbounded_String);
    function Create (key : Unbounded_String) return IIOImageCacheable_Access;
    function getKey (This : in out IIOImageCacheable) return Java_Object_Access;
-   procedure setBufferedImage (This : in out IIOImageCacheable; bufferedImage_Param : access BufferedImage'Class);
+   procedure setBufferedImage (This : in out IIOImageCacheable; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class);
    function getIioImage (This : in out IIOImageCacheable) return IIOImage_Access;
-   procedure setIioImage (This : in out IIOImageCacheable; iioImage_Param : access IIOImage'Class);
+   procedure setIioImage (This : in out IIOImageCacheable; iioImage_Param : access IIOImage_Package.IIOImage'Class);
    function toString (This : in out IIOImageCacheable) return Unbounded_String;
 
 end org.allbinary.media.image.io.IIOImageCacheable_Package;

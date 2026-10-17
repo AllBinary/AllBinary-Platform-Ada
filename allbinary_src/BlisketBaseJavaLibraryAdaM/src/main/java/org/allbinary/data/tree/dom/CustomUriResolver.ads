@@ -60,8 +60,8 @@ package org.allbinary.data.tree.dom.CustomUriResolver_Package is
       basicURIResolver : BasicUriResolver_Access;
    end record;
 
-   procedure Initialize (This : in out CustomUriResolver'Class; path : Unbounded_String; basicURIResolver_Param : access BasicUriResolver'Class);
-   function Create (path : Unbounded_String; basicURIResolver_Param : access BasicUriResolver'Class) return CustomUriResolver_Access;
+   procedure Initialize (This : in out CustomUriResolver'Class; path : Unbounded_String; basicURIResolver_Param : access BasicUriResolver_Package.BasicUriResolver'Class);
+   function Create (path : Unbounded_String; basicURIResolver_Param : access BasicUriResolver_Package.BasicUriResolver'Class) return CustomUriResolver_Access;
    function resolve (This : in out CustomUriResolver; href : Unbounded_String; base : Unbounded_String) return Source_Access;
    procedure resolve (This : in out CustomUriResolver; href : Unbounded_String; base : Unbounded_String);
    function toString (This : in out CustomUriResolver) return Unbounded_String;

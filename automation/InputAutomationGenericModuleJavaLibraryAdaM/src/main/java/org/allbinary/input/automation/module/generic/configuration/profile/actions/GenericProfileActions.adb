@@ -27,8 +27,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GenericProfileActions'Class; genericProfileActionsJPanel_Param : access GenericProfileActionsJPanel'Class; name : Unbounded_String) is
-      genericProfileActionsJPanel : GenericProfileActionsJPanel_Access := GenericProfileActionsJPanel_Access (genericProfileActionsJPanel_Param);
+   procedure Initialize (This : in out GenericProfileActions'Class; genericProfileActionsJPanel_Param : access GenericProfileActionsJPanel_Package.GenericProfileActionsJPanel'Class; name : Unbounded_String) is
+      genericProfileActionsJPanel : constant GenericProfileActionsJPanel_Access := GenericProfileActionsJPanel_Access (genericProfileActionsJPanel_Param);
    begin
       Initialize_Fields (This);
         This.setName (name);
@@ -36,16 +36,16 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         This.load;
    end Initialize;
 
-   function Create (genericProfileActionsJPanel_Param : access GenericProfileActionsJPanel'Class; name : Unbounded_String) return GenericProfileActions_Access is
+   function Create (genericProfileActionsJPanel_Param : access GenericProfileActionsJPanel_Package.GenericProfileActionsJPanel'Class; name : Unbounded_String) return GenericProfileActions_Access is
       This : constant GenericProfileActions_Access := new GenericProfileActions;
    begin
       GenericProfileActions_Package.Initialize (This.all, genericProfileActionsJPanel_Param, name);
       return This;
    end Create;
 
-   procedure Initialize (This : in out GenericProfileActions'Class; genericProfileActionsJPanel_Param : access GenericProfileActionsJPanel'Class; abPath_Param : access AbPath'Class; name : Unbounded_String) is
-      genericProfileActionsJPanel : GenericProfileActionsJPanel_Access := GenericProfileActionsJPanel_Access (genericProfileActionsJPanel_Param);
-      abPath : AbPath_Access := AbPath_Access (abPath_Param);
+   procedure Initialize (This : in out GenericProfileActions'Class; genericProfileActionsJPanel_Param : access GenericProfileActionsJPanel_Package.GenericProfileActionsJPanel'Class; abPath_Param : access AbPath_Package.AbPath'Class; name : Unbounded_String) is
+      genericProfileActionsJPanel : constant GenericProfileActionsJPanel_Access := GenericProfileActionsJPanel_Access (genericProfileActionsJPanel_Param);
+      abPath : constant AbPath_Access := AbPath_Access (abPath_Param);
    begin
       Initialize_Fields (This);
         This.setName (name);
@@ -53,16 +53,16 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         This.load;
    end Initialize;
 
-   function Create (genericProfileActionsJPanel_Param : access GenericProfileActionsJPanel'Class; abPath_Param : access AbPath'Class; name : Unbounded_String) return GenericProfileActions_Access is
+   function Create (genericProfileActionsJPanel_Param : access GenericProfileActionsJPanel_Package.GenericProfileActionsJPanel'Class; abPath_Param : access AbPath_Package.AbPath'Class; name : Unbounded_String) return GenericProfileActions_Access is
       This : constant GenericProfileActions_Access := new GenericProfileActions;
    begin
       GenericProfileActions_Package.Initialize (This.all, genericProfileActionsJPanel_Param, abPath_Param, name);
       return This;
    end Create;
 
-   procedure Initialize (This : in out GenericProfileActions'Class; genericProfileActionsJPanel_Param : access GenericProfileActionsJPanel'Class; fileInputStream_Param : access FileInputStream'Class; name : Unbounded_String) is
-      genericProfileActionsJPanel : GenericProfileActionsJPanel_Access := GenericProfileActionsJPanel_Access (genericProfileActionsJPanel_Param);
-      fileInputStream : FileInputStream_Access := FileInputStream_Access (fileInputStream_Param);
+   procedure Initialize (This : in out GenericProfileActions'Class; genericProfileActionsJPanel_Param : access GenericProfileActionsJPanel_Package.GenericProfileActionsJPanel'Class; fileInputStream_Param : access FileInputStream_Package.FileInputStream'Class; name : Unbounded_String) is
+      genericProfileActionsJPanel : constant GenericProfileActionsJPanel_Access := GenericProfileActionsJPanel_Access (genericProfileActionsJPanel_Param);
+      fileInputStream : constant FileInputStream_Access := FileInputStream_Access (fileInputStream_Param);
    begin
       Initialize_Fields (This);
         This.setName (name);
@@ -70,7 +70,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         This.fileInit (fileInputStream);
    end Initialize;
 
-   function Create (genericProfileActionsJPanel_Param : access GenericProfileActionsJPanel'Class; fileInputStream_Param : access FileInputStream'Class; name : Unbounded_String) return GenericProfileActions_Access is
+   function Create (genericProfileActionsJPanel_Param : access GenericProfileActionsJPanel_Package.GenericProfileActionsJPanel'Class; fileInputStream_Param : access FileInputStream_Package.FileInputStream'Class; name : Unbounded_String) return GenericProfileActions_Access is
       This : constant GenericProfileActions_Access := new GenericProfileActions;
    begin
       GenericProfileActions_Package.Initialize (This.all, genericProfileActionsJPanel_Param, fileInputStream_Param, name);
@@ -78,8 +78,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    end Create;
 
    --  throws Exception
-   procedure init (This : in out GenericProfileActions; genericProfileActionsJPanel_Param : access GenericProfileActionsJPanel'Class) is
-      genericProfileActionsJPanel : GenericProfileActionsJPanel_Access := GenericProfileActionsJPanel_Access (genericProfileActionsJPanel_Param);
+   procedure init (This : in out GenericProfileActions; genericProfileActionsJPanel_Param : access GenericProfileActionsJPanel_Package.GenericProfileActionsJPanel'Class) is
+      genericProfileActionsJPanel : constant GenericProfileActionsJPanel_Access := GenericProfileActionsJPanel_Access (genericProfileActionsJPanel_Param);
    begin
         This.setGenericProfileActionsJPanel (genericProfileActionsJPanel);
         This.actionsDefaultListModelHelper := DefaultListModelHelper_Package.Create;
@@ -118,8 +118,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    end load;
 
    --  throws Exception
-   procedure fileInit (This : in out GenericProfileActions; fileInputStream_Param : access FileInputStream'Class) is
-      fileInputStream : FileInputStream_Access := FileInputStream_Access (fileInputStream_Param);
+   procedure fileInit (This : in out GenericProfileActions; fileInputStream_Param : access FileInputStream_Package.FileInputStream'Class) is
+      fileInputStream : constant FileInputStream_Access := FileInputStream_Access (fileInputStream_Param);
       bytes : Short_Short_Integer_Array_Access;
       length : Integer;
       data : Unbounded_String;
@@ -151,8 +151,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    end fileInit;
 
    --  throws Exception
-   procedure initActions (This : in out GenericProfileActions; nodeList_Param : access NodeList'Class) is
-      nodeList : NodeList_Access := NodeList_Access (nodeList_Param);
+   procedure initActions (This : in out GenericProfileActions; nodeList_Param : access NodeList_Package.NodeList'Class) is
+      nodeList : constant NodeList_Access := NodeList_Access (nodeList_Param);
       actionNode : Node_Access;
       genericConfigurationProfileAction : GenericProfileAction_Access;
       index : Integer;
@@ -208,8 +208,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    end toHashMap;
 
    --  throws Exception
-   function toXmlNode (This : in out GenericProfileActions; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out GenericProfileActions; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       node : Node_Access;
       set : Set_Access;
       actionNameArray : Java_Object_Access_Array_Access;
@@ -246,8 +246,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         return This.genericProfileActionsJPanel;
    end getGenericProfileActionsJPanel;
 
-   procedure setGenericProfileActionsJPanel (This : in out GenericProfileActions; genericProfileActionsJPanel_Param : access GenericProfileActionsJPanel'Class) is
-      genericProfileActionsJPanel : GenericProfileActionsJPanel_Access := GenericProfileActionsJPanel_Access (genericProfileActionsJPanel_Param);
+   procedure setGenericProfileActionsJPanel (This : in out GenericProfileActions; genericProfileActionsJPanel_Param : access GenericProfileActionsJPanel_Package.GenericProfileActionsJPanel'Class) is
+      genericProfileActionsJPanel : constant GenericProfileActionsJPanel_Access := GenericProfileActionsJPanel_Access (genericProfileActionsJPanel_Param);
    begin
         This.genericProfileActionsJPanel := genericProfileActionsJPanel;
    end setGenericProfileActionsJPanel;
@@ -257,8 +257,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         return This.hashMap;
    end getHashMap;
 
-   procedure setHashMap (This : in out GenericProfileActions; hashMap_Param : access HashMap'Class) is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+   procedure setHashMap (This : in out GenericProfileActions; hashMap_Param : access HashMap_Package.HashMap'Class) is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
         This.hashMap := hashMap;
    end setHashMap;
@@ -287,7 +287,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
       null;
    end getAction;
 
-   procedure toXmlNode (This : in out GenericProfileActions; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out GenericProfileActions; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := GenericProfileActions'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

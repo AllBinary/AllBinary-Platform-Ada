@@ -23,8 +23,8 @@ package body views.compound.CompoundTransform_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CompoundTransform'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out CompoundTransform'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
       objectConfig : CompoundContextTransformInfoObjectConfig_Access;
       templateInputStream : InputStream_Access;
    begin
@@ -39,7 +39,7 @@ package body views.compound.CompoundTransform_Package is
         This.setInputStream (templateInputStream);
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return CompoundTransform_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return CompoundTransform_Access is
       This : constant CompoundTransform_Access := new CompoundTransform;
    begin
       CompoundTransform_Package.Initialize (This.all, transformInfoInterface_Param);

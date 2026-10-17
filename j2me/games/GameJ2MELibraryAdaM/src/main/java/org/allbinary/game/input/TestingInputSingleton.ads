@@ -64,10 +64,10 @@ package org.allbinary.game.input.TestingInputSingleton_Package is
    function Create return TestingInputSingleton_Access;
    function getInstance return TestingInputSingleton_Access;
    procedure initInputProcessors (This : in out TestingInputSingleton);
-   procedure initInputProcessorsForTestInput (This : in out TestingInputSingleton; aTestInputInterface_Param : access TestInputInterface'Class);
-   procedure processInputList (This : in out TestingInputSingleton; allbinaryLayerManager_Param : access AllBinaryLayerManager'Class; list_Param : access BasicArrayList'Class);
-   procedure processInput (This : in out TestingInputSingleton; allbinaryLayerManager_Param : access AllBinaryLayerManager'Class);
-   procedure paint (This : in out TestingInputSingleton; graphics_Param : access Graphics'Class);
+   procedure initInputProcessorsForTestInput (This : in out TestingInputSingleton; aTestInputInterface_Param : access TestInputInterface_Package.TestInputInterface'Class);
+   procedure processInputList (This : in out TestingInputSingleton; allbinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; list_Param : access BasicArrayList_Package.BasicArrayList'Class);
+   procedure processInput (This : in out TestingInputSingleton; allbinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class);
+   procedure paint (This : in out TestingInputSingleton; graphics_Param : access Graphics_Package.Graphics'Class);
    function implmentsGameInputInterface (This : in out TestingInputSingleton) return Boolean;
 
 end org.allbinary.game.input.TestingInputSingleton_Package;

@@ -26,7 +26,7 @@ package org.allbinary.graphics.opengles.EnableFacesShaderOpenGLProcessor_Package
    procedure Initialize (This : in out EnableFacesShaderOpenGLProcessor'Class);
    function Create return EnableFacesShaderOpenGLProcessor_Access;
    function getInstance return EnableFacesShaderOpenGLProcessor_Access;
-   procedure process (This : in out EnableFacesShaderOpenGLProcessor; gl_Param : access GL10'Class; anyType_Param : access Java_Object'Class);
+   procedure process (This : in out EnableFacesShaderOpenGLProcessor; gl_Param : access GL10_Package.GL10'Class; anyType_Param : access Java_Object'Class);
 
 end org.allbinary.graphics.opengles.EnableFacesShaderOpenGLProcessor_Package;
 

@@ -57,8 +57,8 @@ package org.allbinary.game.ag.layer.weapon.mine.MineLayer_Package is
    end record;
    NAME : Unbounded_String;
 
-   procedure Initialize (This : in out MineLayer'Class; viewPosition_Param : access ViewPositionBase'Class);
-   function Create (viewPosition_Param : access ViewPositionBase'Class) return MineLayer_Access;
+   procedure Initialize (This : in out MineLayer'Class; viewPosition_Param : access ViewPositionBase_Package.ViewPositionBase'Class);
+   function Create (viewPosition_Param : access ViewPositionBase_Package.ViewPositionBase'Class) return MineLayer_Access;
    procedure initXYZ (This : in out MineLayer; x : Integer; y : Integer; z : Integer);
    procedure damage (This : in out MineLayer; damage : Integer; damageType : Integer);
    function getDamage (This : in out MineLayer; damageType : Integer) return Integer;

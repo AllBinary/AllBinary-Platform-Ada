@@ -78,13 +78,13 @@ package org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGat
 
    procedure Initialize (This : in out PaymentGatewayEntity'Class);
    function Create return PaymentGatewayEntity_Access;
-   procedure add (This : in out PaymentGatewayEntity; paymentGatewayInterface_Param : access PaymentGatewayInterface'Class);
-   procedure update (This : in out PaymentGatewayEntity; paymentGatewayInterface_Param : access PaymentGatewayInterface'Class);
-   function getPaymentGatewayInterface (This : in out PaymentGatewayEntity; storeName : Unbounded_String; paymentType_Param : access BasicPaymentType'Class) return PaymentGatewayInterface_Access;
-   procedure getPaymentGatewayInterface (This : in out PaymentGatewayEntity; storeName : Unbounded_String; paymentType_Param : access BasicPaymentType'Class);
+   procedure add (This : in out PaymentGatewayEntity; paymentGatewayInterface_Param : access PaymentGatewayInterface_Package.PaymentGatewayInterface'Class);
+   procedure update (This : in out PaymentGatewayEntity; paymentGatewayInterface_Param : access PaymentGatewayInterface_Package.PaymentGatewayInterface'Class);
+   function getPaymentGatewayInterface (This : in out PaymentGatewayEntity; storeName : Unbounded_String; paymentType_Param : access BasicPaymentType_Package.BasicPaymentType'Class) return PaymentGatewayInterface_Access;
+   procedure getPaymentGatewayInterface (This : in out PaymentGatewayEntity; storeName : Unbounded_String; paymentType_Param : access BasicPaymentType_Package.BasicPaymentType'Class);
    function findPaymentTypeVectorByStore (This : in out PaymentGatewayEntity; storeName : Unbounded_String) return BasicArrayList_Access;
    procedure findPaymentTypeVectorByStore (This : in out PaymentGatewayEntity; storeName : Unbounded_String);
-   procedure remove (This : in out PaymentGatewayEntity; storeName : Unbounded_String; paymentType_Param : access BasicPaymentType'Class);
+   procedure remove (This : in out PaymentGatewayEntity; storeName : Unbounded_String; paymentType_Param : access BasicPaymentType_Package.BasicPaymentType'Class);
    function createTableStatement (This : in out PaymentGatewayEntity) return Unbounded_String;
    function createTable (This : in out PaymentGatewayEntity) return Unbounded_String;
    function dropTable (This : in out PaymentGatewayEntity) return Unbounded_String;

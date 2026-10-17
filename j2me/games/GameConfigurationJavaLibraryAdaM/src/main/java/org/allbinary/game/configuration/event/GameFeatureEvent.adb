@@ -23,7 +23,7 @@ package body org.allbinary.game.configuration.event.GameFeatureEvent_Package is
 
 
    procedure Initialize (This : in out GameFeatureEvent'Class; anyType_Param : access Java_Object'Class; whatChanged : Unbounded_String) is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         AllBinaryEventObject_Package.Initialize (This, anyType);
         Initialize_Fields (This);

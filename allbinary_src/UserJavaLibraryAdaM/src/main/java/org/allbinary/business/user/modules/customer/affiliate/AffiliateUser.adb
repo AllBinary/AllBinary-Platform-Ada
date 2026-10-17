@@ -36,30 +36,30 @@ package body org.allbinary.business.user.modules.customer.affiliate.AffiliateUse
       return This;
    end Create;
 
-   procedure Initialize (This : in out AffiliateUser'Class; userHashMap_Param : access HashMap'Class) is
-      userHashMap : HashMap_Access := HashMap_Access (userHashMap_Param);
+   procedure Initialize (This : in out AffiliateUser'Class; userHashMap_Param : access HashMap_Package.HashMap'Class) is
+      userHashMap : constant HashMap_Access := HashMap_Access (userHashMap_Param);
    begin
         User_Package.Initialize (This, userHashMap);
         Initialize_Fields (This);
         This.affiliateSales := AffiliateSales_Package.Create;
    end Initialize;
 
-   function Create (userHashMap_Param : access HashMap'Class) return AffiliateUser_Access is
+   function Create (userHashMap_Param : access HashMap_Package.HashMap'Class) return AffiliateUser_Access is
       This : constant AffiliateUser_Access := new AffiliateUser;
    begin
       AffiliateUser_Package.Initialize (This.all, userHashMap_Param);
       return This;
    end Create;
 
-   procedure validateSession (This : in out AffiliateUser; weblisketSession_Param : access WeblisketSessionInterface'Class) is
-      weblisketSession : WeblisketSessionInterface_Access := WeblisketSessionInterface_Access (weblisketSession_Param);
+   procedure validateSession (This : in out AffiliateUser; weblisketSession_Param : access WeblisketSessionInterface_Package.WeblisketSessionInterface'Class) is
+      weblisketSession : constant WeblisketSessionInterface_Access := WeblisketSessionInterface_Access (weblisketSession_Param);
    begin
         User (This).validateSession (weblisketSession);
         This.updateSession (weblisketSession);
    end validateSession;
 
-   procedure updateSession (This : in out AffiliateUser; weblisketSession_Param : access WeblisketSessionInterface'Class) is
-      weblisketSession : WeblisketSessionInterface_Access := WeblisketSessionInterface_Access (weblisketSession_Param);
+   procedure updateSession (This : in out AffiliateUser; weblisketSession_Param : access WeblisketSessionInterface_Package.WeblisketSessionInterface'Class) is
+      weblisketSession : constant WeblisketSessionInterface_Access := WeblisketSessionInterface_Access (weblisketSession_Param);
    begin
         weblisketSession.setStoreName (This.getPermissions);
    end updateSession;

@@ -41,8 +41,8 @@ package body org.allbinary.media.graphics.geography.map.event.GeographicMapCellP
       return This;
    end Create;
 
-   procedure addListener (This : in out GeographicMapCellPositionEventHandler; miniMapLayer_Param : access MiniMapLayer'Class) is
-      miniMapLayer : MiniMapLayer_Access := MiniMapLayer_Access (miniMapLayer_Param);
+   procedure addListener (This : in out GeographicMapCellPositionEventHandler; miniMapLayer_Param : access MiniMapLayer_Package.MiniMapLayer'Class) is
+      miniMapLayer : constant MiniMapLayer_Access := MiniMapLayer_Access (miniMapLayer_Param);
    begin
         if not (This.list.contains (miniMapLayer)) then
             This.list.add (miniMapLayer);
@@ -55,16 +55,16 @@ package body org.allbinary.media.graphics.geography.map.event.GeographicMapCellP
         BasicEventHandler (This).removeAllListeners;
    end removeAllListeners;
 
-   procedure removeListener (This : in out GeographicMapCellPositionEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class) is
-      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
+   procedure removeListener (This : in out GeographicMapCellPositionEventHandler; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class) is
+      eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
         This.list.remove (eventListenerInterface);
         BasicEventHandler (This).removeListener (eventListenerInterface);
    end removeListener;
 
    --  throws Exception
-   procedure fireEvent (This : in out GeographicMapCellPositionEventHandler; eventObject_Param : access AllBinaryEventObject'Class) is
-      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+   procedure fireEvent (This : in out GeographicMapCellPositionEventHandler; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
+      eventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
       miniMapLayer : MiniMapLayer_Access;
       index : Integer;
    begin
@@ -86,8 +86,8 @@ package body org.allbinary.media.graphics.geography.map.event.GeographicMapCellP
    end fireEvent;
 
    --  throws Exception
-   procedure fireRemoveEvent (This : in out GeographicMapCellPositionEventHandler; eventObject_Param : access AllBinaryEventObject'Class) is
-      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+   procedure fireRemoveEvent (This : in out GeographicMapCellPositionEventHandler; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
+      eventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
       list : BasicArrayList_Access;
       miniMapLayer : MiniMapLayer_Access;
       index : Integer;
@@ -130,9 +130,9 @@ package body org.allbinary.media.graphics.geography.map.event.GeographicMapCellP
    end fireRemoveEvent;
 
    --  throws Exception
-   procedure process (This : in out GeographicMapCellPositionEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class) is
-      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
-      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
+   procedure process (This : in out GeographicMapCellPositionEventHandler; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class) is
+      eventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+      eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
       geographicMapCellPositionEventListenerInterface : GeographicMapCellPositionEventListenerInterface_Access;
    begin
         geographicMapCellPositionEventListenerInterface := (GeographicMapCellPositionEventListenerInterface_Access (eventListenerInterface));

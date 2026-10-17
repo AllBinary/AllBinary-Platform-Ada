@@ -22,8 +22,8 @@ package body views.business.context.OverrideObjectConfigRootContextView_Package 
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out OverrideObjectConfigRootContextView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out OverrideObjectConfigRootContextView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
@@ -32,7 +32,7 @@ package body views.business.context.OverrideObjectConfigRootContextView_Package 
         end if;
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return OverrideObjectConfigRootContextView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return OverrideObjectConfigRootContextView_Access is
       This : constant OverrideObjectConfigRootContextView_Access := new OverrideObjectConfigRootContextView;
    begin
       OverrideObjectConfigRootContextView_Package.Initialize (This.all, transformInfoInterface_Param);

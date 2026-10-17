@@ -54,16 +54,16 @@ package org.allbinary.game.configuration.GameDifficultyOptions_Package is
       list : BasicArrayList_Access;
    end record;
 
-   procedure Initialize (This : in out GameDifficultyOptions'Class; commandListener_Param : access CommandListener'Class; title : Unbounded_String; list_Param : access BasicArrayList'Class; backgrounBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class);
-   function Create (commandListener_Param : access CommandListener'Class; title : Unbounded_String; list_Param : access BasicArrayList'Class; backgrounBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return GameDifficultyOptions_Access;
+   procedure Initialize (This : in out GameDifficultyOptions'Class; commandListener_Param : access CommandListener_Package.CommandListener'Class; title : Unbounded_String; list_Param : access BasicArrayList_Package.BasicArrayList'Class; backgrounBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class);
+   function Create (commandListener_Param : access CommandListener_Package.CommandListener'Class; title : Unbounded_String; list_Param : access BasicArrayList_Package.BasicArrayList'Class; backgrounBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return GameDifficultyOptions_Access;
    procedure open (This : in out GameDifficultyOptions);
    procedure close (This : in out GameDifficultyOptions);
    procedure save (This : in out GameDifficultyOptions);
-   procedure initCommands (This : in out GameDifficultyOptions; cmdListener_Param : access CommandListener'Class);
+   procedure initCommands (This : in out GameDifficultyOptions; cmdListener_Param : access CommandListener_Package.CommandListener'Class);
    procedure update (This : in out GameDifficultyOptions);
-   procedure add (This : in out GameDifficultyOptions; list_Param : access BasicArrayList'Class; name : Unbounded_String; option : Integer);
-   function getChoiceGroup (This : in out GameDifficultyOptions; list_Param : access BasicArrayList'Class; name : Unbounded_String; option : Integer) return ChoiceGroup_Access;
-   procedure getChoiceGroup (This : in out GameDifficultyOptions; list_Param : access BasicArrayList'Class; name : Unbounded_String; option : Integer);
+   procedure add (This : in out GameDifficultyOptions; list_Param : access BasicArrayList_Package.BasicArrayList'Class; name : Unbounded_String; option : Integer);
+   function getChoiceGroup (This : in out GameDifficultyOptions; list_Param : access BasicArrayList_Package.BasicArrayList'Class; name : Unbounded_String; option : Integer) return ChoiceGroup_Access;
+   procedure getChoiceGroup (This : in out GameDifficultyOptions; list_Param : access BasicArrayList_Package.BasicArrayList'Class; name : Unbounded_String; option : Integer);
    procedure setSelectedId (This : in out GameDifficultyOptions; id : Integer);
    function getSelectedId (This : in out GameDifficultyOptions) return Integer;
    function getSelectedText (This : in out GameDifficultyOptions) return Integer;

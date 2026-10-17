@@ -21,13 +21,13 @@ package body views.generic_Id.inventory.AutoSearchValidationInventoryView_Packag
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AutoSearchValidationInventoryView'Class; searchRequest_Param : access SearchRequest'Class) is
-      searchRequest : SearchRequest_Access := SearchRequest_Access (searchRequest_Param);
+   procedure Initialize (This : in out AutoSearchValidationInventoryView'Class; searchRequest_Param : access SearchRequest_Package.SearchRequest'Class) is
+      searchRequest : constant SearchRequest_Access := SearchRequest_Access (searchRequest_Param);
    begin
         InventorySearch_Package.Initialize (This, searchRequest);
    end Initialize;
 
-   function Create (searchRequest_Param : access SearchRequest'Class) return AutoSearchValidationInventoryView_Access is
+   function Create (searchRequest_Param : access SearchRequest_Package.SearchRequest'Class) return AutoSearchValidationInventoryView_Access is
       This : constant AutoSearchValidationInventoryView_Access := new AutoSearchValidationInventoryView;
    begin
       AutoSearchValidationInventoryView_Package.Initialize (This.all, searchRequest_Param);
@@ -44,8 +44,8 @@ package body views.generic_Id.inventory.AutoSearchValidationInventoryView_Packag
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out AutoSearchValidationInventoryView; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toValidationInfoNode (This : in out AutoSearchValidationInventoryView; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
@@ -55,7 +55,7 @@ package body views.generic_Id.inventory.AutoSearchValidationInventoryView_Packag
         return Null_Unbounded_String;
    end validationInfo;
 
-   procedure toValidationInfoNode (This : in out AutoSearchValidationInventoryView; document_Param : access Document'Class) is
+   procedure toValidationInfoNode (This : in out AutoSearchValidationInventoryView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := AutoSearchValidationInventoryView'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

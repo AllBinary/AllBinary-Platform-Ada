@@ -51,8 +51,8 @@ package views.generic_Id.inventory.InventoryColumnUtil_Package is
    procedure Initialize (This : in out InventoryColumnUtil'Class);
    function Create return InventoryColumnUtil_Access;
    function getInstance return InventoryColumnUtil_Access;
-   function getColumnWhereLike (This : in out InventoryColumnUtil; inventoryEntity_Param : access InventoryEntity'Class; category : Unbounded_String; column : Unbounded_String) return BasicArrayList_Access;
-   procedure getColumnWhereLike (This : in out InventoryColumnUtil; inventoryEntity_Param : access InventoryEntity'Class; category : Unbounded_String; column : Unbounded_String);
+   function getColumnWhereLike (This : in out InventoryColumnUtil; inventoryEntity_Param : access InventoryEntity_Package.InventoryEntity'Class; category : Unbounded_String; column : Unbounded_String) return BasicArrayList_Access;
+   procedure getColumnWhereLike (This : in out InventoryColumnUtil; inventoryEntity_Param : access InventoryEntity_Package.InventoryEntity'Class; category : Unbounded_String; column : Unbounded_String);
 
 end views.generic_Id.inventory.InventoryColumnUtil_Package;
 

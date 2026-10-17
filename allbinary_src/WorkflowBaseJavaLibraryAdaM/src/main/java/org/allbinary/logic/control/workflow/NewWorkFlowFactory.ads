@@ -55,10 +55,10 @@ package org.allbinary.logic.control.workflow.NewWorkFlowFactory_Package is
    procedure Initialize (This : in out NewWorkFlowFactory'Class);
    function Create return NewWorkFlowFactory_Access;
    function getInstance return NewWorkFlowFactory_Access;
-   function getInstance (This : in out NewWorkFlowFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return WorkFlowInterface_Access;
-   procedure getInstance (This : in out NewWorkFlowFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
-   function getInstance (This : in out NewWorkFlowFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; className : Unbounded_String) return WorkFlowInterface_Access;
-   procedure getInstance (This : in out NewWorkFlowFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; className : Unbounded_String);
+   function getInstance (This : in out NewWorkFlowFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return WorkFlowInterface_Access;
+   procedure getInstance (This : in out NewWorkFlowFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class);
+   function getInstance (This : in out NewWorkFlowFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; className : Unbounded_String) return WorkFlowInterface_Access;
+   procedure getInstance (This : in out NewWorkFlowFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; className : Unbounded_String);
 
 end org.allbinary.logic.control.workflow.NewWorkFlowFactory_Package;
 

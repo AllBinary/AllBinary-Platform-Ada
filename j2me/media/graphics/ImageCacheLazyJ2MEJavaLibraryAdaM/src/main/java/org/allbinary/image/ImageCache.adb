@@ -80,7 +80,7 @@ package body org.allbinary.image.ImageCache_Package is
    end firstProcess;
 
    procedure addListener (This : in out ImageCache; renderer_Param : access Java_Object'Class) is
-      renderer : Java_Object_Access := Java_Object_Access (renderer_Param);
+      renderer : constant Java_Object_Access := Java_Object_Access (renderer_Param);
    begin
         null;
    end addListener;
@@ -201,8 +201,8 @@ package body org.allbinary.image.ImageCache_Package is
    end loadRemainingAnimations;
 
    --  throws Exception
-   function loadImageForLazyAnimation (This : in out ImageCache; lazyImageRotationAnimation_Param : access LazyImageRotationAnimation'Class) return Boolean is
-      lazyImageRotationAnimation : LazyImageRotationAnimation_Access := LazyImageRotationAnimation_Access (lazyImageRotationAnimation_Param);
+   function loadImageForLazyAnimation (This : in out ImageCache; lazyImageRotationAnimation_Param : access LazyImageRotationAnimation_Package.LazyImageRotationAnimation'Class) return Boolean is
+      lazyImageRotationAnimation : constant LazyImageRotationAnimation_Access := LazyImageRotationAnimation_Access (lazyImageRotationAnimation_Param);
       image : Image_Access;
    begin
         image := lazyImageRotationAnimation.animationInterfaceFactoryInterface.getImage;
@@ -228,8 +228,8 @@ package body org.allbinary.image.ImageCache_Package is
    end loadNextImage;
 
    --  throws Exception
-   function loadImage (This : in out ImageCache; image_Param : access Image'Class) return Boolean is
-      image : Image_Access := Image_Access (image_Param);
+   function loadImage (This : in out ImageCache; image_Param : access Image_Package.Image'Class) return Boolean is
+      image : constant Image_Access := Image_Access (image_Param);
       key : Unbounded_String;
       image2 : Image_Access;
    begin
@@ -258,9 +258,9 @@ package body org.allbinary.image.ImageCache_Package is
    end loadImage;
 
    --  throws Exception
-   procedure init (This : in out ImageCache; image_Param : access Image'Class; image2_Param : access Image'Class) is
-      image : Image_Access := Image_Access (image_Param);
-      image2 : Image_Access := Image_Access (image2_Param);
+   procedure init (This : in out ImageCache; image_Param : access Image_Package.Image'Class; image2_Param : access Image_Package.Image'Class) is
+      image : constant Image_Access := Image_Access (image_Param);
+      image2 : constant Image_Access := Image_Access (image2_Param);
    begin
         image.init (image2.getImage);
    end init;
@@ -305,7 +305,7 @@ package body org.allbinary.image.ImageCache_Package is
 
    --  throws Exception
    function getWithKey (This : in out ImageCache; key_Param : access Java_Object'Class) return Image_Access is
-      key : Java_Object_Access := Java_Object_Access (key_Param);
+      key : constant Java_Object_Access := Java_Object_Access (key_Param);
       image : Image_Access;
       inputStream : InputStream_Access;
    begin
@@ -334,7 +334,7 @@ package body org.allbinary.image.ImageCache_Package is
    end getWithKey;
 
    function getIndex (This : in out ImageCache; key_Param : access Java_Object'Class) return Integer is
-      key : Java_Object_Access := Java_Object_Access (key_Param);
+      key : constant Java_Object_Access := Java_Object_Access (key_Param);
       gdResources : GDResources_Access;
       resourceStringArray : Unbounded_String_Array_Access;
       size : Integer;
@@ -353,9 +353,9 @@ package body org.allbinary.image.ImageCache_Package is
    end getIndex;
 
    --  throws Exception
-   function createImageFromInputStream (This : in out ImageCache; key_Param : access Java_Object'Class; inputStream_Param : access InputStream'Class) return Image_Access is
-      key : Java_Object_Access := Java_Object_Access (key_Param);
-      inputStream : InputStream_Access := InputStream_Access (inputStream_Param);
+   function createImageFromInputStream (This : in out ImageCache; key_Param : access Java_Object'Class; inputStream_Param : access InputStream_Package.InputStream'Class) return Image_Access is
+      key : constant Java_Object_Access := Java_Object_Access (key_Param);
+      inputStream : constant InputStream_Access := InputStream_Access (inputStream_Param);
       gdLazyResources : GDLazyResources_Access;
       resourceStringArray : Unbounded_String_Array_Access;
       size : Integer;
@@ -389,8 +389,8 @@ package body org.allbinary.image.ImageCache_Package is
         return Image_Package.createImageLater (key, width, height);
    end createImageLater;
 
-   function getAssociated (This : in out ImageCache; lazyImageRotationAnimation_Param : access LazyImageRotationAnimation'Class) return BasicArrayList_Access is
-      lazyImageRotationAnimation : LazyImageRotationAnimation_Access := LazyImageRotationAnimation_Access (lazyImageRotationAnimation_Param);
+   function getAssociated (This : in out ImageCache; lazyImageRotationAnimation_Param : access LazyImageRotationAnimation_Package.LazyImageRotationAnimation'Class) return BasicArrayList_Access is
+      lazyImageRotationAnimation : constant LazyImageRotationAnimation_Access := LazyImageRotationAnimation_Access (lazyImageRotationAnimation_Param);
       list : BasicArrayList_Access;
       lazyImageRotationAnimation2 : LazyImageRotationAnimation_Access;
       size : Integer;
@@ -415,8 +415,8 @@ package body org.allbinary.image.ImageCache_Package is
         return list;
    end getAssociated;
 
-   procedure add (This : in out ImageCache; lazyImageRotationAnimation_Param : access LazyImageRotationAnimation'Class) is
-      lazyImageRotationAnimation : LazyImageRotationAnimation_Access := LazyImageRotationAnimation_Access (lazyImageRotationAnimation_Param);
+   procedure add (This : in out ImageCache; lazyImageRotationAnimation_Param : access LazyImageRotationAnimation_Package.LazyImageRotationAnimation'Class) is
+      lazyImageRotationAnimation : constant LazyImageRotationAnimation_Access := LazyImageRotationAnimation_Access (lazyImageRotationAnimation_Param);
    begin
         begin  --  synchronized
             This.loadAfterList.add (lazyImageRotationAnimation);
@@ -424,8 +424,8 @@ package body org.allbinary.image.ImageCache_Package is
    end add;
 
    --  throws Exception
-   procedure insertFirst (This : in out ImageCache; lazyImageRotationAnimation_Param : access LazyImageRotationAnimation'Class) is
-      lazyImageRotationAnimation : LazyImageRotationAnimation_Access := LazyImageRotationAnimation_Access (lazyImageRotationAnimation_Param);
+   procedure insertFirst (This : in out ImageCache; lazyImageRotationAnimation_Param : access LazyImageRotationAnimation_Package.LazyImageRotationAnimation'Class) is
+      lazyImageRotationAnimation : constant LazyImageRotationAnimation_Access := LazyImageRotationAnimation_Access (lazyImageRotationAnimation_Param);
    begin
         if This.loadNowList.contains (lazyImageRotationAnimation) then
             null;
@@ -461,14 +461,14 @@ package body org.allbinary.image.ImageCache_Package is
         return True;
    end isLazy;
 
-   procedure loadImageForLazyAnimation (This : in out ImageCache; lazyImageRotationAnimation_Param : access LazyImageRotationAnimation'Class) is
+   procedure loadImageForLazyAnimation (This : in out ImageCache; lazyImageRotationAnimation_Param : access LazyImageRotationAnimation_Package.LazyImageRotationAnimation'Class) is
       Java_Result : constant Boolean := ImageCache'Class (This).loadImageForLazyAnimation (lazyImageRotationAnimation_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end loadImageForLazyAnimation;
 
-   procedure loadImage (This : in out ImageCache; image_Param : access Image'Class) is
+   procedure loadImage (This : in out ImageCache; image_Param : access Image_Package.Image'Class) is
       Java_Result : constant Boolean := ImageCache'Class (This).loadImage (image_Param);
       pragma Unreferenced (Java_Result);
    begin
@@ -503,7 +503,7 @@ package body org.allbinary.image.ImageCache_Package is
       null;
    end getIndex;
 
-   procedure createImageFromInputStream (This : in out ImageCache; key_Param : access Java_Object'Class; inputStream_Param : access InputStream'Class) is
+   procedure createImageFromInputStream (This : in out ImageCache; key_Param : access Java_Object'Class; inputStream_Param : access InputStream_Package.InputStream'Class) is
       Java_Result : constant Image_Access := ImageCache'Class (This).createImageFromInputStream (key_Param, inputStream_Param);
       pragma Unreferenced (Java_Result);
    begin
@@ -517,7 +517,7 @@ package body org.allbinary.image.ImageCache_Package is
       null;
    end createImageLater;
 
-   procedure getAssociated (This : in out ImageCache; lazyImageRotationAnimation_Param : access LazyImageRotationAnimation'Class) is
+   procedure getAssociated (This : in out ImageCache; lazyImageRotationAnimation_Param : access LazyImageRotationAnimation_Package.LazyImageRotationAnimation'Class) is
       Java_Result : constant BasicArrayList_Access := ImageCache'Class (This).getAssociated (lazyImageRotationAnimation_Param);
       pragma Unreferenced (Java_Result);
    begin

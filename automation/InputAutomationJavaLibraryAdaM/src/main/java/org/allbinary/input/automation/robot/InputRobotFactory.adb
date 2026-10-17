@@ -65,15 +65,15 @@ package body org.allbinary.input.automation.robot.InputRobotFactory_Package is
       return This;
    end Create;
 
-   procedure addListener (This : in out InputRobotFactory; helpSetListenerInterface_Param : access HelpSetListener'Class) is
-      helpSetListenerInterface : HelpSetListener_Access := HelpSetListener_Access (helpSetListenerInterface_Param);
+   procedure addListener (This : in out InputRobotFactory; helpSetListenerInterface_Param : access HelpSetListener_Package.HelpSetListener'Class) is
+      helpSetListenerInterface : constant HelpSetListener_Access := HelpSetListener_Access (helpSetListenerInterface_Param);
    begin
         This.helpSetListenerInterface := helpSetListenerInterface;
    end addListener;
 
    --  throws Exception
-   procedure add (This : in out InputRobotFactory; inputRobotInterface_Param : access InputRobotInterface'Class) is
-      inputRobotInterface : InputRobotInterface_Access := InputRobotInterface_Access (inputRobotInterface_Param);
+   procedure add (This : in out InputRobotFactory; inputRobotInterface_Param : access InputRobotInterface_Package.InputRobotInterface'Class) is
+      inputRobotInterface : constant InputRobotInterface_Access := InputRobotInterface_Access (inputRobotInterface_Param);
       helpSet : HelpSet_Access;
       helpSetEvent : HelpSetEvent_Access;
    begin
@@ -113,8 +113,8 @@ package body org.allbinary.input.automation.robot.InputRobotFactory_Package is
    end loadLibraries;
 
    --  throws Exception
-   procedure loadLibraries (collection_Param : access Collection'Class) is
-      collection : Collection_Access := Collection_Access (collection_Param);
+   procedure loadLibraries (collection_Param : access Collection_Package.Collection'Class) is
+      collection : constant Collection_Access := Collection_Access (collection_Param);
       logUtil : LogUtil_Access;
       iterator : Iterator_Access;
    begin
@@ -127,8 +127,8 @@ package body org.allbinary.input.automation.robot.InputRobotFactory_Package is
    end loadLibraries;
 
    --  throws Exception
-   procedure loadLibrary (inputRobotInterface_Param : access InputRobotInterface'Class) is
-      inputRobotInterface : InputRobotInterface_Access := InputRobotInterface_Access (inputRobotInterface_Param);
+   procedure loadLibrary (inputRobotInterface_Param : access InputRobotInterface_Package.InputRobotInterface'Class) is
+      inputRobotInterface : constant InputRobotInterface_Access := InputRobotInterface_Access (inputRobotInterface_Param);
       logUtil : LogUtil_Access;
       securedNativeLibraryInterface : SecuredNativeLibraryInterface_Access;
    begin

@@ -124,22 +124,22 @@ package org.allbinary.game.input.PCKeyFactory_Package is
    procedure Initialize (This : in out PCKeyFactory'Class);
    function Create return PCKeyFactory_Access;
    function getInstance return PCKeyFactory_Access;
-   function isSubmission (This : in out PCKeyFactory; input_Param : access Input'Class) return Boolean;
-   procedure isSubmission (This : in out PCKeyFactory; input_Param : access Input'Class);
-   function isDelete (This : in out PCKeyFactory; input_Param : access Input'Class) return Boolean;
-   procedure isDelete (This : in out PCKeyFactory; input_Param : access Input'Class);
-   function isBackSpace (This : in out PCKeyFactory; input_Param : access Input'Class) return Boolean;
-   procedure isBackSpace (This : in out PCKeyFactory; input_Param : access Input'Class);
-   function isUp (This : in out PCKeyFactory; input_Param : access Input'Class) return Boolean;
-   procedure isUp (This : in out PCKeyFactory; input_Param : access Input'Class);
-   function isDown (This : in out PCKeyFactory; input_Param : access Input'Class) return Boolean;
-   procedure isDown (This : in out PCKeyFactory; input_Param : access Input'Class);
-   function isLeft (This : in out PCKeyFactory; input_Param : access Input'Class) return Boolean;
-   procedure isLeft (This : in out PCKeyFactory; input_Param : access Input'Class);
-   function isRight (This : in out PCKeyFactory; input_Param : access Input'Class) return Boolean;
-   procedure isRight (This : in out PCKeyFactory; input_Param : access Input'Class);
-   function isEnter (This : in out PCKeyFactory; input_Param : access Input'Class) return Boolean;
-   procedure isEnter (This : in out PCKeyFactory; input_Param : access Input'Class);
+   function isSubmission (This : in out PCKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean;
+   procedure isSubmission (This : in out PCKeyFactory; input_Param : access Input_Package.Input'Class);
+   function isDelete (This : in out PCKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean;
+   procedure isDelete (This : in out PCKeyFactory; input_Param : access Input_Package.Input'Class);
+   function isBackSpace (This : in out PCKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean;
+   procedure isBackSpace (This : in out PCKeyFactory; input_Param : access Input_Package.Input'Class);
+   function isUp (This : in out PCKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean;
+   procedure isUp (This : in out PCKeyFactory; input_Param : access Input_Package.Input'Class);
+   function isDown (This : in out PCKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean;
+   procedure isDown (This : in out PCKeyFactory; input_Param : access Input_Package.Input'Class);
+   function isLeft (This : in out PCKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean;
+   procedure isLeft (This : in out PCKeyFactory; input_Param : access Input_Package.Input'Class);
+   function isRight (This : in out PCKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean;
+   procedure isRight (This : in out PCKeyFactory; input_Param : access Input_Package.Input'Class);
+   function isEnter (This : in out PCKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean;
+   procedure isEnter (This : in out PCKeyFactory; input_Param : access Input_Package.Input'Class);
 
 end org.allbinary.game.input.PCKeyFactory_Package;
 

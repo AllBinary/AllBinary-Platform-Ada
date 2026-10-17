@@ -41,8 +41,8 @@ package body org.allbinary.osgi.service.OSGIServiceUtil_Package is
    end Create;
 
    --  throws Exception
-   function getServicesObjectVector (This : in out OSGIServiceUtil; bundleContext_Param : access BundleContext'Class; serviceReferences : ServiceReference_Access_Array_Access) return BasicArrayList_Access is
-      bundleContext : BundleContext_Access := BundleContext_Access (bundleContext_Param);
+   function getServicesObjectVector (This : in out OSGIServiceUtil; bundleContext_Param : access BundleContext_Package.BundleContext'Class; serviceReferences : ServiceReference_Access_Array_Access) return BasicArrayList_Access is
+      bundleContext : constant BundleContext_Access := BundleContext_Access (bundleContext_Param);
       vector : BasicArrayList_Access;
       size : Integer;
       serviceReference : ServiceReference_Access;
@@ -67,7 +67,7 @@ package body org.allbinary.osgi.service.OSGIServiceUtil_Package is
         return vector;
    end getServicesObjectVector;
 
-   procedure getServicesObjectVector (This : in out OSGIServiceUtil; bundleContext_Param : access BundleContext'Class; serviceReferences : ServiceReference_Access_Array_Access) is
+   procedure getServicesObjectVector (This : in out OSGIServiceUtil; bundleContext_Param : access BundleContext_Package.BundleContext'Class; serviceReferences : ServiceReference_Access_Array_Access) is
       Java_Result : constant BasicArrayList_Access := OSGIServiceUtil'Class (This).getServicesObjectVector (bundleContext_Param, serviceReferences);
       pragma Unreferenced (Java_Result);
    begin

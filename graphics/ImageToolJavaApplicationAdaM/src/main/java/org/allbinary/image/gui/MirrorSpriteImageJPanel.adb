@@ -36,8 +36,8 @@ package body org.allbinary.image.gui.MirrorSpriteImageJPanel_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out MirrorSpriteImageJPanel'Class; imageProcessorInput_Param : access ImageProcessorInput'Class) is
-      imageProcessorInput : ImageProcessorInput_Access := ImageProcessorInput_Access (imageProcessorInput_Param);
+   procedure Initialize (This : in out MirrorSpriteImageJPanel'Class; imageProcessorInput_Param : access ImageProcessorInput_Package.ImageProcessorInput'Class) is
+      imageProcessorInput : constant ImageProcessorInput_Access := ImageProcessorInput_Access (imageProcessorInput_Param);
    begin
         JPanel_Package.Initialize (This);
         Initialize_Fields (This);
@@ -46,7 +46,7 @@ package body org.allbinary.image.gui.MirrorSpriteImageJPanel_Package is
         This.imageProcessorInput := imageProcessorInput;
    end Initialize;
 
-   function Create (imageProcessorInput_Param : access ImageProcessorInput'Class) return MirrorSpriteImageJPanel_Access is
+   function Create (imageProcessorInput_Param : access ImageProcessorInput_Package.ImageProcessorInput'Class) return MirrorSpriteImageJPanel_Access is
       This : constant MirrorSpriteImageJPanel_Access := new MirrorSpriteImageJPanel;
    begin
       MirrorSpriteImageJPanel_Package.Initialize (This.all, imageProcessorInput_Param);
@@ -109,8 +109,8 @@ package body org.allbinary.image.gui.MirrorSpriteImageJPanel_Package is
         This.jLayeredPane1 := JLayeredPane_Package.Create;
         This.jPanel1 := JPanel_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure paint (This : in out ; graphics_Param : access Graphics'Class) is
---        graphics : Graphics_Access := Graphics_Access (graphics_Param);
+--     procedure paint (This : in out ; graphics_Param : access Graphics_Package.Graphics'Class) is
+--        graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
 --     begin
 --                  if (This.result) /= (null) then
 --                      graphics.drawImage (This.result, 0, 0, This.result.getWidth (null), This.result.getHeight (null), null);
@@ -134,8 +134,8 @@ package body org.allbinary.image.gui.MirrorSpriteImageJPanel_Package is
         This.imageHeightIsFrameSizeJCheckBox.setEnabled (False);
         This.imageHeightIsFrameSizeJCheckBox.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.imageHeightIsFrameSizeJCheckBoxActionPerformed (evt);
 --     end actionPerformed;
@@ -149,8 +149,8 @@ package body org.allbinary.image.gui.MirrorSpriteImageJPanel_Package is
         This.generateJButton.setText (To_Unbounded_String ("Generate"));
         This.generateJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.generateJButtonActionPerformed (evt);
 --     end actionPerformed;
@@ -170,14 +170,14 @@ package body org.allbinary.image.gui.MirrorSpriteImageJPanel_Package is
         layout.setVerticalGroup (layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (layout.createSequentialGroup.add (This.jPanel2, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 25, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE).addPreferredGap (org_Package.jdesktop.layout.LayoutStyle.RELATED).add (This.jPanel3, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE).addPreferredGap (org_Package.jdesktop.layout.LayoutStyle.RELATED).add (This.jPanel1, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE)));
    end initComponents;
 
-   procedure generateJButtonActionPerformed (This : in out MirrorSpriteImageJPanel; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure generateJButtonActionPerformed (This : in out MirrorSpriteImageJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         This.process;
    end generateJButtonActionPerformed;
 
-   procedure imageHeightIsFrameSizeJCheckBoxActionPerformed (This : in out MirrorSpriteImageJPanel; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure imageHeightIsFrameSizeJCheckBoxActionPerformed (This : in out MirrorSpriteImageJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         null;
    end imageHeightIsFrameSizeJCheckBoxActionPerformed;
@@ -187,8 +187,8 @@ package body org.allbinary.image.gui.MirrorSpriteImageJPanel_Package is
         return This.imageProcessorInput;
    end getImageProcessorInput;
 
-   procedure setImageProcessorInput (This : in out MirrorSpriteImageJPanel; imageProcessorInput_Param : access ImageProcessorInput'Class) is
-      imageProcessorInput : ImageProcessorInput_Access := ImageProcessorInput_Access (imageProcessorInput_Param);
+   procedure setImageProcessorInput (This : in out MirrorSpriteImageJPanel; imageProcessorInput_Param : access ImageProcessorInput_Package.ImageProcessorInput'Class) is
+      imageProcessorInput : constant ImageProcessorInput_Access := ImageProcessorInput_Access (imageProcessorInput_Param);
    begin
         This.imageProcessorInput := imageProcessorInput;
    end setImageProcessorInput;

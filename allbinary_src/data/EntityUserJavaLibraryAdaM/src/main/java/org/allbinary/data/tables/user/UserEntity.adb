@@ -44,8 +44,8 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
       return This;
    end Create;
 
-   procedure insert (This : in out UserEntity; values_Param : access BasicArrayList'Class) is
-      values : BasicArrayList_Access := BasicArrayList_Access (values_Param);
+   procedure insert (This : in out UserEntity; values_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      values : constant BasicArrayList_Access := BasicArrayList_Access (values_Param);
    begin
         begin
             AbSqlBean (This).insert (values);
@@ -71,8 +71,8 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
    end getAdministrators;
 
    --  throws Exception
-   function getStoreManagers (This : in out UserEntity; storeFrontInterface_Param : access StoreFrontInterface'Class) return BasicArrayList_Access is
-      storeFrontInterface : StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
+   function getStoreManagers (This : in out UserEntity; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) return BasicArrayList_Access is
+      storeFrontInterface : constant StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
       keysAndValues : HashMap_Access;
       usersVector : BasicArrayList_Access;
       usersHashMapVector : BasicArrayList_Access;
@@ -102,8 +102,8 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
    end getCustomers;
 
    --  throws Exception
-   function getUsersWithRole (This : in out UserEntity; userRole_Param : access UserRole'Class) return BasicArrayList_Access is
-      userRole : UserRole_Access := UserRole_Access (userRole_Param);
+   function getUsersWithRole (This : in out UserEntity; userRole_Param : access UserRole_Package.UserRole'Class) return BasicArrayList_Access is
+      userRole : constant UserRole_Access := UserRole_Access (userRole_Param);
       keysAndValues : HashMap_Access;
       usersVector : BasicArrayList_Access;
       usersHashMapVector : BasicArrayList_Access;
@@ -126,8 +126,8 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
    end getUsersWithRole;
 
    --  throws Exception
-   function getUsers (This : in out UserEntity; storeFrontInterface_Param : access StoreFrontInterface'Class) return BasicArrayList_Access is
-      storeFrontInterface : StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
+   function getUsers (This : in out UserEntity; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) return BasicArrayList_Access is
+      storeFrontInterface : constant StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
       keysAndValues : HashMap_Access;
       usersVector : BasicArrayList_Access;
       usersHashMapVector : BasicArrayList_Access;
@@ -240,8 +240,8 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
         end;
    end login;
 
-   procedure update (This : in out UserEntity; userName : Unbounded_String; updatedValues_Param : access HashMap'Class) is
-      updatedValues : HashMap_Access := HashMap_Access (updatedValues_Param);
+   procedure update (This : in out UserEntity; userName : Unbounded_String; updatedValues_Param : access HashMap_Package.HashMap'Class) is
+      updatedValues : constant HashMap_Access := HashMap_Access (updatedValues_Param);
    begin
         AbSqlBean (This).updateWhere (UserData_Package.USERNAME, userName, updatedValues);
    end update;
@@ -266,21 +266,21 @@ package body org.allbinary.data.tables.user.UserEntity_Package is
         return AbSqlBean (This).createTable (This.createTableStatement);
    end createTable;
 
-   procedure getStoreManagers (This : in out UserEntity; storeFrontInterface_Param : access StoreFrontInterface'Class) is
+   procedure getStoreManagers (This : in out UserEntity; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) is
       Java_Result : constant BasicArrayList_Access := UserEntity'Class (This).getStoreManagers (storeFrontInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getStoreManagers;
 
-   procedure getUsersWithRole (This : in out UserEntity; userRole_Param : access UserRole'Class) is
+   procedure getUsersWithRole (This : in out UserEntity; userRole_Param : access UserRole_Package.UserRole'Class) is
       Java_Result : constant BasicArrayList_Access := UserEntity'Class (This).getUsersWithRole (userRole_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getUsersWithRole;
 
-   procedure getUsers (This : in out UserEntity; storeFrontInterface_Param : access StoreFrontInterface'Class) is
+   procedure getUsers (This : in out UserEntity; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) is
       Java_Result : constant BasicArrayList_Access := UserEntity'Class (This).getUsers (storeFrontInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

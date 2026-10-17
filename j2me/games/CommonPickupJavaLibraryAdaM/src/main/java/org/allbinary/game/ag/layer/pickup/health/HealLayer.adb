@@ -33,14 +33,14 @@ package body org.allbinary.game.ag.layer.pickup.health.HealLayer_Package is
       return This;
    end Create;
 
-   procedure paint (This : in out HealLayer; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out HealLayer; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paint;
 
-   procedure visit (This : in out HealLayer; healthInterface_Param : access HealthInterface'Class) is
-      healthInterface : HealthInterface_Access := HealthInterface_Access (healthInterface_Param);
+   procedure visit (This : in out HealLayer; healthInterface_Param : access HealthInterface_Package.HealthInterface'Class) is
+      healthInterface : constant HealthInterface_Access := HealthInterface_Access (healthInterface_Param);
    begin
         if healthInterface.isAlive then
             healthInterface.healMax;

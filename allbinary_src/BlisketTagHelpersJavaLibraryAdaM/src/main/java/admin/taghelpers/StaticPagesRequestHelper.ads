@@ -92,8 +92,8 @@ package admin.taghelpers.StaticPagesRequestHelper_Package is
       xslFile : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out StaticPagesRequestHelper'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
-   function Create (propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return StaticPagesRequestHelper_Access;
+   procedure Initialize (This : in out StaticPagesRequestHelper'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class);
+   function Create (propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return StaticPagesRequestHelper_Access;
    procedure getFormData (This : in out StaticPagesRequestHelper);
    procedure email (This : in out StaticPagesRequestHelper);
    function generateStaticPages (This : in out StaticPagesRequestHelper) return Unbounded_String;

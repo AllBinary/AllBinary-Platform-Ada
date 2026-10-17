@@ -47,8 +47,8 @@ package org.allbinary.game.input.mapping.MotionInputMappingEventListener_Package
 
    procedure Initialize (This : in out MotionInputMappingEventListener'Class);
    function Create return MotionInputMappingEventListener_Access;
-   procedure onEvent (This : in out MotionInputMappingEventListener; eventObject_Param : access AllBinaryEventObject'Class);
-   procedure onInputMappingEvent (This : in out MotionInputMappingEventListener; inputMappingEvent_Param : access InputMappingEvent'Class);
+   procedure onEvent (This : in out MotionInputMappingEventListener; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class);
+   procedure onInputMappingEvent (This : in out MotionInputMappingEventListener; inputMappingEvent_Param : access InputMappingEvent_Package.InputMappingEvent'Class);
 
 end org.allbinary.game.input.mapping.MotionInputMappingEventListener_Package;
 

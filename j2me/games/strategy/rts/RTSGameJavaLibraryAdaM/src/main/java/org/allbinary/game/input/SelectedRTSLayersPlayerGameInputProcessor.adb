@@ -22,15 +22,15 @@ package body org.allbinary.game.input.SelectedRTSLayersPlayerGameInputProcessor_
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out SelectedRTSLayersPlayerGameInputProcessor'Class; selectedRTSLayersPlayerGameInput_Param : access SelectedRTSLayersPlayerGameInput'Class) is
-      selectedRTSLayersPlayerGameInput : SelectedRTSLayersPlayerGameInput_Access := SelectedRTSLayersPlayerGameInput_Access (selectedRTSLayersPlayerGameInput_Param);
+   procedure Initialize (This : in out SelectedRTSLayersPlayerGameInputProcessor'Class; selectedRTSLayersPlayerGameInput_Param : access SelectedRTSLayersPlayerGameInput_Package.SelectedRTSLayersPlayerGameInput'Class) is
+      selectedRTSLayersPlayerGameInput : constant SelectedRTSLayersPlayerGameInput_Access := SelectedRTSLayersPlayerGameInput_Access (selectedRTSLayersPlayerGameInput_Param);
    begin
       GameInputProcessor_Package.Initialize (This);
       Initialize_Fields (This);
         This.selectedRTSLayersPlayerGameInput := selectedRTSLayersPlayerGameInput;
    end Initialize;
 
-   function Create (selectedRTSLayersPlayerGameInput_Param : access SelectedRTSLayersPlayerGameInput'Class) return SelectedRTSLayersPlayerGameInputProcessor_Access is
+   function Create (selectedRTSLayersPlayerGameInput_Param : access SelectedRTSLayersPlayerGameInput_Package.SelectedRTSLayersPlayerGameInput'Class) return SelectedRTSLayersPlayerGameInputProcessor_Access is
       This : constant SelectedRTSLayersPlayerGameInputProcessor_Access := new SelectedRTSLayersPlayerGameInputProcessor;
    begin
       SelectedRTSLayersPlayerGameInputProcessor_Package.Initialize (This.all, selectedRTSLayersPlayerGameInput_Param);

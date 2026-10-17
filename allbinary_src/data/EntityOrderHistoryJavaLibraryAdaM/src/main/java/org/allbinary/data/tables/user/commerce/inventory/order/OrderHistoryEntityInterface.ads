@@ -41,14 +41,14 @@ package org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEnti
    type OrderHistoryEntityInterface_Access is access all OrderHistoryEntityInterface'Class;
    type OrderHistoryEntityInterface_Access_Array is array (Natural range <>) of OrderHistoryEntityInterface_Access;
    type OrderHistoryEntityInterface_Access_Array_Access is access all OrderHistoryEntityInterface_Access_Array;
-   procedure insert (This : in out OrderHistoryEntityInterface; userName : Unbounded_String; order_Param : access Order'Class) is abstract;
+   procedure insert (This : in out OrderHistoryEntityInterface; userName : Unbounded_String; order_Param : access Order_Package.Order'Class) is abstract;
    procedure setStatus (This : in out OrderHistoryEntityInterface; orderId : Unbounded_String; status : Unbounded_String) is abstract;
    procedure setPaymentMethod (This : in out OrderHistoryEntityInterface; orderId : Unbounded_String; status : Unbounded_String) is abstract;
-   function getStoreOrders (This : in out OrderHistoryEntityInterface; storeFrontInterface_Param : access StoreFrontInterface'Class) return BasicArrayList_Access is abstract;
+   function getStoreOrders (This : in out OrderHistoryEntityInterface; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) return BasicArrayList_Access is abstract;
    function getOrders (This : in out OrderHistoryEntityInterface; userName : Unbounded_String) return BasicArrayList_Access is abstract;
    function getOrders (This : in out OrderHistoryEntityInterface; status : Unbounded_String; fromDate : Unbounded_String; toDate : Unbounded_String) return BasicArrayList_Access is abstract;
    function getOrder (This : in out OrderHistoryEntityInterface; id : Unbounded_String) return OrderHistory_Access is abstract;
-   procedure update (This : in out OrderHistoryEntityInterface; whereHashMap_Param : access HashMap'Class; orderHashMap_Param : access HashMap'Class) is abstract;
+   procedure update (This : in out OrderHistoryEntityInterface; whereHashMap_Param : access HashMap_Package.HashMap'Class; orderHashMap_Param : access HashMap_Package.HashMap'Class) is abstract;
 
 end org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntityInterface_Package;
 

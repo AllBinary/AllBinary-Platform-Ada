@@ -60,8 +60,8 @@ package body org.allbinary.data.tables.user.commerce.money.payment.transaction.T
         end;
    end remove;
 
-   procedure add (This : in out TransactionEntity; userName : Unbounded_String; orderNumber : Unbounded_String; paymentTransactionInterface_Param : access PaymentTransactionInterface'Class) is
-      paymentTransactionInterface : PaymentTransactionInterface_Access := PaymentTransactionInterface_Access (paymentTransactionInterface_Param);
+   procedure add (This : in out TransactionEntity; userName : Unbounded_String; orderNumber : Unbounded_String; paymentTransactionInterface_Param : access PaymentTransactionInterface_Package.PaymentTransactionInterface'Class) is
+      paymentTransactionInterface : constant PaymentTransactionInterface_Access := PaymentTransactionInterface_Access (paymentTransactionInterface_Param);
       values : BasicArrayList_Access;
       calendar : Calendar_Access;
       time : Unbounded_String;

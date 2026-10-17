@@ -46,8 +46,8 @@ package org.allbinary.animation.compound.CompoundAnimationInterfaceFactory_Packa
       animationBehaviorFactory : AnimationBehaviorFactory_Access;
    end record;
 
-   procedure Initialize (This : in out CompoundAnimationInterfaceFactory'Class; basicAnimationInterfaceFactoryInterfaceArray : AnimationInterfaceFactoryInterface_Access_Array_Access; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class);
-   function Create (basicAnimationInterfaceFactoryInterfaceArray : AnimationInterfaceFactoryInterface_Access_Array_Access; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return CompoundAnimationInterfaceFactory_Access;
+   procedure Initialize (This : in out CompoundAnimationInterfaceFactory'Class; basicAnimationInterfaceFactoryInterfaceArray : AnimationInterfaceFactoryInterface_Access_Array_Access; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class);
+   function Create (basicAnimationInterfaceFactoryInterfaceArray : AnimationInterfaceFactoryInterface_Access_Array_Access; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return CompoundAnimationInterfaceFactory_Access;
    function getInstance (This : in out CompoundAnimationInterfaceFactory; instanceId : Integer) return Animation_Access;
    procedure getInstance (This : in out CompoundAnimationInterfaceFactory; instanceId : Integer);
    function createArray (This : in out CompoundAnimationInterfaceFactory; size : Integer) return Animation_Access_Array_Access;
@@ -55,7 +55,7 @@ package org.allbinary.animation.compound.CompoundAnimationInterfaceFactory_Packa
    function createAnimation (This : in out CompoundAnimationInterfaceFactory; animationInterfaceArray : Animation_Access_Array_Access) return Animation_Access;
    procedure createAnimation (This : in out CompoundAnimationInterfaceFactory; animationInterfaceArray : Animation_Access_Array_Access);
    function getBasicAnimationInterfaceFactoryInterfaceArray (This : in out CompoundAnimationInterfaceFactory) return AnimationInterfaceFactoryInterface_Access_Array_Access;
-   procedure setInitialScale (This : in out CompoundAnimationInterfaceFactory; scaleProperties_Param : access ScaleProperties'Class);
+   procedure setInitialScale (This : in out CompoundAnimationInterfaceFactory; scaleProperties_Param : access ScaleProperties_Package.ScaleProperties'Class);
 
 end org.allbinary.animation.compound.CompoundAnimationInterfaceFactory_Package;
 

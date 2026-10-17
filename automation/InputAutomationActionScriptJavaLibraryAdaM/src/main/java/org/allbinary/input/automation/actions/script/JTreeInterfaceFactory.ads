@@ -30,7 +30,7 @@ package org.allbinary.input.automation.actions.script.JTreeInterfaceFactory_Pack
    procedure Initialize (This : in out JTreeInterfaceFactory'Class);
    function Create return JTreeInterfaceFactory_Access;
    function getInstance return JTreeInterfaceFactory_Access;
-   procedure set (This : in out JTreeInterfaceFactory; jTreeInterface_Param : access JTreeInterface'Class);
+   procedure set (This : in out JTreeInterfaceFactory; jTreeInterface_Param : access JTreeInterface_Package.JTreeInterface'Class);
    function getJTreeInterface (This : in out JTreeInterfaceFactory) return JTreeInterface_Access;
 
 end org.allbinary.input.automation.actions.script.JTreeInterfaceFactory_Package;

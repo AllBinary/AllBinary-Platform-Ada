@@ -22,9 +22,9 @@ package body org.allbinary.game.ag.ai.LurchRotationAI_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out LurchRotationAI'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) is
-      ownerLayerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
-      gameInput : GameInput_Access := GameInput_Access (gameInput_Param);
+   procedure Initialize (This : in out LurchRotationAI'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) is
+      ownerLayerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
+      gameInput : constant GameInput_Access := GameInput_Access (gameInput_Param);
       rotationAnimationInterfaceCompositeInterface : RotationAnimationInterfaceCompositeInterface_Access;
    begin
         LurchAI_Package.Initialize (This, ownerLayerInterface, gameInput);
@@ -34,7 +34,7 @@ package body org.allbinary.game.ag.ai.LurchRotationAI_Package is
         This.update;
    end Initialize;
 
-   function Create (ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return LurchRotationAI_Access is
+   function Create (ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) return LurchRotationAI_Access is
       This : constant LurchRotationAI_Access := new LurchRotationAI;
    begin
       LurchRotationAI_Package.Initialize (This.all, ownerLayerInterface_Param, gameInput_Param);

@@ -46,8 +46,8 @@ package body org.allbinary.logic.communication.sql.AbSqlBasic_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AbSqlBasic'Class; databaseConnectionInfoInterface_Param : access DbConnectionInfo'Class) is
-      databaseConnectionInfoInterface : DbConnectionInfo_Access := DbConnectionInfo_Access (databaseConnectionInfoInterface_Param);
+   procedure Initialize (This : in out AbSqlBasic'Class; databaseConnectionInfoInterface_Param : access DbConnectionInfo_Package.DbConnectionInfo'Class) is
+      databaseConnectionInfoInterface : constant DbConnectionInfo_Access := DbConnectionInfo_Access (databaseConnectionInfoInterface_Param);
    begin
       Initialize_Fields (This);
         This.databaseConnectionInfoInterface := databaseConnectionInfoInterface;
@@ -55,7 +55,7 @@ package body org.allbinary.logic.communication.sql.AbSqlBasic_Package is
         This.conn := null;
    end Initialize;
 
-   function Create (databaseConnectionInfoInterface_Param : access DbConnectionInfo'Class) return AbSqlBasic_Access is
+   function Create (databaseConnectionInfoInterface_Param : access DbConnectionInfo_Package.DbConnectionInfo'Class) return AbSqlBasic_Access is
       This : constant AbSqlBasic_Access := new AbSqlBasic;
    begin
       AbSqlBasic_Package.Initialize (This.all, databaseConnectionInfoInterface_Param);
@@ -185,8 +185,8 @@ package body org.allbinary.logic.communication.sql.AbSqlBasic_Package is
         return This.databaseConnectionInfoInterface;
    end getDatabaseConnectionInfoInterface;
 
-   procedure setDatabaseConnectionInfoInterface (This : in out AbSqlBasic; databaseConnectionInfoInterface_Param : access DbConnectionInfo'Class) is
-      databaseConnectionInfoInterface : DbConnectionInfo_Access := DbConnectionInfo_Access (databaseConnectionInfoInterface_Param);
+   procedure setDatabaseConnectionInfoInterface (This : in out AbSqlBasic; databaseConnectionInfoInterface_Param : access DbConnectionInfo_Package.DbConnectionInfo'Class) is
+      databaseConnectionInfoInterface : constant DbConnectionInfo_Access := DbConnectionInfo_Access (databaseConnectionInfoInterface_Param);
    begin
         This.databaseConnectionInfoInterface := databaseConnectionInfoInterface;
    end setDatabaseConnectionInfoInterface;

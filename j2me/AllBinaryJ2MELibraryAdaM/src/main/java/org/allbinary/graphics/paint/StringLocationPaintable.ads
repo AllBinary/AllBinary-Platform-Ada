@@ -37,7 +37,7 @@ package org.allbinary.graphics.paint.StringLocationPaintable_Package is
 
    procedure Initialize (This : in out StringLocationPaintable'Class; value : Unbounded_String);
    function Create (value : Unbounded_String) return StringLocationPaintable_Access;
-   procedure paintXY (This : in out StringLocationPaintable; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
+   procedure paintXY (This : in out StringLocationPaintable; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
 
 end org.allbinary.graphics.paint.StringLocationPaintable_Package;
 

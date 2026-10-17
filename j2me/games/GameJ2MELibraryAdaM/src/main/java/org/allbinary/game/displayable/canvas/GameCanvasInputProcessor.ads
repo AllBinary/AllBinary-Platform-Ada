@@ -71,11 +71,11 @@ package org.allbinary.game.displayable.canvas.GameCanvasInputProcessor_Package i
       gameKeyEventFactory : GameKeyEventFactory_Access;
    end record;
 
-   procedure Initialize (This : in out GameCanvasInputProcessor'Class; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class);
-   function Create (allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class) return GameCanvasInputProcessor_Access;
+   procedure Initialize (This : in out GameCanvasInputProcessor'Class; allBinaryGameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class);
+   function Create (allBinaryGameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class) return GameCanvasInputProcessor_Access;
    procedure keyPressedByDevice (This : in out GameCanvasInputProcessor; keyCode : Integer; deviceId : Integer);
-   procedure keyReleasedByDevice (This : in out GameCanvasInputProcessor; canvas_Param : access Canvas'Class; keyCode : Integer; deviceId : Integer);
-   procedure removeGameKeyEvent (This : in out GameCanvasInputProcessor; canvas_Param : access Canvas'Class; keyCode : Integer; deviceId : Integer; repeated : Boolean);
+   procedure keyReleasedByDevice (This : in out GameCanvasInputProcessor; canvas_Param : access Canvas_Package.Canvas'Class; keyCode : Integer; deviceId : Integer);
+   procedure removeGameKeyEvent (This : in out GameCanvasInputProcessor; canvas_Param : access Canvas_Package.Canvas'Class; keyCode : Integer; deviceId : Integer; repeated : Boolean);
 
 end org.allbinary.game.displayable.canvas.GameCanvasInputProcessor_Package;
 

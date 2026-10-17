@@ -22,9 +22,9 @@ package body org.allbinary.game.layer.hud.basic.ImageHealthGraphic_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ImageHealthGraphic'Class; animationInterface_Param : access AnimationInterface'Class; healthInterface_Param : access HealthInterface'Class; location : Integer; direction : Integer) is
-      animationInterface : AnimationInterface_Access := AnimationInterface_Access (animationInterface_Param);
-      healthInterface : HealthInterface_Access := HealthInterface_Access (healthInterface_Param);
+   procedure Initialize (This : in out ImageHealthGraphic'Class; animationInterface_Param : access AnimationInterface_Package.AnimationInterface'Class; healthInterface_Param : access HealthInterface_Package.HealthInterface'Class; location : Integer; direction : Integer) is
+      animationInterface : constant AnimationInterface_Access := AnimationInterface_Access (animationInterface_Param);
+      healthInterface : constant HealthInterface_Access := HealthInterface_Access (healthInterface_Param);
       imageCacheFactory : ImageCacheFactory_Access;
       numOfHealth : Integer;
       index : Integer;
@@ -43,15 +43,15 @@ package body org.allbinary.game.layer.hud.basic.ImageHealthGraphic_Package is
         end loop;
    end Initialize;
 
-   function Create (animationInterface_Param : access AnimationInterface'Class; healthInterface_Param : access HealthInterface'Class; location : Integer; direction : Integer) return ImageHealthGraphic_Access is
+   function Create (animationInterface_Param : access AnimationInterface_Package.AnimationInterface'Class; healthInterface_Param : access HealthInterface_Package.HealthInterface'Class; location : Integer; direction : Integer) return ImageHealthGraphic_Access is
       This : constant ImageHealthGraphic_Access := new ImageHealthGraphic;
    begin
       ImageHealthGraphic_Package.Initialize (This.all, animationInterface_Param, healthInterface_Param, location, direction);
       return This;
    end Create;
 
-   procedure paint (This : in out ImageHealthGraphic; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out ImageHealthGraphic; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         graphics.drawImage (This.image (This.max), This.x, This.y, Anchor_Package.TOP_LEFT);
    end paint;

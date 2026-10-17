@@ -50,8 +50,8 @@ package body org.allbinary.media.audio.AllBinaryMediaManager_Package is
    end update;
 
    --  throws Exception
-   procedure init (soundsFactoryInterface_Param : access SoundsFactoryInterface'Class) is
-      soundsFactoryInterface : SoundsFactoryInterface_Access := SoundsFactoryInterface_Access (soundsFactoryInterface_Param);
+   procedure init (soundsFactoryInterface_Param : access SoundsFactoryInterface_Package.SoundsFactoryInterface'Class) is
+      soundsFactoryInterface : constant SoundsFactoryInterface_Access := SoundsFactoryInterface_Access (soundsFactoryInterface_Param);
       logUtil : LogUtil_Access;
       commonString : CommonStrings_Access;
    begin
@@ -63,8 +63,8 @@ package body org.allbinary.media.audio.AllBinaryMediaManager_Package is
    end init;
 
    --  throws Exception
-   procedure shutdown (soundsFactoryInterface_Param : access SoundsFactoryInterface'Class) is
-      soundsFactoryInterface : SoundsFactoryInterface_Access := SoundsFactoryInterface_Access (soundsFactoryInterface_Param);
+   procedure shutdown (soundsFactoryInterface_Param : access SoundsFactoryInterface_Package.SoundsFactoryInterface'Class) is
+      soundsFactoryInterface : constant SoundsFactoryInterface_Access := SoundsFactoryInterface_Access (soundsFactoryInterface_Param);
    begin
         Sounds_Package.Create (soundsFactoryInterface).stopAll;
         Sounds_Package.Create (soundsFactoryInterface).closeAll;
@@ -102,8 +102,8 @@ package body org.allbinary.media.audio.AllBinaryMediaManager_Package is
    end createPlayer;
 
    --  throws IOException, MediaException
-   function createPlayerFromInputStream (stream_Param : access InputStream'Class; type_Id : Unbounded_String) return Player_Access is
-      stream : InputStream_Access := InputStream_Access (stream_Param);
+   function createPlayerFromInputStream (stream_Param : access InputStream_Package.InputStream'Class; type_Id : Unbounded_String) return Player_Access is
+      stream : constant InputStream_Access := InputStream_Access (stream_Param);
    begin
         Java_Throw (Java_New_Exception ("MediaException", To_Unbounded_String ("No Impl")));
    end createPlayerFromInputStream;
@@ -126,7 +126,7 @@ package body org.allbinary.media.audio.AllBinaryMediaManager_Package is
       null;
    end createPlayer;
 
-   procedure createPlayerFromInputStream (stream_Param : access InputStream'Class; type_Id : Unbounded_String) is
+   procedure createPlayerFromInputStream (stream_Param : access InputStream_Package.InputStream'Class; type_Id : Unbounded_String) is
       Java_Result : constant Player_Access := createPlayerFromInputStream (stream_Param, type_Id);
       pragma Unreferenced (Java_Result);
    begin

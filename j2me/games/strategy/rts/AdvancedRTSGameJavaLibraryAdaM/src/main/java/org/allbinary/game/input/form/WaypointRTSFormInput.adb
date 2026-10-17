@@ -55,8 +55,8 @@ package body org.allbinary.game.input.form.WaypointRTSFormInput_Package is
    end Create;
 
    --  throws Exception
-   procedure setAllBinaryGameLayerManager (This : in out WaypointRTSFormInput; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class) is
-      allBinaryGameLayerManager : AllBinaryGameLayerManager_Access := AllBinaryGameLayerManager_Access (allBinaryGameLayerManager_Param);
+   procedure setAllBinaryGameLayerManager (This : in out WaypointRTSFormInput; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager_Package.AllBinaryGameLayerManager'Class) is
+      allBinaryGameLayerManager : constant AllBinaryGameLayerManager_Access := AllBinaryGameLayerManager_Access (allBinaryGameLayerManager_Param);
       geographicMapCompositeInterface : GeographicMapCompositeInterface_Access;
       geographicMapInterface : BasicGeographicMap_Access;
    begin
@@ -72,11 +72,11 @@ package body org.allbinary.game.input.form.WaypointRTSFormInput_Package is
    end setAllBinaryGameLayerManager;
 
    --  throws Exception
-   procedure processAtPoint (This : in out WaypointRTSFormInput; associatedRtsLayer_Param : access CollidableDestroyableDamageableLayer'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager'Class; point_Param : access GPoint'Class) is
-      associatedRtsLayer : CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (associatedRtsLayer_Param);
-      rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
-      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
-      point : GPoint_Access := GPoint_Access (point_Param);
+   procedure processAtPoint (This : in out WaypointRTSFormInput; associatedRtsLayer_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface_Package.RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; point_Param : access GPoint_Package.GPoint'Class) is
+      associatedRtsLayer : constant CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (associatedRtsLayer_Param);
+      rtsPlayerLayerInterface : constant RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
+      layerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+      point : constant GPoint_Access := GPoint_Access (point_Param);
       geographicMapCompositeInterface : GeographicMapCompositeInterface_Access;
       geographicMapInterface : BasicGeographicMap_Access;
       allBinaryTiledLayer : AllBinaryTiledLayer_Access;
@@ -107,10 +107,10 @@ package body org.allbinary.game.input.form.WaypointRTSFormInput_Package is
    end processAtPoint;
 
    --  throws Exception
-   procedure processCellPosition (This : in out WaypointRTSFormInput; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
-      rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
-      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
-      geographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
+   procedure processCellPosition (This : in out WaypointRTSFormInput; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface_Package.RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
+      rtsPlayerLayerInterface : constant RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
+      layerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+      geographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
       itemIndex : Integer;
       cellPoint : GPoint_Access;
       rtsLayer : RTSLayer_Access;
@@ -132,11 +132,11 @@ package body org.allbinary.game.input.form.WaypointRTSFormInput_Package is
    end processCellPosition;
 
    --  throws Exception
-   procedure processStickyGameSpecific (This : in out WaypointRTSFormInput; associatedRtsLayer_Param : access CollidableDestroyableDamageableLayer'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager'Class; item_Param : access ABCustomItem'Class; index : Integer) is
-      associatedRtsLayer : CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (associatedRtsLayer_Param);
-      rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
-      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
-      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
+   procedure processStickyGameSpecific (This : in out WaypointRTSFormInput; associatedRtsLayer_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface_Package.RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; item_Param : access ABCustomItem_Package.ABCustomItem'Class; index : Integer) is
+      associatedRtsLayer : constant CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (associatedRtsLayer_Param);
+      rtsPlayerLayerInterface : constant RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
+      layerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+      item : constant ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
         This.logUtil.putF (To_Unbounded_String ("Set Sticking Item: ") & Java_Image (item), WaypointRTSFormInput_Access'(This'Unchecked_Access), To_Unbounded_String ("processSticky"));
         This.setSelectedStickyItem (item);
@@ -147,10 +147,10 @@ package body org.allbinary.game.input.form.WaypointRTSFormInput_Package is
    end processStickyGameSpecific;
 
    --  throws Exception
-   function attemptBuild (This : in out WaypointRTSFormInput; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager'Class; layerInterface_Param : access RTSLayer'Class; itemIndex : Integer) return Boolean is
-      rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
-      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
-      layerInterface : RTSLayer_Access := RTSLayer_Access (layerInterface_Param);
+   function attemptBuild (This : in out WaypointRTSFormInput; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface_Package.RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; layerInterface_Param : access RTSLayer_Package.RTSLayer'Class; itemIndex : Integer) return Boolean is
+      rtsPlayerLayerInterface : constant RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
+      layerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+      layerInterface : constant RTSLayer_Access := RTSLayer_Access (layerInterface_Param);
       geographicMapCellPositionArea : GeographicMapCellPositionAreaBase_Access;
       list : BasicArrayList_Access;
       geographicMapCompositeInterface : GeographicMapCompositeInterface_Access;
@@ -235,8 +235,8 @@ package body org.allbinary.game.input.form.WaypointRTSFormInput_Package is
    end attemptBuild;
 
    --  throws Exception
-   procedure addWayPoint (This : in out WaypointRTSFormInput; layerInterface_Param : access WaypointLayer'Class) is
-      layerInterface : WaypointLayer_Access := WaypointLayer_Access (layerInterface_Param);
+   procedure addWayPoint (This : in out WaypointRTSFormInput; layerInterface_Param : access WaypointLayer_Package.WaypointLayer'Class) is
+      layerInterface : constant WaypointLayer_Access := WaypointLayer_Access (layerInterface_Param);
       stickyAssociatedAdvandedRtsLayer : AdvancedRTSGameLayer_Access;
       list : BasicArrayList_Access;
    begin
@@ -251,7 +251,7 @@ package body org.allbinary.game.input.form.WaypointRTSFormInput_Package is
         WaypointEventHandlerFactory_Package.getInstance (layerInterface.getGroupInterface (0)).fireEvent (This.WAYPOINT_EVENT);
    end addWayPoint;
 
-   procedure attemptBuild (This : in out WaypointRTSFormInput; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager'Class; layerInterface_Param : access RTSLayer'Class; itemIndex : Integer) is
+   procedure attemptBuild (This : in out WaypointRTSFormInput; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface_Package.RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; layerInterface_Param : access RTSLayer_Package.RTSLayer'Class; itemIndex : Integer) is
       Java_Result : constant Boolean := WaypointRTSFormInput'Class (This).attemptBuild (rtsPlayerLayerInterface_Param, layerManager_Param, layerInterface_Param, itemIndex);
       pragma Unreferenced (Java_Result);
    begin

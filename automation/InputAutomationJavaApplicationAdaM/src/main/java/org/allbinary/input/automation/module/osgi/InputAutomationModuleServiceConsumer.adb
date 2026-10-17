@@ -21,13 +21,13 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationModuleSer
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out InputAutomationModuleServiceConsumer'Class; bundleContext_Param : access BundleContext'Class) is
-      bundleContext : BundleContext_Access := BundleContext_Access (bundleContext_Param);
+   procedure Initialize (This : in out InputAutomationModuleServiceConsumer'Class; bundleContext_Param : access BundleContext_Package.BundleContext'Class) is
+      bundleContext : constant BundleContext_Access := BundleContext_Access (bundleContext_Param);
    begin
         InputAutomationServiceConsumer_Package.Initialize (This, InputAutomationModuleServiceInterface_Package.InputAutomationModuleServiceInterface'Tag.getName, bundleContext, InputAutomationModuleOSGIServiceVisitor_Package.Create);
    end Initialize;
 
-   function Create (bundleContext_Param : access BundleContext'Class) return InputAutomationModuleServiceConsumer_Access is
+   function Create (bundleContext_Param : access BundleContext_Package.BundleContext'Class) return InputAutomationModuleServiceConsumer_Access is
       This : constant InputAutomationModuleServiceConsumer_Access := new InputAutomationModuleServiceConsumer;
    begin
       InputAutomationModuleServiceConsumer_Package.Initialize (This.all, bundleContext_Param);

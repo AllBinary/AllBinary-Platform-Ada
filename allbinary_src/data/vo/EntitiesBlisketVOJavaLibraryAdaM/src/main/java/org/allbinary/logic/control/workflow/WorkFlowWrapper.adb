@@ -25,7 +25,7 @@ package body org.allbinary.logic.control.workflow.WorkFlowWrapper_Package is
 
 
    procedure Initialize (This : in out WorkFlowWrapper'Class; anyType_Param : access Java_Object'Class) is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
       Initialize_Fields (This);
         This.anyType := anyType;

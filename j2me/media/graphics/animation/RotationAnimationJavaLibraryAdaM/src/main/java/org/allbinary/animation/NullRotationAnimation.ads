@@ -27,12 +27,12 @@ package org.allbinary.animation.NullRotationAnimation_Package is
 
    type NullRotationAnimation is new RotationAnimation with null record;
 
-   procedure Initialize (This : in out NullRotationAnimation'Class; angleInfo_Param : access AngleInfo'Class; circularIndexUtil_Param : access CircularIndexUtil'Class; animationBehavior_Param : access AnimationBehavior'Class);
-   function Create (angleInfo_Param : access AngleInfo'Class; circularIndexUtil_Param : access CircularIndexUtil'Class; animationBehavior_Param : access AnimationBehavior'Class) return NullRotationAnimation_Access;
-   function createTotalAngle (angleInfo_Param : access AngleInfo'Class; totalAngle : Short_Integer; animationBehavior_Param : access AnimationBehavior'Class) return NullRotationAnimation_Access;
-   procedure createTotalAngle (angleInfo_Param : access AngleInfo'Class; totalAngle : Short_Integer; animationBehavior_Param : access AnimationBehavior'Class);
-   function createQuarter (animationBehavior_Param : access AnimationBehavior'Class) return NullRotationAnimation_Access;
-   procedure createQuarter (animationBehavior_Param : access AnimationBehavior'Class);
+   procedure Initialize (This : in out NullRotationAnimation'Class; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; circularIndexUtil_Param : access CircularIndexUtil_Package.CircularIndexUtil'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class);
+   function Create (angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; circularIndexUtil_Param : access CircularIndexUtil_Package.CircularIndexUtil'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return NullRotationAnimation_Access;
+   function createTotalAngle (angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; totalAngle : Short_Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return NullRotationAnimation_Access;
+   procedure createTotalAngle (angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; totalAngle : Short_Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class);
+   function createQuarter (animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return NullRotationAnimation_Access;
+   procedure createQuarter (animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class);
    function getAnimationSize (This : in out NullRotationAnimation) return Integer;
 
 end org.allbinary.animation.NullRotationAnimation_Package;

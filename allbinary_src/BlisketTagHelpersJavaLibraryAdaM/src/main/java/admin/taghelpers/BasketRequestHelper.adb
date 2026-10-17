@@ -31,9 +31,9 @@ package body admin.taghelpers.BasketRequestHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasketRequestHelper'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
-      propertiesHashMap : HashMap_Access := HashMap_Access (propertiesHashMap_Param);
-      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
+   procedure Initialize (This : in out BasketRequestHelper'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is
+      propertiesHashMap : constant HashMap_Access := HashMap_Access (propertiesHashMap_Param);
+      pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
       storeName : Unbounded_String;
    begin
       TagHelper_Package.Initialize (This);
@@ -51,7 +51,7 @@ package body admin.taghelpers.BasketRequestHelper_Package is
         This.getFormData;
    end Initialize;
 
-   function Create (propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return BasketRequestHelper_Access is
+   function Create (propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return BasketRequestHelper_Access is
       This : constant BasketRequestHelper_Access := new BasketRequestHelper;
    begin
       BasketRequestHelper_Package.Initialize (This.all, propertiesHashMap_Param, pageContext_Param);

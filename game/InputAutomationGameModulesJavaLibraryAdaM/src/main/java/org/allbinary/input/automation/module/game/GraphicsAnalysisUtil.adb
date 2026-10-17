@@ -35,8 +35,8 @@ package body org.allbinary.input.automation.module.game.GraphicsAnalysisUtil_Pac
    end Create;
 
    --  throws Exception
-   function getNominator (bufferedImage_Param : access BufferedImage'Class; min_x : Integer; max_x : Integer; y : Integer) return Long_Float is
-      bufferedImage : BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
+   function getNominator (bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; min_x : Integer; max_x : Integer; y : Integer) return Long_Float is
+      bufferedImage : constant BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
       colorInteger : Integer;
       automaticCacheInterface : AutomaticCacheInterface_Access;
       colorCacheable : ColorCacheable_Access;
@@ -57,7 +57,7 @@ package body org.allbinary.input.automation.module.game.GraphicsAnalysisUtil_Pac
         return 0.0;
    end getNominator;
 
-   procedure getNominator (bufferedImage_Param : access BufferedImage'Class; min_x : Integer; max_x : Integer; y : Integer) is
+   procedure getNominator (bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; min_x : Integer; max_x : Integer; y : Integer) is
       Java_Result : constant Long_Float := getNominator (bufferedImage_Param, min_x, max_x, y);
       pragma Unreferenced (Java_Result);
    begin

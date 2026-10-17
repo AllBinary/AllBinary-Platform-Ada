@@ -50,10 +50,10 @@ package org.allbinary.logic.visual.transform.info.TransformInfoHttpContext_Packa
       logUtil : LogUtil_Access;
    end record;
 
-   procedure Initialize (This : in out TransformInfoHttpContext'Class; databaseHashMap_Param : access HashMap'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
-   function Create (databaseHashMap_Param : access HashMap'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return TransformInfoHttpContext_Access;
-   procedure Initialize (This : in out TransformInfoHttpContext'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
-   function Create (propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return TransformInfoHttpContext_Access;
+   procedure Initialize (This : in out TransformInfoHttpContext'Class; databaseHashMap_Param : access HashMap_Package.HashMap'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class);
+   function Create (databaseHashMap_Param : access HashMap_Package.HashMap'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return TransformInfoHttpContext_Access;
+   procedure Initialize (This : in out TransformInfoHttpContext'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class);
+   function Create (propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return TransformInfoHttpContext_Access;
    function getPath (This : in out TransformInfoHttpContext) return Unbounded_String;
    function getTemplateFilePath (This : in out TransformInfoHttpContext) return AbPath_Access;
    function getObjectConfigFilePath (This : in out TransformInfoHttpContext) return AbPath_Access;

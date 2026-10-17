@@ -40,8 +40,8 @@ package body org.allbinary.game.displayable.canvas.GamePerformanceInitUpdatePain
    end Create;
 
 
-   procedure updateMeasurement (This : in out GamePerformanceInitUpdatePaintable; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure updateMeasurement (This : in out GamePerformanceInitUpdatePaintable; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
    begin
         font := graphics.getFont;
@@ -59,8 +59,8 @@ package body org.allbinary.game.displayable.canvas.GamePerformanceInitUpdatePain
         This.baseRefreshHelperCharArray := GameStatisticsFactory_Package.getInstance.to2DCharArray;
    end update;
 
-   procedure paint (This : in out GamePerformanceInitUpdatePaintable; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out GamePerformanceInitUpdatePaintable; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       charArray : Character_Array_Access;
       charArray2 : Character_Array_Access;
       size2 : Integer;

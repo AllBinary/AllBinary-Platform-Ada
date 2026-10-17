@@ -22,15 +22,15 @@ package body org.allbinary.image.gui.ImageIconUnique_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ImageIconUnique'Class; bufferedImage_Param : access BufferedImage'Class; index : Integer) is
-      bufferedImage : BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
+   procedure Initialize (This : in out ImageIconUnique'Class; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; index : Integer) is
+      bufferedImage : constant BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
    begin
         ImageIcon_Package.Initialize (This, bufferedImage);
         Initialize_Fields (This);
         This.setId (index);
    end Initialize;
 
-   function Create (bufferedImage_Param : access BufferedImage'Class; index : Integer) return ImageIconUnique_Access is
+   function Create (bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; index : Integer) return ImageIconUnique_Access is
       This : constant ImageIconUnique_Access := new ImageIconUnique;
    begin
       ImageIconUnique_Package.Initialize (This.all, bufferedImage_Param, index);

@@ -30,7 +30,7 @@ package org.allbinary.logic.system.security.licensing.LockedUtilInterface_Packag
    type LockedUtilInterface_Access_Array is array (Natural range <>) of LockedUtilInterface_Access;
    type LockedUtilInterface_Access_Array_Access is access all LockedUtilInterface_Access_Array;
    function isLocked (This : in out LockedUtilInterface) return Boolean is abstract;
-   function isLockedFeature (This : in out LockedUtilInterface; lockableFeatrue_Param : access LockableFeature'Class) return Boolean is abstract;
+   function isLockedFeature (This : in out LockedUtilInterface; lockableFeatrue_Param : access LockableFeature_Package.LockableFeature'Class) return Boolean is abstract;
 
 end org.allbinary.logic.system.security.licensing.LockedUtilInterface_Package;
 

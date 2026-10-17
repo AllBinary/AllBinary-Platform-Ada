@@ -34,68 +34,68 @@ package body org.allbinary.game.behavior.topview.GeographicMapTopViewLayerBehavi
    end Create;
 
    --  throws Exception
-   function getGeographicMapCellPositionIfNotSolidBlockOrOffMapLocation (This : in out GeographicMapTopViewLayerBehavior; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; velocityProperties_Param : access VelocityProperties'Class; layer_Param : access AllBinaryLayer'Class; x : Integer; y : Integer) return GeographicMapCellPosition_Access is
-      velocityProperties : VelocityProperties_Access := VelocityProperties_Access (velocityProperties_Param);
-      layer : AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
+   function getGeographicMapCellPositionIfNotSolidBlockOrOffMapLocation (This : in out GeographicMapTopViewLayerBehavior; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; velocityProperties_Param : access VelocityProperties_Package.VelocityProperties'Class; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; x : Integer; y : Integer) return GeographicMapCellPosition_Access is
+      velocityProperties : constant VelocityProperties_Access := VelocityProperties_Access (velocityProperties_Param);
+      layer : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
    begin
         return SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION;
    end getGeographicMapCellPositionIfNotSolidBlockOrOffMapLocation;
 
    --  throws Exception
-   function getGeographicMapCellPositionIfNotSolidBlockOrOffMap (This : in out GeographicMapTopViewLayerBehavior; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class; velocityProperties_Param : access VelocityProperties'Class; layer_Param : access AllBinaryLayer'Class) return GeographicMapCellPosition_Access is
-      geographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
-      velocityProperties : VelocityProperties_Access := VelocityProperties_Access (velocityProperties_Param);
-      layer : AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
+   function getGeographicMapCellPositionIfNotSolidBlockOrOffMap (This : in out GeographicMapTopViewLayerBehavior; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; velocityProperties_Param : access VelocityProperties_Package.VelocityProperties'Class; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) return GeographicMapCellPosition_Access is
+      geographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
+      velocityProperties : constant VelocityProperties_Access := VelocityProperties_Access (velocityProperties_Param);
+      layer : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
    begin
         return SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION;
    end getGeographicMapCellPositionIfNotSolidBlockOrOffMap;
 
    --  throws Exception
-   function getGeographicMapCellPositionFromListIfNotSolidBlockOrOffMap (This : in out GeographicMapTopViewLayerBehavior; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; geographicMapCellPositionList_Param : access BasicArrayList'Class; velocityProperties_Param : access VelocityProperties'Class; layer_Param : access AllBinaryLayer'Class) return GeographicMapCellPosition_Access is
-      geographicMapCellPositionList : BasicArrayList_Access := BasicArrayList_Access (geographicMapCellPositionList_Param);
-      velocityProperties : VelocityProperties_Access := VelocityProperties_Access (velocityProperties_Param);
-      layer : AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
+   function getGeographicMapCellPositionFromListIfNotSolidBlockOrOffMap (This : in out GeographicMapTopViewLayerBehavior; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; geographicMapCellPositionList_Param : access BasicArrayList_Package.BasicArrayList'Class; velocityProperties_Param : access VelocityProperties_Package.VelocityProperties'Class; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) return GeographicMapCellPosition_Access is
+      geographicMapCellPositionList : constant BasicArrayList_Access := BasicArrayList_Access (geographicMapCellPositionList_Param);
+      velocityProperties : constant VelocityProperties_Access := VelocityProperties_Access (velocityProperties_Param);
+      layer : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
    begin
         return SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION;
    end getGeographicMapCellPositionFromListIfNotSolidBlockOrOffMap;
 
    --  throws Exception
-   procedure gravity (This : in out GeographicMapTopViewLayerBehavior; velocityProperties_Param : access VelocityProperties'Class; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
-      velocityProperties : VelocityProperties_Access := VelocityProperties_Access (velocityProperties_Param);
-      geographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
+   procedure gravity (This : in out GeographicMapTopViewLayerBehavior; velocityProperties_Param : access VelocityProperties_Package.VelocityProperties'Class; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
+      velocityProperties : constant VelocityProperties_Access := VelocityProperties_Access (velocityProperties_Param);
+      geographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
    begin
         null;
    end gravity;
 
    --  throws Exception
-   procedure left (This : in out GeographicMapTopViewLayerBehavior; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; velocityProperties_Param : access VelocityProperties'Class; layer_Param : access AllBinaryLayer'Class) is
-      velocityProperties : VelocityProperties_Access := VelocityProperties_Access (velocityProperties_Param);
-      layer : AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
+   procedure left (This : in out GeographicMapTopViewLayerBehavior; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; velocityProperties_Param : access VelocityProperties_Package.VelocityProperties'Class; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
+      velocityProperties : constant VelocityProperties_Access := VelocityProperties_Access (velocityProperties_Param);
+      layer : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
    begin
         null;
    end left;
 
    --  throws Exception
-   function move (This : in out GeographicMapTopViewLayerBehavior; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; velocityProperties_Param : access VelocityProperties'Class; layer_Param : access AllBinaryLayer'Class; x : Integer; y : Integer) return Boolean is
-      velocityProperties : VelocityProperties_Access := VelocityProperties_Access (velocityProperties_Param);
-      layer : AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
+   function move (This : in out GeographicMapTopViewLayerBehavior; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; velocityProperties_Param : access VelocityProperties_Package.VelocityProperties'Class; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; x : Integer; y : Integer) return Boolean is
+      velocityProperties : constant VelocityProperties_Access := VelocityProperties_Access (velocityProperties_Param);
+      layer : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
    begin
         return False;
    end move;
 
    --  throws Exception
-   procedure moveAndLand (This : in out GeographicMapTopViewLayerBehavior; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class; velocityProperties_Param : access VelocityProperties'Class; layer_Param : access AllBinaryLayer'Class; x : Integer; y : Integer) is
-      geographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
-      velocityProperties : VelocityProperties_Access := VelocityProperties_Access (velocityProperties_Param);
-      layer : AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
+   procedure moveAndLand (This : in out GeographicMapTopViewLayerBehavior; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; velocityProperties_Param : access VelocityProperties_Package.VelocityProperties'Class; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; x : Integer; y : Integer) is
+      geographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
+      velocityProperties : constant VelocityProperties_Access := VelocityProperties_Access (velocityProperties_Param);
+      layer : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
    begin
         null;
    end moveAndLand;
 
    --  throws Exception
-   procedure right (This : in out GeographicMapTopViewLayerBehavior; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; velocityProperties_Param : access VelocityProperties'Class; layer_Param : access AllBinaryLayer'Class) is
-      velocityProperties : VelocityProperties_Access := VelocityProperties_Access (velocityProperties_Param);
-      layer : AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
+   procedure right (This : in out GeographicMapTopViewLayerBehavior; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; velocityProperties_Param : access VelocityProperties_Package.VelocityProperties'Class; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
+      velocityProperties : constant VelocityProperties_Access := VelocityProperties_Access (velocityProperties_Param);
+      layer : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
    begin
         null;
    end right;
@@ -132,28 +132,28 @@ package body org.allbinary.game.behavior.topview.GeographicMapTopViewLayerBehavi
         return False;
    end isOffMap;
 
-   procedure getGeographicMapCellPositionIfNotSolidBlockOrOffMapLocation (This : in out GeographicMapTopViewLayerBehavior; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; velocityProperties_Param : access VelocityProperties'Class; layer_Param : access AllBinaryLayer'Class; x : Integer; y : Integer) is
+   procedure getGeographicMapCellPositionIfNotSolidBlockOrOffMapLocation (This : in out GeographicMapTopViewLayerBehavior; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; velocityProperties_Param : access VelocityProperties_Package.VelocityProperties'Class; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; x : Integer; y : Integer) is
       Java_Result : constant GeographicMapCellPosition_Access := GeographicMapTopViewLayerBehavior'Class (This).getGeographicMapCellPositionIfNotSolidBlockOrOffMapLocation (geographicMapInterfaceArray, geographicMapCellTypeArray, velocityProperties_Param, layer_Param, x, y);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getGeographicMapCellPositionIfNotSolidBlockOrOffMapLocation;
 
-   procedure getGeographicMapCellPositionIfNotSolidBlockOrOffMap (This : in out GeographicMapTopViewLayerBehavior; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class; velocityProperties_Param : access VelocityProperties'Class; layer_Param : access AllBinaryLayer'Class) is
+   procedure getGeographicMapCellPositionIfNotSolidBlockOrOffMap (This : in out GeographicMapTopViewLayerBehavior; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; velocityProperties_Param : access VelocityProperties_Package.VelocityProperties'Class; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
       Java_Result : constant GeographicMapCellPosition_Access := GeographicMapTopViewLayerBehavior'Class (This).getGeographicMapCellPositionIfNotSolidBlockOrOffMap (geographicMapInterfaceArray, geographicMapCellTypeArray, geographicMapCellPosition_Param, velocityProperties_Param, layer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getGeographicMapCellPositionIfNotSolidBlockOrOffMap;
 
-   procedure getGeographicMapCellPositionFromListIfNotSolidBlockOrOffMap (This : in out GeographicMapTopViewLayerBehavior; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; geographicMapCellPositionList_Param : access BasicArrayList'Class; velocityProperties_Param : access VelocityProperties'Class; layer_Param : access AllBinaryLayer'Class) is
+   procedure getGeographicMapCellPositionFromListIfNotSolidBlockOrOffMap (This : in out GeographicMapTopViewLayerBehavior; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; geographicMapCellPositionList_Param : access BasicArrayList_Package.BasicArrayList'Class; velocityProperties_Param : access VelocityProperties_Package.VelocityProperties'Class; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
       Java_Result : constant GeographicMapCellPosition_Access := GeographicMapTopViewLayerBehavior'Class (This).getGeographicMapCellPositionFromListIfNotSolidBlockOrOffMap (geographicMapInterfaceArray, geographicMapCellTypeArray, geographicMapCellPositionList_Param, velocityProperties_Param, layer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getGeographicMapCellPositionFromListIfNotSolidBlockOrOffMap;
 
-   procedure move (This : in out GeographicMapTopViewLayerBehavior; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; velocityProperties_Param : access VelocityProperties'Class; layer_Param : access AllBinaryLayer'Class; x : Integer; y : Integer) is
+   procedure move (This : in out GeographicMapTopViewLayerBehavior; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellTypeArray : GeographicMapCellType_Access_Array_Access; velocityProperties_Param : access VelocityProperties_Package.VelocityProperties'Class; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; x : Integer; y : Integer) is
       Java_Result : constant Boolean := GeographicMapTopViewLayerBehavior'Class (This).move (geographicMapInterfaceArray, geographicMapCellTypeArray, velocityProperties_Param, layer_Param, x, y);
       pragma Unreferenced (Java_Result);
    begin

@@ -38,10 +38,10 @@ package org.allbinary.business.user.modules.admin.store.web.workflow.editor.Work
 
    procedure Initialize (This : in out WorkflowEditorWebStoreAdminUser'Class);
    function Create return WorkflowEditorWebStoreAdminUser_Access;
-   procedure Initialize (This : in out WorkflowEditorWebStoreAdminUser'Class; userHashMap_Param : access HashMap'Class);
-   function Create (userHashMap_Param : access HashMap'Class) return WorkflowEditorWebStoreAdminUser_Access;
-   procedure validateSession (This : in out WorkflowEditorWebStoreAdminUser; weblisketSession_Param : access WeblisketSessionInterface'Class);
-   procedure updateSession (This : in out WorkflowEditorWebStoreAdminUser; weblisketSession_Param : access WeblisketSessionInterface'Class);
+   procedure Initialize (This : in out WorkflowEditorWebStoreAdminUser'Class; userHashMap_Param : access HashMap_Package.HashMap'Class);
+   function Create (userHashMap_Param : access HashMap_Package.HashMap'Class) return WorkflowEditorWebStoreAdminUser_Access;
+   procedure validateSession (This : in out WorkflowEditorWebStoreAdminUser; weblisketSession_Param : access WeblisketSessionInterface_Package.WeblisketSessionInterface'Class);
+   procedure updateSession (This : in out WorkflowEditorWebStoreAdminUser; weblisketSession_Param : access WeblisketSessionInterface_Package.WeblisketSessionInterface'Class);
 
 end org.allbinary.business.user.modules.admin.store.web.workflow.editor.WorkflowEditorWebStoreAdminUser_Package;
 

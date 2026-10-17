@@ -41,7 +41,7 @@ package org.allbinary.animation.image.SetColorProcessor_Package is
    procedure Initialize (This : in out SetColorProcessor'Class);
    function Create return SetColorProcessor_Access;
    function getInstance return SetColorProcessor_Access;
-   procedure updateColor (This : in out SetColorProcessor; imageModifierUtil_Param : access ImageModifierUtil'Class; originalImage_Param : access Image'Class; imageToShow_Param : access Image'Class; index : Integer; basicColor_Param : access BasicColor'Class);
+   procedure updateColor (This : in out SetColorProcessor; imageModifierUtil_Param : access ImageModifierUtil_Package.ImageModifierUtil'Class; originalImage_Param : access Image_Package.Image'Class; imageToShow_Param : access Image_Package.Image'Class; index : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class);
 
 end org.allbinary.animation.image.SetColorProcessor_Package;
 

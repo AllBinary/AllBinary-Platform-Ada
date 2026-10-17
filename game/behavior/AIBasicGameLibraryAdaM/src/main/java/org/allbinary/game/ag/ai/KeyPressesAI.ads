@@ -46,9 +46,9 @@ package org.allbinary.game.ag.ai.KeyPressesAI_Package is
       keys : Integer_Array_Access;
    end record;
 
-   procedure Initialize (This : in out KeyPressesAI'Class; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class);
-   function Create (hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return KeyPressesAI_Access;
-   procedure processAI (This : in out KeyPressesAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class);
+   procedure Initialize (This : in out KeyPressesAI'Class; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class);
+   function Create (hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) return KeyPressesAI_Access;
+   procedure processAI (This : in out KeyPressesAI; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class);
    procedure toggle (This : in out KeyPressesAI);
    procedure disable (This : in out KeyPressesAI);
    procedure enable (This : in out KeyPressesAI);

@@ -35,8 +35,8 @@ package body org.allbinary.init.NoLicense_Package is
    end Create;
 
    --  throws Exception
-   procedure init (classLoader_Param : access ClassLoader'Class; pathString : Unbounded_String) is
-      classLoader : ClassLoader_Access := ClassLoader_Access (classLoader_Param);
+   procedure init (classLoader_Param : access ClassLoader_Package.ClassLoader'Class; pathString : Unbounded_String) is
+      classLoader : constant ClassLoader_Access := ClassLoader_Access (classLoader_Param);
    begin
         Globals_Package.init (classLoader, pathString);
    end init;

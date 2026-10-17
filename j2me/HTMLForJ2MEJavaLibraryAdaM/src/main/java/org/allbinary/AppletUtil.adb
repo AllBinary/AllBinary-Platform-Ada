@@ -35,7 +35,7 @@ package body org.allbinary.AppletUtil_Package is
    end Create;
 
    function isAppletLoader (anyType_Param : access Java_Object'Class) return Boolean is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         return False;
    end isAppletLoader;

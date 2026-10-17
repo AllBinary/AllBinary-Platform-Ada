@@ -23,11 +23,11 @@ package body org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnima
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out HackRotationSpriteIndexedAnimation'Class; sprite_Param : access Sprite'Class; image_Param : access Image'Class; angleInfo_Param : access AngleInfo'Class; animationBehavior_Param : access AnimationBehavior'Class) is
-      sprite : Sprite_Access := Sprite_Access (sprite_Param);
-      image : Image_Access := Image_Access (image_Param);
-      angleInfo : AngleInfo_Access := AngleInfo_Access (angleInfo_Param);
-      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
+   procedure Initialize (This : in out HackRotationSpriteIndexedAnimation'Class; sprite_Param : access Sprite_Package.Sprite'Class; image_Param : access Image_Package.Image'Class; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) is
+      sprite : constant Sprite_Access := Sprite_Access (sprite_Param);
+      image : constant Image_Access := Image_Access (image_Param);
+      angleInfo : constant AngleInfo_Access := AngleInfo_Access (angleInfo_Param);
+      animationBehavior : constant AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
         RotationAnimation_Package.Initialize (This, angleInfo, CircularIndexUtil_Package.createInstance ((360) / (angleInfo.getAngleIncrementInfo.getAngleIncrement)), animationBehavior);
         Initialize_Fields (This);
@@ -35,7 +35,7 @@ package body org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnima
         This.image := image;
    end Initialize;
 
-   function Create (sprite_Param : access Sprite'Class; image_Param : access Image'Class; angleInfo_Param : access AngleInfo'Class; animationBehavior_Param : access AnimationBehavior'Class) return HackRotationSpriteIndexedAnimation_Access is
+   function Create (sprite_Param : access Sprite_Package.Sprite'Class; image_Param : access Image_Package.Image'Class; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return HackRotationSpriteIndexedAnimation_Access is
       This : constant HackRotationSpriteIndexedAnimation_Access := new HackRotationSpriteIndexedAnimation;
    begin
       HackRotationSpriteIndexedAnimation_Package.Initialize (This.all, sprite_Param, image_Param, angleInfo_Param, animationBehavior_Param);
@@ -48,22 +48,22 @@ package body org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnima
         return This.getSize;
    end getAnimationSize;
 
-   procedure paintFrame (This : in out HackRotationSpriteIndexedAnimation; g_Param : access Graphics'Class; frame : Integer; x : Integer; y : Integer) is
-      g : Graphics_Access := Graphics_Access (g_Param);
+   procedure paintFrame (This : in out HackRotationSpriteIndexedAnimation; g_Param : access Graphics_Package.Graphics'Class; frame : Integer; x : Integer; y : Integer) is
+      g : constant Graphics_Access := Graphics_Access (g_Param);
    begin
         This.setFrame (frame);
         This.paintXY (g, x, y);
    end paintFrame;
 
-   procedure paintXY (This : in out HackRotationSpriteIndexedAnimation; g_Param : access Graphics'Class; x : Integer; y : Integer) is
-      g : Graphics_Access := Graphics_Access (g_Param);
+   procedure paintXY (This : in out HackRotationSpriteIndexedAnimation; g_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
+      g : constant Graphics_Access := Graphics_Access (g_Param);
    begin
         This.sprite.setPosition (x, y);
         This.paint (g);
    end paintXY;
 
-   procedure paint (This : in out HackRotationSpriteIndexedAnimation; g_Param : access Graphics'Class) is
-      g : Graphics_Access := Graphics_Access (g_Param);
+   procedure paint (This : in out HackRotationSpriteIndexedAnimation; g_Param : access Graphics_Package.Graphics'Class) is
+      g : constant Graphics_Access := Graphics_Access (g_Param);
    begin
         This.sprite.paint (g);
    end paint;

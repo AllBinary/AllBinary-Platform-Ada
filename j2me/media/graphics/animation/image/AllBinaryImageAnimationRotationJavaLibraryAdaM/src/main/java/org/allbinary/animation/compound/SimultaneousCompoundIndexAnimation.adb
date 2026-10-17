@@ -22,15 +22,15 @@ package body org.allbinary.animation.compound.SimultaneousCompoundIndexAnimation
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out SimultaneousCompoundIndexAnimation'Class; animationInterfaceArray : IndexedAnimation_Access_Array_Access; animationBehavior_Param : access AnimationBehavior'Class) is
-      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
+   procedure Initialize (This : in out SimultaneousCompoundIndexAnimation'Class; animationInterfaceArray : IndexedAnimation_Access_Array_Access; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) is
+      animationBehavior : constant AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
         IndexedAnimation_Package.Initialize (This, animationBehavior);
         Initialize_Fields (This);
         This.animationInterfaceArray := animationInterfaceArray;
    end Initialize;
 
-   function Create (animationInterfaceArray : IndexedAnimation_Access_Array_Access; animationBehavior_Param : access AnimationBehavior'Class) return SimultaneousCompoundIndexAnimation_Access is
+   function Create (animationInterfaceArray : IndexedAnimation_Access_Array_Access; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return SimultaneousCompoundIndexAnimation_Access is
       This : constant SimultaneousCompoundIndexAnimation_Access := new SimultaneousCompoundIndexAnimation;
    begin
       SimultaneousCompoundIndexAnimation_Package.Initialize (This.all, animationInterfaceArray, animationBehavior_Param);
@@ -91,8 +91,8 @@ package body org.allbinary.animation.compound.SimultaneousCompoundIndexAnimation
         return PrimitiveIntUtil_Package.getArrayInstance;
    end getSequence;
 
-   procedure paintXY (This : in out SimultaneousCompoundIndexAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintXY (This : in out SimultaneousCompoundIndexAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       index : Integer;
    begin
         index := This.animationInterfaceArray'Length;
@@ -101,8 +101,8 @@ package body org.allbinary.animation.compound.SimultaneousCompoundIndexAnimation
         end loop;
    end paintXY;
 
-   procedure paintThreedXYZ (This : in out SimultaneousCompoundIndexAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer; z : Integer) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintThreedXYZ (This : in out SimultaneousCompoundIndexAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer; z : Integer) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       index : Integer;
    begin
         index := This.animationInterfaceArray'Length;
@@ -112,8 +112,8 @@ package body org.allbinary.animation.compound.SimultaneousCompoundIndexAnimation
    end paintThreedXYZ;
 
    --  throws Exception
-   procedure set (This : in out SimultaneousCompoundIndexAnimation; gl_Param : access GL'Class) is
-      gl : GL_Access := GL_Access (gl_Param);
+   procedure set (This : in out SimultaneousCompoundIndexAnimation; gl_Param : access GL_Package.GL'Class) is
+      gl : constant GL_Access := GL_Access (gl_Param);
       index : Integer;
    begin
         index := This.animationInterfaceArray'Length;

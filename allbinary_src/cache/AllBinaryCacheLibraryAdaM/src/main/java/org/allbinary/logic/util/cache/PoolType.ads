@@ -34,8 +34,8 @@ package org.allbinary.logic.util.cache.PoolType_Package is
       cacheType : CacheType_Access;
    end record;
 
-   procedure Initialize (This : in out PoolType'Class; cacheType_Param : access CacheType'Class);
-   function Create (cacheType_Param : access CacheType'Class) return PoolType_Access;
+   procedure Initialize (This : in out PoolType'Class; cacheType_Param : access CacheType_Package.CacheType'Class);
+   function Create (cacheType_Param : access CacheType_Package.CacheType'Class) return PoolType_Access;
    function getCacheType (This : in out PoolType) return CacheType_Access;
    function toString (This : in out PoolType) return Unbounded_String;
 

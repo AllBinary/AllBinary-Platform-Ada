@@ -37,8 +37,8 @@ package org.allbinary.game.layer.capital.event.CapitalEventHandlerFactory_Packag
 
    procedure Initialize (This : in out CapitalEventHandlerFactory'Class);
    function Create return CapitalEventHandlerFactory_Access;
-   function getInstance (groupInterface_Param : access Group'Class) return CapitalEventHandler_Access;
-   procedure getInstance (groupInterface_Param : access Group'Class);
+   function getInstance (groupInterface_Param : access Group_Package.Group'Class) return CapitalEventHandler_Access;
+   procedure getInstance (groupInterface_Param : access Group_Package.Group'Class);
    procedure removeAll;
 
 end org.allbinary.game.layer.capital.event.CapitalEventHandlerFactory_Package;

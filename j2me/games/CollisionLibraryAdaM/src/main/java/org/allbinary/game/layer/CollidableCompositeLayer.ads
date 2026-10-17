@@ -63,14 +63,14 @@ package org.allbinary.game.layer.CollidableCompositeLayer_Package is
    end record;
    NULL_COLLIDABLE_COMPOSITE_LAYER : Java_Object_Access;
 
-   procedure Initialize (This : in out CollidableCompositeLayer'Class; name : Unbounded_String; layerInfo_Param : access Rectangle'Class; viewPosition_Param : access ViewPositionBase'Class; collidableBaseBehaviorFactory_Param : access CollidableBaseBehaviorFactory'Class);
-   function Create (name : Unbounded_String; layerInfo_Param : access Rectangle'Class; viewPosition_Param : access ViewPositionBase'Class; collidableBaseBehaviorFactory_Param : access CollidableBaseBehaviorFactory'Class) return CollidableCompositeLayer_Access;
+   procedure Initialize (This : in out CollidableCompositeLayer'Class; name : Unbounded_String; layerInfo_Param : access Rectangle_Package.Rectangle'Class; viewPosition_Param : access ViewPositionBase_Package.ViewPositionBase'Class; collidableBaseBehaviorFactory_Param : access CollidableBaseBehaviorFactory_Package.CollidableBaseBehaviorFactory'Class);
+   function Create (name : Unbounded_String; layerInfo_Param : access Rectangle_Package.Rectangle'Class; viewPosition_Param : access ViewPositionBase_Package.ViewPositionBase'Class; collidableBaseBehaviorFactory_Param : access CollidableBaseBehaviorFactory_Package.CollidableBaseBehaviorFactory'Class) return CollidableCompositeLayer_Access;
    function getNullInstance return CollidableCompositeLayer_Access;
    function getArtificialIntelligenceInterface (This : in out CollidableCompositeLayer) return ArtificialIntelligenceInterface_Access;
    function getCollidableInferface (This : in out CollidableCompositeLayer) return CollidableBaseBehavior_Access;
-   procedure setCollidableInferface (This : in out CollidableCompositeLayer; collidableInferface_Param : access CollidableBaseBehavior'Class);
+   procedure setCollidableInferface (This : in out CollidableCompositeLayer; collidableInferface_Param : access CollidableBaseBehavior_Package.CollidableBaseBehavior'Class);
    function implmentsCollidableInterface (This : in out CollidableCompositeLayer) return Boolean;
-   procedure toStringAppend (This : in out CollidableCompositeLayer; stringBuffer_Param : access StringMaker'Class);
+   procedure toStringAppend (This : in out CollidableCompositeLayer; stringBuffer_Param : access StringMaker_Package.StringMaker'Class);
    function toString (This : in out CollidableCompositeLayer) return Unbounded_String;
 
 end org.allbinary.game.layer.CollidableCompositeLayer_Package;

@@ -37,7 +37,7 @@ package org.allbinary.animation.transition.shake.ShakeAnimationListener_Package 
    procedure onSmallShakeEvent (This : in out ShakeAnimationListener);
    procedure onMediumShakeEvent (This : in out ShakeAnimationListener);
    procedure onLargeShakeEvent (This : in out ShakeAnimationListener);
-   procedure onShakeEvent (This : in out ShakeAnimationListener; shakeEvent_Param : access ShakeEvent'Class);
+   procedure onShakeEvent (This : in out ShakeAnimationListener; shakeEvent_Param : access ShakeEvent_Package.ShakeEvent'Class);
    function getType (This : in out ShakeAnimationListener) return Integer;
 
 end org.allbinary.animation.transition.shake.ShakeAnimationListener_Package;

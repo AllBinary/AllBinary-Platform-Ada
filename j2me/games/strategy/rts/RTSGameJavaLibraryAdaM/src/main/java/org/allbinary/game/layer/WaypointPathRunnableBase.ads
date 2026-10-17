@@ -51,11 +51,11 @@ package org.allbinary.game.layer.WaypointPathRunnableBase_Package is
    function Create return WaypointPathRunnableBase_Access;
    function isRunning (This : in out WaypointPathRunnableBase) return Boolean;
    procedure setRunning (This : in out WaypointPathRunnableBase; isRunning : Boolean);
-   procedure setThread (This : in out WaypointPathRunnableBase; thread_Param : access Thread'Class);
-   procedure setTargetLayer (This : in out WaypointPathRunnableBase; waypointLayer_Param : access PathFindingLayerInterface'Class);
+   procedure setThread (This : in out WaypointPathRunnableBase; thread_Param : access Thread_Package.Thread'Class);
+   procedure setTargetLayer (This : in out WaypointPathRunnableBase; waypointLayer_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class);
    procedure setPriority (This : in out WaypointPathRunnableBase);
    function getTargetLayer (This : in out WaypointPathRunnableBase) return PathFindingLayerInterface_Access;
-   procedure setUnitLayer (This : in out WaypointPathRunnableBase; unitLayer_Param : access PathFindingLayerInterface'Class);
+   procedure setUnitLayer (This : in out WaypointPathRunnableBase; unitLayer_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class);
    function getPriority (This : in out WaypointPathRunnableBase) return Integer;
    function isDone (This : in out WaypointPathRunnableBase) return Boolean;
    procedure run (This : in out WaypointPathRunnableBase);

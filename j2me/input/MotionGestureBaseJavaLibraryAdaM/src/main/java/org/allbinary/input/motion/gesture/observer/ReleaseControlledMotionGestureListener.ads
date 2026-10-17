@@ -61,21 +61,21 @@ package org.allbinary.input.motion.gesture.observer.ReleaseControlledMotionGestu
       signed : CompleteMotionGestureListenerInterface_Access;
    end record;
 
-   procedure Initialize (This : in out ReleaseControlledMotionGestureListener'Class; signed_Param : access CompleteMotionGestureListenerInterface'Class);
-   function Create (signed_Param : access CompleteMotionGestureListenerInterface'Class) return ReleaseControlledMotionGestureListener_Access;
-   procedure onEvent (This : in out ReleaseControlledMotionGestureListener; eventObject_Param : access AllBinaryEventObject'Class);
-   procedure onUpMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent'Class);
-   procedure onDownMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent'Class);
-   procedure onLeftMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent'Class);
-   procedure onRightMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent'Class);
-   procedure onDiagonalDownRightMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent'Class);
-   procedure onDiagonalDownLeftMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent'Class);
-   procedure onDiagonalUpRightMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent'Class);
-   procedure onDiagonalUpLeftMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent'Class);
-   procedure onPressedMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent'Class);
-   procedure onScrolledMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; motionGestureEvent_Param : access MotionGestureEvent'Class);
-   procedure released (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent'Class);
-   procedure onMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent'Class);
+   procedure Initialize (This : in out ReleaseControlledMotionGestureListener'Class; signed_Param : access CompleteMotionGestureListenerInterface_Package.CompleteMotionGestureListenerInterface'Class);
+   function Create (signed_Param : access CompleteMotionGestureListenerInterface_Package.CompleteMotionGestureListenerInterface'Class) return ReleaseControlledMotionGestureListener_Access;
+   procedure onEvent (This : in out ReleaseControlledMotionGestureListener; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class);
+   procedure onUpMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class);
+   procedure onDownMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class);
+   procedure onLeftMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class);
+   procedure onRightMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class);
+   procedure onDiagonalDownRightMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class);
+   procedure onDiagonalDownLeftMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class);
+   procedure onDiagonalUpRightMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class);
+   procedure onDiagonalUpLeftMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class);
+   procedure onPressedMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class);
+   procedure onScrolledMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; motionGestureEvent_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class);
+   procedure released (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class);
+   procedure onMotionGestureEvent (This : in out ReleaseControlledMotionGestureListener; ev_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class);
 
 end org.allbinary.input.motion.gesture.observer.ReleaseControlledMotionGestureListener_Package;
 

@@ -35,8 +35,8 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementsValidationFac
    end Create;
 
    --  throws Exception
-   function getInstance (cssElementStyleNodeList_Param : access BasicArrayList'Class) return BasicArrayList_Access is
-      cssElementStyleNodeList : BasicArrayList_Access := BasicArrayList_Access (cssElementStyleNodeList_Param);
+   function getInstance (cssElementStyleNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class) return BasicArrayList_Access is
+      cssElementStyleNodeList : constant BasicArrayList_Access := BasicArrayList_Access (cssElementStyleNodeList_Param);
       styles : BasicArrayList_Access;
       size : Integer;
       cssElementStyleNode : Node_Access;
@@ -55,22 +55,22 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementsValidationFac
         return styles;
    end getInstance;
 
-   function getInstance (hashMap_Param : access HashMap'Class) return BasicArrayList_Access is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+   function getInstance (hashMap_Param : access HashMap_Package.HashMap'Class) return BasicArrayList_Access is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
       styles : BasicArrayList_Access;
    begin
         styles := BasicArrayListD_Package.Create;
         return styles;
    end getInstance;
 
-   procedure getInstance (cssElementStyleNodeList_Param : access BasicArrayList'Class) is
+   procedure getInstance (cssElementStyleNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class) is
       Java_Result : constant BasicArrayList_Access := getInstance (cssElementStyleNodeList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
-   procedure getInstance (hashMap_Param : access HashMap'Class) is
+   procedure getInstance (hashMap_Param : access HashMap_Package.HashMap'Class) is
       Java_Result : constant BasicArrayList_Access := getInstance (hashMap_Param);
       pragma Unreferenced (Java_Result);
    begin

@@ -44,10 +44,10 @@ package org.allbinary.direction.DirectionUtil_Package is
    procedure Initialize (This : in out DirectionUtil'Class);
    function Create return DirectionUtil_Access;
    function getInstance return DirectionUtil_Access;
-   function getAngle (This : in out DirectionUtil; direction_Param : access Direction'Class) return Angle_Access;
-   procedure getAngle (This : in out DirectionUtil; direction_Param : access Direction'Class);
-   function getFrameAngle (This : in out DirectionUtil; direction_Param : access Direction'Class) return Angle_Access;
-   procedure getFrameAngle (This : in out DirectionUtil; direction_Param : access Direction'Class);
+   function getAngle (This : in out DirectionUtil; direction_Param : access Direction_Package.Direction'Class) return Angle_Access;
+   procedure getAngle (This : in out DirectionUtil; direction_Param : access Direction_Package.Direction'Class);
+   function getFrameAngle (This : in out DirectionUtil; direction_Param : access Direction_Package.Direction'Class) return Angle_Access;
+   procedure getFrameAngle (This : in out DirectionUtil; direction_Param : access Direction_Package.Direction'Class);
 
 end org.allbinary.direction.DirectionUtil_Package;
 

@@ -22,15 +22,15 @@ package body org.allbinary.logic.io.AbFileInputStream_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AbFileInputStream'Class; fileInputStream_Param : access FileInputStream'Class) is
-      fileInputStream : FileInputStream_Access := FileInputStream_Access (fileInputStream_Param);
+   procedure Initialize (This : in out AbFileInputStream'Class; fileInputStream_Param : access FileInputStream_Package.FileInputStream'Class) is
+      fileInputStream : constant FileInputStream_Access := FileInputStream_Access (fileInputStream_Param);
    begin
       InputStream_Package.Initialize (This);
       Initialize_Fields (This);
         This.fileInputStream := fileInputStream;
    end Initialize;
 
-   function Create (fileInputStream_Param : access FileInputStream'Class) return AbFileInputStream_Access is
+   function Create (fileInputStream_Param : access FileInputStream_Package.FileInputStream'Class) return AbFileInputStream_Access is
       This : constant AbFileInputStream_Access := new AbFileInputStream;
    begin
       AbFileInputStream_Package.Initialize (This.all, fileInputStream_Param);

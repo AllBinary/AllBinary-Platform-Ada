@@ -62,11 +62,11 @@ package views.generic_Id.address.billing.BillingAddressesView_Package is
       streetAddresses : BasicArrayList_Access;
    end record;
 
-   procedure Initialize (This : in out BillingAddressesView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return BillingAddressesView_Access;
+   procedure Initialize (This : in out BillingAddressesView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return BillingAddressesView_Access;
    function getRequest (This : in out BillingAddressesView) return HttpServletRequest_Access;
-   function toXmlNode (This : in out BillingAddressesView; document_Param : access Document'Class) return Node_Access;
-   procedure toXmlNode (This : in out BillingAddressesView; document_Param : access Document'Class);
+   function toXmlNode (This : in out BillingAddressesView; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out BillingAddressesView; document_Param : access Document_Package.Document'Class);
    procedure addDomNodeInterfaces (This : in out BillingAddressesView);
    function view (This : in out BillingAddressesView) return Unbounded_String;
 

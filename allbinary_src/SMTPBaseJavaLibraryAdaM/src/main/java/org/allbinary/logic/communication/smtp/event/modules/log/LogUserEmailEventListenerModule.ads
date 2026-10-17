@@ -41,7 +41,7 @@ package org.allbinary.logic.communication.smtp.event.modules.log.LogUserEmailEve
 
    procedure Initialize (This : in out LogUserEmailEventListenerModule'Class);
    function Create return LogUserEmailEventListenerModule_Access;
-   procedure onEmailSendRequest (This : in out LogUserEmailEventListenerModule; userEmailInfoEvent_Param : access EmailEvent'Class);
+   procedure onEmailSendRequest (This : in out LogUserEmailEventListenerModule; userEmailInfoEvent_Param : access EmailEvent_Package.EmailEvent'Class);
 
 end org.allbinary.logic.communication.smtp.event.modules.log.LogUserEmailEventListenerModule_Package;
 

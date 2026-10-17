@@ -24,8 +24,8 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasicProfileActionScriptInput'Class; label : Unbounded_String; node_Param : access Node'Class) is
-      node : Node_Access := Node_Access (node_Param);
+   procedure Initialize (This : in out BasicProfileActionScriptInput'Class; label : Unbounded_String; node_Param : access Node_Package.Node'Class) is
+      node : constant Node_Access := Node_Access (node_Param);
       actionNode : Node_Access;
       inputTypeString : Unbounded_String;
       timeNode : Node_Access;
@@ -46,7 +46,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         This.setInputRobotInterface (InputRobotFactory_Package.getInstance.get (inputTypeString));
    end Initialize;
 
-   function Create (label : Unbounded_String; node_Param : access Node'Class) return BasicProfileActionScriptInput_Access is
+   function Create (label : Unbounded_String; node_Param : access Node_Package.Node'Class) return BasicProfileActionScriptInput_Access is
       This : constant BasicProfileActionScriptInput_Access := new BasicProfileActionScriptInput;
    begin
       BasicProfileActionScriptInput_Package.Initialize (This.all, label, node_Param);
@@ -98,16 +98,16 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    end BasicProfileActionScriptInput_toHashMap;
 
    --  throws Exception
-   function toXmlNode (This : in out BasicProfileActionScriptInput; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out BasicProfileActionScriptInput; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       node : Node_Access;
    begin
         node := ModDomHelper_Package.createNodeWithValueNodes (document, GenericProfileActionScriptInputData_Package.NAME, This.BasicProfileActionScriptInput_toHashMap);
         return node;
    end toXmlNode;
 
-   procedure setInputRobotInterface (This : in out BasicProfileActionScriptInput; inputRobotInterface_Param : access InputRobotInterface'Class) is
-      inputRobotInterface : InputRobotInterface_Access := InputRobotInterface_Access (inputRobotInterface_Param);
+   procedure setInputRobotInterface (This : in out BasicProfileActionScriptInput; inputRobotInterface_Param : access InputRobotInterface_Package.InputRobotInterface'Class) is
+      inputRobotInterface : constant InputRobotInterface_Access := InputRobotInterface_Access (inputRobotInterface_Param);
    begin
         This.inputRobotInterface := inputRobotInterface;
    end setInputRobotInterface;
@@ -133,7 +133,7 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
         return stringBuffer.toString;
    end toString;
 
-   procedure toXmlNode (This : in out BasicProfileActionScriptInput; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out BasicProfileActionScriptInput; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := BasicProfileActionScriptInput'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

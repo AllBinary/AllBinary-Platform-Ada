@@ -46,8 +46,8 @@ package body org.allbinary.business.user.commerce.shipping.modules.BasicWeightSh
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out BasicWeightShippingModuleView; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toValidationInfoNode (This : in out BasicWeightShippingModuleView; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
@@ -57,8 +57,8 @@ package body org.allbinary.business.user.commerce.shipping.modules.BasicWeightSh
         return Null_Unbounded_String;
    end validationInfo;
 
-   function toXmlNode (This : in out BasicWeightShippingModuleView; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out BasicWeightShippingModuleView; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       shippingMethodNode : Node_Access;
    begin
         begin
@@ -115,14 +115,14 @@ package body org.allbinary.business.user.commerce.shipping.modules.BasicWeightSh
         end;
    end view;
 
-   procedure toValidationInfoNode (This : in out BasicWeightShippingModuleView; document_Param : access Document'Class) is
+   procedure toValidationInfoNode (This : in out BasicWeightShippingModuleView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := BasicWeightShippingModuleView'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
 
-   procedure toXmlNode (This : in out BasicWeightShippingModuleView; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out BasicWeightShippingModuleView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := BasicWeightShippingModuleView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

@@ -42,8 +42,8 @@ package body org.allbinary.logic.io.file.FileUtil2_Package is
       return This;
    end Create;
 
-   function loadFileAsList (This : in out FileUtil2; file_Param : access AbFile'Class; max : Integer; byteArray1 : Short_Short_Integer_Array_Access) return BasicArrayList_Access is
-      file : AbFile_Access := AbFile_Access (file_Param);
+   function loadFileAsList (This : in out FileUtil2; file_Param : access AbFile_Package.AbFile'Class; max : Integer; byteArray1 : Short_Short_Integer_Array_Access) return BasicArrayList_Access is
+      file : constant AbFile_Access := AbFile_Access (file_Param);
       inputStream : AbFileInputStream_Access;
    begin
         inputStream := null;
@@ -60,7 +60,7 @@ package body org.allbinary.logic.io.file.FileUtil2_Package is
         return SimpleFileUtil_Package.getInstance.loadFileAsList (inputStream, max, byteArray1);
    end loadFileAsList;
 
-   procedure loadFileAsList (This : in out FileUtil2; file_Param : access AbFile'Class; max : Integer; byteArray1 : Short_Short_Integer_Array_Access) is
+   procedure loadFileAsList (This : in out FileUtil2; file_Param : access AbFile_Package.AbFile'Class; max : Integer; byteArray1 : Short_Short_Integer_Array_Access) is
       Java_Result : constant BasicArrayList_Access := FileUtil2'Class (This).loadFileAsList (file_Param, max, byteArray1);
       pragma Unreferenced (Java_Result);
    begin

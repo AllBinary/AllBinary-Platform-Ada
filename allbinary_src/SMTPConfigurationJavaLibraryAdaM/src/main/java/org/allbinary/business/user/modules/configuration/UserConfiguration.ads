@@ -49,14 +49,14 @@ package org.allbinary.business.user.modules.configuration.UserConfiguration_Pack
 
    procedure Initialize (This : in out UserConfiguration'Class);
    function Create return UserConfiguration_Access;
-   procedure Initialize (This : in out UserConfiguration'Class; hashMap_Param : access HashMap'Class);
-   function Create (hashMap_Param : access HashMap'Class) return UserConfiguration_Access;
+   procedure Initialize (This : in out UserConfiguration'Class; hashMap_Param : access HashMap_Package.HashMap'Class);
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return UserConfiguration_Access;
    function getUserEmailConfigurationInterface (This : in out UserConfiguration) return UserEmailConfigurationInterface_Access;
-   procedure setUserEmailConfigurationInterface (This : in out UserConfiguration; userEmailConfigurationInterface_Param : access UserEmailConfigurationInterface'Class);
+   procedure setUserEmailConfigurationInterface (This : in out UserConfiguration; userEmailConfigurationInterface_Param : access UserEmailConfigurationInterface_Package.UserEmailConfigurationInterface'Class);
    function getTimeCreated (This : in out UserConfiguration) return TimeCreated_Access;
    function getTimeLastModified (This : in out UserConfiguration) return TimeLastModified_Access;
-   procedure setTimeCreated (This : in out UserConfiguration; timeCreated_Param : access TimeCreated'Class);
-   procedure setTimeLastModified (This : in out UserConfiguration; timeLastModified_Param : access TimeLastModified'Class);
+   procedure setTimeCreated (This : in out UserConfiguration; timeCreated_Param : access TimeCreated_Package.TimeCreated'Class);
+   procedure setTimeLastModified (This : in out UserConfiguration; timeLastModified_Param : access TimeLastModified_Package.TimeLastModified'Class);
 
 end org.allbinary.business.user.modules.configuration.UserConfiguration_Package;
 

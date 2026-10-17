@@ -26,15 +26,15 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out InputAutomationNewBundleRunnable'Class; inputAutomationBundleActivator_Param : access InputAutomationBundleActivator'Class) is
-      inputAutomationBundleActivator : InputAutomationBundleActivator_Access := InputAutomationBundleActivator_Access (inputAutomationBundleActivator_Param);
+   procedure Initialize (This : in out InputAutomationNewBundleRunnable'Class; inputAutomationBundleActivator_Param : access InputAutomationBundleActivator_Package.InputAutomationBundleActivator'Class) is
+      inputAutomationBundleActivator : constant InputAutomationBundleActivator_Access := InputAutomationBundleActivator_Access (inputAutomationBundleActivator_Param);
    begin
       Initialize_Fields (This);
         This.inputAutomationBundleActivator := inputAutomationBundleActivator;
         This.fileBasicArrayList := BasicArrayListD_Package.Create;
    end Initialize;
 
-   function Create (inputAutomationBundleActivator_Param : access InputAutomationBundleActivator'Class) return InputAutomationNewBundleRunnable_Access is
+   function Create (inputAutomationBundleActivator_Param : access InputAutomationBundleActivator_Package.InputAutomationBundleActivator'Class) return InputAutomationNewBundleRunnable_Access is
       This : constant InputAutomationNewBundleRunnable_Access := new InputAutomationNewBundleRunnable;
    begin
       InputAutomationNewBundleRunnable_Package.Initialize (This.all, inputAutomationBundleActivator_Param);
@@ -42,8 +42,8 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
    end Create;
 
    --  throws Exception
-   procedure setThread (This : in out InputAutomationNewBundleRunnable; thread_Param : access Thread'Class) is
-      thread : Thread_Access := Thread_Access (thread_Param);
+   procedure setThread (This : in out InputAutomationNewBundleRunnable; thread_Param : access Thread_Package.Thread'Class) is
+      thread : constant Thread_Access := Thread_Access (thread_Param);
    begin
         null;
    end setThread;
@@ -202,8 +202,8 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
    end findNewModules;
 
    --  throws Exception
-   function install (This : in out InputAutomationNewBundleRunnable; url_Param : access URL'Class) return Bundle_Access is
-      url : URL_Access := URL_Access (url_Param);
+   function install (This : in out InputAutomationNewBundleRunnable; url_Param : access URL_Package.URL'Class) return Bundle_Access is
+      url : constant URL_Access := URL_Access (url_Param);
       bundleContext : BundleContext_Access;
    begin
         This.logUtil.putF ((CommonLabels_Package.getInstance.START) + (url), InputAutomationNewBundleRunnable_Access'(This'Unchecked_Access), To_Unbounded_String ("install"));
@@ -242,7 +242,7 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationNewBundle
       null;
    end isInstalled;
 
-   procedure install (This : in out InputAutomationNewBundleRunnable; url_Param : access URL'Class) is
+   procedure install (This : in out InputAutomationNewBundleRunnable; url_Param : access URL_Package.URL'Class) is
       Java_Result : constant Bundle_Access := InputAutomationNewBundleRunnable'Class (This).install (url_Param);
       pragma Unreferenced (Java_Result);
    begin

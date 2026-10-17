@@ -34,8 +34,8 @@ package body org.allbinary.logic.communication.java.vm.stats.JvmStatisticsView_P
    end Create;
 
    --  throws Exception
-   function toXmlNode (This : in out JvmStatisticsView; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out JvmStatisticsView; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       hashMap : HashMap_Access;
       node : Node_Access;
    begin
@@ -44,7 +44,7 @@ package body org.allbinary.logic.communication.java.vm.stats.JvmStatisticsView_P
         return node;
    end toXmlNode;
 
-   procedure toXmlNode (This : in out JvmStatisticsView; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out JvmStatisticsView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := JvmStatisticsView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

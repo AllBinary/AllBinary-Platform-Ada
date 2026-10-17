@@ -29,10 +29,10 @@ package body org.allbinary.game.ag.ai.scroller.HorizontalScreenPatrolAI_Package 
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out HorizontalScreenPatrolAI'Class; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) is
-      hashtable : ABHashtable_Access := ABHashtable_Access (hashtable_Param);
-      ownerLayerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
-      gameInput : GameInput_Access := GameInput_Access (gameInput_Param);
+   procedure Initialize (This : in out HorizontalScreenPatrolAI'Class; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) is
+      hashtable : constant ABHashtable_Access := ABHashtable_Access (hashtable_Param);
+      ownerLayerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
+      gameInput : constant GameInput_Access := GameInput_Access (gameInput_Param);
    begin
         BasicAI_Package.Initialize (This, ownerLayerInterface, gameInput);
         Initialize_Fields (This);
@@ -42,7 +42,7 @@ package body org.allbinary.game.ag.ai.scroller.HorizontalScreenPatrolAI_Package 
         end if;
    end Initialize;
 
-   function Create (hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return HorizontalScreenPatrolAI_Access is
+   function Create (hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) return HorizontalScreenPatrolAI_Access is
       This : constant HorizontalScreenPatrolAI_Access := new HorizontalScreenPatrolAI;
    begin
       HorizontalScreenPatrolAI_Package.Initialize (This.all, hashtable_Param, ownerLayerInterface_Param, gameInput_Param);
@@ -50,8 +50,8 @@ package body org.allbinary.game.ag.ai.scroller.HorizontalScreenPatrolAI_Package 
    end Create;
 
    --  throws Exception
-   procedure processAI (This : in out HorizontalScreenPatrolAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class) is
-      allBinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
+   procedure processAI (This : in out HorizontalScreenPatrolAI; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class) is
+      allBinaryLayerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
       layerInterface : AllBinaryLayer_Access;
       currentOwnerLayerX : Integer;
       y : Integer;

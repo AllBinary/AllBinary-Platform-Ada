@@ -27,9 +27,9 @@ package body admin.taghelpers.StaticPagesRequestHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out StaticPagesRequestHelper'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
-      propertiesHashMap : HashMap_Access := HashMap_Access (propertiesHashMap_Param);
-      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
+   procedure Initialize (This : in out StaticPagesRequestHelper'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is
+      propertiesHashMap : constant HashMap_Access := HashMap_Access (propertiesHashMap_Param);
+      pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
    begin
         AbContext_Package.Initialize (This, propertiesHashMap, pageContext);
         Initialize_Fields (This);
@@ -38,7 +38,7 @@ package body admin.taghelpers.StaticPagesRequestHelper_Package is
         This.getFormData;
    end Initialize;
 
-   function Create (propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return StaticPagesRequestHelper_Access is
+   function Create (propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return StaticPagesRequestHelper_Access is
       This : constant StaticPagesRequestHelper_Access := new StaticPagesRequestHelper;
    begin
       StaticPagesRequestHelper_Package.Initialize (This.all, propertiesHashMap_Param, pageContext_Param);

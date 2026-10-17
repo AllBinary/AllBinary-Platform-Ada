@@ -36,8 +36,8 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
    end Create;
 
    --  throws Exception
-   procedure process (imageActionScriptOutputInterface_Param : access ImageActionScriptOutputInterface'Class; frame : Long_Long_Integer) is
-      imageActionScriptOutputInterface : ImageActionScriptOutputInterface_Access := ImageActionScriptOutputInterface_Access (imageActionScriptOutputInterface_Param);
+   procedure process (imageActionScriptOutputInterface_Param : access ImageActionScriptOutputInterface_Package.ImageActionScriptOutputInterface'Class; frame : Long_Long_Integer) is
+      imageActionScriptOutputInterface : constant ImageActionScriptOutputInterface_Access := ImageActionScriptOutputInterface_Access (imageActionScriptOutputInterface_Param);
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       imageTypes : ImageTypes_Access;

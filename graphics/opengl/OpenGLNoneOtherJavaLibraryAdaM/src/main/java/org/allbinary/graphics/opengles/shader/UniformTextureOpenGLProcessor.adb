@@ -21,24 +21,24 @@ package body org.allbinary.graphics.opengles.shader.UniformTextureOpenGLProcesso
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out UniformTextureOpenGLProcessor'Class; shaderComposite_Param : access ShaderComposite'Class; handleIndex : Integer) is
-      shaderComposite : ShaderComposite_Access := ShaderComposite_Access (shaderComposite_Param);
+   procedure Initialize (This : in out UniformTextureOpenGLProcessor'Class; shaderComposite_Param : access ShaderComposite_Package.ShaderComposite'Class; handleIndex : Integer) is
+      shaderComposite : constant ShaderComposite_Access := ShaderComposite_Access (shaderComposite_Param);
    begin
       OpenGLObject3dProcessor_Package.Initialize (This);
       Initialize_Fields (This);
         null;
    end Initialize;
 
-   function Create (shaderComposite_Param : access ShaderComposite'Class; handleIndex : Integer) return UniformTextureOpenGLProcessor_Access is
+   function Create (shaderComposite_Param : access ShaderComposite_Package.ShaderComposite'Class; handleIndex : Integer) return UniformTextureOpenGLProcessor_Access is
       This : constant UniformTextureOpenGLProcessor_Access := new UniformTextureOpenGLProcessor;
    begin
       UniformTextureOpenGLProcessor_Package.Initialize (This.all, shaderComposite_Param, handleIndex);
       return This;
    end Create;
 
-   procedure process (This : in out UniformTextureOpenGLProcessor; gl_Param : access GL10'Class; unused_Param : access Java_Object'Class; index : Integer) is
-      gl : GL10_Access := GL10_Access (gl_Param);
-      unused : Java_Object_Access := Java_Object_Access (unused_Param);
+   procedure process (This : in out UniformTextureOpenGLProcessor; gl_Param : access GL10_Package.GL10'Class; unused_Param : access Java_Object'Class; index : Integer) is
+      gl : constant GL10_Access := GL10_Access (gl_Param);
+      unused : constant Java_Object_Access := Java_Object_Access (unused_Param);
    begin
         null;
    end process;

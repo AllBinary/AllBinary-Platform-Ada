@@ -43,8 +43,8 @@ package body org.allbinary.logic.communication.smtp.configuration.server.EmailSe
       return This;
    end Create;
 
-   procedure Initialize (This : in out EmailServerConfiguration'Class; hashMap_Param : access HashMap'Class) is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+   procedure Initialize (This : in out EmailServerConfiguration'Class; hashMap_Param : access HashMap_Package.HashMap'Class) is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
       commonStrings : CommonStrings_Access;
    begin
       Initialize_Fields (This);
@@ -58,7 +58,7 @@ package body org.allbinary.logic.communication.smtp.configuration.server.EmailSe
         This.log;
    end Initialize;
 
-   function Create (hashMap_Param : access HashMap'Class) return EmailServerConfiguration_Access is
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return EmailServerConfiguration_Access is
       This : constant EmailServerConfiguration_Access := new EmailServerConfiguration;
    begin
       EmailServerConfiguration_Package.Initialize (This.all, hashMap_Param);

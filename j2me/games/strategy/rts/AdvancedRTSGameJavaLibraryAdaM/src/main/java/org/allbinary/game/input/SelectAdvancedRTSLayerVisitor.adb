@@ -22,15 +22,15 @@ package body org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out SelectAdvancedRTSLayerVisitor'Class; selectedRTSLayersPlayerGameInput_Param : access SelectedRTSLayersPlayerGameInput'Class) is
-      selectedRTSLayersPlayerGameInput : SelectedRTSLayersPlayerGameInput_Access := SelectedRTSLayersPlayerGameInput_Access (selectedRTSLayersPlayerGameInput_Param);
+   procedure Initialize (This : in out SelectAdvancedRTSLayerVisitor'Class; selectedRTSLayersPlayerGameInput_Param : access SelectedRTSLayersPlayerGameInput_Package.SelectedRTSLayersPlayerGameInput'Class) is
+      selectedRTSLayersPlayerGameInput : constant SelectedRTSLayersPlayerGameInput_Access := SelectedRTSLayersPlayerGameInput_Access (selectedRTSLayersPlayerGameInput_Param);
    begin
       Visitor_Package.Initialize (This);
       Initialize_Fields (This);
         This.selectedRTSLayersPlayerGameInput := selectedRTSLayersPlayerGameInput;
    end Initialize;
 
-   function Create (selectedRTSLayersPlayerGameInput_Param : access SelectedRTSLayersPlayerGameInput'Class) return SelectAdvancedRTSLayerVisitor_Access is
+   function Create (selectedRTSLayersPlayerGameInput_Param : access SelectedRTSLayersPlayerGameInput_Package.SelectedRTSLayersPlayerGameInput'Class) return SelectAdvancedRTSLayerVisitor_Access is
       This : constant SelectAdvancedRTSLayerVisitor_Access := new SelectAdvancedRTSLayerVisitor;
    begin
       SelectAdvancedRTSLayerVisitor_Package.Initialize (This.all, selectedRTSLayersPlayerGameInput_Param);
@@ -38,7 +38,7 @@ package body org.allbinary.game.input.SelectAdvancedRTSLayerVisitor_Package is
    end Create;
 
    function visit (This : in out SelectAdvancedRTSLayerVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
       selectedLayer : CollidableDestroyableDamageableLayer_Access;
       rtsGameLayer : AdvancedRTSGameLayer_Access;
       assignWaypointsUtil : AssignWaypointsUtil_Access;

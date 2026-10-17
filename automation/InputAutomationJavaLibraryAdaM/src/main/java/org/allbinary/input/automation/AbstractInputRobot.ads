@@ -40,14 +40,14 @@ package org.allbinary.input.automation.AbstractInputRobot_Package is
       helpSet : HelpSet_Access;
    end record;
 
-   procedure Initialize (This : in out AbstractInputRobot'Class; helpSet_Param : access HelpSet'Class);
-   function Create (helpSet_Param : access HelpSet'Class) return AbstractInputRobot_Access;
+   procedure Initialize (This : in out AbstractInputRobot'Class; helpSet_Param : access HelpSet_Package.HelpSet'Class);
+   function Create (helpSet_Param : access HelpSet_Package.HelpSet'Class) return AbstractInputRobot_Access;
    function getHelpSet (This : in out AbstractInputRobot) return HelpSet_Access;
-   procedure mouseMove (This : in out AbstractInputRobot; point_Param : access Point'Class);
-   procedure mouseMoveToTarget (This : in out AbstractInputRobot; rectangle_Param : access Rectangle'Class; x : Integer; y : Integer);
-   procedure mouseMoveToTarget (This : in out AbstractInputRobot; rectangle_Param : access Rectangle'Class);
+   procedure mouseMove (This : in out AbstractInputRobot; point_Param : access Point_Package.Point'Class);
+   procedure mouseMoveToTarget (This : in out AbstractInputRobot; rectangle_Param : access Rectangle_Package.Rectangle'Class; x : Integer; y : Integer);
+   procedure mouseMoveToTarget (This : in out AbstractInputRobot; rectangle_Param : access Rectangle_Package.Rectangle'Class);
    procedure mouseMove (This : in out AbstractInputRobot; x : Integer; y : Integer);
-   procedure setHelpSet (This : in out AbstractInputRobot; helpSet_Param : access HelpSet'Class);
+   procedure setHelpSet (This : in out AbstractInputRobot; helpSet_Param : access HelpSet_Package.HelpSet'Class);
 
 end org.allbinary.input.automation.AbstractInputRobot_Package;
 

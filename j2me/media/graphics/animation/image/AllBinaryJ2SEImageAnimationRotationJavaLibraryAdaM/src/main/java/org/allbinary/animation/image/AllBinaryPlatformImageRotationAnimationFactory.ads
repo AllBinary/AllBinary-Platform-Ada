@@ -35,8 +35,8 @@ package org.allbinary.animation.image.AllBinaryPlatformImageRotationAnimationFac
 
    type AllBinaryPlatformImageRotationAnimationFactory is new AllBinaryJ2SEImageRotationAnimationFactory with null record;
 
-   procedure Initialize (This : in out AllBinaryPlatformImageRotationAnimationFactory'Class; image_Param : access Image'Class; width : Integer; height : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class; resizeCanvasForRotation : Boolean);
-   function Create (image_Param : access Image'Class; width : Integer; height : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class; resizeCanvasForRotation : Boolean) return AllBinaryPlatformImageRotationAnimationFactory_Access;
+   procedure Initialize (This : in out AllBinaryPlatformImageRotationAnimationFactory'Class; image_Param : access Image_Package.Image'Class; width : Integer; height : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class; resizeCanvasForRotation : Boolean);
+   function Create (image_Param : access Image_Package.Image'Class; width : Integer; height : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class; resizeCanvasForRotation : Boolean) return AllBinaryPlatformImageRotationAnimationFactory_Access;
 
 end org.allbinary.animation.image.AllBinaryPlatformImageRotationAnimationFactory_Package;
 

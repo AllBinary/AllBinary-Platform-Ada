@@ -27,9 +27,9 @@ package body org.allbinary.business.user.commerce.inventory.order.status.OrderSt
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out OrderStatusEmail'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; orderHistory_Param : access OrderHistory'Class) is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      orderHistory : OrderHistory_Access := OrderHistory_Access (orderHistory_Param);
+   procedure Initialize (This : in out OrderStatusEmail'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; orderHistory_Param : access OrderHistory_Package.OrderHistory'Class) is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      orderHistory : constant OrderHistory_Access := OrderHistory_Access (orderHistory_Param);
       storeName : Unbounded_String;
    begin
       Initialize_Fields (This);
@@ -40,7 +40,7 @@ package body org.allbinary.business.user.commerce.inventory.order.status.OrderSt
         This.user := UserEntityFactory_Package.getInstance.getUser (orderHistory.getUserName);
    end Initialize;
 
-   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; orderHistory_Param : access OrderHistory'Class) return OrderStatusEmail_Access is
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; orderHistory_Param : access OrderHistory_Package.OrderHistory'Class) return OrderStatusEmail_Access is
       This : constant OrderStatusEmail_Access := new OrderStatusEmail;
    begin
       OrderStatusEmail_Package.Initialize (This.all, abeClientInformation_Param, orderHistory_Param);

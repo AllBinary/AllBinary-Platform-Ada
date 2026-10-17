@@ -22,14 +22,14 @@ package body org.allbinary.logic.system.loader.NativeLibraryClassLoader_Package 
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out NativeLibraryClassLoader'Class; parent_Param : access ClassLoader'Class) is
-      parent : ClassLoader_Access := ClassLoader_Access (parent_Param);
+   procedure Initialize (This : in out NativeLibraryClassLoader'Class; parent_Param : access ClassLoader_Package.ClassLoader'Class) is
+      parent : constant ClassLoader_Access := ClassLoader_Access (parent_Param);
    begin
         ClassLoader_Package.Initialize (This, parent);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (parent_Param : access ClassLoader'Class) return NativeLibraryClassLoader_Access is
+   function Create (parent_Param : access ClassLoader_Package.ClassLoader'Class) return NativeLibraryClassLoader_Access is
       This : constant NativeLibraryClassLoader_Access := new NativeLibraryClassLoader;
    begin
       NativeLibraryClassLoader_Package.Initialize (This.all, parent_Param);

@@ -40,8 +40,8 @@ package bundle.input.automation.ServiceReferenceMap_Package is
       serviceReference : ServiceReference_Access;
    end record;
 
-   procedure Initialize (This : in out ServiceReferenceMap'Class; serviceReference_Param : access ServiceReference'Class);
-   function Create (serviceReference_Param : access ServiceReference'Class) return ServiceReferenceMap_Access;
+   procedure Initialize (This : in out ServiceReferenceMap'Class; serviceReference_Param : access ServiceReference_Package.ServiceReference'Class);
+   function Create (serviceReference_Param : access ServiceReference_Package.ServiceReference'Class) return ServiceReferenceMap_Access;
    function size (This : in out ServiceReferenceMap) return Integer;
    function isEmpty (This : in out ServiceReferenceMap) return Boolean;
    function containsKey (This : in out ServiceReferenceMap; key_Param : access Java_Object'Class) return Boolean;
@@ -54,13 +54,13 @@ package bundle.input.automation.ServiceReferenceMap_Package is
    procedure put (This : in out ServiceReferenceMap; key_Param : access Java_Object'Class; value_Param : access Java_Object'Class);
    function remove (This : in out ServiceReferenceMap; key_Param : access Java_Object'Class) return Java_Object_Access;
    procedure remove (This : in out ServiceReferenceMap; key_Param : access Java_Object'Class);
-   procedure putAll (This : in out ServiceReferenceMap; m_Param : access Map'Class);
+   procedure putAll (This : in out ServiceReferenceMap; m_Param : access Map_Package.Map'Class);
    procedure clear (This : in out ServiceReferenceMap);
    function keySet (This : in out ServiceReferenceMap) return Set_Access;
    function values (This : in out ServiceReferenceMap) return Collection_Access;
    function entrySet (This : in out ServiceReferenceMap) return Set_Access;
-   function toString (map_Param : access Map'Class) return Unbounded_String;
-   procedure toString (map_Param : access Map'Class);
+   function toString (map_Param : access Map_Package.Map'Class) return Unbounded_String;
+   procedure toString (map_Param : access Map_Package.Map'Class);
 
 end bundle.input.automation.ServiceReferenceMap_Package;
 

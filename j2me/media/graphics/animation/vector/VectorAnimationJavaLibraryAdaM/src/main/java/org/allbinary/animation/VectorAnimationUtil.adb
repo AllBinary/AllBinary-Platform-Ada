@@ -39,8 +39,8 @@ package body org.allbinary.animation.VectorAnimationUtil_Package is
       return This;
    end Create;
 
-   function toAnimationArrayFromListOfPointListWithPointsPerFrame (This : in out VectorAnimationUtil; vector_Param : access BasicArrayList'Class; pointsPerFrame : Integer) return Integer_Array_Access_Array_Access_Array_Access is
-      vector : BasicArrayList_Access := BasicArrayList_Access (vector_Param);
+   function toAnimationArrayFromListOfPointListWithPointsPerFrame (This : in out VectorAnimationUtil; vector_Param : access BasicArrayList_Package.BasicArrayList'Class; pointsPerFrame : Integer) return Integer_Array_Access_Array_Access_Array_Access is
+      vector : constant BasicArrayList_Access := BasicArrayList_Access (vector_Param);
       size : Integer;
       points : Integer_Array_Access_Array_Access_Array_Access;
       nextBasicArrayList : BasicArrayList_Access;
@@ -63,8 +63,8 @@ package body org.allbinary.animation.VectorAnimationUtil_Package is
         return points;
    end toAnimationArrayFromListOfPointListWithPointsPerFrame;
 
-   function toAnimationArrayFromListOfPointList (This : in out VectorAnimationUtil; vector_Param : access BasicArrayList'Class) return Integer_Array_Access_Array_Access_Array_Access is
-      vector : BasicArrayList_Access := BasicArrayList_Access (vector_Param);
+   function toAnimationArrayFromListOfPointList (This : in out VectorAnimationUtil; vector_Param : access BasicArrayList_Package.BasicArrayList'Class) return Integer_Array_Access_Array_Access_Array_Access is
+      vector : constant BasicArrayList_Access := BasicArrayList_Access (vector_Param);
       size : Integer;
       points : Integer_Array_Access_Array_Access_Array_Access;
       nextBasicArrayList : BasicArrayList_Access;
@@ -88,8 +88,8 @@ package body org.allbinary.animation.VectorAnimationUtil_Package is
         return points;
    end toAnimationArrayFromListOfPointList;
 
-   function toFrameArrayFromPointBasicArrayList (This : in out VectorAnimationUtil; list_Param : access BasicArrayList'Class) return Integer_Array_Access_Array_Access is
-      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
+   function toFrameArrayFromPointBasicArrayList (This : in out VectorAnimationUtil; list_Param : access BasicArrayList_Package.BasicArrayList'Class) return Integer_Array_Access_Array_Access is
+      list : constant BasicArrayList_Access := BasicArrayList_Access (list_Param);
       points : Integer_Array_Access_Array_Access;
       size : Integer;
       nextPoint : GPoint_Access;
@@ -105,21 +105,21 @@ package body org.allbinary.animation.VectorAnimationUtil_Package is
         return points;
    end toFrameArrayFromPointBasicArrayList;
 
-   procedure toAnimationArrayFromListOfPointListWithPointsPerFrame (This : in out VectorAnimationUtil; vector_Param : access BasicArrayList'Class; pointsPerFrame : Integer) is
+   procedure toAnimationArrayFromListOfPointListWithPointsPerFrame (This : in out VectorAnimationUtil; vector_Param : access BasicArrayList_Package.BasicArrayList'Class; pointsPerFrame : Integer) is
       Java_Result : constant Integer_Array_Access_Array_Access_Array_Access := VectorAnimationUtil'Class (This).toAnimationArrayFromListOfPointListWithPointsPerFrame (vector_Param, pointsPerFrame);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toAnimationArrayFromListOfPointListWithPointsPerFrame;
 
-   procedure toAnimationArrayFromListOfPointList (This : in out VectorAnimationUtil; vector_Param : access BasicArrayList'Class) is
+   procedure toAnimationArrayFromListOfPointList (This : in out VectorAnimationUtil; vector_Param : access BasicArrayList_Package.BasicArrayList'Class) is
       Java_Result : constant Integer_Array_Access_Array_Access_Array_Access := VectorAnimationUtil'Class (This).toAnimationArrayFromListOfPointList (vector_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toAnimationArrayFromListOfPointList;
 
-   procedure toFrameArrayFromPointBasicArrayList (This : in out VectorAnimationUtil; list_Param : access BasicArrayList'Class) is
+   procedure toFrameArrayFromPointBasicArrayList (This : in out VectorAnimationUtil; list_Param : access BasicArrayList_Package.BasicArrayList'Class) is
       Java_Result : constant Integer_Array_Access_Array_Access := VectorAnimationUtil'Class (This).toFrameArrayFromPointBasicArrayList (list_Param);
       pragma Unreferenced (Java_Result);
    begin

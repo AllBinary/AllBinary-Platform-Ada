@@ -38,9 +38,9 @@ package body org.allbinary.logic.MEUtil_Package is
         return MEUtil_Package.instance;
    end getInstance;
 
-   procedure appendItem (This : in out MEUtil; form_Param : access CommandForm'Class; item_Param : access Item'Class) is
-      form : CommandForm_Access := CommandForm_Access (form_Param);
-      item : Item_Access := Item_Access (item_Param);
+   procedure appendItem (This : in out MEUtil; form_Param : access CommandForm_Package.CommandForm'Class; item_Param : access Item_Package.Item'Class) is
+      form : constant CommandForm_Access := CommandForm_Access (form_Param);
+      item : constant Item_Access := Item_Access (item_Param);
    begin
         form.append (item);
    end appendItem;

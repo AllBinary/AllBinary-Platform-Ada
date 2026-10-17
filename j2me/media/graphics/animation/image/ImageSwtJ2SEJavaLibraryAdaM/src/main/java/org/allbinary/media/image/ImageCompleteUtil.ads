@@ -36,7 +36,7 @@ package org.allbinary.media.image.ImageCompleteUtil_Package is
    procedure Initialize (This : in out ImageCompleteUtil'Class);
    function Create return ImageCompleteUtil_Access;
    function getInstance return ImageCompleteUtil_Access;
-   procedure waitForImage (This : in out ImageCompleteUtil; image_Param : access Image'Class; name : Unbounded_String);
+   procedure waitForImage (This : in out ImageCompleteUtil; image_Param : access Image_Package.Image'Class; name : Unbounded_String);
 
 end org.allbinary.media.image.ImageCompleteUtil_Package;
 

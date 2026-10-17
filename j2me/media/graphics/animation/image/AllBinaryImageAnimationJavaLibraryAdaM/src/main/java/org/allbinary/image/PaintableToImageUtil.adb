@@ -34,8 +34,8 @@ package body org.allbinary.image.PaintableToImageUtil_Package is
 
 
    --  throws Exception
-   function getImage (paintableInterface_Param : access PaintableInterface'Class; width : Integer; height : Integer) return Image_Access is
-      paintableInterface : PaintableInterface_Access := PaintableInterface_Access (paintableInterface_Param);
+   function getImage (paintableInterface_Param : access PaintableInterface_Package.PaintableInterface'Class; width : Integer; height : Integer) return Image_Access is
+      paintableInterface : constant PaintableInterface_Access := PaintableInterface_Access (paintableInterface_Param);
       image : Image_Access;
       graphics : Graphics_Access;
    begin
@@ -45,7 +45,7 @@ package body org.allbinary.image.PaintableToImageUtil_Package is
         return image;
    end getImage;
 
-   procedure getImage (paintableInterface_Param : access PaintableInterface'Class; width : Integer; height : Integer) is
+   procedure getImage (paintableInterface_Param : access PaintableInterface_Package.PaintableInterface'Class; width : Integer; height : Integer) is
       Java_Result : constant Image_Access := getImage (paintableInterface_Param, width, height);
       pragma Unreferenced (Java_Result);
    begin

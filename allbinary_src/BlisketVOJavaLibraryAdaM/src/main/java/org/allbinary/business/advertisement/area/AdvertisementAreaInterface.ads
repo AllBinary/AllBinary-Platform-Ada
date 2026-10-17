@@ -37,7 +37,7 @@ package org.allbinary.business.advertisement.area.AdvertisementAreaInterface_Pac
    procedure setName (This : in out AdvertisementAreaInterface; name : Unbounded_String) is abstract;
    procedure setStoreName (This : in out AdvertisementAreaInterface; storeName : Unbounded_String) is abstract;
    procedure setDescription (This : in out AdvertisementAreaInterface; description : Unbounded_String) is abstract;
-   procedure setConstraints (This : in out AdvertisementAreaInterface; advertisementConstraintsInterface_Param : access AdvertisementAreaConstraintsInterface'Class) is abstract;
+   procedure setConstraints (This : in out AdvertisementAreaInterface; advertisementConstraintsInterface_Param : access AdvertisementAreaConstraintsInterface_Package.AdvertisementAreaConstraintsInterface'Class) is abstract;
    procedure setCampaign (This : in out AdvertisementAreaInterface; campaign : Unbounded_String) is abstract;
 
 end org.allbinary.business.advertisement.area.AdvertisementAreaInterface_Package;

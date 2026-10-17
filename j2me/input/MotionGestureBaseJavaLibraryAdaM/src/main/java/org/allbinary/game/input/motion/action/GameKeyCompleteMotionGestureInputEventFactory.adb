@@ -40,8 +40,8 @@ package body org.allbinary.game.input.motion.action.GameKeyCompleteMotionGesture
         return GameKeyCompleteMotionGestureInputEventFactory_Package.SINGLETON;
    end getInstance;
 
-   procedure add (This : in out GameKeyCompleteMotionGestureInputEventFactory; gameKeyCompleteMotionGestureInputEvent_Param : access GameKeyCompleteMotionGestureInputEvent'Class) is
-      gameKeyCompleteMotionGestureInputEvent : GameKeyCompleteMotionGestureInputEvent_Access := GameKeyCompleteMotionGestureInputEvent_Access (gameKeyCompleteMotionGestureInputEvent_Param);
+   procedure add (This : in out GameKeyCompleteMotionGestureInputEventFactory; gameKeyCompleteMotionGestureInputEvent_Param : access GameKeyCompleteMotionGestureInputEvent_Package.GameKeyCompleteMotionGestureInputEvent'Class) is
+      gameKeyCompleteMotionGestureInputEvent : constant GameKeyCompleteMotionGestureInputEvent_Access := GameKeyCompleteMotionGestureInputEvent_Access (gameKeyCompleteMotionGestureInputEvent_Param);
    begin
         This.eventList.add (gameKeyCompleteMotionGestureInputEvent);
    end add;

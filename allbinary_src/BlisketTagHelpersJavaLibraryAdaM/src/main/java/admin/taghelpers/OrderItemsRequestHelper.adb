@@ -26,9 +26,9 @@ package body admin.taghelpers.OrderItemsRequestHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out OrderItemsRequestHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
-      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
+   procedure Initialize (This : in out OrderItemsRequestHelper'Class; hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
    begin
       TagHelper_Package.Initialize (This);
       Initialize_Fields (This);
@@ -36,7 +36,7 @@ package body admin.taghelpers.OrderItemsRequestHelper_Package is
         This.getFormData;
    end Initialize;
 
-   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return OrderItemsRequestHelper_Access is
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return OrderItemsRequestHelper_Access is
       This : constant OrderItemsRequestHelper_Access := new OrderItemsRequestHelper;
    begin
       OrderItemsRequestHelper_Package.Initialize (This.all, hashMap_Param, pageContext_Param);

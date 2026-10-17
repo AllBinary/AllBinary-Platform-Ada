@@ -47,8 +47,8 @@ package body views.admin.orderhistory.DateRangeOrderHistoryView_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out DateRangeOrderHistoryView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out DateRangeOrderHistoryView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
@@ -56,7 +56,7 @@ package body views.admin.orderhistory.DateRangeOrderHistoryView_Package is
         This.getFormData;
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return DateRangeOrderHistoryView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return DateRangeOrderHistoryView_Access is
       This : constant DateRangeOrderHistoryView_Access := new DateRangeOrderHistoryView;
    begin
       DateRangeOrderHistoryView_Package.Initialize (This.all, transformInfoInterface_Param);
@@ -106,8 +106,8 @@ package body views.admin.orderhistory.DateRangeOrderHistoryView_Package is
         end;
    end view;
 
-   function toXmlNode (This : in out DateRangeOrderHistoryView; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out DateRangeOrderHistoryView; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       stringBuffer : StringMaker_Access;
       node : Node_Access;
       orderHistoryVector : BasicArrayList_Access;
@@ -285,8 +285,8 @@ package body views.admin.orderhistory.DateRangeOrderHistoryView_Package is
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out DateRangeOrderHistoryView; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toValidationInfoNode (This : in out DateRangeOrderHistoryView; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
@@ -320,14 +320,14 @@ package body views.admin.orderhistory.DateRangeOrderHistoryView_Package is
         end;
    end validationInfo;
 
-   procedure toXmlNode (This : in out DateRangeOrderHistoryView; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out DateRangeOrderHistoryView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := DateRangeOrderHistoryView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toXmlNode;
 
-   procedure toValidationInfoNode (This : in out DateRangeOrderHistoryView; document_Param : access Document'Class) is
+   procedure toValidationInfoNode (This : in out DateRangeOrderHistoryView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := DateRangeOrderHistoryView'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

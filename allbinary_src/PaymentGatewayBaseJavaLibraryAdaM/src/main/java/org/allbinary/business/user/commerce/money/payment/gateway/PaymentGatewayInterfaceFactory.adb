@@ -36,8 +36,8 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
    end Create;
 
    --  throws Exception
-   function getInstance (This : in out PaymentGatewayInterfaceFactory; httpServletRequest_Param : access HttpServletRequest'Class) return PaymentGatewayInterface_Access is
-      httpServletRequest : HttpServletRequest_Access := HttpServletRequest_Access (httpServletRequest_Param);
+   function getInstance (This : in out PaymentGatewayInterfaceFactory; httpServletRequest_Param : access HttpServletRequest_Package.HttpServletRequest'Class) return PaymentGatewayInterface_Access is
+      httpServletRequest : constant HttpServletRequest_Access := HttpServletRequest_Access (httpServletRequest_Param);
       commonStrings : CommonStrings_Access;
    begin
         commonStrings := CommonStrings_Package.getInstance;
@@ -60,8 +60,8 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
    end getInstance;
 
    --  throws Exception
-   function getInstance (This : in out PaymentGatewayInterfaceFactory; paymentType_Param : access BasicPaymentType'Class) return PaymentGatewayInterface_Access is
-      paymentType : BasicPaymentType_Access := BasicPaymentType_Access (paymentType_Param);
+   function getInstance (This : in out PaymentGatewayInterfaceFactory; paymentType_Param : access BasicPaymentType_Package.BasicPaymentType'Class) return PaymentGatewayInterface_Access is
+      paymentType : constant BasicPaymentType_Access := BasicPaymentType_Access (paymentType_Param);
       hashMap : HashMap_Access;
    begin
         hashMap := StdUtil_Package.getInstance.createHashMap;
@@ -70,8 +70,8 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
    end getInstance;
 
    --  throws Exception
-   function getInstance (This : in out PaymentGatewayInterfaceFactory; hashMap_Param : access HashMap'Class) return PaymentGatewayInterface_Access is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+   function getInstance (This : in out PaymentGatewayInterfaceFactory; hashMap_Param : access HashMap_Package.HashMap'Class) return PaymentGatewayInterface_Access is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
       commonStrings : CommonStrings_Access;
       gatewayName : Unbounded_String;
       paymentType : BasicPaymentType_Access;
@@ -99,21 +99,21 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
         end;
    end getInstance;
 
-   procedure getInstance (This : in out PaymentGatewayInterfaceFactory; httpServletRequest_Param : access HttpServletRequest'Class) is
+   procedure getInstance (This : in out PaymentGatewayInterfaceFactory; httpServletRequest_Param : access HttpServletRequest_Package.HttpServletRequest'Class) is
       Java_Result : constant PaymentGatewayInterface_Access := PaymentGatewayInterfaceFactory'Class (This).getInstance (httpServletRequest_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
-   procedure getInstance (This : in out PaymentGatewayInterfaceFactory; paymentType_Param : access BasicPaymentType'Class) is
+   procedure getInstance (This : in out PaymentGatewayInterfaceFactory; paymentType_Param : access BasicPaymentType_Package.BasicPaymentType'Class) is
       Java_Result : constant PaymentGatewayInterface_Access := PaymentGatewayInterfaceFactory'Class (This).getInstance (paymentType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
-   procedure getInstance (This : in out PaymentGatewayInterfaceFactory; hashMap_Param : access HashMap'Class) is
+   procedure getInstance (This : in out PaymentGatewayInterfaceFactory; hashMap_Param : access HashMap_Package.HashMap'Class) is
       Java_Result : constant PaymentGatewayInterface_Access := PaymentGatewayInterfaceFactory'Class (This).getInstance (hashMap_Param);
       pragma Unreferenced (Java_Result);
    begin

@@ -83,20 +83,20 @@ package org.allbinary.game.layer.waypoint.MultipassNoCacheWaypoint_Package is
       ownerLayer : PathFindingLayerInterface_Access;
    end record;
 
-   procedure Initialize (This : in out MultipassNoCacheWaypoint'Class; ownerLayer_Param : access PathFindingLayerInterface'Class; sound_Param : access Sound'Class);
-   function Create (ownerLayer_Param : access PathFindingLayerInterface'Class; sound_Param : access Sound'Class) return MultipassNoCacheWaypoint_Access;
-   procedure setAllBinaryGameLayerManager (This : in out MultipassNoCacheWaypoint; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class);
+   procedure Initialize (This : in out MultipassNoCacheWaypoint'Class; ownerLayer_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class; sound_Param : access Sound_Package.Sound'Class);
+   function Create (ownerLayer_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class; sound_Param : access Sound_Package.Sound'Class) return MultipassNoCacheWaypoint_Access;
+   procedure setAllBinaryGameLayerManager (This : in out MultipassNoCacheWaypoint; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager_Package.AllBinaryGameLayerManager'Class);
    procedure releaseCachedPaths (This : in out MultipassNoCacheWaypoint);
-   function getPathFindingInfo (This : in out MultipassNoCacheWaypoint; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return PathFindingInfo_Access;
-   procedure getPathFindingInfo (This : in out MultipassNoCacheWaypoint; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class);
-   function getPathsList (This : in out MultipassNoCacheWaypoint; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class; pathFindingInfo_Param : access PathFindingInfo'Class; multipassState_Param : access MultipassState'Class) return BasicArrayList_Access;
-   procedure getPathsList (This : in out MultipassNoCacheWaypoint; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class; pathFindingInfo_Param : access PathFindingInfo'Class; multipassState_Param : access MultipassState'Class);
-   function getEndGeographicMapCellPosition (This : in out MultipassNoCacheWaypoint; startGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return GeographicMapCellPosition_Access;
-   procedure getEndGeographicMapCellPosition (This : in out MultipassNoCacheWaypoint; startGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class);
-   procedure onEvent (This : in out MultipassNoCacheWaypoint; eventObject_Param : access AllBinaryEventObject'Class);
-   procedure onBuildingEvent (This : in out MultipassNoCacheWaypoint; event_Param : access RTSLayerEvent'Class);
+   function getPathFindingInfo (This : in out MultipassNoCacheWaypoint; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) return PathFindingInfo_Access;
+   procedure getPathFindingInfo (This : in out MultipassNoCacheWaypoint; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class);
+   function getPathsList (This : in out MultipassNoCacheWaypoint; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; pathFindingInfo_Param : access PathFindingInfo_Package.PathFindingInfo'Class; multipassState_Param : access MultipassState_Package.MultipassState'Class) return BasicArrayList_Access;
+   procedure getPathsList (This : in out MultipassNoCacheWaypoint; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; pathFindingInfo_Param : access PathFindingInfo_Package.PathFindingInfo'Class; multipassState_Param : access MultipassState_Package.MultipassState'Class);
+   function getEndGeographicMapCellPosition (This : in out MultipassNoCacheWaypoint; startGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) return GeographicMapCellPosition_Access;
+   procedure getEndGeographicMapCellPosition (This : in out MultipassNoCacheWaypoint; startGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class);
+   procedure onEvent (This : in out MultipassNoCacheWaypoint; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class);
+   procedure onBuildingEvent (This : in out MultipassNoCacheWaypoint; event_Param : access RTSLayerEvent_Package.RTSLayerEvent'Class);
    procedure reset (This : in out MultipassNoCacheWaypoint);
-   procedure visit (This : in out MultipassNoCacheWaypoint; unitLayer_Param : access PathFindingLayerInterface'Class);
+   procedure visit (This : in out MultipassNoCacheWaypoint; unitLayer_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class);
 
 end org.allbinary.game.layer.waypoint.MultipassNoCacheWaypoint_Package;
 

@@ -61,16 +61,16 @@ package org.allbinary.media.image.ImageModifierUtil_Package is
    procedure Initialize (This : in out ImageModifierUtil'Class);
    function Create return ImageModifierUtil_Access;
    function getInstanceOrCreate return ImageModifierUtil_Access;
-   procedure setColor (This : in out ImageModifierUtil; unusedOriginalImage_Param : access Image'Class; image_Param : access Image'Class; imageIndex : Integer; basicColor_Param : access BasicColor'Class);
-   procedure changeColor (This : in out ImageModifierUtil; unusedOriginalImage_Param : access Image'Class; image_Param : access Image'Class; imageIndex : Integer; basicColor_Param : access BasicColor'Class);
-   procedure setAlpha (This : in out ImageModifierUtil; originalImage_Param : access Image'Class; image_Param : access Image'Class; imageIndex : Integer; alpha : Integer);
-   procedure setAlphaF (This : in out ImageModifierUtil; originalImage_Param : access Image'Class; image_Param : access Image'Class; imageIndex : Integer; alpha : Float);
-   procedure setAlpha2 (This : in out ImageModifierUtil; originalImage_Param : access Image'Class; image_Param : access Image'Class; imageIndex : Integer; alpha : Float);
-   procedure setAlpha3 (This : in out ImageModifierUtil; image_Param : access Image'Class; alpha : Float);
+   procedure setColor (This : in out ImageModifierUtil; unusedOriginalImage_Param : access Image_Package.Image'Class; image_Param : access Image_Package.Image'Class; imageIndex : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class);
+   procedure changeColor (This : in out ImageModifierUtil; unusedOriginalImage_Param : access Image_Package.Image'Class; image_Param : access Image_Package.Image'Class; imageIndex : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class);
+   procedure setAlpha (This : in out ImageModifierUtil; originalImage_Param : access Image_Package.Image'Class; image_Param : access Image_Package.Image'Class; imageIndex : Integer; alpha : Integer);
+   procedure setAlphaF (This : in out ImageModifierUtil; originalImage_Param : access Image_Package.Image'Class; image_Param : access Image_Package.Image'Class; imageIndex : Integer; alpha : Float);
+   procedure setAlpha2 (This : in out ImageModifierUtil; originalImage_Param : access Image_Package.Image'Class; image_Param : access Image_Package.Image'Class; imageIndex : Integer; alpha : Float);
+   procedure setAlpha3 (This : in out ImageModifierUtil; image_Param : access Image_Package.Image'Class; alpha : Float);
    function getImageArray (This : in out ImageModifierUtil; originalImageArray : Image_Access_Array_Access) return Image_Access_Array_Access;
    procedure getImageArray (This : in out ImageModifierUtil; originalImageArray : Image_Access_Array_Access);
-   procedure handleImage (This : in out ImageModifierUtil; imageArray : Image_Access_Array_Access; index : Integer; image_Param : access Image'Class);
-   procedure copy (This : in out ImageModifierUtil; imageArray : Image_Access_Array_Access; index : Integer; image_Param : access Image'Class; image3_Param : access Image'Class);
+   procedure handleImage (This : in out ImageModifierUtil; imageArray : Image_Access_Array_Access; index : Integer; image_Param : access Image_Package.Image'Class);
+   procedure copy (This : in out ImageModifierUtil; imageArray : Image_Access_Array_Access; index : Integer; image_Param : access Image_Package.Image'Class; image3_Param : access Image_Package.Image'Class);
    procedure reset (This : in out ImageModifierUtil);
 
 end org.allbinary.media.image.ImageModifierUtil_Package;

@@ -34,9 +34,9 @@ package org.allbinary.graphics.opengles.shader.UniformLightPositionOpenGLProcess
 
    type UniformLightPositionOpenGLProcessor is new OpenGLObject3dProcessor with null record;
 
-   procedure Initialize (This : in out UniformLightPositionOpenGLProcessor'Class; shaderComposite_Param : access ShaderComposite'Class; handleIndex : Integer);
-   function Create (shaderComposite_Param : access ShaderComposite'Class; handleIndex : Integer) return UniformLightPositionOpenGLProcessor_Access;
-   procedure process (This : in out UniformLightPositionOpenGLProcessor; gl_Param : access GL10'Class; unused_Param : access Java_Object'Class);
+   procedure Initialize (This : in out UniformLightPositionOpenGLProcessor'Class; shaderComposite_Param : access ShaderComposite_Package.ShaderComposite'Class; handleIndex : Integer);
+   function Create (shaderComposite_Param : access ShaderComposite_Package.ShaderComposite'Class; handleIndex : Integer) return UniformLightPositionOpenGLProcessor_Access;
+   procedure process (This : in out UniformLightPositionOpenGLProcessor; gl_Param : access GL10_Package.GL10'Class; unused_Param : access Java_Object'Class);
 
 end org.allbinary.graphics.opengles.shader.UniformLightPositionOpenGLProcessor_Package;
 

@@ -45,10 +45,10 @@ package org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositi
       geographicMapCellPosition : CellPosition_Access;
    end record;
 
-   procedure Initialize (This : in out GeographicMapCellPositionEvent'Class; anyType_Param : access Java_Object'Class; geographicMapCellPosition_Param : access CellPosition'Class);
-   function Create (anyType_Param : access Java_Object'Class; geographicMapCellPosition_Param : access CellPosition'Class) return GeographicMapCellPositionEvent_Access;
+   procedure Initialize (This : in out GeographicMapCellPositionEvent'Class; anyType_Param : access Java_Object'Class; geographicMapCellPosition_Param : access CellPosition_Package.CellPosition'Class);
+   function Create (anyType_Param : access Java_Object'Class; geographicMapCellPosition_Param : access CellPosition_Package.CellPosition'Class) return GeographicMapCellPositionEvent_Access;
    procedure init (This : in out GeographicMapCellPositionEvent; anyType_Param : access Java_Object'Class);
-   procedure setGeographicMapCellPosition (This : in out GeographicMapCellPositionEvent; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class);
+   procedure setGeographicMapCellPosition (This : in out GeographicMapCellPositionEvent; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class);
    function getGeographicMapCellPosition (This : in out GeographicMapCellPositionEvent) return GeographicMapCellPosition_Access;
    function toString (This : in out GeographicMapCellPositionEvent) return Unbounded_String;
 

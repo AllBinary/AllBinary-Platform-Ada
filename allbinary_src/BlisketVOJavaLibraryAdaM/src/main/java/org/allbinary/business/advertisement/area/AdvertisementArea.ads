@@ -50,8 +50,8 @@ package org.allbinary.business.advertisement.area.AdvertisementArea_Package is
       campaign : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out AdvertisementArea'Class; hashMap_Param : access HashMap'Class);
-   function Create (hashMap_Param : access HashMap'Class) return AdvertisementArea_Access;
+   procedure Initialize (This : in out AdvertisementArea'Class; hashMap_Param : access HashMap_Package.HashMap'Class);
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return AdvertisementArea_Access;
    function getName (This : in out AdvertisementArea) return Unbounded_String;
    function getStoreName (This : in out AdvertisementArea) return Unbounded_String;
    function getDescription (This : in out AdvertisementArea) return Unbounded_String;
@@ -60,7 +60,7 @@ package org.allbinary.business.advertisement.area.AdvertisementArea_Package is
    procedure setName (This : in out AdvertisementArea; name : Unbounded_String);
    procedure setStoreName (This : in out AdvertisementArea; storeName : Unbounded_String);
    procedure setDescription (This : in out AdvertisementArea; description : Unbounded_String);
-   procedure setConstraints (This : in out AdvertisementArea; advertisementConstraintsInterface_Param : access AdvertisementAreaConstraintsInterface'Class);
+   procedure setConstraints (This : in out AdvertisementArea; advertisementConstraintsInterface_Param : access AdvertisementAreaConstraintsInterface_Package.AdvertisementAreaConstraintsInterface'Class);
    procedure setCampaign (This : in out AdvertisementArea; campaign : Unbounded_String);
 
 end org.allbinary.business.advertisement.area.AdvertisementArea_Package;

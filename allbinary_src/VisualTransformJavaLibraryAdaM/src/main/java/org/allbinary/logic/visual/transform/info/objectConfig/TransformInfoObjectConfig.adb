@@ -26,8 +26,8 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TransformInfoObjectConfig'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out TransformInfoObjectConfig'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
       stringBuffer : StringMaker_Access;
    begin
       Initialize_Fields (This);
@@ -47,16 +47,16 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
         end if;
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return TransformInfoObjectConfig_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return TransformInfoObjectConfig_Access is
       This : constant TransformInfoObjectConfig_Access := new TransformInfoObjectConfig;
    begin
       TransformInfoObjectConfig_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out TransformInfoObjectConfig'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; document_Param : access Document'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
-      document : Document_Access := Document_Access (document_Param);
+   procedure Initialize (This : in out TransformInfoObjectConfig'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; document_Param : access Document_Package.Document'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+      document : constant Document_Access := Document_Access (document_Param);
       node : Node_Access;
       stringBuffer : StringMaker_Access;
    begin
@@ -81,15 +81,15 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
         end if;
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; document_Param : access Document'Class) return TransformInfoObjectConfig_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; document_Param : access Document_Package.Document'Class) return TransformInfoObjectConfig_Access is
       This : constant TransformInfoObjectConfig_Access := new TransformInfoObjectConfig;
    begin
       TransformInfoObjectConfig_Package.Initialize (This.all, transformInfoInterface_Param, document_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out TransformInfoObjectConfig'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; name : Unbounded_String; type_Id : Unbounded_String) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out TransformInfoObjectConfig'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; name : Unbounded_String; type_Id : Unbounded_String) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
       configNameAttr : Attr_Access;
       objectConfigNode : Node_Access;
       stringBuffer : StringMaker_Access;
@@ -115,7 +115,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
         end if;
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; name : Unbounded_String; type_Id : Unbounded_String) return TransformInfoObjectConfig_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; name : Unbounded_String; type_Id : Unbounded_String) return TransformInfoObjectConfig_Access is
       This : constant TransformInfoObjectConfig_Access := new TransformInfoObjectConfig;
    begin
       TransformInfoObjectConfig_Package.Initialize (This.all, transformInfoInterface_Param, name, type_Id);
@@ -141,14 +141,14 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
         return This.document;
    end toXmlDoc;
 
-   procedure setDocument (This : in out TransformInfoObjectConfig; document_Param : access Document'Class) is
-      document : Document_Access := Document_Access (document_Param);
+   procedure setDocument (This : in out TransformInfoObjectConfig; document_Param : access Document_Package.Document'Class) is
+      document : constant Document_Access := Document_Access (document_Param);
    begin
         This.document := document;
    end setDocument;
 
-   function containsView (This : in out TransformInfoObjectConfig; transformInfoInterface_Param : access TransformInfoInterface'Class) return Boolean is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   function containsView (This : in out TransformInfoObjectConfig; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return Boolean is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
       objectConfigNode : Node_Access;
       viewNodeList : NodeList_Access;
       numberOfViews : Integer;
@@ -398,7 +398,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
         end;
    end toString;
 
-   procedure containsView (This : in out TransformInfoObjectConfig; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+   procedure containsView (This : in out TransformInfoObjectConfig; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
       Java_Result : constant Boolean := TransformInfoObjectConfig'Class (This).containsView (transformInfoInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

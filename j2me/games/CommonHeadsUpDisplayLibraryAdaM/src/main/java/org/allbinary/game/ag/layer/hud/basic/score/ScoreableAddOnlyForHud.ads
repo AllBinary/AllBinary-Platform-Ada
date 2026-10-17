@@ -36,8 +36,8 @@ package org.allbinary.game.ag.layer.hud.basic.score.ScoreableAddOnlyForHud_Packa
       scoreHudWidget : ScoreHudWidget_Access;
    end record;
 
-   procedure Initialize (This : in out ScoreableAddOnlyForHud'Class; scoreVectorGraphic_Param : access ScoreHudWidget'Class);
-   function Create (scoreVectorGraphic_Param : access ScoreHudWidget'Class) return ScoreableAddOnlyForHud_Access;
+   procedure Initialize (This : in out ScoreableAddOnlyForHud'Class; scoreVectorGraphic_Param : access ScoreHudWidget_Package.ScoreHudWidget'Class);
+   function Create (scoreVectorGraphic_Param : access ScoreHudWidget_Package.ScoreHudWidget'Class) return ScoreableAddOnlyForHud_Access;
    procedure removePoints (This : in out ScoreableAddOnlyForHud; points : Integer);
    procedure addPoints (This : in out ScoreableAddOnlyForHud; points : Integer);
    function getScoreHudWidget (This : in out ScoreableAddOnlyForHud) return ScoreHudWidget_Access;

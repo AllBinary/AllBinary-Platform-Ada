@@ -71,13 +71,13 @@ package org.allbinary.game.layer.item.RTSLayerCostAnimation_Package is
       fontHeight : Integer;
    end record;
 
-   procedure Initialize (This : in out RTSLayerCostAnimation'Class; image_Param : access Image'Class; layerInterfaceFactoryInterface_Param : access CostLayerInterfaceFactoryInterface'Class);
-   function Create (image_Param : access Image'Class; layerInterfaceFactoryInterface_Param : access CostLayerInterfaceFactoryInterface'Class) return RTSLayerCostAnimation_Access;
-   procedure updateMeasurement (This : in out RTSLayerCostAnimation; graphics_Param : access Graphics'Class);
-   procedure onEvent (This : in out RTSLayerCostAnimation; event_Param : access AllBinaryEventObject'Class);
-   procedure onTechEvent (This : in out RTSLayerCostAnimation; event_Param : access AllBinaryEventObject'Class);
+   procedure Initialize (This : in out RTSLayerCostAnimation'Class; image_Param : access Image_Package.Image'Class; layerInterfaceFactoryInterface_Param : access CostLayerInterfaceFactoryInterface_Package.CostLayerInterfaceFactoryInterface'Class);
+   function Create (image_Param : access Image_Package.Image'Class; layerInterfaceFactoryInterface_Param : access CostLayerInterfaceFactoryInterface_Package.CostLayerInterfaceFactoryInterface'Class) return RTSLayerCostAnimation_Access;
+   procedure updateMeasurement (This : in out RTSLayerCostAnimation; graphics_Param : access Graphics_Package.Graphics'Class);
+   procedure onEvent (This : in out RTSLayerCostAnimation; event_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class);
+   procedure onTechEvent (This : in out RTSLayerCostAnimation; event_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class);
    procedure update (This : in out RTSLayerCostAnimation);
-   procedure paintXY (This : in out RTSLayerCostAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
+   procedure paintXY (This : in out RTSLayerCostAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
 
 end org.allbinary.game.layer.item.RTSLayerCostAnimation_Package;
 

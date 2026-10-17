@@ -74,8 +74,8 @@ package admin.taghelpers.BasicGroupItemsRequestHelper_Package is
       lastModified : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out BasicGroupItemsRequestHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
-   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return BasicGroupItemsRequestHelper_Access;
+   procedure Initialize (This : in out BasicGroupItemsRequestHelper'Class; hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class);
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return BasicGroupItemsRequestHelper_Access;
    procedure getFormData (This : in out BasicGroupItemsRequestHelper);
    function getHashMap (This : in out BasicGroupItemsRequestHelper) return HashMap_Access;
    function insert (This : in out BasicGroupItemsRequestHelper) return Unbounded_String;

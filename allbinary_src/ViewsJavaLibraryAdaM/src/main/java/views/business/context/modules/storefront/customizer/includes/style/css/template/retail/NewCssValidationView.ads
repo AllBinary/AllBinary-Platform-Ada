@@ -53,14 +53,14 @@ package views.business.context.modules.storefront.customizer.includes.style.css.
       logUtil : LogUtil_Access;
    end record;
 
-   procedure Initialize (This : in out NewCssValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return NewCssValidationView_Access;
+   procedure Initialize (This : in out NewCssValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return NewCssValidationView_Access;
    function toXmlDoc (This : in out NewCssValidationView) return Document_Access;
    function isValid (This : in out NewCssValidationView) return Boolean;
    function validationInfo (This : in out NewCssValidationView) return Unbounded_String;
    function toValidationInfoDoc (This : in out NewCssValidationView) return Document_Access;
-   function toValidationInfoNode (This : in out NewCssValidationView; document_Param : access Document'Class) return Node_Access;
-   procedure toValidationInfoNode (This : in out NewCssValidationView; document_Param : access Document'Class);
+   function toValidationInfoNode (This : in out NewCssValidationView; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out NewCssValidationView; document_Param : access Document_Package.Document'Class);
    function view (This : in out NewCssValidationView) return Unbounded_String;
 
 end views.business.context.modules.storefront.customizer.includes.style.css.template.retail.NewCssValidationView_Package;

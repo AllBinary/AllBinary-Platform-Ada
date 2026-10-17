@@ -24,14 +24,14 @@ package body org.allbinary.business.advertisement.GameAdStateBase_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GameAdStateBase'Class; adConfiguration_Param : access AdConfiguration'Class) is
-      adConfiguration : AdConfiguration_Access := AdConfiguration_Access (adConfiguration_Param);
+   procedure Initialize (This : in out GameAdStateBase'Class; adConfiguration_Param : access AdConfiguration_Package.AdConfiguration'Class) is
+      adConfiguration : constant AdConfiguration_Access := AdConfiguration_Access (adConfiguration_Param);
    begin
       Initialize_Fields (This);
         This.adConfigurationP := adConfiguration;
    end Initialize;
 
-   function Create (adConfiguration_Param : access AdConfiguration'Class) return GameAdStateBase_Access is
+   function Create (adConfiguration_Param : access AdConfiguration_Package.AdConfiguration'Class) return GameAdStateBase_Access is
       This : constant GameAdStateBase_Access := new GameAdStateBase;
    begin
       GameAdStateBase_Package.Initialize (This.all, adConfiguration_Param);
@@ -44,7 +44,7 @@ package body org.allbinary.business.advertisement.GameAdStateBase_Package is
    end initViewArray;
 
    procedure onStart (This : in out GameAdStateBase; anyType_Param : access Java_Object'Class) is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         This.init;
    end onStart;
@@ -74,15 +74,15 @@ package body org.allbinary.business.advertisement.GameAdStateBase_Package is
         null;
    end hide;
 
-   procedure onEvent (This : in out GameAdStateBase; eventObject_Param : access AllBinaryEventObject'Class) is
-      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+   procedure onEvent (This : in out GameAdStateBase; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
+      eventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
    begin
         ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, GameAdStateBase_Access'(This'Unchecked_Access));
    end onEvent;
 
-   procedure processAdState (This : in out GameAdStateBase; gameState_Param : access GameState'Class; gameType_Param : access GameType'Class) is
-      gameState : GameState_Access := GameState_Access (gameState_Param);
-      gameType : GameType_Access := GameType_Access (gameType_Param);
+   procedure processAdState (This : in out GameAdStateBase; gameState_Param : access GameState_Package.GameState'Class; gameType_Param : access GameType_Package.GameType'Class) is
+      gameState : constant GameState_Access := GameState_Access (gameState_Param);
+      gameType : constant GameType_Access := GameType_Access (gameType_Param);
    begin
         null;
    end processAdState;

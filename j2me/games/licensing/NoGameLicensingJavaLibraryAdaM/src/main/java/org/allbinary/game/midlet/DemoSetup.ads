@@ -34,7 +34,7 @@ package org.allbinary.game.midlet.DemoSetup_Package is
 
    procedure Initialize (This : in out DemoSetup'Class);
    function Create return DemoSetup_Access;
-   procedure init (This : in out DemoSetup; gameMidlet_Param : access GameMidlet'Class);
+   procedure init (This : in out DemoSetup; gameMidlet_Param : access GameMidlet_Package.GameMidlet'Class);
 
 end org.allbinary.game.midlet.DemoSetup_Package;
 

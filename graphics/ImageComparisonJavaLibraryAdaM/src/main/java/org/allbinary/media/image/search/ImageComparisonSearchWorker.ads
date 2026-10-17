@@ -64,10 +64,10 @@ package org.allbinary.media.image.search.ImageComparisonSearchWorker_Package is
       imageSearchConstraintsInterface : ImageComparisonSearchConstraintsInterface_Access;
    end record;
 
-   procedure Initialize (This : in out ImageComparisonSearchWorker'Class; imageSearchConstraintsInterface_Param : access ImageComparisonSearchConstraintsInterface'Class);
-   function Create (imageSearchConstraintsInterface_Param : access ImageComparisonSearchConstraintsInterface'Class) return ImageComparisonSearchWorker_Access;
-   procedure onImageComparisonResultsEvent (This : in out ImageComparisonSearchWorker; imageComparisonResultsEvent_Param : access ImageComparisonResultsEvent'Class);
-   procedure onEvent (This : in out ImageComparisonSearchWorker; allBinaryEventObject_Param : access AllBinaryEventObject'Class);
+   procedure Initialize (This : in out ImageComparisonSearchWorker'Class; imageSearchConstraintsInterface_Param : access ImageComparisonSearchConstraintsInterface_Package.ImageComparisonSearchConstraintsInterface'Class);
+   function Create (imageSearchConstraintsInterface_Param : access ImageComparisonSearchConstraintsInterface_Package.ImageComparisonSearchConstraintsInterface'Class) return ImageComparisonSearchWorker_Access;
+   procedure onImageComparisonResultsEvent (This : in out ImageComparisonSearchWorker; imageComparisonResultsEvent_Param : access ImageComparisonResultsEvent_Package.ImageComparisonResultsEvent'Class);
+   procedure onEvent (This : in out ImageComparisonSearchWorker; allBinaryEventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class);
    function isRunning (This : in out ImageComparisonSearchWorker) return Boolean;
    procedure setRunning (This : in out ImageComparisonSearchWorker; running : Boolean);
    procedure run (This : in out ImageComparisonSearchWorker);

@@ -71,27 +71,27 @@ package org.allbinary.graphics.displayable.MyCanvas_Package is
       touchME : TouchJ2ME_Access;
    end record;
 
-   procedure Initialize (This : in out MyCanvas'Class; name : Unbounded_String; childNameList_Param : access BasicArrayList'Class);
-   function Create (name : Unbounded_String; childNameList_Param : access BasicArrayList'Class) return MyCanvas_Access;
+   procedure Initialize (This : in out MyCanvas'Class; name : Unbounded_String; childNameList_Param : access BasicArrayList_Package.BasicArrayList'Class);
+   function Create (name : Unbounded_String; childNameList_Param : access BasicArrayList_Package.BasicArrayList'Class) return MyCanvas_Access;
    procedure setFullScreenMode (This : in out MyCanvas; mode : Boolean);
    procedure sizeChanged (This : in out MyCanvas; w : Integer; h : Integer);
    function getCommandStack (This : in out MyCanvas) return ABStack_Access;
-   function isCommand (This : in out MyCanvas; command_Param : access Command'Class) return Boolean;
-   procedure isCommand (This : in out MyCanvas; command_Param : access Command'Class);
-   procedure addCommand (This : in out MyCanvas; command_Param : access Command'Class);
-   procedure removeCommand (This : in out MyCanvas; command_Param : access Command'Class);
+   function isCommand (This : in out MyCanvas; command_Param : access Command_Package.Command'Class) return Boolean;
+   procedure isCommand (This : in out MyCanvas; command_Param : access Command_Package.Command'Class);
+   procedure addCommand (This : in out MyCanvas; command_Param : access Command_Package.Command'Class);
+   procedure removeCommand (This : in out MyCanvas; command_Param : access Command_Package.Command'Class);
    procedure removeAllCommands (This : in out MyCanvas);
-   procedure setCommandListener (This : in out MyCanvas; l_Param : access CommandListener'Class);
+   procedure setCommandListener (This : in out MyCanvas; l_Param : access CommandListener_Package.CommandListener'Class);
    function getCustomCommandListener (This : in out MyCanvas) return CommandListener_Access;
    function isPaused (This : in out MyCanvas) return Boolean;
    procedure removePauseCommand (This : in out MyCanvas);
    procedure pause (This : in out MyCanvas);
    procedure unPause (This : in out MyCanvas);
    procedure process (This : in out MyCanvas);
-   procedure paint (This : in out MyCanvas; graphics_Param : access Graphics'Class);
-   procedure draw (This : in out MyCanvas; graphics_Param : access Graphics'Class);
-   function hasChild (This : in out MyCanvas; displayable_Param : access MyCanvas'Class) return Boolean;
-   procedure hasChild (This : in out MyCanvas; displayable_Param : access MyCanvas'Class);
+   procedure paint (This : in out MyCanvas; graphics_Param : access Graphics_Package.Graphics'Class);
+   procedure draw (This : in out MyCanvas; graphics_Param : access Graphics_Package.Graphics'Class);
+   function hasChild (This : in out MyCanvas; displayable_Param : access MyCanvas_Package.MyCanvas'Class) return Boolean;
+   procedure hasChild (This : in out MyCanvas; displayable_Param : access MyCanvas_Package.MyCanvas'Class);
    procedure destroy (This : in out MyCanvas);
    procedure setPaused (This : in out MyCanvas; isPaused : Boolean);
    procedure keyPressedByDevice (This : in out MyCanvas; keyCode : Integer; deviceId : Integer);
@@ -100,7 +100,7 @@ package org.allbinary.graphics.displayable.MyCanvas_Package is
    procedure pointerDragged (This : in out MyCanvas; x : Integer; y : Integer);
    procedure pointerPressed (This : in out MyCanvas; x : Integer; y : Integer);
    procedure pointerReleased (This : in out MyCanvas; x : Integer; y : Integer);
-   procedure nextSong (This : in out MyCanvas; nextSongSound_Param : access Sound'Class; leftVolume : Integer; rightVolume : Integer);
+   procedure nextSong (This : in out MyCanvas; nextSongSound_Param : access Sound_Package.Sound'Class; leftVolume : Integer; rightVolume : Integer);
 
 end org.allbinary.graphics.displayable.MyCanvas_Package;
 

@@ -41,8 +41,8 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.generator.Tr
    end Create;
 
    --  throws Exception
-   function getInstance (This : in out TransformInfoObjectConfigGeneratorFactory; transformInfoInterface_Param : access TransformInfoInterface'Class) return TransformInfoObjectConfigGenerator_Access is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   function getInstance (This : in out TransformInfoObjectConfigGeneratorFactory; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return TransformInfoObjectConfigGenerator_Access is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
       type_Id : Unbounded_String;
       commonStrings : CommonStrings_Access;
    begin
@@ -60,7 +60,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.generator.Tr
         end if;
    end getInstance;
 
-   procedure getInstance (This : in out TransformInfoObjectConfigGeneratorFactory; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+   procedure getInstance (This : in out TransformInfoObjectConfigGeneratorFactory; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
       Java_Result : constant TransformInfoObjectConfigGenerator_Access := TransformInfoObjectConfigGeneratorFactory'Class (This).getInstance (transformInfoInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

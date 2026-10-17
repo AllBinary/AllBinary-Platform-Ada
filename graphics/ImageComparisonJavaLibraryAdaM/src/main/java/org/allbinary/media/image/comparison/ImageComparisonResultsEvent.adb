@@ -22,16 +22,16 @@ package body org.allbinary.media.image.comparison.ImageComparisonResultsEvent_Pa
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ImageComparisonResultsEvent'Class; anyType_Param : access Java_Object'Class; imageComparisonInfo_Param : access ImageComparisonResult'Class) is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
-      imageComparisonInfo : ImageComparisonResult_Access := ImageComparisonResult_Access (imageComparisonInfo_Param);
+   procedure Initialize (This : in out ImageComparisonResultsEvent'Class; anyType_Param : access Java_Object'Class; imageComparisonInfo_Param : access ImageComparisonResult_Package.ImageComparisonResult'Class) is
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
+      imageComparisonInfo : constant ImageComparisonResult_Access := ImageComparisonResult_Access (imageComparisonInfo_Param);
    begin
         AllBinaryEventObject_Package.Initialize (This, anyType);
         Initialize_Fields (This);
         This.setImageComparisonResult (imageComparisonInfo);
    end Initialize;
 
-   function Create (anyType_Param : access Java_Object'Class; imageComparisonInfo_Param : access ImageComparisonResult'Class) return ImageComparisonResultsEvent_Access is
+   function Create (anyType_Param : access Java_Object'Class; imageComparisonInfo_Param : access ImageComparisonResult_Package.ImageComparisonResult'Class) return ImageComparisonResultsEvent_Access is
       This : constant ImageComparisonResultsEvent_Access := new ImageComparisonResultsEvent;
    begin
       ImageComparisonResultsEvent_Package.Initialize (This.all, anyType_Param, imageComparisonInfo_Param);
@@ -43,8 +43,8 @@ package body org.allbinary.media.image.comparison.ImageComparisonResultsEvent_Pa
         return This.imageComparisonResult;
    end getImageComparisonResult;
 
-   procedure setImageComparisonResult (This : in out ImageComparisonResultsEvent; imageComparisonResult_Param : access ImageComparisonResult'Class) is
-      imageComparisonResult : ImageComparisonResult_Access := ImageComparisonResult_Access (imageComparisonResult_Param);
+   procedure setImageComparisonResult (This : in out ImageComparisonResultsEvent; imageComparisonResult_Param : access ImageComparisonResult_Package.ImageComparisonResult'Class) is
+      imageComparisonResult : constant ImageComparisonResult_Access := ImageComparisonResult_Access (imageComparisonResult_Param);
    begin
         This.imageComparisonResult := imageComparisonResult;
    end setImageComparisonResult;

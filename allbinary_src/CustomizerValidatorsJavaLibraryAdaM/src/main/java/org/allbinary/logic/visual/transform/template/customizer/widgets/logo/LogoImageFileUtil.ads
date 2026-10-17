@@ -46,9 +46,9 @@ package org.allbinary.logic.visual.transform.template.customizer.widgets.logo.Lo
       imageFileAbPath : AbPath_Access;
    end record;
 
-   procedure Initialize (This : in out LogoImageFileUtil'Class; imageAbPath_Param : access AbPath'Class; imageFile : Unbounded_String);
-   function Create (imageAbPath_Param : access AbPath'Class; imageFile : Unbounded_String) return LogoImageFileUtil_Access;
-   procedure saveFiles (This : in out LogoImageFileUtil; fileItem_Param : access FileItem'Class);
+   procedure Initialize (This : in out LogoImageFileUtil'Class; imageAbPath_Param : access AbPath_Package.AbPath'Class; imageFile : Unbounded_String);
+   function Create (imageAbPath_Param : access AbPath_Package.AbPath'Class; imageFile : Unbounded_String) return LogoImageFileUtil_Access;
+   procedure saveFiles (This : in out LogoImageFileUtil; fileItem_Param : access FileItem_Package.FileItem'Class);
 
 end org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoImageFileUtil_Package;
 

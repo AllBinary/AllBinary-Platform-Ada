@@ -48,15 +48,15 @@ package org.allbinary.input.automation.actions.script.condition.AlwaysActionScri
       titleJLabel : JLabel_Access;
    end record;
 
-   procedure Initialize (This : in out AlwaysActionScriptConditionJPanel'Class; alwaysActionScriptConditionInterface_Param : access AlwaysActionScriptConditionInterface'Class);
-   function Create (alwaysActionScriptConditionInterface_Param : access AlwaysActionScriptConditionInterface'Class) return AlwaysActionScriptConditionJPanel_Access;
+   procedure Initialize (This : in out AlwaysActionScriptConditionJPanel'Class; alwaysActionScriptConditionInterface_Param : access AlwaysActionScriptConditionInterface_Package.AlwaysActionScriptConditionInterface'Class);
+   function Create (alwaysActionScriptConditionInterface_Param : access AlwaysActionScriptConditionInterface_Package.AlwaysActionScriptConditionInterface'Class) return AlwaysActionScriptConditionJPanel_Access;
    procedure set (This : in out AlwaysActionScriptConditionJPanel);
    procedure update (This : in out AlwaysActionScriptConditionJPanel);
    function getAlwaysActionJDialog (This : in out AlwaysActionScriptConditionJPanel) return JDialog_Access;
-   procedure setAlwaysActionJDialog (This : in out AlwaysActionScriptConditionJPanel; alwaysActionJDialog_Param : access JDialog'Class);
+   procedure setAlwaysActionJDialog (This : in out AlwaysActionScriptConditionJPanel; alwaysActionJDialog_Param : access JDialog_Package.JDialog'Class);
    procedure initComponents (This : in out AlwaysActionScriptConditionJPanel);
-   procedure okJButtonActionPerformed (This : in out AlwaysActionScriptConditionJPanel; evt_Param : access ActionEvent'Class);
-   procedure alwaysActionJButtonActionPerformed (This : in out AlwaysActionScriptConditionJPanel; evt_Param : access ActionEvent'Class);
+   procedure okJButtonActionPerformed (This : in out AlwaysActionScriptConditionJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
+   procedure alwaysActionJButtonActionPerformed (This : in out AlwaysActionScriptConditionJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
 
 end org.allbinary.input.automation.actions.script.condition.AlwaysActionScriptConditionJPanel_Package;
 

@@ -25,9 +25,9 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out RemoveActionScriptItemJPanel'Class; genericProfileActionJPanel_Param : access GenericProfileActionJPanel'Class; profileActionScriptConditionInterface_Param : access ProfileActionScriptConditionInterface'Class) is
-      genericProfileActionJPanel : GenericProfileActionJPanel_Access := GenericProfileActionJPanel_Access (genericProfileActionJPanel_Param);
-      profileActionScriptConditionInterface : ProfileActionScriptConditionInterface_Access := ProfileActionScriptConditionInterface_Access (profileActionScriptConditionInterface_Param);
+   procedure Initialize (This : in out RemoveActionScriptItemJPanel'Class; genericProfileActionJPanel_Param : access GenericProfileActionJPanel_Package.GenericProfileActionJPanel'Class; profileActionScriptConditionInterface_Param : access ProfileActionScriptConditionInterface_Package.ProfileActionScriptConditionInterface'Class) is
+      genericProfileActionJPanel : constant GenericProfileActionJPanel_Access := GenericProfileActionJPanel_Access (genericProfileActionJPanel_Param);
+      profileActionScriptConditionInterface : constant ProfileActionScriptConditionInterface_Access := ProfileActionScriptConditionInterface_Access (profileActionScriptConditionInterface_Param);
    begin
       Panel_Package.Initialize (This);
       Initialize_Fields (This);
@@ -36,7 +36,7 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         This.profileActionScriptConditionInterface := profileActionScriptConditionInterface;
    end Initialize;
 
-   function Create (genericProfileActionJPanel_Param : access GenericProfileActionJPanel'Class; profileActionScriptConditionInterface_Param : access ProfileActionScriptConditionInterface'Class) return RemoveActionScriptItemJPanel_Access is
+   function Create (genericProfileActionJPanel_Param : access GenericProfileActionJPanel_Package.GenericProfileActionJPanel'Class; profileActionScriptConditionInterface_Param : access ProfileActionScriptConditionInterface_Package.ProfileActionScriptConditionInterface'Class) return RemoveActionScriptItemJPanel_Access is
       This : constant RemoveActionScriptItemJPanel_Access := new RemoveActionScriptItemJPanel;
    begin
       RemoveActionScriptItemJPanel_Package.Initialize (This.all, genericProfileActionJPanel_Param, profileActionScriptConditionInterface_Param);
@@ -50,8 +50,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         This.removeJButton.setText (To_Unbounded_String ("Remove"));
         This.removeJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.removeJButtonActionPerformed (evt);
 --     end actionPerformed;
@@ -59,8 +59,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         This.add (This.removeJButton);
    end initComponents;
 
-   procedure removeJButtonActionPerformed (This : in out RemoveActionScriptItemJPanel; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure removeJButtonActionPerformed (This : in out RemoveActionScriptItemJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
       genericProfileAction : GenericProfileAction_Access;
    begin
         genericProfileAction := This.genericProfileActionJPanel.getGenericProfileAction;

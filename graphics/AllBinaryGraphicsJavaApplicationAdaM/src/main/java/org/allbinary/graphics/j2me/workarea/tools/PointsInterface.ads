@@ -31,7 +31,7 @@ package org.allbinary.graphics.j2me.workarea.tools.PointsInterface_Package is
    type PointsInterface_Access_Array is array (Natural range <>) of PointsInterface_Access;
    type PointsInterface_Access_Array_Access is access all PointsInterface_Access_Array;
    function getPoints (This : in out PointsInterface) return BasicArrayList_Access is abstract;
-   procedure addPoints (This : in out PointsInterface; vector_Param : access BasicArrayList'Class) is abstract;
+   procedure addPoints (This : in out PointsInterface; vector_Param : access BasicArrayList_Package.BasicArrayList'Class) is abstract;
 
 end org.allbinary.graphics.j2me.workarea.tools.PointsInterface_Package;
 

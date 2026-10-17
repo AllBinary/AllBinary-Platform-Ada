@@ -27,9 +27,9 @@ package body org.allbinary.game.ai.BasicAI_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasicAI'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) is
-      ownerLayerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
-      gameInput : GameInput_Access := GameInput_Access (gameInput_Param);
+   procedure Initialize (This : in out BasicAI'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) is
+      ownerLayerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
+      gameInput : constant GameInput_Access := GameInput_Access (gameInput_Param);
    begin
       ArtificialIntelligence_Package.Initialize (This);
       Initialize_Fields (This);
@@ -37,7 +37,7 @@ package body org.allbinary.game.ai.BasicAI_Package is
         This.gameInput := gameInput;
    end Initialize;
 
-   function Create (ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return BasicAI_Access is
+   function Create (ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) return BasicAI_Access is
       This : constant BasicAI_Access := new BasicAI;
    begin
       BasicAI_Package.Initialize (This.all, ownerLayerInterface_Param, gameInput_Param);
@@ -45,8 +45,8 @@ package body org.allbinary.game.ai.BasicAI_Package is
    end Create;
 
    --  throws Exception
-   procedure processAI (This : in out BasicAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class) is
-      allBinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
+   procedure processAI (This : in out BasicAI; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class) is
+      allBinaryLayerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
    begin
         Java_Throw (Java_New_Exception ("Exception", This.commonStrings.NOT_IMPLEMENTED));
    end processAI;

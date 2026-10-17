@@ -25,15 +25,15 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItemValida
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasicItemValidation'Class; itemInterface_Param : access ItemInterface'Class) is
-      itemInterface : ItemInterface_Access := ItemInterface_Access (itemInterface_Param);
+   procedure Initialize (This : in out BasicItemValidation'Class; itemInterface_Param : access ItemInterface_Package.ItemInterface'Class) is
+      itemInterface : constant ItemInterface_Access := ItemInterface_Access (itemInterface_Param);
    begin
       Validation_Package.Initialize (This);
       Initialize_Fields (This);
         This.itemInterface := itemInterface;
    end Initialize;
 
-   function Create (itemInterface_Param : access ItemInterface'Class) return BasicItemValidation_Access is
+   function Create (itemInterface_Param : access ItemInterface_Package.ItemInterface'Class) return BasicItemValidation_Access is
       This : constant BasicItemValidation_Access := new BasicItemValidation;
    begin
       BasicItemValidation_Package.Initialize (This.all, itemInterface_Param);
@@ -217,13 +217,13 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItemValida
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out BasicItemValidation; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toValidationInfoNode (This : in out BasicItemValidation; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
 
-   procedure toValidationInfoNode (This : in out BasicItemValidation; document_Param : access Document'Class) is
+   procedure toValidationInfoNode (This : in out BasicItemValidation; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := BasicItemValidation'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

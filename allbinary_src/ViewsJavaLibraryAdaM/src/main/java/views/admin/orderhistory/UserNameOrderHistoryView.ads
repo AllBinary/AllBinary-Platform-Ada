@@ -76,16 +76,16 @@ package views.admin.orderhistory.UserNameOrderHistoryView_Package is
       ON : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out UserNameOrderHistoryView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return UserNameOrderHistoryView_Access;
+   procedure Initialize (This : in out UserNameOrderHistoryView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return UserNameOrderHistoryView_Access;
    procedure addDomNodeInterfaces (This : in out UserNameOrderHistoryView);
    function view (This : in out UserNameOrderHistoryView) return Unbounded_String;
-   function toXmlNode (This : in out UserNameOrderHistoryView; document_Param : access Document'Class) return Node_Access;
-   procedure toXmlNode (This : in out UserNameOrderHistoryView; document_Param : access Document'Class);
+   function toXmlNode (This : in out UserNameOrderHistoryView; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out UserNameOrderHistoryView; document_Param : access Document_Package.Document'Class);
    function isValid (This : in out UserNameOrderHistoryView) return Boolean;
    function toValidationInfoDoc (This : in out UserNameOrderHistoryView) return Document_Access;
-   function toValidationInfoNode (This : in out UserNameOrderHistoryView; document_Param : access Document'Class) return Node_Access;
-   procedure toValidationInfoNode (This : in out UserNameOrderHistoryView; document_Param : access Document'Class);
+   function toValidationInfoNode (This : in out UserNameOrderHistoryView; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out UserNameOrderHistoryView; document_Param : access Document_Package.Document'Class);
    function validationInfo (This : in out UserNameOrderHistoryView) return Unbounded_String;
 
 end views.admin.orderhistory.UserNameOrderHistoryView_Package;

@@ -101,14 +101,14 @@ package org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
    function getInstance return AbSqlTableUtil_Access;
    function getOutputStream (This : in out AbSqlTableUtil; backupPath : Unbounded_String; tableName : Unbounded_String) return OutputStream_Access;
    procedure getOutputStream (This : in out AbSqlTableUtil; backupPath : Unbounded_String; tableName : Unbounded_String);
-   function backupFile (This : in out AbSqlTableUtil; path_Param : access AbPath'Class; backupPath : Unbounded_String; tableName : Unbounded_String) return Boolean;
-   procedure backupFile (This : in out AbSqlTableUtil; path_Param : access AbPath'Class; backupPath : Unbounded_String; tableName : Unbounded_String);
+   function backupFile (This : in out AbSqlTableUtil; path_Param : access AbPath_Package.AbPath'Class; backupPath : Unbounded_String; tableName : Unbounded_String) return Boolean;
+   procedure backupFile (This : in out AbSqlTableUtil; path_Param : access AbPath_Package.AbPath'Class; backupPath : Unbounded_String; tableName : Unbounded_String);
    function convertNewLines (This : in out AbSqlTableUtil; value : Unbounded_String) return Unbounded_String;
    procedure convertNewLines (This : in out AbSqlTableUtil; value : Unbounded_String);
-   function backupTable (This : in out AbSqlTableUtil; abSqlTable_Param : access AbSqlTable'Class) return Unbounded_String;
-   procedure backupTable (This : in out AbSqlTableUtil; abSqlTable_Param : access AbSqlTable'Class);
-   function restoreTable (This : in out AbSqlTableUtil; abSqlTable_Param : access AbSqlTable'Class; portion_Param : access Portion'Class) return Unbounded_String;
-   procedure restoreTable (This : in out AbSqlTableUtil; abSqlTable_Param : access AbSqlTable'Class; portion_Param : access Portion'Class);
+   function backupTable (This : in out AbSqlTableUtil; abSqlTable_Param : access AbSqlTable_Package.AbSqlTable'Class) return Unbounded_String;
+   procedure backupTable (This : in out AbSqlTableUtil; abSqlTable_Param : access AbSqlTable_Package.AbSqlTable'Class);
+   function restoreTable (This : in out AbSqlTableUtil; abSqlTable_Param : access AbSqlTable_Package.AbSqlTable'Class; portion_Param : access Portion_Package.Portion'Class) return Unbounded_String;
+   procedure restoreTable (This : in out AbSqlTableUtil; abSqlTable_Param : access AbSqlTable_Package.AbSqlTable'Class; portion_Param : access Portion_Package.Portion'Class);
 
 end org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
 

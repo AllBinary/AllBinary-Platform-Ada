@@ -25,8 +25,8 @@ package org.allbinary.graphics.displayable.ScreenRelationalUtil_Package is
    procedure Initialize (This : in out ScreenRelationalUtil'Class);
    function Create return ScreenRelationalUtil_Access;
    function getInstance return ScreenRelationalUtil_Access;
-   function getScaleImage (This : in out ScreenRelationalUtil; image_Param : access Image'Class) return Float;
-   procedure getScaleImage (This : in out ScreenRelationalUtil; image_Param : access Image'Class);
+   function getScaleImage (This : in out ScreenRelationalUtil; image_Param : access Image_Package.Image'Class) return Float;
+   procedure getScaleImage (This : in out ScreenRelationalUtil; image_Param : access Image_Package.Image'Class);
    function getScaleWH (This : in out ScreenRelationalUtil; aWidth : Integer; aHeight : Integer) return Float;
    procedure getScaleWH (This : in out ScreenRelationalUtil; aWidth : Integer; aHeight : Integer);
    function getScaleWHA (This : in out ScreenRelationalUtil; aWidth : Integer; aHeight : Integer; add : Integer) return Float;

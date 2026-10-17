@@ -42,8 +42,8 @@ package body org.allbinary.animation.VectorRotationGenerator_Package is
       return This;
    end Create;
 
-   function getInstance (This : in out VectorRotationGenerator; vectorRotationInfo_Param : access VectorInfo'Class) return Integer_Array_Access_Array_Access_Array_Access is
-      vectorRotationInfo : VectorInfo_Access := VectorInfo_Access (vectorRotationInfo_Param);
+   function getInstance (This : in out VectorRotationGenerator; vectorRotationInfo_Param : access VectorInfo_Package.VectorInfo'Class) return Integer_Array_Access_Array_Access_Array_Access is
+      vectorRotationInfo : constant VectorInfo_Access := VectorInfo_Access (vectorRotationInfo_Param);
    begin
         return This.getInstanceFrames (vectorRotationInfo.getWidth, vectorRotationInfo.getHeight, vectorRotationInfo.getPoints, vectorRotationInfo.getTotalFrames);
    end getInstance;
@@ -89,9 +89,9 @@ package body org.allbinary.animation.VectorRotationGenerator_Package is
    end getInstanceFrames;
 
    --  throws Exception
-   function getListAtAngle (This : in out VectorRotationGenerator; width : Integer; height : Integer; pointBasicArrayList_Param : access BasicArrayList'Class; angle_Param : access Angle'Class) return BasicArrayList_Access is
-      pointBasicArrayList : BasicArrayList_Access := BasicArrayList_Access (pointBasicArrayList_Param);
-      angle : Angle_Access := Angle_Access (angle_Param);
+   function getListAtAngle (This : in out VectorRotationGenerator; width : Integer; height : Integer; pointBasicArrayList_Param : access BasicArrayList_Package.BasicArrayList'Class; angle_Param : access Angle_Package.Angle'Class) return BasicArrayList_Access is
+      pointBasicArrayList : constant BasicArrayList_Access := BasicArrayList_Access (pointBasicArrayList_Param);
+      angle : constant Angle_Access := Angle_Access (angle_Param);
       graphicsPipe : BasicGraphicsPipeline_Access;
    begin
         graphicsPipe := BasicGraphicsPipeline_Package.Create (pointBasicArrayList);
@@ -102,7 +102,7 @@ package body org.allbinary.animation.VectorRotationGenerator_Package is
         return graphicsPipe.getMatrix;
    end getListAtAngle;
 
-   procedure getInstance (This : in out VectorRotationGenerator; vectorRotationInfo_Param : access VectorInfo'Class) is
+   procedure getInstance (This : in out VectorRotationGenerator; vectorRotationInfo_Param : access VectorInfo_Package.VectorInfo'Class) is
       Java_Result : constant Integer_Array_Access_Array_Access_Array_Access := VectorRotationGenerator'Class (This).getInstance (vectorRotationInfo_Param);
       pragma Unreferenced (Java_Result);
    begin
@@ -116,7 +116,7 @@ package body org.allbinary.animation.VectorRotationGenerator_Package is
       null;
    end getInstanceFrames;
 
-   procedure getListAtAngle (This : in out VectorRotationGenerator; width : Integer; height : Integer; pointBasicArrayList_Param : access BasicArrayList'Class; angle_Param : access Angle'Class) is
+   procedure getListAtAngle (This : in out VectorRotationGenerator; width : Integer; height : Integer; pointBasicArrayList_Param : access BasicArrayList_Package.BasicArrayList'Class; angle_Param : access Angle_Package.Angle'Class) is
       Java_Result : constant BasicArrayList_Access := VectorRotationGenerator'Class (This).getListAtAngle (width, height, pointBasicArrayList_Param, angle_Param);
       pragma Unreferenced (Java_Result);
    begin

@@ -50,8 +50,8 @@ package org.allbinary.graphics.GPoint_Package is
 
    procedure Initialize (This : in out GPoint'Class; x : Integer; y : Integer; z : Integer);
    function Create (x : Integer; y : Integer; z : Integer) return GPoint_Access;
-   function getInstance (point_Param : access GPoint'Class) return GPoint_Access;
-   procedure getInstance (point_Param : access GPoint'Class);
+   function getInstance (point_Param : access GPoint_Package.GPoint'Class) return GPoint_Access;
+   procedure getInstance (point_Param : access GPoint_Package.GPoint'Class);
    function getX (This : in out GPoint) return Integer;
    function getY (This : in out GPoint) return Integer;
    function getZ (This : in out GPoint) return Integer;

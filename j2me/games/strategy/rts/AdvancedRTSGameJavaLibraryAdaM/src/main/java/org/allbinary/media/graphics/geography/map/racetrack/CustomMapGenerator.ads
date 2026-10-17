@@ -52,8 +52,8 @@ package org.allbinary.media.graphics.geography.map.racetrack.CustomMapGenerator_
       dropCellPositionHistory : DropCellPositionHistory_Access;
    end record;
 
-   procedure Initialize (This : in out CustomMapGenerator'Class; raceTrackGeographicMap_Param : access RaceTrackGeographicMap'Class);
-   function Create (raceTrackGeographicMap_Param : access RaceTrackGeographicMap'Class) return CustomMapGenerator_Access;
+   procedure Initialize (This : in out CustomMapGenerator'Class; raceTrackGeographicMap_Param : access RaceTrackGeographicMap_Package.RaceTrackGeographicMap'Class);
+   function Create (raceTrackGeographicMap_Param : access RaceTrackGeographicMap_Package.RaceTrackGeographicMap'Class) return CustomMapGenerator_Access;
    procedure copyMapIntoCustomMap (This : in out CustomMapGenerator);
    function getCustomType (This : in out CustomMapGenerator; column : Integer; row : Integer; currentType : Integer) return Integer;
    procedure getCustomType (This : in out CustomMapGenerator; column : Integer; row : Integer; currentType : Integer);

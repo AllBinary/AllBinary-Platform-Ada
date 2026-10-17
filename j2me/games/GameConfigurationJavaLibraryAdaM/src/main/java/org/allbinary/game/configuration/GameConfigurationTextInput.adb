@@ -38,8 +38,8 @@ package body org.allbinary.game.configuration.GameConfigurationTextInput_Package
       return This;
    end Create;
 
-   procedure update (textField_Param : access TextField'Class) is
-      textField : TextField_Access := TextField_Access (textField_Param);
+   procedure update (textField_Param : access TextField_Package.TextField'Class) is
+      textField : constant TextField_Access := TextField_Access (textField_Param);
       anyType : Java_Object_Access;
       gameConfigurationTextInput : GameConfigurationTextInput_Access;
    begin

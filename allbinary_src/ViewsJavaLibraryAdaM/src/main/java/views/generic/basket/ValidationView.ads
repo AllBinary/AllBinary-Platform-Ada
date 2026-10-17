@@ -42,12 +42,12 @@ package views.generic_Id.basket.ValidationView_Package is
 
    type ValidationView is new BasketView and ValidationComponentInterface with null record;
 
-   procedure Initialize (This : in out ValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return ValidationView_Access;
+   procedure Initialize (This : in out ValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return ValidationView_Access;
    function isValid (This : in out ValidationView) return Boolean;
    function toValidationInfoDoc (This : in out ValidationView) return Document_Access;
-   function toValidationInfoNode (This : in out ValidationView; document_Param : access Document'Class) return Node_Access;
-   procedure toValidationInfoNode (This : in out ValidationView; document_Param : access Document'Class);
+   function toValidationInfoNode (This : in out ValidationView; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out ValidationView; document_Param : access Document_Package.Document'Class);
    function validationInfo (This : in out ValidationView) return Unbounded_String;
 
 end views.generic_Id.basket.ValidationView_Package;

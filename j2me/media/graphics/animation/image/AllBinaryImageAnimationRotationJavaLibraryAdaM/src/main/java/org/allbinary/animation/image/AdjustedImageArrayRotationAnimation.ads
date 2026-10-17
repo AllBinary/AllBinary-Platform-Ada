@@ -42,14 +42,14 @@ package org.allbinary.animation.image.AdjustedImageArrayRotationAnimation_Packag
       dy : Integer;
    end record;
 
-   procedure Initialize (This : in out AdjustedImageArrayRotationAnimation'Class; imageArray : Image_Access_Array_Access; angleInfo_Param : access AngleInfo'Class; totalAngle : Integer; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior'Class);
-   function Create (imageArray : Image_Access_Array_Access; angleInfo_Param : access AngleInfo'Class; totalAngle : Integer; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior'Class) return AdjustedImageArrayRotationAnimation_Access;
-   function createAdjustedImageArrayRotationAnimationInfo (anyType_Param : access Java_Object'Class; animationBehavior_Param : access AnimationBehavior'Class) return AdjustedImageArrayRotationAnimation_Access;
-   procedure createAdjustedImageArrayRotationAnimationInfo (anyType_Param : access Java_Object'Class; animationBehavior_Param : access AnimationBehavior'Class);
-   function createAnimation (imageArray : Image_Access_Array_Access; angleInfo_Param : access AngleInfo'Class; totalAngle : Integer; animationBehavior_Param : access AnimationBehavior'Class) return AdjustedImageArrayRotationAnimation_Access;
-   procedure createAnimation (imageArray : Image_Access_Array_Access; angleInfo_Param : access AngleInfo'Class; totalAngle : Integer; animationBehavior_Param : access AnimationBehavior'Class);
+   procedure Initialize (This : in out AdjustedImageArrayRotationAnimation'Class; imageArray : Image_Access_Array_Access; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; totalAngle : Integer; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class);
+   function Create (imageArray : Image_Access_Array_Access; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; totalAngle : Integer; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return AdjustedImageArrayRotationAnimation_Access;
+   function createAdjustedImageArrayRotationAnimationInfo (anyType_Param : access Java_Object'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return AdjustedImageArrayRotationAnimation_Access;
+   procedure createAdjustedImageArrayRotationAnimationInfo (anyType_Param : access Java_Object'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class);
+   function createAnimation (imageArray : Image_Access_Array_Access; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; totalAngle : Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return AdjustedImageArrayRotationAnimation_Access;
+   procedure createAnimation (imageArray : Image_Access_Array_Access; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; totalAngle : Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class);
    procedure init (This : in out AdjustedImageArrayRotationAnimation; dx : Integer; dy : Integer);
-   procedure paintXY (This : in out AdjustedImageArrayRotationAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
+   procedure paintXY (This : in out AdjustedImageArrayRotationAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
    procedure setDx (This : in out AdjustedImageArrayRotationAnimation; dx : Integer);
    function getDx (This : in out AdjustedImageArrayRotationAnimation) return Integer;
    procedure setDy (This : in out AdjustedImageArrayRotationAnimation; dy : Integer);

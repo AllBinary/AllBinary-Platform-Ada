@@ -23,15 +23,15 @@ package body org.allbinary.graphics.canvas.transition.progress.DismissTitleProgr
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out DismissTitleProgressBarRunnable'Class; midletActivity_Param : access Activity'Class; progressCanvas_Param : access ProgressCanvas'Class) is
-      midletActivity : Activity_Access := Activity_Access (midletActivity_Param);
-      progressCanvas : ProgressCanvas_Access := ProgressCanvas_Access (progressCanvas_Param);
+   procedure Initialize (This : in out DismissTitleProgressBarRunnable'Class; midletActivity_Param : access Activity_Package.Activity'Class; progressCanvas_Param : access ProgressCanvas_Package.ProgressCanvas'Class) is
+      midletActivity : constant Activity_Access := Activity_Access (midletActivity_Param);
+      progressCanvas : constant ProgressCanvas_Access := ProgressCanvas_Access (progressCanvas_Param);
    begin
         ProgressRunnable_Package.Initialize (This, midletActivity, progressCanvas);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (midletActivity_Param : access Activity'Class; progressCanvas_Param : access ProgressCanvas'Class) return DismissTitleProgressBarRunnable_Access is
+   function Create (midletActivity_Param : access Activity_Package.Activity'Class; progressCanvas_Param : access ProgressCanvas_Package.ProgressCanvas'Class) return DismissTitleProgressBarRunnable_Access is
       This : constant DismissTitleProgressBarRunnable_Access := new DismissTitleProgressBarRunnable;
    begin
       DismissTitleProgressBarRunnable_Package.Initialize (This.all, midletActivity_Param, progressCanvas_Param);

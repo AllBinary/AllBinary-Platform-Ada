@@ -25,15 +25,15 @@ package body views.generic_Id.inventory.InventorySearch_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out InventorySearch'Class; searchRequest_Param : access SearchRequest'Class) is
-      searchRequest : SearchRequest_Access := SearchRequest_Access (searchRequest_Param);
+   procedure Initialize (This : in out InventorySearch'Class; searchRequest_Param : access SearchRequest_Package.SearchRequest'Class) is
+      searchRequest : constant SearchRequest_Access := SearchRequest_Access (searchRequest_Param);
    begin
         null;
         Initialize_Fields (This);
         This.searchRequest := searchRequest;
    end Initialize;
 
-   function Create (searchRequest_Param : access SearchRequest'Class) return InventorySearch_Access is
+   function Create (searchRequest_Param : access SearchRequest_Package.SearchRequest'Class) return InventorySearch_Access is
       This : constant InventorySearch_Access := new InventorySearch;
    begin
       InventorySearch_Package.Initialize (This.all, searchRequest_Param);

@@ -59,8 +59,8 @@ package org.allbinary.logic.communication.smtp.email.NewPasswordEmail_Package is
       newPassword : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out NewPasswordEmail'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; userInterface_Param : access UserInterface'Class; newPassword : Unbounded_String);
-   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; userInterface_Param : access UserInterface'Class; newPassword : Unbounded_String) return NewPasswordEmail_Access;
+   procedure Initialize (This : in out NewPasswordEmail'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; userInterface_Param : access UserInterface_Package.UserInterface'Class; newPassword : Unbounded_String);
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; userInterface_Param : access UserInterface_Package.UserInterface'Class; newPassword : Unbounded_String) return NewPasswordEmail_Access;
    procedure process (This : in out NewPasswordEmail);
    procedure notifyStoreAdmin (This : in out NewPasswordEmail);
    procedure notifyUser (This : in out NewPasswordEmail);

@@ -34,14 +34,14 @@ package body org.allbinary.game.input.mapping.event.NullInputMappingEventListene
 
 
    --  throws Exception
-   procedure onInputMappingEvent (This : in out NullInputMappingEventListener; inputMappingEvent_Param : access InputMappingEvent'Class) is
-      inputMappingEvent : InputMappingEvent_Access := InputMappingEvent_Access (inputMappingEvent_Param);
+   procedure onInputMappingEvent (This : in out NullInputMappingEventListener; inputMappingEvent_Param : access InputMappingEvent_Package.InputMappingEvent'Class) is
+      inputMappingEvent : constant InputMappingEvent_Access := InputMappingEvent_Access (inputMappingEvent_Param);
    begin
         null;
    end onInputMappingEvent;
 
-   procedure onEvent (This : in out NullInputMappingEventListener; eventObject_Param : access AllBinaryEventObject'Class) is
-      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+   procedure onEvent (This : in out NullInputMappingEventListener; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
+      eventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
    begin
         null;
    end onEvent;

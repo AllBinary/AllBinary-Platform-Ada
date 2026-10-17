@@ -38,13 +38,13 @@ package body org.allbinary.image.ImageCache_Package is
    end Create;
 
    procedure addListener (This : in out ImageCache; renderer_Param : access Java_Object'Class) is
-      renderer : Java_Object_Access := Java_Object_Access (renderer_Param);
+      renderer : constant Java_Object_Access := Java_Object_Access (renderer_Param);
    begin
         null;
    end addListener;
 
    function getIndex (This : in out ImageCache; key_Param : access Java_Object'Class) return Integer is
-      key : Java_Object_Access := Java_Object_Access (key_Param);
+      key : constant Java_Object_Access := Java_Object_Access (key_Param);
       gdResources : GDResources_Access;
       resourceStringArray : Unbounded_String_Array_Access;
       size : Integer;
@@ -93,7 +93,7 @@ package body org.allbinary.image.ImageCache_Package is
 
    --  throws Exception
    function getWithKey (This : in out ImageCache; key_Param : access Java_Object'Class) return Image_Access is
-      key : Java_Object_Access := Java_Object_Access (key_Param);
+      key : constant Java_Object_Access := Java_Object_Access (key_Param);
       image : Image_Access;
       resourceUtil : ResourceUtil_Access;
       resourceInputStream : InputStream_Access;

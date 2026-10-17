@@ -38,9 +38,9 @@ package org.allbinary.game.physics.velocity.DragVelocityBehavior_Package is
 
    procedure Initialize (This : in out DragVelocityBehavior'Class);
    function Create return DragVelocityBehavior_Access;
-   procedure reduce (This : in out DragVelocityBehavior; velocityProperties_Param : access BasicVelocityProperties'Class; nominator : Integer; denominator : Integer);
-   procedure reduceX (This : in out DragVelocityBehavior; velocityProperties_Param : access BasicVelocityProperties'Class; nominator : Integer; denominator : Integer);
-   procedure reduceY (This : in out DragVelocityBehavior; velocityProperties_Param : access BasicVelocityProperties'Class; nominator : Integer; denominator : Integer);
+   procedure reduce (This : in out DragVelocityBehavior; velocityProperties_Param : access BasicVelocityProperties_Package.BasicVelocityProperties'Class; nominator : Integer; denominator : Integer);
+   procedure reduceX (This : in out DragVelocityBehavior; velocityProperties_Param : access BasicVelocityProperties_Package.BasicVelocityProperties'Class; nominator : Integer; denominator : Integer);
+   procedure reduceY (This : in out DragVelocityBehavior; velocityProperties_Param : access BasicVelocityProperties_Package.BasicVelocityProperties'Class; nominator : Integer; denominator : Integer);
 
 end org.allbinary.game.physics.velocity.DragVelocityBehavior_Package;
 

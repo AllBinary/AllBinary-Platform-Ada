@@ -53,17 +53,17 @@ package org.allbinary.android.activity.MidletActivityBase_Package is
 
    procedure Initialize (This : in out MidletActivityBase'Class);
    function Create return MidletActivityBase_Access;
-   procedure onGameFeatureChange (This : in out MidletActivityBase; gameFeatureEvent_Param : access GameFeatureEvent'Class);
-   procedure onEvent (This : in out MidletActivityBase; eventObject_Param : access AllBinaryEventObject'Class);
-   procedure onGameInitialized (This : in out MidletActivityBase; gameInitializedEvent_Param : access GameInitializedEvent'Class);
+   procedure onGameFeatureChange (This : in out MidletActivityBase; gameFeatureEvent_Param : access GameFeatureEvent_Package.GameFeatureEvent'Class);
+   procedure onEvent (This : in out MidletActivityBase; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class);
+   procedure onGameInitialized (This : in out MidletActivityBase; gameInitializedEvent_Param : access GameInitializedEvent_Package.GameInitializedEvent'Class);
    procedure onSetProgress (This : in out MidletActivityBase; value : Integer; text : Unbounded_String);
    procedure onDismissProgress (This : in out MidletActivityBase; animationSequence : Integer_Array_Access);
    procedure onShowProgress (This : in out MidletActivityBase; indeterminate : Boolean; animationSequence : Integer_Array_Access);
    function getRootView (This : in out MidletActivityBase) return View_Access;
    function getView (This : in out MidletActivityBase) return View_Access;
-   procedure setKeyInputView (This : in out MidletActivityBase; keyInputView_Param : access View'Class);
-   function onGenericMotionEvent (This : in out MidletActivityBase; event_Param : access MotionEvent'Class) return Boolean;
-   procedure onGenericMotionEvent (This : in out MidletActivityBase; event_Param : access MotionEvent'Class);
+   procedure setKeyInputView (This : in out MidletActivityBase; keyInputView_Param : access View_Package.View'Class);
+   function onGenericMotionEvent (This : in out MidletActivityBase; event_Param : access MotionEvent_Package.MotionEvent'Class) return Boolean;
+   procedure onGenericMotionEvent (This : in out MidletActivityBase; event_Param : access MotionEvent_Package.MotionEvent'Class);
 
 end org.allbinary.android.activity.MidletActivityBase_Package;
 

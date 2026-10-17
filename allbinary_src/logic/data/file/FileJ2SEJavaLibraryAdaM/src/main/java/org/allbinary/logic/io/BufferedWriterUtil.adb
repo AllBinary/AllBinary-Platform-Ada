@@ -71,8 +71,8 @@ package body org.allbinary.logic.io.BufferedWriterUtil_Package is
    end overwrite;
 
    --  throws Exception
-   procedure overwrite (This : in out BufferedWriterUtil; abFile_Param : access AbFile'Class; data : Unbounded_String) is
-      abFile : AbFile_Access := AbFile_Access (abFile_Param);
+   procedure overwrite (This : in out BufferedWriterUtil; abFile_Param : access AbFile_Package.AbFile'Class; data : Unbounded_String) is
+      abFile : constant AbFile_Access := AbFile_Access (abFile_Param);
       name : Unbounded_String;
       abFileDirectory : AbFile_Access;
       stringBuilder : StringMaker_Access;
@@ -98,8 +98,8 @@ package body org.allbinary.logic.io.BufferedWriterUtil_Package is
    end overwrite;
 
    --  throws Exception
-   procedure write (This : in out BufferedWriterUtil; abFile_Param : access AbFile'Class; data : Unbounded_String) is
-      abFile : AbFile_Access := AbFile_Access (abFile_Param);
+   procedure write (This : in out BufferedWriterUtil; abFile_Param : access AbFile_Package.AbFile'Class; data : Unbounded_String) is
+      abFile : constant AbFile_Access := AbFile_Access (abFile_Param);
       fileOut : BufferedWriter_Access;
    begin
         fileOut := BufferedWriter_Package.Create (FileWriter_Package.Create (AbFileNativeUtil_Package.get (abFile)));

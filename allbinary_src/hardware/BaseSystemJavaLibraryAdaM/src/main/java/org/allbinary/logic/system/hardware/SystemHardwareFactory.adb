@@ -42,8 +42,8 @@ package body org.allbinary.logic.system.hardware.SystemHardwareFactory_Package i
       return This;
    end Create;
 
-   function getInstance (This : in out SystemHardwareFactory; operatingSystemInterface_Param : access GenericOperatingSystem'Class) return HardwareInterface_Access is
-      operatingSystemInterface : GenericOperatingSystem_Access := GenericOperatingSystem_Access (operatingSystemInterface_Param);
+   function getInstance (This : in out SystemHardwareFactory; operatingSystemInterface_Param : access GenericOperatingSystem_Package.GenericOperatingSystem'Class) return HardwareInterface_Access is
+      operatingSystemInterface : constant GenericOperatingSystem_Access := GenericOperatingSystem_Access (operatingSystemInterface_Param);
    begin
         begin
             if (This.hardwareInterface) = (NoHardware_Package.getInstance) then
@@ -76,7 +76,7 @@ package body org.allbinary.logic.system.hardware.SystemHardwareFactory_Package i
         return osBuffer.toString;
    end static_toString;
 
-   procedure getInstance (This : in out SystemHardwareFactory; operatingSystemInterface_Param : access GenericOperatingSystem'Class) is
+   procedure getInstance (This : in out SystemHardwareFactory; operatingSystemInterface_Param : access GenericOperatingSystem_Package.GenericOperatingSystem'Class) is
       Java_Result : constant HardwareInterface_Access := SystemHardwareFactory'Class (This).getInstance (operatingSystemInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

@@ -26,8 +26,8 @@ package body org.allbinary.logic.system.loader.AbeClassLoader_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AbeClassLoader'Class; parent_Param : access ClassLoader'Class; key : Unbounded_String) is
-      parent : ClassLoader_Access := ClassLoader_Access (parent_Param);
+   procedure Initialize (This : in out AbeClassLoader'Class; parent_Param : access ClassLoader_Package.ClassLoader'Class; key : Unbounded_String) is
+      parent : constant ClassLoader_Access := ClassLoader_Access (parent_Param);
    begin
         ClassLoader_Package.Initialize (This, parent);
         Initialize_Fields (This);
@@ -35,7 +35,7 @@ package body org.allbinary.logic.system.loader.AbeClassLoader_Package is
         AbeClassLoader_Package.PATH := Java_Image (org_Package.allbinary.globals.URLGLOBALS.getWebappPath) & To_Unbounded_String ("WEB-INF/classes/");
    end Initialize;
 
-   function Create (parent_Param : access ClassLoader'Class; key : Unbounded_String) return AbeClassLoader_Access is
+   function Create (parent_Param : access ClassLoader_Package.ClassLoader'Class; key : Unbounded_String) return AbeClassLoader_Access is
       This : constant AbeClassLoader_Access := new AbeClassLoader;
    begin
       AbeClassLoader_Package.Initialize (This.all, parent_Param, key);

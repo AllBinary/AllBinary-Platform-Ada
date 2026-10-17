@@ -40,9 +40,9 @@ package body org.allbinary.game.collision.layer.AllBinaryCollisionManager_Packag
    end getInstance;
 
    --  throws Exception
-   procedure process (This : in out AllBinaryCollisionManager; layerManager_Param : access LayerManager'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface'Class; startIndex : Integer) is
-      layerManager : LayerManager_Access := LayerManager_Access (layerManager_Param);
-      collidableInterfaceCompositeInterface : CollidableInterfaceCompositeInterface_Access := CollidableInterfaceCompositeInterface_Access (collidableInterfaceCompositeInterface_Param);
+   procedure process (This : in out AllBinaryCollisionManager; layerManager_Param : access LayerManager_Package.LayerManager'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface_Package.CollidableInterfaceCompositeInterface'Class; startIndex : Integer) is
+      layerManager : constant LayerManager_Access := LayerManager_Access (layerManager_Param);
+      collidableInterfaceCompositeInterface : constant CollidableInterfaceCompositeInterface_Access := CollidableInterfaceCompositeInterface_Access (collidableInterfaceCompositeInterface_Param);
       size : Integer;
       collidableInterfaceCompositeInterface2 : CollidableInterfaceCompositeInterface_Access;
       index : Integer;
@@ -55,10 +55,10 @@ package body org.allbinary.game.collision.layer.AllBinaryCollisionManager_Packag
    end process;
 
    --  throws Exception
-   procedure collide (This : in out AllBinaryCollisionManager; layerManager_Param : access LayerManager'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface'Class; collidableInterfaceCompositeInterface2_Param : access CollidableInterfaceCompositeInterface'Class) is
-      layerManager : LayerManager_Access := LayerManager_Access (layerManager_Param);
-      collidableInterfaceCompositeInterface : CollidableInterfaceCompositeInterface_Access := CollidableInterfaceCompositeInterface_Access (collidableInterfaceCompositeInterface_Param);
-      collidableInterfaceCompositeInterface2 : CollidableInterfaceCompositeInterface_Access := CollidableInterfaceCompositeInterface_Access (collidableInterfaceCompositeInterface2_Param);
+   procedure collide (This : in out AllBinaryCollisionManager; layerManager_Param : access LayerManager_Package.LayerManager'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface_Package.CollidableInterfaceCompositeInterface'Class; collidableInterfaceCompositeInterface2_Param : access CollidableInterfaceCompositeInterface_Package.CollidableInterfaceCompositeInterface'Class) is
+      layerManager : constant LayerManager_Access := LayerManager_Access (layerManager_Param);
+      collidableInterfaceCompositeInterface : constant CollidableInterfaceCompositeInterface_Access := CollidableInterfaceCompositeInterface_Access (collidableInterfaceCompositeInterface_Param);
+      collidableInterfaceCompositeInterface2 : constant CollidableInterfaceCompositeInterface_Access := CollidableInterfaceCompositeInterface_Access (collidableInterfaceCompositeInterface2_Param);
       collidableBase2 : CollidableBaseBehavior_Access;
       collidableBase : CollidableBaseBehavior_Access;
    begin

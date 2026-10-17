@@ -33,13 +33,13 @@ package body org.allbinary.game.midlet.LicenseCheckRunnableFactory_Package is
    end Create;
 
 
-   function getInstance (This : in out LicenseCheckRunnableFactory; specialDemoGameMidlet_Param : access SpecialDemoGameMidlet'Class) return ABRunnable_Access is
-      specialDemoGameMidlet : SpecialDemoGameMidlet_Access := SpecialDemoGameMidlet_Access (specialDemoGameMidlet_Param);
+   function getInstance (This : in out LicenseCheckRunnableFactory; specialDemoGameMidlet_Param : access SpecialDemoGameMidlet_Package.SpecialDemoGameMidlet'Class) return ABRunnable_Access is
+      specialDemoGameMidlet : constant SpecialDemoGameMidlet_Access := SpecialDemoGameMidlet_Access (specialDemoGameMidlet_Param);
    begin
         return NullABRunnable_Package.getInstance;
    end getInstance;
 
-   procedure getInstance (This : in out LicenseCheckRunnableFactory; specialDemoGameMidlet_Param : access SpecialDemoGameMidlet'Class) is
+   procedure getInstance (This : in out LicenseCheckRunnableFactory; specialDemoGameMidlet_Param : access SpecialDemoGameMidlet_Package.SpecialDemoGameMidlet'Class) is
       Java_Result : constant ABRunnable_Access := LicenseCheckRunnableFactory'Class (This).getInstance (specialDemoGameMidlet_Param);
       pragma Unreferenced (Java_Result);
    begin

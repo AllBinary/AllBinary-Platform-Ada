@@ -40,12 +40,12 @@ package org.allbinary.game.layer.special.SpecialGameInputInterface_Package is
    procedure left (This : in out SpecialGameInputInterface) is abstract;
    procedure strafeLeft (This : in out SpecialGameInputInterface) is abstract;
    procedure strafeRight (This : in out SpecialGameInputInterface) is abstract;
-   procedure fire (This : in out SpecialGameInputInterface; layerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class) is abstract;
-   procedure special1 (This : in out SpecialGameInputInterface; layerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class) is abstract;
-   procedure special2 (This : in out SpecialGameInputInterface; layerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class) is abstract;
-   procedure special3 (This : in out SpecialGameInputInterface; layerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class) is abstract;
-   procedure special4 (This : in out SpecialGameInputInterface; layerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class) is abstract;
-   procedure special5 (This : in out SpecialGameInputInterface; layerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class) is abstract;
+   procedure fire (This : in out SpecialGameInputInterface; layerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class) is abstract;
+   procedure special1 (This : in out SpecialGameInputInterface; layerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class) is abstract;
+   procedure special2 (This : in out SpecialGameInputInterface; layerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class) is abstract;
+   procedure special3 (This : in out SpecialGameInputInterface; layerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class) is abstract;
+   procedure special4 (This : in out SpecialGameInputInterface; layerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class) is abstract;
+   procedure special5 (This : in out SpecialGameInputInterface; layerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class) is abstract;
 
 end org.allbinary.game.layer.special.SpecialGameInputInterface_Package;
 

@@ -67,8 +67,8 @@ package org.allbinary.image.ImageCache_Package is
    procedure get (This : in out ImageCache; key_Param : access Java_Object'Class);
    function getIndex (This : in out ImageCache; key_Param : access Java_Object'Class) return Integer;
    procedure getIndex (This : in out ImageCache; key_Param : access Java_Object'Class);
-   function createImage (This : in out ImageCache; key_Param : access Java_Object'Class; inputStream_Param : access InputStream'Class) return Image_Access;
-   procedure createImage (This : in out ImageCache; key_Param : access Java_Object'Class; inputStream_Param : access InputStream'Class);
+   function createImage (This : in out ImageCache; key_Param : access Java_Object'Class; inputStream_Param : access InputStream_Package.InputStream'Class) return Image_Access;
+   procedure createImage (This : in out ImageCache; key_Param : access Java_Object'Class; inputStream_Param : access InputStream_Package.InputStream'Class);
    function isLazy (This : in out ImageCache) return Boolean;
 
 end org.allbinary.image.ImageCache_Package;

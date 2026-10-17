@@ -57,8 +57,8 @@ package body org.allbinary.data.tables.generator.IdGeneratorEntity_Package is
         return Long_Long_Integer'Value (To_String (value_Case));
    end get;
 
-   procedure insert (This : in out IdGeneratorEntity; values_Param : access BasicArrayList'Class) is
-      values : BasicArrayList_Access := BasicArrayList_Access (values_Param);
+   procedure insert (This : in out IdGeneratorEntity; values_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      values : constant BasicArrayList_Access := BasicArrayList_Access (values_Param);
    begin
         begin
             AbSqlBean (This).insert (values);
@@ -97,8 +97,8 @@ package body org.allbinary.data.tables.generator.IdGeneratorEntity_Package is
         This.update (map);
    end update;
 
-   procedure update (This : in out IdGeneratorEntity; hashMap_Param : access HashMap'Class) is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+   procedure update (This : in out IdGeneratorEntity; hashMap_Param : access HashMap_Package.HashMap'Class) is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
         AbSqlBean (This).updateWhere (This.NAME, Unbounded_String (hashMap.get (This.NAME)), hashMap);
    end update;

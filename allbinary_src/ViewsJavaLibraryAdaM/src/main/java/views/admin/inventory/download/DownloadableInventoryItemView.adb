@@ -28,8 +28,8 @@ package body views.admin.inventory.download.DownloadableInventoryItemView_Packag
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out DownloadableInventoryItemView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out DownloadableInventoryItemView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
@@ -37,22 +37,22 @@ package body views.admin.inventory.download.DownloadableInventoryItemView_Packag
         This.getFormData;
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return DownloadableInventoryItemView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return DownloadableInventoryItemView_Access is
       This : constant DownloadableInventoryItemView_Access := new DownloadableInventoryItemView;
    begin
       DownloadableInventoryItemView_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out DownloadableInventoryItemView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; empty : Unbounded_String) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out DownloadableInventoryItemView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; empty : Unbounded_String) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
         This.request := HttpServletRequest_Access (This.getPageContext.getRequest);
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; empty : Unbounded_String) return DownloadableInventoryItemView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; empty : Unbounded_String) return DownloadableInventoryItemView_Access is
       This : constant DownloadableInventoryItemView_Access := new DownloadableInventoryItemView;
    begin
       DownloadableInventoryItemView_Package.Initialize (This.all, transformInfoInterface_Param, empty);
@@ -101,8 +101,8 @@ package body views.admin.inventory.download.DownloadableInventoryItemView_Packag
    end view;
 
    --  throws Exception
-   procedure processFile (This : in out DownloadableInventoryItemView; fileItem_Param : access FileItem'Class) is
-      fileItem : FileItem_Access := FileItem_Access (fileItem_Param);
+   procedure processFile (This : in out DownloadableInventoryItemView; fileItem_Param : access FileItem_Package.FileItem'Class) is
+      fileItem : constant FileItem_Access := FileItem_Access (fileItem_Param);
       fileName : Unbounded_String;
       fullPath : Unbounded_String;
       itemResourceFile : AbFile_Access;
@@ -126,8 +126,8 @@ package body views.admin.inventory.download.DownloadableInventoryItemView_Packag
    end processFile;
 
    --  throws Exception
-   procedure unzip (This : in out DownloadableInventoryItemView; fileItem_Param : access FileItem'Class) is
-      fileItem : FileItem_Access := FileItem_Access (fileItem_Param);
+   procedure unzip (This : in out DownloadableInventoryItemView; fileItem_Param : access FileItem_Package.FileItem'Class) is
+      fileItem : constant FileItem_Access := FileItem_Access (fileItem_Param);
       fileName : Unbounded_String;
       fullPath : Unbounded_String;
       stringBuffer : StringMaker_Access;
@@ -163,8 +163,8 @@ package body views.admin.inventory.download.DownloadableInventoryItemView_Packag
         return stringBuffer.toString;
    end getItemFilePath;
 
-   procedure setRequestHashMap (This : in out DownloadableInventoryItemView; requestHashMap_Param : access HashMap'Class) is
-      requestHashMap : HashMap_Access := HashMap_Access (requestHashMap_Param);
+   procedure setRequestHashMap (This : in out DownloadableInventoryItemView; requestHashMap_Param : access HashMap_Package.HashMap'Class) is
+      requestHashMap : constant HashMap_Access := HashMap_Access (requestHashMap_Param);
    begin
         This.requestHashMap := requestHashMap;
    end setRequestHashMap;

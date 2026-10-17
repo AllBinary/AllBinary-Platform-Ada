@@ -44,7 +44,7 @@ package org.allbinary.servlet.BlisketServletUtil_Package is
    procedure Initialize (This : in out BlisketServletUtil'Class);
    function Create return BlisketServletUtil_Access;
    function getInstance return BlisketServletUtil_Access;
-   procedure init (This : in out BlisketServletUtil; request_Param : access HttpServletRequest'Class);
+   procedure init (This : in out BlisketServletUtil; request_Param : access HttpServletRequest_Package.HttpServletRequest'Class);
 
 end org.allbinary.servlet.BlisketServletUtil_Package;
 

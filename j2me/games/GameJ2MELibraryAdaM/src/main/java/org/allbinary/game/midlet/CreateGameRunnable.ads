@@ -54,8 +54,8 @@ package org.allbinary.game.midlet.CreateGameRunnable_Package is
       startGameMidletEvent : DemoGameMidletEvent_Access;
    end record;
 
-   procedure Initialize (This : in out CreateGameRunnable'Class; demoGameMidlet_Param : access DemoGameMidlet'Class; hashtable_Param : access ABHashtable'Class);
-   function Create (demoGameMidlet_Param : access DemoGameMidlet'Class; hashtable_Param : access ABHashtable'Class) return CreateGameRunnable_Access;
+   procedure Initialize (This : in out CreateGameRunnable'Class; demoGameMidlet_Param : access DemoGameMidlet_Package.DemoGameMidlet'Class; hashtable_Param : access ABHashtable_Package.ABHashtable'Class);
+   function Create (demoGameMidlet_Param : access DemoGameMidlet_Package.DemoGameMidlet'Class; hashtable_Param : access ABHashtable_Package.ABHashtable'Class) return CreateGameRunnable_Access;
    procedure run (This : in out CreateGameRunnable);
 
 end org.allbinary.game.midlet.CreateGameRunnable_Package;

@@ -44,16 +44,16 @@ package org.allbinary.logic.io.file.visitor.BooleanFileVisitor_Package is
       filterStringBasicArrayList : BasicArrayList_Access;
    end record;
 
-   procedure Initialize (This : in out BooleanFileVisitor'Class; filterStringBasicArrayList_Param : access BasicArrayList'Class);
-   function Create (filterStringBasicArrayList_Param : access BasicArrayList'Class) return BooleanFileVisitor_Access;
+   procedure Initialize (This : in out BooleanFileVisitor'Class; filterStringBasicArrayList_Param : access BasicArrayList_Package.BasicArrayList'Class);
+   function Create (filterStringBasicArrayList_Param : access BasicArrayList_Package.BasicArrayList'Class) return BooleanFileVisitor_Access;
    function visit (This : in out BooleanFileVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access;
    procedure visit (This : in out BooleanFileVisitor; anyType_Param : access Java_Object'Class);
-   function visit (This : in out BooleanFileVisitor; file_Param : access AbFile'Class) return Boolean;
-   procedure visit (This : in out BooleanFileVisitor; file_Param : access AbFile'Class);
+   function visit (This : in out BooleanFileVisitor; file_Param : access AbFile_Package.AbFile'Class) return Boolean;
+   procedure visit (This : in out BooleanFileVisitor; file_Param : access AbFile_Package.AbFile'Class);
    function getFilterStringBasicArrayList (This : in out BooleanFileVisitor) return BasicArrayList_Access;
-   procedure setFilterStringBasicArrayList (This : in out BooleanFileVisitor; filterStringBasicArrayList_Param : access BasicArrayList'Class);
-   function visit (This : in out BooleanFileVisitor; file_Param : access AbFile'Class; fileNameString : Unbounded_String) return Boolean;
-   procedure visit (This : in out BooleanFileVisitor; file_Param : access AbFile'Class; fileNameString : Unbounded_String);
+   procedure setFilterStringBasicArrayList (This : in out BooleanFileVisitor; filterStringBasicArrayList_Param : access BasicArrayList_Package.BasicArrayList'Class);
+   function visit (This : in out BooleanFileVisitor; file_Param : access AbFile_Package.AbFile'Class; fileNameString : Unbounded_String) return Boolean;
+   procedure visit (This : in out BooleanFileVisitor; file_Param : access AbFile_Package.AbFile'Class; fileNameString : Unbounded_String);
 
 end org.allbinary.logic.io.file.visitor.BooleanFileVisitor_Package;
 

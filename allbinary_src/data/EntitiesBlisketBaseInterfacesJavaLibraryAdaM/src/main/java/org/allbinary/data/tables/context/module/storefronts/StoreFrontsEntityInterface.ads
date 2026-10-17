@@ -40,8 +40,8 @@ package org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntityIn
    function getStoreFrontInterface (This : in out StoreFrontsEntityInterface; name : Unbounded_String) return StoreFrontInterface_Access is abstract;
    function getStoreFrontNames (This : in out StoreFrontsEntityInterface) return BasicArrayList_Access is abstract;
    procedure delete (This : in out StoreFrontsEntityInterface; value : Unbounded_String) is abstract;
-   procedure insert (This : in out StoreFrontsEntityInterface; values_Param : access BasicArrayList'Class) is abstract;
-   procedure update (This : in out StoreFrontsEntityInterface; updatedValues_Param : access HashMap'Class) is abstract;
+   procedure insert (This : in out StoreFrontsEntityInterface; values_Param : access BasicArrayList_Package.BasicArrayList'Class) is abstract;
+   procedure update (This : in out StoreFrontsEntityInterface; updatedValues_Param : access HashMap_Package.HashMap'Class) is abstract;
 
 end org.allbinary.data.tables.context.module.storefronts.StoreFrontsEntityInterface_Package;
 

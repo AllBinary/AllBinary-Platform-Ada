@@ -38,7 +38,7 @@ package body org.allbinary.game.ag.ai.LastKeyAIVisitor_Package is
    end Create;
 
    function visit (This : in out LastKeyAIVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
       basicAI : BasicAI_Access;
       key : Integer;
       commonStrings : CommonStrings_Access;

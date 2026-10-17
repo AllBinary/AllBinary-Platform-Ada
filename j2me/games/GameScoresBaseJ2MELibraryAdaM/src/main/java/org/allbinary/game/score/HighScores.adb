@@ -41,8 +41,8 @@ package body org.allbinary.game.score.HighScores_Package is
       return This;
    end Create;
 
-   procedure setList (This : in out HighScores; orderedHighScoresList_Param : access BasicArrayList'Class) is
-      orderedHighScoresList : BasicArrayList_Access := BasicArrayList_Access (orderedHighScoresList_Param);
+   procedure setList (This : in out HighScores; orderedHighScoresList_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      orderedHighScoresList : constant BasicArrayList_Access := BasicArrayList_Access (orderedHighScoresList_Param);
    begin
         This.orderedHighScoresList := orderedHighScoresList;
    end setList;
@@ -62,8 +62,8 @@ package body org.allbinary.game.score.HighScores_Package is
         return This.getList.size;
    end getTotal;
 
-   procedure addHighScore (This : in out HighScores; newHighScore_Param : access HighScore'Class) is
-      newHighScore : HighScore_Access := HighScore_Access (newHighScore_Param);
+   procedure addHighScore (This : in out HighScores; newHighScore_Param : access HighScore_Package.HighScore'Class) is
+      newHighScore : constant HighScore_Access := HighScore_Access (newHighScore_Param);
    begin
         This.orderedHighScoresList.add (newHighScore);
    end addHighScore;
@@ -84,8 +84,8 @@ package body org.allbinary.game.score.HighScores_Package is
    end getColumnTwoHeading;
 
    --  throws Exception
-   function isBestScore (This : in out HighScores; newHighScore_Param : access HighScore'Class) return Boolean is
-      newHighScore : HighScore_Access := HighScore_Access (newHighScore_Param);
+   function isBestScore (This : in out HighScores; newHighScore_Param : access HighScore_Package.HighScore'Class) return Boolean is
+      newHighScore : constant HighScore_Access := HighScore_Access (newHighScore_Param);
    begin
         return False;
    end isBestScore;
@@ -102,7 +102,7 @@ package body org.allbinary.game.score.HighScores_Package is
         return stringBuffer.toString;
    end toString;
 
-   procedure isBestScore (This : in out HighScores; newHighScore_Param : access HighScore'Class) is
+   procedure isBestScore (This : in out HighScores; newHighScore_Param : access HighScore_Package.HighScore'Class) is
       Java_Result : constant Boolean := HighScores'Class (This).isBestScore (newHighScore_Param);
       pragma Unreferenced (Java_Result);
    begin

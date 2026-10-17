@@ -39,7 +39,7 @@ package body org.allbinary.logic.VectorUtil_Package is
    end getInstance;
 
    function getSize (This : in out VectorUtil; anyType_Param : access Java_Object'Class) return Integer is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
       vector : Vector_Access;
    begin
         vector := Vector_Access (anyType);
@@ -47,7 +47,7 @@ package body org.allbinary.logic.VectorUtil_Package is
    end getSize;
 
    function elementAt (This : in out VectorUtil; anyType_Param : access Java_Object'Class; index : Integer) return Java_Object_Access is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
       vector : Vector_Access;
    begin
         vector := Vector_Access (anyType);

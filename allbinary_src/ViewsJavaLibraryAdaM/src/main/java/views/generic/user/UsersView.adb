@@ -23,22 +23,22 @@ package body views.generic_Id.user.UsersView_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out UsersView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out UsersView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return UsersView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return UsersView_Access is
       This : constant UsersView_Access := new UsersView;
    begin
       UsersView_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
-   function toXmlNode (This : in out UsersView; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out UsersView; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       usersNode : Node_Access;
       size : Integer;
       userInterface : User_Access;
@@ -95,7 +95,7 @@ package body views.generic_Id.user.UsersView_Package is
         end;
    end view;
 
-   procedure toXmlNode (This : in out UsersView; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out UsersView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := UsersView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

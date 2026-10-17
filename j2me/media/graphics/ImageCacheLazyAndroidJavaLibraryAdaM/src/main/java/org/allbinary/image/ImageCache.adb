@@ -66,7 +66,7 @@ package body org.allbinary.image.ImageCache_Package is
 
    --  throws Exception
    function get (This : in out ImageCache; key_Param : access Java_Object'Class) return Image_Access is
-      key : Java_Object_Access := Java_Object_Access (key_Param);
+      key : constant Java_Object_Access := Java_Object_Access (key_Param);
       resourceUtil : ResourceUtil_Access;
       resourceId : Integer;
       image : Image_Access;
@@ -100,7 +100,7 @@ package body org.allbinary.image.ImageCache_Package is
    end get;
 
    function getIndex (This : in out ImageCache; key_Param : access Java_Object'Class) return Integer is
-      key : Java_Object_Access := Java_Object_Access (key_Param);
+      key : constant Java_Object_Access := Java_Object_Access (key_Param);
       gdResources : GDResources_Access;
       resourceStringArray : Unbounded_String_Array_Access;
       size : Integer;
@@ -119,9 +119,9 @@ package body org.allbinary.image.ImageCache_Package is
    end getIndex;
 
    --  throws Exception
-   function createImage (This : in out ImageCache; key_Param : access Java_Object'Class; inputStream_Param : access InputStream'Class) return Image_Access is
-      key : Java_Object_Access := Java_Object_Access (key_Param);
-      inputStream : InputStream_Access := InputStream_Access (inputStream_Param);
+   function createImage (This : in out ImageCache; key_Param : access Java_Object'Class; inputStream_Param : access InputStream_Package.InputStream'Class) return Image_Access is
+      key : constant Java_Object_Access := Java_Object_Access (key_Param);
+      inputStream : constant InputStream_Access := InputStream_Access (inputStream_Param);
    begin
         return Image_Package.createImageLater (Unbounded_String (key), -(1), -(1));
    end createImage;
@@ -152,7 +152,7 @@ package body org.allbinary.image.ImageCache_Package is
       null;
    end getIndex;
 
-   procedure createImage (This : in out ImageCache; key_Param : access Java_Object'Class; inputStream_Param : access InputStream'Class) is
+   procedure createImage (This : in out ImageCache; key_Param : access Java_Object'Class; inputStream_Param : access InputStream_Package.InputStream'Class) is
       Java_Result : constant Image_Access := ImageCache'Class (This).createImage (key_Param, inputStream_Param);
       pragma Unreferenced (Java_Result);
    begin

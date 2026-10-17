@@ -23,9 +23,9 @@ package body org.allbinary.media.image.comparison.motion.MotionRectanglesResults
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out MotionRectanglesResultsEvent'Class; anyType_Param : access Java_Object'Class; frame : Long_Long_Integer; motionRectangles_Param : access MotionRectangles'Class) is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
-      motionRectangles : MotionRectangles_Access := MotionRectangles_Access (motionRectangles_Param);
+   procedure Initialize (This : in out MotionRectanglesResultsEvent'Class; anyType_Param : access Java_Object'Class; frame : Long_Long_Integer; motionRectangles_Param : access MotionRectangles_Package.MotionRectangles'Class) is
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
+      motionRectangles : constant MotionRectangles_Access := MotionRectangles_Access (motionRectangles_Param);
    begin
         AllBinaryEventObject_Package.Initialize (This, anyType);
         Initialize_Fields (This);
@@ -33,7 +33,7 @@ package body org.allbinary.media.image.comparison.motion.MotionRectanglesResults
         This.setMotionRectangles (motionRectangles);
    end Initialize;
 
-   function Create (anyType_Param : access Java_Object'Class; frame : Long_Long_Integer; motionRectangles_Param : access MotionRectangles'Class) return MotionRectanglesResultsEvent_Access is
+   function Create (anyType_Param : access Java_Object'Class; frame : Long_Long_Integer; motionRectangles_Param : access MotionRectangles_Package.MotionRectangles'Class) return MotionRectanglesResultsEvent_Access is
       This : constant MotionRectanglesResultsEvent_Access := new MotionRectanglesResultsEvent;
    begin
       MotionRectanglesResultsEvent_Package.Initialize (This.all, anyType_Param, frame, motionRectangles_Param);
@@ -45,8 +45,8 @@ package body org.allbinary.media.image.comparison.motion.MotionRectanglesResults
         return This.motionRectangles;
    end getMotionRectangles;
 
-   procedure setMotionRectangles (This : in out MotionRectanglesResultsEvent; motionRectangles_Param : access MotionRectangles'Class) is
-      motionRectangles : MotionRectangles_Access := MotionRectangles_Access (motionRectangles_Param);
+   procedure setMotionRectangles (This : in out MotionRectanglesResultsEvent; motionRectangles_Param : access MotionRectangles_Package.MotionRectangles'Class) is
+      motionRectangles : constant MotionRectangles_Access := MotionRectangles_Access (motionRectangles_Param);
    begin
         This.motionRectangles := motionRectangles;
    end setMotionRectangles;

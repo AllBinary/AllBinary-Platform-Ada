@@ -74,7 +74,7 @@ package body org.allbinary.logic.string_Id.StringUtil_Package is
    end count;
 
    function toString (This : in out StringUtil; anyType_Param : access Java_Object'Class) return Unbounded_String is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         if (anyType) /= (null) then
             return anyType.toString;

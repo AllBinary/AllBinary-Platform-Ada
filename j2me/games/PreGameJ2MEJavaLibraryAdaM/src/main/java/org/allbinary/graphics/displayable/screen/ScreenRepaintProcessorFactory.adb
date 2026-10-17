@@ -39,8 +39,8 @@ package body org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFac
       return This;
    end Create;
 
-   function create (This : in out ScreenRepaintProcessorFactory; displayable_Param : access Displayable'Class) return Processor_Access is
-      displayable : Displayable_Access := Displayable_Access (displayable_Param);
+   function create (This : in out ScreenRepaintProcessorFactory; displayable_Param : access Displayable_Package.Displayable'Class) return Processor_Access is
+      displayable : constant Displayable_Access := Displayable_Access (displayable_Param);
    begin
         if not (J2MEUtil_Package.isJ2ME) then
             return ScreenRepaintProcessor_Package.Create (displayable);
@@ -49,7 +49,7 @@ package body org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFac
         end if;
    end create;
 
-   procedure create (This : in out ScreenRepaintProcessorFactory; displayable_Param : access Displayable'Class) is
+   procedure create (This : in out ScreenRepaintProcessorFactory; displayable_Param : access Displayable_Package.Displayable'Class) is
       Java_Result : constant Processor_Access := ScreenRepaintProcessorFactory'Class (This).create (displayable_Param);
       pragma Unreferenced (Java_Result);
    begin

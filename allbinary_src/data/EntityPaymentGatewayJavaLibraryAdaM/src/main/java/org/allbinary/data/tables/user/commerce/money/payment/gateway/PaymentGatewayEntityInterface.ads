@@ -38,11 +38,11 @@ package org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGat
    type PaymentGatewayEntityInterface_Access is access all PaymentGatewayEntityInterface'Class;
    type PaymentGatewayEntityInterface_Access_Array is array (Natural range <>) of PaymentGatewayEntityInterface_Access;
    type PaymentGatewayEntityInterface_Access_Array_Access is access all PaymentGatewayEntityInterface_Access_Array;
-   function getPaymentGatewayInterface (This : in out PaymentGatewayEntityInterface; storeName : Unbounded_String; paymentType_Param : access BasicPaymentType'Class) return PaymentGatewayInterface_Access is abstract;
+   function getPaymentGatewayInterface (This : in out PaymentGatewayEntityInterface; storeName : Unbounded_String; paymentType_Param : access BasicPaymentType_Package.BasicPaymentType'Class) return PaymentGatewayInterface_Access is abstract;
    function findPaymentTypeVectorByStore (This : in out PaymentGatewayEntityInterface; storeName : Unbounded_String) return BasicArrayList_Access is abstract;
-   procedure remove (This : in out PaymentGatewayEntityInterface; storeName : Unbounded_String; paymentType_Param : access BasicPaymentType'Class) is abstract;
-   procedure add (This : in out PaymentGatewayEntityInterface; paymentGatewayInterface_Param : access PaymentGatewayInterface'Class) is abstract;
-   procedure update (This : in out PaymentGatewayEntityInterface; paymentGatewayInterface_Param : access PaymentGatewayInterface'Class) is abstract;
+   procedure remove (This : in out PaymentGatewayEntityInterface; storeName : Unbounded_String; paymentType_Param : access BasicPaymentType_Package.BasicPaymentType'Class) is abstract;
+   procedure add (This : in out PaymentGatewayEntityInterface; paymentGatewayInterface_Param : access PaymentGatewayInterface_Package.PaymentGatewayInterface'Class) is abstract;
+   procedure update (This : in out PaymentGatewayEntityInterface; paymentGatewayInterface_Param : access PaymentGatewayInterface_Package.PaymentGatewayInterface'Class) is abstract;
 
 end org.allbinary.data.tables.user.commerce.money.payment.gateway.PaymentGatewayEntityInterface_Package;
 

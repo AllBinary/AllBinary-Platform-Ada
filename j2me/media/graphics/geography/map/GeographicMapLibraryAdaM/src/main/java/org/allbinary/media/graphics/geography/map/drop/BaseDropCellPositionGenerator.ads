@@ -43,10 +43,10 @@ package org.allbinary.media.graphics.geography.map.drop.BaseDropCellPositionGene
    procedure Initialize (This : in out BaseDropCellPositionGenerator'Class);
    function Create return BaseDropCellPositionGenerator_Access;
    function getName (This : in out BaseDropCellPositionGenerator) return Unbounded_String;
-   procedure update (This : in out BaseDropCellPositionGenerator; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class; geographicMapInterface_Param : access BasicGeographicMap'Class);
-   function isDropAllowedAt (This : in out BaseDropCellPositionGenerator; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return Boolean;
-   procedure isDropAllowedAt (This : in out BaseDropCellPositionGenerator; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class);
-   procedure processTick (This : in out BaseDropCellPositionGenerator; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class);
+   procedure update (This : in out BaseDropCellPositionGenerator; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager_Package.AllBinaryGameLayerManager'Class; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class);
+   function isDropAllowedAt (This : in out BaseDropCellPositionGenerator; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) return Boolean;
+   procedure isDropAllowedAt (This : in out BaseDropCellPositionGenerator; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class);
+   procedure processTick (This : in out BaseDropCellPositionGenerator; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class);
 
 end org.allbinary.media.graphics.geography.map.drop.BaseDropCellPositionGenerator_Package;
 

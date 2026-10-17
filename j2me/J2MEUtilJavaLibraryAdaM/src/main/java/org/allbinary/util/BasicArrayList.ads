@@ -49,12 +49,12 @@ package org.allbinary.util.BasicArrayList_Package is
    procedure removeAt (This : in out BasicArrayList; index : Integer);
    function remove (This : in out BasicArrayList; anyType_Param : access Java_Object'Class) return Boolean;
    procedure remove (This : in out BasicArrayList; anyType_Param : access Java_Object'Class);
-   function removeAll2 (This : in out BasicArrayList; list_Param : access BasicArrayList'Class) return Boolean;
-   procedure removeAll2 (This : in out BasicArrayList; list_Param : access BasicArrayList'Class);
-   function addAll2 (This : in out BasicArrayList; list_Param : access BasicArrayList'Class) return Boolean;
-   procedure addAll2 (This : in out BasicArrayList; list_Param : access BasicArrayList'Class);
-   function addAllList (This : in out BasicArrayList; list_Param : access BasicArrayList'Class) return Boolean;
-   procedure addAllList (This : in out BasicArrayList; list_Param : access BasicArrayList'Class);
+   function removeAll2 (This : in out BasicArrayList; list_Param : access BasicArrayList_Package.BasicArrayList'Class) return Boolean;
+   procedure removeAll2 (This : in out BasicArrayList; list_Param : access BasicArrayList_Package.BasicArrayList'Class);
+   function addAll2 (This : in out BasicArrayList; list_Param : access BasicArrayList_Package.BasicArrayList'Class) return Boolean;
+   procedure addAll2 (This : in out BasicArrayList; list_Param : access BasicArrayList_Package.BasicArrayList'Class);
+   function addAllList (This : in out BasicArrayList; list_Param : access BasicArrayList_Package.BasicArrayList'Class) return Boolean;
+   procedure addAllList (This : in out BasicArrayList; list_Param : access BasicArrayList_Package.BasicArrayList'Class);
    function addAll (This : in out BasicArrayList; newObjectArray : Java_Object_Access_Array_Access) return Boolean;
    procedure addAll (This : in out BasicArrayList; newObjectArray : Java_Object_Access_Array_Access);
    procedure ensureCapacity (This : in out BasicArrayList; minSize : Integer);

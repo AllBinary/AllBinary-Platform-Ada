@@ -64,10 +64,10 @@ package org.allbinary.layer.Layer_Package is
    function getDepth (This : in out Layer) return Long_Long_Integer;
    procedure setVisible (This : in out Layer; visible : Boolean);
    function isVisible (This : in out Layer) return Boolean;
-   procedure paint (This : in out Layer; graphics_Param : access Graphics'Class);
+   procedure paint (This : in out Layer; graphics_Param : access Graphics_Package.Graphics'Class);
    procedure setLayerWidth (This : in out Layer; width : Integer);
    procedure setLayerHeight (This : in out Layer; height : Integer);
-   procedure toStringAppend (This : in out Layer; stringBuffer_Param : access StringMaker'Class);
+   procedure toStringAppend (This : in out Layer; stringBuffer_Param : access StringMaker_Package.StringMaker'Class);
 
 end org.allbinary.layer.Layer_Package;
 

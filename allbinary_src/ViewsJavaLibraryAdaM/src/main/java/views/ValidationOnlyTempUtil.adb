@@ -41,8 +41,8 @@ package body views.ValidationOnlyTempUtil_Package is
    end Create;
 
    --  throws Exception
-   function view (This : in out ValidationOnlyTempUtil; validationComponentInterface_Param : access ValidationComponentInterface'Class) return Unbounded_String is
-      validationComponentInterface : ValidationComponentInterface_Access := ValidationComponentInterface_Access (validationComponentInterface_Param);
+   function view (This : in out ValidationOnlyTempUtil; validationComponentInterface_Param : access ValidationComponentInterface_Package.ValidationComponentInterface'Class) return Unbounded_String is
+      validationComponentInterface : constant ValidationComponentInterface_Access := ValidationComponentInterface_Access (validationComponentInterface_Param);
       commonStrings : CommonStrings_Access;
    begin
         commonStrings := CommonStrings_Package.getInstance;
@@ -64,7 +64,7 @@ package body views.ValidationOnlyTempUtil_Package is
         end;
    end view;
 
-   procedure view (This : in out ValidationOnlyTempUtil; validationComponentInterface_Param : access ValidationComponentInterface'Class) is
+   procedure view (This : in out ValidationOnlyTempUtil; validationComponentInterface_Param : access ValidationComponentInterface_Package.ValidationComponentInterface'Class) is
       Java_Result : constant Unbounded_String := ValidationOnlyTempUtil'Class (This).view (validationComponentInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

@@ -33,8 +33,8 @@ package body org.allbinary.globals.URLGLOBALS_Package is
    end Create;
 
 
-   procedure init (urlGlobalsInterface_Param : access UrlGlobalsInterface'Class) is
-      urlGlobalsInterface : UrlGlobalsInterface_Access := UrlGlobalsInterface_Access (urlGlobalsInterface_Param);
+   procedure init (urlGlobalsInterface_Param : access UrlGlobalsInterface_Package.UrlGlobalsInterface'Class) is
+      urlGlobalsInterface : constant UrlGlobalsInterface_Access := UrlGlobalsInterface_Access (urlGlobalsInterface_Param);
    begin
         URLGLOBALS.urlGlobalsInterface := urlGlobalsInterface;
    end init;

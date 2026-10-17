@@ -41,14 +41,14 @@ package body org.allbinary.business.category.CategoryAbstractFactory_Package is
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end getRootInstance;
 
-   function getRootInstance (This : in out CategoryAbstractFactory; categoryAbPath_Param : access AbPath'Class) return CategoryInterface_Access is
-      categoryAbPath : AbPath_Access := AbPath_Access (categoryAbPath_Param);
+   function getRootInstance (This : in out CategoryAbstractFactory; categoryAbPath_Param : access AbPath_Package.AbPath'Class) return CategoryInterface_Access is
+      categoryAbPath : constant AbPath_Access := AbPath_Access (categoryAbPath_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end getRootInstance;
 
-   function getRootInstanceFromNode (This : in out CategoryAbstractFactory; node_Param : access Node'Class) return CategoryInterface_Access is
-      node : Node_Access := Node_Access (node_Param);
+   function getRootInstanceFromNode (This : in out CategoryAbstractFactory; node_Param : access Node_Package.Node'Class) return CategoryInterface_Access is
+      node : constant Node_Access := Node_Access (node_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end getRootInstanceFromNode;
@@ -75,9 +75,9 @@ package body org.allbinary.business.category.CategoryAbstractFactory_Package is
         end;
    end getInstance;
 
-   function getInstance (This : in out CategoryAbstractFactory; rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class; categoryName : Unbounded_String) return CategoryInterface_Access is
-      rootCategoryInterface : CategoryInterface_Access := CategoryInterface_Access (rootCategoryInterface_Param);
-      parentCategoryInterface : CategoryInterface_Access := CategoryInterface_Access (parentCategoryInterface_Param);
+   function getInstance (This : in out CategoryAbstractFactory; rootCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; categoryName : Unbounded_String) return CategoryInterface_Access is
+      rootCategoryInterface : constant CategoryInterface_Access := CategoryInterface_Access (rootCategoryInterface_Param);
+      parentCategoryInterface : constant CategoryInterface_Access := CategoryInterface_Access (parentCategoryInterface_Param);
       categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access;
    begin
         begin
@@ -99,8 +99,8 @@ package body org.allbinary.business.category.CategoryAbstractFactory_Package is
         end;
    end getInstance;
 
-   function getInstance (This : in out CategoryAbstractFactory; node_Param : access Node'Class) return CategoryInterface_Access is
-      node : Node_Access := Node_Access (node_Param);
+   function getInstance (This : in out CategoryAbstractFactory; node_Param : access Node_Package.Node'Class) return CategoryInterface_Access is
+      node : constant Node_Access := Node_Access (node_Param);
       categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access;
    begin
         begin
@@ -122,10 +122,10 @@ package body org.allbinary.business.category.CategoryAbstractFactory_Package is
         end;
    end getInstance;
 
-   function getInstance (This : in out CategoryAbstractFactory; rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class; node_Param : access Node'Class) return CategoryInterface_Access is
-      rootCategoryInterface : CategoryInterface_Access := CategoryInterface_Access (rootCategoryInterface_Param);
-      parentCategoryInterface : CategoryInterface_Access := CategoryInterface_Access (parentCategoryInterface_Param);
-      node : Node_Access := Node_Access (node_Param);
+   function getInstance (This : in out CategoryAbstractFactory; rootCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; node_Param : access Node_Package.Node'Class) return CategoryInterface_Access is
+      rootCategoryInterface : constant CategoryInterface_Access := CategoryInterface_Access (rootCategoryInterface_Param);
+      parentCategoryInterface : constant CategoryInterface_Access := CategoryInterface_Access (parentCategoryInterface_Param);
+      node : constant Node_Access := Node_Access (node_Param);
       categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access;
    begin
         begin
@@ -147,10 +147,10 @@ package body org.allbinary.business.category.CategoryAbstractFactory_Package is
         end;
    end getInstance;
 
-   function getInstance (This : in out CategoryAbstractFactory; rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class; categoryPropertiesHashMap_Param : access HashMap'Class) return CategoryInterface_Access is
-      rootCategoryInterface : CategoryInterface_Access := CategoryInterface_Access (rootCategoryInterface_Param);
-      parentCategoryInterface : CategoryInterface_Access := CategoryInterface_Access (parentCategoryInterface_Param);
-      categoryPropertiesHashMap : HashMap_Access := HashMap_Access (categoryPropertiesHashMap_Param);
+   function getInstance (This : in out CategoryAbstractFactory; rootCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; categoryPropertiesHashMap_Param : access HashMap_Package.HashMap'Class) return CategoryInterface_Access is
+      rootCategoryInterface : constant CategoryInterface_Access := CategoryInterface_Access (rootCategoryInterface_Param);
+      parentCategoryInterface : constant CategoryInterface_Access := CategoryInterface_Access (parentCategoryInterface_Param);
+      categoryPropertiesHashMap : constant HashMap_Access := HashMap_Access (categoryPropertiesHashMap_Param);
       categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access;
    begin
         begin
@@ -172,14 +172,14 @@ package body org.allbinary.business.category.CategoryAbstractFactory_Package is
         end;
    end getInstance;
 
-   procedure getRootInstance (This : in out CategoryAbstractFactory; categoryAbPath_Param : access AbPath'Class) is
+   procedure getRootInstance (This : in out CategoryAbstractFactory; categoryAbPath_Param : access AbPath_Package.AbPath'Class) is
       Java_Result : constant CategoryInterface_Access := CategoryAbstractFactory'Class (This).getRootInstance (categoryAbPath_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRootInstance;
 
-   procedure getRootInstanceFromNode (This : in out CategoryAbstractFactory; node_Param : access Node'Class) is
+   procedure getRootInstanceFromNode (This : in out CategoryAbstractFactory; node_Param : access Node_Package.Node'Class) is
       Java_Result : constant CategoryInterface_Access := CategoryAbstractFactory'Class (This).getRootInstanceFromNode (node_Param);
       pragma Unreferenced (Java_Result);
    begin
@@ -193,28 +193,28 @@ package body org.allbinary.business.category.CategoryAbstractFactory_Package is
       null;
    end getInstance;
 
-   procedure getInstance (This : in out CategoryAbstractFactory; rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class; categoryName : Unbounded_String) is
+   procedure getInstance (This : in out CategoryAbstractFactory; rootCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; categoryName : Unbounded_String) is
       Java_Result : constant CategoryInterface_Access := CategoryAbstractFactory'Class (This).getInstance (rootCategoryInterface_Param, parentCategoryInterface_Param, categoryName);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
-   procedure getInstance (This : in out CategoryAbstractFactory; node_Param : access Node'Class) is
+   procedure getInstance (This : in out CategoryAbstractFactory; node_Param : access Node_Package.Node'Class) is
       Java_Result : constant CategoryInterface_Access := CategoryAbstractFactory'Class (This).getInstance (node_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
-   procedure getInstance (This : in out CategoryAbstractFactory; rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class; node_Param : access Node'Class) is
+   procedure getInstance (This : in out CategoryAbstractFactory; rootCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; node_Param : access Node_Package.Node'Class) is
       Java_Result : constant CategoryInterface_Access := CategoryAbstractFactory'Class (This).getInstance (rootCategoryInterface_Param, parentCategoryInterface_Param, node_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
-   procedure getInstance (This : in out CategoryAbstractFactory; rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class; categoryPropertiesHashMap_Param : access HashMap'Class) is
+   procedure getInstance (This : in out CategoryAbstractFactory; rootCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; categoryPropertiesHashMap_Param : access HashMap_Package.HashMap'Class) is
       Java_Result : constant CategoryInterface_Access := CategoryAbstractFactory'Class (This).getInstance (rootCategoryInterface_Param, parentCategoryInterface_Param, categoryPropertiesHashMap_Param);
       pragma Unreferenced (Java_Result);
    begin

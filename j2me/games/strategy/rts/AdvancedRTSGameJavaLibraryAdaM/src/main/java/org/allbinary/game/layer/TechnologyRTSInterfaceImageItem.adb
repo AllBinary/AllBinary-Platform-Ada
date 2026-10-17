@@ -36,10 +36,10 @@ package body org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TechnologyRTSInterfaceImageItem'Class; label : Unbounded_String; img_Param : access Image'Class; layout : Integer; altText : Unbounded_String; basicColor_Param : access BasicColor'Class; rtsInterface_Param : access RTSInterface'Class) is
-      img : Image_Access := Image_Access (img_Param);
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
-      rtsInterface : RTSInterface_Access := RTSInterface_Access (rtsInterface_Param);
+   procedure Initialize (This : in out TechnologyRTSInterfaceImageItem'Class; label : Unbounded_String; img_Param : access Image_Package.Image'Class; layout : Integer; altText : Unbounded_String; basicColor_Param : access BasicColor_Package.BasicColor'Class; rtsInterface_Param : access RTSInterface_Package.RTSInterface'Class) is
+      img : constant Image_Access := Image_Access (img_Param);
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
+      rtsInterface : constant RTSInterface_Access := RTSInterface_Access (rtsInterface_Param);
    begin
         ABCustomImageItem_Package.Initialize (This, label, img, layout, altText, basicColor, 0);
         Initialize_Fields (This);
@@ -47,15 +47,15 @@ package body org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package is
         This.update;
    end Initialize;
 
-   function Create (label : Unbounded_String; img_Param : access Image'Class; layout : Integer; altText : Unbounded_String; basicColor_Param : access BasicColor'Class; rtsInterface_Param : access RTSInterface'Class) return TechnologyRTSInterfaceImageItem_Access is
+   function Create (label : Unbounded_String; img_Param : access Image_Package.Image'Class; layout : Integer; altText : Unbounded_String; basicColor_Param : access BasicColor_Package.BasicColor'Class; rtsInterface_Param : access RTSInterface_Package.RTSInterface'Class) return TechnologyRTSInterfaceImageItem_Access is
       This : constant TechnologyRTSInterfaceImageItem_Access := new TechnologyRTSInterfaceImageItem;
    begin
       TechnologyRTSInterfaceImageItem_Package.Initialize (This.all, label, img_Param, layout, altText, basicColor_Param, rtsInterface_Param);
       return This;
    end Create;
 
-   procedure updateMeasurement (This : in out TechnologyRTSInterfaceImageItem; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure updateMeasurement (This : in out TechnologyRTSInterfaceImageItem; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
       fontHeight : Integer;
       imageHeight : Integer;
@@ -87,8 +87,8 @@ package body org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package is
         This.levelString := This.primitiveLongUtil.getCharArray (This.getRtsInterface.getLevel);
    end update;
 
-   procedure paintXY (This : in out TechnologyRTSInterfaceImageItem; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintXY (This : in out TechnologyRTSInterfaceImageItem; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       xa : Integer;
    begin
         This.myFontProcessor.process (graphics);

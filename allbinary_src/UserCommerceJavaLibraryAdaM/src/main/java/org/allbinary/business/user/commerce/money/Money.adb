@@ -23,14 +23,14 @@ package body org.allbinary.business.user.commerce.money.Money_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out Money'Class; money_Param : access Money'Class) is
-      money : Money_Access := Money_Access (money_Param);
+   procedure Initialize (This : in out Money'Class; money_Param : access Money_Package.Money'Class) is
+      money : constant Money_Access := Money_Access (money_Param);
    begin
       Initialize_Fields (This);
         This.units := money.getUnits;
    end Initialize;
 
-   function Create (money_Param : access Money'Class) return Money_Access is
+   function Create (money_Param : access Money_Package.Money'Class) return Money_Access is
       This : constant Money_Access := new Money;
    begin
       Money_Package.Initialize (This.all, money_Param);
@@ -87,8 +87,8 @@ package body org.allbinary.business.user.commerce.money.Money_Package is
         end if;
    end isValid;
 
-   procedure add (This : in out Money; moreMoney_Param : access Money'Class) is
-      moreMoney : Money_Access := Money_Access (moreMoney_Param);
+   procedure add (This : in out Money; moreMoney_Param : access Money_Package.Money'Class) is
+      moreMoney : constant Money_Access := Money_Access (moreMoney_Param);
    begin
         This.add (moreMoney.toString);
    end add;

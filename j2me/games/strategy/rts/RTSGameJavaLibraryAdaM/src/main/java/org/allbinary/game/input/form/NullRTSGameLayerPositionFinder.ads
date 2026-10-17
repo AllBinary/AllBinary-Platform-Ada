@@ -43,8 +43,8 @@ package org.allbinary.game.input.form.NullRTSGameLayerPositionFinder_Package is
    procedure Initialize (This : in out NullRTSGameLayerPositionFinder'Class);
    function Create return NullRTSGameLayerPositionFinder_Access;
    function getInstance return NullRTSGameLayerPositionFinder_Access;
-   function getLayerInterface (This : in out NullRTSGameLayerPositionFinder; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return AllBinaryLayer_Access;
-   procedure getLayerInterface (This : in out NullRTSGameLayerPositionFinder; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class);
+   function getLayerInterface (This : in out NullRTSGameLayerPositionFinder; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) return AllBinaryLayer_Access;
+   procedure getLayerInterface (This : in out NullRTSGameLayerPositionFinder; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class);
 
 end org.allbinary.game.input.form.NullRTSGameLayerPositionFinder_Package;
 

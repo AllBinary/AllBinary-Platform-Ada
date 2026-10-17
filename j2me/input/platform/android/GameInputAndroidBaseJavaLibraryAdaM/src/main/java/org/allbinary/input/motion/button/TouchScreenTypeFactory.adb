@@ -38,8 +38,8 @@ package body org.allbinary.input.motion.button.TouchScreenTypeFactory_Package is
         return TouchScreenTypeFactory_Package.instance;
    end getInstance;
 
-   procedure update (This : in out TouchScreenTypeFactory; activity_Param : access Activity'Class) is
-      activity : Activity_Access := Activity_Access (activity_Param);
+   procedure update (This : in out TouchScreenTypeFactory; activity_Param : access Activity_Package.Activity'Class) is
+      activity : constant Activity_Access := Activity_Access (activity_Param);
       commonStrings : CommonStrings_Access;
       touchScreenFactory : TouchScreenFactory_Access;
       touchScreenTypesFactory : TouchScreenTypesFactory_Access;

@@ -41,10 +41,10 @@ package org.allbinary.animation.vector.RectangleAnimation_Package is
       height : Integer;
    end record;
 
-   procedure Initialize (This : in out RectangleAnimation'Class; width : Integer; height : Integer; basicColor_Param : access BasicColor'Class);
-   function Create (width : Integer; height : Integer; basicColor_Param : access BasicColor'Class) return RectangleAnimation_Access;
+   procedure Initialize (This : in out RectangleAnimation'Class; width : Integer; height : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class);
+   function Create (width : Integer; height : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) return RectangleAnimation_Access;
    procedure nextFrame (This : in out RectangleAnimation);
-   procedure paintXY (This : in out RectangleAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
+   procedure paintXY (This : in out RectangleAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
    procedure setWidth (This : in out RectangleAnimation; width : Integer);
    procedure setHeight (This : in out RectangleAnimation; height : Integer);
 

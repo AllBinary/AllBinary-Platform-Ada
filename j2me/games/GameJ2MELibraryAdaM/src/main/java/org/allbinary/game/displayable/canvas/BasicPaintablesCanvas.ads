@@ -45,9 +45,9 @@ package org.allbinary.game.displayable.canvas.BasicPaintablesCanvas_Package is
       colorFillPaintable : ColorFillBasePaintable_Access;
    end record;
 
-   procedure Initialize (This : in out BasicPaintablesCanvas'Class; cmdListener_Param : access CommandListener'Class; name : Unbounded_String; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class; paintableArray : Paintable_Access_Array_Access);
-   function Create (cmdListener_Param : access CommandListener'Class; name : Unbounded_String; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class; paintableArray : Paintable_Access_Array_Access) return BasicPaintablesCanvas_Access;
-   procedure paint (This : in out BasicPaintablesCanvas; graphics_Param : access Graphics'Class);
+   procedure Initialize (This : in out BasicPaintablesCanvas'Class; cmdListener_Param : access CommandListener_Package.CommandListener'Class; name : Unbounded_String; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager_Package.AllBinaryGameLayerManager'Class; paintableArray : Paintable_Access_Array_Access);
+   function Create (cmdListener_Param : access CommandListener_Package.CommandListener'Class; name : Unbounded_String; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager_Package.AllBinaryGameLayerManager'Class; paintableArray : Paintable_Access_Array_Access) return BasicPaintablesCanvas_Access;
+   procedure paint (This : in out BasicPaintablesCanvas; graphics_Param : access Graphics_Package.Graphics'Class);
 
 end org.allbinary.game.displayable.canvas.BasicPaintablesCanvas_Package;
 

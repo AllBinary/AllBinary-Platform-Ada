@@ -48,8 +48,8 @@ package org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Pack
    function Create (id : Integer) return MotionEventCircularPool_Access;
    function createPool (id : Integer) return MotionEventCircularPool_Access;
    procedure createPool (id : Integer);
-   function getInstance (This : in out MotionEventCircularPool; motionGestureInput_Param : access MotionGestureInput'Class) return MotionGestureEvent_Access;
-   procedure getInstance (This : in out MotionEventCircularPool; motionGestureInput_Param : access MotionGestureInput'Class);
+   function getInstance (This : in out MotionEventCircularPool; motionGestureInput_Param : access MotionGestureInput_Package.MotionGestureInput'Class) return MotionGestureEvent_Access;
+   procedure getInstance (This : in out MotionEventCircularPool; motionGestureInput_Param : access MotionGestureInput_Package.MotionGestureInput'Class);
 
 end org.allbinary.input.motion.gesture.observer.MotionEventCircularPool_Package;
 

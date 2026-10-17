@@ -34,9 +34,9 @@ package body org.allbinary.game.health.HealthBarFactory_Package is
 
 
    --  throws Exception
-   function getInstance (This : in out HealthBarFactory; layerInterface_Param : access AllBinaryLayer'Class; healthInterface_Param : access Health'Class; location : Integer; direction : Integer) return HealthBar_Access is
-      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
-      healthInterface : Health_Access := Health_Access (healthInterface_Param);
+   function getInstance (This : in out HealthBarFactory; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; healthInterface_Param : access Health_Package.Health'Class; location : Integer; direction : Integer) return HealthBar_Access is
+      layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
+      healthInterface : constant Health_Access := Health_Access (healthInterface_Param);
       featuredAnimationInterfaceFactoryInterfaceFactory : FeaturedAnimationInterfaceFactoryInterfaceFactory_Access;
       healthBarAnimationInterfaceFactory : HealthBarAnimationInterfaceFactory_Access;
    begin
@@ -49,7 +49,7 @@ package body org.allbinary.game.health.HealthBarFactory_Package is
         end if;
    end getInstance;
 
-   procedure getInstance (This : in out HealthBarFactory; layerInterface_Param : access AllBinaryLayer'Class; healthInterface_Param : access Health'Class; location : Integer; direction : Integer) is
+   procedure getInstance (This : in out HealthBarFactory; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; healthInterface_Param : access Health_Package.Health'Class; location : Integer; direction : Integer) is
       Java_Result : constant HealthBar_Access := HealthBarFactory'Class (This).getInstance (layerInterface_Param, healthInterface_Param, location, direction);
       pragma Unreferenced (Java_Result);
    begin

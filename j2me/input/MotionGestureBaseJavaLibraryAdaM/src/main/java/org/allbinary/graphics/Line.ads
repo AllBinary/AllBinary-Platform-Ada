@@ -38,16 +38,16 @@ package org.allbinary.graphics.Line_Package is
       deltaY : Long_Float;
    end record;
 
-   procedure Initialize (This : in out Line'Class; p1_Param : access GPoint'Class; p2_Param : access GPoint'Class);
-   function Create (p1_Param : access GPoint'Class; p2_Param : access GPoint'Class) return Line_Access;
+   procedure Initialize (This : in out Line'Class; p1_Param : access GPoint_Package.GPoint'Class; p2_Param : access GPoint_Package.GPoint'Class);
+   function Create (p1_Param : access GPoint_Package.GPoint'Class; p2_Param : access GPoint_Package.GPoint'Class) return Line_Access;
    function getGradient (This : in out Line) return Long_Float;
    procedure update (This : in out Line);
    function getDeltaX (This : in out Line) return Long_Float;
    function getDeltaY (This : in out Line) return Long_Float;
    function getP1 (This : in out Line) return GPoint_Access;
    function getP2 (This : in out Line) return GPoint_Access;
-   procedure setP1 (This : in out Line; p1_Param : access GPoint'Class);
-   procedure setP2 (This : in out Line; p2_Param : access GPoint'Class);
+   procedure setP1 (This : in out Line; p1_Param : access GPoint_Package.GPoint'Class);
+   procedure setP2 (This : in out Line; p2_Param : access GPoint_Package.GPoint'Class);
 
 end org.allbinary.graphics.Line_Package;
 

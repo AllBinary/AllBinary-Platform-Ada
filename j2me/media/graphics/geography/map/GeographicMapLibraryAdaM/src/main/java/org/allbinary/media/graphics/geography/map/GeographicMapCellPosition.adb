@@ -54,8 +54,8 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellPositio
         return This.midPoint;
    end getMidPoint;
 
-   procedure setMidPoint (This : in out GeographicMapCellPosition; midPoint_Param : access GPoint'Class) is
-      midPoint : GPoint_Access := GPoint_Access (midPoint_Param);
+   procedure setMidPoint (This : in out GeographicMapCellPosition; midPoint_Param : access GPoint_Package.GPoint'Class) is
+      midPoint : constant GPoint_Access := GPoint_Access (midPoint_Param);
    begin
         This.midPoint := midPoint;
    end setMidPoint;

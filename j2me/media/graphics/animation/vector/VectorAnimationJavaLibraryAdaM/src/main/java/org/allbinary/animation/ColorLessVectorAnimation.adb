@@ -21,21 +21,21 @@ package body org.allbinary.animation.ColorLessVectorAnimation_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ColorLessVectorAnimation'Class; currentPoints : Integer_Array_Access_Array_Access_Array_Access; animationBehavior_Param : access AnimationBehavior'Class) is
-      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
+   procedure Initialize (This : in out ColorLessVectorAnimation'Class; currentPoints : Integer_Array_Access_Array_Access_Array_Access; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) is
+      animationBehavior : constant AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
         VectorAnimation_Package.Initialize (This, currentPoints, BasicColorFactory_Package.getInstance.WHITE, animationBehavior);
    end Initialize;
 
-   function Create (currentPoints : Integer_Array_Access_Array_Access_Array_Access; animationBehavior_Param : access AnimationBehavior'Class) return ColorLessVectorAnimation_Access is
+   function Create (currentPoints : Integer_Array_Access_Array_Access_Array_Access; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return ColorLessVectorAnimation_Access is
       This : constant ColorLessVectorAnimation_Access := new ColorLessVectorAnimation;
    begin
       ColorLessVectorAnimation_Package.Initialize (This.all, currentPoints, animationBehavior_Param);
       return This;
    end Create;
 
-   procedure paintXY (This : in out ColorLessVectorAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintXY (This : in out ColorLessVectorAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.paintVectors (graphics, x, y);
    end paintXY;

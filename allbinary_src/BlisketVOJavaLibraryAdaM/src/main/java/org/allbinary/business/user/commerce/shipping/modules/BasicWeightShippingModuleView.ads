@@ -52,11 +52,11 @@ package org.allbinary.business.user.commerce.shipping.modules.BasicWeightShippin
    function Create return BasicWeightShippingModuleView_Access;
    function isValid (This : in out BasicWeightShippingModuleView) return Boolean;
    function toValidationInfoDoc (This : in out BasicWeightShippingModuleView) return Document_Access;
-   function toValidationInfoNode (This : in out BasicWeightShippingModuleView; document_Param : access Document'Class) return Node_Access;
-   procedure toValidationInfoNode (This : in out BasicWeightShippingModuleView; document_Param : access Document'Class);
+   function toValidationInfoNode (This : in out BasicWeightShippingModuleView; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out BasicWeightShippingModuleView; document_Param : access Document_Package.Document'Class);
    function validationInfo (This : in out BasicWeightShippingModuleView) return Unbounded_String;
-   function toXmlNode (This : in out BasicWeightShippingModuleView; document_Param : access Document'Class) return Node_Access;
-   procedure toXmlNode (This : in out BasicWeightShippingModuleView; document_Param : access Document'Class);
+   function toXmlNode (This : in out BasicWeightShippingModuleView; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out BasicWeightShippingModuleView; document_Param : access Document_Package.Document'Class);
    function toXmlDoc (This : in out BasicWeightShippingModuleView) return Document_Access;
    function view (This : in out BasicWeightShippingModuleView) return Unbounded_String;
 

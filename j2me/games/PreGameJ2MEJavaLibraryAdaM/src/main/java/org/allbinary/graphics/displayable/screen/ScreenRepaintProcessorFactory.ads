@@ -41,8 +41,8 @@ package org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFactory_
    procedure Initialize (This : in out ScreenRepaintProcessorFactory'Class);
    function Create return ScreenRepaintProcessorFactory_Access;
    function getInstance return ScreenRepaintProcessorFactory_Access;
-   function create (This : in out ScreenRepaintProcessorFactory; displayable_Param : access Displayable'Class) return Processor_Access;
-   procedure create (This : in out ScreenRepaintProcessorFactory; displayable_Param : access Displayable'Class);
+   function create (This : in out ScreenRepaintProcessorFactory; displayable_Param : access Displayable_Package.Displayable'Class) return Processor_Access;
+   procedure create (This : in out ScreenRepaintProcessorFactory; displayable_Param : access Displayable_Package.Displayable'Class);
 
 end org.allbinary.graphics.displayable.screen.ScreenRepaintProcessorFactory_Package;
 

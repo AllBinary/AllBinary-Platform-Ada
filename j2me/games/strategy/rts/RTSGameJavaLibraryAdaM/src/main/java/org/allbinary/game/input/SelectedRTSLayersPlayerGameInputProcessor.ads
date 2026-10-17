@@ -35,8 +35,8 @@ package org.allbinary.game.input.SelectedRTSLayersPlayerGameInputProcessor_Packa
       selectedRTSLayersPlayerGameInput : SelectedRTSLayersPlayerGameInput_Access;
    end record;
 
-   procedure Initialize (This : in out SelectedRTSLayersPlayerGameInputProcessor'Class; selectedRTSLayersPlayerGameInput_Param : access SelectedRTSLayersPlayerGameInput'Class);
-   function Create (selectedRTSLayersPlayerGameInput_Param : access SelectedRTSLayersPlayerGameInput'Class) return SelectedRTSLayersPlayerGameInputProcessor_Access;
+   procedure Initialize (This : in out SelectedRTSLayersPlayerGameInputProcessor'Class; selectedRTSLayersPlayerGameInput_Param : access SelectedRTSLayersPlayerGameInput_Package.SelectedRTSLayersPlayerGameInput'Class);
+   function Create (selectedRTSLayersPlayerGameInput_Param : access SelectedRTSLayersPlayerGameInput_Package.SelectedRTSLayersPlayerGameInput'Class) return SelectedRTSLayersPlayerGameInputProcessor_Access;
 
 end org.allbinary.game.input.SelectedRTSLayersPlayerGameInputProcessor_Package;
 

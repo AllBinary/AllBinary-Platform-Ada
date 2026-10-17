@@ -38,7 +38,7 @@ package org.allbinary.game.input.InputProcessor_Package is
    procedure Initialize (This : in out InputProcessor'Class);
    function Create return InputProcessor_Access;
    procedure keyPressedByDevice (This : in out InputProcessor; keyCode : Integer; deviceId : Integer);
-   procedure keyReleasedByDevice (This : in out InputProcessor; canvas_Param : access Canvas'Class; keyCode : Integer; deviceId : Integer);
+   procedure keyReleasedByDevice (This : in out InputProcessor; canvas_Param : access Canvas_Package.Canvas'Class; keyCode : Integer; deviceId : Integer);
 
 end org.allbinary.game.input.InputProcessor_Package;
 

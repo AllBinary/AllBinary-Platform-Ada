@@ -65,8 +65,8 @@ package admin.taghelpers.ShippingAddressHelper_Package is
       portion : Portion_Access;
    end record;
 
-   procedure Initialize (This : in out ShippingAddressHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
-   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return ShippingAddressHelper_Access;
+   procedure Initialize (This : in out ShippingAddressHelper'Class; hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class);
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return ShippingAddressHelper_Access;
    procedure getAddressForm (This : in out ShippingAddressHelper);
    function drop (This : in out ShippingAddressHelper) return Unbounded_String;
    function create (This : in out ShippingAddressHelper) return Unbounded_String;

@@ -55,8 +55,8 @@ package org.allbinary.graphics.j2me.workarea.tools.GraphicItemFactory_Package is
    function getInstance return GraphicItemFactory_Access;
    function getInstance (This : in out GraphicItemFactory; itemName : Unbounded_String) return GraphicsItemInterfaceFactoryInterface_Access;
    procedure getInstance (This : in out GraphicItemFactory; itemName : Unbounded_String);
-   function getInstance (This : in out GraphicItemFactory; graphicItemNodeList_Param : access BasicArrayList'Class) return HashMap_Access;
-   procedure getInstance (This : in out GraphicItemFactory; graphicItemNodeList_Param : access BasicArrayList'Class);
+   function getInstance (This : in out GraphicItemFactory; graphicItemNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class) return HashMap_Access;
+   procedure getInstance (This : in out GraphicItemFactory; graphicItemNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class);
 
 end org.allbinary.graphics.j2me.workarea.tools.GraphicItemFactory_Package;
 

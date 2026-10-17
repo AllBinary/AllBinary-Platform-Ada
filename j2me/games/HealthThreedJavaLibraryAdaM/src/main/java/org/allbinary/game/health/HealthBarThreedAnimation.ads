@@ -58,12 +58,12 @@ package org.allbinary.game.health.HealthBarThreedAnimation_Package is
       object3dProcessor : Object3dProcessor_Access;
    end record;
 
-   procedure Initialize (This : in out HealthBarThreedAnimation'Class; layerInterface_Param : access AllBinaryLayer'Class; location : Integer);
-   function Create (layerInterface_Param : access AllBinaryLayer'Class; location : Integer) return HealthBarThreedAnimation_Access;
+   procedure Initialize (This : in out HealthBarThreedAnimation'Class; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; location : Integer);
+   function Create (layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; location : Integer) return HealthBarThreedAnimation_Access;
    procedure updateColor (This : in out HealthBarThreedAnimation);
    procedure updateSize (This : in out HealthBarThreedAnimation);
    procedure onHealthChange (This : in out HealthBarThreedAnimation; newX2 : Integer);
-   procedure paintThreedXYZ (This : in out HealthBarThreedAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer; z : Integer);
+   procedure paintThreedXYZ (This : in out HealthBarThreedAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer; z : Integer);
 
 end org.allbinary.game.health.HealthBarThreedAnimation_Package;
 

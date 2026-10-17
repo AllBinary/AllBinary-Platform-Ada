@@ -32,7 +32,7 @@ package org.allbinary.game.midlet.GameMidletEventListener_Package is
    type GameMidletEventListener_Access is access all GameMidletEventListener'Class;
    type GameMidletEventListener_Access_Array is array (Natural range <>) of GameMidletEventListener_Access;
    type GameMidletEventListener_Access_Array_Access is access all GameMidletEventListener_Access_Array;
-   procedure onGameEnd (This : in out GameMidletEventListener; eventObject_Param : access AllBinaryEventObject'Class) is abstract;
+   procedure onGameEnd (This : in out GameMidletEventListener; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is abstract;
 
 end org.allbinary.game.midlet.GameMidletEventListener_Package;
 

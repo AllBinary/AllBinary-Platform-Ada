@@ -58,19 +58,19 @@ package org.allbinary.game.layer.NullRTSLayer_Package is
    procedure Initialize (This : in out NullRTSLayer'Class);
    function Create return NullRTSLayer_Access;
    function getName (This : in out NullRTSLayer) return Unbounded_String;
-   procedure processInput (This : in out NullRTSLayer; layerManager_Param : access AllBinaryLayerManager'Class);
+   procedure processInput (This : in out NullRTSLayer; layerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class);
    procedure initInputProcessors (This : in out NullRTSLayer);
    function getGameNotificationHud (This : in out NullRTSLayer) return GameNotificationHud_Access;
    function getCurrentScrollSelectionForm (This : in out NullRTSLayer) return ScrollSelectionForm_Access;
-   procedure setCurrentScrollSelectionForm (This : in out NullRTSLayer; currentScrollSelectionForm_Param : access ScrollSelectionForm'Class);
+   procedure setCurrentScrollSelectionForm (This : in out NullRTSLayer; currentScrollSelectionForm_Param : access ScrollSelectionForm_Package.ScrollSelectionForm'Class);
    function getBuildingScrollSelectionForm (This : in out NullRTSLayer) return ScrollSelectionForm_Access;
    function getPlayerGameInput (This : in out NullRTSLayer) return PlayerGameInput_Access;
-   procedure onEvent (This : in out NullRTSLayer; eventObject_Param : access AllBinaryEventObject'Class);
-   procedure onDestroyed (This : in out NullRTSLayer; destroyedEvent_Param : access DestroyedEvent'Class);
-   procedure processTick (This : in out NullRTSLayer; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class);
+   procedure onEvent (This : in out NullRTSLayer; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class);
+   procedure onDestroyed (This : in out NullRTSLayer; destroyedEvent_Param : access DestroyedEvent_Package.DestroyedEvent'Class);
+   procedure processTick (This : in out NullRTSLayer; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class);
    function getCapital (This : in out NullRTSLayer) return Capital_Access;
    function getRTSFormInput (This : in out NullRTSLayer) return RTSFormInput_Access;
-   procedure add (This : in out NullRTSLayer; sound_Param : access Sound'Class);
+   procedure add (This : in out NullRTSLayer; sound_Param : access Sound_Package.Sound'Class);
    function getPlayerOwnedRTSLayers (This : in out NullRTSLayer) return PlayerOwnedRTSLayers_Access;
    function implmentsArtificialIntelligenceCompositeInterface (This : in out NullRTSLayer) return Boolean;
 

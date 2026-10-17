@@ -52,9 +52,9 @@ package org.allbinary.animation.RotationAnimationFactory_Package is
    function createFactory return RotationAnimationFactory_Access;
    function getInstance (This : in out RotationAnimationFactory; instanceId : Integer) return Animation_Access;
    procedure getInstance (This : in out RotationAnimationFactory; instanceId : Integer);
-   function getInstanceAnimation (This : in out RotationAnimationFactory; animationInterface_Param : access Animation'Class) return Animation_Access;
-   procedure getInstanceAnimation (This : in out RotationAnimationFactory; animationInterface_Param : access Animation'Class);
-   procedure setInitialScale (This : in out RotationAnimationFactory; scaleProperties_Param : access ScaleProperties'Class);
+   function getInstanceAnimation (This : in out RotationAnimationFactory; animationInterface_Param : access Animation_Package.Animation'Class) return Animation_Access;
+   procedure getInstanceAnimation (This : in out RotationAnimationFactory; animationInterface_Param : access Animation_Package.Animation'Class);
+   procedure setInitialScale (This : in out RotationAnimationFactory; scaleProperties_Param : access ScaleProperties_Package.ScaleProperties'Class);
 
 end org.allbinary.animation.RotationAnimationFactory_Package;
 

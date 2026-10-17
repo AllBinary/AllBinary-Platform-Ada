@@ -24,7 +24,7 @@ package body org.allbinary.media.graphics.geography.map.event.GeographicMapCellP
 
 
    procedure Initialize (This : in out GeographicMapCellPositionEventUtil'Class; anyType_Param : access Java_Object'Class) is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
       Initialize_Fields (This);
         This.geographicMapCellPositionEvent := GeographicMapCellPositionEvent_Package.Create (anyType, CellPositionFactory_Package.getInstance.NONE);
@@ -38,16 +38,16 @@ package body org.allbinary.media.graphics.geography.map.event.GeographicMapCellP
    end Create;
 
    --  throws Exception
-   procedure update (This : in out GeographicMapCellPositionEventUtil; geographicMapCellPositionTracking_Param : access GeographicMapCellPositionTracking'Class) is
-      geographicMapCellPositionTracking : GeographicMapCellPositionTracking_Access := GeographicMapCellPositionTracking_Access (geographicMapCellPositionTracking_Param);
+   procedure update (This : in out GeographicMapCellPositionEventUtil; geographicMapCellPositionTracking_Param : access GeographicMapCellPositionTracking_Package.GeographicMapCellPositionTracking'Class) is
+      geographicMapCellPositionTracking : constant GeographicMapCellPositionTracking_Access := GeographicMapCellPositionTracking_Access (geographicMapCellPositionTracking_Param);
    begin
         This.geographicMapCellPositionEvent.setGeographicMapCellPosition (geographicMapCellPositionTracking.getCurrentGeographicMapCellPosition);
         This.geographicMapCellPositionEventHandler.fireEvent (This.geographicMapCellPositionEvent);
    end update;
 
    --  throws Exception
-   procedure remove (This : in out GeographicMapCellPositionEventUtil; geographicMapCellPositionTracking_Param : access GeographicMapCellPositionTracking'Class) is
-      geographicMapCellPositionTracking : GeographicMapCellPositionTracking_Access := GeographicMapCellPositionTracking_Access (geographicMapCellPositionTracking_Param);
+   procedure remove (This : in out GeographicMapCellPositionEventUtil; geographicMapCellPositionTracking_Param : access GeographicMapCellPositionTracking_Package.GeographicMapCellPositionTracking'Class) is
+      geographicMapCellPositionTracking : constant GeographicMapCellPositionTracking_Access := GeographicMapCellPositionTracking_Access (geographicMapCellPositionTracking_Param);
    begin
         This.geographicMapCellPositionEvent.setGeographicMapCellPosition (geographicMapCellPositionTracking.getCurrentGeographicMapCellPosition);
         This.geographicMapCellPositionEventHandler.fireRemoveEvent (This.geographicMapCellPositionEvent);

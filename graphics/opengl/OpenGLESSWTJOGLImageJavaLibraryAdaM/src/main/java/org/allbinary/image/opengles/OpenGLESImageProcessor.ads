@@ -36,10 +36,10 @@ package org.allbinary.image.opengles.OpenGLESImageProcessor_Package is
    procedure Initialize (This : in out OpenGLESImageProcessor'Class);
    function Create return OpenGLESImageProcessor_Access;
    function getInstance return OpenGLESImageProcessor_Access;
-   procedure translate (This : in out OpenGLESImageProcessor; gl_Param : access GL10'Class; translateX : Float; translateY : Float);
-   procedure rotate (This : in out OpenGLESImageProcessor; gl_Param : access GL10'Class; angle : Float);
-   procedure scale (This : in out OpenGLESImageProcessor; gl_Param : access GL10'Class; scaleX : Float; scaleY : Float);
-   procedure colorMask (This : in out OpenGLESImageProcessor; gl_Param : access GL10'Class; red : Float; green : Float; blue : Float; alpha : Float);
+   procedure translate (This : in out OpenGLESImageProcessor; gl_Param : access GL10_Package.GL10'Class; translateX : Float; translateY : Float);
+   procedure rotate (This : in out OpenGLESImageProcessor; gl_Param : access GL10_Package.GL10'Class; angle : Float);
+   procedure scale (This : in out OpenGLESImageProcessor; gl_Param : access GL10_Package.GL10'Class; scaleX : Float; scaleY : Float);
+   procedure colorMask (This : in out OpenGLESImageProcessor; gl_Param : access GL10_Package.GL10'Class; red : Float; green : Float; blue : Float; alpha : Float);
 
 end org.allbinary.image.opengles.OpenGLESImageProcessor_Package;
 

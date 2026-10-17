@@ -35,14 +35,14 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementValidation_Pac
       return This;
    end Create;
 
-   procedure Initialize (This : in out CssElementValidation'Class; node_Param : access Node'Class) is
-      node : Node_Access := Node_Access (node_Param);
+   procedure Initialize (This : in out CssElementValidation'Class; node_Param : access Node_Package.Node'Class) is
+      node : constant Node_Access := Node_Access (node_Param);
    begin
         CssElementView_Package.Initialize (This, node);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (node_Param : access Node'Class) return CssElementValidation_Access is
+   function Create (node_Param : access Node_Package.Node'Class) return CssElementValidation_Access is
       This : constant CssElementValidation_Access := new CssElementValidation;
    begin
       CssElementValidation_Package.Initialize (This.all, node_Param);
@@ -100,13 +100,13 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementValidation_Pac
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out CssElementValidation; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toValidationInfoNode (This : in out CssElementValidation; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
 
-   procedure toValidationInfoNode (This : in out CssElementValidation; document_Param : access Document'Class) is
+   procedure toValidationInfoNode (This : in out CssElementValidation; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := CssElementValidation'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

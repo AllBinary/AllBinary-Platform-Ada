@@ -23,10 +23,10 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeC
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PathFindingNodeCost'Class; parent_Param : access Java_Object'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class; pathFindingNodeCostInfo_Param : access PathFindingNodeCostInfo'Class) is
-      parent : Java_Object_Access := Java_Object_Access (parent_Param);
-      geographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
-      pathFindingNodeCostInfo : PathFindingNodeCostInfo_Access := PathFindingNodeCostInfo_Access (pathFindingNodeCostInfo_Param);
+   procedure Initialize (This : in out PathFindingNodeCost'Class; parent_Param : access Java_Object'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; pathFindingNodeCostInfo_Param : access PathFindingNodeCostInfo_Package.PathFindingNodeCostInfo'Class) is
+      parent : constant Java_Object_Access := Java_Object_Access (parent_Param);
+      geographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
+      pathFindingNodeCostInfo : constant PathFindingNodeCostInfo_Access := PathFindingNodeCostInfo_Access (pathFindingNodeCostInfo_Param);
    begin
         PathFindingNode_Package.Initialize (This, parent, geographicMapCellPosition);
         Initialize_Fields (This);
@@ -39,7 +39,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeC
         end if;
    end Initialize;
 
-   function Create (parent_Param : access Java_Object'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class; pathFindingNodeCostInfo_Param : access PathFindingNodeCostInfo'Class) return PathFindingNodeCost_Access is
+   function Create (parent_Param : access Java_Object'Class; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; pathFindingNodeCostInfo_Param : access PathFindingNodeCostInfo_Package.PathFindingNodeCostInfo'Class) return PathFindingNodeCost_Access is
       This : constant PathFindingNodeCost_Access := new PathFindingNodeCost;
    begin
       PathFindingNodeCost_Package.Initialize (This.all, parent_Param, geographicMapCellPosition_Param, pathFindingNodeCostInfo_Param);
@@ -51,14 +51,14 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeC
         return This.pathFindingNodeCostInfoP;
    end getPathFindingNodeCostInfo;
 
-   procedure setPathFindingNodeCostInfo (This : in out PathFindingNodeCost; pathFindingNodeCostInfo_Param : access PathFindingNodeCostInfo'Class) is
-      pathFindingNodeCostInfo : PathFindingNodeCostInfo_Access := PathFindingNodeCostInfo_Access (pathFindingNodeCostInfo_Param);
+   procedure setPathFindingNodeCostInfo (This : in out PathFindingNodeCost; pathFindingNodeCostInfo_Param : access PathFindingNodeCostInfo_Package.PathFindingNodeCostInfo'Class) is
+      pathFindingNodeCostInfo : constant PathFindingNodeCostInfo_Access := PathFindingNodeCostInfo_Access (pathFindingNodeCostInfo_Param);
    begin
         This.pathFindingNodeCostInfoP := pathFindingNodeCostInfo;
    end setPathFindingNodeCostInfo;
 
-   function compareTo (This : in out PathFindingNodeCost; pathFindingNodeCost_Param : access PathFindingNodeCost'Class) return Integer is
-      pathFindingNodeCost : PathFindingNodeCost_Access := PathFindingNodeCost_Access (pathFindingNodeCost_Param);
+   function compareTo (This : in out PathFindingNodeCost; pathFindingNodeCost_Param : access PathFindingNodeCost_Package.PathFindingNodeCost'Class) return Integer is
+      pathFindingNodeCost : constant PathFindingNodeCost_Access := PathFindingNodeCost_Access (pathFindingNodeCost_Param);
    begin
         return This.pathFindingNodeCostInfoP.compareTo (pathFindingNodeCost.pathFindingNodeCostInfoP);
    end compareTo;
@@ -82,7 +82,7 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeC
         return stringBuffer.toString;
    end toString;
 
-   procedure compareTo (This : in out PathFindingNodeCost; pathFindingNodeCost_Param : access PathFindingNodeCost'Class) is
+   procedure compareTo (This : in out PathFindingNodeCost; pathFindingNodeCost_Param : access PathFindingNodeCost_Package.PathFindingNodeCost'Class) is
       Java_Result : constant Integer := PathFindingNodeCost'Class (This).compareTo (pathFindingNodeCost_Param);
       pragma Unreferenced (Java_Result);
    begin

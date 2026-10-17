@@ -57,8 +57,8 @@ package org.allbinary.media.graphics.geography.map.drop.AnyRandomDropCellPositio
 
    procedure Initialize (This : in out AnyRandomDropCellPositionGenerator'Class);
    function Create return AnyRandomDropCellPositionGenerator_Access;
-   procedure update (This : in out AnyRandomDropCellPositionGenerator; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class; geographicMapInterface_Param : access BasicGeographicMap'Class);
-   procedure processTick (This : in out AnyRandomDropCellPositionGenerator; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class);
+   procedure update (This : in out AnyRandomDropCellPositionGenerator; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager_Package.AllBinaryGameLayerManager'Class; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class);
+   procedure processTick (This : in out AnyRandomDropCellPositionGenerator; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class);
 
 end org.allbinary.media.graphics.geography.map.drop.AnyRandomDropCellPositionGenerator_Package;
 

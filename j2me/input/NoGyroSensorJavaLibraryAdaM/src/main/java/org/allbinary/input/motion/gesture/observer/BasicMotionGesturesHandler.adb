@@ -41,9 +41,9 @@ package body org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHand
    end Create;
 
    --  throws Exception
-   procedure process (This : in out BasicMotionGesturesHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class) is
-      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
-      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
+   procedure process (This : in out BasicMotionGesturesHandler; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class) is
+      eventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+      eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
       baseMotionGestureEventListener : BaseMotionGestureEventListener_Access;
    begin
         baseMotionGestureEventListener := BaseMotionGestureEventListener_Access (eventListenerInterface);

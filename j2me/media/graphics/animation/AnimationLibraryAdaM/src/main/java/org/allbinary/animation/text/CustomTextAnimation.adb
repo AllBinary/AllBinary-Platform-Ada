@@ -27,8 +27,8 @@ package body org.allbinary.animation.text.CustomTextAnimation_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CustomTextAnimation'Class; text : Unbounded_String; fontSize : Integer; animationBehavior_Param : access AnimationBehavior'Class) is
-      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
+   procedure Initialize (This : in out CustomTextAnimation'Class; text : Unbounded_String; fontSize : Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) is
+      animationBehavior : constant AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
         TextAnimation_Package.Initialize (This, text, animationBehavior);
         Initialize_Fields (This);
@@ -36,15 +36,15 @@ package body org.allbinary.animation.text.CustomTextAnimation_Package is
         This.font := Font_Package.getFont (Font_Package.FACE_SYSTEM, Font_Package.STYLE_PLAIN, fontSize);
    end Initialize;
 
-   function Create (text : Unbounded_String; fontSize : Integer; animationBehavior_Param : access AnimationBehavior'Class) return CustomTextAnimation_Access is
+   function Create (text : Unbounded_String; fontSize : Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return CustomTextAnimation_Access is
       This : constant CustomTextAnimation_Access := new CustomTextAnimation;
    begin
       CustomTextAnimation_Package.Initialize (This.all, text, fontSize, animationBehavior_Param);
       return This;
    end Create;
 
-   procedure paintXY (This : in out CustomTextAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintXY (This : in out CustomTextAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       existingFont : Font_Access;
    begin
         This.myFontProcessor.process (graphics);

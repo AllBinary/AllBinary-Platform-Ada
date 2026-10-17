@@ -38,8 +38,8 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.InventoryEnt
       return This;
    end Create;
 
-   procedure insert (This : in out InventoryEntity; values_Param : access BasicArrayList'Class) is
-      values : BasicArrayList_Access := BasicArrayList_Access (values_Param);
+   procedure insert (This : in out InventoryEntity; values_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      values : constant BasicArrayList_Access := BasicArrayList_Access (values_Param);
    begin
         begin
             AbSqlBean (This).insert (values);
@@ -78,8 +78,8 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.InventoryEnt
    end delete;
 
    --  throws Exception
-   function getItems (This : in out InventoryEntity; storeFrontInterface_Param : access StoreFrontInterface'Class) return BasicArrayList_Access is
-      storeFrontInterface : StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
+   function getItems (This : in out InventoryEntity; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) return BasicArrayList_Access is
+      storeFrontInterface : constant StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
       itemVector : BasicArrayList_Access;
       keysAndValues : HashMap_Access;
       itemHashMapVector : BasicArrayList_Access;
@@ -203,8 +203,8 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.InventoryEnt
         return AbSqlBean (This).createTable (This.createTableStatement);
    end createTable;
 
-   procedure update (This : in out InventoryEntity; updatedValues_Param : access HashMap'Class) is
-      updatedValues : HashMap_Access := HashMap_Access (updatedValues_Param);
+   procedure update (This : in out InventoryEntity; updatedValues_Param : access HashMap_Package.HashMap'Class) is
+      updatedValues : constant HashMap_Access := HashMap_Access (updatedValues_Param);
    begin
         AbSqlBean (This).updateWhere (This.basicItemData.ID, Unbounded_String (updatedValues.get (This.basicItemData.ID)), updatedValues);
    end update;
@@ -214,7 +214,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.InventoryEnt
         return AbSqlBean (This).dropTable;
    end dropTable;
 
-   procedure getItems (This : in out InventoryEntity; storeFrontInterface_Param : access StoreFrontInterface'Class) is
+   procedure getItems (This : in out InventoryEntity; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) is
       Java_Result : constant BasicArrayList_Access := InventoryEntity'Class (This).getItems (storeFrontInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

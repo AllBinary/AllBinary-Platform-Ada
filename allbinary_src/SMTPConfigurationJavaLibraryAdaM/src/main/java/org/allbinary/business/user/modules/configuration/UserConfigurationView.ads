@@ -58,13 +58,13 @@ package org.allbinary.business.user.modules.configuration.UserConfigurationView_
       userConfigurationInterface : UserConfigurationInterface_Access;
    end record;
 
-   procedure Initialize (This : in out UserConfigurationView'Class; node_Param : access Node'Class);
-   function Create (node_Param : access Node'Class) return UserConfigurationView_Access;
-   procedure Initialize (This : in out UserConfigurationView'Class; userConfigurationInterface_Param : access UserConfigurationInterface'Class);
-   function Create (userConfigurationInterface_Param : access UserConfigurationInterface'Class) return UserConfigurationView_Access;
+   procedure Initialize (This : in out UserConfigurationView'Class; node_Param : access Node_Package.Node'Class);
+   function Create (node_Param : access Node_Package.Node'Class) return UserConfigurationView_Access;
+   procedure Initialize (This : in out UserConfigurationView'Class; userConfigurationInterface_Param : access UserConfigurationInterface_Package.UserConfigurationInterface'Class);
+   function Create (userConfigurationInterface_Param : access UserConfigurationInterface_Package.UserConfigurationInterface'Class) return UserConfigurationView_Access;
    function getUserConfigurationInterface (This : in out UserConfigurationView) return UserConfigurationInterface_Access;
-   function toXmlNode (This : in out UserConfigurationView; document_Param : access Document'Class) return Node_Access;
-   procedure toXmlNode (This : in out UserConfigurationView; document_Param : access Document'Class);
+   function toXmlNode (This : in out UserConfigurationView; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out UserConfigurationView; document_Param : access Document_Package.Document'Class);
 
 end org.allbinary.business.user.modules.configuration.UserConfigurationView_Package;
 

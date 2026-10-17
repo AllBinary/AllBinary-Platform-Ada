@@ -61,8 +61,8 @@ package admin.taghelpers.InventoryRequestHelper_Package is
       itemInterface : ItemInterface_Access;
    end record;
 
-   procedure Initialize (This : in out InventoryRequestHelper'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
-   function Create (propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return InventoryRequestHelper_Access;
+   procedure Initialize (This : in out InventoryRequestHelper'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class);
+   function Create (propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return InventoryRequestHelper_Access;
    function insert (This : in out InventoryRequestHelper) return Unbounded_String;
    function delete (This : in out InventoryRequestHelper) return Unbounded_String;
    function update (This : in out InventoryRequestHelper) return Unbounded_String;

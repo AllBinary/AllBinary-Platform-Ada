@@ -46,7 +46,7 @@ package org.allbinary.input.gyro.AllBinaryOrientationSensor_Package is
 
    procedure Initialize (This : in out AllBinaryOrientationSensor'Class);
    function Create return AllBinaryOrientationSensor_Access;
-   procedure setCompleteMotionGestureInputEventListener (This : in out AllBinaryOrientationSensor; completeMotionGestureInputEventListenerInterface_Param : access CompleteMotionGestureInputEventListenerInterface'Class);
+   procedure setCompleteMotionGestureInputEventListener (This : in out AllBinaryOrientationSensor; completeMotionGestureInputEventListenerInterface_Param : access CompleteMotionGestureInputEventListenerInterface_Package.CompleteMotionGestureInputEventListenerInterface'Class);
    function getOrientation (This : in out AllBinaryOrientationSensor) return Orientation_Access;
 
 end org.allbinary.input.gyro.AllBinaryOrientationSensor_Package;

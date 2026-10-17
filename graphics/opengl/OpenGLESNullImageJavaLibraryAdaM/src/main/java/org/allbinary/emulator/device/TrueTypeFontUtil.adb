@@ -50,8 +50,8 @@ package body org.allbinary.emulator.device.TrueTypeFontUtil_Package is
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end getCellSize;
 
-   function getFontBitmap (This : in out TrueTypeFontUtil; filename : Unbounded_String; fontSize : Integer; cellSize : Integer; basicColor_Param : access BasicColor'Class) return Image_Access is
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+   function getFontBitmap (This : in out TrueTypeFontUtil; filename : Unbounded_String; fontSize : Integer; cellSize : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) return Image_Access is
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end getFontBitmap;
@@ -61,9 +61,9 @@ package body org.allbinary.emulator.device.TrueTypeFontUtil_Package is
         null;
    end saveFontAtlasAsFile;
 
-   function getFontBitmapGL (This : in out TrueTypeFontUtil; gl_Param : access GL10'Class; filename : Unbounded_String; cellSize : Integer; basicColor_Param : access BasicColor'Class) return Image_Access is
-      gl : GL10_Access := GL10_Access (gl_Param);
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+   function getFontBitmapGL (This : in out TrueTypeFontUtil; gl_Param : access GL10_Package.GL10'Class; filename : Unbounded_String; cellSize : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) return Image_Access is
+      gl : constant GL10_Access := GL10_Access (gl_Param);
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end getFontBitmapGL;
@@ -87,14 +87,14 @@ package body org.allbinary.emulator.device.TrueTypeFontUtil_Package is
       null;
    end getCellSize;
 
-   procedure getFontBitmap (This : in out TrueTypeFontUtil; filename : Unbounded_String; fontSize : Integer; cellSize : Integer; basicColor_Param : access BasicColor'Class) is
+   procedure getFontBitmap (This : in out TrueTypeFontUtil; filename : Unbounded_String; fontSize : Integer; cellSize : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
       Java_Result : constant Image_Access := TrueTypeFontUtil'Class (This).getFontBitmap (filename, fontSize, cellSize, basicColor_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getFontBitmap;
 
-   procedure getFontBitmapGL (This : in out TrueTypeFontUtil; gl_Param : access GL10'Class; filename : Unbounded_String; cellSize : Integer; basicColor_Param : access BasicColor'Class) is
+   procedure getFontBitmapGL (This : in out TrueTypeFontUtil; gl_Param : access GL10_Package.GL10'Class; filename : Unbounded_String; cellSize : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
       Java_Result : constant Image_Access := TrueTypeFontUtil'Class (This).getFontBitmapGL (gl_Param, filename, cellSize, basicColor_Param);
       pragma Unreferenced (Java_Result);
    begin

@@ -44,8 +44,8 @@ package body org.allbinary.game.configuration.feature.GameFeatureUtil_Package is
    end getInstance;
 
    --  throws Exception
-   procedure setDefault (This : in out GameFeatureUtil; choiceGroup_Param : access ChoiceGroup'Class) is
-      choiceGroup : ChoiceGroup_Access := ChoiceGroup_Access (choiceGroup_Param);
+   procedure setDefault (This : in out GameFeatureUtil; choiceGroup_Param : access ChoiceGroup_Package.ChoiceGroup'Class) is
+      choiceGroup : constant ChoiceGroup_Access := ChoiceGroup_Access (choiceGroup_Param);
       stringBuffer : StringMaker_Access;
       METHOD_NAME : Unbounded_String;
       SELECTED_ARRAY_RETURN : Unbounded_String;
@@ -89,8 +89,8 @@ package body org.allbinary.game.configuration.feature.GameFeatureUtil_Package is
    end setDefault;
 
    --  throws Exception
-   procedure updateMultiple (This : in out GameFeatureUtil; choiceGroup_Param : access ChoiceGroup'Class) is
-      choiceGroup : ChoiceGroup_Access := ChoiceGroup_Access (choiceGroup_Param);
+   procedure updateMultiple (This : in out GameFeatureUtil; choiceGroup_Param : access ChoiceGroup_Package.ChoiceGroup'Class) is
+      choiceGroup : constant ChoiceGroup_Access := ChoiceGroup_Access (choiceGroup_Param);
       stringBuffer : StringMaker_Access;
       METHOD_NAME : Unbounded_String;
       SELECTED_ARRAY_RETURN : Unbounded_String;
@@ -132,8 +132,8 @@ package body org.allbinary.game.configuration.feature.GameFeatureUtil_Package is
    end updateMultiple;
 
    --  throws Exception
-   procedure updateExclusiveForChoiceGroup (This : in out GameFeatureUtil; choiceGroup_Param : access ChoiceGroup'Class) is
-      choiceGroup : ChoiceGroup_Access := ChoiceGroup_Access (choiceGroup_Param);
+   procedure updateExclusiveForChoiceGroup (This : in out GameFeatureUtil; choiceGroup_Param : access ChoiceGroup_Package.ChoiceGroup'Class) is
+      choiceGroup : constant ChoiceGroup_Access := ChoiceGroup_Access (choiceGroup_Param);
       stringBuffer : StringMaker_Access;
       METHOD_NAME : Unbounded_String;
       SELECTED_ARRAY_RETURN : Unbounded_String;
@@ -208,9 +208,9 @@ package body org.allbinary.game.configuration.feature.GameFeatureUtil_Package is
    end updateExclusive;
 
    --  throws Exception
-   procedure updateExclusiveList (This : in out GameFeatureUtil; gameFeature_Param : access Feature'Class; list_Param : access BasicArrayList'Class) is
-      gameFeature : Feature_Access := Feature_Access (gameFeature_Param);
-      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
+   procedure updateExclusiveList (This : in out GameFeatureUtil; gameFeature_Param : access Feature_Package.Feature'Class; list_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      gameFeature : constant Feature_Access := Feature_Access (gameFeature_Param);
+      list : constant BasicArrayList_Access := BasicArrayList_Access (list_Param);
       features : Features_Access;
       addIndex : Integer;
       size : Integer;

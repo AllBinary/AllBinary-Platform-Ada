@@ -38,8 +38,8 @@ package org.allbinary.layer.relationship.MiddleRelativeLayerRelationship_Package
 
    type MiddleRelativeLayerRelationship is new RelativeLayerRelationship with null record;
 
-   procedure Initialize (This : in out MiddleRelativeLayerRelationship'Class; layer_Param : access AllBinaryLayer'Class);
-   function Create (layer_Param : access AllBinaryLayer'Class) return MiddleRelativeLayerRelationship_Access;
+   procedure Initialize (This : in out MiddleRelativeLayerRelationship'Class; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class);
+   function Create (layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) return MiddleRelativeLayerRelationship_Access;
 
 end org.allbinary.layer.relationship.MiddleRelativeLayerRelationship_Package;
 

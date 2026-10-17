@@ -42,15 +42,15 @@ package org.allbinary.data.tables.user.UserEntityInterface_Package is
    type UserEntityInterface_Access_Array is array (Natural range <>) of UserEntityInterface_Access;
    type UserEntityInterface_Access_Array_Access is access all UserEntityInterface_Access_Array;
    function getAdministrators (This : in out UserEntityInterface) return BasicArrayList_Access is abstract;
-   function getStoreManagers (This : in out UserEntityInterface; storeFrontInterface_Param : access StoreFrontInterface'Class) return BasicArrayList_Access is abstract;
+   function getStoreManagers (This : in out UserEntityInterface; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) return BasicArrayList_Access is abstract;
    function getCustomers (This : in out UserEntityInterface) return BasicArrayList_Access is abstract;
-   function getUsersWithRole (This : in out UserEntityInterface; userRole_Param : access UserRole'Class) return BasicArrayList_Access is abstract;
-   function getUsers (This : in out UserEntityInterface; storeFrontInterface_Param : access StoreFrontInterface'Class) return BasicArrayList_Access is abstract;
+   function getUsersWithRole (This : in out UserEntityInterface; userRole_Param : access UserRole_Package.UserRole'Class) return BasicArrayList_Access is abstract;
+   function getUsers (This : in out UserEntityInterface; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) return BasicArrayList_Access is abstract;
    function getUser (This : in out UserEntityInterface; userName : Unbounded_String) return UserInterface_Access is abstract;
    function login (This : in out UserEntityInterface; userName : Unbounded_String; password : Unbounded_String) return Unbounded_String is abstract;
    procedure deleteWhere (This : in out UserEntityInterface; key : Unbounded_String; value : Unbounded_String) is abstract;
-   procedure insert (This : in out UserEntityInterface; values_Param : access BasicArrayList'Class) is abstract;
-   procedure update (This : in out UserEntityInterface; userName : Unbounded_String; updatedValues_Param : access HashMap'Class) is abstract;
+   procedure insert (This : in out UserEntityInterface; values_Param : access BasicArrayList_Package.BasicArrayList'Class) is abstract;
+   procedure update (This : in out UserEntityInterface; userName : Unbounded_String; updatedValues_Param : access HashMap_Package.HashMap'Class) is abstract;
 
 end org.allbinary.data.tables.user.UserEntityInterface_Package;
 

@@ -40,8 +40,8 @@ package body org.allbinary.game.physics.acceleration.GravityUtil_Package is
         return GravityUtil_Package.instance;
    end getInstance;
 
-   procedure process (This : in out GravityUtil; velocityProperties_Param : access BasicVelocityProperties'Class; customGravity : Integer) is
-      velocityProperties : BasicVelocityProperties_Access := BasicVelocityProperties_Access (velocityProperties_Param);
+   procedure process (This : in out GravityUtil; velocityProperties_Param : access BasicVelocityProperties_Package.BasicVelocityProperties'Class; customGravity : Integer) is
+      velocityProperties : constant BasicVelocityProperties_Access := BasicVelocityProperties_Access (velocityProperties_Param);
    begin
         velocityProperties.getVelocityYBasicDecimalP.addint (customGravity);
    end process;

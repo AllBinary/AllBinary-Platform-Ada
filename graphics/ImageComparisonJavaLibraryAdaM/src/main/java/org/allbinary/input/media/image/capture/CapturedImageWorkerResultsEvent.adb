@@ -23,9 +23,9 @@ package body org.allbinary.input.media.image.capture.CapturedImageWorkerResultsE
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CapturedImageWorkerResultsEvent'Class; anyType_Param : access Java_Object'Class; frame : Long_Long_Integer; bufferedImage_Param : access BufferedImage'Class) is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
-      bufferedImage : BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
+   procedure Initialize (This : in out CapturedImageWorkerResultsEvent'Class; anyType_Param : access Java_Object'Class; frame : Long_Long_Integer; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class) is
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
+      bufferedImage : constant BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
    begin
         AllBinaryEventObject_Package.Initialize (This, anyType);
         Initialize_Fields (This);
@@ -33,7 +33,7 @@ package body org.allbinary.input.media.image.capture.CapturedImageWorkerResultsE
         This.setBufferedImage (bufferedImage);
    end Initialize;
 
-   function Create (anyType_Param : access Java_Object'Class; frame : Long_Long_Integer; bufferedImage_Param : access BufferedImage'Class) return CapturedImageWorkerResultsEvent_Access is
+   function Create (anyType_Param : access Java_Object'Class; frame : Long_Long_Integer; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class) return CapturedImageWorkerResultsEvent_Access is
       This : constant CapturedImageWorkerResultsEvent_Access := new CapturedImageWorkerResultsEvent;
    begin
       CapturedImageWorkerResultsEvent_Package.Initialize (This.all, anyType_Param, frame, bufferedImage_Param);
@@ -45,8 +45,8 @@ package body org.allbinary.input.media.image.capture.CapturedImageWorkerResultsE
         return This.bufferedImage;
    end getBufferedImage;
 
-   procedure setBufferedImage (This : in out CapturedImageWorkerResultsEvent; bufferedImage_Param : access BufferedImage'Class) is
-      bufferedImage : BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
+   procedure setBufferedImage (This : in out CapturedImageWorkerResultsEvent; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class) is
+      bufferedImage : constant BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
    begin
         This.bufferedImage := bufferedImage;
    end setBufferedImage;

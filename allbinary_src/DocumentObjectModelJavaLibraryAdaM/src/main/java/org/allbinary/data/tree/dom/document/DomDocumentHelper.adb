@@ -66,8 +66,8 @@ package body org.allbinary.data.tree.dom.document.DomDocumentHelper_Package is
    end create;
 
    --  throws Exception
-   function create (inputStream_Param : access InputStream'Class) return Document_Access is
-      inputStream : InputStream_Access := InputStream_Access (inputStream_Param);
+   function create (inputStream_Param : access InputStream_Package.InputStream'Class) return Document_Access is
+      inputStream : constant InputStream_Access := InputStream_Access (inputStream_Param);
       factory : DocumentBuilderFactory_Access;
       builder : DocumentBuilder_Access;
       document : Document_Access;
@@ -108,7 +108,7 @@ package body org.allbinary.data.tree.dom.document.DomDocumentHelper_Package is
         end;
    end create;
 
-   procedure create (inputStream_Param : access InputStream'Class) is
+   procedure create (inputStream_Param : access InputStream_Package.InputStream'Class) is
       Java_Result : constant Document_Access := create (inputStream_Param);
       pragma Unreferenced (Java_Result);
    begin

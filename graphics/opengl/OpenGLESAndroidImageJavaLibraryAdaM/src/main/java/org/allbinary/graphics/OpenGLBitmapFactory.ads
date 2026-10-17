@@ -39,12 +39,12 @@ package org.allbinary.graphics.OpenGLBitmapFactory_Package is
    procedure Initialize (This : in out OpenGLBitmapFactory'Class);
    function Create return OpenGLBitmapFactory_Access;
    function getInstance return OpenGLBitmapFactory_Access;
-   function createBitmap (This : in out OpenGLBitmapFactory; width : Integer; height : Integer; config_Param : access Config'Class) return OpenGLBitmap_Access;
-   procedure createBitmap (This : in out OpenGLBitmapFactory; width : Integer; height : Integer; config_Param : access Config'Class);
-   function decodeStream (This : in out OpenGLBitmapFactory; inputStream_Param : access InputStream'Class) return OpenGLBitmap_Access;
-   procedure decodeStream (This : in out OpenGLBitmapFactory; inputStream_Param : access InputStream'Class);
-   function createBitmap (This : in out OpenGLBitmapFactory; image_Param : access Image'Class) return PlatformBitmapBase_Access;
-   procedure createBitmap (This : in out OpenGLBitmapFactory; image_Param : access Image'Class);
+   function createBitmap (This : in out OpenGLBitmapFactory; width : Integer; height : Integer; config_Param : access Config_Package.Config'Class) return OpenGLBitmap_Access;
+   procedure createBitmap (This : in out OpenGLBitmapFactory; width : Integer; height : Integer; config_Param : access Config_Package.Config'Class);
+   function decodeStream (This : in out OpenGLBitmapFactory; inputStream_Param : access InputStream_Package.InputStream'Class) return OpenGLBitmap_Access;
+   procedure decodeStream (This : in out OpenGLBitmapFactory; inputStream_Param : access InputStream_Package.InputStream'Class);
+   function createBitmap (This : in out OpenGLBitmapFactory; image_Param : access Image_Package.Image'Class) return PlatformBitmapBase_Access;
+   procedure createBitmap (This : in out OpenGLBitmapFactory; image_Param : access Image_Package.Image'Class);
 
 end org.allbinary.graphics.OpenGLBitmapFactory_Package;
 
@@ -83,8 +83,8 @@ package org.allbinary.graphics.Config_Package is
       bitmapConfig : Config_Access;
    end record;
 
-   procedure Initialize (This : in out Config'Class; bitmapConfig_Param : access Config'Class);
-   function Create (bitmapConfig_Param : access Config'Class) return Config_Access;
+   procedure Initialize (This : in out Config'Class; bitmapConfig_Param : access Config_Package.Config'Class);
+   function Create (bitmapConfig_Param : access Config_Package.Config'Class) return Config_Access;
 
 end org.allbinary.graphics.Config_Package;
 

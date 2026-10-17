@@ -40,13 +40,13 @@ package org.allbinary.layer.LayerProcessor_Package is
       layerManager : LayerManager_Access;
    end record;
 
-   procedure Initialize (This : in out LayerProcessor'Class; layerManager_Param : access LayerManager'Class);
-   function Create (layerManager_Param : access LayerManager'Class) return LayerProcessor_Access;
-   procedure processAt (This : in out LayerProcessor; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class; layerInterface_Param : access AllBinaryLayer'Class; index : Integer);
-   function isProcessorLayer (This : in out LayerProcessor; layerInterface_Param : access AllBinaryLayer'Class) return Boolean;
-   procedure isProcessorLayer (This : in out LayerProcessor; layerInterface_Param : access AllBinaryLayer'Class);
+   procedure Initialize (This : in out LayerProcessor'Class; layerManager_Param : access LayerManager_Package.LayerManager'Class);
+   function Create (layerManager_Param : access LayerManager_Package.LayerManager'Class) return LayerProcessor_Access;
+   procedure processAt (This : in out LayerProcessor; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; index : Integer);
+   function isProcessorLayer (This : in out LayerProcessor; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) return Boolean;
+   procedure isProcessorLayer (This : in out LayerProcessor; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class);
    function getLayerManager (This : in out LayerProcessor) return LayerManager_Access;
-   procedure process (This : in out LayerProcessor; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class);
+   procedure process (This : in out LayerProcessor; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class);
 
 end org.allbinary.layer.LayerProcessor_Package;
 

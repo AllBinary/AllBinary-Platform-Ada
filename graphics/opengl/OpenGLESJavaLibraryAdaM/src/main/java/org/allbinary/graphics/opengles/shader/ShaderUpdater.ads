@@ -44,7 +44,7 @@ package org.allbinary.graphics.opengles.shader.ShaderUpdater_Package is
    procedure Initialize (This : in out ShaderUpdater'Class);
    function Create return ShaderUpdater_Access;
    function getInstance return ShaderUpdater_Access;
-   procedure onSurfaceCreated (This : in out ShaderUpdater; gl_Param : access GL10'Class; eglConfig_Param : access EGLConfig'Class);
+   procedure onSurfaceCreated (This : in out ShaderUpdater; gl_Param : access GL10_Package.GL10'Class; eglConfig_Param : access EGLConfig_Package.EGLConfig'Class);
 
 end org.allbinary.graphics.opengles.shader.ShaderUpdater_Package;
 

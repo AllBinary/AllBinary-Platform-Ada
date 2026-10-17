@@ -29,9 +29,9 @@ package body org.platform.opengl.OpenGLTextureFactory_Package is
       return This;
    end Create;
 
-   procedure load (This : in out OpenGLTextureFactory; gl_Param : access GL10'Class; target : Integer; level : Integer; image_Param : access Image'Class; border : Integer; flip : Boolean) is
-      gl : GL10_Access := GL10_Access (gl_Param);
-      image : Image_Access := Image_Access (image_Param);
+   procedure load (This : in out OpenGLTextureFactory; gl_Param : access GL10_Package.GL10'Class; target : Integer; level : Integer; image_Param : access Image_Package.Image'Class; border : Integer; flip : Boolean) is
+      gl : constant GL10_Access := GL10_Access (gl_Param);
+      image : constant Image_Access := Image_Access (image_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end load;

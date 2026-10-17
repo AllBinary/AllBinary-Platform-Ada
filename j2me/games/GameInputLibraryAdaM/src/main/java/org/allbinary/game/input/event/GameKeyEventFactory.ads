@@ -53,10 +53,10 @@ package org.allbinary.game.input.event.GameKeyEventFactory_Package is
    function Create return GameKeyEventFactory_Access;
    function getInstance return GameKeyEventFactory_Access;
    procedure init (This : in out GameKeyEventFactory);
-   function getInstanceForKey (This : in out GameKeyEventFactory; anyType_Param : access GameKeyEventSourceInterface'Class; key : Integer) return GameKeyEvent_Access;
-   procedure getInstanceForKey (This : in out GameKeyEventFactory; anyType_Param : access GameKeyEventSourceInterface'Class; key : Integer);
-   function getInstanceForInput (This : in out GameKeyEventFactory; anyType_Param : access GameKeyEventSourceInterface'Class; input_Param : access Input'Class) return GameKeyEvent_Access;
-   procedure getInstanceForInput (This : in out GameKeyEventFactory; anyType_Param : access GameKeyEventSourceInterface'Class; input_Param : access Input'Class);
+   function getInstanceForKey (This : in out GameKeyEventFactory; anyType_Param : access GameKeyEventSourceInterface_Package.GameKeyEventSourceInterface'Class; key : Integer) return GameKeyEvent_Access;
+   procedure getInstanceForKey (This : in out GameKeyEventFactory; anyType_Param : access GameKeyEventSourceInterface_Package.GameKeyEventSourceInterface'Class; key : Integer);
+   function getInstanceForInput (This : in out GameKeyEventFactory; anyType_Param : access GameKeyEventSourceInterface_Package.GameKeyEventSourceInterface'Class; input_Param : access Input_Package.Input'Class) return GameKeyEvent_Access;
+   procedure getInstanceForInput (This : in out GameKeyEventFactory; anyType_Param : access GameKeyEventSourceInterface_Package.GameKeyEventSourceInterface'Class; input_Param : access Input_Package.Input'Class);
 
 end org.allbinary.game.input.event.GameKeyEventFactory_Package;
 

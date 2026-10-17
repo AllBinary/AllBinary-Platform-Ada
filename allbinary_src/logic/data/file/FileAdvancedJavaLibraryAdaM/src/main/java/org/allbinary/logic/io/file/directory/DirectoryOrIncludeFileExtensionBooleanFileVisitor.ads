@@ -39,12 +39,12 @@ package org.allbinary.logic.io.file.directory.DirectoryOrIncludeFileExtensionBoo
       includesString : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out DirectoryOrIncludeFileExtensionBooleanFileVisitor'Class; filterStringBasicArrayList_Param : access BasicArrayList'Class);
-   function Create (filterStringBasicArrayList_Param : access BasicArrayList'Class) return DirectoryOrIncludeFileExtensionBooleanFileVisitor_Access;
-   procedure Initialize (This : in out DirectoryOrIncludeFileExtensionBooleanFileVisitor'Class; filterStringBasicArrayList_Param : access BasicArrayList'Class; includesString : Unbounded_String);
-   function Create (filterStringBasicArrayList_Param : access BasicArrayList'Class; includesString : Unbounded_String) return DirectoryOrIncludeFileExtensionBooleanFileVisitor_Access;
-   function visit (This : in out DirectoryOrIncludeFileExtensionBooleanFileVisitor; file_Param : access AbFile'Class) return Boolean;
-   procedure visit (This : in out DirectoryOrIncludeFileExtensionBooleanFileVisitor; file_Param : access AbFile'Class);
+   procedure Initialize (This : in out DirectoryOrIncludeFileExtensionBooleanFileVisitor'Class; filterStringBasicArrayList_Param : access BasicArrayList_Package.BasicArrayList'Class);
+   function Create (filterStringBasicArrayList_Param : access BasicArrayList_Package.BasicArrayList'Class) return DirectoryOrIncludeFileExtensionBooleanFileVisitor_Access;
+   procedure Initialize (This : in out DirectoryOrIncludeFileExtensionBooleanFileVisitor'Class; filterStringBasicArrayList_Param : access BasicArrayList_Package.BasicArrayList'Class; includesString : Unbounded_String);
+   function Create (filterStringBasicArrayList_Param : access BasicArrayList_Package.BasicArrayList'Class; includesString : Unbounded_String) return DirectoryOrIncludeFileExtensionBooleanFileVisitor_Access;
+   function visit (This : in out DirectoryOrIncludeFileExtensionBooleanFileVisitor; file_Param : access AbFile_Package.AbFile'Class) return Boolean;
+   procedure visit (This : in out DirectoryOrIncludeFileExtensionBooleanFileVisitor; file_Param : access AbFile_Package.AbFile'Class);
 
 end org.allbinary.logic.io.file.directory.DirectoryOrIncludeFileExtensionBooleanFileVisitor_Package;
 

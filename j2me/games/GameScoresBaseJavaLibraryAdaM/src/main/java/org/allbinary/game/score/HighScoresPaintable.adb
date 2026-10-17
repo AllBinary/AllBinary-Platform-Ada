@@ -41,8 +41,8 @@ package body org.allbinary.game.score.HighScoresPaintable_Package is
       return This;
    end Create;
 
-   procedure updateMeasurement (This : in out HighScoresPaintable; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure updateMeasurement (This : in out HighScoresPaintable; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
    begin
         font := graphics.getFont;
@@ -50,16 +50,16 @@ package body org.allbinary.game.score.HighScoresPaintable_Package is
         This.myFontProcessor := MyFontProcessor_Package.getInstance;
    end updateMeasurement;
 
-   procedure onEvent (This : in out HighScoresPaintable; eventObject_Param : access AllBinaryEventObject'Class) is
-      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+   procedure onEvent (This : in out HighScoresPaintable; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
+      eventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
       colorChangeEvent : ColorChangeEvent_Access;
    begin
         colorChangeEvent := ColorChangeEvent_Access (eventObject);
         This.basicColor := colorChangeEvent.getBasicColorP;
    end onEvent;
 
-   procedure paint (This : in out HighScoresPaintable; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out HighScoresPaintable; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       width : Integer;
       height : Integer;
       heading : Unbounded_String;
@@ -111,8 +111,8 @@ package body org.allbinary.game.score.HighScoresPaintable_Package is
         end loop;
    end paint;
 
-   procedure setBasicColorP (This : in out HighScoresPaintable; basicColor_Param : access BasicColor'Class) is
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+   procedure setBasicColorP (This : in out HighScoresPaintable; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         This.basicColor := basicColor;
    end setBasicColorP;
@@ -122,8 +122,8 @@ package body org.allbinary.game.score.HighScoresPaintable_Package is
         return This.basicColor;
    end getBasicColorP;
 
-   procedure setHighScores (This : in out HighScoresPaintable; highScores_Param : access HighScores'Class) is
-      highScores : HighScores_Access := HighScores_Access (highScores_Param);
+   procedure setHighScores (This : in out HighScoresPaintable; highScores_Param : access HighScores_Package.HighScores'Class) is
+      highScores : constant HighScores_Access := HighScores_Access (highScores_Param);
    begin
         This.highScores := highScores;
    end setHighScores;

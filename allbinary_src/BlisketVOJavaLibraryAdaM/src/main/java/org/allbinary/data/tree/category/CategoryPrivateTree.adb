@@ -23,8 +23,8 @@ package body org.allbinary.data.tree.category.CategoryPrivateTree_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CategoryPrivateTree'Class; categoryFactoryInterface_Param : access CategoryFactoryInterface'Class) is
-      categoryFactoryInterface : CategoryFactoryInterface_Access := CategoryFactoryInterface_Access (categoryFactoryInterface_Param);
+   procedure Initialize (This : in out CategoryPrivateTree'Class; categoryFactoryInterface_Param : access CategoryFactoryInterface_Package.CategoryFactoryInterface'Class) is
+      categoryFactoryInterface : constant CategoryFactoryInterface_Access := CategoryFactoryInterface_Access (categoryFactoryInterface_Param);
       commonStrings : CommonStrings_Access;
    begin
       Initialize_Fields (This);
@@ -35,7 +35,7 @@ package body org.allbinary.data.tree.category.CategoryPrivateTree_Package is
         This.categoryFactoryInterface := categoryFactoryInterface;
    end Initialize;
 
-   function Create (categoryFactoryInterface_Param : access CategoryFactoryInterface'Class) return CategoryPrivateTree_Access is
+   function Create (categoryFactoryInterface_Param : access CategoryFactoryInterface_Package.CategoryFactoryInterface'Class) return CategoryPrivateTree_Access is
       This : constant CategoryPrivateTree_Access := new CategoryPrivateTree;
    begin
       CategoryPrivateTree_Package.Initialize (This.all, categoryFactoryInterface_Param);
@@ -43,8 +43,8 @@ package body org.allbinary.data.tree.category.CategoryPrivateTree_Package is
    end Create;
 
    --  throws Exception
-   procedure save (This : in out CategoryPrivateTree; categoryInterface_Param : access CategoryInterface'Class) is
-      categoryInterface : CategoryInterface_Access := CategoryInterface_Access (categoryInterface_Param);
+   procedure save (This : in out CategoryPrivateTree; categoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class) is
+      categoryInterface : constant CategoryInterface_Access := CategoryInterface_Access (categoryInterface_Param);
       document : Document_Access;
       cryptFileWriter : CryptFileWriter_Access;
    begin
@@ -60,8 +60,8 @@ package body org.allbinary.data.tree.category.CategoryPrivateTree_Package is
    end save;
 
    --  throws Exception
-   procedure delete (This : in out CategoryPrivateTree; categoryInterface_Param : access CategoryInterface'Class) is
-      categoryInterface : CategoryInterface_Access := CategoryInterface_Access (categoryInterface_Param);
+   procedure delete (This : in out CategoryPrivateTree; categoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class) is
+      categoryInterface : constant CategoryInterface_Access := CategoryInterface_Access (categoryInterface_Param);
       categoryFile : AbFile_Access;
    begin
         if categoryInterface.isLeaf then

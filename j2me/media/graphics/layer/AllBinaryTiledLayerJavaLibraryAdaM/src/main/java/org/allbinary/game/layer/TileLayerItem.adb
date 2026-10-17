@@ -22,25 +22,25 @@ package body org.allbinary.game.layer.TileLayerItem_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TileLayerItem'Class; label : Unbounded_String; tiledLayer_Param : access AllBinaryTiledLayer'Class; layout : Integer; altText : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) is
-      tiledLayer : AllBinaryTiledLayer_Access := AllBinaryTiledLayer_Access (tiledLayer_Param);
-      backgroundBasicColor : BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
-      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
+   procedure Initialize (This : in out TileLayerItem'Class; label : Unbounded_String; tiledLayer_Param : access AllBinaryTiledLayer_Package.AllBinaryTiledLayer'Class; layout : Integer; altText : Unbounded_String; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      tiledLayer : constant AllBinaryTiledLayer_Access := AllBinaryTiledLayer_Access (tiledLayer_Param);
+      backgroundBasicColor : constant BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
+      foregroundBasicColor : constant BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
    begin
         ABCustomItem_Package.Initialize (This, label, backgroundBasicColor, foregroundBasicColor);
         Initialize_Fields (This);
         This.tiledLayer := tiledLayer;
    end Initialize;
 
-   function Create (label : Unbounded_String; tiledLayer_Param : access AllBinaryTiledLayer'Class; layout : Integer; altText : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return TileLayerItem_Access is
+   function Create (label : Unbounded_String; tiledLayer_Param : access AllBinaryTiledLayer_Package.AllBinaryTiledLayer'Class; layout : Integer; altText : Unbounded_String; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return TileLayerItem_Access is
       This : constant TileLayerItem_Access := new TileLayerItem;
    begin
       TileLayerItem_Package.Initialize (This.all, label, tiledLayer_Param, layout, altText, backgroundBasicColor_Param, foregroundBasicColor_Param);
       return This;
    end Create;
 
-   procedure setOwner (This : in out TileLayerItem; owner_Param : access Screen'Class) is
-      owner : Screen_Access := Screen_Access (owner_Param);
+   procedure setOwner (This : in out TileLayerItem; owner_Param : access Screen_Package.Screen'Class) is
+      owner : constant Screen_Access := Screen_Access (owner_Param);
    begin
         null;
    end setOwner;
@@ -75,15 +75,15 @@ package body org.allbinary.game.layer.TileLayerItem_Package is
         return This.tiledLayer.getWidth;
    end getPrefContentWidth;
 
-   procedure paintXY (This : in out TileLayerItem; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintXY (This : in out TileLayerItem; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.tiledLayer.setPosition (x, y, This.tiledLayer.getZP);
         This.tiledLayer.paint (graphics);
    end paintXY;
 
-   procedure paintUnselected (This : in out TileLayerItem; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintUnselected (This : in out TileLayerItem; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paintUnselected;

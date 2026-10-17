@@ -55,7 +55,7 @@ package org.allbinary.input.automation.log.FrameLog_Package is
    procedure Initialize (This : in out FrameLog'Class; frame : Long_Long_Integer);
    function Create (frame : Long_Long_Integer) return FrameLog_Access;
    procedure addInfo (This : in out FrameLog; infoString : Unbounded_String);
-   procedure addActions (This : in out FrameLog; vectorOfStrings_Param : access BasicArrayList'Class);
+   procedure addActions (This : in out FrameLog; vectorOfStrings_Param : access BasicArrayList_Package.BasicArrayList'Class);
    procedure addAction (This : in out FrameLog; action : Unbounded_String);
    procedure write (This : in out FrameLog);
    function getFrame (This : in out FrameLog) return Long_Long_Integer;

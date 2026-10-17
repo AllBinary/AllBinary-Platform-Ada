@@ -41,8 +41,8 @@ package body org.allbinary.input.motion.button.TouchButtonInput_Package is
       return This;
    end Create;
 
-   procedure update (This : in out TouchButtonInput; inputToGameKeyMapping_Param : access InputToGameKeyMapping'Class) is
-      inputToGameKeyMapping : InputToGameKeyMapping_Access := InputToGameKeyMapping_Access (inputToGameKeyMapping_Param);
+   procedure update (This : in out TouchButtonInput; inputToGameKeyMapping_Param : access InputToGameKeyMapping_Package.InputToGameKeyMapping'Class) is
+      inputToGameKeyMapping : constant InputToGameKeyMapping_Access := InputToGameKeyMapping_Access (inputToGameKeyMapping_Param);
       gameKey : GameKey_Access;
       commonStrings : CommonStrings_Access;
    begin

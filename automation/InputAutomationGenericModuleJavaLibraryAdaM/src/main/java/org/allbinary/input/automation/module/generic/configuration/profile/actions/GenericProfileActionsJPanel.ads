@@ -61,17 +61,17 @@ package org.allbinary.input.automation.module.generic_Id.configuration.profile.a
    function Create return GenericProfileActionsJPanel_Access;
    procedure initComponents (This : in out GenericProfileActionsJPanel);
    procedure setModel (This : in out GenericProfileActionsJPanel);
-   procedure saveJButtonActionPerformed (This : in out GenericProfileActionsJPanel; evt_Param : access ActionEvent'Class);
+   procedure saveJButtonActionPerformed (This : in out GenericProfileActionsJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
    procedure updateProfileActionUI (This : in out GenericProfileActionsJPanel; profileActionNameString : Unbounded_String);
-   procedure genericProfileActionsJListValueChanged (This : in out GenericProfileActionsJPanel; evt_Param : access ListSelectionEvent'Class);
-   procedure okNewProfileActionJButtonActionPerformed (This : in out GenericProfileActionsJPanel; evt_Param : access ActionEvent'Class);
-   procedure deleteActionJButtonActionPerformed (This : in out GenericProfileActionsJPanel; evt_Param : access ActionEvent'Class);
+   procedure genericProfileActionsJListValueChanged (This : in out GenericProfileActionsJPanel; evt_Param : access ListSelectionEvent_Package.ListSelectionEvent'Class);
+   procedure okNewProfileActionJButtonActionPerformed (This : in out GenericProfileActionsJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
+   procedure deleteActionJButtonActionPerformed (This : in out GenericProfileActionsJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
    procedure selectFirstElement (This : in out GenericProfileActionsJPanel);
    function getGenericProfileActionJPanel (This : in out GenericProfileActionsJPanel) return GenericProfileActionJPanel_Access;
-   procedure setGenericProfileActionJPanel (This : in out GenericProfileActionsJPanel; genericProfileActionJPanel_Param : access GenericProfileActionJPanel'Class);
+   procedure setGenericProfileActionJPanel (This : in out GenericProfileActionsJPanel; genericProfileActionJPanel_Param : access GenericProfileActionJPanel_Package.GenericProfileActionJPanel'Class);
    function getGenericProfileActions (This : in out GenericProfileActionsJPanel) return GenericProfileActions_Access;
-   procedure setGenericProfileActions (This : in out GenericProfileActionsJPanel; genericProfileActions_Param : access GenericProfileActions'Class);
-   procedure newActionJButtonActionPerformed (This : in out GenericProfileActionsJPanel; evt_Param : access ActionEvent'Class);
+   procedure setGenericProfileActions (This : in out GenericProfileActionsJPanel; genericProfileActions_Param : access GenericProfileActions_Package.GenericProfileActions'Class);
+   procedure newActionJButtonActionPerformed (This : in out GenericProfileActionsJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
 
 end org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.GenericProfileActionsJPanel_Package;
 

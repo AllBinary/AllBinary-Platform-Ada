@@ -35,8 +35,8 @@ package org.allbinary.game.input.RTSPlayerGameInputProcessor_Package is
       rtsPlayerGameInput : RTSPlayerGameInput_Access;
    end record;
 
-   procedure Initialize (This : in out RTSPlayerGameInputProcessor'Class; rtsPlayerGameInput_Param : access RTSPlayerGameInput'Class);
-   function Create (rtsPlayerGameInput_Param : access RTSPlayerGameInput'Class) return RTSPlayerGameInputProcessor_Access;
+   procedure Initialize (This : in out RTSPlayerGameInputProcessor'Class; rtsPlayerGameInput_Param : access RTSPlayerGameInput_Package.RTSPlayerGameInput'Class);
+   function Create (rtsPlayerGameInput_Param : access RTSPlayerGameInput_Package.RTSPlayerGameInput'Class) return RTSPlayerGameInputProcessor_Access;
 
 end org.allbinary.game.input.RTSPlayerGameInputProcessor_Package;
 

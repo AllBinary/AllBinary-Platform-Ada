@@ -33,9 +33,9 @@ package body org.allbinary.media.image.ImagePersistanceUtil_Package is
    end getInstance;
 
    --  throws Exception
-   procedure saveWithBatik (This : in out ImagePersistanceUtil; file_Param : access AbFile'Class; bufferedImage_Param : access BufferedImage'Class) is
-      file : AbFile_Access := AbFile_Access (file_Param);
-      bufferedImage : BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
+   procedure saveWithBatik (This : in out ImagePersistanceUtil; file_Param : access AbFile_Package.AbFile'Class; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class) is
+      file : constant AbFile_Access := AbFile_Access (file_Param);
+      bufferedImage : constant BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
       batikPNGImageWriter : PNGImageWriter_Access;
       fileOutputStream : AbFileOutputStream_Access;
    begin
@@ -52,15 +52,15 @@ package body org.allbinary.media.image.ImagePersistanceUtil_Package is
         This.logUtil.putF (To_Unbounded_String ("Wrote Image: ") & Java_Image (file.getAbsolutePath), ImagePersistanceUtil_Access'(This'Unchecked_Access), This.commonStrings.SAVE);
    end saveWithBatik;
 
-   procedure saveWithImageIO (This : in out ImagePersistanceUtil; filePath : Unbounded_String; bufferedImage_Param : access BufferedImage'Class) is
-      bufferedImage : BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
+   procedure saveWithImageIO (This : in out ImagePersistanceUtil; filePath : Unbounded_String; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class) is
+      bufferedImage : constant BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
    begin
         This.saveWithImageIO (File_Package.Create (filePath), bufferedImage);
    end saveWithImageIO;
 
-   procedure saveWithImageIO (This : in out ImagePersistanceUtil; file_Param : access File'Class; bufferedImage_Param : access BufferedImage'Class) is
-      file : File_Access := File_Access (file_Param);
-      bufferedImage : BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
+   procedure saveWithImageIO (This : in out ImagePersistanceUtil; file_Param : access File_Package.File'Class; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class) is
+      file : constant File_Access := File_Access (file_Param);
+      bufferedImage : constant BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
       writer : ImageWriter_Access;
       ios : ImageOutputStream_Access;
       iter : Iterator_Access;

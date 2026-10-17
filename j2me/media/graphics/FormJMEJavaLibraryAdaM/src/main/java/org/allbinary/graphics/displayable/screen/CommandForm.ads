@@ -64,15 +64,15 @@ package org.allbinary.graphics.displayable.screen.CommandForm_Package is
    end record;
    NULL_COMMAND_FORM : Java_Object_Access;
 
-   procedure Initialize (This : in out CommandForm'Class; commandListener_Param : access CommandListener'Class; formTitle : Unbounded_String; backgrounBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class);
-   function Create (commandListener_Param : access CommandListener'Class; formTitle : Unbounded_String; backgrounBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return CommandForm_Access;
+   procedure Initialize (This : in out CommandForm'Class; commandListener_Param : access CommandListener_Package.CommandListener'Class; formTitle : Unbounded_String; backgrounBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class);
+   function Create (commandListener_Param : access CommandListener_Package.CommandListener'Class; formTitle : Unbounded_String; backgrounBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return CommandForm_Access;
    function getNullCommandForm return CommandForm_Access;
-   procedure initCommands (This : in out CommandForm; cmdListener_Param : access CommandListener'Class);
+   procedure initCommands (This : in out CommandForm; cmdListener_Param : access CommandListener_Package.CommandListener'Class);
    procedure open (This : in out CommandForm);
    procedure close (This : in out CommandForm);
    procedure update (This : in out CommandForm);
    function getSourceId (This : in out CommandForm) return Integer;
-   procedure addCommand (This : in out CommandForm; command_Param : access Command'Class);
+   procedure addCommand (This : in out CommandForm; command_Param : access Command_Package.Command'Class);
    procedure removeAllCommands (This : in out CommandForm);
 
 end org.allbinary.graphics.displayable.screen.CommandForm_Package;

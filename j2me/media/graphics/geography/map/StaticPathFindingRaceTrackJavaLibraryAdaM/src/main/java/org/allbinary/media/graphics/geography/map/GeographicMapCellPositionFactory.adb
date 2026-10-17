@@ -36,8 +36,8 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellPositio
 
 
    --  throws Exception
-   function getInstance (This : in out GeographicMapCellPositionFactory; geographicMapInterface_Param : access BasicGeographicMap'Class) return BasicGeographicMapCellPositionFactory_Access is
-      geographicMapInterface : BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
+   function getInstance (This : in out GeographicMapCellPositionFactory; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class) return BasicGeographicMapCellPositionFactory_Access is
+      geographicMapInterface : constant BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
       commonStrings : CommonStrings_Access;
       allBinaryTiledLayer : AllBinaryTiledLayer_Access;
       geographicMapCellPositionFactoryCanBeNull : Java_Object_Access;
@@ -61,7 +61,7 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapCellPositio
         return GeographicMapCellPositionFactory_Package.hashtable;
    end getHashtable;
 
-   procedure getInstance (This : in out GeographicMapCellPositionFactory; geographicMapInterface_Param : access BasicGeographicMap'Class) is
+   procedure getInstance (This : in out GeographicMapCellPositionFactory; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class) is
       Java_Result : constant BasicGeographicMapCellPositionFactory_Access := GeographicMapCellPositionFactory'Class (This).getInstance (geographicMapInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

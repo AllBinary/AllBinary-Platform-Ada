@@ -57,8 +57,8 @@ package org.allbinary.animation.image.ImageArrayBaseRotationAnimation_Package is
       anchor : Integer;
    end record;
 
-   procedure Initialize (This : in out ImageArrayBaseRotationAnimation'Class; originalImageArray : Image_Access_Array_Access; angleInfo_Param : access AngleInfo'Class; animationBehavior_Param : access AnimationBehavior'Class);
-   function Create (originalImageArray : Image_Access_Array_Access; angleInfo_Param : access AngleInfo'Class; animationBehavior_Param : access AnimationBehavior'Class) return ImageArrayBaseRotationAnimation_Access;
+   procedure Initialize (This : in out ImageArrayBaseRotationAnimation'Class; originalImageArray : Image_Access_Array_Access; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class);
+   function Create (originalImageArray : Image_Access_Array_Access; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return ImageArrayBaseRotationAnimation_Access;
    function getAnimationSize (This : in out ImageArrayBaseRotationAnimation) return Integer;
    procedure setAlpha (This : in out ImageArrayBaseRotationAnimation; alpha : Integer);
    procedure nextRotation (This : in out ImageArrayBaseRotationAnimation);
@@ -67,7 +67,7 @@ package org.allbinary.animation.image.ImageArrayBaseRotationAnimation_Package is
    procedure setSequence (This : in out ImageArrayBaseRotationAnimation; sequence : Integer_Array_Access);
    function getSequence (This : in out ImageArrayBaseRotationAnimation) return Integer_Array_Access;
    procedure setImageArray (This : in out ImageArrayBaseRotationAnimation; imageArray : Image_Access_Array_Access);
-   procedure paintXY (This : in out ImageArrayBaseRotationAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
+   procedure paintXY (This : in out ImageArrayBaseRotationAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
    procedure close (This : in out ImageArrayBaseRotationAnimation);
    procedure finalize (This : in out ImageArrayBaseRotationAnimation);
 

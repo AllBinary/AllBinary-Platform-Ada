@@ -37,8 +37,8 @@ package body org.allbinary.game.input.InputPersistance_Package is
    end Create;
 
    --  throws Exception
-   procedure loadAll (This : in out InputPersistance; abeClientInformation_Param : access AbeClientInformationInterface'Class) is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+   procedure loadAll (This : in out InputPersistance; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
       recordStore : RecordStore_Access;
       recordEnum : RecordEnumeration_Access;
       gameActionInputId : Long_Long_Integer;
@@ -140,9 +140,9 @@ package body org.allbinary.game.input.InputPersistance_Package is
    end loadAll;
 
    --  throws Exception
-   procedure save (This : in out InputPersistance; abeClientInformation_Param : access AbeClientInformationInterface'Class; hashtable_Param : access ABHashtable'Class) is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      hashtable : ABHashtable_Access := ABHashtable_Access (hashtable_Param);
+   procedure save (This : in out InputPersistance; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; hashtable_Param : access ABHashtable_Package.ABHashtable'Class) is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      hashtable : constant ABHashtable_Access := ABHashtable_Access (hashtable_Param);
       recordStore : RecordStore_Access;
       stringBuffer : StringMaker_Access;
       byteArrayOutputStream : ByteArrayOutputStream_Access;

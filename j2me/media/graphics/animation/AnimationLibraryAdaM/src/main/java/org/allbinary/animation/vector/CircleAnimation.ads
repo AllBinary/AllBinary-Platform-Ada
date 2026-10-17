@@ -44,10 +44,10 @@ package org.allbinary.animation.vector.CircleAnimation_Package is
       height : Integer;
    end record;
 
-   procedure Initialize (This : in out CircleAnimation'Class; width : Integer; height : Integer; basicColor_Param : access BasicColor'Class);
-   function Create (width : Integer; height : Integer; basicColor_Param : access BasicColor'Class) return CircleAnimation_Access;
+   procedure Initialize (This : in out CircleAnimation'Class; width : Integer; height : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class);
+   function Create (width : Integer; height : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) return CircleAnimation_Access;
    procedure nextFrame (This : in out CircleAnimation);
-   procedure paintXY (This : in out CircleAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
+   procedure paintXY (This : in out CircleAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
 
 end org.allbinary.animation.vector.CircleAnimation_Package;
 

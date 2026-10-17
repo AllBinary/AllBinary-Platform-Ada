@@ -86,16 +86,16 @@ package views.admin.inventory.download.UpdateFileValidationView_Package is
       commonStrings : CommonStrings_Access;
    end record;
 
-   procedure Initialize (This : in out UpdateFileValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return UpdateFileValidationView_Access;
+   procedure Initialize (This : in out UpdateFileValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return UpdateFileValidationView_Access;
    function isValid (This : in out UpdateFileValidationView) return Boolean;
    function toValidationInfoDoc (This : in out UpdateFileValidationView) return Document_Access;
-   function toValidationInfoNode (This : in out UpdateFileValidationView; document_Param : access Document'Class) return Node_Access;
-   procedure toValidationInfoNode (This : in out UpdateFileValidationView; document_Param : access Document'Class);
+   function toValidationInfoNode (This : in out UpdateFileValidationView; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out UpdateFileValidationView; document_Param : access Document_Package.Document'Class);
    function validationInfo (This : in out UpdateFileValidationView) return Unbounded_String;
    function isValid (This : in out UpdateFileValidationView; fileName : Unbounded_String; size : Long_Long_Integer) return Boolean;
    procedure isValid (This : in out UpdateFileValidationView; fileName : Unbounded_String; size : Long_Long_Integer);
-   procedure validationInfo (This : in out UpdateFileValidationView; stringBuffer_Param : access StringMaker'Class; fileName : Unbounded_String; size : Long_Long_Integer);
+   procedure validationInfo (This : in out UpdateFileValidationView; stringBuffer_Param : access StringMaker_Package.StringMaker'Class; fileName : Unbounded_String; size : Long_Long_Integer);
 
 end views.admin.inventory.download.UpdateFileValidationView_Package;
 

@@ -45,8 +45,8 @@ package body org.allbinary.game.tracking.TrackingEventCircularStaticPool_Package
    end init;
 
    --  throws Exception
-   function getNextInstance (This : in out TrackingEventCircularStaticPool; layerInterface_Param : access AllBinaryLayer'Class) return TrackingEvent_Access is
-      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
+   function getNextInstance (This : in out TrackingEventCircularStaticPool; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) return TrackingEvent_Access is
+      layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
       trackingEvent : TrackingEvent_Access;
    begin
         trackingEvent := TrackingEvent_Access (This.EVENT_POOL.getNextInstance);
@@ -54,7 +54,7 @@ package body org.allbinary.game.tracking.TrackingEventCircularStaticPool_Package
         return trackingEvent;
    end getNextInstance;
 
-   procedure getNextInstance (This : in out TrackingEventCircularStaticPool; layerInterface_Param : access AllBinaryLayer'Class) is
+   procedure getNextInstance (This : in out TrackingEventCircularStaticPool; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
       Java_Result : constant TrackingEvent_Access := TrackingEventCircularStaticPool'Class (This).getNextInstance (layerInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

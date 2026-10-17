@@ -42,14 +42,14 @@ package org.allbinary.data.tree.dom.DomNodeHelper_Package is
 
    procedure Initialize (This : in out DomNodeHelper'Class);
    function Create return DomNodeHelper_Access;
-   function getFirstChildElement (parentNode_Param : access Node'Class) return Node_Access;
-   procedure getFirstChildElement (parentNode_Param : access Node'Class);
-   function getTextNodeValue (node_Param : access Node'Class) return Unbounded_String;
-   procedure getTextNodeValue (node_Param : access Node'Class);
-   function getTextNodeValue (nodeName : Unbounded_String; nodeList_Param : access NodeList'Class) return Unbounded_String;
-   procedure getTextNodeValue (nodeName : Unbounded_String; nodeList_Param : access NodeList'Class);
-   function getTextNodesValue (node_Param : access Node'Class) return Unbounded_String;
-   procedure getTextNodesValue (node_Param : access Node'Class);
+   function getFirstChildElement (parentNode_Param : access Node_Package.Node'Class) return Node_Access;
+   procedure getFirstChildElement (parentNode_Param : access Node_Package.Node'Class);
+   function getTextNodeValue (node_Param : access Node_Package.Node'Class) return Unbounded_String;
+   procedure getTextNodeValue (node_Param : access Node_Package.Node'Class);
+   function getTextNodeValue (nodeName : Unbounded_String; nodeList_Param : access NodeList_Package.NodeList'Class) return Unbounded_String;
+   procedure getTextNodeValue (nodeName : Unbounded_String; nodeList_Param : access NodeList_Package.NodeList'Class);
+   function getTextNodesValue (node_Param : access Node_Package.Node'Class) return Unbounded_String;
+   procedure getTextNodesValue (node_Param : access Node_Package.Node'Class);
 
 end org.allbinary.data.tree.dom.DomNodeHelper_Package;
 

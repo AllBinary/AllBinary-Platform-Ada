@@ -79,8 +79,8 @@ package body org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package
    end getString;
 
    --  throws Exception
-   function getStringForFeature (This : in out GameGraphicsResourceUtil; graphicsFeature_Param : access GraphicsFeature'Class) return Unbounded_String is
-      graphicsFeature : GraphicsFeature_Access := GraphicsFeature_Access (graphicsFeature_Param);
+   function getStringForFeature (This : in out GameGraphicsResourceUtil; graphicsFeature_Param : access GraphicsFeature_Package.GraphicsFeature'Class) return Unbounded_String is
+      graphicsFeature : constant GraphicsFeature_Access := GraphicsFeature_Access (graphicsFeature_Param);
       stringBuffer : StringMaker_Access;
       graphicsFeatureFactory : GraphicsFeatureFactory_Access;
       features : Features_Access;
@@ -115,7 +115,7 @@ package body org.allbinary.game.layer.resources.GameGraphicsResourceUtil_Package
         return This.name;
    end getName;
 
-   procedure getStringForFeature (This : in out GameGraphicsResourceUtil; graphicsFeature_Param : access GraphicsFeature'Class) is
+   procedure getStringForFeature (This : in out GameGraphicsResourceUtil; graphicsFeature_Param : access GraphicsFeature_Package.GraphicsFeature'Class) is
       Java_Result : constant Unbounded_String := GameGraphicsResourceUtil'Class (This).getStringForFeature (graphicsFeature_Param);
       pragma Unreferenced (Java_Result);
    begin

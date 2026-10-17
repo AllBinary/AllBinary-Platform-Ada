@@ -51,7 +51,7 @@ package body org.allbinary.graphics.opengles.OpenGLCapabilities_Package is
    end Create;
 
    procedure initCapabilities (This : in out OpenGLCapabilities; gl_Param : access Java_Object'Class) is
-      gl : Java_Object_Access := Java_Object_Access (gl_Param);
+      gl : constant Java_Object_Access := Java_Object_Access (gl_Param);
    begin
         null;
    end initCapabilities;

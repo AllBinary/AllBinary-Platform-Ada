@@ -24,12 +24,12 @@ package org.platform.opengl.OpenGLGLU_Package is
    procedure Initialize (This : in out OpenGLGLU'Class);
    function Create return OpenGLGLU_Access;
    function getInstance return OpenGLGLU_Access;
-   procedure gluLookAt (This : in out OpenGLGLU; gl_Param : access GL10'Class; eyeX : Float; eyeY : Float; eyeZ : Float; centerX : Float; centerY : Float; centerZ : Float; upX : Float; upY : Float; upZ : Float);
-   function gluProject (This : in out OpenGLGLU; gl_Param : access GL10'Class; objX : Float; objY : Float; objZ : Float; model : Float_Array_Access; modelOffset : Integer; project : Float_Array_Access; projectOffset : Integer; view : Integer_Array_Access; viewOffset : Integer; win : Float_Array_Access; winOffset : Integer) return Integer;
-   procedure gluProject (This : in out OpenGLGLU; gl_Param : access GL10'Class; objX : Float; objY : Float; objZ : Float; model : Float_Array_Access; modelOffset : Integer; project : Float_Array_Access; projectOffset : Integer; view : Integer_Array_Access; viewOffset : Integer; win : Float_Array_Access; winOffset : Integer);
-   function gluUnProject (This : in out OpenGLGLU; gl_Param : access GL10'Class; winX : Float; winY : Float; winZ : Float; model : Float_Array_Access; modelOffset : Integer; project : Float_Array_Access; projectOffset : Integer; view : Integer_Array_Access; viewOffset : Integer; obj : Float_Array_Access; objOffset : Integer) return Integer;
-   procedure gluUnProject (This : in out OpenGLGLU; gl_Param : access GL10'Class; winX : Float; winY : Float; winZ : Float; model : Float_Array_Access; modelOffset : Integer; project : Float_Array_Access; projectOffset : Integer; view : Integer_Array_Access; viewOffset : Integer; obj : Float_Array_Access; objOffset : Integer);
-   procedure glFrustumf (This : in out OpenGLGLU; gl_Param : access GL10'Class; lt : Float; rt : Float; btm : Float; top : Float; zNear : Float; zFar : Float);
+   procedure gluLookAt (This : in out OpenGLGLU; gl_Param : access GL10_Package.GL10'Class; eyeX : Float; eyeY : Float; eyeZ : Float; centerX : Float; centerY : Float; centerZ : Float; upX : Float; upY : Float; upZ : Float);
+   function gluProject (This : in out OpenGLGLU; gl_Param : access GL10_Package.GL10'Class; objX : Float; objY : Float; objZ : Float; model : Float_Array_Access; modelOffset : Integer; project : Float_Array_Access; projectOffset : Integer; view : Integer_Array_Access; viewOffset : Integer; win : Float_Array_Access; winOffset : Integer) return Integer;
+   procedure gluProject (This : in out OpenGLGLU; gl_Param : access GL10_Package.GL10'Class; objX : Float; objY : Float; objZ : Float; model : Float_Array_Access; modelOffset : Integer; project : Float_Array_Access; projectOffset : Integer; view : Integer_Array_Access; viewOffset : Integer; win : Float_Array_Access; winOffset : Integer);
+   function gluUnProject (This : in out OpenGLGLU; gl_Param : access GL10_Package.GL10'Class; winX : Float; winY : Float; winZ : Float; model : Float_Array_Access; modelOffset : Integer; project : Float_Array_Access; projectOffset : Integer; view : Integer_Array_Access; viewOffset : Integer; obj : Float_Array_Access; objOffset : Integer) return Integer;
+   procedure gluUnProject (This : in out OpenGLGLU; gl_Param : access GL10_Package.GL10'Class; winX : Float; winY : Float; winZ : Float; model : Float_Array_Access; modelOffset : Integer; project : Float_Array_Access; projectOffset : Integer; view : Integer_Array_Access; viewOffset : Integer; obj : Float_Array_Access; objOffset : Integer);
+   procedure glFrustumf (This : in out OpenGLGLU; gl_Param : access GL10_Package.GL10'Class; lt : Float; rt : Float; btm : Float; top : Float; zNear : Float; zFar : Float);
 
 end org.platform.opengl.OpenGLGLU_Package;
 

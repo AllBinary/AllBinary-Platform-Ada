@@ -22,45 +22,45 @@ package body views.business.context.modules.storefront.customizer.template.objec
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out NoTemplateTransformInfoObjectConfig'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out NoTemplateTransformInfoObjectConfig'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         TransformInfoObjectConfig_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return NoTemplateTransformInfoObjectConfig_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return NoTemplateTransformInfoObjectConfig_Access is
       This : constant NoTemplateTransformInfoObjectConfig_Access := new NoTemplateTransformInfoObjectConfig;
    begin
       NoTemplateTransformInfoObjectConfig_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out NoTemplateTransformInfoObjectConfig'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; document_Param : access Document'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
-      document : Document_Access := Document_Access (document_Param);
+   procedure Initialize (This : in out NoTemplateTransformInfoObjectConfig'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; document_Param : access Document_Package.Document'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+      document : constant Document_Access := Document_Access (document_Param);
    begin
         TransformInfoObjectConfig_Package.Initialize (This, transformInfoInterface, document);
         Initialize_Fields (This);
         This.setDocument (This.generate (This.toXmlDoc));
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; document_Param : access Document'Class) return NoTemplateTransformInfoObjectConfig_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; document_Param : access Document_Package.Document'Class) return NoTemplateTransformInfoObjectConfig_Access is
       This : constant NoTemplateTransformInfoObjectConfig_Access := new NoTemplateTransformInfoObjectConfig;
    begin
       NoTemplateTransformInfoObjectConfig_Package.Initialize (This.all, transformInfoInterface_Param, document_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out NoTemplateTransformInfoObjectConfig'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; name : Unbounded_String; type_Id : Unbounded_String) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out NoTemplateTransformInfoObjectConfig'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; name : Unbounded_String; type_Id : Unbounded_String) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         TransformInfoObjectConfig_Package.Initialize (This, transformInfoInterface, name, type_Id);
         Initialize_Fields (This);
         This.setDocument (This.generate (This.toXmlDoc));
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; name : Unbounded_String; type_Id : Unbounded_String) return NoTemplateTransformInfoObjectConfig_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; name : Unbounded_String; type_Id : Unbounded_String) return NoTemplateTransformInfoObjectConfig_Access is
       This : constant NoTemplateTransformInfoObjectConfig_Access := new NoTemplateTransformInfoObjectConfig;
    begin
       NoTemplateTransformInfoObjectConfig_Package.Initialize (This.all, transformInfoInterface_Param, name, type_Id);
@@ -68,8 +68,8 @@ package body views.business.context.modules.storefront.customizer.template.objec
    end Create;
 
    --  throws Exception
-   function generate (This : in out NoTemplateTransformInfoObjectConfig; objectConfigDocument_Param : access Document'Class) return Document_Access is
-      objectConfigDocument : Document_Access := Document_Access (objectConfigDocument_Param);
+   function generate (This : in out NoTemplateTransformInfoObjectConfig; objectConfigDocument_Param : access Document_Package.Document'Class) return Document_Access is
+      objectConfigDocument : constant Document_Access := Document_Access (objectConfigDocument_Param);
       docString : Unbounded_String;
       storeName : Unbounded_String;
       viewName : Unbounded_String;
@@ -99,7 +99,7 @@ package body views.business.context.modules.storefront.customizer.template.objec
         return newObjectConfigDocument;
    end generate;
 
-   procedure generate (This : in out NoTemplateTransformInfoObjectConfig; objectConfigDocument_Param : access Document'Class) is
+   procedure generate (This : in out NoTemplateTransformInfoObjectConfig; objectConfigDocument_Param : access Document_Package.Document'Class) is
       Java_Result : constant Document_Access := NoTemplateTransformInfoObjectConfig'Class (This).generate (objectConfigDocument_Param);
       pragma Unreferenced (Java_Result);
    begin

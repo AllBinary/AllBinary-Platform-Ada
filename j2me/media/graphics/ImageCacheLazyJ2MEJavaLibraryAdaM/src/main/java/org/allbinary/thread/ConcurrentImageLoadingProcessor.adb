@@ -23,15 +23,15 @@ package body org.allbinary.thread.ConcurrentImageLoadingProcessor_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ConcurrentImageLoadingProcessor'Class; imageCache_Param : access ImageCache'Class) is
-      imageCache : ImageCache_Access := ImageCache_Access (imageCache_Param);
+   procedure Initialize (This : in out ConcurrentImageLoadingProcessor'Class; imageCache_Param : access ImageCache_Package.ImageCache'Class) is
+      imageCache : constant ImageCache_Access := ImageCache_Access (imageCache_Param);
    begin
       BaseImageLoadingProcessor_Package.Initialize (This);
       Initialize_Fields (This);
         This.runnable := ImageCacheRunnable_Package.Create (imageCache);
    end Initialize;
 
-   function Create (imageCache_Param : access ImageCache'Class) return ConcurrentImageLoadingProcessor_Access is
+   function Create (imageCache_Param : access ImageCache_Package.ImageCache'Class) return ConcurrentImageLoadingProcessor_Access is
       This : constant ConcurrentImageLoadingProcessor_Access := new ConcurrentImageLoadingProcessor;
    begin
       ConcurrentImageLoadingProcessor_Package.Initialize (This.all, imageCache_Param);
@@ -57,15 +57,15 @@ package body org.allbinary.thread.ImageCacheRunnable_Package is
    end Initialize_Fields;
 
     
-   procedure Initialize (This : in out ImageCacheRunnable'Class; imageCache_Param : access ImageCache'Class) is
-      imageCache : ImageCache_Access := ImageCache_Access (imageCache_Param);
+   procedure Initialize (This : in out ImageCacheRunnable'Class; imageCache_Param : access ImageCache_Package.ImageCache'Class) is
+      imageCache : constant ImageCache_Access := ImageCache_Access (imageCache_Param);
    begin
       ABRunnable_Package.Initialize (This);
       Initialize_Fields (This);
             This.imageCache := imageCache;
    end Initialize;
 
-   function Create (imageCache_Param : access ImageCache'Class) return ImageCacheRunnable_Access is
+   function Create (imageCache_Param : access ImageCache_Package.ImageCache'Class) return ImageCacheRunnable_Access is
       This : constant ImageCacheRunnable_Access := new ImageCacheRunnable;
    begin
       ImageCacheRunnable_Package.Initialize (This.all, imageCache_Param);

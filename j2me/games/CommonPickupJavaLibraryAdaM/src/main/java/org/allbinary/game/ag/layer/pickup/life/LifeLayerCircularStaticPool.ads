@@ -42,9 +42,9 @@ package org.allbinary.game.ag.layer.pickup.life.LifeLayerCircularStaticPool_Pack
 
    type LifeLayerCircularStaticPool is new AllBinaryLayerCircularPool with null record;
 
-   procedure Initialize (This : in out LifeLayerCircularStaticPool'Class; allbinaryLayerFactoryInterface_Param : access AllBinaryLayerFactoryInterface'Class; total : Integer);
-   function Create (allbinaryLayerFactoryInterface_Param : access AllBinaryLayerFactoryInterface'Class; total : Integer) return LifeLayerCircularStaticPool_Access;
-   procedure visit (This : in out LifeLayerCircularStaticPool; sourceLayerInterface_Param : access AllBinaryLayer'Class);
+   procedure Initialize (This : in out LifeLayerCircularStaticPool'Class; allbinaryLayerFactoryInterface_Param : access AllBinaryLayerFactoryInterface_Package.AllBinaryLayerFactoryInterface'Class; total : Integer);
+   function Create (allbinaryLayerFactoryInterface_Param : access AllBinaryLayerFactoryInterface_Package.AllBinaryLayerFactoryInterface'Class; total : Integer) return LifeLayerCircularStaticPool_Access;
+   procedure visit (This : in out LifeLayerCircularStaticPool; sourceLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class);
 
 end org.allbinary.game.ag.layer.pickup.life.LifeLayerCircularStaticPool_Package;
 

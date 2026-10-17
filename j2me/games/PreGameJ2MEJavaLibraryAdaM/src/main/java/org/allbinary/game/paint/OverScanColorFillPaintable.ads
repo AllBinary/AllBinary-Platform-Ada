@@ -35,9 +35,9 @@ package org.allbinary.game.paint.OverScanColorFillPaintable_Package is
 
    type OverScanColorFillPaintable is new ColorFillPaintable with null record;
 
-   procedure Initialize (This : in out OverScanColorFillPaintable'Class; basicColor_Param : access BasicColor'Class);
-   function Create (basicColor_Param : access BasicColor'Class) return OverScanColorFillPaintable_Access;
-   procedure paint (This : in out OverScanColorFillPaintable; graphics_Param : access Graphics'Class);
+   procedure Initialize (This : in out OverScanColorFillPaintable'Class; basicColor_Param : access BasicColor_Package.BasicColor'Class);
+   function Create (basicColor_Param : access BasicColor_Package.BasicColor'Class) return OverScanColorFillPaintable_Access;
+   procedure paint (This : in out OverScanColorFillPaintable; graphics_Param : access Graphics_Package.Graphics'Class);
 
 end org.allbinary.game.paint.OverScanColorFillPaintable_Package;
 

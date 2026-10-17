@@ -40,8 +40,8 @@ package body org.allbinary.input.gyro.OrientationToGameKeyEvent_Package is
       return This;
    end Create;
 
-   procedure setAllBinaryGyroSensor (This : in out OrientationToGameKeyEvent; allBinaryGyroSensor_Param : access AllBinaryOrientationSensor'Class) is
-      allBinaryGyroSensor : AllBinaryOrientationSensor_Access := AllBinaryOrientationSensor_Access (allBinaryGyroSensor_Param);
+   procedure setAllBinaryGyroSensor (This : in out OrientationToGameKeyEvent; allBinaryGyroSensor_Param : access AllBinaryOrientationSensor_Package.AllBinaryOrientationSensor'Class) is
+      allBinaryGyroSensor : constant AllBinaryOrientationSensor_Access := AllBinaryOrientationSensor_Access (allBinaryGyroSensor_Param);
    begin
         This.allBinaryGyroSensor := allBinaryGyroSensor;
    end setAllBinaryGyroSensor;
@@ -58,8 +58,8 @@ package body org.allbinary.input.gyro.OrientationToGameKeyEvent_Package is
    end process;
 
    --  throws Exception
-   procedure updateGameKeyEvents (This : in out OrientationToGameKeyEvent; orientation_Param : access Orientation'Class; yaw : Integer; pitch : Integer; roll : Integer) is
-      orientation : Orientation_Access := Orientation_Access (orientation_Param);
+   procedure updateGameKeyEvents (This : in out OrientationToGameKeyEvent; orientation_Param : access Orientation_Package.Orientation'Class; yaw : Integer; pitch : Integer; roll : Integer) is
+      orientation : constant Orientation_Access := Orientation_Access (orientation_Param);
    begin
         null;
    end updateGameKeyEvents;

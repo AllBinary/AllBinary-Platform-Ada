@@ -31,9 +31,9 @@ package body org.allbinary.game.paint.help.HelpPaintable_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out HelpPaintable'Class; title : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; basicColor_Param : access BasicColor'Class) is
-      backgroundBasicColor : BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+   procedure Initialize (This : in out HelpPaintable'Class; title : Unbounded_String; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      backgroundBasicColor : constant BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
       Paintable_Package.Initialize (This);
       Initialize_Fields (This);
@@ -41,15 +41,15 @@ package body org.allbinary.game.paint.help.HelpPaintable_Package is
         This.basicColor := basicColor;
    end Initialize;
 
-   function Create (title : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; basicColor_Param : access BasicColor'Class) return HelpPaintable_Access is
+   function Create (title : Unbounded_String; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; basicColor_Param : access BasicColor_Package.BasicColor'Class) return HelpPaintable_Access is
       This : constant HelpPaintable_Access := new HelpPaintable;
    begin
       HelpPaintable_Package.Initialize (This.all, title, backgroundBasicColor_Param, basicColor_Param);
       return This;
    end Create;
 
-   procedure updateMeasurement (This : in out HelpPaintable; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure updateMeasurement (This : in out HelpPaintable; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
       size : Integer;
       index : Integer;
@@ -71,8 +71,8 @@ package body org.allbinary.game.paint.help.HelpPaintable_Package is
         This.myFontProcessor := This.updateMyFontProcessor;
    end setInputInfoP;
 
-   procedure paint (This : in out HelpPaintable; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out HelpPaintable; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       halfWidth : Integer;
       size : Integer;
       index : Integer;

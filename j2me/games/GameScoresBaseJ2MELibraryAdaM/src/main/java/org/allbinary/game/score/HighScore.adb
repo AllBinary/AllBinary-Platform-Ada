@@ -26,8 +26,8 @@ package body org.allbinary.game.score.HighScore_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out HighScore'Class; id : Integer; name : Unbounded_String; gameInfo_Param : access GameInfo'Class; score : Long_Long_Integer) is
-      gameInfo : GameInfo_Access := GameInfo_Access (gameInfo_Param);
+   procedure Initialize (This : in out HighScore'Class; id : Integer; name : Unbounded_String; gameInfo_Param : access GameInfo_Package.GameInfo'Class; score : Long_Long_Integer) is
+      gameInfo : constant GameInfo_Access := GameInfo_Access (gameInfo_Param);
    begin
       Initialize_Fields (This);
         This.id := id;
@@ -37,7 +37,7 @@ package body org.allbinary.game.score.HighScore_Package is
         This.scoreString := To_Unbounded_String (Java_Image (This.score));
    end Initialize;
 
-   function Create (id : Integer; name : Unbounded_String; gameInfo_Param : access GameInfo'Class; score : Long_Long_Integer) return HighScore_Access is
+   function Create (id : Integer; name : Unbounded_String; gameInfo_Param : access GameInfo_Package.GameInfo'Class; score : Long_Long_Integer) return HighScore_Access is
       This : constant HighScore_Access := new HighScore;
    begin
       HighScore_Package.Initialize (This.all, id, name, gameInfo_Param, score);

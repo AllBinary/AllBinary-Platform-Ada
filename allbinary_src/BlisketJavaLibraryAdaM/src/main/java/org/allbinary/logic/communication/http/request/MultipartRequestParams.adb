@@ -23,30 +23,30 @@ package body org.allbinary.logic.communication.http.request.MultipartRequestPara
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out MultipartRequestParams'Class; request_Param : access HttpServletRequest'Class) is
-      request : HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
+   procedure Initialize (This : in out MultipartRequestParams'Class; request_Param : access HttpServletRequest_Package.HttpServletRequest'Class) is
+      request : constant HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
    begin
         RequestParams_Package.Initialize (This);
         Initialize_Fields (This);
         This.processMultipartRequest (request);
    end Initialize;
 
-   function Create (request_Param : access HttpServletRequest'Class) return MultipartRequestParams_Access is
+   function Create (request_Param : access HttpServletRequest_Package.HttpServletRequest'Class) return MultipartRequestParams_Access is
       This : constant MultipartRequestParams_Access := new MultipartRequestParams;
    begin
       MultipartRequestParams_Package.Initialize (This.all, request_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out MultipartRequestParams'Class; pageContext_Param : access PageContext'Class) is
-      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
+   procedure Initialize (This : in out MultipartRequestParams'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is
+      pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
    begin
         RequestParams_Package.Initialize (This);
         Initialize_Fields (This);
         This.processMultipartRequest (HttpServletRequest_Access (pageContext.getRequest));
    end Initialize;
 
-   function Create (pageContext_Param : access PageContext'Class) return MultipartRequestParams_Access is
+   function Create (pageContext_Param : access PageContext_Package.PageContext'Class) return MultipartRequestParams_Access is
       This : constant MultipartRequestParams_Access := new MultipartRequestParams;
    begin
       MultipartRequestParams_Package.Initialize (This.all, pageContext_Param);
@@ -58,8 +58,8 @@ package body org.allbinary.logic.communication.http.request.MultipartRequestPara
         This.special := True;
    end setSpecial;
 
-   procedure processMultipartRequest (This : in out MultipartRequestParams; request_Param : access HttpServletRequest'Class) is
-      request : HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
+   procedure processMultipartRequest (This : in out MultipartRequestParams; request_Param : access HttpServletRequest_Package.HttpServletRequest'Class) is
+      request : constant HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
       specialRequest : HashMap_Access;
       multipartRequestList : List_Access;
       fileItemArray : Java_Object_Access_Array_Access;

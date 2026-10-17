@@ -38,9 +38,9 @@ package body org.allbinary.graphics.font.FontDebugFactory_Package is
         return FontDebugFactory_Package.instance;
    end getInstance;
 
-   procedure setFont (This : in out FontDebugFactory; font_Param : access Font'Class; graphics_Param : access Graphics'Class) is
-      font : Font_Access := Font_Access (font_Param);
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure setFont (This : in out FontDebugFactory; font_Param : access Font_Package.Font'Class; graphics_Param : access Graphics_Package.Graphics'Class) is
+      font : constant Font_Access := Font_Access (font_Param);
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         graphics.setFont (font);
    end setFont;

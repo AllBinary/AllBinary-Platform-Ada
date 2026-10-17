@@ -59,8 +59,8 @@ package body org.allbinary.logic.communication.smtp.info.BasicEmailInfo_Package 
         return This.emailServerConfigurationInterface;
    end getEmailServerConfigurationInterface;
 
-   procedure setEmailServerConfigurationInterface (This : in out BasicEmailInfo; emailServerConfigurationInterface_Param : access EmailServerConfigurationInterface'Class) is
-      emailServerConfigurationInterface : EmailServerConfigurationInterface_Access := EmailServerConfigurationInterface_Access (emailServerConfigurationInterface_Param);
+   procedure setEmailServerConfigurationInterface (This : in out BasicEmailInfo; emailServerConfigurationInterface_Param : access EmailServerConfigurationInterface_Package.EmailServerConfigurationInterface'Class) is
+      emailServerConfigurationInterface : constant EmailServerConfigurationInterface_Access := EmailServerConfigurationInterface_Access (emailServerConfigurationInterface_Param);
    begin
         This.emailServerConfigurationInterface := emailServerConfigurationInterface;
    end setEmailServerConfigurationInterface;

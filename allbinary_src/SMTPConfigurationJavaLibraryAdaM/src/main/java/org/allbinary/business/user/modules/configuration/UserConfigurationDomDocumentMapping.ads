@@ -45,8 +45,8 @@ package org.allbinary.business.user.modules.configuration.UserConfigurationDomDo
       userConfigurationInterface : UserConfigurationInterface_Access;
    end record;
 
-   procedure Initialize (This : in out UserConfigurationDomDocumentMapping'Class; userConfigurationInterface_Param : access UserConfigurationInterface'Class);
-   function Create (userConfigurationInterface_Param : access UserConfigurationInterface'Class) return UserConfigurationDomDocumentMapping_Access;
+   procedure Initialize (This : in out UserConfigurationDomDocumentMapping'Class; userConfigurationInterface_Param : access UserConfigurationInterface_Package.UserConfigurationInterface'Class);
+   function Create (userConfigurationInterface_Param : access UserConfigurationInterface_Package.UserConfigurationInterface'Class) return UserConfigurationDomDocumentMapping_Access;
    function toXmlDoc (This : in out UserConfigurationDomDocumentMapping) return Document_Access;
    function toDomDocumentString (This : in out UserConfigurationDomDocumentMapping) return Unbounded_String;
 

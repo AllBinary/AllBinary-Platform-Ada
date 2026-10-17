@@ -23,16 +23,16 @@ package body admin.taghelpers.OrderHistoryHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out OrderHistoryHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
-      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
+   procedure Initialize (This : in out OrderHistoryHelper'Class; hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
    begin
       BasicTable_Package.Initialize (This);
       Initialize_Fields (This);
         This.portion := Portion_Package.Create (hashMap);
    end Initialize;
 
-   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return OrderHistoryHelper_Access is
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return OrderHistoryHelper_Access is
       This : constant OrderHistoryHelper_Access := new OrderHistoryHelper;
    begin
       OrderHistoryHelper_Package.Initialize (This.all, hashMap_Param, pageContext_Param);

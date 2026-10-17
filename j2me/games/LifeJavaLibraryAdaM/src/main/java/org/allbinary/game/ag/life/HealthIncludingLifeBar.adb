@@ -26,19 +26,19 @@ package body org.allbinary.game.ag.life.HealthIncludingLifeBar_Package is
 
 
    --  throws Exception
-   function createHealthIncludingLifeBar (layerInterface_Param : access AllBinaryLayer'Class; life_Param : access Life'Class; healthInterface_Param : access Health'Class; location : Integer; direction : Integer) return HealthIncludingLifeBar_Access is
-      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
-      life : Life_Access := Life_Access (life_Param);
-      healthInterface : Health_Access := Health_Access (healthInterface_Param);
+   function createHealthIncludingLifeBar (layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; life_Param : access Life_Package.Life'Class; healthInterface_Param : access Health_Package.Health'Class; location : Integer; direction : Integer) return HealthIncludingLifeBar_Access is
+      layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
+      life : constant Life_Access := Life_Access (life_Param);
+      healthInterface : constant Health_Access := Health_Access (healthInterface_Param);
    begin
         return HealthIncludingLifeBar_Package.Create (layerInterface, life, healthInterface, HealthBarTwodAnimation_Package.Create (layerInterface, location), direction);
    end createHealthIncludingLifeBar;
 
-   procedure Initialize (This : in out HealthIncludingLifeBar'Class; layerInterface_Param : access AllBinaryLayer'Class; life_Param : access Life'Class; healthInterface_Param : access Health'Class; animationInterface_Param : access HealthBarAnimation'Class; direction : Integer) is
-      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
-      life : Life_Access := Life_Access (life_Param);
-      healthInterface : Health_Access := Health_Access (healthInterface_Param);
-      animationInterface : HealthBarAnimation_Access := HealthBarAnimation_Access (animationInterface_Param);
+   procedure Initialize (This : in out HealthIncludingLifeBar'Class; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; life_Param : access Life_Package.Life'Class; healthInterface_Param : access Health_Package.Health'Class; animationInterface_Param : access HealthBarAnimation_Package.HealthBarAnimation'Class; direction : Integer) is
+      layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
+      life : constant Life_Access := Life_Access (life_Param);
+      healthInterface : constant Health_Access := Health_Access (healthInterface_Param);
+      animationInterface : constant HealthBarAnimation_Access := HealthBarAnimation_Access (animationInterface_Param);
    begin
       Paintable_Package.Initialize (This);
       Initialize_Fields (This);
@@ -50,7 +50,7 @@ package body org.allbinary.game.ag.life.HealthIncludingLifeBar_Package is
         This.onHealthChange;
    end Initialize;
 
-   function Create (layerInterface_Param : access AllBinaryLayer'Class; life_Param : access Life'Class; healthInterface_Param : access Health'Class; animationInterface_Param : access HealthBarAnimation'Class; direction : Integer) return HealthIncludingLifeBar_Access is
+   function Create (layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; life_Param : access Life_Package.Life'Class; healthInterface_Param : access Health_Package.Health'Class; animationInterface_Param : access HealthBarAnimation_Package.HealthBarAnimation'Class; direction : Integer) return HealthIncludingLifeBar_Access is
       This : constant HealthIncludingLifeBar_Access := new HealthIncludingLifeBar;
    begin
       HealthIncludingLifeBar_Package.Initialize (This.all, layerInterface_Param, life_Param, healthInterface_Param, animationInterface_Param, direction);
@@ -62,19 +62,19 @@ package body org.allbinary.game.ag.life.HealthIncludingLifeBar_Package is
         This.animationInterface.onHealthChange ((((((This.healthInterface.getHealth) + (((This.healthInterface.getMaxHealth) * (This.life.get))))) * (This.allbinaryLayer.getWidth))) / (((This.healthInterface.getMaxHealth) + (((This.healthInterface.getMaxHealth) * (This.life.getStartLives))))));
    end onHealthChange;
 
-   procedure paint (This : in out HealthIncludingLifeBar; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out HealthIncludingLifeBar; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.animationInterface.paintXY (graphics, 0, 0);
    end paint;
 
-   procedure paintThreed (This : in out HealthIncludingLifeBar; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintThreed (This : in out HealthIncludingLifeBar; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.animationInterface.paintThreedXYZ (graphics, 0, 0, 0);
    end paintThreed;
 
-   procedure createHealthIncludingLifeBar (layerInterface_Param : access AllBinaryLayer'Class; life_Param : access Life'Class; healthInterface_Param : access Health'Class; location : Integer; direction : Integer) is
+   procedure createHealthIncludingLifeBar (layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; life_Param : access Life_Package.Life'Class; healthInterface_Param : access Health_Package.Health'Class; location : Integer; direction : Integer) is
       Java_Result : constant HealthIncludingLifeBar_Access := createHealthIncludingLifeBar (layerInterface_Param, life_Param, healthInterface_Param, location, direction);
       pragma Unreferenced (Java_Result);
    begin

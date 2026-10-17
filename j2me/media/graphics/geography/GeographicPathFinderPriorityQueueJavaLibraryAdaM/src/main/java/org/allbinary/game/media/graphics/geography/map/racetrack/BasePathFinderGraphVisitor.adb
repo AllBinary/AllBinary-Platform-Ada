@@ -25,8 +25,8 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.BasePathF
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasePathFinderGraphVisitor'Class; geographicMapInterface_Param : access BasicGeographicMap'Class; edgeMinimum : Integer; minPathWeight : Integer; maxPathWeight : Integer) is
-      geographicMapInterface : BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
+   procedure Initialize (This : in out BasePathFinderGraphVisitor'Class; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; edgeMinimum : Integer; minPathWeight : Integer; maxPathWeight : Integer) is
+      geographicMapInterface : constant BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
    begin
       PathFinderGraphVisitorBase_Package.Initialize (This);
       Initialize_Fields (This);
@@ -36,7 +36,7 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.BasePathF
         This.maxPathWeight := maxPathWeight;
    end Initialize;
 
-   function Create (geographicMapInterface_Param : access BasicGeographicMap'Class; edgeMinimum : Integer; minPathWeight : Integer; maxPathWeight : Integer) return BasePathFinderGraphVisitor_Access is
+   function Create (geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; edgeMinimum : Integer; minPathWeight : Integer; maxPathWeight : Integer) return BasePathFinderGraphVisitor_Access is
       This : constant BasePathFinderGraphVisitor_Access := new BasePathFinderGraphVisitor;
    begin
       BasePathFinderGraphVisitor_Package.Initialize (This.all, geographicMapInterface_Param, edgeMinimum, minPathWeight, maxPathWeight);
@@ -44,19 +44,19 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.BasePathF
    end Create;
 
    --  throws Exception
-   procedure visit (This : in out BasePathFinderGraphVisitor; graph_Param : access Java_Object'Class; startPathFindingNodeList_Param : access BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList'Class) is
-      graph : Java_Object_Access := Java_Object_Access (graph_Param);
-      startPathFindingNodeList : BasicArrayList_Access := BasicArrayList_Access (startPathFindingNodeList_Param);
-      endPathFindingNodeList : BasicArrayList_Access := BasicArrayList_Access (endPathFindingNodeList_Param);
+   procedure visit (This : in out BasePathFinderGraphVisitor; graph_Param : access Java_Object'Class; startPathFindingNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      graph : constant Java_Object_Access := Java_Object_Access (graph_Param);
+      startPathFindingNodeList : constant BasicArrayList_Access := BasicArrayList_Access (startPathFindingNodeList_Param);
+      endPathFindingNodeList : constant BasicArrayList_Access := BasicArrayList_Access (endPathFindingNodeList_Param);
    begin
         null;
    end visit;
 
    --  throws Exception
-   procedure fixPath (This : in out BasePathFinderGraphVisitor; startPathFindingNodeList_Param : access BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList'Class; pathList_Param : access BasicArrayList'Class) is
-      startPathFindingNodeList : BasicArrayList_Access := BasicArrayList_Access (startPathFindingNodeList_Param);
-      endPathFindingNodeList : BasicArrayList_Access := BasicArrayList_Access (endPathFindingNodeList_Param);
-      pathList : BasicArrayList_Access := BasicArrayList_Access (pathList_Param);
+   procedure fixPath (This : in out BasePathFinderGraphVisitor; startPathFindingNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class; pathList_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      startPathFindingNodeList : constant BasicArrayList_Access := BasicArrayList_Access (startPathFindingNodeList_Param);
+      endPathFindingNodeList : constant BasicArrayList_Access := BasicArrayList_Access (endPathFindingNodeList_Param);
+      pathList : constant BasicArrayList_Access := BasicArrayList_Access (pathList_Param);
       startPathFindingNode : PathFindingNode_Access;
       index : Integer;
    begin
@@ -69,13 +69,13 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.BasePathF
    end fixPath;
 
    function isValid (This : in out BasePathFinderGraphVisitor; graphPath_Param : access Java_Object'Class) return Boolean is
-      graphPath : Java_Object_Access := Java_Object_Access (graphPath_Param);
+      graphPath : constant Java_Object_Access := Java_Object_Access (graphPath_Param);
    begin
         return False;
    end isValid;
 
    function getInvalidReason (This : in out BasePathFinderGraphVisitor; graphPath_Param : access Java_Object'Class) return Unbounded_String is
-      graphPath : Java_Object_Access := Java_Object_Access (graphPath_Param);
+      graphPath : constant Java_Object_Access := Java_Object_Access (graphPath_Param);
    begin
         return StringUtil_Package.getInstance.EMPTY_STRING;
    end getInvalidReason;

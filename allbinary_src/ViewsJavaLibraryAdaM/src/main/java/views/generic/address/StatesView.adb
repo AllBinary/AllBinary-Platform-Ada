@@ -36,8 +36,8 @@ package body views.generic_Id.address.StatesView_Package is
       return This;
    end Create;
 
-   function toXmlNode (This : in out StatesView; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out StatesView; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       node : Node_Access;
       statesFile : Unbounded_String;
       lineReader : LineReader_Access;
@@ -65,7 +65,7 @@ package body views.generic_Id.address.StatesView_Package is
         end;
    end toXmlNode;
 
-   procedure toXmlNode (This : in out StatesView; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out StatesView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := StatesView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

@@ -47,9 +47,9 @@ package org.allbinary.media.image.ImageRotationUtil_Package is
    procedure Initialize (This : in out ImageRotationUtil'Class);
    function Create return ImageRotationUtil_Access;
    function getInstance return ImageRotationUtil_Access;
-   procedure rotateImage (This : in out ImageRotationUtil; originalImage_Param : access Image'Class; image_Param : access Image'Class; totalAngle : Integer);
-   function createRotatedImage (This : in out ImageRotationUtil; originalImage_Param : access Image'Class; rotationInDegrees : Integer) return Image_Access;
-   procedure createRotatedImage (This : in out ImageRotationUtil; originalImage_Param : access Image'Class; rotationInDegrees : Integer);
+   procedure rotateImage (This : in out ImageRotationUtil; originalImage_Param : access Image_Package.Image'Class; image_Param : access Image_Package.Image'Class; totalAngle : Integer);
+   function createRotatedImage (This : in out ImageRotationUtil; originalImage_Param : access Image_Package.Image'Class; rotationInDegrees : Integer) return Image_Access;
+   procedure createRotatedImage (This : in out ImageRotationUtil; originalImage_Param : access Image_Package.Image'Class; rotationInDegrees : Integer);
 
 end org.allbinary.media.image.ImageRotationUtil_Package;
 

@@ -39,9 +39,9 @@ package org.allbinary.animation.AdjustedVectorAnimation_Package is
       dy : Integer;
    end record;
 
-   procedure Initialize (This : in out AdjustedVectorAnimation'Class; currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor'Class; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior'Class);
-   function Create (currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor'Class; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior'Class) return AdjustedVectorAnimation_Access;
-   procedure paintXY (This : in out AdjustedVectorAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
+   procedure Initialize (This : in out AdjustedVectorAnimation'Class; currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor_Package.BasicColor'Class; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class);
+   function Create (currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor_Package.BasicColor'Class; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return AdjustedVectorAnimation_Access;
+   procedure paintXY (This : in out AdjustedVectorAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
 
 end org.allbinary.animation.AdjustedVectorAnimation_Package;
 

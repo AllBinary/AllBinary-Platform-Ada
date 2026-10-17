@@ -41,14 +41,14 @@ package org.allbinary.animation.image.AllBinaryAdjustedJ2SEImageRotationAnimatio
       dy : Integer;
    end record;
 
-   procedure Initialize (This : in out AllBinaryAdjustedJ2SEImageRotationAnimation'Class; originalImage_Param : access Image'Class; image_Param : access Image'Class; angleInfo_Param : access AngleInfo'Class; totalAngle : Short_Integer; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior'Class);
-   function Create (originalImage_Param : access Image'Class; image_Param : access Image'Class; angleInfo_Param : access AngleInfo'Class; totalAngle : Short_Integer; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior'Class) return AllBinaryAdjustedJ2SEImageRotationAnimation_Access;
+   procedure Initialize (This : in out AllBinaryAdjustedJ2SEImageRotationAnimation'Class; originalImage_Param : access Image_Package.Image'Class; image_Param : access Image_Package.Image'Class; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; totalAngle : Short_Integer; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class);
+   function Create (originalImage_Param : access Image_Package.Image'Class; image_Param : access Image_Package.Image'Class; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; totalAngle : Short_Integer; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return AllBinaryAdjustedJ2SEImageRotationAnimation_Access;
    procedure init (This : in out AllBinaryAdjustedJ2SEImageRotationAnimation; dx : Integer; dy : Integer);
    procedure setDx (This : in out AllBinaryAdjustedJ2SEImageRotationAnimation; dx : Integer);
    function getDx (This : in out AllBinaryAdjustedJ2SEImageRotationAnimation) return Integer;
    procedure setDy (This : in out AllBinaryAdjustedJ2SEImageRotationAnimation; dy : Integer);
    function getDy (This : in out AllBinaryAdjustedJ2SEImageRotationAnimation) return Integer;
-   procedure paintXY (This : in out AllBinaryAdjustedJ2SEImageRotationAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
+   procedure paintXY (This : in out AllBinaryAdjustedJ2SEImageRotationAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
 
 end org.allbinary.animation.image.AllBinaryAdjustedJ2SEImageRotationAnimation_Package;
 

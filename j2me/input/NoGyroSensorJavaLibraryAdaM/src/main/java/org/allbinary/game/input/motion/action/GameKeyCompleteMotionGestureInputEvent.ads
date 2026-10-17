@@ -46,13 +46,13 @@ package org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInput
       gameKeyEvent : GameKeyEvent_Access;
    end record;
 
-   procedure Initialize (This : in out GameKeyCompleteMotionGestureInputEvent'Class; name : Unbounded_String; motionGestureInput_Param : access MotionGestureInput'Class; inputToGameKeyMapping_Param : access InputToGameKeyMapping'Class);
-   function Create (name : Unbounded_String; motionGestureInput_Param : access MotionGestureInput'Class; inputToGameKeyMapping_Param : access InputToGameKeyMapping'Class) return GameKeyCompleteMotionGestureInputEvent_Access;
+   procedure Initialize (This : in out GameKeyCompleteMotionGestureInputEvent'Class; name : Unbounded_String; motionGestureInput_Param : access MotionGestureInput_Package.MotionGestureInput'Class; inputToGameKeyMapping_Param : access InputToGameKeyMapping_Package.InputToGameKeyMapping'Class);
+   function Create (name : Unbounded_String; motionGestureInput_Param : access MotionGestureInput_Package.MotionGestureInput'Class; inputToGameKeyMapping_Param : access InputToGameKeyMapping_Package.InputToGameKeyMapping'Class) return GameKeyCompleteMotionGestureInputEvent_Access;
    function getSourceId (This : in out GameKeyCompleteMotionGestureInputEvent) return Integer;
    procedure update (This : in out GameKeyCompleteMotionGestureInputEvent);
-   procedure setGameKeyEvent (This : in out GameKeyCompleteMotionGestureInputEvent; gameKeyEvent_Param : access GameKeyEvent'Class);
+   procedure setGameKeyEvent (This : in out GameKeyCompleteMotionGestureInputEvent; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class);
    function getGameKeyEvent (This : in out GameKeyCompleteMotionGestureInputEvent) return GameKeyEvent_Access;
-   procedure setGameKey (This : in out GameKeyCompleteMotionGestureInputEvent; gameKey_Param : access GameKey'Class);
+   procedure setGameKey (This : in out GameKeyCompleteMotionGestureInputEvent; gameKey_Param : access GameKey_Package.GameKey'Class);
    function getGameKey (This : in out GameKeyCompleteMotionGestureInputEvent) return GameKey_Access;
 
 end org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEvent_Package;

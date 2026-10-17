@@ -64,12 +64,12 @@ package org.allbinary.game.displayable.screen.LicenseRegistrationTextBox_Package
    DISPLAY_COMMAND : Command_Access;
    SUBMIT_COMMAND : Command_Access;
 
-   procedure Initialize (This : in out LicenseRegistrationTextBox'Class; cmdListener_Param : access CommandListener'Class; backgrounBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class);
-   function Create (cmdListener_Param : access CommandListener'Class; backgrounBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return LicenseRegistrationTextBox_Access;
-   procedure initCommands (This : in out LicenseRegistrationTextBox; cmdListener_Param : access CommandListener'Class);
+   procedure Initialize (This : in out LicenseRegistrationTextBox'Class; cmdListener_Param : access CommandListener_Package.CommandListener'Class; backgrounBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class);
+   function Create (cmdListener_Param : access CommandListener_Package.CommandListener'Class; backgrounBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return LicenseRegistrationTextBox_Access;
+   procedure initCommands (This : in out LicenseRegistrationTextBox; cmdListener_Param : access CommandListener_Package.CommandListener'Class);
    procedure open (This : in out LicenseRegistrationTextBox);
    procedure close (This : in out LicenseRegistrationTextBox);
-   procedure paint (This : in out LicenseRegistrationTextBox; graphics_Param : access Graphics'Class);
+   procedure paint (This : in out LicenseRegistrationTextBox; graphics_Param : access Graphics_Package.Graphics'Class);
    procedure submit (This : in out LicenseRegistrationTextBox);
 
 end org.allbinary.game.displayable.screen.LicenseRegistrationTextBox_Package;

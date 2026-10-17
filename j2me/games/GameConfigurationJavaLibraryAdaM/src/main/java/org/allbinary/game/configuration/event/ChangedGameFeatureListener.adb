@@ -39,13 +39,13 @@ package body org.allbinary.game.configuration.event.ChangedGameFeatureListener_P
         return ChangedGameFeatureListener_Package.gameFeatureListener;
    end getInstance;
 
-   function isChangedGameConfiguration (This : in out ChangedGameFeatureListener; gameConfiguration_Param : access GameConfiguration'Class) return Boolean is
-      gameConfiguration : GameConfiguration_Access := GameConfiguration_Access (gameConfiguration_Param);
+   function isChangedGameConfiguration (This : in out ChangedGameFeatureListener; gameConfiguration_Param : access GameConfiguration_Package.GameConfiguration'Class) return Boolean is
+      gameConfiguration : constant GameConfiguration_Access := GameConfiguration_Access (gameConfiguration_Param);
    begin
         return This.list.contains (gameConfiguration);
    end isChangedGameConfiguration;
 
-   procedure isChangedGameConfiguration (This : in out ChangedGameFeatureListener; gameConfiguration_Param : access GameConfiguration'Class) is
+   procedure isChangedGameConfiguration (This : in out ChangedGameFeatureListener; gameConfiguration_Param : access GameConfiguration_Package.GameConfiguration'Class) is
       Java_Result : constant Boolean := ChangedGameFeatureListener'Class (This).isChangedGameConfiguration (gameConfiguration_Param);
       pragma Unreferenced (Java_Result);
    begin

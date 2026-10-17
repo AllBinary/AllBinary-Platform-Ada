@@ -53,10 +53,10 @@ package org.allbinary.game.displayable.canvas.BufferedGameCanvasPaintHelper_Pack
    end record;
    MAX_IMAGES : Integer;
 
-   procedure Initialize (This : in out BufferedGameCanvasPaintHelper'Class; gameCanvas_Param : access AllBinaryGameCanvas'Class);
-   function Create (gameCanvas_Param : access AllBinaryGameCanvas'Class) return BufferedGameCanvasPaintHelper_Access;
+   procedure Initialize (This : in out BufferedGameCanvasPaintHelper'Class; gameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class);
+   function Create (gameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class) return BufferedGameCanvasPaintHelper_Access;
    procedure process (This : in out BufferedGameCanvasPaintHelper);
-   procedure paint (This : in out BufferedGameCanvasPaintHelper; graphics_Param : access Graphics'Class);
+   procedure paint (This : in out BufferedGameCanvasPaintHelper; graphics_Param : access Graphics_Package.Graphics'Class);
 
 end org.allbinary.game.displayable.canvas.BufferedGameCanvasPaintHelper_Package;
 

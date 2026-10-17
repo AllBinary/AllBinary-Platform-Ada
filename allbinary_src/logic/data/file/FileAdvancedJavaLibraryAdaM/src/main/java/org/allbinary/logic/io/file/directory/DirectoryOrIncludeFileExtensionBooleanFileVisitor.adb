@@ -22,38 +22,38 @@ package body org.allbinary.logic.io.file.directory.DirectoryOrIncludeFileExtensi
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out DirectoryOrIncludeFileExtensionBooleanFileVisitor'Class; filterStringBasicArrayList_Param : access BasicArrayList'Class) is
-      filterStringBasicArrayList : BasicArrayList_Access := BasicArrayList_Access (filterStringBasicArrayList_Param);
+   procedure Initialize (This : in out DirectoryOrIncludeFileExtensionBooleanFileVisitor'Class; filterStringBasicArrayList_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      filterStringBasicArrayList : constant BasicArrayList_Access := BasicArrayList_Access (filterStringBasicArrayList_Param);
    begin
         IncludeFileExtensionsBooleanFileVisitor_Package.Initialize (This, filterStringBasicArrayList);
         Initialize_Fields (This);
         This.includesString := Null_Unbounded_String;
    end Initialize;
 
-   function Create (filterStringBasicArrayList_Param : access BasicArrayList'Class) return DirectoryOrIncludeFileExtensionBooleanFileVisitor_Access is
+   function Create (filterStringBasicArrayList_Param : access BasicArrayList_Package.BasicArrayList'Class) return DirectoryOrIncludeFileExtensionBooleanFileVisitor_Access is
       This : constant DirectoryOrIncludeFileExtensionBooleanFileVisitor_Access := new DirectoryOrIncludeFileExtensionBooleanFileVisitor;
    begin
       DirectoryOrIncludeFileExtensionBooleanFileVisitor_Package.Initialize (This.all, filterStringBasicArrayList_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out DirectoryOrIncludeFileExtensionBooleanFileVisitor'Class; filterStringBasicArrayList_Param : access BasicArrayList'Class; includesString : Unbounded_String) is
-      filterStringBasicArrayList : BasicArrayList_Access := BasicArrayList_Access (filterStringBasicArrayList_Param);
+   procedure Initialize (This : in out DirectoryOrIncludeFileExtensionBooleanFileVisitor'Class; filterStringBasicArrayList_Param : access BasicArrayList_Package.BasicArrayList'Class; includesString : Unbounded_String) is
+      filterStringBasicArrayList : constant BasicArrayList_Access := BasicArrayList_Access (filterStringBasicArrayList_Param);
    begin
         IncludeFileExtensionsBooleanFileVisitor_Package.Initialize (This, filterStringBasicArrayList);
         Initialize_Fields (This);
         This.includesString := includesString;
    end Initialize;
 
-   function Create (filterStringBasicArrayList_Param : access BasicArrayList'Class; includesString : Unbounded_String) return DirectoryOrIncludeFileExtensionBooleanFileVisitor_Access is
+   function Create (filterStringBasicArrayList_Param : access BasicArrayList_Package.BasicArrayList'Class; includesString : Unbounded_String) return DirectoryOrIncludeFileExtensionBooleanFileVisitor_Access is
       This : constant DirectoryOrIncludeFileExtensionBooleanFileVisitor_Access := new DirectoryOrIncludeFileExtensionBooleanFileVisitor;
    begin
       DirectoryOrIncludeFileExtensionBooleanFileVisitor_Package.Initialize (This.all, filterStringBasicArrayList_Param, includesString);
       return This;
    end Create;
 
-   function visit (This : in out DirectoryOrIncludeFileExtensionBooleanFileVisitor; file_Param : access AbFile'Class) return Boolean is
-      file : AbFile_Access := AbFile_Access (file_Param);
+   function visit (This : in out DirectoryOrIncludeFileExtensionBooleanFileVisitor; file_Param : access AbFile_Package.AbFile'Class) return Boolean is
+      file : constant AbFile_Access := AbFile_Access (file_Param);
    begin
         if file.isDirectory then
             return True;
@@ -65,7 +65,7 @@ package body org.allbinary.logic.io.file.directory.DirectoryOrIncludeFileExtensi
         end if;
    end visit;
 
-   procedure visit (This : in out DirectoryOrIncludeFileExtensionBooleanFileVisitor; file_Param : access AbFile'Class) is
+   procedure visit (This : in out DirectoryOrIncludeFileExtensionBooleanFileVisitor; file_Param : access AbFile_Package.AbFile'Class) is
       Java_Result : constant Boolean := DirectoryOrIncludeFileExtensionBooleanFileVisitor'Class (This).visit (file_Param);
       pragma Unreferenced (Java_Result);
    begin

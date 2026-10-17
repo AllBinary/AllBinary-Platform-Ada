@@ -26,8 +26,8 @@ package org.allbinary.graphics.opengles.shader.OpenGLObject3dProcessor_Package i
 
    procedure Initialize (This : in out OpenGLObject3dProcessor'Class);
    function Create return OpenGLObject3dProcessor_Access;
-   procedure process (This : in out OpenGLObject3dProcessor; gl_Param : access GL10'Class; object3d_Param : access Java_Object'Class);
-   procedure process (This : in out OpenGLObject3dProcessor; gl_Param : access GL10'Class; object3d_Param : access Java_Object'Class; index : Integer);
+   procedure process (This : in out OpenGLObject3dProcessor; gl_Param : access GL10_Package.GL10'Class; object3d_Param : access Java_Object'Class);
+   procedure process (This : in out OpenGLObject3dProcessor; gl_Param : access GL10_Package.GL10'Class; object3d_Param : access Java_Object'Class; index : Integer);
 
 end org.allbinary.graphics.opengles.shader.OpenGLObject3dProcessor_Package;
 

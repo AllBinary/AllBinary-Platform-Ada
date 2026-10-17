@@ -56,8 +56,8 @@ package body org.allbinary.media.image.comparison.ComparisonImageInputOutput_Pac
    end save;
 
    --  throws Exception
-   procedure save (This : in out ComparisonImageInputOutput; imageComparisonResult_Param : access ImageComparisonResult'Class; frame : Long_Long_Integer) is
-      imageComparisonResult : ImageComparisonResult_Access := ImageComparisonResult_Access (imageComparisonResult_Param);
+   procedure save (This : in out ComparisonImageInputOutput; imageComparisonResult_Param : access ImageComparisonResult_Package.ImageComparisonResult'Class; frame : Long_Long_Integer) is
+      imageComparisonResult : constant ImageComparisonResult_Access := ImageComparisonResult_Access (imageComparisonResult_Param);
       commonStrings : CommonStrings_Access;
       filePathStringBuffer : StringMaker_Access;
       filePathStringBuffer1 : StringMaker_Access;

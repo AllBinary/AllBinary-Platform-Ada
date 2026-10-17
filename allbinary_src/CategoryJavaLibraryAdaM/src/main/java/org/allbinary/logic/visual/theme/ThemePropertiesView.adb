@@ -22,14 +22,14 @@ package body org.allbinary.logic.visual.theme.ThemePropertiesView_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ThemePropertiesView'Class; themeInterface_Param : access ThemeInterface'Class) is
-      themeInterface : ThemeInterface_Access := ThemeInterface_Access (themeInterface_Param);
+   procedure Initialize (This : in out ThemePropertiesView'Class; themeInterface_Param : access ThemeInterface_Package.ThemeInterface'Class) is
+      themeInterface : constant ThemeInterface_Access := ThemeInterface_Access (themeInterface_Param);
    begin
       Initialize_Fields (This);
         This.themeInterface := themeInterface;
    end Initialize;
 
-   function Create (themeInterface_Param : access ThemeInterface'Class) return ThemePropertiesView_Access is
+   function Create (themeInterface_Param : access ThemeInterface_Package.ThemeInterface'Class) return ThemePropertiesView_Access is
       This : constant ThemePropertiesView_Access := new ThemePropertiesView;
    begin
       ThemePropertiesView_Package.Initialize (This.all, themeInterface_Param);
@@ -37,15 +37,15 @@ package body org.allbinary.logic.visual.theme.ThemePropertiesView_Package is
    end Create;
 
    --  throws Exception
-   function toXmlNode (This : in out ThemePropertiesView; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out ThemePropertiesView; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       node : Node_Access;
    begin
         node := ModDomHelper_Package.createNameValueNodes (document, ThemeData_Package.getInstance.NAME, This.themeInterface.toHashMap);
         return node;
    end toXmlNode;
 
-   procedure toXmlNode (This : in out ThemePropertiesView; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out ThemePropertiesView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := ThemePropertiesView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

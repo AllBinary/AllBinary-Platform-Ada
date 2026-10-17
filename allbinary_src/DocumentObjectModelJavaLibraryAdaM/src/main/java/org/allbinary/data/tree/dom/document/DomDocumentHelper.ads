@@ -41,8 +41,8 @@ package org.allbinary.data.tree.dom.document.DomDocumentHelper_Package is
    function Create return DomDocumentHelper_Access;
    procedure init;
    function create return Document_Access;
-   function create (inputStream_Param : access InputStream'Class) return Document_Access;
-   procedure create (inputStream_Param : access InputStream'Class);
+   function create (inputStream_Param : access InputStream_Package.InputStream'Class) return Document_Access;
+   procedure create (inputStream_Param : access InputStream_Package.InputStream'Class);
    function create (xmlString : Unbounded_String) return Document_Access;
    procedure create (xmlString : Unbounded_String);
 

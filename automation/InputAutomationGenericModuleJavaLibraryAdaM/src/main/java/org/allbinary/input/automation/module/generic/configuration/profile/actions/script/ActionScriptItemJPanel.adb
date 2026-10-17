@@ -45,8 +45,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         return This.newActionScriptInputJPanel;
    end getNewActionScriptInputJPanel;
 
-   procedure setNewActionScriptInputJPanel (This : in out ActionScriptItemJPanel; newActionScriptInputJPanel_Param : access JPanel'Class) is
-      newActionScriptInputJPanel : JPanel_Access := JPanel_Access (newActionScriptInputJPanel_Param);
+   procedure setNewActionScriptInputJPanel (This : in out ActionScriptItemJPanel; newActionScriptInputJPanel_Param : access JPanel_Package.JPanel'Class) is
+      newActionScriptInputJPanel : constant JPanel_Access := JPanel_Access (newActionScriptInputJPanel_Param);
    begin
         This.newActionScriptInputJPanel := newActionScriptInputJPanel;
    end setNewActionScriptInputJPanel;
@@ -56,8 +56,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         return This.removeJPanel;
    end getRemoveJPanel;
 
-   procedure setRemoveJPanel (This : in out ActionScriptItemJPanel; removeJPanel_Param : access JPanel'Class) is
-      removeJPanel : JPanel_Access := JPanel_Access (removeJPanel_Param);
+   procedure setRemoveJPanel (This : in out ActionScriptItemJPanel; removeJPanel_Param : access JPanel_Package.JPanel'Class) is
+      removeJPanel : constant JPanel_Access := JPanel_Access (removeJPanel_Param);
    begin
         This.removeJPanel := removeJPanel;
    end setRemoveJPanel;
@@ -67,8 +67,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         return This.scriptItemJPanel;
    end getScriptItemJPanel;
 
-   procedure setScriptItemJPanel (This : in out ActionScriptItemJPanel; scriptItemJPanel_Param : access JPanel'Class) is
-      scriptItemJPanel : JPanel_Access := JPanel_Access (scriptItemJPanel_Param);
+   procedure setScriptItemJPanel (This : in out ActionScriptItemJPanel; scriptItemJPanel_Param : access JPanel_Package.JPanel'Class) is
+      scriptItemJPanel : constant JPanel_Access := JPanel_Access (scriptItemJPanel_Param);
    begin
         This.scriptItemJPanel := scriptItemJPanel;
    end setScriptItemJPanel;
@@ -78,8 +78,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         return This.newActionScriptConditionJPanel;
    end getNewActionScriptConditionJPanel;
 
-   procedure setNewActionScriptConditionJPanel (This : in out ActionScriptItemJPanel; newActionScriptConditionJPanel_Param : access JPanel'Class) is
-      newActionScriptConditionJPanel : JPanel_Access := JPanel_Access (newActionScriptConditionJPanel_Param);
+   procedure setNewActionScriptConditionJPanel (This : in out ActionScriptItemJPanel; newActionScriptConditionJPanel_Param : access JPanel_Package.JPanel'Class) is
+      newActionScriptConditionJPanel : constant JPanel_Access := JPanel_Access (newActionScriptConditionJPanel_Param);
    begin
         This.newActionScriptConditionJPanel := newActionScriptConditionJPanel;
    end setNewActionScriptConditionJPanel;
@@ -89,8 +89,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         return This.childActionScriptConditionJPanel;
    end getChildActionScriptConditionJPanel;
 
-   procedure setChildActionScriptConditionJPanel (This : in out ActionScriptItemJPanel; childActionScriptConditionJPanel_Param : access JPanel'Class) is
-      childActionScriptConditionJPanel : JPanel_Access := JPanel_Access (childActionScriptConditionJPanel_Param);
+   procedure setChildActionScriptConditionJPanel (This : in out ActionScriptItemJPanel; childActionScriptConditionJPanel_Param : access JPanel_Package.JPanel'Class) is
+      childActionScriptConditionJPanel : constant JPanel_Access := JPanel_Access (childActionScriptConditionJPanel_Param);
    begin
         This.childActionScriptConditionJPanel := childActionScriptConditionJPanel;
    end setChildActionScriptConditionJPanel;

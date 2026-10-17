@@ -35,7 +35,7 @@ package body org.allbinary.graphics.color.ColorCacheableFactory_Package is
    end Create;
 
    function getInstance (This : in out ColorCacheableFactory; key_Param : access Java_Object'Class) return CacheableInterface_Access is
-      key : Java_Object_Access := Java_Object_Access (key_Param);
+      key : constant Java_Object_Access := Java_Object_Access (key_Param);
    begin
         return ColorCacheable_Package.Create (key);
    end getInstance;

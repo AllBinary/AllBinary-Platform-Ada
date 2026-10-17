@@ -57,10 +57,10 @@ package org.allbinary.data.tables.generator.IdGeneratorEntity_Package is
    function Create return IdGeneratorEntity_Access;
    function get (This : in out IdGeneratorEntity; name_Case : Unbounded_String) return Long_Long_Integer;
    procedure get (This : in out IdGeneratorEntity; name_Case : Unbounded_String);
-   procedure insert (This : in out IdGeneratorEntity; values_Param : access BasicArrayList'Class);
+   procedure insert (This : in out IdGeneratorEntity; values_Param : access BasicArrayList_Package.BasicArrayList'Class);
    procedure delete (This : in out IdGeneratorEntity; value_Case : Unbounded_String);
    procedure update (This : in out IdGeneratorEntity; name_Case : Unbounded_String; value_Case : Long_Long_Integer);
-   procedure update (This : in out IdGeneratorEntity; hashMap_Param : access HashMap'Class);
+   procedure update (This : in out IdGeneratorEntity; hashMap_Param : access HashMap_Package.HashMap'Class);
    function createTable (This : in out IdGeneratorEntity) return Unbounded_String;
    function dropTable (This : in out IdGeneratorEntity) return Unbounded_String;
 

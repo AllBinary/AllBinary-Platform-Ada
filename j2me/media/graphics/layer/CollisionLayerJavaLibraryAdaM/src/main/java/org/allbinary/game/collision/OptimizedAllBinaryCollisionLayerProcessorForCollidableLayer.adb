@@ -34,9 +34,9 @@ package body org.allbinary.game.collision.OptimizedAllBinaryCollisionLayerProces
    end Create;
 
    --  throws Exception
-   procedure processAt (This : in out OptimizedAllBinaryCollisionLayerProcessorForCollidableLayer; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class; layerInterface_Param : access AllBinaryLayer'Class; startIndex : Integer) is
-      allBinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
-      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
+   procedure processAt (This : in out OptimizedAllBinaryCollisionLayerProcessorForCollidableLayer; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; startIndex : Integer) is
+      allBinaryLayerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
+      layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
       collidableInterfaceCompositeInterface : CollidableCompositeLayer_Access;
       collidableBase : CollidableBaseBehavior_Access;
       layerManager : LayerManager_Access;
@@ -63,8 +63,8 @@ package body org.allbinary.game.collision.OptimizedAllBinaryCollisionLayerProces
         end if;
    end processAt;
 
-   function isProcessorLayer (This : in out OptimizedAllBinaryCollisionLayerProcessorForCollidableLayer; layerInterface_Param : access AllBinaryLayer'Class) return Boolean is
-      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
+   function isProcessorLayer (This : in out OptimizedAllBinaryCollisionLayerProcessorForCollidableLayer; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) return Boolean is
+      layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         if layerInterface.implmentsCollidableInterface then
             return True;
@@ -73,7 +73,7 @@ package body org.allbinary.game.collision.OptimizedAllBinaryCollisionLayerProces
         end if;
    end isProcessorLayer;
 
-   procedure isProcessorLayer (This : in out OptimizedAllBinaryCollisionLayerProcessorForCollidableLayer; layerInterface_Param : access AllBinaryLayer'Class) is
+   procedure isProcessorLayer (This : in out OptimizedAllBinaryCollisionLayerProcessorForCollidableLayer; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
       Java_Result : constant Boolean := OptimizedAllBinaryCollisionLayerProcessorForCollidableLayer'Class (This).isProcessorLayer (layerInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

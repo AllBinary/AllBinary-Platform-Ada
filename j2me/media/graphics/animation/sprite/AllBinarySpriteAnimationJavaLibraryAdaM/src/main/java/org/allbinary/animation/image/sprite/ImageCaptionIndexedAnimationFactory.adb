@@ -35,11 +35,11 @@ package body org.allbinary.animation.image.sprite.ImageCaptionIndexedAnimationFa
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ImageCaptionIndexedAnimationFactory'Class; captionImage_Param : access Image'Class; spriteMovieImage_Param : access Image'Class; soundInterface_Param : access Sound'Class; frameWidth : Integer; frameHeight : Integer; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer; time : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) is
-      captionImage : Image_Access := Image_Access (captionImage_Param);
-      spriteMovieImage : Image_Access := Image_Access (spriteMovieImage_Param);
-      soundInterface : Sound_Access := Sound_Access (soundInterface_Param);
-      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
+   procedure Initialize (This : in out ImageCaptionIndexedAnimationFactory'Class; captionImage_Param : access Image_Package.Image'Class; spriteMovieImage_Param : access Image_Package.Image'Class; soundInterface_Param : access Sound_Package.Sound'Class; frameWidth : Integer; frameHeight : Integer; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer; time : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
+      captionImage : constant Image_Access := Image_Access (captionImage_Param);
+      spriteMovieImage : constant Image_Access := Image_Access (spriteMovieImage_Param);
+      soundInterface : constant Sound_Access := Sound_Access (soundInterface_Param);
+      animationBehaviorFactory : constant AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
    begin
       Initialize_Fields (This);
         if (animationBehaviorFactory) = (AnimationBehaviorFactory_Package.getInstance) then
@@ -58,7 +58,7 @@ package body org.allbinary.animation.image.sprite.ImageCaptionIndexedAnimationFa
         This.animationBehaviorFactory := animationBehaviorFactory;
    end Initialize;
 
-   function Create (captionImage_Param : access Image'Class; spriteMovieImage_Param : access Image'Class; soundInterface_Param : access Sound'Class; frameWidth : Integer; frameHeight : Integer; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer; time : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return ImageCaptionIndexedAnimationFactory_Access is
+   function Create (captionImage_Param : access Image_Package.Image'Class; spriteMovieImage_Param : access Image_Package.Image'Class; soundInterface_Param : access Sound_Package.Sound'Class; frameWidth : Integer; frameHeight : Integer; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer; time : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return ImageCaptionIndexedAnimationFactory_Access is
       This : constant ImageCaptionIndexedAnimationFactory_Access := new ImageCaptionIndexedAnimationFactory;
    begin
       ImageCaptionIndexedAnimationFactory_Package.Initialize (This.all, captionImage_Param, spriteMovieImage_Param, soundInterface_Param, frameWidth, frameHeight, captionDx, captionDy, dx, dy, time, animationBehaviorFactory_Param);
@@ -84,8 +84,8 @@ package body org.allbinary.animation.image.sprite.ImageCaptionIndexedAnimationFa
         return CaptionIndexedAnimation_Package.Create (animationInterface, movieIndexedAnimationInterface, player, This.captionDx, This.captionDy, This.dx, This.dy, This.time, This.animationBehaviorFactory.getOrCreateInstance);
    end getInstance;
 
-   procedure setInitialScale (This : in out ImageCaptionIndexedAnimationFactory; scaleProperties_Param : access ScaleProperties'Class) is
-      scaleProperties : ScaleProperties_Access := ScaleProperties_Access (scaleProperties_Param);
+   procedure setInitialScale (This : in out ImageCaptionIndexedAnimationFactory; scaleProperties_Param : access ScaleProperties_Package.ScaleProperties'Class) is
+      scaleProperties : constant ScaleProperties_Access := ScaleProperties_Access (scaleProperties_Param);
    begin
         This.scaleProperties := scaleProperties;
    end setInitialScale;

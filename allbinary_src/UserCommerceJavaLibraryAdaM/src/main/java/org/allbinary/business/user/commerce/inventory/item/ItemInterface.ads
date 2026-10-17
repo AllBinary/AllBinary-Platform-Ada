@@ -53,7 +53,7 @@ package org.allbinary.business.user.commerce.inventory.item.ItemInterface_Packag
    procedure setLargeImage (This : in out ItemInterface; value : Unbounded_String) is abstract;
    procedure setTimeEntered (This : in out ItemInterface; value : Unbounded_String) is abstract;
    procedure setLastModified (This : in out ItemInterface; value : Unbounded_String) is abstract;
-   procedure setPrice (This : in out ItemInterface; value_Param : access Money'Class) is abstract;
+   procedure setPrice (This : in out ItemInterface; value_Param : access Money_Package.Money'Class) is abstract;
    procedure setComment (This : in out ItemInterface; value : Unbounded_String) is abstract;
    procedure setCustoms (This : in out ItemInterface; value : Unbounded_String) is abstract;
    procedure setDownloads (This : in out ItemInterface; value : Unbounded_String) is abstract;

@@ -24,8 +24,8 @@ package body org.allbinary.game.layer.Driver_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out Driver'Class; turnSpeed : Integer; trackPathSelectionSkill : Integer; aggression_Param : access Aggression'Class) is
-      aggression : Aggression_Access := Aggression_Access (aggression_Param);
+   procedure Initialize (This : in out Driver'Class; turnSpeed : Integer; trackPathSelectionSkill : Integer; aggression_Param : access Aggression_Package.Aggression'Class) is
+      aggression : constant Aggression_Access := Aggression_Access (aggression_Param);
    begin
       Initialize_Fields (This);
         This.setTurnSpeed (turnSpeed);
@@ -33,7 +33,7 @@ package body org.allbinary.game.layer.Driver_Package is
         This.aggression := aggression;
    end Initialize;
 
-   function Create (turnSpeed : Integer; trackPathSelectionSkill : Integer; aggression_Param : access Aggression'Class) return Driver_Access is
+   function Create (turnSpeed : Integer; trackPathSelectionSkill : Integer; aggression_Param : access Aggression_Package.Aggression'Class) return Driver_Access is
       This : constant Driver_Access := new Driver;
    begin
       Driver_Package.Initialize (This.all, turnSpeed, trackPathSelectionSkill, aggression_Param);
@@ -65,8 +65,8 @@ package body org.allbinary.game.layer.Driver_Package is
         return This.aggression;
    end getAggression;
 
-   procedure setAggression (This : in out Driver; aggression_Param : access Aggression'Class) is
-      aggression : Aggression_Access := Aggression_Access (aggression_Param);
+   procedure setAggression (This : in out Driver; aggression_Param : access Aggression_Package.Aggression'Class) is
+      aggression : constant Aggression_Access := Aggression_Access (aggression_Param);
    begin
         This.aggression := aggression;
    end setAggression;

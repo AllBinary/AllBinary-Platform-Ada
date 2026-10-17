@@ -33,30 +33,30 @@ package body org.allbinary.media.graphics.geography.map.racetrack.TiledLayerFact
    end Create;
 
 
-   function getInstance (This : in out TiledLayerFactory; raceTrackData_Param : access RaceTrackData'Class) return TiledLayer_Access is
-      raceTrackData : RaceTrackData_Access := RaceTrackData_Access (raceTrackData_Param);
+   function getInstance (This : in out TiledLayerFactory; raceTrackData_Param : access RaceTrackData_Package.RaceTrackData'Class) return TiledLayer_Access is
+      raceTrackData : constant RaceTrackData_Access := RaceTrackData_Access (raceTrackData_Param);
       mapArray : Integer_Array_Access_Array_Access;
    begin
         mapArray := raceTrackData.getMapArray;
         return TiledLayer_Package.Create (mapArray (0)'Length, mapArray'Length, raceTrackData.getTileSetImage, raceTrackData.getCellWidth, raceTrackData.getCellHeight);
    end getInstance;
 
-   function getMiniInstance (This : in out TiledLayerFactory; raceTrackData_Param : access RaceTrackData'Class) return TiledLayer_Access is
-      raceTrackData : RaceTrackData_Access := RaceTrackData_Access (raceTrackData_Param);
+   function getMiniInstance (This : in out TiledLayerFactory; raceTrackData_Param : access RaceTrackData_Package.RaceTrackData'Class) return TiledLayer_Access is
+      raceTrackData : constant RaceTrackData_Access := RaceTrackData_Access (raceTrackData_Param);
       mapArray : Integer_Array_Access_Array_Access;
    begin
         mapArray := raceTrackData.getMapArray;
         return TiledLayer_Package.Create (mapArray (0)'Length, mapArray'Length, raceTrackData.getMiniTileSetImage, raceTrackData.getMiniCellWidth, raceTrackData.getMiniCellHeight);
    end getMiniInstance;
 
-   procedure getInstance (This : in out TiledLayerFactory; raceTrackData_Param : access RaceTrackData'Class) is
+   procedure getInstance (This : in out TiledLayerFactory; raceTrackData_Param : access RaceTrackData_Package.RaceTrackData'Class) is
       Java_Result : constant TiledLayer_Access := TiledLayerFactory'Class (This).getInstance (raceTrackData_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
-   procedure getMiniInstance (This : in out TiledLayerFactory; raceTrackData_Param : access RaceTrackData'Class) is
+   procedure getMiniInstance (This : in out TiledLayerFactory; raceTrackData_Param : access RaceTrackData_Package.RaceTrackData'Class) is
       Java_Result : constant TiledLayer_Access := TiledLayerFactory'Class (This).getMiniInstance (raceTrackData_Param);
       pragma Unreferenced (Java_Result);
    begin

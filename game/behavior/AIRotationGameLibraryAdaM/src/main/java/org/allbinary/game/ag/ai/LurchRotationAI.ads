@@ -47,8 +47,8 @@ package org.allbinary.game.ag.ai.LurchRotationAI_Package is
       rotationAnimationInterface : IndexedAnimation_Access;
    end record;
 
-   procedure Initialize (This : in out LurchRotationAI'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class);
-   function Create (ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return LurchRotationAI_Access;
+   procedure Initialize (This : in out LurchRotationAI'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class);
+   function Create (ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) return LurchRotationAI_Access;
    procedure reverse_Id (This : in out LurchRotationAI);
    procedure update (This : in out LurchRotationAI);
 

@@ -30,7 +30,7 @@ package org.allbinary.business.category.properties.root.RootCategoryPropertiesIn
    type RootCategoryPropertiesInterface_Access is access all RootCategoryPropertiesInterface'Class;
    type RootCategoryPropertiesInterface_Access_Array is array (Natural range <>) of RootCategoryPropertiesInterface_Access;
    type RootCategoryPropertiesInterface_Access_Array_Access is access all RootCategoryPropertiesInterface_Access_Array;
-   procedure setRootFilePath (This : in out RootCategoryPropertiesInterface; value_Param : access AbPath'Class) is abstract;
+   procedure setRootFilePath (This : in out RootCategoryPropertiesInterface; value_Param : access AbPath_Package.AbPath'Class) is abstract;
    function getRootFilePath (This : in out RootCategoryPropertiesInterface) return AbPath_Access is abstract;
 
 end org.allbinary.business.category.properties.root.RootCategoryPropertiesInterface_Package;

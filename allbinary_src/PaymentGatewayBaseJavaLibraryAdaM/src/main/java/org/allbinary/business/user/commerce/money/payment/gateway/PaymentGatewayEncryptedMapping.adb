@@ -22,14 +22,14 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PaymentGatewayEncryptedMapping'Class; paymentGatewayInterface_Param : access PaymentGatewayInterface'Class) is
-      paymentGatewayInterface : PaymentGatewayInterface_Access := PaymentGatewayInterface_Access (paymentGatewayInterface_Param);
+   procedure Initialize (This : in out PaymentGatewayEncryptedMapping'Class; paymentGatewayInterface_Param : access PaymentGatewayInterface_Package.PaymentGatewayInterface'Class) is
+      paymentGatewayInterface : constant PaymentGatewayInterface_Access := PaymentGatewayInterface_Access (paymentGatewayInterface_Param);
    begin
       Initialize_Fields (This);
         This.paymentGatewayInterface := paymentGatewayInterface;
    end Initialize;
 
-   function Create (paymentGatewayInterface_Param : access PaymentGatewayInterface'Class) return PaymentGatewayEncryptedMapping_Access is
+   function Create (paymentGatewayInterface_Param : access PaymentGatewayInterface_Package.PaymentGatewayInterface'Class) return PaymentGatewayEncryptedMapping_Access is
       This : constant PaymentGatewayEncryptedMapping_Access := new PaymentGatewayEncryptedMapping;
    begin
       PaymentGatewayEncryptedMapping_Package.Initialize (This.all, paymentGatewayInterface_Param);

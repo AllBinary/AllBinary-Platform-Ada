@@ -23,8 +23,8 @@ package body org.allbinary.business.context.modules.storefront.statistics.users.
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out StoreFrontUsersStatistics'Class; storeFrontInterface_Param : access StoreFrontInterface'Class) is
-      storeFrontInterface : StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
+   procedure Initialize (This : in out StoreFrontUsersStatistics'Class; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) is
+      storeFrontInterface : constant StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
       userEntityInterface : UserEntityInterface_Access;
       userVector : BasicArrayList_Access;
       size : Integer;
@@ -47,15 +47,15 @@ package body org.allbinary.business.context.modules.storefront.statistics.users.
         end loop;
    end Initialize;
 
-   function Create (storeFrontInterface_Param : access StoreFrontInterface'Class) return StoreFrontUsersStatistics_Access is
+   function Create (storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) return StoreFrontUsersStatistics_Access is
       This : constant StoreFrontUsersStatistics_Access := new StoreFrontUsersStatistics;
    begin
       StoreFrontUsersStatistics_Package.Initialize (This.all, storeFrontInterface_Param);
       return This;
    end Create;
 
-   function getNewTotal (This : in out StoreFrontUsersStatistics; userRole_Param : access UserRole'Class) return Long_Long_Integer is
-      userRole : UserRole_Access := UserRole_Access (userRole_Param);
+   function getNewTotal (This : in out StoreFrontUsersStatistics; userRole_Param : access UserRole_Package.UserRole'Class) return Long_Long_Integer is
+      userRole : constant UserRole_Access := UserRole_Access (userRole_Param);
       numberOfUsersForRoleLong : Long_Long_Integer;
    begin
         numberOfUsersForRoleLong := Long_Long_Integer (This.totalUsersByRoleHashMap.get (userRole));
@@ -110,7 +110,7 @@ package body org.allbinary.business.context.modules.storefront.statistics.users.
         return null;
    end getKey;
 
-   procedure getNewTotal (This : in out StoreFrontUsersStatistics; userRole_Param : access UserRole'Class) is
+   procedure getNewTotal (This : in out StoreFrontUsersStatistics; userRole_Param : access UserRole_Package.UserRole'Class) is
       Java_Result : constant Long_Long_Integer := StoreFrontUsersStatistics'Class (This).getNewTotal (userRole_Param);
       pragma Unreferenced (Java_Result);
    begin

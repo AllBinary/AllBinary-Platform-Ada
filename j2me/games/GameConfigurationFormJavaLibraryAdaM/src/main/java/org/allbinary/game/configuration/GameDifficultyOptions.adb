@@ -23,11 +23,11 @@ package body org.allbinary.game.configuration.GameDifficultyOptions_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GameDifficultyOptions'Class; commandListener_Param : access CommandListener'Class; title : Unbounded_String; list_Param : access BasicArrayList'Class; backgrounBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) is
-      commandListener : CommandListener_Access := CommandListener_Access (commandListener_Param);
-      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
-      backgrounBasicColor : BasicColor_Access := BasicColor_Access (backgrounBasicColor_Param);
-      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
+   procedure Initialize (This : in out GameDifficultyOptions'Class; commandListener_Param : access CommandListener_Package.CommandListener'Class; title : Unbounded_String; list_Param : access BasicArrayList_Package.BasicArrayList'Class; backgrounBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      commandListener : constant CommandListener_Access := CommandListener_Access (commandListener_Param);
+      list : constant BasicArrayList_Access := BasicArrayList_Access (list_Param);
+      backgrounBasicColor : constant BasicColor_Access := BasicColor_Access (backgrounBasicColor_Param);
+      foregroundBasicColor : constant BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
       gameDifficultyFactory : GameDifficultyFactory_Access;
    begin
         CommandForm_Package.Initialize (This, commandListener, title, backgrounBasicColor, foregroundBasicColor);
@@ -40,7 +40,7 @@ package body org.allbinary.game.configuration.GameDifficultyOptions_Package is
         This.setSelectedId (gameDifficultyFactory.getLevel);
    end Initialize;
 
-   function Create (commandListener_Param : access CommandListener'Class; title : Unbounded_String; list_Param : access BasicArrayList'Class; backgrounBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return GameDifficultyOptions_Access is
+   function Create (commandListener_Param : access CommandListener_Package.CommandListener'Class; title : Unbounded_String; list_Param : access BasicArrayList_Package.BasicArrayList'Class; backgrounBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return GameDifficultyOptions_Access is
       This : constant GameDifficultyOptions_Access := new GameDifficultyOptions;
    begin
       GameDifficultyOptions_Package.Initialize (This.all, commandListener_Param, title, list_Param, backgrounBasicColor_Param, foregroundBasicColor_Param);
@@ -67,8 +67,8 @@ package body org.allbinary.game.configuration.GameDifficultyOptions_Package is
         gameDifficultyFactory.setLevel (This.getSelectedId);
    end save;
 
-   procedure initCommands (This : in out GameDifficultyOptions; cmdListener_Param : access CommandListener'Class) is
-      cmdListener : CommandListener_Access := CommandListener_Access (cmdListener_Param);
+   procedure initCommands (This : in out GameDifficultyOptions; cmdListener_Param : access CommandListener_Package.CommandListener'Class) is
+      cmdListener : constant CommandListener_Access := CommandListener_Access (cmdListener_Param);
       gameCommandsFactory : GameCommandsFactory_Access;
    begin
         gameCommandsFactory := GameCommandsFactory_Package.getInstance;
@@ -85,8 +85,8 @@ package body org.allbinary.game.configuration.GameDifficultyOptions_Package is
         CommandForm (This).update;
    end update;
 
-   procedure add (This : in out GameDifficultyOptions; list_Param : access BasicArrayList'Class; name : Unbounded_String; option : Integer) is
-      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
+   procedure add (This : in out GameDifficultyOptions; list_Param : access BasicArrayList_Package.BasicArrayList'Class; name : Unbounded_String; option : Integer) is
+      list : constant BasicArrayList_Access := BasicArrayList_Access (list_Param);
       choiceGroup : ChoiceGroup_Access;
    begin
         choiceGroup := This.getChoiceGroup (list, name, option);
@@ -96,8 +96,8 @@ package body org.allbinary.game.configuration.GameDifficultyOptions_Package is
         This.meUtil.appendItem (GameDifficultyOptions_Access'(This'Unchecked_Access), choiceGroup);
    end add;
 
-   function getChoiceGroup (This : in out GameDifficultyOptions; list_Param : access BasicArrayList'Class; name : Unbounded_String; option : Integer) return ChoiceGroup_Access is
-      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
+   function getChoiceGroup (This : in out GameDifficultyOptions; list_Param : access BasicArrayList_Package.BasicArrayList'Class; name : Unbounded_String; option : Integer) return ChoiceGroup_Access is
+      list : constant BasicArrayList_Access := BasicArrayList_Access (list_Param);
       METHOD_NAME : Unbounded_String;
       NAME : Unbounded_String;
       choiceGroup : ChoiceGroup_Access;
@@ -141,7 +141,7 @@ package body org.allbinary.game.configuration.GameDifficultyOptions_Package is
         return value;
    end getSelectedText;
 
-   procedure getChoiceGroup (This : in out GameDifficultyOptions; list_Param : access BasicArrayList'Class; name : Unbounded_String; option : Integer) is
+   procedure getChoiceGroup (This : in out GameDifficultyOptions; list_Param : access BasicArrayList_Package.BasicArrayList'Class; name : Unbounded_String; option : Integer) is
       Java_Result : constant ChoiceGroup_Access := GameDifficultyOptions'Class (This).getChoiceGroup (list_Param, name, option);
       pragma Unreferenced (Java_Result);
    begin

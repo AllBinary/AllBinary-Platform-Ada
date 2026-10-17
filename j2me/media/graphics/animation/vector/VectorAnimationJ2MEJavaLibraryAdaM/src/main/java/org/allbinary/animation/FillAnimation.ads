@@ -28,15 +28,15 @@ package org.allbinary.animation.FillAnimation_Package is
       height : Integer;
    end record;
 
-   procedure Initialize (This : in out FillAnimation'Class; pixelBuffer : Integer_Array_Access; width : Integer; height : Integer; animationBehavior_Param : access AnimationBehavior'Class);
-   function Create (pixelBuffer : Integer_Array_Access; width : Integer; height : Integer; animationBehavior_Param : access AnimationBehavior'Class) return FillAnimation_Access;
-   procedure setBasicColorP (This : in out FillAnimation; basicColor_Param : access BasicColor'Class);
-   procedure changeBasicColor (This : in out FillAnimation; basicColor_Param : access BasicColor'Class);
+   procedure Initialize (This : in out FillAnimation'Class; pixelBuffer : Integer_Array_Access; width : Integer; height : Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class);
+   function Create (pixelBuffer : Integer_Array_Access; width : Integer; height : Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return FillAnimation_Access;
+   procedure setBasicColorP (This : in out FillAnimation; basicColor_Param : access BasicColor_Package.BasicColor'Class);
+   procedure changeBasicColor (This : in out FillAnimation; basicColor_Param : access BasicColor_Package.BasicColor'Class);
    procedure setAlpha (This : in out FillAnimation; alpha : Integer);
    procedure setScale (This : in out FillAnimation; scaleX : Float; scaleY : Float);
    procedure setMaxScale (This : in out FillAnimation; maxScaleX : Float; maxScaleY : Float);
    procedure updateModifiers (This : in out FillAnimation);
-   procedure paint (This : in out FillAnimation; g_Param : access Graphics'Class);
+   procedure paint (This : in out FillAnimation; g_Param : access Graphics_Package.Graphics'Class);
 
 end org.allbinary.animation.FillAnimation_Package;
 

@@ -42,7 +42,7 @@ package org.allbinary.business.init.LicenseInitInfoUtil_Package is
    function Create return LicenseInitInfoUtil_Access;
    function getInstance return LicenseInitInfoUtil_Access;
    procedure setFilePath (This : in out LicenseInitInfoUtil; filePath : Unbounded_String);
-   procedure write (This : in out LicenseInitInfoUtil; initData_Param : access LicenseInitInfo'Class);
+   procedure write (This : in out LicenseInitInfoUtil; initData_Param : access LicenseInitInfo_Package.LicenseInitInfo'Class);
    function read (This : in out LicenseInitInfoUtil) return LicenseInitInfo_Access;
    function readAgain (This : in out LicenseInitInfoUtil; initializeCounter : Integer) return LicenseInitInfo_Access;
    procedure readAgain (This : in out LicenseInitInfoUtil; initializeCounter : Integer);

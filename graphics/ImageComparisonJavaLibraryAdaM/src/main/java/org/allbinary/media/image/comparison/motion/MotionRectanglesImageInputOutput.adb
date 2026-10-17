@@ -59,8 +59,8 @@ package body org.allbinary.media.image.comparison.motion.MotionRectanglesImageIn
    end save;
 
    --  throws Exception
-   procedure save (This : in out MotionRectanglesImageInputOutput; motionRectangles_Param : access MotionRectangles'Class; frame : Long_Long_Integer) is
-      motionRectangles : MotionRectangles_Access := MotionRectangles_Access (motionRectangles_Param);
+   procedure save (This : in out MotionRectanglesImageInputOutput; motionRectangles_Param : access MotionRectangles_Package.MotionRectangles'Class; frame : Long_Long_Integer) is
+      motionRectangles : constant MotionRectangles_Access := MotionRectangles_Access (motionRectangles_Param);
       commonStrings : CommonStrings_Access;
       filePathStringBuffer : StringMaker_Access;
       filePathStringBuffer1 : StringMaker_Access;

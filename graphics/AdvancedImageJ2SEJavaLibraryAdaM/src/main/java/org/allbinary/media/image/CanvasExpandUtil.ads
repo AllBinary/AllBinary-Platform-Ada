@@ -46,7 +46,7 @@ package org.allbinary.media.image.CanvasExpandUtil_Package is
    procedure Initialize (This : in out CanvasExpandUtil'Class);
    function Create return CanvasExpandUtil_Access;
    function getInstance return CanvasExpandUtil_Access;
-   procedure process (This : in out CanvasExpandUtil; imageProcessorInput_Param : access ImageProcessorInput'Class; increaseX : Integer; increaseY : Integer; visitor_Param : access ImageProcessedVisitor'Class);
+   procedure process (This : in out CanvasExpandUtil; imageProcessorInput_Param : access ImageProcessorInput_Package.ImageProcessorInput'Class; increaseX : Integer; increaseY : Integer; visitor_Param : access ImageProcessedVisitor_Package.ImageProcessedVisitor'Class);
 
 end org.allbinary.media.image.CanvasExpandUtil_Package;
 

@@ -38,7 +38,7 @@ package org.allbinary.thirdparty.store.ThirdPartyStore_Package is
 
    procedure Initialize (This : in out ThirdPartyStore'Class; name : Unbounded_String);
    function Create (name : Unbounded_String) return ThirdPartyStore_Access;
-   procedure authorize (This : in out ThirdPartyStore; clientInformationInterface_Param : access AbeClientInformationInterface'Class);
+   procedure authorize (This : in out ThirdPartyStore; clientInformationInterface_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class);
    function isAuthorized (This : in out ThirdPartyStore) return Boolean;
    procedure setAuthorized (This : in out ThirdPartyStore; authorized : Boolean);
    function getName (This : in out ThirdPartyStore) return Unbounded_String;

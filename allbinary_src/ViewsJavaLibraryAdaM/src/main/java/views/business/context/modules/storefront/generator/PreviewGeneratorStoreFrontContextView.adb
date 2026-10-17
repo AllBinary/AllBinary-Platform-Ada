@@ -22,14 +22,14 @@ package body views.business.context.modules.storefront.generator.PreviewGenerato
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PreviewGeneratorStoreFrontContextView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out PreviewGeneratorStoreFrontContextView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         GeneratorStoreFrontContextView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return PreviewGeneratorStoreFrontContextView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return PreviewGeneratorStoreFrontContextView_Access is
       This : constant PreviewGeneratorStoreFrontContextView_Access := new PreviewGeneratorStoreFrontContextView;
    begin
       PreviewGeneratorStoreFrontContextView_Package.Initialize (This.all, transformInfoInterface_Param);

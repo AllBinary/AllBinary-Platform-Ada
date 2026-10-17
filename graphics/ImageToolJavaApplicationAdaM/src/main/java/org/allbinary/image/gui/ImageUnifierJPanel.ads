@@ -103,29 +103,29 @@ package org.allbinary.image.gui.ImageUnifierJPanel_Package is
       upJButton : JButton_Access;
    end record;
 
-   procedure Initialize (This : in out ImageUnifierJPanel'Class; imageProcessorInput_Param : access ImageProcessorInput'Class);
-   function Create (imageProcessorInput_Param : access ImageProcessorInput'Class) return ImageUnifierJPanel_Access;
+   procedure Initialize (This : in out ImageUnifierJPanel'Class; imageProcessorInput_Param : access ImageProcessorInput_Package.ImageProcessorInput'Class);
+   function Create (imageProcessorInput_Param : access ImageProcessorInput_Package.ImageProcessorInput'Class) return ImageUnifierJPanel_Access;
    procedure init (This : in out ImageUnifierJPanel);
    procedure updateImage (This : in out ImageUnifierJPanel);
    procedure updateImageWithFudgedImages (This : in out ImageUnifierJPanel);
    procedure updateImage (This : in out ImageUnifierJPanel; tempBufferedImageArray : BufferedImage_Access_Array_Access);
    procedure updateOnPropertiesChange (This : in out ImageUnifierJPanel);
    procedure initComponents (This : in out ImageUnifierJPanel);
-   procedure jButton2ActionPerformed (This : in out ImageUnifierJPanel; evt_Param : access ActionEvent'Class);
-   procedure columnsJTextFieldKeyPressed (This : in out ImageUnifierJPanel; evt_Param : access KeyEvent'Class);
-   procedure columnsJTextFieldKeyTyped (This : in out ImageUnifierJPanel; evt_Param : access KeyEvent'Class);
-   procedure columnsJTextFieldPropertyChange (This : in out ImageUnifierJPanel; evt_Param : access PropertyChangeEvent'Class);
-   procedure fudgeItJButtonActionPerformed (This : in out ImageUnifierJPanel; evt_Param : access ActionEvent'Class);
-   procedure cellHeightJTextFieldActionPerformed (This : in out ImageUnifierJPanel; evt_Param : access ActionEvent'Class);
-   procedure cellWidthJTextFieldActionPerformed (This : in out ImageUnifierJPanel; evt_Param : access ActionEvent'Class);
-   procedure columnsJTextFieldActionPerformed (This : in out ImageUnifierJPanel; evt_Param : access ActionEvent'Class);
-   procedure rowsJTextFieldActionPerformed (This : in out ImageUnifierJPanel; evt_Param : access ActionEvent'Class);
-   procedure jButton1ActionPerformed (This : in out ImageUnifierJPanel; evt_Param : access ActionEvent'Class);
-   procedure downJButtonActionPerformed (This : in out ImageUnifierJPanel; evt_Param : access ActionEvent'Class);
-   procedure upJButtonActionPerformed (This : in out ImageUnifierJPanel; evt_Param : access ActionEvent'Class);
-   procedure jButtonOrderActionPerformed (This : in out ImageUnifierJPanel; evt_Param : access ActionEvent'Class);
+   procedure jButton2ActionPerformed (This : in out ImageUnifierJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
+   procedure columnsJTextFieldKeyPressed (This : in out ImageUnifierJPanel; evt_Param : access KeyEvent_Package.KeyEvent'Class);
+   procedure columnsJTextFieldKeyTyped (This : in out ImageUnifierJPanel; evt_Param : access KeyEvent_Package.KeyEvent'Class);
+   procedure columnsJTextFieldPropertyChange (This : in out ImageUnifierJPanel; evt_Param : access PropertyChangeEvent_Package.PropertyChangeEvent'Class);
+   procedure fudgeItJButtonActionPerformed (This : in out ImageUnifierJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
+   procedure cellHeightJTextFieldActionPerformed (This : in out ImageUnifierJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
+   procedure cellWidthJTextFieldActionPerformed (This : in out ImageUnifierJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
+   procedure columnsJTextFieldActionPerformed (This : in out ImageUnifierJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
+   procedure rowsJTextFieldActionPerformed (This : in out ImageUnifierJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
+   procedure jButton1ActionPerformed (This : in out ImageUnifierJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
+   procedure downJButtonActionPerformed (This : in out ImageUnifierJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
+   procedure upJButtonActionPerformed (This : in out ImageUnifierJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
+   procedure jButtonOrderActionPerformed (This : in out ImageUnifierJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
    function getImageProcessorInput (This : in out ImageUnifierJPanel) return ImageProcessorInput_Access;
-   procedure setImageProcessorInput (This : in out ImageUnifierJPanel; imageProcessorInput_Param : access ImageProcessorInput'Class);
+   procedure setImageProcessorInput (This : in out ImageUnifierJPanel; imageProcessorInput_Param : access ImageProcessorInput_Package.ImageProcessorInput'Class);
 
 end org.allbinary.image.gui.ImageUnifierJPanel_Package;
 

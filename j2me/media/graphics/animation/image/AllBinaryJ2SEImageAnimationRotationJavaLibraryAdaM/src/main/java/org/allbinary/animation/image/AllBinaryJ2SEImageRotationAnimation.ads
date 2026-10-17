@@ -73,10 +73,10 @@ package org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimation_Packag
       scaleProcessor : ScaleBaseProcessor_Access;
    end record;
 
-   procedure Initialize (This : in out AllBinaryJ2SEImageRotationAnimation'Class; originalImage_Param : access Image'Class; image_Param : access Image'Class; angleInfo_Param : access AngleInfo'Class; totalAngle : Short_Integer; animationBehavior_Param : access AnimationBehavior'Class);
-   function Create (originalImage_Param : access Image'Class; image_Param : access Image'Class; angleInfo_Param : access AngleInfo'Class; totalAngle : Short_Integer; animationBehavior_Param : access AnimationBehavior'Class) return AllBinaryJ2SEImageRotationAnimation_Access;
-   procedure setBasicColorP (This : in out AllBinaryJ2SEImageRotationAnimation; basicColor_Param : access BasicColor'Class);
-   procedure changeBasicColor (This : in out AllBinaryJ2SEImageRotationAnimation; basicColor_Param : access BasicColor'Class);
+   procedure Initialize (This : in out AllBinaryJ2SEImageRotationAnimation'Class; originalImage_Param : access Image_Package.Image'Class; image_Param : access Image_Package.Image'Class; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; totalAngle : Short_Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class);
+   function Create (originalImage_Param : access Image_Package.Image'Class; image_Param : access Image_Package.Image'Class; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; totalAngle : Short_Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return AllBinaryJ2SEImageRotationAnimation_Access;
+   procedure setBasicColorP (This : in out AllBinaryJ2SEImageRotationAnimation; basicColor_Param : access BasicColor_Package.BasicColor'Class);
+   procedure changeBasicColor (This : in out AllBinaryJ2SEImageRotationAnimation; basicColor_Param : access BasicColor_Package.BasicColor'Class);
    procedure setAlpha (This : in out AllBinaryJ2SEImageRotationAnimation; alpha : Integer);
    procedure setScale (This : in out AllBinaryJ2SEImageRotationAnimation; scaleX : Float; scaleY : Float);
    procedure setMaxScale (This : in out AllBinaryJ2SEImageRotationAnimation; maxScaleX : Float; maxScaleY : Float);
@@ -85,7 +85,7 @@ package org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimation_Packag
    procedure updateImage (This : in out AllBinaryJ2SEImageRotationAnimation);
    procedure setFrame (This : in out AllBinaryJ2SEImageRotationAnimation; index : Integer);
    procedure swap (This : in out AllBinaryJ2SEImageRotationAnimation);
-   procedure paintXY (This : in out AllBinaryJ2SEImageRotationAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
+   procedure paintXY (This : in out AllBinaryJ2SEImageRotationAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
    procedure close (This : in out AllBinaryJ2SEImageRotationAnimation);
    procedure finalize (This : in out AllBinaryJ2SEImageRotationAnimation);
 

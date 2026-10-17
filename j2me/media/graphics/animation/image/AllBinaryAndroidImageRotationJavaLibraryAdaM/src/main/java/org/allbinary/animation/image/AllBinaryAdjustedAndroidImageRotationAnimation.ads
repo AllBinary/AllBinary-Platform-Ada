@@ -41,14 +41,14 @@ package org.allbinary.animation.image.AllBinaryAdjustedAndroidImageRotationAnima
       dy : Integer;
    end record;
 
-   procedure Initialize (This : in out AllBinaryAdjustedAndroidImageRotationAnimation'Class; originalImage_Param : access Image'Class; image_Param : access Image'Class; angleInfo_Param : access AngleInfo'Class; totalAngle : Short_Integer; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior'Class);
-   function Create (originalImage_Param : access Image'Class; image_Param : access Image'Class; angleInfo_Param : access AngleInfo'Class; totalAngle : Short_Integer; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior'Class) return AllBinaryAdjustedAndroidImageRotationAnimation_Access;
+   procedure Initialize (This : in out AllBinaryAdjustedAndroidImageRotationAnimation'Class; originalImage_Param : access Image_Package.Image'Class; image_Param : access Image_Package.Image'Class; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; totalAngle : Short_Integer; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class);
+   function Create (originalImage_Param : access Image_Package.Image'Class; image_Param : access Image_Package.Image'Class; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; totalAngle : Short_Integer; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return AllBinaryAdjustedAndroidImageRotationAnimation_Access;
    procedure init (This : in out AllBinaryAdjustedAndroidImageRotationAnimation; dx : Integer; dy : Integer);
    procedure setDx (This : in out AllBinaryAdjustedAndroidImageRotationAnimation; dx : Integer);
    function getDx (This : in out AllBinaryAdjustedAndroidImageRotationAnimation) return Integer;
    procedure setDy (This : in out AllBinaryAdjustedAndroidImageRotationAnimation; dy : Integer);
    function getDy (This : in out AllBinaryAdjustedAndroidImageRotationAnimation) return Integer;
-   procedure paintXY (This : in out AllBinaryAdjustedAndroidImageRotationAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
+   procedure paintXY (This : in out AllBinaryAdjustedAndroidImageRotationAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
 
 end org.allbinary.animation.image.AllBinaryAdjustedAndroidImageRotationAnimation_Package;
 

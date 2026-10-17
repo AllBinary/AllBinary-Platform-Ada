@@ -43,8 +43,8 @@ package org.allbinary.game.health.HealthBarFactory_Package is
 
    procedure Initialize (This : in out HealthBarFactory'Class);
    function Create return HealthBarFactory_Access;
-   function getInstance (This : in out HealthBarFactory; layerInterface_Param : access AllBinaryLayer'Class; healthInterface_Param : access Health'Class; location : Integer; direction : Integer) return HealthBar_Access;
-   procedure getInstance (This : in out HealthBarFactory; layerInterface_Param : access AllBinaryLayer'Class; healthInterface_Param : access Health'Class; location : Integer; direction : Integer);
+   function getInstance (This : in out HealthBarFactory; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; healthInterface_Param : access Health_Package.Health'Class; location : Integer; direction : Integer) return HealthBar_Access;
+   procedure getInstance (This : in out HealthBarFactory; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; healthInterface_Param : access Health_Package.Health'Class; location : Integer; direction : Integer);
 
 end org.allbinary.game.health.HealthBarFactory_Package;
 

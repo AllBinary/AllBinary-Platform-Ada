@@ -35,9 +35,9 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.DynamicRa
    end Create;
 
 
-   procedure printAllPaths (This : in out DynamicRaceTracksPathPrinter; raceTrackGeographicMapInterfaceFactoryInterface_Param : access RaceTrackGeographicMapInterfaceFactoryInterface'Class; pathFindingInfo_Param : access PathFindingInfo'Class; size : Integer) is
-      raceTrackGeographicMapInterfaceFactoryInterface : RaceTrackGeographicMapInterfaceFactoryInterface_Access := RaceTrackGeographicMapInterfaceFactoryInterface_Access (raceTrackGeographicMapInterfaceFactoryInterface_Param);
-      pathFindingInfo : PathFindingInfo_Access := PathFindingInfo_Access (pathFindingInfo_Param);
+   procedure printAllPaths (This : in out DynamicRaceTracksPathPrinter; raceTrackGeographicMapInterfaceFactoryInterface_Param : access RaceTrackGeographicMapInterfaceFactoryInterface_Package.RaceTrackGeographicMapInterfaceFactoryInterface'Class; pathFindingInfo_Param : access PathFindingInfo_Package.PathFindingInfo'Class; size : Integer) is
+      raceTrackGeographicMapInterfaceFactoryInterface : constant RaceTrackGeographicMapInterfaceFactoryInterface_Access := RaceTrackGeographicMapInterfaceFactoryInterface_Access (raceTrackGeographicMapInterfaceFactoryInterface_Param);
+      pathFindingInfo : constant PathFindingInfo_Access := PathFindingInfo_Access (pathFindingInfo_Param);
       geographicMapInterface : BasicGeographicMap_Access;
       list : BasicArrayList_Access;
       index : Integer;

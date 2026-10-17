@@ -61,15 +61,15 @@ package org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundleActi
    procedure Initialize (This : in out InputAutomationRobotBundleActivator'Class);
    function Create return InputAutomationRobotBundleActivator_Access;
    procedure init (This : in out InputAutomationRobotBundleActivator);
-   procedure registerAsService (This : in out InputAutomationRobotBundleActivator; bundleContext_Param : access BundleContext'Class);
-   function getInputAutomationRobotChangeListener (This : in out InputAutomationRobotBundleActivator; context_Param : access BundleContext'Class) return InputAutomationRobotChangeListener_Access;
-   procedure getInputAutomationRobotChangeListener (This : in out InputAutomationRobotBundleActivator; context_Param : access BundleContext'Class);
-   procedure addRobots (This : in out InputAutomationRobotBundleActivator; context_Param : access BundleContext'Class);
-   procedure removeRobots (This : in out InputAutomationRobotBundleActivator; context_Param : access BundleContext'Class);
-   procedure start (This : in out InputAutomationRobotBundleActivator; context_Param : access BundleContext'Class);
-   procedure stop (This : in out InputAutomationRobotBundleActivator; context_Param : access BundleContext'Class);
+   procedure registerAsService (This : in out InputAutomationRobotBundleActivator; bundleContext_Param : access BundleContext_Package.BundleContext'Class);
+   function getInputAutomationRobotChangeListener (This : in out InputAutomationRobotBundleActivator; context_Param : access BundleContext_Package.BundleContext'Class) return InputAutomationRobotChangeListener_Access;
+   procedure getInputAutomationRobotChangeListener (This : in out InputAutomationRobotBundleActivator; context_Param : access BundleContext_Package.BundleContext'Class);
+   procedure addRobots (This : in out InputAutomationRobotBundleActivator; context_Param : access BundleContext_Package.BundleContext'Class);
+   procedure removeRobots (This : in out InputAutomationRobotBundleActivator; context_Param : access BundleContext_Package.BundleContext'Class);
+   procedure start (This : in out InputAutomationRobotBundleActivator; context_Param : access BundleContext_Package.BundleContext'Class);
+   procedure stop (This : in out InputAutomationRobotBundleActivator; context_Param : access BundleContext_Package.BundleContext'Class);
    function getServiceFactory (This : in out InputAutomationRobotBundleActivator) return Java_Object_Access;
-   procedure setServiceFactory (This : in out InputAutomationRobotBundleActivator; serviceObject_Param : access ServiceFactory'Class);
+   procedure setServiceFactory (This : in out InputAutomationRobotBundleActivator; serviceObject_Param : access ServiceFactory_Package.ServiceFactory'Class);
    function getInputRobotInterface (This : in out InputAutomationRobotBundleActivator) return InputRobotInterface_Access_Array_Access;
    procedure setInputRobotInterface (This : in out InputAutomationRobotBundleActivator; inputRobotInterface : InputRobotInterface_Access_Array_Access);
 

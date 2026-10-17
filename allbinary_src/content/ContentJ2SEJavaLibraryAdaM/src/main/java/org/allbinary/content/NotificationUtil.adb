@@ -39,8 +39,8 @@ package body org.allbinary.content.NotificationUtil_Package is
         return NotificationUtil_Package.SINGLETON;
    end getInstance;
 
-   procedure notify (This : in out NotificationUtil; command_Param : access Command'Class; resource : Unbounded_String; message : Unbounded_String) is
-      command : Command_Access := Command_Access (command_Param);
+   procedure notify (This : in out NotificationUtil; command_Param : access Command_Package.Command'Class; resource : Unbounded_String; message : Unbounded_String) is
+      command : constant Command_Access := Command_Access (command_Param);
       context : Context_Access;
       intent : Intent_Access;
       integer_Id : Integer;

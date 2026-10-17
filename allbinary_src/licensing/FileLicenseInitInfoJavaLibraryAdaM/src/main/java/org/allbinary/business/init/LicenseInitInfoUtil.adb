@@ -50,8 +50,8 @@ package body org.allbinary.business.init.LicenseInitInfoUtil_Package is
    end setFilePath;
 
    --  throws Exception
-   procedure write (This : in out LicenseInitInfoUtil; initData_Param : access LicenseInitInfo'Class) is
-      initData : LicenseInitInfo_Access := LicenseInitInfo_Access (initData_Param);
+   procedure write (This : in out LicenseInitInfoUtil; initData_Param : access LicenseInitInfo_Package.LicenseInitInfo'Class) is
+      initData : constant LicenseInitInfo_Access := LicenseInitInfo_Access (initData_Param);
       tsUtil : TsUtil_Access;
       dataOutputStream : AbDataOutputStream_Access;
       licenseIdCrypted : Short_Short_Integer_Array_Access;

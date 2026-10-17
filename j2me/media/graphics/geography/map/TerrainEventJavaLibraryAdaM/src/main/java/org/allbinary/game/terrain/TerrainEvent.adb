@@ -23,7 +23,7 @@ package body org.allbinary.game.terrain.TerrainEvent_Package is
 
 
    procedure Initialize (This : in out TerrainEvent'Class; basicTerrainInfo_Param : access Java_Object'Class) is
-      basicTerrainInfo : Java_Object_Access := Java_Object_Access (basicTerrainInfo_Param);
+      basicTerrainInfo : constant Java_Object_Access := Java_Object_Access (basicTerrainInfo_Param);
    begin
         AllBinaryEventObject_Package.Initialize (This, basicTerrainInfo);
         Initialize_Fields (This);
@@ -52,14 +52,14 @@ package body org.allbinary.game.terrain.TerrainEvent_Package is
         return This.basicTerrainInfo;
    end getBasicTerrainInfo;
 
-   procedure setBasicTerrainInfo (This : in out TerrainEvent; basicTerrainInfo_Param : access BasicTerrainInfo'Class) is
-      basicTerrainInfo : BasicTerrainInfo_Access := BasicTerrainInfo_Access (basicTerrainInfo_Param);
+   procedure setBasicTerrainInfo (This : in out TerrainEvent; basicTerrainInfo_Param : access BasicTerrainInfo_Package.BasicTerrainInfo'Class) is
+      basicTerrainInfo : constant BasicTerrainInfo_Access := BasicTerrainInfo_Access (basicTerrainInfo_Param);
    begin
         This.basicTerrainInfo := basicTerrainInfo;
    end setBasicTerrainInfo;
 
-   procedure setBasicTerrainInfoForCircularStaticPool (This : in out TerrainEvent; basicTerrainInfo_Param : access BasicTerrainInfo'Class) is
-      basicTerrainInfo : BasicTerrainInfo_Access := BasicTerrainInfo_Access (basicTerrainInfo_Param);
+   procedure setBasicTerrainInfoForCircularStaticPool (This : in out TerrainEvent; basicTerrainInfo_Param : access BasicTerrainInfo_Package.BasicTerrainInfo'Class) is
+      basicTerrainInfo : constant BasicTerrainInfo_Access := BasicTerrainInfo_Access (basicTerrainInfo_Param);
    begin
         This.basicTerrainInfo := basicTerrainInfo;
    end setBasicTerrainInfoForCircularStaticPool;

@@ -38,10 +38,10 @@ package body org.allbinary.media.image.AndroidImageUtil_Package is
         return AndroidImageUtil_Package.instance;
    end getInstance;
 
-   procedure paintBitmap (This : in out AndroidImageUtil; bitmap_Param : access Bitmap'Class; originalBitmap_Param : access Bitmap'Class; paint_Param : access Paint'Class) is
-      bitmap : Bitmap_Access := Bitmap_Access (bitmap_Param);
-      originalBitmap : Bitmap_Access := Bitmap_Access (originalBitmap_Param);
-      paint : Paint_Access := Paint_Access (paint_Param);
+   procedure paintBitmap (This : in out AndroidImageUtil; bitmap_Param : access Bitmap_Package.Bitmap'Class; originalBitmap_Param : access Bitmap_Package.Bitmap'Class; paint_Param : access Paint_Package.Paint'Class) is
+      bitmap : constant Bitmap_Access := Bitmap_Access (bitmap_Param);
+      originalBitmap : constant Bitmap_Access := Bitmap_Access (originalBitmap_Param);
+      paint : constant Paint_Access := Paint_Access (paint_Param);
       canvas : Canvas_Access;
    begin
         bitmap.eraseColor (Color_Package.TRANSPARENT);
@@ -50,10 +50,10 @@ package body org.allbinary.media.image.AndroidImageUtil_Package is
         canvas.drawBitmap (originalBitmap, 0.0, 0.0, paint);
    end paintBitmap;
 
-   procedure paint (This : in out AndroidImageUtil; image_Param : access Image'Class; originalImage_Param : access Image'Class; paint_Param : access Paint'Class) is
-      image : Image_Access := Image_Access (image_Param);
-      originalImage : Image_Access := Image_Access (originalImage_Param);
-      paint : Paint_Access := Paint_Access (paint_Param);
+   procedure paint (This : in out AndroidImageUtil; image_Param : access Image_Package.Image'Class; originalImage_Param : access Image_Package.Image'Class; paint_Param : access Paint_Package.Paint'Class) is
+      image : constant Image_Access := Image_Access (image_Param);
+      originalImage : constant Image_Access := Image_Access (originalImage_Param);
+      paint : constant Paint_Access := Paint_Access (paint_Param);
       androidImage : AndroidImageInterface_Access;
       canvas : Canvas_Access;
       originalAndroidImage : AndroidImageInterface_Access;
@@ -65,11 +65,11 @@ package body org.allbinary.media.image.AndroidImageUtil_Package is
         canvas.drawBitmap (originalAndroidImage.getBitmap, 0.0, 0.0, paint);
    end paint;
 
-   procedure rotate (This : in out AndroidImageUtil; image_Param : access Image'Class; originalImage_Param : access Image'Class; matrix_Param : access Matrix'Class; paint_Param : access Paint'Class) is
-      image : Image_Access := Image_Access (image_Param);
-      originalImage : Image_Access := Image_Access (originalImage_Param);
-      matrix : Matrix_Access := Matrix_Access (matrix_Param);
-      paint : Paint_Access := Paint_Access (paint_Param);
+   procedure rotate (This : in out AndroidImageUtil; image_Param : access Image_Package.Image'Class; originalImage_Param : access Image_Package.Image'Class; matrix_Param : access Matrix_Package.Matrix'Class; paint_Param : access Paint_Package.Paint'Class) is
+      image : constant Image_Access := Image_Access (image_Param);
+      originalImage : constant Image_Access := Image_Access (originalImage_Param);
+      matrix : constant Matrix_Access := Matrix_Access (matrix_Param);
+      paint : constant Paint_Access := Paint_Access (paint_Param);
       androidImage : AndroidImageInterface_Access;
       canvas : Canvas_Access;
       originalAndroidImage : AndroidImageInterface_Access;

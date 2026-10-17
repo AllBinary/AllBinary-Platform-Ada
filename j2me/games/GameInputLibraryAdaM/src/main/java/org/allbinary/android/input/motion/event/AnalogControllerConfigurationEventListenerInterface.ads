@@ -31,7 +31,7 @@ package org.allbinary.android.input.motion.event.AnalogControllerConfigurationEv
    type AnalogControllerConfigurationEventListenerInterface_Access is access all AnalogControllerConfigurationEventListenerInterface'Class;
    type AnalogControllerConfigurationEventListenerInterface_Access_Array is array (Natural range <>) of AnalogControllerConfigurationEventListenerInterface_Access;
    type AnalogControllerConfigurationEventListenerInterface_Access_Array_Access is access all AnalogControllerConfigurationEventListenerInterface_Access_Array;
-   procedure onAnalogControllerConfigurationEvent (This : in out AnalogControllerConfigurationEventListenerInterface; analogControllerConfigurationEvent_Param : access AnalogControllerConfigurationEvent'Class) is abstract;
+   procedure onAnalogControllerConfigurationEvent (This : in out AnalogControllerConfigurationEventListenerInterface; analogControllerConfigurationEvent_Param : access AnalogControllerConfigurationEvent_Package.AnalogControllerConfigurationEvent'Class) is abstract;
 
 end org.allbinary.android.input.motion.event.AnalogControllerConfigurationEventListenerInterface_Package;
 

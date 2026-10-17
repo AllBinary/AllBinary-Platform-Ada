@@ -66,18 +66,18 @@ package org.allbinary.logic.visual.transform.template.customizer.bodies.GenericB
 
    procedure Initialize (This : in out GenericBodyValidation'Class);
    function Create return GenericBodyValidation_Access;
-   procedure Initialize (This : in out GenericBodyValidation'Class; document_Param : access Document'Class);
-   function Create (document_Param : access Document'Class) return GenericBodyValidation_Access;
-   procedure Initialize (This : in out GenericBodyValidation'Class; hashMap_Param : access HashMap'Class);
-   function Create (hashMap_Param : access HashMap'Class) return GenericBodyValidation_Access;
-   procedure getFormData (This : in out GenericBodyValidation; hashMap_Param : access HashMap'Class);
+   procedure Initialize (This : in out GenericBodyValidation'Class; document_Param : access Document_Package.Document'Class);
+   function Create (document_Param : access Document_Package.Document'Class) return GenericBodyValidation_Access;
+   procedure Initialize (This : in out GenericBodyValidation'Class; hashMap_Param : access HashMap_Package.HashMap'Class);
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return GenericBodyValidation_Access;
+   procedure getFormData (This : in out GenericBodyValidation; hashMap_Param : access HashMap_Package.HashMap'Class);
    function isValid (This : in out GenericBodyValidation) return Boolean;
    function validationInfo (This : in out GenericBodyValidation) return Unbounded_String;
    function toValidationInfoDoc (This : in out GenericBodyValidation) return Document_Access;
-   function toValidationInfoNode (This : in out GenericBodyValidation; document_Param : access Document'Class) return Node_Access;
-   procedure toValidationInfoNode (This : in out GenericBodyValidation; document_Param : access Document'Class);
-   function toXmlNode (This : in out GenericBodyValidation; document_Param : access Document'Class) return Node_Access;
-   procedure toXmlNode (This : in out GenericBodyValidation; document_Param : access Document'Class);
+   function toValidationInfoNode (This : in out GenericBodyValidation; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out GenericBodyValidation; document_Param : access Document_Package.Document'Class);
+   function toXmlNode (This : in out GenericBodyValidation; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out GenericBodyValidation; document_Param : access Document_Package.Document'Class);
 
 end org.allbinary.logic.visual.transform.template.customizer.bodies.GenericBodyValidation_Package;
 

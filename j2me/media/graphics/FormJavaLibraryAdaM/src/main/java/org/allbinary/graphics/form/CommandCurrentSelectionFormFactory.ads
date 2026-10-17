@@ -47,8 +47,8 @@ package org.allbinary.graphics.form.CommandCurrentSelectionFormFactory_Package i
 
    procedure Initialize (This : in out CommandCurrentSelectionFormFactory'Class);
    function Create return CommandCurrentSelectionFormFactory_Access;
-   function getInstance (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; rectangle_Param : access Rectangle'Class; formType_Param : access FormType'Class; border : Integer; moveForSmallScreen : Boolean; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return ScrollSelectionForm_Access;
-   procedure getInstance (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; rectangle_Param : access Rectangle'Class; formType_Param : access FormType'Class; border : Integer; moveForSmallScreen : Boolean; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class);
+   function getInstance (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; rectangle_Param : access Rectangle_Package.Rectangle'Class; formType_Param : access FormType_Package.FormType'Class; border : Integer; moveForSmallScreen : Boolean; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return ScrollSelectionForm_Access;
+   procedure getInstance (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; rectangle_Param : access Rectangle_Package.Rectangle'Class; formType_Param : access FormType_Package.FormType'Class; border : Integer; moveForSmallScreen : Boolean; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class);
 
 end org.allbinary.graphics.form.CommandCurrentSelectionFormFactory_Package;
 

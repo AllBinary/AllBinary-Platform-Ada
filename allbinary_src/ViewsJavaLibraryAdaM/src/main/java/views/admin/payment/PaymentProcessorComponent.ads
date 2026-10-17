@@ -47,8 +47,8 @@ package views.admin.payment.PaymentProcessorComponent_Package is
       logUtil : LogUtil_Access;
    end record;
 
-   procedure Initialize (This : in out PaymentProcessorComponent'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return PaymentProcessorComponent_Access;
+   procedure Initialize (This : in out PaymentProcessorComponent'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return PaymentProcessorComponent_Access;
    procedure addDomNodeInterfaces (This : in out PaymentProcessorComponent);
    function view (This : in out PaymentProcessorComponent) return Unbounded_String;
 

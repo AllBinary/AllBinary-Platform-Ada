@@ -39,8 +39,8 @@ package body org.allbinary.logic.io.DataOutputStreamFactory_Package is
    end getInstance;
 
    --  throws Exception
-   function getInstanceForAbFile (This : in out DataOutputStreamFactory; file_Param : access AbFile'Class) return AbDataOutputStream_Access is
-      file : AbFile_Access := AbFile_Access (file_Param);
+   function getInstanceForAbFile (This : in out DataOutputStreamFactory; file_Param : access AbFile_Package.AbFile'Class) return AbDataOutputStream_Access is
+      file : constant AbFile_Access := AbFile_Access (file_Param);
       idFileOutputStream : AbFileOutputStream_Access;
       idOutData : AbDataOutputStream_Access;
    begin
@@ -61,7 +61,7 @@ package body org.allbinary.logic.io.DataOutputStreamFactory_Package is
         return idOutData;
    end getInstance;
 
-   procedure getInstanceForAbFile (This : in out DataOutputStreamFactory; file_Param : access AbFile'Class) is
+   procedure getInstanceForAbFile (This : in out DataOutputStreamFactory; file_Param : access AbFile_Package.AbFile'Class) is
       Java_Result : constant AbDataOutputStream_Access := DataOutputStreamFactory'Class (This).getInstanceForAbFile (file_Param);
       pragma Unreferenced (Java_Result);
    begin

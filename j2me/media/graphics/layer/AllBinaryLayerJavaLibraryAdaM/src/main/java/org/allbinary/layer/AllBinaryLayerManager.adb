@@ -60,8 +60,8 @@ package body org.allbinary.layer.AllBinaryLayerManager_Package is
    end log;
 
    --  throws Exception
-   procedure append (This : in out AllBinaryLayerManager; layerInterface_Param : access AllBinaryLayer'Class) is
-      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
+   procedure append (This : in out AllBinaryLayerManager; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
+      layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         if not (This.contains (layerInterface)) then
             This.appendProcessors (layerInterface);
@@ -70,8 +70,8 @@ package body org.allbinary.layer.AllBinaryLayerManager_Package is
    end append;
 
    --  throws Exception
-   procedure appendAt (This : in out AllBinaryLayerManager; layerInterface_Param : access AllBinaryLayer'Class; index : Integer) is
-      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
+   procedure appendAt (This : in out AllBinaryLayerManager; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; index : Integer) is
+      layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         if not (This.contains (layerInterface)) then
             This.appendProcessors (layerInterface);
@@ -80,8 +80,8 @@ package body org.allbinary.layer.AllBinaryLayerManager_Package is
    end appendAt;
 
    --  throws Exception
-   procedure appendProcessors (This : in out AllBinaryLayerManager; layerInterface_Param : access AllBinaryLayer'Class) is
-      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
+   procedure appendProcessors (This : in out AllBinaryLayerManager; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
+      layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
       layerProcessorInterface : LayerProcessor_Access;
       index : Integer;
    begin
@@ -98,8 +98,8 @@ package body org.allbinary.layer.AllBinaryLayerManager_Package is
    end appendProcessors;
 
    --  throws Exception
-   procedure remove (This : in out AllBinaryLayerManager; layerInterface_Param : access AllBinaryLayer'Class) is
-      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
+   procedure remove (This : in out AllBinaryLayerManager; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
+      layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
       layerProcessorInterface : LayerProcessor_Access;
       index : Integer;
    begin

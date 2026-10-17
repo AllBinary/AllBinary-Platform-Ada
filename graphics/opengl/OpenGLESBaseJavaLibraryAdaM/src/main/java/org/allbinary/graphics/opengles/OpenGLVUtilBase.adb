@@ -33,20 +33,20 @@ package body org.allbinary.graphics.opengles.OpenGLVUtilBase_Package is
    end Create;
 
 
-   procedure glTexEnvix (This : in out OpenGLVUtilBase; gl_Param : access GL10'Class; target : Integer; pname : Integer; param : Integer) is
-      gl : GL10_Access := GL10_Access (gl_Param);
+   procedure glTexEnvix (This : in out OpenGLVUtilBase; gl_Param : access GL10_Package.GL10'Class; target : Integer; pname : Integer; param : Integer) is
+      gl : constant GL10_Access := GL10_Access (gl_Param);
    begin
         null;
    end glTexEnvix;
 
-   procedure glTexParameterix (This : in out OpenGLVUtilBase; gl_Param : access GL10'Class; target : Integer; pname : Integer; param : Integer) is
-      gl : GL10_Access := GL10_Access (gl_Param);
+   procedure glTexParameterix (This : in out OpenGLVUtilBase; gl_Param : access GL10_Package.GL10'Class; target : Integer; pname : Integer; param : Integer) is
+      gl : constant GL10_Access := GL10_Access (gl_Param);
    begin
         null;
    end glTexParameterix;
 
-   procedure glGenerateMipmap (This : in out OpenGLVUtilBase; gl_Param : access GL10'Class; textureId : Integer; target : Integer; generateMipMap : Boolean) is
-      gl : GL10_Access := GL10_Access (gl_Param);
+   procedure glGenerateMipmap (This : in out OpenGLVUtilBase; gl_Param : access GL10_Package.GL10'Class; textureId : Integer; target : Integer; generateMipMap : Boolean) is
+      gl : constant GL10_Access := GL10_Access (gl_Param);
    begin
         null;
    end glGenerateMipmap;

@@ -73,14 +73,14 @@ package body org.allbinary.logic.util.cache.IndexedBasicArrayListCache_Package i
 
    --  throws Exception
    procedure addObject (This : in out IndexedBasicArrayListCache; anyType_Param : access Java_Object'Class) is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         This.list.add (anyType);
    end addObject;
 
    --  throws Exception
-   procedure add (This : in out IndexedBasicArrayListCache; cacheableInterface_Param : access CacheableInterface'Class) is
-      cacheableInterface : CacheableInterface_Access := CacheableInterface_Access (cacheableInterface_Param);
+   procedure add (This : in out IndexedBasicArrayListCache; cacheableInterface_Param : access CacheableInterface_Package.CacheableInterface'Class) is
+      cacheableInterface : constant CacheableInterface_Access := CacheableInterface_Access (cacheableInterface_Param);
    begin
         This.list.add (cacheableInterface);
    end add;

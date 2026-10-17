@@ -21,13 +21,13 @@ package body org.allbinary.graphics.form.item.validation.PasswordValidator_Packa
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PasswordValidator'Class; textFieldItem_Param : access ABTextFieldItem'Class; min : Integer; max : Integer; allowOnEmpty : Boolean) is
-      textFieldItem : ABTextFieldItem_Access := ABTextFieldItem_Access (textFieldItem_Param);
+   procedure Initialize (This : in out PasswordValidator'Class; textFieldItem_Param : access ABTextFieldItem_Package.ABTextFieldItem'Class; min : Integer; max : Integer; allowOnEmpty : Boolean) is
+      textFieldItem : constant ABTextFieldItem_Access := ABTextFieldItem_Access (textFieldItem_Param);
    begin
         TextFieldItemValidator_Package.Initialize (This, textFieldItem, min, max, allowOnEmpty);
    end Initialize;
 
-   function Create (textFieldItem_Param : access ABTextFieldItem'Class; min : Integer; max : Integer; allowOnEmpty : Boolean) return PasswordValidator_Access is
+   function Create (textFieldItem_Param : access ABTextFieldItem_Package.ABTextFieldItem'Class; min : Integer; max : Integer; allowOnEmpty : Boolean) return PasswordValidator_Access is
       This : constant PasswordValidator_Access := new PasswordValidator;
    begin
       PasswordValidator_Package.Initialize (This.all, textFieldItem_Param, min, max, allowOnEmpty);

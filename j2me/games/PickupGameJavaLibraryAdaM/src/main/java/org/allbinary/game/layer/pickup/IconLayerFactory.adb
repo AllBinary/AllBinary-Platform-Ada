@@ -34,13 +34,13 @@ package body org.allbinary.game.layer.pickup.IconLayerFactory_Package is
 
 
    --  throws Exception
-   function getInstance (animationInterface_Param : access Animation'Class; width : Integer; height : Integer) return IconLayer_Access is
-      animationInterface : Animation_Access := Animation_Access (animationInterface_Param);
+   function getInstance (animationInterface_Param : access Animation_Package.Animation'Class; width : Integer; height : Integer) return IconLayer_Access is
+      animationInterface : constant Animation_Access := Animation_Access (animationInterface_Param);
    begin
         return IconLayer_Package.Create (animationInterface, width, height);
    end getInstance;
 
-   procedure getInstance (animationInterface_Param : access Animation'Class; width : Integer; height : Integer) is
+   procedure getInstance (animationInterface_Param : access Animation_Package.Animation'Class; width : Integer; height : Integer) is
       Java_Result : constant IconLayer_Access := getInstance (animationInterface_Param, width, height);
       pragma Unreferenced (Java_Result);
    begin

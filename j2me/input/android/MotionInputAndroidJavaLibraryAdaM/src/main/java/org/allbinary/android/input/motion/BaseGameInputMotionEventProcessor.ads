@@ -47,7 +47,7 @@ package org.allbinary.android.input.motion.BaseGameInputMotionEventProcessor_Pac
 
    procedure Initialize (This : in out BaseGameInputMotionEventProcessor'Class);
    function Create return BaseGameInputMotionEventProcessor_Access;
-   procedure process (This : in out BaseGameInputMotionEventProcessor; motionEvent_Param : access MotionEvent'Class);
+   procedure process (This : in out BaseGameInputMotionEventProcessor; motionEvent_Param : access MotionEvent_Package.MotionEvent'Class);
    procedure addListener (This : in out BaseGameInputMotionEventProcessor);
 
 end org.allbinary.android.input.motion.BaseGameInputMotionEventProcessor_Package;

@@ -35,8 +35,8 @@ package body org.allbinary.input.automation.module.generic_Id.GenericProfileCapt
    end Create;
 
    --  throws Exception
-   function getInstance (genericProfile_Param : access GenericProfile'Class) return CaptureWorkerInterface_Access is
-      genericProfile : GenericProfile_Access := GenericProfile_Access (genericProfile_Param);
+   function getInstance (genericProfile_Param : access GenericProfile_Package.GenericProfile'Class) return CaptureWorkerInterface_Access is
+      genericProfile : constant GenericProfile_Access := GenericProfile_Access (genericProfile_Param);
       vector : BasicArrayList_Access;
       size : Integer;
       genericProfileDataWorkerType : GenericProfileDataWorkerType_Access;
@@ -55,7 +55,7 @@ package body org.allbinary.input.automation.module.generic_Id.GenericProfileCapt
         Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No CaptureWorkerInterface specified in GenericProfile")));
    end getInstance;
 
-   procedure getInstance (genericProfile_Param : access GenericProfile'Class) is
+   procedure getInstance (genericProfile_Param : access GenericProfile_Package.GenericProfile'Class) is
       Java_Result : constant CaptureWorkerInterface_Access := getInstance (genericProfile_Param);
       pragma Unreferenced (Java_Result);
    begin

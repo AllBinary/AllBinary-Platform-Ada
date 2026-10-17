@@ -25,14 +25,14 @@ package body org.allbinary.media.audio.Sounds_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out Sounds'Class; soundsFactoryInterface_Param : access SoundsFactoryInterface'Class) is
-      soundsFactoryInterface : SoundsFactoryInterface_Access := SoundsFactoryInterface_Access (soundsFactoryInterface_Param);
+   procedure Initialize (This : in out Sounds'Class; soundsFactoryInterface_Param : access SoundsFactoryInterface_Package.SoundsFactoryInterface'Class) is
+      soundsFactoryInterface : constant SoundsFactoryInterface_Access := SoundsFactoryInterface_Access (soundsFactoryInterface_Param);
    begin
       Initialize_Fields (This);
         This.soundsFactoryInterface := soundsFactoryInterface;
    end Initialize;
 
-   function Create (soundsFactoryInterface_Param : access SoundsFactoryInterface'Class) return Sounds_Access is
+   function Create (soundsFactoryInterface_Param : access SoundsFactoryInterface_Package.SoundsFactoryInterface'Class) return Sounds_Access is
       This : constant Sounds_Access := new Sounds;
    begin
       Sounds_Package.Initialize (This.all, soundsFactoryInterface_Param);

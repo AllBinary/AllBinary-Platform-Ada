@@ -37,9 +37,9 @@ package org.allbinary.game.input.RTSPlayerFireGameInputProcessor_Package is
 
    type RTSPlayerFireGameInputProcessor is new RTSPlayerGameInputProcessor with null record;
 
-   procedure Initialize (This : in out RTSPlayerFireGameInputProcessor'Class; rtsPlayerGameInput_Param : access RTSPlayerGameInput'Class);
-   function Create (rtsPlayerGameInput_Param : access RTSPlayerGameInput'Class) return RTSPlayerFireGameInputProcessor_Access;
-   procedure processEvent (This : in out RTSPlayerFireGameInputProcessor; allbinaryLayerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class);
+   procedure Initialize (This : in out RTSPlayerFireGameInputProcessor'Class; rtsPlayerGameInput_Param : access RTSPlayerGameInput_Package.RTSPlayerGameInput'Class);
+   function Create (rtsPlayerGameInput_Param : access RTSPlayerGameInput_Package.RTSPlayerGameInput'Class) return RTSPlayerFireGameInputProcessor_Access;
+   procedure processEvent (This : in out RTSPlayerFireGameInputProcessor; allbinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class);
 
 end org.allbinary.game.input.RTSPlayerFireGameInputProcessor_Package;
 

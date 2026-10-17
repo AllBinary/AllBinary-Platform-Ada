@@ -44,8 +44,8 @@ package org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRu
       FADE_IN_HALF : Integer_Array_Access;
    end record;
 
-   procedure Initialize (This : in out ShowTitleProgressBarRunnable'Class; midletActivity_Param : access Activity'Class; progressCanvas_Param : access ProgressCanvas'Class);
-   function Create (midletActivity_Param : access Activity'Class; progressCanvas_Param : access ProgressCanvas'Class) return ShowTitleProgressBarRunnable_Access;
+   procedure Initialize (This : in out ShowTitleProgressBarRunnable'Class; midletActivity_Param : access Activity_Package.Activity'Class; progressCanvas_Param : access ProgressCanvas_Package.ProgressCanvas'Class);
+   function Create (midletActivity_Param : access Activity_Package.Activity'Class; progressCanvas_Param : access ProgressCanvas_Package.ProgressCanvas'Class) return ShowTitleProgressBarRunnable_Access;
    procedure run (This : in out ShowTitleProgressBarRunnable);
 
 end org.allbinary.graphics.canvas.transition.progress.ShowTitleProgressBarRunnable_Package;

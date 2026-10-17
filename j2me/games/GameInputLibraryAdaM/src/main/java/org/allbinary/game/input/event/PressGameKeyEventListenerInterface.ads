@@ -31,7 +31,7 @@ package org.allbinary.game.input.event.PressGameKeyEventListenerInterface_Packag
    type PressGameKeyEventListenerInterface_Access is access all PressGameKeyEventListenerInterface'Class;
    type PressGameKeyEventListenerInterface_Access_Array is array (Natural range <>) of PressGameKeyEventListenerInterface_Access;
    type PressGameKeyEventListenerInterface_Access_Array_Access is access all PressGameKeyEventListenerInterface_Access_Array;
-   procedure onPressGameKeyEvent (This : in out PressGameKeyEventListenerInterface; gameKeyEvent_Param : access GameKeyEvent'Class) is abstract;
+   procedure onPressGameKeyEvent (This : in out PressGameKeyEventListenerInterface; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class) is abstract;
 
 end org.allbinary.game.input.event.PressGameKeyEventListenerInterface_Package;
 

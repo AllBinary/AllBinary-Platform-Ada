@@ -25,25 +25,25 @@ package body org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Packa
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PopupMenuInputProcessor'Class; gameKeyEventList_Param : access BasicArrayList'Class; playerInputId : Integer; gameCanvas_Param : access MyCanvas'Class; rectangle_Param : access Rectangle'Class) is
-      gameKeyEventList : BasicArrayList_Access := BasicArrayList_Access (gameKeyEventList_Param);
-      gameCanvas : MyCanvas_Access := MyCanvas_Access (gameCanvas_Param);
-      rectangle : Rectangle_Access := Rectangle_Access (rectangle_Param);
+   procedure Initialize (This : in out PopupMenuInputProcessor'Class; gameKeyEventList_Param : access BasicArrayList_Package.BasicArrayList'Class; playerInputId : Integer; gameCanvas_Param : access MyCanvas_Package.MyCanvas'Class; rectangle_Param : access Rectangle_Package.Rectangle'Class) is
+      gameKeyEventList : constant BasicArrayList_Access := BasicArrayList_Access (gameKeyEventList_Param);
+      gameCanvas : constant MyCanvas_Access := MyCanvas_Access (gameCanvas_Param);
+      rectangle : constant Rectangle_Access := Rectangle_Access (rectangle_Param);
    begin
         BasicMenuInputProcessor_Package.Initialize (This, gameKeyEventList, playerInputId, gameCanvas);
         Initialize_Fields (This);
         This.rectangle := rectangle;
    end Initialize;
 
-   function Create (gameKeyEventList_Param : access BasicArrayList'Class; playerInputId : Integer; gameCanvas_Param : access MyCanvas'Class; rectangle_Param : access Rectangle'Class) return PopupMenuInputProcessor_Access is
+   function Create (gameKeyEventList_Param : access BasicArrayList_Package.BasicArrayList'Class; playerInputId : Integer; gameCanvas_Param : access MyCanvas_Package.MyCanvas'Class; rectangle_Param : access Rectangle_Package.Rectangle'Class) return PopupMenuInputProcessor_Access is
       This : constant PopupMenuInputProcessor_Access := new PopupMenuInputProcessor;
    begin
       PopupMenuInputProcessor_Package.Initialize (This.all, gameKeyEventList_Param, playerInputId, gameCanvas_Param, rectangle_Param);
       return This;
    end Create;
 
-   procedure init (This : in out PopupMenuInputProcessor; rectangle_Param : access Rectangle'Class) is
-      rectangle : Rectangle_Access := Rectangle_Access (rectangle_Param);
+   procedure init (This : in out PopupMenuInputProcessor; rectangle_Param : access Rectangle_Package.Rectangle'Class) is
+      rectangle : constant Rectangle_Access := Rectangle_Access (rectangle_Param);
    begin
         This.rectangle := rectangle;
    end init;
@@ -116,8 +116,8 @@ package body org.allbinary.game.displayable.canvas.PopupMenuInputProcessor_Packa
    end processMotionInputs;
 
    --  throws Exception
-   procedure processMotionInput (This : in out PopupMenuInputProcessor; motionGestureEvent_Param : access MotionGestureEvent'Class) is
-      motionGestureEvent : MotionGestureEvent_Access := MotionGestureEvent_Access (motionGestureEvent_Param);
+   procedure processMotionInput (This : in out PopupMenuInputProcessor; motionGestureEvent_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is
+      motionGestureEvent : constant MotionGestureEvent_Access := MotionGestureEvent_Access (motionGestureEvent_Param);
       touchMotionGestureFactory : TouchMotionGestureFactory_Access;
       motionGestureInput : MotionGestureInput_Access;
       point : GPoint_Access;

@@ -49,8 +49,8 @@ package tags.ModifyTag_Package is
       logUtil : LogUtil_Access;
    end record;
 
-   procedure Initialize (This : in out ModifyTag'Class; tagHelperFactoryInterface_Param : access TagHelperFactoryInterface'Class);
-   function Create (tagHelperFactoryInterface_Param : access TagHelperFactoryInterface'Class) return ModifyTag_Access;
+   procedure Initialize (This : in out ModifyTag'Class; tagHelperFactoryInterface_Param : access TagHelperFactoryInterface_Package.TagHelperFactoryInterface'Class);
+   function Create (tagHelperFactoryInterface_Param : access TagHelperFactoryInterface_Package.TagHelperFactoryInterface'Class) return ModifyTag_Access;
    function insert (This : in out ModifyTag) return Unbounded_String;
    function delete (This : in out ModifyTag) return Unbounded_String;
    function update (This : in out ModifyTag) return Unbounded_String;

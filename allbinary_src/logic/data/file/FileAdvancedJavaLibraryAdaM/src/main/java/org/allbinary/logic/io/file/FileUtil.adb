@@ -48,9 +48,9 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
    end Create;
 
    --  throws Exception
-   procedure write (This : in out FileUtil; inputStream_Param : access InputStream'Class; file_Param : access AbFile'Class) is
-      inputStream : InputStream_Access := InputStream_Access (inputStream_Param);
-      file : AbFile_Access := AbFile_Access (file_Param);
+   procedure write (This : in out FileUtil; inputStream_Param : access InputStream_Package.InputStream'Class; file_Param : access AbFile_Package.AbFile'Class) is
+      inputStream : constant InputStream_Access := InputStream_Access (inputStream_Param);
+      file : constant AbFile_Access := AbFile_Access (file_Param);
       dataOutputStream : AbDataOutputStream_Access;
    begin
         dataOutputStream := DataOutputStreamFactory_Package.getInstance.getInstanceForAbFile (file);
@@ -58,8 +58,8 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
    end write;
 
    --  throws Exception
-   procedure write (This : in out FileUtil; inputStream_Param : access InputStream'Class; dataOutputStream_Param : access AbDataOutputStream'Class) is
-      inputStream : InputStream_Access := InputStream_Access (inputStream_Param);
+   procedure write (This : in out FileUtil; inputStream_Param : access InputStream_Package.InputStream'Class; dataOutputStream_Param : access AbDataOutputStream_Package.AbDataOutputStream'Class) is
+      inputStream : constant InputStream_Access := InputStream_Access (inputStream_Param);
       dataOutputStream : AbDataOutputStream_Access := AbDataOutputStream_Access (dataOutputStream_Param);
    begin
         begin
@@ -73,8 +73,8 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
    end write;
 
    --  throws Exception
-   procedure write (This : in out FileUtil; inputStream_Param : access InputStream'Class; dataOutputStream_Param : access AbDataOutputStream'Class; buffer : Short_Short_Integer_Array_Access) is
-      inputStream : InputStream_Access := InputStream_Access (inputStream_Param);
+   procedure write (This : in out FileUtil; inputStream_Param : access InputStream_Package.InputStream'Class; dataOutputStream_Param : access AbDataOutputStream_Package.AbDataOutputStream'Class; buffer : Short_Short_Integer_Array_Access) is
+      inputStream : constant InputStream_Access := InputStream_Access (inputStream_Param);
       dataOutputStream : AbDataOutputStream_Access := AbDataOutputStream_Access (dataOutputStream_Param);
    begin
         begin
@@ -88,8 +88,8 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
    end write;
 
    --  throws Exception
-   procedure copy (This : in out FileUtil; dataInputStream_Param : access AbFileInputStream'Class; dataOutputStream_Param : access AbDataOutputStream'Class) is
-      dataInputStream : AbFileInputStream_Access := AbFileInputStream_Access (dataInputStream_Param);
+   procedure copy (This : in out FileUtil; dataInputStream_Param : access AbFileInputStream_Package.AbFileInputStream'Class; dataOutputStream_Param : access AbDataOutputStream_Package.AbDataOutputStream'Class) is
+      dataInputStream : constant AbFileInputStream_Access := AbFileInputStream_Access (dataInputStream_Param);
       dataOutputStream : AbDataOutputStream_Access := AbDataOutputStream_Access (dataOutputStream_Param);
    begin
         begin
@@ -104,10 +104,10 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
    end copy;
 
    --  throws Exception
-   function fixPath (This : in out FileUtil; file_Param : access AbFile'Class; path_Param : access AbPath'Class; realPath_Param : access AbPath'Class; cloud : Unbounded_String) return AbPath_Access is
-      file : AbFile_Access := AbFile_Access (file_Param);
-      path : AbPath_Access := AbPath_Access (path_Param);
-      realPath : AbPath_Access := AbPath_Access (realPath_Param);
+   function fixPath (This : in out FileUtil; file_Param : access AbFile_Package.AbFile'Class; path_Param : access AbPath_Package.AbPath'Class; realPath_Param : access AbPath_Package.AbPath'Class; cloud : Unbounded_String) return AbPath_Access is
+      file : constant AbFile_Access := AbFile_Access (file_Param);
+      path : constant AbPath_Access := AbPath_Access (path_Param);
+      realPath : constant AbPath_Access := AbPath_Access (realPath_Param);
       beginIndex : Integer;
       endIndex : Integer;
       fixedPathString : Unbounded_String;
@@ -129,19 +129,19 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
    end fixPath;
 
    --  throws Exception
-   procedure copyToCloud (This : in out FileUtil; file_Param : access AbFile'Class; path_Param : access AbPath'Class; realPath_Param : access AbPath'Class; cloud : Unbounded_String) is
-      file : AbFile_Access := AbFile_Access (file_Param);
-      path : AbPath_Access := AbPath_Access (path_Param);
-      realPath : AbPath_Access := AbPath_Access (realPath_Param);
+   procedure copyToCloud (This : in out FileUtil; file_Param : access AbFile_Package.AbFile'Class; path_Param : access AbPath_Package.AbPath'Class; realPath_Param : access AbPath_Package.AbPath'Class; cloud : Unbounded_String) is
+      file : constant AbFile_Access := AbFile_Access (file_Param);
+      path : constant AbPath_Access := AbPath_Access (path_Param);
+      realPath : constant AbPath_Access := AbPath_Access (realPath_Param);
    begin
         This.copyToCloud (file, path, realPath, cloud, False, False);
    end copyToCloud;
 
    --  throws Exception
-   procedure copyToCloud (This : in out FileUtil; file_Param : access AbFile'Class; path_Param : access AbPath'Class; realPath_Param : access AbPath'Class; cloud : Unbounded_String; overwriteNewer : Boolean; overwriteAll : Boolean) is
-      file : AbFile_Access := AbFile_Access (file_Param);
-      path : AbPath_Access := AbPath_Access (path_Param);
-      realPath : AbPath_Access := AbPath_Access (realPath_Param);
+   procedure copyToCloud (This : in out FileUtil; file_Param : access AbFile_Package.AbFile'Class; path_Param : access AbPath_Package.AbPath'Class; realPath_Param : access AbPath_Package.AbPath'Class; cloud : Unbounded_String; overwriteNewer : Boolean; overwriteAll : Boolean) is
+      file : constant AbFile_Access := AbFile_Access (file_Param);
+      path : constant AbPath_Access := AbPath_Access (path_Param);
+      realPath : constant AbPath_Access := AbPath_Access (realPath_Param);
       outPath : AbPath_Access;
       outFile : AbFile_Access;
       stringBuffer : StringMaker_Access;
@@ -185,17 +185,17 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
    end copyToCloud;
 
    --  throws Exception
-   procedure copyToCloud (This : in out FileUtil; file_Param : access AbFile'Class; outFile_Param : access AbFile'Class) is
-      file : AbFile_Access := AbFile_Access (file_Param);
-      outFile : AbFile_Access := AbFile_Access (outFile_Param);
+   procedure copyToCloud (This : in out FileUtil; file_Param : access AbFile_Package.AbFile'Class; outFile_Param : access AbFile_Package.AbFile'Class) is
+      file : constant AbFile_Access := AbFile_Access (file_Param);
+      outFile : constant AbFile_Access := AbFile_Access (outFile_Param);
    begin
         This.copyToCloud (file, outFile, False, False);
    end copyToCloud;
 
    --  throws Exception
-   procedure copyToCloud (This : in out FileUtil; file_Param : access AbFile'Class; outFile_Param : access AbFile'Class; overwriteNewer : Boolean; overwriteAll : Boolean) is
-      file : AbFile_Access := AbFile_Access (file_Param);
-      outFile : AbFile_Access := AbFile_Access (outFile_Param);
+   procedure copyToCloud (This : in out FileUtil; file_Param : access AbFile_Package.AbFile'Class; outFile_Param : access AbFile_Package.AbFile'Class; overwriteNewer : Boolean; overwriteAll : Boolean) is
+      file : constant AbFile_Access := AbFile_Access (file_Param);
+      outFile : constant AbFile_Access := AbFile_Access (outFile_Param);
       stringBuffer : StringMaker_Access;
       dataOutputStream : AbDataOutputStream_Access;
       fileInputStream : AbFileInputStream_Access;
@@ -236,9 +236,9 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
    end copyToCloud;
 
    --  throws Exception
-   function copyPrepare (This : in out FileUtil; fromFile_Param : access AbFile'Class; toFile_Param : access AbFile'Class; overwriteNewer : Boolean; overwriteAll : Boolean) return Boolean is
-      fromFile : AbFile_Access := AbFile_Access (fromFile_Param);
-      toFile : AbFile_Access := AbFile_Access (toFile_Param);
+   function copyPrepare (This : in out FileUtil; fromFile_Param : access AbFile_Package.AbFile'Class; toFile_Param : access AbFile_Package.AbFile'Class; overwriteNewer : Boolean; overwriteAll : Boolean) return Boolean is
+      fromFile : constant AbFile_Access := AbFile_Access (fromFile_Param);
+      toFile : constant AbFile_Access := AbFile_Access (toFile_Param);
       stringBuffer : StringMaker_Access;
    begin
         if toFile.exists then
@@ -286,17 +286,17 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
    end copyPrepare;
 
    --  throws Exception
-   procedure copyFile (This : in out FileUtil; fromFile_Param : access AbFile'Class; toFile_Param : access AbFile'Class) is
-      fromFile : AbFile_Access := AbFile_Access (fromFile_Param);
-      toFile : AbFile_Access := AbFile_Access (toFile_Param);
+   procedure copyFile (This : in out FileUtil; fromFile_Param : access AbFile_Package.AbFile'Class; toFile_Param : access AbFile_Package.AbFile'Class) is
+      fromFile : constant AbFile_Access := AbFile_Access (fromFile_Param);
+      toFile : constant AbFile_Access := AbFile_Access (toFile_Param);
    begin
         This.copyFile (fromFile, toFile, False, False);
    end copyFile;
 
    --  throws Exception
-   procedure copyFile (This : in out FileUtil; fromFile_Param : access AbFile'Class; toFile_Param : access AbFile'Class; overwriteNewer : Boolean; overwriteAll : Boolean) is
-      fromFile : AbFile_Access := AbFile_Access (fromFile_Param);
-      toFile : AbFile_Access := AbFile_Access (toFile_Param);
+   procedure copyFile (This : in out FileUtil; fromFile_Param : access AbFile_Package.AbFile'Class; toFile_Param : access AbFile_Package.AbFile'Class; overwriteNewer : Boolean; overwriteAll : Boolean) is
+      fromFile : constant AbFile_Access := AbFile_Access (fromFile_Param);
+      toFile : constant AbFile_Access := AbFile_Access (toFile_Param);
       stringBuffer : StringMaker_Access;
       dataOutputStream : AbDataOutputStream_Access;
       fileInputStream : AbFileInputStream_Access;
@@ -336,8 +336,8 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
         end;
    end copyFile;
 
-   function getNewDirectory (fromFile_Param : access AbFile'Class) return Unbounded_String is
-      fromFile : AbFile_Access := AbFile_Access (fromFile_Param);
+   function getNewDirectory (fromFile_Param : access AbFile_Package.AbFile'Class) return Unbounded_String is
+      fromFile : constant AbFile_Access := AbFile_Access (fromFile_Param);
       newDirectory : Unbounded_String;
       separatorChar : Unbounded_String;
       lastIndex : Integer;
@@ -356,9 +356,9 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
    end getNewDirectory;
 
    --  throws Exception
-   procedure copyDirectoryPortion (This : in out FileUtil; fromDirectoryAbPath_Param : access AbPath'Class; toDirectoryAbPath_Param : access AbPath'Class; overwriteNewer : Boolean; overwriteAll : Boolean; current : Integer; total : Integer) is
-      fromDirectoryAbPath : AbPath_Access := AbPath_Access (fromDirectoryAbPath_Param);
-      toDirectoryAbPath : AbPath_Access := AbPath_Access (toDirectoryAbPath_Param);
+   procedure copyDirectoryPortion (This : in out FileUtil; fromDirectoryAbPath_Param : access AbPath_Package.AbPath'Class; toDirectoryAbPath_Param : access AbPath_Package.AbPath'Class; overwriteNewer : Boolean; overwriteAll : Boolean; current : Integer; total : Integer) is
+      fromDirectoryAbPath : constant AbPath_Access := AbPath_Access (fromDirectoryAbPath_Param);
+      toDirectoryAbPath : constant AbPath_Access := AbPath_Access (toDirectoryAbPath_Param);
       file : AbFile_Access;
       fileList : BasicArrayList_Access;
       size : Integer;
@@ -416,9 +416,9 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
    end copyDirectoryPortion;
 
    --  throws Exception
-   procedure copyDirectory (This : in out FileUtil; fromFile_Param : access AbFile'Class; to_Param : access AbFile'Class) is
-      fromFile : AbFile_Access := AbFile_Access (fromFile_Param);
-      to : AbFile_Access := AbFile_Access (to_Param);
+   procedure copyDirectory (This : in out FileUtil; fromFile_Param : access AbFile_Package.AbFile'Class; to_Param : access AbFile_Package.AbFile'Class) is
+      fromFile : constant AbFile_Access := AbFile_Access (fromFile_Param);
+      to : constant AbFile_Access := AbFile_Access (to_Param);
       stringBuffer : StringMaker_Access;
       newDirectory : Unbounded_String;
       newDirectoryAbPath : AbPath_Access;
@@ -483,9 +483,9 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
    end copyDirectory;
 
    --  throws Exception
-   function copy (This : in out FileUtil; fromAbPath_Param : access AbPath'Class; to_Param : access AbPath'Class) return Boolean is
-      fromAbPath : AbPath_Access := AbPath_Access (fromAbPath_Param);
-      to : AbPath_Access := AbPath_Access (to_Param);
+   function copy (This : in out FileUtil; fromAbPath_Param : access AbPath_Package.AbPath'Class; to_Param : access AbPath_Package.AbPath'Class) return Boolean is
+      fromAbPath : constant AbPath_Access := AbPath_Access (fromAbPath_Param);
+      to : constant AbPath_Access := AbPath_Access (to_Param);
       COPY : Unbounded_String;
       stringBuffer : StringMaker_Access;
       fromLocationFile : AbFile_Access;
@@ -588,8 +588,8 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
         end;
    end copy;
 
-   function shouldSkip (This : in out FileUtil; file_Param : access AbFile'Class; skipFiles : Unbounded_String_Array_Access) return Boolean is
-      file : AbFile_Access := AbFile_Access (file_Param);
+   function shouldSkip (This : in out FileUtil; file_Param : access AbFile_Package.AbFile'Class; skipFiles : Unbounded_String_Array_Access) return Boolean is
+      file : constant AbFile_Access := AbFile_Access (file_Param);
       size : Integer;
       skipFile : Unbounded_String;
       index : Integer;
@@ -626,48 +626,48 @@ package body org.allbinary.logic.io.file.FileUtil_Package is
         end;
    end write;
 
-   function loadFileAsList (This : in out FileUtil; file_Param : access AbFile'Class; max : Integer; byteArray1 : Short_Short_Integer_Array_Access) return BasicArrayList_Access is
-      file : AbFile_Access := AbFile_Access (file_Param);
+   function loadFileAsList (This : in out FileUtil; file_Param : access AbFile_Package.AbFile'Class; max : Integer; byteArray1 : Short_Short_Integer_Array_Access) return BasicArrayList_Access is
+      file : constant AbFile_Access := AbFile_Access (file_Param);
    begin
         return FileUtil2_Package.getInstance.loadFileAsList (file, max, byteArray1);
    end loadFileAsList;
 
-   procedure fixPath (This : in out FileUtil; file_Param : access AbFile'Class; path_Param : access AbPath'Class; realPath_Param : access AbPath'Class; cloud : Unbounded_String) is
+   procedure fixPath (This : in out FileUtil; file_Param : access AbFile_Package.AbFile'Class; path_Param : access AbPath_Package.AbPath'Class; realPath_Param : access AbPath_Package.AbPath'Class; cloud : Unbounded_String) is
       Java_Result : constant AbPath_Access := FileUtil'Class (This).fixPath (file_Param, path_Param, realPath_Param, cloud);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end fixPath;
 
-   procedure copyPrepare (This : in out FileUtil; fromFile_Param : access AbFile'Class; toFile_Param : access AbFile'Class; overwriteNewer : Boolean; overwriteAll : Boolean) is
+   procedure copyPrepare (This : in out FileUtil; fromFile_Param : access AbFile_Package.AbFile'Class; toFile_Param : access AbFile_Package.AbFile'Class; overwriteNewer : Boolean; overwriteAll : Boolean) is
       Java_Result : constant Boolean := FileUtil'Class (This).copyPrepare (fromFile_Param, toFile_Param, overwriteNewer, overwriteAll);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end copyPrepare;
 
-   procedure getNewDirectory (fromFile_Param : access AbFile'Class) is
+   procedure getNewDirectory (fromFile_Param : access AbFile_Package.AbFile'Class) is
       Java_Result : constant Unbounded_String := getNewDirectory (fromFile_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getNewDirectory;
 
-   procedure copy (This : in out FileUtil; fromAbPath_Param : access AbPath'Class; to_Param : access AbPath'Class) is
+   procedure copy (This : in out FileUtil; fromAbPath_Param : access AbPath_Package.AbPath'Class; to_Param : access AbPath_Package.AbPath'Class) is
       Java_Result : constant Boolean := FileUtil'Class (This).copy (fromAbPath_Param, to_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end copy;
 
-   procedure shouldSkip (This : in out FileUtil; file_Param : access AbFile'Class; skipFiles : Unbounded_String_Array_Access) is
+   procedure shouldSkip (This : in out FileUtil; file_Param : access AbFile_Package.AbFile'Class; skipFiles : Unbounded_String_Array_Access) is
       Java_Result : constant Boolean := FileUtil'Class (This).shouldSkip (file_Param, skipFiles);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end shouldSkip;
 
-   procedure loadFileAsList (This : in out FileUtil; file_Param : access AbFile'Class; max : Integer; byteArray1 : Short_Short_Integer_Array_Access) is
+   procedure loadFileAsList (This : in out FileUtil; file_Param : access AbFile_Package.AbFile'Class; max : Integer; byteArray1 : Short_Short_Integer_Array_Access) is
       Java_Result : constant BasicArrayList_Access := FileUtil'Class (This).loadFileAsList (file_Param, max, byteArray1);
       pragma Unreferenced (Java_Result);
    begin

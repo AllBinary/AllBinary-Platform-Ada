@@ -24,14 +24,14 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out DownloadableItemView'Class; downloadableItem_Param : access DownloadableItem'Class) is
-      downloadableItem : DownloadableItem_Access := DownloadableItem_Access (downloadableItem_Param);
+   procedure Initialize (This : in out DownloadableItemView'Class; downloadableItem_Param : access DownloadableItem_Package.DownloadableItem'Class) is
+      downloadableItem : constant DownloadableItem_Access := DownloadableItem_Access (downloadableItem_Param);
    begin
       Initialize_Fields (This);
         This.downloadableItem := downloadableItem;
    end Initialize;
 
-   function Create (downloadableItem_Param : access DownloadableItem'Class) return DownloadableItemView_Access is
+   function Create (downloadableItem_Param : access DownloadableItem_Package.DownloadableItem'Class) return DownloadableItemView_Access is
       This : constant DownloadableItemView_Access := new DownloadableItemView;
    begin
       DownloadableItemView_Package.Initialize (This.all, downloadableItem_Param);
@@ -39,8 +39,8 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
    end Create;
 
    --  throws Exception
-   function toXmlNode (This : in out DownloadableItemView; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out DownloadableItemView; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       hashMap : HashMap_Access;
       totalTime : Long_Long_Integer;
       calendar : Calendar_Access;
@@ -114,7 +114,7 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
         return Null_Unbounded_String;
    end view;
 
-   procedure toXmlNode (This : in out DownloadableItemView; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out DownloadableItemView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := DownloadableItemView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

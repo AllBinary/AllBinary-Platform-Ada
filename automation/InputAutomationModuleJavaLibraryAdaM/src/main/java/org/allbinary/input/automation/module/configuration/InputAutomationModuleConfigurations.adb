@@ -23,9 +23,9 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out InputAutomationModuleConfigurations'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; file_Param : access File'Class) is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      file : File_Access := File_Access (file_Param);
+   procedure Initialize (This : in out InputAutomationModuleConfigurations'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; file_Param : access File_Package.File'Class) is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      file : constant File_Access := File_Access (file_Param);
       bytes : Short_Short_Integer_Array_Access;
       idFile : FileInputStream_Access;
       length : Integer;
@@ -56,16 +56,16 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
         end if;
    end Initialize;
 
-   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; file_Param : access File'Class) return InputAutomationModuleConfigurations_Access is
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; file_Param : access File_Package.File'Class) return InputAutomationModuleConfigurations_Access is
       This : constant InputAutomationModuleConfigurations_Access := new InputAutomationModuleConfigurations;
    begin
       InputAutomationModuleConfigurations_Package.Initialize (This.all, abeClientInformation_Param, file_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out InputAutomationModuleConfigurations'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; document_Param : access Document'Class) is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      document : Document_Access := Document_Access (document_Param);
+   procedure Initialize (This : in out InputAutomationModuleConfigurations'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; document_Param : access Document_Package.Document'Class) is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      document : constant Document_Access := Document_Access (document_Param);
       nameNodeList : NodeList_Access;
       node : Node_Access;
       index : Integer;
@@ -80,15 +80,15 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
         end loop;
    end Initialize;
 
-   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; document_Param : access Document'Class) return InputAutomationModuleConfigurations_Access is
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; document_Param : access Document_Package.Document'Class) return InputAutomationModuleConfigurations_Access is
       This : constant InputAutomationModuleConfigurations_Access := new InputAutomationModuleConfigurations;
    begin
       InputAutomationModuleConfigurations_Package.Initialize (This.all, abeClientInformation_Param, document_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out InputAutomationModuleConfigurations'Class; inputAutomationModuleConfigurationList_Param : access List'Class) is
-      inputAutomationModuleConfigurationList : List_Access := List_Access (inputAutomationModuleConfigurationList_Param);
+   procedure Initialize (This : in out InputAutomationModuleConfigurations'Class; inputAutomationModuleConfigurationList_Param : access List_Package.List'Class) is
+      inputAutomationModuleConfigurationList : constant List_Access := List_Access (inputAutomationModuleConfigurationList_Param);
       size : Integer;
       inputAutomationModuleConfiguration : InputAutomationModuleConfiguration_Access;
       index : Integer;
@@ -103,7 +103,7 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
         end loop;
    end Initialize;
 
-   function Create (inputAutomationModuleConfigurationList_Param : access List'Class) return InputAutomationModuleConfigurations_Access is
+   function Create (inputAutomationModuleConfigurationList_Param : access List_Package.List'Class) return InputAutomationModuleConfigurations_Access is
       This : constant InputAutomationModuleConfigurations_Access := new InputAutomationModuleConfigurations;
    begin
       InputAutomationModuleConfigurations_Package.Initialize (This.all, inputAutomationModuleConfigurationList_Param);
@@ -123,14 +123,14 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
       return This;
    end Create;
 
-   procedure add (This : in out InputAutomationModuleConfigurations; inputAutomationModuleConfiguration_Param : access InputAutomationModuleConfiguration'Class) is
-      inputAutomationModuleConfiguration : InputAutomationModuleConfiguration_Access := InputAutomationModuleConfiguration_Access (inputAutomationModuleConfiguration_Param);
+   procedure add (This : in out InputAutomationModuleConfigurations; inputAutomationModuleConfiguration_Param : access InputAutomationModuleConfiguration_Package.InputAutomationModuleConfiguration'Class) is
+      inputAutomationModuleConfiguration : constant InputAutomationModuleConfiguration_Access := InputAutomationModuleConfiguration_Access (inputAutomationModuleConfiguration_Param);
    begin
         This.getHashMap.put (inputAutomationModuleConfiguration.getClassName, inputAutomationModuleConfiguration);
    end add;
 
-   procedure remove (This : in out InputAutomationModuleConfigurations; inputAutomationModuleConfiguration_Param : access InputAutomationModuleConfiguration'Class) is
-      inputAutomationModuleConfiguration : InputAutomationModuleConfiguration_Access := InputAutomationModuleConfiguration_Access (inputAutomationModuleConfiguration_Param);
+   procedure remove (This : in out InputAutomationModuleConfigurations; inputAutomationModuleConfiguration_Param : access InputAutomationModuleConfiguration_Package.InputAutomationModuleConfiguration'Class) is
+      inputAutomationModuleConfiguration : constant InputAutomationModuleConfiguration_Access := InputAutomationModuleConfiguration_Access (inputAutomationModuleConfiguration_Param);
    begin
         This.getHashMap.remove (inputAutomationModuleConfiguration.getClassName);
    end remove;
@@ -140,8 +140,8 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
         return This.hashMap;
    end getHashMap;
 
-   procedure setHashMap (This : in out InputAutomationModuleConfigurations; hashMap_Param : access HashMap'Class) is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+   procedure setHashMap (This : in out InputAutomationModuleConfigurations; hashMap_Param : access HashMap_Package.HashMap'Class) is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
         This.hashMap := hashMap;
    end setHashMap;

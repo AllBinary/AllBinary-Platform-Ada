@@ -39,14 +39,14 @@ package body org.allbinary.graphics.j2me.workarea.tools.PointsUtil_Package is
    end getInstance;
 
    --  throws Exception
-   function doTransforms (This : in out PointsUtil; pointVector_Param : access BasicArrayList'Class; angle : Long_Float; fulcrumPoint_Param : access GPoint'Class) return BasicArrayList_Access is
-      pointVector : BasicArrayList_Access := BasicArrayList_Access (pointVector_Param);
-      fulcrumPoint : GPoint_Access := GPoint_Access (fulcrumPoint_Param);
+   function doTransforms (This : in out PointsUtil; pointVector_Param : access BasicArrayList_Package.BasicArrayList'Class; angle : Long_Float; fulcrumPoint_Param : access GPoint_Package.GPoint'Class) return BasicArrayList_Access is
+      pointVector : constant BasicArrayList_Access := BasicArrayList_Access (pointVector_Param);
+      fulcrumPoint : constant GPoint_Access := GPoint_Access (fulcrumPoint_Param);
    begin
         return VectorRotationGenerator_Package.getInstance.getListAtAngle (fulcrumPoint.getX, fulcrumPoint.getY, pointVector, AngleFactory_Package.getInstance.getAt (angle.intValue));
    end doTransforms;
 
-   procedure doTransforms (This : in out PointsUtil; pointVector_Param : access BasicArrayList'Class; angle : Long_Float; fulcrumPoint_Param : access GPoint'Class) is
+   procedure doTransforms (This : in out PointsUtil; pointVector_Param : access BasicArrayList_Package.BasicArrayList'Class; angle : Long_Float; fulcrumPoint_Param : access GPoint_Package.GPoint'Class) is
       Java_Result : constant BasicArrayList_Access := PointsUtil'Class (This).doTransforms (pointVector_Param, angle, fulcrumPoint_Param);
       pragma Unreferenced (Java_Result);
    begin

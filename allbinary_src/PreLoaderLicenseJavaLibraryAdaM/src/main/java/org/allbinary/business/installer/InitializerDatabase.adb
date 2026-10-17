@@ -29,9 +29,9 @@ package body org.allbinary.business.installer.InitializerDatabase_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out InitializerDatabase'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; map_Param : access Map'Class) is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      map : Map_Access := Map_Access (map_Param);
+   procedure Initialize (This : in out InitializerDatabase'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; map_Param : access Map_Package.Map'Class) is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      map : constant Map_Access := Map_Access (map_Param);
       stringBuffer : StringMaker_Access;
       hashMap : HashMap_Access;
       keys : Set_Access;
@@ -61,31 +61,31 @@ package body org.allbinary.business.installer.InitializerDatabase_Package is
         This.getFormData (abeClientInformation, hashMap);
    end Initialize;
 
-   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; map_Param : access Map'Class) return InitializerDatabase_Access is
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; map_Param : access Map_Package.Map'Class) return InitializerDatabase_Access is
       This : constant InitializerDatabase_Access := new InitializerDatabase;
    begin
       InitializerDatabase_Package.Initialize (This.all, abeClientInformation_Param, map_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out InitializerDatabase'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; initHashMap_Param : access HashMap'Class) is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      initHashMap : HashMap_Access := HashMap_Access (initHashMap_Param);
+   procedure Initialize (This : in out InitializerDatabase'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; initHashMap_Param : access HashMap_Package.HashMap'Class) is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      initHashMap : constant HashMap_Access := HashMap_Access (initHashMap_Param);
    begin
       Initialize_Fields (This);
         This.getFormData (abeClientInformation, initHashMap);
    end Initialize;
 
-   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; initHashMap_Param : access HashMap'Class) return InitializerDatabase_Access is
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; initHashMap_Param : access HashMap_Package.HashMap'Class) return InitializerDatabase_Access is
       This : constant InitializerDatabase_Access := new InitializerDatabase;
    begin
       InitializerDatabase_Package.Initialize (This.all, abeClientInformation_Param, initHashMap_Param);
       return This;
    end Create;
 
-   procedure getFormData (This : in out InitializerDatabase; abeClientInformation_Param : access AbeClientInformationInterface'Class; hashMap_Param : access HashMap'Class) is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+   procedure getFormData (This : in out InitializerDatabase; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; hashMap_Param : access HashMap_Package.HashMap'Class) is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
       initializerData : InitializerData_Access;
       dbConnectionInfo : DbConnectionInfo_Access;
       adminDbName : Unbounded_String;

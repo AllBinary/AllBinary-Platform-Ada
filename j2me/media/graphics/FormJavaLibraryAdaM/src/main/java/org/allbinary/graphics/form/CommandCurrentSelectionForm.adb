@@ -23,9 +23,9 @@ package body org.allbinary.graphics.form.CommandCurrentSelectionForm_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CommandCurrentSelectionForm'Class; title : Unbounded_String; items : ABCustomItem_Access_Array_Access; border : Integer; moveForSmallScreen : Boolean; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) is
-      backgroundBasicColor : BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
-      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
+   procedure Initialize (This : in out CommandCurrentSelectionForm'Class; title : Unbounded_String; items : ABCustomItem_Access_Array_Access; border : Integer; moveForSmallScreen : Boolean; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      backgroundBasicColor : constant BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
+      foregroundBasicColor : constant BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
    begin
         ScrollCurrentSelectionForm_Package.Initialize (This, title, items, ItemPaintableFactory_Package.getInstance, border, -(3), moveForSmallScreen, backgroundBasicColor, foregroundBasicColor);
         Initialize_Fields (This);
@@ -33,15 +33,15 @@ package body org.allbinary.graphics.form.CommandCurrentSelectionForm_Package is
         This.addAll (items);
    end Initialize;
 
-   function Create (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; border : Integer; moveForSmallScreen : Boolean; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return CommandCurrentSelectionForm_Access is
+   function Create (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; border : Integer; moveForSmallScreen : Boolean; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return CommandCurrentSelectionForm_Access is
       This : constant CommandCurrentSelectionForm_Access := new CommandCurrentSelectionForm;
    begin
       CommandCurrentSelectionForm_Package.Initialize (This.all, title, items, border, moveForSmallScreen, backgroundBasicColor_Param, foregroundBasicColor_Param);
       return This;
    end Create;
 
-   procedure updateMeasurement (This : in out CommandCurrentSelectionForm; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure updateMeasurement (This : in out CommandCurrentSelectionForm; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.updateAll (graphics, This.getAllitems);
         ScrollCurrentSelectionForm (This).updateMeasurement (graphics);
@@ -71,8 +71,8 @@ package body org.allbinary.graphics.form.CommandCurrentSelectionForm_Package is
         end loop;
    end addAll;
 
-   procedure addAt (This : in out CommandCurrentSelectionForm; index : Integer; item_Param : access ABCustomItem'Class) is
-      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
+   procedure addAt (This : in out CommandCurrentSelectionForm; index : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class) is
+      item : constant ABCustomItem_Access := ABCustomItem_Access (item_Param);
       basicColorFactory : BasicColorFactory_Access;
       buttonColor : BasicColor_Access;
       selectedButtonColor : BasicColor_Access;
@@ -105,8 +105,8 @@ package body org.allbinary.graphics.form.CommandCurrentSelectionForm_Package is
         end if;
    end addAt;
 
-   procedure updateAll (This : in out CommandCurrentSelectionForm; graphics_Param : access Graphics'Class; items : ABCustomItem_Access_Array_Access) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure updateAll (This : in out CommandCurrentSelectionForm; graphics_Param : access Graphics_Package.Graphics'Class; items : ABCustomItem_Access_Array_Access) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       index : Integer;
    begin
         index := items'Length;
@@ -116,8 +116,8 @@ package body org.allbinary.graphics.form.CommandCurrentSelectionForm_Package is
         end loop;
    end updateAll;
 
-   procedure updateAt (This : in out CommandCurrentSelectionForm; index : Integer; item_Param : access ABCustomItem'Class) is
-      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
+   procedure updateAt (This : in out CommandCurrentSelectionForm; index : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class) is
+      item : constant ABCustomItem_Access := ABCustomItem_Access (item_Param);
       basicColorFactory : BasicColorFactory_Access;
       buttonColor : BasicColor_Access;
       selectedButtonColor : BasicColor_Access;
@@ -180,8 +180,8 @@ package body org.allbinary.graphics.form.CommandCurrentSelectionForm_Package is
         return commandTextItem.getCommand;
    end getSelectedCommand;
 
-   function append (This : in out CommandCurrentSelectionForm; item_Param : access ABCustomItem'Class) return Integer is
-      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
+   function append (This : in out CommandCurrentSelectionForm; item_Param : access ABCustomItem_Package.ABCustomItem'Class) return Integer is
+      item : constant ABCustomItem_Access := ABCustomItem_Access (item_Param);
       result : Integer;
    begin
         result := ScrollCurrentSelectionForm (This).append (item);
@@ -200,58 +200,58 @@ package body org.allbinary.graphics.form.CommandCurrentSelectionForm_Package is
         ScrollCurrentSelectionForm (This).deleteAll;
    end deleteAll;
 
-   procedure insert (This : in out CommandCurrentSelectionForm; itemNum : Integer; item_Param : access ABCustomItem'Class) is
-      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
+   procedure insert (This : in out CommandCurrentSelectionForm; itemNum : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class) is
+      item : constant ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
         ScrollCurrentSelectionForm (This).insert (itemNum, item);
    end insert;
 
-   procedure set (This : in out CommandCurrentSelectionForm; itemNum : Integer; item_Param : access ABCustomItem'Class) is
-      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
+   procedure set (This : in out CommandCurrentSelectionForm; itemNum : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class) is
+      item : constant ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
         ScrollCurrentSelectionForm (This).set (itemNum, item);
    end set;
 
-   procedure paint (This : in out CommandCurrentSelectionForm; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out CommandCurrentSelectionForm; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.myFontProcessor.process (graphics);
         ScrollCurrentSelectionForm (This).paint (graphics);
    end paint;
 
    --  throws Exception
-   function paintItem (This : in out CommandCurrentSelectionForm; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; x : Integer; y : Integer) return Integer is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
-      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
+   function paintItem (This : in out CommandCurrentSelectionForm; graphics_Param : access Graphics_Package.Graphics'Class; index : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class; x : Integer; y : Integer) return Integer is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
+      item : constant ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
         This.selectedAnimationArray (index).paintXY (graphics, x, y);
         return ScrollCurrentSelectionForm (This).paintItem (graphics, index, item, x, y);
    end paintItem;
 
    --  throws Exception
-   function paintUnselectedItem (This : in out CommandCurrentSelectionForm; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; x : Integer; y : Integer) return Integer is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
-      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
+   function paintUnselectedItem (This : in out CommandCurrentSelectionForm; graphics_Param : access Graphics_Package.Graphics'Class; index : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class; x : Integer; y : Integer) return Integer is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
+      item : constant ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
         This.unSelectedAnimationArray (index).paintXY (graphics, x, y);
         return ScrollCurrentSelectionForm (This).paintUnselectedItem (graphics, index, item, x, y);
    end paintUnselectedItem;
 
-   procedure append (This : in out CommandCurrentSelectionForm; item_Param : access ABCustomItem'Class) is
+   procedure append (This : in out CommandCurrentSelectionForm; item_Param : access ABCustomItem_Package.ABCustomItem'Class) is
       Java_Result : constant Integer := CommandCurrentSelectionForm'Class (This).append (item_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end append;
 
-   procedure paintItem (This : in out CommandCurrentSelectionForm; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; x : Integer; y : Integer) is
+   procedure paintItem (This : in out CommandCurrentSelectionForm; graphics_Param : access Graphics_Package.Graphics'Class; index : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class; x : Integer; y : Integer) is
       Java_Result : constant Integer := CommandCurrentSelectionForm'Class (This).paintItem (graphics_Param, index, item_Param, x, y);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end paintItem;
 
-   procedure paintUnselectedItem (This : in out CommandCurrentSelectionForm; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; x : Integer; y : Integer) is
+   procedure paintUnselectedItem (This : in out CommandCurrentSelectionForm; graphics_Param : access Graphics_Package.Graphics'Class; index : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class; x : Integer; y : Integer) is
       Java_Result : constant Integer := CommandCurrentSelectionForm'Class (This).paintUnselectedItem (graphics_Param, index, item_Param, x, y);
       pragma Unreferenced (Java_Result);
    begin

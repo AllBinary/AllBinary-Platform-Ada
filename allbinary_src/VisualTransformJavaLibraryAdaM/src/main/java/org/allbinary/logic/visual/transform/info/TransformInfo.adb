@@ -79,8 +79,8 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
    end Create;
 
    --  throws Exception
-   procedure override (This : in out TransformInfo; hashMap_Param : access HashMap'Class) is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+   procedure override (This : in out TransformInfo; hashMap_Param : access HashMap_Package.HashMap'Class) is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
       transformInfoData : TransformInfoData_Access;
       stringValidationUtil : StringValidationUtil_Access;
       aName : Unbounded_String;
@@ -246,7 +246,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
    end getStoreName;
 
    procedure setObject (This : in out TransformInfo; anyType_Param : access Java_Object'Class) is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         This.anyType := anyType;
    end setObject;
@@ -496,8 +496,8 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
         return This.objectConfigInterface;
    end getObjectConfigInterface;
 
-   procedure setObjectConfigInterface (This : in out TransformInfo; objectConfigInterface_Param : access TransformInfoObjectConfigInterface'Class) is
-      objectConfigInterface : TransformInfoObjectConfigInterface_Access := TransformInfoObjectConfigInterface_Access (objectConfigInterface_Param);
+   procedure setObjectConfigInterface (This : in out TransformInfo; objectConfigInterface_Param : access TransformInfoObjectConfigInterface_Package.TransformInfoObjectConfigInterface'Class) is
+      objectConfigInterface : constant TransformInfoObjectConfigInterface_Access := TransformInfoObjectConfigInterface_Access (objectConfigInterface_Param);
    begin
         This.objectConfigInterface := objectConfigInterface;
    end setObjectConfigInterface;

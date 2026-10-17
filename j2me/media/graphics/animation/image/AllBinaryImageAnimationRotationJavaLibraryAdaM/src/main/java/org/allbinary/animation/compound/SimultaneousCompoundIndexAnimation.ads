@@ -41,8 +41,8 @@ package org.allbinary.animation.compound.SimultaneousCompoundIndexAnimation_Pack
       animationInterfaceArray : IndexedAnimation_Access_Array_Access;
    end record;
 
-   procedure Initialize (This : in out SimultaneousCompoundIndexAnimation'Class; animationInterfaceArray : IndexedAnimation_Access_Array_Access; animationBehavior_Param : access AnimationBehavior'Class);
-   function Create (animationInterfaceArray : IndexedAnimation_Access_Array_Access; animationBehavior_Param : access AnimationBehavior'Class) return SimultaneousCompoundIndexAnimation_Access;
+   procedure Initialize (This : in out SimultaneousCompoundIndexAnimation'Class; animationInterfaceArray : IndexedAnimation_Access_Array_Access; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class);
+   function Create (animationInterfaceArray : IndexedAnimation_Access_Array_Access; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return SimultaneousCompoundIndexAnimation_Access;
    procedure setFrame (This : in out SimultaneousCompoundIndexAnimation; frameIndex : Integer);
    function getFrame (This : in out SimultaneousCompoundIndexAnimation) return Integer;
    function getAnimationSize (This : in out SimultaneousCompoundIndexAnimation) return Integer;
@@ -51,9 +51,9 @@ package org.allbinary.animation.compound.SimultaneousCompoundIndexAnimation_Pack
    procedure nextFrame (This : in out SimultaneousCompoundIndexAnimation);
    procedure setSequence (This : in out SimultaneousCompoundIndexAnimation; sequence : Integer_Array_Access);
    function getSequence (This : in out SimultaneousCompoundIndexAnimation) return Integer_Array_Access;
-   procedure paintXY (This : in out SimultaneousCompoundIndexAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
-   procedure paintThreedXYZ (This : in out SimultaneousCompoundIndexAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer; z : Integer);
-   procedure set (This : in out SimultaneousCompoundIndexAnimation; gl_Param : access GL'Class);
+   procedure paintXY (This : in out SimultaneousCompoundIndexAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
+   procedure paintThreedXYZ (This : in out SimultaneousCompoundIndexAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer; z : Integer);
+   procedure set (This : in out SimultaneousCompoundIndexAnimation; gl_Param : access GL_Package.GL'Class);
    function getAnimationInterfaceArray (This : in out SimultaneousCompoundIndexAnimation) return IndexedAnimation_Access_Array_Access;
    procedure setAnimationInterfaceArray (This : in out SimultaneousCompoundIndexAnimation; animationInterfaceArray : IndexedAnimation_Access_Array_Access);
 

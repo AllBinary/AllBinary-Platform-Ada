@@ -34,16 +34,16 @@ package body views.admin.inventory.InventoryUploadMediaUtil_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out InventoryUploadMediaUtil'Class; storeFrontInterface_Param : access StoreFrontInterface'Class; itemInterface_Param : access ItemInterface'Class) is
-      storeFrontInterface : StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
-      itemInterface : ItemInterface_Access := ItemInterface_Access (itemInterface_Param);
+   procedure Initialize (This : in out InventoryUploadMediaUtil'Class; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class; itemInterface_Param : access ItemInterface_Package.ItemInterface'Class) is
+      storeFrontInterface : constant StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
+      itemInterface : constant ItemInterface_Access := ItemInterface_Access (itemInterface_Param);
    begin
       Initialize_Fields (This);
         This.storeFrontInterface := storeFrontInterface;
         This.itemInterface := itemInterface;
    end Initialize;
 
-   function Create (storeFrontInterface_Param : access StoreFrontInterface'Class; itemInterface_Param : access ItemInterface'Class) return InventoryUploadMediaUtil_Access is
+   function Create (storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class; itemInterface_Param : access ItemInterface_Package.ItemInterface'Class) return InventoryUploadMediaUtil_Access is
       This : constant InventoryUploadMediaUtil_Access := new InventoryUploadMediaUtil;
    begin
       InventoryUploadMediaUtil_Package.Initialize (This.all, storeFrontInterface_Param, itemInterface_Param);
@@ -51,8 +51,8 @@ package body views.admin.inventory.InventoryUploadMediaUtil_Package is
    end Create;
 
    --  throws Exception
-   function saveFiles (This : in out InventoryUploadMediaUtil; byteArray : Short_Short_Integer_Array_Access; fileName : Unbounded_String; mediaData_Param : access MediaData'Class) return ItemInterface_Access is
-      mediaData : MediaData_Access := MediaData_Access (mediaData_Param);
+   function saveFiles (This : in out InventoryUploadMediaUtil; byteArray : Short_Short_Integer_Array_Access; fileName : Unbounded_String; mediaData_Param : access MediaData_Package.MediaData'Class) return ItemInterface_Access is
+      mediaData : constant MediaData_Access := MediaData_Access (mediaData_Param);
       fileUtil : FileUtil_Access;
       stringBuffer : StringMaker_Access;
       fullPath : Unbounded_String;
@@ -195,7 +195,7 @@ package body views.admin.inventory.InventoryUploadMediaUtil_Package is
         This.itemInterface.setLargeImage (newImageFileName);
    end setFileNames;
 
-   procedure saveFiles (This : in out InventoryUploadMediaUtil; byteArray : Short_Short_Integer_Array_Access; fileName : Unbounded_String; mediaData_Param : access MediaData'Class) is
+   procedure saveFiles (This : in out InventoryUploadMediaUtil; byteArray : Short_Short_Integer_Array_Access; fileName : Unbounded_String; mediaData_Param : access MediaData_Package.MediaData'Class) is
       Java_Result : constant ItemInterface_Access := InventoryUploadMediaUtil'Class (This).saveFiles (byteArray, fileName, mediaData_Param);
       pragma Unreferenced (Java_Result);
    begin

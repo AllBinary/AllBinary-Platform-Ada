@@ -24,7 +24,7 @@ package body org.allbinary.graphics.color.ColorCacheable_Package is
 
 
    procedure Initialize (This : in out ColorCacheable'Class; key_Param : access Java_Object'Class) is
-      key : Java_Object_Access := Java_Object_Access (key_Param);
+      key : constant Java_Object_Access := Java_Object_Access (key_Param);
    begin
       Initialize_Fields (This);
         This.key := key;
@@ -48,8 +48,8 @@ package body org.allbinary.graphics.color.ColorCacheable_Package is
         return This.color;
    end getColor;
 
-   procedure setColor (This : in out ColorCacheable; color_Param : access Color'Class) is
-      color : Color_Access := Color_Access (color_Param);
+   procedure setColor (This : in out ColorCacheable; color_Param : access Color_Package.Color'Class) is
+      color : constant Color_Access := Color_Access (color_Param);
    begin
         This.color := color;
    end setColor;

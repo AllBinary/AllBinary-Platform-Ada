@@ -40,7 +40,7 @@ package org.allbinary.game.layer.capital.event.CapitalEventHandler_Package is
 
    procedure Initialize (This : in out CapitalEventHandler'Class);
    function Create return CapitalEventHandler_Access;
-   procedure process (This : in out CapitalEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class);
+   procedure process (This : in out CapitalEventHandler; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class);
 
 end org.allbinary.game.layer.capital.event.CapitalEventHandler_Package;
 

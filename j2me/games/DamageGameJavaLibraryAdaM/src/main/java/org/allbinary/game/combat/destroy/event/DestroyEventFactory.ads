@@ -40,8 +40,8 @@ package org.allbinary.game.combat.destroy.event.DestroyEventFactory_Package is
       combatGameCanvas : AllBinaryGameCanvas_Access;
    end record;
 
-   procedure Initialize (This : in out DestroyEventFactory'Class; combatGameCanvas_Param : access AllBinaryGameCanvas'Class);
-   function Create (combatGameCanvas_Param : access AllBinaryGameCanvas'Class) return DestroyEventFactory_Access;
+   procedure Initialize (This : in out DestroyEventFactory'Class; combatGameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class);
+   function Create (combatGameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class) return DestroyEventFactory_Access;
    function getInstance (This : in out DestroyEventFactory) return AllBinaryEventObject_Access;
 
 end org.allbinary.game.combat.destroy.event.DestroyEventFactory_Package;

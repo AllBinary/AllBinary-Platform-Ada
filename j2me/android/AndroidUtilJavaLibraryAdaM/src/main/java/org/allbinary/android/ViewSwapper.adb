@@ -14,15 +14,15 @@ package body org.allbinary.android.ViewSwapper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ViewSwapper'Class; activity_Param : access Activity'Class; rootViewId : Integer) is
-      activity : Activity_Access := Activity_Access (activity_Param);
+   procedure Initialize (This : in out ViewSwapper'Class; activity_Param : access Activity_Package.Activity'Class; rootViewId : Integer) is
+      activity : constant Activity_Access := Activity_Access (activity_Param);
    begin
       Initialize_Fields (This);
         This.activity := activity;
         This.rootViewId := rootViewId;
    end Initialize;
 
-   function Create (activity_Param : access Activity'Class; rootViewId : Integer) return ViewSwapper_Access is
+   function Create (activity_Param : access Activity_Package.Activity'Class; rootViewId : Integer) return ViewSwapper_Access is
       This : constant ViewSwapper_Access := new ViewSwapper;
    begin
       ViewSwapper_Package.Initialize (This.all, activity_Param, rootViewId);

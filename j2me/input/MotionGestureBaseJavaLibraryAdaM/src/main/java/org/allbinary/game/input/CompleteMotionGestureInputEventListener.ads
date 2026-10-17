@@ -25,8 +25,8 @@ package org.allbinary.game.input.CompleteMotionGestureInputEventListener_Package
 
    procedure Initialize (This : in out CompleteMotionGestureInputEventListener'Class);
    function Create return CompleteMotionGestureInputEventListener_Access;
-   procedure onEvent (This : in out CompleteMotionGestureInputEventListener; eventObject_Param : access AllBinaryEventObject'Class);
-   procedure onCompleteMotionGestureInputEvent (This : in out CompleteMotionGestureInputEventListener; completeMotionGestureInputEvent_Param : access CompleteMotionGestureInputEvent'Class);
+   procedure onEvent (This : in out CompleteMotionGestureInputEventListener; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class);
+   procedure onCompleteMotionGestureInputEvent (This : in out CompleteMotionGestureInputEventListener; completeMotionGestureInputEvent_Param : access CompleteMotionGestureInputEvent_Package.CompleteMotionGestureInputEvent'Class);
 
 end org.allbinary.game.input.CompleteMotionGestureInputEventListener_Package;
 

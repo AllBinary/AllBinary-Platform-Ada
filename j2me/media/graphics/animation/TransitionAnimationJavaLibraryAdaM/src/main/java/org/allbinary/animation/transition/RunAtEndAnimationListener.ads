@@ -34,8 +34,8 @@ package org.allbinary.animation.transition.RunAtEndAnimationListener_Package is
       runnable : Runnable_Access;
    end record;
 
-   procedure Initialize (This : in out RunAtEndAnimationListener'Class; runnable_Param : access Runnable'Class);
-   function Create (runnable_Param : access Runnable'Class) return RunAtEndAnimationListener_Access;
+   procedure Initialize (This : in out RunAtEndAnimationListener'Class; runnable_Param : access Runnable_Package.Runnable'Class);
+   function Create (runnable_Param : access Runnable_Package.Runnable'Class) return RunAtEndAnimationListener_Access;
    procedure onPlatformAnimationStart (This : in out RunAtEndAnimationListener);
    procedure onPlatformAnimationEnd (This : in out RunAtEndAnimationListener);
    procedure onPlatformAnimationRepeat (This : in out RunAtEndAnimationListener);

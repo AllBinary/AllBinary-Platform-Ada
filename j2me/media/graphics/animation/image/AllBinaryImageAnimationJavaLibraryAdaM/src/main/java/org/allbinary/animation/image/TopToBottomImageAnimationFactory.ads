@@ -38,8 +38,8 @@ package org.allbinary.animation.image.TopToBottomImageAnimationFactory_Package i
 
    type TopToBottomImageAnimationFactory is new BaseImageAnimationFactory with null record;
 
-   procedure Initialize (This : in out TopToBottomImageAnimationFactory'Class; image_Param : access Image'Class; sequenceArray : Integer_Array_Access; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class);
-   function Create (image_Param : access Image'Class; sequenceArray : Integer_Array_Access; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return TopToBottomImageAnimationFactory_Access;
+   procedure Initialize (This : in out TopToBottomImageAnimationFactory'Class; image_Param : access Image_Package.Image'Class; sequenceArray : Integer_Array_Access; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class);
+   function Create (image_Param : access Image_Package.Image'Class; sequenceArray : Integer_Array_Access; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return TopToBottomImageAnimationFactory_Access;
    function getInstance (This : in out TopToBottomImageAnimationFactory; instanceId : Integer) return Animation_Access;
    procedure getInstance (This : in out TopToBottomImageAnimationFactory; instanceId : Integer);
 

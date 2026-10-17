@@ -80,8 +80,8 @@ package body org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package is
    end format;
 
    --  throws Exception
-   function toString (document_Param : access Document'Class) return Unbounded_String is
-      document : Document_Access := Document_Access (document_Param);
+   function toString (document_Param : access Document_Package.Document'Class) return Unbounded_String is
+      document : constant Document_Access := Document_Access (document_Param);
       domSource : DOMSource_Access;
       byteArrayOutputStream : ByteArrayOutputStream_Access;
       streamResult : StreamResult_Access;
@@ -113,7 +113,7 @@ package body org.allbinary.data.tree.dom.document.XmlDocumentHelper_Package is
       null;
    end format;
 
-   procedure toString (document_Param : access Document'Class) is
+   procedure toString (document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Unbounded_String := toString (document_Param);
       pragma Unreferenced (Java_Result);
    begin

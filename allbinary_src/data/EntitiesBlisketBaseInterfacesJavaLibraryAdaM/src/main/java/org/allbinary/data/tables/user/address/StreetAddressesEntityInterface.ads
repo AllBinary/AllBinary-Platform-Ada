@@ -33,8 +33,8 @@ package org.allbinary.data.tables.user.address.StreetAddressesEntityInterface_Pa
    type StreetAddressesEntityInterface_Access_Array is array (Natural range <>) of StreetAddressesEntityInterface_Access;
    type StreetAddressesEntityInterface_Access_Array_Access is access all StreetAddressesEntityInterface_Access_Array;
    procedure remove (This : in out StreetAddressesEntityInterface; index : Integer) is abstract;
-   procedure add (This : in out StreetAddressesEntityInterface; address_Param : access StreetAddress'Class) is abstract;
-   procedure update (This : in out StreetAddressesEntityInterface; address_Param : access StreetAddress'Class) is abstract;
+   procedure add (This : in out StreetAddressesEntityInterface; address_Param : access StreetAddress_Package.StreetAddress'Class) is abstract;
+   procedure update (This : in out StreetAddressesEntityInterface; address_Param : access StreetAddress_Package.StreetAddress'Class) is abstract;
    function getLastId (This : in out StreetAddressesEntityInterface) return Unbounded_String is abstract;
    function getDefault (This : in out StreetAddressesEntityInterface) return StreetAddress_Access is abstract;
    procedure setDefault (This : in out StreetAddressesEntityInterface; value : Unbounded_String) is abstract;

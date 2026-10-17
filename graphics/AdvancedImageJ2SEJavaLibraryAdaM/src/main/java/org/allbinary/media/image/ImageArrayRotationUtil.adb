@@ -42,9 +42,9 @@ package body org.allbinary.media.image.ImageArrayRotationUtil_Package is
    end getInstance;
 
    --  throws IOException
-   procedure process (This : in out ImageArrayRotationUtil; imageProcessorInput_Param : access ImageProcessorInput'Class; input : Unbounded_String; visitor_Param : access ImageProcessedVisitor'Class) is
-      imageProcessorInput : ImageProcessorInput_Access := ImageProcessorInput_Access (imageProcessorInput_Param);
-      visitor : ImageProcessedVisitor_Access := ImageProcessedVisitor_Access (visitor_Param);
+   procedure process (This : in out ImageArrayRotationUtil; imageProcessorInput_Param : access ImageProcessorInput_Package.ImageProcessorInput'Class; input : Unbounded_String; visitor_Param : access ImageProcessedVisitor_Package.ImageProcessedVisitor'Class) is
+      imageProcessorInput : constant ImageProcessorInput_Access := ImageProcessorInput_Access (imageProcessorInput_Param);
+      visitor : constant ImageProcessedVisitor_Access := ImageProcessedVisitor_Access (visitor_Param);
       totalAngle : Integer;
       generatedBufferedImage : BufferedImage_Access;
       bufferedImageArray : BufferedImage_Access_Array_Access;

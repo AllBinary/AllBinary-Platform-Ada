@@ -22,14 +22,14 @@ package body views.generic_Id.payment.PaymentView_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PaymentView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out PaymentView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return PaymentView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return PaymentView_Access is
       This : constant PaymentView_Access := new PaymentView;
    begin
       PaymentView_Package.Initialize (This.all, transformInfoInterface_Param);
@@ -37,8 +37,8 @@ package body views.generic_Id.payment.PaymentView_Package is
    end Create;
 
    --  throws Exception
-   function toXmlNode (This : in out PaymentView; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out PaymentView; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       paymentNode : Node_Access;
       paymentVector : BasicArrayList_Access;
       size : Integer;
@@ -93,7 +93,7 @@ package body views.generic_Id.payment.PaymentView_Package is
         end;
    end view;
 
-   procedure toXmlNode (This : in out PaymentView; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out PaymentView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := PaymentView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

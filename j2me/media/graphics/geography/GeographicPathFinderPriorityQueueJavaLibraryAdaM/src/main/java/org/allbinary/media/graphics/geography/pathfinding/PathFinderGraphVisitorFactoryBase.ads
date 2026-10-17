@@ -36,8 +36,8 @@ package org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisito
 
    procedure Initialize (This : in out PathFinderGraphVisitorFactoryBase'Class);
    function Create return PathFinderGraphVisitorFactoryBase_Access;
-   function getInstance (This : in out PathFinderGraphVisitorFactoryBase; geographicMapInterface_Param : access BasicGeographicMap'Class) return PathFinderGraphVisitorBase_Access;
-   procedure getInstance (This : in out PathFinderGraphVisitorFactoryBase; geographicMapInterface_Param : access BasicGeographicMap'Class);
+   function getInstance (This : in out PathFinderGraphVisitorFactoryBase; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class) return PathFinderGraphVisitorBase_Access;
+   procedure getInstance (This : in out PathFinderGraphVisitorFactoryBase; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class);
 
 end org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisitorFactoryBase_Package;
 

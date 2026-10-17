@@ -23,14 +23,14 @@ package body views.business.context.modules.storefront.customizer.hedges.header.
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TopBarView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out TopBarView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return TopBarView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return TopBarView_Access is
       This : constant TopBarView_Access := new TopBarView;
    begin
       TopBarView_Package.Initialize (This.all, transformInfoInterface_Param);
@@ -43,8 +43,8 @@ package body views.business.context.modules.storefront.customizer.hedges.header.
    end addDomNodeInterfaces;
 
    --  throws Exception
-   function toXmlNode (This : in out TopBarView; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out TopBarView; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
    begin
         begin
             return This.heading.toXmlNode (document);
@@ -80,7 +80,7 @@ package body views.business.context.modules.storefront.customizer.hedges.header.
         end;
    end view;
 
-   procedure toXmlNode (This : in out TopBarView; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out TopBarView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := TopBarView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

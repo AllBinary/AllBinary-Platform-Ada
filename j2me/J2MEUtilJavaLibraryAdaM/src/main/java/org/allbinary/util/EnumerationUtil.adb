@@ -38,20 +38,20 @@ package body org.allbinary.util.EnumerationUtil_Package is
         return EnumerationUtil_Package.instance;
    end getInstance;
 
-   function hasMoreElements (This : in out EnumerationUtil; enumeration_Param : access Enumeration'Class) return Boolean is
-      enumeration : Enumeration_Access := Enumeration_Access (enumeration_Param);
+   function hasMoreElements (This : in out EnumerationUtil; enumeration_Param : access Enumeration_Package.Enumeration'Class) return Boolean is
+      enumeration : constant Enumeration_Access := Enumeration_Access (enumeration_Param);
    begin
         return enumeration.hasMoreElements;
    end hasMoreElements;
 
-   function nextElement (This : in out EnumerationUtil; enumeration_Param : access Enumeration'Class) return Java_Object_Access is
-      enumeration : Enumeration_Access := Enumeration_Access (enumeration_Param);
+   function nextElement (This : in out EnumerationUtil; enumeration_Param : access Enumeration_Package.Enumeration'Class) return Java_Object_Access is
+      enumeration : constant Enumeration_Access := Enumeration_Access (enumeration_Param);
    begin
         return enumeration.nextElement;
    end nextElement;
 
-   function getAsArray (This : in out EnumerationUtil; enumeration_Param : access Enumeration'Class) return Java_Object_Access_Array_Access is
-      enumeration : Enumeration_Access := Enumeration_Access (enumeration_Param);
+   function getAsArray (This : in out EnumerationUtil; enumeration_Param : access Enumeration_Package.Enumeration'Class) return Java_Object_Access_Array_Access is
+      enumeration : constant Enumeration_Access := Enumeration_Access (enumeration_Param);
       basicArrayList : BasicArrayList_Access;
    begin
         basicArrayList := BasicArrayListD_Package.Create;
@@ -61,21 +61,21 @@ package body org.allbinary.util.EnumerationUtil_Package is
         return basicArrayList.toArray;
    end getAsArray;
 
-   procedure hasMoreElements (This : in out EnumerationUtil; enumeration_Param : access Enumeration'Class) is
+   procedure hasMoreElements (This : in out EnumerationUtil; enumeration_Param : access Enumeration_Package.Enumeration'Class) is
       Java_Result : constant Boolean := EnumerationUtil'Class (This).hasMoreElements (enumeration_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end hasMoreElements;
 
-   procedure nextElement (This : in out EnumerationUtil; enumeration_Param : access Enumeration'Class) is
+   procedure nextElement (This : in out EnumerationUtil; enumeration_Param : access Enumeration_Package.Enumeration'Class) is
       Java_Result : constant Java_Object_Access := EnumerationUtil'Class (This).nextElement (enumeration_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end nextElement;
 
-   procedure getAsArray (This : in out EnumerationUtil; enumeration_Param : access Enumeration'Class) is
+   procedure getAsArray (This : in out EnumerationUtil; enumeration_Param : access Enumeration_Package.Enumeration'Class) is
       Java_Result : constant Java_Object_Access_Array_Access := EnumerationUtil'Class (This).getAsArray (enumeration_Param);
       pragma Unreferenced (Java_Result);
    begin

@@ -37,14 +37,14 @@ package org.allbinary.game.physics.velocity.BasicVelocityInterface_Package is
    function getVelocityXBasicDecimalP (This : in out BasicVelocityInterface) return BasicDecimal_Access is abstract;
    function getVelocityYBasicDecimalP (This : in out BasicVelocityInterface) return BasicDecimal_Access is abstract;
    procedure zero (This : in out BasicVelocityInterface) is abstract;
-   procedure setVelocityWithBigDecimalAndDirection (This : in out BasicVelocityInterface; magnitudeBasicDecimal_Param : access BasicDecimal'Class; direction_Param : access Direction'Class; otherDirection_Param : access Direction'Class) is abstract;
-   procedure addVelocityWithBigDecimalAndDirection (This : in out BasicVelocityInterface; magnitudeBasicDecimal_Param : access BasicDecimal'Class; direction_Param : access Direction'Class; otherDirection_Param : access Direction'Class) is abstract;
-   procedure setVelocityWithDirection (This : in out BasicVelocityInterface; magnitude : Long_Long_Integer; direction_Param : access Direction'Class; otherDirection_Param : access Direction'Class) is abstract;
-   procedure addVelocityWithDirection (This : in out BasicVelocityInterface; magnitude : Long_Long_Integer; direction_Param : access Direction'Class; otherDirection_Param : access Direction'Class) is abstract;
-   procedure setVelocityWithBigDecimal (This : in out BasicVelocityInterface; magnitudeBasicDecimal_Param : access BasicDecimal'Class; angle_Param : access Angle'Class; otherAngle_Param : access Angle'Class) is abstract;
-   procedure addVelocityWithBigDecimal (This : in out BasicVelocityInterface; magnitudeBasicDecimal_Param : access BasicDecimal'Class; angle_Param : access Angle'Class; otherAngle_Param : access Angle'Class) is abstract;
-   procedure setVelocity (This : in out BasicVelocityInterface; magnitude : Long_Long_Integer; angle_Param : access Angle'Class; otherAngle_Param : access Angle'Class) is abstract;
-   procedure addVelocity (This : in out BasicVelocityInterface; magnitude : Long_Long_Integer; angle_Param : access Angle'Class; otherAngle_Param : access Angle'Class) is abstract;
+   procedure setVelocityWithBigDecimalAndDirection (This : in out BasicVelocityInterface; magnitudeBasicDecimal_Param : access BasicDecimal_Package.BasicDecimal'Class; direction_Param : access Direction_Package.Direction'Class; otherDirection_Param : access Direction_Package.Direction'Class) is abstract;
+   procedure addVelocityWithBigDecimalAndDirection (This : in out BasicVelocityInterface; magnitudeBasicDecimal_Param : access BasicDecimal_Package.BasicDecimal'Class; direction_Param : access Direction_Package.Direction'Class; otherDirection_Param : access Direction_Package.Direction'Class) is abstract;
+   procedure setVelocityWithDirection (This : in out BasicVelocityInterface; magnitude : Long_Long_Integer; direction_Param : access Direction_Package.Direction'Class; otherDirection_Param : access Direction_Package.Direction'Class) is abstract;
+   procedure addVelocityWithDirection (This : in out BasicVelocityInterface; magnitude : Long_Long_Integer; direction_Param : access Direction_Package.Direction'Class; otherDirection_Param : access Direction_Package.Direction'Class) is abstract;
+   procedure setVelocityWithBigDecimal (This : in out BasicVelocityInterface; magnitudeBasicDecimal_Param : access BasicDecimal_Package.BasicDecimal'Class; angle_Param : access Angle_Package.Angle'Class; otherAngle_Param : access Angle_Package.Angle'Class) is abstract;
+   procedure addVelocityWithBigDecimal (This : in out BasicVelocityInterface; magnitudeBasicDecimal_Param : access BasicDecimal_Package.BasicDecimal'Class; angle_Param : access Angle_Package.Angle'Class; otherAngle_Param : access Angle_Package.Angle'Class) is abstract;
+   procedure setVelocity (This : in out BasicVelocityInterface; magnitude : Long_Long_Integer; angle_Param : access Angle_Package.Angle'Class; otherAngle_Param : access Angle_Package.Angle'Class) is abstract;
+   procedure addVelocity (This : in out BasicVelocityInterface; magnitude : Long_Long_Integer; angle_Param : access Angle_Package.Angle'Class; otherAngle_Param : access Angle_Package.Angle'Class) is abstract;
    procedure addVelocityi (This : in out BasicVelocityInterface; magnitude : Long_Long_Integer; angle : Integer; otherAngle : Integer) is abstract;
 
 end org.allbinary.game.physics.velocity.BasicVelocityInterface_Package;

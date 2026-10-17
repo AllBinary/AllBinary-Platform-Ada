@@ -34,10 +34,10 @@ package org.allbinary.game.GameInfoCopyFactory_Package is
 
    procedure Initialize (This : in out GameInfoCopyFactory'Class);
    function Create return GameInfoCopyFactory_Access;
-   function getInstanceMaxLevel (gameInfo_Param : access GameInfo'Class; maxLevel : Integer) return GameInfo_Access;
-   procedure getInstanceMaxLevel (gameInfo_Param : access GameInfo'Class; maxLevel : Integer);
-   function getInstance (gameInfo_Param : access GameInfo'Class) return GameInfo_Access;
-   procedure getInstance (gameInfo_Param : access GameInfo'Class);
+   function getInstanceMaxLevel (gameInfo_Param : access GameInfo_Package.GameInfo'Class; maxLevel : Integer) return GameInfo_Access;
+   procedure getInstanceMaxLevel (gameInfo_Param : access GameInfo_Package.GameInfo'Class; maxLevel : Integer);
+   function getInstance (gameInfo_Param : access GameInfo_Package.GameInfo'Class) return GameInfo_Access;
+   procedure getInstance (gameInfo_Param : access GameInfo_Package.GameInfo'Class);
 
 end org.allbinary.game.GameInfoCopyFactory_Package;
 

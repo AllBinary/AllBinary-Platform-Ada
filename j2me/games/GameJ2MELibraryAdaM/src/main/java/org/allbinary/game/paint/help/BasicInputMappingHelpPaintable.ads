@@ -57,11 +57,11 @@ package org.allbinary.game.paint.help.BasicInputMappingHelpPaintable_Package is
       NONE : GameKey_Access;
    end record;
 
-   procedure Initialize (This : in out BasicInputMappingHelpPaintable'Class; gameInputMappingArray : GameInputMapping_Access_Array_Access; basicColor_Param : access BasicColor'Class);
-   function Create (gameInputMappingArray : GameInputMapping_Access_Array_Access; basicColor_Param : access BasicColor'Class) return BasicInputMappingHelpPaintable_Access;
-   procedure update (This : in out BasicInputMappingHelpPaintable; selectedGameKey_Param : access GameKey'Class; selectedInput_Param : access Input'Class);
-   function get (This : in out BasicInputMappingHelpPaintable; keyList_Param : access BasicArrayList'Class) return Unbounded_String;
-   procedure get (This : in out BasicInputMappingHelpPaintable; keyList_Param : access BasicArrayList'Class);
+   procedure Initialize (This : in out BasicInputMappingHelpPaintable'Class; gameInputMappingArray : GameInputMapping_Access_Array_Access; basicColor_Param : access BasicColor_Package.BasicColor'Class);
+   function Create (gameInputMappingArray : GameInputMapping_Access_Array_Access; basicColor_Param : access BasicColor_Package.BasicColor'Class) return BasicInputMappingHelpPaintable_Access;
+   procedure update (This : in out BasicInputMappingHelpPaintable; selectedGameKey_Param : access GameKey_Package.GameKey'Class; selectedInput_Param : access Input_Package.Input'Class);
+   function get (This : in out BasicInputMappingHelpPaintable; keyList_Param : access BasicArrayList_Package.BasicArrayList'Class) return Unbounded_String;
+   procedure get (This : in out BasicInputMappingHelpPaintable; keyList_Param : access BasicArrayList_Package.BasicArrayList'Class);
 
 end org.allbinary.game.paint.help.BasicInputMappingHelpPaintable_Package;
 

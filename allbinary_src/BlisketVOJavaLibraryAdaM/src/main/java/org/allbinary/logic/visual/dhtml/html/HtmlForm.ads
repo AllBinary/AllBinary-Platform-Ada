@@ -59,8 +59,8 @@ package org.allbinary.logic.visual.dhtml.html.HtmlForm_Package is
    function Create (action_Case : Unbounded_String) return HtmlForm_Access;
    procedure setPost (This : in out HtmlForm);
    procedure setGet (This : in out HtmlForm);
-   procedure addInput (This : in out HtmlForm; htmlInput_Param : access HtmlInput'Class);
-   procedure addTable (This : in out HtmlForm; htmlTable_Param : access HtmlTable'Class);
+   procedure addInput (This : in out HtmlForm; htmlInput_Param : access HtmlInput_Package.HtmlInput'Class);
+   procedure addTable (This : in out HtmlForm; htmlTable_Param : access HtmlTable_Package.HtmlTable'Class);
    function toString (This : in out HtmlForm) return Unbounded_String;
 
 end org.allbinary.logic.visual.dhtml.html.HtmlForm_Package;

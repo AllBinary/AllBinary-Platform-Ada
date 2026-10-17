@@ -46,13 +46,13 @@ package views.business.context.modules.storefront.customizer.includes.globals.Ed
       logUtil : LogUtil_Access;
    end record;
 
-   procedure Initialize (This : in out EditGlobalsValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return EditGlobalsValidationView_Access;
+   procedure Initialize (This : in out EditGlobalsValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return EditGlobalsValidationView_Access;
    function isValid (This : in out EditGlobalsValidationView) return Boolean;
    function validationInfo (This : in out EditGlobalsValidationView) return Unbounded_String;
    function toValidationInfoDoc (This : in out EditGlobalsValidationView) return Document_Access;
-   function toValidationInfoNode (This : in out EditGlobalsValidationView; document_Param : access Document'Class) return Node_Access;
-   procedure toValidationInfoNode (This : in out EditGlobalsValidationView; document_Param : access Document'Class);
+   function toValidationInfoNode (This : in out EditGlobalsValidationView; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out EditGlobalsValidationView; document_Param : access Document_Package.Document'Class);
 
 end views.business.context.modules.storefront.customizer.includes.globals.EditGlobalsValidationView_Package;
 

@@ -64,8 +64,8 @@ package admin.taghelpers.OrderHistoryRequestHelper_Package is
       status : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out OrderHistoryRequestHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
-   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return OrderHistoryRequestHelper_Access;
+   procedure Initialize (This : in out OrderHistoryRequestHelper'Class; hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class);
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return OrderHistoryRequestHelper_Access;
    procedure getFormData (This : in out OrderHistoryRequestHelper);
    function setOrderStatus (This : in out OrderHistoryRequestHelper) return Unbounded_String;
    function setOrderStatus (This : in out OrderHistoryRequestHelper; newStatus_Param : Unbounded_String) return Unbounded_String;

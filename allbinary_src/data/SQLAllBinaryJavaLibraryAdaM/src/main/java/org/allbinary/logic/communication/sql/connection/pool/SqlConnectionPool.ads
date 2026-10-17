@@ -65,7 +65,7 @@ package org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_
    function getInstance return SqlConnectionPool_Access;
    function get (This : in out SqlConnectionPool; url : Unbounded_String) return Connection_Access;
    procedure get (This : in out SqlConnectionPool; url : Unbounded_String);
-   procedure add (This : in out SqlConnectionPool; url : Unbounded_String; sqlConnection_Param : access Connection'Class);
+   procedure add (This : in out SqlConnectionPool; url : Unbounded_String; sqlConnection_Param : access Connection_Package.Connection'Class);
 
 end org.allbinary.logic.communication.sql.connection.pool.SqlConnectionPool_Package;
 

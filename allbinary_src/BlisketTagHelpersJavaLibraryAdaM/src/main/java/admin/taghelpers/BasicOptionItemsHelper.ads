@@ -47,8 +47,8 @@ package admin.taghelpers.BasicOptionItemsHelper_Package is
       portion : Portion_Access;
    end record;
 
-   procedure Initialize (This : in out BasicOptionItemsHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
-   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return BasicOptionItemsHelper_Access;
+   procedure Initialize (This : in out BasicOptionItemsHelper'Class; hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class);
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return BasicOptionItemsHelper_Access;
    function create (This : in out BasicOptionItemsHelper) return Unbounded_String;
    function drop (This : in out BasicOptionItemsHelper) return Unbounded_String;
    function restore (This : in out BasicOptionItemsHelper) return Unbounded_String;

@@ -49,7 +49,7 @@ package org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInput
    procedure Initialize (This : in out GameKeyCompleteMotionGestureInputEventFactory'Class);
    function Create return GameKeyCompleteMotionGestureInputEventFactory_Access;
    function getInstance return GameKeyCompleteMotionGestureInputEventFactory_Access;
-   procedure add (This : in out GameKeyCompleteMotionGestureInputEventFactory; gameKeyCompleteMotionGestureInputEvent_Param : access GameKeyCompleteMotionGestureInputEvent'Class);
+   procedure add (This : in out GameKeyCompleteMotionGestureInputEventFactory; gameKeyCompleteMotionGestureInputEvent_Param : access GameKeyCompleteMotionGestureInputEvent_Package.GameKeyCompleteMotionGestureInputEvent'Class);
    procedure updateAll (This : in out GameKeyCompleteMotionGestureInputEventFactory);
 
 end org.allbinary.game.input.motion.action.GameKeyCompleteMotionGestureInputEventFactory_Package;

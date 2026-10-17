@@ -24,10 +24,10 @@ package body org.allbinary.image.opengles.OpenGLESGL11ExtImage_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out OpenGLESGL11ExtImage'Class; image_Param : access Image'Class; bitmapFactory_Param : access PlatformBitmapBaseFactory'Class; textureFactory_Param : access PlatformTextureBaseFactory'Class) is
-      image : Image_Access := Image_Access (image_Param);
-      bitmapFactory : PlatformBitmapBaseFactory_Access := PlatformBitmapBaseFactory_Access (bitmapFactory_Param);
-      textureFactory : PlatformTextureBaseFactory_Access := PlatformTextureBaseFactory_Access (textureFactory_Param);
+   procedure Initialize (This : in out OpenGLESGL11ExtImage'Class; image_Param : access Image_Package.Image'Class; bitmapFactory_Param : access PlatformBitmapBaseFactory_Package.PlatformBitmapBaseFactory'Class; textureFactory_Param : access PlatformTextureBaseFactory_Package.PlatformTextureBaseFactory'Class) is
+      image : constant Image_Access := Image_Access (image_Param);
+      bitmapFactory : constant PlatformBitmapBaseFactory_Access := PlatformBitmapBaseFactory_Access (bitmapFactory_Param);
+      textureFactory : constant PlatformTextureBaseFactory_Access := PlatformTextureBaseFactory_Access (textureFactory_Param);
    begin
         OpenGLESImage_Package.Initialize (This, image, bitmapFactory, textureFactory);
         Initialize_Fields (This);
@@ -35,15 +35,15 @@ package body org.allbinary.image.opengles.OpenGLESGL11ExtImage_Package is
         This.rectangle := new Integer_Array'(0, This.getHeight, This.getWidth, -(This.getHeight));
    end Initialize;
 
-   function Create (image_Param : access Image'Class; bitmapFactory_Param : access PlatformBitmapBaseFactory'Class; textureFactory_Param : access PlatformTextureBaseFactory'Class) return OpenGLESGL11ExtImage_Access is
+   function Create (image_Param : access Image_Package.Image'Class; bitmapFactory_Param : access PlatformBitmapBaseFactory_Package.PlatformBitmapBaseFactory'Class; textureFactory_Param : access PlatformTextureBaseFactory_Package.PlatformTextureBaseFactory'Class) return OpenGLESGL11ExtImage_Access is
       This : constant OpenGLESGL11ExtImage_Access := new OpenGLESGL11ExtImage;
    begin
       OpenGLESGL11ExtImage_Package.Initialize (This.all, image_Param, bitmapFactory_Param, textureFactory_Param);
       return This;
    end Create;
 
-   procedure onDisplayChangeEvent (This : in out OpenGLESGL11ExtImage; displayChangeEvent_Param : access DisplayChangeEvent'Class) is
-      displayChangeEvent : DisplayChangeEvent_Access := DisplayChangeEvent_Access (displayChangeEvent_Param);
+   procedure onDisplayChangeEvent (This : in out OpenGLESGL11ExtImage; displayChangeEvent_Param : access DisplayChangeEvent_Package.DisplayChangeEvent'Class) is
+      displayChangeEvent : constant DisplayChangeEvent_Access := DisplayChangeEvent_Access (displayChangeEvent_Param);
    begin
         begin
             This.logUtil.putF (This.commonStrings.START, OpenGLESGL11ExtImage_Access'(This'Unchecked_Access), To_Unbounded_String ("onResize"));
@@ -58,8 +58,8 @@ package body org.allbinary.image.opengles.OpenGLESGL11ExtImage_Package is
         end;
    end onDisplayChangeEvent;
 
-   procedure set (This : in out OpenGLESGL11ExtImage; gl_Param : access GL'Class) is
-      gl : GL_Access := GL_Access (gl_Param);
+   procedure set (This : in out OpenGLESGL11ExtImage; gl_Param : access GL_Package.GL'Class) is
+      gl : constant GL_Access := GL_Access (gl_Param);
       gl11 : GL11_Access;
    begin
         This.onDisplayChangeEvent (null);
@@ -72,8 +72,8 @@ package body org.allbinary.image.opengles.OpenGLESGL11ExtImage_Package is
         end if;
    end set;
 
-   procedure draw (This : in out OpenGLESGL11ExtImage; gl_Param : access GL10'Class; x : Integer; y : Integer; z : Integer) is
-      gl : GL10_Access := GL10_Access (gl_Param);
+   procedure draw (This : in out OpenGLESGL11ExtImage; gl_Param : access GL10_Package.GL10'Class; x : Integer; y : Integer; z : Integer) is
+      gl : constant GL10_Access := GL10_Access (gl_Param);
    begin
         gl.glEnable (GL10.GL_TEXTURE_2D);
         gl.glBindTexture (GL10.GL_TEXTURE_2D, This.openGLESImageProperties.textureID);

@@ -56,11 +56,11 @@ package org.allbinary.game.behavior.topview.PlayerTopViewCharacterBehavior_Packa
 
    procedure Initialize (This : in out PlayerTopViewCharacterBehavior'Class);
    function Create return PlayerTopViewCharacterBehavior_Access;
-   procedure terrainEvent (This : in out PlayerTopViewCharacterBehavior; layer_Param : access AllBinaryLayer'Class; direction_Param : access Direction'Class; x : Integer; y : Integer; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class);
-   procedure terrainMove (This : in out PlayerTopViewCharacterBehavior; layer_Param : access AllBinaryLayer'Class; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; x : Integer; y : Integer);
-   procedure moveIfOnScreen (This : in out PlayerTopViewCharacterBehavior; layer_Param : access AllBinaryLayer'Class; ax : Integer; ay : Integer);
-   function isTiledLayerMoveable (This : in out PlayerTopViewCharacterBehavior; terrainTiledLayer_Param : access AllBinaryTiledLayer'Class; x : Integer; y : Integer) return Boolean;
-   procedure isTiledLayerMoveable (This : in out PlayerTopViewCharacterBehavior; terrainTiledLayer_Param : access AllBinaryTiledLayer'Class; x : Integer; y : Integer);
+   procedure terrainEvent (This : in out PlayerTopViewCharacterBehavior; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; direction_Param : access Direction_Package.Direction'Class; x : Integer; y : Integer; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class);
+   procedure terrainMove (This : in out PlayerTopViewCharacterBehavior; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; x : Integer; y : Integer);
+   procedure moveIfOnScreen (This : in out PlayerTopViewCharacterBehavior; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; ax : Integer; ay : Integer);
+   function isTiledLayerMoveable (This : in out PlayerTopViewCharacterBehavior; terrainTiledLayer_Param : access AllBinaryTiledLayer_Package.AllBinaryTiledLayer'Class; x : Integer; y : Integer) return Boolean;
+   procedure isTiledLayerMoveable (This : in out PlayerTopViewCharacterBehavior; terrainTiledLayer_Param : access AllBinaryTiledLayer_Package.AllBinaryTiledLayer'Class; x : Integer; y : Integer);
 
 end org.allbinary.game.behavior.topview.PlayerTopViewCharacterBehavior_Package;
 

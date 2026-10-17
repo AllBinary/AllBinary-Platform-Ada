@@ -42,8 +42,8 @@ package org.allbinary.game.score.HighScoresBase_Package is
 
    procedure Initialize (This : in out HighScoresBase'Class);
    function Create return HighScoresBase_Access;
-   procedure fetchHighScores (This : in out HighScoresBase; gameInfo_Param : access GameInfo'Class; highScoresResultsListener_Param : access HighScoresResultsListener'Class);
-   procedure fetchHighScoresPreload (This : in out HighScoresBase; gameInfo_Param : access GameInfo'Class; highScoresResultsListener_Param : access HighScoresResultsListener'Class; preload : Boolean);
+   procedure fetchHighScores (This : in out HighScoresBase; gameInfo_Param : access GameInfo_Package.GameInfo'Class; highScoresResultsListener_Param : access HighScoresResultsListener_Package.HighScoresResultsListener'Class);
+   procedure fetchHighScoresPreload (This : in out HighScoresBase; gameInfo_Param : access GameInfo_Package.GameInfo'Class; highScoresResultsListener_Param : access HighScoresResultsListener_Package.HighScoresResultsListener'Class; preload : Boolean);
    function createHighScoresHelper (This : in out HighScoresBase) return HighScoresHelperBaseInterface_Access;
 
 end org.allbinary.game.score.HighScoresBase_Package;

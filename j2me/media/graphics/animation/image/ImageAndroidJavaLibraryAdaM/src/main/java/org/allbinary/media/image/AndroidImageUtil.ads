@@ -48,9 +48,9 @@ package org.allbinary.media.image.AndroidImageUtil_Package is
    procedure Initialize (This : in out AndroidImageUtil'Class);
    function Create return AndroidImageUtil_Access;
    function getInstance return AndroidImageUtil_Access;
-   procedure paintBitmap (This : in out AndroidImageUtil; bitmap_Param : access Bitmap'Class; originalBitmap_Param : access Bitmap'Class; paint_Param : access Paint'Class);
-   procedure paint (This : in out AndroidImageUtil; image_Param : access Image'Class; originalImage_Param : access Image'Class; paint_Param : access Paint'Class);
-   procedure rotate (This : in out AndroidImageUtil; image_Param : access Image'Class; originalImage_Param : access Image'Class; matrix_Param : access Matrix'Class; paint_Param : access Paint'Class);
+   procedure paintBitmap (This : in out AndroidImageUtil; bitmap_Param : access Bitmap_Package.Bitmap'Class; originalBitmap_Param : access Bitmap_Package.Bitmap'Class; paint_Param : access Paint_Package.Paint'Class);
+   procedure paint (This : in out AndroidImageUtil; image_Param : access Image_Package.Image'Class; originalImage_Param : access Image_Package.Image'Class; paint_Param : access Paint_Package.Paint'Class);
+   procedure rotate (This : in out AndroidImageUtil; image_Param : access Image_Package.Image'Class; originalImage_Param : access Image_Package.Image'Class; matrix_Param : access Matrix_Package.Matrix'Class; paint_Param : access Paint_Package.Paint'Class);
 
 end org.allbinary.media.image.AndroidImageUtil_Package;
 

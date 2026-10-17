@@ -45,10 +45,10 @@ package org.allbinary.media.image.MirrorImageUtil_Package is
    procedure Initialize (This : in out MirrorImageUtil'Class);
    function Create return MirrorImageUtil_Access;
    function getInstance return MirrorImageUtil_Access;
-   function getImage (This : in out MirrorImageUtil; bufferedImage_Param : access BufferedImage'Class; verticle : Boolean; horizontal : Boolean) return BufferedImage_Access;
-   procedure getImage (This : in out MirrorImageUtil; bufferedImage_Param : access BufferedImage'Class; verticle : Boolean; horizontal : Boolean);
-   function getImages (This : in out MirrorImageUtil; bufferedImage_Param : access BufferedImage'Class; verticle : Boolean; horizontal : Boolean) return BufferedImage_Access_Array_Access;
-   procedure getImages (This : in out MirrorImageUtil; bufferedImage_Param : access BufferedImage'Class; verticle : Boolean; horizontal : Boolean);
+   function getImage (This : in out MirrorImageUtil; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; verticle : Boolean; horizontal : Boolean) return BufferedImage_Access;
+   procedure getImage (This : in out MirrorImageUtil; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; verticle : Boolean; horizontal : Boolean);
+   function getImages (This : in out MirrorImageUtil; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; verticle : Boolean; horizontal : Boolean) return BufferedImage_Access_Array_Access;
+   procedure getImages (This : in out MirrorImageUtil; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; verticle : Boolean; horizontal : Boolean);
 
 end org.allbinary.media.image.MirrorImageUtil_Package;
 

@@ -54,8 +54,8 @@ package body org.allbinary.game.input.InputFactory_Package is
       return This;
    end Create;
 
-   procedure add (This : in out InputFactory; id : Integer; input_Param : access Input'Class) is
-      input : Input_Access := Input_Access (input_Param);
+   procedure add (This : in out InputFactory; id : Integer; input_Param : access Input_Package.Input'Class) is
+      input : constant Input_Access := Input_Access (input_Param);
    begin
         This.inputIntegerArray (id) := input;
    end add;

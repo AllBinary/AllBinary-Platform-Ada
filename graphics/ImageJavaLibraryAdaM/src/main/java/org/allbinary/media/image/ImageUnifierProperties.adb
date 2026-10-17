@@ -72,8 +72,8 @@ package body org.allbinary.media.image.ImageUnifierProperties_Package is
         return This.imageUnifierCell;
    end getImageUnifierCell;
 
-   procedure setImageUnifierCell (This : in out ImageUnifierProperties; imageUnifierCell_Param : access ImageUnifierCell'Class) is
-      imageUnifierCell : ImageUnifierCell_Access := ImageUnifierCell_Access (imageUnifierCell_Param);
+   procedure setImageUnifierCell (This : in out ImageUnifierProperties; imageUnifierCell_Param : access ImageUnifierCell_Package.ImageUnifierCell'Class) is
+      imageUnifierCell : constant ImageUnifierCell_Access := ImageUnifierCell_Access (imageUnifierCell_Param);
    begin
         This.imageUnifierCell := imageUnifierCell;
    end setImageUnifierCell;

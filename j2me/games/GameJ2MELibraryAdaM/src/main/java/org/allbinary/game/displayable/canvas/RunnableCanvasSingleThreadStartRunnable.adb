@@ -23,15 +23,15 @@ package body org.allbinary.game.displayable.canvas.RunnableCanvasSingleThreadSta
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out RunnableCanvasSingleThreadStartRunnable'Class; demoCanvas_Param : access RunnableCanvas'Class) is
-      demoCanvas : RunnableCanvas_Access := RunnableCanvas_Access (demoCanvas_Param);
+   procedure Initialize (This : in out RunnableCanvasSingleThreadStartRunnable'Class; demoCanvas_Param : access RunnableCanvas_Package.RunnableCanvas'Class) is
+      demoCanvas : constant RunnableCanvas_Access := RunnableCanvas_Access (demoCanvas_Param);
    begin
       GameRunnable_Package.Initialize (This);
       Initialize_Fields (This);
         This.runnableCanvas := demoCanvas;
    end Initialize;
 
-   function Create (demoCanvas_Param : access RunnableCanvas'Class) return RunnableCanvasSingleThreadStartRunnable_Access is
+   function Create (demoCanvas_Param : access RunnableCanvas_Package.RunnableCanvas'Class) return RunnableCanvasSingleThreadStartRunnable_Access is
       This : constant RunnableCanvasSingleThreadStartRunnable_Access := new RunnableCanvasSingleThreadStartRunnable;
    begin
       RunnableCanvasSingleThreadStartRunnable_Package.Initialize (This.all, demoCanvas_Param);

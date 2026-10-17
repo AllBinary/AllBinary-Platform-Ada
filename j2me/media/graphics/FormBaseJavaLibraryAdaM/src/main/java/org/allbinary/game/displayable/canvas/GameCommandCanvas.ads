@@ -154,12 +154,12 @@ package org.allbinary.game.displayable.canvas.GameCommandCanvas_Package is
    end record;
    id : Integer;
 
-   procedure Initialize (This : in out GameCommandCanvas'Class; cmdListener_Param : access CommandListener'Class; name : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class);
-   function Create (cmdListener_Param : access CommandListener'Class; name : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return GameCommandCanvas_Access;
-   procedure updateMeasurement (This : in out GameCommandCanvas; graphics_Param : access Graphics'Class);
-   procedure onEvent (This : in out GameCommandCanvas; eventObject_Param : access AllBinaryEventObject'Class);
-   procedure onDisplayChangeEvent (This : in out GameCommandCanvas; displayChangeEvent_Param : access DisplayChangeEvent'Class);
-   procedure initCommands (This : in out GameCommandCanvas; cmdListener_Param : access CommandListener'Class);
+   procedure Initialize (This : in out GameCommandCanvas'Class; cmdListener_Param : access CommandListener_Package.CommandListener'Class; name : Unbounded_String; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class);
+   function Create (cmdListener_Param : access CommandListener_Package.CommandListener'Class; name : Unbounded_String; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return GameCommandCanvas_Access;
+   procedure updateMeasurement (This : in out GameCommandCanvas; graphics_Param : access Graphics_Package.Graphics'Class);
+   procedure onEvent (This : in out GameCommandCanvas; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class);
+   procedure onDisplayChangeEvent (This : in out GameCommandCanvas; displayChangeEvent_Param : access DisplayChangeEvent_Package.DisplayChangeEvent'Class);
+   procedure initCommands (This : in out GameCommandCanvas; cmdListener_Param : access CommandListener_Package.CommandListener'Class);
    procedure initMenu (This : in out GameCommandCanvas);
    function createForm (This : in out GameCommandCanvas) return ScrollSelectionForm_Access;
    function createRectangle (This : in out GameCommandCanvas; size : Integer) return Rectangle_Access;
@@ -176,8 +176,8 @@ package org.allbinary.game.displayable.canvas.GameCommandCanvas_Package is
    procedure keyRepeatedByDevice (This : in out GameCommandCanvas; keyCode : Integer; deviceId : Integer);
    procedure addGameKeyEvent (This : in out GameCommandCanvas; keyCode : Integer; deviceId : Integer; repeated : Boolean);
    procedure removeGameKeyEvent (This : in out GameCommandCanvas; keyCode : Integer; deviceId : Integer; repeated : Boolean);
-   procedure paint (This : in out GameCommandCanvas; graphics_Param : access Graphics'Class);
-   procedure setMenuInputProcessor (This : in out GameCommandCanvas; menuInputProcessor_Param : access BasicMenuInputProcessor'Class);
+   procedure paint (This : in out GameCommandCanvas; graphics_Param : access Graphics_Package.Graphics'Class);
+   procedure setMenuInputProcessor (This : in out GameCommandCanvas; menuInputProcessor_Param : access BasicMenuInputProcessor_Package.BasicMenuInputProcessor'Class);
    function getMenuInputProcessor (This : in out GameCommandCanvas) return BasicMenuInputProcessor_Access;
 
 end org.allbinary.game.displayable.canvas.GameCommandCanvas_Package;

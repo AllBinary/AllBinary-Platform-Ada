@@ -106,8 +106,8 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_
         return This.tileSetImage;
    end getTileSetImage;
 
-   procedure setTileSetImage (This : in out RaceTrackData; tileSetImage_Param : access Image'Class) is
-      tileSetImage : Image_Access := Image_Access (tileSetImage_Param);
+   procedure setTileSetImage (This : in out RaceTrackData; tileSetImage_Param : access Image_Package.Image'Class) is
+      tileSetImage : constant Image_Access := Image_Access (tileSetImage_Param);
    begin
         This.tileSetImage := tileSetImage;
    end setTileSetImage;
@@ -117,8 +117,8 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackData_
         return This.miniTileSetImage;
    end getMiniTileSetImage;
 
-   procedure setMiniTileSetImage (This : in out RaceTrackData; miniTileSetImage_Param : access Image'Class) is
-      miniTileSetImage : Image_Access := Image_Access (miniTileSetImage_Param);
+   procedure setMiniTileSetImage (This : in out RaceTrackData; miniTileSetImage_Param : access Image_Package.Image'Class) is
+      miniTileSetImage : constant Image_Access := Image_Access (miniTileSetImage_Param);
    begin
         This.miniTileSetImage := miniTileSetImage;
    end setMiniTileSetImage;

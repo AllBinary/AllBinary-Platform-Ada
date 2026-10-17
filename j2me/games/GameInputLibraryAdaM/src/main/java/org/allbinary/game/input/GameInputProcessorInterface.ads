@@ -30,7 +30,7 @@ package org.allbinary.game.input.GameInputProcessorInterface_Package is
    type GameInputProcessorInterface_Access is access all GameInputProcessorInterface'Class;
    type GameInputProcessorInterface_Access_Array is array (Natural range <>) of GameInputProcessorInterface_Access;
    type GameInputProcessorInterface_Access_Array_Access is access all GameInputProcessorInterface_Access_Array;
-   procedure onInput (This : in out GameInputProcessorInterface; list_Param : access BasicArrayList'Class) is abstract;
+   procedure onInput (This : in out GameInputProcessorInterface; list_Param : access BasicArrayList_Package.BasicArrayList'Class) is abstract;
 
 end org.allbinary.game.input.GameInputProcessorInterface_Package;
 

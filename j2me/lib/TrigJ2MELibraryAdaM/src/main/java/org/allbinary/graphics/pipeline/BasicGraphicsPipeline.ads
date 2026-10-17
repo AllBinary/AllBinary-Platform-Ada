@@ -46,12 +46,12 @@ package org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package is
       noDecimalTrigTable : NoDecimalTrigTable_Access;
    end record;
 
-   procedure Initialize (This : in out BasicGraphicsPipeline'Class; points_Param : access BasicArrayList'Class);
-   function Create (points_Param : access BasicArrayList'Class) return BasicGraphicsPipeline_Access;
-   procedure setInitMatrix (This : in out BasicGraphicsPipeline; points_Param : access BasicArrayList'Class);
+   procedure Initialize (This : in out BasicGraphicsPipeline'Class; points_Param : access BasicArrayList_Package.BasicArrayList'Class);
+   function Create (points_Param : access BasicArrayList_Package.BasicArrayList'Class) return BasicGraphicsPipeline_Access;
+   procedure setInitMatrix (This : in out BasicGraphicsPipeline; points_Param : access BasicArrayList_Package.BasicArrayList'Class);
    procedure createMatrix (This : in out BasicGraphicsPipeline);
    procedure translate (This : in out BasicGraphicsPipeline; x : Integer; y : Integer);
-   procedure rotateToAngle (This : in out BasicGraphicsPipeline; angle_Param : access Angle'Class);
+   procedure rotateToAngle (This : in out BasicGraphicsPipeline; angle_Param : access Angle_Package.Angle'Class);
    procedure rotate (This : in out BasicGraphicsPipeline; angle : Integer);
    procedure mirror (This : in out BasicGraphicsPipeline; width : Integer);
    function getMatrix (This : in out BasicGraphicsPipeline) return BasicArrayList_Access;

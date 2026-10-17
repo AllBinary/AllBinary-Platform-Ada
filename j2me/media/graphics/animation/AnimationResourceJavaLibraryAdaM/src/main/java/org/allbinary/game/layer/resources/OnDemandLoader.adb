@@ -24,10 +24,10 @@ package body org.allbinary.game.layer.resources.OnDemandLoader_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out OnDemandLoader'Class; onDemandResourcesFactory_Param : access OnDemandResourcesFactory'Class; gameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory_Param : access GameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory'Class; resourceAnimationInterfaceFactoryInterfaceFactory_Param : access BaseResourceAnimationInterfaceFactoryInterfaceFactory'Class) is
-      onDemandResourcesFactory : OnDemandResourcesFactory_Access := OnDemandResourcesFactory_Access (onDemandResourcesFactory_Param);
-      gameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory : GameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory_Access := GameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory_Access (gameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory_Param);
-      resourceAnimationInterfaceFactoryInterfaceFactory : BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access := BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access (resourceAnimationInterfaceFactoryInterfaceFactory_Param);
+   procedure Initialize (This : in out OnDemandLoader'Class; onDemandResourcesFactory_Param : access OnDemandResourcesFactory_Package.OnDemandResourcesFactory'Class; gameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory_Param : access GameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory_Package.GameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory'Class; resourceAnimationInterfaceFactoryInterfaceFactory_Param : access BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package.BaseResourceAnimationInterfaceFactoryInterfaceFactory'Class) is
+      onDemandResourcesFactory : constant OnDemandResourcesFactory_Access := OnDemandResourcesFactory_Access (onDemandResourcesFactory_Param);
+      gameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory : constant GameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory_Access := GameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory_Access (gameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory_Param);
+      resourceAnimationInterfaceFactoryInterfaceFactory : constant BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access := BaseResourceAnimationInterfaceFactoryInterfaceFactory_Access (resourceAnimationInterfaceFactoryInterfaceFactory_Param);
    begin
       Initialize_Fields (This);
         This.onDemandResourcesFactory := onDemandResourcesFactory;
@@ -35,7 +35,7 @@ package body org.allbinary.game.layer.resources.OnDemandLoader_Package is
         This.resourceAnimationInterfaceFactoryInterfaceFactory := resourceAnimationInterfaceFactoryInterfaceFactory;
    end Initialize;
 
-   function Create (onDemandResourcesFactory_Param : access OnDemandResourcesFactory'Class; gameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory_Param : access GameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory'Class; resourceAnimationInterfaceFactoryInterfaceFactory_Param : access BaseResourceAnimationInterfaceFactoryInterfaceFactory'Class) return OnDemandLoader_Access is
+   function Create (onDemandResourcesFactory_Param : access OnDemandResourcesFactory_Package.OnDemandResourcesFactory'Class; gameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory_Param : access GameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory_Package.GameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory'Class; resourceAnimationInterfaceFactoryInterfaceFactory_Param : access BaseResourceAnimationInterfaceFactoryInterfaceFactory_Package.BaseResourceAnimationInterfaceFactoryInterfaceFactory'Class) return OnDemandLoader_Access is
       This : constant OnDemandLoader_Access := new OnDemandLoader;
    begin
       OnDemandLoader_Package.Initialize (This.all, onDemandResourcesFactory_Param, gameLayerPlacementInterfaceBasicArrayListFactoryInterfaceFactory_Param, resourceAnimationInterfaceFactoryInterfaceFactory_Param);
@@ -43,8 +43,8 @@ package body org.allbinary.game.layer.resources.OnDemandLoader_Package is
    end Create;
 
    --  throws Exception
-   procedure init (This : in out OnDemandLoader; imageCache_Param : access ImageCache'Class; level : Integer; loadingString : Unbounded_String) is
-      imageCache : ImageCache_Access := ImageCache_Access (imageCache_Param);
+   procedure init (This : in out OnDemandLoader; imageCache_Param : access ImageCache_Package.ImageCache'Class; level : Integer; loadingString : Unbounded_String) is
+      imageCache : constant ImageCache_Access := ImageCache_Access (imageCache_Param);
       resourceLoadingLevelFactory : ResourceLoadingLevelFactory_Access;
       layerPlacementInterfaceBasicArrayListFactoryInterface : LayerPlacementInterfaceBasicArrayListFactoryInterface_Access;
    begin
@@ -61,8 +61,8 @@ package body org.allbinary.game.layer.resources.OnDemandLoader_Package is
    end init;
 
    --  throws Exception
-   procedure initAll (This : in out OnDemandLoader; imageCache_Param : access ImageCache'Class; loadingString : Unbounded_String) is
-      imageCache : ImageCache_Access := ImageCache_Access (imageCache_Param);
+   procedure initAll (This : in out OnDemandLoader; imageCache_Param : access ImageCache_Package.ImageCache'Class; loadingString : Unbounded_String) is
+      imageCache : constant ImageCache_Access := ImageCache_Access (imageCache_Param);
       index : Integer;
       portion : Integer;
       onDemandResources : OnDemandResources_Access;
@@ -81,9 +81,9 @@ package body org.allbinary.game.layer.resources.OnDemandLoader_Package is
    end initAll;
 
    --  throws Exception
-   procedure initLevel (This : in out OnDemandLoader; layerPlacementInterfaceBasicArrayListFactoryInterface_Param : access LayerPlacementInterfaceBasicArrayListFactoryInterface'Class; imageCache_Param : access ImageCache'Class; level : Integer; loadingString : Unbounded_String) is
-      layerPlacementInterfaceBasicArrayListFactoryInterface : LayerPlacementInterfaceBasicArrayListFactoryInterface_Access := LayerPlacementInterfaceBasicArrayListFactoryInterface_Access (layerPlacementInterfaceBasicArrayListFactoryInterface_Param);
-      imageCache : ImageCache_Access := ImageCache_Access (imageCache_Param);
+   procedure initLevel (This : in out OnDemandLoader; layerPlacementInterfaceBasicArrayListFactoryInterface_Param : access LayerPlacementInterfaceBasicArrayListFactoryInterface_Package.LayerPlacementInterfaceBasicArrayListFactoryInterface'Class; imageCache_Param : access ImageCache_Package.ImageCache'Class; level : Integer; loadingString : Unbounded_String) is
+      layerPlacementInterfaceBasicArrayListFactoryInterface : constant LayerPlacementInterfaceBasicArrayListFactoryInterface_Access := LayerPlacementInterfaceBasicArrayListFactoryInterface_Access (layerPlacementInterfaceBasicArrayListFactoryInterface_Param);
+      imageCache : constant ImageCache_Access := ImageCache_Access (imageCache_Param);
       commonStrings : CommonStrings_Access;
       portion : Integer;
       index : Integer;

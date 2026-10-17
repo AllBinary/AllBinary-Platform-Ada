@@ -41,8 +41,8 @@ package org.allbinary.graphics.opengles.shader.ShaderInitializer_Package is
    procedure Initialize (This : in out ShaderInitializer'Class);
    function Create return ShaderInitializer_Access;
    function getInstance return ShaderInitializer_Access;
-   function init (This : in out ShaderInitializer; gl_Param : access GL10'Class; shader : Shader_Access_Array_Access; attributeArray : Unbounded_String_Array_Access) return Integer;
-   procedure init (This : in out ShaderInitializer; gl_Param : access GL10'Class; shader : Shader_Access_Array_Access; attributeArray : Unbounded_String_Array_Access);
+   function init (This : in out ShaderInitializer; gl_Param : access GL10_Package.GL10'Class; shader : Shader_Access_Array_Access; attributeArray : Unbounded_String_Array_Access) return Integer;
+   procedure init (This : in out ShaderInitializer; gl_Param : access GL10_Package.GL10'Class; shader : Shader_Access_Array_Access; attributeArray : Unbounded_String_Array_Access);
 
 end org.allbinary.graphics.opengles.shader.ShaderInitializer_Package;
 

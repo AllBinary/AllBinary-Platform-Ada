@@ -52,10 +52,10 @@ package org.allbinary.media.audio.PlayerComposite_Package is
       gameTickTimeDelayHelper : GameTickTimeDelayHelper_Access;
    end record;
 
-   procedure Initialize (This : in out PlayerComposite'Class; player_Param : access Player'Class; repeatTime : Integer);
-   function Create (player_Param : access Player'Class; repeatTime : Integer) return PlayerComposite_Access;
-   procedure addPlayerListener (This : in out PlayerComposite; playerListener_Param : access PlayerListener'Class);
-   procedure removePlayerListener (This : in out PlayerComposite; playerListener_Param : access PlayerListener'Class);
+   procedure Initialize (This : in out PlayerComposite'Class; player_Param : access Player_Package.Player'Class; repeatTime : Integer);
+   function Create (player_Param : access Player_Package.Player'Class; repeatTime : Integer) return PlayerComposite_Access;
+   procedure addPlayerListener (This : in out PlayerComposite; playerListener_Param : access PlayerListener_Package.PlayerListener'Class);
+   procedure removePlayerListener (This : in out PlayerComposite; playerListener_Param : access PlayerListener_Package.PlayerListener'Class);
    procedure close (This : in out PlayerComposite);
    procedure deallocate (This : in out PlayerComposite);
    function getContentType (This : in out PlayerComposite) return Unbounded_String;

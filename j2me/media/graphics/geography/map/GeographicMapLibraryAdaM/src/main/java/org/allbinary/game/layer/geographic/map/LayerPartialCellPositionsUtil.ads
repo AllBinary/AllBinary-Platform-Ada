@@ -44,10 +44,10 @@ package org.allbinary.game.layer.geographic.map.LayerPartialCellPositionsUtil_Pa
 
    procedure Initialize (This : in out LayerPartialCellPositionsUtil'Class);
    function Create return LayerPartialCellPositionsUtil_Access;
-   function getAll (This : in out LayerPartialCellPositionsUtil; geographicMapInterface_Param : access BasicGeographicMap'Class; layerInterface_Param : access AllBinaryLayer'Class; reusableList_Param : access BasicArrayList'Class) return BasicArrayList_Access;
-   procedure getAll (This : in out LayerPartialCellPositionsUtil; geographicMapInterface_Param : access BasicGeographicMap'Class; layerInterface_Param : access AllBinaryLayer'Class; reusableList_Param : access BasicArrayList'Class);
-   function getAllDXY (This : in out LayerPartialCellPositionsUtil; geographicMapInterface_Param : access BasicGeographicMap'Class; layerInterface_Param : access AllBinaryLayer'Class; dx : Integer; dy : Integer; reusableList_Param : access BasicArrayList'Class) return BasicArrayList_Access;
-   procedure getAllDXY (This : in out LayerPartialCellPositionsUtil; geographicMapInterface_Param : access BasicGeographicMap'Class; layerInterface_Param : access AllBinaryLayer'Class; dx : Integer; dy : Integer; reusableList_Param : access BasicArrayList'Class);
+   function getAll (This : in out LayerPartialCellPositionsUtil; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; reusableList_Param : access BasicArrayList_Package.BasicArrayList'Class) return BasicArrayList_Access;
+   procedure getAll (This : in out LayerPartialCellPositionsUtil; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; reusableList_Param : access BasicArrayList_Package.BasicArrayList'Class);
+   function getAllDXY (This : in out LayerPartialCellPositionsUtil; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; dx : Integer; dy : Integer; reusableList_Param : access BasicArrayList_Package.BasicArrayList'Class) return BasicArrayList_Access;
+   procedure getAllDXY (This : in out LayerPartialCellPositionsUtil; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; dx : Integer; dy : Integer; reusableList_Param : access BasicArrayList_Package.BasicArrayList'Class);
    function getInstance return LayerPartialCellPositionsUtil_Access;
 
 end org.allbinary.game.layer.geographic.map.LayerPartialCellPositionsUtil_Package;

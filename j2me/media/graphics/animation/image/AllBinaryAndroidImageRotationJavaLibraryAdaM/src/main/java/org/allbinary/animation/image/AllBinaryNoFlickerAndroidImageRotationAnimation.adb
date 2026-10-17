@@ -31,11 +31,11 @@ package body org.allbinary.animation.image.AllBinaryNoFlickerAndroidImageRotatio
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AllBinaryNoFlickerAndroidImageRotationAnimation'Class; originalImage_Param : access Image'Class; image_Param : access Image'Class; angleInfo_Param : access AngleInfo'Class; totalAngle : Short_Integer; animationBehavior_Param : access AnimationBehavior'Class) is
-      originalImage : Image_Access := Image_Access (originalImage_Param);
-      image : Image_Access := Image_Access (image_Param);
-      angleInfo : AngleInfo_Access := AngleInfo_Access (angleInfo_Param);
-      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
+   procedure Initialize (This : in out AllBinaryNoFlickerAndroidImageRotationAnimation'Class; originalImage_Param : access Image_Package.Image'Class; image_Param : access Image_Package.Image'Class; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; totalAngle : Short_Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) is
+      originalImage : constant Image_Access := Image_Access (originalImage_Param);
+      image : constant Image_Access := Image_Access (image_Param);
+      angleInfo : constant AngleInfo_Access := AngleInfo_Access (angleInfo_Param);
+      animationBehavior : constant AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
         ImageBaseRotationAnimation_Package.Initialize (This, image, angleInfo, totalAngle, animationBehavior);
         Initialize_Fields (This);
@@ -48,15 +48,15 @@ package body org.allbinary.animation.image.AllBinaryNoFlickerAndroidImageRotatio
         This.twoImages (1) := ImageCopyUtil_Package.getInstance.createImage (image);
    end Initialize;
 
-   function Create (originalImage_Param : access Image'Class; image_Param : access Image'Class; angleInfo_Param : access AngleInfo'Class; totalAngle : Short_Integer; animationBehavior_Param : access AnimationBehavior'Class) return AllBinaryNoFlickerAndroidImageRotationAnimation_Access is
+   function Create (originalImage_Param : access Image_Package.Image'Class; image_Param : access Image_Package.Image'Class; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; totalAngle : Short_Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return AllBinaryNoFlickerAndroidImageRotationAnimation_Access is
       This : constant AllBinaryNoFlickerAndroidImageRotationAnimation_Access := new AllBinaryNoFlickerAndroidImageRotationAnimation;
    begin
       AllBinaryNoFlickerAndroidImageRotationAnimation_Package.Initialize (This.all, originalImage_Param, image_Param, angleInfo_Param, totalAngle, animationBehavior_Param);
       return This;
    end Create;
 
-   procedure setBasicColorP (This : in out AllBinaryNoFlickerAndroidImageRotationAnimation; basicColor_Param : access BasicColor'Class) is
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+   procedure setBasicColorP (This : in out AllBinaryNoFlickerAndroidImageRotationAnimation; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
       changed : Boolean;
    begin
         changed := False;
@@ -71,8 +71,8 @@ package body org.allbinary.animation.image.AllBinaryNoFlickerAndroidImageRotatio
         end if;
    end setBasicColorP;
 
-   procedure changeBasicColor (This : in out AllBinaryNoFlickerAndroidImageRotationAnimation; basicColor_Param : access BasicColor'Class) is
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+   procedure changeBasicColor (This : in out AllBinaryNoFlickerAndroidImageRotationAnimation; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         This.setBasicColorP (basicColor);
    end changeBasicColor;
@@ -134,8 +134,8 @@ package body org.allbinary.animation.image.AllBinaryNoFlickerAndroidImageRotatio
         end if;
    end swap;
 
-   procedure paintXY (This : in out AllBinaryNoFlickerAndroidImageRotationAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintXY (This : in out AllBinaryNoFlickerAndroidImageRotationAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         graphics.drawImage (This.imageToShow, x, y, This.anchor);
    end paintXY;

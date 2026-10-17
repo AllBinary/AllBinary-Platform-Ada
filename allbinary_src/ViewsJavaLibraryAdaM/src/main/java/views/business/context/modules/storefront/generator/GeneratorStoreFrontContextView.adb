@@ -22,8 +22,8 @@ package body views.business.context.modules.storefront.generator.GeneratorStoreF
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GeneratorStoreFrontContextView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out GeneratorStoreFrontContextView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
@@ -32,7 +32,7 @@ package body views.business.context.modules.storefront.generator.GeneratorStoreF
         end if;
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return GeneratorStoreFrontContextView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return GeneratorStoreFrontContextView_Access is
       This : constant GeneratorStoreFrontContextView_Access := new GeneratorStoreFrontContextView;
    begin
       GeneratorStoreFrontContextView_Package.Initialize (This.all, transformInfoInterface_Param);

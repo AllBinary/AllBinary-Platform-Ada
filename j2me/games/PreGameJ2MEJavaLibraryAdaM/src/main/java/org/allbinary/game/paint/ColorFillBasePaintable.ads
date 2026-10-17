@@ -43,13 +43,13 @@ package org.allbinary.game.paint.ColorFillBasePaintable_Package is
       colorP : Integer;
    end record;
 
-   procedure Initialize (This : in out ColorFillBasePaintable'Class; basicColor_Param : access BasicColor'Class);
-   function Create (basicColor_Param : access BasicColor'Class) return ColorFillBasePaintable_Access;
-   procedure setBasicColorP (This : in out ColorFillBasePaintable; basicColor_Param : access BasicColor'Class);
+   procedure Initialize (This : in out ColorFillBasePaintable'Class; basicColor_Param : access BasicColor_Package.BasicColor'Class);
+   function Create (basicColor_Param : access BasicColor_Package.BasicColor'Class) return ColorFillBasePaintable_Access;
+   procedure setBasicColorP (This : in out ColorFillBasePaintable; basicColor_Param : access BasicColor_Package.BasicColor'Class);
    function getBasicColorP (This : in out ColorFillBasePaintable) return BasicColor_Access;
    function getColor (This : in out ColorFillBasePaintable) return Integer;
    procedure setColor (This : in out ColorFillBasePaintable; color : Integer);
-   procedure paint (This : in out ColorFillBasePaintable; graphics_Param : access Graphics'Class);
+   procedure paint (This : in out ColorFillBasePaintable; graphics_Param : access Graphics_Package.Graphics'Class);
 
 end org.allbinary.game.paint.ColorFillBasePaintable_Package;
 

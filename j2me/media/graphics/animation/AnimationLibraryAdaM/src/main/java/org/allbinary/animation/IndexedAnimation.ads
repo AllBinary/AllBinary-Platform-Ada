@@ -44,8 +44,8 @@ package org.allbinary.animation.IndexedAnimation_Package is
       animationBehaviorP : AnimationBehavior_Access;
    end record;
 
-   procedure Initialize (This : in out IndexedAnimation'Class; animationBehavior_Param : access AnimationBehavior'Class);
-   function Create (animationBehavior_Param : access AnimationBehavior'Class) return IndexedAnimation_Access;
+   procedure Initialize (This : in out IndexedAnimation'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class);
+   function Create (animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return IndexedAnimation_Access;
    function getAnimationBehavior (This : in out IndexedAnimation) return AnimationBehavior_Access;
    procedure reset (This : in out IndexedAnimation);
    procedure setFrame (This : in out IndexedAnimation; index : Integer);
@@ -56,7 +56,7 @@ package org.allbinary.animation.IndexedAnimation_Package is
    function isLastFrame (This : in out IndexedAnimation) return Boolean;
    procedure setSequence (This : in out IndexedAnimation; sequence : Integer_Array_Access);
    function getSequence (This : in out IndexedAnimation) return Integer_Array_Access;
-   procedure setState (This : in out IndexedAnimation; indexedAnimation_Param : access IndexedAnimation'Class);
+   procedure setState (This : in out IndexedAnimation; indexedAnimation_Param : access IndexedAnimation_Package.IndexedAnimation'Class);
    function getWidth (This : in out IndexedAnimation) return Integer;
    function getHeight (This : in out IndexedAnimation) return Integer;
 

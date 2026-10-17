@@ -73,7 +73,7 @@ package org.allbinary.data.tables.advertisement.campaign.internal.AdvertisementC
    procedure getCampaignsInStore (This : in out AdvertisementCampaignInternalEntity; storeName : Unbounded_String);
    function get (This : in out AdvertisementCampaignInternalEntity; storeName : Unbounded_String; name : Unbounded_String) return AdvertisementCampaignInterface_Access;
    procedure get (This : in out AdvertisementCampaignInternalEntity; storeName : Unbounded_String; name : Unbounded_String);
-   procedure update (This : in out AdvertisementCampaignInternalEntity; updatedValues_Param : access HashMap'Class);
+   procedure update (This : in out AdvertisementCampaignInternalEntity; updatedValues_Param : access HashMap_Package.HashMap'Class);
    function createTableStatement (This : in out AdvertisementCampaignInternalEntity) return Unbounded_String;
    function createTable (This : in out AdvertisementCampaignInternalEntity) return Unbounded_String;
    function dropTable (This : in out AdvertisementCampaignInternalEntity) return Unbounded_String;

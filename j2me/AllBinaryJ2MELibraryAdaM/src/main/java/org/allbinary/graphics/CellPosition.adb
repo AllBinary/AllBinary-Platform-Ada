@@ -55,8 +55,8 @@ package body org.allbinary.graphics.CellPosition_Package is
         return CellPosition_Package.toStringColRow (This.getColumn, This.getRow);
    end toString;
 
-   function toStringCellPosition (basicGeographicMapCellPosition_Param : access CellPosition'Class) return Unbounded_String is
-      basicGeographicMapCellPosition : CellPosition_Access := CellPosition_Access (basicGeographicMapCellPosition_Param);
+   function toStringCellPosition (basicGeographicMapCellPosition_Param : access CellPosition_Package.CellPosition'Class) return Unbounded_String is
+      basicGeographicMapCellPosition : constant CellPosition_Access := CellPosition_Access (basicGeographicMapCellPosition_Param);
    begin
         return CellPosition_Package.toStringColRow (basicGeographicMapCellPosition.getColumn, basicGeographicMapCellPosition.getRow);
    end toStringCellPosition;
@@ -80,7 +80,7 @@ package body org.allbinary.graphics.CellPosition_Package is
         return This.id;
    end getId;
 
-   procedure toStringCellPosition (basicGeographicMapCellPosition_Param : access CellPosition'Class) is
+   procedure toStringCellPosition (basicGeographicMapCellPosition_Param : access CellPosition_Package.CellPosition'Class) is
       Java_Result : constant Unbounded_String := toStringCellPosition (basicGeographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin

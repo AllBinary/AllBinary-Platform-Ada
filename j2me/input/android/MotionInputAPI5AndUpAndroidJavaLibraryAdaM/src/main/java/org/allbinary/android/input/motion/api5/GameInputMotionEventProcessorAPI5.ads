@@ -61,7 +61,7 @@ package org.allbinary.android.input.motion.api5.GameInputMotionEventProcessorAPI
    function getInstance return GameInputMotionEventProcessorAPI5_Access;
    function isValid (This : in out GameInputMotionEventProcessorAPI5; pointerId : Integer) return Boolean;
    procedure isValid (This : in out GameInputMotionEventProcessorAPI5; pointerId : Integer);
-   procedure process (This : in out GameInputMotionEventProcessorAPI5; motionEvent_Param : access MotionEvent'Class);
+   procedure process (This : in out GameInputMotionEventProcessorAPI5; motionEvent_Param : access MotionEvent_Package.MotionEvent'Class);
 
 end org.allbinary.android.input.motion.api5.GameInputMotionEventProcessorAPI5_Package;
 

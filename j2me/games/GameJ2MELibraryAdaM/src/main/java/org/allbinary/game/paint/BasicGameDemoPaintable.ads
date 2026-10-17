@@ -43,12 +43,12 @@ package org.allbinary.game.paint.BasicGameDemoPaintable_Package is
       currentStatePaintable : Paintable_Access;
    end record;
 
-   procedure Initialize (This : in out BasicGameDemoPaintable'Class; mainDemoStatePaintable_Param : access Paintable'Class; ownershipPaintable_Param : access Paintable'Class; helpPaintableInterface_Param : access Paintable'Class);
-   function Create (mainDemoStatePaintable_Param : access Paintable'Class; ownershipPaintable_Param : access Paintable'Class; helpPaintableInterface_Param : access Paintable'Class) return BasicGameDemoPaintable_Access;
+   procedure Initialize (This : in out BasicGameDemoPaintable'Class; mainDemoStatePaintable_Param : access Paintable_Package.Paintable'Class; ownershipPaintable_Param : access Paintable_Package.Paintable'Class; helpPaintableInterface_Param : access Paintable_Package.Paintable'Class);
+   function Create (mainDemoStatePaintable_Param : access Paintable_Package.Paintable'Class; ownershipPaintable_Param : access Paintable_Package.Paintable'Class; helpPaintableInterface_Param : access Paintable_Package.Paintable'Class) return BasicGameDemoPaintable_Access;
    procedure setState (This : in out BasicGameDemoPaintable; state : Integer);
-   procedure paint (This : in out BasicGameDemoPaintable; graphics_Param : access Graphics'Class);
+   procedure paint (This : in out BasicGameDemoPaintable; graphics_Param : access Graphics_Package.Graphics'Class);
    function getHelpPaintableInterface (This : in out BasicGameDemoPaintable) return Paintable_Access;
-   procedure setCurrentStatePaintable (This : in out BasicGameDemoPaintable; currentStatePaintable_Param : access Paintable'Class);
+   procedure setCurrentStatePaintable (This : in out BasicGameDemoPaintable; currentStatePaintable_Param : access Paintable_Package.Paintable'Class);
    function getCurrentStatePaintable (This : in out BasicGameDemoPaintable) return Paintable_Access;
    function getMainDemoStatePaintable (This : in out BasicGameDemoPaintable) return Paintable_Access;
 

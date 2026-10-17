@@ -36,8 +36,8 @@ package org.allbinary.game.layer.unit.UnitGameInputProcessor_Package is
       unitLayer : UnitLayer_Access;
    end record;
 
-   procedure Initialize (This : in out UnitGameInputProcessor'Class; unitLayer_Param : access UnitLayer'Class);
-   function Create (unitLayer_Param : access UnitLayer'Class) return UnitGameInputProcessor_Access;
+   procedure Initialize (This : in out UnitGameInputProcessor'Class; unitLayer_Param : access UnitLayer_Package.UnitLayer'Class);
+   function Create (unitLayer_Param : access UnitLayer_Package.UnitLayer'Class) return UnitGameInputProcessor_Access;
 
 end org.allbinary.game.layer.unit.UnitGameInputProcessor_Package;
 

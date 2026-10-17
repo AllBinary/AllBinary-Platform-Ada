@@ -40,8 +40,8 @@ package org.allbinary.input.automation.module.actions.script.condition.processor
 
    procedure Initialize (This : in out ProfileActionScriptOutputFactory'Class);
    function Create return ProfileActionScriptOutputFactory_Access;
-   function getInstance (node_Param : access Node'Class) return ProfileActionScriptOutputInterface_Access;
-   procedure getInstance (node_Param : access Node'Class);
+   function getInstance (node_Param : access Node_Package.Node'Class) return ProfileActionScriptOutputInterface_Access;
+   procedure getInstance (node_Param : access Node_Package.Node'Class);
 
 end org.allbinary.input.automation.module.actions.script.condition.processors.output.ProfileActionScriptOutputFactory_Package;
 

@@ -39,8 +39,8 @@ package org.allbinary.media.graphics.geography.map.CachingGeographicMapCellPosit
 
    type CachingGeographicMapCellPositionFactory is new BasicGeographicMapCellPositionFactory with null record;
 
-   procedure Initialize (This : in out CachingGeographicMapCellPositionFactory'Class; geographicMapInterface_Param : access BasicGeographicMap'Class);
-   function Create (geographicMapInterface_Param : access BasicGeographicMap'Class) return CachingGeographicMapCellPositionFactory_Access;
+   procedure Initialize (This : in out CachingGeographicMapCellPositionFactory'Class; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class);
+   function Create (geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class) return CachingGeographicMapCellPositionFactory_Access;
    function createInstance (This : in out CachingGeographicMapCellPositionFactory; i_column : Integer; i_row : Integer; width : Integer; height : Integer) return GeographicMapCellPosition_Access;
    procedure createInstance (This : in out CachingGeographicMapCellPositionFactory; i_column : Integer; i_row : Integer; width : Integer; height : Integer);
 

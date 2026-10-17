@@ -22,14 +22,14 @@ package body views.business.context.modules.storefront.customizer.includes.meta.
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out EditMetaValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out EditMetaValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         MetaView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return EditMetaValidationView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return EditMetaValidationView_Access is
       This : constant EditMetaValidationView_Access := new EditMetaValidationView;
    begin
       EditMetaValidationView_Package.Initialize (This.all, transformInfoInterface_Param);
@@ -79,13 +79,13 @@ package body views.business.context.modules.storefront.customizer.includes.meta.
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out EditMetaValidationView; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toValidationInfoNode (This : in out EditMetaValidationView; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
 
-   procedure toValidationInfoNode (This : in out EditMetaValidationView; document_Param : access Document'Class) is
+   procedure toValidationInfoNode (This : in out EditMetaValidationView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := EditMetaValidationView'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

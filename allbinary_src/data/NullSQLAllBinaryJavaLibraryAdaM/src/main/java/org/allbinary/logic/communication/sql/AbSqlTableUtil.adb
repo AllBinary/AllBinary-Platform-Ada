@@ -43,17 +43,17 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
         return AbSqlTableUtil_Package.instance;
    end getInstance;
 
-   function backupTable (This : in out AbSqlTableUtil; abSqlTable_Param : access AbSqlTable'Class) return Unbounded_String is
-      abSqlTable : AbSqlTable_Access := AbSqlTable_Access (abSqlTable_Param);
+   function backupTable (This : in out AbSqlTableUtil; abSqlTable_Param : access AbSqlTable_Package.AbSqlTable'Class) return Unbounded_String is
+      abSqlTable : constant AbSqlTable_Access := AbSqlTable_Access (abSqlTable_Param);
       tableName : Unbounded_String;
    begin
         tableName := abSqlTable.getTableName;
         return This.TABLE_LABEL & tableName & To_Unbounded_String (" Backup Failed");
    end backupTable;
 
-   function restoreTable (This : in out AbSqlTableUtil; abSqlTable_Param : access AbSqlTable'Class; portion_Param : access Portion'Class) return Unbounded_String is
-      abSqlTable : AbSqlTable_Access := AbSqlTable_Access (abSqlTable_Param);
-      portion : Portion_Access := Portion_Access (portion_Param);
+   function restoreTable (This : in out AbSqlTableUtil; abSqlTable_Param : access AbSqlTable_Package.AbSqlTable'Class; portion_Param : access Portion_Package.Portion'Class) return Unbounded_String is
+      abSqlTable : constant AbSqlTable_Access := AbSqlTable_Access (abSqlTable_Param);
+      portion : constant Portion_Access := Portion_Access (portion_Param);
       tableName : Unbounded_String;
       stringBuffer : StringMaker_Access;
    begin
@@ -65,14 +65,14 @@ package body org.allbinary.logic.communication.sql.AbSqlTableUtil_Package is
         return stringBuffer.toString;
    end restoreTable;
 
-   procedure backupTable (This : in out AbSqlTableUtil; abSqlTable_Param : access AbSqlTable'Class) is
+   procedure backupTable (This : in out AbSqlTableUtil; abSqlTable_Param : access AbSqlTable_Package.AbSqlTable'Class) is
       Java_Result : constant Unbounded_String := AbSqlTableUtil'Class (This).backupTable (abSqlTable_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end backupTable;
 
-   procedure restoreTable (This : in out AbSqlTableUtil; abSqlTable_Param : access AbSqlTable'Class; portion_Param : access Portion'Class) is
+   procedure restoreTable (This : in out AbSqlTableUtil; abSqlTable_Param : access AbSqlTable_Package.AbSqlTable'Class; portion_Param : access Portion_Package.Portion'Class) is
       Java_Result : constant Unbounded_String := AbSqlTableUtil'Class (This).restoreTable (abSqlTable_Param, portion_Param);
       pragma Unreferenced (Java_Result);
    begin

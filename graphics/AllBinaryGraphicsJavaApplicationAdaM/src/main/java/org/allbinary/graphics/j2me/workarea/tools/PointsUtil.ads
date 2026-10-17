@@ -43,8 +43,8 @@ package org.allbinary.graphics.j2me.workarea.tools.PointsUtil_Package is
    procedure Initialize (This : in out PointsUtil'Class);
    function Create return PointsUtil_Access;
    function getInstance return PointsUtil_Access;
-   function doTransforms (This : in out PointsUtil; pointVector_Param : access BasicArrayList'Class; angle : Long_Float; fulcrumPoint_Param : access GPoint'Class) return BasicArrayList_Access;
-   procedure doTransforms (This : in out PointsUtil; pointVector_Param : access BasicArrayList'Class; angle : Long_Float; fulcrumPoint_Param : access GPoint'Class);
+   function doTransforms (This : in out PointsUtil; pointVector_Param : access BasicArrayList_Package.BasicArrayList'Class; angle : Long_Float; fulcrumPoint_Param : access GPoint_Package.GPoint'Class) return BasicArrayList_Access;
+   procedure doTransforms (This : in out PointsUtil; pointVector_Param : access BasicArrayList_Package.BasicArrayList'Class; angle : Long_Float; fulcrumPoint_Param : access GPoint_Package.GPoint'Class);
 
 end org.allbinary.graphics.j2me.workarea.tools.PointsUtil_Package;
 

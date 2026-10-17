@@ -23,15 +23,15 @@ package body org.allbinary.logic.io.AbFileOutputStream_Package is
 
 
    --  throws FileNotFoundException
-   function createFromAbFile (file_Param : access AbFile'Class) return AbFileOutputStream_Access is
-      file : AbFile_Access := AbFile_Access (file_Param);
+   function createFromAbFile (file_Param : access AbFile_Package.AbFile'Class) return AbFileOutputStream_Access is
+      file : constant AbFile_Access := AbFile_Access (file_Param);
    begin
         return AbFileOutputStream_Package.Create (FileOutputStream_Package.Create (AbFileNativeUtil_Package.get (file)));
    end createFromAbFile;
 
    --  throws FileNotFoundException
-   function createFromAbFileAppend (file_Param : access AbFile'Class; append : Boolean) return AbFileOutputStream_Access is
-      file : AbFile_Access := AbFile_Access (file_Param);
+   function createFromAbFileAppend (file_Param : access AbFile_Package.AbFile'Class; append : Boolean) return AbFileOutputStream_Access is
+      file : constant AbFile_Access := AbFile_Access (file_Param);
    begin
         return AbFileOutputStream_Package.Create (FileOutputStream_Package.Create (file.getPath));
    end createFromAbFileAppend;
@@ -48,15 +48,15 @@ package body org.allbinary.logic.io.AbFileOutputStream_Package is
         return AbFileOutputStream_Package.Create (FileOutputStream_Package.Create (name));
    end createFromFilePathAppend;
 
-   procedure Initialize (This : in out AbFileOutputStream'Class; fileOutputStream_Param : access FileOutputStream'Class) is
-      fileOutputStream : FileOutputStream_Access := FileOutputStream_Access (fileOutputStream_Param);
+   procedure Initialize (This : in out AbFileOutputStream'Class; fileOutputStream_Param : access FileOutputStream_Package.FileOutputStream'Class) is
+      fileOutputStream : constant FileOutputStream_Access := FileOutputStream_Access (fileOutputStream_Param);
    begin
       OutputStream_Package.Initialize (This);
       Initialize_Fields (This);
         This.fileOutputStream := fileOutputStream;
    end Initialize;
 
-   function Create (fileOutputStream_Param : access FileOutputStream'Class) return AbFileOutputStream_Access is
+   function Create (fileOutputStream_Param : access FileOutputStream_Package.FileOutputStream'Class) return AbFileOutputStream_Access is
       This : constant AbFileOutputStream_Access := new AbFileOutputStream;
    begin
       AbFileOutputStream_Package.Initialize (This.all, fileOutputStream_Param);
@@ -92,14 +92,14 @@ package body org.allbinary.logic.io.AbFileOutputStream_Package is
         This.fileOutputStream.write (b);
    end write;
 
-   procedure createFromAbFile (file_Param : access AbFile'Class) is
+   procedure createFromAbFile (file_Param : access AbFile_Package.AbFile'Class) is
       Java_Result : constant AbFileOutputStream_Access := createFromAbFile (file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createFromAbFile;
 
-   procedure createFromAbFileAppend (file_Param : access AbFile'Class; append : Boolean) is
+   procedure createFromAbFileAppend (file_Param : access AbFile_Package.AbFile'Class; append : Boolean) is
       Java_Result : constant AbFileOutputStream_Access := createFromAbFileAppend (file_Param, append);
       pragma Unreferenced (Java_Result);
    begin

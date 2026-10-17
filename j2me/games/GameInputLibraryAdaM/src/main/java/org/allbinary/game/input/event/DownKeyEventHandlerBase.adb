@@ -36,8 +36,8 @@ package body org.allbinary.game.input.event.DownKeyEventHandlerBase_Package is
       return This;
    end Create;
 
-   procedure addListener (This : in out DownKeyEventHandlerBase; playerGameInput_Param : access PlayerGameInput'Class) is
-      playerGameInput : PlayerGameInput_Access := PlayerGameInput_Access (playerGameInput_Param);
+   procedure addListener (This : in out DownKeyEventHandlerBase; playerGameInput_Param : access PlayerGameInput_Package.PlayerGameInput'Class) is
+      playerGameInput : constant PlayerGameInput_Access := PlayerGameInput_Access (playerGameInput_Param);
    begin
         if not (This.list.contains (playerGameInput)) then
             This.list.add (playerGameInput);
@@ -50,15 +50,15 @@ package body org.allbinary.game.input.event.DownKeyEventHandlerBase_Package is
         BasicEventHandler (This).removeAllListeners;
    end removeAllListeners;
 
-   procedure removeListenerSingleThreaded (This : in out DownKeyEventHandlerBase; eventListenerInterface_Param : access EventListenerInterface'Class) is
-      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
+   procedure removeListenerSingleThreaded (This : in out DownKeyEventHandlerBase; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class) is
+      eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
         This.list.remove (eventListenerInterface);
         BasicEventHandler (This).removeListenerSingleThreaded (eventListenerInterface);
    end removeListenerSingleThreaded;
 
-   procedure removeListener (This : in out DownKeyEventHandlerBase; eventListenerInterface_Param : access EventListenerInterface'Class) is
-      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
+   procedure removeListener (This : in out DownKeyEventHandlerBase; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class) is
+      eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
         This.list.remove (eventListenerInterface);
         BasicEventHandler (This).removeListener (eventListenerInterface);
@@ -103,8 +103,8 @@ package body org.allbinary.game.input.event.DownKeyEventHandlerBase_Package is
    end fireEventI;
 
    --  throws Exception
-   procedure fireEventForGameKeyEvent (This : in out DownKeyEventHandlerBase; eventObject_Param : access GameKeyEvent'Class) is
-      eventObject : GameKeyEvent_Access := GameKeyEvent_Access (eventObject_Param);
+   procedure fireEventForGameKeyEvent (This : in out DownKeyEventHandlerBase; eventObject_Param : access GameKeyEvent_Package.GameKeyEvent'Class) is
+      eventObject : constant GameKeyEvent_Access := GameKeyEvent_Access (eventObject_Param);
       size : Integer;
       playerGameInput : PlayerGameInput_Access;
       index : Integer;
@@ -144,8 +144,8 @@ package body org.allbinary.game.input.event.DownKeyEventHandlerBase_Package is
    end fireEventForGameKeyEvent;
 
    --  throws Exception
-   procedure processI (This : in out DownKeyEventHandlerBase; eventObject : Integer; eventListenerInterface_Param : access EventListenerInterface'Class) is
-      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
+   procedure processI (This : in out DownKeyEventHandlerBase; eventObject : Integer; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class) is
+      eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
       downKeyEventListenerInterface : DownKeyEventListenerInterface_Access;
    begin
         downKeyEventListenerInterface := DownKeyEventListenerInterface_Access (eventListenerInterface);
@@ -153,9 +153,9 @@ package body org.allbinary.game.input.event.DownKeyEventHandlerBase_Package is
    end processI;
 
    --  throws Exception
-   procedure processEvent (This : in out DownKeyEventHandlerBase; eventObject_Param : access GameKeyEvent'Class; eventListenerInterface_Param : access EventListenerInterface'Class) is
-      eventObject : GameKeyEvent_Access := GameKeyEvent_Access (eventObject_Param);
-      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
+   procedure processEvent (This : in out DownKeyEventHandlerBase; eventObject_Param : access GameKeyEvent_Package.GameKeyEvent'Class; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class) is
+      eventObject : constant GameKeyEvent_Access := GameKeyEvent_Access (eventObject_Param);
+      eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
       downKeyEventListenerInterface : DownKeyEventListenerInterface_Access;
    begin
         downKeyEventListenerInterface := DownKeyEventListenerInterface_Access (eventListenerInterface);

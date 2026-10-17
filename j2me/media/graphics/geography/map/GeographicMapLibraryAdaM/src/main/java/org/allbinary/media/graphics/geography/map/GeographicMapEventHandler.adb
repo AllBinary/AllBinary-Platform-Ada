@@ -41,8 +41,8 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapEventHandle
       return This;
    end Create;
 
-   procedure addListener (This : in out GeographicMapEventHandler; gameLayer_Param : access AllBinaryGameLayer'Class) is
-      gameLayer : AllBinaryGameLayer_Access := AllBinaryGameLayer_Access (gameLayer_Param);
+   procedure addListener (This : in out GeographicMapEventHandler; gameLayer_Param : access AllBinaryGameLayer_Package.AllBinaryGameLayer'Class) is
+      gameLayer : constant AllBinaryGameLayer_Access := AllBinaryGameLayer_Access (gameLayer_Param);
    begin
         if not (This.list.contains (gameLayer)) then
             This.list.add (gameLayer);
@@ -55,8 +55,8 @@ package body org.allbinary.media.graphics.geography.map.GeographicMapEventHandle
         BasicEventHandler (This).removeAllListeners;
    end removeAllListeners;
 
-   procedure removeListener (This : in out GeographicMapEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class) is
-      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
+   procedure removeListener (This : in out GeographicMapEventHandler; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class) is
+      eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
         This.list.remove (eventListenerInterface);
         BasicEventHandler (This).removeListener (eventListenerInterface);

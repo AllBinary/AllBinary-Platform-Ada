@@ -37,8 +37,8 @@ package body org.allbinary.media.audio.PlayerQueue_Package is
       return This;
    end Create;
 
-   procedure add (This : in out PlayerQueue; sound_Param : access Sound'Class) is
-      sound : Sound_Access := Sound_Access (sound_Param);
+   procedure add (This : in out PlayerQueue; sound_Param : access Sound_Package.Sound'Class) is
+      sound : constant Sound_Access := Sound_Access (sound_Param);
    begin
         begin
             if not (This.list.contains (sound)) then

@@ -29,8 +29,8 @@ package body org.allbinary.graphics.paint.SimpleTextPaintable_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out SimpleTextPaintable'Class; text : Unbounded_String; basicColor_Param : access BasicColor'Class) is
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+   procedure Initialize (This : in out SimpleTextPaintable'Class; text : Unbounded_String; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
       Paintable_Package.Initialize (This);
       Initialize_Fields (This);
@@ -38,15 +38,15 @@ package body org.allbinary.graphics.paint.SimpleTextPaintable_Package is
         This.basicColor := basicColor;
    end Initialize;
 
-   function Create (text : Unbounded_String; basicColor_Param : access BasicColor'Class) return SimpleTextPaintable_Access is
+   function Create (text : Unbounded_String; basicColor_Param : access BasicColor_Package.BasicColor'Class) return SimpleTextPaintable_Access is
       This : constant SimpleTextPaintable_Access := new SimpleTextPaintable;
    begin
       SimpleTextPaintable_Package.Initialize (This.all, text, basicColor_Param);
       return This;
    end Create;
 
-   procedure updateMeasurement (This : in out SimpleTextPaintable; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure updateMeasurement (This : in out SimpleTextPaintable; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
    begin
         font := graphics.getFont;
@@ -55,8 +55,8 @@ package body org.allbinary.graphics.paint.SimpleTextPaintable_Package is
         This.myFontProcessor := MyFontProcessor_Package.getInstance;
    end updateMeasurement;
 
-   procedure paint (This : in out SimpleTextPaintable; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out SimpleTextPaintable; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       width : Integer;
    begin
         This.myFontProcessor.process (graphics);
@@ -65,8 +65,8 @@ package body org.allbinary.graphics.paint.SimpleTextPaintable_Package is
         graphics.drawString (This.text, ((Java_Shift_Right_Arithmetic (width, 1))) - (This.topScoresWidth), This.fontHeight, This.anchor);
    end paint;
 
-   procedure setBasicColorP (This : in out SimpleTextPaintable; basicColor_Param : access BasicColor'Class) is
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+   procedure setBasicColorP (This : in out SimpleTextPaintable; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         This.basicColor := basicColor;
    end setBasicColorP;

@@ -37,7 +37,7 @@ package body org.allbinary.graphics.form.item.validation.TextItemUserIdentifierV
    end Create;
 
    function visit (This : in out TextItemUserIdentifierVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
       value : Unbounded_String;
       charValue : Character;
       stringValidationUtil : StringValidationUtil_Access;

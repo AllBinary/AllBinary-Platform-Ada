@@ -100,14 +100,14 @@ package body org.allbinary.game.layer.AllBinaryTiledLayer_Package is
         return To_Unbounded_String (Ada.Tags.Expanded_Name (This.all'Tag));
    end getName;
 
-   procedure paint (This : in out AllBinaryTiledLayer; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out AllBinaryTiledLayer; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paint;
 
-   procedure paintThreed (This : in out AllBinaryTiledLayer; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintThreed (This : in out AllBinaryTiledLayer; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paintThreed;

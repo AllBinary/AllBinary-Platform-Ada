@@ -38,8 +38,8 @@ package body org.allbinary.midlet.MidletExitProcessorFactory_Package is
         return MidletExitProcessorFactory_Package.instance;
    end getInstance;
 
-   function getExitInstance (This : in out MidletExitProcessorFactory; midlet_Param : access MIDlet'Class) return Processor_Access is
-      midlet : MIDlet_Access := MIDlet_Access (midlet_Param);
+   function getExitInstance (This : in out MidletExitProcessorFactory; midlet_Param : access MIDlet_Package.MIDlet'Class) return Processor_Access is
+      midlet : constant MIDlet_Access := MIDlet_Access (midlet_Param);
    begin
         if (AppletUtil_Package.isAppletLoader (midlet)) or else (J2MEUtil_Package.isJ2ME) then
             return Processor_Package.getInstance;
@@ -48,7 +48,7 @@ package body org.allbinary.midlet.MidletExitProcessorFactory_Package is
         end if;
    end getExitInstance;
 
-   procedure getExitInstance (This : in out MidletExitProcessorFactory; midlet_Param : access MIDlet'Class) is
+   procedure getExitInstance (This : in out MidletExitProcessorFactory; midlet_Param : access MIDlet_Package.MIDlet'Class) is
       Java_Result : constant Processor_Access := MidletExitProcessorFactory'Class (This).getExitInstance (midlet_Param);
       pragma Unreferenced (Java_Result);
    begin

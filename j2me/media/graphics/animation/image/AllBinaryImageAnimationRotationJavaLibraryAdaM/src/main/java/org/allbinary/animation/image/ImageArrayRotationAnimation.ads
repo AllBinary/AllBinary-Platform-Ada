@@ -40,11 +40,11 @@ package org.allbinary.animation.image.ImageArrayRotationAnimation_Package is
       expectedTotalFrames : Integer;
    end record;
 
-   procedure Initialize (This : in out ImageArrayRotationAnimation'Class; imageArray : Image_Access_Array_Access; angleInfo_Param : access AngleInfo'Class; totalAngle : Integer; animationBehavior_Param : access AnimationBehavior'Class);
-   function Create (imageArray : Image_Access_Array_Access; angleInfo_Param : access AngleInfo'Class; totalAngle : Integer; animationBehavior_Param : access AnimationBehavior'Class) return ImageArrayRotationAnimation_Access;
-   function createAnimation (anyType_Param : access Java_Object'Class; animationBehavior_Param : access AnimationBehavior'Class) return ImageArrayRotationAnimation_Access;
-   procedure createAnimation (anyType_Param : access Java_Object'Class; animationBehavior_Param : access AnimationBehavior'Class);
-   procedure init (This : in out ImageArrayRotationAnimation; imageArray : Image_Access_Array_Access; angleInfo_Param : access AngleInfo'Class; totalAngle : Integer);
+   procedure Initialize (This : in out ImageArrayRotationAnimation'Class; imageArray : Image_Access_Array_Access; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; totalAngle : Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class);
+   function Create (imageArray : Image_Access_Array_Access; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; totalAngle : Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return ImageArrayRotationAnimation_Access;
+   function createAnimation (anyType_Param : access Java_Object'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return ImageArrayRotationAnimation_Access;
+   procedure createAnimation (anyType_Param : access Java_Object'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class);
+   procedure init (This : in out ImageArrayRotationAnimation; imageArray : Image_Access_Array_Access; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; totalAngle : Integer);
    procedure setImageArray (This : in out ImageArrayRotationAnimation; imageArray : Image_Access_Array_Access);
 
 end org.allbinary.animation.image.ImageArrayRotationAnimation_Package;

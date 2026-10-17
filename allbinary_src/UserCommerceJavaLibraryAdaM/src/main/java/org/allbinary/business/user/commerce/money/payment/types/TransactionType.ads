@@ -35,8 +35,8 @@ package org.allbinary.business.user.commerce.money.payment.types.TransactionType
 
    procedure Initialize (This : in out TransactionType'Class; name : Unbounded_String);
    function Create (name : Unbounded_String) return TransactionType_Access;
-   function isEqual (This : in out TransactionType; transactionType_Param : access TransactionType'Class) return Boolean;
-   procedure isEqual (This : in out TransactionType; transactionType_Param : access TransactionType'Class);
+   function isEqual (This : in out TransactionType; transactionType_Param : access TransactionType_Package.TransactionType'Class) return Boolean;
+   procedure isEqual (This : in out TransactionType; transactionType_Param : access TransactionType_Package.TransactionType'Class);
    function toString (This : in out TransactionType) return Unbounded_String;
 
 end org.allbinary.business.user.commerce.money.payment.types.TransactionType_Package;

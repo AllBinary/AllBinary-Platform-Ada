@@ -44,12 +44,12 @@ package org.allbinary.business.advertisement.search.AdvertisementSearchInterface
    function getPageNumber (This : in out AdvertisementSearchInterface) return Integer is abstract;
    function getProductsPerPage (This : in out AdvertisementSearchInterface) return Integer is abstract;
    function getSearchParams (This : in out AdvertisementSearchInterface) return HashMap_Access is abstract;
-   procedure setCategory (This : in out AdvertisementSearchInterface; advertisementCategoryInterface_Param : access AdvertisementCategoryInterface'Class) is abstract;
-   procedure setSizeConstraints (This : in out AdvertisementSearchInterface; twoDimensionConstraintsInterface_Param : access TwoDimensionalConstraintInterface'Class) is abstract;
-   procedure setPricingConstraints (This : in out AdvertisementSearchInterface; priceConstraintInterface_Param : access PriceConstraintInterface'Class) is abstract;
+   procedure setCategory (This : in out AdvertisementSearchInterface; advertisementCategoryInterface_Param : access AdvertisementCategoryInterface_Package.AdvertisementCategoryInterface'Class) is abstract;
+   procedure setSizeConstraints (This : in out AdvertisementSearchInterface; twoDimensionConstraintsInterface_Param : access TwoDimensionalConstraintInterface_Package.TwoDimensionalConstraintInterface'Class) is abstract;
+   procedure setPricingConstraints (This : in out AdvertisementSearchInterface; priceConstraintInterface_Param : access PriceConstraintInterface_Package.PriceConstraintInterface'Class) is abstract;
    procedure setPageNumber (This : in out AdvertisementSearchInterface; pageNumber : Integer) is abstract;
    procedure setProductsPerPage (This : in out AdvertisementSearchInterface; productsPerPage : Integer) is abstract;
-   procedure setSearchParams (This : in out AdvertisementSearchInterface; columnAndKeywordHashMap_Param : access HashMap'Class) is abstract;
+   procedure setSearchParams (This : in out AdvertisementSearchInterface; columnAndKeywordHashMap_Param : access HashMap_Package.HashMap'Class) is abstract;
 
 end org.allbinary.business.advertisement.search.AdvertisementSearchInterface_Package;
 

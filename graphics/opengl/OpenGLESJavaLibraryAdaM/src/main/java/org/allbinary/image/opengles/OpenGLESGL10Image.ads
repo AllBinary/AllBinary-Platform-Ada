@@ -55,12 +55,12 @@ package org.allbinary.image.opengles.OpenGLESGL10Image_Package is
       openGLESImageDraw : OpenGLESImageDraw_Access;
    end record;
 
-   procedure Initialize (This : in out OpenGLESGL10Image'Class; image_Param : access Image'Class; bitmapFactory_Param : access PlatformBitmapBaseFactory'Class; textureFactory_Param : access PlatformTextureBaseFactory'Class);
-   function Create (image_Param : access Image'Class; bitmapFactory_Param : access PlatformBitmapBaseFactory'Class; textureFactory_Param : access PlatformTextureBaseFactory'Class) return OpenGLESGL10Image_Access;
+   procedure Initialize (This : in out OpenGLESGL10Image'Class; image_Param : access Image_Package.Image'Class; bitmapFactory_Param : access PlatformBitmapBaseFactory_Package.PlatformBitmapBaseFactory'Class; textureFactory_Param : access PlatformTextureBaseFactory_Package.PlatformTextureBaseFactory'Class);
+   function Create (image_Param : access Image_Package.Image'Class; bitmapFactory_Param : access PlatformBitmapBaseFactory_Package.PlatformBitmapBaseFactory'Class; textureFactory_Param : access PlatformTextureBaseFactory_Package.PlatformTextureBaseFactory'Class) return OpenGLESGL10Image_Access;
    procedure initVertices (This : in out OpenGLESGL10Image);
-   procedure set (This : in out OpenGLESGL10Image; gl_Param : access GL'Class);
-   procedure drawRegion (This : in out OpenGLESGL10Image; gl_Param : access GL10'Class; viewHeight : Integer; x_src : Float; y_src : Float; width : Float; height : Float; x : Integer; y : Integer; z : Integer);
-   procedure draw (This : in out OpenGLESGL10Image; gl_Param : access GL10'Class; x : Integer; y : Integer; z : Integer);
+   procedure set (This : in out OpenGLESGL10Image; gl_Param : access GL_Package.GL'Class);
+   procedure drawRegion (This : in out OpenGLESGL10Image; gl_Param : access GL10_Package.GL10'Class; viewHeight : Integer; x_src : Float; y_src : Float; width : Float; height : Float; x : Integer; y : Integer; z : Integer);
+   procedure draw (This : in out OpenGLESGL10Image; gl_Param : access GL10_Package.GL10'Class; x : Integer; y : Integer; z : Integer);
 
 end org.allbinary.image.opengles.OpenGLESGL10Image_Package;
 

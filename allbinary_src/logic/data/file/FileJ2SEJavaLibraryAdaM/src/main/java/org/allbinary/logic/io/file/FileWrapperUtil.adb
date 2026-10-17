@@ -54,8 +54,8 @@ package body org.allbinary.logic.io.file.FileWrapperUtil_Package is
         end;
    end wrapFiles;
 
-   function wrapFile (file_Param : access File'Class) return AbFile_Access is
-      file : File_Access := File_Access (file_Param);
+   function wrapFile (file_Param : access File_Package.File'Class) return AbFile_Access is
+      file : constant File_Access := File_Access (file_Param);
    begin
         begin
             return AbFile_Package.Create (file);
@@ -77,7 +77,7 @@ package body org.allbinary.logic.io.file.FileWrapperUtil_Package is
       null;
    end wrapFiles;
 
-   procedure wrapFile (file_Param : access File'Class) is
+   procedure wrapFile (file_Param : access File_Package.File'Class) is
       Java_Result : constant AbFile_Access := wrapFile (file_Param);
       pragma Unreferenced (Java_Result);
    begin

@@ -61,8 +61,8 @@ package body org.allbinary.configuration.ApplicationConfiguration_Package is
    end write;
 
    --  throws Exception
-   procedure update (This : in out ApplicationConfiguration; gameFeature_Param : access Feature'Class) is
-      gameFeature : Feature_Access := Feature_Access (gameFeature_Param);
+   procedure update (This : in out ApplicationConfiguration; gameFeature_Param : access Feature_Package.Feature'Class) is
+      gameFeature : constant Feature_Access := Feature_Access (gameFeature_Param);
       features : Features_Access;
    begin
         if (gameFeature) = (MainFeatureFactory_Package.getInstance.FULL_SCREEN) then

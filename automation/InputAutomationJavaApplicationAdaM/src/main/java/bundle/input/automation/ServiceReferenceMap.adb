@@ -22,14 +22,14 @@ package body bundle.input.automation.ServiceReferenceMap_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ServiceReferenceMap'Class; serviceReference_Param : access ServiceReference'Class) is
-      serviceReference : ServiceReference_Access := ServiceReference_Access (serviceReference_Param);
+   procedure Initialize (This : in out ServiceReferenceMap'Class; serviceReference_Param : access ServiceReference_Package.ServiceReference'Class) is
+      serviceReference : constant ServiceReference_Access := ServiceReference_Access (serviceReference_Param);
    begin
       Initialize_Fields (This);
         This.serviceReference := serviceReference;
    end Initialize;
 
-   function Create (serviceReference_Param : access ServiceReference'Class) return ServiceReferenceMap_Access is
+   function Create (serviceReference_Param : access ServiceReference_Package.ServiceReference'Class) return ServiceReferenceMap_Access is
       This : constant ServiceReferenceMap_Access := new ServiceReferenceMap;
    begin
       ServiceReferenceMap_Package.Initialize (This.all, serviceReference_Param);
@@ -47,38 +47,38 @@ package body bundle.input.automation.ServiceReferenceMap_Package is
    end isEmpty;
 
    function containsKey (This : in out ServiceReferenceMap; key_Param : access Java_Object'Class) return Boolean is
-      key : Java_Object_Access := Java_Object_Access (key_Param);
+      key : constant Java_Object_Access := Java_Object_Access (key_Param);
    begin
         return False;
    end containsKey;
 
    function containsValue (This : in out ServiceReferenceMap; value_Param : access Java_Object'Class) return Boolean is
-      value : Java_Object_Access := Java_Object_Access (value_Param);
+      value : constant Java_Object_Access := Java_Object_Access (value_Param);
    begin
         return False;
    end containsValue;
 
    function get (This : in out ServiceReferenceMap; key_Param : access Java_Object'Class) return Java_Object_Access is
-      key : Java_Object_Access := Java_Object_Access (key_Param);
+      key : constant Java_Object_Access := Java_Object_Access (key_Param);
    begin
         return This.serviceReference.getProperty (Unbounded_String (key));
    end get;
 
    function put (This : in out ServiceReferenceMap; key_Param : access Java_Object'Class; value_Param : access Java_Object'Class) return Java_Object_Access is
-      key : Java_Object_Access := Java_Object_Access (key_Param);
-      value : Java_Object_Access := Java_Object_Access (value_Param);
+      key : constant Java_Object_Access := Java_Object_Access (key_Param);
+      value : constant Java_Object_Access := Java_Object_Access (value_Param);
    begin
         return null;
    end put;
 
    function remove (This : in out ServiceReferenceMap; key_Param : access Java_Object'Class) return Java_Object_Access is
-      key : Java_Object_Access := Java_Object_Access (key_Param);
+      key : constant Java_Object_Access := Java_Object_Access (key_Param);
    begin
         return null;
    end remove;
 
-   procedure putAll (This : in out ServiceReferenceMap; m_Param : access Map'Class) is
-      m : Map_Access := Map_Access (m_Param);
+   procedure putAll (This : in out ServiceReferenceMap; m_Param : access Map_Package.Map'Class) is
+      m : constant Map_Access := Map_Access (m_Param);
    begin
         null;
    end putAll;
@@ -105,8 +105,8 @@ package body bundle.input.automation.ServiceReferenceMap_Package is
         return null;
    end entrySet;
 
-   function toString (map_Param : access Map'Class) return Unbounded_String is
-      map : Map_Access := Map_Access (map_Param);
+   function toString (map_Param : access Map_Package.Map'Class) return Unbounded_String is
+      map : constant Map_Access := Map_Access (map_Param);
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := StringMaker_Package.Create;
@@ -148,7 +148,7 @@ package body bundle.input.automation.ServiceReferenceMap_Package is
       null;
    end remove;
 
-   procedure toString (map_Param : access Map'Class) is
+   procedure toString (map_Param : access Map_Package.Map'Class) is
       Java_Result : constant Unbounded_String := toString (map_Param);
       pragma Unreferenced (Java_Result);
    begin

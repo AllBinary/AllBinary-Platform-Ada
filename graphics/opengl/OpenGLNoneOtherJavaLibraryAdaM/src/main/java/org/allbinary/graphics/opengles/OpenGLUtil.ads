@@ -24,10 +24,10 @@ package org.allbinary.graphics.opengles.OpenGLUtil_Package is
    procedure Initialize (This : in out OpenGLUtil'Class);
    function Create return OpenGLUtil_Access;
    function getInstance return OpenGLUtil_Access;
-   function addImage (This : in out OpenGLUtil; image_Param : access Image'Class) return Image_Access;
-   procedure addImage (This : in out OpenGLUtil; image_Param : access Image'Class);
+   function addImage (This : in out OpenGLUtil; image_Param : access Image_Package.Image'Class) return Image_Access;
+   procedure addImage (This : in out OpenGLUtil; image_Param : access Image_Package.Image'Class);
    procedure clear (This : in out OpenGLUtil);
-   procedure addRunnable (This : in out OpenGLUtil; runnable_Param : access Runnable'Class);
+   procedure addRunnable (This : in out OpenGLUtil; runnable_Param : access Runnable_Package.Runnable'Class);
 
 end org.allbinary.graphics.opengles.OpenGLUtil_Package;
 

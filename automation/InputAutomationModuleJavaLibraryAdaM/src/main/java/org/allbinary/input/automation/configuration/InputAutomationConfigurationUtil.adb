@@ -35,8 +35,8 @@ package body org.allbinary.input.automation.configuration.InputAutomationConfigu
    end Create;
 
    --  throws Exception
-   function getChangeEvent (inputAutomationModuleInterface_Param : access InputAutomationModuleFactoryInterface'Class) return InputAutomationConfigurationModuleChangeEvent_Access is
-      inputAutomationModuleInterface : InputAutomationModuleFactoryInterface_Access := InputAutomationModuleFactoryInterface_Access (inputAutomationModuleInterface_Param);
+   function getChangeEvent (inputAutomationModuleInterface_Param : access InputAutomationModuleFactoryInterface_Package.InputAutomationModuleFactoryInterface'Class) return InputAutomationConfigurationModuleChangeEvent_Access is
+      inputAutomationModuleInterface : constant InputAutomationModuleFactoryInterface_Access := InputAutomationModuleFactoryInterface_Access (inputAutomationModuleInterface_Param);
       inputAutomationModuleConfiguration : InputAutomationModuleConfiguration_Access;
       inputAutomationConfigurationModuleChangeEvent : InputAutomationConfigurationModuleChangeEvent_Access;
    begin
@@ -45,7 +45,7 @@ package body org.allbinary.input.automation.configuration.InputAutomationConfigu
         return inputAutomationConfigurationModuleChangeEvent;
    end getChangeEvent;
 
-   procedure getChangeEvent (inputAutomationModuleInterface_Param : access InputAutomationModuleFactoryInterface'Class) is
+   procedure getChangeEvent (inputAutomationModuleInterface_Param : access InputAutomationModuleFactoryInterface_Package.InputAutomationModuleFactoryInterface'Class) is
       Java_Result : constant InputAutomationConfigurationModuleChangeEvent_Access := getChangeEvent (inputAutomationModuleInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

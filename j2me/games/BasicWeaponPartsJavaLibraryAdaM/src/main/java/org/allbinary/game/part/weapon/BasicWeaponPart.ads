@@ -62,21 +62,21 @@ package org.allbinary.game.part.weapon.BasicWeaponPart_Package is
    end record;
    NULL_BASIC_WEAPON_PART : BasicWeaponPart_Access;
 
-   procedure Initialize (This : in out BasicWeaponPart'Class; animationInterface_Param : access Animation'Class; sourceLayerInterface_Param : access AllBinaryLayer'Class; weaponProperties_Param : access WeaponProperties'Class; scoreableInterface_Param : access ScoreableInterface'Class; relativeRelationship_Param : access RelativeRelationship'Class);
-   function Create (animationInterface_Param : access Animation'Class; sourceLayerInterface_Param : access AllBinaryLayer'Class; weaponProperties_Param : access WeaponProperties'Class; scoreableInterface_Param : access ScoreableInterface'Class; relativeRelationship_Param : access RelativeRelationship'Class) return BasicWeaponPart_Access;
-   function createBasicWeaponPart (animationInterface_Param : access Animation'Class) return BasicWeaponPart_Access;
-   procedure createBasicWeaponPart (animationInterface_Param : access Animation'Class);
-   procedure init (This : in out BasicWeaponPart; sourceLayerInterface_Param : access AllBinaryLayer'Class; weaponProperties_Param : access WeaponProperties'Class; scoreableInterface_Param : access ScoreableInterface'Class; relativeRelationship_Param : access RelativeRelationship'Class);
-   procedure process (This : in out BasicWeaponPart; allbinaryLayerManager_Param : access AllBinaryLayerManager'Class; angle : Short_Integer; otherAngle : Short_Integer);
-   procedure processScore (This : in out BasicWeaponPart; allbinaryLayerManager_Param : access AllBinaryLayerManager'Class; angle : Short_Integer; otherAngle : Short_Integer; weaponProperties_Param : access WeaponProperties'Class; scoreableInterface_Param : access ScoreableInterface'Class);
+   procedure Initialize (This : in out BasicWeaponPart'Class; animationInterface_Param : access Animation_Package.Animation'Class; sourceLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; weaponProperties_Param : access WeaponProperties_Package.WeaponProperties'Class; scoreableInterface_Param : access ScoreableInterface_Package.ScoreableInterface'Class; relativeRelationship_Param : access RelativeRelationship_Package.RelativeRelationship'Class);
+   function Create (animationInterface_Param : access Animation_Package.Animation'Class; sourceLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; weaponProperties_Param : access WeaponProperties_Package.WeaponProperties'Class; scoreableInterface_Param : access ScoreableInterface_Package.ScoreableInterface'Class; relativeRelationship_Param : access RelativeRelationship_Package.RelativeRelationship'Class) return BasicWeaponPart_Access;
+   function createBasicWeaponPart (animationInterface_Param : access Animation_Package.Animation'Class) return BasicWeaponPart_Access;
+   procedure createBasicWeaponPart (animationInterface_Param : access Animation_Package.Animation'Class);
+   procedure init (This : in out BasicWeaponPart; sourceLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; weaponProperties_Param : access WeaponProperties_Package.WeaponProperties'Class; scoreableInterface_Param : access ScoreableInterface_Package.ScoreableInterface'Class; relativeRelationship_Param : access RelativeRelationship_Package.RelativeRelationship'Class);
+   procedure process (This : in out BasicWeaponPart; allbinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; angle : Short_Integer; otherAngle : Short_Integer);
+   procedure processScore (This : in out BasicWeaponPart; allbinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; angle : Short_Integer; otherAngle : Short_Integer; weaponProperties_Param : access WeaponProperties_Package.WeaponProperties'Class; scoreableInterface_Param : access ScoreableInterface_Package.ScoreableInterface'Class);
    function getOwnerLayerInterface (This : in out BasicWeaponPart) return AllBinaryLayer_Access;
-   procedure setOwnerLayerInterface (This : in out BasicWeaponPart; ownerLayerInterface_Param : access AllBinaryLayer'Class);
+   procedure setOwnerLayerInterface (This : in out BasicWeaponPart; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class);
    function getAnimationInterface (This : in out BasicWeaponPart) return Animation_Access;
-   procedure setAnimationInterface (This : in out BasicWeaponPart; animationInterface_Param : access Animation'Class);
-   procedure paint (This : in out BasicWeaponPart; graphics_Param : access Graphics'Class);
-   procedure paintThreed (This : in out BasicWeaponPart; graphics_Param : access Graphics'Class);
+   procedure setAnimationInterface (This : in out BasicWeaponPart; animationInterface_Param : access Animation_Package.Animation'Class);
+   procedure paint (This : in out BasicWeaponPart; graphics_Param : access Graphics_Package.Graphics'Class);
+   procedure paintThreed (This : in out BasicWeaponPart; graphics_Param : access Graphics_Package.Graphics'Class);
    function getWeaponProperties (This : in out BasicWeaponPart) return WeaponProperties_Access;
-   procedure setWeaponProperties (This : in out BasicWeaponPart; weaponProperties_Param : access WeaponProperties'Class);
+   procedure setWeaponProperties (This : in out BasicWeaponPart; weaponProperties_Param : access WeaponProperties_Package.WeaponProperties'Class);
 
 end org.allbinary.game.part.weapon.BasicWeaponPart_Package;
 

@@ -27,9 +27,9 @@ package body org.allbinary.animation.image.ImageArrayBaseRotationAnimation_Packa
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ImageArrayBaseRotationAnimation'Class; originalImageArray : Image_Access_Array_Access; angleInfo_Param : access AngleInfo'Class; animationBehavior_Param : access AnimationBehavior'Class) is
-      angleInfo : AngleInfo_Access := AngleInfo_Access (angleInfo_Param);
-      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
+   procedure Initialize (This : in out ImageArrayBaseRotationAnimation'Class; originalImageArray : Image_Access_Array_Access; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) is
+      angleInfo : constant AngleInfo_Access := AngleInfo_Access (angleInfo_Param);
+      animationBehavior : constant AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
         RotationAnimation_Package.Initialize (This, angleInfo, CircularIndexUtil_Package.createInstance ((360) / (angleInfo.getAngleIncrementInfo.getAngleIncrement)), animationBehavior);
         Initialize_Fields (This);
@@ -38,7 +38,7 @@ package body org.allbinary.animation.image.ImageArrayBaseRotationAnimation_Packa
         This.currentImage := This.imageArray (This.circularIndexUtil.getIndex);
    end Initialize;
 
-   function Create (originalImageArray : Image_Access_Array_Access; angleInfo_Param : access AngleInfo'Class; animationBehavior_Param : access AnimationBehavior'Class) return ImageArrayBaseRotationAnimation_Access is
+   function Create (originalImageArray : Image_Access_Array_Access; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return ImageArrayBaseRotationAnimation_Access is
       This : constant ImageArrayBaseRotationAnimation_Access := new ImageArrayBaseRotationAnimation;
    begin
       ImageArrayBaseRotationAnimation_Package.Initialize (This.all, originalImageArray, angleInfo_Param, animationBehavior_Param);
@@ -106,8 +106,8 @@ package body org.allbinary.animation.image.ImageArrayBaseRotationAnimation_Packa
         This.circularIndexUtil := CircularIndexUtil_Package.createInstance (This.totalFrames);
    end setImageArray;
 
-   procedure paintXY (This : in out ImageArrayBaseRotationAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintXY (This : in out ImageArrayBaseRotationAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         graphics.drawImage (This.currentImage, x, y, This.anchor);
    end paintXY;

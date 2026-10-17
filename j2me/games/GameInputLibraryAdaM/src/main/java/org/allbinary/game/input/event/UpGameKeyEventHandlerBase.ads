@@ -55,12 +55,12 @@ package org.allbinary.game.input.event.UpGameKeyEventHandlerBase_Package is
 
    procedure Initialize (This : in out UpGameKeyEventHandlerBase'Class);
    function Create return UpGameKeyEventHandlerBase_Access;
-   procedure addListener (This : in out UpGameKeyEventHandlerBase; playerGameInput_Param : access PlayerGameInput'Class);
+   procedure addListener (This : in out UpGameKeyEventHandlerBase; playerGameInput_Param : access PlayerGameInput_Package.PlayerGameInput'Class);
    procedure removeAllListeners (This : in out UpGameKeyEventHandlerBase);
-   procedure removeListenerSingleThreaded (This : in out UpGameKeyEventHandlerBase; eventListenerInterface_Param : access EventListenerInterface'Class);
-   procedure removeListener (This : in out UpGameKeyEventHandlerBase; eventListenerInterface_Param : access EventListenerInterface'Class);
-   procedure fireEvent (This : in out UpGameKeyEventHandlerBase; eventObject_Param : access AllBinaryEventObject'Class);
-   procedure process (This : in out UpGameKeyEventHandlerBase; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class);
+   procedure removeListenerSingleThreaded (This : in out UpGameKeyEventHandlerBase; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class);
+   procedure removeListener (This : in out UpGameKeyEventHandlerBase; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class);
+   procedure fireEvent (This : in out UpGameKeyEventHandlerBase; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class);
+   procedure process (This : in out UpGameKeyEventHandlerBase; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class);
    function toString (This : in out UpGameKeyEventHandlerBase) return Unbounded_String;
 
 end org.allbinary.game.input.event.UpGameKeyEventHandlerBase_Package;

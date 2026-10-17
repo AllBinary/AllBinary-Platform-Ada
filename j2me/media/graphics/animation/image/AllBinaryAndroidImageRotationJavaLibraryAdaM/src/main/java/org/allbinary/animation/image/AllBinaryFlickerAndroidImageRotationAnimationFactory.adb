@@ -24,9 +24,9 @@ package body org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationA
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AllBinaryFlickerAndroidImageRotationAnimationFactory'Class; image_Param : access Image'Class; width : Integer; height : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) is
-      image : Image_Access := Image_Access (image_Param);
-      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
+   procedure Initialize (This : in out AllBinaryFlickerAndroidImageRotationAnimationFactory'Class; image_Param : access Image_Package.Image'Class; width : Integer; height : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
+      image : constant Image_Access := Image_Access (image_Param);
+      animationBehaviorFactory : constant AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
    begin
       Initialize_Fields (This);
         This.setImage (image);
@@ -34,7 +34,7 @@ package body org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationA
         This.animationBehaviorFactory := animationBehaviorFactory;
    end Initialize;
 
-   function Create (image_Param : access Image'Class; width : Integer; height : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return AllBinaryFlickerAndroidImageRotationAnimationFactory_Access is
+   function Create (image_Param : access Image_Package.Image'Class; width : Integer; height : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return AllBinaryFlickerAndroidImageRotationAnimationFactory_Access is
       This : constant AllBinaryFlickerAndroidImageRotationAnimationFactory_Access := new AllBinaryFlickerAndroidImageRotationAnimationFactory;
    begin
       AllBinaryFlickerAndroidImageRotationAnimationFactory_Package.Initialize (This.all, image_Param, width, height, angleIncrement, animationBehaviorFactory_Param);
@@ -54,8 +54,8 @@ package body org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationA
         return This.angleIncrement;
    end getAngleIncrement;
 
-   procedure setImage (This : in out AllBinaryFlickerAndroidImageRotationAnimationFactory; image_Param : access Image'Class) is
-      image : Image_Access := Image_Access (image_Param);
+   procedure setImage (This : in out AllBinaryFlickerAndroidImageRotationAnimationFactory; image_Param : access Image_Package.Image'Class) is
+      image : constant Image_Access := Image_Access (image_Param);
    begin
         This.image := image;
    end setImage;
@@ -65,8 +65,8 @@ package body org.allbinary.animation.image.AllBinaryFlickerAndroidImageRotationA
         return This.image;
    end getImage;
 
-   procedure setInitialScale (This : in out AllBinaryFlickerAndroidImageRotationAnimationFactory; scaleProperties_Param : access ScaleProperties'Class) is
-      scaleProperties : ScaleProperties_Access := ScaleProperties_Access (scaleProperties_Param);
+   procedure setInitialScale (This : in out AllBinaryFlickerAndroidImageRotationAnimationFactory; scaleProperties_Param : access ScaleProperties_Package.ScaleProperties'Class) is
+      scaleProperties : constant ScaleProperties_Access := ScaleProperties_Access (scaleProperties_Param);
    begin
         null;
    end setInitialScale;

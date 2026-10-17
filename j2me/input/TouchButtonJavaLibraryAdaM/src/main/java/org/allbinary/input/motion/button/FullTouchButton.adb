@@ -22,26 +22,26 @@ package body org.allbinary.input.motion.button.FullTouchButton_Package is
 
 
    --  throws Exception
-   function createButton (touchButtonInput_Param : access TouchButtonInput'Class; touchButtonResource_Param : access TouchButtonResource'Class; rawRectangle_Param : access Rectangle'Class; cellPosition_Param : access CellPosition'Class; xBorder : Integer; yBorder : Integer) return FullTouchButton_Access is
-      touchButtonInput : TouchButtonInput_Access := TouchButtonInput_Access (touchButtonInput_Param);
-      touchButtonResource : TouchButtonResource_Access := TouchButtonResource_Access (touchButtonResource_Param);
-      rawRectangle : Rectangle_Access := Rectangle_Access (rawRectangle_Param);
-      cellPosition : CellPosition_Access := CellPosition_Access (cellPosition_Param);
+   function createButton (touchButtonInput_Param : access TouchButtonInput_Package.TouchButtonInput'Class; touchButtonResource_Param : access TouchButtonResource_Package.TouchButtonResource'Class; rawRectangle_Param : access Rectangle_Package.Rectangle'Class; cellPosition_Param : access CellPosition_Package.CellPosition'Class; xBorder : Integer; yBorder : Integer) return FullTouchButton_Access is
+      touchButtonInput : constant TouchButtonInput_Access := TouchButtonInput_Access (touchButtonInput_Param);
+      touchButtonResource : constant TouchButtonResource_Access := TouchButtonResource_Access (touchButtonResource_Param);
+      rawRectangle : constant Rectangle_Access := Rectangle_Access (rawRectangle_Param);
+      cellPosition : constant CellPosition_Access := CellPosition_Access (cellPosition_Param);
    begin
         return FullTouchButton_Package.Create (touchButtonInput, FeaturedAnimationInterfaceFactoryInterfaceFactory_Package.getInstance.get (touchButtonResource.RESOURCE).getInstance (0), FeaturedAnimationInterfaceFactoryInterfaceFactory_Package.getInstance.get (touchButtonResource.HINT).getInstance (0), rawRectangle, cellPosition, xBorder, yBorder);
    end createButton;
 
-   procedure Initialize (This : in out FullTouchButton'Class; touchButtonInput_Param : access TouchButtonInput'Class; animationInterface_Param : access Animation'Class; hintAnimationInterface_Param : access Animation'Class; rawRectangle_Param : access Rectangle'Class; cellPosition_Param : access CellPosition'Class; xBorder : Integer; yBorder : Integer) is
-      touchButtonInput : TouchButtonInput_Access := TouchButtonInput_Access (touchButtonInput_Param);
-      animationInterface : Animation_Access := Animation_Access (animationInterface_Param);
-      hintAnimationInterface : Animation_Access := Animation_Access (hintAnimationInterface_Param);
-      rawRectangle : Rectangle_Access := Rectangle_Access (rawRectangle_Param);
-      cellPosition : CellPosition_Access := CellPosition_Access (cellPosition_Param);
+   procedure Initialize (This : in out FullTouchButton'Class; touchButtonInput_Param : access TouchButtonInput_Package.TouchButtonInput'Class; animationInterface_Param : access Animation_Package.Animation'Class; hintAnimationInterface_Param : access Animation_Package.Animation'Class; rawRectangle_Param : access Rectangle_Package.Rectangle'Class; cellPosition_Param : access CellPosition_Package.CellPosition'Class; xBorder : Integer; yBorder : Integer) is
+      touchButtonInput : constant TouchButtonInput_Access := TouchButtonInput_Access (touchButtonInput_Param);
+      animationInterface : constant Animation_Access := Animation_Access (animationInterface_Param);
+      hintAnimationInterface : constant Animation_Access := Animation_Access (hintAnimationInterface_Param);
+      rawRectangle : constant Rectangle_Access := Rectangle_Access (rawRectangle_Param);
+      cellPosition : constant CellPosition_Access := CellPosition_Access (cellPosition_Param);
    begin
         TouchButton_Package.Initialize (This, touchButtonInput, animationInterface, hintAnimationInterface, rawRectangle, cellPosition, xBorder, yBorder);
    end Initialize;
 
-   function Create (touchButtonInput_Param : access TouchButtonInput'Class; animationInterface_Param : access Animation'Class; hintAnimationInterface_Param : access Animation'Class; rawRectangle_Param : access Rectangle'Class; cellPosition_Param : access CellPosition'Class; xBorder : Integer; yBorder : Integer) return FullTouchButton_Access is
+   function Create (touchButtonInput_Param : access TouchButtonInput_Package.TouchButtonInput'Class; animationInterface_Param : access Animation_Package.Animation'Class; hintAnimationInterface_Param : access Animation_Package.Animation'Class; rawRectangle_Param : access Rectangle_Package.Rectangle'Class; cellPosition_Param : access CellPosition_Package.CellPosition'Class; xBorder : Integer; yBorder : Integer) return FullTouchButton_Access is
       This : constant FullTouchButton_Access := new FullTouchButton;
    begin
       FullTouchButton_Package.Initialize (This.all, touchButtonInput_Param, animationInterface_Param, hintAnimationInterface_Param, rawRectangle_Param, cellPosition_Param, xBorder, yBorder);
@@ -73,7 +73,7 @@ package body org.allbinary.input.motion.button.FullTouchButton_Package is
         end;
    end updateRectangle;
 
-   procedure createButton (touchButtonInput_Param : access TouchButtonInput'Class; touchButtonResource_Param : access TouchButtonResource'Class; rawRectangle_Param : access Rectangle'Class; cellPosition_Param : access CellPosition'Class; xBorder : Integer; yBorder : Integer) is
+   procedure createButton (touchButtonInput_Param : access TouchButtonInput_Package.TouchButtonInput'Class; touchButtonResource_Param : access TouchButtonResource_Package.TouchButtonResource'Class; rawRectangle_Param : access Rectangle_Package.Rectangle'Class; cellPosition_Param : access CellPosition_Package.CellPosition'Class; xBorder : Integer; yBorder : Integer) is
       Java_Result : constant FullTouchButton_Access := createButton (touchButtonInput_Param, touchButtonResource_Param, rawRectangle_Param, cellPosition_Param, xBorder, yBorder);
       pragma Unreferenced (Java_Result);
    begin

@@ -36,8 +36,8 @@ package body org.allbinary.game.ag.layer.hud.basic.notification.GameNotification
    end Create;
 
 
-   procedure add (This : in out GameNotification; string_Id : Unbounded_String; seconds : Integer; basicColor_Param : access BasicColor'Class) is
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+   procedure add (This : in out GameNotification; string_Id : Unbounded_String; seconds : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         if not (This.stringList.contains (string_Id)) then
             This.stringList.add (string_Id);

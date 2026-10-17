@@ -55,10 +55,10 @@ package org.allbinary.game.layer.RTSLayerHudPaintable_Package is
    procedure Initialize (This : in out RTSLayerHudPaintable'Class);
    function Create return RTSLayerHudPaintable_Access;
    function getInstance return RTSLayerHudPaintable_Access;
-   procedure updateMeasurement (This : in out RTSLayerHudPaintable; graphics_Param : access Graphics'Class);
+   procedure updateMeasurement (This : in out RTSLayerHudPaintable; graphics_Param : access Graphics_Package.Graphics'Class);
    procedure updateSelectionInfo (This : in out RTSLayerHudPaintable);
-   procedure paint (This : in out RTSLayerHudPaintable; graphics_Param : access Graphics'Class);
-   procedure setRtsLayer (This : in out RTSLayerHudPaintable; rtsLayer_Param : access RTSLayer'Class);
+   procedure paint (This : in out RTSLayerHudPaintable; graphics_Param : access Graphics_Package.Graphics'Class);
+   procedure setRtsLayer (This : in out RTSLayerHudPaintable; rtsLayer_Param : access RTSLayer_Package.RTSLayer'Class);
    function getRtsLayer (This : in out RTSLayerHudPaintable) return CollidableDestroyableDamageableLayer_Access;
 
 end org.allbinary.game.layer.RTSLayerHudPaintable_Package;

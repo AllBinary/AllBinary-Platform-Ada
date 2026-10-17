@@ -44,10 +44,10 @@ package org.allbinary.business.context.modules.storefront.statistics.users.Store
       storeFrontUsersStatisticsInterface : StoreFrontUsersStatisticsInterface_Access;
    end record;
 
-   procedure Initialize (This : in out StoreFrontUsersStatisticsView'Class; storeFrontUsersStatisticsInterface_Param : access StoreFrontUsersStatisticsInterface'Class);
-   function Create (storeFrontUsersStatisticsInterface_Param : access StoreFrontUsersStatisticsInterface'Class) return StoreFrontUsersStatisticsView_Access;
-   function toXmlNode (This : in out StoreFrontUsersStatisticsView; document_Param : access Document'Class) return Node_Access;
-   procedure toXmlNode (This : in out StoreFrontUsersStatisticsView; document_Param : access Document'Class);
+   procedure Initialize (This : in out StoreFrontUsersStatisticsView'Class; storeFrontUsersStatisticsInterface_Param : access StoreFrontUsersStatisticsInterface_Package.StoreFrontUsersStatisticsInterface'Class);
+   function Create (storeFrontUsersStatisticsInterface_Param : access StoreFrontUsersStatisticsInterface_Package.StoreFrontUsersStatisticsInterface'Class) return StoreFrontUsersStatisticsView_Access;
+   function toXmlNode (This : in out StoreFrontUsersStatisticsView; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out StoreFrontUsersStatisticsView; document_Param : access Document_Package.Document'Class);
 
 end org.allbinary.business.context.modules.storefront.statistics.users.StoreFrontUsersStatisticsView_Package;
 

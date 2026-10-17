@@ -35,7 +35,7 @@ package org.allbinary.data.tables.log.LogTableEntityInterface_Package is
    type LogTableEntityInterface_Access_Array is array (Natural range <>) of LogTableEntityInterface_Access;
    type LogTableEntityInterface_Access_Array_Access is access all LogTableEntityInterface_Access_Array;
    procedure deleteWhere (This : in out LogTableEntityInterface; key : Unbounded_String; value : Unbounded_String) is abstract;
-   procedure insert (This : in out LogTableEntityInterface; values_Param : access BasicArrayList'Class) is abstract;
+   procedure insert (This : in out LogTableEntityInterface; values_Param : access BasicArrayList_Package.BasicArrayList'Class) is abstract;
 
 end org.allbinary.data.tables.log.LogTableEntityInterface_Package;
 

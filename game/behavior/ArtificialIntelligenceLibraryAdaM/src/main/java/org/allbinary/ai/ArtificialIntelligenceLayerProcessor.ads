@@ -41,9 +41,9 @@ package org.allbinary.ai.ArtificialIntelligenceLayerProcessor_Package is
 
    procedure Initialize (This : in out ArtificialIntelligenceLayerProcessor'Class);
    function Create return ArtificialIntelligenceLayerProcessor_Access;
-   procedure processAt (This : in out ArtificialIntelligenceLayerProcessor; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class; layerInterface_Param : access AllBinaryLayer'Class; index : Integer);
-   function isProcessorLayer (This : in out ArtificialIntelligenceLayerProcessor; layerInterface_Param : access AllBinaryLayer'Class) return Boolean;
-   procedure isProcessorLayer (This : in out ArtificialIntelligenceLayerProcessor; layerInterface_Param : access AllBinaryLayer'Class);
+   procedure processAt (This : in out ArtificialIntelligenceLayerProcessor; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; index : Integer);
+   function isProcessorLayer (This : in out ArtificialIntelligenceLayerProcessor; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) return Boolean;
+   procedure isProcessorLayer (This : in out ArtificialIntelligenceLayerProcessor; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class);
 
 end org.allbinary.ai.ArtificialIntelligenceLayerProcessor_Package;
 

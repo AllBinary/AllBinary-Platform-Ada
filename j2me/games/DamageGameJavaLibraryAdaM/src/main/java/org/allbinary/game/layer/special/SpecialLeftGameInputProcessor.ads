@@ -37,9 +37,9 @@ package org.allbinary.game.layer.special.SpecialLeftGameInputProcessor_Package i
 
    type SpecialLeftGameInputProcessor is new SpecialGameInputProcessor with null record;
 
-   procedure Initialize (This : in out SpecialLeftGameInputProcessor'Class; collidableDestroyableDamageableLayer_Param : access CollidableDestroyableDamageableLayer'Class);
-   function Create (collidableDestroyableDamageableLayer_Param : access CollidableDestroyableDamageableLayer'Class) return SpecialLeftGameInputProcessor_Access;
-   procedure processEvent (This : in out SpecialLeftGameInputProcessor; allbinaryLayerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class);
+   procedure Initialize (This : in out SpecialLeftGameInputProcessor'Class; collidableDestroyableDamageableLayer_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class);
+   function Create (collidableDestroyableDamageableLayer_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class) return SpecialLeftGameInputProcessor_Access;
+   procedure processEvent (This : in out SpecialLeftGameInputProcessor; allbinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class);
 
 end org.allbinary.game.layer.special.SpecialLeftGameInputProcessor_Package;
 

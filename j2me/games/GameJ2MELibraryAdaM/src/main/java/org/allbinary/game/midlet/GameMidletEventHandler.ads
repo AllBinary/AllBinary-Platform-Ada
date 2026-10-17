@@ -42,7 +42,7 @@ package org.allbinary.game.midlet.GameMidletEventHandler_Package is
    procedure Initialize (This : in out GameMidletEventHandler'Class);
    function Create return GameMidletEventHandler_Access;
    function getInstance return GameMidletEventHandler_Access;
-   procedure process (This : in out GameMidletEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class);
+   procedure process (This : in out GameMidletEventHandler; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class);
 
 end org.allbinary.game.midlet.GameMidletEventHandler_Package;
 

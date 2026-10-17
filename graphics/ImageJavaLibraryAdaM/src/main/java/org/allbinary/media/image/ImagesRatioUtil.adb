@@ -76,8 +76,8 @@ package body org.allbinary.media.image.ImagesRatioUtil_Package is
    end getAverage;
 
    --  throws Exception
-   function fudge (This : in out ImagesRatioUtil; bufferedImage_Param : access BufferedImage'Class; ratio : Long_Float) return BufferedImage_Access is
-      bufferedImage : BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
+   function fudge (This : in out ImagesRatioUtil; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; ratio : Long_Float) return BufferedImage_Access is
+      bufferedImage : constant BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
       imageRatio : Long_Float;
       point : Point_Access;
       newHeight : Integer;
@@ -159,7 +159,7 @@ package body org.allbinary.media.image.ImagesRatioUtil_Package is
       null;
    end getAverage;
 
-   procedure fudge (This : in out ImagesRatioUtil; bufferedImage_Param : access BufferedImage'Class; ratio : Long_Float) is
+   procedure fudge (This : in out ImagesRatioUtil; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; ratio : Long_Float) is
       Java_Result : constant BufferedImage_Access := ImagesRatioUtil'Class (This).fudge (bufferedImage_Param, ratio);
       pragma Unreferenced (Java_Result);
    begin

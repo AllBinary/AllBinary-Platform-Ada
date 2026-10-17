@@ -53,11 +53,11 @@ package org.allbinary.view.event.ViewPositionEventHandler_Package is
    procedure Initialize (This : in out ViewPositionEventHandler'Class);
    function Create return ViewPositionEventHandler_Access;
    function getInstance return ViewPositionEventHandler_Access;
-   procedure addListener (This : in out ViewPositionEventHandler; layerInterface_Param : access AllBinaryLayer'Class);
+   procedure addListener (This : in out ViewPositionEventHandler; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class);
    procedure removeAllListeners (This : in out ViewPositionEventHandler);
-   procedure removeListener (This : in out ViewPositionEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class);
-   procedure fireEvent (This : in out ViewPositionEventHandler; eventObject_Param : access AllBinaryEventObject'Class);
-   procedure process (This : in out ViewPositionEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class);
+   procedure removeListener (This : in out ViewPositionEventHandler; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class);
+   procedure fireEvent (This : in out ViewPositionEventHandler; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class);
+   procedure process (This : in out ViewPositionEventHandler; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class);
 
 end org.allbinary.view.event.ViewPositionEventHandler_Package;
 

@@ -31,8 +31,8 @@ package body org.allbinary.media.audio.music.BaseMusicService_Package is
    end Create;
 
 
-   function onBind (This : in out BaseMusicService; intent_Param : access Intent'Class) return IBinder_Access is
-      intent : Intent_Access := Intent_Access (intent_Param);
+   function onBind (This : in out BaseMusicService; intent_Param : access Intent_Package.Intent'Class) return IBinder_Access is
+      intent : constant Intent_Access := Intent_Access (intent_Param);
    begin
         This.logUtil.putF (This.commonStrings.START, BaseMusicService_Access'(This'Unchecked_Access), This.commonStateStrings.BIND);
         return null;
@@ -78,22 +78,22 @@ package body org.allbinary.media.audio.music.BaseMusicService_Package is
         This.player.start;
    end start;
 
-   procedure onStart (This : in out BaseMusicService; intent_Param : access Intent'Class; startid : Integer) is
-      intent : Intent_Access := Intent_Access (intent_Param);
+   procedure onStart (This : in out BaseMusicService; intent_Param : access Intent_Package.Intent'Class; startid : Integer) is
+      intent : constant Intent_Access := Intent_Access (intent_Param);
    begin
         This.onStartCommandIntent (intent);
         This.logUtil.putF (This.commonStrings.START, BaseMusicService_Access'(This'Unchecked_Access), This.commonStateStrings.START);
    end onStart;
 
-   function onStartCommand (This : in out BaseMusicService; intent_Param : access Intent'Class; flags : Integer; startId : Integer) return Integer is
-      intent : Intent_Access := Intent_Access (intent_Param);
+   function onStartCommand (This : in out BaseMusicService; intent_Param : access Intent_Package.Intent'Class; flags : Integer; startId : Integer) return Integer is
+      intent : constant Intent_Access := Intent_Access (intent_Param);
    begin
         This.onStartCommandIntent (intent);
         return Service_Package.START_STICKY;
    end onStartCommand;
 
-   procedure onStartCommandIntent (This : in out BaseMusicService; intent_Param : access Intent'Class) is
-      intent : Intent_Access := Intent_Access (intent_Param);
+   procedure onStartCommandIntent (This : in out BaseMusicService; intent_Param : access Intent_Package.Intent'Class) is
+      intent : constant Intent_Access := Intent_Access (intent_Param);
       musicStrings : MusicStrings_Access;
       command : Integer;
       player : MediaPlayer_Access;
@@ -134,14 +134,14 @@ package body org.allbinary.media.audio.music.BaseMusicService_Package is
         end if;
    end onStartCommandIntent;
 
-   procedure onBind (This : in out BaseMusicService; intent_Param : access Intent'Class) is
+   procedure onBind (This : in out BaseMusicService; intent_Param : access Intent_Package.Intent'Class) is
       Java_Result : constant IBinder_Access := BaseMusicService'Class (This).onBind (intent_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end onBind;
 
-   procedure onStartCommand (This : in out BaseMusicService; intent_Param : access Intent'Class; flags : Integer; startId : Integer) is
+   procedure onStartCommand (This : in out BaseMusicService; intent_Param : access Intent_Package.Intent'Class; flags : Integer; startId : Integer) is
       Java_Result : constant Integer := BaseMusicService'Class (This).onStartCommand (intent_Param, flags, startId);
       pragma Unreferenced (Java_Result);
    begin

@@ -48,8 +48,8 @@ package org.allbinary.input.automation.module.generic_Id.GenericProfileCaptureWo
 
    procedure Initialize (This : in out GenericProfileCaptureWorkerFactory'Class);
    function Create return GenericProfileCaptureWorkerFactory_Access;
-   function getInstance (genericProfile_Param : access GenericProfile'Class) return CaptureWorkerInterface_Access;
-   procedure getInstance (genericProfile_Param : access GenericProfile'Class);
+   function getInstance (genericProfile_Param : access GenericProfile_Package.GenericProfile'Class) return CaptureWorkerInterface_Access;
+   procedure getInstance (genericProfile_Param : access GenericProfile_Package.GenericProfile'Class);
 
 end org.allbinary.input.automation.module.generic_Id.GenericProfileCaptureWorkerFactory_Package;
 

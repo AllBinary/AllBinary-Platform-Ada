@@ -24,8 +24,8 @@ package body views.generic_Id.address.billing.BillingAddressesView_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BillingAddressesView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out BillingAddressesView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
       httpTransformInfoInterface : TransformInfoHttpInterface_Access;
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
@@ -34,7 +34,7 @@ package body views.generic_Id.address.billing.BillingAddressesView_Package is
         This.request := HttpServletRequest_Access (httpTransformInfoInterface.getPageContext.getRequest);
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return BillingAddressesView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return BillingAddressesView_Access is
       This : constant BillingAddressesView_Access := new BillingAddressesView;
    begin
       BillingAddressesView_Package.Initialize (This.all, transformInfoInterface_Param);
@@ -46,8 +46,8 @@ package body views.generic_Id.address.billing.BillingAddressesView_Package is
         return This.request;
    end getRequest;
 
-   function toXmlNode (This : in out BillingAddressesView; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out BillingAddressesView; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       billingAddressesNode : Node_Access;
       size : Integer;
       streetAddress : StreetAddress_Access;
@@ -99,7 +99,7 @@ package body views.generic_Id.address.billing.BillingAddressesView_Package is
         end;
    end view;
 
-   procedure toXmlNode (This : in out BillingAddressesView; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out BillingAddressesView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := BillingAddressesView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

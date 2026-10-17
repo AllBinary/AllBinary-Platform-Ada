@@ -44,11 +44,11 @@ package org.allbinary.game.health.HealthBar_Package is
       allbinaryLayer : AllBinaryLayer_Access;
    end record;
 
-   procedure Initialize (This : in out HealthBar'Class; layerInterface_Param : access AllBinaryLayer'Class; healthInterface_Param : access Health'Class; animationInterface_Param : access HealthBarAnimation'Class; direction : Integer);
-   function Create (layerInterface_Param : access AllBinaryLayer'Class; healthInterface_Param : access Health'Class; animationInterface_Param : access HealthBarAnimation'Class; direction : Integer) return HealthBar_Access;
+   procedure Initialize (This : in out HealthBar'Class; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; healthInterface_Param : access Health_Package.Health'Class; animationInterface_Param : access HealthBarAnimation_Package.HealthBarAnimation'Class; direction : Integer);
+   function Create (layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; healthInterface_Param : access Health_Package.Health'Class; animationInterface_Param : access HealthBarAnimation_Package.HealthBarAnimation'Class; direction : Integer) return HealthBar_Access;
    procedure onHealthChange (This : in out HealthBar);
-   procedure paint (This : in out HealthBar; graphics_Param : access Graphics'Class);
-   procedure paintThreed (This : in out HealthBar; graphics_Param : access Graphics'Class);
+   procedure paint (This : in out HealthBar; graphics_Param : access Graphics_Package.Graphics'Class);
+   procedure paintThreed (This : in out HealthBar; graphics_Param : access Graphics_Package.Graphics'Class);
 
 end org.allbinary.game.health.HealthBar_Package;
 

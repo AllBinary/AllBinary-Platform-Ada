@@ -23,16 +23,16 @@ package body org.allbinary.game.layer.VehicleProperties_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out VehicleProperties'Class; velocityProperties_Param : access VelocityProperties'Class; vehicleFrictionProperties_Param : access VehicleFrictionProperties'Class) is
-      velocityProperties : VelocityProperties_Access := VelocityProperties_Access (velocityProperties_Param);
-      vehicleFrictionProperties : VehicleFrictionProperties_Access := VehicleFrictionProperties_Access (vehicleFrictionProperties_Param);
+   procedure Initialize (This : in out VehicleProperties'Class; velocityProperties_Param : access VelocityProperties_Package.VelocityProperties'Class; vehicleFrictionProperties_Param : access VehicleFrictionProperties_Package.VehicleFrictionProperties'Class) is
+      velocityProperties : constant VelocityProperties_Access := VelocityProperties_Access (velocityProperties_Param);
+      vehicleFrictionProperties : constant VehicleFrictionProperties_Access := VehicleFrictionProperties_Access (vehicleFrictionProperties_Param);
    begin
       Initialize_Fields (This);
         This.velocityProperties := velocityProperties;
         This.vehicleFrictionProperties := vehicleFrictionProperties;
    end Initialize;
 
-   function Create (velocityProperties_Param : access VelocityProperties'Class; vehicleFrictionProperties_Param : access VehicleFrictionProperties'Class) return VehicleProperties_Access is
+   function Create (velocityProperties_Param : access VelocityProperties_Package.VelocityProperties'Class; vehicleFrictionProperties_Param : access VehicleFrictionProperties_Package.VehicleFrictionProperties'Class) return VehicleProperties_Access is
       This : constant VehicleProperties_Access := new VehicleProperties;
    begin
       VehicleProperties_Package.Initialize (This.all, velocityProperties_Param, vehicleFrictionProperties_Param);
@@ -44,8 +44,8 @@ package body org.allbinary.game.layer.VehicleProperties_Package is
         return This.vehicleFrictionProperties;
    end getVehicleFrictionProperties;
 
-   procedure setVehicleFrictionProperties (This : in out VehicleProperties; vehicleFrictionProperties_Param : access VehicleFrictionProperties'Class) is
-      vehicleFrictionProperties : VehicleFrictionProperties_Access := VehicleFrictionProperties_Access (vehicleFrictionProperties_Param);
+   procedure setVehicleFrictionProperties (This : in out VehicleProperties; vehicleFrictionProperties_Param : access VehicleFrictionProperties_Package.VehicleFrictionProperties'Class) is
+      vehicleFrictionProperties : constant VehicleFrictionProperties_Access := VehicleFrictionProperties_Access (vehicleFrictionProperties_Param);
    begin
         This.vehicleFrictionProperties := vehicleFrictionProperties;
    end setVehicleFrictionProperties;

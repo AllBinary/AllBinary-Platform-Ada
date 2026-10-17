@@ -74,8 +74,8 @@ package org.allbinary.input.automation.actions.script.condition.processors.input
    end record;
    NAME : Unbounded_String;
 
-   procedure Initialize (This : in out KeyboardActionScriptInput'Class; node_Param : access Node'Class);
-   function Create (node_Param : access Node'Class) return KeyboardActionScriptInput_Access;
+   procedure Initialize (This : in out KeyboardActionScriptInput'Class; node_Param : access Node_Package.Node'Class);
+   function Create (node_Param : access Node_Package.Node'Class) return KeyboardActionScriptInput_Access;
    procedure Initialize (This : in out KeyboardActionScriptInput'Class);
    function Create return KeyboardActionScriptInput_Access;
    function getDelayBetweenKeys (This : in out KeyboardActionScriptInput) return Integer;
@@ -96,8 +96,8 @@ package org.allbinary.input.automation.actions.script.condition.processors.input
    function integerArrayValue (This : in out KeyboardActionScriptInput; text : Unbounded_String) return Integer_Array_Access;
    procedure integerArrayValue (This : in out KeyboardActionScriptInput; text : Unbounded_String);
    function toHashMap (This : in out KeyboardActionScriptInput) return HashMap_Access;
-   function toXmlNode (This : in out KeyboardActionScriptInput; document_Param : access Document'Class) return Node_Access;
-   procedure toXmlNode (This : in out KeyboardActionScriptInput; document_Param : access Document'Class);
+   function toXmlNode (This : in out KeyboardActionScriptInput; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out KeyboardActionScriptInput; document_Param : access Document_Package.Document'Class);
    procedure process (This : in out KeyboardActionScriptInput; frame : Long_Long_Integer);
    procedure log (This : in out KeyboardActionScriptInput);
    function toString (This : in out KeyboardActionScriptInput) return Unbounded_String;

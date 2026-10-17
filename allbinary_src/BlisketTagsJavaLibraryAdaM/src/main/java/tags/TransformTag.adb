@@ -38,8 +38,8 @@ package body tags.TransformTag_Package is
       return This;
    end Create;
 
-   procedure Initialize (This : in out TransformTag'Class; tagHelperFactoryInterface_Param : access TagHelperFactoryInterface'Class) is
-      tagHelperFactoryInterface : TagHelperFactoryInterface_Access := TagHelperFactoryInterface_Access (tagHelperFactoryInterface_Param);
+   procedure Initialize (This : in out TransformTag'Class; tagHelperFactoryInterface_Param : access TagHelperFactoryInterface_Package.TagHelperFactoryInterface'Class) is
+      tagHelperFactoryInterface : constant TagHelperFactoryInterface_Access := TagHelperFactoryInterface_Access (tagHelperFactoryInterface_Param);
    begin
         TransformInfoTag_Package.Initialize (This, tagHelperFactoryInterface);
         Initialize_Fields (This);
@@ -48,7 +48,7 @@ package body tags.TransformTag_Package is
         end if;
    end Initialize;
 
-   function Create (tagHelperFactoryInterface_Param : access TagHelperFactoryInterface'Class) return TransformTag_Access is
+   function Create (tagHelperFactoryInterface_Param : access TagHelperFactoryInterface_Package.TagHelperFactoryInterface'Class) return TransformTag_Access is
       This : constant TransformTag_Access := new TransformTag;
    begin
       TransformTag_Package.Initialize (This.all, tagHelperFactoryInterface_Param);

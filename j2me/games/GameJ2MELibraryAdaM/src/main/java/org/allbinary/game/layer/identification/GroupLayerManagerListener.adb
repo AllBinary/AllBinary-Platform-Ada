@@ -55,24 +55,24 @@ package body org.allbinary.game.layer.identification.GroupLayerManagerListener_P
         end loop;
    end clear;
 
-   function getGroupSizeFromInterface (This : in out GroupLayerManagerListener; groupInterfaceCompositeInterface_Param : access GroupInterfaceCompositeInterface'Class) return Integer is
-      groupInterfaceCompositeInterface : GroupInterfaceCompositeInterface_Access := GroupInterfaceCompositeInterface_Access (groupInterfaceCompositeInterface_Param);
+   function getGroupSizeFromInterface (This : in out GroupLayerManagerListener; groupInterfaceCompositeInterface_Param : access GroupInterfaceCompositeInterface_Package.GroupInterfaceCompositeInterface'Class) return Integer is
+      groupInterfaceCompositeInterface : constant GroupInterfaceCompositeInterface_Access := GroupInterfaceCompositeInterface_Access (groupInterfaceCompositeInterface_Param);
       groupInterfaceArray : Group_Access_Array_Access;
    begin
         groupInterfaceArray := groupInterfaceCompositeInterface.getGroupInterface;
         return This.getGroupSize (groupInterfaceArray (0));
    end getGroupSizeFromInterface;
 
-   function getGroupSize (This : in out GroupLayerManagerListener; groupInterface_Param : access Group'Class) return Integer is
-      groupInterface : Group_Access := Group_Access (groupInterface_Param);
+   function getGroupSize (This : in out GroupLayerManagerListener; groupInterface_Param : access Group_Package.Group'Class) return Integer is
+      groupInterface : constant Group_Access := Group_Access (groupInterface_Param);
       id : Integer;
    begin
         id := Integer (groupInterface.getGroupId);
         return This.getGroupSizeById (id);
    end getGroupSize;
 
-   function getList (This : in out GroupLayerManagerListener; groupInterface_Param : access Group'Class) return BasicArrayList_Access is
-      groupInterface : Group_Access := Group_Access (groupInterface_Param);
+   function getList (This : in out GroupLayerManagerListener; groupInterface_Param : access Group_Package.Group'Class) return BasicArrayList_Access is
+      groupInterface : constant Group_Access := Group_Access (groupInterface_Param);
       id : Integer;
    begin
         id := Integer (groupInterface.getGroupId);
@@ -95,8 +95,8 @@ package body org.allbinary.game.layer.identification.GroupLayerManagerListener_P
         return size;
    end getGroupSizeById;
 
-   function areAllOtherGroupsEmpty (This : in out GroupLayerManagerListener; groupInterface_Param : access Group'Class) return Boolean is
-      groupInterface : Group_Access := Group_Access (groupInterface_Param);
+   function areAllOtherGroupsEmpty (This : in out GroupLayerManagerListener; groupInterface_Param : access Group_Package.Group'Class) return Boolean is
+      groupInterface : constant Group_Access := Group_Access (groupInterface_Param);
       id : Integer;
       size : Integer;
       groupSize : Integer;
@@ -116,8 +116,8 @@ package body org.allbinary.game.layer.identification.GroupLayerManagerListener_P
         return True;
    end areAllOtherGroupsEmpty;
 
-   function isIdInList (This : in out GroupLayerManagerListener; id : Integer; excludeGroupList_Param : access BasicArrayList'Class) return Boolean is
-      excludeGroupList : BasicArrayList_Access := BasicArrayList_Access (excludeGroupList_Param);
+   function isIdInList (This : in out GroupLayerManagerListener; id : Integer; excludeGroupList_Param : access BasicArrayList_Package.BasicArrayList'Class) return Boolean is
+      excludeGroupList : constant BasicArrayList_Access := BasicArrayList_Access (excludeGroupList_Param);
       size : Integer;
       groupInterfaceArray : Group_Access_Array_Access;
       groupInterface : Group_Access;
@@ -144,8 +144,8 @@ package body org.allbinary.game.layer.identification.GroupLayerManagerListener_P
         return False;
    end isIdInList;
 
-   function areAllOtherGroupsLessThan (This : in out GroupLayerManagerListener; excludeGroupList_Param : access BasicArrayList'Class; maxSize : Integer) return Boolean is
-      excludeGroupList : BasicArrayList_Access := BasicArrayList_Access (excludeGroupList_Param);
+   function areAllOtherGroupsLessThan (This : in out GroupLayerManagerListener; excludeGroupList_Param : access BasicArrayList_Package.BasicArrayList'Class; maxSize : Integer) return Boolean is
+      excludeGroupList : constant BasicArrayList_Access := BasicArrayList_Access (excludeGroupList_Param);
       size : Integer;
       groupSize : Integer;
       index : Integer;
@@ -169,15 +169,15 @@ package body org.allbinary.game.layer.identification.GroupLayerManagerListener_P
         end loop;
    end init;
 
-   procedure onEvent (This : in out GroupLayerManagerListener; eventObject_Param : access AllBinaryEventObject'Class) is
-      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+   procedure onEvent (This : in out GroupLayerManagerListener; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
+      eventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
    begin
         ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, GroupLayerManagerListener_Access'(This'Unchecked_Access));
    end onEvent;
 
    --  throws Exception
-   procedure onCreateLayerManagerEvent (This : in out GroupLayerManagerListener; layerManagerEvent_Param : access LayerManagerEvent'Class) is
-      layerManagerEvent : LayerManagerEvent_Access := LayerManagerEvent_Access (layerManagerEvent_Param);
+   procedure onCreateLayerManagerEvent (This : in out GroupLayerManagerListener; layerManagerEvent_Param : access LayerManagerEvent_Package.LayerManagerEvent'Class) is
+      layerManagerEvent : constant LayerManagerEvent_Access := LayerManagerEvent_Access (layerManagerEvent_Param);
       layerInterface : AllBinaryLayer_Access;
       groupInterfaceArray : Group_Access_Array_Access;
       size : Integer;
@@ -205,8 +205,8 @@ package body org.allbinary.game.layer.identification.GroupLayerManagerListener_P
    end onCreateLayerManagerEvent;
 
    --  throws Exception
-   procedure onDeleteLayerManagerEvent (This : in out GroupLayerManagerListener; layerManagerEvent_Param : access LayerManagerEvent'Class) is
-      layerManagerEvent : LayerManagerEvent_Access := LayerManagerEvent_Access (layerManagerEvent_Param);
+   procedure onDeleteLayerManagerEvent (This : in out GroupLayerManagerListener; layerManagerEvent_Param : access LayerManagerEvent_Package.LayerManagerEvent'Class) is
+      layerManagerEvent : constant LayerManagerEvent_Access := LayerManagerEvent_Access (layerManagerEvent_Param);
       layerInterface : AllBinaryLayer_Access;
       groupInterfaceArray : Group_Access_Array_Access;
       size : Integer;
@@ -252,21 +252,21 @@ package body org.allbinary.game.layer.identification.GroupLayerManagerListener_P
         This.logUtil.putF (stringBuffer.toString, GroupLayerManagerListener_Access'(This'Unchecked_Access), To_Unbounded_String ("log"));
    end log;
 
-   procedure getGroupSizeFromInterface (This : in out GroupLayerManagerListener; groupInterfaceCompositeInterface_Param : access GroupInterfaceCompositeInterface'Class) is
+   procedure getGroupSizeFromInterface (This : in out GroupLayerManagerListener; groupInterfaceCompositeInterface_Param : access GroupInterfaceCompositeInterface_Package.GroupInterfaceCompositeInterface'Class) is
       Java_Result : constant Integer := GroupLayerManagerListener'Class (This).getGroupSizeFromInterface (groupInterfaceCompositeInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getGroupSizeFromInterface;
 
-   procedure getGroupSize (This : in out GroupLayerManagerListener; groupInterface_Param : access Group'Class) is
+   procedure getGroupSize (This : in out GroupLayerManagerListener; groupInterface_Param : access Group_Package.Group'Class) is
       Java_Result : constant Integer := GroupLayerManagerListener'Class (This).getGroupSize (groupInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getGroupSize;
 
-   procedure getList (This : in out GroupLayerManagerListener; groupInterface_Param : access Group'Class) is
+   procedure getList (This : in out GroupLayerManagerListener; groupInterface_Param : access Group_Package.Group'Class) is
       Java_Result : constant BasicArrayList_Access := GroupLayerManagerListener'Class (This).getList (groupInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
@@ -287,21 +287,21 @@ package body org.allbinary.game.layer.identification.GroupLayerManagerListener_P
       null;
    end getGroupSizeById;
 
-   procedure areAllOtherGroupsEmpty (This : in out GroupLayerManagerListener; groupInterface_Param : access Group'Class) is
+   procedure areAllOtherGroupsEmpty (This : in out GroupLayerManagerListener; groupInterface_Param : access Group_Package.Group'Class) is
       Java_Result : constant Boolean := GroupLayerManagerListener'Class (This).areAllOtherGroupsEmpty (groupInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end areAllOtherGroupsEmpty;
 
-   procedure isIdInList (This : in out GroupLayerManagerListener; id : Integer; excludeGroupList_Param : access BasicArrayList'Class) is
+   procedure isIdInList (This : in out GroupLayerManagerListener; id : Integer; excludeGroupList_Param : access BasicArrayList_Package.BasicArrayList'Class) is
       Java_Result : constant Boolean := GroupLayerManagerListener'Class (This).isIdInList (id, excludeGroupList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isIdInList;
 
-   procedure areAllOtherGroupsLessThan (This : in out GroupLayerManagerListener; excludeGroupList_Param : access BasicArrayList'Class; maxSize : Integer) is
+   procedure areAllOtherGroupsLessThan (This : in out GroupLayerManagerListener; excludeGroupList_Param : access BasicArrayList_Package.BasicArrayList'Class; maxSize : Integer) is
       Java_Result : constant Boolean := GroupLayerManagerListener'Class (This).areAllOtherGroupsLessThan (excludeGroupList_Param, maxSize);
       pragma Unreferenced (Java_Result);
    begin

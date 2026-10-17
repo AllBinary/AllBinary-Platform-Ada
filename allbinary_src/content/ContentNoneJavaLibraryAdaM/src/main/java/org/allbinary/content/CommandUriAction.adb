@@ -39,14 +39,14 @@ package body org.allbinary.content.CommandUriAction_Package is
         return CommandUriAction_Package.instance;
    end getInstance;
 
-   procedure add (This : in out CommandUriAction; command_Param : access Command'Class; url : Unbounded_String) is
-      command : Command_Access := Command_Access (command_Param);
+   procedure add (This : in out CommandUriAction; command_Param : access Command_Package.Command'Class; url : Unbounded_String) is
+      command : constant Command_Access := Command_Access (command_Param);
    begin
         null;
    end add;
 
-   procedure process (This : in out CommandUriAction; command_Param : access Command'Class) is
-      command : Command_Access := Command_Access (command_Param);
+   procedure process (This : in out CommandUriAction; command_Param : access Command_Package.Command'Class) is
+      command : constant Command_Access := Command_Access (command_Param);
    begin
         null;
    end process;

@@ -47,16 +47,16 @@ package body org.allbinary.game.layer.weapon.CollidableWeaponBehavior_Package is
       return This;
    end Create;
 
-   procedure init (This : in out CollidableWeaponBehavior; sourceLayerInterface_Param : access AllBinaryLayer'Class) is
-      sourceLayerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (sourceLayerInterface_Param);
+   procedure init (This : in out CollidableWeaponBehavior; sourceLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
+      sourceLayerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (sourceLayerInterface_Param);
    begin
         This.setCollided (False);
         This.collisionHelper.setOwnerLayerInterface (sourceLayerInterface);
    end init;
 
-   function isCollision (This : in out CollidableWeaponBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collisionLayer_Param : access CollidableCompositeLayer'Class) return Boolean is
-      ownerLayer : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
-      collisionLayer : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (collisionLayer_Param);
+   function isCollision (This : in out CollidableWeaponBehavior; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; collisionLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class) return Boolean is
+      ownerLayer : constant CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
+      collisionLayer : constant CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (collisionLayer_Param);
    begin
         if This.collisionHelper.isCollidable (collisionLayer) then
             if (ownerLayer.getGroupInterface (0)) /= (collisionLayer.getGroupInterface (0)) then
@@ -67,17 +67,17 @@ package body org.allbinary.game.layer.weapon.CollidableWeaponBehavior_Package is
    end isCollision;
 
    --  throws Exception
-   procedure collide (This : in out CollidableWeaponBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collisionLayer_Param : access CollidableCompositeLayer'Class) is
-      ownerLayer : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
-      collisionLayer : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (collisionLayer_Param);
+   procedure collide (This : in out CollidableWeaponBehavior; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; collisionLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class) is
+      ownerLayer : constant CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
+      collisionLayer : constant CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (collisionLayer_Param);
    begin
         CollidableDestroyableDamageableBehavior (This).collide (ownerLayer, collisionLayer);
         This.collided := True;
    end collide;
 
-   function isCollisionInterface (This : in out CollidableWeaponBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface'Class) return Boolean is
-      ownerLayer : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
-      collidableInterfaceCompositeInterface : CollidableInterfaceCompositeInterface_Access := CollidableInterfaceCompositeInterface_Access (collidableInterfaceCompositeInterface_Param);
+   function isCollisionInterface (This : in out CollidableWeaponBehavior; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface_Package.CollidableInterfaceCompositeInterface'Class) return Boolean is
+      ownerLayer : constant CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
+      collidableInterfaceCompositeInterface : constant CollidableInterfaceCompositeInterface_Access := CollidableInterfaceCompositeInterface_Access (collidableInterfaceCompositeInterface_Param);
       layerInterface : AllBinaryLayer_Access;
    begin
         if This.collisionHelper.isCollidable (CollidableCompositeLayer_Access (collidableInterfaceCompositeInterface)) then
@@ -92,9 +92,9 @@ package body org.allbinary.game.layer.weapon.CollidableWeaponBehavior_Package is
    end isCollisionInterface;
 
    --  throws Exception
-   procedure collideInterface (This : in out CollidableWeaponBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface'Class) is
-      ownerLayer : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
-      collidableInterfaceCompositeInterface : CollidableInterfaceCompositeInterface_Access := CollidableInterfaceCompositeInterface_Access (collidableInterfaceCompositeInterface_Param);
+   procedure collideInterface (This : in out CollidableWeaponBehavior; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface_Package.CollidableInterfaceCompositeInterface'Class) is
+      ownerLayer : constant CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayer_Param);
+      collidableInterfaceCompositeInterface : constant CollidableInterfaceCompositeInterface_Access := CollidableInterfaceCompositeInterface_Access (collidableInterfaceCompositeInterface_Param);
       ownerDamageableInterface : DamageableInterface_Access;
       damageableInterface : DamageableInterface_Access;
    begin
@@ -104,8 +104,8 @@ package body org.allbinary.game.layer.weapon.CollidableWeaponBehavior_Package is
         This.collided := True;
    end collideInterface;
 
-   function getCollisionTypeWith (This : in out CollidableWeaponBehavior; layerInterface_Param : access AllBinaryLayer'Class) return CollisionType_Access is
-      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
+   function getCollisionTypeWith (This : in out CollidableWeaponBehavior; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) return CollisionType_Access is
+      layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         return CollisionTypeFactory_Package.getInstance.COLLISION;
    end getCollisionTypeWith;
@@ -120,21 +120,21 @@ package body org.allbinary.game.layer.weapon.CollidableWeaponBehavior_Package is
         This.collided := collided;
    end setCollided;
 
-   procedure isCollision (This : in out CollidableWeaponBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collisionLayer_Param : access CollidableCompositeLayer'Class) is
+   procedure isCollision (This : in out CollidableWeaponBehavior; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; collisionLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class) is
       Java_Result : constant Boolean := CollidableWeaponBehavior'Class (This).isCollision (ownerLayer_Param, collisionLayer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isCollision;
 
-   procedure isCollisionInterface (This : in out CollidableWeaponBehavior; ownerLayer_Param : access CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface'Class) is
+   procedure isCollisionInterface (This : in out CollidableWeaponBehavior; ownerLayer_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface_Package.CollidableInterfaceCompositeInterface'Class) is
       Java_Result : constant Boolean := CollidableWeaponBehavior'Class (This).isCollisionInterface (ownerLayer_Param, collidableInterfaceCompositeInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isCollisionInterface;
 
-   procedure getCollisionTypeWith (This : in out CollidableWeaponBehavior; layerInterface_Param : access AllBinaryLayer'Class) is
+   procedure getCollisionTypeWith (This : in out CollidableWeaponBehavior; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
       Java_Result : constant CollisionType_Access := CollidableWeaponBehavior'Class (This).getCollisionTypeWith (layerInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

@@ -40,8 +40,8 @@ package org.allbinary.data.tree.dom.BasicErrorNodeUtil_Package is
 
    procedure Initialize (This : in out BasicErrorNodeUtil'Class);
    function Create return BasicErrorNodeUtil_Access;
-   function get (document_Param : access Document'Class; errorText : Unbounded_String) return Node_Access;
-   procedure get (document_Param : access Document'Class; errorText : Unbounded_String);
+   function get (document_Param : access Document_Package.Document'Class; errorText : Unbounded_String) return Node_Access;
+   procedure get (document_Param : access Document_Package.Document'Class; errorText : Unbounded_String);
 
 end org.allbinary.data.tree.dom.BasicErrorNodeUtil_Package;
 

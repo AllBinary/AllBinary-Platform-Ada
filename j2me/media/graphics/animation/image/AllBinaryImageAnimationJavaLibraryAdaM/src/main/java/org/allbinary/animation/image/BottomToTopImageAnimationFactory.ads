@@ -40,8 +40,8 @@ package org.allbinary.animation.image.BottomToTopImageAnimationFactory_Package i
 
    type BottomToTopImageAnimationFactory is new BaseImageAnimationFactory with null record;
 
-   procedure Initialize (This : in out BottomToTopImageAnimationFactory'Class; image_Param : access Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class);
-   function Create (image_Param : access Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return BottomToTopImageAnimationFactory_Access;
+   procedure Initialize (This : in out BottomToTopImageAnimationFactory'Class; image_Param : access Image_Package.Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class);
+   function Create (image_Param : access Image_Package.Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return BottomToTopImageAnimationFactory_Access;
    function getInstance (This : in out BottomToTopImageAnimationFactory; instanceId : Integer) return Animation_Access;
    procedure getInstance (This : in out BottomToTopImageAnimationFactory; instanceId : Integer);
 

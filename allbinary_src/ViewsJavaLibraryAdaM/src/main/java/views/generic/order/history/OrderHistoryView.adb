@@ -28,8 +28,8 @@ package body views.generic_Id.order.history.OrderHistoryView_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out OrderHistoryView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out OrderHistoryView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
@@ -41,7 +41,7 @@ package body views.generic_Id.order.history.OrderHistoryView_Package is
         This.cancelled := This.request.getParameter (OrderHistoryData_Package.CANCELLEDNAME);
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return OrderHistoryView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return OrderHistoryView_Access is
       This : constant OrderHistoryView_Access := new OrderHistoryView;
    begin
       OrderHistoryView_Package.Initialize (This.all, transformInfoInterface_Param);
@@ -49,8 +49,8 @@ package body views.generic_Id.order.history.OrderHistoryView_Package is
    end Create;
 
    --  throws Exception
-   function toXmlNode (This : in out OrderHistoryView; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out OrderHistoryView; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       node : Node_Access;
       orderHistoryEntity : OrderHistoryEntity_Access;
       orderReviewVector : BasicArrayList_Access;
@@ -118,7 +118,7 @@ package body views.generic_Id.order.history.OrderHistoryView_Package is
         end;
    end view;
 
-   procedure toXmlNode (This : in out OrderHistoryView; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out OrderHistoryView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := OrderHistoryView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

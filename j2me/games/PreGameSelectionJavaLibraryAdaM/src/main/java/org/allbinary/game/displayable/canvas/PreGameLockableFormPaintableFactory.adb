@@ -37,13 +37,13 @@ package body org.allbinary.game.displayable.canvas.PreGameLockableFormPaintableF
    end Create;
 
    --  throws Exception
-   function getInstanceItemPaintable (This : in out PreGameLockableFormPaintableFactory; paintableForm_Param : access PaintableForm'Class) return ItemPaintable_Access is
-      paintableForm : PaintableForm_Access := PaintableForm_Access (paintableForm_Param);
+   function getInstanceItemPaintable (This : in out PreGameLockableFormPaintableFactory; paintableForm_Param : access PaintableForm_Package.PaintableForm'Class) return ItemPaintable_Access is
+      paintableForm : constant PaintableForm_Access := PaintableForm_Access (paintableForm_Param);
    begin
         return PreGameLockablePaintable_Package.Create (ScrollCurrentSelectionForm_Access (paintableForm), This.lockedIndex);
    end getInstanceItemPaintable;
 
-   procedure getInstanceItemPaintable (This : in out PreGameLockableFormPaintableFactory; paintableForm_Param : access PaintableForm'Class) is
+   procedure getInstanceItemPaintable (This : in out PreGameLockableFormPaintableFactory; paintableForm_Param : access PaintableForm_Package.PaintableForm'Class) is
       Java_Result : constant ItemPaintable_Access := PreGameLockableFormPaintableFactory'Class (This).getInstanceItemPaintable (paintableForm_Param);
       pragma Unreferenced (Java_Result);
    begin

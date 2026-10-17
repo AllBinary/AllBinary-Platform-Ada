@@ -58,12 +58,12 @@ package org.allbinary.logic.visual.dhtml.style.css.property.CssProperty_Package 
 
    procedure Initialize (This : in out CssProperty'Class; name : Unbounded_String);
    function Create (name : Unbounded_String) return CssProperty_Access;
-   procedure Initialize (This : in out CssProperty'Class; node_Param : access Node'Class);
-   function Create (node_Param : access Node'Class) return CssProperty_Access;
+   procedure Initialize (This : in out CssProperty'Class; node_Param : access Node_Package.Node'Class);
+   function Create (node_Param : access Node_Package.Node'Class) return CssProperty_Access;
    function getName (This : in out CssProperty) return Unbounded_String;
    function toHashMap (This : in out CssProperty) return HashMap_Access;
-   function toXmlNode (This : in out CssProperty; document_Param : access Document'Class) return Node_Access;
-   procedure toXmlNode (This : in out CssProperty; document_Param : access Document'Class);
+   function toXmlNode (This : in out CssProperty; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out CssProperty; document_Param : access Document_Package.Document'Class);
 
 end org.allbinary.logic.visual.dhtml.style.css.property.CssProperty_Package;
 

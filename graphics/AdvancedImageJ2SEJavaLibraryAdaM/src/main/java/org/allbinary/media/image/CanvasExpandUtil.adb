@@ -41,9 +41,9 @@ package body org.allbinary.media.image.CanvasExpandUtil_Package is
    end getInstance;
 
    --  throws Exception
-   procedure process (This : in out CanvasExpandUtil; imageProcessorInput_Param : access ImageProcessorInput'Class; increaseX : Integer; increaseY : Integer; visitor_Param : access ImageProcessedVisitor'Class) is
-      imageProcessorInput : ImageProcessorInput_Access := ImageProcessorInput_Access (imageProcessorInput_Param);
-      visitor : ImageProcessedVisitor_Access := ImageProcessedVisitor_Access (visitor_Param);
+   procedure process (This : in out CanvasExpandUtil; imageProcessorInput_Param : access ImageProcessorInput_Package.ImageProcessorInput'Class; increaseX : Integer; increaseY : Integer; visitor_Param : access ImageProcessedVisitor_Package.ImageProcessedVisitor'Class) is
+      imageProcessorInput : constant ImageProcessorInput_Access := ImageProcessorInput_Access (imageProcessorInput_Param);
+      visitor : constant ImageProcessedVisitor_Access := ImageProcessedVisitor_Access (visitor_Param);
       imageUtil : ImageUtil_Access;
       bufferedImageArray : BufferedImage_Access_Array_Access;
       subBufferedImageArray : BufferedImage_Access_Array_Access;

@@ -118,8 +118,8 @@ package body org.allbinary.game.health.Health_Package is
         return This.health;
    end getHealth;
 
-   procedure addListener (This : in out Health; healthGraphic_Param : access HealthListenerInterface'Class) is
-      healthGraphic : HealthListenerInterface_Access := HealthListenerInterface_Access (healthGraphic_Param);
+   procedure addListener (This : in out Health; healthGraphic_Param : access HealthListenerInterface_Package.HealthListenerInterface'Class) is
+      healthGraphic : constant HealthListenerInterface_Access := HealthListenerInterface_Access (healthGraphic_Param);
    begin
         This.healthListenerInterface := healthGraphic;
    end addListener;

@@ -43,8 +43,8 @@ package org.allbinary.business.user.CreateUserFactory_Package is
 
    procedure Initialize (This : in out CreateUserFactory'Class);
    function Create return CreateUserFactory_Access;
-   function getInstance (hashMap_Param : access HashMap'Class) return UserInterface_Access;
-   procedure getInstance (hashMap_Param : access HashMap'Class);
+   function getInstance (hashMap_Param : access HashMap_Package.HashMap'Class) return UserInterface_Access;
+   procedure getInstance (hashMap_Param : access HashMap_Package.HashMap'Class);
 
 end org.allbinary.business.user.CreateUserFactory_Package;
 

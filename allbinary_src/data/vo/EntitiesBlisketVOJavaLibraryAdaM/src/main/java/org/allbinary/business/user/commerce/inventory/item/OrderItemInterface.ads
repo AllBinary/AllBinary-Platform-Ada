@@ -35,7 +35,7 @@ package org.allbinary.business.user.commerce.inventory.item.OrderItemInterface_P
    procedure setTax (This : in out OrderItemInterface; value : Unbounded_String) is abstract;
    procedure setShippingType (This : in out OrderItemInterface; value : Unbounded_String) is abstract;
    procedure setShippingCost (This : in out OrderItemInterface; value : Unbounded_String) is abstract;
-   procedure setShippingAddress (This : in out OrderItemInterface; value_Param : access StreetAddress'Class) is abstract;
+   procedure setShippingAddress (This : in out OrderItemInterface; value_Param : access StreetAddress_Package.StreetAddress'Class) is abstract;
    procedure setSpecial (This : in out OrderItemInterface; value : Unbounded_String) is abstract;
    function getGroup (This : in out OrderItemInterface) return Unbounded_String is abstract;
    function getTax (This : in out OrderItemInterface) return Unbounded_String is abstract;

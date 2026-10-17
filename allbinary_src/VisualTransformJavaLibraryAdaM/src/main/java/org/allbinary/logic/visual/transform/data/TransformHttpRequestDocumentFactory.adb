@@ -35,14 +35,14 @@ package body org.allbinary.logic.visual.transform.data.TransformHttpRequestDocum
    end Create;
 
    --  throws Exception
-   function getInstance (pageContext_Param : access PageContext'Class; weblisketSession_Param : access WeblisketSession'Class) return TransformDocumentInterface_Access is
-      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
-      weblisketSession : WeblisketSession_Access := WeblisketSession_Access (weblisketSession_Param);
+   function getInstance (pageContext_Param : access PageContext_Package.PageContext'Class; weblisketSession_Param : access WeblisketSession_Package.WeblisketSession'Class) return TransformDocumentInterface_Access is
+      pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
+      weblisketSession : constant WeblisketSession_Access := WeblisketSession_Access (weblisketSession_Param);
    begin
         return TransformDocumentInterface_Access (TransformHttpRequestDocument_Package.Create (pageContext, weblisketSession));
    end getInstance;
 
-   procedure getInstance (pageContext_Param : access PageContext'Class; weblisketSession_Param : access WeblisketSession'Class) is
+   procedure getInstance (pageContext_Param : access PageContext_Package.PageContext'Class; weblisketSession_Param : access WeblisketSession_Package.WeblisketSession'Class) is
       Java_Result : constant TransformDocumentInterface_Access := getInstance (pageContext_Param, weblisketSession_Param);
       pragma Unreferenced (Java_Result);
    begin

@@ -23,22 +23,22 @@ package body org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasicGraphicsPipeline'Class; points_Param : access BasicArrayList'Class) is
-      points : BasicArrayList_Access := BasicArrayList_Access (points_Param);
+   procedure Initialize (This : in out BasicGraphicsPipeline'Class; points_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      points : constant BasicArrayList_Access := BasicArrayList_Access (points_Param);
    begin
       Initialize_Fields (This);
         This.pointBasicArrayList := points;
    end Initialize;
 
-   function Create (points_Param : access BasicArrayList'Class) return BasicGraphicsPipeline_Access is
+   function Create (points_Param : access BasicArrayList_Package.BasicArrayList'Class) return BasicGraphicsPipeline_Access is
       This : constant BasicGraphicsPipeline_Access := new BasicGraphicsPipeline;
    begin
       BasicGraphicsPipeline_Package.Initialize (This.all, points_Param);
       return This;
    end Create;
 
-   procedure setInitMatrix (This : in out BasicGraphicsPipeline; points_Param : access BasicArrayList'Class) is
-      points : BasicArrayList_Access := BasicArrayList_Access (points_Param);
+   procedure setInitMatrix (This : in out BasicGraphicsPipeline; points_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      points : constant BasicArrayList_Access := BasicArrayList_Access (points_Param);
    begin
         This.pointBasicArrayList := points;
    end setInitMatrix;
@@ -72,8 +72,8 @@ package body org.allbinary.graphics.pipeline.BasicGraphicsPipeline_Package is
    end translate;
 
    --  throws Exception
-   procedure rotateToAngle (This : in out BasicGraphicsPipeline; angle_Param : access Angle'Class) is
-      angle : Angle_Access := Angle_Access (angle_Param);
+   procedure rotateToAngle (This : in out BasicGraphicsPipeline; angle_Param : access Angle_Package.Angle'Class) is
+      angle : constant Angle_Access := Angle_Access (angle_Param);
    begin
         This.rotate (Integer (angle.getValue));
    end rotateToAngle;

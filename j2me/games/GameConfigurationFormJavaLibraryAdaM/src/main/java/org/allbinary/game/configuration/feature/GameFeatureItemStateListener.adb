@@ -23,8 +23,8 @@ package body org.allbinary.game.configuration.feature.GameFeatureItemStateListen
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GameFeatureItemStateListener'Class; gameOptionsForm_Param : access GameOptionsForm'Class) is
-      gameOptionsForm : GameOptionsForm_Access := GameOptionsForm_Access (gameOptionsForm_Param);
+   procedure Initialize (This : in out GameFeatureItemStateListener'Class; gameOptionsForm_Param : access GameOptionsForm_Package.GameOptionsForm'Class) is
+      gameOptionsForm : constant GameOptionsForm_Access := GameOptionsForm_Access (gameOptionsForm_Param);
       gameFeatureFactory : GameFeatureFactory_Access;
    begin
       Initialize_Fields (This);
@@ -40,23 +40,23 @@ package body org.allbinary.game.configuration.feature.GameFeatureItemStateListen
         GameFeatureItemStateListener_Package.add (gameFeatureFactory.TICKABLE_LAYER_PROCESSOR);
    end Initialize;
 
-   function Create (gameOptionsForm_Param : access GameOptionsForm'Class) return GameFeatureItemStateListener_Access is
+   function Create (gameOptionsForm_Param : access GameOptionsForm_Package.GameOptionsForm'Class) return GameFeatureItemStateListener_Access is
       This : constant GameFeatureItemStateListener_Access := new GameFeatureItemStateListener;
    begin
       GameFeatureItemStateListener_Package.Initialize (This.all, gameOptionsForm_Param);
       return This;
    end Create;
 
-   procedure add (gameFeature_Param : access GameFeature'Class) is
-      gameFeature : GameFeature_Access := GameFeature_Access (gameFeature_Param);
+   procedure add (gameFeature_Param : access GameFeature_Package.GameFeature'Class) is
+      gameFeature : constant GameFeature_Access := GameFeature_Access (gameFeature_Param);
    begin
         if not (GameFeatureItemStateListener_Package.toggleList.contains (gameFeature)) then
             GameFeatureItemStateListener_Package.toggleList.add (gameFeature);
         end if;
    end add;
 
-   procedure itemStateChanged (This : in out GameFeatureItemStateListener; item_Param : access Item'Class) is
-      item : Item_Access := Item_Access (item_Param);
+   procedure itemStateChanged (This : in out GameFeatureItemStateListener; item_Param : access Item_Package.Item'Class) is
+      item : constant Item_Access := Item_Access (item_Param);
       itemLabel : Unbounded_String;
       gameFeatureUtil : GameFeatureUtil_Access;
       commonStrings : CommonStrings_Access;

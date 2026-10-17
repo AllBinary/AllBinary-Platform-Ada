@@ -33,13 +33,13 @@ package body org.allbinary.logic.io.file.AbFileNativeUtil_Package is
    end Create;
 
 
-   function get (file_Param : access AbFile'Class) return File_Access is
-      file : AbFile_Access := AbFile_Access (file_Param);
+   function get (file_Param : access AbFile_Package.AbFile'Class) return File_Access is
+      file : constant AbFile_Access := AbFile_Access (file_Param);
    begin
         return file.getFile;
    end get;
 
-   procedure get (file_Param : access AbFile'Class) is
+   procedure get (file_Param : access AbFile_Package.AbFile'Class) is
       Java_Result : constant File_Access := get (file_Param);
       pragma Unreferenced (Java_Result);
    begin

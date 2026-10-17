@@ -38,8 +38,8 @@ package body org.allbinary.logic.system.security.licensing.client.AbeLicenseClie
    end Create;
 
    --  throws Exception
-   function get (This : in out AbeLicenseClient; abeClientInformation_Param : access AbeClientInformationInterface'Class) return AbeLicenseInterface_Access is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+   function get (This : in out AbeLicenseClient; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) return AbeLicenseInterface_Access is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
       xmlRpcAbeLicenseClient : XmlRpcAbeClient_Access;
       abeLicenseInterface : AbeLicenseInterface_Access;
       licenseId : Unbounded_String;
@@ -83,7 +83,7 @@ package body org.allbinary.logic.system.security.licensing.client.AbeLicenseClie
         end;
    end get;
 
-   procedure get (This : in out AbeLicenseClient; abeClientInformation_Param : access AbeClientInformationInterface'Class) is
+   procedure get (This : in out AbeLicenseClient; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) is
       Java_Result : constant AbeLicenseInterface_Access := AbeLicenseClient'Class (This).get (abeClientInformation_Param);
       pragma Unreferenced (Java_Result);
    begin

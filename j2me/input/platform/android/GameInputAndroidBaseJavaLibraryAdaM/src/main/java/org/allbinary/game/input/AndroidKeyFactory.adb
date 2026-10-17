@@ -146,8 +146,8 @@ package body org.allbinary.game.input.AndroidKeyFactory_Package is
         This.logUtil.putF (To_Unbounded_String ("Start/End"), AndroidKeyFactory_Access'(This'Unchecked_Access), commonStrings.INIT);
    end init;
 
-   function isSubmission (This : in out AndroidKeyFactory; input_Param : access Input'Class) return Boolean is
-      input : Input_Access := Input_Access (input_Param);
+   function isSubmission (This : in out AndroidKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean is
+      input : constant Input_Access := Input_Access (input_Param);
    begin
         if (input) = (This.ENTER) then
             return True;
@@ -157,14 +157,14 @@ package body org.allbinary.game.input.AndroidKeyFactory_Package is
         return False;
    end isSubmission;
 
-   function isDelete (This : in out AndroidKeyFactory; input_Param : access Input'Class) return Boolean is
-      input : Input_Access := Input_Access (input_Param);
+   function isDelete (This : in out AndroidKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean is
+      input : constant Input_Access := Input_Access (input_Param);
    begin
         return False;
    end isDelete;
 
-   function isBackSpace (This : in out AndroidKeyFactory; input_Param : access Input'Class) return Boolean is
-      input : Input_Access := Input_Access (input_Param);
+   function isBackSpace (This : in out AndroidKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean is
+      input : constant Input_Access := Input_Access (input_Param);
    begin
         if (input) = (This.DEL) then
             return True;
@@ -172,8 +172,8 @@ package body org.allbinary.game.input.AndroidKeyFactory_Package is
         return False;
    end isBackSpace;
 
-   function isLeft (This : in out AndroidKeyFactory; input_Param : access Input'Class) return Boolean is
-      input : Input_Access := Input_Access (input_Param);
+   function isLeft (This : in out AndroidKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean is
+      input : constant Input_Access := Input_Access (input_Param);
    begin
         if (input) = (This.DPAD_LEFT) then
             return True;
@@ -181,8 +181,8 @@ package body org.allbinary.game.input.AndroidKeyFactory_Package is
         return False;
    end isLeft;
 
-   function isRight (This : in out AndroidKeyFactory; input_Param : access Input'Class) return Boolean is
-      input : Input_Access := Input_Access (input_Param);
+   function isRight (This : in out AndroidKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean is
+      input : constant Input_Access := Input_Access (input_Param);
    begin
         if (input) = (This.DPAD_RIGHT) then
             return True;
@@ -190,8 +190,8 @@ package body org.allbinary.game.input.AndroidKeyFactory_Package is
         return False;
    end isRight;
 
-   function isUp (This : in out AndroidKeyFactory; input_Param : access Input'Class) return Boolean is
-      input : Input_Access := Input_Access (input_Param);
+   function isUp (This : in out AndroidKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean is
+      input : constant Input_Access := Input_Access (input_Param);
    begin
         if (input) = (This.DPAD_UP) then
             return True;
@@ -199,8 +199,8 @@ package body org.allbinary.game.input.AndroidKeyFactory_Package is
         return False;
    end isUp;
 
-   function isDown (This : in out AndroidKeyFactory; input_Param : access Input'Class) return Boolean is
-      input : Input_Access := Input_Access (input_Param);
+   function isDown (This : in out AndroidKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean is
+      input : constant Input_Access := Input_Access (input_Param);
    begin
         if (input) = (This.DPAD_DOWN) then
             return True;
@@ -208,8 +208,8 @@ package body org.allbinary.game.input.AndroidKeyFactory_Package is
         return False;
    end isDown;
 
-   function isEnter (This : in out AndroidKeyFactory; input_Param : access Input'Class) return Boolean is
-      input : Input_Access := Input_Access (input_Param);
+   function isEnter (This : in out AndroidKeyFactory; input_Param : access Input_Package.Input'Class) return Boolean is
+      input : constant Input_Access := Input_Access (input_Param);
    begin
         if (input) = (This.DPAD_CENTER) then
             return True;
@@ -221,56 +221,56 @@ package body org.allbinary.game.input.AndroidKeyFactory_Package is
         return False;
    end isEnter;
 
-   procedure isSubmission (This : in out AndroidKeyFactory; input_Param : access Input'Class) is
+   procedure isSubmission (This : in out AndroidKeyFactory; input_Param : access Input_Package.Input'Class) is
       Java_Result : constant Boolean := AndroidKeyFactory'Class (This).isSubmission (input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isSubmission;
 
-   procedure isDelete (This : in out AndroidKeyFactory; input_Param : access Input'Class) is
+   procedure isDelete (This : in out AndroidKeyFactory; input_Param : access Input_Package.Input'Class) is
       Java_Result : constant Boolean := AndroidKeyFactory'Class (This).isDelete (input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isDelete;
 
-   procedure isBackSpace (This : in out AndroidKeyFactory; input_Param : access Input'Class) is
+   procedure isBackSpace (This : in out AndroidKeyFactory; input_Param : access Input_Package.Input'Class) is
       Java_Result : constant Boolean := AndroidKeyFactory'Class (This).isBackSpace (input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isBackSpace;
 
-   procedure isLeft (This : in out AndroidKeyFactory; input_Param : access Input'Class) is
+   procedure isLeft (This : in out AndroidKeyFactory; input_Param : access Input_Package.Input'Class) is
       Java_Result : constant Boolean := AndroidKeyFactory'Class (This).isLeft (input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isLeft;
 
-   procedure isRight (This : in out AndroidKeyFactory; input_Param : access Input'Class) is
+   procedure isRight (This : in out AndroidKeyFactory; input_Param : access Input_Package.Input'Class) is
       Java_Result : constant Boolean := AndroidKeyFactory'Class (This).isRight (input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isRight;
 
-   procedure isUp (This : in out AndroidKeyFactory; input_Param : access Input'Class) is
+   procedure isUp (This : in out AndroidKeyFactory; input_Param : access Input_Package.Input'Class) is
       Java_Result : constant Boolean := AndroidKeyFactory'Class (This).isUp (input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isUp;
 
-   procedure isDown (This : in out AndroidKeyFactory; input_Param : access Input'Class) is
+   procedure isDown (This : in out AndroidKeyFactory; input_Param : access Input_Package.Input'Class) is
       Java_Result : constant Boolean := AndroidKeyFactory'Class (This).isDown (input_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isDown;
 
-   procedure isEnter (This : in out AndroidKeyFactory; input_Param : access Input'Class) is
+   procedure isEnter (This : in out AndroidKeyFactory; input_Param : access Input_Package.Input'Class) is
       Java_Result : constant Boolean := AndroidKeyFactory'Class (This).isEnter (input_Param);
       pragma Unreferenced (Java_Result);
    begin

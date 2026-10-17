@@ -55,8 +55,8 @@ package body org.allbinary.input.motion.button.BasicTouchInputFactory_Package is
         return BasicTouchInputFactory_Access (BasicTouchInputFactory_Package.instance);
    end getInstance;
 
-   procedure init (This : in out BasicTouchInputFactory; inputToGameKeyMapping_Param : access InputToGameKeyMapping'Class) is
-      inputToGameKeyMapping : InputToGameKeyMapping_Access := InputToGameKeyMapping_Access (inputToGameKeyMapping_Param);
+   procedure init (This : in out BasicTouchInputFactory; inputToGameKeyMapping_Param : access InputToGameKeyMapping_Package.InputToGameKeyMapping'Class) is
+      inputToGameKeyMapping : constant InputToGameKeyMapping_Access := InputToGameKeyMapping_Access (inputToGameKeyMapping_Param);
    begin
         if not (This.initialized) then
             This.initialized := True;
@@ -74,15 +74,15 @@ package body org.allbinary.input.motion.button.BasicTouchInputFactory_Package is
         end if;
    end init;
 
-   procedure updateAll (This : in out BasicTouchInputFactory; inputToGameKeyMapping_Param : access InputToGameKeyMapping'Class) is
-      inputToGameKeyMapping : InputToGameKeyMapping_Access := InputToGameKeyMapping_Access (inputToGameKeyMapping_Param);
+   procedure updateAll (This : in out BasicTouchInputFactory; inputToGameKeyMapping_Param : access InputToGameKeyMapping_Package.InputToGameKeyMapping'Class) is
+      inputToGameKeyMapping : constant InputToGameKeyMapping_Access := InputToGameKeyMapping_Access (inputToGameKeyMapping_Param);
    begin
         This.updateAllList (This.getList, inputToGameKeyMapping);
    end updateAll;
 
-   procedure updateAllList (This : in out BasicTouchInputFactory; list_Param : access BasicArrayList'Class; inputToGameKeyMapping_Param : access InputToGameKeyMapping'Class) is
-      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
-      inputToGameKeyMapping : InputToGameKeyMapping_Access := InputToGameKeyMapping_Access (inputToGameKeyMapping_Param);
+   procedure updateAllList (This : in out BasicTouchInputFactory; list_Param : access BasicArrayList_Package.BasicArrayList'Class; inputToGameKeyMapping_Param : access InputToGameKeyMapping_Package.InputToGameKeyMapping'Class) is
+      list : constant BasicArrayList_Access := BasicArrayList_Access (list_Param);
+      inputToGameKeyMapping : constant InputToGameKeyMapping_Access := InputToGameKeyMapping_Access (inputToGameKeyMapping_Param);
       touchButtonInput : TouchButtonInput_Access;
       index : Integer;
    begin

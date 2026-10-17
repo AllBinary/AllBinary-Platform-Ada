@@ -32,23 +32,23 @@ package body org.allbinary.game.layer.pickup.PickupBehavior_Package is
         return PickupBehavior_Access (PickupBehavior_Package.NULL_PICKUP_BEHAVIOR);
    end getNullInstance;
 
-   procedure Initialize (This : in out PickupBehavior'Class; ownerLayerInterface_Param : access CollidableCompositeLayer'Class; countedIndex : Integer) is
-      ownerLayerInterface : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayerInterface_Param);
+   procedure Initialize (This : in out PickupBehavior'Class; ownerLayerInterface_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; countedIndex : Integer) is
+      ownerLayerInterface : constant CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (ownerLayerInterface_Param);
    begin
       Initialize_Fields (This);
         This.ownerLayerInterface := ownerLayerInterface;
         This.countedIndex := countedIndex;
    end Initialize;
 
-   function Create (ownerLayerInterface_Param : access CollidableCompositeLayer'Class; countedIndex : Integer) return PickupBehavior_Access is
+   function Create (ownerLayerInterface_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class; countedIndex : Integer) return PickupBehavior_Access is
       This : constant PickupBehavior_Access := new PickupBehavior;
    begin
       PickupBehavior_Package.Initialize (This.all, ownerLayerInterface_Param, countedIndex);
       return This;
    end Create;
 
-   procedure doPickup (This : in out PickupBehavior; pickupProcessorInterface_Param : access PickupProcessorInterface'Class) is
-      pickupProcessorInterface : PickupProcessorInterface_Access := PickupProcessorInterface_Access (pickupProcessorInterface_Param);
+   procedure doPickup (This : in out PickupBehavior; pickupProcessorInterface_Param : access PickupProcessorInterface_Package.PickupProcessorInterface'Class) is
+      pickupProcessorInterface : constant PickupProcessorInterface_Access := PickupProcessorInterface_Access (pickupProcessorInterface_Param);
       healthInterfaceCompositeInterface : HealthInterfaceCompositeInterface_Access;
       commonStrings : CommonStrings_Access;
    begin
@@ -68,8 +68,8 @@ package body org.allbinary.game.layer.pickup.PickupBehavior_Package is
         end;
    end doPickup;
 
-   procedure doPickupLayer (This : in out PickupBehavior; pickupLayerInterface_Param : access PickedUpLayerInterface'Class) is
-      pickupLayerInterface : PickedUpLayerInterface_Access := PickedUpLayerInterface_Access (pickupLayerInterface_Param);
+   procedure doPickupLayer (This : in out PickupBehavior; pickupLayerInterface_Param : access PickedUpLayerInterface_Package.PickedUpLayerInterface'Class) is
+      pickupLayerInterface : constant PickedUpLayerInterface_Access := PickedUpLayerInterface_Access (pickupLayerInterface_Param);
       pickedUpLayerInterfaceFactoryInterface : PickedUpLayerInterfaceFactoryInterface_Access;
       pickedUpLayerType : PickedUpLayerType_Access;
       pickedUpLayerTypeFactory : PickedUpLayerTypeFactory_Access;
@@ -104,16 +104,16 @@ package body org.allbinary.game.layer.pickup.PickupBehavior_Package is
         end;
    end doPickupLayer;
 
-   procedure add (This : in out PickupBehavior; countedPickedUpLayerInterfaceFactoryInterface_Param : access CountedPickedUpLayerInterfaceFactoryInterface'Class) is
-      countedPickedUpLayerInterfaceFactoryInterface : CountedPickedUpLayerInterfaceFactoryInterface_Access := CountedPickedUpLayerInterfaceFactoryInterface_Access (countedPickedUpLayerInterfaceFactoryInterface_Param);
+   procedure add (This : in out PickupBehavior; countedPickedUpLayerInterfaceFactoryInterface_Param : access CountedPickedUpLayerInterfaceFactoryInterface_Package.CountedPickedUpLayerInterfaceFactoryInterface'Class) is
+      countedPickedUpLayerInterfaceFactoryInterface : constant CountedPickedUpLayerInterfaceFactoryInterface_Access := CountedPickedUpLayerInterfaceFactoryInterface_Access (countedPickedUpLayerInterfaceFactoryInterface_Param);
       partIndex : Integer;
    begin
         partIndex := (countedPickedUpLayerInterfaceFactoryInterface.getId) + (This.countedIndex);
         This.addAt (countedPickedUpLayerInterfaceFactoryInterface, partIndex);
    end add;
 
-   procedure addAt (This : in out PickupBehavior; countedPickedUpLayerInterfaceFactoryInterface_Param : access CountedPickedUpLayerInterfaceFactoryInterface'Class; partIndex : Integer) is
-      countedPickedUpLayerInterfaceFactoryInterface : CountedPickedUpLayerInterfaceFactoryInterface_Access := CountedPickedUpLayerInterfaceFactoryInterface_Access (countedPickedUpLayerInterfaceFactoryInterface_Param);
+   procedure addAt (This : in out PickupBehavior; countedPickedUpLayerInterfaceFactoryInterface_Param : access CountedPickedUpLayerInterfaceFactoryInterface_Package.CountedPickedUpLayerInterfaceFactoryInterface'Class; partIndex : Integer) is
+      countedPickedUpLayerInterfaceFactoryInterface : constant CountedPickedUpLayerInterfaceFactoryInterface_Access := CountedPickedUpLayerInterfaceFactoryInterface_Access (countedPickedUpLayerInterfaceFactoryInterface_Param);
       collidableDestroyableDamageableLayer : CollidableDestroyableDamageableLayer_Access;
       countedLayerInterfaceFactory : CountedLayerInterfaceFactoryPart_Access;
    begin

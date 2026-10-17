@@ -40,14 +40,14 @@ package body org.allbinary.game.init.DefaultGameInitializationListener_Package i
       return This;
    end Create;
 
-   procedure onEvent (This : in out DefaultGameInitializationListener; eventObject_Param : access AllBinaryEventObject'Class) is
-      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+   procedure onEvent (This : in out DefaultGameInitializationListener; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
+      eventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
    begin
         ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, DefaultGameInitializationListener_Access'(This'Unchecked_Access));
    end onEvent;
 
-   procedure onGameInitialized (This : in out DefaultGameInitializationListener; gameInitializedEvent_Param : access GameInitializedEvent'Class) is
-      gameInitializedEvent : GameInitializedEvent_Access := GameInitializedEvent_Access (gameInitializedEvent_Param);
+   procedure onGameInitialized (This : in out DefaultGameInitializationListener; gameInitializedEvent_Param : access GameInitializedEvent_Package.GameInitializedEvent'Class) is
+      gameInitializedEvent : constant GameInitializedEvent_Access := GameInitializedEvent_Access (gameInitializedEvent_Param);
       ON_GAME_INITIALIZED : Unbounded_String;
       commonStrings : CommonStrings_Access;
    begin

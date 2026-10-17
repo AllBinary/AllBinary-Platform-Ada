@@ -43,8 +43,8 @@ package org.allbinary.game.layer.AdvancedRTSLayerUtil_Package is
    procedure Initialize (This : in out AdvancedRTSLayerUtil'Class);
    function Create return AdvancedRTSLayerUtil_Access;
    function getInstance return AdvancedRTSLayerUtil_Access;
-   function createFakeRTSLayerHashtable (This : in out AdvancedRTSLayerUtil; baseRaceTrackGeographicMap_Param : access BaseRaceTrackGeographicMap'Class) return ABHashtable_Access;
-   procedure createFakeRTSLayerHashtable (This : in out AdvancedRTSLayerUtil; baseRaceTrackGeographicMap_Param : access BaseRaceTrackGeographicMap'Class);
+   function createFakeRTSLayerHashtable (This : in out AdvancedRTSLayerUtil; baseRaceTrackGeographicMap_Param : access BaseRaceTrackGeographicMap_Package.BaseRaceTrackGeographicMap'Class) return ABHashtable_Access;
+   procedure createFakeRTSLayerHashtable (This : in out AdvancedRTSLayerUtil; baseRaceTrackGeographicMap_Param : access BaseRaceTrackGeographicMap_Package.BaseRaceTrackGeographicMap'Class);
 
 end org.allbinary.game.layer.AdvancedRTSLayerUtil_Package;
 

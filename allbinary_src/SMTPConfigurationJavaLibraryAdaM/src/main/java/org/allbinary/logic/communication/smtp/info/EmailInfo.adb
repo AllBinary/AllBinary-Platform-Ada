@@ -25,8 +25,8 @@ package body org.allbinary.logic.communication.smtp.info.EmailInfo_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out EmailInfo'Class; basicEmailInfo_Param : access BasicEmailInfo'Class) is
-      basicEmailInfo : BasicEmailInfo_Access := BasicEmailInfo_Access (basicEmailInfo_Param);
+   procedure Initialize (This : in out EmailInfo'Class; basicEmailInfo_Param : access BasicEmailInfo_Package.BasicEmailInfo'Class) is
+      basicEmailInfo : constant BasicEmailInfo_Access := BasicEmailInfo_Access (basicEmailInfo_Param);
       commonStrings : CommonStrings_Access;
    begin
       Initialize_Fields (This);
@@ -37,15 +37,15 @@ package body org.allbinary.logic.communication.smtp.info.EmailInfo_Package is
         This.init (basicEmailInfo, null, null);
    end Initialize;
 
-   function Create (basicEmailInfo_Param : access BasicEmailInfo'Class) return EmailInfo_Access is
+   function Create (basicEmailInfo_Param : access BasicEmailInfo_Package.BasicEmailInfo'Class) return EmailInfo_Access is
       This : constant EmailInfo_Access := new EmailInfo;
    begin
       EmailInfo_Package.Initialize (This.all, basicEmailInfo_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out EmailInfo'Class; basicEmailInfo_Param : access BasicEmailInfo'Class; htmlAttachment : Unbounded_String; contentBase : Unbounded_String) is
-      basicEmailInfo : BasicEmailInfo_Access := BasicEmailInfo_Access (basicEmailInfo_Param);
+   procedure Initialize (This : in out EmailInfo'Class; basicEmailInfo_Param : access BasicEmailInfo_Package.BasicEmailInfo'Class; htmlAttachment : Unbounded_String; contentBase : Unbounded_String) is
+      basicEmailInfo : constant BasicEmailInfo_Access := BasicEmailInfo_Access (basicEmailInfo_Param);
       commonStrings : CommonStrings_Access;
    begin
       Initialize_Fields (This);
@@ -56,15 +56,15 @@ package body org.allbinary.logic.communication.smtp.info.EmailInfo_Package is
         This.init (basicEmailInfo, null, null);
    end Initialize;
 
-   function Create (basicEmailInfo_Param : access BasicEmailInfo'Class; htmlAttachment : Unbounded_String; contentBase : Unbounded_String) return EmailInfo_Access is
+   function Create (basicEmailInfo_Param : access BasicEmailInfo_Package.BasicEmailInfo'Class; htmlAttachment : Unbounded_String; contentBase : Unbounded_String) return EmailInfo_Access is
       This : constant EmailInfo_Access := new EmailInfo;
    begin
       EmailInfo_Package.Initialize (This.all, basicEmailInfo_Param, htmlAttachment, contentBase);
       return This;
    end Create;
 
-   procedure init (This : in out EmailInfo; basicEmailInfo_Param : access BasicEmailInfo'Class; htmlAttachment : Unbounded_String; contentBase : Unbounded_String) is
-      basicEmailInfo : BasicEmailInfo_Access := BasicEmailInfo_Access (basicEmailInfo_Param);
+   procedure init (This : in out EmailInfo; basicEmailInfo_Param : access BasicEmailInfo_Package.BasicEmailInfo'Class; htmlAttachment : Unbounded_String; contentBase : Unbounded_String) is
+      basicEmailInfo : constant BasicEmailInfo_Access := BasicEmailInfo_Access (basicEmailInfo_Param);
    begin
         This.basicEmailInfo := basicEmailInfo;
         This.htmlAttachment := htmlAttachment;

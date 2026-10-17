@@ -58,9 +58,9 @@ package org.allbinary.business.advertisement.AdvertisementInterface_Package is
    procedure setDirectory (This : in out AdvertisementInterface; directory : Unbounded_String) is abstract;
    procedure setFramedLink (This : in out AdvertisementInterface; framedLink : Unbounded_String) is abstract;
    procedure setRank (This : in out AdvertisementInterface; rank : Integer) is abstract;
-   procedure setImage (This : in out AdvertisementInterface; AdvertisementImageInterface_Param : access AdvertisementImageInterface'Class) is abstract;
-   procedure setProduct (This : in out AdvertisementInterface; AdvertisementProductInterface_Param : access AdvertisementProductInterface'Class) is abstract;
-   procedure setThumbnail (This : in out AdvertisementInterface; AdvertisementThumbnailInterface_Param : access AdvertisementThumbnailInterface'Class) is abstract;
+   procedure setImage (This : in out AdvertisementInterface; AdvertisementImageInterface_Param : access AdvertisementImageInterface_Package.AdvertisementImageInterface'Class) is abstract;
+   procedure setProduct (This : in out AdvertisementInterface; AdvertisementProductInterface_Param : access AdvertisementProductInterface_Package.AdvertisementProductInterface'Class) is abstract;
+   procedure setThumbnail (This : in out AdvertisementInterface; AdvertisementThumbnailInterface_Param : access AdvertisementThumbnailInterface_Package.AdvertisementThumbnailInterface'Class) is abstract;
 
 end org.allbinary.business.advertisement.AdvertisementInterface_Package;
 

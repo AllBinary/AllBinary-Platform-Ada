@@ -39,7 +39,7 @@ package body org.allbinary.graphics.form.item.LimitCommandsVisitor_Package is
    end Create;
 
    function visit (This : in out LimitCommandsVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
       command : Command_Access;
       booleanFactory : BooleanFactory_Access;
    begin

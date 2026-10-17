@@ -43,8 +43,8 @@ package org.allbinary.game.terrain.TerrainEventCircularStaticPool_Package is
    function Create return TerrainEventCircularStaticPool_Access;
    function getInstance return TerrainEventCircularStaticPool_Access;
    procedure init (This : in out TerrainEventCircularStaticPool);
-   function getNext (This : in out TerrainEventCircularStaticPool; basicTerrainInfo_Param : access BasicTerrainInfo'Class) return TerrainEvent_Access;
-   procedure getNext (This : in out TerrainEventCircularStaticPool; basicTerrainInfo_Param : access BasicTerrainInfo'Class);
+   function getNext (This : in out TerrainEventCircularStaticPool; basicTerrainInfo_Param : access BasicTerrainInfo_Package.BasicTerrainInfo'Class) return TerrainEvent_Access;
+   procedure getNext (This : in out TerrainEventCircularStaticPool; basicTerrainInfo_Param : access BasicTerrainInfo_Package.BasicTerrainInfo'Class);
 
 end org.allbinary.game.terrain.TerrainEventCircularStaticPool_Package;
 

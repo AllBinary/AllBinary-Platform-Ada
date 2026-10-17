@@ -39,8 +39,8 @@ package body org.allbinary.android.api30.ActivityFractureUtilAPI30_Package is
         return ActivityFractureUtilAPI30_Package.instance30;
    end getInstance;
 
-   procedure setFullScreen (This : in out ActivityFractureUtilAPI30; activity_Param : access Activity'Class) is
-      activity : Activity_Access := Activity_Access (activity_Param);
+   procedure setFullScreen (This : in out ActivityFractureUtilAPI30; activity_Param : access Activity_Package.Activity'Class) is
+      activity : constant Activity_Access := Activity_Access (activity_Param);
       window : Window_Access;
       windowInsetsController : WindowInsetsControllerCompat_Access;
    begin

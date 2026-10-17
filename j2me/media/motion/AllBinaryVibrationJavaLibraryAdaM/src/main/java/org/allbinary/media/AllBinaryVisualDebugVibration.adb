@@ -40,8 +40,8 @@ package body org.allbinary.media.AllBinaryVisualDebugVibration_Package is
    end Create;
 
 
-   procedure updateMeasurement (This : in out AllBinaryVisualDebugVibration; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure updateMeasurement (This : in out AllBinaryVisualDebugVibration; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
    begin
         font := graphics.getFont;
@@ -54,8 +54,8 @@ package body org.allbinary.media.AllBinaryVisualDebugVibration_Package is
         This.timeDelayHelper.delay_Id := duration;
    end vibrate;
 
-   procedure paint (This : in out AllBinaryVisualDebugVibration; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out AllBinaryVisualDebugVibration; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         if This.timeDelayHelper.isTimeTNT then
             This.timeDelayHelper.delay_Id := Integer_Package.MAX_VALUE;

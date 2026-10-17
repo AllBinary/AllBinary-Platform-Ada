@@ -38,8 +38,8 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderItemsE
       return This;
    end Create;
 
-   procedure insert (This : in out OrderItemsEntity; userName : Unbounded_String; order_Param : access OrderInterface'Class) is
-      order : OrderInterface_Access := OrderInterface_Access (order_Param);
+   procedure insert (This : in out OrderItemsEntity; userName : Unbounded_String; order_Param : access OrderInterface_Package.OrderInterface'Class) is
+      order : constant OrderInterface_Access := OrderInterface_Access (order_Param);
       vector : BasicArrayList_Access;
       basket : BasketInterface_Access;
       items : Set_Access;

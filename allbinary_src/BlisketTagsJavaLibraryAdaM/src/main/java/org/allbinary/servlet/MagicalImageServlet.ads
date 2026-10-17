@@ -57,9 +57,9 @@ package org.allbinary.servlet.MagicalImageServlet_Package is
 
    procedure Initialize (This : in out MagicalImageServlet'Class);
    function Create return MagicalImageServlet_Access;
-   procedure processRequest (This : in out MagicalImageServlet; request_Param : access HttpServletRequest'Class; response_Param : access HttpServletResponse'Class);
-   procedure doGet (This : in out MagicalImageServlet; request_Param : access HttpServletRequest'Class; response_Param : access HttpServletResponse'Class);
-   procedure doPost (This : in out MagicalImageServlet; request_Param : access HttpServletRequest'Class; response_Param : access HttpServletResponse'Class);
+   procedure processRequest (This : in out MagicalImageServlet; request_Param : access HttpServletRequest_Package.HttpServletRequest'Class; response_Param : access HttpServletResponse_Package.HttpServletResponse'Class);
+   procedure doGet (This : in out MagicalImageServlet; request_Param : access HttpServletRequest_Package.HttpServletRequest'Class; response_Param : access HttpServletResponse_Package.HttpServletResponse'Class);
+   procedure doPost (This : in out MagicalImageServlet; request_Param : access HttpServletRequest_Package.HttpServletRequest'Class; response_Param : access HttpServletResponse_Package.HttpServletResponse'Class);
    function getServletInfo (This : in out MagicalImageServlet) return Unbounded_String;
 
 end org.allbinary.servlet.MagicalImageServlet_Package;

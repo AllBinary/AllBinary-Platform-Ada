@@ -38,7 +38,7 @@ package org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package is
    procedure Initialize (This : in out OpenGLESGraphicsCompositeFactory'Class);
    function Create return OpenGLESGraphicsCompositeFactory_Access;
    function getInstance return OpenGLESGraphicsCompositeFactory_Access;
-   procedure set (This : in out OpenGLESGraphicsCompositeFactory; openGLESGraphicsFactory_Param : access OpenGLESGraphicsFactory'Class);
+   procedure set (This : in out OpenGLESGraphicsCompositeFactory; openGLESGraphicsFactory_Param : access OpenGLESGraphicsFactory_Package.OpenGLESGraphicsFactory'Class);
    function get (This : in out OpenGLESGraphicsCompositeFactory) return OpenGLESGraphicsFactory_Access;
 
 end org.allbinary.device.OpenGLESGraphicsCompositeFactory_Package;

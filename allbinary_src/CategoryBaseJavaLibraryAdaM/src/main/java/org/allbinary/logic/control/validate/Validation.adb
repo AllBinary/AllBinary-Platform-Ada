@@ -41,8 +41,8 @@ package body org.allbinary.logic.control.validate.Validation_Package is
    end isValid;
 
    --  throws Exception
-   function toValidationInfoNode (This : in out Validation; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toValidationInfoNode (This : in out Validation; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end toValidationInfoNode;
@@ -59,7 +59,7 @@ package body org.allbinary.logic.control.validate.Validation_Package is
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end validationInfo;
 
-   procedure toValidationInfoNode (This : in out Validation; document_Param : access Document'Class) is
+   procedure toValidationInfoNode (This : in out Validation; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := Validation'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

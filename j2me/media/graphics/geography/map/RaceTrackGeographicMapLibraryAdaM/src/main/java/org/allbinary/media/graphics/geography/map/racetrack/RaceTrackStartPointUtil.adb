@@ -34,9 +34,9 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackStart
 
 
    --  throws Exception
-   function get (geographicMapInterface_Param : access BasicGeographicMap'Class; pathFindingInfo_Param : access PathFindingInfo'Class; index : Integer) return GPoint_Access is
-      geographicMapInterface : BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
-      pathFindingInfo : PathFindingInfo_Access := PathFindingInfo_Access (pathFindingInfo_Param);
+   function get (geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; pathFindingInfo_Param : access PathFindingInfo_Package.PathFindingInfo'Class; index : Integer) return GPoint_Access is
+      geographicMapInterface : constant BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
+      pathFindingInfo : constant PathFindingInfo_Access := PathFindingInfo_Access (pathFindingInfo_Param);
       list : BasicArrayList_Access;
       startPathFindingNode : PathFindingNode_Access;
       geographicMapCellPosition : GeographicMapCellPosition_Access;
@@ -49,7 +49,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackStart
         return PointFactory_Package.getInstance.createXY (point.getX, (point.getY) + (geographicMapInterface.getAllBinaryTiledLayer.getHalfCellHeight));
    end get;
 
-   procedure get (geographicMapInterface_Param : access BasicGeographicMap'Class; pathFindingInfo_Param : access PathFindingInfo'Class; index : Integer) is
+   procedure get (geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; pathFindingInfo_Param : access PathFindingInfo_Package.PathFindingInfo'Class; index : Integer) is
       Java_Result : constant GPoint_Access := get (geographicMapInterface_Param, pathFindingInfo_Param, index);
       pragma Unreferenced (Java_Result);
    begin

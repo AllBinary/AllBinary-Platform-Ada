@@ -55,10 +55,10 @@ package org.allbinary.logic.system.security.licensing.AbeLicenseInterfaceFactory
    procedure Initialize (This : in out AbeLicenseInterfaceFactory'Class);
    function Create return AbeLicenseInterfaceFactory_Access;
    function getInstance return AbeLicenseInterfaceFactory_Access;
-   function getLicenseInstance (This : in out AbeLicenseInterfaceFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class) return AbeLicenseInterface_Access;
-   procedure getLicenseInstance (This : in out AbeLicenseInterfaceFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class);
-   function get (This : in out AbeLicenseInterfaceFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class) return AbeLicenseInterface_Access;
-   procedure get (This : in out AbeLicenseInterfaceFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class);
+   function getLicenseInstance (This : in out AbeLicenseInterfaceFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) return AbeLicenseInterface_Access;
+   procedure getLicenseInstance (This : in out AbeLicenseInterfaceFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class);
+   function get (This : in out AbeLicenseInterfaceFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) return AbeLicenseInterface_Access;
+   procedure get (This : in out AbeLicenseInterfaceFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class);
    function isTimeToGetKey (This : in out AbeLicenseInterfaceFactory) return Boolean;
    procedure setCheck (This : in out AbeLicenseInterfaceFactory; check : Boolean);
    function isCheck (This : in out AbeLicenseInterfaceFactory) return Boolean;

@@ -57,8 +57,8 @@ package org.allbinary.game.init.DefaultGameInitializationListener_Package is
 
    procedure Initialize (This : in out DefaultGameInitializationListener'Class);
    function Create return DefaultGameInitializationListener_Access;
-   procedure onEvent (This : in out DefaultGameInitializationListener; eventObject_Param : access AllBinaryEventObject'Class);
-   procedure onGameInitialized (This : in out DefaultGameInitializationListener; gameInitializedEvent_Param : access GameInitializedEvent'Class);
+   procedure onEvent (This : in out DefaultGameInitializationListener; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class);
+   procedure onGameInitialized (This : in out DefaultGameInitializationListener; gameInitializedEvent_Param : access GameInitializedEvent_Package.GameInitializedEvent'Class);
 
 end org.allbinary.game.init.DefaultGameInitializationListener_Package;
 

@@ -40,8 +40,8 @@ package body org.allbinary.thread.ThreadUtil_Package is
         return ThreadUtil_Package.instance;
    end getInstance;
 
-   function isRunning (This : in out ThreadUtil; thread_Param : access Thread'Class) return Boolean is
-      thread : Thread_Access := Thread_Access (thread_Param);
+   function isRunning (This : in out ThreadUtil; thread_Param : access Thread_Package.Thread'Class) return Boolean is
+      thread : constant Thread_Access := Thread_Access (thread_Param);
    begin
         if ((thread) /= (null)) and then (thread.isAlive) then
             return True;
@@ -51,8 +51,8 @@ package body org.allbinary.thread.ThreadUtil_Package is
    end isRunning;
 
    --  throws Exception
-   procedure join_Case (This : in out ThreadUtil; thread_Param : access Thread'Class) is
-      thread : Thread_Access := Thread_Access (thread_Param);
+   procedure join_Case (This : in out ThreadUtil; thread_Param : access Thread_Package.Thread'Class) is
+      thread : constant Thread_Access := Thread_Access (thread_Param);
    begin
         if ThreadUtil_Package.getInstance.isRunning (thread) then
             This.logUtil.putF (To_Unbounded_String ("Waiting for Thread To Join/End"), ThreadUtil_Access'(This'Unchecked_Access), This.JOIN);
@@ -60,7 +60,7 @@ package body org.allbinary.thread.ThreadUtil_Package is
         end if;
    end join_Case;
 
-   procedure isRunning (This : in out ThreadUtil; thread_Param : access Thread'Class) is
+   procedure isRunning (This : in out ThreadUtil; thread_Param : access Thread_Package.Thread'Class) is
       Java_Result : constant Boolean := ThreadUtil'Class (This).isRunning (thread_Param);
       pragma Unreferenced (Java_Result);
    begin

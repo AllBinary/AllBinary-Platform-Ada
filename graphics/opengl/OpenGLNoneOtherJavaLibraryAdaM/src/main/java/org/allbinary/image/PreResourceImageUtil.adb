@@ -38,27 +38,27 @@ package body org.allbinary.image.PreResourceImageUtil_Package is
         return PreResourceImageUtil_Package.instance;
    end getInstance;
 
-   function encapsulate (This : in out PreResourceImageUtil; image_Param : access Image'Class) return Image_Access is
-      image : Image_Access := Image_Access (image_Param);
+   function encapsulate (This : in out PreResourceImageUtil; image_Param : access Image_Package.Image'Class) return Image_Access is
+      image : constant Image_Access := Image_Access (image_Param);
    begin
         return image;
    end encapsulate;
 
-   procedure updateGL (This : in out PreResourceImageUtil; gl_Param : access GL'Class; image_Param : access Image'Class) is
-      gl : GL_Access := GL_Access (gl_Param);
-      image : Image_Access := Image_Access (image_Param);
+   procedure updateGL (This : in out PreResourceImageUtil; gl_Param : access GL_Package.GL'Class; image_Param : access Image_Package.Image'Class) is
+      gl : constant GL_Access := GL_Access (gl_Param);
+      image : constant Image_Access := Image_Access (image_Param);
    begin
         null;
    end updateGL;
 
-   procedure update (This : in out PreResourceImageUtil; graphics_Param : access Graphics'Class; image_Param : access Image'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
-      image : Image_Access := Image_Access (image_Param);
+   procedure update (This : in out PreResourceImageUtil; graphics_Param : access Graphics_Package.Graphics'Class; image_Param : access Image_Package.Image'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
+      image : constant Image_Access := Image_Access (image_Param);
    begin
         null;
    end update;
 
-   procedure encapsulate (This : in out PreResourceImageUtil; image_Param : access Image'Class) is
+   procedure encapsulate (This : in out PreResourceImageUtil; image_Param : access Image_Package.Image'Class) is
       Java_Result : constant Image_Access := PreResourceImageUtil'Class (This).encapsulate (image_Param);
       pragma Unreferenced (Java_Result);
    begin

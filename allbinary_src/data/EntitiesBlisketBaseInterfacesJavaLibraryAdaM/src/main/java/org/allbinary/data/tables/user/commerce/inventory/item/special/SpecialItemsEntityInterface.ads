@@ -36,8 +36,8 @@ package org.allbinary.data.tables.user.commerce.inventory.item.special.SpecialIt
    type SpecialItemsEntityInterface_Access_Array is array (Natural range <>) of SpecialItemsEntityInterface_Access;
    type SpecialItemsEntityInterface_Access_Array_Access is access all SpecialItemsEntityInterface_Access_Array;
    procedure delete (This : in out SpecialItemsEntityInterface; value : Unbounded_String) is abstract;
-   procedure insert (This : in out SpecialItemsEntityInterface; values_Param : access BasicArrayList'Class) is abstract;
-   procedure update (This : in out SpecialItemsEntityInterface; updatedValues_Param : access HashMap'Class) is abstract;
+   procedure insert (This : in out SpecialItemsEntityInterface; values_Param : access BasicArrayList_Package.BasicArrayList'Class) is abstract;
+   procedure update (This : in out SpecialItemsEntityInterface; updatedValues_Param : access HashMap_Package.HashMap'Class) is abstract;
 
 end org.allbinary.data.tables.user.commerce.inventory.item.special.SpecialItemsEntityInterface_Package;
 

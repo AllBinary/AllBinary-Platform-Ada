@@ -56,13 +56,13 @@ package org.allbinary.input.automation.module.actions.script.condition.processor
 
    procedure Initialize (This : in out ImageTypes'Class);
    function Create return ImageTypes_Access;
-   procedure Initialize (This : in out ImageTypes'Class; node_Param : access Node'Class);
-   function Create (node_Param : access Node'Class) return ImageTypes_Access;
+   procedure Initialize (This : in out ImageTypes'Class; node_Param : access Node_Package.Node'Class);
+   function Create (node_Param : access Node_Package.Node'Class) return ImageTypes_Access;
    function valueOf (anyType : Java_Object_Access_Array_Access) return ImageTypes_Access;
    procedure valueOf (anyType : Java_Object_Access_Array_Access);
    function getVector (This : in out ImageTypes) return BasicArrayList_Access;
-   function toXmlNode (This : in out ImageTypes; document_Param : access Document'Class) return Node_Access;
-   procedure toXmlNode (This : in out ImageTypes; document_Param : access Document'Class);
+   function toXmlNode (This : in out ImageTypes; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out ImageTypes; document_Param : access Document_Package.Document'Class);
    function toString (This : in out ImageTypes) return Unbounded_String;
 
 end org.allbinary.input.automation.module.actions.script.condition.processors.output.ImageTypes_Package;

@@ -36,9 +36,9 @@ package body org.allbinary.media.image.comparison.ImageComparisonResult_Package 
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ImageComparisonResult'Class; name : Unbounded_String; bufferedImage_Param : access BufferedImage'Class; bufferedImage2_Param : access BufferedImage'Class; frameOne : Long_Long_Integer; frameTwo : Long_Long_Integer; tolerance : Integer) is
-      bufferedImage : BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
-      bufferedImage2 : BufferedImage_Access := BufferedImage_Access (bufferedImage2_Param);
+   procedure Initialize (This : in out ImageComparisonResult'Class; name : Unbounded_String; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; bufferedImage2_Param : access BufferedImage_Package.BufferedImage'Class; frameOne : Long_Long_Integer; frameTwo : Long_Long_Integer; tolerance : Integer) is
+      bufferedImage : constant BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
+      bufferedImage2 : constant BufferedImage_Access := BufferedImage_Access (bufferedImage2_Param);
       imageHeight : Integer;
       imageWidth : Integer;
       imageUtil : ImageUtil_Access;
@@ -79,7 +79,7 @@ package body org.allbinary.media.image.comparison.ImageComparisonResult_Package 
         end if;
    end Initialize;
 
-   function Create (name : Unbounded_String; bufferedImage_Param : access BufferedImage'Class; bufferedImage2_Param : access BufferedImage'Class; frameOne : Long_Long_Integer; frameTwo : Long_Long_Integer; tolerance : Integer) return ImageComparisonResult_Access is
+   function Create (name : Unbounded_String; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; bufferedImage2_Param : access BufferedImage_Package.BufferedImage'Class; frameOne : Long_Long_Integer; frameTwo : Long_Long_Integer; tolerance : Integer) return ImageComparisonResult_Access is
       This : constant ImageComparisonResult_Access := new ImageComparisonResult;
    begin
       ImageComparisonResult_Package.Initialize (This.all, name, bufferedImage_Param, bufferedImage2_Param, frameOne, frameTwo, tolerance);
@@ -94,8 +94,8 @@ package body org.allbinary.media.image.comparison.ImageComparisonResult_Package 
         return This.matchingPercent;
    end getMatchingPercent;
 
-   procedure add (This : in out ImageComparisonResult; pixel_Param : access PixelDelta'Class) is
-      pixel : PixelDelta_Access := PixelDelta_Access (pixel_Param);
+   procedure add (This : in out ImageComparisonResult; pixel_Param : access PixelDelta_Package.PixelDelta'Class) is
+      pixel : constant PixelDelta_Access := PixelDelta_Access (pixel_Param);
    begin
         This.nonMatchingPixelVector.add (pixel);
    end add;

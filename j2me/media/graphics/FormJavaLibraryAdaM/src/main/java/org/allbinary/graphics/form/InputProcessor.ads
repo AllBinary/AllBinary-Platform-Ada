@@ -37,8 +37,8 @@ package org.allbinary.graphics.form.InputProcessor_Package is
       playerGameInputCompositeInterface : PlayerGameInputCompositeInterface_Access;
    end record;
 
-   procedure Initialize (This : in out InputProcessor'Class; playerGameInputCompositeInterface_Param : access PlayerGameInputCompositeInterface'Class);
-   function Create (playerGameInputCompositeInterface_Param : access PlayerGameInputCompositeInterface'Class) return InputProcessor_Access;
+   procedure Initialize (This : in out InputProcessor'Class; playerGameInputCompositeInterface_Param : access PlayerGameInputCompositeInterface_Package.PlayerGameInputCompositeInterface'Class);
+   function Create (playerGameInputCompositeInterface_Param : access PlayerGameInputCompositeInterface_Package.PlayerGameInputCompositeInterface'Class) return InputProcessor_Access;
    procedure process (This : in out InputProcessor);
 
 end org.allbinary.graphics.form.InputProcessor_Package;

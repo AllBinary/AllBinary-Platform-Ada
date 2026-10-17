@@ -62,10 +62,10 @@ package org.allbinary.logic.system.security.licensing.client.XmlRpcAbeLicenseRet
       logUtil : LogUtil_Access;
    end record;
 
-   procedure Initialize (This : in out XmlRpcAbeLicenseRetrievalClient'Class; clientInfo_Param : access AbeClientInformationInterface'Class);
-   function Create (clientInfo_Param : access AbeClientInformationInterface'Class) return XmlRpcAbeLicenseRetrievalClient_Access;
-   function get (This : in out XmlRpcAbeLicenseRetrievalClient; anyType_Param : access Java_Object'Class; cryptInterface_Param : access CryptInterface'Class) return Java_Object_Access;
-   procedure get (This : in out XmlRpcAbeLicenseRetrievalClient; anyType_Param : access Java_Object'Class; cryptInterface_Param : access CryptInterface'Class);
+   procedure Initialize (This : in out XmlRpcAbeLicenseRetrievalClient'Class; clientInfo_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class);
+   function Create (clientInfo_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) return XmlRpcAbeLicenseRetrievalClient_Access;
+   function get (This : in out XmlRpcAbeLicenseRetrievalClient; anyType_Param : access Java_Object'Class; cryptInterface_Param : access CryptInterface_Package.CryptInterface'Class) return Java_Object_Access;
+   procedure get (This : in out XmlRpcAbeLicenseRetrievalClient; anyType_Param : access Java_Object'Class; cryptInterface_Param : access CryptInterface_Package.CryptInterface'Class);
 
 end org.allbinary.logic.system.security.licensing.client.XmlRpcAbeLicenseRetrievalClient_Package;
 

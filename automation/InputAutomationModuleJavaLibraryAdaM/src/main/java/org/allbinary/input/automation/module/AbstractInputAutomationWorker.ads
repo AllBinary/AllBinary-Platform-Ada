@@ -58,9 +58,9 @@ package org.allbinary.input.automation.module.AbstractInputAutomationWorker_Pack
       captureThread : Thread_Access;
    end record;
 
-   procedure Initialize (This : in out AbstractInputAutomationWorker'Class; inputAutomationActionInterface_Param : access InputAutomationActionInterface'Class);
-   function Create (inputAutomationActionInterface_Param : access InputAutomationActionInterface'Class) return AbstractInputAutomationWorker_Access;
-   procedure setThread (This : in out AbstractInputAutomationWorker; thread_Param : access Thread'Class);
+   procedure Initialize (This : in out AbstractInputAutomationWorker'Class; inputAutomationActionInterface_Param : access InputAutomationActionInterface_Package.InputAutomationActionInterface'Class);
+   function Create (inputAutomationActionInterface_Param : access InputAutomationActionInterface_Package.InputAutomationActionInterface'Class) return AbstractInputAutomationWorker_Access;
+   procedure setThread (This : in out AbstractInputAutomationWorker; thread_Param : access Thread_Package.Thread'Class);
    function isRunning (This : in out AbstractInputAutomationWorker) return Boolean;
    procedure setRunning (This : in out AbstractInputAutomationWorker; running : Boolean);
    function isAnyDataWorkerRunning (This : in out AbstractInputAutomationWorker) return Boolean;
@@ -70,13 +70,13 @@ package org.allbinary.input.automation.module.AbstractInputAutomationWorker_Pack
    procedure process (This : in out AbstractInputAutomationWorker);
    procedure run (This : in out AbstractInputAutomationWorker);
    function getInputAutomationActionInterface (This : in out AbstractInputAutomationWorker) return InputAutomationActionInterface_Access;
-   procedure setInputAutomationActionInterface (This : in out AbstractInputAutomationWorker; inputAutomationActionInterface_Param : access InputAutomationActionInterface'Class);
+   procedure setInputAutomationActionInterface (This : in out AbstractInputAutomationWorker; inputAutomationActionInterface_Param : access InputAutomationActionInterface_Package.InputAutomationActionInterface'Class);
    function getCaptureWorker (This : in out AbstractInputAutomationWorker) return CaptureWorkerInterface_Access;
-   procedure setCaptureWorker (This : in out AbstractInputAutomationWorker; captureWorkerInterface_Param : access CaptureWorkerInterface'Class);
+   procedure setCaptureWorker (This : in out AbstractInputAutomationWorker; captureWorkerInterface_Param : access CaptureWorkerInterface_Package.CaptureWorkerInterface'Class);
    function getImageComparisonWorker (This : in out AbstractInputAutomationWorker) return ImageComparisonWorker_Access;
-   procedure setImageComparisonWorker (This : in out AbstractInputAutomationWorker; imageComparisonWorker_Param : access ImageComparisonWorker'Class);
+   procedure setImageComparisonWorker (This : in out AbstractInputAutomationWorker; imageComparisonWorker_Param : access ImageComparisonWorker_Package.ImageComparisonWorker'Class);
    function getMotionRectanglesWorker (This : in out AbstractInputAutomationWorker) return MotionRectanglesWorker_Access;
-   procedure setMotionRectanglesWorker (This : in out AbstractInputAutomationWorker; motionRectanglesWorker_Param : access MotionRectanglesWorker'Class);
+   procedure setMotionRectanglesWorker (This : in out AbstractInputAutomationWorker; motionRectanglesWorker_Param : access MotionRectanglesWorker_Package.MotionRectanglesWorker'Class);
 
 end org.allbinary.input.automation.module.AbstractInputAutomationWorker_Package;
 

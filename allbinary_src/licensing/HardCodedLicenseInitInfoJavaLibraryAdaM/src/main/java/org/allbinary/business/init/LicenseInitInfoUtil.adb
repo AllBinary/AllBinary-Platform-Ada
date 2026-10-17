@@ -49,8 +49,8 @@ package body org.allbinary.business.init.LicenseInitInfoUtil_Package is
    end Create;
 
    --  throws Exception
-   procedure write (This : in out LicenseInitInfoUtil; initData_Param : access LicenseInitInfo'Class) is
-      initData : LicenseInitInfo_Access := LicenseInitInfo_Access (initData_Param);
+   procedure write (This : in out LicenseInitInfoUtil; initData_Param : access LicenseInitInfo_Package.LicenseInitInfo'Class) is
+      initData : constant LicenseInitInfo_Access := LicenseInitInfo_Access (initData_Param);
    begin
         null;
    end write;

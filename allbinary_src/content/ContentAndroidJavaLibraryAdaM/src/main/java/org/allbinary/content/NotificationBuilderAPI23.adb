@@ -34,17 +34,17 @@ package body org.allbinary.content.NotificationBuilderAPI23_Package is
    end Create;
 
 
-   function build (This : in out NotificationBuilderAPI23; context_Param : access Context'Class; command_Param : access Command'Class; message : Unbounded_String; integer_Id : Integer; pendingIntent_Param : access PendingIntent'Class) return Parcelable_Access is
-      context : Context_Access := Context_Access (context_Param);
-      command : Command_Access := Command_Access (command_Param);
-      pendingIntent : PendingIntent_Access := PendingIntent_Access (pendingIntent_Param);
+   function build (This : in out NotificationBuilderAPI23; context_Param : access Context_Package.Context'Class; command_Param : access Command_Package.Command'Class; message : Unbounded_String; integer_Id : Integer; pendingIntent_Param : access PendingIntent_Package.PendingIntent'Class) return Parcelable_Access is
+      context : constant Context_Access := Context_Access (context_Param);
+      command : constant Command_Access := Command_Access (command_Param);
+      pendingIntent : constant PendingIntent_Access := PendingIntent_Access (pendingIntent_Param);
       notification : Notification_Access;
    begin
         notification := Builder_Package.Create (context).setSmallIcon (integer_Id.intValue).setTicker (message).setWhen (Java_Current_Time_Millis).setContentTitle (command.getLabel).setContentText (message).setContentIntent (pendingIntent).build;
         return notification;
    end build;
 
-   procedure build (This : in out NotificationBuilderAPI23; context_Param : access Context'Class; command_Param : access Command'Class; message : Unbounded_String; integer_Id : Integer; pendingIntent_Param : access PendingIntent'Class) is
+   procedure build (This : in out NotificationBuilderAPI23; context_Param : access Context_Package.Context'Class; command_Param : access Command_Package.Command'Class; message : Unbounded_String; integer_Id : Integer; pendingIntent_Param : access PendingIntent_Package.PendingIntent'Class) is
       Java_Result : constant Parcelable_Access := NotificationBuilderAPI23'Class (This).build (context_Param, command_Param, message, integer_Id, pendingIntent_Param);
       pragma Unreferenced (Java_Result);
    begin

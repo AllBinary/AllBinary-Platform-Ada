@@ -43,17 +43,17 @@ package org.allbinary.business.category.hierarchy.CategoryHierarchy_Package is
       level : Integer;
    end record;
 
-   procedure Initialize (This : in out CategoryHierarchy'Class; rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class);
-   function Create (rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class) return CategoryHierarchy_Access;
-   procedure Initialize (This : in out CategoryHierarchy'Class; rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class; level : Integer);
-   function Create (rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class; level : Integer) return CategoryHierarchy_Access;
-   procedure Initialize (This : in out CategoryHierarchy'Class; rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class; categoryPropertiesHashMap_Param : access HashMap'Class);
-   function Create (rootCategoryInterface_Param : access CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface'Class; categoryPropertiesHashMap_Param : access HashMap'Class) return CategoryHierarchy_Access;
+   procedure Initialize (This : in out CategoryHierarchy'Class; rootCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class);
+   function Create (rootCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class) return CategoryHierarchy_Access;
+   procedure Initialize (This : in out CategoryHierarchy'Class; rootCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; level : Integer);
+   function Create (rootCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; level : Integer) return CategoryHierarchy_Access;
+   procedure Initialize (This : in out CategoryHierarchy'Class; rootCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; categoryPropertiesHashMap_Param : access HashMap_Package.HashMap'Class);
+   function Create (rootCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; categoryPropertiesHashMap_Param : access HashMap_Package.HashMap'Class) return CategoryHierarchy_Access;
    function getLevel (This : in out CategoryHierarchy) return Integer;
    function getLevelString (This : in out CategoryHierarchy) return Unbounded_String;
    procedure setLevel (This : in out CategoryHierarchy; level : Integer);
-   procedure setParent (This : in out CategoryHierarchy; categoryInterface_Param : access CategoryInterface'Class);
-   procedure setRoot (This : in out CategoryHierarchy; categoryInterface_Param : access CategoryInterface'Class);
+   procedure setParent (This : in out CategoryHierarchy; categoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class);
+   procedure setRoot (This : in out CategoryHierarchy; categoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class);
    function getRoot (This : in out CategoryHierarchy) return CategoryInterface_Access;
    function getParent (This : in out CategoryHierarchy) return CategoryInterface_Access;
 

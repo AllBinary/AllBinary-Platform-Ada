@@ -41,8 +41,8 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoPropertiesFa
    end Create;
 
    --  throws Exception
-   function getInstance (This : in out TransformInfoPropertiesFactory; node_Param : access Node'Class) return TransformInfoProperties_Access is
-      node : Node_Access := Node_Access (node_Param);
+   function getInstance (This : in out TransformInfoPropertiesFactory; node_Param : access Node_Package.Node'Class) return TransformInfoProperties_Access is
+      node : constant Node_Access := Node_Access (node_Param);
       transformInfoChildNodeList : NodeList_Access;
       transformInfoData : TransformInfoData_Access;
       attributes : NamedNodeMap_Access;
@@ -85,7 +85,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoPropertiesFa
         return transformInfoProperties;
    end getInstance;
 
-   procedure getInstance (This : in out TransformInfoPropertiesFactory; node_Param : access Node'Class) is
+   procedure getInstance (This : in out TransformInfoPropertiesFactory; node_Param : access Node_Package.Node'Class) is
       Java_Result : constant TransformInfoProperties_Access := TransformInfoPropertiesFactory'Class (This).getInstance (node_Param);
       pragma Unreferenced (Java_Result);
    begin

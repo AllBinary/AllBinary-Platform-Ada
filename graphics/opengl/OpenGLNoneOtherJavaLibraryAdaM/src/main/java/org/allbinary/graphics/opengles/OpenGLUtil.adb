@@ -26,8 +26,8 @@ package body org.allbinary.graphics.opengles.OpenGLUtil_Package is
         return OpenGLUtil_Package.instance;
    end getInstance;
 
-   function addImage (This : in out OpenGLUtil; image_Param : access Image'Class) return Image_Access is
-      image : Image_Access := Image_Access (image_Param);
+   function addImage (This : in out OpenGLUtil; image_Param : access Image_Package.Image'Class) return Image_Access is
+      image : constant Image_Access := Image_Access (image_Param);
    begin
         return image;
    end addImage;
@@ -37,13 +37,13 @@ package body org.allbinary.graphics.opengles.OpenGLUtil_Package is
         null;
    end clear;
 
-   procedure addRunnable (This : in out OpenGLUtil; runnable_Param : access Runnable'Class) is
-      runnable : Runnable_Access := Runnable_Access (runnable_Param);
+   procedure addRunnable (This : in out OpenGLUtil; runnable_Param : access Runnable_Package.Runnable'Class) is
+      runnable : constant Runnable_Access := Runnable_Access (runnable_Param);
    begin
         null;
    end addRunnable;
 
-   procedure addImage (This : in out OpenGLUtil; image_Param : access Image'Class) is
+   procedure addImage (This : in out OpenGLUtil; image_Param : access Image_Package.Image'Class) is
       Java_Result : constant Image_Access := OpenGLUtil'Class (This).addImage (image_Param);
       pragma Unreferenced (Java_Result);
    begin

@@ -57,9 +57,9 @@ package org.allbinary.servlet.ImageServlet_Package is
 
    procedure Initialize (This : in out ImageServlet'Class);
    function Create return ImageServlet_Access;
-   procedure processRequest (This : in out ImageServlet; request_Param : access HttpServletRequest'Class; response_Param : access HttpServletResponse'Class);
-   procedure doGet (This : in out ImageServlet; request_Param : access HttpServletRequest'Class; response_Param : access HttpServletResponse'Class);
-   procedure doPost (This : in out ImageServlet; request_Param : access HttpServletRequest'Class; response_Param : access HttpServletResponse'Class);
+   procedure processRequest (This : in out ImageServlet; request_Param : access HttpServletRequest_Package.HttpServletRequest'Class; response_Param : access HttpServletResponse_Package.HttpServletResponse'Class);
+   procedure doGet (This : in out ImageServlet; request_Param : access HttpServletRequest_Package.HttpServletRequest'Class; response_Param : access HttpServletResponse_Package.HttpServletResponse'Class);
+   procedure doPost (This : in out ImageServlet; request_Param : access HttpServletRequest_Package.HttpServletRequest'Class; response_Param : access HttpServletResponse_Package.HttpServletResponse'Class);
    function getServletInfo (This : in out ImageServlet) return Unbounded_String;
 
 end org.allbinary.servlet.ImageServlet_Package;

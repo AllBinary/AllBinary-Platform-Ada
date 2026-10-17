@@ -55,7 +55,7 @@ package org.allbinary.logic.system.security.licensing.LockedFeatureNotificationU
    function Create return LockedFeatureNotificationUtil_Access;
    function getInstance return LockedFeatureNotificationUtil_Access;
    procedure fire (This : in out LockedFeatureNotificationUtil);
-   procedure fireWithColor (This : in out LockedFeatureNotificationUtil; basicColor_Param : access BasicColor'Class);
+   procedure fireWithColor (This : in out LockedFeatureNotificationUtil; basicColor_Param : access BasicColor_Package.BasicColor'Class);
 
 end org.allbinary.logic.system.security.licensing.LockedFeatureNotificationUtil_Package;
 

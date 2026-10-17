@@ -72,7 +72,7 @@ package body org.allbinary.logic.system.hardware.components.linux.Cpu_Package is
    end init;
 
    --  throws Exception
-   procedure init (This : in out Cpu; lineNumberReader_Param : access LineNumberReader'Class; filePath : Unbounded_String) is
+   procedure init (This : in out Cpu; lineNumberReader_Param : access LineNumberReader_Package.LineNumberReader'Class; filePath : Unbounded_String) is
       lineNumberReader : LineNumberReader_Access := LineNumberReader_Access (lineNumberReader_Param);
       fileReader : FileReader_Access;
       fileVector : BasicArrayList_Access;
@@ -182,14 +182,14 @@ package body org.allbinary.logic.system.hardware.components.linux.Cpu_Package is
         return Unbounded_String (This.cpuHashMap.get (CpuInfo_Package.CACHESIZE));
    end getCacheSize;
 
-   function compareTo (This : in out Cpu; cpuInterface_Param : access CpuInterface'Class) return Boolean is
-      cpuInterface : CpuInterface_Access := CpuInterface_Access (cpuInterface_Param);
+   function compareTo (This : in out Cpu; cpuInterface_Param : access CpuInterface_Package.CpuInterface'Class) return Boolean is
+      cpuInterface : constant CpuInterface_Access := CpuInterface_Access (cpuInterface_Param);
    begin
         return True;
    end compareTo;
 
-   function compareTo (This : in out Cpu; componentInterface_Param : access HardwareComponentInterface'Class) return Boolean is
-      componentInterface : HardwareComponentInterface_Access := HardwareComponentInterface_Access (componentInterface_Param);
+   function compareTo (This : in out Cpu; componentInterface_Param : access HardwareComponentInterface_Package.HardwareComponentInterface'Class) return Boolean is
+      componentInterface : constant HardwareComponentInterface_Access := HardwareComponentInterface_Access (componentInterface_Param);
    begin
         return True;
    end compareTo;
@@ -220,14 +220,14 @@ package body org.allbinary.logic.system.hardware.components.linux.Cpu_Package is
         return stringMaker.toString;
    end toString;
 
-   procedure compareTo (This : in out Cpu; cpuInterface_Param : access CpuInterface'Class) is
+   procedure compareTo (This : in out Cpu; cpuInterface_Param : access CpuInterface_Package.CpuInterface'Class) is
       Java_Result : constant Boolean := Cpu'Class (This).compareTo (cpuInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end compareTo;
 
-   procedure compareTo (This : in out Cpu; componentInterface_Param : access HardwareComponentInterface'Class) is
+   procedure compareTo (This : in out Cpu; componentInterface_Param : access HardwareComponentInterface_Package.HardwareComponentInterface'Class) is
       Java_Result : constant Boolean := Cpu'Class (This).compareTo (componentInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

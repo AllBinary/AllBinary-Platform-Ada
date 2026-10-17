@@ -24,15 +24,15 @@ package body org.allbinary.animation.IndexedAnimation_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out IndexedAnimation'Class; animationBehavior_Param : access AnimationBehavior'Class) is
-      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
+   procedure Initialize (This : in out IndexedAnimation'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) is
+      animationBehavior : constant AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
       Animation_Package.Initialize (This);
       Initialize_Fields (This);
         This.animationBehaviorP := animationBehavior;
    end Initialize;
 
-   function Create (animationBehavior_Param : access AnimationBehavior'Class) return IndexedAnimation_Access is
+   function Create (animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return IndexedAnimation_Access is
       This : constant IndexedAnimation_Access := new IndexedAnimation;
    begin
       IndexedAnimation_Package.Initialize (This.all, animationBehavior_Param);
@@ -95,8 +95,8 @@ package body org.allbinary.animation.IndexedAnimation_Package is
         return PrimitiveIntUtil_Package.getArrayInstance;
    end getSequence;
 
-   procedure setState (This : in out IndexedAnimation; indexedAnimation_Param : access IndexedAnimation'Class) is
-      indexedAnimation : IndexedAnimation_Access := IndexedAnimation_Access (indexedAnimation_Param);
+   procedure setState (This : in out IndexedAnimation; indexedAnimation_Param : access IndexedAnimation_Package.IndexedAnimation'Class) is
+      indexedAnimation : constant IndexedAnimation_Access := IndexedAnimation_Access (indexedAnimation_Param);
    begin
         This.setFrame (indexedAnimation.getFrame);
         This.setDx (indexedAnimation.getDx);

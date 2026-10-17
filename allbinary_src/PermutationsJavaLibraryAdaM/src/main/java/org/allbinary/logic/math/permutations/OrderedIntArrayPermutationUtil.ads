@@ -45,7 +45,7 @@ package org.allbinary.logic.math.permutations.OrderedIntArrayPermutationUtil_Pac
    procedure swap (This : in out OrderedIntArrayPermutationUtil; data : Integer_Array_Access; a : Integer; b : Integer);
    function factorial (This : in out OrderedIntArrayPermutationUtil; dataLength : Integer) return Long_Long_Integer;
    procedure factorial (This : in out OrderedIntArrayPermutationUtil; dataLength : Integer);
-   procedure generate (This : in out OrderedIntArrayPermutationUtil; data : Integer_Array_Access; visitor_Param : access Visitor'Class);
+   procedure generate (This : in out OrderedIntArrayPermutationUtil; data : Integer_Array_Access; visitor_Param : access Visitor_Package.Visitor'Class);
    procedure main (args : Unbounded_String_Array_Access);
 
 end org.allbinary.logic.math.permutations.OrderedIntArrayPermutationUtil_Package;

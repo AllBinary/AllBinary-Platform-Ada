@@ -33,13 +33,13 @@ package body org.allbinary.animation.TimedVectorAnimationFactory_Package is
    end Create;
 
 
-   function getInstance (This : in out TimedVectorAnimationFactory; points : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor'Class) return VectorAnimation_Access is
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+   function getInstance (This : in out TimedVectorAnimationFactory; points : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor_Package.BasicColor'Class) return VectorAnimation_Access is
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         return TimedVectorAnimation_Package.Create (points, basicColor, AnimationBehavior_Package.getInstance);
    end getInstance;
 
-   procedure getInstance (This : in out TimedVectorAnimationFactory; points : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor'Class) is
+   procedure getInstance (This : in out TimedVectorAnimationFactory; points : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
       Java_Result : constant VectorAnimation_Access := TimedVectorAnimationFactory'Class (This).getInstance (points, basicColor_Param);
       pragma Unreferenced (Java_Result);
    begin

@@ -65,11 +65,11 @@ package org.allbinary.animation.vector.VectorCenterGenerator_Package is
 
    procedure Initialize (This : in out VectorCenterGenerator'Class);
    function Create return VectorCenterGenerator_Access;
-   procedure calculate (This : in out VectorCenterGenerator; hashMap_Param : access HashMap'Class);
-   procedure transform (This : in out VectorCenterGenerator; hashMap_Param : access HashMap'Class);
-   procedure getInstance (This : in out VectorCenterGenerator; pointVector_Param : access BasicArrayList'Class);
-   function translate (list_Param : access BasicArrayList'Class; x : Integer; y : Integer) return BasicArrayList_Access;
-   procedure translate (list_Param : access BasicArrayList'Class; x : Integer; y : Integer);
+   procedure calculate (This : in out VectorCenterGenerator; hashMap_Param : access HashMap_Package.HashMap'Class);
+   procedure transform (This : in out VectorCenterGenerator; hashMap_Param : access HashMap_Package.HashMap'Class);
+   procedure getInstance (This : in out VectorCenterGenerator; pointVector_Param : access BasicArrayList_Package.BasicArrayList'Class);
+   function translate (list_Param : access BasicArrayList_Package.BasicArrayList'Class; x : Integer; y : Integer) return BasicArrayList_Access;
+   procedure translate (list_Param : access BasicArrayList_Package.BasicArrayList'Class; x : Integer; y : Integer);
    function getWidth (This : in out VectorCenterGenerator) return Integer;
    procedure setWidth (This : in out VectorCenterGenerator; width : Integer);
    function getHeight (This : in out VectorCenterGenerator) return Integer;

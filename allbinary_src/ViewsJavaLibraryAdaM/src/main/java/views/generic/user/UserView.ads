@@ -46,8 +46,8 @@ package views.generic_Id.user.UserView_Package is
       user : UserInterface_Access;
    end record;
 
-   procedure Initialize (This : in out UserView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return UserView_Access;
+   procedure Initialize (This : in out UserView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return UserView_Access;
    procedure addDomNodeInterfaces (This : in out UserView);
    function view (This : in out UserView) return Unbounded_String;
 

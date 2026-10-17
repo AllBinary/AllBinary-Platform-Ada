@@ -37,8 +37,8 @@ package body org.allbinary.game.Intermission_Package is
       return This;
    end Create;
 
-   procedure setListener (This : in out Intermission; enableListener_Param : access IntermissionEnableListenerInterface'Class) is
-      enableListener : IntermissionEnableListenerInterface_Access := IntermissionEnableListenerInterface_Access (enableListener_Param);
+   procedure setListener (This : in out Intermission; enableListener_Param : access IntermissionEnableListenerInterface_Package.IntermissionEnableListenerInterface'Class) is
+      enableListener : constant IntermissionEnableListenerInterface_Access := IntermissionEnableListenerInterface_Access (enableListener_Param);
    begin
         This.intermissionEnableListener := enableListener;
    end setListener;

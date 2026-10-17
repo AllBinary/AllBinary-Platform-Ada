@@ -45,8 +45,8 @@ package admin.taghelpers.CustomItemsHelper_Package is
       portion : Portion_Access;
    end record;
 
-   procedure Initialize (This : in out CustomItemsHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
-   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return CustomItemsHelper_Access;
+   procedure Initialize (This : in out CustomItemsHelper'Class; hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class);
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return CustomItemsHelper_Access;
    function create (This : in out CustomItemsHelper) return Unbounded_String;
    function drop (This : in out CustomItemsHelper) return Unbounded_String;
    function restore (This : in out CustomItemsHelper) return Unbounded_String;

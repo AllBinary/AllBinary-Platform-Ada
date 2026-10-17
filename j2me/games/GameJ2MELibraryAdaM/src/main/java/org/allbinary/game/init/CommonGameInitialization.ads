@@ -55,7 +55,7 @@ package org.allbinary.game.init.CommonGameInitialization_Package is
 
    procedure Initialize (This : in out CommonGameInitialization'Class; resourceInitializationArray : ResourceInitialization_Access_Array_Access; portion : Integer);
    function Create (resourceInitializationArray : ResourceInitialization_Access_Array_Access; portion : Integer) return CommonGameInitialization_Access;
-   procedure init (This : in out CommonGameInitialization; abeClientInformation_Param : access AbeClientInformationInterface'Class; commandListener_Param : access CommandListener'Class; level : Integer);
+   procedure init (This : in out CommonGameInitialization; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; commandListener_Param : access CommandListener_Package.CommandListener'Class; level : Integer);
    procedure initGame (This : in out CommonGameInitialization);
 
 end org.allbinary.game.init.CommonGameInitialization_Package;

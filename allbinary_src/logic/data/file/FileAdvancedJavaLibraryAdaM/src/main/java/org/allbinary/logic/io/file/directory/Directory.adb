@@ -39,15 +39,15 @@ package body org.allbinary.logic.io.file.directory.Directory_Package is
       return This;
    end Create;
 
-   function create (This : in out Directory; directoryAbPath_Param : access AbPath'Class) return Boolean is
-      directoryAbPath : AbPath_Access := AbPath_Access (directoryAbPath_Param);
+   function create (This : in out Directory; directoryAbPath_Param : access AbPath_Package.AbPath'Class) return Boolean is
+      directoryAbPath : constant AbPath_Access := AbPath_Access (directoryAbPath_Param);
    begin
         return This.create (directoryAbPath.toFileSystemString);
    end create;
 
    --  throws Exception
-   procedure remove (This : in out Directory; existingDirectoryAbPath_Param : access AbPath'Class) is
-      existingDirectoryAbPath : AbPath_Access := AbPath_Access (existingDirectoryAbPath_Param);
+   procedure remove (This : in out Directory; existingDirectoryAbPath_Param : access AbPath_Package.AbPath'Class) is
+      existingDirectoryAbPath : constant AbPath_Access := AbPath_Access (existingDirectoryAbPath_Param);
    begin
         This.remove (existingDirectoryAbPath.toFileSystemString);
    end remove;
@@ -91,16 +91,16 @@ package body org.allbinary.logic.io.file.directory.Directory_Package is
         end if;
    end remove;
 
-   function search (This : in out Directory; fileFilter_Param : access FileFilter'Class; file_Param : access AbFile'Class) return BasicArrayList_Access is
-      fileFilter : FileFilter_Access := FileFilter_Access (fileFilter_Param);
-      file : AbFile_Access := AbFile_Access (file_Param);
+   function search (This : in out Directory; fileFilter_Param : access FileFilter_Package.FileFilter'Class; file_Param : access AbFile_Package.AbFile'Class) return BasicArrayList_Access is
+      fileFilter : constant FileFilter_Access := FileFilter_Access (fileFilter_Param);
+      file : constant AbFile_Access := AbFile_Access (file_Param);
    begin
         return This.search (fileFilter, file, False);
    end search;
 
-   function search (This : in out Directory; fileFilter_Param : access FileFilter'Class; file_Param : access AbFile'Class; isRecursiveSearch : Boolean) return BasicArrayList_Access is
-      fileFilter : FileFilter_Access := FileFilter_Access (fileFilter_Param);
-      file : AbFile_Access := AbFile_Access (file_Param);
+   function search (This : in out Directory; fileFilter_Param : access FileFilter_Package.FileFilter'Class; file_Param : access AbFile_Package.AbFile'Class; isRecursiveSearch : Boolean) return BasicArrayList_Access is
+      fileFilter : constant FileFilter_Access := FileFilter_Access (fileFilter_Param);
+      file : constant AbFile_Access := AbFile_Access (file_Param);
       fileList : BasicArrayList_Access;
       recursiveFileList : BasicArrayList_Access;
       fileArray : Java_Object_Access_Array_Access;
@@ -131,14 +131,14 @@ package body org.allbinary.logic.io.file.directory.Directory_Package is
         return fileList;
    end search;
 
-   function search (This : in out Directory; file_Param : access AbFile'Class) return BasicArrayList_Access is
-      file : AbFile_Access := AbFile_Access (file_Param);
+   function search (This : in out Directory; file_Param : access AbFile_Package.AbFile'Class) return BasicArrayList_Access is
+      file : constant AbFile_Access := AbFile_Access (file_Param);
    begin
         return This.search (file, False);
    end search;
 
-   function search (This : in out Directory; file_Param : access AbFile'Class; isRecursiveSearch : Boolean) return BasicArrayList_Access is
-      file : AbFile_Access := AbFile_Access (file_Param);
+   function search (This : in out Directory; file_Param : access AbFile_Package.AbFile'Class; isRecursiveSearch : Boolean) return BasicArrayList_Access is
+      file : constant AbFile_Access := AbFile_Access (file_Param);
       fileList : BasicArrayList_Access;
       recursiveFileList : BasicArrayList_Access;
       fileArray : Java_Object_Access_Array_Access;
@@ -167,14 +167,14 @@ package body org.allbinary.logic.io.file.directory.Directory_Package is
         return fileList;
    end search;
 
-   function search (This : in out Directory; searchValue : Unbounded_String; file_Param : access AbFile'Class) return BasicArrayList_Access is
-      file : AbFile_Access := AbFile_Access (file_Param);
+   function search (This : in out Directory; searchValue : Unbounded_String; file_Param : access AbFile_Package.AbFile'Class) return BasicArrayList_Access is
+      file : constant AbFile_Access := AbFile_Access (file_Param);
    begin
         return This.search (searchValue, file, False);
    end search;
 
-   function search (This : in out Directory; searchValue : Unbounded_String; file_Param : access AbFile'Class; isRecursiveSearch : Boolean) return BasicArrayList_Access is
-      file : AbFile_Access := AbFile_Access (file_Param);
+   function search (This : in out Directory; searchValue : Unbounded_String; file_Param : access AbFile_Package.AbFile'Class; isRecursiveSearch : Boolean) return BasicArrayList_Access is
+      file : constant AbFile_Access := AbFile_Access (file_Param);
       fileList : BasicArrayList_Access;
       recursiveFileList : BasicArrayList_Access;
       fileArray : Java_Object_Access_Array_Access;
@@ -205,14 +205,14 @@ package body org.allbinary.logic.io.file.directory.Directory_Package is
         return fileList;
    end search;
 
-   function search (This : in out Directory; level : Integer; file_Param : access AbFile'Class) return BasicArrayList_Access is
-      file : AbFile_Access := AbFile_Access (file_Param);
+   function search (This : in out Directory; level : Integer; file_Param : access AbFile_Package.AbFile'Class) return BasicArrayList_Access is
+      file : constant AbFile_Access := AbFile_Access (file_Param);
    begin
         return This.search (level, file, False);
    end search;
 
-   function search (This : in out Directory; level : Integer; file_Param : access AbFile'Class; isRecursiveSearch : Boolean) return BasicArrayList_Access is
-      file : AbFile_Access := AbFile_Access (file_Param);
+   function search (This : in out Directory; level : Integer; file_Param : access AbFile_Package.AbFile'Class; isRecursiveSearch : Boolean) return BasicArrayList_Access is
+      file : constant AbFile_Access := AbFile_Access (file_Param);
       fileList : BasicArrayList_Access;
       recursiveFileList : BasicArrayList_Access;
       fileArray : Java_Object_Access_Array_Access;
@@ -242,7 +242,7 @@ package body org.allbinary.logic.io.file.directory.Directory_Package is
         return fileList;
    end search;
 
-   procedure create (This : in out Directory; directoryAbPath_Param : access AbPath'Class) is
+   procedure create (This : in out Directory; directoryAbPath_Param : access AbPath_Package.AbPath'Class) is
       Java_Result : constant Boolean := Directory'Class (This).create (directoryAbPath_Param);
       pragma Unreferenced (Java_Result);
    begin
@@ -256,56 +256,56 @@ package body org.allbinary.logic.io.file.directory.Directory_Package is
       null;
    end create;
 
-   procedure search (This : in out Directory; fileFilter_Param : access FileFilter'Class; file_Param : access AbFile'Class) is
+   procedure search (This : in out Directory; fileFilter_Param : access FileFilter_Package.FileFilter'Class; file_Param : access AbFile_Package.AbFile'Class) is
       Java_Result : constant BasicArrayList_Access := Directory'Class (This).search (fileFilter_Param, file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end search;
 
-   procedure search (This : in out Directory; fileFilter_Param : access FileFilter'Class; file_Param : access AbFile'Class; isRecursiveSearch : Boolean) is
+   procedure search (This : in out Directory; fileFilter_Param : access FileFilter_Package.FileFilter'Class; file_Param : access AbFile_Package.AbFile'Class; isRecursiveSearch : Boolean) is
       Java_Result : constant BasicArrayList_Access := Directory'Class (This).search (fileFilter_Param, file_Param, isRecursiveSearch);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end search;
 
-   procedure search (This : in out Directory; file_Param : access AbFile'Class) is
+   procedure search (This : in out Directory; file_Param : access AbFile_Package.AbFile'Class) is
       Java_Result : constant BasicArrayList_Access := Directory'Class (This).search (file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end search;
 
-   procedure search (This : in out Directory; file_Param : access AbFile'Class; isRecursiveSearch : Boolean) is
+   procedure search (This : in out Directory; file_Param : access AbFile_Package.AbFile'Class; isRecursiveSearch : Boolean) is
       Java_Result : constant BasicArrayList_Access := Directory'Class (This).search (file_Param, isRecursiveSearch);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end search;
 
-   procedure search (This : in out Directory; searchValue : Unbounded_String; file_Param : access AbFile'Class) is
+   procedure search (This : in out Directory; searchValue : Unbounded_String; file_Param : access AbFile_Package.AbFile'Class) is
       Java_Result : constant BasicArrayList_Access := Directory'Class (This).search (searchValue, file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end search;
 
-   procedure search (This : in out Directory; searchValue : Unbounded_String; file_Param : access AbFile'Class; isRecursiveSearch : Boolean) is
+   procedure search (This : in out Directory; searchValue : Unbounded_String; file_Param : access AbFile_Package.AbFile'Class; isRecursiveSearch : Boolean) is
       Java_Result : constant BasicArrayList_Access := Directory'Class (This).search (searchValue, file_Param, isRecursiveSearch);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end search;
 
-   procedure search (This : in out Directory; level : Integer; file_Param : access AbFile'Class) is
+   procedure search (This : in out Directory; level : Integer; file_Param : access AbFile_Package.AbFile'Class) is
       Java_Result : constant BasicArrayList_Access := Directory'Class (This).search (level, file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end search;
 
-   procedure search (This : in out Directory; level : Integer; file_Param : access AbFile'Class; isRecursiveSearch : Boolean) is
+   procedure search (This : in out Directory; level : Integer; file_Param : access AbFile_Package.AbFile'Class; isRecursiveSearch : Boolean) is
       Java_Result : constant BasicArrayList_Access := Directory'Class (This).search (level, file_Param, isRecursiveSearch);
       pragma Unreferenced (Java_Result);
    begin

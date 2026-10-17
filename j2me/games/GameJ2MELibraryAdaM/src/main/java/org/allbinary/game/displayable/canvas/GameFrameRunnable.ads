@@ -48,8 +48,8 @@ package org.allbinary.game.displayable.canvas.GameFrameRunnable_Package is
       gameTickTimeDelayHelper : GameTickTimeDelayHelper_Access;
    end record;
 
-   procedure Initialize (This : in out GameFrameRunnable'Class; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class);
-   function Create (allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class) return GameFrameRunnable_Access;
+   procedure Initialize (This : in out GameFrameRunnable'Class; allBinaryGameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class);
+   function Create (allBinaryGameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class) return GameFrameRunnable_Access;
    procedure run (This : in out GameFrameRunnable);
 
 end org.allbinary.game.displayable.canvas.GameFrameRunnable_Package;

@@ -49,7 +49,7 @@ package org.allbinary.game.layer.drop.DropLayerFactory_Package is
    function getInstance return DropLayerFactory_Access;
    function getSize (This : in out DropLayerFactory) return Integer;
    function getRandomInstance (This : in out DropLayerFactory) return PickedUpLayerInterfaceFactoryInterface_Access;
-   procedure add (This : in out DropLayerFactory; layerInterfaceFactoryInterface_Param : access PickedUpLayerInterfaceFactoryInterface'Class);
+   procedure add (This : in out DropLayerFactory; layerInterfaceFactoryInterface_Param : access PickedUpLayerInterfaceFactoryInterface_Package.PickedUpLayerInterfaceFactoryInterface'Class);
    function getList (This : in out DropLayerFactory) return BasicArrayList_Access;
 
 end org.allbinary.game.layer.drop.DropLayerFactory_Package;

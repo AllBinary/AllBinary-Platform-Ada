@@ -26,8 +26,8 @@ package body org.allbinary.input.automation.module.generic_Id.SavedCaptureImages
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out SavedCaptureImagesWorker'Class; savedCaptureGenericProfileDataWorkerType_Param : access SavedCaptureGenericProfileDataWorkerType'Class) is
-      savedCaptureGenericProfileDataWorkerType : SavedCaptureGenericProfileDataWorkerType_Access := SavedCaptureGenericProfileDataWorkerType_Access (savedCaptureGenericProfileDataWorkerType_Param);
+   procedure Initialize (This : in out SavedCaptureImagesWorker'Class; savedCaptureGenericProfileDataWorkerType_Param : access SavedCaptureGenericProfileDataWorkerType_Package.SavedCaptureGenericProfileDataWorkerType'Class) is
+      savedCaptureGenericProfileDataWorkerType : constant SavedCaptureGenericProfileDataWorkerType_Access := SavedCaptureGenericProfileDataWorkerType_Access (savedCaptureGenericProfileDataWorkerType_Param);
    begin
       BasicEventHandler_Package.Initialize (This);
       Initialize_Fields (This);
@@ -36,7 +36,7 @@ package body org.allbinary.input.automation.module.generic_Id.SavedCaptureImages
         SavedCaptureImagesWorker_Package.index := ProcessingFrameIndexFactory_Package.next;
    end Initialize;
 
-   function Create (savedCaptureGenericProfileDataWorkerType_Param : access SavedCaptureGenericProfileDataWorkerType'Class) return SavedCaptureImagesWorker_Access is
+   function Create (savedCaptureGenericProfileDataWorkerType_Param : access SavedCaptureGenericProfileDataWorkerType_Package.SavedCaptureGenericProfileDataWorkerType'Class) return SavedCaptureImagesWorker_Access is
       This : constant SavedCaptureImagesWorker_Access := new SavedCaptureImagesWorker;
    begin
       SavedCaptureImagesWorker_Package.Initialize (This.all, savedCaptureGenericProfileDataWorkerType_Param);
@@ -44,8 +44,8 @@ package body org.allbinary.input.automation.module.generic_Id.SavedCaptureImages
    end Create;
 
    --  throws Exception
-   procedure setThread (This : in out SavedCaptureImagesWorker; thread_Param : access Thread'Class) is
-      thread : Thread_Access := Thread_Access (thread_Param);
+   procedure setThread (This : in out SavedCaptureImagesWorker; thread_Param : access Thread_Package.Thread'Class) is
+      thread : constant Thread_Access := Thread_Access (thread_Param);
    begin
         null;
    end setThread;

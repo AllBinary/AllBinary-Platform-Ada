@@ -59,13 +59,13 @@ package org.allbinary.game.score.HighScoresCanvasLevelChangeInputProcessor_Packa
       fontHeight : Integer;
    end record;
 
-   procedure Initialize (This : in out HighScoresCanvasLevelChangeInputProcessor'Class; highScoresCanvas_Param : access HighScoresCanvas'Class);
-   function Create (highScoresCanvas_Param : access HighScoresCanvas'Class) return HighScoresCanvasLevelChangeInputProcessor_Access;
-   procedure updateMeasurement (This : in out HighScoresCanvasLevelChangeInputProcessor; graphics_Param : access Graphics'Class);
+   procedure Initialize (This : in out HighScoresCanvasLevelChangeInputProcessor'Class; highScoresCanvas_Param : access HighScoresCanvas_Package.HighScoresCanvas'Class);
+   function Create (highScoresCanvas_Param : access HighScoresCanvas_Package.HighScoresCanvas'Class) return HighScoresCanvasLevelChangeInputProcessor_Access;
+   procedure updateMeasurement (This : in out HighScoresCanvasLevelChangeInputProcessor; graphics_Param : access Graphics_Package.Graphics'Class);
    procedure open (This : in out HighScoresCanvasLevelChangeInputProcessor);
    procedure close (This : in out HighScoresCanvasLevelChangeInputProcessor);
    procedure update (This : in out HighScoresCanvasLevelChangeInputProcessor);
-   procedure paint (This : in out HighScoresCanvasLevelChangeInputProcessor; graphics_Param : access Graphics'Class);
+   procedure paint (This : in out HighScoresCanvasLevelChangeInputProcessor; graphics_Param : access Graphics_Package.Graphics'Class);
 
 end org.allbinary.game.score.HighScoresCanvasLevelChangeInputProcessor_Package;
 

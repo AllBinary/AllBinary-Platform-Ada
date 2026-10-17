@@ -124,10 +124,10 @@ package org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
    procedure add (This : in out DisplayInfoSingleton; reason_Case : Unbounded_String);
    procedure process (This : in out DisplayInfoSingleton);
    procedure processForced (This : in out DisplayInfoSingleton);
-   procedure update (This : in out DisplayInfoSingleton; displayable_Param : access Displayable'Class; reason_Case : Unbounded_String);
+   procedure update (This : in out DisplayInfoSingleton; displayable_Param : access Displayable_Package.Displayable'Class; reason_Case : Unbounded_String);
    function toString (This : in out DisplayInfoSingleton) return Unbounded_String;
-   function toStringAppend (This : in out DisplayInfoSingleton; stringBuffer_Param : access StringMaker'Class) return Unbounded_String;
-   procedure toStringAppend (This : in out DisplayInfoSingleton; stringBuffer_Param : access StringMaker'Class);
+   function toStringAppend (This : in out DisplayInfoSingleton; stringBuffer_Param : access StringMaker_Package.StringMaker'Class) return Unbounded_String;
+   procedure toStringAppend (This : in out DisplayInfoSingleton; stringBuffer_Param : access StringMaker_Package.StringMaker'Class);
    function getTop (This : in out DisplayInfoSingleton) return Integer;
    function getLeft (This : in out DisplayInfoSingleton) return Integer;
    function getLastWidth (This : in out DisplayInfoSingleton) return Integer;
@@ -139,7 +139,7 @@ package org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
    function getRawLastWidth (This : in out DisplayInfoSingleton) return Integer;
    function getRawLastHeight (This : in out DisplayInfoSingleton) return Integer;
    procedure setCustom (This : in out DisplayInfoSingleton; width_Case : Integer; height_Case : Integer);
-   procedure setScalableListener (This : in out DisplayInfoSingleton; scalableListener_Param : access BaseScalable'Class);
+   procedure setScalableListener (This : in out DisplayInfoSingleton; scalableListener_Param : access BaseScalable_Package.BaseScalable'Class);
    function getScalableListener (This : in out DisplayInfoSingleton) return ScalableListener_Access;
    function getRatio (This : in out DisplayInfoSingleton) return Float;
    function getDisplayRatio (This : in out DisplayInfoSingleton) return Float;

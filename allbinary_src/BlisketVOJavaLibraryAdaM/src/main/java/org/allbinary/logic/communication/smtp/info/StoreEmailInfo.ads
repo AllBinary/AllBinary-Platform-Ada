@@ -45,8 +45,8 @@ package org.allbinary.logic.communication.smtp.info.StoreEmailInfo_Package is
       storeFrontInterface : StoreFrontInterface_Access;
    end record;
 
-   procedure Initialize (This : in out StoreEmailInfo'Class; storeFrontInterface_Param : access StoreFrontInterface'Class; subject : Unbounded_String; textBody : Unbounded_String);
-   function Create (storeFrontInterface_Param : access StoreFrontInterface'Class; subject : Unbounded_String; textBody : Unbounded_String) return StoreEmailInfo_Access;
+   procedure Initialize (This : in out StoreEmailInfo'Class; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class; subject : Unbounded_String; textBody : Unbounded_String);
+   function Create (storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class; subject : Unbounded_String; textBody : Unbounded_String) return StoreEmailInfo_Access;
    procedure init (This : in out StoreEmailInfo);
 
 end org.allbinary.logic.communication.smtp.info.StoreEmailInfo_Package;

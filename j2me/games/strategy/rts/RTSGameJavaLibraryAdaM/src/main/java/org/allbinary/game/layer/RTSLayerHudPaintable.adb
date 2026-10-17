@@ -45,8 +45,8 @@ package body org.allbinary.game.layer.RTSLayerHudPaintable_Package is
       return This;
    end Create;
 
-   procedure updateMeasurement (This : in out RTSLayerHudPaintable; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure updateMeasurement (This : in out RTSLayerHudPaintable; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
    begin
         SelectionHudPaintable (This).updateMeasurement (graphics);
@@ -69,8 +69,8 @@ package body org.allbinary.game.layer.RTSLayerHudPaintable_Package is
         This.myFontProcessor := This.updateMyFontProcessor;
    end updateSelectionInfo;
 
-   procedure paint (This : in out RTSLayerHudPaintable; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out RTSLayerHudPaintable; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       size : Integer;
       index : Integer;
    begin
@@ -81,8 +81,8 @@ package body org.allbinary.game.layer.RTSLayerHudPaintable_Package is
         end loop;
    end paint;
 
-   procedure setRtsLayer (This : in out RTSLayerHudPaintable; rtsLayer_Param : access RTSLayer'Class) is
-      rtsLayer : RTSLayer_Access := RTSLayer_Access (rtsLayer_Param);
+   procedure setRtsLayer (This : in out RTSLayerHudPaintable; rtsLayer_Param : access RTSLayer_Package.RTSLayer'Class) is
+      rtsLayer : constant RTSLayer_Access := RTSLayer_Access (rtsLayer_Param);
    begin
         This.rtsLayer := rtsLayer;
    end setRtsLayer;

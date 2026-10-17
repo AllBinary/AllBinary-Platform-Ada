@@ -80,17 +80,17 @@ package org.allbinary.image.gui.CanvasImageJPanel_Package is
       writeOverOriginalJCheckBox : JCheckBox_Access;
    end record;
 
-   procedure Initialize (This : in out CanvasImageJPanel'Class; imageProcessorInput_Param : access ImageProcessorInput'Class);
-   function Create (imageProcessorInput_Param : access ImageProcessorInput'Class) return CanvasImageJPanel_Access;
+   procedure Initialize (This : in out CanvasImageJPanel'Class; imageProcessorInput_Param : access ImageProcessorInput_Package.ImageProcessorInput'Class);
+   function Create (imageProcessorInput_Param : access ImageProcessorInput_Package.ImageProcessorInput'Class) return CanvasImageJPanel_Access;
    procedure process (This : in out CanvasImageJPanel);
    procedure initComponents (This : in out CanvasImageJPanel);
-   procedure writeOverOriginalJCheckBoxActionPerformed (This : in out CanvasImageJPanel; evt_Param : access ActionEvent'Class);
-   procedure generateJButtonActionPerformed (This : in out CanvasImageJPanel; evt_Param : access ActionEvent'Class);
-   procedure widthReductionTextFieldActionPerformed (This : in out CanvasImageJPanel; evt_Param : access ActionEvent'Class);
-   procedure widthReductionTextField1ActionPerformed (This : in out CanvasImageJPanel; evt_Param : access ActionEvent'Class);
+   procedure writeOverOriginalJCheckBoxActionPerformed (This : in out CanvasImageJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
+   procedure generateJButtonActionPerformed (This : in out CanvasImageJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
+   procedure widthReductionTextFieldActionPerformed (This : in out CanvasImageJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
+   procedure widthReductionTextField1ActionPerformed (This : in out CanvasImageJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
    function getImageProcessorInput (This : in out CanvasImageJPanel) return ImageProcessorInput_Access;
-   procedure setImageProcessorInput (This : in out CanvasImageJPanel; imageProcessorInput_Param : access ImageProcessorInput'Class);
-   procedure visit (This : in out CanvasImageJPanel; generatedBufferedImage_Param : access BufferedImage'Class; name : Unbounded_String; index : Integer);
+   procedure setImageProcessorInput (This : in out CanvasImageJPanel; imageProcessorInput_Param : access ImageProcessorInput_Package.ImageProcessorInput'Class);
+   procedure visit (This : in out CanvasImageJPanel; generatedBufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; name : Unbounded_String; index : Integer);
 
 end org.allbinary.image.gui.CanvasImageJPanel_Package;
 

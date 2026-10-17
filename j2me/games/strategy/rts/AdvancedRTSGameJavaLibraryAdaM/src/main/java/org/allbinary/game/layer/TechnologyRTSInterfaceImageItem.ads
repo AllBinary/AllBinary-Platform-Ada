@@ -66,12 +66,12 @@ package org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package is
       adjustedLevelY : Integer;
    end record;
 
-   procedure Initialize (This : in out TechnologyRTSInterfaceImageItem'Class; label : Unbounded_String; img_Param : access Image'Class; layout : Integer; altText : Unbounded_String; basicColor_Param : access BasicColor'Class; rtsInterface_Param : access RTSInterface'Class);
-   function Create (label : Unbounded_String; img_Param : access Image'Class; layout : Integer; altText : Unbounded_String; basicColor_Param : access BasicColor'Class; rtsInterface_Param : access RTSInterface'Class) return TechnologyRTSInterfaceImageItem_Access;
-   procedure updateMeasurement (This : in out TechnologyRTSInterfaceImageItem; graphics_Param : access Graphics'Class);
+   procedure Initialize (This : in out TechnologyRTSInterfaceImageItem'Class; label : Unbounded_String; img_Param : access Image_Package.Image'Class; layout : Integer; altText : Unbounded_String; basicColor_Param : access BasicColor_Package.BasicColor'Class; rtsInterface_Param : access RTSInterface_Package.RTSInterface'Class);
+   function Create (label : Unbounded_String; img_Param : access Image_Package.Image'Class; layout : Integer; altText : Unbounded_String; basicColor_Param : access BasicColor_Package.BasicColor'Class; rtsInterface_Param : access RTSInterface_Package.RTSInterface'Class) return TechnologyRTSInterfaceImageItem_Access;
+   procedure updateMeasurement (This : in out TechnologyRTSInterfaceImageItem; graphics_Param : access Graphics_Package.Graphics'Class);
    function getRtsInterface (This : in out TechnologyRTSInterfaceImageItem) return RTSInterface_Access;
    procedure update (This : in out TechnologyRTSInterfaceImageItem);
-   procedure paintXY (This : in out TechnologyRTSInterfaceImageItem; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
+   procedure paintXY (This : in out TechnologyRTSInterfaceImageItem; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
 
 end org.allbinary.game.layer.TechnologyRTSInterfaceImageItem_Package;
 

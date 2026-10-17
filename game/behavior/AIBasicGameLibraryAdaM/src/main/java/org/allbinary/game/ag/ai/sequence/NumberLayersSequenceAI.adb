@@ -22,16 +22,16 @@ package body org.allbinary.game.ag.ai.sequence.NumberLayersSequenceAI_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out NumberLayersSequenceAI'Class; numberOfEnemiesLeft : Integer; artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) is
-      ownerLayerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
-      gameInput : GameInput_Access := GameInput_Access (gameInput_Param);
+   procedure Initialize (This : in out NumberLayersSequenceAI'Class; numberOfEnemiesLeft : Integer; artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) is
+      ownerLayerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
+      gameInput : constant GameInput_Access := GameInput_Access (gameInput_Param);
    begin
         SequenceAI_Package.Initialize (This, artificialIntelligenceInterface, ownerLayerInterface, gameInput);
         Initialize_Fields (This);
         This.numberOfLayersLeft := numberOfEnemiesLeft;
    end Initialize;
 
-   function Create (numberOfEnemiesLeft : Integer; artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return NumberLayersSequenceAI_Access is
+   function Create (numberOfEnemiesLeft : Integer; artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) return NumberLayersSequenceAI_Access is
       This : constant NumberLayersSequenceAI_Access := new NumberLayersSequenceAI;
    begin
       NumberLayersSequenceAI_Package.Initialize (This.all, numberOfEnemiesLeft, artificialIntelligenceInterface, ownerLayerInterface_Param, gameInput_Param);
@@ -39,8 +39,8 @@ package body org.allbinary.game.ag.ai.sequence.NumberLayersSequenceAI_Package is
    end Create;
 
    --  throws Exception
-   procedure processAI (This : in out NumberLayersSequenceAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class) is
-      allBinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
+   procedure processAI (This : in out NumberLayersSequenceAI; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class) is
+      allBinaryLayerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
    begin
         if (This.getIndex) = (0) then
             if (allBinaryLayerManager.getSize) < (This.numberOfLayersLeft) then

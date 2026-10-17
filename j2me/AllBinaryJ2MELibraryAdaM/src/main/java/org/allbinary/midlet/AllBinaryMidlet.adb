@@ -51,8 +51,8 @@ package body org.allbinary.midlet.AllBinaryMidlet_Package is
       return This;
    end Create;
 
-   procedure setDisplay (This : in out AllBinaryMidlet; newDisplay_Param : access Displayable'Class) is
-      newDisplay : Displayable_Access := Displayable_Access (newDisplay_Param);
+   procedure setDisplay (This : in out AllBinaryMidlet; newDisplay_Param : access Displayable_Package.Displayable'Class) is
+      newDisplay : constant Displayable_Access := Displayable_Access (newDisplay_Param);
       title : Unbounded_String;
       display : Display_Access;
    begin
@@ -124,8 +124,8 @@ package body org.allbinary.midlet.AllBinaryMidlet_Package is
    end destroyApp;
 
    --  throws Exception
-   procedure setStartStateHashtable (This : in out AllBinaryMidlet; hashtable_Param : access ABHashtable'Class) is
-      hashtable : ABHashtable_Access := ABHashtable_Access (hashtable_Param);
+   procedure setStartStateHashtable (This : in out AllBinaryMidlet; hashtable_Param : access ABHashtable_Package.ABHashtable'Class) is
+      hashtable : constant ABHashtable_Access := ABHashtable_Access (hashtable_Param);
    begin
         This.logUtil.putF (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.START_LABEL).append (StringUtil_Package.getInstance.toString (hashtable)).toString, AllBinaryMidlet_Access'(This'Unchecked_Access), To_Unbounded_String ("setStartStateHashtable"));
         This.hashtable := hashtable;
@@ -145,9 +145,9 @@ package body org.allbinary.midlet.AllBinaryMidlet_Package is
         return StdUtil_Package.getInstance.NULL_TABLE;
    end getCurrentStateHashtable;
 
-   procedure commandAction (This : in out AllBinaryMidlet; command_Param : access Command'Class; displayable_Param : access Displayable'Class) is
-      command : Command_Access := Command_Access (command_Param);
-      displayable : Displayable_Access := Displayable_Access (displayable_Param);
+   procedure commandAction (This : in out AllBinaryMidlet; command_Param : access Command_Package.Command'Class; displayable_Param : access Displayable_Package.Displayable'Class) is
+      command : constant Command_Access := Command_Access (command_Param);
+      displayable : constant Displayable_Access := Displayable_Access (displayable_Param);
    begin
         null;
    end commandAction;

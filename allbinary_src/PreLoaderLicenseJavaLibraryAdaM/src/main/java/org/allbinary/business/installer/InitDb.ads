@@ -46,8 +46,8 @@ package org.allbinary.business.installer.InitDb_Package is
 
    procedure Initialize (This : in out InitDb'Class);
    function Create return InitDb_Access;
-   procedure Initialize (This : in out InitDb'Class; dbConnectionInfo_Param : access DbConnectionInfo'Class);
-   function Create (dbConnectionInfo_Param : access DbConnectionInfo'Class) return InitDb_Access;
+   procedure Initialize (This : in out InitDb'Class; dbConnectionInfo_Param : access DbConnectionInfo_Package.DbConnectionInfo'Class);
+   function Create (dbConnectionInfo_Param : access DbConnectionInfo_Package.DbConnectionInfo'Class) return InitDb_Access;
    procedure setHelper (This : in out InitDb; anyType_Param : access Java_Object'Class);
    function getHelper (This : in out InitDb) return Java_Object_Access;
    function getHostName (This : in out InitDb) return Unbounded_String;

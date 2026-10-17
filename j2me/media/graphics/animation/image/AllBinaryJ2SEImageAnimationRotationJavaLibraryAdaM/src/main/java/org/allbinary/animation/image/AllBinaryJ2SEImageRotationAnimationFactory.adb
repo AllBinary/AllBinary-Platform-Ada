@@ -24,9 +24,9 @@ package body org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimationFa
 
 
    --  throws Exception
-   function createDXY (image_Param : access Image'Class; width : Integer; height : Integer; dx : Integer; dy : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class; resizeCanvasForRotation : Boolean) return AllBinaryJ2SEImageRotationAnimationFactory_Access is
-      image : Image_Access := Image_Access (image_Param);
-      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
+   function createDXY (image_Param : access Image_Package.Image'Class; width : Integer; height : Integer; dx : Integer; dy : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class; resizeCanvasForRotation : Boolean) return AllBinaryJ2SEImageRotationAnimationFactory_Access is
+      image : constant Image_Access := Image_Access (image_Param);
+      animationBehaviorFactory : constant AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
       imageRotationAnimationFactory : AllBinaryJ2SEImageRotationAnimationFactory_Access;
    begin
         imageRotationAnimationFactory := AllBinaryJ2SEImageRotationAnimationFactory_Package.Create (image, width, height, angleIncrement, animationBehaviorFactory, resizeCanvasForRotation);
@@ -37,9 +37,9 @@ package body org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimationFa
         return imageRotationAnimationFactory;
    end createDXY;
 
-   procedure Initialize (This : in out AllBinaryJ2SEImageRotationAnimationFactory'Class; image_Param : access Image'Class; width : Integer; height : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class; resizeCanvasForRotation : Boolean) is
-      image : Image_Access := Image_Access (image_Param);
-      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
+   procedure Initialize (This : in out AllBinaryJ2SEImageRotationAnimationFactory'Class; image_Param : access Image_Package.Image'Class; width : Integer; height : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class; resizeCanvasForRotation : Boolean) is
+      image : constant Image_Access := Image_Access (image_Param);
+      animationBehaviorFactory : constant AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
    begin
         BaseImageAnimationFactory_Package.Initialize (This, image, PrimitiveIntUtil_Package.getArrayInstance, width, height, 0, 0, animationBehaviorFactory);
         Initialize_Fields (This);
@@ -47,7 +47,7 @@ package body org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimationFa
         This.resizeCanvasForRotation := resizeCanvasForRotation;
    end Initialize;
 
-   function Create (image_Param : access Image'Class; width : Integer; height : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class; resizeCanvasForRotation : Boolean) return AllBinaryJ2SEImageRotationAnimationFactory_Access is
+   function Create (image_Param : access Image_Package.Image'Class; width : Integer; height : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class; resizeCanvasForRotation : Boolean) return AllBinaryJ2SEImageRotationAnimationFactory_Access is
       This : constant AllBinaryJ2SEImageRotationAnimationFactory_Access := new AllBinaryJ2SEImageRotationAnimationFactory;
    begin
       AllBinaryJ2SEImageRotationAnimationFactory_Package.Initialize (This.all, image_Param, width, height, angleIncrement, animationBehaviorFactory_Param, resizeCanvasForRotation);
@@ -93,7 +93,7 @@ package body org.allbinary.animation.image.AllBinaryJ2SEImageRotationAnimationFa
         return This.angleIncrementP;
    end getAngleIncrement;
 
-   procedure createDXY (image_Param : access Image'Class; width : Integer; height : Integer; dx : Integer; dy : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class; resizeCanvasForRotation : Boolean) is
+   procedure createDXY (image_Param : access Image_Package.Image'Class; width : Integer; height : Integer; dx : Integer; dy : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class; resizeCanvasForRotation : Boolean) is
       Java_Result : constant AllBinaryJ2SEImageRotationAnimationFactory_Access := createDXY (image_Param, width, height, dx, dy, angleIncrement, animationBehaviorFactory_Param, resizeCanvasForRotation);
       pragma Unreferenced (Java_Result);
    begin

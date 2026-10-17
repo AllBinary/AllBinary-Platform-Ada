@@ -52,8 +52,8 @@ package org.allbinary.business.user.commerce.shipping.ShippingMethods_Package is
       defaultShippingMethodInterface : ShippingInterface_Access;
    end record;
 
-   procedure Initialize (This : in out ShippingMethods'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; storeFrontInterface_Param : access StoreFrontInterface'Class);
-   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; storeFrontInterface_Param : access StoreFrontInterface'Class) return ShippingMethods_Access;
+   procedure Initialize (This : in out ShippingMethods'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class);
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) return ShippingMethods_Access;
    function get (This : in out ShippingMethods) return BasicArrayList_Access;
    function getShippingInterface (This : in out ShippingMethods; name : Unbounded_String) return ShippingInterface_Access;
    procedure getShippingInterface (This : in out ShippingMethods; name : Unbounded_String);

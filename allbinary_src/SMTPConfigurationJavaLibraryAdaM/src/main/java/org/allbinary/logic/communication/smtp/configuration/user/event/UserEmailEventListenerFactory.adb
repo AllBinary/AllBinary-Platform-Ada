@@ -35,10 +35,10 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
    end Create;
 
    --  throws Exception
-   function getInstance (abeClientInformation_Param : access AbeClientInformationInterface'Class; userEmailEventConfigurationInterface_Param : access UserEmailEventConfigurationInterface'Class; userInterface_Param : access UserInterface'Class) return UserEmailEventListenerInterface_Access is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      userEmailEventConfigurationInterface : UserEmailEventConfigurationInterface_Access := UserEmailEventConfigurationInterface_Access (userEmailEventConfigurationInterface_Param);
-      userInterface : UserInterface_Access := UserInterface_Access (userInterface_Param);
+   function getInstance (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; userEmailEventConfigurationInterface_Param : access UserEmailEventConfigurationInterface_Package.UserEmailEventConfigurationInterface'Class; userInterface_Param : access UserInterface_Package.UserInterface'Class) return UserEmailEventListenerInterface_Access is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      userEmailEventConfigurationInterface : constant UserEmailEventConfigurationInterface_Access := UserEmailEventConfigurationInterface_Access (userEmailEventConfigurationInterface_Param);
+      userInterface : constant UserInterface_Access := UserInterface_Access (userInterface_Param);
       params : Java_Object_Access_Array_Access;
       classes : Ada_Tags_Tag_Array_Access;
    begin
@@ -49,7 +49,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
         return UserEmailEventListenerInterface_Access (AbeFactory_Package.getInstance.getInstance (abeClientInformation, userEmailEventConfigurationInterface.getEventListenerClassPath, classes, params));
    end getInstance;
 
-   procedure getInstance (abeClientInformation_Param : access AbeClientInformationInterface'Class; userEmailEventConfigurationInterface_Param : access UserEmailEventConfigurationInterface'Class; userInterface_Param : access UserInterface'Class) is
+   procedure getInstance (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; userEmailEventConfigurationInterface_Param : access UserEmailEventConfigurationInterface_Package.UserEmailEventConfigurationInterface'Class; userInterface_Param : access UserInterface_Package.UserInterface'Class) is
       Java_Result : constant UserEmailEventListenerInterface_Access := getInstance (abeClientInformation_Param, userEmailEventConfigurationInterface_Param, userInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

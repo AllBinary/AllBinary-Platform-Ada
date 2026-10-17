@@ -23,7 +23,7 @@ package body org.allbinary.graphics.color.ColorChangeEvent_Package is
 
 
    procedure Initialize (This : in out ColorChangeEvent'Class; anyType_Param : access Java_Object'Class) is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         AllBinaryEventObject_Package.Initialize (This, anyType);
         Initialize_Fields (This);
@@ -36,8 +36,8 @@ package body org.allbinary.graphics.color.ColorChangeEvent_Package is
       return This;
    end Create;
 
-   procedure setBasicColorP (This : in out ColorChangeEvent; basicColor_Param : access BasicColor'Class) is
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+   procedure setBasicColorP (This : in out ColorChangeEvent; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         This.basicColor := basicColor;
    end setBasicColorP;

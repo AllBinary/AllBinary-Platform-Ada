@@ -34,31 +34,31 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphV
 
 
    --  throws Exception
-   procedure visit (This : in out PathFinderGraphVisitorBase; graph_Param : access Java_Object'Class; startPathFindingNodeList_Param : access BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList'Class) is
-      graph : Java_Object_Access := Java_Object_Access (graph_Param);
-      startPathFindingNodeList : BasicArrayList_Access := BasicArrayList_Access (startPathFindingNodeList_Param);
-      endPathFindingNodeList : BasicArrayList_Access := BasicArrayList_Access (endPathFindingNodeList_Param);
+   procedure visit (This : in out PathFinderGraphVisitorBase; graph_Param : access Java_Object'Class; startPathFindingNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      graph : constant Java_Object_Access := Java_Object_Access (graph_Param);
+      startPathFindingNodeList : constant BasicArrayList_Access := BasicArrayList_Access (startPathFindingNodeList_Param);
+      endPathFindingNodeList : constant BasicArrayList_Access := BasicArrayList_Access (endPathFindingNodeList_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end visit;
 
    --  throws Exception
-   procedure fixPath (This : in out PathFinderGraphVisitorBase; startPathFindingNodeList_Param : access BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList'Class; pathList_Param : access BasicArrayList'Class) is
-      startPathFindingNodeList : BasicArrayList_Access := BasicArrayList_Access (startPathFindingNodeList_Param);
-      endPathFindingNodeList : BasicArrayList_Access := BasicArrayList_Access (endPathFindingNodeList_Param);
-      pathList : BasicArrayList_Access := BasicArrayList_Access (pathList_Param);
+   procedure fixPath (This : in out PathFinderGraphVisitorBase; startPathFindingNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class; pathList_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      startPathFindingNodeList : constant BasicArrayList_Access := BasicArrayList_Access (startPathFindingNodeList_Param);
+      endPathFindingNodeList : constant BasicArrayList_Access := BasicArrayList_Access (endPathFindingNodeList_Param);
+      pathList : constant BasicArrayList_Access := BasicArrayList_Access (pathList_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end fixPath;
 
    function isValid (This : in out PathFinderGraphVisitorBase; graphPath_Param : access Java_Object'Class) return Boolean is
-      graphPath : Java_Object_Access := Java_Object_Access (graphPath_Param);
+      graphPath : constant Java_Object_Access := Java_Object_Access (graphPath_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end isValid;
 
    function getInvalidReason (This : in out PathFinderGraphVisitorBase; graphPath_Param : access Java_Object'Class) return Unbounded_String is
-      graphPath : Java_Object_Access := Java_Object_Access (graphPath_Param);
+      graphPath : constant Java_Object_Access := Java_Object_Access (graphPath_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end getInvalidReason;

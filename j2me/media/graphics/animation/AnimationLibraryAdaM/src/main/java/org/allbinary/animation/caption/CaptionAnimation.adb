@@ -27,9 +27,9 @@ package body org.allbinary.animation.caption.CaptionAnimation_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CaptionAnimation'Class; animationInterface_Param : access Animation'Class; overlayAnimationInterface_Param : access Animation'Class; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer) is
-      animationInterface : Animation_Access := Animation_Access (animationInterface_Param);
-      overlayAnimationInterface : Animation_Access := Animation_Access (overlayAnimationInterface_Param);
+   procedure Initialize (This : in out CaptionAnimation'Class; animationInterface_Param : access Animation_Package.Animation'Class; overlayAnimationInterface_Param : access Animation_Package.Animation'Class; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer) is
+      animationInterface : constant Animation_Access := Animation_Access (animationInterface_Param);
+      overlayAnimationInterface : constant Animation_Access := Animation_Access (overlayAnimationInterface_Param);
    begin
       Animation_Package.Initialize (This);
       Initialize_Fields (This);
@@ -41,7 +41,7 @@ package body org.allbinary.animation.caption.CaptionAnimation_Package is
         This.dy := dy;
    end Initialize;
 
-   function Create (animationInterface_Param : access Animation'Class; overlayAnimationInterface_Param : access Animation'Class; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer) return CaptionAnimation_Access is
+   function Create (animationInterface_Param : access Animation_Package.Animation'Class; overlayAnimationInterface_Param : access Animation_Package.Animation'Class; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer) return CaptionAnimation_Access is
       This : constant CaptionAnimation_Access := new CaptionAnimation;
    begin
       CaptionAnimation_Package.Initialize (This.all, animationInterface_Param, overlayAnimationInterface_Param, captionDx, captionDy, dx, dy);
@@ -54,15 +54,15 @@ package body org.allbinary.animation.caption.CaptionAnimation_Package is
         null;
    end nextFrame;
 
-   procedure paintXY (This : in out CaptionAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintXY (This : in out CaptionAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.animationInterface.paintXY (graphics, (x) + (This.captionDx), (y) + (This.captionDy));
         This.overlayAnimationInterface.paintXY (graphics, ((x) + (This.captionDx)) + (This.dx), ((y) + (This.captionDy)) + (This.dy));
    end paintXY;
 
-   procedure paintThreedXYZ (This : in out CaptionAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer; z : Integer) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintThreedXYZ (This : in out CaptionAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer; z : Integer) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.animationInterface.paintThreedXYZ (graphics, (x) + (This.captionDx), (y) + (This.captionDy), z);
         This.overlayAnimationInterface.paintThreedXYZ (graphics, ((x) + (This.captionDx)) + (This.dx), ((y) + (This.captionDy)) + (This.dy), z);

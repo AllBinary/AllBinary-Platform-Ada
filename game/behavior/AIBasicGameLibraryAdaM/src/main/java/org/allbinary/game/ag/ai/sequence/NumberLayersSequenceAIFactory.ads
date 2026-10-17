@@ -40,8 +40,8 @@ package org.allbinary.game.ag.ai.sequence.NumberLayersSequenceAIFactory_Package 
 
    procedure Initialize (This : in out NumberLayersSequenceAIFactory'Class);
    function Create return NumberLayersSequenceAIFactory_Access;
-   function getInstance (This : in out NumberLayersSequenceAIFactory; numberOfEnemiesLeft : Integer; artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return ArtificialIntelligenceInterface_Access;
-   procedure getInstance (This : in out NumberLayersSequenceAIFactory; numberOfEnemiesLeft : Integer; artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class);
+   function getInstance (This : in out NumberLayersSequenceAIFactory; numberOfEnemiesLeft : Integer; artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) return ArtificialIntelligenceInterface_Access;
+   procedure getInstance (This : in out NumberLayersSequenceAIFactory; numberOfEnemiesLeft : Integer; artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class);
 
 end org.allbinary.game.ag.ai.sequence.NumberLayersSequenceAIFactory_Package;
 

@@ -36,14 +36,14 @@ package org.allbinary.device.OpenGLESGraphics_Package is
 
    procedure Initialize (This : in out OpenGLESGraphics'Class);
    function Create return OpenGLESGraphics_Access;
-   procedure updateGL (This : in out OpenGLESGraphics; gl_Param : access GL'Class);
-   procedure set (This : in out OpenGLESGraphics; gl_Param : access GL'Class);
+   procedure updateGL (This : in out OpenGLESGraphics; gl_Param : access GL_Package.GL'Class);
+   procedure set (This : in out OpenGLESGraphics; gl_Param : access GL_Package.GL'Class);
    procedure init (This : in out OpenGLESGraphics);
    procedure update (This : in out OpenGLESGraphics);
    procedure setOrthoginalMode (This : in out OpenGLESGraphics);
    procedure setCameraMode (This : in out OpenGLESGraphics);
    function getGl10 (This : in out OpenGLESGraphics) return GL10_Access;
-   procedure setFontDebug (This : in out OpenGLESGraphics; font_Param : access Font'Class; fontDebug_Param : access FontDebugBase'Class);
+   procedure setFontDebug (This : in out OpenGLESGraphics; font_Param : access Font_Package.Font'Class; fontDebug_Param : access FontDebugBase_Package.FontDebugBase'Class);
 
 end org.allbinary.device.OpenGLESGraphics_Package;
 

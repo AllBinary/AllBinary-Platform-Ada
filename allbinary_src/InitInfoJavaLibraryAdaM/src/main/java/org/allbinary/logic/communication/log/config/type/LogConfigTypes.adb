@@ -64,8 +64,8 @@ package body org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes
    end init;
 
    --  throws Exception
-   function getInstance (node_Param : access Node'Class) return LogConfigType_Access is
-      node : Node_Access := Node_Access (node_Param);
+   function getInstance (node_Param : access Node_Package.Node'Class) return LogConfigType_Access is
+      node : constant Node_Access := Node_Access (node_Param);
       nameValueNode : Node_Access;
       name : Unbounded_String;
       descriptionValueNode : Node_Access;
@@ -93,7 +93,7 @@ package body org.allbinary.logic.communication.log.config.type_Id.LogConfigTypes
         Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such LogConfigType: ") & name));
    end getInstance;
 
-   procedure getInstance (node_Param : access Node'Class) is
+   procedure getInstance (node_Param : access Node_Package.Node'Class) is
       Java_Result : constant LogConfigType_Access := getInstance (node_Param);
       pragma Unreferenced (Java_Result);
    begin

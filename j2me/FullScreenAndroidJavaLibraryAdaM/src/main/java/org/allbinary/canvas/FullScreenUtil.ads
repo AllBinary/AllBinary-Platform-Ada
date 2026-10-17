@@ -37,12 +37,12 @@ package org.allbinary.canvas.FullScreenUtil_Package is
    procedure Initialize (This : in out FullScreenUtil'Class);
    function Create return FullScreenUtil_Access;
    function getInstance return FullScreenUtil_Access;
-   procedure initOnRun (This : in out FullScreenUtil; fullScreenInterface_Param : access Canvas'Class; commandListener_Param : access CommandListener'Class);
-   procedure init (This : in out FullScreenUtil; fullScreenInterface_Param : access Canvas'Class);
+   procedure initOnRun (This : in out FullScreenUtil; fullScreenInterface_Param : access Canvas_Package.Canvas'Class; commandListener_Param : access CommandListener_Package.CommandListener'Class);
+   procedure init (This : in out FullScreenUtil; fullScreenInterface_Param : access Canvas_Package.Canvas'Class);
    function isScreenChange (This : in out FullScreenUtil; isFullScreen : Boolean) return Boolean;
    procedure isScreenChange (This : in out FullScreenUtil; isFullScreen : Boolean);
-   function isScreenChangeCanvas (This : in out FullScreenUtil; fullScreenInterface_Param : access Canvas'Class) return Boolean;
-   procedure isScreenChangeCanvas (This : in out FullScreenUtil; fullScreenInterface_Param : access Canvas'Class);
+   function isScreenChangeCanvas (This : in out FullScreenUtil; fullScreenInterface_Param : access Canvas_Package.Canvas'Class) return Boolean;
+   procedure isScreenChangeCanvas (This : in out FullScreenUtil; fullScreenInterface_Param : access Canvas_Package.Canvas'Class);
 
 end org.allbinary.canvas.FullScreenUtil_Package;
 

@@ -41,9 +41,9 @@ package org.allbinary.game.ag.ai.ScrollOverAtHalfAI_Package is
 
    type ScrollOverAtHalfAI is new BasicAI with null record;
 
-   procedure Initialize (This : in out ScrollOverAtHalfAI'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class);
-   function Create (ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return ScrollOverAtHalfAI_Access;
-   procedure processAI (This : in out ScrollOverAtHalfAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class);
+   procedure Initialize (This : in out ScrollOverAtHalfAI'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class);
+   function Create (ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) return ScrollOverAtHalfAI_Access;
+   procedure processAI (This : in out ScrollOverAtHalfAI; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class);
 
 end org.allbinary.game.ag.ai.ScrollOverAtHalfAI_Package;
 

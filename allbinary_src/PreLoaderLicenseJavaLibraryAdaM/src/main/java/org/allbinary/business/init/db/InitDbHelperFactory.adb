@@ -35,9 +35,9 @@ package body org.allbinary.business.init.db.InitDbHelperFactory_Package is
    end Create;
 
    --  throws LicensingException
-   function getInstance (abeClientInformation_Param : access AbeClientInformationInterface'Class; databaseConnectionInfoInterface_Param : access DatabaseConnectionInfoInterface'Class) return Java_Object_Access is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      databaseConnectionInfoInterface : DatabaseConnectionInfoInterface_Access := DatabaseConnectionInfoInterface_Access (databaseConnectionInfoInterface_Param);
+   function getInstance (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; databaseConnectionInfoInterface_Param : access DatabaseConnectionInfoInterface_Package.DatabaseConnectionInfoInterface'Class) return Java_Object_Access is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      databaseConnectionInfoInterface : constant DatabaseConnectionInfoInterface_Access := DatabaseConnectionInfoInterface_Access (databaseConnectionInfoInterface_Param);
       params : Java_Object_Access_Array_Access;
       classes : Ada_Tags_Tag_Array_Access;
       anyType : Java_Object_Access;
@@ -51,22 +51,22 @@ package body org.allbinary.business.init.db.InitDbHelperFactory_Package is
    end getInstance;
 
    --  throws LicensingException
-   function getInstance (abeClientInformation_Param : access AbeClientInformationInterface'Class) return Java_Object_Access is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+   function getInstance (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) return Java_Object_Access is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
       anyType : Java_Object_Access;
    begin
         anyType := AbeFactory_Package.getInstance.getInstance (abeClientInformation, CLASSNAME, null, null);
         return anyType;
    end getInstance;
 
-   procedure getInstance (abeClientInformation_Param : access AbeClientInformationInterface'Class; databaseConnectionInfoInterface_Param : access DatabaseConnectionInfoInterface'Class) is
+   procedure getInstance (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; databaseConnectionInfoInterface_Param : access DatabaseConnectionInfoInterface_Package.DatabaseConnectionInfoInterface'Class) is
       Java_Result : constant Java_Object_Access := getInstance (abeClientInformation_Param, databaseConnectionInfoInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
-   procedure getInstance (abeClientInformation_Param : access AbeClientInformationInterface'Class) is
+   procedure getInstance (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) is
       Java_Result : constant Java_Object_Access := getInstance (abeClientInformation_Param);
       pragma Unreferenced (Java_Result);
    begin

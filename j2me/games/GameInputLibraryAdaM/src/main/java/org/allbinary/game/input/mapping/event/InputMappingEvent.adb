@@ -23,7 +23,7 @@ package body org.allbinary.game.input.mapping.event.InputMappingEvent_Package is
 
 
    procedure Initialize (This : in out InputMappingEvent'Class; anyType_Param : access Java_Object'Class) is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         AllBinaryEventObject_Package.Initialize (This, anyType);
         Initialize_Fields (This);
@@ -36,8 +36,8 @@ package body org.allbinary.game.input.mapping.event.InputMappingEvent_Package is
       return This;
    end Create;
 
-   procedure setInputToGameKeyMapping (This : in out InputMappingEvent; inputToGameKeyMapping_Param : access InputToGameKeyMapping'Class) is
-      inputToGameKeyMapping : InputToGameKeyMapping_Access := InputToGameKeyMapping_Access (inputToGameKeyMapping_Param);
+   procedure setInputToGameKeyMapping (This : in out InputMappingEvent; inputToGameKeyMapping_Param : access InputToGameKeyMapping_Package.InputToGameKeyMapping'Class) is
+      inputToGameKeyMapping : constant InputToGameKeyMapping_Access := InputToGameKeyMapping_Access (inputToGameKeyMapping_Param);
    begin
         This.inputToGameKeyMapping := inputToGameKeyMapping;
    end setInputToGameKeyMapping;

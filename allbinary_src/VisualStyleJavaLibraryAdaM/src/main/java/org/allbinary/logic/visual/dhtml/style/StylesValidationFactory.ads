@@ -64,10 +64,10 @@ package org.allbinary.logic.visual.dhtml.style.StylesValidationFactory_Package i
    procedure Initialize (This : in out StylesValidationFactory'Class);
    function Create return StylesValidationFactory_Access;
    function getInstance return StylesValidationFactory_Access;
-   function getInstance (This : in out StylesValidationFactory; document_Param : access Document'Class) return BasicArrayList_Access;
-   procedure getInstance (This : in out StylesValidationFactory; document_Param : access Document'Class);
-   function getInstance (hashMap_Param : access HashMap'Class) return BasicArrayList_Access;
-   procedure getInstance (hashMap_Param : access HashMap'Class);
+   function getInstance (This : in out StylesValidationFactory; document_Param : access Document_Package.Document'Class) return BasicArrayList_Access;
+   procedure getInstance (This : in out StylesValidationFactory; document_Param : access Document_Package.Document'Class);
+   function getInstance (hashMap_Param : access HashMap_Package.HashMap'Class) return BasicArrayList_Access;
+   procedure getInstance (hashMap_Param : access HashMap_Package.HashMap'Class);
 
 end org.allbinary.logic.visual.dhtml.style.StylesValidationFactory_Package;
 

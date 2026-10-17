@@ -47,8 +47,8 @@ package org.allbinary.logic.communication.smtp.AbEmail_Package is
    function getDebugInfo (This : in out AbEmail) return Unbounded_String;
    function log (This : in out AbEmail) return Unbounded_String;
    function toHashMap (This : in out AbEmail) return HashMap_Access;
-   function toXmlNode (This : in out AbEmail; document_Param : access Document'Class) return Node_Access;
-   procedure toXmlNode (This : in out AbEmail; document_Param : access Document'Class);
+   function toXmlNode (This : in out AbEmail; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out AbEmail; document_Param : access Document_Package.Document'Class);
    function getEmail (This : in out AbEmail) return Email_Access;
    function toXmlDoc (This : in out AbEmail) return Document_Access;
 

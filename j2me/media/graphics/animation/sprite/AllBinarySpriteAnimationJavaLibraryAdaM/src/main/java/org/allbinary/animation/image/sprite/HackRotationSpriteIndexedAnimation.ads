@@ -47,12 +47,12 @@ package org.allbinary.animation.image.sprite.HackRotationSpriteIndexedAnimation_
       image : Image_Access;
    end record;
 
-   procedure Initialize (This : in out HackRotationSpriteIndexedAnimation'Class; sprite_Param : access Sprite'Class; image_Param : access Image'Class; angleInfo_Param : access AngleInfo'Class; animationBehavior_Param : access AnimationBehavior'Class);
-   function Create (sprite_Param : access Sprite'Class; image_Param : access Image'Class; angleInfo_Param : access AngleInfo'Class; animationBehavior_Param : access AnimationBehavior'Class) return HackRotationSpriteIndexedAnimation_Access;
+   procedure Initialize (This : in out HackRotationSpriteIndexedAnimation'Class; sprite_Param : access Sprite_Package.Sprite'Class; image_Param : access Image_Package.Image'Class; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class);
+   function Create (sprite_Param : access Sprite_Package.Sprite'Class; image_Param : access Image_Package.Image'Class; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return HackRotationSpriteIndexedAnimation_Access;
    function getAnimationSize (This : in out HackRotationSpriteIndexedAnimation) return Integer;
-   procedure paintFrame (This : in out HackRotationSpriteIndexedAnimation; g_Param : access Graphics'Class; frame : Integer; x : Integer; y : Integer);
-   procedure paintXY (This : in out HackRotationSpriteIndexedAnimation; g_Param : access Graphics'Class; x : Integer; y : Integer);
-   procedure paint (This : in out HackRotationSpriteIndexedAnimation; g_Param : access Graphics'Class);
+   procedure paintFrame (This : in out HackRotationSpriteIndexedAnimation; g_Param : access Graphics_Package.Graphics'Class; frame : Integer; x : Integer; y : Integer);
+   procedure paintXY (This : in out HackRotationSpriteIndexedAnimation; g_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
+   procedure paint (This : in out HackRotationSpriteIndexedAnimation; g_Param : access Graphics_Package.Graphics'Class);
    procedure nextRotation (This : in out HackRotationSpriteIndexedAnimation);
    procedure previousRotation (This : in out HackRotationSpriteIndexedAnimation);
    function getSize (This : in out HackRotationSpriteIndexedAnimation) return Integer;

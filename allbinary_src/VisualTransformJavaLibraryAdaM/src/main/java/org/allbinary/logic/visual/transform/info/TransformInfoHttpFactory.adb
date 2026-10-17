@@ -35,9 +35,9 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpFactory_
    end Create;
 
    --  throws Exception
-   function getInstance (propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return TransformInfoInterface_Access is
-      propertiesHashMap : HashMap_Access := HashMap_Access (propertiesHashMap_Param);
-      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
+   function getInstance (propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return TransformInfoInterface_Access is
+      propertiesHashMap : constant HashMap_Access := HashMap_Access (propertiesHashMap_Param);
+      pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
       logUtil : LogUtil_Access;
       weblisketSession : WeblisketSession_Access;
       storeFrontInterface : StoreFrontInterface_Access;
@@ -70,7 +70,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpFactory_
         end;
    end getInstance;
 
-   procedure getInstance (propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+   procedure getInstance (propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is
       Java_Result : constant TransformInfoInterface_Access := getInstance (propertiesHashMap_Param, pageContext_Param);
       pragma Unreferenced (Java_Result);
    begin

@@ -37,10 +37,10 @@ package org.apache.xmlrpc.XmlRpcClient_Package is
    function Create (url : Unbounded_String) return XmlRpcClient_Access;
    function getURL (This : in out XmlRpcClient) return URL_Access;
    procedure setBasicAuthentication (This : in out XmlRpcClient; user : Unbounded_String; password : Unbounded_String);
-   function execute (This : in out XmlRpcClient; method : Unbounded_String; params_Param : access BasicArrayList'Class) return Java_Object_Access;
-   procedure execute (This : in out XmlRpcClient; method : Unbounded_String; params_Param : access BasicArrayList'Class);
-   function execute (This : in out XmlRpcClient; method : Unbounded_String; params_Param : access BasicArrayList'Class; cryptInterface_Param : access CryptInterface'Class) return Java_Object_Access;
-   procedure execute (This : in out XmlRpcClient; method : Unbounded_String; params_Param : access BasicArrayList'Class; cryptInterface_Param : access CryptInterface'Class);
+   function execute (This : in out XmlRpcClient; method : Unbounded_String; params_Param : access BasicArrayList_Package.BasicArrayList'Class) return Java_Object_Access;
+   procedure execute (This : in out XmlRpcClient; method : Unbounded_String; params_Param : access BasicArrayList_Package.BasicArrayList'Class);
+   function execute (This : in out XmlRpcClient; method : Unbounded_String; params_Param : access BasicArrayList_Package.BasicArrayList'Class; cryptInterface_Param : access CryptInterface_Package.CryptInterface'Class) return Java_Object_Access;
+   procedure execute (This : in out XmlRpcClient; method : Unbounded_String; params_Param : access BasicArrayList_Package.BasicArrayList'Class; cryptInterface_Param : access CryptInterface_Package.CryptInterface'Class);
 
 end org.apache.xmlrpc.XmlRpcClient_Package;
 

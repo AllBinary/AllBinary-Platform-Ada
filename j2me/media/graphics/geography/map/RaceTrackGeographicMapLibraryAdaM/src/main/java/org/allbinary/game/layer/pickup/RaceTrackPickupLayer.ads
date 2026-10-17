@@ -58,7 +58,7 @@ package org.allbinary.game.layer.pickup.RaceTrackPickupLayer_Package is
 
    procedure Initialize (This : in out RaceTrackPickupLayer'Class);
    function Create return RaceTrackPickupLayer_Access;
-   procedure setTiledLayer (This : in out RaceTrackPickupLayer; tiledLayer_Param : access AllBinaryTiledLayer'Class);
+   procedure setTiledLayer (This : in out RaceTrackPickupLayer; tiledLayer_Param : access AllBinaryTiledLayer_Package.AllBinaryTiledLayer'Class);
    procedure setDestroyed (This : in out RaceTrackPickupLayer; destroyed : Boolean);
 
 end org.allbinary.game.layer.pickup.RaceTrackPickupLayer_Package;

@@ -47,8 +47,8 @@ package org.allbinary.graphics.displayable.screen.DisplayPointScalar_Package is
    procedure processX (This : in out DisplayPointScalar; value : Integer);
    function processY (This : in out DisplayPointScalar; value : Integer) return Integer;
    procedure processY (This : in out DisplayPointScalar; value : Integer);
-   function process (This : in out DisplayPointScalar; point_Param : access GPoint'Class) return GPoint_Access;
-   procedure process (This : in out DisplayPointScalar; point_Param : access GPoint'Class);
+   function process (This : in out DisplayPointScalar; point_Param : access GPoint_Package.GPoint'Class) return GPoint_Access;
+   procedure process (This : in out DisplayPointScalar; point_Param : access GPoint_Package.GPoint'Class);
 
 end org.allbinary.graphics.displayable.screen.DisplayPointScalar_Package;
 

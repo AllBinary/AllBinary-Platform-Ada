@@ -69,9 +69,9 @@ package body org.allbinary.emulator.device.TrueTypeFontUtil_Package is
         end;
    end saveFontAtlasAsFile;
 
-   function getFontBitmapGL (This : in out TrueTypeFontUtil; gl_Param : access GL10'Class; filename : Unbounded_String; cellSize : Integer; basicColor_Param : access BasicColor'Class) return Image_Access is
-      gl : GL10_Access := GL10_Access (gl_Param);
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+   function getFontBitmapGL (This : in out TrueTypeFontUtil; gl_Param : access GL10_Package.GL10'Class; filename : Unbounded_String; cellSize : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) return Image_Access is
+      gl : constant GL10_Access := GL10_Access (gl_Param);
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
       cellsPerRow2 : Integer;
       cellsPerRow3 : Integer;
       cellsPerRow4 : Integer;
@@ -212,7 +212,7 @@ package body org.allbinary.emulator.device.TrueTypeFontUtil_Package is
         return This.U_characterWidth;
    end getFontWidths;
 
-   procedure getFontBitmapGL (This : in out TrueTypeFontUtil; gl_Param : access GL10'Class; filename : Unbounded_String; cellSize : Integer; basicColor_Param : access BasicColor'Class) is
+   procedure getFontBitmapGL (This : in out TrueTypeFontUtil; gl_Param : access GL10_Package.GL10'Class; filename : Unbounded_String; cellSize : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
       Java_Result : constant Image_Access := TrueTypeFontUtil'Class (This).getFontBitmapGL (gl_Param, filename, cellSize, basicColor_Param);
       pragma Unreferenced (Java_Result);
    begin

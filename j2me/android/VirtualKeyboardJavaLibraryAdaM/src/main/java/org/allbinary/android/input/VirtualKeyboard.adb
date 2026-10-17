@@ -33,14 +33,14 @@ package body org.allbinary.android.input.VirtualKeyboard_Package is
    end Create;
 
 
-   procedure onEvent (This : in out VirtualKeyboard; eventObject_Param : access AllBinaryEventObject'Class) is
-      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+   procedure onEvent (This : in out VirtualKeyboard; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
+      eventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
    begin
         ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, VirtualKeyboard_Access'(This'Unchecked_Access));
    end onEvent;
 
-   procedure onVirtualKeyboardEvent (This : in out VirtualKeyboard; virtualKeyboardEvent_Param : access VirtualKeyboardEvent'Class) is
-      virtualKeyboardEvent : VirtualKeyboardEvent_Access := VirtualKeyboardEvent_Access (virtualKeyboardEvent_Param);
+   procedure onVirtualKeyboardEvent (This : in out VirtualKeyboard; virtualKeyboardEvent_Param : access VirtualKeyboardEvent_Package.VirtualKeyboardEvent'Class) is
+      virtualKeyboardEvent : constant VirtualKeyboardEvent_Access := VirtualKeyboardEvent_Access (virtualKeyboardEvent_Param);
    begin
         null;
    end onVirtualKeyboardEvent;

@@ -42,7 +42,7 @@ package body org.allbinary.logic.communication.http.file.upload.HttpFileUploadUt
 
    --  throws Exception
    function isValid (This : in out HttpFileUploadUtil; anyType_Param : access Java_Object'Class) return Boolean is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         if ((anyType) /= (null)) and then (not (((anyType.all in String_Package.String'Class)))) then
             if (anyType.all in FileItem_Package.FileItem'Class) then
@@ -55,8 +55,8 @@ package body org.allbinary.logic.communication.http.file.upload.HttpFileUploadUt
    end isValid;
 
    --  throws Exception
-   procedure log (fileItem_Param : access FileItemStream'Class) is
-      fileItem : FileItemStream_Access := FileItemStream_Access (fileItem_Param);
+   procedure log (fileItem_Param : access FileItemStream_Package.FileItemStream'Class) is
+      fileItem : constant FileItemStream_Access := FileItemStream_Access (fileItem_Param);
       logUtil : LogUtil_Access;
       stringBuffer : StringMaker_Access;
       commonSeps : CommonSeps_Access;
@@ -82,8 +82,8 @@ package body org.allbinary.logic.communication.http.file.upload.HttpFileUploadUt
         end if;
    end log;
 
-   procedure log (fileItem_Param : access FileItem'Class) is
-      fileItem : FileItem_Access := FileItem_Access (fileItem_Param);
+   procedure log (fileItem_Param : access FileItem_Package.FileItem'Class) is
+      fileItem : constant FileItem_Access := FileItem_Access (fileItem_Param);
       logUtil : LogUtil_Access;
       stringBuffer : StringMaker_Access;
       commonSeps : CommonSeps_Access;

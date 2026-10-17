@@ -40,8 +40,8 @@ package body org.allbinary.game.layer.NullRTSLayer_Package is
    end getName;
 
    --  throws Exception
-   procedure processInput (This : in out NullRTSLayer; layerManager_Param : access AllBinaryLayerManager'Class) is
-      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+   procedure processInput (This : in out NullRTSLayer; layerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class) is
+      layerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end processInput;
@@ -61,8 +61,8 @@ package body org.allbinary.game.layer.NullRTSLayer_Package is
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end getCurrentScrollSelectionForm;
 
-   procedure setCurrentScrollSelectionForm (This : in out NullRTSLayer; currentScrollSelectionForm_Param : access ScrollSelectionForm'Class) is
-      currentScrollSelectionForm : ScrollSelectionForm_Access := ScrollSelectionForm_Access (currentScrollSelectionForm_Param);
+   procedure setCurrentScrollSelectionForm (This : in out NullRTSLayer; currentScrollSelectionForm_Param : access ScrollSelectionForm_Package.ScrollSelectionForm'Class) is
+      currentScrollSelectionForm : constant ScrollSelectionForm_Access := ScrollSelectionForm_Access (currentScrollSelectionForm_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end setCurrentScrollSelectionForm;
@@ -77,22 +77,22 @@ package body org.allbinary.game.layer.NullRTSLayer_Package is
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end getPlayerGameInput;
 
-   procedure onEvent (This : in out NullRTSLayer; eventObject_Param : access AllBinaryEventObject'Class) is
-      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+   procedure onEvent (This : in out NullRTSLayer; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
+      eventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end onEvent;
 
    --  throws Exception
-   procedure onDestroyed (This : in out NullRTSLayer; destroyedEvent_Param : access DestroyedEvent'Class) is
-      destroyedEvent : DestroyedEvent_Access := DestroyedEvent_Access (destroyedEvent_Param);
+   procedure onDestroyed (This : in out NullRTSLayer; destroyedEvent_Param : access DestroyedEvent_Package.DestroyedEvent'Class) is
+      destroyedEvent : constant DestroyedEvent_Access := DestroyedEvent_Access (destroyedEvent_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end onDestroyed;
 
    --  throws Exception
-   procedure processTick (This : in out NullRTSLayer; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class) is
-      allBinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
+   procedure processTick (This : in out NullRTSLayer; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class) is
+      allBinaryLayerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end processTick;
@@ -107,8 +107,8 @@ package body org.allbinary.game.layer.NullRTSLayer_Package is
         return NullRTSFormInputFactory_Package.getInstance;
    end getRTSFormInput;
 
-   procedure add (This : in out NullRTSLayer; sound_Param : access Sound'Class) is
-      sound : Sound_Access := Sound_Access (sound_Param);
+   procedure add (This : in out NullRTSLayer; sound_Param : access Sound_Package.Sound'Class) is
+      sound : constant Sound_Access := Sound_Access (sound_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end add;

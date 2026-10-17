@@ -76,20 +76,20 @@ package org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package is
    GRAPHICITEMS : Unbounded_String;
    REAL_SIZE : Unbounded_String;
 
-   procedure Initialize (This : in out CanvasDom'Class; canvasNode_Param : access Node'Class);
-   function Create (canvasNode_Param : access Node'Class) return CanvasDom_Access;
-   procedure Initialize (This : in out CanvasDom'Class; canvasJPanel_Param : access CanvasJPanel'Class);
-   function Create (canvasJPanel_Param : access CanvasJPanel'Class) return CanvasDom_Access;
+   procedure Initialize (This : in out CanvasDom'Class; canvasNode_Param : access Node_Package.Node'Class);
+   function Create (canvasNode_Param : access Node_Package.Node'Class) return CanvasDom_Access;
+   procedure Initialize (This : in out CanvasDom'Class; canvasJPanel_Param : access CanvasJPanel_Package.CanvasJPanel'Class);
+   function Create (canvasJPanel_Param : access CanvasJPanel_Package.CanvasJPanel'Class) return CanvasDom_Access;
    function getAngle (This : in out CanvasDom) return Long_Float;
    function getGraphicItemHashMap (This : in out CanvasDom) return HashMap_Access;
    procedure setAngle (This : in out CanvasDom; angle : Long_Float);
    procedure setWorkArea (This : in out CanvasDom; x_Case : Integer; y_Case : Integer);
    procedure setGrid (This : in out CanvasDom; gridX : Integer; gridY : Integer);
-   function getPointNode (This : in out CanvasDom; point_Param : access GPoint'Class; pointName : Unbounded_String) return Node_Access;
-   procedure getPointNode (This : in out CanvasDom; point_Param : access GPoint'Class; pointName : Unbounded_String);
+   function getPointNode (This : in out CanvasDom; point_Param : access GPoint_Package.GPoint'Class; pointName : Unbounded_String) return Node_Access;
+   procedure getPointNode (This : in out CanvasDom; point_Param : access GPoint_Package.GPoint'Class; pointName : Unbounded_String);
    function toDom (This : in out CanvasDom) return Node_Access;
    function getDimension (This : in out CanvasDom) return IntegerDimension_Access;
-   procedure setDimension (This : in out CanvasDom; dimension_Param : access IntegerDimension'Class);
+   procedure setDimension (This : in out CanvasDom; dimension_Param : access IntegerDimension_Package.IntegerDimension'Class);
    function getGrid (This : in out CanvasDom) return Grid_Access;
 
 end org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package;

@@ -41,9 +41,9 @@ package org.allbinary.game.ag.ai.ScrollOverAtEndAI_Package is
 
    type ScrollOverAtEndAI is new BasicAI with null record;
 
-   procedure Initialize (This : in out ScrollOverAtEndAI'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class);
-   function Create (ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return ScrollOverAtEndAI_Access;
-   procedure processAI (This : in out ScrollOverAtEndAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class);
+   procedure Initialize (This : in out ScrollOverAtEndAI'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class);
+   function Create (ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) return ScrollOverAtEndAI_Access;
+   procedure processAI (This : in out ScrollOverAtEndAI; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class);
 
 end org.allbinary.game.ag.ai.ScrollOverAtEndAI_Package;
 

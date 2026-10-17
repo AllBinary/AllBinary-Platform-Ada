@@ -23,8 +23,8 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out WorkAreaDom'Class; document_Param : access Document'Class) is
-      document : Document_Access := Document_Access (document_Param);
+   procedure Initialize (This : in out WorkAreaDom'Class; document_Param : access Document_Package.Document'Class) is
+      document : constant Document_Access := Document_Access (document_Param);
       workAreaNodeList : NodeList_Access;
       numberOfworkAreas : Integer;
       numberOfNodes : Integer;
@@ -49,7 +49,7 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaDom_Package is
         end if;
    end Initialize;
 
-   function Create (document_Param : access Document'Class) return WorkAreaDom_Access is
+   function Create (document_Param : access Document_Package.Document'Class) return WorkAreaDom_Access is
       This : constant WorkAreaDom_Access := new WorkAreaDom;
    begin
       WorkAreaDom_Package.Initialize (This.all, document_Param);

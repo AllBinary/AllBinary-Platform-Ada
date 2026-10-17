@@ -38,8 +38,8 @@ package org.allbinary.logic.visual.dhtml.style.css.CssElementValidationFactory_P
 
    procedure Initialize (This : in out CssElementValidationFactory'Class);
    function Create return CssElementValidationFactory_Access;
-   function getInstance (node_Param : access Node'Class) return ValidationInterface_Access;
-   procedure getInstance (node_Param : access Node'Class);
+   function getInstance (node_Param : access Node_Package.Node'Class) return ValidationInterface_Access;
+   procedure getInstance (node_Param : access Node_Package.Node'Class);
 
 end org.allbinary.logic.visual.dhtml.style.css.CssElementValidationFactory_Package;
 

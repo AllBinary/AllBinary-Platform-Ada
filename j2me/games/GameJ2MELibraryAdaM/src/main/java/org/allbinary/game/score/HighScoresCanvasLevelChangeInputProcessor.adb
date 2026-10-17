@@ -26,22 +26,22 @@ package body org.allbinary.game.score.HighScoresCanvasLevelChangeInputProcessor_
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out HighScoresCanvasLevelChangeInputProcessor'Class; highScoresCanvas_Param : access HighScoresCanvas'Class) is
-      highScoresCanvas : HighScoresCanvas_Access := HighScoresCanvas_Access (highScoresCanvas_Param);
+   procedure Initialize (This : in out HighScoresCanvasLevelChangeInputProcessor'Class; highScoresCanvas_Param : access HighScoresCanvas_Package.HighScoresCanvas'Class) is
+      highScoresCanvas : constant HighScoresCanvas_Access := HighScoresCanvas_Access (highScoresCanvas_Param);
    begin
         HighScoresCanvasInputProcessor_Package.Initialize (This, highScoresCanvas);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (highScoresCanvas_Param : access HighScoresCanvas'Class) return HighScoresCanvasLevelChangeInputProcessor_Access is
+   function Create (highScoresCanvas_Param : access HighScoresCanvas_Package.HighScoresCanvas'Class) return HighScoresCanvasLevelChangeInputProcessor_Access is
       This : constant HighScoresCanvasLevelChangeInputProcessor_Access := new HighScoresCanvasLevelChangeInputProcessor;
    begin
       HighScoresCanvasLevelChangeInputProcessor_Package.Initialize (This.all, highScoresCanvas_Param);
       return This;
    end Create;
 
-   procedure updateMeasurement (This : in out HighScoresCanvasLevelChangeInputProcessor; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure updateMeasurement (This : in out HighScoresCanvasLevelChangeInputProcessor; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
    begin
         font := graphics.getFont;
@@ -81,8 +81,8 @@ package body org.allbinary.game.score.HighScoresCanvasLevelChangeInputProcessor_
         list.clear;
    end update;
 
-   procedure paint (This : in out HighScoresCanvasLevelChangeInputProcessor; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out HighScoresCanvasLevelChangeInputProcessor; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       width : Integer;
       topScoresWidth : Integer;
    begin

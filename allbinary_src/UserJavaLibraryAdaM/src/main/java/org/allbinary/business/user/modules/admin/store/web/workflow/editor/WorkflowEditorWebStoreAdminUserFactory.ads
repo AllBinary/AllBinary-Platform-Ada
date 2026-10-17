@@ -40,8 +40,8 @@ package org.allbinary.business.user.modules.admin.store.web.workflow.editor.Work
    procedure Initialize (This : in out WorkflowEditorWebStoreAdminUserFactory'Class);
    function Create return WorkflowEditorWebStoreAdminUserFactory_Access;
    function getInstance (This : in out WorkflowEditorWebStoreAdminUserFactory) return UserInterface_Access;
-   function getInstance (This : in out WorkflowEditorWebStoreAdminUserFactory; hashMap_Param : access HashMap'Class) return UserInterface_Access;
-   procedure getInstance (This : in out WorkflowEditorWebStoreAdminUserFactory; hashMap_Param : access HashMap'Class);
+   function getInstance (This : in out WorkflowEditorWebStoreAdminUserFactory; hashMap_Param : access HashMap_Package.HashMap'Class) return UserInterface_Access;
+   procedure getInstance (This : in out WorkflowEditorWebStoreAdminUserFactory; hashMap_Param : access HashMap_Package.HashMap'Class);
 
 end org.allbinary.business.user.modules.admin.store.web.workflow.editor.WorkflowEditorWebStoreAdminUserFactory_Package;
 

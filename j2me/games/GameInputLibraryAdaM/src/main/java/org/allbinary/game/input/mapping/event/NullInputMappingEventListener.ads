@@ -38,8 +38,8 @@ package org.allbinary.game.input.mapping.event.NullInputMappingEventListener_Pac
 
    procedure Initialize (This : in out NullInputMappingEventListener'Class);
    function Create return NullInputMappingEventListener_Access;
-   procedure onInputMappingEvent (This : in out NullInputMappingEventListener; inputMappingEvent_Param : access InputMappingEvent'Class);
-   procedure onEvent (This : in out NullInputMappingEventListener; eventObject_Param : access AllBinaryEventObject'Class);
+   procedure onInputMappingEvent (This : in out NullInputMappingEventListener; inputMappingEvent_Param : access InputMappingEvent_Package.InputMappingEvent'Class);
+   procedure onEvent (This : in out NullInputMappingEventListener; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class);
 
 end org.allbinary.game.input.mapping.event.NullInputMappingEventListener_Package;
 

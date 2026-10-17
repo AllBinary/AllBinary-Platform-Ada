@@ -65,18 +65,18 @@ package org.allbinary.input.automation.actions.script.condition.processors.input
    end record;
    NAME : Unbounded_String;
 
-   procedure Initialize (This : in out MouseActionScriptInput'Class; node_Param : access Node'Class);
-   function Create (node_Param : access Node'Class) return MouseActionScriptInput_Access;
+   procedure Initialize (This : in out MouseActionScriptInput'Class; node_Param : access Node_Package.Node'Class);
+   function Create (node_Param : access Node_Package.Node'Class) return MouseActionScriptInput_Access;
    procedure Initialize (This : in out MouseActionScriptInput'Class);
    function Create return MouseActionScriptInput_Access;
-   procedure setPoint (This : in out MouseActionScriptInput; point_Param : access Point'Class);
+   procedure setPoint (This : in out MouseActionScriptInput; point_Param : access Point_Package.Point'Class);
    function getPoint (This : in out MouseActionScriptInput) return Point_Access;
    function getButtonClicks (This : in out MouseActionScriptInput) return Integer;
    procedure setButtonClicks (This : in out MouseActionScriptInput; buttons : Integer);
    procedure showDialog (This : in out MouseActionScriptInput);
    function toHashMap (This : in out MouseActionScriptInput) return HashMap_Access;
-   function toXmlNode (This : in out MouseActionScriptInput; document_Param : access Document'Class) return Node_Access;
-   procedure toXmlNode (This : in out MouseActionScriptInput; document_Param : access Document'Class);
+   function toXmlNode (This : in out MouseActionScriptInput; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out MouseActionScriptInput; document_Param : access Document_Package.Document'Class);
    procedure process (This : in out MouseActionScriptInput; frame : Long_Long_Integer);
    procedure log (This : in out MouseActionScriptInput);
 

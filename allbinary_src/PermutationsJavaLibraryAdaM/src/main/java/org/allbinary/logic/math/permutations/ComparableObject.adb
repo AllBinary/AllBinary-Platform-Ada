@@ -34,7 +34,7 @@ package body org.allbinary.logic.math.permutations.ComparableObject_Package is
 
 
    function compareTo (This : in out ComparableObject; anyType_Param : access Java_Object'Class) return Integer is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         if (TsUtil_Package.getInstance.hashCode (ComparableObject_Access'(This'Unchecked_Access))) < (TsUtil_Package.getInstance.hashCode (anyType)) then
             return -(1);

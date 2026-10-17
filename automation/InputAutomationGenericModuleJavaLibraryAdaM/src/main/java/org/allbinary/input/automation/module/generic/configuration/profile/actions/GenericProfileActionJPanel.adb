@@ -65,8 +65,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         return This.genericProfileAction;
    end getGenericProfileAction;
 
-   procedure setGenericProfileAction (This : in out GenericProfileActionJPanel; genericProfileAction_Param : access GenericProfileAction'Class) is
-      genericProfileAction : GenericProfileAction_Access := GenericProfileAction_Access (genericProfileAction_Param);
+   procedure setGenericProfileAction (This : in out GenericProfileActionJPanel; genericProfileAction_Param : access GenericProfileAction_Package.GenericProfileAction'Class) is
+      genericProfileAction : constant GenericProfileAction_Access := GenericProfileAction_Access (genericProfileAction_Param);
    begin
         This.genericProfileAction := genericProfileAction;
    end setGenericProfileAction;
@@ -76,8 +76,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         return This.genericProfileActionScriptJPanel;
    end getGenericProfileActionScriptJPanel;
 
-   procedure setGenericProfileActionScriptJPanel (This : in out GenericProfileActionJPanel; genericProfileActionScriptJPanel_Param : access GenericProfileActionScriptJPanel'Class) is
-      genericProfileActionScriptJPanel : GenericProfileActionScriptJPanel_Access := GenericProfileActionScriptJPanel_Access (genericProfileActionScriptJPanel_Param);
+   procedure setGenericProfileActionScriptJPanel (This : in out GenericProfileActionJPanel; genericProfileActionScriptJPanel_Param : access GenericProfileActionScriptJPanel_Package.GenericProfileActionScriptJPanel'Class) is
+      genericProfileActionScriptJPanel : constant GenericProfileActionScriptJPanel_Access := GenericProfileActionScriptJPanel_Access (genericProfileActionScriptJPanel_Param);
    begin
         This.genericProfileActionScriptJPanel := genericProfileActionScriptJPanel;
    end setGenericProfileActionScriptJPanel;
@@ -105,8 +105,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         This.newColorAtJButton.setText (To_Unbounded_String ("Color Range At"));
         This.newColorAtJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.newColorAtJButtonActionPerformed (evt);
 --     end actionPerformed;
@@ -114,8 +114,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         This.newTimeIntervalJButton.setText (To_Unbounded_String ("Time Interval"));
         This.newTimeIntervalJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.newTimeIntervalJButtonActionPerformed (evt);
 --     end actionPerformed;
@@ -123,8 +123,8 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         This.newAlwaysJButton.setText (To_Unbounded_String ("Always On/Off"));
         This.newAlwaysJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.newAlwaysJButtonActionPerformed (evt);
 --     end actionPerformed;
@@ -135,24 +135,24 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
         layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.ifJLabel, javax_Package.swing.GroupLayout.PREFERRED_SIZE, 14, javax_Package.swing.GroupLayout.PREFERRED_SIZE).addComponent (This.newColorAtJButton).addComponent (This.newTimeIntervalJButton).addComponent (This.newAlwaysJButton)).addPreferredGap (javax_Package.swing.LayoutStyle.ComponentPlacement.RELATED).addComponent (This.genericProfileActionScriptJScrollPane, javax_Package.swing.GroupLayout.DEFAULT_SIZE, 246, Short_Package.MAX_VALUE)));
    end initComponents;
 
-   procedure newTimeIntervalJButtonActionPerformed (This : in out GenericProfileActionJPanel; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure newTimeIntervalJButtonActionPerformed (This : in out GenericProfileActionJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         This.logUtil.putF (To_Unbounded_String ("New Time Interval Action Condition"), GenericProfileActionJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("newTimeIntervalJButtonActionPerformed"));
         This.getGenericProfileAction.getGenericProfileActionScript.addCondition (ProfileActionScriptConditionInterface_Access (TimeIntervalActionScriptCondition_Package.Create));
         This.updateProfileActionUI;
    end newTimeIntervalJButtonActionPerformed;
 
-   procedure newAlwaysJButtonActionPerformed (This : in out GenericProfileActionJPanel; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure newAlwaysJButtonActionPerformed (This : in out GenericProfileActionJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         This.logUtil.putF (To_Unbounded_String ("New EveryTime Action Condition"), GenericProfileActionJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("newEveryTimeJButtonActionPerformed"));
         This.getGenericProfileAction.getGenericProfileActionScript.addCondition (ProfileActionScriptConditionInterface_Access (AlwaysActionScriptCondition_Package.Create));
         This.updateProfileActionUI;
    end newAlwaysJButtonActionPerformed;
 
-   procedure newColorAtJButtonActionPerformed (This : in out GenericProfileActionJPanel; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure newColorAtJButtonActionPerformed (This : in out GenericProfileActionJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         This.logUtil.putF (To_Unbounded_String ("New Color At Action Condition"), GenericProfileActionJPanel_Access'(This'Unchecked_Access), To_Unbounded_String ("newColorAtJButtonActionPerformed"));
         This.getGenericProfileAction.getGenericProfileActionScript.addCondition (ProfileActionScriptConditionInterface_Access (ColorAtActionScriptCondition_Package.Create));

@@ -48,11 +48,11 @@ package org.allbinary.emulator.device.TrueTypeFontUtil_Package is
    procedure getAsTextureSize (This : in out TrueTypeFontUtil; textureSize : Integer);
    function getCellSize (This : in out TrueTypeFontUtil; cellSize : Integer) return Integer;
    procedure getCellSize (This : in out TrueTypeFontUtil; cellSize : Integer);
-   function getFontBitmap (This : in out TrueTypeFontUtil; filename : Unbounded_String; fontSize : Integer; cellSize : Integer; basicColor_Param : access BasicColor'Class) return Image_Access;
-   procedure getFontBitmap (This : in out TrueTypeFontUtil; filename : Unbounded_String; fontSize : Integer; cellSize : Integer; basicColor_Param : access BasicColor'Class);
+   function getFontBitmap (This : in out TrueTypeFontUtil; filename : Unbounded_String; fontSize : Integer; cellSize : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) return Image_Access;
+   procedure getFontBitmap (This : in out TrueTypeFontUtil; filename : Unbounded_String; fontSize : Integer; cellSize : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class);
    procedure saveFontAtlasAsFile (This : in out TrueTypeFontUtil);
-   function getFontBitmapGL (This : in out TrueTypeFontUtil; gl_Param : access GL10'Class; filename : Unbounded_String; cellSize : Integer; basicColor_Param : access BasicColor'Class) return Image_Access;
-   procedure getFontBitmapGL (This : in out TrueTypeFontUtil; gl_Param : access GL10'Class; filename : Unbounded_String; cellSize : Integer; basicColor_Param : access BasicColor'Class);
+   function getFontBitmapGL (This : in out TrueTypeFontUtil; gl_Param : access GL10_Package.GL10'Class; filename : Unbounded_String; cellSize : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) return Image_Access;
+   procedure getFontBitmapGL (This : in out TrueTypeFontUtil; gl_Param : access GL10_Package.GL10'Class; filename : Unbounded_String; cellSize : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class);
    function getFontWidths (This : in out TrueTypeFontUtil; filename : Unbounded_String; fontSize : Integer) return Integer_Array_Access;
    procedure getFontWidths (This : in out TrueTypeFontUtil; filename : Unbounded_String; fontSize : Integer);
 

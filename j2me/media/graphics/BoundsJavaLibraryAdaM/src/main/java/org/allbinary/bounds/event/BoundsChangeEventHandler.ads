@@ -43,7 +43,7 @@ package org.allbinary.bounds.event.BoundsChangeEventHandler_Package is
    procedure Initialize (This : in out BoundsChangeEventHandler'Class);
    function Create return BoundsChangeEventHandler_Access;
    function getInstance return BasicEventHandler_Access;
-   procedure process (This : in out BoundsChangeEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class);
+   procedure process (This : in out BoundsChangeEventHandler; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class);
 
 end org.allbinary.bounds.event.BoundsChangeEventHandler_Package;
 

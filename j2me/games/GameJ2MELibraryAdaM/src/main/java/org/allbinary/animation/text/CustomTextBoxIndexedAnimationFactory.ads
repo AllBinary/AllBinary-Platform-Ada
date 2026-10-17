@@ -61,7 +61,7 @@ package org.allbinary.animation.text.CustomTextBoxIndexedAnimationFactory_Packag
    function Create (fontSize : Integer; maxLength : Integer) return CustomTextBoxIndexedAnimationFactory_Access;
    function getInstance (This : in out CustomTextBoxIndexedAnimationFactory; instanceId : Integer) return Animation_Access;
    procedure getInstance (This : in out CustomTextBoxIndexedAnimationFactory; instanceId : Integer);
-   procedure setInitialScale (This : in out CustomTextBoxIndexedAnimationFactory; scaleProperties_Param : access ScaleProperties'Class);
+   procedure setInitialScale (This : in out CustomTextBoxIndexedAnimationFactory; scaleProperties_Param : access ScaleProperties_Package.ScaleProperties'Class);
 
 end org.allbinary.animation.text.CustomTextBoxIndexedAnimationFactory_Package;
 

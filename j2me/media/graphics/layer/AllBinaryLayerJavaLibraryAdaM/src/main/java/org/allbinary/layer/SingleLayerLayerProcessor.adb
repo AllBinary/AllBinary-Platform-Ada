@@ -34,8 +34,8 @@ package body org.allbinary.layer.SingleLayerLayerProcessor_Package is
    end Create;
 
    --  throws Exception
-   procedure process (This : in out SingleLayerLayerProcessor; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class) is
-      allBinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
+   procedure process (This : in out SingleLayerLayerProcessor; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class) is
+      allBinaryLayerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
       layerManager : LayerManager_Access;
    begin
         layerManager := This.getLayerManager;

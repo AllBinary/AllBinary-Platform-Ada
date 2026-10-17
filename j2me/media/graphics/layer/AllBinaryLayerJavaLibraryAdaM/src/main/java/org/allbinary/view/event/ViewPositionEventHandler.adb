@@ -41,8 +41,8 @@ package body org.allbinary.view.event.ViewPositionEventHandler_Package is
       return This;
    end Create;
 
-   procedure addListener (This : in out ViewPositionEventHandler; layerInterface_Param : access AllBinaryLayer'Class) is
-      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
+   procedure addListener (This : in out ViewPositionEventHandler; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
+      layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         if not (This.list.contains (layerInterface)) then
             This.list.add (layerInterface);
@@ -55,16 +55,16 @@ package body org.allbinary.view.event.ViewPositionEventHandler_Package is
         BasicEventHandler (This).removeAllListeners;
    end removeAllListeners;
 
-   procedure removeListener (This : in out ViewPositionEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class) is
-      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
+   procedure removeListener (This : in out ViewPositionEventHandler; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class) is
+      eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
         This.list.remove (eventListenerInterface);
         BasicEventHandler (This).removeListener (eventListenerInterface);
    end removeListener;
 
    --  throws Exception
-   procedure fireEvent (This : in out ViewPositionEventHandler; eventObject_Param : access AllBinaryEventObject'Class) is
-      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+   procedure fireEvent (This : in out ViewPositionEventHandler; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
+      eventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
       layerInterface : AllBinaryLayer_Access;
       index : Integer;
    begin
@@ -86,9 +86,9 @@ package body org.allbinary.view.event.ViewPositionEventHandler_Package is
    end fireEvent;
 
    --  throws Exception
-   procedure process (This : in out ViewPositionEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class) is
-      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
-      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
+   procedure process (This : in out ViewPositionEventHandler; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class) is
+      eventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+      eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
       viewPositionEventListenerInterface : ViewPositionEventListenerInterface_Access;
    begin
         viewPositionEventListenerInterface := (ViewPositionEventListenerInterface_Access (eventListenerInterface));

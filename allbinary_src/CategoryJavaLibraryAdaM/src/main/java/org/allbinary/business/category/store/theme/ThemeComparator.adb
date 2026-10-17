@@ -35,8 +35,8 @@ package body org.allbinary.business.category.store.theme.ThemeComparator_Package
    end Create;
 
    function compare (This : in out ThemeComparator; anyType_Param : access Java_Object'Class; object2_Param : access Java_Object'Class) return Integer is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
-      object2 : Java_Object_Access := Java_Object_Access (object2_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
+      object2 : constant Java_Object_Access := Java_Object_Access (object2_Param);
       string_Id : Unbounded_String;
       string2 : Unbounded_String;
    begin

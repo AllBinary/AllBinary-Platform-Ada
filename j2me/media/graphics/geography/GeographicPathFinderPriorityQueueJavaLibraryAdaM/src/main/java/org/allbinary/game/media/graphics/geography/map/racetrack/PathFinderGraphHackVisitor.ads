@@ -36,14 +36,14 @@ package org.allbinary.game.media.graphics.geography.map.racetrack.PathFinderGrap
 
    type PathFinderGraphHackVisitor is new BasePathFinderGraphVisitor with null record;
 
-   procedure Initialize (This : in out PathFinderGraphHackVisitor'Class; geographicMapInterface_Param : access BasicGeographicMap'Class; edgeMinimum : Integer; minPathWeight : Integer; maxPathWeight : Integer);
-   function Create (geographicMapInterface_Param : access BasicGeographicMap'Class; edgeMinimum : Integer; minPathWeight : Integer; maxPathWeight : Integer) return PathFinderGraphHackVisitor_Access;
-   procedure visit (This : in out PathFinderGraphHackVisitor; graph_Param : access Java_Object'Class; startPathFindingNodeList_Param : access BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList'Class);
-   procedure fixStart (This : in out PathFinderGraphHackVisitor; graph_Param : access Java_Object'Class; startPathFindingNodeList_Param : access BasicArrayList'Class);
-   procedure fixEnd (This : in out PathFinderGraphHackVisitor; graph_Param : access Java_Object'Class; endPathFindingNodeList_Param : access BasicArrayList'Class);
+   procedure Initialize (This : in out PathFinderGraphHackVisitor'Class; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; edgeMinimum : Integer; minPathWeight : Integer; maxPathWeight : Integer);
+   function Create (geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; edgeMinimum : Integer; minPathWeight : Integer; maxPathWeight : Integer) return PathFinderGraphHackVisitor_Access;
+   procedure visit (This : in out PathFinderGraphHackVisitor; graph_Param : access Java_Object'Class; startPathFindingNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class);
+   procedure fixStart (This : in out PathFinderGraphHackVisitor; graph_Param : access Java_Object'Class; startPathFindingNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class);
+   procedure fixEnd (This : in out PathFinderGraphHackVisitor; graph_Param : access Java_Object'Class; endPathFindingNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class);
    procedure fixOverPassEdges (This : in out PathFinderGraphHackVisitor; graph_Param : access Java_Object'Class);
-   procedure fixPath (This : in out PathFinderGraphHackVisitor; startPathFindingNodeList_Param : access BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList'Class; pathList_Param : access BasicArrayList'Class);
-   procedure removeOverPassEdges (This : in out PathFinderGraphHackVisitor; pathList_Param : access BasicArrayList'Class);
+   procedure fixPath (This : in out PathFinderGraphHackVisitor; startPathFindingNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class; pathList_Param : access BasicArrayList_Package.BasicArrayList'Class);
+   procedure removeOverPassEdges (This : in out PathFinderGraphHackVisitor; pathList_Param : access BasicArrayList_Package.BasicArrayList'Class);
    function isValid (This : in out PathFinderGraphHackVisitor; graphPath_Param : access Java_Object'Class) return Boolean;
    procedure isValid (This : in out PathFinderGraphHackVisitor; graphPath_Param : access Java_Object'Class);
 

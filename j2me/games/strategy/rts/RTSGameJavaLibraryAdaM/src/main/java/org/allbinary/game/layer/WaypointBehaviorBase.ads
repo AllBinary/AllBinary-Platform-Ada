@@ -59,15 +59,15 @@ package org.allbinary.game.layer.WaypointBehaviorBase_Package is
    function Create return WaypointBehaviorBase_Access;
    function getName (This : in out WaypointBehaviorBase) return Unbounded_String;
    function isRunning (This : in out WaypointBehaviorBase) return Boolean;
-   procedure processTick (This : in out WaypointBehaviorBase; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class);
+   procedure processTick (This : in out WaypointBehaviorBase; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class);
    function getOwnedWaypointList (This : in out WaypointBehaviorBase) return BasicArrayList_Access;
    function getWaypoint (This : in out WaypointBehaviorBase) return WaypointBase_Access;
-   procedure setWaypoint (This : in out WaypointBehaviorBase; waypoint_Param : access WaypointBase'Class);
+   procedure setWaypoint (This : in out WaypointBehaviorBase; waypoint_Param : access WaypointBase_Package.WaypointBase'Class);
    function getSteeringVisitorList (This : in out WaypointBehaviorBase) return BasicArrayList_Access;
    function getMovementLogicAsString (This : in out WaypointBehaviorBase) return Unbounded_String;
    function isWaypointListEmptyOrOnlyTargets (This : in out WaypointBehaviorBase) return Boolean;
-   function isInSensorRange (This : in out WaypointBehaviorBase; layerInterface_Param : access CollidableDestroyableDamageableLayer'Class; targetDistance : Integer) return Boolean;
-   procedure isInSensorRange (This : in out WaypointBehaviorBase; layerInterface_Param : access CollidableDestroyableDamageableLayer'Class; targetDistance : Integer);
+   function isInSensorRange (This : in out WaypointBehaviorBase; layerInterface_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class; targetDistance : Integer) return Boolean;
+   procedure isInSensorRange (This : in out WaypointBehaviorBase; layerInterface_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class; targetDistance : Integer);
    function getCurrentTargetLayerInterface (This : in out WaypointBehaviorBase) return CollidableDestroyableDamageableLayer_Access;
    function getCurrentTargetingStateString (This : in out WaypointBehaviorBase) return Unbounded_String;
    function isTrackingWaypoint (This : in out WaypointBehaviorBase) return Boolean;
@@ -76,10 +76,10 @@ package org.allbinary.game.layer.WaypointBehaviorBase_Package is
    function isWaypointOverridesAttacking (This : in out WaypointBehaviorBase) return Boolean;
    function getNextUnvisitedPathGeographicMapCellPosition (This : in out WaypointBehaviorBase) return GeographicMapCellPosition_Access;
    function needToMove (This : in out WaypointBehaviorBase) return Boolean;
-   procedure setWaypointPathsList (This : in out WaypointBehaviorBase; waypointPathsList_Param : access BasicArrayList'Class);
+   procedure setWaypointPathsList (This : in out WaypointBehaviorBase; waypointPathsList_Param : access BasicArrayList_Package.BasicArrayList'Class);
    function getWaypointPathsList (This : in out WaypointBehaviorBase) return BasicArrayList_Access;
-   procedure setTarget (This : in out WaypointBehaviorBase; layerInterface_Param : access PathFindingLayerInterface'Class);
-   procedure setTargetWithDistance (This : in out WaypointBehaviorBase; layerInterface_Param : access PathFindingLayerInterface'Class; anotherTargetDistance : Integer);
+   procedure setTarget (This : in out WaypointBehaviorBase; layerInterface_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class);
+   procedure setTargetWithDistance (This : in out WaypointBehaviorBase; layerInterface_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class; anotherTargetDistance : Integer);
    procedure clearTarget (This : in out WaypointBehaviorBase);
    procedure updatePathOnTargetMove (This : in out WaypointBehaviorBase; reason : Unbounded_String);
 

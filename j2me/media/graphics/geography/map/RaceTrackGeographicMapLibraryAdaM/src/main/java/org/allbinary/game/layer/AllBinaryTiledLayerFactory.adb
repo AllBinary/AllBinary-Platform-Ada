@@ -34,9 +34,9 @@ package body org.allbinary.game.layer.AllBinaryTiledLayerFactory_Package is
 
 
    --  throws Exception
-   function getInstance (This : in out AllBinaryTiledLayerFactory; raceTrackInfo_Param : access RaceTrackInfo'Class; raceTrackData_Param : access RaceTrackData'Class) return AllBinaryTiledLayer_Access is
-      raceTrackInfo : RaceTrackInfo_Access := RaceTrackInfo_Access (raceTrackInfo_Param);
-      raceTrackData : RaceTrackData_Access := RaceTrackData_Access (raceTrackData_Param);
+   function getInstance (This : in out AllBinaryTiledLayerFactory; raceTrackInfo_Param : access RaceTrackInfo_Package.RaceTrackInfo'Class; raceTrackData_Param : access RaceTrackData_Package.RaceTrackData'Class) return AllBinaryTiledLayer_Access is
+      raceTrackInfo : constant RaceTrackInfo_Access := RaceTrackInfo_Access (raceTrackInfo_Param);
+      raceTrackData : constant RaceTrackData_Access := RaceTrackData_Access (raceTrackData_Param);
       allbinaryTiledLayer : AllBinaryTiledLayer_Access;
       tiledLayer : TiledLayer_Access;
    begin
@@ -48,8 +48,8 @@ package body org.allbinary.game.layer.AllBinaryTiledLayerFactory_Package is
    end getInstance;
 
    --  throws Exception
-   function getMiniInstance (This : in out AllBinaryTiledLayerFactory; raceTrackData_Param : access RaceTrackData'Class) return AllBinaryTiledLayer_Access is
-      raceTrackData : RaceTrackData_Access := RaceTrackData_Access (raceTrackData_Param);
+   function getMiniInstance (This : in out AllBinaryTiledLayerFactory; raceTrackData_Param : access RaceTrackData_Package.RaceTrackData'Class) return AllBinaryTiledLayer_Access is
+      raceTrackData : constant RaceTrackData_Access := RaceTrackData_Access (raceTrackData_Param);
       smallIntegerSingletonFactory : SmallIntegerSingletonFactory_Access;
       tiledLayer : TiledLayer_Access;
       allbinaryTiledLayer : AllBinaryTiledLayer_Access;
@@ -61,14 +61,14 @@ package body org.allbinary.game.layer.AllBinaryTiledLayerFactory_Package is
         return allbinaryTiledLayer;
    end getMiniInstance;
 
-   procedure getInstance (This : in out AllBinaryTiledLayerFactory; raceTrackInfo_Param : access RaceTrackInfo'Class; raceTrackData_Param : access RaceTrackData'Class) is
+   procedure getInstance (This : in out AllBinaryTiledLayerFactory; raceTrackInfo_Param : access RaceTrackInfo_Package.RaceTrackInfo'Class; raceTrackData_Param : access RaceTrackData_Package.RaceTrackData'Class) is
       Java_Result : constant AllBinaryTiledLayer_Access := AllBinaryTiledLayerFactory'Class (This).getInstance (raceTrackInfo_Param, raceTrackData_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
-   procedure getMiniInstance (This : in out AllBinaryTiledLayerFactory; raceTrackData_Param : access RaceTrackData'Class) is
+   procedure getMiniInstance (This : in out AllBinaryTiledLayerFactory; raceTrackData_Param : access RaceTrackData_Package.RaceTrackData'Class) is
       Java_Result : constant AllBinaryTiledLayer_Access := AllBinaryTiledLayerFactory'Class (This).getMiniInstance (raceTrackData_Param);
       pragma Unreferenced (Java_Result);
    begin

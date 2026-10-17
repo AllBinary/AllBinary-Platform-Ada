@@ -39,8 +39,8 @@ package body org.allbinary.logic.visual.dhtml.style.color.ColorsView_Package is
    end Create;
 
    --  throws Exception
-   function getColorNode (This : in out ColorsView; document_Param : access Document'Class; redIndex : Integer; greenIndex : Integer; blueIndex : Integer) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function getColorNode (This : in out ColorsView; document_Param : access Document_Package.Document'Class; redIndex : Integer; greenIndex : Integer; blueIndex : Integer) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       hexColorStringBuffer : StringMaker_Access;
       colorNode : Node_Access;
    begin
@@ -62,8 +62,8 @@ package body org.allbinary.logic.visual.dhtml.style.color.ColorsView_Package is
    end getColorNode;
 
    --  throws Exception
-   function toXmlNode (This : in out ColorsView; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out ColorsView; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       node : Node_Access;
       blackNode : Node_Access;
       hexColorStringBuffer : StringMaker_Access;
@@ -153,14 +153,14 @@ package body org.allbinary.logic.visual.dhtml.style.color.ColorsView_Package is
         return node;
    end toXmlNode;
 
-   procedure getColorNode (This : in out ColorsView; document_Param : access Document'Class; redIndex : Integer; greenIndex : Integer; blueIndex : Integer) is
+   procedure getColorNode (This : in out ColorsView; document_Param : access Document_Package.Document'Class; redIndex : Integer; greenIndex : Integer; blueIndex : Integer) is
       Java_Result : constant Node_Access := ColorsView'Class (This).getColorNode (document_Param, redIndex, greenIndex, blueIndex);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getColorNode;
 
-   procedure toXmlNode (This : in out ColorsView; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out ColorsView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := ColorsView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

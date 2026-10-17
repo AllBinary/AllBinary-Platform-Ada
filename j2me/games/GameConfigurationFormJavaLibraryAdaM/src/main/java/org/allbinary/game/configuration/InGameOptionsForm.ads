@@ -49,9 +49,9 @@ package org.allbinary.game.configuration.InGameOptionsForm_Package is
    SAVE : Command_Access;
    DEFAULT : Command_Access;
 
-   procedure Initialize (This : in out InGameOptionsForm'Class; commandListener_Param : access CommandListener'Class; title : Unbounded_String; backgrounBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class);
-   function Create (commandListener_Param : access CommandListener'Class; title : Unbounded_String; backgrounBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return InGameOptionsForm_Access;
-   procedure initCommands (This : in out InGameOptionsForm; cmdListener_Param : access CommandListener'Class);
+   procedure Initialize (This : in out InGameOptionsForm'Class; commandListener_Param : access CommandListener_Package.CommandListener'Class; title : Unbounded_String; backgrounBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class);
+   function Create (commandListener_Param : access CommandListener_Package.CommandListener'Class; title : Unbounded_String; backgrounBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return InGameOptionsForm_Access;
+   procedure initCommands (This : in out InGameOptionsForm; cmdListener_Param : access CommandListener_Package.CommandListener'Class);
 
 end org.allbinary.game.configuration.InGameOptionsForm_Package;
 

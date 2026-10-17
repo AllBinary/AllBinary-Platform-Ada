@@ -64,14 +64,14 @@ package views.business.context.modules.storefront.customizer.hedges.header.Inser
       LOGOPATH : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out InsertHeaderValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return InsertHeaderValidationView_Access;
+   procedure Initialize (This : in out InsertHeaderValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return InsertHeaderValidationView_Access;
    function toXmlDoc (This : in out InsertHeaderValidationView) return Document_Access;
    function isValid (This : in out InsertHeaderValidationView) return Boolean;
    function validationInfo (This : in out InsertHeaderValidationView) return Unbounded_String;
    function toValidationInfoDoc (This : in out InsertHeaderValidationView) return Document_Access;
-   function toValidationInfoNode (This : in out InsertHeaderValidationView; document_Param : access Document'Class) return Node_Access;
-   procedure toValidationInfoNode (This : in out InsertHeaderValidationView; document_Param : access Document'Class);
+   function toValidationInfoNode (This : in out InsertHeaderValidationView; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out InsertHeaderValidationView; document_Param : access Document_Package.Document'Class);
 
 end views.business.context.modules.storefront.customizer.hedges.header.InsertHeaderValidationView_Package;
 

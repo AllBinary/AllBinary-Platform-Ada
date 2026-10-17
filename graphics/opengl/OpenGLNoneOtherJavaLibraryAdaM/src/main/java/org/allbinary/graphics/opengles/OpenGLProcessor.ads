@@ -26,7 +26,7 @@ package org.allbinary.graphics.opengles.OpenGLProcessor_Package is
 
    procedure Initialize (This : in out OpenGLProcessor'Class);
    function Create return OpenGLProcessor_Access;
-   procedure process (This : in out OpenGLProcessor; gl_Param : access GL10'Class);
+   procedure process (This : in out OpenGLProcessor; gl_Param : access GL10_Package.GL10'Class);
 
 end org.allbinary.graphics.opengles.OpenGLProcessor_Package;
 

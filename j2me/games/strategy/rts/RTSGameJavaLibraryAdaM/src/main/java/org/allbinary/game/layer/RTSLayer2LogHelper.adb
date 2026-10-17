@@ -38,50 +38,50 @@ package body org.allbinary.game.layer.RTSLayer2LogHelper_Package is
         return RTSLayer2LogHelper_Package.instance;
    end getInstance;
 
-   procedure steeringUp (This : in out RTSLayer2LogHelper; pathFindingLayerInterface_Param : access PathFindingLayerInterface'Class) is
-      pathFindingLayerInterface : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (pathFindingLayerInterface_Param);
+   procedure steeringUp (This : in out RTSLayer2LogHelper; pathFindingLayerInterface_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class) is
+      pathFindingLayerInterface : constant PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (pathFindingLayerInterface_Param);
    begin
         null;
    end steeringUp;
 
-   procedure steeringFireOrStop (This : in out RTSLayer2LogHelper; pathFindingLayerInterface_Param : access PathFindingLayerInterface'Class) is
-      pathFindingLayerInterface : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (pathFindingLayerInterface_Param);
+   procedure steeringFireOrStop (This : in out RTSLayer2LogHelper; pathFindingLayerInterface_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class) is
+      pathFindingLayerInterface : constant PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (pathFindingLayerInterface_Param);
    begin
         null;
    end steeringFireOrStop;
 
-   procedure buildingAbove (This : in out RTSLayer2LogHelper; pathFindingLayerInterface_Param : access PathFindingLayerInterface'Class) is
-      pathFindingLayerInterface : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (pathFindingLayerInterface_Param);
+   procedure buildingAbove (This : in out RTSLayer2LogHelper; pathFindingLayerInterface_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class) is
+      pathFindingLayerInterface : constant PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (pathFindingLayerInterface_Param);
    begin
         null;
    end buildingAbove;
 
-   procedure buildingChaseLeft (This : in out RTSLayer2LogHelper; pathFindingLayerInterface_Param : access PathFindingLayerInterface'Class; angle : Integer) is
-      pathFindingLayerInterface : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (pathFindingLayerInterface_Param);
+   procedure buildingChaseLeft (This : in out RTSLayer2LogHelper; pathFindingLayerInterface_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class; angle : Integer) is
+      pathFindingLayerInterface : constant PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (pathFindingLayerInterface_Param);
    begin
         null;
    end buildingChaseLeft;
 
-   procedure buildingChaseRight (This : in out RTSLayer2LogHelper; pathFindingLayerInterface_Param : access PathFindingLayerInterface'Class; angle : Integer) is
-      pathFindingLayerInterface : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (pathFindingLayerInterface_Param);
+   procedure buildingChaseRight (This : in out RTSLayer2LogHelper; pathFindingLayerInterface_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class; angle : Integer) is
+      pathFindingLayerInterface : constant PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (pathFindingLayerInterface_Param);
    begin
         null;
    end buildingChaseRight;
 
-   procedure buildingDown (This : in out RTSLayer2LogHelper; pathFindingLayerInterface_Param : access PathFindingLayerInterface'Class) is
-      pathFindingLayerInterface : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (pathFindingLayerInterface_Param);
+   procedure buildingDown (This : in out RTSLayer2LogHelper; pathFindingLayerInterface_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class) is
+      pathFindingLayerInterface : constant PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (pathFindingLayerInterface_Param);
    begin
         null;
    end buildingDown;
 
-   procedure buildingChaseDown (This : in out RTSLayer2LogHelper; pathFindingLayerInterface_Param : access PathFindingLayerInterface'Class; angle : Integer) is
-      pathFindingLayerInterface : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (pathFindingLayerInterface_Param);
+   procedure buildingChaseDown (This : in out RTSLayer2LogHelper; pathFindingLayerInterface_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class; angle : Integer) is
+      pathFindingLayerInterface : constant PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (pathFindingLayerInterface_Param);
    begin
         null;
    end buildingChaseDown;
 
-   procedure buildingChaseUp (This : in out RTSLayer2LogHelper; pathFindingLayerInterface_Param : access PathFindingLayerInterface'Class; angle : Integer) is
-      pathFindingLayerInterface : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (pathFindingLayerInterface_Param);
+   procedure buildingChaseUp (This : in out RTSLayer2LogHelper; pathFindingLayerInterface_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class; angle : Integer) is
+      pathFindingLayerInterface : constant PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (pathFindingLayerInterface_Param);
    begin
         null;
    end buildingChaseUp;

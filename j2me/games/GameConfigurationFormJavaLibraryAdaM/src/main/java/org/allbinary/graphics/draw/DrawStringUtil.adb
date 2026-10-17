@@ -40,8 +40,8 @@ package body org.allbinary.graphics.draw.DrawStringUtil_Package is
         return DrawStringUtil_Package.instance;
    end getInstance;
 
-   procedure drawCenterString (This : in out DrawStringUtil; graphics_Param : access Graphics'Class; string_Id : Unbounded_String; offset : Integer; length : Integer; x : Integer; y : Integer) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure drawCenterString (This : in out DrawStringUtil; graphics_Param : access Graphics_Package.Graphics'Class; string_Id : Unbounded_String; offset : Integer; length : Integer; x : Integer; y : Integer) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       width : Integer;
    begin
         width := (Java_Shift_Right_Arithmetic (graphics.getFont.substringWidth (string_Id, offset, length), 1));
@@ -57,8 +57,8 @@ package body org.allbinary.graphics.draw.DrawStringUtil_Package is
         end;
    end drawCenterString;
 
-   procedure drawCenterStrings (This : in out DrawStringUtil; graphics_Param : access Graphics'Class; stringArray : Unbounded_String_Array_Access; maxWidth : Integer; charHeight : Integer; x : Integer; y : Integer) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure drawCenterStrings (This : in out DrawStringUtil; graphics_Param : access Graphics_Package.Graphics'Class; stringArray : Unbounded_String_Array_Access; maxWidth : Integer; charHeight : Integer; x : Integer; y : Integer) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       extraLines : Integer;
       string_Id : Unbounded_String;
       width : Integer;

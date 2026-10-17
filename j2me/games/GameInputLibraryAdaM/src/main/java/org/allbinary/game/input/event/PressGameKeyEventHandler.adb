@@ -41,8 +41,8 @@ package body org.allbinary.game.input.event.PressGameKeyEventHandler_Package is
       return This;
    end Create;
 
-   procedure addListener (This : in out PressGameKeyEventHandler; playerGameInput_Param : access PlayerGameInput'Class) is
-      playerGameInput : PlayerGameInput_Access := PlayerGameInput_Access (playerGameInput_Param);
+   procedure addListener (This : in out PressGameKeyEventHandler; playerGameInput_Param : access PlayerGameInput_Package.PlayerGameInput'Class) is
+      playerGameInput : constant PlayerGameInput_Access := PlayerGameInput_Access (playerGameInput_Param);
    begin
         if not (This.list.contains (playerGameInput)) then
             This.list.add (playerGameInput);
@@ -55,16 +55,16 @@ package body org.allbinary.game.input.event.PressGameKeyEventHandler_Package is
         BasicEventHandler (This).removeAllListeners;
    end removeAllListeners;
 
-   procedure removeListener (This : in out PressGameKeyEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class) is
-      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
+   procedure removeListener (This : in out PressGameKeyEventHandler; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class) is
+      eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
    begin
         This.list.remove (eventListenerInterface);
         BasicEventHandler (This).removeListener (eventListenerInterface);
    end removeListener;
 
    --  throws Exception
-   procedure fireEvent (This : in out PressGameKeyEventHandler; eventObject_Param : access AllBinaryEventObject'Class) is
-      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+   procedure fireEvent (This : in out PressGameKeyEventHandler; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
+      eventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
       playerGameInput : PlayerGameInput_Access;
       index : Integer;
    begin
@@ -86,9 +86,9 @@ package body org.allbinary.game.input.event.PressGameKeyEventHandler_Package is
    end fireEvent;
 
    --  throws Exception
-   procedure process (This : in out PressGameKeyEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class) is
-      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
-      eventListenerInterface : EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
+   procedure process (This : in out PressGameKeyEventHandler; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class) is
+      eventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+      eventListenerInterface : constant EventListenerInterface_Access := EventListenerInterface_Access (eventListenerInterface_Param);
       pressGameKeyEventListenerInterface : PressGameKeyEventListenerInterface_Access;
    begin
         pressGameKeyEventListenerInterface := (PressGameKeyEventListenerInterface_Access (eventListenerInterface));

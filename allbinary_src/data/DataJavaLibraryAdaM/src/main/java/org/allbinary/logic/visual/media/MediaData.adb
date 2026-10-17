@@ -55,8 +55,8 @@ package body org.allbinary.logic.visual.media.MediaData_Package is
         return This.extension;
    end getExtension;
 
-   function isConvertableTo (This : in out MediaData; mediaData_Param : access MediaData'Class) return Boolean is
-      mediaData : MediaData_Access := MediaData_Access (mediaData_Param);
+   function isConvertableTo (This : in out MediaData; mediaData_Param : access MediaData_Package.MediaData'Class) return Boolean is
+      mediaData : constant MediaData_Access := MediaData_Access (mediaData_Param);
    begin
         if ((MediaData_Access'(This'Unchecked_Access)) = (MediaDataFactory_Package.getInstance.GIF)) and then ((mediaData) = (MediaDataFactory_Package.getInstance.JPG)) then
             return True;
@@ -91,7 +91,7 @@ package body org.allbinary.logic.visual.media.MediaData_Package is
         return MediaData_Package.hashMap;
    end toHashMap;
 
-   procedure isConvertableTo (This : in out MediaData; mediaData_Param : access MediaData'Class) is
+   procedure isConvertableTo (This : in out MediaData; mediaData_Param : access MediaData_Package.MediaData'Class) is
       Java_Result : constant Boolean := MediaData'Class (This).isConvertableTo (mediaData_Param);
       pragma Unreferenced (Java_Result);
    begin

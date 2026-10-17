@@ -26,9 +26,9 @@ package body org.allbinary.game.midlet.CreateGameRunnable_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CreateGameRunnable'Class; demoGameMidlet_Param : access DemoGameMidlet'Class; hashtable_Param : access ABHashtable'Class) is
-      demoGameMidlet : DemoGameMidlet_Access := DemoGameMidlet_Access (demoGameMidlet_Param);
-      hashtable : ABHashtable_Access := ABHashtable_Access (hashtable_Param);
+   procedure Initialize (This : in out CreateGameRunnable'Class; demoGameMidlet_Param : access DemoGameMidlet_Package.DemoGameMidlet'Class; hashtable_Param : access ABHashtable_Package.ABHashtable'Class) is
+      demoGameMidlet : constant DemoGameMidlet_Access := DemoGameMidlet_Access (demoGameMidlet_Param);
+      hashtable : constant ABHashtable_Access := ABHashtable_Access (hashtable_Param);
    begin
       Initialize_Fields (This);
         This.demoGameMidlet := demoGameMidlet;
@@ -36,7 +36,7 @@ package body org.allbinary.game.midlet.CreateGameRunnable_Package is
         This.startGameMidletEvent := DemoGameMidletEvent_Package.Create (CreateGameRunnable_Access'(This'Unchecked_Access), DemoGameMidletStateFactory_Package.getInstance.START_GAME);
    end Initialize;
 
-   function Create (demoGameMidlet_Param : access DemoGameMidlet'Class; hashtable_Param : access ABHashtable'Class) return CreateGameRunnable_Access is
+   function Create (demoGameMidlet_Param : access DemoGameMidlet_Package.DemoGameMidlet'Class; hashtable_Param : access ABHashtable_Package.ABHashtable'Class) return CreateGameRunnable_Access is
       This : constant CreateGameRunnable_Access := new CreateGameRunnable;
    begin
       CreateGameRunnable_Package.Initialize (This.all, demoGameMidlet_Param, hashtable_Param);

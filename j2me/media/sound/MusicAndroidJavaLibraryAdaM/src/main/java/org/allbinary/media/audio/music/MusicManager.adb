@@ -27,8 +27,8 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out MusicManager'Class; musicServiceClass : Ada.Tags.Tag; songList_Param : access BasicArrayList'Class) is
-      songList : BasicArrayList_Access := BasicArrayList_Access (songList_Param);
+   procedure Initialize (This : in out MusicManager'Class; musicServiceClass : Ada.Tags.Tag; songList_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      songList : constant BasicArrayList_Access := BasicArrayList_Access (songList_Param);
    begin
       Initialize_Fields (This);
         PreLogUtil_Package.put ((This.commonStateStrings.CONTEXT) + (This.resourceUtil.getContext), MusicManager_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
@@ -37,14 +37,14 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
         This.songList := songList;
    end Initialize;
 
-   function Create (musicServiceClass : Ada.Tags.Tag; songList_Param : access BasicArrayList'Class) return MusicManager_Access is
+   function Create (musicServiceClass : Ada.Tags.Tag; songList_Param : access BasicArrayList_Package.BasicArrayList'Class) return MusicManager_Access is
       This : constant MusicManager_Access := new MusicManager;
    begin
       MusicManager_Package.Initialize (This.all, musicServiceClass, songList_Param);
       return This;
    end Create;
 
-   procedure nextSong (This : in out MusicManager; nextSongSound_Param : access Sound'Class; leftVolume : Integer; rightVolume : Integer) is
+   procedure nextSong (This : in out MusicManager; nextSongSound_Param : access Sound_Package.Sound'Class; leftVolume : Integer; rightVolume : Integer) is
       nextSongSound : Sound_Access := Sound_Access (nextSongSound_Param);
    begin
         if (nextSongSound) = (null) then
@@ -131,8 +131,8 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
         This.resourceUtil.getContext.stopService (This.currentIntent);
    end stop;
 
-   procedure pause (activity_Param : access Activity'Class; musicServiceClass : Ada.Tags.Tag) is
-      activity : Activity_Access := Activity_Access (activity_Param);
+   procedure pause (activity_Param : access Activity_Package.Activity'Class; musicServiceClass : Ada.Tags.Tag) is
+      activity : constant Activity_Access := Activity_Access (activity_Param);
       commonStateStrings : CommonStateStrings_Access;
       musicPauseIntent : Intent_Access;
    begin
@@ -142,8 +142,8 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
         activity.startService (musicPauseIntent);
    end pause;
 
-   procedure resume (activity_Param : access Activity'Class; musicServiceClass : Ada.Tags.Tag) is
-      activity : Activity_Access := Activity_Access (activity_Param);
+   procedure resume (activity_Param : access Activity_Package.Activity'Class; musicServiceClass : Ada.Tags.Tag) is
+      activity : constant Activity_Access := Activity_Access (activity_Param);
       commonStateStrings : CommonStateStrings_Access;
       musicResumeIntent : Intent_Access;
    begin

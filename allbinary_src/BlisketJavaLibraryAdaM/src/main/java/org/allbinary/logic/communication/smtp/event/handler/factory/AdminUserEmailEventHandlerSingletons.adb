@@ -45,9 +45,9 @@ package body org.allbinary.logic.communication.smtp.event.handler.factory.AdminU
    end Create;
 
    --  throws Exception
-   function getInstance (This : in out AdminUserEmailEventHandlerSingletons; abeClientInformation_Param : access AbeClientInformationInterface'Class; userEmailEventNameData_Param : access UserEmailEventNameData'Class) return UserEmailEventHandler_Access is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      userEmailEventNameData : UserEmailEventNameData_Access := UserEmailEventNameData_Access (userEmailEventNameData_Param);
+   function getInstance (This : in out AdminUserEmailEventHandlerSingletons; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; userEmailEventNameData_Param : access UserEmailEventNameData_Package.UserEmailEventNameData'Class) return UserEmailEventHandler_Access is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      userEmailEventNameData : constant UserEmailEventNameData_Access := UserEmailEventNameData_Access (userEmailEventNameData_Param);
       userEmailEventHandler : UserEmailEventHandler_Access;
       userVector : BasicArrayList_Access;
       newUserEmailEventHandler : UserEmailEventHandler_Access;
@@ -72,7 +72,7 @@ package body org.allbinary.logic.communication.smtp.event.handler.factory.AdminU
         end if;
    end getInstance;
 
-   procedure getInstance (This : in out AdminUserEmailEventHandlerSingletons; abeClientInformation_Param : access AbeClientInformationInterface'Class; userEmailEventNameData_Param : access UserEmailEventNameData'Class) is
+   procedure getInstance (This : in out AdminUserEmailEventHandlerSingletons; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; userEmailEventNameData_Param : access UserEmailEventNameData_Package.UserEmailEventNameData'Class) is
       Java_Result : constant UserEmailEventHandler_Access := AdminUserEmailEventHandlerSingletons'Class (This).getInstance (abeClientInformation_Param, userEmailEventNameData_Param);
       pragma Unreferenced (Java_Result);
    begin

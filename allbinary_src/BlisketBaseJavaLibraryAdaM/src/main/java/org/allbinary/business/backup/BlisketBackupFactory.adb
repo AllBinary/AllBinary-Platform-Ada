@@ -224,8 +224,8 @@ package body org.allbinary.business.backup.BlisketBackupFactory_Package is
         end;
    end backupJsps;
 
-   procedure backup (This : in out BlisketBackupFactory; fileBasicArrayList_Param : access BasicArrayList'Class; zipFile : Unbounded_String) is
-      fileBasicArrayList : BasicArrayList_Access := BasicArrayList_Access (fileBasicArrayList_Param);
+   procedure backup (This : in out BlisketBackupFactory; fileBasicArrayList_Param : access BasicArrayList_Package.BasicArrayList'Class; zipFile : Unbounded_String) is
+      fileBasicArrayList : constant BasicArrayList_Access := BasicArrayList_Access (fileBasicArrayList_Param);
       stringBuffer : StringMaker_Access;
    begin
         begin

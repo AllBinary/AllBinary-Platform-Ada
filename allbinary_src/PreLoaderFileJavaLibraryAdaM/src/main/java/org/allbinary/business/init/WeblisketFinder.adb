@@ -61,8 +61,8 @@ package body org.allbinary.business.init.WeblisketFinder_Package is
         end;
    end findAll;
 
-   function getInstallationPath (This : in out WeblisketFinder; file_Param : access AbFile'Class) return Unbounded_String is
-      file : AbFile_Access := AbFile_Access (file_Param);
+   function getInstallationPath (This : in out WeblisketFinder; file_Param : access AbFile_Package.AbFile'Class) return Unbounded_String is
+      file : constant AbFile_Access := AbFile_Access (file_Param);
       filePath : Unbounded_String;
       end_Id : Integer;
    begin
@@ -103,7 +103,7 @@ package body org.allbinary.business.init.WeblisketFinder_Package is
       null;
    end findAll;
 
-   procedure getInstallationPath (This : in out WeblisketFinder; file_Param : access AbFile'Class) is
+   procedure getInstallationPath (This : in out WeblisketFinder; file_Param : access AbFile_Package.AbFile'Class) is
       Java_Result : constant Unbounded_String := WeblisketFinder'Class (This).getInstallationPath (file_Param);
       pragma Unreferenced (Java_Result);
    begin

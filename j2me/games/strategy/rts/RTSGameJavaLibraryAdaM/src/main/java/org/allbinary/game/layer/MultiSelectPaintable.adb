@@ -42,8 +42,8 @@ package body org.allbinary.game.layer.MultiSelectPaintable_Package is
       return This;
    end Create;
 
-   procedure updateMeasurement (This : in out MultiSelectPaintable; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure updateMeasurement (This : in out MultiSelectPaintable; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
    begin
         SelectionHudPaintable (This).updateMeasurement (graphics);
@@ -52,8 +52,8 @@ package body org.allbinary.game.layer.MultiSelectPaintable_Package is
         This.textLine2Y := ((This.y) + (font.getHeight));
    end updateMeasurement;
 
-   procedure update (This : in out MultiSelectPaintable; list_Param : access BasicArrayList'Class) is
-      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
+   procedure update (This : in out MultiSelectPaintable; list_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      list : constant BasicArrayList_Access := BasicArrayList_Access (list_Param);
       size : Integer;
       rtsLayer : RTSLayer_Access;
       index : Integer;
@@ -87,8 +87,8 @@ package body org.allbinary.game.layer.MultiSelectPaintable_Package is
         This.rootNameList.clear;
    end clear;
 
-   procedure paint (This : in out MultiSelectPaintable; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out MultiSelectPaintable; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         graphics.setColor (This.backgroundColor);
         graphics.drawRect (This.getX, This.y, This.getWidth, This.getHeight);

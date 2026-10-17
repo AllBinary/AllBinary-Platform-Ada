@@ -41,8 +41,8 @@ package org.allbinary.layer.relationship.RelativeLayerRelationship_Package is
       layer : AllBinaryLayer_Access;
    end record;
 
-   procedure Initialize (This : in out RelativeLayerRelationship'Class; layer_Param : access AllBinaryLayer'Class; point_Param : access GPoint'Class; typesAllowedList_Param : access BasicArrayList'Class);
-   function Create (layer_Param : access AllBinaryLayer'Class; point_Param : access GPoint'Class; typesAllowedList_Param : access BasicArrayList'Class) return RelativeLayerRelationship_Access;
+   procedure Initialize (This : in out RelativeLayerRelationship'Class; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; point_Param : access GPoint_Package.GPoint'Class; typesAllowedList_Param : access BasicArrayList_Package.BasicArrayList'Class);
+   function Create (layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; point_Param : access GPoint_Package.GPoint'Class; typesAllowedList_Param : access BasicArrayList_Package.BasicArrayList'Class) return RelativeLayerRelationship_Access;
    function getX (This : in out RelativeLayerRelationship) return Integer;
    function getY (This : in out RelativeLayerRelationship) return Integer;
    function getZ (This : in out RelativeLayerRelationship) return Integer;

@@ -23,15 +23,15 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out DownloadableItemValidation'Class; downloadableItem_Param : access DownloadableItem'Class) is
-      downloadableItem : DownloadableItem_Access := DownloadableItem_Access (downloadableItem_Param);
+   procedure Initialize (This : in out DownloadableItemValidation'Class; downloadableItem_Param : access DownloadableItem_Package.DownloadableItem'Class) is
+      downloadableItem : constant DownloadableItem_Access := DownloadableItem_Access (downloadableItem_Param);
    begin
       Validation_Package.Initialize (This);
       Initialize_Fields (This);
         This.downloadableItem := downloadableItem;
    end Initialize;
 
-   function Create (downloadableItem_Param : access DownloadableItem'Class) return DownloadableItemValidation_Access is
+   function Create (downloadableItem_Param : access DownloadableItem_Package.DownloadableItem'Class) return DownloadableItemValidation_Access is
       This : constant DownloadableItemValidation_Access := new DownloadableItemValidation;
    begin
       DownloadableItemValidation_Package.Initialize (This.all, downloadableItem_Param);
@@ -189,13 +189,13 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out DownloadableItemValidation; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toValidationInfoNode (This : in out DownloadableItemValidation; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
 
-   procedure toValidationInfoNode (This : in out DownloadableItemValidation; document_Param : access Document'Class) is
+   procedure toValidationInfoNode (This : in out DownloadableItemValidation; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := DownloadableItemValidation'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

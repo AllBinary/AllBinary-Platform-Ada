@@ -24,17 +24,17 @@ package body org.allbinary.animation.image.sprite.SpriteIndexedAnimationFactory_
 
 
    --  throws Exception
-   function createCWHDXY (image_Param : access Image'Class; basicColorArray : BasicColor_Access_Array_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return SpriteIndexedAnimationFactory_Access is
-      image : Image_Access := Image_Access (image_Param);
-      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
+   function createCWHDXY (image_Param : access Image_Package.Image'Class; basicColorArray : BasicColor_Access_Array_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return SpriteIndexedAnimationFactory_Access is
+      image : constant Image_Access := Image_Access (image_Param);
+      animationBehaviorFactory : constant AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
    begin
         return SpriteIndexedAnimationFactory_Package.Create (image, basicColorArray, PrimitiveIntUtil_Package.getArrayInstance, width, height, dx, dy, animationBehaviorFactory);
    end createCWHDXY;
 
    --  throws Exception
-   function createCWH (image_Param : access Image'Class; basicColorArray : BasicColor_Access_Array_Access; width : Integer; height : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return SpriteIndexedAnimationFactory_Access is
-      image : Image_Access := Image_Access (image_Param);
-      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
+   function createCWH (image_Param : access Image_Package.Image'Class; basicColorArray : BasicColor_Access_Array_Access; width : Integer; height : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return SpriteIndexedAnimationFactory_Access is
+      image : constant Image_Access := Image_Access (image_Param);
+      animationBehaviorFactory : constant AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
       spriteIndexedAnimationFactory : SpriteIndexedAnimationFactory_Access;
    begin
         spriteIndexedAnimationFactory := SpriteIndexedAnimationFactory_Package.Create (image, basicColorArray, PrimitiveIntUtil_Package.getArrayInstance, width, height, 0, 0, animationBehaviorFactory);
@@ -43,23 +43,23 @@ package body org.allbinary.animation.image.sprite.SpriteIndexedAnimationFactory_
    end createCWH;
 
    --  throws Exception
-   function createWH (image_Param : access Image'Class; width : Integer; height : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return SpriteIndexedAnimationFactory_Access is
-      image : Image_Access := Image_Access (image_Param);
-      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
+   function createWH (image_Param : access Image_Package.Image'Class; width : Integer; height : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return SpriteIndexedAnimationFactory_Access is
+      image : constant Image_Access := Image_Access (image_Param);
+      animationBehaviorFactory : constant AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
    begin
         return SpriteIndexedAnimationFactory_Package.Create (image, BasicColorUtil_Package.getInstance.ZERO_ARRAY, PrimitiveIntUtil_Package.getArrayInstance, width, height, 0, 0, animationBehaviorFactory);
    end createWH;
 
-   procedure Initialize (This : in out SpriteIndexedAnimationFactory'Class; image_Param : access Image'Class; basicColorArray : BasicColor_Access_Array_Access; sequenceArray : Integer_Array_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) is
-      image : Image_Access := Image_Access (image_Param);
-      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
+   procedure Initialize (This : in out SpriteIndexedAnimationFactory'Class; image_Param : access Image_Package.Image'Class; basicColorArray : BasicColor_Access_Array_Access; sequenceArray : Integer_Array_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
+      image : constant Image_Access := Image_Access (image_Param);
+      animationBehaviorFactory : constant AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
    begin
         BaseImageAnimationFactory_Package.Initialize (This, image, sequenceArray, width, height, dx, dy, animationBehaviorFactory);
         Initialize_Fields (This);
         This.basicColorArray := basicColorArray;
    end Initialize;
 
-   function Create (image_Param : access Image'Class; basicColorArray : BasicColor_Access_Array_Access; sequenceArray : Integer_Array_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return SpriteIndexedAnimationFactory_Access is
+   function Create (image_Param : access Image_Package.Image'Class; basicColorArray : BasicColor_Access_Array_Access; sequenceArray : Integer_Array_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return SpriteIndexedAnimationFactory_Access is
       This : constant SpriteIndexedAnimationFactory_Access := new SpriteIndexedAnimationFactory;
    begin
       SpriteIndexedAnimationFactory_Package.Initialize (This.all, image_Param, basicColorArray, sequenceArray, width, height, dx, dy, animationBehaviorFactory_Param);
@@ -88,27 +88,27 @@ package body org.allbinary.animation.image.sprite.SpriteIndexedAnimationFactory_
    end getInstance;
 
    --  throws Exception
-   function getInstanceAnimation (This : in out SpriteIndexedAnimationFactory; animationInterface_Param : access Animation'Class) return Animation_Access is
-      animationInterface : Animation_Access := Animation_Access (animationInterface_Param);
+   function getInstanceAnimation (This : in out SpriteIndexedAnimationFactory; animationInterface_Param : access Animation_Package.Animation'Class) return Animation_Access is
+      animationInterface : constant Animation_Access := Animation_Access (animationInterface_Param);
    begin
         return This.getInstance (0);
    end getInstanceAnimation;
 
-   procedure createCWHDXY (image_Param : access Image'Class; basicColorArray : BasicColor_Access_Array_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) is
+   procedure createCWHDXY (image_Param : access Image_Package.Image'Class; basicColorArray : BasicColor_Access_Array_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
       Java_Result : constant SpriteIndexedAnimationFactory_Access := createCWHDXY (image_Param, basicColorArray, width, height, dx, dy, animationBehaviorFactory_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createCWHDXY;
 
-   procedure createCWH (image_Param : access Image'Class; basicColorArray : BasicColor_Access_Array_Access; width : Integer; height : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) is
+   procedure createCWH (image_Param : access Image_Package.Image'Class; basicColorArray : BasicColor_Access_Array_Access; width : Integer; height : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
       Java_Result : constant SpriteIndexedAnimationFactory_Access := createCWH (image_Param, basicColorArray, width, height, animationBehaviorFactory_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createCWH;
 
-   procedure createWH (image_Param : access Image'Class; width : Integer; height : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) is
+   procedure createWH (image_Param : access Image_Package.Image'Class; width : Integer; height : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
       Java_Result : constant SpriteIndexedAnimationFactory_Access := createWH (image_Param, width, height, animationBehaviorFactory_Param);
       pragma Unreferenced (Java_Result);
    begin
@@ -122,7 +122,7 @@ package body org.allbinary.animation.image.sprite.SpriteIndexedAnimationFactory_
       null;
    end getInstance;
 
-   procedure getInstanceAnimation (This : in out SpriteIndexedAnimationFactory; animationInterface_Param : access Animation'Class) is
+   procedure getInstanceAnimation (This : in out SpriteIndexedAnimationFactory; animationInterface_Param : access Animation_Package.Animation'Class) is
       Java_Result : constant Animation_Access := SpriteIndexedAnimationFactory'Class (This).getInstanceAnimation (animationInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

@@ -65,8 +65,8 @@ package body admin.tags.AuthenticationTag_Package is
         This.newPassword := value;
    end setNewPassword;
 
-   procedure setRoles (This : in out AuthenticationTag; values_Param : access BasicArrayList'Class) is
-      values : BasicArrayList_Access := BasicArrayList_Access (values_Param);
+   procedure setRoles (This : in out AuthenticationTag; values_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      values : constant BasicArrayList_Access := BasicArrayList_Access (values_Param);
    begin
         This.roles := values;
    end setRoles;

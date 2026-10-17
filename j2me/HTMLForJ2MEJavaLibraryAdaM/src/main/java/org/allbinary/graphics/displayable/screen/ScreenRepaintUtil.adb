@@ -33,8 +33,8 @@ package body org.allbinary.graphics.displayable.screen.ScreenRepaintUtil_Package
    end Create;
 
 
-   procedure repaint (displayable_Param : access Displayable'Class) is
-      displayable : Displayable_Access := Displayable_Access (displayable_Param);
+   procedure repaint (displayable_Param : access Displayable_Package.Displayable'Class) is
+      displayable : constant Displayable_Access := Displayable_Access (displayable_Param);
    begin
         null;
    end repaint;

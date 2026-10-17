@@ -27,23 +27,23 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgr
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AndroidTitleProgressBar'Class; title : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) is
-      backgroundBasicColor : BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
-      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
+   procedure Initialize (This : in out AndroidTitleProgressBar'Class; title : Unbounded_String; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      backgroundBasicColor : constant BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
+      foregroundBasicColor : constant BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
    begin
         ProgressCanvas_Package.Initialize (This, title, backgroundBasicColor, foregroundBasicColor);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (title : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return AndroidTitleProgressBar_Access is
+   function Create (title : Unbounded_String; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return AndroidTitleProgressBar_Access is
       This : constant AndroidTitleProgressBar_Access := new AndroidTitleProgressBar;
    begin
       AndroidTitleProgressBar_Package.Initialize (This.all, title, backgroundBasicColor_Param, foregroundBasicColor_Param);
       return This;
    end Create;
 
-   procedure init (This : in out AndroidTitleProgressBar; activity_Param : access ProgressActivityInterface'Class) is
-      activity : ProgressActivityInterface_Access := ProgressActivityInterface_Access (activity_Param);
+   procedure init (This : in out AndroidTitleProgressBar; activity_Param : access ProgressActivityInterface_Package.ProgressActivityInterface'Class) is
+      activity : constant ProgressActivityInterface_Access := ProgressActivityInterface_Access (activity_Param);
    begin
         This.progressActivity := activity;
    end init;
@@ -141,8 +141,8 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidTitleProgr
         null;
    end waitUntilDisplayed;
 
-   procedure paint (This : in out AndroidTitleProgressBar; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out AndroidTitleProgressBar; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paint;
@@ -159,14 +159,14 @@ package body org.allbinary.graphics.canvas.transition.progress.TitleProgressBarS
    end Initialize_Fields;
 
     
-   procedure Initialize (This : in out TitleProgressBarSetProgressRunnable'Class; androidTitleProgressBar_Param : access AndroidTitleProgressBar'Class) is
-      androidTitleProgressBar : AndroidTitleProgressBar_Access := AndroidTitleProgressBar_Access (androidTitleProgressBar_Param);
+   procedure Initialize (This : in out TitleProgressBarSetProgressRunnable'Class; androidTitleProgressBar_Param : access AndroidTitleProgressBar_Package.AndroidTitleProgressBar'Class) is
+      androidTitleProgressBar : constant AndroidTitleProgressBar_Access := AndroidTitleProgressBar_Access (androidTitleProgressBar_Param);
    begin
       Initialize_Fields (This);
             This.androidTitleProgressBar := androidTitleProgressBar;
    end Initialize;
 
-   function Create (androidTitleProgressBar_Param : access AndroidTitleProgressBar'Class) return TitleProgressBarSetProgressRunnable_Access is
+   function Create (androidTitleProgressBar_Param : access AndroidTitleProgressBar_Package.AndroidTitleProgressBar'Class) return TitleProgressBarSetProgressRunnable_Access is
       This : constant TitleProgressBarSetProgressRunnable_Access := new TitleProgressBarSetProgressRunnable;
    begin
       TitleProgressBarSetProgressRunnable_Package.Initialize (This.all, androidTitleProgressBar_Param);
@@ -205,14 +205,14 @@ package body org.allbinary.graphics.canvas.transition.progress.TitleProgressBarP
    end Initialize_Fields;
 
     
-   procedure Initialize (This : in out TitleProgressBarPortionSetProgressRunnable'Class; androidTitleProgressBar_Param : access AndroidTitleProgressBar'Class) is
-      androidTitleProgressBar : AndroidTitleProgressBar_Access := AndroidTitleProgressBar_Access (androidTitleProgressBar_Param);
+   procedure Initialize (This : in out TitleProgressBarPortionSetProgressRunnable'Class; androidTitleProgressBar_Param : access AndroidTitleProgressBar_Package.AndroidTitleProgressBar'Class) is
+      androidTitleProgressBar : constant AndroidTitleProgressBar_Access := AndroidTitleProgressBar_Access (androidTitleProgressBar_Param);
    begin
       Initialize_Fields (This);
             This.androidTitleProgressBar := androidTitleProgressBar;
    end Initialize;
 
-   function Create (androidTitleProgressBar_Param : access AndroidTitleProgressBar'Class) return TitleProgressBarPortionSetProgressRunnable_Access is
+   function Create (androidTitleProgressBar_Param : access AndroidTitleProgressBar_Package.AndroidTitleProgressBar'Class) return TitleProgressBarPortionSetProgressRunnable_Access is
       This : constant TitleProgressBarPortionSetProgressRunnable_Access := new TitleProgressBarPortionSetProgressRunnable;
    begin
       TitleProgressBarPortionSetProgressRunnable_Package.Initialize (This.all, androidTitleProgressBar_Param);
@@ -251,14 +251,14 @@ package body org.allbinary.graphics.canvas.transition.progress.ShowTitleProgress
    end Initialize_Fields;
 
     
-   procedure Initialize (This : in out ShowTitleProgressBarRunnable'Class; androidTitleProgressBar_Param : access AndroidTitleProgressBar'Class) is
-      androidTitleProgressBar : AndroidTitleProgressBar_Access := AndroidTitleProgressBar_Access (androidTitleProgressBar_Param);
+   procedure Initialize (This : in out ShowTitleProgressBarRunnable'Class; androidTitleProgressBar_Param : access AndroidTitleProgressBar_Package.AndroidTitleProgressBar'Class) is
+      androidTitleProgressBar : constant AndroidTitleProgressBar_Access := AndroidTitleProgressBar_Access (androidTitleProgressBar_Param);
    begin
       Initialize_Fields (This);
             This.androidTitleProgressBar := androidTitleProgressBar;
    end Initialize;
 
-   function Create (androidTitleProgressBar_Param : access AndroidTitleProgressBar'Class) return ShowTitleProgressBarRunnable_Access is
+   function Create (androidTitleProgressBar_Param : access AndroidTitleProgressBar_Package.AndroidTitleProgressBar'Class) return ShowTitleProgressBarRunnable_Access is
       This : constant ShowTitleProgressBarRunnable_Access := new ShowTitleProgressBarRunnable;
    begin
       ShowTitleProgressBarRunnable_Package.Initialize (This.all, androidTitleProgressBar_Param);
@@ -297,14 +297,14 @@ package body org.allbinary.graphics.canvas.transition.progress.DismissTitleProgr
    end Initialize_Fields;
 
     
-   procedure Initialize (This : in out DismissTitleProgressBarRunnable'Class; androidTitleProgressBar_Param : access AndroidTitleProgressBar'Class) is
-      androidTitleProgressBar : AndroidTitleProgressBar_Access := AndroidTitleProgressBar_Access (androidTitleProgressBar_Param);
+   procedure Initialize (This : in out DismissTitleProgressBarRunnable'Class; androidTitleProgressBar_Param : access AndroidTitleProgressBar_Package.AndroidTitleProgressBar'Class) is
+      androidTitleProgressBar : constant AndroidTitleProgressBar_Access := AndroidTitleProgressBar_Access (androidTitleProgressBar_Param);
    begin
       Initialize_Fields (This);
             This.androidTitleProgressBar := androidTitleProgressBar;
    end Initialize;
 
-   function Create (androidTitleProgressBar_Param : access AndroidTitleProgressBar'Class) return DismissTitleProgressBarRunnable_Access is
+   function Create (androidTitleProgressBar_Param : access AndroidTitleProgressBar_Package.AndroidTitleProgressBar'Class) return DismissTitleProgressBarRunnable_Access is
       This : constant DismissTitleProgressBarRunnable_Access := new DismissTitleProgressBarRunnable;
    begin
       DismissTitleProgressBarRunnable_Package.Initialize (This.all, androidTitleProgressBar_Param);

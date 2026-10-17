@@ -44,7 +44,7 @@ package org.allbinary.logic.visual.dhtml.html.HtmlTags_Package is
    function Create return HtmlTags_Access;
    function get (This : in out HtmlTags; index : Integer) return HtmlTag_Access;
    procedure get (This : in out HtmlTags; index : Integer);
-   procedure add (This : in out HtmlTags; htmlTag_Param : access HtmlTag'Class);
+   procedure add (This : in out HtmlTags; htmlTag_Param : access HtmlTag_Package.HtmlTag'Class);
    function size (This : in out HtmlTags) return Integer;
 
 end org.allbinary.logic.visual.dhtml.html.HtmlTags_Package;

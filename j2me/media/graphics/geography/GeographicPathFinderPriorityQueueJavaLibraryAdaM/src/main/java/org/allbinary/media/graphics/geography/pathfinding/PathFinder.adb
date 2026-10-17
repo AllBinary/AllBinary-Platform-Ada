@@ -42,8 +42,8 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFinder_Packa
 
 
    --  throws Exception
-   procedure init (This : in out PathFinder; geographicMapInterface_Param : access BasicGeographicMap'Class) is
-      geographicMapInterface : BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
+   procedure init (This : in out PathFinder; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class) is
+      geographicMapInterface : constant BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
       tiledLayer : AllBinaryTiledLayer_Access;
       basicGeographicMapCellPositionFactory : BasicGeographicMapCellPositionFactory_Access;
       node : PathFindingNodeCost_Access;
@@ -71,9 +71,9 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFinder_Packa
         end loop;
    end init;
 
-   function searchTotalPath (This : in out PathFinder; startPathFindingNodeList_Param : access BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList'Class; totalPaths : Integer) return BasicArrayList_Access is
-      startPathFindingNodeList : BasicArrayList_Access := BasicArrayList_Access (startPathFindingNodeList_Param);
-      endPathFindingNodeList : BasicArrayList_Access := BasicArrayList_Access (endPathFindingNodeList_Param);
+   function searchTotalPath (This : in out PathFinder; startPathFindingNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class; totalPaths : Integer) return BasicArrayList_Access is
+      startPathFindingNodeList : constant BasicArrayList_Access := BasicArrayList_Access (startPathFindingNodeList_Param);
+      endPathFindingNodeList : constant BasicArrayList_Access := BasicArrayList_Access (endPathFindingNodeList_Param);
       commonStrings : CommonStrings_Access;
    begin
         begin
@@ -91,10 +91,10 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFinder_Packa
    end searchTotalPath;
 
    --  throws Exception
-   function searchTotalPathN (This : in out PathFinder; startPathFindingNodeList_Param : access BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList'Class; totalPaths : Integer; multipassState_Param : access MultipassState'Class) return BasicArrayList_Access is
-      startPathFindingNodeList : BasicArrayList_Access := BasicArrayList_Access (startPathFindingNodeList_Param);
-      endPathFindingNodeList : BasicArrayList_Access := BasicArrayList_Access (endPathFindingNodeList_Param);
-      multipassState : MultipassState_Access := MultipassState_Access (multipassState_Param);
+   function searchTotalPathN (This : in out PathFinder; startPathFindingNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class; totalPaths : Integer; multipassState_Param : access MultipassState_Package.MultipassState'Class) return BasicArrayList_Access is
+      startPathFindingNodeList : constant BasicArrayList_Access := BasicArrayList_Access (startPathFindingNodeList_Param);
+      endPathFindingNodeList : constant BasicArrayList_Access := BasicArrayList_Access (endPathFindingNodeList_Param);
+      multipassState : constant MultipassState_Access := MultipassState_Access (multipassState_Param);
    begin
         if (multipassState.step) = (0) then
             multipassState.step := multipassState.step + 1;
@@ -107,9 +107,9 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFinder_Packa
    end searchTotalPathN;
 
    --  throws Exception
-   function search (This : in out PathFinder; startPathFindingNode_Param : access PathFindingNode'Class; endPathFindingNode_Param : access PathFindingNode'Class) return BasicArrayList_Access is
-      startPathFindingNode : PathFindingNode_Access := PathFindingNode_Access (startPathFindingNode_Param);
-      endPathFindingNode : PathFindingNode_Access := PathFindingNode_Access (endPathFindingNode_Param);
+   function search (This : in out PathFinder; startPathFindingNode_Param : access PathFindingNode_Package.PathFindingNode'Class; endPathFindingNode_Param : access PathFindingNode_Package.PathFindingNode'Class) return BasicArrayList_Access is
+      startPathFindingNode : constant PathFindingNode_Access := PathFindingNode_Access (startPathFindingNode_Param);
+      endPathFindingNode : constant PathFindingNode_Access := PathFindingNode_Access (endPathFindingNode_Param);
       list : BasicArrayList_Access;
       pathList : BasicArrayList_Access;
    begin
@@ -120,19 +120,19 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFinder_Packa
    end search;
 
    --  throws Exception
-   procedure searchStart (This : in out PathFinder; startPathFindingNode_Param : access PathFindingNode'Class; endPathFindingNode_Param : access PathFindingNode'Class; multipassState_Param : access MultipassState'Class) is
-      startPathFindingNode : PathFindingNode_Access := PathFindingNode_Access (startPathFindingNode_Param);
-      endPathFindingNode : PathFindingNode_Access := PathFindingNode_Access (endPathFindingNode_Param);
-      multipassState : MultipassState_Access := MultipassState_Access (multipassState_Param);
+   procedure searchStart (This : in out PathFinder; startPathFindingNode_Param : access PathFindingNode_Package.PathFindingNode'Class; endPathFindingNode_Param : access PathFindingNode_Package.PathFindingNode'Class; multipassState_Param : access MultipassState_Package.MultipassState'Class) is
+      startPathFindingNode : constant PathFindingNode_Access := PathFindingNode_Access (startPathFindingNode_Param);
+      endPathFindingNode : constant PathFindingNode_Access := PathFindingNode_Access (endPathFindingNode_Param);
+      multipassState : constant MultipassState_Access := MultipassState_Access (multipassState_Param);
    begin
         This.findPathStart (startPathFindingNode.geographicMapCellPosition, endPathFindingNode.geographicMapCellPosition, multipassState);
    end searchStart;
 
    --  throws Exception
-   function searchN (This : in out PathFinder; startPathFindingNode_Param : access PathFindingNode'Class; endPathFindingNode_Param : access PathFindingNode'Class; multipassState_Param : access MultipassState'Class) return BasicArrayList_Access is
-      startPathFindingNode : PathFindingNode_Access := PathFindingNode_Access (startPathFindingNode_Param);
-      endPathFindingNode : PathFindingNode_Access := PathFindingNode_Access (endPathFindingNode_Param);
-      multipassState : MultipassState_Access := MultipassState_Access (multipassState_Param);
+   function searchN (This : in out PathFinder; startPathFindingNode_Param : access PathFindingNode_Package.PathFindingNode'Class; endPathFindingNode_Param : access PathFindingNode_Package.PathFindingNode'Class; multipassState_Param : access MultipassState_Package.MultipassState'Class) return BasicArrayList_Access is
+      startPathFindingNode : constant PathFindingNode_Access := PathFindingNode_Access (startPathFindingNode_Param);
+      endPathFindingNode : constant PathFindingNode_Access := PathFindingNode_Access (endPathFindingNode_Param);
+      multipassState : constant MultipassState_Access := MultipassState_Access (multipassState_Param);
       list : BasicArrayList_Access;
       pathList : BasicArrayList_Access;
    begin
@@ -148,9 +148,9 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFinder_Packa
    end searchN;
 
    --  throws Exception
-   function findPath (This : in out PathFinder; start_Param : access GeographicMapCellPosition'Class; target_Param : access GeographicMapCellPosition'Class) return BasicArrayList_Access is
-      start : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (start_Param);
-      target : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (target_Param);
+   function findPath (This : in out PathFinder; start_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; target_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) return BasicArrayList_Access is
+      start : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (start_Param);
+      target : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (target_Param);
       discoveryCalculation : Long_Long_Integer;
       node : PathFindingNodeCost_Access;
       targetColumn : Integer;
@@ -229,10 +229,10 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFinder_Packa
    end findPath;
 
    --  throws Exception
-   procedure findPathStart (This : in out PathFinder; start_Param : access GeographicMapCellPosition'Class; target_Param : access GeographicMapCellPosition'Class; multipassState_Param : access MultipassState'Class) is
-      start : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (start_Param);
-      target : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (target_Param);
-      multipassState : MultipassState_Access := MultipassState_Access (multipassState_Param);
+   procedure findPathStart (This : in out PathFinder; start_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; target_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; multipassState_Param : access MultipassState_Package.MultipassState'Class) is
+      start : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (start_Param);
+      target : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (target_Param);
+      multipassState : constant MultipassState_Access := MultipassState_Access (multipassState_Param);
       discoveryCalculation : Long_Long_Integer;
       node : PathFindingNodeCost_Access;
       targetColumn : Integer;
@@ -265,10 +265,10 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFinder_Packa
    end findPathStart;
 
    --  throws Exception
-   function findPathEnd (This : in out PathFinder; start_Param : access GeographicMapCellPosition'Class; target_Param : access GeographicMapCellPosition'Class; multipassState_Param : access MultipassState'Class) return BasicArrayList_Access is
-      start : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (start_Param);
-      target : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (target_Param);
-      multipassState : MultipassState_Access := MultipassState_Access (multipassState_Param);
+   function findPathEnd (This : in out PathFinder; start_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; target_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; multipassState_Param : access MultipassState_Package.MultipassState'Class) return BasicArrayList_Access is
+      start : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (start_Param);
+      target : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (target_Param);
+      multipassState : constant MultipassState_Access := MultipassState_Access (multipassState_Param);
       geographicMapInterface : BasicGeographicMap_Access;
       basicGeographicMapCellPositionFactory : BasicGeographicMapCellPositionFactory_Access;
       allBinaryTiledLayer : AllBinaryTiledLayer_Access;
@@ -327,8 +327,8 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFinder_Packa
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end findPathEnd;
 
-   function extractPath (This : in out PathFinder; start_Param : access GeographicMapCellPosition'Class; current_Param : access PathFindingNodeCost'Class) return BasicArrayList_Access is
-      start : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (start_Param);
+   function extractPath (This : in out PathFinder; start_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; current_Param : access PathFindingNodeCost_Package.PathFindingNodeCost'Class) return BasicArrayList_Access is
+      start : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (start_Param);
       current : PathFindingNodeCost_Access := PathFindingNodeCost_Access (current_Param);
       path : BasicArrayList_Access;
    begin
@@ -342,49 +342,49 @@ package body org.allbinary.media.graphics.geography.pathfinding.PathFinder_Packa
         return path;
    end extractPath;
 
-   procedure searchTotalPath (This : in out PathFinder; startPathFindingNodeList_Param : access BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList'Class; totalPaths : Integer) is
+   procedure searchTotalPath (This : in out PathFinder; startPathFindingNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class; totalPaths : Integer) is
       Java_Result : constant BasicArrayList_Access := PathFinder'Class (This).searchTotalPath (startPathFindingNodeList_Param, endPathFindingNodeList_Param, totalPaths);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end searchTotalPath;
 
-   procedure searchTotalPathN (This : in out PathFinder; startPathFindingNodeList_Param : access BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList'Class; totalPaths : Integer; multipassState_Param : access MultipassState'Class) is
+   procedure searchTotalPathN (This : in out PathFinder; startPathFindingNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class; totalPaths : Integer; multipassState_Param : access MultipassState_Package.MultipassState'Class) is
       Java_Result : constant BasicArrayList_Access := PathFinder'Class (This).searchTotalPathN (startPathFindingNodeList_Param, endPathFindingNodeList_Param, totalPaths, multipassState_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end searchTotalPathN;
 
-   procedure search (This : in out PathFinder; startPathFindingNode_Param : access PathFindingNode'Class; endPathFindingNode_Param : access PathFindingNode'Class) is
+   procedure search (This : in out PathFinder; startPathFindingNode_Param : access PathFindingNode_Package.PathFindingNode'Class; endPathFindingNode_Param : access PathFindingNode_Package.PathFindingNode'Class) is
       Java_Result : constant BasicArrayList_Access := PathFinder'Class (This).search (startPathFindingNode_Param, endPathFindingNode_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end search;
 
-   procedure searchN (This : in out PathFinder; startPathFindingNode_Param : access PathFindingNode'Class; endPathFindingNode_Param : access PathFindingNode'Class; multipassState_Param : access MultipassState'Class) is
+   procedure searchN (This : in out PathFinder; startPathFindingNode_Param : access PathFindingNode_Package.PathFindingNode'Class; endPathFindingNode_Param : access PathFindingNode_Package.PathFindingNode'Class; multipassState_Param : access MultipassState_Package.MultipassState'Class) is
       Java_Result : constant BasicArrayList_Access := PathFinder'Class (This).searchN (startPathFindingNode_Param, endPathFindingNode_Param, multipassState_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end searchN;
 
-   procedure findPath (This : in out PathFinder; start_Param : access GeographicMapCellPosition'Class; target_Param : access GeographicMapCellPosition'Class) is
+   procedure findPath (This : in out PathFinder; start_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; target_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
       Java_Result : constant BasicArrayList_Access := PathFinder'Class (This).findPath (start_Param, target_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end findPath;
 
-   procedure findPathEnd (This : in out PathFinder; start_Param : access GeographicMapCellPosition'Class; target_Param : access GeographicMapCellPosition'Class; multipassState_Param : access MultipassState'Class) is
+   procedure findPathEnd (This : in out PathFinder; start_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; target_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; multipassState_Param : access MultipassState_Package.MultipassState'Class) is
       Java_Result : constant BasicArrayList_Access := PathFinder'Class (This).findPathEnd (start_Param, target_Param, multipassState_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end findPathEnd;
 
-   procedure extractPath (This : in out PathFinder; start_Param : access GeographicMapCellPosition'Class; current_Param : access PathFindingNodeCost'Class) is
+   procedure extractPath (This : in out PathFinder; start_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class; current_Param : access PathFindingNodeCost_Package.PathFindingNodeCost'Class) is
       Java_Result : constant BasicArrayList_Access := PathFinder'Class (This).extractPath (start_Param, current_Param);
       pragma Unreferenced (Java_Result);
    begin

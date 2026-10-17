@@ -29,9 +29,9 @@ package body org.allbinary.game.input.ScrollMapPlayerGameInput_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ScrollMapPlayerGameInput'Class; geographicMapInterface_Param : access BasicGeographicMap'Class; list_Param : access BasicArrayList'Class; playerInputId : Integer) is
-      geographicMapInterface : BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
-      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
+   procedure Initialize (This : in out ScrollMapPlayerGameInput'Class; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; list_Param : access BasicArrayList_Package.BasicArrayList'Class; playerInputId : Integer) is
+      geographicMapInterface : constant BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
+      list : constant BasicArrayList_Access := BasicArrayList_Access (list_Param);
    begin
         PlayerGameInput_Package.Initialize (This, list, BasicArrayListD_Package.Create, playerInputId);
         Initialize_Fields (This);
@@ -41,7 +41,7 @@ package body org.allbinary.game.input.ScrollMapPlayerGameInput_Package is
         This.init;
    end Initialize;
 
-   function Create (geographicMapInterface_Param : access BasicGeographicMap'Class; list_Param : access BasicArrayList'Class; playerInputId : Integer) return ScrollMapPlayerGameInput_Access is
+   function Create (geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; list_Param : access BasicArrayList_Package.BasicArrayList'Class; playerInputId : Integer) return ScrollMapPlayerGameInput_Access is
       This : constant ScrollMapPlayerGameInput_Access := new ScrollMapPlayerGameInput;
    begin
       ScrollMapPlayerGameInput_Package.Initialize (This.all, geographicMapInterface_Param, list_Param, playerInputId);
@@ -161,8 +161,8 @@ package body org.allbinary.game.input.ScrollMapPlayerGameInput_Package is
    end processInputKey;
 
    --  throws Exception
-   procedure processInput (This : in out ScrollMapPlayerGameInput; layerManager_Param : access AllBinaryLayerManager'Class) is
-      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+   procedure processInput (This : in out ScrollMapPlayerGameInput; layerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class) is
+      layerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
       size : Integer;
       key : Integer;
       gameKeyEvent : GameKeyEvent_Access;

@@ -41,9 +41,9 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoObjectFactor
    end Create;
 
    --  throws Exception
-   function getInstance (This : in out TransformInfoObjectFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) return TransformInterface_Access is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   function getInstance (This : in out TransformInfoObjectFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return TransformInterface_Access is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
       commonStrings : CommonStrings_Access;
       params : Java_Object_Access_Array_Access;
       classes : Ada_Tags_Tag_Array_Access;
@@ -92,7 +92,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoObjectFactor
         end;
    end getInstance;
 
-   procedure getInstance (This : in out TransformInfoObjectFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+   procedure getInstance (This : in out TransformInfoObjectFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
       Java_Result : constant TransformInterface_Access := TransformInfoObjectFactory'Class (This).getInstance (abeClientInformation_Param, transformInfoInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

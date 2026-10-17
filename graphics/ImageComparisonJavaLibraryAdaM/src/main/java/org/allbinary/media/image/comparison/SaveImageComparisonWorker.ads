@@ -58,8 +58,8 @@ package org.allbinary.media.image.comparison.SaveImageComparisonWorker_Package i
 
    procedure Initialize (This : in out SaveImageComparisonWorker'Class);
    function Create return SaveImageComparisonWorker_Access;
-   procedure onImageComparisonResultsEvent (This : in out SaveImageComparisonWorker; imageComparisonResultsEvent_Param : access ImageComparisonResultsEvent'Class);
-   procedure onEvent (This : in out SaveImageComparisonWorker; allBinaryEventObject_Param : access AllBinaryEventObject'Class);
+   procedure onImageComparisonResultsEvent (This : in out SaveImageComparisonWorker; imageComparisonResultsEvent_Param : access ImageComparisonResultsEvent_Package.ImageComparisonResultsEvent'Class);
+   procedure onEvent (This : in out SaveImageComparisonWorker; allBinaryEventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class);
    function isRunning (This : in out SaveImageComparisonWorker) return Boolean;
    procedure setRunning (This : in out SaveImageComparisonWorker; running : Boolean);
    procedure run (This : in out SaveImageComparisonWorker);

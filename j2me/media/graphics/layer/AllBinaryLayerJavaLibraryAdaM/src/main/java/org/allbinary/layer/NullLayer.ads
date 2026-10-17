@@ -37,7 +37,7 @@ package org.allbinary.layer.NullLayer_Package is
    procedure Initialize (This : in out NullLayer'Class);
    function Create return NullLayer_Access;
    function getInstance return NullLayer_Access;
-   procedure paint (This : in out NullLayer; graphics_Param : access Graphics'Class);
+   procedure paint (This : in out NullLayer; graphics_Param : access Graphics_Package.Graphics'Class);
 
 end org.allbinary.layer.NullLayer_Package;
 

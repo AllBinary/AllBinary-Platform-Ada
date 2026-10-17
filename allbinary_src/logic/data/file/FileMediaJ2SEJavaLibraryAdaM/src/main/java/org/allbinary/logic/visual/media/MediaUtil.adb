@@ -29,9 +29,9 @@ package body org.allbinary.logic.visual.media.MediaUtil_Package is
    end Create;
 
    --  throws Exception
-   procedure saveImageFile (This : in out MediaUtil; originalImageFile_Param : access AbFile'Class; newImageFileName : Unbounded_String; category : Unbounded_String; mediaData_Param : access MediaData'Class; newWidth : Integer; newHeight : Integer) is
-      originalImageFile : AbFile_Access := AbFile_Access (originalImageFile_Param);
-      mediaData : MediaData_Access := MediaData_Access (mediaData_Param);
+   procedure saveImageFile (This : in out MediaUtil; originalImageFile_Param : access AbFile_Package.AbFile'Class; newImageFileName : Unbounded_String; category : Unbounded_String; mediaData_Param : access MediaData_Package.MediaData'Class; newWidth : Integer; newHeight : Integer) is
+      originalImageFile : constant AbFile_Access := AbFile_Access (originalImageFile_Param);
+      mediaData : constant MediaData_Access := MediaData_Access (mediaData_Param);
       bufferedImage : BufferedImage_Access;
       hashMap : HashMap_Access;
       imageFile : AbFile_Access;
@@ -83,8 +83,8 @@ package body org.allbinary.logic.visual.media.MediaUtil_Package is
         end if;
    end saveImageFile;
 
-   function getImageBufferPropertyHashMap (bufferedImage_Param : access BufferedImage'Class) return HashMap_Access is
-      bufferedImage : BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
+   function getImageBufferPropertyHashMap (bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class) return HashMap_Access is
+      bufferedImage : constant BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
       hashMap : HashMap_Access;
       propertyStringArray : Unbounded_String_Array_Access;
       propertyObject : Java_Object_Access;
@@ -101,7 +101,7 @@ package body org.allbinary.logic.visual.media.MediaUtil_Package is
         return hashMap;
    end getImageBufferPropertyHashMap;
 
-   procedure getImageBufferPropertyHashMap (bufferedImage_Param : access BufferedImage'Class) is
+   procedure getImageBufferPropertyHashMap (bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class) is
       Java_Result : constant HashMap_Access := getImageBufferPropertyHashMap (bufferedImage_Param);
       pragma Unreferenced (Java_Result);
    begin

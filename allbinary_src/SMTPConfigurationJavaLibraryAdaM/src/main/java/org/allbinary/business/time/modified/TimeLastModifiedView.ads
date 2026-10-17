@@ -46,14 +46,14 @@ package org.allbinary.business.time.modified.TimeLastModifiedView_Package is
       timeLastModified : TimeLastModified_Access;
    end record;
 
-   procedure Initialize (This : in out TimeLastModifiedView'Class; timeLastModified_Param : access TimeLastModified'Class);
-   function Create (timeLastModified_Param : access TimeLastModified'Class) return TimeLastModifiedView_Access;
-   procedure Initialize (This : in out TimeLastModifiedView'Class; node_Param : access Node'Class);
-   function Create (node_Param : access Node'Class) return TimeLastModifiedView_Access;
-   function toXmlNode (This : in out TimeLastModifiedView; document_Param : access Document'Class) return Node_Access;
-   procedure toXmlNode (This : in out TimeLastModifiedView; document_Param : access Document'Class);
+   procedure Initialize (This : in out TimeLastModifiedView'Class; timeLastModified_Param : access TimeLastModified_Package.TimeLastModified'Class);
+   function Create (timeLastModified_Param : access TimeLastModified_Package.TimeLastModified'Class) return TimeLastModifiedView_Access;
+   procedure Initialize (This : in out TimeLastModifiedView'Class; node_Param : access Node_Package.Node'Class);
+   function Create (node_Param : access Node_Package.Node'Class) return TimeLastModifiedView_Access;
+   function toXmlNode (This : in out TimeLastModifiedView; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out TimeLastModifiedView; document_Param : access Document_Package.Document'Class);
    function getTimeLastModified (This : in out TimeLastModifiedView) return TimeLastModified_Access;
-   procedure setTimeLastModified (This : in out TimeLastModifiedView; timeLastModified_Param : access TimeLastModified'Class);
+   procedure setTimeLastModified (This : in out TimeLastModifiedView; timeLastModified_Param : access TimeLastModified_Package.TimeLastModified'Class);
 
 end org.allbinary.business.time.modified.TimeLastModifiedView_Package;
 

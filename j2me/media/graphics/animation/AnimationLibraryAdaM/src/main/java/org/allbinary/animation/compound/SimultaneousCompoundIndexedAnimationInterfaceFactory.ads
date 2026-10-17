@@ -41,8 +41,8 @@ package org.allbinary.animation.compound.SimultaneousCompoundIndexedAnimationInt
 
    type SimultaneousCompoundIndexedAnimationInterfaceFactory is new CompoundAnimationInterfaceFactory with null record;
 
-   procedure Initialize (This : in out SimultaneousCompoundIndexedAnimationInterfaceFactory'Class; basicAnimationInterfaceFactoryInterfaceArray : AnimationInterfaceFactoryInterface_Access_Array_Access; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class);
-   function Create (basicAnimationInterfaceFactoryInterfaceArray : AnimationInterfaceFactoryInterface_Access_Array_Access; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return SimultaneousCompoundIndexedAnimationInterfaceFactory_Access;
+   procedure Initialize (This : in out SimultaneousCompoundIndexedAnimationInterfaceFactory'Class; basicAnimationInterfaceFactoryInterfaceArray : AnimationInterfaceFactoryInterface_Access_Array_Access; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class);
+   function Create (basicAnimationInterfaceFactoryInterfaceArray : AnimationInterfaceFactoryInterface_Access_Array_Access; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return SimultaneousCompoundIndexedAnimationInterfaceFactory_Access;
    function createArray (This : in out SimultaneousCompoundIndexedAnimationInterfaceFactory; size : Integer) return Animation_Access_Array_Access;
    procedure createArray (This : in out SimultaneousCompoundIndexedAnimationInterfaceFactory; size : Integer);
    function createAnimation (This : in out SimultaneousCompoundIndexedAnimationInterfaceFactory; animationArray : Animation_Access_Array_Access) return Animation_Access;

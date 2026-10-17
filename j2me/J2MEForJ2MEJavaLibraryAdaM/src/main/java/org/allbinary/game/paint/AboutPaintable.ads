@@ -63,9 +63,9 @@ package org.allbinary.game.paint.AboutPaintable_Package is
    function Create (info : Unbounded_String_Array_Access; developers : Unbounded_String_Array_Access) return AboutPaintable_Access;
    function getInstance (info : Unbounded_String_Array_Access; developers : Unbounded_String_Array_Access) return AboutPaintable_Access;
    procedure getInstance (info : Unbounded_String_Array_Access; developers : Unbounded_String_Array_Access);
-   procedure updateMeasurement (This : in out AboutPaintable; graphics_Param : access Graphics'Class);
+   procedure updateMeasurement (This : in out AboutPaintable; graphics_Param : access Graphics_Package.Graphics'Class);
    function getPaintableArrayInstance (This : in out AboutPaintable) return Paintable_Access_Array_Access;
-   procedure paint (This : in out AboutPaintable; graphics_Param : access Graphics'Class);
+   procedure paint (This : in out AboutPaintable; graphics_Param : access Graphics_Package.Graphics'Class);
 
 end org.allbinary.game.paint.AboutPaintable_Package;
 

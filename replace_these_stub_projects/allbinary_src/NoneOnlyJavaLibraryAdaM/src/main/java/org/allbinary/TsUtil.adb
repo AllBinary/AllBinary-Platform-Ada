@@ -39,14 +39,14 @@ package body org.allbinary.TsUtil_Package is
    end getInstance;
 
    function hashCode (This : in out TsUtil; anyType_Param : access Java_Object'Class) return Integer is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         return anyType.hashCode;
    end hashCode;
 
    --  throws InterruptedException
    procedure waitFor (This : in out TsUtil; any_Param : access Java_Object'Class; timeoutMillis : Long_Long_Integer) is
-      any : Java_Object_Access := Java_Object_Access (any_Param);
+      any : constant Java_Object_Access := Java_Object_Access (any_Param);
       anyType : Java_Object_Access;
    begin
         anyType := Java_Object_Access (any);
@@ -54,7 +54,7 @@ package body org.allbinary.TsUtil_Package is
    end waitFor;
 
    function getRecord (This : in out TsUtil; anyType_Param : access Java_Object'Class; recordId : Integer) return Short_Short_Integer_Array_Access is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         return new Short_Short_Integer_Array'(0 .. (0) - 1 => 0);
    end getRecord;
@@ -70,8 +70,8 @@ package body org.allbinary.TsUtil_Package is
    end equalIgnoreCase;
 
    function equalsNotstring (This : in out TsUtil; anyType_Param : access Java_Object'Class; object2_Param : access Java_Object'Class) return Boolean is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
-      object2 : Java_Object_Access := Java_Object_Access (object2_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
+      object2 : constant Java_Object_Access := Java_Object_Access (object2_Param);
    begin
         return anyType.equals (object2);
    end equalsNotstring;
@@ -92,13 +92,13 @@ package body org.allbinary.TsUtil_Package is
    end getByteArray;
 
    function isItemListener (This : in out TsUtil; owner_Param : access Java_Object'Class) return Boolean is
-      owner : Java_Object_Access := Java_Object_Access (owner_Param);
+      owner : constant Java_Object_Access := Java_Object_Access (owner_Param);
    begin
         return False;
    end isItemListener;
 
    procedure printAvailableMethods (This : in out TsUtil; anyType_Param : access Java_Object'Class) is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         null;
    end printAvailableMethods;

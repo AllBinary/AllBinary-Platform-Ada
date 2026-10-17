@@ -50,8 +50,8 @@ package body org.allbinary.game.layer.SelectionHudPaintable_Package is
       return This;
    end Create;
 
-   procedure updateMeasurement (This : in out SelectionHudPaintable; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure updateMeasurement (This : in out SelectionHudPaintable; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       commonButtons : CommonButtons_Access;
       font : Font_Access;
    begin
@@ -91,8 +91,8 @@ package body org.allbinary.game.layer.SelectionHudPaintable_Package is
         return This.primitiveLongUtil;
    end getPrimitiveLongUtil;
 
-   procedure setAnimationInterface (This : in out SelectionHudPaintable; animationInterface_Param : access Animation'Class) is
-      animationInterface : Animation_Access := Animation_Access (animationInterface_Param);
+   procedure setAnimationInterface (This : in out SelectionHudPaintable; animationInterface_Param : access Animation_Package.Animation'Class) is
+      animationInterface : constant Animation_Access := Animation_Access (animationInterface_Param);
    begin
         This.animationInterface := animationInterface;
    end setAnimationInterface;
@@ -112,8 +112,8 @@ package body org.allbinary.game.layer.SelectionHudPaintable_Package is
         return This.name;
    end getName;
 
-   procedure setBasicColorP (This : in out SelectionHudPaintable; basicColor_Param : access BasicColor'Class) is
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+   procedure setBasicColorP (This : in out SelectionHudPaintable; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         This.basicColor := basicColor;
         This.setColor (basicColor.intValue);
@@ -154,8 +154,8 @@ package body org.allbinary.game.layer.SelectionHudPaintable_Package is
         return This.x;
    end getX;
 
-   procedure paint (This : in out SelectionHudPaintable; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out SelectionHudPaintable; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.myFontProcessor.process (graphics);
         graphics.setColor (This.backgroundColor);

@@ -33,8 +33,8 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ImageActionScriptOutputJPanel'Class; capturedImageActionScriptOutputInterface_Param : access ImageActionScriptOutputInterface'Class) is
-      capturedImageActionScriptOutputInterface : ImageActionScriptOutputInterface_Access := ImageActionScriptOutputInterface_Access (capturedImageActionScriptOutputInterface_Param);
+   procedure Initialize (This : in out ImageActionScriptOutputJPanel'Class; capturedImageActionScriptOutputInterface_Param : access ImageActionScriptOutputInterface_Package.ImageActionScriptOutputInterface'Class) is
+      capturedImageActionScriptOutputInterface : constant ImageActionScriptOutputInterface_Access := ImageActionScriptOutputInterface_Access (capturedImageActionScriptOutputInterface_Param);
    begin
       JPanel_Package.Initialize (This);
       Initialize_Fields (This);
@@ -44,7 +44,7 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
         This.set;
    end Initialize;
 
-   function Create (capturedImageActionScriptOutputInterface_Param : access ImageActionScriptOutputInterface'Class) return ImageActionScriptOutputJPanel_Access is
+   function Create (capturedImageActionScriptOutputInterface_Param : access ImageActionScriptOutputInterface_Package.ImageActionScriptOutputInterface'Class) return ImageActionScriptOutputJPanel_Access is
       This : constant ImageActionScriptOutputJPanel_Access := new ImageActionScriptOutputJPanel;
    begin
       ImageActionScriptOutputJPanel_Package.Initialize (This.all, capturedImageActionScriptOutputInterface_Param);
@@ -120,8 +120,8 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
         return This.capturedImageActionJDialog;
    end getCapturedImageActionJDialog;
 
-   procedure setCapturedImageActionJDialog (This : in out ImageActionScriptOutputJPanel; capturedImageActionJDialog_Param : access JDialog'Class) is
-      capturedImageActionJDialog : JDialog_Access := JDialog_Access (capturedImageActionJDialog_Param);
+   procedure setCapturedImageActionJDialog (This : in out ImageActionScriptOutputJPanel; capturedImageActionJDialog_Param : access JDialog_Package.JDialog'Class) is
+      capturedImageActionJDialog : constant JDialog_Access := JDialog_Access (capturedImageActionJDialog_Param);
    begin
         This.capturedImageActionJDialog := capturedImageActionJDialog;
    end setCapturedImageActionJDialog;
@@ -144,8 +144,8 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
         This.okJButton.setText (To_Unbounded_String ("OK"));
         This.okJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.okJButtonActionPerformed (evt);
 --     end actionPerformed;
@@ -158,8 +158,8 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
         This.displayJCheckBox.setMargin (Insets_Package.Create (0, 0, 0, 0));
         This.displayJCheckBox.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.displayJCheckBoxActionPerformed (evt);
 --     end actionPerformed;
@@ -186,8 +186,8 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
         This.capturedImageActionJButton.setText (To_Unbounded_String ("Edit"));
         This.capturedImageActionJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.capturedImageActionJButtonActionPerformed (evt);
 --     end actionPerformed;
@@ -199,21 +199,21 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
         layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.BASELINE).addComponent (This.jLabel1).addComponent (This.capturedImageActionJButton)));
    end initComponents;
 
-   procedure displayJCheckBoxActionPerformed (This : in out ImageActionScriptOutputJPanel; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure displayJCheckBoxActionPerformed (This : in out ImageActionScriptOutputJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         null;
    end displayJCheckBoxActionPerformed;
 
-   procedure okJButtonActionPerformed (This : in out ImageActionScriptOutputJPanel; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure okJButtonActionPerformed (This : in out ImageActionScriptOutputJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         This.update;
         This.getCapturedImageActionJDialog.setVisible (False);
    end okJButtonActionPerformed;
 
-   procedure capturedImageActionJButtonActionPerformed (This : in out ImageActionScriptOutputJPanel; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure capturedImageActionJButtonActionPerformed (This : in out ImageActionScriptOutputJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         This.getCapturedImageActionJDialog.setVisible (True);
    end capturedImageActionJButtonActionPerformed;

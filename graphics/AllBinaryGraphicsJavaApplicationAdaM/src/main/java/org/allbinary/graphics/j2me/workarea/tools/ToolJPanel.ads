@@ -56,22 +56,22 @@ package org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
    procedure Initialize (This : in out ToolJPanel'Class);
    function Create return ToolJPanel_Access;
    procedure initComponents (This : in out ToolJPanel);
-   procedure dottedFillRountRectJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent'Class);
-   procedure dottedFillArcJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent'Class);
-   procedure dottedFillRectJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent'Class);
-   procedure dottedArcJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent'Class);
-   procedure dottedRectButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent'Class);
-   procedure dottedLineJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent'Class);
-   procedure fillRoundRectJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent'Class);
-   procedure fillRectJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent'Class);
-   procedure fillArcJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent'Class);
-   procedure imageJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent'Class);
-   procedure roundRectJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent'Class);
-   procedure charJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent'Class);
-   procedure stringJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent'Class);
-   procedure arcJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent'Class);
-   procedure rectJButtonMouseClicked (This : in out ToolJPanel; evt_Param : access MouseEvent'Class);
-   procedure lineJButtonMouseClicked (This : in out ToolJPanel; evt_Param : access MouseEvent'Class);
+   procedure dottedFillRountRectJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent_Package.MouseEvent'Class);
+   procedure dottedFillArcJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent_Package.MouseEvent'Class);
+   procedure dottedFillRectJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent_Package.MouseEvent'Class);
+   procedure dottedArcJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent_Package.MouseEvent'Class);
+   procedure dottedRectButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent_Package.MouseEvent'Class);
+   procedure dottedLineJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent_Package.MouseEvent'Class);
+   procedure fillRoundRectJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent_Package.MouseEvent'Class);
+   procedure fillRectJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent_Package.MouseEvent'Class);
+   procedure fillArcJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent_Package.MouseEvent'Class);
+   procedure imageJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent_Package.MouseEvent'Class);
+   procedure roundRectJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent_Package.MouseEvent'Class);
+   procedure charJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent_Package.MouseEvent'Class);
+   procedure stringJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent_Package.MouseEvent'Class);
+   procedure arcJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent_Package.MouseEvent'Class);
+   procedure rectJButtonMouseClicked (This : in out ToolJPanel; evt_Param : access MouseEvent_Package.MouseEvent'Class);
+   procedure lineJButtonMouseClicked (This : in out ToolJPanel; evt_Param : access MouseEvent_Package.MouseEvent'Class);
 
 end org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package;
 

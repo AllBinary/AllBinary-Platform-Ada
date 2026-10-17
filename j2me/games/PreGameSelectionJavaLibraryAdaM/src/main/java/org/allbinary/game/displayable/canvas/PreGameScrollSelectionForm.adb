@@ -21,15 +21,15 @@ package body org.allbinary.game.displayable.canvas.PreGameScrollSelectionForm_Pa
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PreGameScrollSelectionForm'Class; title : Unbounded_String; items : ABCustomItem_Access_Array_Access; formPaintableFactory_Param : access ItemPaintableFactory'Class; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) is
-      formPaintableFactory : ItemPaintableFactory_Access := ItemPaintableFactory_Access (formPaintableFactory_Param);
-      backgroundBasicColor : BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
-      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
+   procedure Initialize (This : in out PreGameScrollSelectionForm'Class; title : Unbounded_String; items : ABCustomItem_Access_Array_Access; formPaintableFactory_Param : access ItemPaintableFactory_Package.ItemPaintableFactory'Class; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      formPaintableFactory : constant ItemPaintableFactory_Access := ItemPaintableFactory_Access (formPaintableFactory_Param);
+      backgroundBasicColor : constant BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
+      foregroundBasicColor : constant BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
    begin
         ScrollCurrentSelectionForm_Package.Initialize (This, title, items, formPaintableFactory, 0, 3, False, backgroundBasicColor, foregroundBasicColor);
    end Initialize;
 
-   function Create (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; formPaintableFactory_Param : access ItemPaintableFactory'Class; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return PreGameScrollSelectionForm_Access is
+   function Create (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; formPaintableFactory_Param : access ItemPaintableFactory_Package.ItemPaintableFactory'Class; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return PreGameScrollSelectionForm_Access is
       This : constant PreGameScrollSelectionForm_Access := new PreGameScrollSelectionForm;
    begin
       PreGameScrollSelectionForm_Package.Initialize (This.all, title, items, formPaintableFactory_Param, backgroundBasicColor_Param, foregroundBasicColor_Param);
@@ -37,8 +37,8 @@ package body org.allbinary.game.displayable.canvas.PreGameScrollSelectionForm_Pa
    end Create;
 
    --  throws Exception
-   procedure init (This : in out PreGameScrollSelectionForm; rectangle_Param : access Rectangle'Class) is
-      rectangle : Rectangle_Access := Rectangle_Access (rectangle_Param);
+   procedure init (This : in out PreGameScrollSelectionForm; rectangle_Param : access Rectangle_Package.Rectangle'Class) is
+      rectangle : constant Rectangle_Access := Rectangle_Access (rectangle_Param);
    begin
         ScrollCurrentSelectionForm (This).init (rectangle, FormTypeFactory_Package.getInstance.TEMP_HORIZONTAL_FORM);
    end init;

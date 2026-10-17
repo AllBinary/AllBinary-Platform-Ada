@@ -51,8 +51,8 @@ package body org.allbinary.input.media.image.capture.ScreenCaptureImagesWorker_P
    end setRunning;
 
    --  throws Exception
-   procedure setThread (This : in out ScreenCaptureImagesWorker; thread_Param : access Thread'Class) is
-      thread : Thread_Access := Thread_Access (thread_Param);
+   procedure setThread (This : in out ScreenCaptureImagesWorker; thread_Param : access Thread_Package.Thread'Class) is
+      thread : constant Thread_Access := Thread_Access (thread_Param);
    begin
         null;
    end setThread;

@@ -39,9 +39,9 @@ package org.allbinary.media.image.analysis.ImageColorResults_Package is
    procedure Initialize (This : in out ImageColorResults'Class);
    function Create return ImageColorResults_Access;
    function getColorRange (This : in out ImageColorResults) return ColorRange_Access;
-   procedure setColorRange (This : in out ImageColorResults; colorRange_Param : access ColorRange'Class);
+   procedure setColorRange (This : in out ImageColorResults; colorRange_Param : access ColorRange_Package.ColorRange'Class);
    function getColorAverage (This : in out ImageColorResults) return ColorAverage_Access;
-   procedure setColorAverage (This : in out ImageColorResults; colorAverage_Param : access ColorAverage'Class);
+   procedure setColorAverage (This : in out ImageColorResults; colorAverage_Param : access ColorAverage_Package.ColorAverage'Class);
 
 end org.allbinary.media.image.analysis.ImageColorResults_Package;
 

@@ -34,14 +34,14 @@ package body org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package 
       return This;
    end Create;
 
-   function accept_Id (This : in out DirectoryFileVisitor; arg0_Param : access File'Class) return Boolean is
-      arg0 : File_Access := File_Access (arg0_Param);
+   function accept_Id (This : in out DirectoryFileVisitor; arg0_Param : access File_Package.File'Class) return Boolean is
+      arg0 : constant File_Access := File_Access (arg0_Param);
    begin
         return (Boolean (This.visit (Java_Object_Access (arg0)))).booleanValue;
    end accept_Id;
 
    function visit (This : in out DirectoryFileVisitor; anyType_Param : access Java_Object'Class) return Java_Object_Access is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
       file : File_Access;
       index : Integer;
       aFile : File_Access;
@@ -58,7 +58,7 @@ package body org.allbinary.logic.io.file.directory.DirectoryFileVisitor_Package 
         return False;
    end visit;
 
-   procedure accept_Id (This : in out DirectoryFileVisitor; arg0_Param : access File'Class) is
+   procedure accept_Id (This : in out DirectoryFileVisitor; arg0_Param : access File_Package.File'Class) is
       Java_Result : constant Boolean := DirectoryFileVisitor'Class (This).accept_Id (arg0_Param);
       pragma Unreferenced (Java_Result);
    begin

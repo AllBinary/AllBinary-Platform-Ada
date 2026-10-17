@@ -21,13 +21,13 @@ package body org.allbinary.logic.io.AbDataOutputStream_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AbDataOutputStream'Class; out_Id_Param : access OutputStream'Class) is
-      out_Id : OutputStream_Access := OutputStream_Access (out_Id_Param);
+   procedure Initialize (This : in out AbDataOutputStream'Class; out_Id_Param : access OutputStream_Package.OutputStream'Class) is
+      out_Id : constant OutputStream_Access := OutputStream_Access (out_Id_Param);
    begin
         DataOutputStream_Package.Initialize (This, out_Id);
    end Initialize;
 
-   function Create (out_Id_Param : access OutputStream'Class) return AbDataOutputStream_Access is
+   function Create (out_Id_Param : access OutputStream_Package.OutputStream'Class) return AbDataOutputStream_Access is
       This : constant AbDataOutputStream_Access := new AbDataOutputStream;
    begin
       AbDataOutputStream_Package.Initialize (This.all, out_Id_Param);

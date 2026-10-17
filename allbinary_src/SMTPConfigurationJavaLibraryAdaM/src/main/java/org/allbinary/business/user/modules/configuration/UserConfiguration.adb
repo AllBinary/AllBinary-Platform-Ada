@@ -39,8 +39,8 @@ package body org.allbinary.business.user.modules.configuration.UserConfiguration
       return This;
    end Create;
 
-   procedure Initialize (This : in out UserConfiguration'Class; hashMap_Param : access HashMap'Class) is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+   procedure Initialize (This : in out UserConfiguration'Class; hashMap_Param : access HashMap_Package.HashMap'Class) is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
       Initialize_Fields (This);
         This.userEmailConfigurationInterface := UserEmailConfigurationInterface_Access (UserEmailConfiguration_Package.Create (hashMap));
@@ -48,7 +48,7 @@ package body org.allbinary.business.user.modules.configuration.UserConfiguration
         This.timeLastModified := TimeLastModified_Package.Create (Unbounded_String (hashMap.get (EntryData_Package.getInstance.LASTMODIFIED)));
    end Initialize;
 
-   function Create (hashMap_Param : access HashMap'Class) return UserConfiguration_Access is
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return UserConfiguration_Access is
       This : constant UserConfiguration_Access := new UserConfiguration;
    begin
       UserConfiguration_Package.Initialize (This.all, hashMap_Param);
@@ -60,8 +60,8 @@ package body org.allbinary.business.user.modules.configuration.UserConfiguration
         return This.userEmailConfigurationInterface;
    end getUserEmailConfigurationInterface;
 
-   procedure setUserEmailConfigurationInterface (This : in out UserConfiguration; userEmailConfigurationInterface_Param : access UserEmailConfigurationInterface'Class) is
-      userEmailConfigurationInterface : UserEmailConfigurationInterface_Access := UserEmailConfigurationInterface_Access (userEmailConfigurationInterface_Param);
+   procedure setUserEmailConfigurationInterface (This : in out UserConfiguration; userEmailConfigurationInterface_Param : access UserEmailConfigurationInterface_Package.UserEmailConfigurationInterface'Class) is
+      userEmailConfigurationInterface : constant UserEmailConfigurationInterface_Access := UserEmailConfigurationInterface_Access (userEmailConfigurationInterface_Param);
    begin
         This.userEmailConfigurationInterface := userEmailConfigurationInterface;
    end setUserEmailConfigurationInterface;
@@ -76,14 +76,14 @@ package body org.allbinary.business.user.modules.configuration.UserConfiguration
         return This.timeLastModified;
    end getTimeLastModified;
 
-   procedure setTimeCreated (This : in out UserConfiguration; timeCreated_Param : access TimeCreated'Class) is
-      timeCreated : TimeCreated_Access := TimeCreated_Access (timeCreated_Param);
+   procedure setTimeCreated (This : in out UserConfiguration; timeCreated_Param : access TimeCreated_Package.TimeCreated'Class) is
+      timeCreated : constant TimeCreated_Access := TimeCreated_Access (timeCreated_Param);
    begin
         This.timeCreated := timeCreated;
    end setTimeCreated;
 
-   procedure setTimeLastModified (This : in out UserConfiguration; timeLastModified_Param : access TimeLastModified'Class) is
-      timeLastModified : TimeLastModified_Access := TimeLastModified_Access (timeLastModified_Param);
+   procedure setTimeLastModified (This : in out UserConfiguration; timeLastModified_Param : access TimeLastModified_Package.TimeLastModified'Class) is
+      timeLastModified : constant TimeLastModified_Access := TimeLastModified_Access (timeLastModified_Param);
    begin
         This.timeLastModified := timeLastModified;
    end setTimeLastModified;

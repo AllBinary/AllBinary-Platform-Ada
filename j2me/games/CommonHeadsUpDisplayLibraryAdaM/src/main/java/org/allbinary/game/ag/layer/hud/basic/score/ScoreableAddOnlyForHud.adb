@@ -22,8 +22,8 @@ package body org.allbinary.game.ag.layer.hud.basic.score.ScoreableAddOnlyForHud_
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ScoreableAddOnlyForHud'Class; scoreVectorGraphic_Param : access ScoreHudWidget'Class) is
-      scoreVectorGraphic : ScoreHudWidget_Access := ScoreHudWidget_Access (scoreVectorGraphic_Param);
+   procedure Initialize (This : in out ScoreableAddOnlyForHud'Class; scoreVectorGraphic_Param : access ScoreHudWidget_Package.ScoreHudWidget'Class) is
+      scoreVectorGraphic : constant ScoreHudWidget_Access := ScoreHudWidget_Access (scoreVectorGraphic_Param);
    begin
         Scoreable_Package.Initialize (This, 0);
         Initialize_Fields (This);
@@ -31,7 +31,7 @@ package body org.allbinary.game.ag.layer.hud.basic.score.ScoreableAddOnlyForHud_
         This.getScoreHudWidget.set (0);
    end Initialize;
 
-   function Create (scoreVectorGraphic_Param : access ScoreHudWidget'Class) return ScoreableAddOnlyForHud_Access is
+   function Create (scoreVectorGraphic_Param : access ScoreHudWidget_Package.ScoreHudWidget'Class) return ScoreableAddOnlyForHud_Access is
       This : constant ScoreableAddOnlyForHud_Access := new ScoreableAddOnlyForHud;
    begin
       ScoreableAddOnlyForHud_Package.Initialize (This.all, scoreVectorGraphic_Param);

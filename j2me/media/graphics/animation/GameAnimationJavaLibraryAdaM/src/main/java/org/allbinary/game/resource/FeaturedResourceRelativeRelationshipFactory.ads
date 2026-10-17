@@ -55,10 +55,10 @@ package org.allbinary.game.resource.FeaturedResourceRelativeRelationshipFactory_
    procedure Initialize (This : in out FeaturedResourceRelativeRelationshipFactory'Class);
    function Create return FeaturedResourceRelativeRelationshipFactory_Access;
    function getInstance return FeaturedResourceRelativeRelationshipFactory_Access;
-   function getRelativeRelationshipList (This : in out FeaturedResourceRelativeRelationshipFactory; resource : Unbounded_String; layer_Param : access AllBinaryLayer'Class) return BasicArrayList_Access;
-   procedure getRelativeRelationshipList (This : in out FeaturedResourceRelativeRelationshipFactory; resource : Unbounded_String; layer_Param : access AllBinaryLayer'Class);
-   function duplicate (This : in out FeaturedResourceRelativeRelationshipFactory; list_Param : access BasicArrayList'Class; layer_Param : access AllBinaryLayer'Class) return BasicArrayList_Access;
-   procedure duplicate (This : in out FeaturedResourceRelativeRelationshipFactory; list_Param : access BasicArrayList'Class; layer_Param : access AllBinaryLayer'Class);
+   function getRelativeRelationshipList (This : in out FeaturedResourceRelativeRelationshipFactory; resource : Unbounded_String; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) return BasicArrayList_Access;
+   procedure getRelativeRelationshipList (This : in out FeaturedResourceRelativeRelationshipFactory; resource : Unbounded_String; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class);
+   function duplicate (This : in out FeaturedResourceRelativeRelationshipFactory; list_Param : access BasicArrayList_Package.BasicArrayList'Class; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) return BasicArrayList_Access;
+   procedure duplicate (This : in out FeaturedResourceRelativeRelationshipFactory; list_Param : access BasicArrayList_Package.BasicArrayList'Class; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class);
 
 end org.allbinary.game.resource.FeaturedResourceRelativeRelationshipFactory_Package;
 

@@ -41,10 +41,10 @@ package org.allbinary.business.init.InitInfo2_Package is
    procedure Initialize (This : in out InitInfo2'Class);
    function Create return InitInfo2_Access;
    function getInstance return InitInfo2_Access;
-   function isTestHtmlPathValid (This : in out InitInfo2; value_Param : access AbPath'Class) return Boolean;
-   procedure isTestHtmlPathValid (This : in out InitInfo2; value_Param : access AbPath'Class);
-   function isMainPathValid (This : in out InitInfo2; value_Param : access AbPath'Class) return Boolean;
-   procedure isMainPathValid (This : in out InitInfo2; value_Param : access AbPath'Class);
+   function isTestHtmlPathValid (This : in out InitInfo2; value_Param : access AbPath_Package.AbPath'Class) return Boolean;
+   procedure isTestHtmlPathValid (This : in out InitInfo2; value_Param : access AbPath_Package.AbPath'Class);
+   function isMainPathValid (This : in out InitInfo2; value_Param : access AbPath_Package.AbPath'Class) return Boolean;
+   procedure isMainPathValid (This : in out InitInfo2; value_Param : access AbPath_Package.AbPath'Class);
 
 end org.allbinary.business.init.InitInfo2_Package;
 

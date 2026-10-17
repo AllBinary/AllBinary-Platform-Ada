@@ -62,8 +62,8 @@ package body org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
         This.clear;
    end removeAll;
 
-   procedure addMapping (This : in out InputToGameKeyMapping; inputToGameKeyMapping_Param : access InputToGameKeyMapping'Class) is
-      inputToGameKeyMapping : InputToGameKeyMapping_Access := InputToGameKeyMapping_Access (inputToGameKeyMapping_Param);
+   procedure addMapping (This : in out InputToGameKeyMapping; inputToGameKeyMapping_Param : access InputToGameKeyMapping_Package.InputToGameKeyMapping'Class) is
+      inputToGameKeyMapping : constant InputToGameKeyMapping_Access := InputToGameKeyMapping_Access (inputToGameKeyMapping_Param);
       input : Input_Access;
       index : Integer;
    begin
@@ -75,9 +75,9 @@ package body org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
         end loop;
    end addMapping;
 
-   procedure addAll (This : in out InputToGameKeyMapping; input_Param : access Input'Class; list_Param : access BasicArrayList'Class) is
-      input : Input_Access := Input_Access (input_Param);
-      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
+   procedure addAll (This : in out InputToGameKeyMapping; input_Param : access Input_Package.Input'Class; list_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      input : constant Input_Access := Input_Access (input_Param);
+      list : constant BasicArrayList_Access := BasicArrayList_Access (list_Param);
       mappedToInput : Input_Access;
       index : Integer;
    begin
@@ -87,26 +87,26 @@ package body org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
         end loop;
    end addAll;
 
-   procedure add (This : in out InputToGameKeyMapping; input_Param : access Input'Class; mappedToInput_Param : access Input'Class) is
-      input : Input_Access := Input_Access (input_Param);
-      mappedToInput : Input_Access := Input_Access (mappedToInput_Param);
+   procedure add (This : in out InputToGameKeyMapping; input_Param : access Input_Package.Input'Class; mappedToInput_Param : access Input_Package.Input'Class) is
+      input : constant Input_Access := Input_Access (input_Param);
+      mappedToInput : constant Input_Access := Input_Access (mappedToInput_Param);
    begin
         InputMapping (This).add (input, mappedToInput);
         This.set (input, mappedToInput);
    end add;
 
-   procedure remove (This : in out InputToGameKeyMapping; input_Param : access Input'Class; mappedToInput_Param : access Input'Class) is
-      input : Input_Access := Input_Access (input_Param);
-      mappedToInput : Input_Access := Input_Access (mappedToInput_Param);
+   procedure remove (This : in out InputToGameKeyMapping; input_Param : access Input_Package.Input'Class; mappedToInput_Param : access Input_Package.Input'Class) is
+      input : constant Input_Access := Input_Access (input_Param);
+      mappedToInput : constant Input_Access := Input_Access (mappedToInput_Param);
    begin
         This.logUtil.putF (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.START_LABEL).append (StringUtil_Package.getInstance.toString (input)).append (To_Unbounded_String (" == ")).append (StringUtil_Package.getInstance.toString (mappedToInput)).toString, InputToGameKeyMapping_Access'(This'Unchecked_Access), To_Unbounded_String ("InputToGameKeyMapping::remove"));
         InputMapping (This).remove (input, mappedToInput);
         This.set (input, This.gameKeyFactory.NONE);
    end remove;
 
-   procedure set (This : in out InputToGameKeyMapping; input_Param : access Input'Class; mappedToInput_Param : access Input'Class) is
-      input : Input_Access := Input_Access (input_Param);
-      mappedToInput : Input_Access := Input_Access (mappedToInput_Param);
+   procedure set (This : in out InputToGameKeyMapping; input_Param : access Input_Package.Input'Class; mappedToInput_Param : access Input_Package.Input'Class) is
+      input : constant Input_Access := Input_Access (input_Param);
+      mappedToInput : constant Input_Access := Input_Access (mappedToInput_Param);
       id : Integer;
    begin
         id := mappedToInput.getId;
@@ -140,9 +140,9 @@ package body org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
    end getReverseInstance;
 
    --  throws Exception
-   procedure initGameKey (This : in out InputToGameKeyMapping; canvas_Param : access Canvas'Class; gameKey_Param : access GameKey'Class) is
-      canvas : Canvas_Access := Canvas_Access (canvas_Param);
-      gameKey : GameKey_Access := GameKey_Access (gameKey_Param);
+   procedure initGameKey (This : in out InputToGameKeyMapping; canvas_Param : access Canvas_Package.Canvas'Class; gameKey_Param : access GameKey_Package.GameKey'Class) is
+      canvas : constant Canvas_Access := Canvas_Access (canvas_Param);
+      gameKey : constant GameKey_Access := GameKey_Access (gameKey_Param);
       key : Integer;
    begin
         key := canvas.getKeyCode (gameKey.getId);
@@ -158,8 +158,8 @@ package body org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
    end initGameKey;
 
    --  throws Exception
-   function getSmallestCanvasGameKeyCode (This : in out InputToGameKeyMapping; canvas_Param : access Canvas'Class) return Integer is
-      canvas : Canvas_Access := Canvas_Access (canvas_Param);
+   function getSmallestCanvasGameKeyCode (This : in out InputToGameKeyMapping; canvas_Param : access Canvas_Package.Canvas'Class) return Integer is
+      canvas : constant Canvas_Access := Canvas_Access (canvas_Param);
       nextKey : Integer;
       smallestKey : Integer;
       index : Integer;
@@ -176,8 +176,8 @@ package body org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
         return smallestKey;
    end getSmallestCanvasGameKeyCode;
 
-   procedure init (This : in out InputToGameKeyMapping; canvas_Param : access Canvas'Class) is
-      canvas : Canvas_Access := Canvas_Access (canvas_Param);
+   procedure init (This : in out InputToGameKeyMapping; canvas_Param : access Canvas_Package.Canvas'Class) is
+      canvas : constant Canvas_Access := Canvas_Access (canvas_Param);
       negativePlatformToGameKeyMapping : GameKey_Access_Array_Access;
       smallestKey : Integer;
       index : Integer;
@@ -211,8 +211,8 @@ package body org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
         end;
    end init;
 
-   function getInstanceForCanvas (This : in out InputToGameKeyMapping; canvas_Param : access Canvas'Class; id : Integer) return GameKey_Access is
-      canvas : Canvas_Access := Canvas_Access (canvas_Param);
+   function getInstanceForCanvas (This : in out InputToGameKeyMapping; canvas_Param : access Canvas_Package.Canvas'Class; id : Integer) return GameKey_Access is
+      canvas : constant Canvas_Access := Canvas_Access (canvas_Param);
    begin
         if ((id) >= (0)) and then ((id) < (This.platformToGameKeyMapping'Length)) then
             return This.platformToGameKeyMapping (id);
@@ -241,14 +241,14 @@ package body org.allbinary.game.input.mapping.InputToGameKeyMapping_Package is
       null;
    end getReverseInstance;
 
-   procedure getSmallestCanvasGameKeyCode (This : in out InputToGameKeyMapping; canvas_Param : access Canvas'Class) is
+   procedure getSmallestCanvasGameKeyCode (This : in out InputToGameKeyMapping; canvas_Param : access Canvas_Package.Canvas'Class) is
       Java_Result : constant Integer := InputToGameKeyMapping'Class (This).getSmallestCanvasGameKeyCode (canvas_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getSmallestCanvasGameKeyCode;
 
-   procedure getInstanceForCanvas (This : in out InputToGameKeyMapping; canvas_Param : access Canvas'Class; id : Integer) is
+   procedure getInstanceForCanvas (This : in out InputToGameKeyMapping; canvas_Param : access Canvas_Package.Canvas'Class; id : Integer) is
       Java_Result : constant GameKey_Access := InputToGameKeyMapping'Class (This).getInstanceForCanvas (canvas_Param, id);
       pragma Unreferenced (Java_Result);
    begin

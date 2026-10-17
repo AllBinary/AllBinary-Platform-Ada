@@ -55,12 +55,12 @@ package org.allbinary.animation.caption.CaptionAnimationHelper_Package is
       animation : Animation_Access;
    end record;
 
-   procedure Initialize (This : in out CaptionAnimationHelper'Class; captionAnimation_Param : access Animation'Class; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer);
-   function Create (captionAnimation_Param : access Animation'Class; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer) return CaptionAnimationHelper_Access;
+   procedure Initialize (This : in out CaptionAnimationHelper'Class; captionAnimation_Param : access Animation_Package.Animation'Class; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer);
+   function Create (captionAnimation_Param : access Animation_Package.Animation'Class; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer) return CaptionAnimationHelper_Access;
    function isShowing (This : in out CaptionAnimationHelper) return Boolean;
    procedure tick (This : in out CaptionAnimationHelper);
-   procedure update (This : in out CaptionAnimationHelper; message : Unbounded_String; basicColor_Param : access BasicColor'Class);
-   procedure paintXY (This : in out CaptionAnimationHelper; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
+   procedure update (This : in out CaptionAnimationHelper; message : Unbounded_String; basicColor_Param : access BasicColor_Package.BasicColor'Class);
+   procedure paintXY (This : in out CaptionAnimationHelper; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
 
 end org.allbinary.animation.caption.CaptionAnimationHelper_Package;
 

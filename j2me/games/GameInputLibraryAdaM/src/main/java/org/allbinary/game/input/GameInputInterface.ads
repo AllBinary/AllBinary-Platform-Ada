@@ -32,7 +32,7 @@ package org.allbinary.game.input.GameInputInterface_Package is
    type GameInputInterface_Access is access all GameInputInterface'Class;
    type GameInputInterface_Access_Array is array (Natural range <>) of GameInputInterface_Access;
    type GameInputInterface_Access_Array_Access is access all GameInputInterface_Access_Array;
-   procedure processInput (This : in out GameInputInterface; layerManager_Param : access AllBinaryLayerManager'Class) is abstract;
+   procedure processInput (This : in out GameInputInterface; layerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class) is abstract;
    procedure initInputProcessors (This : in out GameInputInterface) is abstract;
 
 end org.allbinary.game.input.GameInputInterface_Package;

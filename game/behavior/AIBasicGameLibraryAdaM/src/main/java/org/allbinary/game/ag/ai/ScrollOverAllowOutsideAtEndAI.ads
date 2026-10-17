@@ -41,9 +41,9 @@ package org.allbinary.game.ag.ai.ScrollOverAllowOutsideAtEndAI_Package is
 
    type ScrollOverAllowOutsideAtEndAI is new BasicAI with null record;
 
-   procedure Initialize (This : in out ScrollOverAllowOutsideAtEndAI'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class);
-   function Create (ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return ScrollOverAllowOutsideAtEndAI_Access;
-   procedure processAI (This : in out ScrollOverAllowOutsideAtEndAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class);
+   procedure Initialize (This : in out ScrollOverAllowOutsideAtEndAI'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class);
+   function Create (ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) return ScrollOverAllowOutsideAtEndAI_Access;
+   procedure processAI (This : in out ScrollOverAllowOutsideAtEndAI; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class);
 
 end org.allbinary.game.ag.ai.ScrollOverAllowOutsideAtEndAI_Package;
 

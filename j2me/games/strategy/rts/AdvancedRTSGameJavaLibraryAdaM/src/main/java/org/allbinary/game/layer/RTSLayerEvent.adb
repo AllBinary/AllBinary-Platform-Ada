@@ -21,14 +21,14 @@ package body org.allbinary.game.layer.RTSLayerEvent_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out RTSLayerEvent'Class; rtsLayer_Param : access PathFindingLayerInterface'Class) is
-      rtsLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (rtsLayer_Param);
+   procedure Initialize (This : in out RTSLayerEvent'Class; rtsLayer_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class) is
+      rtsLayer : constant PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (rtsLayer_Param);
    begin
         AllBinaryEventObject_Package.Initialize (This, rtsLayer);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (rtsLayer_Param : access PathFindingLayerInterface'Class) return RTSLayerEvent_Access is
+   function Create (rtsLayer_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class) return RTSLayerEvent_Access is
       This : constant RTSLayerEvent_Access := new RTSLayerEvent;
    begin
       RTSLayerEvent_Package.Initialize (This.all, rtsLayer_Param);
@@ -50,8 +50,8 @@ package body org.allbinary.game.layer.RTSLayerEvent_Package is
         return This.rtsLayer;
    end getRtsLayer;
 
-   procedure setRtsLayer (This : in out RTSLayerEvent; rtsLayer_Param : access PathFindingLayerInterface'Class) is
-      rtsLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (rtsLayer_Param);
+   procedure setRtsLayer (This : in out RTSLayerEvent; rtsLayer_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class) is
+      rtsLayer : constant PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (rtsLayer_Param);
    begin
         This.rtsLayer := rtsLayer;
    end setRtsLayer;

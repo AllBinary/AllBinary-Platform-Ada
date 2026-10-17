@@ -23,15 +23,15 @@ package body org.allbinary.data.tables.category.CategoryEntity_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CategoryEntity'Class; categoryFactoryInterface_Param : access CategoryFactoryInterface'Class) is
-      categoryFactoryInterface : CategoryFactoryInterface_Access := CategoryFactoryInterface_Access (categoryFactoryInterface_Param);
+   procedure Initialize (This : in out CategoryEntity'Class; categoryFactoryInterface_Param : access CategoryFactoryInterface_Package.CategoryFactoryInterface'Class) is
+      categoryFactoryInterface : constant CategoryFactoryInterface_Access := CategoryFactoryInterface_Access (categoryFactoryInterface_Param);
    begin
         AbSqlBean_Package.Initialize (This, InventoryDbInitInfo_Package.Create);
         Initialize_Fields (This);
         This.setTableName (This.tableName);
    end Initialize;
 
-   function Create (categoryFactoryInterface_Param : access CategoryFactoryInterface'Class) return CategoryEntity_Access is
+   function Create (categoryFactoryInterface_Param : access CategoryFactoryInterface_Package.CategoryFactoryInterface'Class) return CategoryEntity_Access is
       This : constant CategoryEntity_Access := new CategoryEntity;
    begin
       CategoryEntity_Package.Initialize (This.all, categoryFactoryInterface_Param);
@@ -52,8 +52,8 @@ package body org.allbinary.data.tables.category.CategoryEntity_Package is
       return This;
    end Create;
 
-   procedure insert (This : in out CategoryEntity; category_Param : access Category'Class) is
-      category : Category_Access := Category_Access (category_Param);
+   procedure insert (This : in out CategoryEntity; category_Param : access Category_Package.Category'Class) is
+      category : constant Category_Access := Category_Access (category_Param);
       categoryVector : BasicArrayList_Access;
       values : BasicArrayList_Access;
    begin
@@ -119,8 +119,8 @@ package body org.allbinary.data.tables.category.CategoryEntity_Package is
         return AbSqlBean (This).createTable (This.createTableStatement);
    end createTable;
 
-   procedure update (This : in out CategoryEntity; updatedValues_Param : access HashMap'Class) is
-      updatedValues : HashMap_Access := HashMap_Access (updatedValues_Param);
+   procedure update (This : in out CategoryEntity; updatedValues_Param : access HashMap_Package.HashMap'Class) is
+      updatedValues : constant HashMap_Access := HashMap_Access (updatedValues_Param);
    begin
         AbSqlBean (This).updateWhere (CategoryData_Package.getInstance.NAME, Unbounded_String (updatedValues.get (CategoryData_Package.getInstance.NAME)), updatedValues);
    end update;

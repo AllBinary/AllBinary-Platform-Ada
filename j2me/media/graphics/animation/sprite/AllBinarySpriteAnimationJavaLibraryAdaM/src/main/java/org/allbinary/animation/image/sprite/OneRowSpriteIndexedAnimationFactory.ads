@@ -49,16 +49,16 @@ package org.allbinary.animation.image.sprite.OneRowSpriteIndexedAnimationFactory
       animationFactorySpriteScaleUtil : AnimationFactorySpriteScaleUtil_Access;
    end record;
 
-   procedure Initialize (This : in out OneRowSpriteIndexedAnimationFactory'Class; image_Param : access Image'Class; sequenceArray : Integer_Array_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class);
-   function Create (image_Param : access Image'Class; sequenceArray : Integer_Array_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return OneRowSpriteIndexedAnimationFactory_Access;
-   function createFactoryDX (image_Param : access Image'Class; dx : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return OneRowSpriteIndexedAnimationFactory_Access;
-   procedure createFactoryDX (image_Param : access Image'Class; dx : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class);
-   function createFactoryDXY (image_Param : access Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return OneRowSpriteIndexedAnimationFactory_Access;
-   procedure createFactoryDXY (image_Param : access Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class);
-   function createFactoryWH (image_Param : access Image'Class; width : Integer; height : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return OneRowSpriteIndexedAnimationFactory_Access;
-   procedure createFactoryWH (image_Param : access Image'Class; width : Integer; height : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class);
-   function createFactory (image_Param : access Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return OneRowSpriteIndexedAnimationFactory_Access;
-   procedure createFactory (image_Param : access Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class);
+   procedure Initialize (This : in out OneRowSpriteIndexedAnimationFactory'Class; image_Param : access Image_Package.Image'Class; sequenceArray : Integer_Array_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class);
+   function Create (image_Param : access Image_Package.Image'Class; sequenceArray : Integer_Array_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return OneRowSpriteIndexedAnimationFactory_Access;
+   function createFactoryDX (image_Param : access Image_Package.Image'Class; dx : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return OneRowSpriteIndexedAnimationFactory_Access;
+   procedure createFactoryDX (image_Param : access Image_Package.Image'Class; dx : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class);
+   function createFactoryDXY (image_Param : access Image_Package.Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return OneRowSpriteIndexedAnimationFactory_Access;
+   procedure createFactoryDXY (image_Param : access Image_Package.Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class);
+   function createFactoryWH (image_Param : access Image_Package.Image'Class; width : Integer; height : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return OneRowSpriteIndexedAnimationFactory_Access;
+   procedure createFactoryWH (image_Param : access Image_Package.Image'Class; width : Integer; height : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class);
+   function createFactory (image_Param : access Image_Package.Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return OneRowSpriteIndexedAnimationFactory_Access;
+   procedure createFactory (image_Param : access Image_Package.Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class);
    procedure init (This : in out OneRowSpriteIndexedAnimationFactory; dx : Integer; dy : Integer);
    procedure initW (This : in out OneRowSpriteIndexedAnimationFactory; dx : Integer);
    function getInstance (This : in out OneRowSpriteIndexedAnimationFactory; instanceId : Integer) return Animation_Access;

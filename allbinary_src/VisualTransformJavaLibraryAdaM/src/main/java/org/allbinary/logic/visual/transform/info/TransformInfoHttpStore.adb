@@ -22,9 +22,9 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpStore_Pa
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TransformInfoHttpStore'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
-      propertiesHashMap : HashMap_Access := HashMap_Access (propertiesHashMap_Param);
-      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
+   procedure Initialize (This : in out TransformInfoHttpStore'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is
+      propertiesHashMap : constant HashMap_Access := HashMap_Access (propertiesHashMap_Param);
+      pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
    begin
         TransformInfoHttp_Package.Initialize (This, propertiesHashMap, pageContext, True);
         Initialize_Fields (This);
@@ -33,17 +33,17 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpStore_Pa
         end if;
    end Initialize;
 
-   function Create (propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return TransformInfoHttpStore_Access is
+   function Create (propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return TransformInfoHttpStore_Access is
       This : constant TransformInfoHttpStore_Access := new TransformInfoHttpStore;
    begin
       TransformInfoHttpStore_Package.Initialize (This.all, propertiesHashMap_Param, pageContext_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out TransformInfoHttpStore'Class; databaseHashMap_Param : access HashMap'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
-      databaseHashMap : HashMap_Access := HashMap_Access (databaseHashMap_Param);
-      propertiesHashMap : HashMap_Access := HashMap_Access (propertiesHashMap_Param);
-      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
+   procedure Initialize (This : in out TransformInfoHttpStore'Class; databaseHashMap_Param : access HashMap_Package.HashMap'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is
+      databaseHashMap : constant HashMap_Access := HashMap_Access (databaseHashMap_Param);
+      propertiesHashMap : constant HashMap_Access := HashMap_Access (propertiesHashMap_Param);
+      pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
       stringBuffer : StringMaker_Access;
    begin
         TransformInfoHttp_Package.Initialize (This, databaseHashMap, propertiesHashMap, pageContext);
@@ -59,17 +59,17 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpStore_Pa
         This.setStoreName (Unbounded_String (databaseHashMap.get (StoreFrontData_Package.getInstance.NAME)));
    end Initialize;
 
-   function Create (databaseHashMap_Param : access HashMap'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return TransformInfoHttpStore_Access is
+   function Create (databaseHashMap_Param : access HashMap_Package.HashMap'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return TransformInfoHttpStore_Access is
       This : constant TransformInfoHttpStore_Access := new TransformInfoHttpStore;
    begin
       TransformInfoHttpStore_Package.Initialize (This.all, databaseHashMap_Param, propertiesHashMap_Param, pageContext_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out TransformInfoHttpStore'Class; storeFrontInterface_Param : access StoreFrontInterface'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
-      storeFrontInterface : StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
-      propertiesHashMap : HashMap_Access := HashMap_Access (propertiesHashMap_Param);
-      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
+   procedure Initialize (This : in out TransformInfoHttpStore'Class; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is
+      storeFrontInterface : constant StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
+      propertiesHashMap : constant HashMap_Access := HashMap_Access (propertiesHashMap_Param);
+      pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
    begin
         TransformInfoHttp_Package.Initialize (This, propertiesHashMap, pageContext);
         Initialize_Fields (This);
@@ -79,7 +79,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpStore_Pa
         This.setStoreName (storeFrontInterface.getName);
    end Initialize;
 
-   function Create (storeFrontInterface_Param : access StoreFrontInterface'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return TransformInfoHttpStore_Access is
+   function Create (storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return TransformInfoHttpStore_Access is
       This : constant TransformInfoHttpStore_Access := new TransformInfoHttpStore;
    begin
       TransformInfoHttpStore_Package.Initialize (This.all, storeFrontInterface_Param, propertiesHashMap_Param, pageContext_Param);

@@ -59,8 +59,8 @@ package org.allbinary.game.ag.ai.TopUBoundBounceAIFactory_Package is
 
    procedure Initialize (This : in out TopUBoundBounceAIFactory'Class);
    function Create return TopUBoundBounceAIFactory_Access;
-   function getInstance (This : in out TopUBoundBounceAIFactory; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return ArtificialIntelligenceInterface_Access;
-   procedure getInstance (This : in out TopUBoundBounceAIFactory; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class);
+   function getInstance (This : in out TopUBoundBounceAIFactory; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) return ArtificialIntelligenceInterface_Access;
+   procedure getInstance (This : in out TopUBoundBounceAIFactory; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class);
 
 end org.allbinary.game.ag.ai.TopUBoundBounceAIFactory_Package;
 

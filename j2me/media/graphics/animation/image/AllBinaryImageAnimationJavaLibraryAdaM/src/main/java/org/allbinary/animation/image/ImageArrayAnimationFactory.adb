@@ -25,8 +25,8 @@ package body org.allbinary.animation.image.ImageArrayAnimationFactory_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ImageArrayAnimationFactory'Class; imageArray : Image_Access_Array_Access; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) is
-      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
+   procedure Initialize (This : in out ImageArrayAnimationFactory'Class; imageArray : Image_Access_Array_Access; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
+      animationBehaviorFactory : constant AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
    begin
       Initialize_Fields (This);
         This.imageArray := imageArray;
@@ -35,7 +35,7 @@ package body org.allbinary.animation.image.ImageArrayAnimationFactory_Package is
         This.dy := dy;
    end Initialize;
 
-   function Create (imageArray : Image_Access_Array_Access; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return ImageArrayAnimationFactory_Access is
+   function Create (imageArray : Image_Access_Array_Access; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return ImageArrayAnimationFactory_Access is
       This : constant ImageArrayAnimationFactory_Access := new ImageArrayAnimationFactory;
    begin
       ImageArrayAnimationFactory_Package.Initialize (This.all, imageArray, dx, dy, animationBehaviorFactory_Param);
@@ -52,8 +52,8 @@ package body org.allbinary.animation.image.ImageArrayAnimationFactory_Package is
         end if;
    end getInstance;
 
-   procedure setInitialScale (This : in out ImageArrayAnimationFactory; scaleProperties_Param : access ScaleProperties'Class) is
-      scaleProperties : ScaleProperties_Access := ScaleProperties_Access (scaleProperties_Param);
+   procedure setInitialScale (This : in out ImageArrayAnimationFactory; scaleProperties_Param : access ScaleProperties_Package.ScaleProperties'Class) is
+      scaleProperties : constant ScaleProperties_Access := ScaleProperties_Access (scaleProperties_Param);
    begin
         null;
    end setInitialScale;

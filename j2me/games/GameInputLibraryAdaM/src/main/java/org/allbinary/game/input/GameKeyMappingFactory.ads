@@ -44,7 +44,7 @@ package org.allbinary.game.input.GameKeyMappingFactory_Package is
    function getInstance return GameKeyMappingFactory_Access;
    function getGameKey (This : in out GameKeyMappingFactory; key : Integer) return GameKey_Access;
    procedure getGameKey (This : in out GameKeyMappingFactory; key : Integer);
-   procedure setGameKey (This : in out GameKeyMappingFactory; gameKey_Param : access GameKey'Class);
+   procedure setGameKey (This : in out GameKeyMappingFactory; gameKey_Param : access GameKey_Package.GameKey'Class);
 
 end org.allbinary.game.input.GameKeyMappingFactory_Package;
 

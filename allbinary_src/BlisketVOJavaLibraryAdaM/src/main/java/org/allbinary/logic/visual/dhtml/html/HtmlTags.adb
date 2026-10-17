@@ -40,8 +40,8 @@ package body org.allbinary.logic.visual.dhtml.html.HtmlTags_Package is
         return HtmlTag_Access (This.htmlTagVector.get (index));
    end get;
 
-   procedure add (This : in out HtmlTags; htmlTag_Param : access HtmlTag'Class) is
-      htmlTag : HtmlTag_Access := HtmlTag_Access (htmlTag_Param);
+   procedure add (This : in out HtmlTags; htmlTag_Param : access HtmlTag_Package.HtmlTag'Class) is
+      htmlTag : constant HtmlTag_Access := HtmlTag_Access (htmlTag_Param);
    begin
         This.htmlTagVector.add (htmlTag);
    end add;

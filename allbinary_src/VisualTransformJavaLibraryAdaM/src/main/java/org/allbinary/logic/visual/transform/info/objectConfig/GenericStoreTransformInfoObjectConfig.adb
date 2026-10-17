@@ -23,26 +23,26 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.GenericStore
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GenericStoreTransformInfoObjectConfig'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out GenericStoreTransformInfoObjectConfig'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         TransformInfoObjectConfig_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
         This.abeClientInformation := abeClientInformation;
    end Initialize;
 
-   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) return GenericStoreTransformInfoObjectConfig_Access is
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return GenericStoreTransformInfoObjectConfig_Access is
       This : constant GenericStoreTransformInfoObjectConfig_Access := new GenericStoreTransformInfoObjectConfig;
    begin
       GenericStoreTransformInfoObjectConfig_Package.Initialize (This.all, abeClientInformation_Param, transformInfoInterface_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out GenericStoreTransformInfoObjectConfig'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; document_Param : access Document'Class) is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
-      document : Document_Access := Document_Access (document_Param);
+   procedure Initialize (This : in out GenericStoreTransformInfoObjectConfig'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; document_Param : access Document_Package.Document'Class) is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+      document : constant Document_Access := Document_Access (document_Param);
    begin
         TransformInfoObjectConfig_Package.Initialize (This, transformInfoInterface, document);
         Initialize_Fields (This);
@@ -50,16 +50,16 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.GenericStore
         This.setDocument (This.generate (This.toXmlDoc));
    end Initialize;
 
-   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; document_Param : access Document'Class) return GenericStoreTransformInfoObjectConfig_Access is
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; document_Param : access Document_Package.Document'Class) return GenericStoreTransformInfoObjectConfig_Access is
       This : constant GenericStoreTransformInfoObjectConfig_Access := new GenericStoreTransformInfoObjectConfig;
    begin
       GenericStoreTransformInfoObjectConfig_Package.Initialize (This.all, abeClientInformation_Param, transformInfoInterface_Param, document_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out GenericStoreTransformInfoObjectConfig'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; name : Unbounded_String; type_Id : Unbounded_String) is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out GenericStoreTransformInfoObjectConfig'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; name : Unbounded_String; type_Id : Unbounded_String) is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         TransformInfoObjectConfig_Package.Initialize (This, transformInfoInterface, name, type_Id);
         Initialize_Fields (This);
@@ -67,7 +67,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.GenericStore
         This.setDocument (This.generate (This.toXmlDoc));
    end Initialize;
 
-   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; name : Unbounded_String; type_Id : Unbounded_String) return GenericStoreTransformInfoObjectConfig_Access is
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; name : Unbounded_String; type_Id : Unbounded_String) return GenericStoreTransformInfoObjectConfig_Access is
       This : constant GenericStoreTransformInfoObjectConfig_Access := new GenericStoreTransformInfoObjectConfig;
    begin
       GenericStoreTransformInfoObjectConfig_Package.Initialize (This.all, abeClientInformation_Param, transformInfoInterface_Param, name, type_Id);
@@ -75,8 +75,8 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.GenericStore
    end Create;
 
    --  throws Exception
-   function generate (This : in out GenericStoreTransformInfoObjectConfig; objectConfigDocument_Param : access Document'Class) return Document_Access is
-      objectConfigDocument : Document_Access := Document_Access (objectConfigDocument_Param);
+   function generate (This : in out GenericStoreTransformInfoObjectConfig; objectConfigDocument_Param : access Document_Package.Document'Class) return Document_Access is
+      objectConfigDocument : constant Document_Access := Document_Access (objectConfigDocument_Param);
       stringBuffer : StringMaker_Access;
       transformInfoHttpStoreInterface : TransformInfoHttp_Access;
       objectConfigDocumentString : Unbounded_String;
@@ -99,8 +99,8 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.GenericStore
    end generate;
 
    --  throws Exception
-   function createReplaceHashMap (This : in out GenericStoreTransformInfoObjectConfig; transformInfoHttpStoreInterface_Param : access TransformInfoHttp'Class; objectConfigDocumentString : Unbounded_String) return HashMap_Access is
-      transformInfoHttpStoreInterface : TransformInfoHttp_Access := TransformInfoHttp_Access (transformInfoHttpStoreInterface_Param);
+   function createReplaceHashMap (This : in out GenericStoreTransformInfoObjectConfig; transformInfoHttpStoreInterface_Param : access TransformInfoHttp_Package.TransformInfoHttp'Class; objectConfigDocumentString : Unbounded_String) return HashMap_Access is
+      transformInfoHttpStoreInterface : constant TransformInfoHttp_Access := TransformInfoHttp_Access (transformInfoHttpStoreInterface_Param);
       storeName : Unbounded_String;
       hashMap : HashMap_Access;
       transformInfoObjectConfigData : TransformInfoObjectConfigData_Access;
@@ -116,8 +116,8 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.GenericStore
    end createReplaceHashMap;
 
    --  throws Exception
-   function createHashMap (This : in out GenericStoreTransformInfoObjectConfig; transformInfoHttpStoreInterface_Param : access TransformInfoHttp'Class; objectConfigDocumentString : Unbounded_String) return HashMap_Access is
-      transformInfoHttpStoreInterface : TransformInfoHttp_Access := TransformInfoHttp_Access (transformInfoHttpStoreInterface_Param);
+   function createHashMap (This : in out GenericStoreTransformInfoObjectConfig; transformInfoHttpStoreInterface_Param : access TransformInfoHttp_Package.TransformInfoHttp'Class; objectConfigDocumentString : Unbounded_String) return HashMap_Access is
+      transformInfoHttpStoreInterface : constant TransformInfoHttp_Access := TransformInfoHttp_Access (transformInfoHttpStoreInterface_Param);
       hashMap : HashMap_Access;
       storeName : Unbounded_String;
       propertiesHashMap : HashMap_Access;
@@ -149,8 +149,8 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.GenericStore
    end createHashMap;
 
    --  throws Exception
-   function generate (This : in out GenericStoreTransformInfoObjectConfig; objectConfigDocumentString : Unbounded_String; hashMap_Param : access HashMap'Class) return Document_Access is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+   function generate (This : in out GenericStoreTransformInfoObjectConfig; objectConfigDocumentString : Unbounded_String; hashMap_Param : access HashMap_Package.HashMap'Class) return Document_Access is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
       replace : Replace_Access;
       newObjectConfigDocument : Document_Access;
    begin
@@ -162,28 +162,28 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.GenericStore
         return newObjectConfigDocument;
    end generate;
 
-   procedure generate (This : in out GenericStoreTransformInfoObjectConfig; objectConfigDocument_Param : access Document'Class) is
+   procedure generate (This : in out GenericStoreTransformInfoObjectConfig; objectConfigDocument_Param : access Document_Package.Document'Class) is
       Java_Result : constant Document_Access := GenericStoreTransformInfoObjectConfig'Class (This).generate (objectConfigDocument_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end generate;
 
-   procedure createReplaceHashMap (This : in out GenericStoreTransformInfoObjectConfig; transformInfoHttpStoreInterface_Param : access TransformInfoHttp'Class; objectConfigDocumentString : Unbounded_String) is
+   procedure createReplaceHashMap (This : in out GenericStoreTransformInfoObjectConfig; transformInfoHttpStoreInterface_Param : access TransformInfoHttp_Package.TransformInfoHttp'Class; objectConfigDocumentString : Unbounded_String) is
       Java_Result : constant HashMap_Access := GenericStoreTransformInfoObjectConfig'Class (This).createReplaceHashMap (transformInfoHttpStoreInterface_Param, objectConfigDocumentString);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createReplaceHashMap;
 
-   procedure createHashMap (This : in out GenericStoreTransformInfoObjectConfig; transformInfoHttpStoreInterface_Param : access TransformInfoHttp'Class; objectConfigDocumentString : Unbounded_String) is
+   procedure createHashMap (This : in out GenericStoreTransformInfoObjectConfig; transformInfoHttpStoreInterface_Param : access TransformInfoHttp_Package.TransformInfoHttp'Class; objectConfigDocumentString : Unbounded_String) is
       Java_Result : constant HashMap_Access := GenericStoreTransformInfoObjectConfig'Class (This).createHashMap (transformInfoHttpStoreInterface_Param, objectConfigDocumentString);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createHashMap;
 
-   procedure generate (This : in out GenericStoreTransformInfoObjectConfig; objectConfigDocumentString : Unbounded_String; hashMap_Param : access HashMap'Class) is
+   procedure generate (This : in out GenericStoreTransformInfoObjectConfig; objectConfigDocumentString : Unbounded_String; hashMap_Param : access HashMap_Package.HashMap'Class) is
       Java_Result : constant Document_Access := GenericStoreTransformInfoObjectConfig'Class (This).generate (objectConfigDocumentString, hashMap_Param);
       pragma Unreferenced (Java_Result);
    begin

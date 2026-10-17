@@ -23,8 +23,8 @@ package body org.allbinary.game.layer.AdvancedRTSLayerFormFactory_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AdvancedRTSLayerFormFactory'Class; label : Unbounded_String; itemArrayFactoryInterface_Param : access ItemArraySingletonFactoryInterface'Class) is
-      itemArrayFactoryInterface : ItemArraySingletonFactoryInterface_Access := ItemArraySingletonFactoryInterface_Access (itemArrayFactoryInterface_Param);
+   procedure Initialize (This : in out AdvancedRTSLayerFormFactory'Class; label : Unbounded_String; itemArrayFactoryInterface_Param : access ItemArraySingletonFactoryInterface_Package.ItemArraySingletonFactoryInterface'Class) is
+      itemArrayFactoryInterface : constant ItemArraySingletonFactoryInterface_Access := ItemArraySingletonFactoryInterface_Access (itemArrayFactoryInterface_Param);
       scrollSelectionForm : ScrollSelectionForm_Access;
       items : ABCustomItem_Access_Array_Access;
       commonStrings : CommonStrings_Access;
@@ -47,20 +47,20 @@ package body org.allbinary.game.layer.AdvancedRTSLayerFormFactory_Package is
         This.scrollSelectionForm := scrollSelectionForm;
    end Initialize;
 
-   function Create (label : Unbounded_String; itemArrayFactoryInterface_Param : access ItemArraySingletonFactoryInterface'Class) return AdvancedRTSLayerFormFactory_Access is
+   function Create (label : Unbounded_String; itemArrayFactoryInterface_Param : access ItemArraySingletonFactoryInterface_Package.ItemArraySingletonFactoryInterface'Class) return AdvancedRTSLayerFormFactory_Access is
       This : constant AdvancedRTSLayerFormFactory_Access := new AdvancedRTSLayerFormFactory;
    begin
       AdvancedRTSLayerFormFactory_Package.Initialize (This.all, label, itemArrayFactoryInterface_Param);
       return This;
    end Create;
 
-   function getInstance (This : in out AdvancedRTSLayerFormFactory; rtsLayer_Param : access RTSLayer'Class) return ScrollSelectionForm_Access is
-      rtsLayer : RTSLayer_Access := RTSLayer_Access (rtsLayer_Param);
+   function getInstance (This : in out AdvancedRTSLayerFormFactory; rtsLayer_Param : access RTSLayer_Package.RTSLayer'Class) return ScrollSelectionForm_Access is
+      rtsLayer : constant RTSLayer_Access := RTSLayer_Access (rtsLayer_Param);
    begin
         return This.scrollSelectionForm;
    end getInstance;
 
-   procedure getInstance (This : in out AdvancedRTSLayerFormFactory; rtsLayer_Param : access RTSLayer'Class) is
+   procedure getInstance (This : in out AdvancedRTSLayerFormFactory; rtsLayer_Param : access RTSLayer_Package.RTSLayer'Class) is
       Java_Result : constant ScrollSelectionForm_Access := AdvancedRTSLayerFormFactory'Class (This).getInstance (rtsLayer_Param);
       pragma Unreferenced (Java_Result);
    begin

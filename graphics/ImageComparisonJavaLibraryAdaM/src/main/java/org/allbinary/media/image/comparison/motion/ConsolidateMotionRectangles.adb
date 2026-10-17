@@ -22,8 +22,8 @@ package body org.allbinary.media.image.comparison.motion.ConsolidateMotionRectan
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ConsolidateMotionRectangles'Class; motionRectangles_Param : access MotionRectangles'Class) is
-      motionRectangles : MotionRectangles_Access := MotionRectangles_Access (motionRectangles_Param);
+   procedure Initialize (This : in out ConsolidateMotionRectangles'Class; motionRectangles_Param : access MotionRectangles_Package.MotionRectangles'Class) is
+      motionRectangles : constant MotionRectangles_Access := MotionRectangles_Access (motionRectangles_Param);
       vector : BasicArrayList_Access;
       size : Integer;
       motionRectangle : MotionRectangle_Access;
@@ -40,7 +40,7 @@ package body org.allbinary.media.image.comparison.motion.ConsolidateMotionRectan
         This.consolidateMotionRectangles;
    end Initialize;
 
-   function Create (motionRectangles_Param : access MotionRectangles'Class) return ConsolidateMotionRectangles_Access is
+   function Create (motionRectangles_Param : access MotionRectangles_Package.MotionRectangles'Class) return ConsolidateMotionRectangles_Access is
       This : constant ConsolidateMotionRectangles_Access := new ConsolidateMotionRectangles;
    begin
       ConsolidateMotionRectangles_Package.Initialize (This.all, motionRectangles_Param);
@@ -84,8 +84,8 @@ package body org.allbinary.media.image.comparison.motion.ConsolidateMotionRectan
         This.remove (removeVector);
    end consolidateMotionRectangles;
 
-   procedure remove (This : in out ConsolidateMotionRectangles; removeVector_Param : access BasicArrayList'Class) is
-      removeVector : BasicArrayList_Access := BasicArrayList_Access (removeVector_Param);
+   procedure remove (This : in out ConsolidateMotionRectangles; removeVector_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      removeVector : constant BasicArrayList_Access := BasicArrayList_Access (removeVector_Param);
       vector : BasicArrayList_Access;
       size : Integer;
       index : Integer;

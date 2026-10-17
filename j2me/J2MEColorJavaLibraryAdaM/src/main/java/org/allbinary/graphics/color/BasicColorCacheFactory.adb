@@ -40,8 +40,8 @@ package body org.allbinary.graphics.color.BasicColorCacheFactory_Package is
       return This;
    end Create;
 
-   procedure add (This : in out BasicColorCacheFactory; basicDefaultColor_Param : access BasicColor'Class) is
-      basicDefaultColor : BasicColor_Access := BasicColor_Access (basicDefaultColor_Param);
+   procedure add (This : in out BasicColorCacheFactory; basicDefaultColor_Param : access BasicColor_Package.BasicColor'Class) is
+      basicDefaultColor : constant BasicColor_Access := BasicColor_Access (basicDefaultColor_Param);
    begin
         This.hashtable.put (basicDefaultColor.intValue, basicDefaultColor);
    end add;

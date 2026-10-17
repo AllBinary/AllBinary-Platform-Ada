@@ -20,8 +20,8 @@ package org.allbinary.graphics.form.item.ABCustomItemInterface_Package is
    function getMinimumWidth (This : in out ABCustomItemInterface) return Integer is abstract;
    function getMinimumHeight (This : in out ABCustomItemInterface) return Integer is abstract;
    function getLabel (This : in out ABCustomItemInterface) return Unbounded_String is abstract;
-   procedure paintXY (This : in out ABCustomItemInterface; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is abstract;
-   procedure paintUnselected (This : in out ABCustomItemInterface; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is abstract;
+   procedure paintXY (This : in out ABCustomItemInterface; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is abstract;
+   procedure paintUnselected (This : in out ABCustomItemInterface; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is abstract;
 
 end org.allbinary.graphics.form.item.ABCustomItemInterface_Package;
 

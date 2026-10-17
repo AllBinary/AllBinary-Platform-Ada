@@ -57,11 +57,11 @@ package org.allbinary.data.tables.user.commerce.inventory.item.options.XmlOption
 
    procedure Initialize (This : in out XmlOptionItemsEntity'Class);
    function Create return XmlOptionItemsEntity_Access;
-   procedure insert (This : in out XmlOptionItemsEntity; values_Param : access BasicArrayList'Class);
+   procedure insert (This : in out XmlOptionItemsEntity; values_Param : access BasicArrayList_Package.BasicArrayList'Class);
    procedure delete (This : in out XmlOptionItemsEntity; value : Unbounded_String);
    function createTableStatement (This : in out XmlOptionItemsEntity) return Unbounded_String;
    function createTable (This : in out XmlOptionItemsEntity) return Unbounded_String;
-   procedure update (This : in out XmlOptionItemsEntity; updatedValues_Param : access HashMap'Class);
+   procedure update (This : in out XmlOptionItemsEntity; updatedValues_Param : access HashMap_Package.HashMap'Class);
    function dropTable (This : in out XmlOptionItemsEntity) return Unbounded_String;
 
 end org.allbinary.data.tables.user.commerce.inventory.item.options.XmlOptionItemsEntity_Package;

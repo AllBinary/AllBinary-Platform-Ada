@@ -45,16 +45,16 @@ package body org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Packag
    end getInstance;
 
    --  throws Exception
-   function offer (This : in out BasicEmailQueue; emailInterface_Param : access EmailInterface'Class) return Boolean is
-      emailInterface : EmailInterface_Access := EmailInterface_Access (emailInterface_Param);
+   function offer (This : in out BasicEmailQueue; emailInterface_Param : access EmailInterface_Package.EmailInterface'Class) return Boolean is
+      emailInterface : constant EmailInterface_Access := EmailInterface_Access (emailInterface_Param);
    begin
         This.offer (Java_Object_Access (emailInterface));
         This.post (emailInterface);
         return True;
    end offer;
 
-   procedure remove (This : in out BasicEmailQueue; emailInterface_Param : access EmailInterface'Class) is
-      emailInterface : EmailInterface_Access := EmailInterface_Access (emailInterface_Param);
+   procedure remove (This : in out BasicEmailQueue; emailInterface_Param : access EmailInterface_Package.EmailInterface'Class) is
+      emailInterface : constant EmailInterface_Access := EmailInterface_Access (emailInterface_Param);
    begin
         This.remove (Java_Object_Access (emailInterface));
    end remove;
@@ -65,8 +65,8 @@ package body org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Packag
    end remove;
 
    --  throws Exception
-   procedure post (This : in out BasicEmailQueue; emailInterface_Param : access EmailInterface'Class) is
-      emailInterface : EmailInterface_Access := EmailInterface_Access (emailInterface_Param);
+   procedure post (This : in out BasicEmailQueue; emailInterface_Param : access EmailInterface_Package.EmailInterface'Class) is
+      emailInterface : constant EmailInterface_Access := EmailInterface_Access (emailInterface_Param);
    begin
         if This.send (emailInterface) then
             This.remove (emailInterface);
@@ -90,8 +90,8 @@ package body org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Packag
         end loop;
    end processAllUnsent;
 
-   function send (This : in out BasicEmailQueue; emailInterface_Param : access EmailInterface'Class) return Boolean is
-      emailInterface : EmailInterface_Access := EmailInterface_Access (emailInterface_Param);
+   function send (This : in out BasicEmailQueue; emailInterface_Param : access EmailInterface_Package.EmailInterface'Class) return Boolean is
+      emailInterface : constant EmailInterface_Access := EmailInterface_Access (emailInterface_Param);
    begin
         begin
             if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.EMAILLOGGING) then
@@ -115,14 +115,14 @@ package body org.allbinary.logic.communication.smtp.queue.BasicEmailQueue_Packag
         end;
    end send;
 
-   procedure offer (This : in out BasicEmailQueue; emailInterface_Param : access EmailInterface'Class) is
+   procedure offer (This : in out BasicEmailQueue; emailInterface_Param : access EmailInterface_Package.EmailInterface'Class) is
       Java_Result : constant Boolean := BasicEmailQueue'Class (This).offer (emailInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end offer;
 
-   procedure send (This : in out BasicEmailQueue; emailInterface_Param : access EmailInterface'Class) is
+   procedure send (This : in out BasicEmailQueue; emailInterface_Param : access EmailInterface_Package.EmailInterface'Class) is
       Java_Result : constant Boolean := BasicEmailQueue'Class (This).send (emailInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

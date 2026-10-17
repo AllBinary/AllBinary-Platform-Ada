@@ -48,9 +48,9 @@ package body org.allbinary.media.image.SpriteSplitterUtil_Package is
    end getInstance;
 
    --  throws Exception
-   procedure process (This : in out SpriteSplitterUtil; imageProcessorInput_Param : access ImageProcessorInput'Class; totalFrames : Integer; totalAnimations : Integer; widthReduction : Integer; heightReduction : Integer; increaseWidth : Integer; increaseHeight : Integer; spriteType : Unbounded_String; visitor_Param : access ImageProcessedVisitor'Class) is
-      imageProcessorInput : ImageProcessorInput_Access := ImageProcessorInput_Access (imageProcessorInput_Param);
-      visitor : ImageProcessedVisitor_Access := ImageProcessedVisitor_Access (visitor_Param);
+   procedure process (This : in out SpriteSplitterUtil; imageProcessorInput_Param : access ImageProcessorInput_Package.ImageProcessorInput'Class; totalFrames : Integer; totalAnimations : Integer; widthReduction : Integer; heightReduction : Integer; increaseWidth : Integer; increaseHeight : Integer; spriteType : Unbounded_String; visitor_Param : access ImageProcessedVisitor_Package.ImageProcessedVisitor'Class) is
+      imageProcessorInput : constant ImageProcessorInput_Access := ImageProcessorInput_Access (imageProcessorInput_Param);
+      visitor : constant ImageProcessedVisitor_Access := ImageProcessedVisitor_Access (visitor_Param);
       bufferedImage : BufferedImage_Access;
       generatedBufferedImageArray : BufferedImage_Access_Array_Access_Array_Access;
       bufferedImageArray : BufferedImage_Access_Array_Access;

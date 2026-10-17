@@ -30,13 +30,13 @@ package body org.allbinary.game.score.displayable.HighScoreUtil_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out HighScoreUtil'Class; highScoresFactoryInterface_Param : access HighScoresFactoryInterface'Class; highScoresHelper_Param : access HighScoresHelperBaseInterface'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo'Class; cmdListener_Param : access CommandListener'Class; name : Unbounded_String; highScore_Param : access HighScore'Class) is
-      highScoresFactoryInterface : HighScoresFactoryInterface_Access := HighScoresFactoryInterface_Access (highScoresFactoryInterface_Param);
-      highScoresHelper : HighScoresHelperBaseInterface_Access := HighScoresHelperBaseInterface_Access (highScoresHelper_Param);
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      gameInfo : GameInfo_Access := GameInfo_Access (gameInfo_Param);
-      cmdListener : CommandListener_Access := CommandListener_Access (cmdListener_Param);
-      highScore : HighScore_Access := HighScore_Access (highScore_Param);
+   procedure Initialize (This : in out HighScoreUtil'Class; highScoresFactoryInterface_Param : access HighScoresFactoryInterface_Package.HighScoresFactoryInterface'Class; highScoresHelper_Param : access HighScoresHelperBaseInterface_Package.HighScoresHelperBaseInterface'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo_Package.GameInfo'Class; cmdListener_Param : access CommandListener_Package.CommandListener'Class; name : Unbounded_String; highScore_Param : access HighScore_Package.HighScore'Class) is
+      highScoresFactoryInterface : constant HighScoresFactoryInterface_Access := HighScoresFactoryInterface_Access (highScoresFactoryInterface_Param);
+      highScoresHelper : constant HighScoresHelperBaseInterface_Access := HighScoresHelperBaseInterface_Access (highScoresHelper_Param);
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      gameInfo : constant GameInfo_Access := GameInfo_Access (gameInfo_Param);
+      cmdListener : constant CommandListener_Access := CommandListener_Access (cmdListener_Param);
+      highScore : constant HighScore_Access := HighScore_Access (highScore_Param);
    begin
       Initialize_Fields (This);
         This.highScoresFactoryInterface := highScoresFactoryInterface;
@@ -47,7 +47,7 @@ package body org.allbinary.game.score.displayable.HighScoreUtil_Package is
         This.gameInfo := gameInfo;
    end Initialize;
 
-   function Create (highScoresFactoryInterface_Param : access HighScoresFactoryInterface'Class; highScoresHelper_Param : access HighScoresHelperBaseInterface'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo'Class; cmdListener_Param : access CommandListener'Class; name : Unbounded_String; highScore_Param : access HighScore'Class) return HighScoreUtil_Access is
+   function Create (highScoresFactoryInterface_Param : access HighScoresFactoryInterface_Package.HighScoresFactoryInterface'Class; highScoresHelper_Param : access HighScoresHelperBaseInterface_Package.HighScoresHelperBaseInterface'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo_Package.GameInfo'Class; cmdListener_Param : access CommandListener_Package.CommandListener'Class; name : Unbounded_String; highScore_Param : access HighScore_Package.HighScore'Class) return HighScoreUtil_Access is
       This : constant HighScoreUtil_Access := new HighScoreUtil;
    begin
       HighScoreUtil_Package.Initialize (This.all, highScoresFactoryInterface_Param, highScoresHelper_Param, abeClientInformation_Param, gameInfo_Param, cmdListener_Param, name, highScore_Param);
@@ -91,8 +91,8 @@ package body org.allbinary.game.score.displayable.HighScoreUtil_Package is
         This.highScoresHelper.setHighScoresArray (This.highScoresArray);
    end saveHighScore;
 
-   procedure submit (This : in out HighScoreUtil; myCanvas_Param : access MyCanvas'Class) is
-      myCanvas : MyCanvas_Access := MyCanvas_Access (myCanvas_Param);
+   procedure submit (This : in out HighScoreUtil; myCanvas_Param : access MyCanvas_Package.MyCanvas'Class) is
+      myCanvas : constant MyCanvas_Access := MyCanvas_Access (myCanvas_Param);
       commandListener : CommandListener_Access;
    begin
         commandListener := myCanvas.getCustomCommandListener;

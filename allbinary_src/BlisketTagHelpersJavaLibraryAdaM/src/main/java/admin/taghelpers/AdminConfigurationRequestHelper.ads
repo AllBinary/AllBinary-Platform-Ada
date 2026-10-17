@@ -44,8 +44,8 @@ package admin.taghelpers.AdminConfigurationRequestHelper_Package is
       request : HttpServletRequest_Access;
    end record;
 
-   procedure Initialize (This : in out AdminConfigurationRequestHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
-   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return AdminConfigurationRequestHelper_Access;
+   procedure Initialize (This : in out AdminConfigurationRequestHelper'Class; hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class);
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return AdminConfigurationRequestHelper_Access;
    function insert (This : in out AdminConfigurationRequestHelper) return Unbounded_String;
    function delete (This : in out AdminConfigurationRequestHelper) return Unbounded_String;
    function update (This : in out AdminConfigurationRequestHelper) return Unbounded_String;

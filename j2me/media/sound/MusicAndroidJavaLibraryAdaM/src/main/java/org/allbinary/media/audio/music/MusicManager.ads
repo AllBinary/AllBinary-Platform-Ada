@@ -73,16 +73,16 @@ package org.allbinary.media.audio.music.MusicManager_Package is
       currentIntent : Intent_Access;
    end record;
 
-   procedure Initialize (This : in out MusicManager'Class; musicServiceClass : Ada.Tags.Tag; songList_Param : access BasicArrayList'Class);
-   function Create (musicServiceClass : Ada.Tags.Tag; songList_Param : access BasicArrayList'Class) return MusicManager_Access;
-   procedure nextSong (This : in out MusicManager; nextSongSound_Param : access Sound'Class; leftVolume : Integer; rightVolume : Integer);
+   procedure Initialize (This : in out MusicManager'Class; musicServiceClass : Ada.Tags.Tag; songList_Param : access BasicArrayList_Package.BasicArrayList'Class);
+   function Create (musicServiceClass : Ada.Tags.Tag; songList_Param : access BasicArrayList_Package.BasicArrayList'Class) return MusicManager_Access;
+   procedure nextSong (This : in out MusicManager; nextSongSound_Param : access Sound_Package.Sound'Class; leftVolume : Integer; rightVolume : Integer);
    procedure reset (This : in out MusicManager);
    procedure process (This : in out MusicManager);
    procedure show (This : in out MusicManager);
    procedure startNewSong (This : in out MusicManager);
    procedure stop (This : in out MusicManager);
-   procedure pause (activity_Param : access Activity'Class; musicServiceClass : Ada.Tags.Tag);
-   procedure resume (activity_Param : access Activity'Class; musicServiceClass : Ada.Tags.Tag);
+   procedure pause (activity_Param : access Activity_Package.Activity'Class; musicServiceClass : Ada.Tags.Tag);
+   procedure resume (activity_Param : access Activity_Package.Activity'Class; musicServiceClass : Ada.Tags.Tag);
 
 end org.allbinary.media.audio.music.MusicManager_Package;
 

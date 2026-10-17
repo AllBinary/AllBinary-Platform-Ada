@@ -50,8 +50,8 @@ package org.allbinary.logic.communication.sql.AbSqlColumn_Package is
       INVALID_RESULT : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out AbSqlColumn'Class; databaseConnectionInfoInterface_Param : access DbConnectionInfo'Class);
-   function Create (databaseConnectionInfoInterface_Param : access DbConnectionInfo'Class) return AbSqlColumn_Access;
+   procedure Initialize (This : in out AbSqlColumn'Class; databaseConnectionInfoInterface_Param : access DbConnectionInfo_Package.DbConnectionInfo'Class);
+   function Create (databaseConnectionInfoInterface_Param : access DbConnectionInfo_Package.DbConnectionInfo'Class) return AbSqlColumn_Access;
    function getLargestIntegerInColumnWhere (This : in out AbSqlColumn; columnName : Unbounded_String; key : Unbounded_String; value : Unbounded_String) return Unbounded_String;
    procedure getLargestIntegerInColumnWhere (This : in out AbSqlColumn; columnName : Unbounded_String; key : Unbounded_String; value : Unbounded_String);
    function getColumn (This : in out AbSqlColumn; columnName : Unbounded_String) return BasicArrayList_Access;

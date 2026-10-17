@@ -38,8 +38,8 @@ package body org.allbinary.input.motion.gesture.observer.NullCompleteMotionGestu
    end Create;
 
    --  throws Exception
-   procedure onMotionGestureCompleted (This : in out NullCompleteMotionGestureReceiver; list_Param : access BasicArrayList'Class) is
-      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
+   procedure onMotionGestureCompleted (This : in out NullCompleteMotionGestureReceiver; list_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      list : constant BasicArrayList_Access := BasicArrayList_Access (list_Param);
    begin
         null;
    end onMotionGestureCompleted;

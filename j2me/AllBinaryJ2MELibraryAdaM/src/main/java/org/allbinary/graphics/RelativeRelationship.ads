@@ -43,13 +43,13 @@ package org.allbinary.graphics.RelativeRelationship_Package is
    end record;
    NULL_RELATIVE_RELATIONSHIP : RelativeRelationship_Access;
 
-   procedure Initialize (This : in out RelativeRelationship'Class; point_Param : access GPoint'Class; typesAllowedList_Param : access BasicArrayList'Class);
-   function Create (point_Param : access GPoint'Class; typesAllowedList_Param : access BasicArrayList'Class) return RelativeRelationship_Access;
+   procedure Initialize (This : in out RelativeRelationship'Class; point_Param : access GPoint_Package.GPoint'Class; typesAllowedList_Param : access BasicArrayList_Package.BasicArrayList'Class);
+   function Create (point_Param : access GPoint_Package.GPoint'Class; typesAllowedList_Param : access BasicArrayList_Package.BasicArrayList'Class) return RelativeRelationship_Access;
    function getX (This : in out RelativeRelationship) return Integer;
    function getY (This : in out RelativeRelationship) return Integer;
    function getZ (This : in out RelativeRelationship) return Integer;
    function getTypesAllowedList (This : in out RelativeRelationship) return BasicArrayList_Access;
-   procedure setTypesAllowedList (This : in out RelativeRelationship; typesAllowedList_Param : access BasicArrayList'Class);
+   procedure setTypesAllowedList (This : in out RelativeRelationship; typesAllowedList_Param : access BasicArrayList_Package.BasicArrayList'Class);
 
 end org.allbinary.graphics.RelativeRelationship_Package;
 

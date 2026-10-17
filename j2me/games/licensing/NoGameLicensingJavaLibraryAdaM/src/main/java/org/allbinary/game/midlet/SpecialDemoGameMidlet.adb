@@ -21,16 +21,16 @@ package body org.allbinary.game.midlet.SpecialDemoGameMidlet_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out SpecialDemoGameMidlet'Class; clientInformationFactory_Param : access ClientInformationFactory'Class; licenseLoadingType_Param : access LicenseLoadingType'Class; demoSetupFactory_Param : access LicensedDemoSetupFactory'Class; licenseCheckRunnableFactory_Param : access LicenseCheckRunnableFactory'Class) is
-      clientInformationFactory : ClientInformationFactory_Access := ClientInformationFactory_Access (clientInformationFactory_Param);
-      licenseLoadingType : LicenseLoadingType_Access := LicenseLoadingType_Access (licenseLoadingType_Param);
-      demoSetupFactory : LicensedDemoSetupFactory_Access := LicensedDemoSetupFactory_Access (demoSetupFactory_Param);
-      licenseCheckRunnableFactory : LicenseCheckRunnableFactory_Access := LicenseCheckRunnableFactory_Access (licenseCheckRunnableFactory_Param);
+   procedure Initialize (This : in out SpecialDemoGameMidlet'Class; clientInformationFactory_Param : access ClientInformationFactory_Package.ClientInformationFactory'Class; licenseLoadingType_Param : access LicenseLoadingType_Package.LicenseLoadingType'Class; demoSetupFactory_Param : access LicensedDemoSetupFactory_Package.LicensedDemoSetupFactory'Class; licenseCheckRunnableFactory_Param : access LicenseCheckRunnableFactory_Package.LicenseCheckRunnableFactory'Class) is
+      clientInformationFactory : constant ClientInformationFactory_Access := ClientInformationFactory_Access (clientInformationFactory_Param);
+      licenseLoadingType : constant LicenseLoadingType_Access := LicenseLoadingType_Access (licenseLoadingType_Param);
+      demoSetupFactory : constant LicensedDemoSetupFactory_Access := LicensedDemoSetupFactory_Access (demoSetupFactory_Param);
+      licenseCheckRunnableFactory : constant LicenseCheckRunnableFactory_Access := LicenseCheckRunnableFactory_Access (licenseCheckRunnableFactory_Param);
    begin
         DemoGameMidlet_Package.Initialize (This, clientInformationFactory);
    end Initialize;
 
-   function Create (clientInformationFactory_Param : access ClientInformationFactory'Class; licenseLoadingType_Param : access LicenseLoadingType'Class; demoSetupFactory_Param : access LicensedDemoSetupFactory'Class; licenseCheckRunnableFactory_Param : access LicenseCheckRunnableFactory'Class) return SpecialDemoGameMidlet_Access is
+   function Create (clientInformationFactory_Param : access ClientInformationFactory_Package.ClientInformationFactory'Class; licenseLoadingType_Param : access LicenseLoadingType_Package.LicenseLoadingType'Class; demoSetupFactory_Param : access LicensedDemoSetupFactory_Package.LicensedDemoSetupFactory'Class; licenseCheckRunnableFactory_Param : access LicenseCheckRunnableFactory_Package.LicenseCheckRunnableFactory'Class) return SpecialDemoGameMidlet_Access is
       This : constant SpecialDemoGameMidlet_Access := new SpecialDemoGameMidlet;
    begin
       SpecialDemoGameMidlet_Package.Initialize (This.all, clientInformationFactory_Param, licenseLoadingType_Param, demoSetupFactory_Param, licenseCheckRunnableFactory_Param);

@@ -23,15 +23,15 @@ package body views.generic_Id.advertisement.area.AdvertisementAreaView_Package i
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AdvertisementAreaView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out AdvertisementAreaView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
         This.advertisementAreaName := Unbounded_String (This.getPropertiesHashMap.get (AdvertisementAreaData_Package.getInstance.NAME));
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return AdvertisementAreaView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return AdvertisementAreaView_Access is
       This : constant AdvertisementAreaView_Access := new AdvertisementAreaView;
    begin
       AdvertisementAreaView_Package.Initialize (This.all, transformInfoInterface_Param);
@@ -39,8 +39,8 @@ package body views.generic_Id.advertisement.area.AdvertisementAreaView_Package i
    end Create;
 
    --  throws Exception
-   function toXmlNode (This : in out AdvertisementAreaView; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out AdvertisementAreaView; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       advertisementAreasEntityInterface : AdvertisementAreasEntityInterface_Access;
       advertisementAreaInterface : AdvertisementAreaInterface_Access;
    begin
@@ -85,7 +85,7 @@ package body views.generic_Id.advertisement.area.AdvertisementAreaView_Package i
         end;
    end view;
 
-   procedure toXmlNode (This : in out AdvertisementAreaView; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out AdvertisementAreaView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := AdvertisementAreaView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

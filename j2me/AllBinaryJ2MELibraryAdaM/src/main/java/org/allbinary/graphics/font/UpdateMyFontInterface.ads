@@ -29,7 +29,7 @@ package org.allbinary.graphics.font.UpdateMyFontInterface_Package is
    type UpdateMyFontInterface_Access is access all UpdateMyFontInterface'Class;
    type UpdateMyFontInterface_Access_Array is array (Natural range <>) of UpdateMyFontInterface_Access;
    type UpdateMyFontInterface_Access_Array_Access is access all UpdateMyFontInterface_Access_Array;
-   procedure updateMeasurement (This : in out UpdateMyFontInterface; graphics_Param : access Graphics'Class) is abstract;
+   procedure updateMeasurement (This : in out UpdateMyFontInterface; graphics_Param : access Graphics_Package.Graphics'Class) is abstract;
 
 end org.allbinary.graphics.font.UpdateMyFontInterface_Package;
 

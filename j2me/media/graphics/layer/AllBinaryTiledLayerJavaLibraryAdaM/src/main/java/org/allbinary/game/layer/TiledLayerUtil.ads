@@ -36,14 +36,14 @@ package org.allbinary.game.layer.TiledLayerUtil_Package is
    procedure Initialize (This : in out TiledLayerUtil'Class);
    function Create return TiledLayerUtil_Access;
    function getInstance return TiledLayerUtil_Access;
-   function keepOnBorderdMapX (This : in out TiledLayerUtil; terrainTiledLayer_Param : access AllBinaryTiledLayer'Class; x : Integer; width : Integer; mapBorderBufferWidth : Integer) return Integer;
-   procedure keepOnBorderdMapX (This : in out TiledLayerUtil; terrainTiledLayer_Param : access AllBinaryTiledLayer'Class; x : Integer; width : Integer; mapBorderBufferWidth : Integer);
-   function keepOnBorderdMapY (This : in out TiledLayerUtil; terrainTiledLayer_Param : access AllBinaryTiledLayer'Class; y : Integer; height : Integer; mapBorderBufferHeight : Integer) return Integer;
-   procedure keepOnBorderdMapY (This : in out TiledLayerUtil; terrainTiledLayer_Param : access AllBinaryTiledLayer'Class; y : Integer; height : Integer; mapBorderBufferHeight : Integer);
-   function keepOnMapX (This : in out TiledLayerUtil; terrainTiledLayer_Param : access AllBinaryTiledLayer'Class; x : Integer; width : Integer) return Integer;
-   procedure keepOnMapX (This : in out TiledLayerUtil; terrainTiledLayer_Param : access AllBinaryTiledLayer'Class; x : Integer; width : Integer);
-   function keepOnMapY (This : in out TiledLayerUtil; terrainTiledLayer_Param : access AllBinaryTiledLayer'Class; y : Integer; height : Integer) return Integer;
-   procedure keepOnMapY (This : in out TiledLayerUtil; terrainTiledLayer_Param : access AllBinaryTiledLayer'Class; y : Integer; height : Integer);
+   function keepOnBorderdMapX (This : in out TiledLayerUtil; terrainTiledLayer_Param : access AllBinaryTiledLayer_Package.AllBinaryTiledLayer'Class; x : Integer; width : Integer; mapBorderBufferWidth : Integer) return Integer;
+   procedure keepOnBorderdMapX (This : in out TiledLayerUtil; terrainTiledLayer_Param : access AllBinaryTiledLayer_Package.AllBinaryTiledLayer'Class; x : Integer; width : Integer; mapBorderBufferWidth : Integer);
+   function keepOnBorderdMapY (This : in out TiledLayerUtil; terrainTiledLayer_Param : access AllBinaryTiledLayer_Package.AllBinaryTiledLayer'Class; y : Integer; height : Integer; mapBorderBufferHeight : Integer) return Integer;
+   procedure keepOnBorderdMapY (This : in out TiledLayerUtil; terrainTiledLayer_Param : access AllBinaryTiledLayer_Package.AllBinaryTiledLayer'Class; y : Integer; height : Integer; mapBorderBufferHeight : Integer);
+   function keepOnMapX (This : in out TiledLayerUtil; terrainTiledLayer_Param : access AllBinaryTiledLayer_Package.AllBinaryTiledLayer'Class; x : Integer; width : Integer) return Integer;
+   procedure keepOnMapX (This : in out TiledLayerUtil; terrainTiledLayer_Param : access AllBinaryTiledLayer_Package.AllBinaryTiledLayer'Class; x : Integer; width : Integer);
+   function keepOnMapY (This : in out TiledLayerUtil; terrainTiledLayer_Param : access AllBinaryTiledLayer_Package.AllBinaryTiledLayer'Class; y : Integer; height : Integer) return Integer;
+   procedure keepOnMapY (This : in out TiledLayerUtil; terrainTiledLayer_Param : access AllBinaryTiledLayer_Package.AllBinaryTiledLayer'Class; y : Integer; height : Integer);
 
 end org.allbinary.game.layer.TiledLayerUtil_Package;
 

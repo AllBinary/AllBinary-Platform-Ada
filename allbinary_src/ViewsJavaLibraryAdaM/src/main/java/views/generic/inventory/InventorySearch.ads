@@ -75,8 +75,8 @@ package views.generic_Id.inventory.InventorySearch_Package is
       searchRequest : SearchRequest_Access;
    end record;
 
-   procedure Initialize (This : in out InventorySearch'Class; searchRequest_Param : access SearchRequest'Class);
-   function Create (searchRequest_Param : access SearchRequest'Class) return InventorySearch_Access;
+   procedure Initialize (This : in out InventorySearch'Class; searchRequest_Param : access SearchRequest_Package.SearchRequest'Class);
+   function Create (searchRequest_Param : access SearchRequest_Package.SearchRequest'Class) return InventorySearch_Access;
    function searchSingleStaticPage (This : in out InventorySearch) return Unbounded_String;
    function searchSingleDynamicPage (This : in out InventorySearch) return Unbounded_String;
    function search (This : in out InventorySearch) return Unbounded_String_Array_Access;

@@ -26,27 +26,27 @@ package body org.platform.opengl.OpenGLGLUUtils_Package is
         return OpenGLGLUUtils_Package.instance;
    end getInstance;
 
-   function makeByteBuffer (This : in out OpenGLGLUUtils; bmp_Param : access OpenGLBitmap'Class; flip : Boolean) return ByteBuffer_Access is
-      bmp : OpenGLBitmap_Access := OpenGLBitmap_Access (bmp_Param);
+   function makeByteBuffer (This : in out OpenGLGLUUtils; bmp_Param : access OpenGLBitmap_Package.OpenGLBitmap'Class; flip : Boolean) return ByteBuffer_Access is
+      bmp : constant OpenGLBitmap_Access := OpenGLBitmap_Access (bmp_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end makeByteBuffer;
 
-   procedure texImage2D (This : in out OpenGLGLUUtils; gl_Param : access GL10'Class; glVersion : Unbounded_String; target : Integer; level : Integer; generateMipMap : Boolean; openGLESImage_Param : access OpenGLESImage'Class; border : Integer; flip : Boolean) is
-      gl : GL10_Access := GL10_Access (gl_Param);
-      openGLESImage : OpenGLESImage_Access := OpenGLESImage_Access (openGLESImage_Param);
+   procedure texImage2D (This : in out OpenGLGLUUtils; gl_Param : access GL10_Package.GL10'Class; glVersion : Unbounded_String; target : Integer; level : Integer; generateMipMap : Boolean; openGLESImage_Param : access OpenGLESImage_Package.OpenGLESImage'Class; border : Integer; flip : Boolean) is
+      gl : constant GL10_Access := GL10_Access (gl_Param);
+      openGLESImage : constant OpenGLESImage_Access := OpenGLESImage_Access (openGLESImage_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end texImage2D;
 
-   procedure texImage2D (This : in out OpenGLGLUUtils; gl_Param : access GL10'Class; glVersion : Unbounded_String; target : Integer; level : Integer; generateMipMap : Boolean; bitmap_Param : access OpenGLBitmap'Class; border : Integer; flip : Boolean) is
-      gl : GL10_Access := GL10_Access (gl_Param);
-      bitmap : OpenGLBitmap_Access := OpenGLBitmap_Access (bitmap_Param);
+   procedure texImage2D (This : in out OpenGLGLUUtils; gl_Param : access GL10_Package.GL10'Class; glVersion : Unbounded_String; target : Integer; level : Integer; generateMipMap : Boolean; bitmap_Param : access OpenGLBitmap_Package.OpenGLBitmap'Class; border : Integer; flip : Boolean) is
+      gl : constant GL10_Access := GL10_Access (gl_Param);
+      bitmap : constant OpenGLBitmap_Access := OpenGLBitmap_Access (bitmap_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end texImage2D;
 
-   procedure makeByteBuffer (This : in out OpenGLGLUUtils; bmp_Param : access OpenGLBitmap'Class; flip : Boolean) is
+   procedure makeByteBuffer (This : in out OpenGLGLUUtils; bmp_Param : access OpenGLBitmap_Package.OpenGLBitmap'Class; flip : Boolean) is
       Java_Result : constant ByteBuffer_Access := OpenGLGLUUtils'Class (This).makeByteBuffer (bmp_Param, flip);
       pragma Unreferenced (Java_Result);
    begin

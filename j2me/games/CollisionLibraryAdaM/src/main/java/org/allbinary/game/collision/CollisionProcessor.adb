@@ -21,14 +21,14 @@ package body org.allbinary.game.collision.CollisionProcessor_Package is
    end Create;
 
 
-   function isCollision (This : in out CollisionProcessor; myLayer_Param : access AllBinaryLayer'Class; myLayer2_Param : access AllBinaryLayer'Class) return Boolean is
-      myLayer : AllBinaryLayer_Access := AllBinaryLayer_Access (myLayer_Param);
-      myLayer2 : AllBinaryLayer_Access := AllBinaryLayer_Access (myLayer2_Param);
+   function isCollision (This : in out CollisionProcessor; myLayer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; myLayer2_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) return Boolean is
+      myLayer : constant AllBinaryLayer_Access := AllBinaryLayer_Access (myLayer_Param);
+      myLayer2 : constant AllBinaryLayer_Access := AllBinaryLayer_Access (myLayer2_Param);
    begin
         return False;
    end isCollision;
 
-   procedure isCollision (This : in out CollisionProcessor; myLayer_Param : access AllBinaryLayer'Class; myLayer2_Param : access AllBinaryLayer'Class) is
+   procedure isCollision (This : in out CollisionProcessor; myLayer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; myLayer2_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
       Java_Result : constant Boolean := CollisionProcessor'Class (This).isCollision (myLayer_Param, myLayer2_Param);
       pragma Unreferenced (Java_Result);
    begin

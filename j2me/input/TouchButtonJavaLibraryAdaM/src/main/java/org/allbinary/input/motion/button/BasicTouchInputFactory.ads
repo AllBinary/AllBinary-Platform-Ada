@@ -69,9 +69,9 @@ package org.allbinary.input.motion.button.BasicTouchInputFactory_Package is
    procedure Initialize (This : in out BasicTouchInputFactory'Class);
    function Create return BasicTouchInputFactory_Access;
    function getInstance return BasicTouchInputFactory_Access;
-   procedure init (This : in out BasicTouchInputFactory; inputToGameKeyMapping_Param : access InputToGameKeyMapping'Class);
-   procedure updateAll (This : in out BasicTouchInputFactory; inputToGameKeyMapping_Param : access InputToGameKeyMapping'Class);
-   procedure updateAllFromList (This : in out BasicTouchInputFactory; list_Param : access BasicArrayList'Class; inputToGameKeyMapping_Param : access InputToGameKeyMapping'Class);
+   procedure init (This : in out BasicTouchInputFactory; inputToGameKeyMapping_Param : access InputToGameKeyMapping_Package.InputToGameKeyMapping'Class);
+   procedure updateAll (This : in out BasicTouchInputFactory; inputToGameKeyMapping_Param : access InputToGameKeyMapping_Package.InputToGameKeyMapping'Class);
+   procedure updateAllFromList (This : in out BasicTouchInputFactory; list_Param : access BasicArrayList_Package.BasicArrayList'Class; inputToGameKeyMapping_Param : access InputToGameKeyMapping_Package.InputToGameKeyMapping'Class);
    function getList (This : in out BasicTouchInputFactory) return BasicArrayList_Access;
 
 end org.allbinary.input.motion.button.BasicTouchInputFactory_Package;

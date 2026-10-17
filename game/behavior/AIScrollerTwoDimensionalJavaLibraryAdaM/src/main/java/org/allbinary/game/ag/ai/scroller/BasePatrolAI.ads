@@ -58,8 +58,8 @@ package org.allbinary.game.ag.ai.scroller.BasePatrolAI_Package is
    FIRING_DISTANCE : Integer;
    SPEED : Integer;
 
-   procedure Initialize (This : in out BasePatrolAI'Class; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class);
-   function Create (hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return BasePatrolAI_Access;
+   procedure Initialize (This : in out BasePatrolAI'Class; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class);
+   function Create (hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) return BasePatrolAI_Access;
    procedure update (This : in out BasePatrolAI);
    procedure updateTotalDistance (This : in out BasePatrolAI);
    procedure changeDirectionIfReachedPacingAreaMax (This : in out BasePatrolAI);

@@ -49,10 +49,10 @@ package org.allbinary.logic.control.search.TableSearchRequest_Package is
       searchParams : SearchParams_Access;
    end record;
 
-   procedure Initialize (This : in out TableSearchRequest'Class; keywords : Unbounded_String; searchParams_Param : access SearchParams'Class; xslFile : Unbounded_String; contentType : Unbounded_String);
-   function Create (keywords : Unbounded_String; searchParams_Param : access SearchParams'Class; xslFile : Unbounded_String; contentType : Unbounded_String) return TableSearchRequest_Access;
+   procedure Initialize (This : in out TableSearchRequest'Class; keywords : Unbounded_String; searchParams_Param : access SearchParams_Package.SearchParams'Class; xslFile : Unbounded_String; contentType : Unbounded_String);
+   function Create (keywords : Unbounded_String; searchParams_Param : access SearchParams_Package.SearchParams'Class; xslFile : Unbounded_String; contentType : Unbounded_String) return TableSearchRequest_Access;
    procedure setKeywords (This : in out TableSearchRequest; value : Unbounded_String);
-   procedure setParams (This : in out TableSearchRequest; searchParams_Param : access SearchParams'Class);
+   procedure setParams (This : in out TableSearchRequest; searchParams_Param : access SearchParams_Package.SearchParams'Class);
    procedure setXslFile (This : in out TableSearchRequest; value : Unbounded_String);
    procedure setFileBaseName (This : in out TableSearchRequest; value : Unbounded_String);
    procedure setContentType (This : in out TableSearchRequest; value : Unbounded_String);
@@ -61,8 +61,8 @@ package org.allbinary.logic.control.search.TableSearchRequest_Package is
    function getXslFile (This : in out TableSearchRequest) return Unbounded_String;
    function getFileBaseName (This : in out TableSearchRequest) return Unbounded_String;
    function getContentType (This : in out TableSearchRequest) return Unbounded_String;
-   function getFileBaseNameNode (This : in out TableSearchRequest; document_Param : access Document'Class) return Node_Access;
-   procedure getFileBaseNameNode (This : in out TableSearchRequest; document_Param : access Document'Class);
+   function getFileBaseNameNode (This : in out TableSearchRequest; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure getFileBaseNameNode (This : in out TableSearchRequest; document_Param : access Document_Package.Document'Class);
 
 end org.allbinary.logic.control.search.TableSearchRequest_Package;
 

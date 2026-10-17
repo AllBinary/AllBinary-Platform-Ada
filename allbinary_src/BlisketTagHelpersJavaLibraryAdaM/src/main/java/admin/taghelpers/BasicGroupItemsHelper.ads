@@ -47,8 +47,8 @@ package admin.taghelpers.BasicGroupItemsHelper_Package is
       portion : Portion_Access;
    end record;
 
-   procedure Initialize (This : in out BasicGroupItemsHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
-   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return BasicGroupItemsHelper_Access;
+   procedure Initialize (This : in out BasicGroupItemsHelper'Class; hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class);
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return BasicGroupItemsHelper_Access;
    function create (This : in out BasicGroupItemsHelper) return Unbounded_String;
    function drop (This : in out BasicGroupItemsHelper) return Unbounded_String;
    function restore (This : in out BasicGroupItemsHelper) return Unbounded_String;

@@ -67,11 +67,11 @@ package org.allbinary.business.installer.InitializerDatabase_Package is
    MIN : Integer;
    MINPASSWORD : Integer;
 
-   procedure Initialize (This : in out InitializerDatabase'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; map_Param : access Map'Class);
-   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; map_Param : access Map'Class) return InitializerDatabase_Access;
-   procedure Initialize (This : in out InitializerDatabase'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; initHashMap_Param : access HashMap'Class);
-   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; initHashMap_Param : access HashMap'Class) return InitializerDatabase_Access;
-   procedure getFormData (This : in out InitializerDatabase; abeClientInformation_Param : access AbeClientInformationInterface'Class; hashMap_Param : access HashMap'Class);
+   procedure Initialize (This : in out InitializerDatabase'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; map_Param : access Map_Package.Map'Class);
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; map_Param : access Map_Package.Map'Class) return InitializerDatabase_Access;
+   procedure Initialize (This : in out InitializerDatabase'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; initHashMap_Param : access HashMap_Package.HashMap'Class);
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; initHashMap_Param : access HashMap_Package.HashMap'Class) return InitializerDatabase_Access;
+   procedure getFormData (This : in out InitializerDatabase; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; hashMap_Param : access HashMap_Package.HashMap'Class);
    function isJdbcDriverValid (This : in out InitializerDatabase; jdbcDriverClassPathString : Unbounded_String) return Boolean;
    procedure isJdbcDriverValid (This : in out InitializerDatabase; jdbcDriverClassPathString : Unbounded_String);
    function isValid (This : in out InitializerDatabase) return Boolean;

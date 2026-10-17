@@ -45,10 +45,10 @@ package org.allbinary.game.layer.PathFindingLayerInterface_Package is
    function shouldHandleStartSameAsEnd (This : in out PathFindingLayerInterface) return Boolean is abstract;
    function getGeographicMapCellPositionArea (This : in out PathFindingLayerInterface) return GeographicMapCellPositionAreaBase_Access is abstract;
    function getHudPaintable (This : in out PathFindingLayerInterface) return SelectionHudPaintable_Access is abstract;
-   procedure handleCost (This : in out PathFindingLayerInterface; ownerLayer_Param : access PathFindingLayerInterface'Class) is abstract;
+   procedure handleCost (This : in out PathFindingLayerInterface; ownerLayer_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class) is abstract;
    function getParentLayer (This : in out PathFindingLayerInterface) return PathFindingLayerInterface_Access is abstract;
    function getRTSLayer2LogHelper (This : in out PathFindingLayerInterface) return RTSLayer2LogHelper_Access is abstract;
-   procedure setTarget (This : in out PathFindingLayerInterface; targetGameLayer_Param : access PathFindingLayerInterface'Class) is abstract;
+   procedure setTarget (This : in out PathFindingLayerInterface; targetGameLayer_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class) is abstract;
 
 end org.allbinary.game.layer.PathFindingLayerInterface_Package;
 

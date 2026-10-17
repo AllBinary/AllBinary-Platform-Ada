@@ -45,15 +45,15 @@ package org.allbinary.media.image.ImageRotationUtil_Package is
    procedure Initialize (This : in out ImageRotationUtil'Class);
    function Create return ImageRotationUtil_Access;
    function getInstance return ImageRotationUtil_Access;
-   function rotateImage (This : in out ImageRotationUtil; originalImage_Param : access Image'Class; image_Param : access Image'Class; totalAngle : Integer) return Image_Access;
-   procedure rotateImage (This : in out ImageRotationUtil; originalImage_Param : access Image'Class; image_Param : access Image'Class; totalAngle : Integer);
-   function rotateImageCanvasSurfaceClear (This : in out ImageRotationUtil; originalImage_Param : access Image'Class; image_Param : access Image'Class; canvasSurface_Param : access CanvasSurface'Class; totalAngle : Integer) return Image_Access;
-   procedure rotateImageCanvasSurfaceClear (This : in out ImageRotationUtil; originalImage_Param : access Image'Class; image_Param : access Image'Class; canvasSurface_Param : access CanvasSurface'Class; totalAngle : Integer);
-   function rotateImageCanvasSurface (This : in out ImageRotationUtil; originalImage_Param : access Image'Class; image_Param : access Image'Class; canvasSurface_Param : access CanvasSurface'Class; totalAngle : Integer) return Image_Access;
-   procedure rotateImageCanvasSurface (This : in out ImageRotationUtil; originalImage_Param : access Image'Class; image_Param : access Image'Class; canvasSurface_Param : access CanvasSurface'Class; totalAngle : Integer);
-   procedure drawImage (This : in out ImageRotationUtil; originalImage_Param : access Image'Class; image_Param : access Image'Class; canvasSurface_Param : access CanvasSurface'Class);
-   function createRotatedImage (This : in out ImageRotationUtil; originalImage_Param : access Image'Class; rotationInDegrees : Integer) return Image_Access;
-   procedure createRotatedImage (This : in out ImageRotationUtil; originalImage_Param : access Image'Class; rotationInDegrees : Integer);
+   function rotateImage (This : in out ImageRotationUtil; originalImage_Param : access Image_Package.Image'Class; image_Param : access Image_Package.Image'Class; totalAngle : Integer) return Image_Access;
+   procedure rotateImage (This : in out ImageRotationUtil; originalImage_Param : access Image_Package.Image'Class; image_Param : access Image_Package.Image'Class; totalAngle : Integer);
+   function rotateImageCanvasSurfaceClear (This : in out ImageRotationUtil; originalImage_Param : access Image_Package.Image'Class; image_Param : access Image_Package.Image'Class; canvasSurface_Param : access CanvasSurface_Package.CanvasSurface'Class; totalAngle : Integer) return Image_Access;
+   procedure rotateImageCanvasSurfaceClear (This : in out ImageRotationUtil; originalImage_Param : access Image_Package.Image'Class; image_Param : access Image_Package.Image'Class; canvasSurface_Param : access CanvasSurface_Package.CanvasSurface'Class; totalAngle : Integer);
+   function rotateImageCanvasSurface (This : in out ImageRotationUtil; originalImage_Param : access Image_Package.Image'Class; image_Param : access Image_Package.Image'Class; canvasSurface_Param : access CanvasSurface_Package.CanvasSurface'Class; totalAngle : Integer) return Image_Access;
+   procedure rotateImageCanvasSurface (This : in out ImageRotationUtil; originalImage_Param : access Image_Package.Image'Class; image_Param : access Image_Package.Image'Class; canvasSurface_Param : access CanvasSurface_Package.CanvasSurface'Class; totalAngle : Integer);
+   procedure drawImage (This : in out ImageRotationUtil; originalImage_Param : access Image_Package.Image'Class; image_Param : access Image_Package.Image'Class; canvasSurface_Param : access CanvasSurface_Package.CanvasSurface'Class);
+   function createRotatedImage (This : in out ImageRotationUtil; originalImage_Param : access Image_Package.Image'Class; rotationInDegrees : Integer) return Image_Access;
+   procedure createRotatedImage (This : in out ImageRotationUtil; originalImage_Param : access Image_Package.Image'Class; rotationInDegrees : Integer);
 
 end org.allbinary.media.image.ImageRotationUtil_Package;
 

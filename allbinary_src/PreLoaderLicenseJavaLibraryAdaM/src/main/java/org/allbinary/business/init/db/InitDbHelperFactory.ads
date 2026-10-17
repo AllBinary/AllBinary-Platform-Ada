@@ -41,10 +41,10 @@ package org.allbinary.business.init.db.InitDbHelperFactory_Package is
 
    procedure Initialize (This : in out InitDbHelperFactory'Class);
    function Create return InitDbHelperFactory_Access;
-   function getInstance (abeClientInformation_Param : access AbeClientInformationInterface'Class; databaseConnectionInfoInterface_Param : access DatabaseConnectionInfoInterface'Class) return Java_Object_Access;
-   procedure getInstance (abeClientInformation_Param : access AbeClientInformationInterface'Class; databaseConnectionInfoInterface_Param : access DatabaseConnectionInfoInterface'Class);
-   function getInstance (abeClientInformation_Param : access AbeClientInformationInterface'Class) return Java_Object_Access;
-   procedure getInstance (abeClientInformation_Param : access AbeClientInformationInterface'Class);
+   function getInstance (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; databaseConnectionInfoInterface_Param : access DatabaseConnectionInfoInterface_Package.DatabaseConnectionInfoInterface'Class) return Java_Object_Access;
+   procedure getInstance (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; databaseConnectionInfoInterface_Param : access DatabaseConnectionInfoInterface_Package.DatabaseConnectionInfoInterface'Class);
+   function getInstance (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) return Java_Object_Access;
+   procedure getInstance (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class);
 
 end org.allbinary.business.init.db.InitDbHelperFactory_Package;
 

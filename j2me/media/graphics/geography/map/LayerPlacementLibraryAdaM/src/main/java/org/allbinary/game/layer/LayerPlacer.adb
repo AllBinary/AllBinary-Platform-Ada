@@ -24,16 +24,16 @@ package body org.allbinary.game.layer.LayerPlacer_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out LayerPlacer'Class; layerInterfaceVisitor_Param : access LayerInterfaceVisitor'Class; dimension_Param : access GPoint'Class) is
-      layerInterfaceVisitor : LayerInterfaceVisitor_Access := LayerInterfaceVisitor_Access (layerInterfaceVisitor_Param);
-      dimension : GPoint_Access := GPoint_Access (dimension_Param);
+   procedure Initialize (This : in out LayerPlacer'Class; layerInterfaceVisitor_Param : access LayerInterfaceVisitor_Package.LayerInterfaceVisitor'Class; dimension_Param : access GPoint_Package.GPoint'Class) is
+      layerInterfaceVisitor : constant LayerInterfaceVisitor_Access := LayerInterfaceVisitor_Access (layerInterfaceVisitor_Param);
+      dimension : constant GPoint_Access := GPoint_Access (dimension_Param);
    begin
       Initialize_Fields (This);
         This.layerInterfaceVisitor := layerInterfaceVisitor;
         This.dimension := dimension;
    end Initialize;
 
-   function Create (layerInterfaceVisitor_Param : access LayerInterfaceVisitor'Class; dimension_Param : access GPoint'Class) return LayerPlacer_Access is
+   function Create (layerInterfaceVisitor_Param : access LayerInterfaceVisitor_Package.LayerInterfaceVisitor'Class; dimension_Param : access GPoint_Package.GPoint'Class) return LayerPlacer_Access is
       This : constant LayerPlacer_Access := new LayerPlacer;
    begin
       LayerPlacer_Package.Initialize (This.all, layerInterfaceVisitor_Param, dimension_Param);
@@ -41,8 +41,8 @@ package body org.allbinary.game.layer.LayerPlacer_Package is
    end Create;
 
    --  throws Exception
-   procedure processList (This : in out LayerPlacer; list_Param : access BasicArrayList'Class) is
-      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
+   procedure processList (This : in out LayerPlacer; list_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      list : constant BasicArrayList_Access := BasicArrayList_Access (list_Param);
       size : Integer;
       layerPlacementInterface : LayerPlacementInterface_Access;
       index : Integer;
@@ -56,8 +56,8 @@ package body org.allbinary.game.layer.LayerPlacer_Package is
    end processList;
 
    --  throws Exception
-   procedure process (This : in out LayerPlacer; layerPlacementInterface_Param : access LayerPlacementInterface'Class) is
-      layerPlacementInterface : LayerPlacementInterface_Access := LayerPlacementInterface_Access (layerPlacementInterface_Param);
+   procedure process (This : in out LayerPlacer; layerPlacementInterface_Param : access LayerPlacementInterface_Package.LayerPlacementInterface'Class) is
+      layerPlacementInterface : constant LayerPlacementInterface_Access := LayerPlacementInterface_Access (layerPlacementInterface_Param);
       relativePoint : GPoint_Access;
       layerInterfaceFactory : LayerInterfaceFactory_Access;
       hashtable : ABHashtable_Access;
@@ -91,8 +91,8 @@ package body org.allbinary.game.layer.LayerPlacer_Package is
    end process;
 
    --  throws Exception
-   function getPoint (This : in out LayerPlacer; layerPlacementInterface_Param : access LayerPlacementInterface'Class) return GPoint_Access is
-      layerPlacementInterface : LayerPlacementInterface_Access := LayerPlacementInterface_Access (layerPlacementInterface_Param);
+   function getPoint (This : in out LayerPlacer; layerPlacementInterface_Param : access LayerPlacementInterface_Package.LayerPlacementInterface'Class) return GPoint_Access is
+      layerPlacementInterface : constant LayerPlacementInterface_Access := LayerPlacementInterface_Access (layerPlacementInterface_Param);
       pointFactory : PointFactory_Access;
       layerPlacementType : LayerPlacementType_Access;
       width : Integer;
@@ -119,7 +119,7 @@ package body org.allbinary.game.layer.LayerPlacer_Package is
         end if;
    end getPoint;
 
-   procedure getPoint (This : in out LayerPlacer; layerPlacementInterface_Param : access LayerPlacementInterface'Class) is
+   procedure getPoint (This : in out LayerPlacer; layerPlacementInterface_Param : access LayerPlacementInterface_Package.LayerPlacementInterface'Class) is
       Java_Result : constant GPoint_Access := LayerPlacer'Class (This).getPoint (layerPlacementInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

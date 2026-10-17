@@ -58,11 +58,11 @@ package org.allbinary.input.automation.module.generic_Id.configuration.profile.G
    function Create (name : Unbounded_String) return GenericProfileDataWorkerType_Access;
    function getName (This : in out GenericProfileDataWorkerType) return Unbounded_String;
    procedure setName (This : in out GenericProfileDataWorkerType; name : Unbounded_String);
-   function toXmlNode (This : in out GenericProfileDataWorkerType; document_Param : access Document'Class) return Node_Access;
-   procedure toXmlNode (This : in out GenericProfileDataWorkerType; document_Param : access Document'Class);
+   function toXmlNode (This : in out GenericProfileDataWorkerType; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out GenericProfileDataWorkerType; document_Param : access Document_Package.Document'Class);
    function toString (This : in out GenericProfileDataWorkerType) return Unbounded_String;
-   function getInstance (node_Param : access Node'Class) return GenericProfileDataWorkerType_Access;
-   procedure getInstance (node_Param : access Node'Class);
+   function getInstance (node_Param : access Node_Package.Node'Class) return GenericProfileDataWorkerType_Access;
+   procedure getInstance (node_Param : access Node_Package.Node'Class);
 
 end org.allbinary.input.automation.module.generic_Id.configuration.profile.GenericProfileDataWorkerType_Package;
 

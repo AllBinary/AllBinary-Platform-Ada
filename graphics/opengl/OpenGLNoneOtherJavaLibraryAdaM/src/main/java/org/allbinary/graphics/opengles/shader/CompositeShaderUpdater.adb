@@ -41,15 +41,15 @@ package body org.allbinary.graphics.opengles.shader.CompositeShaderUpdater_Packa
       return This;
    end Create;
 
-   procedure onSurfaceCreated (This : in out CompositeShaderUpdater; gl_Param : access GL10'Class; eglConfig_Param : access EGLConfig'Class; programHandle : Integer) is
-      gl : GL10_Access := GL10_Access (gl_Param);
-      eglConfig : EGLConfig_Access := EGLConfig_Access (eglConfig_Param);
+   procedure onSurfaceCreated (This : in out CompositeShaderUpdater; gl_Param : access GL10_Package.GL10'Class; eglConfig_Param : access EGLConfig_Package.EGLConfig'Class; programHandle : Integer) is
+      gl : constant GL10_Access := GL10_Access (gl_Param);
+      eglConfig : constant EGLConfig_Access := EGLConfig_Access (eglConfig_Param);
    begin
         null;
    end onSurfaceCreated;
 
-   procedure onSurfaceDestroyed (This : in out CompositeShaderUpdater; gl_Param : access GL10'Class) is
-      gl : GL10_Access := GL10_Access (gl_Param);
+   procedure onSurfaceDestroyed (This : in out CompositeShaderUpdater; gl_Param : access GL10_Package.GL10'Class) is
+      gl : constant GL10_Access := GL10_Access (gl_Param);
    begin
         null;
    end onSurfaceDestroyed;

@@ -42,10 +42,10 @@ package admin.taghelpers.AuthenticationRequestHelperFactory_Package is
 
    procedure Initialize (This : in out AuthenticationRequestHelperFactory'Class);
    function Create return AuthenticationRequestHelperFactory_Access;
-   function getInstance (This : in out AuthenticationRequestHelperFactory; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return Java_Object_Access;
-   procedure getInstance (This : in out AuthenticationRequestHelperFactory; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
-   function getInstance (This : in out AuthenticationRequestHelperFactory; hashMap_Param : access HashMap'Class; httpServletRequest_Param : access HttpServletRequest'Class) return Java_Object_Access;
-   procedure getInstance (This : in out AuthenticationRequestHelperFactory; hashMap_Param : access HashMap'Class; httpServletRequest_Param : access HttpServletRequest'Class);
+   function getInstance (This : in out AuthenticationRequestHelperFactory; hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return Java_Object_Access;
+   procedure getInstance (This : in out AuthenticationRequestHelperFactory; hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class);
+   function getInstance (This : in out AuthenticationRequestHelperFactory; hashMap_Param : access HashMap_Package.HashMap'Class; httpServletRequest_Param : access HttpServletRequest_Package.HttpServletRequest'Class) return Java_Object_Access;
+   procedure getInstance (This : in out AuthenticationRequestHelperFactory; hashMap_Param : access HashMap_Package.HashMap'Class; httpServletRequest_Param : access HttpServletRequest_Package.HttpServletRequest'Class);
 
 end admin.taghelpers.AuthenticationRequestHelperFactory_Package;
 

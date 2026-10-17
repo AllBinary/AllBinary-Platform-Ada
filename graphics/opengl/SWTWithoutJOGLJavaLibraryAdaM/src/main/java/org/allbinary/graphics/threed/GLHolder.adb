@@ -36,19 +36,19 @@ package body org.allbinary.graphics.threed.GLHolder_Package is
    end Create;
 
    procedure runOnSurfaceCreated (This : in out GLHolder; renderer_Param : access Java_Object'Class) is
-      renderer : Java_Object_Access := Java_Object_Access (renderer_Param);
+      renderer : constant Java_Object_Access := Java_Object_Access (renderer_Param);
    begin
         null;
    end runOnSurfaceCreated;
 
    procedure runOnSurfaceChanged (This : in out GLHolder; renderer_Param : access Java_Object'Class; width : Integer; height : Integer) is
-      renderer : Java_Object_Access := Java_Object_Access (renderer_Param);
+      renderer : constant Java_Object_Access := Java_Object_Access (renderer_Param);
    begin
         null;
    end runOnSurfaceChanged;
 
    procedure run (This : in out GLHolder; renderer_Param : access Java_Object'Class) is
-      renderer : Java_Object_Access := Java_Object_Access (renderer_Param);
+      renderer : constant Java_Object_Access := Java_Object_Access (renderer_Param);
    begin
         null;
    end run;

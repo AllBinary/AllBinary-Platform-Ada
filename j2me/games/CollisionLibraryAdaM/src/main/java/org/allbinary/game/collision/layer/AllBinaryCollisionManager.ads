@@ -43,8 +43,8 @@ package org.allbinary.game.collision.layer.AllBinaryCollisionManager_Package is
    procedure Initialize (This : in out AllBinaryCollisionManager'Class);
    function Create return AllBinaryCollisionManager_Access;
    function getInstance return AllBinaryCollisionManager_Access;
-   procedure process (This : in out AllBinaryCollisionManager; layerManager_Param : access LayerManager'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface'Class; startIndex : Integer);
-   procedure collide (This : in out AllBinaryCollisionManager; layerManager_Param : access LayerManager'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface'Class; collidableInterfaceCompositeInterface2_Param : access CollidableInterfaceCompositeInterface'Class);
+   procedure process (This : in out AllBinaryCollisionManager; layerManager_Param : access LayerManager_Package.LayerManager'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface_Package.CollidableInterfaceCompositeInterface'Class; startIndex : Integer);
+   procedure collide (This : in out AllBinaryCollisionManager; layerManager_Param : access LayerManager_Package.LayerManager'Class; collidableInterfaceCompositeInterface_Param : access CollidableInterfaceCompositeInterface_Package.CollidableInterfaceCompositeInterface'Class; collidableInterfaceCompositeInterface2_Param : access CollidableInterfaceCompositeInterface_Package.CollidableInterfaceCompositeInterface'Class);
 
 end org.allbinary.game.collision.layer.AllBinaryCollisionManager_Package;
 

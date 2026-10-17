@@ -34,8 +34,8 @@ package body org.allbinary.business.user.commerce.money.payment.PaymentFactory_P
       return This;
    end Create;
 
-   function getInstance (request_Param : access ServletRequest'Class) return PaymentInterface_Access is
-      request : ServletRequest_Access := ServletRequest_Access (request_Param);
+   function getInstance (request_Param : access ServletRequest_Package.ServletRequest'Class) return PaymentInterface_Access is
+      request : constant ServletRequest_Access := ServletRequest_Access (request_Param);
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
    begin
@@ -56,7 +56,7 @@ package body org.allbinary.business.user.commerce.money.payment.PaymentFactory_P
         end;
    end getInstance;
 
-   procedure getInstance (request_Param : access ServletRequest'Class) is
+   procedure getInstance (request_Param : access ServletRequest_Package.ServletRequest'Class) is
       Java_Result : constant PaymentInterface_Access := getInstance (request_Param);
       pragma Unreferenced (Java_Result);
    begin

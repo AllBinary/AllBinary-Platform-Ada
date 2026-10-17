@@ -33,15 +33,15 @@ package body org.allbinary.game.input.mapping.MotionInputMappingEventListener_Pa
    end Create;
 
 
-   procedure onEvent (This : in out MotionInputMappingEventListener; eventObject_Param : access AllBinaryEventObject'Class) is
-      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+   procedure onEvent (This : in out MotionInputMappingEventListener; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
+      eventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
    begin
         ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, MotionInputMappingEventListener_Access'(This'Unchecked_Access));
    end onEvent;
 
    --  throws Exception
-   procedure onInputMappingEvent (This : in out MotionInputMappingEventListener; inputMappingEvent_Param : access InputMappingEvent'Class) is
-      inputMappingEvent : InputMappingEvent_Access := InputMappingEvent_Access (inputMappingEvent_Param);
+   procedure onInputMappingEvent (This : in out MotionInputMappingEventListener; inputMappingEvent_Param : access InputMappingEvent_Package.InputMappingEvent'Class) is
+      inputMappingEvent : constant InputMappingEvent_Access := InputMappingEvent_Access (inputMappingEvent_Param);
    begin
         GameKeyCompleteMotionGestureInputEventFactory_Package.getInstance.updateAll;
         BasicTouchInputFactory_Package.getInstance.updateAll (inputMappingEvent.getInputToGameKeyMapping);

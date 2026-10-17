@@ -124,8 +124,8 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
         This.okJButton.setText (To_Unbounded_String ("OK"));
         This.okJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.okJButtonActionPerformed (evt);
 --     end actionPerformed;
@@ -141,8 +141,8 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
         This.fileJMenu.setText (To_Unbounded_String ("File"));
         This.fileJMenu.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.fileJMenuActionPerformed (evt);
 --     end actionPerformed;
@@ -150,8 +150,8 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
         This.openImageJMenuItem.setText (To_Unbounded_String ("Open"));
         This.openImageJMenuItem.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.openImageJMenuItemActionPerformed (evt);
 --     end actionPerformed;
@@ -161,8 +161,8 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
         This.processingJMenu.setText (To_Unbounded_String ("Processing"));
         This.processingJMenu.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.processingJMenuActionPerformed (evt);
 --     end actionPerformed;
@@ -170,8 +170,8 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
         This.analyzeJMenuItem.setText (To_Unbounded_String ("Image Analyze"));
         This.analyzeJMenuItem.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.analyzeJMenuItemActionPerformed (evt);
 --     end actionPerformed;
@@ -180,8 +180,8 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
         This.generateMirrorSpriteMenuItem.setText (To_Unbounded_String ("Mirror Sprite Generator"));
         This.generateMirrorSpriteMenuItem.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.generateMirrorSpriteMenuItemActionPerformed (evt);
 --     end actionPerformed;
@@ -190,8 +190,8 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
         This.generateRotationSpriteJMenuItem.setText (To_Unbounded_String ("Rotation Sprite Generator"));
         This.generateRotationSpriteJMenuItem.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.generateRotationSpriteJMenuItemActionPerformed (evt);
 --     end actionPerformed;
@@ -200,8 +200,8 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
         This.generateSpriteSplitterMenuItem.setText (To_Unbounded_String ("Sprite Splitter Generator"));
         This.generateSpriteSplitterMenuItem.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.generateSpriteSplitterMenuItemActionPerformed (evt);
 --     end actionPerformed;
@@ -210,8 +210,8 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
         This.generateRotationMenuItem.setText (To_Unbounded_String ("Rotate Image Generator"));
         This.generateRotationMenuItem.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.generateRotationMenuItemActionPerformed (evt);
 --     end actionPerformed;
@@ -220,8 +220,8 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
         This.createStripImageJMenuItem.setText (To_Unbounded_String ("Multi Image Unifier"));
         This.createStripImageJMenuItem.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.createStripImageJMenuItemActionPerformed (evt);
 --     end actionPerformed;
@@ -230,8 +230,8 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
         This.mirrorJMenuItem.setText (To_Unbounded_String ("Mirror Image(s)"));
         This.mirrorJMenuItem.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.mirrorJMenuItemActionPerformed (evt);
 --     end actionPerformed;
@@ -240,8 +240,8 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
         This.scaleImagesJMenuItem.setText (To_Unbounded_String ("Scale Image(s)"));
         This.scaleImagesJMenuItem.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.scaleImagesJMenuItemActionPerformed (evt);
 --     end actionPerformed;
@@ -250,8 +250,8 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
         This.canvasImagesJMenuItem.setText (To_Unbounded_String ("Canvas Image(s)"));
         This.canvasImagesJMenuItem.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.canvasImagesJMenuItemActionPerformed (evt);
 --     end actionPerformed;
@@ -260,8 +260,8 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
         This.createIconImagesJMenuItem.setText (To_Unbounded_String ("Create Icon Image(s)"));
         This.createIconImagesJMenuItem.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent'Class) is
---        evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+--     procedure actionPerformed (This : in out ; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+--        evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
 --     begin
 --                  This.createIconsJMenuItemActionPerformed (evt);
 --     end actionPerformed;
@@ -272,8 +272,8 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
         This.pack;
    end initComponents;
 
-   procedure createStripImageJMenuItemActionPerformed (This : in out ImageToolJFrame; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure createStripImageJMenuItemActionPerformed (This : in out ImageToolJFrame; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
       imageUnifierJPanel : ImageUnifierJPanel_Access;
    begin
         begin
@@ -292,8 +292,8 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
         end;
    end createStripImageJMenuItemActionPerformed;
 
-   procedure okJButtonActionPerformed (This : in out ImageToolJFrame; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure okJButtonActionPerformed (This : in out ImageToolJFrame; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
       imageAnalysisResultsArray : ImageAnalysisResults_Access_Array_Access;
    begin
         begin
@@ -314,14 +314,14 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
         end;
    end okJButtonActionPerformed;
 
-   procedure processingJMenuActionPerformed (This : in out ImageToolJFrame; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure processingJMenuActionPerformed (This : in out ImageToolJFrame; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         null;
    end processingJMenuActionPerformed;
 
-   procedure openImageJMenuItemActionPerformed (This : in out ImageToolJFrame; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure openImageJMenuItemActionPerformed (This : in out ImageToolJFrame; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         begin
             This.logUtil.putF (To_Unbounded_String ("Starting"), ImageToolJFrame_Access'(This'Unchecked_Access), To_Unbounded_String ("openImageJMenuItemActionPerformed"));
@@ -344,9 +344,9 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
             This.logUtil.putF (To_Unbounded_String ("Reading ") & Java_Image (files'Length) & To_Unbounded_String (" files."), ImageToolJFrame_Access'(This'Unchecked_Access), To_Unbounded_String ("onFiles"));
             Arrays_Package.sort (files, Comparator_Package.Create  --  Java anonymous class body: implement it as a named type
 --                  
---     function compare (This : in out ; file1_Param : access File'Class; file2_Param : access File'Class) return Integer is
---        file1 : File_Access := File_Access (file1_Param);
---        file2 : File_Access := File_Access (file2_Param);
+--     function compare (This : in out ; file1_Param : access File_Package.File'Class; file2_Param : access File_Package.File'Class) return Integer is
+--        file1 : constant File_Access := File_Access (file1_Param);
+--        file2 : constant File_Access := File_Access (file2_Param);
 --        fileNameIndexValue1 : Integer;
 --        fileNameIndexValue2 : Integer;
 --     begin
@@ -400,14 +400,14 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
         end;
    end onFiles;
 
-   procedure fileJMenuActionPerformed (This : in out ImageToolJFrame; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure fileJMenuActionPerformed (This : in out ImageToolJFrame; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         null;
    end fileJMenuActionPerformed;
 
-   procedure analyzeJMenuItemActionPerformed (This : in out ImageToolJFrame; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure analyzeJMenuItemActionPerformed (This : in out ImageToolJFrame; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
    begin
         begin
             This.logUtil.putF (To_Unbounded_String ("Starting"), ImageToolJFrame_Access'(This'Unchecked_Access), To_Unbounded_String ("analyzeJMenuItemActionPerformed"));
@@ -422,8 +422,8 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
         end;
    end analyzeJMenuItemActionPerformed;
 
-   procedure generateRotationSpriteJMenuItemActionPerformed (This : in out ImageToolJFrame; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure generateRotationSpriteJMenuItemActionPerformed (This : in out ImageToolJFrame; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
       spriteImageJPanel : RotationSpriteImageJPanel_Access;
    begin
         begin
@@ -443,8 +443,8 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
         end;
    end generateRotationSpriteJMenuItemActionPerformed;
 
-   procedure generateSpriteSplitterMenuItemActionPerformed (This : in out ImageToolJFrame; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure generateSpriteSplitterMenuItemActionPerformed (This : in out ImageToolJFrame; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
       imageJPanel : SpriteSplitterImageJPanel_Access;
    begin
         begin
@@ -464,8 +464,8 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
         end;
    end generateSpriteSplitterMenuItemActionPerformed;
 
-   procedure generateRotationMenuItemActionPerformed (This : in out ImageToolJFrame; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure generateRotationMenuItemActionPerformed (This : in out ImageToolJFrame; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
       rotationImageJPanel : RotationImageJPanel_Access;
    begin
         begin
@@ -485,8 +485,8 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
         end;
    end generateRotationMenuItemActionPerformed;
 
-   procedure scaleImagesJMenuItemActionPerformed (This : in out ImageToolJFrame; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure scaleImagesJMenuItemActionPerformed (This : in out ImageToolJFrame; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
       resizeImageJPanel : ResizeImageJPanel_Access;
    begin
         begin
@@ -506,8 +506,8 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
         end;
    end scaleImagesJMenuItemActionPerformed;
 
-   procedure createIconsJMenuItemActionPerformed (This : in out ImageToolJFrame; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure createIconsJMenuItemActionPerformed (This : in out ImageToolJFrame; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
       createIconImagesJPanel : CreateIconImagesJPanel_Access;
    begin
         begin
@@ -527,8 +527,8 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
         end;
    end createIconsJMenuItemActionPerformed;
 
-   procedure canvasImagesJMenuItemActionPerformed (This : in out ImageToolJFrame; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure canvasImagesJMenuItemActionPerformed (This : in out ImageToolJFrame; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
       resizeImageJPanel : CanvasImageJPanel_Access;
    begin
         begin
@@ -548,8 +548,8 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
         end;
    end canvasImagesJMenuItemActionPerformed;
 
-   procedure generateMirrorSpriteMenuItemActionPerformed (This : in out ImageToolJFrame; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure generateMirrorSpriteMenuItemActionPerformed (This : in out ImageToolJFrame; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
       spriteImageJPanel : MirrorSpriteImageJPanel_Access;
    begin
         begin
@@ -569,8 +569,8 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
         end;
    end generateMirrorSpriteMenuItemActionPerformed;
 
-   procedure mirrorJMenuItemActionPerformed (This : in out ImageToolJFrame; evt_Param : access ActionEvent'Class) is
-      evt : ActionEvent_Access := ActionEvent_Access (evt_Param);
+   procedure mirrorJMenuItemActionPerformed (This : in out ImageToolJFrame; evt_Param : access ActionEvent_Package.ActionEvent'Class) is
+      evt : constant ActionEvent_Access := ActionEvent_Access (evt_Param);
       mirrorImageJPanel : MirrorImageJPanel_Access;
    begin
         begin
@@ -608,8 +608,8 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
         return This.maxBlueJTextField;
    end getMaxBlueJTextField;
 
-   procedure setMaxBlueJTextField (This : in out ImageToolJFrame; maxBlueJTextField_Param : access JTextField'Class) is
-      maxBlueJTextField : JTextField_Access := JTextField_Access (maxBlueJTextField_Param);
+   procedure setMaxBlueJTextField (This : in out ImageToolJFrame; maxBlueJTextField_Param : access JTextField_Package.JTextField'Class) is
+      maxBlueJTextField : constant JTextField_Access := JTextField_Access (maxBlueJTextField_Param);
    begin
         This.maxBlueJTextField := This.maxBlueJTextField;
    end setMaxBlueJTextField;
@@ -619,8 +619,8 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
         return This.maxGreenJTextField;
    end getMaxGreenJTextField;
 
-   procedure setMaxGreenJTextField (This : in out ImageToolJFrame; maxGreenJTextField_Param : access JTextField'Class) is
-      maxGreenJTextField : JTextField_Access := JTextField_Access (maxGreenJTextField_Param);
+   procedure setMaxGreenJTextField (This : in out ImageToolJFrame; maxGreenJTextField_Param : access JTextField_Package.JTextField'Class) is
+      maxGreenJTextField : constant JTextField_Access := JTextField_Access (maxGreenJTextField_Param);
    begin
         This.maxGreenJTextField := This.maxGreenJTextField;
    end setMaxGreenJTextField;
@@ -630,8 +630,8 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
         return This.maxRedJTextField;
    end getMaxRedJTextField;
 
-   procedure setMaxRedJTextField (This : in out ImageToolJFrame; maxRedJTextField_Param : access JTextField'Class) is
-      maxRedJTextField : JTextField_Access := JTextField_Access (maxRedJTextField_Param);
+   procedure setMaxRedJTextField (This : in out ImageToolJFrame; maxRedJTextField_Param : access JTextField_Package.JTextField'Class) is
+      maxRedJTextField : constant JTextField_Access := JTextField_Access (maxRedJTextField_Param);
    begin
         This.maxRedJTextField := This.maxRedJTextField;
    end setMaxRedJTextField;
@@ -641,8 +641,8 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
         return This.minBlueJTextField;
    end getMinBlueJTextField;
 
-   procedure setMinBlueJTextField (This : in out ImageToolJFrame; minBlueJTextField_Param : access JTextField'Class) is
-      minBlueJTextField : JTextField_Access := JTextField_Access (minBlueJTextField_Param);
+   procedure setMinBlueJTextField (This : in out ImageToolJFrame; minBlueJTextField_Param : access JTextField_Package.JTextField'Class) is
+      minBlueJTextField : constant JTextField_Access := JTextField_Access (minBlueJTextField_Param);
    begin
         This.minBlueJTextField := This.minBlueJTextField;
    end setMinBlueJTextField;
@@ -652,8 +652,8 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
         return This.minGreenJTextField;
    end getMinGreenJTextField;
 
-   procedure setMinGreenJTextField (This : in out ImageToolJFrame; minGreenJTextField_Param : access JTextField'Class) is
-      minGreenJTextField : JTextField_Access := JTextField_Access (minGreenJTextField_Param);
+   procedure setMinGreenJTextField (This : in out ImageToolJFrame; minGreenJTextField_Param : access JTextField_Package.JTextField'Class) is
+      minGreenJTextField : constant JTextField_Access := JTextField_Access (minGreenJTextField_Param);
    begin
         This.minGreenJTextField := This.minGreenJTextField;
    end setMinGreenJTextField;
@@ -663,8 +663,8 @@ package body org.allbinary.image.gui.ImageToolJFrame_Package is
         return This.minRedJTextField;
    end getMinRedJTextField;
 
-   procedure setMinRedJTextField (This : in out ImageToolJFrame; minRedJTextField_Param : access JTextField'Class) is
-      minRedJTextField : JTextField_Access := JTextField_Access (minRedJTextField_Param);
+   procedure setMinRedJTextField (This : in out ImageToolJFrame; minRedJTextField_Param : access JTextField_Package.JTextField'Class) is
+      minRedJTextField : constant JTextField_Access := JTextField_Access (minRedJTextField_Param);
    begin
         This.minRedJTextField := This.minRedJTextField;
    end setMinRedJTextField;

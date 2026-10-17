@@ -86,23 +86,23 @@ package org.allbinary.game.layer.waypoint.Waypoint_Package is
       paths : BasicArrayList_Access_Array_Access_Array_Access;
    end record;
 
-   procedure Initialize (This : in out Waypoint'Class; ownerLayer_Param : access PathFindingLayerInterface'Class; sound_Param : access Sound'Class);
-   function Create (ownerLayer_Param : access PathFindingLayerInterface'Class; sound_Param : access Sound'Class) return Waypoint_Access;
-   procedure setAllBinaryGameLayerManager (This : in out Waypoint; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class);
+   procedure Initialize (This : in out Waypoint'Class; ownerLayer_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class; sound_Param : access Sound_Package.Sound'Class);
+   function Create (ownerLayer_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class; sound_Param : access Sound_Package.Sound'Class) return Waypoint_Access;
+   procedure setAllBinaryGameLayerManager (This : in out Waypoint; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager_Package.AllBinaryGameLayerManager'Class);
    procedure releaseCachedPaths (This : in out Waypoint);
-   function getPathsListFromCacheOnly (This : in out Waypoint; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return BasicArrayList_Access;
-   procedure getPathsListFromCacheOnly (This : in out Waypoint; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class);
-   function getPathsListRunnable (This : in out Waypoint; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return BasicArrayList_Access;
-   procedure getPathsListRunnable (This : in out Waypoint; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class);
-   function getEndGeographicMapCellPosition (This : in out Waypoint; startGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return GeographicMapCellPosition_Access;
-   procedure getEndGeographicMapCellPosition (This : in out Waypoint; startGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class);
-   function createPaths (This : in out Waypoint; startGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return BasicArrayList_Access;
-   procedure createPaths (This : in out Waypoint; startGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class);
-   procedure onEvent (This : in out Waypoint; eventObject_Param : access AllBinaryEventObject'Class);
-   procedure onBuildingEvent (This : in out Waypoint; event_Param : access RTSLayerEvent'Class);
+   function getPathsListFromCacheOnly (This : in out Waypoint; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) return BasicArrayList_Access;
+   procedure getPathsListFromCacheOnly (This : in out Waypoint; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class);
+   function getPathsListRunnable (This : in out Waypoint; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) return BasicArrayList_Access;
+   procedure getPathsListRunnable (This : in out Waypoint; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class);
+   function getEndGeographicMapCellPosition (This : in out Waypoint; startGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) return GeographicMapCellPosition_Access;
+   procedure getEndGeographicMapCellPosition (This : in out Waypoint; startGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class);
+   function createPaths (This : in out Waypoint; startGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) return BasicArrayList_Access;
+   procedure createPaths (This : in out Waypoint; startGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class);
+   procedure onEvent (This : in out Waypoint; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class);
+   procedure onBuildingEvent (This : in out Waypoint; event_Param : access RTSLayerEvent_Package.RTSLayerEvent'Class);
    procedure clearPaths (This : in out Waypoint);
    procedure reset (This : in out Waypoint);
-   procedure visit (This : in out Waypoint; unitLayer_Param : access PathFindingLayerInterface'Class);
+   procedure visit (This : in out Waypoint; unitLayer_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class);
 
 end org.allbinary.game.layer.waypoint.Waypoint_Package;
 

@@ -37,8 +37,8 @@ package org.allbinary.graphics.color.BasicColorSetUtil_Package is
    procedure Initialize (This : in out BasicColorSetUtil'Class);
    function Create return BasicColorSetUtil_Access;
    function getInstance return BasicColorSetUtil_Access;
-   procedure setBasicColorP (This : in out BasicColorSetUtil; graphics_Param : access Graphics'Class; basicColor_Param : access BasicColor'Class);
-   procedure setBasicColorP3 (This : in out BasicColorSetUtil; graphics_Param : access Graphics'Class; basicColor_Param : access BasicColor'Class; value : Integer);
+   procedure setBasicColorP (This : in out BasicColorSetUtil; graphics_Param : access Graphics_Package.Graphics'Class; basicColor_Param : access BasicColor_Package.BasicColor'Class);
+   procedure setBasicColorP3 (This : in out BasicColorSetUtil; graphics_Param : access Graphics_Package.Graphics'Class; basicColor_Param : access BasicColor_Package.BasicColor'Class; value : Integer);
 
 end org.allbinary.graphics.color.BasicColorSetUtil_Package;
 

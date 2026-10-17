@@ -66,8 +66,8 @@ package admin.taghelpers.BasketRequestHelper_Package is
       MAX : Integer;
    end record;
 
-   procedure Initialize (This : in out BasketRequestHelper'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
-   function Create (propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return BasketRequestHelper_Access;
+   procedure Initialize (This : in out BasketRequestHelper'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class);
+   function Create (propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return BasketRequestHelper_Access;
    procedure getFormData (This : in out BasketRequestHelper);
    function addItemToBasket (This : in out BasketRequestHelper) return Boolean;
    function removeItemFromBasket (This : in out BasketRequestHelper) return Boolean;

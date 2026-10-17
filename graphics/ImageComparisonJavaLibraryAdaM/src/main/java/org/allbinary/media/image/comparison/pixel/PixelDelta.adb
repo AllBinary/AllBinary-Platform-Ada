@@ -24,9 +24,9 @@ package body org.allbinary.media.image.comparison.pixel.PixelDelta_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PixelDelta'Class; point_Param : access GPoint'Class; colorDelta_Param : access ColorDelta'Class) is
-      point : GPoint_Access := GPoint_Access (point_Param);
-      colorDelta : ColorDelta_Access := ColorDelta_Access (colorDelta_Param);
+   procedure Initialize (This : in out PixelDelta'Class; point_Param : access GPoint_Package.GPoint'Class; colorDelta_Param : access ColorDelta_Package.ColorDelta'Class) is
+      point : constant GPoint_Access := GPoint_Access (point_Param);
+      colorDelta : constant ColorDelta_Access := ColorDelta_Access (colorDelta_Param);
    begin
       Initialize_Fields (This);
         This.setPoint (point);
@@ -34,7 +34,7 @@ package body org.allbinary.media.image.comparison.pixel.PixelDelta_Package is
         This.key := PixelDelta_Package.getKey (This.getPoint, This.getColorDelta);
    end Initialize;
 
-   function Create (point_Param : access GPoint'Class; colorDelta_Param : access ColorDelta'Class) return PixelDelta_Access is
+   function Create (point_Param : access GPoint_Package.GPoint'Class; colorDelta_Param : access ColorDelta_Package.ColorDelta'Class) return PixelDelta_Access is
       This : constant PixelDelta_Access := new PixelDelta;
    begin
       PixelDelta_Package.Initialize (This.all, point_Param, colorDelta_Param);
@@ -46,9 +46,9 @@ package body org.allbinary.media.image.comparison.pixel.PixelDelta_Package is
         return This.key;
    end getKey;
 
-   function getKey (point_Param : access GPoint'Class; colorDelta_Param : access ColorDelta'Class) return Java_Object_Access is
-      point : GPoint_Access := GPoint_Access (point_Param);
-      colorDelta : ColorDelta_Access := ColorDelta_Access (colorDelta_Param);
+   function getKey (point_Param : access GPoint_Package.GPoint'Class; colorDelta_Param : access ColorDelta_Package.ColorDelta'Class) return Java_Object_Access is
+      point : constant GPoint_Access := GPoint_Access (point_Param);
+      colorDelta : constant ColorDelta_Access := ColorDelta_Access (colorDelta_Param);
    begin
         return StringMaker_Package.Create.appendint (Integer (TsUtil_Package.getInstance.hashCode (point))).append (CommonSeps_Package.getInstance.UNDERSCORE).append (colorDelta.getKey.toString).toString;
    end getKey;
@@ -58,8 +58,8 @@ package body org.allbinary.media.image.comparison.pixel.PixelDelta_Package is
         return This.point;
    end getPoint;
 
-   procedure setPoint (This : in out PixelDelta; point_Param : access GPoint'Class) is
-      point : GPoint_Access := GPoint_Access (point_Param);
+   procedure setPoint (This : in out PixelDelta; point_Param : access GPoint_Package.GPoint'Class) is
+      point : constant GPoint_Access := GPoint_Access (point_Param);
    begin
         This.point := point;
    end setPoint;
@@ -69,8 +69,8 @@ package body org.allbinary.media.image.comparison.pixel.PixelDelta_Package is
         return This.colorDelta;
    end getColorDelta;
 
-   procedure setColorDelta (This : in out PixelDelta; colorDelta_Param : access ColorDelta'Class) is
-      colorDelta : ColorDelta_Access := ColorDelta_Access (colorDelta_Param);
+   procedure setColorDelta (This : in out PixelDelta; colorDelta_Param : access ColorDelta_Package.ColorDelta'Class) is
+      colorDelta : constant ColorDelta_Access := ColorDelta_Access (colorDelta_Param);
    begin
         This.colorDelta := colorDelta;
    end setColorDelta;
@@ -80,7 +80,7 @@ package body org.allbinary.media.image.comparison.pixel.PixelDelta_Package is
         return StringMaker_Package.Create.append (To_Unbounded_String ("PixelDelta: Point: ")).append (This.point.toString).append (CommonSeps_Package.getInstance.SPACE).append (This.colorDelta.toString).toString;
    end toString;
 
-   procedure getKey (point_Param : access GPoint'Class; colorDelta_Param : access ColorDelta'Class) is
+   procedure getKey (point_Param : access GPoint_Package.GPoint'Class; colorDelta_Param : access ColorDelta_Package.ColorDelta'Class) is
       Java_Result : constant Java_Object_Access := getKey (point_Param, colorDelta_Param);
       pragma Unreferenced (Java_Result);
    begin

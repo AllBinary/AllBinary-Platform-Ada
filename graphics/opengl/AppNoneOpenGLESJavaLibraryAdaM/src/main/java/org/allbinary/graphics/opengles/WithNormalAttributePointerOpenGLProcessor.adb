@@ -40,9 +40,9 @@ package body org.allbinary.graphics.opengles.WithNormalAttributePointerOpenGLPro
       return This;
    end Create;
 
-   procedure process (This : in out WithNormalAttributePointerOpenGLProcessor; gl_Param : access GL10'Class; aObject3d_Param : access Java_Object'Class) is
-      gl : GL10_Access := GL10_Access (gl_Param);
-      aObject3d : Java_Object_Access := Java_Object_Access (aObject3d_Param);
+   procedure process (This : in out WithNormalAttributePointerOpenGLProcessor; gl_Param : access GL10_Package.GL10'Class; aObject3d_Param : access Java_Object'Class) is
+      gl : constant GL10_Access := GL10_Access (gl_Param);
+      aObject3d : constant Java_Object_Access := Java_Object_Access (aObject3d_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end process;

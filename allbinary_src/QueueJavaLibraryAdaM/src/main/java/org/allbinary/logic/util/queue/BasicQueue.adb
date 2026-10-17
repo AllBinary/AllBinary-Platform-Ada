@@ -37,14 +37,14 @@ package body org.allbinary.logic.util.queue.BasicQueue_Package is
 
    --  throws Exception
    function offer (This : in out BasicQueue; anyType_Param : access Java_Object'Class) return Boolean is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         This.queueVector.add (anyType);
         return True;
    end offer;
 
    procedure remove (This : in out BasicQueue; anyType_Param : access Java_Object'Class) is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         This.queueVector.remove (anyType);
    end remove;

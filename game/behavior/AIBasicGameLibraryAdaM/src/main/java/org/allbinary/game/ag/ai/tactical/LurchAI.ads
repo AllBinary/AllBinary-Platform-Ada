@@ -45,9 +45,9 @@ package org.allbinary.game.ag.ai.tactical.LurchAI_Package is
       currentSpeed : Integer;
    end record;
 
-   procedure Initialize (This : in out LurchAI'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class);
-   function Create (ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return LurchAI_Access;
-   procedure processAI (This : in out LurchAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class);
+   procedure Initialize (This : in out LurchAI'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class);
+   function Create (ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) return LurchAI_Access;
+   procedure processAI (This : in out LurchAI; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class);
    procedure reverse_Id (This : in out LurchAI);
    procedure accelerate (This : in out LurchAI);
    procedure drop (This : in out LurchAI);

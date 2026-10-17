@@ -29,15 +29,15 @@ package body org.allbinary.game.displayable.canvas.FormInputProcessor_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out FormInputProcessor'Class; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class) is
-      allBinaryGameCanvas : AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (allBinaryGameCanvas_Param);
+   procedure Initialize (This : in out FormInputProcessor'Class; allBinaryGameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class) is
+      allBinaryGameCanvas : constant AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (allBinaryGameCanvas_Param);
    begin
       InputProcessor_Package.Initialize (This);
       Initialize_Fields (This);
         This.allBinaryGameCanvas := allBinaryGameCanvas;
    end Initialize;
 
-   function Create (allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class) return FormInputProcessor_Access is
+   function Create (allBinaryGameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class) return FormInputProcessor_Access is
       This : constant FormInputProcessor_Access := new FormInputProcessor;
    begin
       FormInputProcessor_Package.Initialize (This.all, allBinaryGameCanvas_Param);
@@ -63,8 +63,8 @@ package body org.allbinary.game.displayable.canvas.FormInputProcessor_Package is
         end;
    end keyPressedByDevice;
 
-   procedure keyReleasedByDevice (This : in out FormInputProcessor; canvas_Param : access Canvas'Class; keyCode : Integer; deviceId : Integer) is
-      canvas : Canvas_Access := Canvas_Access (canvas_Param);
+   procedure keyReleasedByDevice (This : in out FormInputProcessor; canvas_Param : access Canvas_Package.Canvas'Class; keyCode : Integer; deviceId : Integer) is
+      canvas : constant Canvas_Access := Canvas_Access (canvas_Param);
       input : Input_Access;
       gameKey : GameKey_Access;
       gameKeyEventSourceInterface : GameKeyEventSourceInterface_Access;

@@ -35,8 +35,8 @@ package org.allbinary.media.image.filter.ImageFileFilter_Package is
 
    procedure Initialize (This : in out ImageFileFilter'Class);
    function Create return ImageFileFilter_Access;
-   function accept_Id (This : in out ImageFileFilter; f_Param : access File'Class) return Boolean;
-   procedure accept_Id (This : in out ImageFileFilter; f_Param : access File'Class);
+   function accept_Id (This : in out ImageFileFilter; f_Param : access File_Package.File'Class) return Boolean;
+   procedure accept_Id (This : in out ImageFileFilter; f_Param : access File_Package.File'Class);
    function getDescription (This : in out ImageFileFilter) return Unbounded_String;
 
 end org.allbinary.media.image.filter.ImageFileFilter_Package;

@@ -24,15 +24,15 @@ package body org.allbinary.game.displayable.canvas.CheatGameInputProcessor_Packa
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CheatGameInputProcessor'Class; gameCanvas_Param : access AllBinaryGameCanvas'Class) is
-      gameCanvas : AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (gameCanvas_Param);
+   procedure Initialize (This : in out CheatGameInputProcessor'Class; gameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class) is
+      gameCanvas : constant AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (gameCanvas_Param);
    begin
         PlayerGameInput_Package.Initialize (This, BasicArrayListD_Package.Create, BasicArrayListD_Package.Create, -(1));
         Initialize_Fields (This);
         This.gameCanvas := gameCanvas;
    end Initialize;
 
-   function Create (gameCanvas_Param : access AllBinaryGameCanvas'Class) return CheatGameInputProcessor_Access is
+   function Create (gameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class) return CheatGameInputProcessor_Access is
       This : constant CheatGameInputProcessor_Access := new CheatGameInputProcessor;
    begin
       CheatGameInputProcessor_Package.Initialize (This.all, gameCanvas_Param);

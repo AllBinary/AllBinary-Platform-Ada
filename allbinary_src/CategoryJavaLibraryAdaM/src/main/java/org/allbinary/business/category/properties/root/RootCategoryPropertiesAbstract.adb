@@ -53,8 +53,8 @@ package body org.allbinary.business.category.properties.root.RootCategoryPropert
    end setValue;
 
    --  throws Exception
-   procedure setRootFilePath (This : in out RootCategoryPropertiesAbstract; value_Param : access AbPath'Class) is
-      value : AbPath_Access := AbPath_Access (value_Param);
+   procedure setRootFilePath (This : in out RootCategoryPropertiesAbstract; value_Param : access AbPath_Package.AbPath'Class) is
+      value : constant AbPath_Access := AbPath_Access (value_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end setRootFilePath;
@@ -84,14 +84,14 @@ package body org.allbinary.business.category.properties.root.RootCategoryPropert
    end isRoot;
 
    --  throws Exception
-   function getWebAppPath (This : in out RootCategoryPropertiesAbstract; categoryHierarchyInterface_Param : access CategoryHierarchyInterface'Class) return Unbounded_String is
-      categoryHierarchyInterface : CategoryHierarchyInterface_Access := CategoryHierarchyInterface_Access (categoryHierarchyInterface_Param);
+   function getWebAppPath (This : in out RootCategoryPropertiesAbstract; categoryHierarchyInterface_Param : access CategoryHierarchyInterface_Package.CategoryHierarchyInterface'Class) return Unbounded_String is
+      categoryHierarchyInterface : constant CategoryHierarchyInterface_Access := CategoryHierarchyInterface_Access (categoryHierarchyInterface_Param);
    begin
         Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Not Root")));
    end getWebAppPath;
 
-   function getPath (This : in out RootCategoryPropertiesAbstract; categoryHierarchyInterface_Param : access CategoryHierarchyInterface'Class) return AbPath_Access is
-      categoryHierarchyInterface : CategoryHierarchyInterface_Access := CategoryHierarchyInterface_Access (categoryHierarchyInterface_Param);
+   function getPath (This : in out RootCategoryPropertiesAbstract; categoryHierarchyInterface_Param : access CategoryHierarchyInterface_Package.CategoryHierarchyInterface'Class) return AbPath_Access is
+      categoryHierarchyInterface : constant CategoryHierarchyInterface_Access := CategoryHierarchyInterface_Access (categoryHierarchyInterface_Param);
    begin
         return AbPath_Package.createAbPath;
    end getPath;
@@ -129,8 +129,8 @@ package body org.allbinary.business.category.properties.root.RootCategoryPropert
    end toValidationInfoDoc;
 
    --  throws Exception
-   function toValidationInfoNode (This : in out RootCategoryPropertiesAbstract; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toValidationInfoNode (This : in out RootCategoryPropertiesAbstract; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
@@ -141,21 +141,21 @@ package body org.allbinary.business.category.properties.root.RootCategoryPropert
         return Null_Unbounded_String;
    end validationInfo;
 
-   procedure getWebAppPath (This : in out RootCategoryPropertiesAbstract; categoryHierarchyInterface_Param : access CategoryHierarchyInterface'Class) is
+   procedure getWebAppPath (This : in out RootCategoryPropertiesAbstract; categoryHierarchyInterface_Param : access CategoryHierarchyInterface_Package.CategoryHierarchyInterface'Class) is
       Java_Result : constant Unbounded_String := RootCategoryPropertiesAbstract'Class (This).getWebAppPath (categoryHierarchyInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getWebAppPath;
 
-   procedure getPath (This : in out RootCategoryPropertiesAbstract; categoryHierarchyInterface_Param : access CategoryHierarchyInterface'Class) is
+   procedure getPath (This : in out RootCategoryPropertiesAbstract; categoryHierarchyInterface_Param : access CategoryHierarchyInterface_Package.CategoryHierarchyInterface'Class) is
       Java_Result : constant AbPath_Access := RootCategoryPropertiesAbstract'Class (This).getPath (categoryHierarchyInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getPath;
 
-   procedure toValidationInfoNode (This : in out RootCategoryPropertiesAbstract; document_Param : access Document'Class) is
+   procedure toValidationInfoNode (This : in out RootCategoryPropertiesAbstract; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := RootCategoryPropertiesAbstract'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

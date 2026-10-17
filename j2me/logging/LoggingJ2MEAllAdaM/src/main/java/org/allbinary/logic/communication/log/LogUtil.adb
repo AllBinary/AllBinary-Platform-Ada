@@ -41,8 +41,8 @@ package body org.allbinary.logic.communication.log.LogUtil_Package is
       return This;
    end Create;
 
-   procedure putL (This : in out LogUtil; log_Param : access Log'Class) is
-      log : Log_Access := Log_Access (log_Param);
+   procedure putL (This : in out LogUtil; log_Param : access Log_Package.Log'Class) is
+      log : constant Log_Access := Log_Access (log_Param);
       specialMessage : Unbounded_String;
       anyType : Java_Object_Access;
       functionName : Unbounded_String;
@@ -56,13 +56,13 @@ package body org.allbinary.logic.communication.log.LogUtil_Package is
    end putL;
 
    procedure putF (This : in out LogUtil; specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String) is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
       className : Unbounded_String;
       message : Unbounded_String;
    begin
         className := CommonStrings_Package.getInstance.EMPTY;
         if (To_Unbounded_String (Ada.Tags.Expanded_Name (anyType.all'Tag))) /= (Null_Unbounded_String) then
-            className := Java_New_String (StringMaker_Package.Create.append (To_Unbounded_String (Ada.Tags.Expanded_Name (anyType.all'Tag))).append (CommonSeps_Package.getInstance.COLON).append (Integer_Package.toHexString (TsUtil_Package.getInstance.hashCode (anyType))).toString);
+            className := Java_New_String (StringMaker_Package.Create.append (To_Unbounded_String (Ada.Tags.Expanded_Name (anyType.all'Tag))).append (CommonSeps_Package.getInstance.COLON).append (To_Unbounded_String (Java_To_Unsigned_String (TsUtil_Package.getInstance.hashCode (anyType), 16))).toString);
         end if;
         message := This.logFormatUtil.getS (className, functionName, specialMessage);
         Ada.Text_IO.Put (Java_Image (This.LOG_SUCCESS));
@@ -78,8 +78,8 @@ package body org.allbinary.logic.communication.log.LogUtil_Package is
    end putFS;
 
    procedure put (This : in out LogUtil; specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String; exception_Id_Param : access Java_Object'Class) is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
-      exception_Id : Java_Object_Access := Java_Object_Access (exception_Id_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
+      exception_Id : constant Java_Object_Access := Java_Object_Access (exception_Id_Param);
       className : Unbounded_String;
       hashCodeValue : Integer;
       hexString : Unbounded_String;
@@ -88,7 +88,7 @@ package body org.allbinary.logic.communication.log.LogUtil_Package is
         className := CommonStrings_Package.getInstance.EMPTY;
         if (To_Unbounded_String (Ada.Tags.Expanded_Name (anyType.all'Tag))) /= (Null_Unbounded_String) then
             hashCodeValue := TsUtil_Package.getInstance.hashCode (anyType);
-            hexString := Integer_Package.toHexString (hashCodeValue);
+            hexString := To_Unbounded_String (Java_To_Unsigned_String (hashCodeValue, 16));
             className := Java_New_String (StringMaker_Package.Create.append (To_Unbounded_String (Ada.Tags.Expanded_Name (anyType.all'Tag))).append (CommonSeps_Package.getInstance.COLON).append (hexString).toString);
         end if;
         message := This.logFormatUtil.get (className, functionName, specialMessage, exception_Id);

@@ -43,11 +43,11 @@ package body org.allbinary.game.configuration.InGameOptionsFormFactory_Package i
         return InGameOptionsFormFactory_Access (InGameOptionsFormFactory_Package.instance);
    end getInstance;
 
-   procedure init (This : in out InGameOptionsFormFactory; commandListener_Param : access CommandListener'Class; initInterface_Param : access Init'Class; title : Unbounded_String; backgrounBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) is
-      commandListener : CommandListener_Access := CommandListener_Access (commandListener_Param);
-      initInterface : Init_Access := Init_Access (initInterface_Param);
-      backgrounBasicColor : BasicColor_Access := BasicColor_Access (backgrounBasicColor_Param);
-      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
+   procedure init (This : in out InGameOptionsFormFactory; commandListener_Param : access CommandListener_Package.CommandListener'Class; initInterface_Param : access Init_Package.Init'Class; title : Unbounded_String; backgrounBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      commandListener : constant CommandListener_Access := CommandListener_Access (commandListener_Param);
+      initInterface : constant Init_Access := Init_Access (initInterface_Param);
+      backgrounBasicColor : constant BasicColor_Access := BasicColor_Access (backgrounBasicColor_Param);
+      foregroundBasicColor : constant BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
       commonStrings : CommonStrings_Access;
    begin
         begin

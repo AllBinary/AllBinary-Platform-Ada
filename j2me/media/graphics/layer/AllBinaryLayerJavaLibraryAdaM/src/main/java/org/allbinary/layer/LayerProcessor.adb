@@ -23,14 +23,14 @@ package body org.allbinary.layer.LayerProcessor_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out LayerProcessor'Class; layerManager_Param : access LayerManager'Class) is
-      layerManager : LayerManager_Access := LayerManager_Access (layerManager_Param);
+   procedure Initialize (This : in out LayerProcessor'Class; layerManager_Param : access LayerManager_Package.LayerManager'Class) is
+      layerManager : constant LayerManager_Access := LayerManager_Access (layerManager_Param);
    begin
       Initialize_Fields (This);
         This.layerManager := layerManager;
    end Initialize;
 
-   function Create (layerManager_Param : access LayerManager'Class) return LayerProcessor_Access is
+   function Create (layerManager_Param : access LayerManager_Package.LayerManager'Class) return LayerProcessor_Access is
       This : constant LayerProcessor_Access := new LayerProcessor;
    begin
       LayerProcessor_Package.Initialize (This.all, layerManager_Param);
@@ -38,16 +38,16 @@ package body org.allbinary.layer.LayerProcessor_Package is
    end Create;
 
    --  throws Exception
-   procedure processAt (This : in out LayerProcessor; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class; layerInterface_Param : access AllBinaryLayer'Class; index : Integer) is
-      allBinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
-      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
+   procedure processAt (This : in out LayerProcessor; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; index : Integer) is
+      allBinaryLayerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
+      layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         Java_Throw (Java_New_Exception ("Exception", This.commonStrings.NOT_IMPLEMENTED));
    end processAt;
 
    --  throws Exception
-   function isProcessorLayer (This : in out LayerProcessor; layerInterface_Param : access AllBinaryLayer'Class) return Boolean is
-      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
+   function isProcessorLayer (This : in out LayerProcessor; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) return Boolean is
+      layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         Java_Throw (Java_New_Exception ("Exception", This.commonStrings.NOT_IMPLEMENTED));
    end isProcessorLayer;
@@ -58,8 +58,8 @@ package body org.allbinary.layer.LayerProcessor_Package is
    end getLayerManager;
 
    --  throws Exception
-   procedure process (This : in out LayerProcessor; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class) is
-      allBinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
+   procedure process (This : in out LayerProcessor; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class) is
+      allBinaryLayerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
       layerManager : LayerManager_Access;
       size : Integer;
       index : Integer;
@@ -71,7 +71,7 @@ package body org.allbinary.layer.LayerProcessor_Package is
         end loop;
    end process;
 
-   procedure isProcessorLayer (This : in out LayerProcessor; layerInterface_Param : access AllBinaryLayer'Class) is
+   procedure isProcessorLayer (This : in out LayerProcessor; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
       Java_Result : constant Boolean := LayerProcessor'Class (This).isProcessorLayer (layerInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

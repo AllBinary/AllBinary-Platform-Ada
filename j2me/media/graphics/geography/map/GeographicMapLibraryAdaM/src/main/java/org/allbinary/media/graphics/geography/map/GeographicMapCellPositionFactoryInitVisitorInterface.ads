@@ -31,7 +31,7 @@ package org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFact
    type GeographicMapCellPositionFactoryInitVisitorInterface_Access is access all GeographicMapCellPositionFactoryInitVisitorInterface'Class;
    type GeographicMapCellPositionFactoryInitVisitorInterface_Access_Array is array (Natural range <>) of GeographicMapCellPositionFactoryInitVisitorInterface_Access;
    type GeographicMapCellPositionFactoryInitVisitorInterface_Access_Array_Access is access all GeographicMapCellPositionFactoryInitVisitorInterface_Access_Array;
-   procedure visit (This : in out GeographicMapCellPositionFactoryInitVisitorInterface; tiledLayer_Param : access AllBinaryTiledLayer'Class; cellPosition_Param : access GeographicMapCellPosition'Class) is abstract;
+   procedure visit (This : in out GeographicMapCellPositionFactoryInitVisitorInterface; tiledLayer_Param : access AllBinaryTiledLayer_Package.AllBinaryTiledLayer'Class; cellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is abstract;
 
 end org.allbinary.media.graphics.geography.map.GeographicMapCellPositionFactoryInitVisitorInterface_Package;
 

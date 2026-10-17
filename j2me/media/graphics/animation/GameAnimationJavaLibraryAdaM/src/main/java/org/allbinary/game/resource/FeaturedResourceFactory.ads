@@ -71,7 +71,7 @@ package org.allbinary.game.resource.FeaturedResourceFactory_Package is
    function Create return FeaturedResourceFactory_Access;
    procedure init (This : in out FeaturedResourceFactory; level : Integer);
    procedure clear (This : in out FeaturedResourceFactory);
-   procedure add (This : in out FeaturedResourceFactory; featureInterface_Param : access GameFeatureControlledInterface'Class);
+   procedure add (This : in out FeaturedResourceFactory; featureInterface_Param : access GameFeatureControlledInterface_Package.GameFeatureControlledInterface'Class);
    function getList (This : in out FeaturedResourceFactory) return BasicArrayList_Access;
 
 end org.allbinary.game.resource.FeaturedResourceFactory_Package;

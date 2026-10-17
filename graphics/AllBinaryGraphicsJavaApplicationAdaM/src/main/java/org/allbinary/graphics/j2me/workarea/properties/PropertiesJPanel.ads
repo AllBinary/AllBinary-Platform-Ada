@@ -48,7 +48,7 @@ package org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package
 
    procedure Initialize (This : in out PropertiesJPanel'Class);
    function Create return PropertiesJPanel_Access;
-   procedure set (This : in out PropertiesJPanel; panel_Param : access JPanel'Class);
+   procedure set (This : in out PropertiesJPanel; panel_Param : access JPanel_Package.JPanel'Class);
    procedure initComponents (This : in out PropertiesJPanel);
 
 end org.allbinary.graphics.j2me.workarea.properties.PropertiesJPanel_Package;

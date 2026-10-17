@@ -41,8 +41,8 @@ package body org.allbinary.business.user.NewUserFactory_Package is
    end getInstance;
 
    --  throws Exception
-   function getInstance (transformInfoInterface_Param : access TransformInfoInterface'Class) return UserInterface_Access is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   function getInstance (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return UserInterface_Access is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
       httpTransformInfoInterface : TransformInfoHttpInterface_Access;
       httpServletRequest : HttpServletRequest_Access;
       hashMap : HashMap_Access;
@@ -57,9 +57,9 @@ package body org.allbinary.business.user.NewUserFactory_Package is
    end getInstance;
 
    --  throws Exception
-   function getInstance (httpServletRequest_Param : access HttpServletRequest'Class; propertiesHashMap_Param : access HashMap'Class) return UserInterface_Access is
-      httpServletRequest : HttpServletRequest_Access := HttpServletRequest_Access (httpServletRequest_Param);
-      propertiesHashMap : HashMap_Access := HashMap_Access (propertiesHashMap_Param);
+   function getInstance (httpServletRequest_Param : access HttpServletRequest_Package.HttpServletRequest'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class) return UserInterface_Access is
+      httpServletRequest : constant HttpServletRequest_Access := HttpServletRequest_Access (httpServletRequest_Param);
+      propertiesHashMap : constant HashMap_Access := HashMap_Access (propertiesHashMap_Param);
       requestHashMap : HashMap_Access;
       roleString : Unbounded_String;
    begin
@@ -73,14 +73,14 @@ package body org.allbinary.business.user.NewUserFactory_Package is
         end if;
    end getInstance;
 
-   procedure getInstance (transformInfoInterface_Param : access TransformInfoInterface'Class) is
+   procedure getInstance (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
       Java_Result : constant UserInterface_Access := getInstance (transformInfoInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
-   procedure getInstance (httpServletRequest_Param : access HttpServletRequest'Class; propertiesHashMap_Param : access HashMap'Class) is
+   procedure getInstance (httpServletRequest_Param : access HttpServletRequest_Package.HttpServletRequest'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class) is
       Java_Result : constant UserInterface_Access := getInstance (httpServletRequest_Param, propertiesHashMap_Param);
       pragma Unreferenced (Java_Result);
    begin

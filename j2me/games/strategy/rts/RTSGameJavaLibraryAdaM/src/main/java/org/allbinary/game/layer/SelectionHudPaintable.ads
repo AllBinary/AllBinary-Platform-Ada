@@ -76,16 +76,16 @@ package org.allbinary.game.layer.SelectionHudPaintable_Package is
 
    procedure Initialize (This : in out SelectionHudPaintable'Class);
    function Create return SelectionHudPaintable_Access;
-   procedure updateMeasurement (This : in out SelectionHudPaintable; graphics_Param : access Graphics'Class);
+   procedure updateMeasurement (This : in out SelectionHudPaintable; graphics_Param : access Graphics_Package.Graphics'Class);
    procedure update (This : in out SelectionHudPaintable);
    procedure updateSelectionInfo (This : in out SelectionHudPaintable);
    procedure updateInfo (This : in out SelectionHudPaintable);
    function getPrimitiveLongUtil (This : in out SelectionHudPaintable) return PrimitiveLongUtil_Access;
-   procedure setAnimationInterface (This : in out SelectionHudPaintable; animationInterface_Param : access Animation'Class);
+   procedure setAnimationInterface (This : in out SelectionHudPaintable; animationInterface_Param : access Animation_Package.Animation'Class);
    function getAnimationInterface (This : in out SelectionHudPaintable) return Animation_Access;
    procedure setName (This : in out SelectionHudPaintable; name : Unbounded_String);
    function getName (This : in out SelectionHudPaintable) return Unbounded_String;
-   procedure setBasicColorP (This : in out SelectionHudPaintable; basicColor_Param : access BasicColor'Class);
+   procedure setBasicColorP (This : in out SelectionHudPaintable; basicColor_Param : access BasicColor_Package.BasicColor'Class);
    function getBasicColorP (This : in out SelectionHudPaintable) return BasicColor_Access;
    procedure setColor (This : in out SelectionHudPaintable; color : Integer);
    function getColor (This : in out SelectionHudPaintable) return Integer;
@@ -93,7 +93,7 @@ package org.allbinary.game.layer.SelectionHudPaintable_Package is
    procedure setHeight (This : in out SelectionHudPaintable; height : Integer);
    function getHeight (This : in out SelectionHudPaintable) return Integer;
    function getX (This : in out SelectionHudPaintable) return Integer;
-   procedure paint (This : in out SelectionHudPaintable; graphics_Param : access Graphics'Class);
+   procedure paint (This : in out SelectionHudPaintable; graphics_Param : access Graphics_Package.Graphics'Class);
 
 end org.allbinary.game.layer.SelectionHudPaintable_Package;
 

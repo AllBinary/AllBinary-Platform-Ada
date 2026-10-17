@@ -245,8 +245,8 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
         end;
    end processForced;
 
-   procedure update (This : in out DisplayInfoSingleton; displayable_Param : access Displayable'Class; reason_Case : Unbounded_String) is
-      displayable : Displayable_Access := Displayable_Access (displayable_Param);
+   procedure update (This : in out DisplayInfoSingleton; displayable_Param : access Displayable_Package.Displayable'Class; reason_Case : Unbounded_String) is
+      displayable : constant Displayable_Access := Displayable_Access (displayable_Param);
       aLastWidth : Integer;
       aLastHeight : Integer;
       aFullWidth : Integer;
@@ -327,8 +327,8 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
         return This.toStringAppend (stringBuffer);
    end toString;
 
-   function toStringAppend (This : in out DisplayInfoSingleton; stringBuffer_Param : access StringMaker'Class) return Unbounded_String is
-      stringBuffer : StringMaker_Access := StringMaker_Access (stringBuffer_Param);
+   function toStringAppend (This : in out DisplayInfoSingleton; stringBuffer_Param : access StringMaker_Package.StringMaker'Class) return Unbounded_String is
+      stringBuffer : constant StringMaker_Access := StringMaker_Access (stringBuffer_Param);
    begin
         stringBuffer.append (This.DISPLAY_INFO);
         stringBuffer.append (This.FULL);
@@ -417,8 +417,8 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
         This.lastHalf (This.CUSTOM_HEIGHT) := (Java_Shift_Right_Arithmetic (This.last_Case (This.CUSTOM_HEIGHT), 1));
    end setCustom;
 
-   procedure setScalableListener (This : in out DisplayInfoSingleton; scalableListener_Param : access BaseScalable'Class) is
-      scalableListener : BaseScalable_Access := BaseScalable_Access (scalableListener_Param);
+   procedure setScalableListener (This : in out DisplayInfoSingleton; scalableListener_Param : access BaseScalable_Package.BaseScalable'Class) is
+      scalableListener : constant BaseScalable_Access := BaseScalable_Access (scalableListener_Param);
    begin
         This.scalableListener := scalableListener;
    end setScalableListener;
@@ -460,7 +460,7 @@ package body org.allbinary.graphics.displayable.DisplayInfoSingleton_Package is
       null;
    end isPortraitWH;
 
-   procedure toStringAppend (This : in out DisplayInfoSingleton; stringBuffer_Param : access StringMaker'Class) is
+   procedure toStringAppend (This : in out DisplayInfoSingleton; stringBuffer_Param : access StringMaker_Package.StringMaker'Class) is
       Java_Result : constant Unbounded_String := DisplayInfoSingleton'Class (This).toStringAppend (stringBuffer_Param);
       pragma Unreferenced (Java_Result);
    begin

@@ -40,8 +40,8 @@ package org.allbinary.input.motion.button.TouchButtonsPaintableCompositeFactory_
 
    procedure Initialize (This : in out TouchButtonsPaintableCompositeFactory'Class);
    function Create return TouchButtonsPaintableCompositeFactory_Access;
-   function getInstance (inputMappingInterface_Param : access InputMappingInterface'Class; basicColor_Param : access BasicColor'Class) return ProcessPaintable_Access;
-   procedure getInstance (inputMappingInterface_Param : access InputMappingInterface'Class; basicColor_Param : access BasicColor'Class);
+   function getInstance (inputMappingInterface_Param : access InputMappingInterface_Package.InputMappingInterface'Class; basicColor_Param : access BasicColor_Package.BasicColor'Class) return ProcessPaintable_Access;
+   procedure getInstance (inputMappingInterface_Param : access InputMappingInterface_Package.InputMappingInterface'Class; basicColor_Param : access BasicColor_Package.BasicColor'Class);
 
 end org.allbinary.input.motion.button.TouchButtonsPaintableCompositeFactory_Package;
 

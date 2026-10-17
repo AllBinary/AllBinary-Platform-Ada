@@ -68,10 +68,10 @@ package views.generic_Id.order.history.OrderHistoryView_Package is
       cancelled : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out OrderHistoryView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return OrderHistoryView_Access;
-   function toXmlNode (This : in out OrderHistoryView; document_Param : access Document'Class) return Node_Access;
-   procedure toXmlNode (This : in out OrderHistoryView; document_Param : access Document'Class);
+   procedure Initialize (This : in out OrderHistoryView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return OrderHistoryView_Access;
+   function toXmlNode (This : in out OrderHistoryView; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out OrderHistoryView; document_Param : access Document_Package.Document'Class);
    procedure addDomNodeInterfaces (This : in out OrderHistoryView);
    function view (This : in out OrderHistoryView) return Unbounded_String;
 

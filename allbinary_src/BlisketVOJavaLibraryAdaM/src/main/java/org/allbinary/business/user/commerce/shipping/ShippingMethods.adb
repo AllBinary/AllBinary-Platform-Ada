@@ -25,16 +25,16 @@ package body org.allbinary.business.user.commerce.shipping.ShippingMethods_Packa
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ShippingMethods'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; storeFrontInterface_Param : access StoreFrontInterface'Class) is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      storeFrontInterface : StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
+   procedure Initialize (This : in out ShippingMethods'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      storeFrontInterface : constant StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
    begin
       Initialize_Fields (This);
         This.defaultShippingMethodInterface := ShippingMethodsFactory_Package.Create (abeClientInformation, storeFrontInterface).getDefaultInstance;
         This.shippingVector := ShippingMethodsFactory_Package.Create (abeClientInformation, storeFrontInterface).getInstance;
    end Initialize;
 
-   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; storeFrontInterface_Param : access StoreFrontInterface'Class) return ShippingMethods_Access is
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) return ShippingMethods_Access is
       This : constant ShippingMethods_Access := new ShippingMethods;
    begin
       ShippingMethods_Package.Initialize (This.all, abeClientInformation_Param, storeFrontInterface_Param);

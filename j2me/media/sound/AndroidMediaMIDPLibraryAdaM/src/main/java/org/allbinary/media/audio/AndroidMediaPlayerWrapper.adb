@@ -85,14 +85,14 @@ package body org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package is
         end if;
    end setLoopCount;
 
-   procedure addPlayerListener (This : in out AndroidMediaPlayerWrapper; playerListener_Param : access PlayerListener'Class) is
-      playerListener : PlayerListener_Access := PlayerListener_Access (playerListener_Param);
+   procedure addPlayerListener (This : in out AndroidMediaPlayerWrapper; playerListener_Param : access PlayerListener_Package.PlayerListener'Class) is
+      playerListener : constant PlayerListener_Access := PlayerListener_Access (playerListener_Param);
    begin
         BasicPlayer (This).addPlayerListener (playerListener);
    end addPlayerListener;
 
-   procedure removePlayerListener (This : in out AndroidMediaPlayerWrapper; playerListener_Param : access PlayerListener'Class) is
-      playerListener : PlayerListener_Access := PlayerListener_Access (playerListener_Param);
+   procedure removePlayerListener (This : in out AndroidMediaPlayerWrapper; playerListener_Param : access PlayerListener_Package.PlayerListener'Class) is
+      playerListener : constant PlayerListener_Access := PlayerListener_Access (playerListener_Param);
    begin
         BasicPlayer (This).removePlayerListener (playerListener);
    end removePlayerListener;
@@ -181,8 +181,8 @@ package body org.allbinary.media.audio.AndroidMediaPlayerWrapper_Package is
         return Long_Long_Integer (This.mediaPlayer.getDuration);
    end getDuration;
 
-   procedure setMediaPlayer (This : in out AndroidMediaPlayerWrapper; mediaPlayer_Param : access MediaPlayer'Class) is
-      mediaPlayer : MediaPlayer_Access := MediaPlayer_Access (mediaPlayer_Param);
+   procedure setMediaPlayer (This : in out AndroidMediaPlayerWrapper; mediaPlayer_Param : access MediaPlayer_Package.MediaPlayer'Class) is
+      mediaPlayer : constant MediaPlayer_Access := MediaPlayer_Access (mediaPlayer_Param);
    begin
         This.mediaPlayer := mediaPlayer;
    end setMediaPlayer;

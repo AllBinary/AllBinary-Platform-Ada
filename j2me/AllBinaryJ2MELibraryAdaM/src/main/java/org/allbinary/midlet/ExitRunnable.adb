@@ -26,9 +26,9 @@ package body org.allbinary.midlet.ExitRunnable_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ExitRunnable'Class; midlet_Param : access AllBinaryMidlet'Class; processor_Param : access Processor'Class; isProgress : Boolean) is
-      midlet : AllBinaryMidlet_Access := AllBinaryMidlet_Access (midlet_Param);
-      processor : Processor_Access := Processor_Access (processor_Param);
+   procedure Initialize (This : in out ExitRunnable'Class; midlet_Param : access AllBinaryMidlet_Package.AllBinaryMidlet'Class; processor_Param : access Processor_Package.Processor'Class; isProgress : Boolean) is
+      midlet : constant AllBinaryMidlet_Access := AllBinaryMidlet_Access (midlet_Param);
+      processor : constant Processor_Access := Processor_Access (processor_Param);
    begin
       Initialize_Fields (This);
         This.midlet := midlet;
@@ -36,7 +36,7 @@ package body org.allbinary.midlet.ExitRunnable_Package is
         This.processor := processor;
    end Initialize;
 
-   function Create (midlet_Param : access AllBinaryMidlet'Class; processor_Param : access Processor'Class; isProgress : Boolean) return ExitRunnable_Access is
+   function Create (midlet_Param : access AllBinaryMidlet_Package.AllBinaryMidlet'Class; processor_Param : access Processor_Package.Processor'Class; isProgress : Boolean) return ExitRunnable_Access is
       This : constant ExitRunnable_Access := new ExitRunnable;
    begin
       ExitRunnable_Package.Initialize (This.all, midlet_Param, processor_Param, isProgress);

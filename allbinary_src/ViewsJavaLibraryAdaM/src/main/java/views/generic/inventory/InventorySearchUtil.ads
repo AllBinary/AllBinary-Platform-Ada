@@ -102,12 +102,12 @@ package views.generic_Id.inventory.InventorySearchUtil_Package is
    procedure Initialize (This : in out InventorySearchUtil'Class);
    function Create return InventorySearchUtil_Access;
    function getInstance return InventorySearchUtil_Access;
-   function getBasicItemIdColumn (This : in out InventorySearchUtil; searchRequest_Param : access SearchRequest'Class) return BasicArrayList_Access;
-   procedure getBasicItemIdColumn (This : in out InventorySearchUtil; searchRequest_Param : access SearchRequest'Class);
-   function getNoResults (This : in out InventorySearchUtil; viewDocumentInterface_Param : access TransformDocumentInterface'Class; inventoryNode_Param : access Node'Class) return Unbounded_String;
-   procedure getNoResults (This : in out InventorySearchUtil; viewDocumentInterface_Param : access TransformDocumentInterface'Class; inventoryNode_Param : access Node'Class);
-   function search (This : in out InventorySearchUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; searchRequest_Param : access SearchRequest'Class; column_Param : access BasicArrayList'Class) return Unbounded_String_Array_Access;
-   procedure search (This : in out InventorySearchUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; searchRequest_Param : access SearchRequest'Class; column_Param : access BasicArrayList'Class);
+   function getBasicItemIdColumn (This : in out InventorySearchUtil; searchRequest_Param : access SearchRequest_Package.SearchRequest'Class) return BasicArrayList_Access;
+   procedure getBasicItemIdColumn (This : in out InventorySearchUtil; searchRequest_Param : access SearchRequest_Package.SearchRequest'Class);
+   function getNoResults (This : in out InventorySearchUtil; viewDocumentInterface_Param : access TransformDocumentInterface_Package.TransformDocumentInterface'Class; inventoryNode_Param : access Node_Package.Node'Class) return Unbounded_String;
+   procedure getNoResults (This : in out InventorySearchUtil; viewDocumentInterface_Param : access TransformDocumentInterface_Package.TransformDocumentInterface'Class; inventoryNode_Param : access Node_Package.Node'Class);
+   function search (This : in out InventorySearchUtil; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; searchRequest_Param : access SearchRequest_Package.SearchRequest'Class; column_Param : access BasicArrayList_Package.BasicArrayList'Class) return Unbounded_String_Array_Access;
+   procedure search (This : in out InventorySearchUtil; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; searchRequest_Param : access SearchRequest_Package.SearchRequest'Class; column_Param : access BasicArrayList_Package.BasicArrayList'Class);
 
 end views.generic_Id.inventory.InventorySearchUtil_Package;
 

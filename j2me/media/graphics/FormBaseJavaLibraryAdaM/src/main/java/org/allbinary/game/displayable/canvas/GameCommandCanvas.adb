@@ -40,10 +40,10 @@ package body org.allbinary.game.displayable.canvas.GameCommandCanvas_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GameCommandCanvas'Class; cmdListener_Param : access CommandListener'Class; name : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) is
-      cmdListener : CommandListener_Access := CommandListener_Access (cmdListener_Param);
-      backgroundBasicColor : BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
-      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
+   procedure Initialize (This : in out GameCommandCanvas'Class; cmdListener_Param : access CommandListener_Package.CommandListener'Class; name : Unbounded_String; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      cmdListener : constant CommandListener_Access := CommandListener_Access (cmdListener_Param);
+      backgroundBasicColor : constant BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
+      foregroundBasicColor : constant BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
    begin
         MyCanvas_Package.Initialize (This, name, CanvasStrings_Package.getInstance.EMPTY_CHILD_NAME_LIST);
         Initialize_Fields (This);
@@ -68,15 +68,15 @@ package body org.allbinary.game.displayable.canvas.GameCommandCanvas_Package is
         end if;
    end Initialize;
 
-   function Create (cmdListener_Param : access CommandListener'Class; name : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return GameCommandCanvas_Access is
+   function Create (cmdListener_Param : access CommandListener_Package.CommandListener'Class; name : Unbounded_String; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return GameCommandCanvas_Access is
       This : constant GameCommandCanvas_Access := new GameCommandCanvas;
    begin
       GameCommandCanvas_Package.Initialize (This.all, cmdListener_Param, name, backgroundBasicColor_Param, foregroundBasicColor_Param);
       return This;
    end Create;
 
-   procedure updateMeasurement (This : in out GameCommandCanvas; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure updateMeasurement (This : in out GameCommandCanvas; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
       rectangle : Rectangle_Access;
    begin
@@ -98,21 +98,21 @@ package body org.allbinary.game.displayable.canvas.GameCommandCanvas_Package is
         This.myFontProcessor := MyFontProcessor_Package.getInstance;
    end updateMeasurement;
 
-   procedure onEvent (This : in out GameCommandCanvas; eventObject_Param : access AllBinaryEventObject'Class) is
-      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+   procedure onEvent (This : in out GameCommandCanvas; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
+      eventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
    begin
         ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, GameCommandCanvas_Access'(This'Unchecked_Access));
    end onEvent;
 
-   procedure onDisplayChangeEvent (This : in out GameCommandCanvas; displayChangeEvent_Param : access DisplayChangeEvent'Class) is
-      displayChangeEvent : DisplayChangeEvent_Access := DisplayChangeEvent_Access (displayChangeEvent_Param);
+   procedure onDisplayChangeEvent (This : in out GameCommandCanvas; displayChangeEvent_Param : access DisplayChangeEvent_Package.DisplayChangeEvent'Class) is
+      displayChangeEvent : constant DisplayChangeEvent_Access := DisplayChangeEvent_Access (displayChangeEvent_Param);
    begin
         This.logUtil.putF (StringMaker_Package.Create.append (This.commonStrings.START).append (DisplayInfoSingleton_Package.getInstance.toString).toString, GameCommandCanvas_Access'(This'Unchecked_Access), This.canvasStrings.ON_DISPLAY_CHANGE_EVENT);
         This.myFontProcessor := This.updateMyFontProcessor;
    end onDisplayChangeEvent;
 
-   procedure initCommands (This : in out GameCommandCanvas; cmdListener_Param : access CommandListener'Class) is
-      cmdListener : CommandListener_Access := CommandListener_Access (cmdListener_Param);
+   procedure initCommands (This : in out GameCommandCanvas; cmdListener_Param : access CommandListener_Package.CommandListener'Class) is
+      cmdListener : constant CommandListener_Access := CommandListener_Access (cmdListener_Param);
    begin
         This.removeAllCommands;
         This.addCommand (GameCommandsFactory_Package.getInstance.CLOSE_AND_SHOW_GAME_CANVAS);
@@ -262,16 +262,16 @@ package body org.allbinary.game.displayable.canvas.GameCommandCanvas_Package is
         end;
    end removeGameKeyEvent;
 
-   procedure paint (This : in out GameCommandCanvas; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out GameCommandCanvas; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.myFontProcessor.process (graphics);
         This.menuPaintable.paint (graphics);
         This.repaintBehavior.repaint (GameCommandCanvas_Access'(This'Unchecked_Access));
    end paint;
 
-   procedure setMenuInputProcessor (This : in out GameCommandCanvas; menuInputProcessor_Param : access BasicMenuInputProcessor'Class) is
-      menuInputProcessor : BasicMenuInputProcessor_Access := BasicMenuInputProcessor_Access (menuInputProcessor_Param);
+   procedure setMenuInputProcessor (This : in out GameCommandCanvas; menuInputProcessor_Param : access BasicMenuInputProcessor_Package.BasicMenuInputProcessor'Class) is
+      menuInputProcessor : constant BasicMenuInputProcessor_Access := BasicMenuInputProcessor_Access (menuInputProcessor_Param);
    begin
         This.menuInputProcessor := menuInputProcessor;
    end setMenuInputProcessor;

@@ -21,14 +21,14 @@ package body org.allbinary.graphics.canvas.transition.progress.LazyProgressCanva
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out LazyProgressCanvas'Class; title : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) is
-      backgroundBasicColor : BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
-      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
+   procedure Initialize (This : in out LazyProgressCanvas'Class; title : Unbounded_String; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      backgroundBasicColor : constant BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
+      foregroundBasicColor : constant BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
    begin
         ProgressCanvas_Package.Initialize (This, title, backgroundBasicColor, foregroundBasicColor);
    end Initialize;
 
-   function Create (title : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return LazyProgressCanvas_Access is
+   function Create (title : Unbounded_String; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return LazyProgressCanvas_Access is
       This : constant LazyProgressCanvas_Access := new LazyProgressCanvas;
    begin
       LazyProgressCanvas_Package.Initialize (This.all, title, backgroundBasicColor_Param, foregroundBasicColor_Param);

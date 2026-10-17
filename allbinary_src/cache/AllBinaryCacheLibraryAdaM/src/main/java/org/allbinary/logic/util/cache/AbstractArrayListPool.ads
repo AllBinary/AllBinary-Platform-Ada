@@ -44,12 +44,12 @@ package org.allbinary.logic.util.cache.AbstractArrayListPool_Package is
       cacheableInterfaceFactoryInterface : CacheableInterfaceFactoryInterface_Access;
    end record;
 
-   procedure Initialize (This : in out AbstractArrayListPool'Class; cacheableInterfaceFactoryInterface_Param : access CacheableInterfaceFactoryInterface'Class);
-   function Create (cacheableInterfaceFactoryInterface_Param : access CacheableInterfaceFactoryInterface'Class) return AbstractArrayListPool_Access;
+   procedure Initialize (This : in out AbstractArrayListPool'Class; cacheableInterfaceFactoryInterface_Param : access CacheableInterfaceFactoryInterface_Package.CacheableInterfaceFactoryInterface'Class);
+   function Create (cacheableInterfaceFactoryInterface_Param : access CacheableInterfaceFactoryInterface_Package.CacheableInterfaceFactoryInterface'Class) return AbstractArrayListPool_Access;
    procedure clear (This : in out AbstractArrayListPool);
    function remove (This : in out AbstractArrayListPool; key_Param : access Java_Object'Class) return CacheableInterface_Access;
    procedure remove (This : in out AbstractArrayListPool; key_Param : access Java_Object'Class);
-   procedure add (This : in out AbstractArrayListPool; cacheableInterface_Param : access CacheableInterface'Class);
+   procedure add (This : in out AbstractArrayListPool; cacheableInterface_Param : access CacheableInterface_Package.CacheableInterface'Class);
    procedure addArray (This : in out AbstractArrayListPool; cacheableInterfaces : CacheableInterface_Access_Array_Access);
 
 end org.allbinary.logic.util.cache.AbstractArrayListPool_Package;

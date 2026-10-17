@@ -30,16 +30,16 @@ package org.allbinary.input.motion.gesture.observer.MotionGestureEventListener_P
    type MotionGestureEventListener_Access is access all MotionGestureEventListener'Class;
    type MotionGestureEventListener_Access_Array is array (Natural range <>) of MotionGestureEventListener_Access;
    type MotionGestureEventListener_Access_Array_Access is access all MotionGestureEventListener_Access_Array;
-   procedure onPressedMotionGestureEvent (This : in out MotionGestureEventListener; ev_Param : access MotionGestureEvent'Class) is abstract;
-   procedure onUpMotionGestureEvent (This : in out MotionGestureEventListener; ev_Param : access MotionGestureEvent'Class) is abstract;
-   procedure onDownMotionGestureEvent (This : in out MotionGestureEventListener; ev_Param : access MotionGestureEvent'Class) is abstract;
-   procedure onLeftMotionGestureEvent (This : in out MotionGestureEventListener; ev_Param : access MotionGestureEvent'Class) is abstract;
-   procedure onRightMotionGestureEvent (This : in out MotionGestureEventListener; ev_Param : access MotionGestureEvent'Class) is abstract;
-   procedure onDiagonalDownRightMotionGestureEvent (This : in out MotionGestureEventListener; ev_Param : access MotionGestureEvent'Class) is abstract;
-   procedure onDiagonalDownLeftMotionGestureEvent (This : in out MotionGestureEventListener; ev_Param : access MotionGestureEvent'Class) is abstract;
-   procedure onDiagonalUpRightMotionGestureEvent (This : in out MotionGestureEventListener; ev_Param : access MotionGestureEvent'Class) is abstract;
-   procedure onDiagonalUpLeftMotionGestureEvent (This : in out MotionGestureEventListener; ev_Param : access MotionGestureEvent'Class) is abstract;
-   procedure released (This : in out MotionGestureEventListener; ev_Param : access MotionGestureEvent'Class) is abstract;
+   procedure onPressedMotionGestureEvent (This : in out MotionGestureEventListener; ev_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is abstract;
+   procedure onUpMotionGestureEvent (This : in out MotionGestureEventListener; ev_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is abstract;
+   procedure onDownMotionGestureEvent (This : in out MotionGestureEventListener; ev_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is abstract;
+   procedure onLeftMotionGestureEvent (This : in out MotionGestureEventListener; ev_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is abstract;
+   procedure onRightMotionGestureEvent (This : in out MotionGestureEventListener; ev_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is abstract;
+   procedure onDiagonalDownRightMotionGestureEvent (This : in out MotionGestureEventListener; ev_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is abstract;
+   procedure onDiagonalDownLeftMotionGestureEvent (This : in out MotionGestureEventListener; ev_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is abstract;
+   procedure onDiagonalUpRightMotionGestureEvent (This : in out MotionGestureEventListener; ev_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is abstract;
+   procedure onDiagonalUpLeftMotionGestureEvent (This : in out MotionGestureEventListener; ev_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is abstract;
+   procedure released (This : in out MotionGestureEventListener; ev_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is abstract;
 
 end org.allbinary.input.motion.gesture.observer.MotionGestureEventListener_Package;
 

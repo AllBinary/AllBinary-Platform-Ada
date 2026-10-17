@@ -24,8 +24,8 @@ package body org.allbinary.animation.image.LazyImageRotationAnimationFactory_Pac
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out LazyImageRotationAnimationFactory'Class; layoutIndex : Integer; associatedLazyAnimationId : Integer; animationInterfaceFactoryInterface_Param : access BaseImageAnimationFactory'Class) is
-      animationInterfaceFactoryInterface : BaseImageAnimationFactory_Access := BaseImageAnimationFactory_Access (animationInterfaceFactoryInterface_Param);
+   procedure Initialize (This : in out LazyImageRotationAnimationFactory'Class; layoutIndex : Integer; associatedLazyAnimationId : Integer; animationInterfaceFactoryInterface_Param : access BaseImageAnimationFactory_Package.BaseImageAnimationFactory'Class) is
+      animationInterfaceFactoryInterface : constant BaseImageAnimationFactory_Access := BaseImageAnimationFactory_Access (animationInterfaceFactoryInterface_Param);
    begin
       Initialize_Fields (This);
         This.layoutIndex := layoutIndex;
@@ -36,7 +36,7 @@ package body org.allbinary.animation.image.LazyImageRotationAnimationFactory_Pac
         end if;
    end Initialize;
 
-   function Create (layoutIndex : Integer; associatedLazyAnimationId : Integer; animationInterfaceFactoryInterface_Param : access BaseImageAnimationFactory'Class) return LazyImageRotationAnimationFactory_Access is
+   function Create (layoutIndex : Integer; associatedLazyAnimationId : Integer; animationInterfaceFactoryInterface_Param : access BaseImageAnimationFactory_Package.BaseImageAnimationFactory'Class) return LazyImageRotationAnimationFactory_Access is
       This : constant LazyImageRotationAnimationFactory_Access := new LazyImageRotationAnimationFactory;
    begin
       LazyImageRotationAnimationFactory_Package.Initialize (This.all, layoutIndex, associatedLazyAnimationId, animationInterfaceFactoryInterface_Param);
@@ -54,8 +54,8 @@ package body org.allbinary.animation.image.LazyImageRotationAnimationFactory_Pac
         end if;
    end getInstance;
 
-   procedure setInitialScale (This : in out LazyImageRotationAnimationFactory; scaleProperties_Param : access ScaleProperties'Class) is
-      scaleProperties : ScaleProperties_Access := ScaleProperties_Access (scaleProperties_Param);
+   procedure setInitialScale (This : in out LazyImageRotationAnimationFactory; scaleProperties_Param : access ScaleProperties_Package.ScaleProperties'Class) is
+      scaleProperties : constant ScaleProperties_Access := ScaleProperties_Access (scaleProperties_Param);
    begin
         This.scaleProperties := scaleProperties;
    end setInitialScale;

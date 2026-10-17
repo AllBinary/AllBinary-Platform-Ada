@@ -39,8 +39,8 @@ package body org.allbinary.media.image.ImageWaitCompleteUtil_Package is
    end Create;
 
    --  throws Exception
-   procedure waitForImage (This : in out ImageWaitCompleteUtil; image_Param : access Image'Class; name : Unbounded_String) is
-      image : Image_Access := Image_Access (image_Param);
+   procedure waitForImage (This : in out ImageWaitCompleteUtil; image_Param : access Image_Package.Image'Class; name : Unbounded_String) is
+      image : constant Image_Access := Image_Access (image_Param);
    begin
         This.timeDelayHelper.setStartTimeTNT;
         This.waitForATime (image, name, This.timeDelayHelper);
@@ -55,9 +55,9 @@ package body org.allbinary.media.image.ImageWaitCompleteUtil_Package is
    end handleTimeout;
 
    --  throws Exception
-   procedure waitForATime (This : in out ImageWaitCompleteUtil; image_Param : access Image'Class; name : Unbounded_String; timeDelayHelper_Param : access TimeDelayHelper'Class) is
-      image : Image_Access := Image_Access (image_Param);
-      timeDelayHelper : TimeDelayHelper_Access := TimeDelayHelper_Access (timeDelayHelper_Param);
+   procedure waitForATime (This : in out ImageWaitCompleteUtil; image_Param : access Image_Package.Image'Class; name : Unbounded_String; timeDelayHelper_Param : access TimeDelayHelper_Package.TimeDelayHelper'Class) is
+      image : constant Image_Access := Image_Access (image_Param);
+      timeDelayHelper : constant TimeDelayHelper_Access := TimeDelayHelper_Access (timeDelayHelper_Param);
       playnImage : PlaynImage_Access;
       playnCoreImage : Image_Access;
    begin

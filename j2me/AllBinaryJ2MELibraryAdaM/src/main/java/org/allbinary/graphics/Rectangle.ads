@@ -42,10 +42,10 @@ package org.allbinary.graphics.Rectangle_Package is
       height : Integer;
    end record;
 
-   procedure Initialize (This : in out Rectangle'Class; point_Param : access GPoint'Class; width : Integer; height : Integer);
-   function Create (point_Param : access GPoint'Class; width : Integer; height : Integer) return Rectangle_Access;
+   procedure Initialize (This : in out Rectangle'Class; point_Param : access GPoint_Package.GPoint'Class; width : Integer; height : Integer);
+   function Create (point_Param : access GPoint_Package.GPoint'Class; width : Integer; height : Integer) return Rectangle_Access;
    function getPoint (This : in out Rectangle) return GPoint_Access;
-   procedure setPoint (This : in out Rectangle; point_Param : access GPoint'Class);
+   procedure setPoint (This : in out Rectangle; point_Param : access GPoint_Package.GPoint'Class);
    function getMaxX (This : in out Rectangle) return Integer;
    function getMaxY (This : in out Rectangle) return Integer;
    function getWidth (This : in out Rectangle) return Integer;

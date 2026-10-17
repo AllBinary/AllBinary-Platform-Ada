@@ -65,7 +65,7 @@ package org.allbinary.game.score.remote.RemoteHighScoresProcessor_Package is
 
    procedure Initialize (This : in out RemoteHighScoresProcessor'Class);
    function Create return RemoteHighScoresProcessor_Access;
-   procedure process (This : in out RemoteHighScoresProcessor; remoteHighScores_Param : access RemoteHighScores'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo'Class);
+   procedure process (This : in out RemoteHighScoresProcessor; remoteHighScores_Param : access RemoteHighScores_Package.RemoteHighScores'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; gameInfo_Param : access GameInfo_Package.GameInfo'Class);
 
 end org.allbinary.game.score.remote.RemoteHighScoresProcessor_Package;
 

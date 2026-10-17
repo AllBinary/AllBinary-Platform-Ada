@@ -37,18 +37,18 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationModuleSer
       return This;
    end Create;
 
-   function getService (This : in out InputAutomationModuleServiceFactory; bundle_Param : access Bundle'Class; registration_Param : access ServiceRegistration'Class) return Java_Object_Access is
-      bundle : Bundle_Access := Bundle_Access (bundle_Param);
-      registration : ServiceRegistration_Access := ServiceRegistration_Access (registration_Param);
+   function getService (This : in out InputAutomationModuleServiceFactory; bundle_Param : access Bundle_Package.Bundle'Class; registration_Param : access ServiceRegistration_Package.ServiceRegistration'Class) return Java_Object_Access is
+      bundle : constant Bundle_Access := Bundle_Access (bundle_Param);
+      registration : constant ServiceRegistration_Access := ServiceRegistration_Access (registration_Param);
    begin
         This.logUtil.putF (This.commonStrings.START, InputAutomationModuleServiceFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("getService"));
         return InputAutomationModuleService_Package.Create (This.getInputAutomationModuleInterfaceArray);
    end getService;
 
-   procedure ungetService (This : in out InputAutomationModuleServiceFactory; bundle_Param : access Bundle'Class; registration_Param : access ServiceRegistration'Class; service_Param : access Java_Object'Class) is
-      bundle : Bundle_Access := Bundle_Access (bundle_Param);
-      registration : ServiceRegistration_Access := ServiceRegistration_Access (registration_Param);
-      service : Java_Object_Access := Java_Object_Access (service_Param);
+   procedure ungetService (This : in out InputAutomationModuleServiceFactory; bundle_Param : access Bundle_Package.Bundle'Class; registration_Param : access ServiceRegistration_Package.ServiceRegistration'Class; service_Param : access Java_Object'Class) is
+      bundle : constant Bundle_Access := Bundle_Access (bundle_Param);
+      registration : constant ServiceRegistration_Access := ServiceRegistration_Access (registration_Param);
+      service : constant Java_Object_Access := Java_Object_Access (service_Param);
    begin
         null;
    end ungetService;
@@ -63,7 +63,7 @@ package body org.allbinary.input.automation.module.osgi.InputAutomationModuleSer
         This.inputAutomationModuleInterfaceArray := inputAutomationModuleInterfaceArray;
    end setInputAutomationModuleInterfaceArray;
 
-   procedure getService (This : in out InputAutomationModuleServiceFactory; bundle_Param : access Bundle'Class; registration_Param : access ServiceRegistration'Class) is
+   procedure getService (This : in out InputAutomationModuleServiceFactory; bundle_Param : access Bundle_Package.Bundle'Class; registration_Param : access ServiceRegistration_Package.ServiceRegistration'Class) is
       Java_Result : constant Java_Object_Access := InputAutomationModuleServiceFactory'Class (This).getService (bundle_Param, registration_Param);
       pragma Unreferenced (Java_Result);
    begin

@@ -40,8 +40,8 @@ package body org.allbinary.media.audio.MediaPlayerUtil_Package is
    end getInstance;
 
    --  throws Exception
-   procedure waitForMediaPlayer (This : in out MediaPlayerUtil; mediaPlayer_Param : access MediaPlayer'Class) is
-      mediaPlayer : MediaPlayer_Access := MediaPlayer_Access (mediaPlayer_Param);
+   procedure waitForMediaPlayer (This : in out MediaPlayerUtil; mediaPlayer_Param : access MediaPlayer_Package.MediaPlayer'Class) is
+      mediaPlayer : constant MediaPlayer_Access := MediaPlayer_Access (mediaPlayer_Param);
       MESSAGE : Unbounded_String;
       METHOD_NAME : Unbounded_String;
       index : Integer;

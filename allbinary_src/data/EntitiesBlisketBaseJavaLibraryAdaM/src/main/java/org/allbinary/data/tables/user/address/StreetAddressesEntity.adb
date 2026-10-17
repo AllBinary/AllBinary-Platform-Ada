@@ -73,14 +73,14 @@ package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Packag
         end;
    end remove;
 
-   procedure add (This : in out StreetAddressesEntity; address_Param : access StreetAddress'Class) is
-      address : StreetAddress_Access := StreetAddress_Access (address_Param);
+   procedure add (This : in out StreetAddressesEntity; address_Param : access StreetAddress_Package.StreetAddress'Class) is
+      address : constant StreetAddress_Access := StreetAddress_Access (address_Param);
    begin
         This.add (address, TableDataFactory_Package.getInstance.INTEGER_MAX_VALUE_STRING);
    end add;
 
-   procedure add (This : in out StreetAddressesEntity; address_Param : access StreetAddress'Class; index : Unbounded_String) is
-      address : StreetAddress_Access := StreetAddress_Access (address_Param);
+   procedure add (This : in out StreetAddressesEntity; address_Param : access StreetAddress_Package.StreetAddress'Class; index : Unbounded_String) is
+      address : constant StreetAddress_Access := StreetAddress_Access (address_Param);
       values : BasicArrayList_Access;
       calendar : Calendar_Access;
       time : Unbounded_String;
@@ -116,8 +116,8 @@ package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Packag
         end;
    end add;
 
-   procedure update (This : in out StreetAddressesEntity; address_Param : access StreetAddress'Class) is
-      address : StreetAddress_Access := StreetAddress_Access (address_Param);
+   procedure update (This : in out StreetAddressesEntity; address_Param : access StreetAddress_Package.StreetAddress'Class) is
+      address : constant StreetAddress_Access := StreetAddress_Access (address_Param);
       addressHashMap : HashMap_Access;
       whereKeyValuePairs : HashMap_Access;
    begin

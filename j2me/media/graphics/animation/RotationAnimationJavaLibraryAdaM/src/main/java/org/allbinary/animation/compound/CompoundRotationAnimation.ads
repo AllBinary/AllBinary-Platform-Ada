@@ -54,8 +54,8 @@ package org.allbinary.animation.compound.CompoundRotationAnimation_Package is
       animationInterfaceArray : RotationAnimation_Access_Array_Access;
    end record;
 
-   procedure Initialize (This : in out CompoundRotationAnimation'Class; animationInterfaceArray : RotationAnimation_Access_Array_Access; animationBehavior_Param : access AnimationBehavior'Class);
-   function Create (animationInterfaceArray : RotationAnimation_Access_Array_Access; animationBehavior_Param : access AnimationBehavior'Class) return CompoundRotationAnimation_Access;
+   procedure Initialize (This : in out CompoundRotationAnimation'Class; animationInterfaceArray : RotationAnimation_Access_Array_Access; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class);
+   function Create (animationInterfaceArray : RotationAnimation_Access_Array_Access; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return CompoundRotationAnimation_Access;
    procedure setFrame (This : in out CompoundRotationAnimation; index : Integer);
    function getFrame (This : in out CompoundRotationAnimation) return Integer;
    function getAnimationSize (This : in out CompoundRotationAnimation) return Integer;
@@ -66,20 +66,20 @@ package org.allbinary.animation.compound.CompoundRotationAnimation_Package is
    procedure nextRotation (This : in out CompoundRotationAnimation);
    procedure setSequence (This : in out CompoundRotationAnimation; sequence : Integer_Array_Access);
    function getSequence (This : in out CompoundRotationAnimation) return Integer_Array_Access;
-   procedure paintXY (This : in out CompoundRotationAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
-   procedure paintThreedXYZ (This : in out CompoundRotationAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer; z : Integer);
+   procedure paintXY (This : in out CompoundRotationAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
+   procedure paintThreedXYZ (This : in out CompoundRotationAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer; z : Integer);
    function getCurrentAnimation (This : in out CompoundRotationAnimation) return IndexedAnimation_Access;
    procedure nextAnimation (This : in out CompoundRotationAnimation);
    procedure previousAnimation (This : in out CompoundRotationAnimation);
    procedure setAnimation (This : in out CompoundRotationAnimation; index : Integer);
-   procedure setFrameByDirection (This : in out CompoundRotationAnimation; direction_Param : access Direction'Class);
-   procedure setFrameToAngle (This : in out CompoundRotationAnimation; angle_Param : access Angle'Class);
-   procedure adjustFrameToAngle (This : in out CompoundRotationAnimation; newAngle_Param : access Angle'Class);
+   procedure setFrameByDirection (This : in out CompoundRotationAnimation; direction_Param : access Direction_Package.Direction'Class);
+   procedure setFrameToAngle (This : in out CompoundRotationAnimation; angle_Param : access Angle_Package.Angle'Class);
+   procedure adjustFrameToAngle (This : in out CompoundRotationAnimation; newAngle_Param : access Angle_Package.Angle'Class);
    procedure adjustFrame (This : in out CompoundRotationAnimation; angle : Short_Integer);
    function getAngleInfoP (This : in out CompoundRotationAnimation) return AngleInfo_Access;
    function getAnimationInterfaceArray (This : in out CompoundRotationAnimation) return RotationAnimation_Access_Array_Access;
    procedure setAnimationInterfaceArray (This : in out CompoundRotationAnimation; animationInterfaceArray : RotationAnimation_Access_Array_Access);
-   procedure set (This : in out CompoundRotationAnimation; gl_Param : access GL'Class);
+   procedure set (This : in out CompoundRotationAnimation; gl_Param : access GL_Package.GL'Class);
 
 end org.allbinary.animation.compound.CompoundRotationAnimation_Package;
 

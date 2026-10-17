@@ -50,9 +50,9 @@ package org.allbinary.data.tree.dom.document.DomDocumentFileHelper_Package is
 
    procedure Initialize (This : in out DomDocumentFileHelper'Class);
    function Create return DomDocumentFileHelper_Access;
-   function createDocument (xmlFile_Param : access AbFile'Class) return Document_Access;
-   procedure createDocument (xmlFile_Param : access AbFile'Class);
-   procedure save (file_Param : access AbFile'Class; document_Param : access Document'Class);
+   function createDocument (xmlFile_Param : access AbFile_Package.AbFile'Class) return Document_Access;
+   procedure createDocument (xmlFile_Param : access AbFile_Package.AbFile'Class);
+   procedure save (file_Param : access AbFile_Package.AbFile'Class; document_Param : access Document_Package.Document'Class);
 
 end org.allbinary.data.tree.dom.document.DomDocumentFileHelper_Package;
 

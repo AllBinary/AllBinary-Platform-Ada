@@ -78,7 +78,7 @@ package org.allbinary.business.backup.BlisketBackupFactory_Package is
    procedure backupViews (This : in out BlisketBackupFactory);
    procedure backupResources (This : in out BlisketBackupFactory);
    procedure backupJsps (This : in out BlisketBackupFactory);
-   procedure backup (This : in out BlisketBackupFactory; fileBasicArrayList_Param : access BasicArrayList'Class; zipFile : Unbounded_String);
+   procedure backup (This : in out BlisketBackupFactory; fileBasicArrayList_Param : access BasicArrayList_Package.BasicArrayList'Class; zipFile : Unbounded_String);
 
 end org.allbinary.business.backup.BlisketBackupFactory_Package;
 

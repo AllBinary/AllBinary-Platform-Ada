@@ -39,9 +39,9 @@ package body org.allbinary.game.layer.unit.DecalAnimationInterfaceFactory_Packag
    end getInstance;
 
    --  throws Exception
-   function getAnimationFactory (This : in out DecalAnimationInterfaceFactory; basicGameResources_Param : access BasicGameResources'Class; basicColor_Param : access BasicColor'Class) return AnimationInterfaceFactoryInterface_Access is
-      basicGameResources : BasicGameResources_Access := BasicGameResources_Access (basicGameResources_Param);
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+   function getAnimationFactory (This : in out DecalAnimationInterfaceFactory; basicGameResources_Param : access BasicGameResources_Package.BasicGameResources'Class; basicColor_Param : access BasicColor_Package.BasicColor'Class) return AnimationInterfaceFactoryInterface_Access is
+      basicGameResources : constant BasicGameResources_Access := BasicGameResources_Access (basicGameResources_Param);
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
       animationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access;
    begin
         animationInterfaceFactoryInterface := null;
@@ -53,7 +53,7 @@ package body org.allbinary.game.layer.unit.DecalAnimationInterfaceFactory_Packag
         return animationInterfaceFactoryInterface;
    end getAnimationFactory;
 
-   procedure getAnimationFactory (This : in out DecalAnimationInterfaceFactory; basicGameResources_Param : access BasicGameResources'Class; basicColor_Param : access BasicColor'Class) is
+   procedure getAnimationFactory (This : in out DecalAnimationInterfaceFactory; basicGameResources_Param : access BasicGameResources_Package.BasicGameResources'Class; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
       Java_Result : constant AnimationInterfaceFactoryInterface_Access := DecalAnimationInterfaceFactory'Class (This).getAnimationFactory (basicGameResources_Param, basicColor_Param);
       pragma Unreferenced (Java_Result);
    begin

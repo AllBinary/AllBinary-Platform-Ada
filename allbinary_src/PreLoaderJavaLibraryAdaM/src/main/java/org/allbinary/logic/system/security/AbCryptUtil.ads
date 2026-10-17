@@ -46,8 +46,8 @@ package org.allbinary.logic.system.security.AbCryptUtil_Package is
    procedure Initialize (This : in out AbCryptUtil'Class);
    function Create return AbCryptUtil_Access;
    function getInstance return AbCryptUtil_Access;
-   function decrypt (This : in out AbCryptUtil; inputStream_Param : access InputStream'Class; key : Unbounded_String) return Short_Short_Integer_Array_Access;
-   procedure decrypt (This : in out AbCryptUtil; inputStream_Param : access InputStream'Class; key : Unbounded_String);
+   function decrypt (This : in out AbCryptUtil; inputStream_Param : access InputStream_Package.InputStream'Class; key : Unbounded_String) return Short_Short_Integer_Array_Access;
+   procedure decrypt (This : in out AbCryptUtil; inputStream_Param : access InputStream_Package.InputStream'Class; key : Unbounded_String);
 
 end org.allbinary.logic.system.security.AbCryptUtil_Package;
 

@@ -25,8 +25,8 @@ package body org.allbinary.media.graphics.geography.map.racetrack.CustomMapGener
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CustomMapGenerator'Class; raceTrackGeographicMap_Param : access RaceTrackGeographicMap'Class) is
-      raceTrackGeographicMap : RaceTrackGeographicMap_Access := RaceTrackGeographicMap_Access (raceTrackGeographicMap_Param);
+   procedure Initialize (This : in out CustomMapGenerator'Class; raceTrackGeographicMap_Param : access RaceTrackGeographicMap_Package.RaceTrackGeographicMap'Class) is
+      raceTrackGeographicMap : constant RaceTrackGeographicMap_Access := RaceTrackGeographicMap_Access (raceTrackGeographicMap_Param);
       mapArray : Integer_Array_Access_Array_Access;
       size2 : Integer;
    begin
@@ -42,7 +42,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.CustomMapGener
         end if;
    end Initialize;
 
-   function Create (raceTrackGeographicMap_Param : access RaceTrackGeographicMap'Class) return CustomMapGenerator_Access is
+   function Create (raceTrackGeographicMap_Param : access RaceTrackGeographicMap_Package.RaceTrackGeographicMap'Class) return CustomMapGenerator_Access is
       This : constant CustomMapGenerator_Access := new CustomMapGenerator;
    begin
       CustomMapGenerator_Package.Initialize (This.all, raceTrackGeographicMap_Param);

@@ -37,15 +37,15 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.g
       return This;
    end Create;
 
-   procedure Initialize (This : in out GlobalsValidation'Class; document_Param : access Document'Class) is
-      document : Document_Access := Document_Access (document_Param);
+   procedure Initialize (This : in out GlobalsValidation'Class; document_Param : access Document_Package.Document'Class) is
+      document : constant Document_Access := Document_Access (document_Param);
    begin
       Validation_Package.Initialize (This);
       Initialize_Fields (This);
         Java_Throw (Java_New_Exception ("Exception", CommonStrings_Package.getInstance.NOT_IMPLEMENTED));
    end Initialize;
 
-   function Create (document_Param : access Document'Class) return GlobalsValidation_Access is
+   function Create (document_Param : access Document_Package.Document'Class) return GlobalsValidation_Access is
       This : constant GlobalsValidation_Access := new GlobalsValidation;
    begin
       GlobalsValidation_Package.Initialize (This.all, document_Param);
@@ -95,15 +95,15 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.g
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out GlobalsValidation; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toValidationInfoNode (This : in out GlobalsValidation; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
 
    --  throws Exception
-   function toXmlNode (This : in out GlobalsValidation; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out GlobalsValidation; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       node : Node_Access;
    begin
         node := document.createElement (GlobalsData_Package.NAME);
@@ -111,14 +111,14 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.g
         return node;
    end toXmlNode;
 
-   procedure toValidationInfoNode (This : in out GlobalsValidation; document_Param : access Document'Class) is
+   procedure toValidationInfoNode (This : in out GlobalsValidation; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := GlobalsValidation'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
 
-   procedure toXmlNode (This : in out GlobalsValidation; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out GlobalsValidation; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := GlobalsValidation'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

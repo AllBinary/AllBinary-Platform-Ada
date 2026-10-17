@@ -21,21 +21,21 @@ package body org.allbinary.game.collision.SourceCollisionHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out SourceCollisionHelper'Class; layerInterface_Param : access AllBinaryLayer'Class) is
-      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
+   procedure Initialize (This : in out SourceCollisionHelper'Class; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
+      layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         CollisionHelper_Package.Initialize (This, layerInterface);
    end Initialize;
 
-   function Create (layerInterface_Param : access AllBinaryLayer'Class) return SourceCollisionHelper_Access is
+   function Create (layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) return SourceCollisionHelper_Access is
       This : constant SourceCollisionHelper_Access := new SourceCollisionHelper;
    begin
       SourceCollisionHelper_Package.Initialize (This.all, layerInterface_Param);
       return This;
    end Create;
 
-   function isCollidable (This : in out SourceCollisionHelper; layerInterface_Param : access CollidableCompositeLayer'Class) return Boolean is
-      layerInterface : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (layerInterface_Param);
+   function isCollidable (This : in out SourceCollisionHelper; layerInterface_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class) return Boolean is
+      layerInterface : constant CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (layerInterface_Param);
    begin
         if (This.sourceLayerInterface) /= (layerInterface) then
             return True;
@@ -43,7 +43,7 @@ package body org.allbinary.game.collision.SourceCollisionHelper_Package is
         return False;
    end isCollidable;
 
-   procedure isCollidable (This : in out SourceCollisionHelper; layerInterface_Param : access CollidableCompositeLayer'Class) is
+   procedure isCollidable (This : in out SourceCollisionHelper; layerInterface_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class) is
       Java_Result : constant Boolean := SourceCollisionHelper'Class (This).isCollidable (layerInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

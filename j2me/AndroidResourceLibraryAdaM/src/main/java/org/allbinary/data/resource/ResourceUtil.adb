@@ -53,14 +53,14 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
         return Context_Access (This.context);
    end getContext;
 
-   procedure setContextFromActivity (This : in out ResourceUtil; activity_Param : access Activity'Class) is
-      activity : Activity_Access := Activity_Access (activity_Param);
+   procedure setContextFromActivity (This : in out ResourceUtil; activity_Param : access Activity_Package.Activity'Class) is
+      activity : constant Activity_Access := Activity_Access (activity_Param);
    begin
         This.context := activity;
    end setContextFromActivity;
 
-   procedure setContext (This : in out ResourceUtil; aContext_Param : access Context'Class) is
-      aContext : Context_Access := Context_Access (aContext_Param);
+   procedure setContext (This : in out ResourceUtil; aContext_Param : access Context_Package.Context'Class) is
+      aContext : constant Context_Access := Context_Access (aContext_Param);
    begin
         This.context := aContext;
    end setContext;
@@ -106,8 +106,8 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
         return False;
    end containsDuplicate;
 
-   procedure setResources (This : in out ResourceUtil; resources_Param : access Resources'Class) is
-      resources : Resources_Access := Resources_Access (resources_Param);
+   procedure setResources (This : in out ResourceUtil; resources_Param : access Resources_Package.Resources'Class) is
+      resources : constant Resources_Access := Resources_Access (resources_Param);
    begin
         This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Resource Loader: ")).append (To_Unbounded_String (Ada.Tags.Expanded_Name (resources.all'Tag))).toString, ResourceUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("setResources"));
         This.resources := resources;

@@ -43,15 +43,15 @@ package body org.allbinary.logic.io.file.path.AbPathUtilOld_Package is
    end Create;
 
    --  throws Exception
-   function getExtension (This : in out AbPathUtilOld; abFilePath_Param : access AbFilePath'Class) return Unbounded_String is
-      abFilePath : AbFilePath_Access := AbFilePath_Access (abFilePath_Param);
+   function getExtension (This : in out AbPathUtilOld; abFilePath_Param : access AbFilePath_Package.AbFilePath'Class) return Unbounded_String is
+      abFilePath : constant AbFilePath_Access := AbFilePath_Access (abFilePath_Param);
    begin
         return This.getExtension (abFilePath.toString);
    end getExtension;
 
    --  throws Exception
-   function getExtension (This : in out AbPathUtilOld; abPath_Param : access AbPath'Class) return Unbounded_String is
-      abPath : AbPath_Access := AbPath_Access (abPath_Param);
+   function getExtension (This : in out AbPathUtilOld; abPath_Param : access AbPath_Package.AbPath'Class) return Unbounded_String is
+      abPath : constant AbPath_Access := AbPath_Access (abPath_Param);
    begin
         return This.getExtension (abPath.toString);
    end getExtension;
@@ -73,15 +73,15 @@ package body org.allbinary.logic.io.file.path.AbPathUtilOld_Package is
    end getExtension;
 
    --  throws Exception
-   function getWithoutExtension (This : in out AbPathUtilOld; abFilePath_Param : access AbFilePath'Class) return Unbounded_String is
-      abFilePath : AbFilePath_Access := AbFilePath_Access (abFilePath_Param);
+   function getWithoutExtension (This : in out AbPathUtilOld; abFilePath_Param : access AbFilePath_Package.AbFilePath'Class) return Unbounded_String is
+      abFilePath : constant AbFilePath_Access := AbFilePath_Access (abFilePath_Param);
    begin
         return This.getWithoutExtension (abFilePath.toString);
    end getWithoutExtension;
 
    --  throws Exception
-   function getWithoutExtension (This : in out AbPathUtilOld; abPath_Param : access AbPath'Class) return Unbounded_String is
-      abPath : AbPath_Access := AbPath_Access (abPath_Param);
+   function getWithoutExtension (This : in out AbPathUtilOld; abPath_Param : access AbPath_Package.AbPath'Class) return Unbounded_String is
+      abPath : constant AbPath_Access := AbPath_Access (abPath_Param);
    begin
         return This.getWithoutExtension (abPath.toString);
    end getWithoutExtension;
@@ -203,14 +203,14 @@ package body org.allbinary.logic.io.file.path.AbPathUtilOld_Package is
         end if;
    end removeNameFromPath;
 
-   procedure getExtension (This : in out AbPathUtilOld; abFilePath_Param : access AbFilePath'Class) is
+   procedure getExtension (This : in out AbPathUtilOld; abFilePath_Param : access AbFilePath_Package.AbFilePath'Class) is
       Java_Result : constant Unbounded_String := AbPathUtilOld'Class (This).getExtension (abFilePath_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getExtension;
 
-   procedure getExtension (This : in out AbPathUtilOld; abPath_Param : access AbPath'Class) is
+   procedure getExtension (This : in out AbPathUtilOld; abPath_Param : access AbPath_Package.AbPath'Class) is
       Java_Result : constant Unbounded_String := AbPathUtilOld'Class (This).getExtension (abPath_Param);
       pragma Unreferenced (Java_Result);
    begin
@@ -224,14 +224,14 @@ package body org.allbinary.logic.io.file.path.AbPathUtilOld_Package is
       null;
    end getExtension;
 
-   procedure getWithoutExtension (This : in out AbPathUtilOld; abFilePath_Param : access AbFilePath'Class) is
+   procedure getWithoutExtension (This : in out AbPathUtilOld; abFilePath_Param : access AbFilePath_Package.AbFilePath'Class) is
       Java_Result : constant Unbounded_String := AbPathUtilOld'Class (This).getWithoutExtension (abFilePath_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getWithoutExtension;
 
-   procedure getWithoutExtension (This : in out AbPathUtilOld; abPath_Param : access AbPath'Class) is
+   procedure getWithoutExtension (This : in out AbPathUtilOld; abPath_Param : access AbPath_Package.AbPath'Class) is
       Java_Result : constant Unbounded_String := AbPathUtilOld'Class (This).getWithoutExtension (abPath_Param);
       pragma Unreferenced (Java_Result);
    begin

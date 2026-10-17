@@ -101,18 +101,18 @@ package org.allbinary.game.score.displayable.HighScoresCanvas_Package is
    end record;
    NAME : Unbounded_String;
 
-   procedure Initialize (This : in out HighScoresCanvas'Class; commandListener_Param : access CommandListener'Class; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class; gameInfo_Param : access GameInfo'Class; paintable_Param : access HighScoresPaintable'Class; highScoresFactoryInterface_Param : access HighScoresFactoryInterface'Class; highScoresCanvasInputProcessorFactoryInterface_Param : access HighScoresCanvasInputProcessorFactoryInterface'Class);
-   function Create (commandListener_Param : access CommandListener'Class; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class; gameInfo_Param : access GameInfo'Class; paintable_Param : access HighScoresPaintable'Class; highScoresFactoryInterface_Param : access HighScoresFactoryInterface'Class; highScoresCanvasInputProcessorFactoryInterface_Param : access HighScoresCanvasInputProcessorFactoryInterface'Class) return HighScoresCanvas_Access;
-   procedure initCommands (This : in out HighScoresCanvas; cmdListener_Param : access CommandListener'Class);
+   procedure Initialize (This : in out HighScoresCanvas'Class; commandListener_Param : access CommandListener_Package.CommandListener'Class; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager_Package.AllBinaryGameLayerManager'Class; gameInfo_Param : access GameInfo_Package.GameInfo'Class; paintable_Param : access HighScoresPaintable_Package.HighScoresPaintable'Class; highScoresFactoryInterface_Param : access HighScoresFactoryInterface_Package.HighScoresFactoryInterface'Class; highScoresCanvasInputProcessorFactoryInterface_Param : access HighScoresCanvasInputProcessorFactoryInterface_Package.HighScoresCanvasInputProcessorFactoryInterface'Class);
+   function Create (commandListener_Param : access CommandListener_Package.CommandListener'Class; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager_Package.AllBinaryGameLayerManager'Class; gameInfo_Param : access GameInfo_Package.GameInfo'Class; paintable_Param : access HighScoresPaintable_Package.HighScoresPaintable'Class; highScoresFactoryInterface_Param : access HighScoresFactoryInterface_Package.HighScoresFactoryInterface'Class; highScoresCanvasInputProcessorFactoryInterface_Param : access HighScoresCanvasInputProcessorFactoryInterface_Package.HighScoresCanvasInputProcessorFactoryInterface'Class) return HighScoresCanvas_Access;
+   procedure initCommands (This : in out HighScoresCanvas; cmdListener_Param : access CommandListener_Package.CommandListener'Class);
    procedure open (This : in out HighScoresCanvas);
    procedure close (This : in out HighScoresCanvas);
-   procedure paint (This : in out HighScoresCanvas; graphics_Param : access Graphics'Class);
+   procedure paint (This : in out HighScoresCanvas; graphics_Param : access Graphics_Package.Graphics'Class);
    procedure executeUpdate (This : in out HighScoresCanvas);
    function getHighScoresPaintable (This : in out HighScoresCanvas) return HighScoresPaintable_Access;
    procedure setHighScoresArray (This : in out HighScoresCanvas; highScoresArray : HighScores_Access_Array_Access);
-   procedure updateCommand (This : in out HighScoresCanvas; command_Param : access Command'Class);
+   procedure updateCommand (This : in out HighScoresCanvas; command_Param : access Command_Package.Command'Class);
    function getGameInfo (This : in out HighScoresCanvas) return GameInfo_Access;
-   procedure setPaintable (This : in out HighScoresCanvas; paintable_Param : access Paintable'Class);
+   procedure setPaintable (This : in out HighScoresCanvas; paintable_Param : access Paintable_Package.Paintable'Class);
 
 end org.allbinary.game.score.displayable.HighScoresCanvas_Package;
 

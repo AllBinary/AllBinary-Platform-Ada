@@ -87,10 +87,10 @@ package org.allbinary.business.user.commerce.money.payment.gateway.transaction.P
    procedure Initialize (This : in out PaymentTransactionInterfaceRequestFactory'Class);
    function Create return PaymentTransactionInterfaceRequestFactory_Access;
    function getInstance return PaymentTransactionInterfaceRequestFactory_Access;
-   function getInstance (This : in out PaymentTransactionInterfaceRequestFactory; transformInfoInterface_Param : access TransformInfoInterface'Class) return PaymentTransactionInterface_Access;
-   procedure getInstance (This : in out PaymentTransactionInterfaceRequestFactory; transformInfoInterface_Param : access TransformInfoInterface'Class);
-   function generateFromTestData (This : in out PaymentTransactionInterfaceRequestFactory; transformInfoInterface_Param : access TransformInfoInterface'Class) return PaymentTransactionInterface_Access;
-   procedure generateFromTestData (This : in out PaymentTransactionInterfaceRequestFactory; transformInfoInterface_Param : access TransformInfoInterface'Class);
+   function getInstance (This : in out PaymentTransactionInterfaceRequestFactory; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return PaymentTransactionInterface_Access;
+   procedure getInstance (This : in out PaymentTransactionInterfaceRequestFactory; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
+   function generateFromTestData (This : in out PaymentTransactionInterfaceRequestFactory; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return PaymentTransactionInterface_Access;
+   procedure generateFromTestData (This : in out PaymentTransactionInterfaceRequestFactory; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
 
 end org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterfaceRequestFactory_Package;
 

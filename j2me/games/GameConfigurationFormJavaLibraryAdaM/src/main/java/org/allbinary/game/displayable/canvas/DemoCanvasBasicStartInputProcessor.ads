@@ -47,8 +47,8 @@ package org.allbinary.game.displayable.canvas.DemoCanvasBasicStartInputProcessor
 
    type DemoCanvasBasicStartInputProcessor is new BasicMenuInputProcessor with null record;
 
-   procedure Initialize (This : in out DemoCanvasBasicStartInputProcessor'Class; gameKeyEventList_Param : access BasicArrayList'Class; gameCanvas_Param : access RunnableCanvas'Class);
-   function Create (gameKeyEventList_Param : access BasicArrayList'Class; gameCanvas_Param : access RunnableCanvas'Class) return DemoCanvasBasicStartInputProcessor_Access;
+   procedure Initialize (This : in out DemoCanvasBasicStartInputProcessor'Class; gameKeyEventList_Param : access BasicArrayList_Package.BasicArrayList'Class; gameCanvas_Param : access RunnableCanvas_Package.RunnableCanvas'Class);
+   function Create (gameKeyEventList_Param : access BasicArrayList_Package.BasicArrayList'Class; gameCanvas_Param : access RunnableCanvas_Package.RunnableCanvas'Class) return DemoCanvasBasicStartInputProcessor_Access;
    function processInputList (This : in out DemoCanvasBasicStartInputProcessor) return Integer;
 
 end org.allbinary.game.displayable.canvas.DemoCanvasBasicStartInputProcessor_Package;

@@ -44,8 +44,8 @@ package org.allbinary.input.motion.gesture.MirrorMotionGestureEventUtil_Package 
 
    procedure Initialize (This : in out MirrorMotionGestureEventUtil'Class);
    function Create return MirrorMotionGestureEventUtil_Access;
-   function mirrorVerticle (This : in out MirrorMotionGestureEventUtil; motionGestureEvent_Param : access MotionGestureEvent'Class; halfWidth : Integer) return MotionGestureEvent_Access;
-   procedure mirrorVerticle (This : in out MirrorMotionGestureEventUtil; motionGestureEvent_Param : access MotionGestureEvent'Class; halfWidth : Integer);
+   function mirrorVerticle (This : in out MirrorMotionGestureEventUtil; motionGestureEvent_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class; halfWidth : Integer) return MotionGestureEvent_Access;
+   procedure mirrorVerticle (This : in out MirrorMotionGestureEventUtil; motionGestureEvent_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class; halfWidth : Integer);
    function getNewX (This : in out MirrorMotionGestureEventUtil; x : Integer; halfWidth : Integer) return Integer;
    procedure getNewX (This : in out MirrorMotionGestureEventUtil; x : Integer; halfWidth : Integer);
    function getInstance return MirrorMotionGestureEventUtil_Access;

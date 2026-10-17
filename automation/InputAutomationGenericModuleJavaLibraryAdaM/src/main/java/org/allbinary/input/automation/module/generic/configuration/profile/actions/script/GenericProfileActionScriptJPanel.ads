@@ -58,12 +58,12 @@ package org.allbinary.input.automation.module.generic_Id.configuration.profile.a
    function Create return GenericProfileActionScriptJPanel_Access;
    procedure updateJTree (This : in out GenericProfileActionScriptJPanel);
    function getGenericProfileActionScript (This : in out GenericProfileActionScriptJPanel) return GenericProfileActionScript_Access;
-   procedure setGenericProfileActionScript (This : in out GenericProfileActionScriptJPanel; genericProfileActionScript_Param : access GenericProfileActionScript'Class);
+   procedure setGenericProfileActionScript (This : in out GenericProfileActionScriptJPanel; genericProfileActionScript_Param : access GenericProfileActionScript_Package.GenericProfileActionScript'Class);
    function getActionScriptJTree (This : in out GenericProfileActionScriptJPanel) return JTree_Access;
-   procedure setActionScriptJTree (This : in out GenericProfileActionScriptJPanel; actionScriptJTree_Param : access JTree'Class);
+   procedure setActionScriptJTree (This : in out GenericProfileActionScriptJPanel; actionScriptJTree_Param : access JTree_Package.JTree'Class);
    procedure initComponents (This : in out GenericProfileActionScriptJPanel);
-   procedure actionScriptJTreeMouseReleased (This : in out GenericProfileActionScriptJPanel; evt_Param : access MouseEvent'Class);
-   procedure actionScriptJTreeMouseClicked (This : in out GenericProfileActionScriptJPanel; evt_Param : access MouseEvent'Class);
+   procedure actionScriptJTreeMouseReleased (This : in out GenericProfileActionScriptJPanel; evt_Param : access MouseEvent_Package.MouseEvent'Class);
+   procedure actionScriptJTreeMouseClicked (This : in out GenericProfileActionScriptJPanel; evt_Param : access MouseEvent_Package.MouseEvent'Class);
 
 end org.allbinary.input.automation.module.generic_Id.configuration.profile.actions.script.GenericProfileActionScriptJPanel_Package;
 

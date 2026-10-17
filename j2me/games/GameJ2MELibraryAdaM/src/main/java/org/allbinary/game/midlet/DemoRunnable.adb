@@ -25,15 +25,15 @@ package body org.allbinary.game.midlet.DemoRunnable_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out DemoRunnable'Class; demoGameMidlet_Param : access DemoGameMidlet'Class) is
-      demoGameMidlet : DemoGameMidlet_Access := DemoGameMidlet_Access (demoGameMidlet_Param);
+   procedure Initialize (This : in out DemoRunnable'Class; demoGameMidlet_Param : access DemoGameMidlet_Package.DemoGameMidlet'Class) is
+      demoGameMidlet : constant DemoGameMidlet_Access := DemoGameMidlet_Access (demoGameMidlet_Param);
    begin
       Initialize_Fields (This);
         This.demoGameMidlet := demoGameMidlet;
         This.startDemoGameMidletEvent := DemoGameMidletEvent_Package.Create (This.demoGameMidlet, DemoGameMidletStateFactory_Package.getInstance.START_DEMO);
    end Initialize;
 
-   function Create (demoGameMidlet_Param : access DemoGameMidlet'Class) return DemoRunnable_Access is
+   function Create (demoGameMidlet_Param : access DemoGameMidlet_Package.DemoGameMidlet'Class) return DemoRunnable_Access is
       This : constant DemoRunnable_Access := new DemoRunnable;
    begin
       DemoRunnable_Package.Initialize (This.all, demoGameMidlet_Param);

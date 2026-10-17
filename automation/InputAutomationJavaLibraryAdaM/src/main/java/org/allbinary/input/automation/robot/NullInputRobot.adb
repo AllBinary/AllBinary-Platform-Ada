@@ -75,8 +75,8 @@ package body org.allbinary.input.automation.robot.NullInputRobot_Package is
         This.logUtil.putF (To_Unbounded_String ("Buttons: ") & Java_Image (buttons), NullInputRobot_Access'(This'Unchecked_Access), To_Unbounded_String ("mouseRelease"));
    end mouseRelease;
 
-   function createScreenCapture (This : in out NullInputRobot; screenRect_Param : access Rectangle'Class) return BufferedImage_Access is
-      screenRect : Rectangle_Access := Rectangle_Access (screenRect_Param);
+   function createScreenCapture (This : in out NullInputRobot; screenRect_Param : access Rectangle_Package.Rectangle'Class) return BufferedImage_Access is
+      screenRect : constant Rectangle_Access := Rectangle_Access (screenRect_Param);
    begin
         return null;
    end createScreenCapture;
@@ -126,7 +126,7 @@ package body org.allbinary.input.automation.robot.NullInputRobot_Package is
         null;
    end waitForIdle;
 
-   procedure createScreenCapture (This : in out NullInputRobot; screenRect_Param : access Rectangle'Class) is
+   procedure createScreenCapture (This : in out NullInputRobot; screenRect_Param : access Rectangle_Package.Rectangle'Class) is
       Java_Result : constant BufferedImage_Access := NullInputRobot'Class (This).createScreenCapture (screenRect_Param);
       pragma Unreferenced (Java_Result);
    begin

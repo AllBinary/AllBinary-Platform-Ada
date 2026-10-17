@@ -41,8 +41,8 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
    end Create;
 
    --  throws Exception
-   function getInstance (This : in out PaymentTransactionInterfaceFactory; orderReview_Param : access OrderHistory'Class) return PaymentTransactionInterface_Access is
-      orderReview : OrderHistory_Access := OrderHistory_Access (orderReview_Param);
+   function getInstance (This : in out PaymentTransactionInterfaceFactory; orderReview_Param : access OrderHistory_Package.OrderHistory'Class) return PaymentTransactionInterface_Access is
+      orderReview : constant OrderHistory_Access := OrderHistory_Access (orderReview_Param);
       gatewayName : Unbounded_String;
       paymentType : PaymentType_Access;
       paymentTransactionInterfaceFactoryInterface : PaymentTransactionInterfaceFactoryInterface_Access;
@@ -72,7 +72,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
         end;
    end getInstance;
 
-   procedure getInstance (This : in out PaymentTransactionInterfaceFactory; orderReview_Param : access OrderHistory'Class) is
+   procedure getInstance (This : in out PaymentTransactionInterfaceFactory; orderReview_Param : access OrderHistory_Package.OrderHistory'Class) is
       Java_Result : constant PaymentTransactionInterface_Access := PaymentTransactionInterfaceFactory'Class (This).getInstance (orderReview_Param);
       pragma Unreferenced (Java_Result);
    begin

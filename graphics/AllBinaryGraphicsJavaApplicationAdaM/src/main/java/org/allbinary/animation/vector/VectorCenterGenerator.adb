@@ -45,8 +45,8 @@ package body org.allbinary.animation.vector.VectorCenterGenerator_Package is
    end Create;
 
    --  throws Exception
-   procedure calculate (This : in out VectorCenterGenerator; hashMap_Param : access HashMap'Class) is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+   procedure calculate (This : in out VectorCenterGenerator; hashMap_Param : access HashMap_Package.HashMap'Class) is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
       graphicItemArray : Java_Object_Access_Array_Access;
       size : Integer;
       item : GraphicItemInterface_Access;
@@ -84,8 +84,8 @@ package body org.allbinary.animation.vector.VectorCenterGenerator_Package is
    end calculate;
 
    --  throws Exception
-   procedure transform (This : in out VectorCenterGenerator; hashMap_Param : access HashMap'Class) is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+   procedure transform (This : in out VectorCenterGenerator; hashMap_Param : access HashMap_Package.HashMap'Class) is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
       graphicItemArray : Java_Object_Access_Array_Access;
       size : Integer;
       item : GraphicItemInterface_Access;
@@ -107,8 +107,8 @@ package body org.allbinary.animation.vector.VectorCenterGenerator_Package is
    end transform;
 
    --  throws Exception
-   procedure getInstance (This : in out VectorCenterGenerator; pointVector_Param : access BasicArrayList'Class) is
-      pointVector : BasicArrayList_Access := BasicArrayList_Access (pointVector_Param);
+   procedure getInstance (This : in out VectorCenterGenerator; pointVector_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      pointVector : constant BasicArrayList_Access := BasicArrayList_Access (pointVector_Param);
       size : Integer;
       point : GPoint_Access;
       index : Integer;
@@ -142,8 +142,8 @@ package body org.allbinary.animation.vector.VectorCenterGenerator_Package is
    end getInstance;
 
    --  throws Exception
-   function translate (list_Param : access BasicArrayList'Class; x : Integer; y : Integer) return BasicArrayList_Access is
-      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
+   function translate (list_Param : access BasicArrayList_Package.BasicArrayList'Class; x : Integer; y : Integer) return BasicArrayList_Access is
+      list : constant BasicArrayList_Access := BasicArrayList_Access (list_Param);
       graphicsPipe : BasicGraphicsPipeline_Access;
    begin
         graphicsPipe := BasicGraphicsPipeline_Package.Create (list);
@@ -172,7 +172,7 @@ package body org.allbinary.animation.vector.VectorCenterGenerator_Package is
         This.height := height;
    end setHeight;
 
-   procedure translate (list_Param : access BasicArrayList'Class; x : Integer; y : Integer) is
+   procedure translate (list_Param : access BasicArrayList_Package.BasicArrayList'Class; x : Integer; y : Integer) is
       Java_Result : constant BasicArrayList_Access := translate (list_Param, x, y);
       pragma Unreferenced (Java_Result);
    begin

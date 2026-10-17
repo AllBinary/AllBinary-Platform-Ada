@@ -34,10 +34,10 @@ package body org.allbinary.game.ag.ai.TopUBoundBounceAIFactory_Package is
 
 
    --  throws Exception
-   function getInstance (This : in out TopUBoundBounceAIFactory; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return ArtificialIntelligenceInterface_Access is
-      hashtable : ABHashtable_Access := ABHashtable_Access (hashtable_Param);
-      ownerLayerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
-      gameInput : GameInput_Access := GameInput_Access (gameInput_Param);
+   function getInstance (This : in out TopUBoundBounceAIFactory; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) return ArtificialIntelligenceInterface_Access is
+      hashtable : constant ABHashtable_Access := ABHashtable_Access (hashtable_Param);
+      ownerLayerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
+      gameInput : constant GameInput_Access := GameInput_Access (gameInput_Param);
       velocityInterfaceCompositeInterface : VelocityInterfaceCompositeInterface_Access;
       velocityInterface : VelocityInterface_Access;
       maxDistancePerTick : Integer;
@@ -58,7 +58,7 @@ package body org.allbinary.game.ag.ai.TopUBoundBounceAIFactory_Package is
         return BoundBounceAI_Package.Create (ownerLayerInterface, gameInput, TopULayerBounds_Package.Create (rectangle), ReverseVelocityBoundsVisitor_Package.Create (ownerLayerInterface));
    end getInstance;
 
-   procedure getInstance (This : in out TopUBoundBounceAIFactory; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) is
+   procedure getInstance (This : in out TopUBoundBounceAIFactory; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) is
       Java_Result : constant ArtificialIntelligenceInterface_Access := TopUBoundBounceAIFactory'Class (This).getInstance (hashtable_Param, ownerLayerInterface_Param, gameInput_Param);
       pragma Unreferenced (Java_Result);
    begin

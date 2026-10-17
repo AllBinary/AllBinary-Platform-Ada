@@ -43,8 +43,8 @@ package body org.allbinary.game.input.form.CompositeRTSFormInput_Package is
    end Create;
 
    --  throws Exception
-   procedure setAllBinaryGameLayerManager (This : in out CompositeRTSFormInput; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class) is
-      allBinaryGameLayerManager : AllBinaryGameLayerManager_Access := AllBinaryGameLayerManager_Access (allBinaryGameLayerManager_Param);
+   procedure setAllBinaryGameLayerManager (This : in out CompositeRTSFormInput; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager_Package.AllBinaryGameLayerManager'Class) is
+      allBinaryGameLayerManager : constant AllBinaryGameLayerManager_Access := AllBinaryGameLayerManager_Access (allBinaryGameLayerManager_Param);
       geographicMapCompositeInterface : GeographicMapCompositeInterface_Access;
       geographicMapInterface : BasicGeographicMap_Access;
       size : Integer;
@@ -60,11 +60,11 @@ package body org.allbinary.game.input.form.CompositeRTSFormInput_Package is
    end setAllBinaryGameLayerManager;
 
    --  throws Exception
-   procedure processAtPoint (This : in out CompositeRTSFormInput; associatedRtsLayer_Param : access CollidableDestroyableDamageableLayer'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager'Class; point_Param : access GPoint'Class) is
-      associatedRtsLayer : CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (associatedRtsLayer_Param);
-      rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
-      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
-      point : GPoint_Access := GPoint_Access (point_Param);
+   procedure processAtPoint (This : in out CompositeRTSFormInput; associatedRtsLayer_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface_Package.RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; point_Param : access GPoint_Package.GPoint'Class) is
+      associatedRtsLayer : constant CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (associatedRtsLayer_Param);
+      rtsPlayerLayerInterface : constant RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
+      layerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+      point : constant GPoint_Access := GPoint_Access (point_Param);
       scrollSelectionForm : ScrollSelectionForm_Access;
       index : Integer;
    begin
@@ -80,11 +80,11 @@ package body org.allbinary.game.input.form.CompositeRTSFormInput_Package is
    end processAtPoint;
 
    --  throws Exception
-   procedure processGameSpecific (This : in out CompositeRTSFormInput; associatedRtsLayer_Param : access CollidableDestroyableDamageableLayer'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager'Class; item_Param : access ABCustomItem'Class; index : Integer) is
-      associatedRtsLayer : CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (associatedRtsLayer_Param);
-      rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
-      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
-      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
+   procedure processGameSpecific (This : in out CompositeRTSFormInput; associatedRtsLayer_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface_Package.RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; item_Param : access ABCustomItem_Package.ABCustomItem'Class; index : Integer) is
+      associatedRtsLayer : constant CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (associatedRtsLayer_Param);
+      rtsPlayerLayerInterface : constant RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
+      layerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+      item : constant ABCustomItem_Access := ABCustomItem_Access (item_Param);
       commonStrings : CommonStrings_Access;
    begin
         commonStrings := CommonStrings_Package.getInstance;
@@ -99,21 +99,21 @@ package body org.allbinary.game.input.form.CompositeRTSFormInput_Package is
    end processGameSpecific;
 
    --  throws Exception
-   function processSticky (This : in out CompositeRTSFormInput; associatedRtsLayer_Param : access CollidableDestroyableDamageableLayer'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager'Class; point_Param : access GPoint'Class) return Boolean is
-      associatedRtsLayer : CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (associatedRtsLayer_Param);
-      rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
-      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
-      point : GPoint_Access := GPoint_Access (point_Param);
+   function processSticky (This : in out CompositeRTSFormInput; associatedRtsLayer_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface_Package.RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; point_Param : access GPoint_Package.GPoint'Class) return Boolean is
+      associatedRtsLayer : constant CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (associatedRtsLayer_Param);
+      rtsPlayerLayerInterface : constant RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
+      layerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+      point : constant GPoint_Access := GPoint_Access (point_Param);
    begin
         return This.rtsFormInputArray (0).processSticky (associatedRtsLayer, rtsPlayerLayerInterface, layerManager, point);
    end processSticky;
 
    --  throws Exception
-   procedure processStickyGameSpecific (This : in out CompositeRTSFormInput; associatedRtsLayer_Param : access CollidableDestroyableDamageableLayer'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager'Class; item_Param : access ABCustomItem'Class; index : Integer) is
-      associatedRtsLayer : CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (associatedRtsLayer_Param);
-      rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
-      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
-      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
+   procedure processStickyGameSpecific (This : in out CompositeRTSFormInput; associatedRtsLayer_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface_Package.RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; item_Param : access ABCustomItem_Package.ABCustomItem'Class; index : Integer) is
+      associatedRtsLayer : constant CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (associatedRtsLayer_Param);
+      rtsPlayerLayerInterface : constant RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
+      layerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+      item : constant ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
         This.rtsFormInputArray (0).processStickyGameSpecific (associatedRtsLayer, rtsPlayerLayerInterface, layerManager, item, index);
    end processStickyGameSpecific;
@@ -138,13 +138,13 @@ package body org.allbinary.game.input.form.CompositeRTSFormInput_Package is
         return This.rtsFormInputArray (0).getSelectedStickyItem;
    end getSelectedStickyItem;
 
-   procedure setSelectedStickyItem (This : in out CompositeRTSFormInput; selectedStickyItem_Param : access ABCustomItem'Class) is
-      selectedStickyItem : ABCustomItem_Access := ABCustomItem_Access (selectedStickyItem_Param);
+   procedure setSelectedStickyItem (This : in out CompositeRTSFormInput; selectedStickyItem_Param : access ABCustomItem_Package.ABCustomItem'Class) is
+      selectedStickyItem : constant ABCustomItem_Access := ABCustomItem_Access (selectedStickyItem_Param);
    begin
         This.rtsFormInputArray (0).setSelectedStickyItem (selectedStickyItem);
    end setSelectedStickyItem;
 
-   procedure processSticky (This : in out CompositeRTSFormInput; associatedRtsLayer_Param : access CollidableDestroyableDamageableLayer'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager'Class; point_Param : access GPoint'Class) is
+   procedure processSticky (This : in out CompositeRTSFormInput; associatedRtsLayer_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface_Package.RTSPlayerLayerInterface'Class; layerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; point_Param : access GPoint_Package.GPoint'Class) is
       Java_Result : constant Boolean := CompositeRTSFormInput'Class (This).processSticky (associatedRtsLayer_Param, rtsPlayerLayerInterface_Param, layerManager_Param, point_Param);
       pragma Unreferenced (Java_Result);
    begin

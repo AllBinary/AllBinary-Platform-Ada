@@ -54,8 +54,8 @@ package org.allbinary.media.audio.Sounds_Package is
       soundsFactoryInterface : SoundsFactoryInterface_Access;
    end record;
 
-   procedure Initialize (This : in out Sounds'Class; soundsFactoryInterface_Param : access SoundsFactoryInterface'Class);
-   function Create (soundsFactoryInterface_Param : access SoundsFactoryInterface'Class) return Sounds_Access;
+   procedure Initialize (This : in out Sounds'Class; soundsFactoryInterface_Param : access SoundsFactoryInterface_Package.SoundsFactoryInterface'Class);
+   function Create (soundsFactoryInterface_Param : access SoundsFactoryInterface_Package.SoundsFactoryInterface'Class) return Sounds_Access;
    procedure init (This : in out Sounds);
    procedure stopAll (This : in out Sounds);
    procedure closeAll (This : in out Sounds);

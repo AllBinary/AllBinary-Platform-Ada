@@ -36,7 +36,7 @@ package body org.allbinary.logic.java.anyType.clazz.loader.ClassLoaderUtil_Packa
 
    --  throws Exception
    function getName (anyType_Param : access Java_Object'Class) return Unbounded_String is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
       classLoader : ClassLoader_Access;
    begin
         classLoader := anyType.all'Tag.getClassLoader;

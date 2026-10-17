@@ -22,17 +22,17 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoBasic_Packag
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TransformInfoBasic'Class; storeFrontInterface_Param : access StoreFrontInterface'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
-      storeFrontInterface : StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
-      propertiesHashMap : HashMap_Access := HashMap_Access (propertiesHashMap_Param);
-      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
+   procedure Initialize (This : in out TransformInfoBasic'Class; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is
+      storeFrontInterface : constant StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
+      propertiesHashMap : constant HashMap_Access := HashMap_Access (propertiesHashMap_Param);
+      pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
    begin
         AbContext_Package.Initialize (This, propertiesHashMap, pageContext);
         Initialize_Fields (This);
         This.storeFrontInterface := storeFrontInterface;
    end Initialize;
 
-   function Create (storeFrontInterface_Param : access StoreFrontInterface'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return TransformInfoBasic_Access is
+   function Create (storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return TransformInfoBasic_Access is
       This : constant TransformInfoBasic_Access := new TransformInfoBasic;
    begin
       TransformInfoBasic_Package.Initialize (This.all, storeFrontInterface_Param, propertiesHashMap_Param, pageContext_Param);
@@ -49,8 +49,8 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoBasic_Packag
         return This.commonStrings.NOT_IMPLEMENTED;
    end log;
 
-   procedure override (This : in out TransformInfoBasic; hashMap_Param : access HashMap'Class) is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+   procedure override (This : in out TransformInfoBasic; hashMap_Param : access HashMap_Package.HashMap'Class) is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
         null;
    end override;
@@ -75,8 +75,8 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoBasic_Packag
         return null;
    end getObjectConfigInterface;
 
-   procedure setObjectConfigInterface (This : in out TransformInfoBasic; transformInfoObjectConfigInterface_Param : access TransformInfoObjectConfigInterface'Class) is
-      transformInfoObjectConfigInterface : TransformInfoObjectConfigInterface_Access := TransformInfoObjectConfigInterface_Access (transformInfoObjectConfigInterface_Param);
+   procedure setObjectConfigInterface (This : in out TransformInfoBasic; transformInfoObjectConfigInterface_Param : access TransformInfoObjectConfigInterface_Package.TransformInfoObjectConfigInterface'Class) is
+      transformInfoObjectConfigInterface : constant TransformInfoObjectConfigInterface_Access := TransformInfoObjectConfigInterface_Access (transformInfoObjectConfigInterface_Param);
    begin
         null;
    end setObjectConfigInterface;
@@ -128,7 +128,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoBasic_Packag
    end setObjectFile;
 
    procedure setObject (This : in out TransformInfoBasic; anyType_Param : access Java_Object'Class) is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         null;
    end setObject;

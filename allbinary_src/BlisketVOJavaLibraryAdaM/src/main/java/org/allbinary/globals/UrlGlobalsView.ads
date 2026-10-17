@@ -45,8 +45,8 @@ package org.allbinary.globals.UrlGlobalsView_Package is
 
    procedure Initialize (This : in out UrlGlobalsView'Class);
    function Create return UrlGlobalsView_Access;
-   function toXmlNode (This : in out UrlGlobalsView; document_Param : access Document'Class) return Node_Access;
-   procedure toXmlNode (This : in out UrlGlobalsView; document_Param : access Document'Class);
+   function toXmlNode (This : in out UrlGlobalsView; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out UrlGlobalsView; document_Param : access Document_Package.Document'Class);
 
 end org.allbinary.globals.UrlGlobalsView_Package;
 

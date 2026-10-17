@@ -50,8 +50,8 @@ package org.allbinary.media.image.ImageUnifierUtil_Package is
    function Create return ImageUnifierUtil_Access;
    function getInstance return ImageUnifierUtil_Access;
    function getDefaultConfiguration (This : in out ImageUnifierUtil) return GraphicsConfiguration_Access;
-   function getImage (This : in out ImageUnifierUtil; bufferedImageArray : BufferedImage_Access_Array_Access; imageUnifierProperties_Param : access ImageUnifierProperties'Class) return BufferedImage_Access;
-   procedure getImage (This : in out ImageUnifierUtil; bufferedImageArray : BufferedImage_Access_Array_Access; imageUnifierProperties_Param : access ImageUnifierProperties'Class);
+   function getImage (This : in out ImageUnifierUtil; bufferedImageArray : BufferedImage_Access_Array_Access; imageUnifierProperties_Param : access ImageUnifierProperties_Package.ImageUnifierProperties'Class) return BufferedImage_Access;
+   procedure getImage (This : in out ImageUnifierUtil; bufferedImageArray : BufferedImage_Access_Array_Access; imageUnifierProperties_Param : access ImageUnifierProperties_Package.ImageUnifierProperties'Class);
 
 end org.allbinary.media.image.ImageUnifierUtil_Package;
 

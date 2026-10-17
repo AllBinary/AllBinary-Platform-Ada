@@ -21,14 +21,14 @@ package body org.allbinary.animation.image.BottomToTopImageAnimationFactory_Pack
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BottomToTopImageAnimationFactory'Class; image_Param : access Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) is
-      image : Image_Access := Image_Access (image_Param);
-      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
+   procedure Initialize (This : in out BottomToTopImageAnimationFactory'Class; image_Param : access Image_Package.Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
+      image : constant Image_Access := Image_Access (image_Param);
+      animationBehaviorFactory : constant AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
    begin
         BaseImageAnimationFactory_Package.Initialize (This, image, PrimitiveIntUtil_Package.getArrayInstance, image.getWidth, image.getHeight, 0, 0, animationBehaviorFactory);
    end Initialize;
 
-   function Create (image_Param : access Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return BottomToTopImageAnimationFactory_Access is
+   function Create (image_Param : access Image_Package.Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return BottomToTopImageAnimationFactory_Access is
       This : constant BottomToTopImageAnimationFactory_Access := new BottomToTopImageAnimationFactory;
    begin
       BottomToTopImageAnimationFactory_Package.Initialize (This.all, image_Param, animationBehaviorFactory_Param);

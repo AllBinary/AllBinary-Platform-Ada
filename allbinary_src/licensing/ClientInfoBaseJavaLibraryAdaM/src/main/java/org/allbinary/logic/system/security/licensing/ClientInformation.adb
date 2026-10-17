@@ -125,8 +125,8 @@ package body org.allbinary.logic.system.security.licensing.ClientInformation_Pac
         end if;
    end isSameId;
 
-   function isLargerOrDifferentServerList (This : in out ClientInformation; list_Param : access BasicArrayList'Class) return Boolean is
-      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
+   function isLargerOrDifferentServerList (This : in out ClientInformation; list_Param : access BasicArrayList_Package.BasicArrayList'Class) return Boolean is
+      list : constant BasicArrayList_Access := BasicArrayList_Access (list_Param);
       size : Integer;
       currentSize : Integer;
       newServerName : Unbounded_String;
@@ -161,8 +161,8 @@ package body org.allbinary.logic.system.security.licensing.ClientInformation_Pac
         return This.hardSale;
    end isHardSale;
 
-   procedure setOperatingSystemInterface (This : in out ClientInformation; operatingSystemInterface_Param : access GenericOperatingSystem'Class) is
-      operatingSystemInterface : GenericOperatingSystem_Access := GenericOperatingSystem_Access (operatingSystemInterface_Param);
+   procedure setOperatingSystemInterface (This : in out ClientInformation; operatingSystemInterface_Param : access GenericOperatingSystem_Package.GenericOperatingSystem'Class) is
+      operatingSystemInterface : constant GenericOperatingSystem_Access := GenericOperatingSystem_Access (operatingSystemInterface_Param);
    begin
         This.operatingSystemInterface := operatingSystemInterface;
    end setOperatingSystemInterface;
@@ -172,8 +172,8 @@ package body org.allbinary.logic.system.security.licensing.ClientInformation_Pac
         This.licenseId := licenseId;
    end setLicenseId;
 
-   procedure setLicenseServers (This : in out ClientInformation; licenseServers_Param : access BasicArrayList'Class) is
-      licenseServers : BasicArrayList_Access := BasicArrayList_Access (licenseServers_Param);
+   procedure setLicenseServers (This : in out ClientInformation; licenseServers_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      licenseServers : constant BasicArrayList_Access := BasicArrayList_Access (licenseServers_Param);
    begin
         This.licenseServers := licenseServers;
    end setLicenseServers;
@@ -197,7 +197,7 @@ package body org.allbinary.logic.system.security.licensing.ClientInformation_Pac
       null;
    end isSameId;
 
-   procedure isLargerOrDifferentServerList (This : in out ClientInformation; list_Param : access BasicArrayList'Class) is
+   procedure isLargerOrDifferentServerList (This : in out ClientInformation; list_Param : access BasicArrayList_Package.BasicArrayList'Class) is
       Java_Result : constant Boolean := ClientInformation'Class (This).isLargerOrDifferentServerList (list_Param);
       pragma Unreferenced (Java_Result);
    begin

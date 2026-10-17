@@ -38,8 +38,8 @@ package org.allbinary.animation.VectorAnimationFactory_Package is
 
    procedure Initialize (This : in out VectorAnimationFactory'Class);
    function Create return VectorAnimationFactory_Access;
-   function getInstance (This : in out VectorAnimationFactory; points : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor'Class) return VectorAnimation_Access;
-   procedure getInstance (This : in out VectorAnimationFactory; points : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor'Class);
+   function getInstance (This : in out VectorAnimationFactory; points : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor_Package.BasicColor'Class) return VectorAnimation_Access;
+   procedure getInstance (This : in out VectorAnimationFactory; points : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor_Package.BasicColor'Class);
 
 end org.allbinary.animation.VectorAnimationFactory_Package;
 

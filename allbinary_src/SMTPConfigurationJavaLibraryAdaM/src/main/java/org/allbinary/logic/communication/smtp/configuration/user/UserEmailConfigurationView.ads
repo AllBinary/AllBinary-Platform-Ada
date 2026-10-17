@@ -62,13 +62,13 @@ package org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfi
       userEmailConfigurationInterface : UserEmailConfigurationInterface_Access;
    end record;
 
-   procedure Initialize (This : in out UserEmailConfigurationView'Class; node_Param : access Node'Class);
-   function Create (node_Param : access Node'Class) return UserEmailConfigurationView_Access;
-   procedure Initialize (This : in out UserEmailConfigurationView'Class; userEmailConfigurationInterface_Param : access UserEmailConfigurationInterface'Class);
-   function Create (userEmailConfigurationInterface_Param : access UserEmailConfigurationInterface'Class) return UserEmailConfigurationView_Access;
+   procedure Initialize (This : in out UserEmailConfigurationView'Class; node_Param : access Node_Package.Node'Class);
+   function Create (node_Param : access Node_Package.Node'Class) return UserEmailConfigurationView_Access;
+   procedure Initialize (This : in out UserEmailConfigurationView'Class; userEmailConfigurationInterface_Param : access UserEmailConfigurationInterface_Package.UserEmailConfigurationInterface'Class);
+   function Create (userEmailConfigurationInterface_Param : access UserEmailConfigurationInterface_Package.UserEmailConfigurationInterface'Class) return UserEmailConfigurationView_Access;
    function getEmailConfigurationInterface (This : in out UserEmailConfigurationView) return UserEmailConfigurationInterface_Access;
-   function toXmlNode (This : in out UserEmailConfigurationView; document_Param : access Document'Class) return Node_Access;
-   procedure toXmlNode (This : in out UserEmailConfigurationView; document_Param : access Document'Class);
+   function toXmlNode (This : in out UserEmailConfigurationView; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out UserEmailConfigurationView; document_Param : access Document_Package.Document'Class);
 
 end org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationView_Package;
 

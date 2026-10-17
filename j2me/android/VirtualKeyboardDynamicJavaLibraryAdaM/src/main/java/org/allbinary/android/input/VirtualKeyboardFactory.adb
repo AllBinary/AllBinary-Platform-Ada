@@ -33,8 +33,8 @@ package body org.allbinary.android.input.VirtualKeyboardFactory_Package is
    end Create;
 
 
-   procedure init (activity_Param : access Activity'Class) is
-      activity : Activity_Access := Activity_Access (activity_Param);
+   procedure init (activity_Param : access Activity_Package.Activity'Class) is
+      activity : constant Activity_Access := Activity_Access (activity_Param);
       SDK_VERSION : Integer;
    begin
         SDK_VERSION := AndroidInfoFactory_Package.getInstance.getVersion;

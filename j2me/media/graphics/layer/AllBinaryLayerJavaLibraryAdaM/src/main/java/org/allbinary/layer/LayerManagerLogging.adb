@@ -50,22 +50,22 @@ package body org.allbinary.layer.LayerManagerLogging_Package is
    end getInstance;
 
    --  throws Exception
-   procedure append_Case (This : in out LayerManagerLogging; layerInterface_Param : access AllBinaryLayer'Class) is
-      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
+   procedure append_Case (This : in out LayerManagerLogging; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
+      layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         This.stringBuilder.delete (0, This.stringBuilder.length);
         This.logUtil.putF (This.stringBuilder.appendint (Integer (TsUtil_Package.getInstance.hashCode (LayerManagerLogging_Access'(This'Unchecked_Access)))).append_Case (This.APPEND_U).append_Case (layerInterface.getName).toString, LayerManagerLogging_Access'(This'Unchecked_Access), This.APPEND);
    end append_Case;
 
-   procedure appendAt (This : in out LayerManagerLogging; layerInterface_Param : access AllBinaryLayer'Class; index : Integer) is
-      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
+   procedure appendAt (This : in out LayerManagerLogging; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; index : Integer) is
+      layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         This.stringBuilder.delete (0, This.stringBuilder.length);
         This.logUtil.putF (This.stringBuilder.appendint (Integer (TsUtil_Package.getInstance.hashCode (LayerManagerLogging_Access'(This'Unchecked_Access)))).append_Case (This.APPEND_U).append_Case (layerInterface.getName).append_Case (This.U_AT_U).appendint (index).toString, LayerManagerLogging_Access'(This'Unchecked_Access), This.APPEND);
    end appendAt;
 
-   procedure remove_Case (This : in out LayerManagerLogging; layerInterface_Param : access AllBinaryLayer'Class) is
-      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
+   procedure remove_Case (This : in out LayerManagerLogging; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
+      layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         if (layerInterface) = (null) then
             This.stringBuilder.delete (0, This.stringBuilder.length);
@@ -76,9 +76,9 @@ package body org.allbinary.layer.LayerManagerLogging_Package is
         end if;
    end remove_Case;
 
-   procedure removeResult (This : in out LayerManagerLogging; layerManager_Param : access LayerManager'Class; layerInterface_Param : access AllBinaryLayer'Class; result : Boolean) is
-      layerManager : LayerManager_Access := LayerManager_Access (layerManager_Param);
-      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
+   procedure removeResult (This : in out LayerManagerLogging; layerManager_Param : access LayerManager_Package.LayerManager'Class; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; result : Boolean) is
+      layerManager : constant LayerManager_Access := LayerManager_Access (layerManager_Param);
+      layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         if (layerInterface) = (null) then
             This.stringBuilder.delete (0, This.stringBuilder.length);
@@ -95,8 +95,8 @@ package body org.allbinary.layer.LayerManagerLogging_Package is
         end if;
    end removeResult;
 
-   procedure log (This : in out LayerManagerLogging; layerManager_Param : access LayerManager'Class) is
-      layerManager : LayerManager_Access := LayerManager_Access (layerManager_Param);
+   procedure log (This : in out LayerManagerLogging; layerManager_Param : access LayerManager_Package.LayerManager'Class) is
+      layerManager : constant LayerManager_Access := LayerManager_Access (layerManager_Param);
       size : Integer;
       commonSeps : CommonSeps_Access;
       allBinaryLayer : AllBinaryLayer_Access;
@@ -105,7 +105,7 @@ package body org.allbinary.layer.LayerManagerLogging_Package is
         This.stringBuilder.delete (0, This.stringBuilder.length);
         size := layerManager.getSize;
         commonSeps := CommonSeps_Package.getInstance;
-        This.stringBuilder.append_Case (Integer_Package.toHexString (TsUtil_Package.getInstance.hashCode (layerManager))).append_Case (commonSeps.COLON_SEP);
+        This.stringBuilder.append_Case (To_Unbounded_String (Java_To_Unsigned_String (TsUtil_Package.getInstance.hashCode (layerManager), 16))).append_Case (commonSeps.COLON_SEP);
         This.stringBuilder.appendint (size).append_Case (commonSeps.COLON_SEP);
         allBinaryLayer := null;
         for index in 0 .. (size) - 1 loop

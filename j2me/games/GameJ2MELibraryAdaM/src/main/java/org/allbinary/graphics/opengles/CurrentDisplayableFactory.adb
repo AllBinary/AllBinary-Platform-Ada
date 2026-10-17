@@ -57,8 +57,8 @@ package body org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package i
       return This;
    end Create;
 
-   procedure setMyCanvas (This : in out CurrentDisplayableFactory; displayable_Param : access MyCanvas'Class) is
-      displayable : MyCanvas_Access := MyCanvas_Access (displayable_Param);
+   procedure setMyCanvas (This : in out CurrentDisplayableFactory; displayable_Param : access MyCanvas_Package.MyCanvas'Class) is
+      displayable : constant MyCanvas_Access := MyCanvas_Access (displayable_Param);
    begin
         if (This.displayable.all in MyCanvas_Package.MyCanvas'Class) then
             if displayable.hasChild (MyCanvas_Access (This.displayable)) then
@@ -69,15 +69,15 @@ package body org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package i
         This.setDisplayable (displayable);
    end setMyCanvas;
 
-   procedure setDisplayable (This : in out CurrentDisplayableFactory; displayable_Param : access Displayable'Class) is
-      displayable : Displayable_Access := Displayable_Access (displayable_Param);
+   procedure setDisplayable (This : in out CurrentDisplayableFactory; displayable_Param : access Displayable_Package.Displayable'Class) is
+      displayable : constant Displayable_Access := Displayable_Access (displayable_Param);
    begin
         This.displayable := displayable;
         This.setOpenGlReadydisplayable (displayable);
    end setDisplayable;
 
-   procedure setOpenGlReadydisplayable (This : in out CurrentDisplayableFactory; openGlReadydisplayable_Param : access Displayable'Class) is
-      openGlReadydisplayable : Displayable_Access := Displayable_Access (openGlReadydisplayable_Param);
+   procedure setOpenGlReadydisplayable (This : in out CurrentDisplayableFactory; openGlReadydisplayable_Param : access Displayable_Package.Displayable'Class) is
+      openGlReadydisplayable : constant Displayable_Access := Displayable_Access (openGlReadydisplayable_Param);
    begin
         This.openGlReadydisplayable := openGlReadydisplayable;
         This.update;
@@ -88,8 +88,8 @@ package body org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package i
         return This.openGlReadydisplayable;
    end getOpenGlReadydisplayable;
 
-   procedure setRunnable (This : in out CurrentDisplayableFactory; runnable_Case_Param : access GameRunnable'Class) is
-      runnable_Case : GameRunnable_Access := GameRunnable_Access (runnable_Case_Param);
+   procedure setRunnable (This : in out CurrentDisplayableFactory; runnable_Case_Param : access GameRunnable_Package.GameRunnable'Class) is
+      runnable_Case : constant GameRunnable_Access := GameRunnable_Access (runnable_Case_Param);
    begin
         PreLogUtil_Package.put (StringMaker_Package.Create.append (This.RUNNABLE).append (This.stringUtil.toString (runnable_Case)).toString, CurrentDisplayableFactory_Access'(This'Unchecked_Access), This.SET_RUNNABLE);
         This.runnable_Case := runnable_Case;
@@ -142,8 +142,8 @@ package body org.allbinary.graphics.opengles.CurrentDisplayableFactory_Package i
         return This.usedRunnable;
    end getUsedRunnable;
 
-   procedure setUsedRunnable (This : in out CurrentDisplayableFactory; usedRunnable_Param : access GameRunnable'Class) is
-      usedRunnable : GameRunnable_Access := GameRunnable_Access (usedRunnable_Param);
+   procedure setUsedRunnable (This : in out CurrentDisplayableFactory; usedRunnable_Param : access GameRunnable_Package.GameRunnable'Class) is
+      usedRunnable : constant GameRunnable_Access := GameRunnable_Access (usedRunnable_Param);
    begin
         PreLogUtil_Package.put (StringMaker_Package.Create.append (This.RUNNABLE).append (This.stringUtil.toString (This.runnable_Case)).append (CommonSeps_Package.getInstance.COLON_SEP).append (This.stringUtil.toString (usedRunnable)).toString, CurrentDisplayableFactory_Access'(This'Unchecked_Access), This.SET_USED_RUNNABLE);
         This.usedRunnable := usedRunnable;

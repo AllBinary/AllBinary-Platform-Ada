@@ -33,7 +33,7 @@ package org.allbinary.logic.util.event.EventListenerInterface_Package is
    type EventListenerInterface_Access is access all EventListenerInterface'Class;
    type EventListenerInterface_Access_Array is array (Natural range <>) of EventListenerInterface_Access;
    type EventListenerInterface_Access_Array_Access is access all EventListenerInterface_Access_Array;
-   procedure onEvent (This : in out EventListenerInterface; eventObject_Param : access AllBinaryEventObject'Class) is abstract;
+   procedure onEvent (This : in out EventListenerInterface; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is abstract;
 
 end org.allbinary.logic.util.event.EventListenerInterface_Package;
 

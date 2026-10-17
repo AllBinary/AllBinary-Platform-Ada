@@ -79,26 +79,26 @@ package org.allbinary.input.automation.actions.script.condition.processors.input
       titleJLabel : JLabel_Access;
    end record;
 
-   procedure Initialize (This : in out KeyboardActionScriptInputJPanel'Class; keyActionScriptInputInterface_Param : access KeyboardActionScriptInputInterface'Class);
-   function Create (keyActionScriptInputInterface_Param : access KeyboardActionScriptInputInterface'Class) return KeyboardActionScriptInputJPanel_Access;
+   procedure Initialize (This : in out KeyboardActionScriptInputJPanel'Class; keyActionScriptInputInterface_Param : access KeyboardActionScriptInputInterface_Package.KeyboardActionScriptInputInterface'Class);
+   function Create (keyActionScriptInputInterface_Param : access KeyboardActionScriptInputInterface_Package.KeyboardActionScriptInputInterface'Class) return KeyboardActionScriptInputJPanel_Access;
    procedure set (This : in out KeyboardActionScriptInputJPanel);
    procedure updateInputType (This : in out KeyboardActionScriptInputJPanel);
    function getSelectedKey (This : in out KeyboardActionScriptInputJPanel) return Integer;
    procedure updateKeys (This : in out KeyboardActionScriptInputJPanel);
    procedure update (This : in out KeyboardActionScriptInputJPanel);
    function getKeyActionJDialog (This : in out KeyboardActionScriptInputJPanel) return JDialog_Access;
-   procedure setKeyActionJDialog (This : in out KeyboardActionScriptInputJPanel; keyActionJDialog_Param : access JDialog'Class);
+   procedure setKeyActionJDialog (This : in out KeyboardActionScriptInputJPanel; keyActionJDialog_Param : access JDialog_Package.JDialog'Class);
    procedure initComponents (This : in out KeyboardActionScriptInputJPanel);
    procedure prependText (This : in out KeyboardActionScriptInputJPanel; integer_Id : Integer);
-   procedure keyIntegerJComboBoxActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent'Class);
-   procedure sequenceJRadioButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent'Class);
-   procedure simultaneousJRadioButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent'Class);
-   procedure keyNameJComboBoxActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent'Class);
-   procedure okJButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent'Class);
-   procedure keyActionJButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent'Class);
-   procedure normalJRadioButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent'Class);
-   procedure releaseJRadioButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent'Class);
-   procedure pressJRadioButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent'Class);
+   procedure keyIntegerJComboBoxActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
+   procedure sequenceJRadioButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
+   procedure simultaneousJRadioButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
+   procedure keyNameJComboBoxActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
+   procedure okJButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
+   procedure keyActionJButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
+   procedure normalJRadioButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
+   procedure releaseJRadioButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
+   procedure pressJRadioButtonActionPerformed (This : in out KeyboardActionScriptInputJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
 
 end org.allbinary.input.automation.actions.script.condition.processors.input.KeyboardActionScriptInputJPanel_Package;
 

@@ -33,20 +33,20 @@ package body org.allbinary.game.physics.velocity.VelocityBehaviorBase_Package is
    end Create;
 
 
-   procedure reduce (This : in out VelocityBehaviorBase; velocityProperties_Param : access BasicVelocityProperties'Class; nominator : Integer; denominator : Integer) is
-      velocityProperties : BasicVelocityProperties_Access := BasicVelocityProperties_Access (velocityProperties_Param);
+   procedure reduce (This : in out VelocityBehaviorBase; velocityProperties_Param : access BasicVelocityProperties_Package.BasicVelocityProperties'Class; nominator : Integer; denominator : Integer) is
+      velocityProperties : constant BasicVelocityProperties_Access := BasicVelocityProperties_Access (velocityProperties_Param);
    begin
         null;
    end reduce;
 
-   procedure reduceX (This : in out VelocityBehaviorBase; velocityProperties_Param : access BasicVelocityProperties'Class; nominator : Integer; denominator : Integer) is
-      velocityProperties : BasicVelocityProperties_Access := BasicVelocityProperties_Access (velocityProperties_Param);
+   procedure reduceX (This : in out VelocityBehaviorBase; velocityProperties_Param : access BasicVelocityProperties_Package.BasicVelocityProperties'Class; nominator : Integer; denominator : Integer) is
+      velocityProperties : constant BasicVelocityProperties_Access := BasicVelocityProperties_Access (velocityProperties_Param);
    begin
         null;
    end reduceX;
 
-   procedure reduceY (This : in out VelocityBehaviorBase; velocityProperties_Param : access BasicVelocityProperties'Class; nominator : Integer; denominator : Integer) is
-      velocityProperties : BasicVelocityProperties_Access := BasicVelocityProperties_Access (velocityProperties_Param);
+   procedure reduceY (This : in out VelocityBehaviorBase; velocityProperties_Param : access BasicVelocityProperties_Package.BasicVelocityProperties'Class; nominator : Integer; denominator : Integer) is
+      velocityProperties : constant BasicVelocityProperties_Access := BasicVelocityProperties_Access (velocityProperties_Param);
    begin
         null;
    end reduceY;

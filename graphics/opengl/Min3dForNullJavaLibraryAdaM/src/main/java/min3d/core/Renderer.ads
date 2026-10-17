@@ -30,9 +30,9 @@ package min3d.core.Renderer_Package is
    type Renderer_Access is access all Renderer'Class;
    type Renderer_Access_Array is array (Natural range <>) of Renderer_Access;
    type Renderer_Access_Array_Access is access all Renderer_Access_Array;
-   procedure onSurfaceCreated (This : in out Renderer; gl_Param : access GL10'Class; config_Param : access EGLConfig'Class) is abstract;
-   procedure onSurfaceChanged (This : in out Renderer; gl_Param : access GL10'Class; width : Integer; height : Integer) is abstract;
-   procedure onDrawFrame (This : in out Renderer; gl_Param : access GL10'Class) is abstract;
+   procedure onSurfaceCreated (This : in out Renderer; gl_Param : access GL10_Package.GL10'Class; config_Param : access EGLConfig_Package.EGLConfig'Class) is abstract;
+   procedure onSurfaceChanged (This : in out Renderer; gl_Param : access GL10_Package.GL10'Class; width : Integer; height : Integer) is abstract;
+   procedure onDrawFrame (This : in out Renderer; gl_Param : access GL10_Package.GL10'Class) is abstract;
 
 end min3d.core.Renderer_Package;
 

@@ -58,8 +58,8 @@ package body org.allbinary.game.layer.RTSLayer_Package is
 
 
    --  throws Exception
-   function createSimulatedInstance (remoteInfo_Param : access RemoteInfo'Class) return RTSLayer_Access is
-      remoteInfo : RemoteInfo_Access := RemoteInfo_Access (remoteInfo_Param);
+   function createSimulatedInstance (remoteInfo_Param : access RemoteInfo_Package.RemoteInfo'Class) return RTSLayer_Access is
+      remoteInfo : constant RemoteInfo_Access := RemoteInfo_Access (remoteInfo_Param);
       nullAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access;
       nullIndexedAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access;
    begin
@@ -68,18 +68,18 @@ package body org.allbinary.game.layer.RTSLayer_Package is
         return RTSLayer_Package.Create (RemoteInfo_Package.REMOTE_INFO, GroupFactory_Package.getInstance.NULL_GROUP_ARRAY, StringUtil_Package.getInstance.EMPTY_STRING, StringUtil_Package.getInstance.EMPTY_STRING, Health_Package.NULL_HEALTH, NullRTSFormInputFactory_Package.getInstance, nullAnimationInterfaceFactoryInterface, nullIndexedAnimationInterfaceFactoryInterface, nullAnimationInterfaceFactoryInterface, nullAnimationInterfaceFactoryInterface, nullIndexedAnimationInterfaceFactoryInterface, NullIndexedAnimationFactory_Package.getFactoryInstance, RectangleFactory_Package.SINGLETON, 0, 0, TileLayerPositionIntoViewPosition_Package.Create);
    end createSimulatedInstance;
 
-   procedure Initialize (This : in out RTSLayer'Class; remoteInfo_Param : access RemoteInfo'Class; groupInterface : Group_Access_Array_Access; rootName : Unbounded_String; name : Unbounded_String; healthInterface_Param : access Health'Class; rtsFormInput_Param : access RTSFormInput'Class; animationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface'Class; emptyAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface'Class; baseAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface'Class; buildAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface'Class; verticleBuildAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface'Class; proceduralAnimationInterfaceFactoryInterface_Param : access ProceduralAnimationInterfaceFactoryInterface'Class; rectangle_Param : access Rectangle'Class; x : Integer; y : Integer; viewPosition_Param : access ViewPositionBase'Class) is
-      remoteInfo : RemoteInfo_Access := RemoteInfo_Access (remoteInfo_Param);
-      healthInterface : Health_Access := Health_Access (healthInterface_Param);
-      rtsFormInput : RTSFormInput_Access := RTSFormInput_Access (rtsFormInput_Param);
-      animationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access := AnimationInterfaceFactoryInterface_Access (animationInterfaceFactoryInterface_Param);
-      emptyAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access := AnimationInterfaceFactoryInterface_Access (emptyAnimationInterfaceFactoryInterface_Param);
-      baseAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access := AnimationInterfaceFactoryInterface_Access (baseAnimationInterfaceFactoryInterface_Param);
-      buildAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access := AnimationInterfaceFactoryInterface_Access (buildAnimationInterfaceFactoryInterface_Param);
-      verticleBuildAnimationInterfaceFactoryInterface : AnimationInterfaceFactoryInterface_Access := AnimationInterfaceFactoryInterface_Access (verticleBuildAnimationInterfaceFactoryInterface_Param);
-      proceduralAnimationInterfaceFactoryInterface : ProceduralAnimationInterfaceFactoryInterface_Access := ProceduralAnimationInterfaceFactoryInterface_Access (proceduralAnimationInterfaceFactoryInterface_Param);
-      rectangle : Rectangle_Access := Rectangle_Access (rectangle_Param);
-      viewPosition : ViewPositionBase_Access := ViewPositionBase_Access (viewPosition_Param);
+   procedure Initialize (This : in out RTSLayer'Class; remoteInfo_Param : access RemoteInfo_Package.RemoteInfo'Class; groupInterface : Group_Access_Array_Access; rootName : Unbounded_String; name : Unbounded_String; healthInterface_Param : access Health_Package.Health'Class; rtsFormInput_Param : access RTSFormInput_Package.RTSFormInput'Class; animationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface_Package.AnimationInterfaceFactoryInterface'Class; emptyAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface_Package.AnimationInterfaceFactoryInterface'Class; baseAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface_Package.AnimationInterfaceFactoryInterface'Class; buildAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface_Package.AnimationInterfaceFactoryInterface'Class; verticleBuildAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface_Package.AnimationInterfaceFactoryInterface'Class; proceduralAnimationInterfaceFactoryInterface_Param : access ProceduralAnimationInterfaceFactoryInterface_Package.ProceduralAnimationInterfaceFactoryInterface'Class; rectangle_Param : access Rectangle_Package.Rectangle'Class; x : Integer; y : Integer; viewPosition_Param : access ViewPositionBase_Package.ViewPositionBase'Class) is
+      remoteInfo : constant RemoteInfo_Access := RemoteInfo_Access (remoteInfo_Param);
+      healthInterface : constant Health_Access := Health_Access (healthInterface_Param);
+      rtsFormInput : constant RTSFormInput_Access := RTSFormInput_Access (rtsFormInput_Param);
+      animationInterfaceFactoryInterface : constant AnimationInterfaceFactoryInterface_Access := AnimationInterfaceFactoryInterface_Access (animationInterfaceFactoryInterface_Param);
+      emptyAnimationInterfaceFactoryInterface : constant AnimationInterfaceFactoryInterface_Access := AnimationInterfaceFactoryInterface_Access (emptyAnimationInterfaceFactoryInterface_Param);
+      baseAnimationInterfaceFactoryInterface : constant AnimationInterfaceFactoryInterface_Access := AnimationInterfaceFactoryInterface_Access (baseAnimationInterfaceFactoryInterface_Param);
+      buildAnimationInterfaceFactoryInterface : constant AnimationInterfaceFactoryInterface_Access := AnimationInterfaceFactoryInterface_Access (buildAnimationInterfaceFactoryInterface_Param);
+      verticleBuildAnimationInterfaceFactoryInterface : constant AnimationInterfaceFactoryInterface_Access := AnimationInterfaceFactoryInterface_Access (verticleBuildAnimationInterfaceFactoryInterface_Param);
+      proceduralAnimationInterfaceFactoryInterface : constant ProceduralAnimationInterfaceFactoryInterface_Access := ProceduralAnimationInterfaceFactoryInterface_Access (proceduralAnimationInterfaceFactoryInterface_Param);
+      rectangle : constant Rectangle_Access := Rectangle_Access (rectangle_Param);
+      viewPosition : constant ViewPositionBase_Access := ViewPositionBase_Access (viewPosition_Param);
       animation : Animation_Access;
    begin
         MultiPlayerGameLayer_Package.Initialize (This, remoteInfo, groupInterface, name, rectangle, viewPosition);
@@ -105,7 +105,7 @@ package body org.allbinary.game.layer.RTSLayer_Package is
         This.geographicMapCellPositionAreaBase := GeographicMapCellPositionArea_Package.Create (RTSLayer_Access'(This'Unchecked_Access));
    end Initialize;
 
-   function Create (remoteInfo_Param : access RemoteInfo'Class; groupInterface : Group_Access_Array_Access; rootName : Unbounded_String; name : Unbounded_String; healthInterface_Param : access Health'Class; rtsFormInput_Param : access RTSFormInput'Class; animationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface'Class; emptyAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface'Class; baseAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface'Class; buildAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface'Class; verticleBuildAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface'Class; proceduralAnimationInterfaceFactoryInterface_Param : access ProceduralAnimationInterfaceFactoryInterface'Class; rectangle_Param : access Rectangle'Class; x : Integer; y : Integer; viewPosition_Param : access ViewPositionBase'Class) return RTSLayer_Access is
+   function Create (remoteInfo_Param : access RemoteInfo_Package.RemoteInfo'Class; groupInterface : Group_Access_Array_Access; rootName : Unbounded_String; name : Unbounded_String; healthInterface_Param : access Health_Package.Health'Class; rtsFormInput_Param : access RTSFormInput_Package.RTSFormInput'Class; animationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface_Package.AnimationInterfaceFactoryInterface'Class; emptyAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface_Package.AnimationInterfaceFactoryInterface'Class; baseAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface_Package.AnimationInterfaceFactoryInterface'Class; buildAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface_Package.AnimationInterfaceFactoryInterface'Class; verticleBuildAnimationInterfaceFactoryInterface_Param : access AnimationInterfaceFactoryInterface_Package.AnimationInterfaceFactoryInterface'Class; proceduralAnimationInterfaceFactoryInterface_Param : access ProceduralAnimationInterfaceFactoryInterface_Package.ProceduralAnimationInterfaceFactoryInterface'Class; rectangle_Param : access Rectangle_Package.Rectangle'Class; x : Integer; y : Integer; viewPosition_Param : access ViewPositionBase_Package.ViewPositionBase'Class) return RTSLayer_Access is
       This : constant RTSLayer_Access := new RTSLayer;
    begin
       RTSLayer_Package.Initialize (This.all, remoteInfo_Param, groupInterface, rootName, name, healthInterface_Param, rtsFormInput_Param, animationInterfaceFactoryInterface_Param, emptyAnimationInterfaceFactoryInterface_Param, baseAnimationInterfaceFactoryInterface_Param, buildAnimationInterfaceFactoryInterface_Param, verticleBuildAnimationInterfaceFactoryInterface_Param, proceduralAnimationInterfaceFactoryInterface_Param, rectangle_Param, x, y, viewPosition_Param);
@@ -113,8 +113,8 @@ package body org.allbinary.game.layer.RTSLayer_Package is
    end Create;
 
    --  throws Exception
-   procedure setAllBinaryGameLayerManager (This : in out RTSLayer; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager'Class) is
-      allBinaryGameLayerManager : AllBinaryGameLayerManager_Access := AllBinaryGameLayerManager_Access (allBinaryGameLayerManager_Param);
+   procedure setAllBinaryGameLayerManager (This : in out RTSLayer; allBinaryGameLayerManager_Param : access AllBinaryGameLayerManager_Package.AllBinaryGameLayerManager'Class) is
+      allBinaryGameLayerManager : constant AllBinaryGameLayerManager_Access := AllBinaryGameLayerManager_Access (allBinaryGameLayerManager_Param);
       geographicMapCompositeInterface : GeographicMapCompositeInterface_Access;
       geographicMapInterface : BasicGeographicMap_Access;
       tiledLayer : AllBinaryTiledLayer_Access;
@@ -130,15 +130,15 @@ package body org.allbinary.game.layer.RTSLayer_Package is
    end setAllBinaryGameLayerManager;
 
    --  throws Exception
-   procedure updateWaypointBehavior (This : in out RTSLayer; geographicMapInterface_Param : access BasicGeographicMap'Class) is
-      geographicMapInterface : BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
+   procedure updateWaypointBehavior (This : in out RTSLayer; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class) is
+      geographicMapInterface : constant BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
    begin
         This.geographicMapCellPositionAreaBase.update (geographicMapInterface);
    end updateWaypointBehavior;
 
    --  throws Exception
-   procedure construct (This : in out RTSLayer; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface'Class) is
-      rtsPlayerLayerInterface : RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
+   procedure construct (This : in out RTSLayer; rtsPlayerLayerInterface_Param : access RTSPlayerLayerInterface_Package.RTSPlayerLayerInterface'Class) is
+      rtsPlayerLayerInterface : constant RTSPlayerLayerInterface_Access := RTSPlayerLayerInterface_Access (rtsPlayerLayerInterface_Param);
    begin
         ViewPositionEventHandler_Package.getInstance.addListener (AllBinaryLayer_Access (RTSLayer_Access'(This'Unchecked_Access)));
         This.animationInterface := This.buildAnimationInterface;
@@ -187,14 +187,14 @@ package body org.allbinary.game.layer.RTSLayer_Package is
    end initInputProcessors;
 
    --  throws Exception
-   procedure processBuiltTick (This : in out RTSLayer; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class) is
-      allBinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
+   procedure processBuiltTick (This : in out RTSLayer; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class) is
+      allBinaryLayerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
    begin
         This.animationInterface := This.indexedButShouldBeRotationAnimationInterface;
    end processBuiltTick;
 
-   procedure processTick (This : in out RTSLayer; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class) is
-      allBinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
+   procedure processTick (This : in out RTSLayer; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class) is
+      allBinaryLayerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
    begin
         begin
             if This.isCompleted then
@@ -213,8 +213,8 @@ package body org.allbinary.game.layer.RTSLayer_Package is
    end processTick;
 
    --  throws Exception
-   procedure processInput (This : in out RTSLayer; layerManager_Param : access AllBinaryLayerManager'Class) is
-      layerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
+   procedure processInput (This : in out RTSLayer; layerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class) is
+      layerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (layerManager_Param);
    begin
         null;
    end processInput;
@@ -224,21 +224,21 @@ package body org.allbinary.game.layer.RTSLayer_Package is
         null;
    end reload;
 
-   procedure onMovement (This : in out RTSLayer; trackingEvent_Param : access TrackingEvent'Class) is
-      trackingEvent : TrackingEvent_Access := TrackingEvent_Access (trackingEvent_Param);
+   procedure onMovement (This : in out RTSLayer; trackingEvent_Param : access TrackingEvent_Package.TrackingEvent'Class) is
+      trackingEvent : constant TrackingEvent_Access := TrackingEvent_Access (trackingEvent_Param);
    begin
         null;
    end onMovement;
 
    --  throws Exception
-   procedure onMovementFound (This : in out RTSLayer; trackingEvent_Param : access TrackingEvent'Class) is
-      trackingEvent : TrackingEvent_Access := TrackingEvent_Access (trackingEvent_Param);
+   procedure onMovementFound (This : in out RTSLayer; trackingEvent_Param : access TrackingEvent_Package.TrackingEvent'Class) is
+      trackingEvent : constant TrackingEvent_Access := TrackingEvent_Access (trackingEvent_Param);
    begin
         null;
    end onMovementFound;
 
-   procedure paint (This : in out RTSLayer; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out RTSLayer; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       viewPosition : ViewPositionBase_Access;
       viewX : Integer;
       viewY : Integer;
@@ -350,15 +350,15 @@ package body org.allbinary.game.layer.RTSLayer_Package is
         return This.animationInterface;
    end getAnimationInterface;
 
-   procedure setAnimationInterface (This : in out RTSLayer; animationInterface_Param : access Animation'Class) is
-      animationInterface : Animation_Access := Animation_Access (animationInterface_Param);
+   procedure setAnimationInterface (This : in out RTSLayer; animationInterface_Param : access Animation_Package.Animation'Class) is
+      animationInterface : constant Animation_Access := Animation_Access (animationInterface_Param);
    begin
         This.animationInterface := animationInterface;
    end setAnimationInterface;
 
    --  throws Exception
-   procedure setTarget (This : in out RTSLayer; targetGameLayer_Param : access PathFindingLayerInterface'Class) is
-      targetGameLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (targetGameLayer_Param);
+   procedure setTarget (This : in out RTSLayer; targetGameLayer_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class) is
+      targetGameLayer : constant PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (targetGameLayer_Param);
       anotherTargetDistance : Integer;
       waypointBehaviorBase : WaypointBehaviorBase_Access;
    begin
@@ -392,8 +392,8 @@ package body org.allbinary.game.layer.RTSLayer_Package is
         return This.healthInterface;
    end getHealthInterface;
 
-   procedure setHealthInterface (This : in out RTSLayer; healthInterface_Param : access Health'Class) is
-      healthInterface : Health_Access := Health_Access (healthInterface_Param);
+   procedure setHealthInterface (This : in out RTSLayer; healthInterface_Param : access Health_Package.Health'Class) is
+      healthInterface : constant Health_Access := Health_Access (healthInterface_Param);
    begin
         This.healthInterface := healthInterface;
    end setHealthInterface;
@@ -435,8 +435,8 @@ package body org.allbinary.game.layer.RTSLayer_Package is
    end shouldHandleStartSameAsEnd;
 
    --  throws Exception
-   procedure handleCost (This : in out RTSLayer; ownerLayer_Param : access PathFindingLayerInterface'Class) is
-      ownerLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (ownerLayer_Param);
+   procedure handleCost (This : in out RTSLayer; ownerLayer_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class) is
+      ownerLayer : constant PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (ownerLayer_Param);
    begin
         null;
    end handleCost;
@@ -487,9 +487,9 @@ package body org.allbinary.game.layer.RTSLayer_Package is
    end isShowMoreCaptionStates;
 
    --  throws Exception
-   procedure init (This : in out RTSLayer; geographicMapCellHistory_Param : access GeographicMapCellHistory'Class; geographicMapCellPositionBasicArrayList_Param : access BasicArrayList'Class) is
-      geographicMapCellHistory : GeographicMapCellHistory_Access := GeographicMapCellHistory_Access (geographicMapCellHistory_Param);
-      geographicMapCellPositionBasicArrayList : BasicArrayList_Access := BasicArrayList_Access (geographicMapCellPositionBasicArrayList_Param);
+   procedure init (This : in out RTSLayer; geographicMapCellHistory_Param : access GeographicMapCellHistory_Package.GeographicMapCellHistory'Class; geographicMapCellPositionBasicArrayList_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      geographicMapCellHistory : constant GeographicMapCellHistory_Access := GeographicMapCellHistory_Access (geographicMapCellHistory_Param);
+      geographicMapCellPositionBasicArrayList : constant BasicArrayList_Access := BasicArrayList_Access (geographicMapCellPositionBasicArrayList_Param);
    begin
         null;
    end init;
@@ -506,21 +506,21 @@ package body org.allbinary.game.layer.RTSLayer_Package is
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end getTopLeftGeographicMapCellPosition;
 
-   function getMoveOutOfBuildAreaPath (This : in out RTSLayer; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return BasicArrayList_Access is
-      geographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
+   function getMoveOutOfBuildAreaPath (This : in out RTSLayer; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) return BasicArrayList_Access is
+      geographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end getMoveOutOfBuildAreaPath;
 
    --  throws Exception
-   procedure setClosestGeographicMapCellHistory (This : in out RTSLayer; pathsList_Param : access BasicArrayList'Class) is
-      pathsList : BasicArrayList_Access := BasicArrayList_Access (pathsList_Param);
+   procedure setClosestGeographicMapCellHistory (This : in out RTSLayer; pathsList_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      pathsList : constant BasicArrayList_Access := BasicArrayList_Access (pathsList_Param);
    begin
         null;
    end setClosestGeographicMapCellHistory;
 
-   procedure teleportTo (This : in out RTSLayer; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
-      geographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
+   procedure teleportTo (This : in out RTSLayer; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
+      geographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
    begin
         null;
    end teleportTo;
@@ -560,9 +560,9 @@ package body org.allbinary.game.layer.RTSLayer_Package is
    end getTrackingEvent;
 
    --  throws Exception
-   function buildingChase (This : in out RTSLayer; allbinaryLayer_Param : access AllBinaryLayer'Class; cellPosition_Param : access GeographicMapCellPosition'Class) return Boolean is
-      allbinaryLayer : AllBinaryLayer_Access := AllBinaryLayer_Access (allbinaryLayer_Param);
-      cellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (cellPosition_Param);
+   function buildingChase (This : in out RTSLayer; allbinaryLayer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; cellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) return Boolean is
+      allbinaryLayer : constant AllBinaryLayer_Access := AllBinaryLayer_Access (allbinaryLayer_Param);
+      cellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (cellPosition_Param);
    begin
         return False;
    end buildingChase;
@@ -582,8 +582,8 @@ package body org.allbinary.game.layer.RTSLayer_Package is
         return 4;
    end getMaxStaticType;
 
-   function isRTSLayer (layerInterface_Param : access AllBinaryLayer'Class) return Boolean is
-      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
+   function isRTSLayer (layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) return Boolean is
+      layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         if ((layerInterface.getType) >= (RTSLayer_Package.getMinStaticType)) and then ((layerInterface.getType) <= (RTSLayer_Package.getMaxStaticType)) then
             return True;
@@ -616,34 +616,34 @@ package body org.allbinary.game.layer.RTSLayer_Package is
         This.getRotationAnimationInterface.setFrame (index);
    end setFrame;
 
-   procedure setRotationAnimationInterface (This : in out RTSLayer; rotationAnimationInterface_Param : access RotationAnimation'Class) is
-      rotationAnimationInterface : RotationAnimation_Access := RotationAnimation_Access (rotationAnimationInterface_Param);
+   procedure setRotationAnimationInterface (This : in out RTSLayer; rotationAnimationInterface_Param : access RotationAnimation_Package.RotationAnimation'Class) is
+      rotationAnimationInterface : constant RotationAnimation_Access := RotationAnimation_Access (rotationAnimationInterface_Param);
    begin
         This.indexedButShouldBeRotationAnimationInterface := rotationAnimationInterface;
    end setRotationAnimationInterface;
 
-   procedure createSimulatedInstance (remoteInfo_Param : access RemoteInfo'Class) is
+   procedure createSimulatedInstance (remoteInfo_Param : access RemoteInfo_Package.RemoteInfo'Class) is
       Java_Result : constant RTSLayer_Access := createSimulatedInstance (remoteInfo_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createSimulatedInstance;
 
-   procedure getMoveOutOfBuildAreaPath (This : in out RTSLayer; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+   procedure getMoveOutOfBuildAreaPath (This : in out RTSLayer; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
       Java_Result : constant BasicArrayList_Access := RTSLayer'Class (This).getMoveOutOfBuildAreaPath (geographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getMoveOutOfBuildAreaPath;
 
-   procedure buildingChase (This : in out RTSLayer; allbinaryLayer_Param : access AllBinaryLayer'Class; cellPosition_Param : access GeographicMapCellPosition'Class) is
+   procedure buildingChase (This : in out RTSLayer; allbinaryLayer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; cellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
       Java_Result : constant Boolean := RTSLayer'Class (This).buildingChase (allbinaryLayer_Param, cellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end buildingChase;
 
-   procedure isRTSLayer (layerInterface_Param : access AllBinaryLayer'Class) is
+   procedure isRTSLayer (layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
       Java_Result : constant Boolean := isRTSLayer (layerInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

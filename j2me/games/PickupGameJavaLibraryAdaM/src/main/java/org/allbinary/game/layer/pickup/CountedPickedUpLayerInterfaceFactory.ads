@@ -52,10 +52,10 @@ package org.allbinary.game.layer.pickup.CountedPickedUpLayerInterfaceFactory_Pac
    end record;
    NULL_COUNTED_PICKUP_LAYER_FACTORY : CountedPickedUpLayerInterfaceFactory_Access;
 
-   procedure Initialize (This : in out CountedPickedUpLayerInterfaceFactory'Class; pickeUpLayerType_Param : access PickedUpLayerType'Class; iconLayer_Param : access IconLayer'Class; animationInterface_Param : access Animation'Class);
-   function Create (pickeUpLayerType_Param : access PickedUpLayerType'Class; iconLayer_Param : access IconLayer'Class; animationInterface_Param : access Animation'Class) return CountedPickedUpLayerInterfaceFactory_Access;
-   function getNextInstance (This : in out CountedPickedUpLayerInterfaceFactory; hashtable_Param : access ABHashtable'Class; x : Integer; y : Integer; z : Integer) return AllBinaryLayer_Access;
-   procedure getNextInstance (This : in out CountedPickedUpLayerInterfaceFactory; hashtable_Param : access ABHashtable'Class; x : Integer; y : Integer; z : Integer);
+   procedure Initialize (This : in out CountedPickedUpLayerInterfaceFactory'Class; pickeUpLayerType_Param : access PickedUpLayerType_Package.PickedUpLayerType'Class; iconLayer_Param : access IconLayer_Package.IconLayer'Class; animationInterface_Param : access Animation_Package.Animation'Class);
+   function Create (pickeUpLayerType_Param : access PickedUpLayerType_Package.PickedUpLayerType'Class; iconLayer_Param : access IconLayer_Package.IconLayer'Class; animationInterface_Param : access Animation_Package.Animation'Class) return CountedPickedUpLayerInterfaceFactory_Access;
+   function getNextInstance (This : in out CountedPickedUpLayerInterfaceFactory; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; x : Integer; y : Integer; z : Integer) return AllBinaryLayer_Access;
+   procedure getNextInstance (This : in out CountedPickedUpLayerInterfaceFactory; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; x : Integer; y : Integer; z : Integer);
    function getTotal (This : in out CountedPickedUpLayerInterfaceFactory) return Integer;
    function getId (This : in out CountedPickedUpLayerInterfaceFactory) return Integer;
 

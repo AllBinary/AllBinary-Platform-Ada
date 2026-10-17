@@ -44,7 +44,7 @@ package org.allbinary.input.gyro.SensorGameUpdateProcessor_Package is
 
    procedure Initialize (This : in out SensorGameUpdateProcessor'Class);
    function Create return SensorGameUpdateProcessor_Access;
-   procedure setInputSensor (This : in out SensorGameUpdateProcessor; inputSensor_Param : access AllBinarySensor'Class);
+   procedure setInputSensor (This : in out SensorGameUpdateProcessor; inputSensor_Param : access AllBinarySensor_Package.AllBinarySensor'Class);
    function getInputSensor (This : in out SensorGameUpdateProcessor) return AllBinarySensor_Access;
    procedure process (This : in out SensorGameUpdateProcessor; anyType_Param : access Java_Object'Class);
    procedure sendNotifications (This : in out SensorGameUpdateProcessor; anyType_Param : access Java_Object'Class);

@@ -38,8 +38,8 @@ package org.allbinary.game.configuration.event.ChangedGameFeatureListener_Packag
    procedure Initialize (This : in out ChangedGameFeatureListener'Class);
    function Create return ChangedGameFeatureListener_Access;
    function getInstance return ChangedGameFeatureListener_Access;
-   function isChangedGameConfiguration (This : in out ChangedGameFeatureListener; gameConfiguration_Param : access GameConfiguration'Class) return Boolean;
-   procedure isChangedGameConfiguration (This : in out ChangedGameFeatureListener; gameConfiguration_Param : access GameConfiguration'Class);
+   function isChangedGameConfiguration (This : in out ChangedGameFeatureListener; gameConfiguration_Param : access GameConfiguration_Package.GameConfiguration'Class) return Boolean;
+   procedure isChangedGameConfiguration (This : in out ChangedGameFeatureListener; gameConfiguration_Param : access GameConfiguration_Package.GameConfiguration'Class);
 
 end org.allbinary.game.configuration.event.ChangedGameFeatureListener_Package;
 

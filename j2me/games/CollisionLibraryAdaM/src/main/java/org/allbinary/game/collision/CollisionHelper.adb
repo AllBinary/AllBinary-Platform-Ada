@@ -22,22 +22,22 @@ package body org.allbinary.game.collision.CollisionHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CollisionHelper'Class; sourceLayerInterface_Param : access AllBinaryLayer'Class) is
-      sourceLayerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (sourceLayerInterface_Param);
+   procedure Initialize (This : in out CollisionHelper'Class; sourceLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
+      sourceLayerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (sourceLayerInterface_Param);
    begin
       Initialize_Fields (This);
         This.sourceLayerInterface := sourceLayerInterface;
    end Initialize;
 
-   function Create (sourceLayerInterface_Param : access AllBinaryLayer'Class) return CollisionHelper_Access is
+   function Create (sourceLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) return CollisionHelper_Access is
       This : constant CollisionHelper_Access := new CollisionHelper;
    begin
       CollisionHelper_Package.Initialize (This.all, sourceLayerInterface_Param);
       return This;
    end Create;
 
-   function isCollidable (This : in out CollisionHelper; layerInterface_Param : access CollidableCompositeLayer'Class) return Boolean is
-      layerInterface : CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (layerInterface_Param);
+   function isCollidable (This : in out CollisionHelper; layerInterface_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class) return Boolean is
+      layerInterface : constant CollidableCompositeLayer_Access := CollidableCompositeLayer_Access (layerInterface_Param);
    begin
         return True;
    end isCollidable;
@@ -47,13 +47,13 @@ package body org.allbinary.game.collision.CollisionHelper_Package is
         return This.sourceLayerInterface;
    end getOwnerLayerInterface;
 
-   procedure setOwnerLayerInterface (This : in out CollisionHelper; sourceLayerInterface_Param : access AllBinaryLayer'Class) is
-      sourceLayerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (sourceLayerInterface_Param);
+   procedure setOwnerLayerInterface (This : in out CollisionHelper; sourceLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
+      sourceLayerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (sourceLayerInterface_Param);
    begin
         This.sourceLayerInterface := sourceLayerInterface;
    end setOwnerLayerInterface;
 
-   procedure isCollidable (This : in out CollisionHelper; layerInterface_Param : access CollidableCompositeLayer'Class) is
+   procedure isCollidable (This : in out CollisionHelper; layerInterface_Param : access CollidableCompositeLayer_Package.CollidableCompositeLayer'Class) is
       Java_Result : constant Boolean := CollisionHelper'Class (This).isCollidable (layerInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

@@ -39,8 +39,8 @@ package org.allbinary.logic.system.security.licensing.LicenseUtil_Package is
    procedure init (This : in out LicenseUtil);
    function isRunning (This : in out LicenseUtil) return Boolean;
    procedure setRunning (This : in out LicenseUtil; running : Boolean);
-   function shouldWait (This : in out LicenseUtil; commandListener_Param : access CommandListener'Class) return Boolean;
-   procedure shouldWait (This : in out LicenseUtil; commandListener_Param : access CommandListener'Class);
+   function shouldWait (This : in out LicenseUtil; commandListener_Param : access CommandListener_Package.CommandListener'Class) return Boolean;
+   procedure shouldWait (This : in out LicenseUtil; commandListener_Param : access CommandListener_Package.CommandListener'Class);
 
 end org.allbinary.logic.system.security.licensing.LicenseUtil_Package;
 

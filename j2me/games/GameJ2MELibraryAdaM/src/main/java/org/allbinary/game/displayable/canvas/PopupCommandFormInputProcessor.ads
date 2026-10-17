@@ -41,11 +41,11 @@ package org.allbinary.game.displayable.canvas.PopupCommandFormInputProcessor_Pac
 
    type PopupCommandFormInputProcessor is new CommandFormInputProcessor with null record;
 
-   procedure Initialize (This : in out PopupCommandFormInputProcessor'Class; gameKeyEventList_Param : access BasicArrayList'Class; playerInputId : Integer; gameCanvas_Param : access MyCanvas'Class; form_Param : access ScrollSelectionForm'Class; popupMenuInputProcessor_Param : access PopupMenuInputProcessor'Class);
-   function Create (gameKeyEventList_Param : access BasicArrayList'Class; playerInputId : Integer; gameCanvas_Param : access MyCanvas'Class; form_Param : access ScrollSelectionForm'Class; popupMenuInputProcessor_Param : access PopupMenuInputProcessor'Class) return PopupCommandFormInputProcessor_Access;
+   procedure Initialize (This : in out PopupCommandFormInputProcessor'Class; gameKeyEventList_Param : access BasicArrayList_Package.BasicArrayList'Class; playerInputId : Integer; gameCanvas_Param : access MyCanvas_Package.MyCanvas'Class; form_Param : access ScrollSelectionForm_Package.ScrollSelectionForm'Class; popupMenuInputProcessor_Param : access PopupMenuInputProcessor_Package.PopupMenuInputProcessor'Class);
+   function Create (gameKeyEventList_Param : access BasicArrayList_Package.BasicArrayList'Class; playerInputId : Integer; gameCanvas_Param : access MyCanvas_Package.MyCanvas'Class; form_Param : access ScrollSelectionForm_Package.ScrollSelectionForm'Class; popupMenuInputProcessor_Param : access PopupMenuInputProcessor_Package.PopupMenuInputProcessor'Class) return PopupCommandFormInputProcessor_Access;
    function processInput (This : in out PopupCommandFormInputProcessor; key : Integer) return Integer;
    procedure processInput (This : in out PopupCommandFormInputProcessor; key : Integer);
-   procedure processMotionInput (This : in out PopupCommandFormInputProcessor; motionGestureEvent_Param : access MotionGestureEvent'Class);
+   procedure processMotionInput (This : in out PopupCommandFormInputProcessor; motionGestureEvent_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class);
 
 end org.allbinary.game.displayable.canvas.PopupCommandFormInputProcessor_Package;
 

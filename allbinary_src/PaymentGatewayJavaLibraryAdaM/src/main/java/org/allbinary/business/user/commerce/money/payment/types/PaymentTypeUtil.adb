@@ -68,8 +68,8 @@ package body org.allbinary.business.user.commerce.money.payment.types.PaymentTyp
       return This;
    end Create;
 
-   procedure add (This : in out PaymentTypeUtil; paymentType_Param : access PaymentType'Class) is
-      paymentType : PaymentType_Access := PaymentType_Access (paymentType_Param);
+   procedure add (This : in out PaymentTypeUtil; paymentType_Param : access PaymentType_Package.PaymentType'Class) is
+      paymentType : constant PaymentType_Access := PaymentType_Access (paymentType_Param);
    begin
         This.paymentTypeVector.add (paymentType);
    end add;
@@ -143,14 +143,14 @@ package body org.allbinary.business.user.commerce.money.payment.types.PaymentTyp
         Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Default: ") & This.defaultName));
    end getDefault;
 
-   function isContain (This : in out PaymentTypeUtil; paymentType_Param : access PaymentType'Class) return Boolean is
-      paymentType : PaymentType_Access := PaymentType_Access (paymentType_Param);
+   function isContain (This : in out PaymentTypeUtil; paymentType_Param : access PaymentType_Package.PaymentType'Class) return Boolean is
+      paymentType : constant PaymentType_Access := PaymentType_Access (paymentType_Param);
    begin
         return This.paymentTypeVector.contains (paymentType);
    end isContain;
 
-   function difference (This : in out PaymentTypeUtil; a_PaymentTypeVector_Param : access BasicArrayList'Class) return BasicArrayList_Access is
-      a_PaymentTypeVector : BasicArrayList_Access := BasicArrayList_Access (a_PaymentTypeVector_Param);
+   function difference (This : in out PaymentTypeUtil; a_PaymentTypeVector_Param : access BasicArrayList_Package.BasicArrayList'Class) return BasicArrayList_Access is
+      a_PaymentTypeVector : constant BasicArrayList_Access := BasicArrayList_Access (a_PaymentTypeVector_Param);
       diff : BasicArrayList_Access;
       size : Integer;
       paymentType : PaymentType_Access;
@@ -181,14 +181,14 @@ package body org.allbinary.business.user.commerce.money.payment.types.PaymentTyp
       null;
    end getDefault;
 
-   procedure isContain (This : in out PaymentTypeUtil; paymentType_Param : access PaymentType'Class) is
+   procedure isContain (This : in out PaymentTypeUtil; paymentType_Param : access PaymentType_Package.PaymentType'Class) is
       Java_Result : constant Boolean := PaymentTypeUtil'Class (This).isContain (paymentType_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isContain;
 
-   procedure difference (This : in out PaymentTypeUtil; a_PaymentTypeVector_Param : access BasicArrayList'Class) is
+   procedure difference (This : in out PaymentTypeUtil; a_PaymentTypeVector_Param : access BasicArrayList_Package.BasicArrayList'Class) is
       Java_Result : constant BasicArrayList_Access := PaymentTypeUtil'Class (This).difference (a_PaymentTypeVector_Param);
       pragma Unreferenced (Java_Result);
    begin

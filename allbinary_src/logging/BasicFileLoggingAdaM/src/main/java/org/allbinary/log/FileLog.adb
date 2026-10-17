@@ -99,16 +99,16 @@ package body org.allbinary.log.FileLog_Package is
    end createLogFileBackup;
 
    function put (specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String) return Unbounded_String is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         return FileLog_Package.put (specialMessage, anyType, functionName, null);
    end put;
 
    function put (specialMessage_Param : Unbounded_String; anyType_Param : access Java_Object'Class; functionName_Param : Unbounded_String; exception_Id_Param : access Java_Throwable_Object'Class) return Unbounded_String is
       specialMessage : Unbounded_String := specialMessage_Param;
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
       functionName : Unbounded_String := functionName_Param;
-      exception_Id : Java_Throwable := Java_Throwable (exception_Id_Param);
+      exception_Id : constant Java_Throwable := Java_Throwable (exception_Id_Param);
       length : Long_Long_Integer;
       className : Unbounded_String;
       message : Unbounded_String;
@@ -159,7 +159,7 @@ package body org.allbinary.log.FileLog_Package is
    function put (specialMessage_Param : Unbounded_String; className : Unbounded_String; functionName_Param : Unbounded_String; exception_Id_Param : access Java_Throwable_Object'Class) return Unbounded_String is
       specialMessage : Unbounded_String := specialMessage_Param;
       functionName : Unbounded_String := functionName_Param;
-      exception_Id : Java_Throwable := Java_Throwable (exception_Id_Param);
+      exception_Id : constant Java_Throwable := Java_Throwable (exception_Id_Param);
       length : Long_Long_Integer;
       message : Unbounded_String;
    begin

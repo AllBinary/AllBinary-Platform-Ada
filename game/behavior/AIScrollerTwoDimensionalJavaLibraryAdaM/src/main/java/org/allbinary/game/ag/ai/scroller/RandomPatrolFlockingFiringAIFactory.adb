@@ -34,10 +34,10 @@ package body org.allbinary.game.ag.ai.scroller.RandomPatrolFlockingFiringAIFacto
 
 
    --  throws Exception
-   function getInstance (This : in out RandomPatrolFlockingFiringAIFactory; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return ArtificialIntelligenceInterface_Access is
-      hashtable : ABHashtable_Access := ABHashtable_Access (hashtable_Param);
-      ownerLayerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
-      gameInput : GameInput_Access := GameInput_Access (gameInput_Param);
+   function getInstance (This : in out RandomPatrolFlockingFiringAIFactory; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) return ArtificialIntelligenceInterface_Access is
+      hashtable : constant ABHashtable_Access := ABHashtable_Access (hashtable_Param);
+      ownerLayerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
+      gameInput : constant GameInput_Access := GameInput_Access (gameInput_Param);
       artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access_Array_Access;
    begin
         artificialIntelligenceInterface := new ArtificialIntelligenceInterface_Access_Array'(0 .. (2) - 1 => null);
@@ -46,7 +46,7 @@ package body org.allbinary.game.ag.ai.scroller.RandomPatrolFlockingFiringAIFacto
         return ArrayAI_Package.Create (artificialIntelligenceInterface, ownerLayerInterface, gameInput);
    end getInstance;
 
-   procedure getInstance (This : in out RandomPatrolFlockingFiringAIFactory; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) is
+   procedure getInstance (This : in out RandomPatrolFlockingFiringAIFactory; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) is
       Java_Result : constant ArtificialIntelligenceInterface_Access := RandomPatrolFlockingFiringAIFactory'Class (This).getInstance (hashtable_Param, ownerLayerInterface_Param, gameInput_Param);
       pragma Unreferenced (Java_Result);
    begin

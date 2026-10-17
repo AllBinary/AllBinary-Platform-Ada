@@ -37,8 +37,8 @@ package org.allbinary.image.IndexedAnimationToImageArrayUtil_Package is
 
    procedure Initialize (This : in out IndexedAnimationToImageArrayUtil'Class);
    function Create return IndexedAnimationToImageArrayUtil_Access;
-   function getInstance (width : Integer; height : Integer; sequentialAnimationInterface_Param : access IndexedAnimation'Class) return Image_Access_Array_Access;
-   procedure getInstance (width : Integer; height : Integer; sequentialAnimationInterface_Param : access IndexedAnimation'Class);
+   function getInstance (width : Integer; height : Integer; sequentialAnimationInterface_Param : access IndexedAnimation_Package.IndexedAnimation'Class) return Image_Access_Array_Access;
+   procedure getInstance (width : Integer; height : Integer; sequentialAnimationInterface_Param : access IndexedAnimation_Package.IndexedAnimation'Class);
 
 end org.allbinary.image.IndexedAnimationToImageArrayUtil_Package;
 

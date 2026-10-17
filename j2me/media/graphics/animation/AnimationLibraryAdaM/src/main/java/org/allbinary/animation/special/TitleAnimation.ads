@@ -64,8 +64,8 @@ package org.allbinary.animation.special.TitleAnimation_Package is
       CLEAR_COLOR : BasicColor_Access;
    end record;
 
-   procedure Initialize (This : in out TitleAnimation'Class; animationInterfaceArray : IndexedAnimation_Access_Array_Access; basicColorArray : BasicColor_Access_Array_Access; dxArray : Integer_Array_Access; dyArray : Integer_Array_Access; y : Integer; width : Integer; animationBehavior_Param : access AnimationBehavior'Class);
-   function Create (animationInterfaceArray : IndexedAnimation_Access_Array_Access; basicColorArray : BasicColor_Access_Array_Access; dxArray : Integer_Array_Access; dyArray : Integer_Array_Access; y : Integer; width : Integer; animationBehavior_Param : access AnimationBehavior'Class) return TitleAnimation_Access;
+   procedure Initialize (This : in out TitleAnimation'Class; animationInterfaceArray : IndexedAnimation_Access_Array_Access; basicColorArray : BasicColor_Access_Array_Access; dxArray : Integer_Array_Access; dyArray : Integer_Array_Access; y : Integer; width : Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class);
+   function Create (animationInterfaceArray : IndexedAnimation_Access_Array_Access; basicColorArray : BasicColor_Access_Array_Access; dxArray : Integer_Array_Access; dyArray : Integer_Array_Access; y : Integer; width : Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return TitleAnimation_Access;
    function createAnimation (animationInterfaceArray : IndexedAnimation_Access_Array_Access; basicColorArray : BasicColor_Access_Array_Access; dxArray : Integer_Array_Access; dyArray : Integer_Array_Access; y : Integer; width : Integer) return TitleAnimation_Access;
    procedure createAnimation (animationInterfaceArray : IndexedAnimation_Access_Array_Access; basicColorArray : BasicColor_Access_Array_Access; dxArray : Integer_Array_Access; dyArray : Integer_Array_Access; y : Integer; width : Integer);
    procedure nextFrame (This : in out TitleAnimation);
@@ -78,8 +78,8 @@ package org.allbinary.animation.special.TitleAnimation_Package is
    procedure setLastFrame (This : in out TitleAnimation);
    procedure reset (This : in out TitleAnimation);
    procedure previousFrame (This : in out TitleAnimation);
-   procedure paintFrameXY (This : in out TitleAnimation; graphics_Param : access Graphics'Class; frame : Integer; x : Integer; y : Integer);
-   procedure paintXY (This : in out TitleAnimation; graphics_Param : access Graphics'Class; ax : Integer; ay : Integer);
+   procedure paintFrameXY (This : in out TitleAnimation; graphics_Param : access Graphics_Package.Graphics'Class; frame : Integer; x : Integer; y : Integer);
+   procedure paintXY (This : in out TitleAnimation; graphics_Param : access Graphics_Package.Graphics'Class; ax : Integer; ay : Integer);
 
 end org.allbinary.animation.special.TitleAnimation_Package;
 

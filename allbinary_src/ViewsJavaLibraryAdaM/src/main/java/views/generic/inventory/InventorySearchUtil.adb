@@ -43,8 +43,8 @@ package body views.generic_Id.inventory.InventorySearchUtil_Package is
    end getInstance;
 
    --  throws Exception
-   function getBasicItemIdColumn (This : in out InventorySearchUtil; searchRequest_Param : access SearchRequest'Class) return BasicArrayList_Access is
-      searchRequest : SearchRequest_Access := SearchRequest_Access (searchRequest_Param);
+   function getBasicItemIdColumn (This : in out InventorySearchUtil; searchRequest_Param : access SearchRequest_Package.SearchRequest'Class) return BasicArrayList_Access is
+      searchRequest : constant SearchRequest_Access := SearchRequest_Access (searchRequest_Param);
       inventoryEntityInterface : InventoryEntity_Access;
       storeFrontInterface : StoreFrontInterface_Access;
       inventorySearchUtil : InventoryColumnUtil_Access;
@@ -76,9 +76,9 @@ package body views.generic_Id.inventory.InventorySearchUtil_Package is
    end getBasicItemIdColumn;
 
    --  throws Exception
-   function getNoResults (This : in out InventorySearchUtil; viewDocumentInterface_Param : access TransformDocumentInterface'Class; inventoryNode_Param : access Node'Class) return Unbounded_String is
-      viewDocumentInterface : TransformDocumentInterface_Access := TransformDocumentInterface_Access (viewDocumentInterface_Param);
-      inventoryNode : Node_Access := Node_Access (inventoryNode_Param);
+   function getNoResults (This : in out InventorySearchUtil; viewDocumentInterface_Param : access TransformDocumentInterface_Package.TransformDocumentInterface'Class; inventoryNode_Param : access Node_Package.Node'Class) return Unbounded_String is
+      viewDocumentInterface : constant TransformDocumentInterface_Access := TransformDocumentInterface_Access (viewDocumentInterface_Param);
+      inventoryNode : constant Node_Access := Node_Access (inventoryNode_Param);
       success : Unbounded_String;
    begin
         inventoryNode.appendChild (ModDomHelper_Package.createNameValueNodes (viewDocumentInterface.getDoc, SearchData_Package.TOTAL_NUMBER_PAGES, This.commonPhoneStrings.ZERO));
@@ -90,10 +90,10 @@ package body views.generic_Id.inventory.InventorySearchUtil_Package is
         return success;
    end getNoResults;
 
-   function search (This : in out InventorySearchUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; searchRequest_Param : access SearchRequest'Class; column_Param : access BasicArrayList'Class) return Unbounded_String_Array_Access is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      searchRequest : SearchRequest_Access := SearchRequest_Access (searchRequest_Param);
-      column : BasicArrayList_Access := BasicArrayList_Access (column_Param);
+   function search (This : in out InventorySearchUtil; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; searchRequest_Param : access SearchRequest_Package.SearchRequest'Class; column_Param : access BasicArrayList_Package.BasicArrayList'Class) return Unbounded_String_Array_Access is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      searchRequest : constant SearchRequest_Access := SearchRequest_Access (searchRequest_Param);
+      column : constant BasicArrayList_Access := BasicArrayList_Access (column_Param);
       inventoryEntityInterface : InventoryEntity_Access;
       searchParams : SearchParams_Access;
       startPage : Integer;
@@ -248,21 +248,21 @@ package body views.generic_Id.inventory.InventorySearchUtil_Package is
         end;
    end search;
 
-   procedure getBasicItemIdColumn (This : in out InventorySearchUtil; searchRequest_Param : access SearchRequest'Class) is
+   procedure getBasicItemIdColumn (This : in out InventorySearchUtil; searchRequest_Param : access SearchRequest_Package.SearchRequest'Class) is
       Java_Result : constant BasicArrayList_Access := InventorySearchUtil'Class (This).getBasicItemIdColumn (searchRequest_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getBasicItemIdColumn;
 
-   procedure getNoResults (This : in out InventorySearchUtil; viewDocumentInterface_Param : access TransformDocumentInterface'Class; inventoryNode_Param : access Node'Class) is
+   procedure getNoResults (This : in out InventorySearchUtil; viewDocumentInterface_Param : access TransformDocumentInterface_Package.TransformDocumentInterface'Class; inventoryNode_Param : access Node_Package.Node'Class) is
       Java_Result : constant Unbounded_String := InventorySearchUtil'Class (This).getNoResults (viewDocumentInterface_Param, inventoryNode_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getNoResults;
 
-   procedure search (This : in out InventorySearchUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; searchRequest_Param : access SearchRequest'Class; column_Param : access BasicArrayList'Class) is
+   procedure search (This : in out InventorySearchUtil; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; searchRequest_Param : access SearchRequest_Package.SearchRequest'Class; column_Param : access BasicArrayList_Package.BasicArrayList'Class) is
       Java_Result : constant Unbounded_String_Array_Access := InventorySearchUtil'Class (This).search (abeClientInformation_Param, searchRequest_Param, column_Param);
       pragma Unreferenced (Java_Result);
    begin

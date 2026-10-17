@@ -37,14 +37,14 @@ package org.allbinary.gui.swing.workers.JListSwingWorker_Package is
       listModel : ListModel_Access;
    end record;
 
-   procedure Initialize (This : in out JListSwingWorker'Class; jList_Param : access JList'Class; listModel_Param : access ListModel'Class);
-   function Create (jList_Param : access JList'Class; listModel_Param : access ListModel'Class) return JListSwingWorker_Access;
+   procedure Initialize (This : in out JListSwingWorker'Class; jList_Param : access JList_Package.JList'Class; listModel_Param : access ListModel_Package.ListModel'Class);
+   function Create (jList_Param : access JList_Package.JList'Class; listModel_Param : access ListModel_Package.ListModel'Class) return JListSwingWorker_Access;
    function doInBackground (This : in out JListSwingWorker) return Java_Object_Access;
    procedure done (This : in out JListSwingWorker);
    function getJList (This : in out JListSwingWorker) return JList_Access;
-   procedure setJList (This : in out JListSwingWorker; jList_Param : access JList'Class);
+   procedure setJList (This : in out JListSwingWorker; jList_Param : access JList_Package.JList'Class);
    function getListModel (This : in out JListSwingWorker) return ListModel_Access;
-   procedure setListModel (This : in out JListSwingWorker; listModel_Param : access ListModel'Class);
+   procedure setListModel (This : in out JListSwingWorker; listModel_Param : access ListModel_Package.ListModel'Class);
 
 end org.allbinary.gui.swing.workers.JListSwingWorker_Package;
 

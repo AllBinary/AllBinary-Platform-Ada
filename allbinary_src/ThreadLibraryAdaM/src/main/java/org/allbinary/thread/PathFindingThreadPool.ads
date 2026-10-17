@@ -37,10 +37,10 @@ package org.allbinary.thread.PathFindingThreadPool_Package is
    procedure Initialize (This : in out PathFindingThreadPool'Class; poolName : Unbounded_String; numThreads : Integer; priority : Integer);
    function Create (poolName : Unbounded_String; numThreads : Integer; priority : Integer) return PathFindingThreadPool_Access;
    function getInstance return ThreadPool_Access;
-   procedure runTaskWithPriority (This : in out PathFindingThreadPool; task_Id_Param : access PriorityRunnable'Class);
-   procedure runTask (This : in out PathFindingThreadPool; task_Id_Param : access Runnable'Class);
-   procedure startTask (This : in out PathFindingThreadPool; task_Id_Param : access Runnable'Class);
-   procedure completedTask (This : in out PathFindingThreadPool; task_Id_Param : access Runnable'Class);
+   procedure runTaskWithPriority (This : in out PathFindingThreadPool; task_Id_Param : access PriorityRunnable_Package.PriorityRunnable'Class);
+   procedure runTask (This : in out PathFindingThreadPool; task_Id_Param : access Runnable_Package.Runnable'Class);
+   procedure startTask (This : in out PathFindingThreadPool; task_Id_Param : access Runnable_Package.Runnable'Class);
+   procedure completedTask (This : in out PathFindingThreadPool; task_Id_Param : access Runnable_Package.Runnable'Class);
 
 end org.allbinary.thread.PathFindingThreadPool_Package;
 

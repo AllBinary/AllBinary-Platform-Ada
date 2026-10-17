@@ -21,13 +21,13 @@ package body views.generic_Id.inventory.AutoValidationInventoryView_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AutoValidationInventoryView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out AutoValidationInventoryView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         InventoryView_Package.Initialize (This, transformInfoInterface);
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return AutoValidationInventoryView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return AutoValidationInventoryView_Access is
       This : constant AutoValidationInventoryView_Access := new AutoValidationInventoryView;
    begin
       AutoValidationInventoryView_Package.Initialize (This.all, transformInfoInterface_Param);
@@ -44,8 +44,8 @@ package body views.generic_Id.inventory.AutoValidationInventoryView_Package is
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out AutoValidationInventoryView; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toValidationInfoNode (This : in out AutoValidationInventoryView; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
@@ -55,7 +55,7 @@ package body views.generic_Id.inventory.AutoValidationInventoryView_Package is
         return Null_Unbounded_String;
    end validationInfo;
 
-   procedure toValidationInfoNode (This : in out AutoValidationInventoryView; document_Param : access Document'Class) is
+   procedure toValidationInfoNode (This : in out AutoValidationInventoryView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := AutoValidationInventoryView'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

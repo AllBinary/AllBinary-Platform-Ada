@@ -21,13 +21,13 @@ package body org.allbinary.graphics.pipeline.GraphicsPipeline_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GraphicsPipeline'Class; points_Param : access BasicArrayList'Class) is
-      points : BasicArrayList_Access := BasicArrayList_Access (points_Param);
+   procedure Initialize (This : in out GraphicsPipeline'Class; points_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      points : constant BasicArrayList_Access := BasicArrayList_Access (points_Param);
    begin
         BasicGraphicsPipeline_Package.Initialize (This, points);
    end Initialize;
 
-   function Create (points_Param : access BasicArrayList'Class) return GraphicsPipeline_Access is
+   function Create (points_Param : access BasicArrayList_Package.BasicArrayList'Class) return GraphicsPipeline_Access is
       This : constant GraphicsPipeline_Access := new GraphicsPipeline;
    begin
       GraphicsPipeline_Package.Initialize (This.all, points_Param);

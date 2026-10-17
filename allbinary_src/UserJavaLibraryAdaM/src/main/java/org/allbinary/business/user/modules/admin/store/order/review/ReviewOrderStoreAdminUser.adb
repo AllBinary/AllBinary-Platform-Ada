@@ -33,28 +33,28 @@ package body org.allbinary.business.user.modules.admin.store.order.review.Review
       return This;
    end Create;
 
-   procedure Initialize (This : in out ReviewOrderStoreAdminUser'Class; userHashMap_Param : access HashMap'Class) is
-      userHashMap : HashMap_Access := HashMap_Access (userHashMap_Param);
+   procedure Initialize (This : in out ReviewOrderStoreAdminUser'Class; userHashMap_Param : access HashMap_Package.HashMap'Class) is
+      userHashMap : constant HashMap_Access := HashMap_Access (userHashMap_Param);
    begin
         User_Package.Initialize (This, userHashMap);
    end Initialize;
 
-   function Create (userHashMap_Param : access HashMap'Class) return ReviewOrderStoreAdminUser_Access is
+   function Create (userHashMap_Param : access HashMap_Package.HashMap'Class) return ReviewOrderStoreAdminUser_Access is
       This : constant ReviewOrderStoreAdminUser_Access := new ReviewOrderStoreAdminUser;
    begin
       ReviewOrderStoreAdminUser_Package.Initialize (This.all, userHashMap_Param);
       return This;
    end Create;
 
-   procedure validateSession (This : in out ReviewOrderStoreAdminUser; weblisketSession_Param : access WeblisketSessionInterface'Class) is
-      weblisketSession : WeblisketSessionInterface_Access := WeblisketSessionInterface_Access (weblisketSession_Param);
+   procedure validateSession (This : in out ReviewOrderStoreAdminUser; weblisketSession_Param : access WeblisketSessionInterface_Package.WeblisketSessionInterface'Class) is
+      weblisketSession : constant WeblisketSessionInterface_Access := WeblisketSessionInterface_Access (weblisketSession_Param);
    begin
         User (This).validateSession (weblisketSession);
         This.updateSession (weblisketSession);
    end validateSession;
 
-   procedure updateSession (This : in out ReviewOrderStoreAdminUser; weblisketSession_Param : access WeblisketSessionInterface'Class) is
-      weblisketSession : WeblisketSessionInterface_Access := WeblisketSessionInterface_Access (weblisketSession_Param);
+   procedure updateSession (This : in out ReviewOrderStoreAdminUser; weblisketSession_Param : access WeblisketSessionInterface_Package.WeblisketSessionInterface'Class) is
+      weblisketSession : constant WeblisketSessionInterface_Access := WeblisketSessionInterface_Access (weblisketSession_Param);
    begin
         weblisketSession.setStoreName (This.getPermissions);
    end updateSession;

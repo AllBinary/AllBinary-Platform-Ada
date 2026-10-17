@@ -47,8 +47,8 @@ package body admin.tags.MultipartRequestParamForwardTag_Package is
         This.command := command;
    end setCommand;
 
-   procedure setParamVector (This : in out MultipartRequestParamForwardTag; paramVector_Param : access BasicArrayList'Class) is
-      paramVector : BasicArrayList_Access := BasicArrayList_Access (paramVector_Param);
+   procedure setParamVector (This : in out MultipartRequestParamForwardTag; paramVector_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      paramVector : constant BasicArrayList_Access := BasicArrayList_Access (paramVector_Param);
    begin
         This.paramVector := paramVector;
    end setParamVector;

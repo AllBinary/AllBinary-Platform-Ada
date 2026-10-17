@@ -22,10 +22,10 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpContext_
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TransformInfoHttpContext'Class; databaseHashMap_Param : access HashMap'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
-      databaseHashMap : HashMap_Access := HashMap_Access (databaseHashMap_Param);
-      propertiesHashMap : HashMap_Access := HashMap_Access (propertiesHashMap_Param);
-      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
+   procedure Initialize (This : in out TransformInfoHttpContext'Class; databaseHashMap_Param : access HashMap_Package.HashMap'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is
+      databaseHashMap : constant HashMap_Access := HashMap_Access (databaseHashMap_Param);
+      propertiesHashMap : constant HashMap_Access := HashMap_Access (propertiesHashMap_Param);
+      pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
       stringBuffer : StringMaker_Access;
    begin
         TransformInfoHttp_Package.Initialize (This, databaseHashMap, propertiesHashMap, pageContext);
@@ -41,16 +41,16 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpContext_
         This.setStoreName (StringUtil_Package.getInstance.EMPTY_STRING);
    end Initialize;
 
-   function Create (databaseHashMap_Param : access HashMap'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return TransformInfoHttpContext_Access is
+   function Create (databaseHashMap_Param : access HashMap_Package.HashMap'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return TransformInfoHttpContext_Access is
       This : constant TransformInfoHttpContext_Access := new TransformInfoHttpContext;
    begin
       TransformInfoHttpContext_Package.Initialize (This.all, databaseHashMap_Param, propertiesHashMap_Param, pageContext_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out TransformInfoHttpContext'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
-      propertiesHashMap : HashMap_Access := HashMap_Access (propertiesHashMap_Param);
-      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
+   procedure Initialize (This : in out TransformInfoHttpContext'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is
+      propertiesHashMap : constant HashMap_Access := HashMap_Access (propertiesHashMap_Param);
+      pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
    begin
         TransformInfoHttp_Package.Initialize (This, propertiesHashMap, pageContext);
         Initialize_Fields (This);
@@ -60,7 +60,7 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpContext_
         This.setStoreName (StringUtil_Package.getInstance.EMPTY_STRING);
    end Initialize;
 
-   function Create (propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return TransformInfoHttpContext_Access is
+   function Create (propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return TransformInfoHttpContext_Access is
       This : constant TransformInfoHttpContext_Access := new TransformInfoHttpContext;
    begin
       TransformInfoHttpContext_Package.Initialize (This.all, propertiesHashMap_Param, pageContext_Param);

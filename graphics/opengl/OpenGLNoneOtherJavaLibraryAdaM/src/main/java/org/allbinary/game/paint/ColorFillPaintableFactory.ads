@@ -44,8 +44,8 @@ package org.allbinary.game.paint.ColorFillPaintableFactory_Package is
    procedure Initialize (This : in out ColorFillPaintableFactory'Class);
    function Create return ColorFillPaintableFactory_Access;
    function getInstance return ColorFillPaintableFactory_Access;
-   function getInstance (This : in out ColorFillPaintableFactory; basicColor_Param : access BasicColor'Class; forThreedCanvas : Boolean) return ColorFillBasePaintable_Access;
-   procedure getInstance (This : in out ColorFillPaintableFactory; basicColor_Param : access BasicColor'Class; forThreedCanvas : Boolean);
+   function getInstance (This : in out ColorFillPaintableFactory; basicColor_Param : access BasicColor_Package.BasicColor'Class; forThreedCanvas : Boolean) return ColorFillBasePaintable_Access;
+   procedure getInstance (This : in out ColorFillPaintableFactory; basicColor_Param : access BasicColor_Package.BasicColor'Class; forThreedCanvas : Boolean);
 
 end org.allbinary.game.paint.ColorFillPaintableFactory_Package;
 

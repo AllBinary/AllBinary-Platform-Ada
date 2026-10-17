@@ -33,10 +33,10 @@ package body org.allbinary.graphics.displayable.screen.CommandForm_Package is
         return CommandForm_Access (CommandForm_Package.NULL_COMMAND_FORM);
    end getNullCommandForm;
 
-   procedure Initialize (This : in out CommandForm'Class; commandListener_Param : access CommandListener'Class; formTitle : Unbounded_String; backgrounBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) is
-      commandListener : CommandListener_Access := CommandListener_Access (commandListener_Param);
-      backgrounBasicColor : BasicColor_Access := BasicColor_Access (backgrounBasicColor_Param);
-      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
+   procedure Initialize (This : in out CommandForm'Class; commandListener_Param : access CommandListener_Package.CommandListener'Class; formTitle : Unbounded_String; backgrounBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      commandListener : constant CommandListener_Access := CommandListener_Access (commandListener_Param);
+      backgrounBasicColor : constant BasicColor_Access := BasicColor_Access (backgrounBasicColor_Param);
+      foregroundBasicColor : constant BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
    begin
         Form_Package.Initialize (This, formTitle);
         Initialize_Fields (This);
@@ -53,15 +53,15 @@ package body org.allbinary.graphics.displayable.screen.CommandForm_Package is
         end;
    end Initialize;
 
-   function Create (commandListener_Param : access CommandListener'Class; formTitle : Unbounded_String; backgrounBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return CommandForm_Access is
+   function Create (commandListener_Param : access CommandListener_Package.CommandListener'Class; formTitle : Unbounded_String; backgrounBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return CommandForm_Access is
       This : constant CommandForm_Access := new CommandForm;
    begin
       CommandForm_Package.Initialize (This.all, commandListener_Param, formTitle, backgrounBasicColor_Param, foregroundBasicColor_Param);
       return This;
    end Create;
 
-   procedure initCommands (This : in out CommandForm; cmdListener_Param : access CommandListener'Class) is
-      cmdListener : CommandListener_Access := CommandListener_Access (cmdListener_Param);
+   procedure initCommands (This : in out CommandForm; cmdListener_Param : access CommandListener_Package.CommandListener'Class) is
+      cmdListener : constant CommandListener_Access := CommandListener_Access (cmdListener_Param);
    begin
         null;
    end initCommands;
@@ -88,8 +88,8 @@ package body org.allbinary.graphics.displayable.screen.CommandForm_Package is
         return 0;
    end getSourceId;
 
-   procedure addCommand (This : in out CommandForm; command_Param : access Command'Class) is
-      command : Command_Access := Command_Access (command_Param);
+   procedure addCommand (This : in out CommandForm; command_Param : access Command_Package.Command'Class) is
+      command : constant Command_Access := Command_Access (command_Param);
    begin
         This.commandStack.push (command);
         Form (This).addCommand (command);

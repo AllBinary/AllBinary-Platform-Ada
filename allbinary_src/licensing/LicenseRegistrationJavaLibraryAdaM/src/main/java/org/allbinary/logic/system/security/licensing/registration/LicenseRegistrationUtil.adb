@@ -34,8 +34,8 @@ package body org.allbinary.logic.system.security.licensing.registration.LicenseR
       return This;
    end Create;
 
-   procedure process (abeClientInformation_Param : access AbeClientInformationInterface'Class; registrationId : Unbounded_String) is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+   procedure process (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; registrationId : Unbounded_String) is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
       commonStrings : CommonStrings_Access;
       registrationConfiguration : RegistrationConfiguration_Access;
       hashtable : ABHashtable_Access;

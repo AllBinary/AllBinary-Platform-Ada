@@ -26,13 +26,13 @@ package body org.allbinary.animation.special.SpecialAnimation_Package is
         return SpecialAnimation_Package.NULL_SPECIAL_ANIMATION;
    end getInstance;
 
-   procedure Initialize (This : in out SpecialAnimation'Class; animationBehavior_Param : access AnimationBehavior'Class) is
-      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
+   procedure Initialize (This : in out SpecialAnimation'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) is
+      animationBehavior : constant AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
         IndexedAnimation_Package.Initialize (This, animationBehavior);
    end Initialize;
 
-   function Create (animationBehavior_Param : access AnimationBehavior'Class) return SpecialAnimation_Access is
+   function Create (animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return SpecialAnimation_Access is
       This : constant SpecialAnimation_Access := new SpecialAnimation;
    begin
       SpecialAnimation_Package.Initialize (This.all, animationBehavior_Param);

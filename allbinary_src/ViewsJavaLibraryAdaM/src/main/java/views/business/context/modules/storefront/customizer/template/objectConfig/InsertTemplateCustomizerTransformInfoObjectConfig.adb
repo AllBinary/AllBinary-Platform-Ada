@@ -22,45 +22,45 @@ package body views.business.context.modules.storefront.customizer.template.objec
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out InsertTemplateCustomizerTransformInfoObjectConfig'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out InsertTemplateCustomizerTransformInfoObjectConfig'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         NoTemplateTransformInfoObjectConfig_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return InsertTemplateCustomizerTransformInfoObjectConfig_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return InsertTemplateCustomizerTransformInfoObjectConfig_Access is
       This : constant InsertTemplateCustomizerTransformInfoObjectConfig_Access := new InsertTemplateCustomizerTransformInfoObjectConfig;
    begin
       InsertTemplateCustomizerTransformInfoObjectConfig_Package.Initialize (This.all, transformInfoInterface_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out InsertTemplateCustomizerTransformInfoObjectConfig'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; document_Param : access Document'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
-      document : Document_Access := Document_Access (document_Param);
+   procedure Initialize (This : in out InsertTemplateCustomizerTransformInfoObjectConfig'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; document_Param : access Document_Package.Document'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+      document : constant Document_Access := Document_Access (document_Param);
    begin
         NoTemplateTransformInfoObjectConfig_Package.Initialize (This, transformInfoInterface, document);
         Initialize_Fields (This);
         This.setDocument (This.generate (This.toXmlDoc));
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; document_Param : access Document'Class) return InsertTemplateCustomizerTransformInfoObjectConfig_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; document_Param : access Document_Package.Document'Class) return InsertTemplateCustomizerTransformInfoObjectConfig_Access is
       This : constant InsertTemplateCustomizerTransformInfoObjectConfig_Access := new InsertTemplateCustomizerTransformInfoObjectConfig;
    begin
       InsertTemplateCustomizerTransformInfoObjectConfig_Package.Initialize (This.all, transformInfoInterface_Param, document_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out InsertTemplateCustomizerTransformInfoObjectConfig'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; name : Unbounded_String; type_Id : Unbounded_String) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out InsertTemplateCustomizerTransformInfoObjectConfig'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; name : Unbounded_String; type_Id : Unbounded_String) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         NoTemplateTransformInfoObjectConfig_Package.Initialize (This, transformInfoInterface, name, type_Id);
         Initialize_Fields (This);
         This.setDocument (This.generate (This.toXmlDoc));
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; name : Unbounded_String; type_Id : Unbounded_String) return InsertTemplateCustomizerTransformInfoObjectConfig_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; name : Unbounded_String; type_Id : Unbounded_String) return InsertTemplateCustomizerTransformInfoObjectConfig_Access is
       This : constant InsertTemplateCustomizerTransformInfoObjectConfig_Access := new InsertTemplateCustomizerTransformInfoObjectConfig;
    begin
       InsertTemplateCustomizerTransformInfoObjectConfig_Package.Initialize (This.all, transformInfoInterface_Param, name, type_Id);

@@ -21,21 +21,21 @@ package body org.allbinary.logic.io.file.visitor.ExcludeFileExtensionsBooleanFil
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ExcludeFileExtensionsBooleanFileVisitor'Class; filterStringBasicArrayList_Param : access BasicArrayList'Class) is
-      filterStringBasicArrayList : BasicArrayList_Access := BasicArrayList_Access (filterStringBasicArrayList_Param);
+   procedure Initialize (This : in out ExcludeFileExtensionsBooleanFileVisitor'Class; filterStringBasicArrayList_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      filterStringBasicArrayList : constant BasicArrayList_Access := BasicArrayList_Access (filterStringBasicArrayList_Param);
    begin
         BooleanFileVisitor_Package.Initialize (This, filterStringBasicArrayList);
    end Initialize;
 
-   function Create (filterStringBasicArrayList_Param : access BasicArrayList'Class) return ExcludeFileExtensionsBooleanFileVisitor_Access is
+   function Create (filterStringBasicArrayList_Param : access BasicArrayList_Package.BasicArrayList'Class) return ExcludeFileExtensionsBooleanFileVisitor_Access is
       This : constant ExcludeFileExtensionsBooleanFileVisitor_Access := new ExcludeFileExtensionsBooleanFileVisitor;
    begin
       ExcludeFileExtensionsBooleanFileVisitor_Package.Initialize (This.all, filterStringBasicArrayList_Param);
       return This;
    end Create;
 
-   function visit (This : in out ExcludeFileExtensionsBooleanFileVisitor; file_Param : access AbFile'Class) return Boolean is
-      file : AbFile_Access := AbFile_Access (file_Param);
+   function visit (This : in out ExcludeFileExtensionsBooleanFileVisitor; file_Param : access AbFile_Package.AbFile'Class) return Boolean is
+      file : constant AbFile_Access := AbFile_Access (file_Param);
    begin
         if (This.getFilterStringBasicArrayList.size) = (0) then
             return True;
@@ -43,8 +43,8 @@ package body org.allbinary.logic.io.file.visitor.ExcludeFileExtensionsBooleanFil
         return BooleanFileVisitor (This).visit (file);
    end visit;
 
-   function visit (This : in out ExcludeFileExtensionsBooleanFileVisitor; file_Param : access AbFile'Class; fileNameString : Unbounded_String) return Boolean is
-      file : AbFile_Access := AbFile_Access (file_Param);
+   function visit (This : in out ExcludeFileExtensionsBooleanFileVisitor; file_Param : access AbFile_Package.AbFile'Class; fileNameString : Unbounded_String) return Boolean is
+      file : constant AbFile_Access := AbFile_Access (file_Param);
       fileNameAndExtension : Unbounded_String;
       startIndex : Integer;
       fileName : Unbounded_String;
@@ -60,14 +60,14 @@ package body org.allbinary.logic.io.file.visitor.ExcludeFileExtensionsBooleanFil
         return True;
    end visit;
 
-   procedure visit (This : in out ExcludeFileExtensionsBooleanFileVisitor; file_Param : access AbFile'Class) is
+   procedure visit (This : in out ExcludeFileExtensionsBooleanFileVisitor; file_Param : access AbFile_Package.AbFile'Class) is
       Java_Result : constant Boolean := ExcludeFileExtensionsBooleanFileVisitor'Class (This).visit (file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end visit;
 
-   procedure visit (This : in out ExcludeFileExtensionsBooleanFileVisitor; file_Param : access AbFile'Class; fileNameString : Unbounded_String) is
+   procedure visit (This : in out ExcludeFileExtensionsBooleanFileVisitor; file_Param : access AbFile_Package.AbFile'Class; fileNameString : Unbounded_String) is
       Java_Result : constant Boolean := ExcludeFileExtensionsBooleanFileVisitor'Class (This).visit (file_Param, fileNameString);
       pragma Unreferenced (Java_Result);
    begin

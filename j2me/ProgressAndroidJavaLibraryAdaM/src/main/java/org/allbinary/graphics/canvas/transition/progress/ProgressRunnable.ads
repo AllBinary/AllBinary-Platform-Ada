@@ -43,8 +43,8 @@ package org.allbinary.graphics.canvas.transition.progress.ProgressRunnable_Packa
       progressCanvas : ProgressCanvas_Access;
    end record;
 
-   procedure Initialize (This : in out ProgressRunnable'Class; midletActivity_Param : access Activity'Class; progressCanvas_Param : access ProgressCanvas'Class);
-   function Create (midletActivity_Param : access Activity'Class; progressCanvas_Param : access ProgressCanvas'Class) return ProgressRunnable_Access;
+   procedure Initialize (This : in out ProgressRunnable'Class; midletActivity_Param : access Activity_Package.Activity'Class; progressCanvas_Param : access ProgressCanvas_Package.ProgressCanvas'Class);
+   function Create (midletActivity_Param : access Activity_Package.Activity'Class; progressCanvas_Param : access ProgressCanvas_Package.ProgressCanvas'Class) return ProgressRunnable_Access;
    procedure run (This : in out ProgressRunnable);
 
 end org.allbinary.graphics.canvas.transition.progress.ProgressRunnable_Package;

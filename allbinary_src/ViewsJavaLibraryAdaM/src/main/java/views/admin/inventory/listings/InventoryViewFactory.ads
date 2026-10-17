@@ -44,8 +44,8 @@ package views.admin.inventory.listings.InventoryViewFactory_Package is
 
    procedure Initialize (This : in out InventoryViewFactory'Class);
    function Create return InventoryViewFactory_Access;
-   function getInstance (searchRequest_Param : access SearchRequest'Class) return InventoryViewSearchInterface_Access;
-   procedure getInstance (searchRequest_Param : access SearchRequest'Class);
+   function getInstance (searchRequest_Param : access SearchRequest_Package.SearchRequest'Class) return InventoryViewSearchInterface_Access;
+   procedure getInstance (searchRequest_Param : access SearchRequest_Package.SearchRequest'Class);
 
 end views.admin.inventory.listings.InventoryViewFactory_Package;
 

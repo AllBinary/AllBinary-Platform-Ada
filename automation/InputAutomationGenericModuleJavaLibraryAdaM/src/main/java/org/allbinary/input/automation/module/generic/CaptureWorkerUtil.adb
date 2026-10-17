@@ -36,8 +36,8 @@ package body org.allbinary.input.automation.module.generic_Id.CaptureWorkerUtil_
    end Create;
 
    --  throws Exception
-   procedure processProfileActionConditions (vector_Param : access BasicArrayList'Class; frame : Long_Long_Integer) is
-      vector : BasicArrayList_Access := BasicArrayList_Access (vector_Param);
+   procedure processProfileActionConditions (vector_Param : access BasicArrayList_Package.BasicArrayList'Class; frame : Long_Long_Integer) is
+      vector : constant BasicArrayList_Access := BasicArrayList_Access (vector_Param);
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       size : Integer;

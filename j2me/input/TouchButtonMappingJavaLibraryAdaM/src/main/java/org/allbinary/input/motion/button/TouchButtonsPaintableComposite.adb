@@ -31,9 +31,9 @@ package body org.allbinary.input.motion.button.TouchButtonsPaintableComposite_Pa
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TouchButtonsPaintableComposite'Class; inputMappingInterface_Param : access InputMappingInterface'Class; basicColor_Param : access BasicColor'Class) is
-      inputMappingInterface : InputMappingInterface_Access := InputMappingInterface_Access (inputMappingInterface_Param);
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+   procedure Initialize (This : in out TouchButtonsPaintableComposite'Class; inputMappingInterface_Param : access InputMappingInterface_Package.InputMappingInterface'Class; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      inputMappingInterface : constant InputMappingInterface_Access := InputMappingInterface_Access (inputMappingInterface_Param);
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
       ProcessPaintable_Package.Initialize (This);
       Initialize_Fields (This);
@@ -42,21 +42,21 @@ package body org.allbinary.input.motion.button.TouchButtonsPaintableComposite_Pa
         This.touchButtonsPaintable := TouchButtonsMappingPaintable_Package.Create (basicColor);
    end Initialize;
 
-   function Create (inputMappingInterface_Param : access InputMappingInterface'Class; basicColor_Param : access BasicColor'Class) return TouchButtonsPaintableComposite_Access is
+   function Create (inputMappingInterface_Param : access InputMappingInterface_Package.InputMappingInterface'Class; basicColor_Param : access BasicColor_Package.BasicColor'Class) return TouchButtonsPaintableComposite_Access is
       This : constant TouchButtonsPaintableComposite_Access := new TouchButtonsPaintableComposite;
    begin
       TouchButtonsPaintableComposite_Package.Initialize (This.all, inputMappingInterface_Param, basicColor_Param);
       return This;
    end Create;
 
-   procedure onEvent (This : in out TouchButtonsPaintableComposite; eventObject_Param : access AllBinaryEventObject'Class) is
-      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+   procedure onEvent (This : in out TouchButtonsPaintableComposite; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
+      eventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
    begin
         ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, TouchButtonsPaintableComposite_Access'(This'Unchecked_Access));
    end onEvent;
 
-   procedure onCompleteMotionGestureInputEvent (This : in out TouchButtonsPaintableComposite; completeMotionGestureInputEvent_Param : access CompleteMotionGestureInputEvent'Class) is
-      completeMotionGestureInputEvent : CompleteMotionGestureInputEvent_Access := CompleteMotionGestureInputEvent_Access (completeMotionGestureInputEvent_Param);
+   procedure onCompleteMotionGestureInputEvent (This : in out TouchButtonsPaintableComposite; completeMotionGestureInputEvent_Param : access CompleteMotionGestureInputEvent_Package.CompleteMotionGestureInputEvent'Class) is
+      completeMotionGestureInputEvent : constant CompleteMotionGestureInputEvent_Access := CompleteMotionGestureInputEvent_Access (completeMotionGestureInputEvent_Param);
       touchMotionGestureFactory : TouchMotionGestureFactory_Access;
       gameKeyCompleteMotionGestureInputEvent : GameKeyCompleteMotionGestureInputEvent_Access;
       gameKey : GameKey_Access;

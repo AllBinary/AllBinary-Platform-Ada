@@ -50,16 +50,16 @@ package org.allbinary.physics.movement.NoZBasicConstantVelocityMovement_Package 
       axisMathVectorUtil : AxisMathVectorUtil_Access;
    end record;
 
-   procedure Initialize (This : in out NoZBasicConstantVelocityMovement'Class; basicDecimal_Param : access BasicDecimal'Class; velocityProperties_Param : access BasicVelocityProperties'Class);
-   function Create (basicDecimal_Param : access BasicDecimal'Class; velocityProperties_Param : access BasicVelocityProperties'Class) return NoZBasicConstantVelocityMovement_Access;
-   procedure init (This : in out NoZBasicConstantVelocityMovement; speedBasicDecimal_Param : access BasicDecimal'Class; angle : Integer; otherAngle : Integer);
-   procedure moveOutsideRadius (This : in out NoZBasicConstantVelocityMovement; layer_Param : access AllBinaryLayer'Class; radius : Long_Long_Integer; angle : Integer; otherAngle : Integer);
-   procedure process (This : in out NoZBasicConstantVelocityMovement; layer_Param : access AllBinaryGameLayer'Class);
+   procedure Initialize (This : in out NoZBasicConstantVelocityMovement'Class; basicDecimal_Param : access BasicDecimal_Package.BasicDecimal'Class; velocityProperties_Param : access BasicVelocityProperties_Package.BasicVelocityProperties'Class);
+   function Create (basicDecimal_Param : access BasicDecimal_Package.BasicDecimal'Class; velocityProperties_Param : access BasicVelocityProperties_Package.BasicVelocityProperties'Class) return NoZBasicConstantVelocityMovement_Access;
+   procedure init (This : in out NoZBasicConstantVelocityMovement; speedBasicDecimal_Param : access BasicDecimal_Package.BasicDecimal'Class; angle : Integer; otherAngle : Integer);
+   procedure moveOutsideRadius (This : in out NoZBasicConstantVelocityMovement; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; radius : Long_Long_Integer; angle : Integer; otherAngle : Integer);
+   procedure process (This : in out NoZBasicConstantVelocityMovement; layer_Param : access AllBinaryGameLayer_Package.AllBinaryGameLayer'Class);
    function toString (This : in out NoZBasicConstantVelocityMovement) return Unbounded_String;
    procedure stop (This : in out NoZBasicConstantVelocityMovement);
    function getVelocityProperties (This : in out NoZBasicConstantVelocityMovement) return BasicVelocityProperties_Access;
-   procedure setVelocityProperties (This : in out NoZBasicConstantVelocityMovement; velocityProperties_Param : access BasicVelocityProperties'Class);
-   procedure setSpeedBasicDecimal (This : in out NoZBasicConstantVelocityMovement; speedBasicDecimal_Param : access BasicDecimal'Class);
+   procedure setVelocityProperties (This : in out NoZBasicConstantVelocityMovement; velocityProperties_Param : access BasicVelocityProperties_Package.BasicVelocityProperties'Class);
+   procedure setSpeedBasicDecimal (This : in out NoZBasicConstantVelocityMovement; speedBasicDecimal_Param : access BasicDecimal_Package.BasicDecimal'Class);
    function getSpeedBasicDecimal (This : in out NoZBasicConstantVelocityMovement) return BasicDecimal_Access;
 
 end org.allbinary.physics.movement.NoZBasicConstantVelocityMovement_Package;

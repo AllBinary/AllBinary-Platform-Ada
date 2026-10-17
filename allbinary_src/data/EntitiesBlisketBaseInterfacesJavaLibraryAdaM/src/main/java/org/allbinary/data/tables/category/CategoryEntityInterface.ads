@@ -36,8 +36,8 @@ package org.allbinary.data.tables.category.CategoryEntityInterface_Package is
    type CategoryEntityInterface_Access_Array is array (Natural range <>) of CategoryEntityInterface_Access;
    type CategoryEntityInterface_Access_Array_Access is access all CategoryEntityInterface_Access_Array;
    procedure delete (This : in out CategoryEntityInterface; value : Unbounded_String) is abstract;
-   procedure insert (This : in out CategoryEntityInterface; values_Param : access BasicArrayList'Class) is abstract;
-   procedure update (This : in out CategoryEntityInterface; updatedValues_Param : access HashMap'Class) is abstract;
+   procedure insert (This : in out CategoryEntityInterface; values_Param : access BasicArrayList_Package.BasicArrayList'Class) is abstract;
+   procedure update (This : in out CategoryEntityInterface; updatedValues_Param : access HashMap_Package.HashMap'Class) is abstract;
 
 end org.allbinary.data.tables.category.CategoryEntityInterface_Package;
 

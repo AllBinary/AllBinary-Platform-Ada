@@ -52,11 +52,11 @@ package org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Package i
       touchButtonLocationHelper : TouchButtonLocationHelper_Access;
    end record;
 
-   procedure Initialize (This : in out TouchButtonsMappingPaintable'Class; basicColor_Param : access BasicColor'Class);
-   function Create (basicColor_Param : access BasicColor'Class) return TouchButtonsMappingPaintable_Access;
+   procedure Initialize (This : in out TouchButtonsMappingPaintable'Class; basicColor_Param : access BasicColor_Package.BasicColor'Class);
+   function Create (basicColor_Param : access BasicColor_Package.BasicColor'Class) return TouchButtonsMappingPaintable_Access;
    procedure init (This : in out TouchButtonsMappingPaintable);
    function createPaintableTable (This : in out TouchButtonsMappingPaintable) return Paintable_Access_Array_Access_Array_Access;
-   procedure paint (This : in out TouchButtonsMappingPaintable; graphics_Param : access Graphics'Class);
+   procedure paint (This : in out TouchButtonsMappingPaintable; graphics_Param : access Graphics_Package.Graphics'Class);
 
 end org.allbinary.input.motion.button.TouchButtonsMappingPaintable_Package;
 

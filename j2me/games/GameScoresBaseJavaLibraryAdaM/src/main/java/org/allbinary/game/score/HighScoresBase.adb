@@ -35,16 +35,16 @@ package body org.allbinary.game.score.HighScoresBase_Package is
       return This;
    end Create;
 
-   procedure fetchHighScores (This : in out HighScoresBase; gameInfo_Param : access GameInfo'Class; highScoresResultsListener_Param : access HighScoresResultsListener'Class) is
-      gameInfo : GameInfo_Access := GameInfo_Access (gameInfo_Param);
-      highScoresResultsListener : HighScoresResultsListener_Access := HighScoresResultsListener_Access (highScoresResultsListener_Param);
+   procedure fetchHighScores (This : in out HighScoresBase; gameInfo_Param : access GameInfo_Package.GameInfo'Class; highScoresResultsListener_Param : access HighScoresResultsListener_Package.HighScoresResultsListener'Class) is
+      gameInfo : constant GameInfo_Access := GameInfo_Access (gameInfo_Param);
+      highScoresResultsListener : constant HighScoresResultsListener_Access := HighScoresResultsListener_Access (highScoresResultsListener_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end fetchHighScores;
 
-   procedure fetchHighScoresPreload (This : in out HighScoresBase; gameInfo_Param : access GameInfo'Class; highScoresResultsListener_Param : access HighScoresResultsListener'Class; preload : Boolean) is
-      gameInfo : GameInfo_Access := GameInfo_Access (gameInfo_Param);
-      highScoresResultsListener : HighScoresResultsListener_Access := HighScoresResultsListener_Access (highScoresResultsListener_Param);
+   procedure fetchHighScoresPreload (This : in out HighScoresBase; gameInfo_Param : access GameInfo_Package.GameInfo'Class; highScoresResultsListener_Param : access HighScoresResultsListener_Package.HighScoresResultsListener'Class; preload : Boolean) is
+      gameInfo : constant GameInfo_Access := GameInfo_Access (gameInfo_Param);
+      highScoresResultsListener : constant HighScoresResultsListener_Access := HighScoresResultsListener_Access (highScoresResultsListener_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end fetchHighScoresPreload;

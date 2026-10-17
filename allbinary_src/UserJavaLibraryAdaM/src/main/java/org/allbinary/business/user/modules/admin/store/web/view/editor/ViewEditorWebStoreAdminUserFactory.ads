@@ -40,8 +40,8 @@ package org.allbinary.business.user.modules.admin.store.web.view.editor.ViewEdit
    procedure Initialize (This : in out ViewEditorWebStoreAdminUserFactory'Class);
    function Create return ViewEditorWebStoreAdminUserFactory_Access;
    function getInstance (This : in out ViewEditorWebStoreAdminUserFactory) return UserInterface_Access;
-   function getInstance (This : in out ViewEditorWebStoreAdminUserFactory; hashMap_Param : access HashMap'Class) return UserInterface_Access;
-   procedure getInstance (This : in out ViewEditorWebStoreAdminUserFactory; hashMap_Param : access HashMap'Class);
+   function getInstance (This : in out ViewEditorWebStoreAdminUserFactory; hashMap_Param : access HashMap_Package.HashMap'Class) return UserInterface_Access;
+   procedure getInstance (This : in out ViewEditorWebStoreAdminUserFactory; hashMap_Param : access HashMap_Package.HashMap'Class);
 
 end org.allbinary.business.user.modules.admin.store.web.view.editor.ViewEditorWebStoreAdminUserFactory_Package;
 

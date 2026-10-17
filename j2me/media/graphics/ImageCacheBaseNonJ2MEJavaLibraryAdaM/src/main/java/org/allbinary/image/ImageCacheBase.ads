@@ -77,11 +77,11 @@ package org.allbinary.image.ImageCacheBase_Package is
    procedure getWithKey (This : in out ImageCacheBase; key_Param : access Java_Object'Class);
    function createImage (This : in out ImageCacheBase; caller : Unbounded_String; width : Integer; height : Integer) return Image_Access;
    procedure createImage (This : in out ImageCacheBase; caller : Unbounded_String; width : Integer; height : Integer);
-   function createImageFromInputStream (This : in out ImageCacheBase; key_Param : access Java_Object'Class; inputStream_Param : access InputStream'Class) return Image_Access;
-   procedure createImageFromInputStream (This : in out ImageCacheBase; key_Param : access Java_Object'Class; inputStream_Param : access InputStream'Class);
+   function createImageFromInputStream (This : in out ImageCacheBase; key_Param : access Java_Object'Class; inputStream_Param : access InputStream_Package.InputStream'Class) return Image_Access;
+   procedure createImageFromInputStream (This : in out ImageCacheBase; key_Param : access Java_Object'Class; inputStream_Param : access InputStream_Package.InputStream'Class);
    function toString (This : in out ImageCacheBase) return Unbounded_String;
    function getHashtableP (This : in out ImageCacheBase) return ABHashtable_Access;
-   procedure init (This : in out ImageCacheBase; image_Param : access Image'Class);
+   procedure init (This : in out ImageCacheBase; image_Param : access Image_Package.Image'Class);
    procedure initProgress (This : in out ImageCacheBase);
 
 end org.allbinary.image.ImageCacheBase_Package;

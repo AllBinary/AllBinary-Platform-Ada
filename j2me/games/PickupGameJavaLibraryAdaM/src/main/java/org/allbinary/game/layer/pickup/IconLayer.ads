@@ -49,10 +49,10 @@ package org.allbinary.game.layer.pickup.IconLayer_Package is
    end record;
    NULL_ICON_LAYER : IconLayer_Access;
 
-   procedure Initialize (This : in out IconLayer'Class; animationInterface_Param : access Animation'Class; width : Integer; height : Integer);
-   function Create (animationInterface_Param : access Animation'Class; width : Integer; height : Integer) return IconLayer_Access;
-   procedure paint (This : in out IconLayer; graphics_Param : access Graphics'Class);
-   procedure paintThreed (This : in out IconLayer; graphics_Param : access Graphics'Class);
+   procedure Initialize (This : in out IconLayer'Class; animationInterface_Param : access Animation_Package.Animation'Class; width : Integer; height : Integer);
+   function Create (animationInterface_Param : access Animation_Package.Animation'Class; width : Integer; height : Integer) return IconLayer_Access;
+   procedure paint (This : in out IconLayer; graphics_Param : access Graphics_Package.Graphics'Class);
+   procedure paintThreed (This : in out IconLayer; graphics_Param : access Graphics_Package.Graphics'Class);
    function getAnimationInterface (This : in out IconLayer) return Animation_Access;
 
 end org.allbinary.game.layer.pickup.IconLayer_Package;

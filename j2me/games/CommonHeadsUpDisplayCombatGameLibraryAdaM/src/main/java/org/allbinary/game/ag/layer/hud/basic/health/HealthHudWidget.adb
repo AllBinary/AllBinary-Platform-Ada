@@ -31,9 +31,9 @@ package body org.allbinary.game.ag.layer.hud.basic.health.HealthHudWidget_Packag
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out HealthHudWidget'Class; animationInterface_Param : access Animation'Class; healthInterface_Param : access Health'Class; location : Integer; direction : Integer) is
-      animationInterface : Animation_Access := Animation_Access (animationInterface_Param);
-      healthInterface : Health_Access := Health_Access (healthInterface_Param);
+   procedure Initialize (This : in out HealthHudWidget'Class; animationInterface_Param : access Animation_Package.Animation'Class; healthInterface_Param : access Health_Package.Health'Class; location : Integer; direction : Integer) is
+      animationInterface : constant Animation_Access := Animation_Access (animationInterface_Param);
+      healthInterface : constant Health_Access := Health_Access (healthInterface_Param);
    begin
         BasicHud_Package.Initialize (This, location, direction, 2, BasicColorFactory_Package.getInstance.WHITE);
         Initialize_Fields (This);
@@ -48,7 +48,7 @@ package body org.allbinary.game.ag.layer.hud.basic.health.HealthHudWidget_Packag
         This.update;
    end Initialize;
 
-   function Create (animationInterface_Param : access Animation'Class; healthInterface_Param : access Health'Class; location : Integer; direction : Integer) return HealthHudWidget_Access is
+   function Create (animationInterface_Param : access Animation_Package.Animation'Class; healthInterface_Param : access Health_Package.Health'Class; location : Integer; direction : Integer) return HealthHudWidget_Access is
       This : constant HealthHudWidget_Access := new HealthHudWidget;
    begin
       HealthHudWidget_Package.Initialize (This.all, animationInterface_Param, healthInterface_Param, location, direction);
@@ -87,8 +87,8 @@ package body org.allbinary.game.ag.layer.hud.basic.health.HealthHudWidget_Packag
         end if;
    end onHealthChange;
 
-   procedure paint (This : in out HealthHudWidget; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out HealthHudWidget; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       index : Integer;
    begin
         This.myFontProcessor.process (graphics);
@@ -99,8 +99,8 @@ package body org.allbinary.game.ag.layer.hud.basic.health.HealthHudWidget_Packag
         end loop;
    end paint;
 
-   procedure paintThreed (This : in out HealthHudWidget; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintThreed (This : in out HealthHudWidget; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paintThreed;

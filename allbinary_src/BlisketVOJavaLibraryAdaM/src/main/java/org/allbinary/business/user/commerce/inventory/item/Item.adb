@@ -28,15 +28,15 @@ package body org.allbinary.business.user.commerce.inventory.item.Item_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out Item'Class; itemHashMap_Param : access HashMap'Class) is
-      itemHashMap : HashMap_Access := HashMap_Access (itemHashMap_Param);
+   procedure Initialize (This : in out Item'Class; itemHashMap_Param : access HashMap_Package.HashMap'Class) is
+      itemHashMap : constant HashMap_Access := HashMap_Access (itemHashMap_Param);
    begin
         BasicItem_Package.Initialize (This, itemHashMap);
         Initialize_Fields (This);
         This.setData (itemHashMap);
    end Initialize;
 
-   function Create (itemHashMap_Param : access HashMap'Class) return Item_Access is
+   function Create (itemHashMap_Param : access HashMap_Package.HashMap'Class) return Item_Access is
       This : constant Item_Access := new Item;
    begin
       Item_Package.Initialize (This.all, itemHashMap_Param);
@@ -63,8 +63,8 @@ package body org.allbinary.business.user.commerce.inventory.item.Item_Package is
       return This;
    end Create;
 
-   procedure setData (This : in out Item; itemHashMap_Param : access HashMap'Class) is
-      itemHashMap : HashMap_Access := HashMap_Access (itemHashMap_Param);
+   procedure setData (This : in out Item; itemHashMap_Param : access HashMap_Package.HashMap'Class) is
+      itemHashMap : constant HashMap_Access := HashMap_Access (itemHashMap_Param);
    begin
         This.group := Unbounded_String (itemHashMap.get (ShippingMethodData_Package.GROUP));
         This.tax := Unbounded_String (itemHashMap.get (OrderHistoryData_Package.TAX));
@@ -100,8 +100,8 @@ package body org.allbinary.business.user.commerce.inventory.item.Item_Package is
         This.shippingCost := value;
    end setShippingCost;
 
-   procedure setShippingAddress (This : in out Item; value_Param : access StreetAddress'Class) is
-      value : StreetAddress_Access := StreetAddress_Access (value_Param);
+   procedure setShippingAddress (This : in out Item; value_Param : access StreetAddress_Package.StreetAddress'Class) is
+      value : constant StreetAddress_Access := StreetAddress_Access (value_Param);
    begin
         This.shippingAddress := value;
    end setShippingAddress;

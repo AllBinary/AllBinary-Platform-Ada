@@ -41,9 +41,9 @@ package body views.business.context.modules.storefront.customizer.StoreCustomize
    end Create;
 
    --  throws Exception
-   function generate (This : in out StoreCustomizerComponentUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) return Unbounded_String is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   function generate (This : in out StoreCustomizerComponentUtil; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return Unbounded_String is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
       customizerUtil : CustomizerUtil_Access;
       allCustomizedViews : BasicArrayList_Access;
       size : Integer;
@@ -69,10 +69,10 @@ package body views.business.context.modules.storefront.customizer.StoreCustomize
    end generate;
 
    --  throws Exception
-   procedure generate (This : in out StoreCustomizerComponentUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; allViewsToBeModifiedVector_Param : access BasicArrayList'Class) is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
-      allViewsToBeModifiedVector : BasicArrayList_Access := BasicArrayList_Access (allViewsToBeModifiedVector_Param);
+   procedure generate (This : in out StoreCustomizerComponentUtil; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; allViewsToBeModifiedVector_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+      allViewsToBeModifiedVector : constant BasicArrayList_Access := BasicArrayList_Access (allViewsToBeModifiedVector_Param);
       customizerUtil : CustomizerUtil_Access;
       size : Integer;
       nextTransformInfoInterface : TransformInfo_Access;
@@ -91,7 +91,7 @@ package body views.business.context.modules.storefront.customizer.StoreCustomize
         end loop;
    end generate;
 
-   procedure generate (This : in out StoreCustomizerComponentUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+   procedure generate (This : in out StoreCustomizerComponentUtil; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
       Java_Result : constant Unbounded_String := StoreCustomizerComponentUtil'Class (This).generate (abeClientInformation_Param, transformInfoInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

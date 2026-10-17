@@ -40,8 +40,8 @@ package body org.allbinary.game.displayable.AlwaysRepaintBehavior_Package is
         return AlwaysRepaintBehavior_Package.instanceC;
    end getInstance;
 
-   procedure repaint (This : in out AlwaysRepaintBehavior; canvas_Param : access Canvas'Class) is
-      canvas : Canvas_Access := Canvas_Access (canvas_Param);
+   procedure repaint (This : in out AlwaysRepaintBehavior; canvas_Param : access Canvas_Package.Canvas'Class) is
+      canvas : constant Canvas_Access := Canvas_Access (canvas_Param);
       features : Features_Access;
       openGLFeatureFactory : OpenGLFeatureFactory_Access;
       thread : Thread_Access;
@@ -76,8 +76,8 @@ package body org.allbinary.game.displayable.AlwaysRepaintBehavior_Package is
         end if;
    end repaint;
 
-   procedure onChangeRepaint (This : in out AlwaysRepaintBehavior; canvas_Param : access Canvas'Class) is
-      canvas : Canvas_Access := Canvas_Access (canvas_Param);
+   procedure onChangeRepaint (This : in out AlwaysRepaintBehavior; canvas_Param : access Canvas_Package.Canvas'Class) is
+      canvas : constant Canvas_Access := Canvas_Access (canvas_Param);
    begin
         null;
    end onChangeRepaint;

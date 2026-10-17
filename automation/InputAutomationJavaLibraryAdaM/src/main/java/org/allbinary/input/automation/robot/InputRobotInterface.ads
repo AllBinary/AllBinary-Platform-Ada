@@ -35,7 +35,7 @@ package org.allbinary.input.automation.robot.InputRobotInterface_Package is
    type InputRobotInterface_Access_Array_Access is access all InputRobotInterface_Access_Array;
    function getName (This : in out InputRobotInterface) return Unbounded_String is abstract;
    function getHelpSet (This : in out InputRobotInterface) return HelpSet_Access is abstract;
-   function createScreenCapture (This : in out InputRobotInterface; screenRect_Param : access Rectangle'Class) return BufferedImage_Access is abstract;
+   function createScreenCapture (This : in out InputRobotInterface; screenRect_Param : access Rectangle_Package.Rectangle'Class) return BufferedImage_Access is abstract;
    procedure delay_Id (This : in out InputRobotInterface; ms : Integer) is abstract;
    function getAutoDelay (This : in out InputRobotInterface) return Integer is abstract;
    function getPixelColor (This : in out InputRobotInterface; x : Integer; y : Integer) return Color_Access is abstract;
@@ -51,9 +51,9 @@ package org.allbinary.input.automation.robot.InputRobotInterface_Package is
    procedure setAutoWaitForIdle (This : in out InputRobotInterface; isOn : Boolean) is abstract;
    function toString (This : in out InputRobotInterface) return Unbounded_String is abstract;
    procedure waitForIdle (This : in out InputRobotInterface) is abstract;
-   procedure mouseMove (This : in out InputRobotInterface; point_Param : access Point'Class) is abstract;
-   procedure mouseMoveToTarget (This : in out InputRobotInterface; rectangle_Param : access Rectangle'Class) is abstract;
-   procedure mouseMoveToTarget (This : in out InputRobotInterface; rectangle_Param : access Rectangle'Class; x : Integer; y : Integer) is abstract;
+   procedure mouseMove (This : in out InputRobotInterface; point_Param : access Point_Package.Point'Class) is abstract;
+   procedure mouseMoveToTarget (This : in out InputRobotInterface; rectangle_Param : access Rectangle_Package.Rectangle'Class) is abstract;
+   procedure mouseMoveToTarget (This : in out InputRobotInterface; rectangle_Param : access Rectangle_Package.Rectangle'Class; x : Integer; y : Integer) is abstract;
 
 end org.allbinary.input.automation.robot.InputRobotInterface_Package;
 

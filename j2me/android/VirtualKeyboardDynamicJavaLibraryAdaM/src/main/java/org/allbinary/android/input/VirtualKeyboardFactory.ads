@@ -43,7 +43,7 @@ package org.allbinary.android.input.VirtualKeyboardFactory_Package is
 
    procedure Initialize (This : in out VirtualKeyboardFactory'Class);
    function Create return VirtualKeyboardFactory_Access;
-   procedure init (activity_Param : access Activity'Class);
+   procedure init (activity_Param : access Activity_Package.Activity'Class);
    function getInstance return VirtualKeyboard_Access;
 
 end org.allbinary.android.input.VirtualKeyboardFactory_Package;

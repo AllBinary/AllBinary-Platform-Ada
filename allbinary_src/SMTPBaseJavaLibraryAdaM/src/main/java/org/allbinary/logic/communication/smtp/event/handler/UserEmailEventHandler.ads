@@ -51,10 +51,10 @@ package org.allbinary.logic.communication.smtp.event.handler.UserEmailEventHandl
 
    procedure Initialize (This : in out UserEmailEventHandler'Class);
    function Create return UserEmailEventHandler_Access;
-   procedure receiveEmailInfo (This : in out UserEmailEventHandler; userEmailEventNameData_Param : access UserEmailEventNameData'Class; emailInfo_Param : access EmailInfo'Class);
-   procedure addListener (This : in out UserEmailEventHandler; vector_Param : access BasicArrayList'Class);
-   procedure addListener (This : in out UserEmailEventHandler; emailEventListenerInterface_Param : access UserEmailEventListenerInterface'Class);
-   procedure removeListener (This : in out UserEmailEventHandler; emailEventListenerInterface_Param : access UserEmailEventListenerInterface'Class);
+   procedure receiveEmailInfo (This : in out UserEmailEventHandler; userEmailEventNameData_Param : access UserEmailEventNameData_Package.UserEmailEventNameData'Class; emailInfo_Param : access EmailInfo_Package.EmailInfo'Class);
+   procedure addListener (This : in out UserEmailEventHandler; vector_Param : access BasicArrayList_Package.BasicArrayList'Class);
+   procedure addListener (This : in out UserEmailEventHandler; emailEventListenerInterface_Param : access UserEmailEventListenerInterface_Package.UserEmailEventListenerInterface'Class);
+   procedure removeListener (This : in out UserEmailEventHandler; emailEventListenerInterface_Param : access UserEmailEventListenerInterface_Package.UserEmailEventListenerInterface'Class);
    procedure fireEmailEvent (This : in out UserEmailEventHandler);
 
 end org.allbinary.logic.communication.smtp.event.handler.UserEmailEventHandler_Package;

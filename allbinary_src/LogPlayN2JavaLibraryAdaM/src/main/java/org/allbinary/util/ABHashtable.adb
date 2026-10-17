@@ -49,25 +49,25 @@ package body org.allbinary.util.ABHashtable_Package is
    end elements;
 
    function contains (This : in out ABHashtable; value_Param : access Java_Object'Class) return Boolean is
-      value : Java_Object_Access := Java_Object_Access (value_Param);
+      value : constant Java_Object_Access := Java_Object_Access (value_Param);
    begin
         return Hashtable (This).contains (value);
    end contains;
 
    function containsValue (This : in out ABHashtable; value_Param : access Java_Object'Class) return Boolean is
-      value : Java_Object_Access := Java_Object_Access (value_Param);
+      value : constant Java_Object_Access := Java_Object_Access (value_Param);
    begin
         return Hashtable (This).containsValue (value);
    end containsValue;
 
    function containsKey (This : in out ABHashtable; key_Param : access Java_Object'Class) return Boolean is
-      key : Java_Object_Access := Java_Object_Access (key_Param);
+      key : constant Java_Object_Access := Java_Object_Access (key_Param);
    begin
         return Hashtable (This).containsKey (key);
    end containsKey;
 
    function get (This : in out ABHashtable; key_Param : access Java_Object'Class) return Java_Object_Access is
-      key : Java_Object_Access := Java_Object_Access (key_Param);
+      key : constant Java_Object_Access := Java_Object_Access (key_Param);
    begin
         return Hashtable (This).get (key);
    end get;
@@ -88,7 +88,7 @@ package body org.allbinary.util.ABHashtable_Package is
    end toString;
 
    function equals (This : in out ABHashtable; obj_Param : access Java_Object'Class) return Boolean is
-      obj : Java_Object_Access := Java_Object_Access (obj_Param);
+      obj : constant Java_Object_Access := Java_Object_Access (obj_Param);
    begin
         return Hashtable (This).equals (obj);
    end equals;

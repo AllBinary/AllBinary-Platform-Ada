@@ -27,14 +27,14 @@ package body org.allbinary.logic.system.os.android.AndroidSystemProperties_Packa
         return AndroidSystemProperties_Package.SINGLETON;
    end getInstance;
 
-   procedure Initialize (This : in out AndroidSystemProperties'Class; context_Param : access Context'Class) is
-      context : Context_Access := Context_Access (context_Param);
+   procedure Initialize (This : in out AndroidSystemProperties'Class; context_Param : access Context_Package.Context'Class) is
+      context : constant Context_Access := Context_Access (context_Param);
    begin
       Initialize_Fields (This);
         null;
    end Initialize;
 
-   function Create (context_Param : access Context'Class) return AndroidSystemProperties_Access is
+   function Create (context_Param : access Context_Package.Context'Class) return AndroidSystemProperties_Access is
       This : constant AndroidSystemProperties_Access := new AndroidSystemProperties;
    begin
       AndroidSystemProperties_Package.Initialize (This.all, context_Param);

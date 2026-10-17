@@ -30,14 +30,14 @@ package body org.allbinary.logic.io.FileStreamFactory_Package is
         return FileStreamFactory_Access (FileStreamFactory_Package.SINGLETON);
    end getInstance;
 
-   procedure Initialize (This : in out FileStreamFactory'Class; context_Param : access Context'Class) is
-      context : Context_Access := Context_Access (context_Param);
+   procedure Initialize (This : in out FileStreamFactory'Class; context_Param : access Context_Package.Context'Class) is
+      context : constant Context_Access := Context_Access (context_Param);
    begin
       Initialize_Fields (This);
         This.context := context;
    end Initialize;
 
-   function Create (context_Param : access Context'Class) return FileStreamFactory_Access is
+   function Create (context_Param : access Context_Package.Context'Class) return FileStreamFactory_Access is
       This : constant FileStreamFactory_Access := new FileStreamFactory;
    begin
       FileStreamFactory_Package.Initialize (This.all, context_Param);

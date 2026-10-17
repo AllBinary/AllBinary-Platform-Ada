@@ -27,30 +27,30 @@ package body org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out MotionRectanglesWorker'Class; motionRectangleConstraintsInterface_Param : access MotionRectangleConstraintsInterface'Class) is
-      motionRectangleConstraintsInterface : MotionRectangleConstraintsInterface_Access := MotionRectangleConstraintsInterface_Access (motionRectangleConstraintsInterface_Param);
+   procedure Initialize (This : in out MotionRectanglesWorker'Class; motionRectangleConstraintsInterface_Param : access MotionRectangleConstraintsInterface_Package.MotionRectangleConstraintsInterface'Class) is
+      motionRectangleConstraintsInterface : constant MotionRectangleConstraintsInterface_Access := MotionRectangleConstraintsInterface_Access (motionRectangleConstraintsInterface_Param);
    begin
       BasicEventHandler_Package.Initialize (This);
       Initialize_Fields (This);
         This.motionRectangleConstraintsInterface := motionRectangleConstraintsInterface;
    end Initialize;
 
-   function Create (motionRectangleConstraintsInterface_Param : access MotionRectangleConstraintsInterface'Class) return MotionRectanglesWorker_Access is
+   function Create (motionRectangleConstraintsInterface_Param : access MotionRectangleConstraintsInterface_Package.MotionRectangleConstraintsInterface'Class) return MotionRectanglesWorker_Access is
       This : constant MotionRectanglesWorker_Access := new MotionRectanglesWorker;
    begin
       MotionRectanglesWorker_Package.Initialize (This.all, motionRectangleConstraintsInterface_Param);
       return This;
    end Create;
 
-   procedure onImageComparisonResultsEvent (This : in out MotionRectanglesWorker; imageComparisonResultsEvent_Param : access ImageComparisonResultsEvent'Class) is
-      imageComparisonResultsEvent : ImageComparisonResultsEvent_Access := ImageComparisonResultsEvent_Access (imageComparisonResultsEvent_Param);
+   procedure onImageComparisonResultsEvent (This : in out MotionRectanglesWorker; imageComparisonResultsEvent_Param : access ImageComparisonResultsEvent_Package.ImageComparisonResultsEvent'Class) is
+      imageComparisonResultsEvent : constant ImageComparisonResultsEvent_Access := ImageComparisonResultsEvent_Access (imageComparisonResultsEvent_Param);
    begin
         This.imageComparisonInfoVector.add (imageComparisonResultsEvent);
         This.run;
    end onImageComparisonResultsEvent;
 
-   procedure onEvent (This : in out MotionRectanglesWorker; allBinaryEventObject_Param : access AllBinaryEventObject'Class) is
-      allBinaryEventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (allBinaryEventObject_Param);
+   procedure onEvent (This : in out MotionRectanglesWorker; allBinaryEventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
+      allBinaryEventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (allBinaryEventObject_Param);
    begin
         This.onImageComparisonResultsEvent (ImageComparisonResultsEvent_Access (allBinaryEventObject));
    end onEvent;

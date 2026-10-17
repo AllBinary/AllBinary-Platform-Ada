@@ -44,10 +44,10 @@ package org.allbinary.input.gyro.OrientationToGameKeyEvent_Package is
 
    procedure Initialize (This : in out OrientationToGameKeyEvent'Class);
    function Create return OrientationToGameKeyEvent_Access;
-   procedure setAllBinaryGyroSensor (This : in out OrientationToGameKeyEvent; allBinaryGyroSensor_Param : access AllBinaryOrientationSensor'Class);
+   procedure setAllBinaryGyroSensor (This : in out OrientationToGameKeyEvent; allBinaryGyroSensor_Param : access AllBinaryOrientationSensor_Package.AllBinaryOrientationSensor'Class);
    function getAllBinaryGyroSensor (This : in out OrientationToGameKeyEvent) return AllBinaryOrientationSensor_Access;
    procedure process (This : in out OrientationToGameKeyEvent);
-   procedure updateGameKeyEvents (This : in out OrientationToGameKeyEvent; orientation_Param : access Orientation'Class; yaw : Integer; pitch : Integer; roll : Integer);
+   procedure updateGameKeyEvents (This : in out OrientationToGameKeyEvent; orientation_Param : access Orientation_Package.Orientation'Class; yaw : Integer; pitch : Integer; roll : Integer);
 
 end org.allbinary.input.gyro.OrientationToGameKeyEvent_Package;
 

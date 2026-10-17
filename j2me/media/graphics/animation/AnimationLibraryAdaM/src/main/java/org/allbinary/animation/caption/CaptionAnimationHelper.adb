@@ -25,15 +25,15 @@ package body org.allbinary.animation.caption.CaptionAnimationHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CaptionAnimationHelper'Class; captionAnimation_Param : access Animation'Class; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer) is
-      captionAnimation : Animation_Access := Animation_Access (captionAnimation_Param);
+   procedure Initialize (This : in out CaptionAnimationHelper'Class; captionAnimation_Param : access Animation_Package.Animation'Class; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer) is
+      captionAnimation : constant Animation_Access := Animation_Access (captionAnimation_Param);
    begin
       CaptionAnimationHelperBase_Package.Initialize (This);
       Initialize_Fields (This);
         This.captionAnimation := CaptionAnimation_Package.Create (captionAnimation, This.textAnimation, captionDx, captionDy, dx, dy);
    end Initialize;
 
-   function Create (captionAnimation_Param : access Animation'Class; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer) return CaptionAnimationHelper_Access is
+   function Create (captionAnimation_Param : access Animation_Package.Animation'Class; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer) return CaptionAnimationHelper_Access is
       This : constant CaptionAnimationHelper_Access := new CaptionAnimationHelper;
    begin
       CaptionAnimationHelper_Package.Initialize (This.all, captionAnimation_Param, captionDx, captionDy, dx, dy);
@@ -56,8 +56,8 @@ package body org.allbinary.animation.caption.CaptionAnimationHelper_Package is
         end if;
    end tick;
 
-   procedure update (This : in out CaptionAnimationHelper; message : Unbounded_String; basicColor_Param : access BasicColor'Class) is
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+   procedure update (This : in out CaptionAnimationHelper; message : Unbounded_String; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         This.textAnimation.setBasicColorP (basicColor);
         This.textAnimation.setText (message);
@@ -65,8 +65,8 @@ package body org.allbinary.animation.caption.CaptionAnimationHelper_Package is
         This.timeHelper.setStartTimeTNT;
    end update;
 
-   procedure paintXY (This : in out CaptionAnimationHelper; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintXY (This : in out CaptionAnimationHelper; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.animation.paintXY (graphics, x, y);
    end paintXY;

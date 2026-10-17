@@ -37,8 +37,8 @@ package org.allbinary.graphics.form.ItemIndexDx_Package is
    procedure Initialize (This : in out ItemIndexDx'Class);
    function Create return ItemIndexDx_Access;
    function getInstance return ItemIndexDx_Access;
-   function getDx (This : in out ItemIndexDx; index : Integer; item_Param : access ABCustomItem'Class; dx : Integer; dy : Integer) return Integer;
-   procedure getDx (This : in out ItemIndexDx; index : Integer; item_Param : access ABCustomItem'Class; dx : Integer; dy : Integer);
+   function getDx (This : in out ItemIndexDx; index : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class; dx : Integer; dy : Integer) return Integer;
+   procedure getDx (This : in out ItemIndexDx; index : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class; dx : Integer; dy : Integer);
 
 end org.allbinary.graphics.form.ItemIndexDx_Package;
 

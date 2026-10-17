@@ -35,8 +35,8 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
       return This;
    end Create;
 
-   procedure Initialize (This : in out ImageTypes'Class; node_Param : access Node'Class) is
-      node : Node_Access := Node_Access (node_Param);
+   procedure Initialize (This : in out ImageTypes'Class; node_Param : access Node_Package.Node'Class) is
+      node : constant Node_Access := Node_Access (node_Param);
       nodeList : NodeList_Access;
       childNode : Node_Access;
       nextImageTypeString : Unbounded_String;
@@ -55,7 +55,7 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
         end loop;
    end Initialize;
 
-   function Create (node_Param : access Node'Class) return ImageTypes_Access is
+   function Create (node_Param : access Node_Package.Node'Class) return ImageTypes_Access is
       This : constant ImageTypes_Access := new ImageTypes;
    begin
       ImageTypes_Package.Initialize (This.all, node_Param);
@@ -81,8 +81,8 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
    end getVector;
 
    --  throws Exception
-   function toXmlNode (This : in out ImageTypes; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out ImageTypes; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       newNode : Node_Access;
       size : Integer;
       imageType : InputImageType_Access;
@@ -123,7 +123,7 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
       null;
    end valueOf;
 
-   procedure toXmlNode (This : in out ImageTypes; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out ImageTypes; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := ImageTypes'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

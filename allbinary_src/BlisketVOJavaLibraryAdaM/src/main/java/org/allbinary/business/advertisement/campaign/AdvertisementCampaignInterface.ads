@@ -36,7 +36,7 @@ package org.allbinary.business.advertisement.campaign.AdvertisementCampaignInter
    function getComponent (This : in out AdvertisementCampaignInterface) return Java_Object_Access is abstract;
    procedure setName (This : in out AdvertisementCampaignInterface; name : Unbounded_String) is abstract;
    procedure setComponentName (This : in out AdvertisementCampaignInterface; name : Unbounded_String) is abstract;
-   function search (This : in out AdvertisementCampaignInterface; advertisementSearchInterface_Param : access AdvertisementSearchInterface'Class) return AdvertisementsInterface_Access is abstract;
+   function search (This : in out AdvertisementCampaignInterface; advertisementSearchInterface_Param : access AdvertisementSearchInterface_Package.AdvertisementSearchInterface'Class) return AdvertisementsInterface_Access is abstract;
 
 end org.allbinary.business.advertisement.campaign.AdvertisementCampaignInterface_Package;
 

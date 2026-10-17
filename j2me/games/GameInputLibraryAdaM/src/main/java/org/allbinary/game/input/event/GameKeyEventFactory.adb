@@ -65,8 +65,8 @@ package body org.allbinary.game.input.event.GameKeyEventFactory_Package is
    end init;
 
    --  throws Exception
-   function getInstanceForKey (This : in out GameKeyEventFactory; anyType_Param : access GameKeyEventSourceInterface'Class; key : Integer) return GameKeyEvent_Access is
-      anyType : GameKeyEventSourceInterface_Access := GameKeyEventSourceInterface_Access (anyType_Param);
+   function getInstanceForKey (This : in out GameKeyEventFactory; anyType_Param : access GameKeyEventSourceInterface_Package.GameKeyEventSourceInterface'Class; key : Integer) return GameKeyEvent_Access is
+      anyType : constant GameKeyEventSourceInterface_Access := GameKeyEventSourceInterface_Access (anyType_Param);
       gameKeyEvent : GameKeyEvent_Access;
    begin
         gameKeyEvent := This.ARRAY_Id (anyType.getSourceId) (key);
@@ -74,23 +74,23 @@ package body org.allbinary.game.input.event.GameKeyEventFactory_Package is
    end getInstanceForKey;
 
    --  throws Exception
-   function getInstanceForInput (This : in out GameKeyEventFactory; anyType_Param : access GameKeyEventSourceInterface'Class; input_Param : access Input'Class) return GameKeyEvent_Access is
-      anyType : GameKeyEventSourceInterface_Access := GameKeyEventSourceInterface_Access (anyType_Param);
-      input : Input_Access := Input_Access (input_Param);
+   function getInstanceForInput (This : in out GameKeyEventFactory; anyType_Param : access GameKeyEventSourceInterface_Package.GameKeyEventSourceInterface'Class; input_Param : access Input_Package.Input'Class) return GameKeyEvent_Access is
+      anyType : constant GameKeyEventSourceInterface_Access := GameKeyEventSourceInterface_Access (anyType_Param);
+      input : constant Input_Access := Input_Access (input_Param);
       gameKeyEvent : GameKeyEvent_Access;
    begin
         gameKeyEvent := This.ARRAY_Id (anyType.getSourceId) (input.getId);
         return gameKeyEvent;
    end getInstanceForInput;
 
-   procedure getInstanceForKey (This : in out GameKeyEventFactory; anyType_Param : access GameKeyEventSourceInterface'Class; key : Integer) is
+   procedure getInstanceForKey (This : in out GameKeyEventFactory; anyType_Param : access GameKeyEventSourceInterface_Package.GameKeyEventSourceInterface'Class; key : Integer) is
       Java_Result : constant GameKeyEvent_Access := GameKeyEventFactory'Class (This).getInstanceForKey (anyType_Param, key);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstanceForKey;
 
-   procedure getInstanceForInput (This : in out GameKeyEventFactory; anyType_Param : access GameKeyEventSourceInterface'Class; input_Param : access Input'Class) is
+   procedure getInstanceForInput (This : in out GameKeyEventFactory; anyType_Param : access GameKeyEventSourceInterface_Package.GameKeyEventSourceInterface'Class; input_Param : access Input_Package.Input'Class) is
       Java_Result : constant GameKeyEvent_Access := GameKeyEventFactory'Class (This).getInstanceForInput (anyType_Param, input_Param);
       pragma Unreferenced (Java_Result);
    begin

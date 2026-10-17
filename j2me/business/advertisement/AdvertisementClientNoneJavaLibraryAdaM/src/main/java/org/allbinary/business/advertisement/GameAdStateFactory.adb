@@ -34,8 +34,8 @@ package body org.allbinary.business.advertisement.GameAdStateFactory_Package is
    end getCurrentInstance;
 
    --  throws Exception
-   function getInstanceForApp (This : in out GameAdStateFactory; softwareInformation_Param : access SoftwareInformation'Class) return GameAdStateBase_Access is
-      softwareInformation : SoftwareInformation_Access := SoftwareInformation_Access (softwareInformation_Param);
+   function getInstanceForApp (This : in out GameAdStateFactory; softwareInformation_Param : access SoftwareInformation_Package.SoftwareInformation'Class) return GameAdStateBase_Access is
+      softwareInformation : constant SoftwareInformation_Access := SoftwareInformation_Access (softwareInformation_Param);
    begin
         This.gameAdState := This.gameAdStateArray (0);
         return This.gameAdStateArray (0);
@@ -46,7 +46,7 @@ package body org.allbinary.business.advertisement.GameAdStateFactory_Package is
         return False;
    end isEnabled;
 
-   procedure getInstanceForApp (This : in out GameAdStateFactory; softwareInformation_Param : access SoftwareInformation'Class) is
+   procedure getInstanceForApp (This : in out GameAdStateFactory; softwareInformation_Param : access SoftwareInformation_Package.SoftwareInformation'Class) is
       Java_Result : constant GameAdStateBase_Access := GameAdStateFactory'Class (This).getInstanceForApp (softwareInformation_Param);
       pragma Unreferenced (Java_Result);
    begin

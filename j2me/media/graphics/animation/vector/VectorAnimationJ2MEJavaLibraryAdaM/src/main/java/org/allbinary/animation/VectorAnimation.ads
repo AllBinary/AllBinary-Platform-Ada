@@ -47,12 +47,12 @@ package org.allbinary.animation.VectorAnimation_Package is
       circularIndexUtil : CircularIndexUtil_Access;
    end record;
 
-   procedure Initialize (This : in out VectorAnimation'Class; currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor'Class; animationBehavior_Param : access AnimationBehavior'Class);
-   function Create (currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor'Class; animationBehavior_Param : access AnimationBehavior'Class) return VectorAnimation_Access;
-   function createVectorAnimation (currentPoints2 : Integer_Array_Access_Array_Access; basicColor_Param : access BasicColor'Class; animationBehavior_Param : access AnimationBehavior'Class) return VectorAnimation_Access;
-   procedure createVectorAnimation (currentPoints2 : Integer_Array_Access_Array_Access; basicColor_Param : access BasicColor'Class; animationBehavior_Param : access AnimationBehavior'Class);
-   procedure setBasicColorP (This : in out VectorAnimation; basicColor_Param : access BasicColor'Class);
-   procedure changeBasicColor (This : in out VectorAnimation; basicColor_Param : access BasicColor'Class);
+   procedure Initialize (This : in out VectorAnimation'Class; currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor_Package.BasicColor'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class);
+   function Create (currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor_Package.BasicColor'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return VectorAnimation_Access;
+   function createVectorAnimation (currentPoints2 : Integer_Array_Access_Array_Access; basicColor_Param : access BasicColor_Package.BasicColor'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return VectorAnimation_Access;
+   procedure createVectorAnimation (currentPoints2 : Integer_Array_Access_Array_Access; basicColor_Param : access BasicColor_Package.BasicColor'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class);
+   procedure setBasicColorP (This : in out VectorAnimation; basicColor_Param : access BasicColor_Package.BasicColor'Class);
+   procedure changeBasicColor (This : in out VectorAnimation; basicColor_Param : access BasicColor_Package.BasicColor'Class);
    procedure setAlpha (This : in out VectorAnimation; alpha : Integer);
    procedure setScale (This : in out VectorAnimation; scaleX : Float; scaleY : Float);
    procedure setMaxScale (This : in out VectorAnimation; maxScaleX : Float; maxScaleY : Float);
@@ -63,8 +63,8 @@ package org.allbinary.animation.VectorAnimation_Package is
    function getSequence (This : in out VectorAnimation) return Integer_Array_Access;
    procedure nextFrame (This : in out VectorAnimation);
    procedure previousFrame (This : in out VectorAnimation);
-   procedure paintVectors (This : in out VectorAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
-   procedure paintXY (This : in out VectorAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
+   procedure paintVectors (This : in out VectorAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
+   procedure paintXY (This : in out VectorAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
    function getFrame (This : in out VectorAnimation) return Integer;
    procedure setFrame (This : in out VectorAnimation; index : Integer);
    function getPoints (This : in out VectorAnimation; frame : Integer) return Integer_Array_Access_Array_Access;

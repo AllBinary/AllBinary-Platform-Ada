@@ -38,8 +38,8 @@ package body org.allbinary.android.NullParcelable_Package is
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end describeContents;
 
-   procedure writeToParcel (This : in out NullParcelable; dest_Param : access Parcel'Class; flags : Integer) is
-      dest : Parcel_Access := Parcel_Access (dest_Param);
+   procedure writeToParcel (This : in out NullParcelable; dest_Param : access Parcel_Package.Parcel'Class; flags : Integer) is
+      dest : constant Parcel_Access := Parcel_Access (dest_Param);
    begin
         null;
    end writeToParcel;

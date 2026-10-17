@@ -71,10 +71,10 @@ package org.allbinary.game.score.BasicHighScoresFactory_Package is
       FETCH : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out BasicHighScoresFactory'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; softwareInformation_Param : access SoftwareInformation'Class);
-   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; softwareInformation_Param : access SoftwareInformation'Class) return BasicHighScoresFactory_Access;
-   procedure fetchHighScores (This : in out BasicHighScoresFactory; gameInfo_Param : access GameInfo'Class; highScoresResultsListener_Param : access HighScoresResultsListener'Class);
-   procedure fetchHighScoresPreload (This : in out BasicHighScoresFactory; gameInfo_Param : access GameInfo'Class; highScoresResultsListener_Param : access HighScoresResultsListener'Class; preload : Boolean);
+   procedure Initialize (This : in out BasicHighScoresFactory'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; softwareInformation_Param : access SoftwareInformation_Package.SoftwareInformation'Class);
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; softwareInformation_Param : access SoftwareInformation_Package.SoftwareInformation'Class) return BasicHighScoresFactory_Access;
+   procedure fetchHighScores (This : in out BasicHighScoresFactory; gameInfo_Param : access GameInfo_Package.GameInfo'Class; highScoresResultsListener_Param : access HighScoresResultsListener_Package.HighScoresResultsListener'Class);
+   procedure fetchHighScoresPreload (This : in out BasicHighScoresFactory; gameInfo_Param : access GameInfo_Package.GameInfo'Class; highScoresResultsListener_Param : access HighScoresResultsListener_Package.HighScoresResultsListener'Class; preload : Boolean);
    function createHighScoresHelper (This : in out BasicHighScoresFactory) return HighScoresHelperBaseInterface_Access;
    function loaded (index2 : Integer) return Boolean;
    procedure loaded (index2 : Integer);

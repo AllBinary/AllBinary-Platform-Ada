@@ -36,15 +36,15 @@ package body org.allbinary.game.configuration.persistance.KeyValuePersistance_Pa
    end Create;
 
    --  throws Exception
-   procedure loadAll (This : in out KeyValuePersistance; abeClientInformation_Param : access AbeClientInformationInterface'Class) is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+   procedure loadAll (This : in out KeyValuePersistance; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
    begin
         This.loadAllSize (abeClientInformation, 1);
    end loadAll;
 
    --  throws Exception
-   procedure loadAllSize (This : in out KeyValuePersistance; abeClientInformation_Param : access AbeClientInformationInterface'Class; size : Integer) is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+   procedure loadAllSize (This : in out KeyValuePersistance; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; size : Integer) is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
       recordStore : RecordStore_Access;
       recordEnum : RecordEnumeration_Access;
       hashtable : ABHashtable_Access;
@@ -107,9 +107,9 @@ package body org.allbinary.game.configuration.persistance.KeyValuePersistance_Pa
    end loadAllSize;
 
    --  throws Exception
-   procedure save (This : in out KeyValuePersistance; abeClientInformation_Param : access AbeClientInformationInterface'Class; hashtable_Param : access ABHashtable'Class) is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      hashtable : ABHashtable_Access := ABHashtable_Access (hashtable_Param);
+   procedure save (This : in out KeyValuePersistance; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; hashtable_Param : access ABHashtable_Package.ABHashtable'Class) is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      hashtable : constant ABHashtable_Access := ABHashtable_Access (hashtable_Param);
       recordStore : RecordStore_Access;
       byteArrayOutputStream : ByteArrayOutputStream_Access;
       outputStream : DataOutputStream_Access;

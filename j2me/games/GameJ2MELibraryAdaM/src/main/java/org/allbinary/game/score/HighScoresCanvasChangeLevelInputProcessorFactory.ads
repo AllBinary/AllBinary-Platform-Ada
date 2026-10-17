@@ -38,8 +38,8 @@ package org.allbinary.game.score.HighScoresCanvasChangeLevelInputProcessorFactor
 
    procedure Initialize (This : in out HighScoresCanvasChangeLevelInputProcessorFactory'Class);
    function Create return HighScoresCanvasChangeLevelInputProcessorFactory_Access;
-   function getInstance (This : in out HighScoresCanvasChangeLevelInputProcessorFactory; highScoresCanvas_Param : access HighScoresCanvas'Class) return HighScoresCanvasInputProcessor_Access;
-   procedure getInstance (This : in out HighScoresCanvasChangeLevelInputProcessorFactory; highScoresCanvas_Param : access HighScoresCanvas'Class);
+   function getInstance (This : in out HighScoresCanvasChangeLevelInputProcessorFactory; highScoresCanvas_Param : access HighScoresCanvas_Package.HighScoresCanvas'Class) return HighScoresCanvasInputProcessor_Access;
+   procedure getInstance (This : in out HighScoresCanvasChangeLevelInputProcessorFactory; highScoresCanvas_Param : access HighScoresCanvas_Package.HighScoresCanvas'Class);
 
 end org.allbinary.game.score.HighScoresCanvasChangeLevelInputProcessorFactory_Package;
 

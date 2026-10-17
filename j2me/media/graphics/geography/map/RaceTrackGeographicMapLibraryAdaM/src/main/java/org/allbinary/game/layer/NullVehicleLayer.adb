@@ -163,8 +163,8 @@ package body org.allbinary.game.layer.NullVehicleLayer_Package is
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end getRotationAnimationInterface;
 
-   procedure setRotationAnimationInterface (This : in out NullVehicleLayer; animationInterface_Param : access RotationAnimation'Class) is
-      animationInterface : RotationAnimation_Access := RotationAnimation_Access (animationInterface_Param);
+   procedure setRotationAnimationInterface (This : in out NullVehicleLayer; animationInterface_Param : access RotationAnimation_Package.RotationAnimation'Class) is
+      animationInterface : constant RotationAnimation_Access := RotationAnimation_Access (animationInterface_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end setRotationAnimationInterface;
@@ -205,14 +205,14 @@ package body org.allbinary.game.layer.NullVehicleLayer_Package is
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end setGeographicMapCellHistoryArray;
 
-   procedure paint (This : in out NullVehicleLayer; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out NullVehicleLayer; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paint;
 
-   procedure paintThreed (This : in out NullVehicleLayer; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintThreed (This : in out NullVehicleLayer; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paintThreed;

@@ -82,23 +82,23 @@ package org.allbinary.input.automation.module.generic_Id.configuration.GenericMo
    procedure Initialize (This : in out GenericModuleConfigurationJPanel'Class);
    function Create return GenericModuleConfigurationJPanel_Access;
    procedure initComponents (This : in out GenericModuleConfigurationJPanel);
-   procedure savedCaptureJRadioButtonActionPerformed (This : in out GenericModuleConfigurationJPanel; evt_Param : access ActionEvent'Class);
-   procedure screenCaptureJRadioButtonActionPerformed (This : in out GenericModuleConfigurationJPanel; evt_Param : access ActionEvent'Class);
-   procedure captureMotionAnalysisJCheckBoxActionPerformed (This : in out GenericModuleConfigurationJPanel; evt_Param : access ActionEvent'Class);
-   procedure captureComparisonJCheckBoxActionPerformed (This : in out GenericModuleConfigurationJPanel; evt_Param : access ActionEvent'Class);
+   procedure savedCaptureJRadioButtonActionPerformed (This : in out GenericModuleConfigurationJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
+   procedure screenCaptureJRadioButtonActionPerformed (This : in out GenericModuleConfigurationJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
+   procedure captureMotionAnalysisJCheckBoxActionPerformed (This : in out GenericModuleConfigurationJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
+   procedure captureComparisonJCheckBoxActionPerformed (This : in out GenericModuleConfigurationJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
    procedure updateProfileUI (This : in out GenericModuleConfigurationJPanel; profileNameString : Unbounded_String);
    procedure selectFirstElement (This : in out GenericModuleConfigurationJPanel);
    procedure updateProfileOptions (This : in out GenericModuleConfigurationJPanel);
    function getBlankGenericProfileActionsJPanel (This : in out GenericModuleConfigurationJPanel) return JPanel_Access;
-   procedure setBlankGenericProfileActionsJPanel (This : in out GenericModuleConfigurationJPanel; blankGenericProfileActionsJPanel_Param : access JPanel'Class);
+   procedure setBlankGenericProfileActionsJPanel (This : in out GenericModuleConfigurationJPanel; blankGenericProfileActionsJPanel_Param : access JPanel_Package.JPanel'Class);
    function getGenericProfiles (This : in out GenericModuleConfigurationJPanel) return GenericProfiles_Access;
-   procedure setGenericProfiles (This : in out GenericModuleConfigurationJPanel; genericProfiles_Param : access GenericProfiles'Class);
+   procedure setGenericProfiles (This : in out GenericModuleConfigurationJPanel; genericProfiles_Param : access GenericProfiles_Package.GenericProfiles'Class);
    function getSelectedGenericProfile (This : in out GenericModuleConfigurationJPanel) return GenericProfile_Access;
-   procedure setSelectedGenericProfile (This : in out GenericModuleConfigurationJPanel; selectedGenericProfile_Param : access GenericProfile'Class);
-   procedure genericProfilesJListValueChanged (This : in out GenericModuleConfigurationJPanel; evt_Param : access ListSelectionEvent'Class);
-   procedure deleteProfileJButtonActionPerformed (This : in out GenericModuleConfigurationJPanel; evt_Param : access ActionEvent'Class);
-   procedure okNewProfileJButtonActionPerformed (This : in out GenericModuleConfigurationJPanel; evt_Param : access ActionEvent'Class);
-   procedure newProfileJButtonActionPerformed (This : in out GenericModuleConfigurationJPanel; evt_Param : access ActionEvent'Class);
+   procedure setSelectedGenericProfile (This : in out GenericModuleConfigurationJPanel; selectedGenericProfile_Param : access GenericProfile_Package.GenericProfile'Class);
+   procedure genericProfilesJListValueChanged (This : in out GenericModuleConfigurationJPanel; evt_Param : access ListSelectionEvent_Package.ListSelectionEvent'Class);
+   procedure deleteProfileJButtonActionPerformed (This : in out GenericModuleConfigurationJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
+   procedure okNewProfileJButtonActionPerformed (This : in out GenericModuleConfigurationJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
+   procedure newProfileJButtonActionPerformed (This : in out GenericModuleConfigurationJPanel; evt_Param : access ActionEvent_Package.ActionEvent'Class);
 
 end org.allbinary.input.automation.module.generic_Id.configuration.GenericModuleConfigurationJPanel_Package;
 

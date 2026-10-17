@@ -33,8 +33,8 @@ package body org.allbinary.canvas.CustomGameMenuUtil_Package is
    end Create;
 
 
-   procedure add (canvas_Param : access MyCanvas'Class) is
-      canvas : MyCanvas_Access := MyCanvas_Access (canvas_Param);
+   procedure add (canvas_Param : access MyCanvas_Package.MyCanvas'Class) is
+      canvas : constant MyCanvas_Access := MyCanvas_Access (canvas_Param);
       gameCommandsFactory : GameCommandsFactory_Access;
    begin
         gameCommandsFactory := GameCommandsFactory_Package.getInstance;

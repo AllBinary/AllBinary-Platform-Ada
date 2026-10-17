@@ -27,13 +27,13 @@ package body org.allbinary.game.input.event.GameKeyEvent_Package is
 
 
    function createEvent (anyType_Param : access Java_Object'Class; sourceId : Integer; key : Integer) return GameKeyEvent_Access is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         return GameKeyEvent_Package.Create (anyType, sourceId, 0, 0, key, False);
    end createEvent;
 
    procedure Initialize (This : in out GameKeyEvent'Class; anyType_Param : access Java_Object'Class; sourceId : Integer; originalKey : Integer; gameActionKey : Integer; key : Integer; repeated : Boolean) is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         AllBinaryEventObject_Package.Initialize (This, anyType);
         Initialize_Fields (This);
@@ -52,7 +52,7 @@ package body org.allbinary.game.input.event.GameKeyEvent_Package is
    end Create;
 
    procedure init (This : in out GameKeyEvent; anyType_Param : access Java_Object'Class) is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         This.setSource (anyType);
    end init;

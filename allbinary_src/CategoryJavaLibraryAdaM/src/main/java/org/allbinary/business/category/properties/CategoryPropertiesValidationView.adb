@@ -22,14 +22,14 @@ package body org.allbinary.business.category.properties.CategoryPropertiesValida
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CategoryPropertiesValidationView'Class; categoryPropertiesInterface_Param : access CategoryPropertiesInterface'Class) is
-      categoryPropertiesInterface : CategoryPropertiesInterface_Access := CategoryPropertiesInterface_Access (categoryPropertiesInterface_Param);
+   procedure Initialize (This : in out CategoryPropertiesValidationView'Class; categoryPropertiesInterface_Param : access CategoryPropertiesInterface_Package.CategoryPropertiesInterface'Class) is
+      categoryPropertiesInterface : constant CategoryPropertiesInterface_Access := CategoryPropertiesInterface_Access (categoryPropertiesInterface_Param);
    begin
         CategoryPropertiesView_Package.Initialize (This, categoryPropertiesInterface);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (categoryPropertiesInterface_Param : access CategoryPropertiesInterface'Class) return CategoryPropertiesValidationView_Access is
+   function Create (categoryPropertiesInterface_Param : access CategoryPropertiesInterface_Package.CategoryPropertiesInterface'Class) return CategoryPropertiesValidationView_Access is
       This : constant CategoryPropertiesValidationView_Access := new CategoryPropertiesValidationView;
    begin
       CategoryPropertiesValidationView_Package.Initialize (This.all, categoryPropertiesInterface_Param);
@@ -70,13 +70,13 @@ package body org.allbinary.business.category.properties.CategoryPropertiesValida
    end toValidationInfoDoc;
 
    --  throws Exception
-   function toValidationInfoNode (This : in out CategoryPropertiesValidationView; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toValidationInfoNode (This : in out CategoryPropertiesValidationView; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
 
-   procedure toValidationInfoNode (This : in out CategoryPropertiesValidationView; document_Param : access Document'Class) is
+   procedure toValidationInfoNode (This : in out CategoryPropertiesValidationView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := CategoryPropertiesValidationView'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

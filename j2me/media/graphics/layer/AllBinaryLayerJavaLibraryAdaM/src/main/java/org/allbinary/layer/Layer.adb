@@ -102,8 +102,8 @@ package body org.allbinary.layer.Layer_Package is
         return This.visible;
    end isVisible;
 
-   procedure paint (This : in out Layer; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out Layer; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       commonStrings : CommonStrings_Access;
       canvasStrings : CanvasStrings_Access;
    begin
@@ -128,8 +128,8 @@ package body org.allbinary.layer.Layer_Package is
         This.height := height;
    end setLayerHeight;
 
-   procedure toStringAppend (This : in out Layer; stringBuffer_Param : access StringMaker'Class) is
-      stringBuffer : StringMaker_Access := StringMaker_Access (stringBuffer_Param);
+   procedure toStringAppend (This : in out Layer; stringBuffer_Param : access StringMaker_Package.StringMaker'Class) is
+      stringBuffer : constant StringMaker_Access := StringMaker_Access (stringBuffer_Param);
    begin
         null;
    end toStringAppend;

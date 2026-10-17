@@ -26,8 +26,8 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.m
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out MetaValidation'Class; htmlMetaAttributeData_Param : access HtmlMetaAttributeData'Class; label : Unbounded_String; attributeValue : Unbounded_String; contentValue : Unbounded_String) is
-      htmlMetaAttributeData : HtmlMetaAttributeData_Access := HtmlMetaAttributeData_Access (htmlMetaAttributeData_Param);
+   procedure Initialize (This : in out MetaValidation'Class; htmlMetaAttributeData_Param : access HtmlMetaAttributeData_Package.HtmlMetaAttributeData'Class; label : Unbounded_String; attributeValue : Unbounded_String; contentValue : Unbounded_String) is
+      htmlMetaAttributeData : constant HtmlMetaAttributeData_Access := HtmlMetaAttributeData_Access (htmlMetaAttributeData_Param);
    begin
       Validation_Package.Initialize (This);
       Initialize_Fields (This);
@@ -40,22 +40,22 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.m
         This.content := contentValue;
    end Initialize;
 
-   function Create (htmlMetaAttributeData_Param : access HtmlMetaAttributeData'Class; label : Unbounded_String; attributeValue : Unbounded_String; contentValue : Unbounded_String) return MetaValidation_Access is
+   function Create (htmlMetaAttributeData_Param : access HtmlMetaAttributeData_Package.HtmlMetaAttributeData'Class; label : Unbounded_String; attributeValue : Unbounded_String; contentValue : Unbounded_String) return MetaValidation_Access is
       This : constant MetaValidation_Access := new MetaValidation;
    begin
       MetaValidation_Package.Initialize (This.all, htmlMetaAttributeData_Param, label, attributeValue, contentValue);
       return This;
    end Create;
 
-   procedure Initialize (This : in out MetaValidation'Class; document_Param : access Document'Class) is
-      document : Document_Access := Document_Access (document_Param);
+   procedure Initialize (This : in out MetaValidation'Class; document_Param : access Document_Package.Document'Class) is
+      document : constant Document_Access := Document_Access (document_Param);
    begin
       Validation_Package.Initialize (This);
       Initialize_Fields (This);
         Java_Throw (Java_New_Exception ("Exception", CommonStrings_Package.getInstance.NOT_IMPLEMENTED));
    end Initialize;
 
-   function Create (document_Param : access Document'Class) return MetaValidation_Access is
+   function Create (document_Param : access Document_Package.Document'Class) return MetaValidation_Access is
       This : constant MetaValidation_Access := new MetaValidation;
    begin
       MetaValidation_Package.Initialize (This.all, document_Param);
@@ -105,8 +105,8 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.m
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out MetaValidation; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toValidationInfoNode (This : in out MetaValidation; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
@@ -125,22 +125,22 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.m
    end toHashMap;
 
    --  throws Exception
-   function toXmlNode (This : in out MetaValidation; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out MetaValidation; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       node : Node_Access;
    begin
         node := ModDomHelper_Package.createNameValueNodes (document, HtmlMetaData_Package.getInstance.NAME.toString, This.toHashMap);
         return node;
    end toXmlNode;
 
-   procedure toValidationInfoNode (This : in out MetaValidation; document_Param : access Document'Class) is
+   procedure toValidationInfoNode (This : in out MetaValidation; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := MetaValidation'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toValidationInfoNode;
 
-   procedure toXmlNode (This : in out MetaValidation; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out MetaValidation; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := MetaValidation'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

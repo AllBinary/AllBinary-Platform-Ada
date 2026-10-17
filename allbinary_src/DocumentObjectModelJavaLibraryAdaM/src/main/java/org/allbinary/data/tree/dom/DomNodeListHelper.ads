@@ -42,8 +42,8 @@ package org.allbinary.data.tree.dom.DomNodeListHelper_Package is
 
    procedure Initialize (This : in out DomNodeListHelper'Class);
    function Create return DomNodeListHelper_Access;
-   function getVector (nodeList_Param : access NodeList'Class) return BasicArrayList_Access;
-   procedure getVector (nodeList_Param : access NodeList'Class);
+   function getVector (nodeList_Param : access NodeList_Package.NodeList'Class) return BasicArrayList_Access;
+   procedure getVector (nodeList_Param : access NodeList_Package.NodeList'Class);
 
 end org.allbinary.data.tree.dom.DomNodeListHelper_Package;
 

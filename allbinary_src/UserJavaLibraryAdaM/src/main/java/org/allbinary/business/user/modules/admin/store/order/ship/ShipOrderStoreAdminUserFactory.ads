@@ -40,8 +40,8 @@ package org.allbinary.business.user.modules.admin.store.order.ship.ShipOrderStor
    procedure Initialize (This : in out ShipOrderStoreAdminUserFactory'Class);
    function Create return ShipOrderStoreAdminUserFactory_Access;
    function getInstance (This : in out ShipOrderStoreAdminUserFactory) return UserInterface_Access;
-   function getInstance (This : in out ShipOrderStoreAdminUserFactory; hashMap_Param : access HashMap'Class) return UserInterface_Access;
-   procedure getInstance (This : in out ShipOrderStoreAdminUserFactory; hashMap_Param : access HashMap'Class);
+   function getInstance (This : in out ShipOrderStoreAdminUserFactory; hashMap_Param : access HashMap_Package.HashMap'Class) return UserInterface_Access;
+   procedure getInstance (This : in out ShipOrderStoreAdminUserFactory; hashMap_Param : access HashMap_Package.HashMap'Class);
 
 end org.allbinary.business.user.modules.admin.store.order.ship.ShipOrderStoreAdminUserFactory_Package;
 

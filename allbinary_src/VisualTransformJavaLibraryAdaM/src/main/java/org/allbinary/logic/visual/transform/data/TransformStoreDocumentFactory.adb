@@ -35,28 +35,28 @@ package body org.allbinary.logic.visual.transform.data.TransformStoreDocumentFac
    end Create;
 
    --  throws Exception
-   function getInstance (pageContext_Param : access PageContext'Class; weblisketSession_Param : access WeblisketSession'Class) return TransformDocumentInterface_Access is
-      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
-      weblisketSession : WeblisketSession_Access := WeblisketSession_Access (weblisketSession_Param);
+   function getInstance (pageContext_Param : access PageContext_Package.PageContext'Class; weblisketSession_Param : access WeblisketSession_Package.WeblisketSession'Class) return TransformDocumentInterface_Access is
+      pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
+      weblisketSession : constant WeblisketSession_Access := WeblisketSession_Access (weblisketSession_Param);
    begin
         return TransformDocumentInterface_Access (TransformStoreDocument_Package.Create (pageContext, weblisketSession));
    end getInstance;
 
    --  throws Exception
-   function getInstance (searchRequest_Param : access SearchRequest'Class) return TransformDocumentInterface_Access is
-      searchRequest : SearchRequest_Access := SearchRequest_Access (searchRequest_Param);
+   function getInstance (searchRequest_Param : access SearchRequest_Package.SearchRequest'Class) return TransformDocumentInterface_Access is
+      searchRequest : constant SearchRequest_Access := SearchRequest_Access (searchRequest_Param);
    begin
         return TransformDocumentInterface_Access (TransformStoreDocument_Package.Create (searchRequest));
    end getInstance;
 
-   procedure getInstance (pageContext_Param : access PageContext'Class; weblisketSession_Param : access WeblisketSession'Class) is
+   procedure getInstance (pageContext_Param : access PageContext_Package.PageContext'Class; weblisketSession_Param : access WeblisketSession_Package.WeblisketSession'Class) is
       Java_Result : constant TransformDocumentInterface_Access := getInstance (pageContext_Param, weblisketSession_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
-   procedure getInstance (searchRequest_Param : access SearchRequest'Class) is
+   procedure getInstance (searchRequest_Param : access SearchRequest_Package.SearchRequest'Class) is
       Java_Result : constant TransformDocumentInterface_Access := getInstance (searchRequest_Param);
       pragma Unreferenced (Java_Result);
    begin

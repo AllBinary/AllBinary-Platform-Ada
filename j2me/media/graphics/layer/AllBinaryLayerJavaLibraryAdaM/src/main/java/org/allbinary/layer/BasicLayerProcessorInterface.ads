@@ -29,7 +29,7 @@ package org.allbinary.layer.BasicLayerProcessorInterface_Package is
    type BasicLayerProcessorInterface_Access is access all BasicLayerProcessorInterface'Class;
    type BasicLayerProcessorInterface_Access_Array is array (Natural range <>) of BasicLayerProcessorInterface_Access;
    type BasicLayerProcessorInterface_Access_Array_Access is access all BasicLayerProcessorInterface_Access_Array;
-   procedure process (This : in out BasicLayerProcessorInterface; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class) is abstract;
+   procedure process (This : in out BasicLayerProcessorInterface; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class) is abstract;
 
 end org.allbinary.layer.BasicLayerProcessorInterface_Package;
 

@@ -36,9 +36,9 @@ package org.allbinary.graphics.font.UpdateMyFontProcessor_Package is
       updateMeasurementProcessor : UpdateMyFontInterface_Access;
    end record;
 
-   procedure Initialize (This : in out UpdateMyFontProcessor'Class; keyValueDrawCharArray_Param : access UpdateMyFontInterface'Class);
-   function Create (keyValueDrawCharArray_Param : access UpdateMyFontInterface'Class) return UpdateMyFontProcessor_Access;
-   procedure process (This : in out UpdateMyFontProcessor; graphics_Param : access Graphics'Class);
+   procedure Initialize (This : in out UpdateMyFontProcessor'Class; keyValueDrawCharArray_Param : access UpdateMyFontInterface_Package.UpdateMyFontInterface'Class);
+   function Create (keyValueDrawCharArray_Param : access UpdateMyFontInterface_Package.UpdateMyFontInterface'Class) return UpdateMyFontProcessor_Access;
+   procedure process (This : in out UpdateMyFontProcessor; graphics_Param : access Graphics_Package.Graphics'Class);
 
 end org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
 

@@ -52,8 +52,8 @@ package org.allbinary.logic.control.workflow.DbWorkFlowFactory_Package is
    procedure Initialize (This : in out DbWorkFlowFactory'Class);
    function Create return DbWorkFlowFactory_Access;
    function getInstance return DbWorkFlowFactory_Access;
-   function getInstance (This : in out DbWorkFlowFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; hashMap_Param : access HashMap'Class) return WorkFlowInterface_Access;
-   procedure getInstance (This : in out DbWorkFlowFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; hashMap_Param : access HashMap'Class);
+   function getInstance (This : in out DbWorkFlowFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; hashMap_Param : access HashMap_Package.HashMap'Class) return WorkFlowInterface_Access;
+   procedure getInstance (This : in out DbWorkFlowFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; hashMap_Param : access HashMap_Package.HashMap'Class);
 
 end org.allbinary.logic.control.workflow.DbWorkFlowFactory_Package;
 

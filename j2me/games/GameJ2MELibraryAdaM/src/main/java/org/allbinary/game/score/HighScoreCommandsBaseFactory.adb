@@ -36,8 +36,8 @@ package body org.allbinary.game.score.HighScoreCommandsBaseFactory_Package is
       return This;
    end Create;
 
-   function isHighScoreCommand (This : in out HighScoreCommandsBaseFactory; command_Param : access Command'Class) return Boolean is
-      command : Command_Access := Command_Access (command_Param);
+   function isHighScoreCommand (This : in out HighScoreCommandsBaseFactory; command_Param : access Command_Package.Command'Class) return Boolean is
+      command : constant Command_Access := Command_Access (command_Param);
       index : Integer;
    begin
         for index in reverse 0 .. (This.HIGH_SCORE_COMMANDS'Length) - (1) loop
@@ -49,8 +49,8 @@ package body org.allbinary.game.score.HighScoreCommandsBaseFactory_Package is
    end isHighScoreCommand;
 
    --  throws Exception
-   function getIndex (This : in out HighScoreCommandsBaseFactory; command_Param : access Command'Class) return Integer is
-      command : Command_Access := Command_Access (command_Param);
+   function getIndex (This : in out HighScoreCommandsBaseFactory; command_Param : access Command_Package.Command'Class) return Integer is
+      command : constant Command_Access := Command_Access (command_Param);
       index : Integer;
    begin
         for index in reverse 0 .. (This.HIGH_SCORE_COMMANDS'Length) - (1) loop
@@ -61,14 +61,14 @@ package body org.allbinary.game.score.HighScoreCommandsBaseFactory_Package is
         Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such Command")));
    end getIndex;
 
-   procedure isHighScoreCommand (This : in out HighScoreCommandsBaseFactory; command_Param : access Command'Class) is
+   procedure isHighScoreCommand (This : in out HighScoreCommandsBaseFactory; command_Param : access Command_Package.Command'Class) is
       Java_Result : constant Boolean := HighScoreCommandsBaseFactory'Class (This).isHighScoreCommand (command_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isHighScoreCommand;
 
-   procedure getIndex (This : in out HighScoreCommandsBaseFactory; command_Param : access Command'Class) is
+   procedure getIndex (This : in out HighScoreCommandsBaseFactory; command_Param : access Command_Package.Command'Class) is
       Java_Result : constant Integer := HighScoreCommandsBaseFactory'Class (This).getIndex (command_Param);
       pragma Unreferenced (Java_Result);
    begin

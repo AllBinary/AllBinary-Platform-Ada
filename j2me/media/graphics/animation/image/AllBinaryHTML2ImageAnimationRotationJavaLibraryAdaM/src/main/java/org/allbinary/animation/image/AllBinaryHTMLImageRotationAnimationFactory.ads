@@ -51,10 +51,10 @@ package org.allbinary.animation.image.AllBinaryHTMLImageRotationAnimationFactory
       angleIncrement : Short_Integer;
    end record;
 
-   procedure Initialize (This : in out AllBinaryHTMLImageRotationAnimationFactory'Class; image_Param : access Image'Class; width : Integer; height : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class);
-   function Create (image_Param : access Image'Class; width : Integer; height : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return AllBinaryHTMLImageRotationAnimationFactory_Access;
-   function createFactoryADXY (image_Param : access Image'Class; width : Integer; height : Integer; dx : Integer; dy : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return AllBinaryHTMLImageRotationAnimationFactory_Access;
-   procedure createFactoryADXY (image_Param : access Image'Class; width : Integer; height : Integer; dx : Integer; dy : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class);
+   procedure Initialize (This : in out AllBinaryHTMLImageRotationAnimationFactory'Class; image_Param : access Image_Package.Image'Class; width : Integer; height : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class);
+   function Create (image_Param : access Image_Package.Image'Class; width : Integer; height : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return AllBinaryHTMLImageRotationAnimationFactory_Access;
+   function createFactoryADXY (image_Param : access Image_Package.Image'Class; width : Integer; height : Integer; dx : Integer; dy : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return AllBinaryHTMLImageRotationAnimationFactory_Access;
+   procedure createFactoryADXY (image_Param : access Image_Package.Image'Class; width : Integer; height : Integer; dx : Integer; dy : Integer; angleIncrement : Short_Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class);
    procedure init (This : in out AllBinaryHTMLImageRotationAnimationFactory; dx : Integer; dy : Integer);
    function getInstance (This : in out AllBinaryHTMLImageRotationAnimationFactory; instanceId : Integer) return Animation_Access;
    procedure getInstance (This : in out AllBinaryHTMLImageRotationAnimationFactory; instanceId : Integer);

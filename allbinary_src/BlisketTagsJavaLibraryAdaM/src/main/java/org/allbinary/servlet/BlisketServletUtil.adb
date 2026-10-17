@@ -38,8 +38,8 @@ package body org.allbinary.servlet.BlisketServletUtil_Package is
         return BlisketServletUtil_Package.instance;
    end getInstance;
 
-   procedure init (This : in out BlisketServletUtil; request_Param : access HttpServletRequest'Class) is
-      request : HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
+   procedure init (This : in out BlisketServletUtil; request_Param : access HttpServletRequest_Package.HttpServletRequest'Class) is
+      request : constant HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
       urlGlobals : AppUrlGlobals_Access;
    begin
         urlGlobals := AppUrlGlobals_Package.Create;

@@ -21,13 +21,13 @@ package body org.allbinary.bounds.event.BoundsChangeEvent_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BoundsChangeEvent'Class; rectangle_Param : access Rectangle'Class) is
-      rectangle : Rectangle_Access := Rectangle_Access (rectangle_Param);
+   procedure Initialize (This : in out BoundsChangeEvent'Class; rectangle_Param : access Rectangle_Package.Rectangle'Class) is
+      rectangle : constant Rectangle_Access := Rectangle_Access (rectangle_Param);
    begin
         AllBinaryEventObject_Package.Initialize (This, rectangle);
    end Initialize;
 
-   function Create (rectangle_Param : access Rectangle'Class) return BoundsChangeEvent_Access is
+   function Create (rectangle_Param : access Rectangle_Package.Rectangle'Class) return BoundsChangeEvent_Access is
       This : constant BoundsChangeEvent_Access := new BoundsChangeEvent;
    begin
       BoundsChangeEvent_Package.Initialize (This.all, rectangle_Param);

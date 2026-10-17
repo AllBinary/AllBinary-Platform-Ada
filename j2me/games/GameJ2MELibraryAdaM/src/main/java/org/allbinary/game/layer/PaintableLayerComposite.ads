@@ -42,8 +42,8 @@ package org.allbinary.game.layer.PaintableLayerComposite_Package is
 
    procedure Initialize (This : in out PaintableLayerComposite'Class; paintableArray : Layer_Access_Array_Access);
    function Create (paintableArray : Layer_Access_Array_Access) return PaintableLayerComposite_Access;
-   procedure paint (This : in out PaintableLayerComposite; graphics_Param : access Graphics'Class);
-   procedure paintThreed (This : in out PaintableLayerComposite; graphics_Param : access Graphics'Class);
+   procedure paint (This : in out PaintableLayerComposite; graphics_Param : access Graphics_Package.Graphics'Class);
+   procedure paintThreed (This : in out PaintableLayerComposite; graphics_Param : access Graphics_Package.Graphics'Class);
 
 end org.allbinary.game.layer.PaintableLayerComposite_Package;
 

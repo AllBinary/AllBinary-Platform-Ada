@@ -38,8 +38,8 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.special.Spec
       return This;
    end Create;
 
-   procedure insert (This : in out SpecialItemsEntity; values_Param : access BasicArrayList'Class) is
-      values : BasicArrayList_Access := BasicArrayList_Access (values_Param);
+   procedure insert (This : in out SpecialItemsEntity; values_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      values : constant BasicArrayList_Access := BasicArrayList_Access (values_Param);
    begin
         begin
             AbSqlBean (This).insert (values);
@@ -90,8 +90,8 @@ package body org.allbinary.data.tables.user.commerce.inventory.item.special.Spec
         return AbSqlBean (This).createTable (This.createTableStatement);
    end createTable;
 
-   procedure update (This : in out SpecialItemsEntity; updatedValues_Param : access HashMap'Class) is
-      updatedValues : HashMap_Access := HashMap_Access (updatedValues_Param);
+   procedure update (This : in out SpecialItemsEntity; updatedValues_Param : access HashMap_Package.HashMap'Class) is
+      updatedValues : constant HashMap_Access := HashMap_Access (updatedValues_Param);
    begin
         AbSqlBean (This).updateWhere (This.basicItemData.ID, Unbounded_String (updatedValues.get (This.basicItemData.ID)), updatedValues);
    end update;

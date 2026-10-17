@@ -40,7 +40,7 @@ package org.allbinary.media.image.analysis.ImageColorRangeResults_Package is
    procedure Initialize (This : in out ImageColorRangeResults'Class);
    function Create return ImageColorRangeResults_Access;
    function getColorRangeInterface (This : in out ImageColorRangeResults) return ColorRangeInterface_Access;
-   procedure setColorRangeInterface (This : in out ImageColorRangeResults; colorRangeInterface_Param : access ColorRangeInterface'Class);
+   procedure setColorRangeInterface (This : in out ImageColorRangeResults; colorRangeInterface_Param : access ColorRangeInterface_Package.ColorRangeInterface'Class);
    function getMatchingPixelsChecked (This : in out ImageColorRangeResults) return Long_Long_Integer;
    procedure setMatchingPixelsChecked (This : in out ImageColorRangeResults; matchingPixelsChecked : Long_Long_Integer);
    procedure addMatchingPixelsChecked (This : in out ImageColorRangeResults);

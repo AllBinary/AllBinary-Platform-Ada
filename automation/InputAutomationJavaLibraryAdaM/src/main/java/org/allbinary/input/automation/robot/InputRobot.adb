@@ -23,14 +23,14 @@ package body org.allbinary.input.automation.robot.InputRobot_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out InputRobot'Class; graphicsDevice_Param : access GraphicsDevice'Class) is
-      graphicsDevice : GraphicsDevice_Access := GraphicsDevice_Access (graphicsDevice_Param);
+   procedure Initialize (This : in out InputRobot'Class; graphicsDevice_Param : access GraphicsDevice_Package.GraphicsDevice'Class) is
+      graphicsDevice : constant GraphicsDevice_Access := GraphicsDevice_Access (graphicsDevice_Param);
    begin
       Initialize_Fields (This);
         This.robot := Robot_Package.Create (graphicsDevice);
    end Initialize;
 
-   function Create (graphicsDevice_Param : access GraphicsDevice'Class) return InputRobot_Access is
+   function Create (graphicsDevice_Param : access GraphicsDevice_Package.GraphicsDevice'Class) return InputRobot_Access is
       This : constant InputRobot_Access := new InputRobot;
    begin
       InputRobot_Package.Initialize (This.all, graphicsDevice_Param);
@@ -55,8 +55,8 @@ package body org.allbinary.input.automation.robot.InputRobot_Package is
    end getMousePoint;
 
    --  throws Exception
-   procedure mouseMoveToTarget (This : in out InputRobot; rectangle_Param : access Rectangle'Class; x : Integer; y : Integer) is
-      rectangle : Rectangle_Access := Rectangle_Access (rectangle_Param);
+   procedure mouseMoveToTarget (This : in out InputRobot; rectangle_Param : access Rectangle_Package.Rectangle'Class; x : Integer; y : Integer) is
+      rectangle : constant Rectangle_Access := Rectangle_Access (rectangle_Param);
       point : Point_Access;
       message : Unbounded_String;
    begin
@@ -66,8 +66,8 @@ package body org.allbinary.input.automation.robot.InputRobot_Package is
         This.logUtil.putF (message, InputRobot_Access'(This'Unchecked_Access), To_Unbounded_String ("moveMouseToTarget"));
    end mouseMoveToTarget;
 
-   procedure mouseMove (This : in out InputRobot; point_Param : access Point'Class) is
-      point : Point_Access := Point_Access (point_Param);
+   procedure mouseMove (This : in out InputRobot; point_Param : access Point_Package.Point'Class) is
+      point : constant Point_Access := Point_Access (point_Param);
    begin
         This.mouseMove (point.x, point.y);
    end mouseMove;
@@ -81,14 +81,14 @@ package body org.allbinary.input.automation.robot.InputRobot_Package is
    end mouseMove;
 
    --  throws Exception
-   procedure mouseMoveToTarget (This : in out InputRobot; rectangle_Param : access Rectangle'Class) is
-      rectangle : Rectangle_Access := Rectangle_Access (rectangle_Param);
+   procedure mouseMoveToTarget (This : in out InputRobot; rectangle_Param : access Rectangle_Package.Rectangle'Class) is
+      rectangle : constant Rectangle_Access := Rectangle_Access (rectangle_Param);
    begin
         This.mouseMoveToTarget (rectangle, 0, 0);
    end mouseMoveToTarget;
 
-   function createScreenCapture (This : in out InputRobot; screenRect_Param : access Rectangle'Class) return BufferedImage_Access is
-      screenRect : Rectangle_Access := Rectangle_Access (screenRect_Param);
+   function createScreenCapture (This : in out InputRobot; screenRect_Param : access Rectangle_Package.Rectangle'Class) return BufferedImage_Access is
+      screenRect : constant Rectangle_Access := Rectangle_Access (screenRect_Param);
    begin
         return This.robot.createScreenCapture (screenRect);
    end createScreenCapture;
@@ -173,7 +173,7 @@ package body org.allbinary.input.automation.robot.InputRobot_Package is
         null;
    end off;
 
-   procedure createScreenCapture (This : in out InputRobot; screenRect_Param : access Rectangle'Class) is
+   procedure createScreenCapture (This : in out InputRobot; screenRect_Param : access Rectangle_Package.Rectangle'Class) is
       Java_Result : constant BufferedImage_Access := InputRobot'Class (This).createScreenCapture (screenRect_Param);
       pragma Unreferenced (Java_Result);
    begin

@@ -41,8 +41,8 @@ package body bundle.input.automation.InputAutomationBundleActivator_Package is
    end getBundleContext;
 
    --  throws Exception
-   procedure start (This : in out InputAutomationBundleActivator; bundleContext_Param : access BundleContext'Class) is
-      bundleContext : BundleContext_Access := BundleContext_Access (bundleContext_Param);
+   procedure start (This : in out InputAutomationBundleActivator; bundleContext_Param : access BundleContext_Package.BundleContext'Class) is
+      bundleContext : constant BundleContext_Access := BundleContext_Access (bundleContext_Param);
    begin
         begin
             This.logUtil.putF (This.commonStrings.START, InputAutomationBundleActivator_Access'(This'Unchecked_Access), This.commonStrings.START);
@@ -76,8 +76,8 @@ package body bundle.input.automation.InputAutomationBundleActivator_Package is
    end useServices;
 
    --  throws Exception
-   procedure stop (This : in out InputAutomationBundleActivator; context_Param : access BundleContext'Class) is
-      context : BundleContext_Access := BundleContext_Access (context_Param);
+   procedure stop (This : in out InputAutomationBundleActivator; context_Param : access BundleContext_Package.BundleContext'Class) is
+      context : constant BundleContext_Access := BundleContext_Access (context_Param);
    begin
         This.logUtil.putF (This.commonStrings.START, InputAutomationBundleActivator_Access'(This'Unchecked_Access), To_Unbounded_String ("stop"));
         if (InputAutomationJFrame_Package.getInstance) /= (null) then

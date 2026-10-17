@@ -35,10 +35,10 @@ package org.allbinary.media.graphics.geography.map.racetrack.TiledLayerFactory_P
 
    procedure Initialize (This : in out TiledLayerFactory'Class);
    function Create return TiledLayerFactory_Access;
-   function getInstance (This : in out TiledLayerFactory; raceTrackData_Param : access RaceTrackData'Class) return TiledLayer_Access;
-   procedure getInstance (This : in out TiledLayerFactory; raceTrackData_Param : access RaceTrackData'Class);
-   function getMiniInstance (This : in out TiledLayerFactory; raceTrackData_Param : access RaceTrackData'Class) return TiledLayer_Access;
-   procedure getMiniInstance (This : in out TiledLayerFactory; raceTrackData_Param : access RaceTrackData'Class);
+   function getInstance (This : in out TiledLayerFactory; raceTrackData_Param : access RaceTrackData_Package.RaceTrackData'Class) return TiledLayer_Access;
+   procedure getInstance (This : in out TiledLayerFactory; raceTrackData_Param : access RaceTrackData_Package.RaceTrackData'Class);
+   function getMiniInstance (This : in out TiledLayerFactory; raceTrackData_Param : access RaceTrackData_Package.RaceTrackData'Class) return TiledLayer_Access;
+   procedure getMiniInstance (This : in out TiledLayerFactory; raceTrackData_Param : access RaceTrackData_Package.RaceTrackData'Class);
 
 end org.allbinary.media.graphics.geography.map.racetrack.TiledLayerFactory_Package;
 

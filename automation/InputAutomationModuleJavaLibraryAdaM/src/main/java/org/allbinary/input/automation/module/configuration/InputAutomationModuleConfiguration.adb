@@ -39,23 +39,23 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
       return This;
    end Create;
 
-   procedure Initialize (This : in out InputAutomationModuleConfiguration'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; node_Param : access Node'Class) is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      node : Node_Access := Node_Access (node_Param);
+   procedure Initialize (This : in out InputAutomationModuleConfiguration'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; node_Param : access Node_Package.Node'Class) is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      node : constant Node_Access := Node_Access (node_Param);
    begin
       Initialize_Fields (This);
         This.init (abeClientInformation, node);
    end Initialize;
 
-   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; node_Param : access Node'Class) return InputAutomationModuleConfiguration_Access is
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; node_Param : access Node_Package.Node'Class) return InputAutomationModuleConfiguration_Access is
       This : constant InputAutomationModuleConfiguration_Access := new InputAutomationModuleConfiguration;
    begin
       InputAutomationModuleConfiguration_Package.Initialize (This.all, abeClientInformation_Param, node_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out InputAutomationModuleConfiguration'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; name : Unbounded_String; className : Unbounded_String) is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+   procedure Initialize (This : in out InputAutomationModuleConfiguration'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; name : Unbounded_String; className : Unbounded_String) is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
    begin
       Initialize_Fields (This);
         This.setName (name);
@@ -63,22 +63,22 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
         This.init (abeClientInformation);
    end Initialize;
 
-   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; name : Unbounded_String; className : Unbounded_String) return InputAutomationModuleConfiguration_Access is
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; name : Unbounded_String; className : Unbounded_String) return InputAutomationModuleConfiguration_Access is
       This : constant InputAutomationModuleConfiguration_Access := new InputAutomationModuleConfiguration;
    begin
       InputAutomationModuleConfiguration_Package.Initialize (This.all, abeClientInformation_Param, name, className);
       return This;
    end Create;
 
-   procedure Initialize (This : in out InputAutomationModuleConfiguration'Class; inputAutomationModuleInterface_Param : access InputAutomationModuleFactoryInterface'Class) is
-      inputAutomationModuleInterface : InputAutomationModuleFactoryInterface_Access := InputAutomationModuleFactoryInterface_Access (inputAutomationModuleInterface_Param);
+   procedure Initialize (This : in out InputAutomationModuleConfiguration'Class; inputAutomationModuleInterface_Param : access InputAutomationModuleFactoryInterface_Package.InputAutomationModuleFactoryInterface'Class) is
+      inputAutomationModuleInterface : constant InputAutomationModuleFactoryInterface_Access := InputAutomationModuleFactoryInterface_Access (inputAutomationModuleInterface_Param);
    begin
       Initialize_Fields (This);
         This.setInputAutomationModuleInterface (inputAutomationModuleInterface);
         This.setClassName (To_Unbounded_String (Ada.Tags.Expanded_Name (This.inputAutomationModuleInterface.all'Tag)));
    end Initialize;
 
-   function Create (inputAutomationModuleInterface_Param : access InputAutomationModuleFactoryInterface'Class) return InputAutomationModuleConfiguration_Access is
+   function Create (inputAutomationModuleInterface_Param : access InputAutomationModuleFactoryInterface_Package.InputAutomationModuleFactoryInterface'Class) return InputAutomationModuleConfiguration_Access is
       This : constant InputAutomationModuleConfiguration_Access := new InputAutomationModuleConfiguration;
    begin
       InputAutomationModuleConfiguration_Package.Initialize (This.all, inputAutomationModuleInterface_Param);
@@ -86,9 +86,9 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
    end Create;
 
    --  throws Exception
-   procedure init (This : in out InputAutomationModuleConfiguration; abeClientInformation_Param : access AbeClientInformationInterface'Class; node_Param : access Node'Class) is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      node : Node_Access := Node_Access (node_Param);
+   procedure init (This : in out InputAutomationModuleConfiguration; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; node_Param : access Node_Package.Node'Class) is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      node : constant Node_Access := Node_Access (node_Param);
       nodeList : NodeList_Access;
       classNameNode : Node_Access;
    begin
@@ -106,8 +106,8 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
         end if;
    end init;
 
-   procedure init (This : in out InputAutomationModuleConfiguration; abeClientInformation_Param : access AbeClientInformationInterface'Class) is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+   procedure init (This : in out InputAutomationModuleConfiguration; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
    begin
         begin
             This.logUtil.putF (To_Unbounded_String ("Name: ") & This.getName, InputAutomationModuleConfiguration_Access'(This'Unchecked_Access), This.commonStrings.INIT);
@@ -125,8 +125,8 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
    end init;
 
    --  throws Exception
-   function toDomNode (This : in out InputAutomationModuleConfiguration; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toDomNode (This : in out InputAutomationModuleConfiguration; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       node : Node_Access;
       classNameNode : Node_Access;
    begin
@@ -163,15 +163,15 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
         return This.inputAutomationModuleInterface;
    end getInputAutomationModuleInterface;
 
-   procedure setInputAutomationModuleInterface (This : in out InputAutomationModuleConfiguration; inputAutomationModuleInterface_Param : access InputAutomationModuleFactoryInterface'Class) is
-      inputAutomationModuleInterface : InputAutomationModuleFactoryInterface_Access := InputAutomationModuleFactoryInterface_Access (inputAutomationModuleInterface_Param);
+   procedure setInputAutomationModuleInterface (This : in out InputAutomationModuleConfiguration; inputAutomationModuleInterface_Param : access InputAutomationModuleFactoryInterface_Package.InputAutomationModuleFactoryInterface'Class) is
+      inputAutomationModuleInterface : constant InputAutomationModuleFactoryInterface_Access := InputAutomationModuleFactoryInterface_Access (inputAutomationModuleInterface_Param);
    begin
         This.logUtil.putF (To_Unbounded_String ("InputAutomationModuleFactoryInterface : ") & Java_Image (inputAutomationModuleInterface), InputAutomationModuleConfiguration_Access'(This'Unchecked_Access), To_Unbounded_String ("setInputAutomationModuleInterface"));
         This.inputAutomationModuleInterface := inputAutomationModuleInterface;
         This.setName (This.inputAutomationModuleInterface.getName);
    end setInputAutomationModuleInterface;
 
-   procedure toDomNode (This : in out InputAutomationModuleConfiguration; document_Param : access Document'Class) is
+   procedure toDomNode (This : in out InputAutomationModuleConfiguration; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := InputAutomationModuleConfiguration'Class (This).toDomNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

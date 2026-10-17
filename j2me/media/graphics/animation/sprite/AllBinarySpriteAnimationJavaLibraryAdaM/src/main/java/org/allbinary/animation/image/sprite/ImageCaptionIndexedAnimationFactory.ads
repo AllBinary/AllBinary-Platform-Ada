@@ -74,11 +74,11 @@ package org.allbinary.animation.image.sprite.ImageCaptionIndexedAnimationFactory
       animationBehaviorFactory : AnimationBehaviorFactory_Access;
    end record;
 
-   procedure Initialize (This : in out ImageCaptionIndexedAnimationFactory'Class; captionImage_Param : access Image'Class; spriteMovieImage_Param : access Image'Class; soundInterface_Param : access Sound'Class; frameWidth : Integer; frameHeight : Integer; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer; time : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class);
-   function Create (captionImage_Param : access Image'Class; spriteMovieImage_Param : access Image'Class; soundInterface_Param : access Sound'Class; frameWidth : Integer; frameHeight : Integer; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer; time : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return ImageCaptionIndexedAnimationFactory_Access;
+   procedure Initialize (This : in out ImageCaptionIndexedAnimationFactory'Class; captionImage_Param : access Image_Package.Image'Class; spriteMovieImage_Param : access Image_Package.Image'Class; soundInterface_Param : access Sound_Package.Sound'Class; frameWidth : Integer; frameHeight : Integer; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer; time : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class);
+   function Create (captionImage_Param : access Image_Package.Image'Class; spriteMovieImage_Param : access Image_Package.Image'Class; soundInterface_Param : access Sound_Package.Sound'Class; frameWidth : Integer; frameHeight : Integer; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer; time : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return ImageCaptionIndexedAnimationFactory_Access;
    function getInstance (This : in out ImageCaptionIndexedAnimationFactory; instanceId : Integer) return Animation_Access;
    procedure getInstance (This : in out ImageCaptionIndexedAnimationFactory; instanceId : Integer);
-   procedure setInitialScale (This : in out ImageCaptionIndexedAnimationFactory; scaleProperties_Param : access ScaleProperties'Class);
+   procedure setInitialScale (This : in out ImageCaptionIndexedAnimationFactory; scaleProperties_Param : access ScaleProperties_Package.ScaleProperties'Class);
 
 end org.allbinary.animation.image.sprite.ImageCaptionIndexedAnimationFactory_Package;
 

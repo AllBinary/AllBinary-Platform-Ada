@@ -27,10 +27,10 @@ package body org.allbinary.data.tables.transform.info.TransformInfoEntity_Packag
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TransformInfoEntity'Class; transformInfoObjectConfigGeneratorFactoryInterface_Param : access TransformInfoObjectConfigGeneratorFactoryInterface'Class; transformInfoObjectConfigAndManipulatorFactoryInterface_Param : access TransformInfoObjectConfigAndManipulatorFactoryBase'Class; transformInfoFactoryInterface_Param : access TransformInfoFactoryInterface'Class) is
-      transformInfoObjectConfigGeneratorFactoryInterface : TransformInfoObjectConfigGeneratorFactoryInterface_Access := TransformInfoObjectConfigGeneratorFactoryInterface_Access (transformInfoObjectConfigGeneratorFactoryInterface_Param);
-      transformInfoObjectConfigAndManipulatorFactoryInterface : TransformInfoObjectConfigAndManipulatorFactoryBase_Access := TransformInfoObjectConfigAndManipulatorFactoryBase_Access (transformInfoObjectConfigAndManipulatorFactoryInterface_Param);
-      transformInfoFactoryInterface : TransformInfoFactoryInterface_Access := TransformInfoFactoryInterface_Access (transformInfoFactoryInterface_Param);
+   procedure Initialize (This : in out TransformInfoEntity'Class; transformInfoObjectConfigGeneratorFactoryInterface_Param : access TransformInfoObjectConfigGeneratorFactoryInterface_Package.TransformInfoObjectConfigGeneratorFactoryInterface'Class; transformInfoObjectConfigAndManipulatorFactoryInterface_Param : access TransformInfoObjectConfigAndManipulatorFactoryBase_Package.TransformInfoObjectConfigAndManipulatorFactoryBase'Class; transformInfoFactoryInterface_Param : access TransformInfoFactoryInterface_Package.TransformInfoFactoryInterface'Class) is
+      transformInfoObjectConfigGeneratorFactoryInterface : constant TransformInfoObjectConfigGeneratorFactoryInterface_Access := TransformInfoObjectConfigGeneratorFactoryInterface_Access (transformInfoObjectConfigGeneratorFactoryInterface_Param);
+      transformInfoObjectConfigAndManipulatorFactoryInterface : constant TransformInfoObjectConfigAndManipulatorFactoryBase_Access := TransformInfoObjectConfigAndManipulatorFactoryBase_Access (transformInfoObjectConfigAndManipulatorFactoryInterface_Param);
+      transformInfoFactoryInterface : constant TransformInfoFactoryInterface_Access := TransformInfoFactoryInterface_Access (transformInfoFactoryInterface_Param);
    begin
         AbSqlBean_Package.Initialize (This, UserDbInitInfo_Package.Create);
         Initialize_Fields (This);
@@ -40,15 +40,15 @@ package body org.allbinary.data.tables.transform.info.TransformInfoEntity_Packag
         This.transformInfoFactoryInterface := transformInfoFactoryInterface;
    end Initialize;
 
-   function Create (transformInfoObjectConfigGeneratorFactoryInterface_Param : access TransformInfoObjectConfigGeneratorFactoryInterface'Class; transformInfoObjectConfigAndManipulatorFactoryInterface_Param : access TransformInfoObjectConfigAndManipulatorFactoryBase'Class; transformInfoFactoryInterface_Param : access TransformInfoFactoryInterface'Class) return TransformInfoEntity_Access is
+   function Create (transformInfoObjectConfigGeneratorFactoryInterface_Param : access TransformInfoObjectConfigGeneratorFactoryInterface_Package.TransformInfoObjectConfigGeneratorFactoryInterface'Class; transformInfoObjectConfigAndManipulatorFactoryInterface_Param : access TransformInfoObjectConfigAndManipulatorFactoryBase_Package.TransformInfoObjectConfigAndManipulatorFactoryBase'Class; transformInfoFactoryInterface_Param : access TransformInfoFactoryInterface_Package.TransformInfoFactoryInterface'Class) return TransformInfoEntity_Access is
       This : constant TransformInfoEntity_Access := new TransformInfoEntity;
    begin
       TransformInfoEntity_Package.Initialize (This.all, transformInfoObjectConfigGeneratorFactoryInterface_Param, transformInfoObjectConfigAndManipulatorFactoryInterface_Param, transformInfoFactoryInterface_Param);
       return This;
    end Create;
 
-   procedure insert (This : in out TransformInfoEntity; values_Param : access BasicArrayList'Class) is
-      values : BasicArrayList_Access := BasicArrayList_Access (values_Param);
+   procedure insert (This : in out TransformInfoEntity; values_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      values : constant BasicArrayList_Access := BasicArrayList_Access (values_Param);
    begin
         begin
             AbSqlBean (This).insert (values);
@@ -87,9 +87,9 @@ package body org.allbinary.data.tables.transform.info.TransformInfoEntity_Packag
    end delete;
 
    --  throws Exception
-   function get (This : in out TransformInfoEntity; name : Unbounded_String; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return TransformInfoInterface_Access is
-      propertiesHashMap : HashMap_Access := HashMap_Access (propertiesHashMap_Param);
-      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
+   function get (This : in out TransformInfoEntity; name : Unbounded_String; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return TransformInfoInterface_Access is
+      propertiesHashMap : constant HashMap_Access := HashMap_Access (propertiesHashMap_Param);
+      pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
       transformInfoData : TransformInfoData_Access;
       keysAndValues : HashMap_Access;
       hashMap : HashMap_Access;
@@ -198,8 +198,8 @@ package body org.allbinary.data.tables.transform.info.TransformInfoEntity_Packag
         return AbSqlBean (This).createTable (This.createTableStatement);
    end createTable;
 
-   procedure update (This : in out TransformInfoEntity; updatedValues_Param : access HashMap'Class) is
-      updatedValues : HashMap_Access := HashMap_Access (updatedValues_Param);
+   procedure update (This : in out TransformInfoEntity; updatedValues_Param : access HashMap_Package.HashMap'Class) is
+      updatedValues : constant HashMap_Access := HashMap_Access (updatedValues_Param);
    begin
         AbSqlBean (This).updateWhere (TransformInfoData_Package.getInstance.NAME, Unbounded_String (updatedValues.get (TransformInfoData_Package.getInstance.NAME)), updatedValues);
    end update;
@@ -209,7 +209,7 @@ package body org.allbinary.data.tables.transform.info.TransformInfoEntity_Packag
         return AbSqlBean (This).dropTable;
    end dropTable;
 
-   procedure get (This : in out TransformInfoEntity; name : Unbounded_String; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+   procedure get (This : in out TransformInfoEntity; name : Unbounded_String; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is
       Java_Result : constant TransformInfoInterface_Access := TransformInfoEntity'Class (This).get (name, propertiesHashMap_Param, pageContext_Param);
       pragma Unreferenced (Java_Result);
    begin

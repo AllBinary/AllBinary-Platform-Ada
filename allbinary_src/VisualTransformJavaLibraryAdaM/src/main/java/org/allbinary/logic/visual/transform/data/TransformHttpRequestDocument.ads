@@ -61,10 +61,10 @@ package org.allbinary.logic.visual.transform.data.TransformHttpRequestDocument_P
    language : Unbounded_String;
    local : Unbounded_String;
 
-   procedure Initialize (This : in out TransformHttpRequestDocument'Class; pageContext_Param : access PageContext'Class; weblisketSession_Param : access WeblisketSession'Class);
-   function Create (pageContext_Param : access PageContext'Class; weblisketSession_Param : access WeblisketSession'Class) return TransformHttpRequestDocument_Access;
-   procedure Initialize (This : in out TransformHttpRequestDocument'Class; searchRequest_Param : access SearchRequest'Class);
-   function Create (searchRequest_Param : access SearchRequest'Class) return TransformHttpRequestDocument_Access;
+   procedure Initialize (This : in out TransformHttpRequestDocument'Class; pageContext_Param : access PageContext_Package.PageContext'Class; weblisketSession_Param : access WeblisketSession_Package.WeblisketSession'Class);
+   function Create (pageContext_Param : access PageContext_Package.PageContext'Class; weblisketSession_Param : access WeblisketSession_Package.WeblisketSession'Class) return TransformHttpRequestDocument_Access;
+   procedure Initialize (This : in out TransformHttpRequestDocument'Class; searchRequest_Param : access SearchRequest_Package.SearchRequest'Class);
+   function Create (searchRequest_Param : access SearchRequest_Package.SearchRequest'Class) return TransformHttpRequestDocument_Access;
    function getBaseNode (This : in out TransformHttpRequestDocument) return Node_Access;
    function getDoc (This : in out TransformHttpRequestDocument) return Document_Access;
    function log (This : in out TransformHttpRequestDocument) return Unbounded_String;

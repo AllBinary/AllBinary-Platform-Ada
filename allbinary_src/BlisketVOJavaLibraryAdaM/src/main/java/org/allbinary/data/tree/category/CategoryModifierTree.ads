@@ -51,10 +51,10 @@ package org.allbinary.data.tree.category.CategoryModifierTree_Package is
       directory : Directory_Access;
    end record;
 
-   procedure Initialize (This : in out CategoryModifierTree'Class; categoryFactoryInterface_Param : access CategoryFactoryInterface'Class);
-   function Create (categoryFactoryInterface_Param : access CategoryFactoryInterface'Class) return CategoryModifierTree_Access;
-   procedure insert (This : in out CategoryModifierTree; parentCategoryInterface_Param : access CategoryInterface'Class; newChildCategoryInterface_Param : access CategoryInterface'Class);
-   procedure delete (This : in out CategoryModifierTree; parentCategoryInterface_Param : access CategoryInterface'Class; existingChildCategoryInterface_Param : access CategoryInterface'Class);
+   procedure Initialize (This : in out CategoryModifierTree'Class; categoryFactoryInterface_Param : access CategoryFactoryInterface_Package.CategoryFactoryInterface'Class);
+   function Create (categoryFactoryInterface_Param : access CategoryFactoryInterface_Package.CategoryFactoryInterface'Class) return CategoryModifierTree_Access;
+   procedure insert (This : in out CategoryModifierTree; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; newChildCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class);
+   procedure delete (This : in out CategoryModifierTree; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; existingChildCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class);
 
 end org.allbinary.data.tree.category.CategoryModifierTree_Package;
 

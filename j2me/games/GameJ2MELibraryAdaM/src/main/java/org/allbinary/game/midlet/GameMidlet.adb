@@ -49,8 +49,8 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GameMidlet'Class; clientInformationFactory_Param : access ClientInformationFactory'Class) is
-      clientInformationFactory : ClientInformationFactory_Access := ClientInformationFactory_Access (clientInformationFactory_Param);
+   procedure Initialize (This : in out GameMidlet'Class; clientInformationFactory_Param : access ClientInformationFactory_Package.ClientInformationFactory'Class) is
+      clientInformationFactory : constant ClientInformationFactory_Access := ClientInformationFactory_Access (clientInformationFactory_Param);
       progressCanvas : ProgressCanvas_Access;
    begin
         ProgressMidlet_Package.Initialize (This, clientInformationFactory);
@@ -65,7 +65,7 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
         This.init;
    end Initialize;
 
-   function Create (clientInformationFactory_Param : access ClientInformationFactory'Class) return GameMidlet_Access is
+   function Create (clientInformationFactory_Param : access ClientInformationFactory_Package.ClientInformationFactory'Class) return GameMidlet_Access is
       This : constant GameMidlet_Access := new GameMidlet;
    begin
       GameMidlet_Package.Initialize (This.all, clientInformationFactory_Param);
@@ -218,9 +218,9 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
         end;
    end startApp;
 
-   procedure commandAction (This : in out GameMidlet; command_Param : access Command'Class; displayable_Case_Param : access Displayable'Class) is
-      command : Command_Access := Command_Access (command_Param);
-      displayable_Case : Displayable_Access := Displayable_Access (displayable_Case_Param);
+   procedure commandAction (This : in out GameMidlet; command_Param : access Command_Package.Command'Class; displayable_Case_Param : access Displayable_Package.Displayable'Class) is
+      command : constant Command_Access := Command_Access (command_Param);
+      displayable_Case : constant Displayable_Access := Displayable_Access (displayable_Case_Param);
       displayableAsString : Unbounded_String;
       label : Unbounded_String;
       gameCommandsFactory : GameCommandsFactory_Access;
@@ -498,8 +498,8 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
         end if;
    end updateFullScreen;
 
-   procedure onEvent (This : in out GameMidlet; eventObject_Param : access AllBinaryEventObject'Class) is
-      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+   procedure onEvent (This : in out GameMidlet; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
+      eventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
    begin
         ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, GameMidlet_Access'(This'Unchecked_Access));
    end onEvent;
@@ -576,8 +576,8 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
         return This.allbinaryGameCanvasRunnableInterface;
    end getGameCanvasRunnableInterface;
 
-   procedure setGameCanvasRunnableInterface (This : in out GameMidlet; gameCanvasRunnableInterface_Param : access GameCanvasRunnableInterface'Class) is
-      gameCanvasRunnableInterface : GameCanvasRunnableInterface_Access := GameCanvasRunnableInterface_Access (gameCanvasRunnableInterface_Param);
+   procedure setGameCanvasRunnableInterface (This : in out GameMidlet; gameCanvasRunnableInterface_Param : access GameCanvasRunnableInterface_Package.GameCanvasRunnableInterface'Class) is
+      gameCanvasRunnableInterface : constant GameCanvasRunnableInterface_Access := GameCanvasRunnableInterface_Access (gameCanvasRunnableInterface_Param);
    begin
         This.allbinaryGameCanvasRunnableInterface := gameCanvasRunnableInterface;
    end setGameCanvasRunnableInterface;
@@ -626,8 +626,8 @@ package body org.allbinary.game.midlet.GameMidlet_Package is
         return hashtable;
    end getCurrentStateHashtable;
 
-   procedure setLoadGameForm (This : in out GameMidlet; loadGameForm_Param : access LoadGameForm'Class) is
-      loadGameForm : LoadGameForm_Access := LoadGameForm_Access (loadGameForm_Param);
+   procedure setLoadGameForm (This : in out GameMidlet; loadGameForm_Param : access LoadGameForm_Package.LoadGameForm'Class) is
+      loadGameForm : constant LoadGameForm_Access := LoadGameForm_Access (loadGameForm_Param);
    begin
         This.loadGameForm := loadGameForm;
    end setLoadGameForm;

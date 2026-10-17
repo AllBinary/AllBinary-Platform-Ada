@@ -61,8 +61,8 @@ package admin.taghelpers.MultipartRequestParamForwardHelper_Package is
       paramVector : BasicArrayList_Access;
    end record;
 
-   procedure Initialize (This : in out MultipartRequestParamForwardHelper'Class; parentHelperTag_Param : access HelperTag'Class; page : Unbounded_String; command : Unbounded_String; paramVector_Param : access BasicArrayList'Class; pageContext_Param : access PageContext'Class);
-   function Create (parentHelperTag_Param : access HelperTag'Class; page : Unbounded_String; command : Unbounded_String; paramVector_Param : access BasicArrayList'Class; pageContext_Param : access PageContext'Class) return MultipartRequestParamForwardHelper_Access;
+   procedure Initialize (This : in out MultipartRequestParamForwardHelper'Class; parentHelperTag_Param : access HelperTag_Package.HelperTag'Class; page : Unbounded_String; command : Unbounded_String; paramVector_Param : access BasicArrayList_Package.BasicArrayList'Class; pageContext_Param : access PageContext_Package.PageContext'Class);
+   function Create (parentHelperTag_Param : access HelperTag_Package.HelperTag'Class; page : Unbounded_String; command : Unbounded_String; paramVector_Param : access BasicArrayList_Package.BasicArrayList'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return MultipartRequestParamForwardHelper_Access;
    procedure forward (This : in out MultipartRequestParamForwardHelper);
    function getParams (This : in out MultipartRequestParamForwardHelper) return Unbounded_String;
    function shouldForward (This : in out MultipartRequestParamForwardHelper) return Boolean;

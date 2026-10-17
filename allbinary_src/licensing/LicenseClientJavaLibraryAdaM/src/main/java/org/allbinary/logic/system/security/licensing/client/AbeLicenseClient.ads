@@ -56,8 +56,8 @@ package org.allbinary.logic.system.security.licensing.client.AbeLicenseClient_Pa
 
    procedure Initialize (This : in out AbeLicenseClient'Class);
    function Create return AbeLicenseClient_Access;
-   function get (This : in out AbeLicenseClient; abeClientInformation_Param : access AbeClientInformationInterface'Class) return AbeLicenseInterface_Access;
-   procedure get (This : in out AbeLicenseClient; abeClientInformation_Param : access AbeClientInformationInterface'Class);
+   function get (This : in out AbeLicenseClient; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) return AbeLicenseInterface_Access;
+   procedure get (This : in out AbeLicenseClient; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class);
 
 end org.allbinary.logic.system.security.licensing.client.AbeLicenseClient_Package;
 

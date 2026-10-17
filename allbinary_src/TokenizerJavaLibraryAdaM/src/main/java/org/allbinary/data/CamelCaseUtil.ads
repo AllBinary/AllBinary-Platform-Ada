@@ -51,8 +51,8 @@ package org.allbinary.data.CamelCaseUtil_Package is
    procedure Initialize (This : in out CamelCaseUtil'Class);
    function Create return CamelCaseUtil_Access;
    function getInstance return CamelCaseUtil_Access;
-   function getAsCamelCase (This : in out CamelCaseUtil; string_Id : Unbounded_String; stringBuilder_Param : access StringMaker'Class) return Unbounded_String;
-   procedure getAsCamelCase (This : in out CamelCaseUtil; string_Id : Unbounded_String; stringBuilder_Param : access StringMaker'Class);
+   function getAsCamelCase (This : in out CamelCaseUtil; string_Id : Unbounded_String; stringBuilder_Param : access StringMaker_Package.StringMaker'Class) return Unbounded_String;
+   procedure getAsCamelCase (This : in out CamelCaseUtil; string_Id : Unbounded_String; stringBuilder_Param : access StringMaker_Package.StringMaker'Class);
 
 end org.allbinary.data.CamelCaseUtil_Package;
 

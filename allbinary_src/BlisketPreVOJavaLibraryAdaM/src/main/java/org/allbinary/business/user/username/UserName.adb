@@ -41,14 +41,14 @@ package body org.allbinary.business.user.username.UserName_Package is
       return This;
    end Create;
 
-   procedure Initialize (This : in out UserName'Class; hashMap_Param : access HashMap'Class) is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+   procedure Initialize (This : in out UserName'Class; hashMap_Param : access HashMap_Package.HashMap'Class) is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
       Initialize_Fields (This);
         This.userName := Unbounded_String (hashMap.get (UserData_Package.USERNAME));
    end Initialize;
 
-   function Create (hashMap_Param : access HashMap'Class) return UserName_Access is
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return UserName_Access is
       This : constant UserName_Access := new UserName;
    begin
       UserName_Package.Initialize (This.all, hashMap_Param);

@@ -41,7 +41,7 @@ package org.allbinary.game.layer.waypoint.event.WaypointEventHandler_Package is
 
    procedure Initialize (This : in out WaypointEventHandler'Class);
    function Create return WaypointEventHandler_Access;
-   procedure process (This : in out WaypointEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class);
+   procedure process (This : in out WaypointEventHandler; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class);
 
 end org.allbinary.game.layer.waypoint.event.WaypointEventHandler_Package;
 

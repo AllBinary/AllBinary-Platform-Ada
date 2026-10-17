@@ -83,8 +83,8 @@ package body org.allbinary.java.runtime.process.git.GitProcessHelper_Package is
         return files;
    end trackedFiles;
 
-   function isTracked (This : in out GitProcessHelper; file_Param : access AbFile'Class) return Boolean is
-      file : AbFile_Access := AbFile_Access (file_Param);
+   function isTracked (This : in out GitProcessHelper; file_Param : access AbFile_Package.AbFile'Class) return Boolean is
+      file : constant AbFile_Access := AbFile_Access (file_Param);
       nativeFile : File_Access;
       parentFile : File_Access;
       process : Process_Access;
@@ -119,7 +119,7 @@ package body org.allbinary.java.runtime.process.git.GitProcessHelper_Package is
       null;
    end trackedFiles;
 
-   procedure isTracked (This : in out GitProcessHelper; file_Param : access AbFile'Class) is
+   procedure isTracked (This : in out GitProcessHelper; file_Param : access AbFile_Package.AbFile'Class) is
       Java_Result : constant Boolean := GitProcessHelper'Class (This).isTracked (file_Param);
       pragma Unreferenced (Java_Result);
    begin

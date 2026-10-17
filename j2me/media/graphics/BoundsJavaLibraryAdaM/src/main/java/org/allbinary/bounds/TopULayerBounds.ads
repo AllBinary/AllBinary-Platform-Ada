@@ -35,9 +35,9 @@ package org.allbinary.bounds.TopULayerBounds_Package is
 
    type TopULayerBounds is new LayerBounds with null record;
 
-   procedure Initialize (This : in out TopULayerBounds'Class; rectangle_Param : access Rectangle'Class);
-   function Create (rectangle_Param : access Rectangle'Class) return TopULayerBounds_Access;
-   procedure visit (This : in out TopULayerBounds; boundsVisitorInterface_Param : access BoundsVisitorInterface'Class);
+   procedure Initialize (This : in out TopULayerBounds'Class; rectangle_Param : access Rectangle_Package.Rectangle'Class);
+   function Create (rectangle_Param : access Rectangle_Package.Rectangle'Class) return TopULayerBounds_Access;
+   procedure visit (This : in out TopULayerBounds; boundsVisitorInterface_Param : access BoundsVisitorInterface_Package.BoundsVisitorInterface'Class);
 
 end org.allbinary.bounds.TopULayerBounds_Package;
 

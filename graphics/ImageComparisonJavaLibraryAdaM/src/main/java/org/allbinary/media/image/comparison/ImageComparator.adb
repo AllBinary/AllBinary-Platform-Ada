@@ -22,14 +22,14 @@ package body org.allbinary.media.image.comparison.ImageComparator_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ImageComparator'Class; imageComparatorConstraintsInterface_Param : access ImageComparatorConstraintsInterface'Class) is
-      imageComparatorConstraintsInterface : ImageComparatorConstraintsInterface_Access := ImageComparatorConstraintsInterface_Access (imageComparatorConstraintsInterface_Param);
+   procedure Initialize (This : in out ImageComparator'Class; imageComparatorConstraintsInterface_Param : access ImageComparatorConstraintsInterface_Package.ImageComparatorConstraintsInterface'Class) is
+      imageComparatorConstraintsInterface : constant ImageComparatorConstraintsInterface_Access := ImageComparatorConstraintsInterface_Access (imageComparatorConstraintsInterface_Param);
    begin
       Initialize_Fields (This);
         This.imageComparatorConstraintsInterface := imageComparatorConstraintsInterface;
    end Initialize;
 
-   function Create (imageComparatorConstraintsInterface_Param : access ImageComparatorConstraintsInterface'Class) return ImageComparator_Access is
+   function Create (imageComparatorConstraintsInterface_Param : access ImageComparatorConstraintsInterface_Package.ImageComparatorConstraintsInterface'Class) return ImageComparator_Access is
       This : constant ImageComparator_Access := new ImageComparator;
    begin
       ImageComparator_Package.Initialize (This.all, imageComparatorConstraintsInterface_Param);
@@ -37,9 +37,9 @@ package body org.allbinary.media.image.comparison.ImageComparator_Package is
    end Create;
 
    --  throws Exception
-   procedure process (This : in out ImageComparator; imageComparisonInfo_Param : access ImageComparisonResult'Class; point_Param : access GPoint'Class) is
-      imageComparisonInfo : ImageComparisonResult_Access := ImageComparisonResult_Access (imageComparisonInfo_Param);
-      point : GPoint_Access := GPoint_Access (point_Param);
+   procedure process (This : in out ImageComparator; imageComparisonInfo_Param : access ImageComparisonResult_Package.ImageComparisonResult'Class; point_Param : access GPoint_Package.GPoint'Class) is
+      imageComparisonInfo : constant ImageComparisonResult_Access := ImageComparisonResult_Access (imageComparisonInfo_Param);
+      point : constant GPoint_Access := GPoint_Access (point_Param);
       isCollsionWithAvoidRectangles : Boolean;
       rgb1 : Integer;
       rgb2 : Integer;
@@ -75,17 +75,17 @@ package body org.allbinary.media.image.comparison.ImageComparator_Package is
    end process;
 
    --  throws Exception
-   function compare (This : in out ImageComparator; bufferedImage1_Param : access BufferedImage'Class; bufferedImage2_Param : access BufferedImage'Class; frameOne : Long_Long_Integer; frameTwo : Long_Long_Integer; tolerance : Integer) return ImageComparisonResult_Access is
-      bufferedImage1 : BufferedImage_Access := BufferedImage_Access (bufferedImage1_Param);
-      bufferedImage2 : BufferedImage_Access := BufferedImage_Access (bufferedImage2_Param);
+   function compare (This : in out ImageComparator; bufferedImage1_Param : access BufferedImage_Package.BufferedImage'Class; bufferedImage2_Param : access BufferedImage_Package.BufferedImage'Class; frameOne : Long_Long_Integer; frameTwo : Long_Long_Integer; tolerance : Integer) return ImageComparisonResult_Access is
+      bufferedImage1 : constant BufferedImage_Access := BufferedImage_Access (bufferedImage1_Param);
+      bufferedImage2 : constant BufferedImage_Access := BufferedImage_Access (bufferedImage2_Param);
    begin
         return This.compare (bufferedImage1, bufferedImage2, frameOne, frameTwo, tolerance, StringUtil_Package.getInstance.EMPTY_STRING);
    end compare;
 
    --  throws Exception
-   function compare (This : in out ImageComparator; bufferedImage1_Param : access BufferedImage'Class; bufferedImage2_Param : access BufferedImage'Class; frameOne : Long_Long_Integer; frameTwo : Long_Long_Integer; tolerance : Integer; name : Unbounded_String) return ImageComparisonResult_Access is
-      bufferedImage1 : BufferedImage_Access := BufferedImage_Access (bufferedImage1_Param);
-      bufferedImage2 : BufferedImage_Access := BufferedImage_Access (bufferedImage2_Param);
+   function compare (This : in out ImageComparator; bufferedImage1_Param : access BufferedImage_Package.BufferedImage'Class; bufferedImage2_Param : access BufferedImage_Package.BufferedImage'Class; frameOne : Long_Long_Integer; frameTwo : Long_Long_Integer; tolerance : Integer; name : Unbounded_String) return ImageComparisonResult_Access is
+      bufferedImage1 : constant BufferedImage_Access := BufferedImage_Access (bufferedImage1_Param);
+      bufferedImage2 : constant BufferedImage_Access := BufferedImage_Access (bufferedImage2_Param);
       imageComparisonInfo : ImageComparisonResult_Access;
       indexX : Integer;
       indexY : Integer;
@@ -105,14 +105,14 @@ package body org.allbinary.media.image.comparison.ImageComparator_Package is
         return imageComparisonInfo;
    end compare;
 
-   procedure compare (This : in out ImageComparator; bufferedImage1_Param : access BufferedImage'Class; bufferedImage2_Param : access BufferedImage'Class; frameOne : Long_Long_Integer; frameTwo : Long_Long_Integer; tolerance : Integer) is
+   procedure compare (This : in out ImageComparator; bufferedImage1_Param : access BufferedImage_Package.BufferedImage'Class; bufferedImage2_Param : access BufferedImage_Package.BufferedImage'Class; frameOne : Long_Long_Integer; frameTwo : Long_Long_Integer; tolerance : Integer) is
       Java_Result : constant ImageComparisonResult_Access := ImageComparator'Class (This).compare (bufferedImage1_Param, bufferedImage2_Param, frameOne, frameTwo, tolerance);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end compare;
 
-   procedure compare (This : in out ImageComparator; bufferedImage1_Param : access BufferedImage'Class; bufferedImage2_Param : access BufferedImage'Class; frameOne : Long_Long_Integer; frameTwo : Long_Long_Integer; tolerance : Integer; name : Unbounded_String) is
+   procedure compare (This : in out ImageComparator; bufferedImage1_Param : access BufferedImage_Package.BufferedImage'Class; bufferedImage2_Param : access BufferedImage_Package.BufferedImage'Class; frameOne : Long_Long_Integer; frameTwo : Long_Long_Integer; tolerance : Integer; name : Unbounded_String) is
       Java_Result : constant ImageComparisonResult_Access := ImageComparator'Class (This).compare (bufferedImage1_Param, bufferedImage2_Param, frameOne, frameTwo, tolerance, name);
       pragma Unreferenced (Java_Result);
    begin

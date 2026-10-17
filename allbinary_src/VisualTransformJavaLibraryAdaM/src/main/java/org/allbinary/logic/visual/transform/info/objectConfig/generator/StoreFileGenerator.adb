@@ -26,8 +26,8 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.generator.St
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out StoreFileGenerator'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out StoreFileGenerator'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
       httpTransformInfoInterface : TransformInfoHttpInterface_Access;
       weblisketSession : WeblisketSession_Access;
       stringBuffer : StringMaker_Access;
@@ -83,7 +83,7 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.generator.St
         end if;
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return StoreFileGenerator_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return StoreFileGenerator_Access is
       This : constant StoreFileGenerator_Access := new StoreFileGenerator;
    begin
       StoreFileGenerator_Package.Initialize (This.all, transformInfoInterface_Param);

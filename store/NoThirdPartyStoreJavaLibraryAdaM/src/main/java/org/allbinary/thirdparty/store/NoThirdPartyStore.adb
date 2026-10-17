@@ -33,8 +33,8 @@ package body org.allbinary.thirdparty.store.NoThirdPartyStore_Package is
       return This;
    end Create;
 
-   procedure authorize (This : in out NoThirdPartyStore; clientInformationInterface_Param : access AbeClientInformationInterface'Class) is
-      clientInformationInterface : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (clientInformationInterface_Param);
+   procedure authorize (This : in out NoThirdPartyStore; clientInformationInterface_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) is
+      clientInformationInterface : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (clientInformationInterface_Param);
    begin
         This.setAuthorized (True);
    end authorize;

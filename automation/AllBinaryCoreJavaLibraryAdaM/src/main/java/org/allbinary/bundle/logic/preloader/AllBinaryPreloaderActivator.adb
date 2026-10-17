@@ -42,8 +42,8 @@ package body org.allbinary.bundle.logic.preloader.AllBinaryPreloaderActivator_Pa
    end getBundleContext;
 
    --  throws Exception
-   procedure start (This : in out AllBinaryPreloaderActivator; context_Param : access BundleContext'Class) is
-      context : BundleContext_Access := BundleContext_Access (context_Param);
+   procedure start (This : in out AllBinaryPreloaderActivator; context_Param : access BundleContext_Package.BundleContext'Class) is
+      context : constant BundleContext_Access := BundleContext_Access (context_Param);
    begin
         begin
             This.logUtil.putF (This.commonStrings.START, AllBinaryPreloaderActivator_Access'(This'Unchecked_Access), To_Unbounded_String ("start"));
@@ -76,8 +76,8 @@ package body org.allbinary.bundle.logic.preloader.AllBinaryPreloaderActivator_Pa
    end registerAsService;
 
    --  throws Exception
-   procedure stop (This : in out AllBinaryPreloaderActivator; context_Param : access BundleContext'Class) is
-      context : BundleContext_Access := BundleContext_Access (context_Param);
+   procedure stop (This : in out AllBinaryPreloaderActivator; context_Param : access BundleContext_Package.BundleContext'Class) is
+      context : constant BundleContext_Access := BundleContext_Access (context_Param);
    begin
         This.logUtil.putF (This.commonStrings.START, AllBinaryPreloaderActivator_Access'(This'Unchecked_Access), To_Unbounded_String ("stop"));
    end stop;

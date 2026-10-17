@@ -86,16 +86,16 @@ package views.admin.inventory.download.AddFileValidationView_Package is
    ADDPRODUCT : Unbounded_String;
    ADDANOTHERDOWNLOADABLE : Unbounded_String;
 
-   procedure Initialize (This : in out AddFileValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return AddFileValidationView_Access;
+   procedure Initialize (This : in out AddFileValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return AddFileValidationView_Access;
    function isValid (This : in out AddFileValidationView) return Boolean;
    function toValidationInfoDoc (This : in out AddFileValidationView) return Document_Access;
-   function toValidationInfoNode (This : in out AddFileValidationView; document_Param : access Document'Class) return Node_Access;
-   procedure toValidationInfoNode (This : in out AddFileValidationView; document_Param : access Document'Class);
+   function toValidationInfoNode (This : in out AddFileValidationView; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out AddFileValidationView; document_Param : access Document_Package.Document'Class);
    function validationInfo (This : in out AddFileValidationView) return Unbounded_String;
    function isValid (This : in out AddFileValidationView; fileName : Unbounded_String; size : Long_Long_Integer) return Boolean;
    procedure isValid (This : in out AddFileValidationView; fileName : Unbounded_String; size : Long_Long_Integer);
-   procedure validationInfo (This : in out AddFileValidationView; stringBuffer_Param : access StringMaker'Class; fileName : Unbounded_String; size : Long_Long_Integer);
+   procedure validationInfo (This : in out AddFileValidationView; stringBuffer_Param : access StringMaker_Package.StringMaker'Class; fileName : Unbounded_String; size : Long_Long_Integer);
 
 end views.admin.inventory.download.AddFileValidationView_Package;
 

@@ -41,8 +41,8 @@ package body org.allbinary.logic.system.security.AbCryptUtil_Package is
    end Create;
 
    --  throws Exception
-   function decrypt (This : in out AbCryptUtil; inputStream_Param : access InputStream'Class; key : Unbounded_String) return Short_Short_Integer_Array_Access is
-      inputStream : InputStream_Access := InputStream_Access (inputStream_Param);
+   function decrypt (This : in out AbCryptUtil; inputStream_Param : access InputStream_Package.InputStream'Class; key : Unbounded_String) return Short_Short_Integer_Array_Access is
+      inputStream : constant InputStream_Access := InputStream_Access (inputStream_Param);
       outputStream : ByteArrayOutputStream_Access;
       abCrypt : AbCrypt_Access;
    begin
@@ -60,7 +60,7 @@ package body org.allbinary.logic.system.security.AbCryptUtil_Package is
         end;
    end decrypt;
 
-   procedure decrypt (This : in out AbCryptUtil; inputStream_Param : access InputStream'Class; key : Unbounded_String) is
+   procedure decrypt (This : in out AbCryptUtil; inputStream_Param : access InputStream_Package.InputStream'Class; key : Unbounded_String) is
       Java_Result : constant Short_Short_Integer_Array_Access := AbCryptUtil'Class (This).decrypt (inputStream_Param, key);
       pragma Unreferenced (Java_Result);
    begin

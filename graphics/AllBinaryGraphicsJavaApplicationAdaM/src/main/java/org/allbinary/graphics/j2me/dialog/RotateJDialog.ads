@@ -52,10 +52,10 @@ package org.allbinary.graphics.j2me.dialog.RotateJDialog_Package is
       totalRotationJTextField : JTextField_Access;
    end record;
 
-   procedure Initialize (This : in out RotateJDialog'Class; parent_Param : access Frame'Class; modal : Boolean);
-   function Create (parent_Param : access Frame'Class; modal : Boolean) return RotateJDialog_Access;
+   procedure Initialize (This : in out RotateJDialog'Class; parent_Param : access Frame_Package.Frame'Class; modal : Boolean);
+   function Create (parent_Param : access Frame_Package.Frame'Class; modal : Boolean) return RotateJDialog_Access;
    procedure initComponents (This : in out RotateJDialog);
-   procedure jButton1ActionPerformed (This : in out RotateJDialog; evt_Param : access ActionEvent'Class);
+   procedure jButton1ActionPerformed (This : in out RotateJDialog; evt_Param : access ActionEvent_Package.ActionEvent'Class);
    procedure main (args : Unbounded_String_Array_Access);
 
 end org.allbinary.graphics.j2me.dialog.RotateJDialog_Package;

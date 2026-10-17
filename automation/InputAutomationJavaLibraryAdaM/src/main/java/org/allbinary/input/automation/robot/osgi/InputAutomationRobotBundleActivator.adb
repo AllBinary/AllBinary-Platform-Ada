@@ -45,15 +45,15 @@ package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundl
    end init;
 
    --  throws Exception
-   procedure registerAsService (This : in out InputAutomationRobotBundleActivator; bundleContext_Param : access BundleContext'Class) is
-      bundleContext : BundleContext_Access := BundleContext_Access (bundleContext_Param);
+   procedure registerAsService (This : in out InputAutomationRobotBundleActivator; bundleContext_Param : access BundleContext_Package.BundleContext'Class) is
+      bundleContext : constant BundleContext_Access := BundleContext_Access (bundleContext_Param);
    begin
         OSGIActivatorUtil_Package.registerAsService (bundleContext, This.getServiceFactory, InputAutomationRobotServiceInterface_Package.InputAutomationRobotServiceInterface'Tag.getName);
    end registerAsService;
 
    --  throws Exception
-   function getInputAutomationRobotChangeListener (This : in out InputAutomationRobotBundleActivator; context_Param : access BundleContext'Class) return InputAutomationRobotChangeListener_Access is
-      context : BundleContext_Access := BundleContext_Access (context_Param);
+   function getInputAutomationRobotChangeListener (This : in out InputAutomationRobotBundleActivator; context_Param : access BundleContext_Package.BundleContext'Class) return InputAutomationRobotChangeListener_Access is
+      context : constant BundleContext_Access := BundleContext_Access (context_Param);
       serviceReference : ServiceReference_Access;
       inputAutomationRobotChangeListener : InputAutomationRobotChangeListener_Access;
    begin
@@ -70,8 +70,8 @@ package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundl
         end if;
    end getInputAutomationRobotChangeListener;
 
-   procedure addRobots (This : in out InputAutomationRobotBundleActivator; context_Param : access BundleContext'Class) is
-      context : BundleContext_Access := BundleContext_Access (context_Param);
+   procedure addRobots (This : in out InputAutomationRobotBundleActivator; context_Param : access BundleContext_Package.BundleContext'Class) is
+      context : constant BundleContext_Access := BundleContext_Access (context_Param);
       inputAutomationRobotChangeListener : InputAutomationRobotChangeListener_Access;
       inputAutomationRobotChangeEvent : InputAutomationRobotChangeEvent_Access;
       index : Integer;
@@ -95,8 +95,8 @@ package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundl
         end;
    end addRobots;
 
-   procedure removeRobots (This : in out InputAutomationRobotBundleActivator; context_Param : access BundleContext'Class) is
-      context : BundleContext_Access := BundleContext_Access (context_Param);
+   procedure removeRobots (This : in out InputAutomationRobotBundleActivator; context_Param : access BundleContext_Package.BundleContext'Class) is
+      context : constant BundleContext_Access := BundleContext_Access (context_Param);
       inputAutomationRobotChangeListener : InputAutomationRobotChangeListener_Access;
       inputAutomationRobotChangeEvent : InputAutomationRobotChangeEvent_Access;
       index : Integer;
@@ -121,8 +121,8 @@ package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundl
    end removeRobots;
 
    --  throws Exception
-   procedure start (This : in out InputAutomationRobotBundleActivator; context_Param : access BundleContext'Class) is
-      context : BundleContext_Access := BundleContext_Access (context_Param);
+   procedure start (This : in out InputAutomationRobotBundleActivator; context_Param : access BundleContext_Package.BundleContext'Class) is
+      context : constant BundleContext_Access := BundleContext_Access (context_Param);
    begin
         This.logUtil.putF (This.commonStrings.START, InputAutomationRobotBundleActivator_Access'(This'Unchecked_Access), This.commonStrings.START);
         This.addRobots (context);
@@ -130,8 +130,8 @@ package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundl
    end start;
 
    --  throws Exception
-   procedure stop (This : in out InputAutomationRobotBundleActivator; context_Param : access BundleContext'Class) is
-      context : BundleContext_Access := BundleContext_Access (context_Param);
+   procedure stop (This : in out InputAutomationRobotBundleActivator; context_Param : access BundleContext_Package.BundleContext'Class) is
+      context : constant BundleContext_Access := BundleContext_Access (context_Param);
    begin
         This.logUtil.putF (To_Unbounded_String ("Stop"), InputAutomationRobotBundleActivator_Access'(This'Unchecked_Access), This.commonStrings.START);
         This.removeRobots (context);
@@ -142,8 +142,8 @@ package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundl
         return This.serviceFactory;
    end getServiceFactory;
 
-   procedure setServiceFactory (This : in out InputAutomationRobotBundleActivator; serviceObject_Param : access ServiceFactory'Class) is
-      serviceObject : ServiceFactory_Access := ServiceFactory_Access (serviceObject_Param);
+   procedure setServiceFactory (This : in out InputAutomationRobotBundleActivator; serviceObject_Param : access ServiceFactory_Package.ServiceFactory'Class) is
+      serviceObject : constant ServiceFactory_Access := ServiceFactory_Access (serviceObject_Param);
    begin
         This.serviceFactory := serviceObject;
    end setServiceFactory;
@@ -158,7 +158,7 @@ package body org.allbinary.input.automation.robot.osgi.InputAutomationRobotBundl
         This.inputRobotInterface := inputRobotInterface;
    end setInputRobotInterface;
 
-   procedure getInputAutomationRobotChangeListener (This : in out InputAutomationRobotBundleActivator; context_Param : access BundleContext'Class) is
+   procedure getInputAutomationRobotChangeListener (This : in out InputAutomationRobotBundleActivator; context_Param : access BundleContext_Package.BundleContext'Class) is
       Java_Result : constant InputAutomationRobotChangeListener_Access := InputAutomationRobotBundleActivator'Class (This).getInputAutomationRobotChangeListener (context_Param);
       pragma Unreferenced (Java_Result);
    begin

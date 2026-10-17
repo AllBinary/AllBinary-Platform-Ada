@@ -59,8 +59,8 @@ package body org.allbinary.logic.string_Id.tokens.UniqueTokens_Package is
    end Create;
 
    --  throws Exception
-   function getWhithoutDashesAndSkipNumberOnlyTokens (This : in out UniqueTokens; stringVector_Param : access BasicArrayList'Class) return HashSet_Access is
-      stringVector : BasicArrayList_Access := BasicArrayList_Access (stringVector_Param);
+   function getWhithoutDashesAndSkipNumberOnlyTokens (This : in out UniqueTokens; stringVector_Param : access BasicArrayList_Package.BasicArrayList'Class) return HashSet_Access is
+      stringVector : constant BasicArrayList_Access := BasicArrayList_Access (stringVector_Param);
       hashSet : HashSet_Access;
       index : Integer;
       commonSeps : CommonSeps_Access;
@@ -139,7 +139,7 @@ package body org.allbinary.logic.string_Id.tokens.UniqueTokens_Package is
         return False;
    end isSpecialCharacter;
 
-   procedure getWhithoutDashesAndSkipNumberOnlyTokens (This : in out UniqueTokens; stringVector_Param : access BasicArrayList'Class) is
+   procedure getWhithoutDashesAndSkipNumberOnlyTokens (This : in out UniqueTokens; stringVector_Param : access BasicArrayList_Package.BasicArrayList'Class) is
       Java_Result : constant HashSet_Access := UniqueTokens'Class (This).getWhithoutDashesAndSkipNumberOnlyTokens (stringVector_Param);
       pragma Unreferenced (Java_Result);
    begin

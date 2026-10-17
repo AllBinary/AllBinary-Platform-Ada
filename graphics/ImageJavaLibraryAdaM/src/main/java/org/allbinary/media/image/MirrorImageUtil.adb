@@ -41,7 +41,7 @@ package body org.allbinary.media.image.MirrorImageUtil_Package is
       return This;
    end Create;
 
-   function getImage (This : in out MirrorImageUtil; bufferedImage_Param : access BufferedImage'Class; verticle : Boolean; horizontal : Boolean) return BufferedImage_Access is
+   function getImage (This : in out MirrorImageUtil; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; verticle : Boolean; horizontal : Boolean) return BufferedImage_Access is
       bufferedImage : BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
       newBufferedImage : BufferedImage_Access;
       g : Graphics2D_Access;
@@ -68,8 +68,8 @@ package body org.allbinary.media.image.MirrorImageUtil_Package is
         return newBufferedImage;
    end getImage;
 
-   function getImages (This : in out MirrorImageUtil; bufferedImage_Param : access BufferedImage'Class; verticle : Boolean; horizontal : Boolean) return BufferedImage_Access_Array_Access is
-      bufferedImage : BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
+   function getImages (This : in out MirrorImageUtil; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; verticle : Boolean; horizontal : Boolean) return BufferedImage_Access_Array_Access is
+      bufferedImage : constant BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
       width : Integer;
       height : Integer;
       cellHeight : Integer;
@@ -106,14 +106,14 @@ package body org.allbinary.media.image.MirrorImageUtil_Package is
         return bufferedImageArray;
    end getImages;
 
-   procedure getImage (This : in out MirrorImageUtil; bufferedImage_Param : access BufferedImage'Class; verticle : Boolean; horizontal : Boolean) is
+   procedure getImage (This : in out MirrorImageUtil; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; verticle : Boolean; horizontal : Boolean) is
       Java_Result : constant BufferedImage_Access := MirrorImageUtil'Class (This).getImage (bufferedImage_Param, verticle, horizontal);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getImage;
 
-   procedure getImages (This : in out MirrorImageUtil; bufferedImage_Param : access BufferedImage'Class; verticle : Boolean; horizontal : Boolean) is
+   procedure getImages (This : in out MirrorImageUtil; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; verticle : Boolean; horizontal : Boolean) is
       Java_Result : constant BufferedImage_Access_Array_Access := MirrorImageUtil'Class (This).getImages (bufferedImage_Param, verticle, horizontal);
       pragma Unreferenced (Java_Result);
    begin

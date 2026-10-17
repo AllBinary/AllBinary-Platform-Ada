@@ -23,8 +23,8 @@ package body org.allbinary.game.layer.hud.basic.PositionWidget_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PositionWidget'Class; position : Integer; location : Integer; direction : Integer; basicColor_Param : access BasicColor'Class) is
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+   procedure Initialize (This : in out PositionWidget'Class; position : Integer; location : Integer; direction : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         BasicHud_Package.Initialize (This, location, direction, 2, basicColor);
         Initialize_Fields (This);
@@ -32,7 +32,7 @@ package body org.allbinary.game.layer.hud.basic.PositionWidget_Package is
         This.updateMaxWidth := 40;
    end Initialize;
 
-   function Create (position : Integer; location : Integer; direction : Integer; basicColor_Param : access BasicColor'Class) return PositionWidget_Access is
+   function Create (position : Integer; location : Integer; direction : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) return PositionWidget_Access is
       This : constant PositionWidget_Access := new PositionWidget;
    begin
       PositionWidget_Package.Initialize (This.all, position, location, direction, basicColor_Param);
@@ -50,8 +50,8 @@ package body org.allbinary.game.layer.hud.basic.PositionWidget_Package is
         This.positionString := PositionWidget_Package.toString (This.get);
    end set;
 
-   procedure paint (This : in out PositionWidget; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out PositionWidget; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         BasicHud (This).paintString (graphics, This.positionString);
    end paint;

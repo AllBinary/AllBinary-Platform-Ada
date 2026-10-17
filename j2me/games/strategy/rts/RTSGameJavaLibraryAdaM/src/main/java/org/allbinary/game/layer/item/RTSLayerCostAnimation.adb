@@ -31,9 +31,9 @@ package body org.allbinary.game.layer.item.RTSLayerCostAnimation_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out RTSLayerCostAnimation'Class; image_Param : access Image'Class; layerInterfaceFactoryInterface_Param : access CostLayerInterfaceFactoryInterface'Class) is
-      image : Image_Access := Image_Access (image_Param);
-      layerInterfaceFactoryInterface : CostLayerInterfaceFactoryInterface_Access := CostLayerInterfaceFactoryInterface_Access (layerInterfaceFactoryInterface_Param);
+   procedure Initialize (This : in out RTSLayerCostAnimation'Class; image_Param : access Image_Package.Image'Class; layerInterfaceFactoryInterface_Param : access CostLayerInterfaceFactoryInterface_Package.CostLayerInterfaceFactoryInterface'Class) is
+      image : constant Image_Access := Image_Access (image_Param);
+      layerInterfaceFactoryInterface : constant CostLayerInterfaceFactoryInterface_Access := CostLayerInterfaceFactoryInterface_Access (layerInterfaceFactoryInterface_Param);
    begin
       Animation_Package.Initialize (This);
       Initialize_Fields (This);
@@ -42,15 +42,15 @@ package body org.allbinary.game.layer.item.RTSLayerCostAnimation_Package is
         This.update;
    end Initialize;
 
-   function Create (image_Param : access Image'Class; layerInterfaceFactoryInterface_Param : access CostLayerInterfaceFactoryInterface'Class) return RTSLayerCostAnimation_Access is
+   function Create (image_Param : access Image_Package.Image'Class; layerInterfaceFactoryInterface_Param : access CostLayerInterfaceFactoryInterface_Package.CostLayerInterfaceFactoryInterface'Class) return RTSLayerCostAnimation_Access is
       This : constant RTSLayerCostAnimation_Access := new RTSLayerCostAnimation;
    begin
       RTSLayerCostAnimation_Package.Initialize (This.all, image_Param, layerInterfaceFactoryInterface_Param);
       return This;
    end Create;
 
-   procedure updateMeasurement (This : in out RTSLayerCostAnimation; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure updateMeasurement (This : in out RTSLayerCostAnimation; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
    begin
         font := graphics.getFont;
@@ -59,14 +59,14 @@ package body org.allbinary.game.layer.item.RTSLayerCostAnimation_Package is
         This.myFontProcessor := MyFontProcessor_Package.getInstance;
    end updateMeasurement;
 
-   procedure onEvent (This : in out RTSLayerCostAnimation; event_Param : access AllBinaryEventObject'Class) is
-      event : AllBinaryEventObject_Access := AllBinaryEventObject_Access (event_Param);
+   procedure onEvent (This : in out RTSLayerCostAnimation; event_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
+      event : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (event_Param);
    begin
         ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, RTSLayerCostAnimation_Access'(This'Unchecked_Access));
    end onEvent;
 
-   procedure onTechEvent (This : in out RTSLayerCostAnimation; event_Param : access AllBinaryEventObject'Class) is
-      event : AllBinaryEventObject_Access := AllBinaryEventObject_Access (event_Param);
+   procedure onTechEvent (This : in out RTSLayerCostAnimation; event_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
+      event : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (event_Param);
       commonStrings : CommonStrings_Access;
    begin
         begin
@@ -90,8 +90,8 @@ package body org.allbinary.game.layer.item.RTSLayerCostAnimation_Package is
         This.len := This.primitiveLongUtil.getCurrentTotalDigits;
    end update;
 
-   procedure paintXY (This : in out RTSLayerCostAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintXY (This : in out RTSLayerCostAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       adjustedCostY : Integer;
       xa : Integer;
    begin

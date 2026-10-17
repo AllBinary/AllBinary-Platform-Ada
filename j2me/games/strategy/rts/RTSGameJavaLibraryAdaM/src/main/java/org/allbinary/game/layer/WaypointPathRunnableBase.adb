@@ -49,14 +49,14 @@ package body org.allbinary.game.layer.WaypointPathRunnableBase_Package is
    end setRunning;
 
    --  throws Exception
-   procedure setThread (This : in out WaypointPathRunnableBase; thread_Param : access Thread'Class) is
-      thread : Thread_Access := Thread_Access (thread_Param);
+   procedure setThread (This : in out WaypointPathRunnableBase; thread_Param : access Thread_Package.Thread'Class) is
+      thread : constant Thread_Access := Thread_Access (thread_Param);
    begin
         null;
    end setThread;
 
-   procedure setTargetLayer (This : in out WaypointPathRunnableBase; waypointLayer_Param : access PathFindingLayerInterface'Class) is
-      waypointLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (waypointLayer_Param);
+   procedure setTargetLayer (This : in out WaypointPathRunnableBase; waypointLayer_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class) is
+      waypointLayer : constant PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (waypointLayer_Param);
    begin
         This.targetPathFindingLayer := waypointLayer;
         This.setPriority;
@@ -82,8 +82,8 @@ package body org.allbinary.game.layer.WaypointPathRunnableBase_Package is
         return This.targetPathFindingLayer;
    end getTargetLayer;
 
-   procedure setUnitLayer (This : in out WaypointPathRunnableBase; unitLayer_Param : access PathFindingLayerInterface'Class) is
-      unitLayer : PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (unitLayer_Param);
+   procedure setUnitLayer (This : in out WaypointPathRunnableBase; unitLayer_Param : access PathFindingLayerInterface_Package.PathFindingLayerInterface'Class) is
+      unitLayer : constant PathFindingLayerInterface_Access := PathFindingLayerInterface_Access (unitLayer_Param);
    begin
         This.pathFindingLayer := unitLayer;
    end setUnitLayer;

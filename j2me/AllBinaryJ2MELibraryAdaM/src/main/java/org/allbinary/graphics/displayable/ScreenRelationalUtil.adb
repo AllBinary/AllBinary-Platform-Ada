@@ -26,8 +26,8 @@ package body org.allbinary.graphics.displayable.ScreenRelationalUtil_Package is
         return ScreenRelationalUtil_Package.instance;
    end getInstance;
 
-   function getScaleImage (This : in out ScreenRelationalUtil; image_Param : access Image'Class) return Float is
-      image : Image_Access := Image_Access (image_Param);
+   function getScaleImage (This : in out ScreenRelationalUtil; image_Param : access Image_Package.Image'Class) return Float is
+      image : constant Image_Access := Image_Access (image_Param);
    begin
         return This.getScaleWH (image.getWidth, image.getHeight);
    end getScaleImage;
@@ -67,7 +67,7 @@ package body org.allbinary.graphics.displayable.ScreenRelationalUtil_Package is
         return Integer (((This.getScaleWHA (aWidth, aHeight, add)) * (Float (aHeight))));
    end getScaledHeightAdd;
 
-   procedure getScaleImage (This : in out ScreenRelationalUtil; image_Param : access Image'Class) is
+   procedure getScaleImage (This : in out ScreenRelationalUtil; image_Param : access Image_Package.Image'Class) is
       Java_Result : constant Float := ScreenRelationalUtil'Class (This).getScaleImage (image_Param);
       pragma Unreferenced (Java_Result);
    begin

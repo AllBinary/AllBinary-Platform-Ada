@@ -28,40 +28,40 @@ package body org.allbinary.graphics.OpenGLBitmapFactory_Package is
         return OpenGLBitmapFactory_Package.instance;
    end getInstance;
 
-   function createBitmap (This : in out OpenGLBitmapFactory; width : Integer; height : Integer; config_Param : access Config'Class) return OpenGLBitmap_Access is
-      config : Config_Access := Config_Access (config_Param);
+   function createBitmap (This : in out OpenGLBitmapFactory; width : Integer; height : Integer; config_Param : access Config_Package.Config'Class) return OpenGLBitmap_Access is
+      config : constant Config_Access := Config_Access (config_Param);
    begin
         return OpenGLBitmap_Package.Create (Bitmap_Package.createBitmap (width, height, config.bitmapConfig));
    end createBitmap;
 
    --  throws IOException
-   function decodeStream (This : in out OpenGLBitmapFactory; inputStream_Param : access InputStream'Class) return OpenGLBitmap_Access is
-      inputStream : InputStream_Access := InputStream_Access (inputStream_Param);
+   function decodeStream (This : in out OpenGLBitmapFactory; inputStream_Param : access InputStream_Package.InputStream'Class) return OpenGLBitmap_Access is
+      inputStream : constant InputStream_Access := InputStream_Access (inputStream_Param);
    begin
         return OpenGLBitmap_Package.Create (BitmapFactory_Package.decodeStream (inputStream));
    end decodeStream;
 
-   function createBitmap (This : in out OpenGLBitmapFactory; image_Param : access Image'Class) return PlatformBitmapBase_Access is
-      image : Image_Access := Image_Access (image_Param);
+   function createBitmap (This : in out OpenGLBitmapFactory; image_Param : access Image_Package.Image'Class) return PlatformBitmapBase_Access is
+      image : constant Image_Access := Image_Access (image_Param);
    begin
         return OpenGLBitmap_Package.Create ((AndroidImageInterface_Access (image)).getBitmap);
    end createBitmap;
 
-   procedure createBitmap (This : in out OpenGLBitmapFactory; width : Integer; height : Integer; config_Param : access Config'Class) is
+   procedure createBitmap (This : in out OpenGLBitmapFactory; width : Integer; height : Integer; config_Param : access Config_Package.Config'Class) is
       Java_Result : constant OpenGLBitmap_Access := OpenGLBitmapFactory'Class (This).createBitmap (width, height, config_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createBitmap;
 
-   procedure decodeStream (This : in out OpenGLBitmapFactory; inputStream_Param : access InputStream'Class) is
+   procedure decodeStream (This : in out OpenGLBitmapFactory; inputStream_Param : access InputStream_Package.InputStream'Class) is
       Java_Result : constant OpenGLBitmap_Access := OpenGLBitmapFactory'Class (This).decodeStream (inputStream_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end decodeStream;
 
-   procedure createBitmap (This : in out OpenGLBitmapFactory; image_Param : access Image'Class) is
+   procedure createBitmap (This : in out OpenGLBitmapFactory; image_Param : access Image_Package.Image'Class) is
       Java_Result : constant PlatformBitmapBase_Access := OpenGLBitmapFactory'Class (This).createBitmap (image_Param);
       pragma Unreferenced (Java_Result);
    begin
@@ -84,14 +84,14 @@ package body org.allbinary.graphics.Config_Package is
    end Initialize_Fields;
 
     
-   procedure Initialize (This : in out Config'Class; bitmapConfig_Param : access Config'Class) is
-      bitmapConfig : Config_Access := Config_Access (bitmapConfig_Param);
+   procedure Initialize (This : in out Config'Class; bitmapConfig_Param : access Config_Package.Config'Class) is
+      bitmapConfig : constant Config_Access := Config_Access (bitmapConfig_Param);
    begin
       Initialize_Fields (This);
             This.bitmapConfig := bitmapConfig;
    end Initialize;
 
-   function Create (bitmapConfig_Param : access Config'Class) return Config_Access is
+   function Create (bitmapConfig_Param : access Config_Package.Config'Class) return Config_Access is
       This : constant Config_Access := new Config;
    begin
       Config_Package.Initialize (This.all, bitmapConfig_Param);

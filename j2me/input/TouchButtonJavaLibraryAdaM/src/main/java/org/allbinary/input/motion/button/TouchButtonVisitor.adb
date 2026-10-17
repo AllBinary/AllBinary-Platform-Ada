@@ -34,8 +34,8 @@ package body org.allbinary.input.motion.button.TouchButtonVisitor_Package is
 
 
    --  throws Exception
-   procedure process (This : in out TouchButtonVisitor; touchButtonInput_Param : access TouchButtonInput'Class; string_Id : Unbounded_String) is
-      touchButtonInput : TouchButtonInput_Access := TouchButtonInput_Access (touchButtonInput_Param);
+   procedure process (This : in out TouchButtonVisitor; touchButtonInput_Param : access TouchButtonInput_Package.TouchButtonInput'Class; string_Id : Unbounded_String) is
+      touchButtonInput : constant TouchButtonInput_Access := TouchButtonInput_Access (touchButtonInput_Param);
    begin
         null;
    end process;

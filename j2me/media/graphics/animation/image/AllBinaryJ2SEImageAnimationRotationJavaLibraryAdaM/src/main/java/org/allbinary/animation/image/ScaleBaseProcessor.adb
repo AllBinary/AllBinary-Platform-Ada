@@ -38,8 +38,8 @@ package body org.allbinary.animation.image.ScaleBaseProcessor_Package is
         return ScaleBaseProcessor_Package.instance;
    end getInstance;
 
-   procedure update (This : in out ScaleBaseProcessor; originalImage_Param : access Image'Class; originalImageArray : Image_Access_Array_Access; imageToShowArray : Image_Access_Array_Access; index : Integer; scaleX : Float; scaleY : Float; maxScaleX : Float; maxScaleY : Float) is
-      originalImage : Image_Access := Image_Access (originalImage_Param);
+   procedure update (This : in out ScaleBaseProcessor; originalImage_Param : access Image_Package.Image'Class; originalImageArray : Image_Access_Array_Access; imageToShowArray : Image_Access_Array_Access; index : Integer; scaleX : Float; scaleY : Float; maxScaleX : Float; maxScaleY : Float) is
+      originalImage : constant Image_Access := Image_Access (originalImage_Param);
    begin
         null;
    end update;

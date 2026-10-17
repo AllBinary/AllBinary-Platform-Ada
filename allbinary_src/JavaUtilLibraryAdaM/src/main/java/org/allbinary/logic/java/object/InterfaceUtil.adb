@@ -66,7 +66,7 @@ package body org.allbinary.logic.java.anyType.InterfaceUtil_Package is
    end getClass;
 
    function isImplemented (clazz : Ada.Tags.Tag; anyType_Param : access Java_Object'Class) return Boolean is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
       classes : Ada_Tags_Tag_Array_Access;
       index : Integer;
    begin
@@ -80,7 +80,7 @@ package body org.allbinary.logic.java.anyType.InterfaceUtil_Package is
    end isImplemented;
 
    function isImplemented (className : Unbounded_String; anyType_Param : access Java_Object'Class) return Boolean is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
       classes : Ada_Tags_Tag_Array_Access;
       index : Integer;
    begin
@@ -94,7 +94,7 @@ package body org.allbinary.logic.java.anyType.InterfaceUtil_Package is
    end isImplemented;
 
    function isImplementedView (clazz : Ada.Tags.Tag; anyType_Param : access Java_Object'Class) return Unbounded_String is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
       stringBuffer : StringMaker_Access;
       classes : Ada_Tags_Tag_Array_Access;
       index : Integer;

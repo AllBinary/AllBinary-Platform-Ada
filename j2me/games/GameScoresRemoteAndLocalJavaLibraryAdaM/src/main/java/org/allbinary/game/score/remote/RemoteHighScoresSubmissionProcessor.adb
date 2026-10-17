@@ -37,10 +37,10 @@ package body org.allbinary.game.score.remote.RemoteHighScoresSubmissionProcessor
       return This;
    end Create;
 
-   procedure process (This : in out RemoteHighScoresSubmissionProcessor; remoteHighScores_Param : access RemoteHighScores'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; highScore_Param : access HighScore'Class) is
-      remoteHighScores : RemoteHighScores_Access := RemoteHighScores_Access (remoteHighScores_Param);
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      highScore : HighScore_Access := HighScore_Access (highScore_Param);
+   procedure process (This : in out RemoteHighScoresSubmissionProcessor; remoteHighScores_Param : access RemoteHighScores_Package.RemoteHighScores'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; highScore_Param : access HighScore_Package.HighScore'Class) is
+      remoteHighScores : constant RemoteHighScores_Access := RemoteHighScores_Access (remoteHighScores_Param);
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      highScore : constant HighScore_Access := HighScore_Access (highScore_Param);
       gameInfoData : GameInfoData_Access;
       hashtable : ABHashtable_Access;
       displayInfoSingleton : DisplayInfoSingleton_Access;

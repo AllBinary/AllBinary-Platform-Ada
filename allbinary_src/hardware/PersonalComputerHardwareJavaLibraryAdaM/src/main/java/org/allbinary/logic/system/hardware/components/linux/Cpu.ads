@@ -73,7 +73,7 @@ package org.allbinary.logic.system.hardware.components.linux.Cpu_Package is
    procedure Initialize (This : in out Cpu'Class);
    function Create return Cpu_Access;
    procedure init (This : in out Cpu; filePath : Unbounded_String);
-   procedure init (This : in out Cpu; lineNumberReader_Param : access LineNumberReader'Class; filePath : Unbounded_String);
+   procedure init (This : in out Cpu; lineNumberReader_Param : access LineNumberReader_Package.LineNumberReader'Class; filePath : Unbounded_String);
    function getProcessor (This : in out Cpu) return Unbounded_String;
    function getVendorId (This : in out Cpu) return Unbounded_String;
    function getCpuFamily (This : in out Cpu) return Unbounded_String;
@@ -82,10 +82,10 @@ package org.allbinary.logic.system.hardware.components.linux.Cpu_Package is
    function getStepping (This : in out Cpu) return Unbounded_String;
    function getCpuSpeed (This : in out Cpu) return Unbounded_String;
    function getCacheSize (This : in out Cpu) return Unbounded_String;
-   function compareTo (This : in out Cpu; cpuInterface_Param : access CpuInterface'Class) return Boolean;
-   procedure compareTo (This : in out Cpu; cpuInterface_Param : access CpuInterface'Class);
-   function compareTo (This : in out Cpu; componentInterface_Param : access HardwareComponentInterface'Class) return Boolean;
-   procedure compareTo (This : in out Cpu; componentInterface_Param : access HardwareComponentInterface'Class);
+   function compareTo (This : in out Cpu; cpuInterface_Param : access CpuInterface_Package.CpuInterface'Class) return Boolean;
+   procedure compareTo (This : in out Cpu; cpuInterface_Param : access CpuInterface_Package.CpuInterface'Class);
+   function compareTo (This : in out Cpu; componentInterface_Param : access HardwareComponentInterface_Package.HardwareComponentInterface'Class) return Boolean;
+   procedure compareTo (This : in out Cpu; componentInterface_Param : access HardwareComponentInterface_Package.HardwareComponentInterface'Class);
    function toString (This : in out Cpu) return Unbounded_String;
 
 end org.allbinary.logic.system.hardware.components.linux.Cpu_Package;

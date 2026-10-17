@@ -40,10 +40,10 @@ package org.allbinary.business.installer.DynamicInitDb_Package is
 
    type DynamicInitDb is new InitDb with null record;
 
-   procedure Initialize (This : in out DynamicInitDb'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class);
-   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class) return DynamicInitDb_Access;
-   procedure Initialize (This : in out DynamicInitDb'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; databaseConnectionInfoInterface_Param : access DatabaseConnectionInfoInterface'Class);
-   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; databaseConnectionInfoInterface_Param : access DatabaseConnectionInfoInterface'Class) return DynamicInitDb_Access;
+   procedure Initialize (This : in out DynamicInitDb'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class);
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) return DynamicInitDb_Access;
+   procedure Initialize (This : in out DynamicInitDb'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; databaseConnectionInfoInterface_Param : access DatabaseConnectionInfoInterface_Package.DatabaseConnectionInfoInterface'Class);
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; databaseConnectionInfoInterface_Param : access DatabaseConnectionInfoInterface_Package.DatabaseConnectionInfoInterface'Class) return DynamicInitDb_Access;
 
 end org.allbinary.business.installer.DynamicInitDb_Package;
 

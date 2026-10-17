@@ -42,8 +42,8 @@ package body org.allbinary.input.motion.gesture.observer.MotionEventCircularPool
    end Create;
 
    --  throws Exception
-   function getInstance (This : in out MotionEventCircularPool; motionGestureInput_Param : access MotionGestureInput'Class) return MotionGestureEvent_Access is
-      motionGestureInput : MotionGestureInput_Access := MotionGestureInput_Access (motionGestureInput_Param);
+   function getInstance (This : in out MotionEventCircularPool; motionGestureInput_Param : access MotionGestureInput_Package.MotionGestureInput'Class) return MotionGestureEvent_Access is
+      motionGestureInput : constant MotionGestureInput_Access := MotionGestureInput_Access (motionGestureInput_Param);
    begin
         return MotionGestureEvent_Access (This.eventPool.getInstance ((motionGestureInput.getId) - (This.MIN)));
    end getInstance;
@@ -55,7 +55,7 @@ package body org.allbinary.input.motion.gesture.observer.MotionEventCircularPool
       null;
    end createPool;
 
-   procedure getInstance (This : in out MotionEventCircularPool; motionGestureInput_Param : access MotionGestureInput'Class) is
+   procedure getInstance (This : in out MotionEventCircularPool; motionGestureInput_Param : access MotionGestureInput_Package.MotionGestureInput'Class) is
       Java_Result : constant MotionGestureEvent_Access := MotionEventCircularPool'Class (This).getInstance (motionGestureInput_Param);
       pragma Unreferenced (Java_Result);
    begin

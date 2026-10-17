@@ -69,9 +69,9 @@ package org.allbinary.input.motion.button.TouchButton_Package is
       animationY : Integer;
    end record;
 
-   procedure Initialize (This : in out TouchButton'Class; touchButtonInput_Param : access TouchButtonInput'Class; animationInterface_Param : access AnimationInterface'Class; rawRectangle_Param : access Rectangle'Class; cellPosition_Param : access CellPosition'Class; xBorder : Integer; yBorder : Integer);
-   function Create (touchButtonInput_Param : access TouchButtonInput'Class; animationInterface_Param : access AnimationInterface'Class; rawRectangle_Param : access Rectangle'Class; cellPosition_Param : access CellPosition'Class; xBorder : Integer; yBorder : Integer) return TouchButton_Access;
-   procedure paint (This : in out TouchButton; graphics_Param : access Graphics'Class);
+   procedure Initialize (This : in out TouchButton'Class; touchButtonInput_Param : access TouchButtonInput_Package.TouchButtonInput'Class; animationInterface_Param : access AnimationInterface_Package.AnimationInterface'Class; rawRectangle_Param : access Rectangle_Package.Rectangle'Class; cellPosition_Param : access CellPosition_Package.CellPosition'Class; xBorder : Integer; yBorder : Integer);
+   function Create (touchButtonInput_Param : access TouchButtonInput_Package.TouchButtonInput'Class; animationInterface_Param : access AnimationInterface_Package.AnimationInterface'Class; rawRectangle_Param : access Rectangle_Package.Rectangle'Class; cellPosition_Param : access CellPosition_Package.CellPosition'Class; xBorder : Integer; yBorder : Integer) return TouchButton_Access;
+   procedure paint (This : in out TouchButton; graphics_Param : access Graphics_Package.Graphics'Class);
    procedure updateRectangle (This : in out TouchButton);
    function getCellPositionP (This : in out TouchButton) return CellPosition_Access;
    function getRectangleP (This : in out TouchButton) return Rectangle_Access;

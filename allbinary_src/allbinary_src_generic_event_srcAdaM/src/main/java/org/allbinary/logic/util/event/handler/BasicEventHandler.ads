@@ -58,12 +58,12 @@ package org.allbinary.logic.util.event.handler.BasicEventHandler_Package is
    function Create return BasicEventHandler_Access;
    function toString (This : in out BasicEventHandler) return Unbounded_String;
    procedure removeAllListeners (This : in out BasicEventHandler);
-   procedure addListenerSingleThreaded (This : in out BasicEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class);
-   procedure addListenerInterface (This : in out BasicEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class);
-   procedure removeListenerSingleThreaded (This : in out BasicEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class);
-   procedure removeListener (This : in out BasicEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class);
-   procedure fireEvent (This : in out BasicEventHandler; eventObject_Param : access AllBinaryEventObject'Class);
-   procedure process (This : in out BasicEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class);
+   procedure addListenerSingleThreaded (This : in out BasicEventHandler; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class);
+   procedure addListenerInterface (This : in out BasicEventHandler; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class);
+   procedure removeListenerSingleThreaded (This : in out BasicEventHandler; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class);
+   procedure removeListener (This : in out BasicEventHandler; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class);
+   procedure fireEvent (This : in out BasicEventHandler; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class);
+   procedure process (This : in out BasicEventHandler; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class);
    function getEventListenerInterfaceListP (This : in out BasicEventHandler) return BasicArrayList_Access;
 
 end org.allbinary.logic.util.event.handler.BasicEventHandler_Package;

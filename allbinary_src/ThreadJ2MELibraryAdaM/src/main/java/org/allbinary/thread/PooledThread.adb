@@ -26,8 +26,8 @@ package body org.allbinary.thread.PooledThread_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PooledThread'Class; threadPool_Param : access ThreadPool'Class) is
-      threadPool : ThreadPool_Access := ThreadPool_Access (threadPool_Param);
+   procedure Initialize (This : in out PooledThread'Class; threadPool_Param : access ThreadPool_Package.ThreadPool'Class) is
+      threadPool : constant ThreadPool_Access := ThreadPool_Access (threadPool_Param);
    begin
         Thread_Package.Initialize (This, threadPool.createName);
         Initialize_Fields (This);
@@ -35,7 +35,7 @@ package body org.allbinary.thread.PooledThread_Package is
         This.threadPool := threadPool;
    end Initialize;
 
-   function Create (threadPool_Param : access ThreadPool'Class) return PooledThread_Access is
+   function Create (threadPool_Param : access ThreadPool_Package.ThreadPool'Class) return PooledThread_Access is
       This : constant PooledThread_Access := new PooledThread;
    begin
       PooledThread_Package.Initialize (This.all, threadPool_Param);

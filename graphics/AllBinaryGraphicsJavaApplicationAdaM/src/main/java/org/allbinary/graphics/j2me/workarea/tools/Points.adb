@@ -45,8 +45,8 @@ package body org.allbinary.graphics.j2me.workarea.tools.Points_Package is
         return This.pointVector;
    end getPoints;
 
-   procedure addPoints (This : in out Points; vector_Param : access BasicArrayList'Class) is
-      vector : BasicArrayList_Access := BasicArrayList_Access (vector_Param);
+   procedure addPoints (This : in out Points; vector_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      vector : constant BasicArrayList_Access := BasicArrayList_Access (vector_Param);
    begin
         This.pointVector.addAll2 (vector);
    end addPoints;

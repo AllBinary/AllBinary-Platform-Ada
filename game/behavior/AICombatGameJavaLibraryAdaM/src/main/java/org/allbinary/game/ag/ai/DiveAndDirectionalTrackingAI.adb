@@ -37,11 +37,11 @@ package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out DiveAndDirectionalTrackingAI'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; artificialIntelligenceInterface_Param : access ArtificialIntelligenceInterface'Class; gameInput_Param : access GameInput'Class; visitor_Param : access Visitor'Class) is
-      ownerLayerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
-      artificialIntelligenceInterface : ArtificialIntelligenceInterface_Access := ArtificialIntelligenceInterface_Access (artificialIntelligenceInterface_Param);
-      gameInput : GameInput_Access := GameInput_Access (gameInput_Param);
-      visitor : Visitor_Access := Visitor_Access (visitor_Param);
+   procedure Initialize (This : in out DiveAndDirectionalTrackingAI'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; artificialIntelligenceInterface_Param : access ArtificialIntelligenceInterface_Package.ArtificialIntelligenceInterface'Class; gameInput_Param : access GameInput_Package.GameInput'Class; visitor_Param : access Visitor_Package.Visitor'Class) is
+      ownerLayerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (ownerLayerInterface_Param);
+      artificialIntelligenceInterface : constant ArtificialIntelligenceInterface_Access := ArtificialIntelligenceInterface_Access (artificialIntelligenceInterface_Param);
+      gameInput : constant GameInput_Access := GameInput_Access (gameInput_Param);
+      visitor : constant Visitor_Access := Visitor_Access (visitor_Param);
       directionalCompositeInterface : DirectionalCompositeInterface_Access;
       velocityInterfaceCompositeInterface : VelocityInterfaceCompositeInterface_Access;
    begin
@@ -57,7 +57,7 @@ package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package is
         This.init;
    end Initialize;
 
-   function Create (ownerLayerInterface_Param : access AllBinaryLayer'Class; artificialIntelligenceInterface_Param : access ArtificialIntelligenceInterface'Class; gameInput_Param : access GameInput'Class; visitor_Param : access Visitor'Class) return DiveAndDirectionalTrackingAI_Access is
+   function Create (ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; artificialIntelligenceInterface_Param : access ArtificialIntelligenceInterface_Package.ArtificialIntelligenceInterface'Class; gameInput_Param : access GameInput_Package.GameInput'Class; visitor_Param : access Visitor_Package.Visitor'Class) return DiveAndDirectionalTrackingAI_Access is
       This : constant DiveAndDirectionalTrackingAI_Access := new DiveAndDirectionalTrackingAI;
    begin
       DiveAndDirectionalTrackingAI_Package.Initialize (This.all, ownerLayerInterface_Param, artificialIntelligenceInterface_Param, gameInput_Param, visitor_Param);
@@ -65,8 +65,8 @@ package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package is
    end Create;
 
    --  throws Exception
-   procedure processAI (This : in out DiveAndDirectionalTrackingAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class) is
-      allBinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
+   procedure processAI (This : in out DiveAndDirectionalTrackingAI; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class) is
+      allBinaryLayerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
    begin
         if This.isBeyondTarget then
             This.init;
@@ -89,8 +89,8 @@ package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package is
    end init;
 
    --  throws Exception
-   procedure target (This : in out DiveAndDirectionalTrackingAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class) is
-      allBinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
+   procedure target (This : in out DiveAndDirectionalTrackingAI; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class) is
+      allBinaryLayerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
       lastTrackingEvent : TrackingEvent_Access;
       layerInterface : AllBinaryLayer_Access;
       ownerLayerInterface : AllBinaryLayer_Access;
@@ -266,20 +266,20 @@ package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package is
         end if;
    end isBeyondTarget;
 
-   procedure onEvent (This : in out DiveAndDirectionalTrackingAI; eventObject_Param : access AllBinaryEventObject'Class) is
-      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+   procedure onEvent (This : in out DiveAndDirectionalTrackingAI; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
+      eventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
    begin
         ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, DiveAndDirectionalTrackingAI_Access'(This'Unchecked_Access));
    end onEvent;
 
-   procedure onMovement (This : in out DiveAndDirectionalTrackingAI; trackingEvent_Param : access TrackingEvent'Class) is
-      trackingEvent : TrackingEvent_Access := TrackingEvent_Access (trackingEvent_Param);
+   procedure onMovement (This : in out DiveAndDirectionalTrackingAI; trackingEvent_Param : access TrackingEvent_Package.TrackingEvent'Class) is
+      trackingEvent : constant TrackingEvent_Access := TrackingEvent_Access (trackingEvent_Param);
    begin
         This.list.add (trackingEvent);
    end onMovement;
 
-   procedure onDestroyed (This : in out DiveAndDirectionalTrackingAI; destroyedEvent_Param : access DestroyedEvent'Class) is
-      destroyedEvent : DestroyedEvent_Access := DestroyedEvent_Access (destroyedEvent_Param);
+   procedure onDestroyed (This : in out DiveAndDirectionalTrackingAI; destroyedEvent_Param : access DestroyedEvent_Package.DestroyedEvent'Class) is
+      destroyedEvent : constant DestroyedEvent_Access := DestroyedEvent_Access (destroyedEvent_Param);
    begin
         if (This.getOwnerLayerInterface) = (destroyedEvent.getLayerInterface) then
             TrackingEventHandler_Package.getInstance.removeListener (DiveAndDirectionalTrackingAI_Access'(This'Unchecked_Access));
@@ -287,8 +287,8 @@ package body org.allbinary.game.ag.ai.DiveAndDirectionalTrackingAI_Package is
         end if;
    end onDestroyed;
 
-   procedure setLastDirection (This : in out DiveAndDirectionalTrackingAI; lastDirection_Param : access Direction'Class) is
-      lastDirection : Direction_Access := Direction_Access (lastDirection_Param);
+   procedure setLastDirection (This : in out DiveAndDirectionalTrackingAI; lastDirection_Param : access Direction_Package.Direction'Class) is
+      lastDirection : constant Direction_Access := Direction_Access (lastDirection_Param);
       value : Integer;
    begin
         This.lastDirection := lastDirection;

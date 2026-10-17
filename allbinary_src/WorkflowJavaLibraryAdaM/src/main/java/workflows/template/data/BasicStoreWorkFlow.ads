@@ -38,8 +38,8 @@ package workflows.template.data.BasicStoreWorkFlow_Package is
 
    type BasicStoreWorkFlow is new BasicWorkFlow and StoreWorkFlowInterface with null record;
 
-   procedure Initialize (This : in out BasicStoreWorkFlow'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
-   function Create (propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return BasicStoreWorkFlow_Access;
+   procedure Initialize (This : in out BasicStoreWorkFlow'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class);
+   function Create (propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return BasicStoreWorkFlow_Access;
    function getStoreName (This : in out BasicStoreWorkFlow) return Unbounded_String;
 
 end workflows.template.data.BasicStoreWorkFlow_Package;

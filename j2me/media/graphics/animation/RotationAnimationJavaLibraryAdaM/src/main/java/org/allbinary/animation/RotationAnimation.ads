@@ -53,8 +53,8 @@ package org.allbinary.animation.RotationAnimation_Package is
       circularIndexUtil : CircularIndexUtil_Access;
    end record;
 
-   procedure Initialize (This : in out RotationAnimation'Class; angleInfo_Param : access AngleInfo'Class; circularIndexUtil_Param : access CircularIndexUtil'Class; animationBehavior_Param : access AnimationBehavior'Class);
-   function Create (angleInfo_Param : access AngleInfo'Class; circularIndexUtil_Param : access CircularIndexUtil'Class; animationBehavior_Param : access AnimationBehavior'Class) return RotationAnimation_Access;
+   procedure Initialize (This : in out RotationAnimation'Class; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; circularIndexUtil_Param : access CircularIndexUtil_Package.CircularIndexUtil'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class);
+   function Create (angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; circularIndexUtil_Param : access CircularIndexUtil_Package.CircularIndexUtil'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return RotationAnimation_Access;
    procedure nextRotationX (This : in out RotationAnimation);
    procedure previousRotationX (This : in out RotationAnimation);
    procedure nextRotation (This : in out RotationAnimation);
@@ -62,9 +62,9 @@ package org.allbinary.animation.RotationAnimation_Package is
    procedure nextRotationZ (This : in out RotationAnimation);
    procedure previousRotationZ (This : in out RotationAnimation);
    procedure setFrame (This : in out RotationAnimation; index : Integer);
-   procedure setFrameByDirection (This : in out RotationAnimation; direction_Param : access Direction'Class);
-   procedure setFrameToAngle (This : in out RotationAnimation; angle_Param : access Angle'Class);
-   procedure adjustFrameToAngle (This : in out RotationAnimation; angle_Param : access Angle'Class);
+   procedure setFrameByDirection (This : in out RotationAnimation; direction_Param : access Direction_Package.Direction'Class);
+   procedure setFrameToAngle (This : in out RotationAnimation; angle_Param : access Angle_Package.Angle'Class);
+   procedure adjustFrameToAngle (This : in out RotationAnimation; angle_Param : access Angle_Package.Angle'Class);
    procedure adjustFrame (This : in out RotationAnimation; angle : Short_Integer);
    function getFrame (This : in out RotationAnimation) return Integer;
    function getSize (This : in out RotationAnimation) return Integer;

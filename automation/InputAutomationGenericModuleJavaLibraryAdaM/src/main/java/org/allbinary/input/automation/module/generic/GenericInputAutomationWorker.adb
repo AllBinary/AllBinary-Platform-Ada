@@ -26,11 +26,11 @@ package body org.allbinary.input.automation.module.generic_Id.GenericInputAutoma
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GenericInputAutomationWorker'Class; inputAutomationActionInterface_Param : access InputAutomationActionInterface'Class; genericProfile_Param : access GenericProfile'Class; motionRectangleConstraintsInterface_Param : access MotionRectangleConstraintsInterface'Class; imageComparatorConstraintsInterface_Param : access ImageComparatorConstraintsInterface'Class) is
-      inputAutomationActionInterface : InputAutomationActionInterface_Access := InputAutomationActionInterface_Access (inputAutomationActionInterface_Param);
-      genericProfile : GenericProfile_Access := GenericProfile_Access (genericProfile_Param);
-      motionRectangleConstraintsInterface : MotionRectangleConstraintsInterface_Access := MotionRectangleConstraintsInterface_Access (motionRectangleConstraintsInterface_Param);
-      imageComparatorConstraintsInterface : ImageComparatorConstraintsInterface_Access := ImageComparatorConstraintsInterface_Access (imageComparatorConstraintsInterface_Param);
+   procedure Initialize (This : in out GenericInputAutomationWorker'Class; inputAutomationActionInterface_Param : access InputAutomationActionInterface_Package.InputAutomationActionInterface'Class; genericProfile_Param : access GenericProfile_Package.GenericProfile'Class; motionRectangleConstraintsInterface_Param : access MotionRectangleConstraintsInterface_Package.MotionRectangleConstraintsInterface'Class; imageComparatorConstraintsInterface_Param : access ImageComparatorConstraintsInterface_Package.ImageComparatorConstraintsInterface'Class) is
+      inputAutomationActionInterface : constant InputAutomationActionInterface_Access := InputAutomationActionInterface_Access (inputAutomationActionInterface_Param);
+      genericProfile : constant GenericProfile_Access := GenericProfile_Access (genericProfile_Param);
+      motionRectangleConstraintsInterface : constant MotionRectangleConstraintsInterface_Access := MotionRectangleConstraintsInterface_Access (motionRectangleConstraintsInterface_Param);
+      imageComparatorConstraintsInterface : constant ImageComparatorConstraintsInterface_Access := ImageComparatorConstraintsInterface_Access (imageComparatorConstraintsInterface_Param);
       vector : BasicArrayList_Access;
       size : Integer;
       genericProfileDataWorkerType : GenericProfileDataWorkerType_Access;
@@ -57,7 +57,7 @@ package body org.allbinary.input.automation.module.generic_Id.GenericInputAutoma
         end loop;
    end Initialize;
 
-   function Create (inputAutomationActionInterface_Param : access InputAutomationActionInterface'Class; genericProfile_Param : access GenericProfile'Class; motionRectangleConstraintsInterface_Param : access MotionRectangleConstraintsInterface'Class; imageComparatorConstraintsInterface_Param : access ImageComparatorConstraintsInterface'Class) return GenericInputAutomationWorker_Access is
+   function Create (inputAutomationActionInterface_Param : access InputAutomationActionInterface_Package.InputAutomationActionInterface'Class; genericProfile_Param : access GenericProfile_Package.GenericProfile'Class; motionRectangleConstraintsInterface_Param : access MotionRectangleConstraintsInterface_Package.MotionRectangleConstraintsInterface'Class; imageComparatorConstraintsInterface_Param : access ImageComparatorConstraintsInterface_Package.ImageComparatorConstraintsInterface'Class) return GenericInputAutomationWorker_Access is
       This : constant GenericInputAutomationWorker_Access := new GenericInputAutomationWorker;
    begin
       GenericInputAutomationWorker_Package.Initialize (This.all, inputAutomationActionInterface_Param, genericProfile_Param, motionRectangleConstraintsInterface_Param, imageComparatorConstraintsInterface_Param);
@@ -120,8 +120,8 @@ package body org.allbinary.input.automation.module.generic_Id.GenericInputAutoma
         return This.genericProfile;
    end getGenericProfile;
 
-   procedure setGenericProfile (This : in out GenericInputAutomationWorker; genericProfile_Param : access GenericProfile'Class) is
-      genericProfile : GenericProfile_Access := GenericProfile_Access (genericProfile_Param);
+   procedure setGenericProfile (This : in out GenericInputAutomationWorker; genericProfile_Param : access GenericProfile_Package.GenericProfile'Class) is
+      genericProfile : constant GenericProfile_Access := GenericProfile_Access (genericProfile_Param);
    begin
         This.genericProfile := genericProfile;
    end setGenericProfile;

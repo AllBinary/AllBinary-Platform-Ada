@@ -36,8 +36,8 @@ package org.allbinary.canvas.RunnableCanvasRefreshHelper_Package is
       runnableCanvas : MyCanvas_Access;
    end record;
 
-   procedure Initialize (This : in out RunnableCanvasRefreshHelper'Class; runnableCanvas_Param : access MyCanvas'Class);
-   function Create (runnableCanvas_Param : access MyCanvas'Class) return RunnableCanvasRefreshHelper_Access;
+   procedure Initialize (This : in out RunnableCanvasRefreshHelper'Class; runnableCanvas_Param : access MyCanvas_Package.MyCanvas'Class);
+   function Create (runnableCanvas_Param : access MyCanvas_Package.MyCanvas'Class) return RunnableCanvasRefreshHelper_Access;
    procedure process (This : in out RunnableCanvasRefreshHelper);
 
 end org.allbinary.canvas.RunnableCanvasRefreshHelper_Package;

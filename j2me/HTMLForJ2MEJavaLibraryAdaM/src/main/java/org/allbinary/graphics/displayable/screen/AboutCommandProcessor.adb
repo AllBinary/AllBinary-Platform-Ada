@@ -38,10 +38,10 @@ package body org.allbinary.graphics.displayable.screen.AboutCommandProcessor_Pac
         return AboutCommandProcessor_Package.instance;
    end getInstance;
 
-   procedure process (This : in out AboutCommandProcessor; midletCommandListener_Param : access CommandListener'Class; command_Param : access Command'Class; canvas_Param : access Canvas'Class) is
-      midletCommandListener : CommandListener_Access := CommandListener_Access (midletCommandListener_Param);
-      command : Command_Access := Command_Access (command_Param);
-      canvas : Canvas_Access := Canvas_Access (canvas_Param);
+   procedure process (This : in out AboutCommandProcessor; midletCommandListener_Param : access CommandListener_Package.CommandListener'Class; command_Param : access Command_Package.Command'Class; canvas_Param : access Canvas_Package.Canvas'Class) is
+      midletCommandListener : constant CommandListener_Access := CommandListener_Access (midletCommandListener_Param);
+      command : constant Command_Access := Command_Access (command_Param);
+      canvas : constant Canvas_Access := Canvas_Access (canvas_Param);
    begin
         midletCommandListener.commandAction (command, canvas);
    end process;

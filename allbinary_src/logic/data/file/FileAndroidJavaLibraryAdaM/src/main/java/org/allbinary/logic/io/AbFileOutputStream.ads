@@ -42,12 +42,12 @@ package org.allbinary.logic.io.AbFileOutputStream_Package is
       fileOutputStream : FileOutputStream_Access;
    end record;
 
-   procedure Initialize (This : in out AbFileOutputStream'Class; fileOutputStream_Param : access FileOutputStream'Class);
-   function Create (fileOutputStream_Param : access FileOutputStream'Class) return AbFileOutputStream_Access;
-   function createFromAbFile (file_Param : access AbFile'Class) return AbFileOutputStream_Access;
-   procedure createFromAbFile (file_Param : access AbFile'Class);
-   function createFromAbFileAppend (file_Param : access AbFile'Class; append : Boolean) return AbFileOutputStream_Access;
-   procedure createFromAbFileAppend (file_Param : access AbFile'Class; append : Boolean);
+   procedure Initialize (This : in out AbFileOutputStream'Class; fileOutputStream_Param : access FileOutputStream_Package.FileOutputStream'Class);
+   function Create (fileOutputStream_Param : access FileOutputStream_Package.FileOutputStream'Class) return AbFileOutputStream_Access;
+   function createFromAbFile (file_Param : access AbFile_Package.AbFile'Class) return AbFileOutputStream_Access;
+   procedure createFromAbFile (file_Param : access AbFile_Package.AbFile'Class);
+   function createFromAbFileAppend (file_Param : access AbFile_Package.AbFile'Class; append : Boolean) return AbFileOutputStream_Access;
+   procedure createFromAbFileAppend (file_Param : access AbFile_Package.AbFile'Class; append : Boolean);
    function createFromFilePath (name : Unbounded_String) return AbFileOutputStream_Access;
    procedure createFromFilePath (name : Unbounded_String);
    function createFromFilePathAppend (name : Unbounded_String; append : Boolean) return AbFileOutputStream_Access;

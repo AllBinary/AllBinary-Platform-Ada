@@ -23,14 +23,14 @@ package body org.allbinary.logic.communication.smtp.event.modules.event.user.Use
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out UserEmailEventListenerModule'Class; userInterface_Param : access UserInterface'Class) is
-      userInterface : UserInterface_Access := UserInterface_Access (userInterface_Param);
+   procedure Initialize (This : in out UserEmailEventListenerModule'Class; userInterface_Param : access UserInterface_Package.UserInterface'Class) is
+      userInterface : constant UserInterface_Access := UserInterface_Access (userInterface_Param);
    begin
       Initialize_Fields (This);
         This.userInterface := userInterface;
    end Initialize;
 
-   function Create (userInterface_Param : access UserInterface'Class) return UserEmailEventListenerModule_Access is
+   function Create (userInterface_Param : access UserInterface_Package.UserInterface'Class) return UserEmailEventListenerModule_Access is
       This : constant UserEmailEventListenerModule_Access := new UserEmailEventListenerModule;
    begin
       UserEmailEventListenerModule_Package.Initialize (This.all, userInterface_Param);
@@ -38,8 +38,8 @@ package body org.allbinary.logic.communication.smtp.event.modules.event.user.Use
    end Create;
 
    --  throws Exception
-   procedure onEmailSendFailure (This : in out UserEmailEventListenerModule; emailEvent_Param : access EmailEvent'Class) is
-      emailEvent : EmailEvent_Access := EmailEvent_Access (emailEvent_Param);
+   procedure onEmailSendFailure (This : in out UserEmailEventListenerModule; emailEvent_Param : access EmailEvent_Package.EmailEvent'Class) is
+      emailEvent : constant EmailEvent_Access := EmailEvent_Access (emailEvent_Param);
       to : Unbounded_String;
       email : BasicEmail_Access;
    begin
@@ -49,8 +49,8 @@ package body org.allbinary.logic.communication.smtp.event.modules.event.user.Use
    end onEmailSendFailure;
 
    --  throws Exception
-   procedure onEmailSendRequest (This : in out UserEmailEventListenerModule; emailEvent_Param : access EmailEvent'Class) is
-      emailEvent : EmailEvent_Access := EmailEvent_Access (emailEvent_Param);
+   procedure onEmailSendRequest (This : in out UserEmailEventListenerModule; emailEvent_Param : access EmailEvent_Package.EmailEvent'Class) is
+      emailEvent : constant EmailEvent_Access := EmailEvent_Access (emailEvent_Param);
       to : Unbounded_String;
       email : BasicEmail_Access;
    begin

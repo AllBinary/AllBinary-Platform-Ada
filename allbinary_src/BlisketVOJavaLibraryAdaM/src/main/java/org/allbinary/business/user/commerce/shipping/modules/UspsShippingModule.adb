@@ -36,8 +36,8 @@ package body org.allbinary.business.user.commerce.shipping.modules.UspsShippingM
       return This;
    end Create;
 
-   function getCost (This : in out UspsShippingModule; order_Param : access OrderInterface'Class) return Money_Access is
-      order : OrderInterface_Access := OrderInterface_Access (order_Param);
+   function getCost (This : in out UspsShippingModule; order_Param : access OrderInterface_Package.OrderInterface'Class) return Money_Access is
+      order : constant OrderInterface_Access := OrderInterface_Access (order_Param);
    begin
         return Money_Package.Create;
    end getCost;
@@ -52,7 +52,7 @@ package body org.allbinary.business.user.commerce.shipping.modules.UspsShippingM
         return This.name;
    end getName;
 
-   procedure getCost (This : in out UspsShippingModule; order_Param : access OrderInterface'Class) is
+   procedure getCost (This : in out UspsShippingModule; order_Param : access OrderInterface_Package.OrderInterface'Class) is
       Java_Result : constant Money_Access := UspsShippingModule'Class (This).getCost (order_Param);
       pragma Unreferenced (Java_Result);
    begin

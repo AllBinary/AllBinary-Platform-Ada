@@ -39,8 +39,8 @@ package body org.allbinary.emulator.swt.SWTProcessor_Package is
         return SWTProcessor_Package.instance;
    end getInstance;
 
-   procedure process (This : in out SWTProcessor; display_Param : access Display'Class) is
-      display : Display_Access := Display_Access (display_Param);
+   procedure process (This : in out SWTProcessor; display_Param : access Display_Package.Display'Class) is
+      display : constant Display_Access := Display_Access (display_Param);
    begin
         display.sleep;
    end process;

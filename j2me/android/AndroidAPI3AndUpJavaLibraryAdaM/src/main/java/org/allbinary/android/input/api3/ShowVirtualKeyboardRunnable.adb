@@ -23,14 +23,14 @@ package body org.allbinary.android.input.api3.ShowVirtualKeyboardRunnable_Packag
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ShowVirtualKeyboardRunnable'Class; activity_Param : access Activity'Class) is
-      activity : Activity_Access := Activity_Access (activity_Param);
+   procedure Initialize (This : in out ShowVirtualKeyboardRunnable'Class; activity_Param : access Activity_Package.Activity'Class) is
+      activity : constant Activity_Access := Activity_Access (activity_Param);
    begin
       Initialize_Fields (This);
         This.activity := activity;
    end Initialize;
 
-   function Create (activity_Param : access Activity'Class) return ShowVirtualKeyboardRunnable_Access is
+   function Create (activity_Param : access Activity_Package.Activity'Class) return ShowVirtualKeyboardRunnable_Access is
       This : constant ShowVirtualKeyboardRunnable_Access := new ShowVirtualKeyboardRunnable;
    begin
       ShowVirtualKeyboardRunnable_Package.Initialize (This.all, activity_Param);

@@ -81,8 +81,8 @@ package body org.allbinary.game.displayable.canvas.NullGameCanvasRunnable_Packag
         return False;
    end isGameOver;
 
-   procedure initCommands (This : in out NullGameCanvasRunnable; cmdListener_Param : access CommandListener'Class) is
-      cmdListener : CommandListener_Access := CommandListener_Access (cmdListener_Param);
+   procedure initCommands (This : in out NullGameCanvasRunnable; cmdListener_Param : access CommandListener_Package.CommandListener'Class) is
+      cmdListener : constant CommandListener_Access := CommandListener_Access (cmdListener_Param);
    begin
         null;
    end initCommands;
@@ -100,8 +100,8 @@ package body org.allbinary.game.displayable.canvas.NullGameCanvasRunnable_Packag
    end getLoadStateHashtable;
 
    --  throws Exception
-   procedure setLoadStateHashtable (This : in out NullGameCanvasRunnable; hashtable_Param : access ABHashtable'Class) is
-      hashtable : ABHashtable_Access := ABHashtable_Access (hashtable_Param);
+   procedure setLoadStateHashtable (This : in out NullGameCanvasRunnable; hashtable_Param : access ABHashtable_Package.ABHashtable'Class) is
+      hashtable : constant ABHashtable_Access := ABHashtable_Access (hashtable_Param);
    begin
         null;
    end setLoadStateHashtable;
@@ -112,8 +112,8 @@ package body org.allbinary.game.displayable.canvas.NullGameCanvasRunnable_Packag
    end getType;
 
    --  throws Exception
-   procedure setGameState (This : in out NullGameCanvasRunnable; gameState_Param : access GameState'Class) is
-      gameState : GameState_Access := GameState_Access (gameState_Param);
+   procedure setGameState (This : in out NullGameCanvasRunnable; gameState_Param : access GameState_Package.GameState'Class) is
+      gameState : constant GameState_Access := GameState_Access (gameState_Param);
    begin
         null;
    end setGameState;
@@ -123,20 +123,20 @@ package body org.allbinary.game.displayable.canvas.NullGameCanvasRunnable_Packag
         return This.gameStateFactory.NO_GAME_STATE;
    end getGameState;
 
-   procedure itemStateChanged (This : in out NullGameCanvasRunnable; item_Param : access Item'Class) is
-      item : Item_Access := Item_Access (item_Param);
+   procedure itemStateChanged (This : in out NullGameCanvasRunnable; item_Param : access Item_Package.Item'Class) is
+      item : constant Item_Access := Item_Access (item_Param);
    begin
         null;
    end itemStateChanged;
 
-   procedure paint (This : in out NullGameCanvasRunnable; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out NullGameCanvasRunnable; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paint;
 
-   procedure paintThreed (This : in out NullGameCanvasRunnable; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintThreed (This : in out NullGameCanvasRunnable; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paintThreed;
@@ -152,8 +152,8 @@ package body org.allbinary.game.displayable.canvas.NullGameCanvasRunnable_Packag
    end setRunning;
 
    --  throws Exception
-   procedure setThread (This : in out NullGameCanvasRunnable; thread_Param : access Thread'Class) is
-      thread : Thread_Access := Thread_Access (thread_Param);
+   procedure setThread (This : in out NullGameCanvasRunnable; thread_Param : access Thread_Package.Thread'Class) is
+      thread : constant Thread_Access := Thread_Access (thread_Param);
    begin
         null;
    end setThread;

@@ -16,30 +16,30 @@ package body org.allbinary.layer.LayerManager_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out LayerManager'Class; layerManagerLogging_Param : access LayerManagerLoggingBase'Class) is
-      layerManagerLogging : LayerManagerLoggingBase_Access := LayerManagerLoggingBase_Access (layerManagerLogging_Param);
+   procedure Initialize (This : in out LayerManager'Class; layerManagerLogging_Param : access LayerManagerLoggingBase_Package.LayerManagerLoggingBase'Class) is
+      layerManagerLogging : constant LayerManagerLoggingBase_Access := LayerManagerLoggingBase_Access (layerManagerLogging_Param);
    begin
       Initialize_Fields (This);
         This.logUtil.putF (This.commonStrings.START, LayerManager_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
         This.layerManagerLogging := layerManagerLogging;
    end Initialize;
 
-   function Create (layerManagerLogging_Param : access LayerManagerLoggingBase'Class) return LayerManager_Access is
+   function Create (layerManagerLogging_Param : access LayerManagerLoggingBase_Package.LayerManagerLoggingBase'Class) return LayerManager_Access is
       This : constant LayerManager_Access := new LayerManager;
    begin
       LayerManager_Package.Initialize (This.all, layerManagerLogging_Param);
       return This;
    end Create;
 
-   function contains (This : in out LayerManager; layerInterface_Param : access AllBinaryLayer'Class) return Boolean is
-      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
+   function contains (This : in out LayerManager; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) return Boolean is
+      layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         return This.list.contains (layerInterface);
    end contains;
 
    --  throws Exception
-   procedure update (This : in out LayerManager; layerInterface_Param : access AllBinaryLayer'Class) is
-      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
+   procedure update (This : in out LayerManager; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
+      layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
       had : Boolean;
       nextLayerInterface : AllBinaryLayer_Access;
       size : Integer;
@@ -61,8 +61,8 @@ package body org.allbinary.layer.LayerManager_Package is
    end update;
 
    --  throws Exception
-   procedure insert (This : in out LayerManager; layerInterface_Param : access AllBinaryLayer'Class) is
-      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
+   procedure insert (This : in out LayerManager; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
+      layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
       nextLayerInterface : AllBinaryLayer_Access;
       size : Integer;
       index : Integer;
@@ -80,24 +80,24 @@ package body org.allbinary.layer.LayerManager_Package is
    end insert;
 
    --  throws Exception
-   procedure append (This : in out LayerManager; layerInterface_Param : access AllBinaryLayer'Class) is
-      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
+   procedure append (This : in out LayerManager; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
+      layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         This.layerManagerLogging.append (layerInterface);
         This.list.add (layerInterface);
    end append;
 
    --  throws Exception
-   procedure appendAt (This : in out LayerManager; layerInterface_Param : access AllBinaryLayer'Class; index : Integer) is
-      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
+   procedure appendAt (This : in out LayerManager; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; index : Integer) is
+      layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         This.layerManagerLogging.appendAt (layerInterface, index);
         This.list.addAt (index, layerInterface);
    end appendAt;
 
    --  throws Exception
-   procedure remove (This : in out LayerManager; layerInterface_Param : access AllBinaryLayer'Class) is
-      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
+   procedure remove (This : in out LayerManager; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
+      layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
       result : Boolean;
    begin
         begin  --  synchronized
@@ -128,8 +128,8 @@ package body org.allbinary.layer.LayerManager_Package is
         end;
    end cleanup;
 
-   procedure paint (This : in out LayerManager; g_Param : access Graphics'Class; x : Integer; y : Integer) is
-      g : Graphics_Access := Graphics_Access (g_Param);
+   procedure paint (This : in out LayerManager; g_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
+      g : constant Graphics_Access := Graphics_Access (g_Param);
       comp : Layer_Access;
       index : Integer;
    begin
@@ -145,7 +145,7 @@ package body org.allbinary.layer.LayerManager_Package is
         end;
    end paint;
 
-   procedure contains (This : in out LayerManager; layerInterface_Param : access AllBinaryLayer'Class) is
+   procedure contains (This : in out LayerManager; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
       Java_Result : constant Boolean := LayerManager'Class (This).contains (layerInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

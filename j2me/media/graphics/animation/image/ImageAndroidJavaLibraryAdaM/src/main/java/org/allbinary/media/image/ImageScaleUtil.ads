@@ -65,15 +65,15 @@ package org.allbinary.media.image.ImageScaleUtil_Package is
    procedure Initialize (This : in out ImageScaleUtil'Class);
    function Create return ImageScaleUtil_Access;
    function getInstance return ImageScaleUtil_Access;
-   function createImage2 (This : in out ImageScaleUtil; imageCache_Param : access ImageCache'Class; originalImage_Param : access Image'Class; scaleNominatorX : Float; scaleDenominatorX : Float; scaleNominatorY : Float; scaleDenominatorY : Float; cached : Boolean) return Image_Access;
-   procedure createImage2 (This : in out ImageScaleUtil; imageCache_Param : access ImageCache'Class; originalImage_Param : access Image'Class; scaleNominatorX : Float; scaleDenominatorX : Float; scaleNominatorY : Float; scaleDenominatorY : Float; cached : Boolean);
-   function createImage3 (This : in out ImageScaleUtil; imageCache_Param : access ImageCache'Class; originalImage_Param : access Image'Class; scaleNominatorX : Float; scaleDenominatorX : Float; scaleNominatorY : Float; scaleDenominatorY : Float; cached : Boolean; mutable : Boolean) return Image_Access;
-   procedure createImage3 (This : in out ImageScaleUtil; imageCache_Param : access ImageCache'Class; originalImage_Param : access Image'Class; scaleNominatorX : Float; scaleDenominatorX : Float; scaleNominatorY : Float; scaleDenominatorY : Float; cached : Boolean; mutable : Boolean);
-   function createImage (This : in out ImageScaleUtil; imageCache_Param : access ImageCache'Class; originalImage_Param : access Image'Class; scaleX : Float; scaleY : Float; cached : Boolean) return Image_Access;
-   procedure createImage (This : in out ImageScaleUtil; imageCache_Param : access ImageCache'Class; originalImage_Param : access Image'Class; scaleX : Float; scaleY : Float; cached : Boolean);
-   function getScaledImage (This : in out ImageScaleUtil; imageCache_Param : access ImageCache'Class; originalImage_Param : access Image'Class; scaleX : Float; scaleY : Float; width : Integer; height : Integer; cached : Boolean) return Image_Access;
-   procedure getScaledImage (This : in out ImageScaleUtil; imageCache_Param : access ImageCache'Class; originalImage_Param : access Image'Class; scaleX : Float; scaleY : Float; width : Integer; height : Integer; cached : Boolean);
-   procedure scale (This : in out ImageScaleUtil; image_Param : access Image'Class; matrix_Param : access Matrix'Class; scaleX : Float; scaleY : Float);
+   function createImage2 (This : in out ImageScaleUtil; imageCache_Param : access ImageCache_Package.ImageCache'Class; originalImage_Param : access Image_Package.Image'Class; scaleNominatorX : Float; scaleDenominatorX : Float; scaleNominatorY : Float; scaleDenominatorY : Float; cached : Boolean) return Image_Access;
+   procedure createImage2 (This : in out ImageScaleUtil; imageCache_Param : access ImageCache_Package.ImageCache'Class; originalImage_Param : access Image_Package.Image'Class; scaleNominatorX : Float; scaleDenominatorX : Float; scaleNominatorY : Float; scaleDenominatorY : Float; cached : Boolean);
+   function createImage3 (This : in out ImageScaleUtil; imageCache_Param : access ImageCache_Package.ImageCache'Class; originalImage_Param : access Image_Package.Image'Class; scaleNominatorX : Float; scaleDenominatorX : Float; scaleNominatorY : Float; scaleDenominatorY : Float; cached : Boolean; mutable : Boolean) return Image_Access;
+   procedure createImage3 (This : in out ImageScaleUtil; imageCache_Param : access ImageCache_Package.ImageCache'Class; originalImage_Param : access Image_Package.Image'Class; scaleNominatorX : Float; scaleDenominatorX : Float; scaleNominatorY : Float; scaleDenominatorY : Float; cached : Boolean; mutable : Boolean);
+   function createImage (This : in out ImageScaleUtil; imageCache_Param : access ImageCache_Package.ImageCache'Class; originalImage_Param : access Image_Package.Image'Class; scaleX : Float; scaleY : Float; cached : Boolean) return Image_Access;
+   procedure createImage (This : in out ImageScaleUtil; imageCache_Param : access ImageCache_Package.ImageCache'Class; originalImage_Param : access Image_Package.Image'Class; scaleX : Float; scaleY : Float; cached : Boolean);
+   function getScaledImage (This : in out ImageScaleUtil; imageCache_Param : access ImageCache_Package.ImageCache'Class; originalImage_Param : access Image_Package.Image'Class; scaleX : Float; scaleY : Float; width : Integer; height : Integer; cached : Boolean) return Image_Access;
+   procedure getScaledImage (This : in out ImageScaleUtil; imageCache_Param : access ImageCache_Package.ImageCache'Class; originalImage_Param : access Image_Package.Image'Class; scaleX : Float; scaleY : Float; width : Integer; height : Integer; cached : Boolean);
+   procedure scale (This : in out ImageScaleUtil; image_Param : access Image_Package.Image'Class; matrix_Param : access Matrix_Package.Matrix'Class; scaleX : Float; scaleY : Float);
 
 end org.allbinary.media.image.ImageScaleUtil_Package;
 

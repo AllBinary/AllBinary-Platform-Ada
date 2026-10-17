@@ -50,8 +50,8 @@ package body org.allbinary.media.image.ImageUnifierUtil_Package is
         return gd.getDefaultConfiguration;
    end getDefaultConfiguration;
 
-   function getImage (This : in out ImageUnifierUtil; bufferedImageArray : BufferedImage_Access_Array_Access; imageUnifierProperties_Param : access ImageUnifierProperties'Class) return BufferedImage_Access is
-      imageUnifierProperties : ImageUnifierProperties_Access := ImageUnifierProperties_Access (imageUnifierProperties_Param);
+   function getImage (This : in out ImageUnifierUtil; bufferedImageArray : BufferedImage_Access_Array_Access; imageUnifierProperties_Param : access ImageUnifierProperties_Package.ImageUnifierProperties'Class) return BufferedImage_Access is
+      imageUnifierProperties : constant ImageUnifierProperties_Access := ImageUnifierProperties_Access (imageUnifierProperties_Param);
       newBufferedImage : BufferedImage_Access;
       commonLabels : CommonLabels_Access;
       g : Graphics2D_Access;
@@ -83,7 +83,7 @@ package body org.allbinary.media.image.ImageUnifierUtil_Package is
         return newBufferedImage;
    end getImage;
 
-   procedure getImage (This : in out ImageUnifierUtil; bufferedImageArray : BufferedImage_Access_Array_Access; imageUnifierProperties_Param : access ImageUnifierProperties'Class) is
+   procedure getImage (This : in out ImageUnifierUtil; bufferedImageArray : BufferedImage_Access_Array_Access; imageUnifierProperties_Param : access ImageUnifierProperties_Package.ImageUnifierProperties'Class) is
       Java_Result : constant BufferedImage_Access := ImageUnifierUtil'Class (This).getImage (bufferedImageArray, imageUnifierProperties_Param);
       pragma Unreferenced (Java_Result);
    begin

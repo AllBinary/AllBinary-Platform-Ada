@@ -21,13 +21,13 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryPathV
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out StoreThemeCategoryPathView'Class; categoryInterface_Param : access StoreThemeCategoryInterface'Class) is
-      categoryInterface : StoreThemeCategoryInterface_Access := StoreThemeCategoryInterface_Access (categoryInterface_Param);
+   procedure Initialize (This : in out StoreThemeCategoryPathView'Class; categoryInterface_Param : access StoreThemeCategoryInterface_Package.StoreThemeCategoryInterface'Class) is
+      categoryInterface : constant StoreThemeCategoryInterface_Access := StoreThemeCategoryInterface_Access (categoryInterface_Param);
    begin
         CategoryView_Package.Initialize (This, StoreThemeCategoryInterface_Access (categoryInterface));
    end Initialize;
 
-   function Create (categoryInterface_Param : access StoreThemeCategoryInterface'Class) return StoreThemeCategoryPathView_Access is
+   function Create (categoryInterface_Param : access StoreThemeCategoryInterface_Package.StoreThemeCategoryInterface'Class) return StoreThemeCategoryPathView_Access is
       This : constant StoreThemeCategoryPathView_Access := new StoreThemeCategoryPathView;
    begin
       StoreThemeCategoryPathView_Package.Initialize (This.all, categoryInterface_Param);
@@ -35,8 +35,8 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryPathV
    end Create;
 
    --  throws Exception
-   function toXmlNode (This : in out StoreThemeCategoryPathView; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out StoreThemeCategoryPathView; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       node : Node_Access;
       storeThemeCategoryInterface : StoreThemeCategoryInterface_Access;
       themeArray : Java_Object_Access_Array_Access;
@@ -57,7 +57,7 @@ package body org.allbinary.business.category.store.theme.StoreThemeCategoryPathV
         return node;
    end toXmlNode;
 
-   procedure toXmlNode (This : in out StoreThemeCategoryPathView; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out StoreThemeCategoryPathView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := StoreThemeCategoryPathView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

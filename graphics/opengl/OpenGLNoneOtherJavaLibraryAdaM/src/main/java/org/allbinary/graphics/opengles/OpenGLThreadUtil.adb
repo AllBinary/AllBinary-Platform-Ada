@@ -27,7 +27,7 @@ package body org.allbinary.graphics.opengles.OpenGLThreadUtil_Package is
    end getInstance;
 
    procedure set (This : in out OpenGLThreadUtil; glSurfaceView_Param : access Java_Object'Class) is
-      glSurfaceView : Java_Object_Access := Java_Object_Access (glSurfaceView_Param);
+      glSurfaceView : constant Java_Object_Access := Java_Object_Access (glSurfaceView_Param);
    begin
         null;
    end set;

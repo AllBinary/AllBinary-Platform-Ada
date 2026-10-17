@@ -31,7 +31,7 @@ package org.allbinary.input.media.image.capture.CapturedImageWorkerResultsListen
    type CapturedImageWorkerResultsListener_Access is access all CapturedImageWorkerResultsListener'Class;
    type CapturedImageWorkerResultsListener_Access_Array is array (Natural range <>) of CapturedImageWorkerResultsListener_Access;
    type CapturedImageWorkerResultsListener_Access_Array_Access is access all CapturedImageWorkerResultsListener_Access_Array;
-   procedure onCaptureEvent (This : in out CapturedImageWorkerResultsListener; capturedimageworkerresultsevent_Param : access CapturedImageWorkerResultsEvent'Class) is abstract;
+   procedure onCaptureEvent (This : in out CapturedImageWorkerResultsListener; capturedimageworkerresultsevent_Param : access CapturedImageWorkerResultsEvent_Package.CapturedImageWorkerResultsEvent'Class) is abstract;
 
 end org.allbinary.input.media.image.capture.CapturedImageWorkerResultsListener_Package;
 

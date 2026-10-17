@@ -75,8 +75,8 @@ package body org.allbinary.game.configuration.GameConfigurationCentral_Package i
       return This;
    end Create;
 
-   procedure load (This : in out GameConfigurationCentral; abeClientInformation_Param : access AbeClientInformationInterface'Class) is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+   procedure load (This : in out GameConfigurationCentral; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
       commonStrings : CommonStrings_Access;
       smallIntegerSingletonFactory : SmallIntegerSingletonFactory_Access;
       keyValuePersistance : KeyValuePersistance_Access;

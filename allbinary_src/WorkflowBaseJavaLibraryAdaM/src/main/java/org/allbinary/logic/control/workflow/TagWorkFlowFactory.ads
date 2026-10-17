@@ -54,8 +54,8 @@ package org.allbinary.logic.control.workflow.TagWorkFlowFactory_Package is
    procedure Initialize (This : in out TagWorkFlowFactory'Class);
    function Create return TagWorkFlowFactory_Access;
    function getInstance return TagWorkFlowFactory_Access;
-   function getInstance (This : in out TagWorkFlowFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return WorkFlowInterface_Access;
-   procedure getInstance (This : in out TagWorkFlowFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function getInstance (This : in out TagWorkFlowFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return WorkFlowInterface_Access;
+   procedure getInstance (This : in out TagWorkFlowFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class);
 
 end org.allbinary.logic.control.workflow.TagWorkFlowFactory_Package;
 

@@ -76,8 +76,8 @@ package body org.allbinary.data.tables.advertisement.sales.AffiliateSalesEntity_
         return returnStr;
    end createTable;
 
-   procedure update (This : in out AffiliateSalesEntity; updatedValues_Param : access HashMap'Class) is
-      updatedValues : HashMap_Access := HashMap_Access (updatedValues_Param);
+   procedure update (This : in out AffiliateSalesEntity; updatedValues_Param : access HashMap_Package.HashMap'Class) is
+      updatedValues : constant HashMap_Access := HashMap_Access (updatedValues_Param);
    begin
         AbSqlBean (This).updateWhere (EntryData_Package.getInstance.ID, Unbounded_String (updatedValues.get (EntryData_Package.getInstance.ID)), updatedValues);
    end update;

@@ -96,7 +96,7 @@ package body org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
    end init;
 
    --  throws Exception
-   procedure init (This : in out LinuxHardware; lineNumberReader_Param : access LineNumberReader'Class; filePath : Unbounded_String) is
+   procedure init (This : in out LinuxHardware; lineNumberReader_Param : access LineNumberReader_Package.LineNumberReader'Class; filePath : Unbounded_String) is
       lineNumberReader : LineNumberReader_Access := LineNumberReader_Access (lineNumberReader_Param);
       pciFile_Case : FileReader_Access;
       fileVector : BasicArrayList_Access;
@@ -258,14 +258,14 @@ package body org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
         return hardwareBuffer.toString;
    end toString;
 
-   function compareTo (This : in out LinuxHardware; hardwareInterface_Param : access HardwareInterface'Class) return Boolean is
-      hardwareInterface : HardwareInterface_Access := HardwareInterface_Access (hardwareInterface_Param);
+   function compareTo (This : in out LinuxHardware; hardwareInterface_Param : access HardwareInterface_Package.HardwareInterface'Class) return Boolean is
+      hardwareInterface : constant HardwareInterface_Access := HardwareInterface_Access (hardwareInterface_Param);
    begin
         return True;
    end compareTo;
 
-   function difference (This : in out LinuxHardware; hardwareInterface_Param : access HardwareInterface'Class) return ABHashtable_Access is
-      hardwareInterface : HardwareInterface_Access := HardwareInterface_Access (hardwareInterface_Param);
+   function difference (This : in out LinuxHardware; hardwareInterface_Param : access HardwareInterface_Package.HardwareInterface'Class) return ABHashtable_Access is
+      hardwareInterface : constant HardwareInterface_Access := HardwareInterface_Access (hardwareInterface_Param);
    begin
         return StdUtil_Package.getInstance.NULL_TABLE;
    end difference;
@@ -366,14 +366,14 @@ package body org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
       null;
    end getComponent;
 
-   procedure compareTo (This : in out LinuxHardware; hardwareInterface_Param : access HardwareInterface'Class) is
+   procedure compareTo (This : in out LinuxHardware; hardwareInterface_Param : access HardwareInterface_Package.HardwareInterface'Class) is
       Java_Result : constant Boolean := LinuxHardware'Class (This).compareTo (hardwareInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end compareTo;
 
-   procedure difference (This : in out LinuxHardware; hardwareInterface_Param : access HardwareInterface'Class) is
+   procedure difference (This : in out LinuxHardware; hardwareInterface_Param : access HardwareInterface_Package.HardwareInterface'Class) is
       Java_Result : constant ABHashtable_Access := LinuxHardware'Class (This).difference (hardwareInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

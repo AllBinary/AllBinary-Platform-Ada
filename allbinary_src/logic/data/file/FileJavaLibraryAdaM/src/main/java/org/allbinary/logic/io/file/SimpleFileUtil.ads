@@ -67,10 +67,10 @@ package org.allbinary.logic.io.file.SimpleFileUtil_Package is
    function nullOutputStream return OutputStream_Access;
    function nullWriter return Writer_Access;
    function nullReader return Reader_Access;
-   function loadFileAsList (This : in out SimpleFileUtil; inputStream_Param : access InputStream'Class; max : Integer; byteArray1 : Short_Short_Integer_Array_Access) return BasicArrayList_Access;
-   procedure loadFileAsList (This : in out SimpleFileUtil; inputStream_Param : access InputStream'Class; max : Integer; byteArray1 : Short_Short_Integer_Array_Access);
-   function loadFileAsListReturnLine (This : in out SimpleFileUtil; inputStream_Param : access InputStream'Class; max : Integer; byteArray1 : Short_Short_Integer_Array_Access; includeReturnLine : Integer) return BasicArrayList_Access;
-   procedure loadFileAsListReturnLine (This : in out SimpleFileUtil; inputStream_Param : access InputStream'Class; max : Integer; byteArray1 : Short_Short_Integer_Array_Access; includeReturnLine : Integer);
+   function loadFileAsList (This : in out SimpleFileUtil; inputStream_Param : access InputStream_Package.InputStream'Class; max : Integer; byteArray1 : Short_Short_Integer_Array_Access) return BasicArrayList_Access;
+   procedure loadFileAsList (This : in out SimpleFileUtil; inputStream_Param : access InputStream_Package.InputStream'Class; max : Integer; byteArray1 : Short_Short_Integer_Array_Access);
+   function loadFileAsListReturnLine (This : in out SimpleFileUtil; inputStream_Param : access InputStream_Package.InputStream'Class; max : Integer; byteArray1 : Short_Short_Integer_Array_Access; includeReturnLine : Integer) return BasicArrayList_Access;
+   procedure loadFileAsListReturnLine (This : in out SimpleFileUtil; inputStream_Param : access InputStream_Package.InputStream'Class; max : Integer; byteArray1 : Short_Short_Integer_Array_Access; includeReturnLine : Integer);
    function createStringFromArrayOfStrings (This : in out SimpleFileUtil; stringArray : Unbounded_String_Array_Access) return Unbounded_String;
    procedure createStringFromArrayOfStrings (This : in out SimpleFileUtil; stringArray : Unbounded_String_Array_Access);
 

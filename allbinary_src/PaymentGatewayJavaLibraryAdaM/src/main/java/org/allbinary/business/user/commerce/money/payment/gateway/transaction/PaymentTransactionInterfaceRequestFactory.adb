@@ -42,8 +42,8 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
    end Create;
 
    --  throws Exception
-   function getInstance (This : in out PaymentTransactionInterfaceRequestFactory; transformInfoInterface_Param : access TransformInfoInterface'Class) return PaymentTransactionInterface_Access is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   function getInstance (This : in out PaymentTransactionInterfaceRequestFactory; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return PaymentTransactionInterface_Access is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
       httpTransformInfoInterface : TransformInfoHttpInterface_Access;
       pageContext : PageContext_Access;
       httpServletRequest : HttpServletRequest_Access;
@@ -97,8 +97,8 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
    end getInstance;
 
    --  throws Exception
-   function generateFromTestData (This : in out PaymentTransactionInterfaceRequestFactory; transformInfoInterface_Param : access TransformInfoInterface'Class) return PaymentTransactionInterface_Access is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   function generateFromTestData (This : in out PaymentTransactionInterfaceRequestFactory; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return PaymentTransactionInterface_Access is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
       httpTransformInfoInterface : TransformInfoHttpInterface_Access;
       propertiesHashMap : HashMap_Access;
       pageContext : PageContext_Access;
@@ -201,14 +201,14 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
         end;
    end generateFromTestData;
 
-   procedure getInstance (This : in out PaymentTransactionInterfaceRequestFactory; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+   procedure getInstance (This : in out PaymentTransactionInterfaceRequestFactory; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
       Java_Result : constant PaymentTransactionInterface_Access := PaymentTransactionInterfaceRequestFactory'Class (This).getInstance (transformInfoInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getInstance;
 
-   procedure generateFromTestData (This : in out PaymentTransactionInterfaceRequestFactory; transformInfoInterface_Param : access TransformInfoInterface'Class) is
+   procedure generateFromTestData (This : in out PaymentTransactionInterfaceRequestFactory; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
       Java_Result : constant PaymentTransactionInterface_Access := PaymentTransactionInterfaceRequestFactory'Class (This).generateFromTestData (transformInfoInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

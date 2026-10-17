@@ -46,14 +46,14 @@ package org.allbinary.business.time.created.TimeCreatedView_Package is
       timeCreated : TimeCreated_Access;
    end record;
 
-   procedure Initialize (This : in out TimeCreatedView'Class; timeCreated_Param : access TimeCreated'Class);
-   function Create (timeCreated_Param : access TimeCreated'Class) return TimeCreatedView_Access;
-   procedure Initialize (This : in out TimeCreatedView'Class; node_Param : access Node'Class);
-   function Create (node_Param : access Node'Class) return TimeCreatedView_Access;
-   function toXmlNode (This : in out TimeCreatedView; document_Param : access Document'Class) return Node_Access;
-   procedure toXmlNode (This : in out TimeCreatedView; document_Param : access Document'Class);
+   procedure Initialize (This : in out TimeCreatedView'Class; timeCreated_Param : access TimeCreated_Package.TimeCreated'Class);
+   function Create (timeCreated_Param : access TimeCreated_Package.TimeCreated'Class) return TimeCreatedView_Access;
+   procedure Initialize (This : in out TimeCreatedView'Class; node_Param : access Node_Package.Node'Class);
+   function Create (node_Param : access Node_Package.Node'Class) return TimeCreatedView_Access;
+   function toXmlNode (This : in out TimeCreatedView; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out TimeCreatedView; document_Param : access Document_Package.Document'Class);
    function getTimeCreated (This : in out TimeCreatedView) return TimeCreated_Access;
-   procedure setTimeCreated (This : in out TimeCreatedView; timeCreated_Param : access TimeCreated'Class);
+   procedure setTimeCreated (This : in out TimeCreatedView; timeCreated_Param : access TimeCreated_Package.TimeCreated'Class);
 
 end org.allbinary.business.time.created.TimeCreatedView_Package;
 

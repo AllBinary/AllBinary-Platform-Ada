@@ -38,8 +38,8 @@ package body org.allbinary.logic.communication.ftp.configuration.FtpConfiguratio
       return This;
    end Create;
 
-   procedure Initialize (This : in out FtpConfiguration'Class; hashMap_Param : access HashMap'Class) is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+   procedure Initialize (This : in out FtpConfiguration'Class; hashMap_Param : access HashMap_Package.HashMap'Class) is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
       Initialize_Fields (This);
         This.ftpServer := Unbounded_String (hashMap.get (FtpConfigurationData_Package.SERVER));
@@ -48,7 +48,7 @@ package body org.allbinary.logic.communication.ftp.configuration.FtpConfiguratio
         This.ftpPassword := Unbounded_String (hashMap.get (FtpConfigurationData_Package.PASSWORD));
    end Initialize;
 
-   function Create (hashMap_Param : access HashMap'Class) return FtpConfiguration_Access is
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return FtpConfiguration_Access is
       This : constant FtpConfiguration_Access := new FtpConfiguration;
    begin
       FtpConfiguration_Package.Initialize (This.all, hashMap_Param);

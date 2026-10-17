@@ -25,14 +25,14 @@ package body org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackG
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BaseRaceTrackGeographicMap'Class; raceTrackInfo_Param : access RaceTrackInfo'Class; raceTrackData_Param : access RaceTrackData'Class; tiledLayer_Param : access AllBinaryTiledLayer'Class; miniGeographicMap_Param : access BasicGeographicMap'Class; geographicMapCellPositionFactoryInterface_Param : access GeographicMapCellPositionFactoryInterface'Class; geographicMapCellPositionBaseFactory_Param : access GeographicMapCellPositionBaseFactory'Class; geographicMapCellTypeFactory_Param : access GeographicMapCellTypeFactory'Class) is
-      raceTrackInfo : RaceTrackInfo_Access := RaceTrackInfo_Access (raceTrackInfo_Param);
-      raceTrackData : RaceTrackData_Access := RaceTrackData_Access (raceTrackData_Param);
-      tiledLayer : AllBinaryTiledLayer_Access := AllBinaryTiledLayer_Access (tiledLayer_Param);
-      miniGeographicMap : BasicGeographicMap_Access := BasicGeographicMap_Access (miniGeographicMap_Param);
-      geographicMapCellPositionFactoryInterface : GeographicMapCellPositionFactoryInterface_Access := GeographicMapCellPositionFactoryInterface_Access (geographicMapCellPositionFactoryInterface_Param);
-      geographicMapCellPositionBaseFactory : GeographicMapCellPositionBaseFactory_Access := GeographicMapCellPositionBaseFactory_Access (geographicMapCellPositionBaseFactory_Param);
-      geographicMapCellTypeFactory : GeographicMapCellTypeFactory_Access := GeographicMapCellTypeFactory_Access (geographicMapCellTypeFactory_Param);
+   procedure Initialize (This : in out BaseRaceTrackGeographicMap'Class; raceTrackInfo_Param : access RaceTrackInfo_Package.RaceTrackInfo'Class; raceTrackData_Param : access RaceTrackData_Package.RaceTrackData'Class; tiledLayer_Param : access AllBinaryTiledLayer_Package.AllBinaryTiledLayer'Class; miniGeographicMap_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; geographicMapCellPositionFactoryInterface_Param : access GeographicMapCellPositionFactoryInterface_Package.GeographicMapCellPositionFactoryInterface'Class; geographicMapCellPositionBaseFactory_Param : access GeographicMapCellPositionBaseFactory_Package.GeographicMapCellPositionBaseFactory'Class; geographicMapCellTypeFactory_Param : access GeographicMapCellTypeFactory_Package.GeographicMapCellTypeFactory'Class) is
+      raceTrackInfo : constant RaceTrackInfo_Access := RaceTrackInfo_Access (raceTrackInfo_Param);
+      raceTrackData : constant RaceTrackData_Access := RaceTrackData_Access (raceTrackData_Param);
+      tiledLayer : constant AllBinaryTiledLayer_Access := AllBinaryTiledLayer_Access (tiledLayer_Param);
+      miniGeographicMap : constant BasicGeographicMap_Access := BasicGeographicMap_Access (miniGeographicMap_Param);
+      geographicMapCellPositionFactoryInterface : constant GeographicMapCellPositionFactoryInterface_Access := GeographicMapCellPositionFactoryInterface_Access (geographicMapCellPositionFactoryInterface_Param);
+      geographicMapCellPositionBaseFactory : constant GeographicMapCellPositionBaseFactory_Access := GeographicMapCellPositionBaseFactory_Access (geographicMapCellPositionBaseFactory_Param);
+      geographicMapCellTypeFactory : constant GeographicMapCellTypeFactory_Access := GeographicMapCellTypeFactory_Access (geographicMapCellTypeFactory_Param);
       miniTiledLayer : AllBinaryTiledLayer_Access;
       error : Unbounded_String;
       commonStrings : CommonStrings_Access;
@@ -57,7 +57,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackG
         end if;
    end Initialize;
 
-   function Create (raceTrackInfo_Param : access RaceTrackInfo'Class; raceTrackData_Param : access RaceTrackData'Class; tiledLayer_Param : access AllBinaryTiledLayer'Class; miniGeographicMap_Param : access BasicGeographicMap'Class; geographicMapCellPositionFactoryInterface_Param : access GeographicMapCellPositionFactoryInterface'Class; geographicMapCellPositionBaseFactory_Param : access GeographicMapCellPositionBaseFactory'Class; geographicMapCellTypeFactory_Param : access GeographicMapCellTypeFactory'Class) return BaseRaceTrackGeographicMap_Access is
+   function Create (raceTrackInfo_Param : access RaceTrackInfo_Package.RaceTrackInfo'Class; raceTrackData_Param : access RaceTrackData_Package.RaceTrackData'Class; tiledLayer_Param : access AllBinaryTiledLayer_Package.AllBinaryTiledLayer'Class; miniGeographicMap_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; geographicMapCellPositionFactoryInterface_Param : access GeographicMapCellPositionFactoryInterface_Package.GeographicMapCellPositionFactoryInterface'Class; geographicMapCellPositionBaseFactory_Param : access GeographicMapCellPositionBaseFactory_Package.GeographicMapCellPositionBaseFactory'Class; geographicMapCellTypeFactory_Param : access GeographicMapCellTypeFactory_Package.GeographicMapCellTypeFactory'Class) return BaseRaceTrackGeographicMap_Access is
       This : constant BaseRaceTrackGeographicMap_Access := new BaseRaceTrackGeographicMap;
    begin
       BaseRaceTrackGeographicMap_Package.Initialize (This.all, raceTrackInfo_Param, raceTrackData_Param, tiledLayer_Param, miniGeographicMap_Param, geographicMapCellPositionFactoryInterface_Param, geographicMapCellPositionBaseFactory_Param, geographicMapCellTypeFactory_Param);
@@ -69,14 +69,14 @@ package body org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackG
         return This.raceTrackInfo;
    end getRaceTrackInfo;
 
-   procedure setRaceTrackInfo (This : in out BaseRaceTrackGeographicMap; aRaceTrackInfo_Param : access RaceTrackInfo'Class) is
-      aRaceTrackInfo : RaceTrackInfo_Access := RaceTrackInfo_Access (aRaceTrackInfo_Param);
+   procedure setRaceTrackInfo (This : in out BaseRaceTrackGeographicMap; aRaceTrackInfo_Param : access RaceTrackInfo_Package.RaceTrackInfo'Class) is
+      aRaceTrackInfo : constant RaceTrackInfo_Access := RaceTrackInfo_Access (aRaceTrackInfo_Param);
    begin
         This.raceTrackInfo := aRaceTrackInfo;
    end setRaceTrackInfo;
 
-   procedure setMiniBasicGeographicMap (This : in out BaseRaceTrackGeographicMap; miniBasicGeographicMap_Param : access BasicGeographicMap'Class) is
-      miniBasicGeographicMap : BasicGeographicMap_Access := BasicGeographicMap_Access (miniBasicGeographicMap_Param);
+   procedure setMiniBasicGeographicMap (This : in out BaseRaceTrackGeographicMap; miniBasicGeographicMap_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class) is
+      miniBasicGeographicMap : constant BasicGeographicMap_Access := BasicGeographicMap_Access (miniBasicGeographicMap_Param);
    begin
         This.miniGeographicMap := miniBasicGeographicMap;
    end setMiniBasicGeographicMap;
@@ -91,8 +91,8 @@ package body org.allbinary.media.graphics.geography.map.racetrack.BaseRaceTrackG
         return This.raceTrackData;
    end getRaceTrackData;
 
-   procedure setRaceTrackData (This : in out BaseRaceTrackGeographicMap; raceTrackData_Param : access RaceTrackData'Class) is
-      raceTrackData : RaceTrackData_Access := RaceTrackData_Access (raceTrackData_Param);
+   procedure setRaceTrackData (This : in out BaseRaceTrackGeographicMap; raceTrackData_Param : access RaceTrackData_Package.RaceTrackData'Class) is
+      raceTrackData : constant RaceTrackData_Access := RaceTrackData_Access (raceTrackData_Param);
    begin
         This.raceTrackData := raceTrackData;
    end setRaceTrackData;

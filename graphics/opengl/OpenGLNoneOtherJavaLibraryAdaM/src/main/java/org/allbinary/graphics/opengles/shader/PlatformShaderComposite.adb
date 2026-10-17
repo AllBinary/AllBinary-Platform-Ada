@@ -21,17 +21,17 @@ package body org.allbinary.graphics.opengles.shader.PlatformShaderComposite_Pack
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PlatformShaderComposite'Class; requiresOpenGLVersion : Unbounded_String; shaderArray : Shader_Access_Array_Access; compositeShaderUpdater_Param : access CompositeShaderUpdater'Class; shaderInitializer_Param : access ShaderInitializer'Class; modelViewProjection_Param : access ModelViewProjection'Class; colorOpenGLProcessor_Param : access OpenGLProcessor'Class; vertexOpenGLProcessor_Param : access OpenGLProcessor'Class) is
-      compositeShaderUpdater : CompositeShaderUpdater_Access := CompositeShaderUpdater_Access (compositeShaderUpdater_Param);
-      shaderInitializer : ShaderInitializer_Access := ShaderInitializer_Access (shaderInitializer_Param);
-      modelViewProjection : ModelViewProjection_Access := ModelViewProjection_Access (modelViewProjection_Param);
-      colorOpenGLProcessor : OpenGLProcessor_Access := OpenGLProcessor_Access (colorOpenGLProcessor_Param);
-      vertexOpenGLProcessor : OpenGLProcessor_Access := OpenGLProcessor_Access (vertexOpenGLProcessor_Param);
+   procedure Initialize (This : in out PlatformShaderComposite'Class; requiresOpenGLVersion : Unbounded_String; shaderArray : Shader_Access_Array_Access; compositeShaderUpdater_Param : access CompositeShaderUpdater_Package.CompositeShaderUpdater'Class; shaderInitializer_Param : access ShaderInitializer_Package.ShaderInitializer'Class; modelViewProjection_Param : access ModelViewProjection_Package.ModelViewProjection'Class; colorOpenGLProcessor_Param : access OpenGLProcessor_Package.OpenGLProcessor'Class; vertexOpenGLProcessor_Param : access OpenGLProcessor_Package.OpenGLProcessor'Class) is
+      compositeShaderUpdater : constant CompositeShaderUpdater_Access := CompositeShaderUpdater_Access (compositeShaderUpdater_Param);
+      shaderInitializer : constant ShaderInitializer_Access := ShaderInitializer_Access (shaderInitializer_Param);
+      modelViewProjection : constant ModelViewProjection_Access := ModelViewProjection_Access (modelViewProjection_Param);
+      colorOpenGLProcessor : constant OpenGLProcessor_Access := OpenGLProcessor_Access (colorOpenGLProcessor_Param);
+      vertexOpenGLProcessor : constant OpenGLProcessor_Access := OpenGLProcessor_Access (vertexOpenGLProcessor_Param);
    begin
         ShaderComposite_Package.Initialize (This, requiresOpenGLVersion, shaderArray, compositeShaderUpdater, shaderInitializer, modelViewProjection, colorOpenGLProcessor, vertexOpenGLProcessor, NullOpenGLProcessorFactory_Package.getInstance);
    end Initialize;
 
-   function Create (requiresOpenGLVersion : Unbounded_String; shaderArray : Shader_Access_Array_Access; compositeShaderUpdater_Param : access CompositeShaderUpdater'Class; shaderInitializer_Param : access ShaderInitializer'Class; modelViewProjection_Param : access ModelViewProjection'Class; colorOpenGLProcessor_Param : access OpenGLProcessor'Class; vertexOpenGLProcessor_Param : access OpenGLProcessor'Class) return PlatformShaderComposite_Access is
+   function Create (requiresOpenGLVersion : Unbounded_String; shaderArray : Shader_Access_Array_Access; compositeShaderUpdater_Param : access CompositeShaderUpdater_Package.CompositeShaderUpdater'Class; shaderInitializer_Param : access ShaderInitializer_Package.ShaderInitializer'Class; modelViewProjection_Param : access ModelViewProjection_Package.ModelViewProjection'Class; colorOpenGLProcessor_Param : access OpenGLProcessor_Package.OpenGLProcessor'Class; vertexOpenGLProcessor_Param : access OpenGLProcessor_Package.OpenGLProcessor'Class) return PlatformShaderComposite_Access is
       This : constant PlatformShaderComposite_Access := new PlatformShaderComposite;
    begin
       PlatformShaderComposite_Package.Initialize (This.all, requiresOpenGLVersion, shaderArray, compositeShaderUpdater_Param, shaderInitializer_Param, modelViewProjection_Param, colorOpenGLProcessor_Param, vertexOpenGLProcessor_Param);

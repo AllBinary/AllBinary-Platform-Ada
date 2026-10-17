@@ -41,10 +41,10 @@ package body org.allbinary.logic.visual.transform.generator.TransformGeneratorUt
    end Create;
 
    --  throws Exception
-   procedure generate (This : in out TransformGeneratorUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; ownerTransformInfoInterface_Param : access TransformInfoInterface'Class) is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
-      ownerTransformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (ownerTransformInfoInterface_Param);
+   procedure generate (This : in out TransformGeneratorUtil; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; ownerTransformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+      ownerTransformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (ownerTransformInfoInterface_Param);
       componentInterface : TransformInterface_Access;
       result : Unbounded_String;
       httpTransformInfoInterface : TransformInfoHttpInterface_Access;
@@ -78,10 +78,10 @@ package body org.allbinary.logic.visual.transform.generator.TransformGeneratorUt
    end generate;
 
    --  throws Exception
-   procedure generate (This : in out TransformGeneratorUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; transformInfoDomNode_Param : access TransformInfoDomNode'Class; ownerTransformInfoInterface_Param : access TransformInfoInterface'Class) is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      transformInfoDomNode : TransformInfoDomNode_Access := TransformInfoDomNode_Access (transformInfoDomNode_Param);
-      ownerTransformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (ownerTransformInfoInterface_Param);
+   procedure generate (This : in out TransformGeneratorUtil; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; transformInfoDomNode_Param : access TransformInfoDomNode_Package.TransformInfoDomNode'Class; ownerTransformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      transformInfoDomNode : constant TransformInfoDomNode_Access := TransformInfoDomNode_Access (transformInfoDomNode_Param);
+      ownerTransformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (ownerTransformInfoInterface_Param);
    begin
         This.generate (abeClientInformation, transformInfoDomNode.getTransformInfoInterface, ownerTransformInfoInterface);
    end generate;

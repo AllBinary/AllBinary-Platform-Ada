@@ -30,9 +30,9 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AndroidBasicTitleProgressBar'Class; title : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) is
-      backgroundBasicColor : BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
-      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
+   procedure Initialize (This : in out AndroidBasicTitleProgressBar'Class; title : Unbounded_String; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      backgroundBasicColor : constant BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
+      foregroundBasicColor : constant BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
       size : Integer;
       index : Integer;
    begin
@@ -46,7 +46,7 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
         end loop;
    end Initialize;
 
-   function Create (title : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return AndroidBasicTitleProgressBar_Access is
+   function Create (title : Unbounded_String; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return AndroidBasicTitleProgressBar_Access is
       This : constant AndroidBasicTitleProgressBar_Access := new AndroidBasicTitleProgressBar;
    begin
       AndroidBasicTitleProgressBar_Package.Initialize (This.all, title, backgroundBasicColor_Param, foregroundBasicColor_Param);
@@ -71,8 +71,8 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
         end;
    end init;
 
-   procedure initActivity (This : in out AndroidBasicTitleProgressBar; activity_Param : access Activity'Class) is
-      activity : Activity_Access := Activity_Access (activity_Param);
+   procedure initActivity (This : in out AndroidBasicTitleProgressBar; activity_Param : access Activity_Package.Activity'Class) is
+      activity : constant Activity_Access := Activity_Access (activity_Param);
    begin
         begin
             if (This.midletActivity) /= (activity) then
@@ -125,14 +125,14 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
         end;
    end updateCurrent;
 
-   procedure onEvent (This : in out AndroidBasicTitleProgressBar; eventObject_Param : access AllBinaryEventObject'Class) is
-      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+   procedure onEvent (This : in out AndroidBasicTitleProgressBar; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
+      eventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
    begin
         ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, AndroidBasicTitleProgressBar_Access'(This'Unchecked_Access));
    end onEvent;
 
-   procedure onDisplayChangeEvent (This : in out AndroidBasicTitleProgressBar; displayChangeEvent_Param : access DisplayChangeEvent'Class) is
-      displayChangeEvent : DisplayChangeEvent_Access := DisplayChangeEvent_Access (displayChangeEvent_Param);
+   procedure onDisplayChangeEvent (This : in out AndroidBasicTitleProgressBar; displayChangeEvent_Param : access DisplayChangeEvent_Package.DisplayChangeEvent'Class) is
+      displayChangeEvent : constant DisplayChangeEvent_Access := DisplayChangeEvent_Access (displayChangeEvent_Param);
    begin
         begin
             This.loadProgressImages;
@@ -305,8 +305,8 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
    end setImages;
 
    --  throws Exception
-   procedure initOpenGL (This : in out AndroidBasicTitleProgressBar; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure initOpenGL (This : in out AndroidBasicTitleProgressBar; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       preResourceImageUtil : PreResourceImageUtil_Access;
       size : Integer;
       index : Integer;
@@ -324,8 +324,8 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
    end initOpenGL;
 
    --  throws Exception
-   procedure update (This : in out AndroidBasicTitleProgressBar; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure update (This : in out AndroidBasicTitleProgressBar; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       preResourceImageUtil : PreResourceImageUtil_Access;
       size : Integer;
       index : Integer;
@@ -355,8 +355,8 @@ package body org.allbinary.graphics.canvas.transition.progress.AndroidBasicTitle
         return image_Case;
    end getImage;
 
-   procedure paint2 (This : in out AndroidBasicTitleProgressBar; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint2 (This : in out AndroidBasicTitleProgressBar; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         begin
             This.animation.paintXY (graphics, 0, 20);

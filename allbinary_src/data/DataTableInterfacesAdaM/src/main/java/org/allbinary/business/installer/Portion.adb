@@ -23,15 +23,15 @@ package body org.allbinary.business.installer.Portion_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out Portion'Class; hashMap_Param : access HashMap'Class) is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+   procedure Initialize (This : in out Portion'Class; hashMap_Param : access HashMap_Package.HashMap'Class) is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
       Initialize_Fields (This);
         This.current := Integer (hashMap.get (To_Unbounded_String ("current")));
         This.total := Integer (hashMap.get (To_Unbounded_String ("total")));
    end Initialize;
 
-   function Create (hashMap_Param : access HashMap'Class) return Portion_Access is
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return Portion_Access is
       This : constant Portion_Access := new Portion;
    begin
       Portion_Package.Initialize (This.all, hashMap_Param);

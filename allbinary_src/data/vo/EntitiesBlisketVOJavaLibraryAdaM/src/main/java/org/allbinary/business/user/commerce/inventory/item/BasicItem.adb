@@ -54,8 +54,8 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItem_Packa
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasicItem'Class; itemHashMap_Param : access HashMap'Class) is
-      itemHashMap : HashMap_Access := HashMap_Access (itemHashMap_Param);
+   procedure Initialize (This : in out BasicItem'Class; itemHashMap_Param : access HashMap_Package.HashMap'Class) is
+      itemHashMap : constant HashMap_Access := HashMap_Access (itemHashMap_Param);
    begin
       Initialize_Fields (This);
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PRODUCTSEARCHLOGGING) then
@@ -92,7 +92,7 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItem_Packa
         This.specials := Unbounded_String (itemHashMap.get (This.basicItemData.SPECIALS));
    end Initialize;
 
-   function Create (itemHashMap_Param : access HashMap'Class) return BasicItem_Access is
+   function Create (itemHashMap_Param : access HashMap_Package.HashMap'Class) return BasicItem_Access is
       This : constant BasicItem_Access := new BasicItem;
    begin
       BasicItem_Package.Initialize (This.all, itemHashMap_Param);
@@ -245,8 +245,8 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItem_Packa
         This.lastModified := value;
    end setLastModified;
 
-   procedure setPrice (This : in out BasicItem; value_Param : access Money'Class) is
-      value : Money_Access := Money_Access (value_Param);
+   procedure setPrice (This : in out BasicItem; value_Param : access Money_Package.Money'Class) is
+      value : constant Money_Access := Money_Access (value_Param);
    begin
         This.price := value;
    end setPrice;

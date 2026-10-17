@@ -47,8 +47,8 @@ package org.allbinary.game.ag.ai.scroller.RandomPatrolFlockingFiringAIFactory_Pa
 
    procedure Initialize (This : in out RandomPatrolFlockingFiringAIFactory'Class);
    function Create return RandomPatrolFlockingFiringAIFactory_Access;
-   function getInstance (This : in out RandomPatrolFlockingFiringAIFactory; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return ArtificialIntelligenceInterface_Access;
-   procedure getInstance (This : in out RandomPatrolFlockingFiringAIFactory; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class);
+   function getInstance (This : in out RandomPatrolFlockingFiringAIFactory; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) return ArtificialIntelligenceInterface_Access;
+   procedure getInstance (This : in out RandomPatrolFlockingFiringAIFactory; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class);
 
 end org.allbinary.game.ag.ai.scroller.RandomPatrolFlockingFiringAIFactory_Package;
 

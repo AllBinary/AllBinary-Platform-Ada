@@ -39,9 +39,9 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out UnitWaypointBehavior'Class; associatedAdvancedRTSGameLayer_Param : access UnitLayer'Class; fakeWaypoint_Param : access CollidableDestroyableDamageableLayer'Class) is
-      associatedAdvancedRTSGameLayer : UnitLayer_Access := UnitLayer_Access (associatedAdvancedRTSGameLayer_Param);
-      fakeWaypoint : CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (fakeWaypoint_Param);
+   procedure Initialize (This : in out UnitWaypointBehavior'Class; associatedAdvancedRTSGameLayer_Param : access UnitLayer_Package.UnitLayer'Class; fakeWaypoint_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class) is
+      associatedAdvancedRTSGameLayer : constant UnitLayer_Access := UnitLayer_Access (associatedAdvancedRTSGameLayer_Param);
+      fakeWaypoint : constant CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (fakeWaypoint_Param);
    begin
       WaypointBehaviorBase_Package.Initialize (This);
       Initialize_Fields (This);
@@ -54,7 +54,7 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
         This.FAKE_WAYPOINT_LAYER := fakeWaypoint;
    end Initialize;
 
-   function Create (associatedAdvancedRTSGameLayer_Param : access UnitLayer'Class; fakeWaypoint_Param : access CollidableDestroyableDamageableLayer'Class) return UnitWaypointBehavior_Access is
+   function Create (associatedAdvancedRTSGameLayer_Param : access UnitLayer_Package.UnitLayer'Class; fakeWaypoint_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class) return UnitWaypointBehavior_Access is
       This : constant UnitWaypointBehavior_Access := new UnitWaypointBehavior;
    begin
       UnitWaypointBehavior_Package.Initialize (This.all, associatedAdvancedRTSGameLayer_Param, fakeWaypoint_Param);
@@ -66,15 +66,15 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
         This.longWeaponRange := (weaponRange) / (2);
    end initRange;
 
-   procedure onEvent (This : in out UnitWaypointBehavior; eventObject_Param : access AllBinaryEventObject'Class) is
-      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+   procedure onEvent (This : in out UnitWaypointBehavior; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
+      eventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
    begin
         ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, UnitWaypointBehavior_Access'(This'Unchecked_Access));
    end onEvent;
 
    --  throws Exception
-   procedure onWaypointEvent (This : in out UnitWaypointBehavior; event_Param : access RTSLayerEvent'Class) is
-      event : RTSLayerEvent_Access := RTSLayerEvent_Access (event_Param);
+   procedure onWaypointEvent (This : in out UnitWaypointBehavior; event_Param : access RTSLayerEvent_Package.RTSLayerEvent'Class) is
+      event : constant RTSLayerEvent_Access := RTSLayerEvent_Access (event_Param);
       advancedRTSGameLayer : AdvancedRTSGameLayer_Access;
    begin
         advancedRTSGameLayer := AdvancedRTSGameLayer_Access (event.getRtsLayer);
@@ -87,15 +87,15 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
    end onWaypointEvent;
 
    --  throws Exception
-   procedure addWaypointFromUser (This : in out UnitWaypointBehavior; advancedRTSGameLayer_Param : access AdvancedRTSGameLayer'Class) is
-      advancedRTSGameLayer : AdvancedRTSGameLayer_Access := AdvancedRTSGameLayer_Access (advancedRTSGameLayer_Param);
+   procedure addWaypointFromUser (This : in out UnitWaypointBehavior; advancedRTSGameLayer_Param : access AdvancedRTSGameLayer_Package.AdvancedRTSGameLayer'Class) is
+      advancedRTSGameLayer : constant AdvancedRTSGameLayer_Access := AdvancedRTSGameLayer_Access (advancedRTSGameLayer_Param);
    begin
         null;
    end addWaypointFromUser;
 
    --  throws Exception
-   procedure addWaypointFromBuilding (This : in out UnitWaypointBehavior; advancedRTSGameLayer_Param : access AdvancedRTSGameLayer'Class) is
-      advancedRTSGameLayer : AdvancedRTSGameLayer_Access := AdvancedRTSGameLayer_Access (advancedRTSGameLayer_Param);
+   procedure addWaypointFromBuilding (This : in out UnitWaypointBehavior; advancedRTSGameLayer_Param : access AdvancedRTSGameLayer_Package.AdvancedRTSGameLayer'Class) is
+      advancedRTSGameLayer : constant AdvancedRTSGameLayer_Access := AdvancedRTSGameLayer_Access (advancedRTSGameLayer_Param);
    begin
         if ((advancedRTSGameLayer) = (PrimaryWaypointHelper_Package.getInstance.getWaypointLayer)) or else ((advancedRTSGameLayer.getParentLayer) = (This.associatedAdvancedRTSGameLayer.getParentLayer)) then
             if not (This.targetList.contains (advancedRTSGameLayer)) then
@@ -115,8 +115,8 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
    end isWaypointListEmptyOrOnlyTargets;
 
    --  throws Exception
-   function insertWaypoint (This : in out UnitWaypointBehavior; index : Integer; rtsLayer_Param : access CollidableDestroyableDamageableLayer'Class) return Boolean is
-      rtsLayer : CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (rtsLayer_Param);
+   function insertWaypoint (This : in out UnitWaypointBehavior; index : Integer; rtsLayer_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class) return Boolean is
+      rtsLayer : constant CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (rtsLayer_Param);
    begin
         if This.canInsertWaypoint (index, rtsLayer) then
             This.associatedAdvancedRTSGameLayer.waypointLogHelperP.insertWaypoint (This.associatedAdvancedRTSGameLayer, index, rtsLayer, This.getName);
@@ -141,8 +141,8 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
    end move;
 
    --  throws Exception
-   procedure setRandomGeographicMapCellHistory (This : in out UnitWaypointBehavior; pathsList_Param : access BasicArrayList'Class) is
-      pathsList : BasicArrayList_Access := BasicArrayList_Access (pathsList_Param);
+   procedure setRandomGeographicMapCellHistory (This : in out UnitWaypointBehavior; pathsList_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      pathsList : constant BasicArrayList_Access := BasicArrayList_Access (pathsList_Param);
       size : Integer;
       geographicMapCellPositionBasicArrayList : BasicArrayList_Access;
    begin
@@ -155,8 +155,8 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
    end setRandomGeographicMapCellHistory;
 
    --  throws Exception
-   procedure setGeographicMapCellHistoryPath (This : in out UnitWaypointBehavior; geographicMapCellPositionBasicArrayList_Param : access BasicArrayList'Class) is
-      geographicMapCellPositionBasicArrayList : BasicArrayList_Access := BasicArrayList_Access (geographicMapCellPositionBasicArrayList_Param);
+   procedure setGeographicMapCellHistoryPath (This : in out UnitWaypointBehavior; geographicMapCellPositionBasicArrayList_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      geographicMapCellPositionBasicArrayList : constant BasicArrayList_Access := BasicArrayList_Access (geographicMapCellPositionBasicArrayList_Param);
    begin
         This.lastPathGeographicMapCellPosition := SimpleGeographicMapCellPositionFactory_Package.NULL_GEOGRAPHIC_MAP_CELL_POSITION;
         if This.associatedAdvancedRTSGameLayer.showMoreCaptionStates then
@@ -168,8 +168,8 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
         This.getCompleteTimeDelayHelper.setStartTimeTNT;
    end setGeographicMapCellHistoryPath;
 
-   function canInsertWaypoint (This : in out UnitWaypointBehavior; index : Integer; rtsLayer_Param : access CollidableDestroyableDamageableLayer'Class) return Boolean is
-      rtsLayer : CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (rtsLayer_Param);
+   function canInsertWaypoint (This : in out UnitWaypointBehavior; index : Integer; rtsLayer_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class) return Boolean is
+      rtsLayer : constant CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (rtsLayer_Param);
    begin
         if (This.targetList.size) > (4) then
             null;
@@ -182,16 +182,16 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
    end canInsertWaypoint;
 
    --  throws Exception
-   procedure addBuildingChase (This : in out UnitWaypointBehavior; allbinaryLayer_Param : access AllBinaryLayer'Class; cellPosition_Param : access GeographicMapCellPosition'Class) is
-      allbinaryLayer : AllBinaryLayer_Access := AllBinaryLayer_Access (allbinaryLayer_Param);
-      cellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (cellPosition_Param);
+   procedure addBuildingChase (This : in out UnitWaypointBehavior; allbinaryLayer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; cellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
+      allbinaryLayer : constant AllBinaryLayer_Access := AllBinaryLayer_Access (allbinaryLayer_Param);
+      cellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (cellPosition_Param);
    begin
         null;
    end addBuildingChase;
 
    --  throws Exception
-   procedure moveAwayFromBuilding (This : in out UnitWaypointBehavior; buildingLayer_Param : access BuildingLayer'Class) is
-      buildingLayer : BuildingLayer_Access := BuildingLayer_Access (buildingLayer_Param);
+   procedure moveAwayFromBuilding (This : in out UnitWaypointBehavior; buildingLayer_Param : access BuildingLayer_Package.BuildingLayer'Class) is
+      buildingLayer : constant BuildingLayer_Access := BuildingLayer_Access (buildingLayer_Param);
       geographicMapCellPosition : GeographicMapCellPosition_Access;
       list : BasicArrayList_Access;
       pathsList : BasicArrayList_Access;
@@ -252,8 +252,8 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
         This.movingFromStopped := movingFromStopped;
    end setMovingFromStopped;
 
-   procedure setWaypointPathsList (This : in out UnitWaypointBehavior; waypointPathsList_Param : access BasicArrayList'Class) is
-      waypointPathsList : BasicArrayList_Access := BasicArrayList_Access (waypointPathsList_Param);
+   procedure setWaypointPathsList (This : in out UnitWaypointBehavior; waypointPathsList_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      waypointPathsList : constant BasicArrayList_Access := BasicArrayList_Access (waypointPathsList_Param);
    begin
         This.waypointPathsListP := waypointPathsList;
    end setWaypointPathsList;
@@ -283,8 +283,8 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
         return This.possibleTargetList;
    end getPossibleTargetList;
 
-   procedure setLastPathGeographicMapCellPosition (This : in out UnitWaypointBehavior; lastPathGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
-      lastPathGeographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (lastPathGeographicMapCellPosition_Param);
+   procedure setLastPathGeographicMapCellPosition (This : in out UnitWaypointBehavior; lastPathGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
+      lastPathGeographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (lastPathGeographicMapCellPosition_Param);
    begin
         This.lastPathGeographicMapCellPosition := lastPathGeographicMapCellPosition;
    end setLastPathGeographicMapCellPosition;
@@ -294,8 +294,8 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
         return This.lastPathGeographicMapCellPosition;
    end getLastPathGeographicMapCellPosition;
 
-   procedure setCurrentPathGeographicMapCellPosition (This : in out UnitWaypointBehavior; currentPathGeographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
-      currentPathGeographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (currentPathGeographicMapCellPosition_Param);
+   procedure setCurrentPathGeographicMapCellPosition (This : in out UnitWaypointBehavior; currentPathGeographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
+      currentPathGeographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (currentPathGeographicMapCellPosition_Param);
    begin
         This.currentPathGeographicMapCellPosition := currentPathGeographicMapCellPosition;
    end setCurrentPathGeographicMapCellPosition;
@@ -305,8 +305,8 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
         return This.currentPathGeographicMapCellPosition;
    end getCurrentPathGeographicMapCellPosition;
 
-   procedure setSensorAction (This : in out UnitWaypointBehavior; sensorAction_Param : access SensorAction'Class) is
-      sensorAction : SensorAction_Access := SensorAction_Access (sensorAction_Param);
+   procedure setSensorAction (This : in out UnitWaypointBehavior; sensorAction_Param : access SensorAction_Package.SensorAction'Class) is
+      sensorAction : constant SensorAction_Access := SensorAction_Access (sensorAction_Param);
    begin
         This.sensorAction := sensorAction;
    end setSensorAction;
@@ -316,8 +316,8 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
         return This.sensorAction;
    end getSensorAction;
 
-   procedure setCurrentTargetLayerInterface (This : in out UnitWaypointBehavior; currentTargetLayerInterface_Param : access CollidableDestroyableDamageableLayer'Class) is
-      currentTargetLayerInterface : CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (currentTargetLayerInterface_Param);
+   procedure setCurrentTargetLayerInterface (This : in out UnitWaypointBehavior; currentTargetLayerInterface_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class) is
+      currentTargetLayerInterface : constant CollidableDestroyableDamageableLayer_Access := CollidableDestroyableDamageableLayer_Access (currentTargetLayerInterface_Param);
    begin
         This.currentTargetLayerInterfaceP := currentTargetLayerInterface;
    end setCurrentTargetLayerInterface;
@@ -352,14 +352,14 @@ package body org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
         This.trackingWaypoint := trackingWaypoint;
    end setTrackingWaypoint;
 
-   procedure insertWaypoint (This : in out UnitWaypointBehavior; index : Integer; rtsLayer_Param : access CollidableDestroyableDamageableLayer'Class) is
+   procedure insertWaypoint (This : in out UnitWaypointBehavior; index : Integer; rtsLayer_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class) is
       Java_Result : constant Boolean := UnitWaypointBehavior'Class (This).insertWaypoint (index, rtsLayer_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end insertWaypoint;
 
-   procedure canInsertWaypoint (This : in out UnitWaypointBehavior; index : Integer; rtsLayer_Param : access CollidableDestroyableDamageableLayer'Class) is
+   procedure canInsertWaypoint (This : in out UnitWaypointBehavior; index : Integer; rtsLayer_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class) is
       Java_Result : constant Boolean := UnitWaypointBehavior'Class (This).canInsertWaypoint (index, rtsLayer_Param);
       pragma Unreferenced (Java_Result);
    begin

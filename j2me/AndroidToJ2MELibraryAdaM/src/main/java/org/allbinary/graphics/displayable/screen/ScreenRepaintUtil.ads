@@ -35,7 +35,7 @@ package org.allbinary.graphics.displayable.screen.ScreenRepaintUtil_Package is
 
    procedure Initialize (This : in out ScreenRepaintUtil'Class);
    function Create return ScreenRepaintUtil_Access;
-   procedure repaint (displayable_Param : access Displayable'Class);
+   procedure repaint (displayable_Param : access Displayable_Package.Displayable'Class);
 
 end org.allbinary.graphics.displayable.screen.ScreenRepaintUtil_Package;
 

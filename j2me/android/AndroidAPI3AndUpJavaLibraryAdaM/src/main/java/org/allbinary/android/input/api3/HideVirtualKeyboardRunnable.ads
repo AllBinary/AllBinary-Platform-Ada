@@ -53,8 +53,8 @@ package org.allbinary.android.input.api3.HideVirtualKeyboardRunnable_Package is
       activity : Activity_Access;
    end record;
 
-   procedure Initialize (This : in out HideVirtualKeyboardRunnable'Class; activity_Param : access Activity'Class);
-   function Create (activity_Param : access Activity'Class) return HideVirtualKeyboardRunnable_Access;
+   procedure Initialize (This : in out HideVirtualKeyboardRunnable'Class; activity_Param : access Activity_Package.Activity'Class);
+   function Create (activity_Param : access Activity_Package.Activity'Class) return HideVirtualKeyboardRunnable_Access;
    procedure run (This : in out HideVirtualKeyboardRunnable);
 
 end org.allbinary.android.input.api3.HideVirtualKeyboardRunnable_Package;

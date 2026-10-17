@@ -23,16 +23,16 @@ package body org.allbinary.input.motion.gesture.MotionGestureToMotionGestureActi
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out MotionGestureToMotionGestureActionAssociation'Class; list_Param : access BasicArrayList'Class; commandAction_Param : access CompleteMotionGestureInputEvent'Class) is
-      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
-      commandAction : CompleteMotionGestureInputEvent_Access := CompleteMotionGestureInputEvent_Access (commandAction_Param);
+   procedure Initialize (This : in out MotionGestureToMotionGestureActionAssociation'Class; list_Param : access BasicArrayList_Package.BasicArrayList'Class; commandAction_Param : access CompleteMotionGestureInputEvent_Package.CompleteMotionGestureInputEvent'Class) is
+      list : constant BasicArrayList_Access := BasicArrayList_Access (list_Param);
+      commandAction : constant CompleteMotionGestureInputEvent_Access := CompleteMotionGestureInputEvent_Access (commandAction_Param);
    begin
       Initialize_Fields (This);
         This.list := list;
         This.motionGestureAction := commandAction;
    end Initialize;
 
-   function Create (list_Param : access BasicArrayList'Class; commandAction_Param : access CompleteMotionGestureInputEvent'Class) return MotionGestureToMotionGestureActionAssociation_Access is
+   function Create (list_Param : access BasicArrayList_Package.BasicArrayList'Class; commandAction_Param : access CompleteMotionGestureInputEvent_Package.CompleteMotionGestureInputEvent'Class) return MotionGestureToMotionGestureActionAssociation_Access is
       This : constant MotionGestureToMotionGestureActionAssociation_Access := new MotionGestureToMotionGestureActionAssociation;
    begin
       MotionGestureToMotionGestureActionAssociation_Package.Initialize (This.all, list_Param, commandAction_Param);
@@ -44,8 +44,8 @@ package body org.allbinary.input.motion.gesture.MotionGestureToMotionGestureActi
         return This.list;
    end getMotionGesture;
 
-   procedure setMotionGestures (This : in out MotionGestureToMotionGestureActionAssociation; list_Param : access BasicArrayList'Class) is
-      list : BasicArrayList_Access := BasicArrayList_Access (list_Param);
+   procedure setMotionGestures (This : in out MotionGestureToMotionGestureActionAssociation; list_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      list : constant BasicArrayList_Access := BasicArrayList_Access (list_Param);
    begin
         This.list := list;
    end setMotionGestures;
@@ -55,14 +55,14 @@ package body org.allbinary.input.motion.gesture.MotionGestureToMotionGestureActi
         return This.motionGestureAction;
    end getCommandAction;
 
-   procedure setMotionGestureAction (This : in out MotionGestureToMotionGestureActionAssociation; commandAction_Param : access CompleteMotionGestureInputEvent'Class) is
-      commandAction : CompleteMotionGestureInputEvent_Access := CompleteMotionGestureInputEvent_Access (commandAction_Param);
+   procedure setMotionGestureAction (This : in out MotionGestureToMotionGestureActionAssociation; commandAction_Param : access CompleteMotionGestureInputEvent_Package.CompleteMotionGestureInputEvent'Class) is
+      commandAction : constant CompleteMotionGestureInputEvent_Access := CompleteMotionGestureInputEvent_Access (commandAction_Param);
    begin
         This.motionGestureAction := commandAction;
    end setMotionGestureAction;
 
-   function isMotionGestureArrayEquals (This : in out MotionGestureToMotionGestureActionAssociation; aList_Param : access BasicArrayList'Class) return Boolean is
-      aList : BasicArrayList_Access := BasicArrayList_Access (aList_Param);
+   function isMotionGestureArrayEquals (This : in out MotionGestureToMotionGestureActionAssociation; aList_Param : access BasicArrayList_Package.BasicArrayList'Class) return Boolean is
+      aList : constant BasicArrayList_Access := BasicArrayList_Access (aList_Param);
       size : Integer;
       i : Integer;
    begin
@@ -78,7 +78,7 @@ package body org.allbinary.input.motion.gesture.MotionGestureToMotionGestureActi
         return True;
    end isMotionGestureArrayEquals;
 
-   procedure isMotionGestureArrayEquals (This : in out MotionGestureToMotionGestureActionAssociation; aList_Param : access BasicArrayList'Class) is
+   procedure isMotionGestureArrayEquals (This : in out MotionGestureToMotionGestureActionAssociation; aList_Param : access BasicArrayList_Package.BasicArrayList'Class) is
       Java_Result : constant Boolean := MotionGestureToMotionGestureActionAssociation'Class (This).isMotionGestureArrayEquals (aList_Param);
       pragma Unreferenced (Java_Result);
    begin

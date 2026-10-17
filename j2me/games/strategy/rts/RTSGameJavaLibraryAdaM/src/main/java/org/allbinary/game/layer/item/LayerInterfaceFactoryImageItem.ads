@@ -44,10 +44,10 @@ package org.allbinary.game.layer.item.LayerInterfaceFactoryImageItem_Package is
       layerInterfaceFactoryInterface : LayerInterfaceFactoryInterface_Access;
    end record;
 
-   procedure Initialize (This : in out LayerInterfaceFactoryImageItem'Class; label : Unbounded_String; img_Param : access Image'Class; layout : Integer; altText : Unbounded_String; basicColor_Param : access BasicColor'Class; animationArray : Animation_Access_Array_Access; layerInterfaceFactoryInterface_Param : access LayerInterfaceFactoryInterface'Class);
-   function Create (label : Unbounded_String; img_Param : access Image'Class; layout : Integer; altText : Unbounded_String; basicColor_Param : access BasicColor'Class; animationArray : Animation_Access_Array_Access; layerInterfaceFactoryInterface_Param : access LayerInterfaceFactoryInterface'Class) return LayerInterfaceFactoryImageItem_Access;
+   procedure Initialize (This : in out LayerInterfaceFactoryImageItem'Class; label : Unbounded_String; img_Param : access Image_Package.Image'Class; layout : Integer; altText : Unbounded_String; basicColor_Param : access BasicColor_Package.BasicColor'Class; animationArray : Animation_Access_Array_Access; layerInterfaceFactoryInterface_Param : access LayerInterfaceFactoryInterface_Package.LayerInterfaceFactoryInterface'Class);
+   function Create (label : Unbounded_String; img_Param : access Image_Package.Image'Class; layout : Integer; altText : Unbounded_String; basicColor_Param : access BasicColor_Package.BasicColor'Class; animationArray : Animation_Access_Array_Access; layerInterfaceFactoryInterface_Param : access LayerInterfaceFactoryInterface_Package.LayerInterfaceFactoryInterface'Class) return LayerInterfaceFactoryImageItem_Access;
    function getLayerInterfaceFactoryInterface (This : in out LayerInterfaceFactoryImageItem) return LayerInterfaceFactoryInterface_Access;
-   procedure paintXY (This : in out LayerInterfaceFactoryImageItem; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
+   procedure paintXY (This : in out LayerInterfaceFactoryImageItem; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
 
 end org.allbinary.game.layer.item.LayerInterfaceFactoryImageItem_Package;
 

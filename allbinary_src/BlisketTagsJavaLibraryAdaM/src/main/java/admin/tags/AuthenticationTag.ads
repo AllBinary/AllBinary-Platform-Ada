@@ -74,7 +74,7 @@ package admin.tags.AuthenticationTag_Package is
    procedure setUserName (This : in out AuthenticationTag; userName : Unbounded_String);
    procedure setPassword (This : in out AuthenticationTag; value : Unbounded_String);
    procedure setNewPassword (This : in out AuthenticationTag; value : Unbounded_String);
-   procedure setRoles (This : in out AuthenticationTag; values_Param : access BasicArrayList'Class);
+   procedure setRoles (This : in out AuthenticationTag; values_Param : access BasicArrayList_Package.BasicArrayList'Class);
    function changePassword (This : in out AuthenticationTag) return Boolean;
    function newPassword (This : in out AuthenticationTag) return Boolean;
    function invalidateSession (This : in out AuthenticationTag) return Integer;

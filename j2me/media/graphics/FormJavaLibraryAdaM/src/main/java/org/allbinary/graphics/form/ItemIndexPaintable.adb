@@ -39,14 +39,14 @@ package body org.allbinary.graphics.form.ItemIndexPaintable_Package is
    end getInstance;
 
    --  throws Exception
-   function paint (This : in out ItemIndexPaintable; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; dx : Integer; dy : Integer) return Integer is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
-      item : ABCustomItem_Access := ABCustomItem_Access (item_Param);
+   function paint (This : in out ItemIndexPaintable; graphics_Param : access Graphics_Package.Graphics'Class; index : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class; dx : Integer; dy : Integer) return Integer is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
+      item : constant ABCustomItem_Access := ABCustomItem_Access (item_Param);
    begin
         return 0;
    end paint;
 
-   procedure paint (This : in out ItemIndexPaintable; graphics_Param : access Graphics'Class; index : Integer; item_Param : access ABCustomItem'Class; dx : Integer; dy : Integer) is
+   procedure paint (This : in out ItemIndexPaintable; graphics_Param : access Graphics_Package.Graphics'Class; index : Integer; item_Param : access ABCustomItem_Package.ABCustomItem'Class; dx : Integer; dy : Integer) is
       Java_Result : constant Integer := ItemIndexPaintable'Class (This).paint (graphics_Param, index, item_Param, dx, dy);
       pragma Unreferenced (Java_Result);
    begin

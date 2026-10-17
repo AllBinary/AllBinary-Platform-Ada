@@ -42,8 +42,8 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
    end Create;
 
    --  throws Exception
-   function createRotatedImage (This : in out ImageRotationUtil; originalImage_Param : access Image'Class; rotationInDegrees : Integer) return Image_Access is
-      originalImage : Image_Access := Image_Access (originalImage_Param);
+   function createRotatedImage (This : in out ImageRotationUtil; originalImage_Param : access Image_Package.Image'Class; rotationInDegrees : Integer) return Image_Access is
+      originalImage : constant Image_Access := Image_Access (originalImage_Param);
       image : Image_Access;
       bitmap : Bitmap_Access;
       width : Integer;
@@ -65,7 +65,7 @@ package body org.allbinary.media.image.ImageRotationUtil_Package is
         end if;
    end createRotatedImage;
 
-   procedure createRotatedImage (This : in out ImageRotationUtil; originalImage_Param : access Image'Class; rotationInDegrees : Integer) is
+   procedure createRotatedImage (This : in out ImageRotationUtil; originalImage_Param : access Image_Package.Image'Class; rotationInDegrees : Integer) is
       Java_Result : constant Image_Access := ImageRotationUtil'Class (This).createRotatedImage (originalImage_Param, rotationInDegrees);
       pragma Unreferenced (Java_Result);
    begin

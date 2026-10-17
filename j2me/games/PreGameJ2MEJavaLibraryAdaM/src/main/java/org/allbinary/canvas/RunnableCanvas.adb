@@ -42,9 +42,9 @@ package body org.allbinary.canvas.RunnableCanvas_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out RunnableCanvas'Class; commandListener_Param : access CommandListener'Class; childNameList_Param : access BasicArrayList'Class; hasParam : Boolean) is
-      commandListener : CommandListener_Access := CommandListener_Access (commandListener_Param);
-      childNameList : BasicArrayList_Access := BasicArrayList_Access (childNameList_Param);
+   procedure Initialize (This : in out RunnableCanvas'Class; commandListener_Param : access CommandListener_Package.CommandListener'Class; childNameList_Param : access BasicArrayList_Package.BasicArrayList'Class; hasParam : Boolean) is
+      commandListener : constant CommandListener_Access := CommandListener_Access (commandListener_Param);
+      childNameList : constant BasicArrayList_Access := BasicArrayList_Access (childNameList_Param);
    begin
         MyCanvas_Package.Initialize (This, CommonStrings_Package.getInstance.UNKNOWN, childNameList);
         Initialize_Fields (This);
@@ -57,15 +57,15 @@ package body org.allbinary.canvas.RunnableCanvas_Package is
         end if;
    end Initialize;
 
-   function Create (commandListener_Param : access CommandListener'Class; childNameList_Param : access BasicArrayList'Class; hasParam : Boolean) return RunnableCanvas_Access is
+   function Create (commandListener_Param : access CommandListener_Package.CommandListener'Class; childNameList_Param : access BasicArrayList_Package.BasicArrayList'Class; hasParam : Boolean) return RunnableCanvas_Access is
       This : constant RunnableCanvas_Access := new RunnableCanvas;
    begin
       RunnableCanvas_Package.Initialize (This.all, commandListener_Param, childNameList_Param, hasParam);
       return This;
    end Create;
 
-   procedure initCommands (This : in out RunnableCanvas; cmdListener_Param : access CommandListener'Class) is
-      cmdListener : CommandListener_Access := CommandListener_Access (cmdListener_Param);
+   procedure initCommands (This : in out RunnableCanvas; cmdListener_Param : access CommandListener_Package.CommandListener'Class) is
+      cmdListener : constant CommandListener_Access := CommandListener_Access (cmdListener_Param);
    begin
         This.logUtil.putF (This.commonStrings.NOT_IMPLEMENTED, RunnableCanvas_Access'(This'Unchecked_Access), To_Unbounded_String ("initCommands"));
    end initCommands;
@@ -79,8 +79,8 @@ package body org.allbinary.canvas.RunnableCanvas_Package is
         end if;
    end isMainCanvas;
 
-   procedure setThread (This : in out RunnableCanvas; thread_Case_Param : access Thread'Class) is
-      thread_Case : Thread_Access := Thread_Access (thread_Case_Param);
+   procedure setThread (This : in out RunnableCanvas; thread_Case_Param : access Thread_Package.Thread'Class) is
+      thread_Case : constant Thread_Access := Thread_Access (thread_Case_Param);
    begin
         This.thread_Case := thread_Case;
    end setThread;

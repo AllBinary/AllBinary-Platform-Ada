@@ -41,8 +41,8 @@ package body org.allbinary.logic.communication.log.LogUtil_Package is
       return This;
    end Create;
 
-   procedure putL (This : in out LogUtil; log_Param : access Log'Class) is
-      log : Log_Access := Log_Access (log_Param);
+   procedure putL (This : in out LogUtil; log_Param : access Log_Package.Log'Class) is
+      log : constant Log_Access := Log_Access (log_Param);
       specialMessage : Unbounded_String;
       anyType : Java_Object_Access;
       functionName : Unbounded_String;
@@ -56,7 +56,7 @@ package body org.allbinary.logic.communication.log.LogUtil_Package is
    end putL;
 
    procedure putF (This : in out LogUtil; specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String) is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         This.put (specialMessage, anyType, functionName, NullUtil_Package.getInstance.NULL_OBJECT);
    end putF;
@@ -67,8 +67,8 @@ package body org.allbinary.logic.communication.log.LogUtil_Package is
    end putFS;
 
    procedure put (This : in out LogUtil; specialMessage : Unbounded_String; anyType_Param : access Java_Object'Class; functionName : Unbounded_String; exception_Id_Param : access Java_Object'Class) is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
-      exception_Id : Java_Object_Access := Java_Object_Access (exception_Id_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
+      exception_Id : constant Java_Object_Access := Java_Object_Access (exception_Id_Param);
       className : Unbounded_String;
       clazz : Ada.Tags.Tag;
       message : Unbounded_String;
@@ -96,7 +96,7 @@ package body org.allbinary.logic.communication.log.LogUtil_Package is
    end put;
 
    procedure putS (This : in out LogUtil; specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String; exception_Id_Param : access Java_Object'Class) is
-      exception_Id : Java_Object_Access := Java_Object_Access (exception_Id_Param);
+      exception_Id : constant Java_Object_Access := Java_Object_Access (exception_Id_Param);
       message : Unbounded_String;
    begin
         begin

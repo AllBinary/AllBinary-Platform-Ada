@@ -54,8 +54,8 @@ package admin.taghelpers.WorkFlowRequestHelper_Package is
       workFlowInterface : WorkFlowInterface_Access;
    end record;
 
-   procedure Initialize (This : in out WorkFlowRequestHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
-   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return WorkFlowRequestHelper_Access;
+   procedure Initialize (This : in out WorkFlowRequestHelper'Class; hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class);
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return WorkFlowRequestHelper_Access;
    function delete (This : in out WorkFlowRequestHelper) return Unbounded_String;
    function insert (This : in out WorkFlowRequestHelper) return Unbounded_String;
    function update (This : in out WorkFlowRequestHelper) return Unbounded_String;

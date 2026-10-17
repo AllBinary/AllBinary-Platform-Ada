@@ -42,13 +42,13 @@ package org.allbinary.animation.image.TopToBottomImageAnimation_Package is
       anchor : Integer;
    end record;
 
-   procedure Initialize (This : in out TopToBottomImageAnimation'Class; image_Param : access Image'Class; sequenceArray : Integer_Array_Access; animationBehavior_Param : access AnimationBehavior'Class);
-   function Create (image_Param : access Image'Class; sequenceArray : Integer_Array_Access; animationBehavior_Param : access AnimationBehavior'Class) return TopToBottomImageAnimation_Access;
+   procedure Initialize (This : in out TopToBottomImageAnimation'Class; image_Param : access Image_Package.Image'Class; sequenceArray : Integer_Array_Access; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class);
+   function Create (image_Param : access Image_Package.Image'Class; sequenceArray : Integer_Array_Access; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return TopToBottomImageAnimation_Access;
    procedure nextFrame (This : in out TopToBottomImageAnimation);
    procedure previousFrame (This : in out TopToBottomImageAnimation);
    procedure setFrame (This : in out TopToBottomImageAnimation; index : Integer);
    procedure update (This : in out TopToBottomImageAnimation);
-   procedure paintXY (This : in out TopToBottomImageAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
+   procedure paintXY (This : in out TopToBottomImageAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
 
 end org.allbinary.animation.image.TopToBottomImageAnimation_Package;
 

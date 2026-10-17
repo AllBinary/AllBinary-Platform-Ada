@@ -29,22 +29,22 @@ package body org.allbinary.graphics.j2me.workarea.tools.SelectionTool_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out SelectionTool'Class; canvasJPanel_Param : access CanvasJPanel'Class) is
-      canvasJPanel : CanvasJPanel_Access := CanvasJPanel_Access (canvasJPanel_Param);
+   procedure Initialize (This : in out SelectionTool'Class; canvasJPanel_Param : access CanvasJPanel_Package.CanvasJPanel'Class) is
+      canvasJPanel : constant CanvasJPanel_Access := CanvasJPanel_Access (canvasJPanel_Param);
    begin
       Initialize_Fields (This);
         This.canvasJPanel := canvasJPanel;
    end Initialize;
 
-   function Create (canvasJPanel_Param : access CanvasJPanel'Class) return SelectionTool_Access is
+   function Create (canvasJPanel_Param : access CanvasJPanel_Package.CanvasJPanel'Class) return SelectionTool_Access is
       This : constant SelectionTool_Access := new SelectionTool;
    begin
       SelectionTool_Package.Initialize (This.all, canvasJPanel_Param);
       return This;
    end Create;
 
-   procedure setColor (This : in out SelectionTool; color_Param : access Color'Class) is
-      color : Color_Access := Color_Access (color_Param);
+   procedure setColor (This : in out SelectionTool; color_Param : access Color_Package.Color'Class) is
+      color : constant Color_Access := Color_Access (color_Param);
    begin
         null;
    end setColor;
@@ -59,8 +59,8 @@ package body org.allbinary.graphics.j2me.workarea.tools.SelectionTool_Package is
         return null;
    end getPointsInterface;
 
-   procedure setPointsInterface (This : in out SelectionTool; points_Param : access Points'Class) is
-      points : Points_Access := Points_Access (points_Param);
+   procedure setPointsInterface (This : in out SelectionTool; points_Param : access Points_Package.Points'Class) is
+      points : constant Points_Access := Points_Access (points_Param);
    begin
         null;
    end setPointsInterface;
@@ -85,8 +85,8 @@ package body org.allbinary.graphics.j2me.workarea.tools.SelectionTool_Package is
         null;
    end activate;
 
-   procedure setFulcrumPoint (This : in out SelectionTool; point_Param : access GPoint'Class) is
-      point : GPoint_Access := GPoint_Access (point_Param);
+   procedure setFulcrumPoint (This : in out SelectionTool; point_Param : access GPoint_Package.GPoint'Class) is
+      point : constant GPoint_Access := GPoint_Access (point_Param);
    begin
         null;
    end setFulcrumPoint;
@@ -178,9 +178,9 @@ package body org.allbinary.graphics.j2me.workarea.tools.SelectionTool_Package is
         return yRect;
    end getYRect;
 
-   procedure paint (This : in out SelectionTool; g_Param : access Graphics'Class; canvasAngle : Long_Float; dimension_Param : access IntegerDimension'Class; x : Integer; y : Integer) is
-      g : Graphics_Access := Graphics_Access (g_Param);
-      dimension : IntegerDimension_Access := IntegerDimension_Access (dimension_Param);
+   procedure paint (This : in out SelectionTool; g_Param : access Graphics_Package.Graphics'Class; canvasAngle : Long_Float; dimension_Param : access IntegerDimension_Package.IntegerDimension'Class; x : Integer; y : Integer) is
+      g : constant Graphics_Access := Graphics_Access (g_Param);
+      dimension : constant IntegerDimension_Access := IntegerDimension_Access (dimension_Param);
       xRect : Integer;
       width : Integer;
       yRect : Integer;
@@ -195,8 +195,8 @@ package body org.allbinary.graphics.j2me.workarea.tools.SelectionTool_Package is
    end paint;
 
    --  throws Exception
-   function toDom (This : in out SelectionTool; canvasDom_Param : access CanvasDom'Class) return Node_Access is
-      canvasDom : CanvasDom_Access := CanvasDom_Access (canvasDom_Param);
+   function toDom (This : in out SelectionTool; canvasDom_Param : access CanvasDom_Package.CanvasDom'Class) return Node_Access is
+      canvasDom : constant CanvasDom_Access := CanvasDom_Access (canvasDom_Param);
    begin
         return null;
    end toDom;
@@ -206,8 +206,8 @@ package body org.allbinary.graphics.j2me.workarea.tools.SelectionTool_Package is
         return null;
    end removePoint;
 
-   procedure addPoint (This : in out SelectionTool; point_Param : access GPoint'Class) is
-      point : GPoint_Access := GPoint_Access (point_Param);
+   procedure addPoint (This : in out SelectionTool; point_Param : access GPoint_Package.GPoint'Class) is
+      point : constant GPoint_Access := GPoint_Access (point_Param);
    begin
         null;
    end addPoint;
@@ -222,40 +222,40 @@ package body org.allbinary.graphics.j2me.workarea.tools.SelectionTool_Package is
         return SelectionTool_Package.NAME;
    end getStaticName;
 
-   procedure mouseClicked (This : in out SelectionTool; mouseEvent_Param : access MouseEvent'Class; xPixelsPerCell : Integer; yPixelsPerCell : Integer) is
-      mouseEvent : MouseEvent_Access := MouseEvent_Access (mouseEvent_Param);
+   procedure mouseClicked (This : in out SelectionTool; mouseEvent_Param : access MouseEvent_Package.MouseEvent'Class; xPixelsPerCell : Integer; yPixelsPerCell : Integer) is
+      mouseEvent : constant MouseEvent_Access := MouseEvent_Access (mouseEvent_Param);
    begin
         null;
    end mouseClicked;
 
-   procedure mouseMoved (This : in out SelectionTool; mouseEvent_Param : access MouseEvent'Class; xPixelsPerCell : Integer; yPixelsPerCell : Integer) is
-      mouseEvent : MouseEvent_Access := MouseEvent_Access (mouseEvent_Param);
+   procedure mouseMoved (This : in out SelectionTool; mouseEvent_Param : access MouseEvent_Package.MouseEvent'Class; xPixelsPerCell : Integer; yPixelsPerCell : Integer) is
+      mouseEvent : constant MouseEvent_Access := MouseEvent_Access (mouseEvent_Param);
    begin
         null;
    end mouseMoved;
 
-   procedure mouseEntered (This : in out SelectionTool; mouseEvent_Param : access MouseEvent'Class) is
-      mouseEvent : MouseEvent_Access := MouseEvent_Access (mouseEvent_Param);
+   procedure mouseEntered (This : in out SelectionTool; mouseEvent_Param : access MouseEvent_Package.MouseEvent'Class) is
+      mouseEvent : constant MouseEvent_Access := MouseEvent_Access (mouseEvent_Param);
    begin
         null;
    end mouseEntered;
 
-   procedure mouseExited (This : in out SelectionTool; mouseEvent_Param : access MouseEvent'Class) is
-      mouseEvent : MouseEvent_Access := MouseEvent_Access (mouseEvent_Param);
+   procedure mouseExited (This : in out SelectionTool; mouseEvent_Param : access MouseEvent_Package.MouseEvent'Class) is
+      mouseEvent : constant MouseEvent_Access := MouseEvent_Access (mouseEvent_Param);
    begin
         null;
    end mouseExited;
 
-   procedure mousePressed (This : in out SelectionTool; mouseEvent_Param : access MouseEvent'Class; xPixelsPerCell : Integer; yPixelsPerCell : Integer) is
-      mouseEvent : MouseEvent_Access := MouseEvent_Access (mouseEvent_Param);
+   procedure mousePressed (This : in out SelectionTool; mouseEvent_Param : access MouseEvent_Package.MouseEvent'Class; xPixelsPerCell : Integer; yPixelsPerCell : Integer) is
+      mouseEvent : constant MouseEvent_Access := MouseEvent_Access (mouseEvent_Param);
    begin
         This.logUtil.putF (This.commonStrings.START, SelectionTool_Access'(This'Unchecked_Access), MouseStrings_Package.getInstance.MOUSE_PRESSED);
         This.startPoint := PointFactory_Package.getInstance.createXY (mouseEvent.getX, mouseEvent.getY);
         This.endPoint := This.startPoint;
    end mousePressed;
 
-   procedure mouseReleased (This : in out SelectionTool; mouseEvent_Param : access MouseEvent'Class; xPixelsPerCell : Integer; yPixelsPerCell : Integer) is
-      mouseEvent : MouseEvent_Access := MouseEvent_Access (mouseEvent_Param);
+   procedure mouseReleased (This : in out SelectionTool; mouseEvent_Param : access MouseEvent_Package.MouseEvent'Class; xPixelsPerCell : Integer; yPixelsPerCell : Integer) is
+      mouseEvent : constant MouseEvent_Access := MouseEvent_Access (mouseEvent_Param);
    begin
         This.logUtil.putF (This.commonStrings.START, SelectionTool_Access'(This'Unchecked_Access), MouseStrings_Package.getInstance.MOUSE_RELEASED);
         This.endPoint := PointFactory_Package.getInstance.createXY (mouseEvent.getX, mouseEvent.getY);
@@ -263,30 +263,30 @@ package body org.allbinary.graphics.j2me.workarea.tools.SelectionTool_Package is
         This.makeSelection;
    end mouseReleased;
 
-   procedure mouseDragged (This : in out SelectionTool; mouseEvent_Param : access MouseEvent'Class; xPixelsPerCell : Integer; yPixelsPerCell : Integer) is
-      mouseEvent : MouseEvent_Access := MouseEvent_Access (mouseEvent_Param);
+   procedure mouseDragged (This : in out SelectionTool; mouseEvent_Param : access MouseEvent_Package.MouseEvent'Class; xPixelsPerCell : Integer; yPixelsPerCell : Integer) is
+      mouseEvent : constant MouseEvent_Access := MouseEvent_Access (mouseEvent_Param);
    begin
         This.endPoint := PointFactory_Package.getInstance.createXY (mouseEvent.getX, mouseEvent.getY);
    end mouseDragged;
 
-   procedure keyPressed (This : in out SelectionTool; keyEvent_Param : access KeyEvent'Class) is
-      keyEvent : KeyEvent_Access := KeyEvent_Access (keyEvent_Param);
+   procedure keyPressed (This : in out SelectionTool; keyEvent_Param : access KeyEvent_Package.KeyEvent'Class) is
+      keyEvent : constant KeyEvent_Access := KeyEvent_Access (keyEvent_Param);
    begin
         if (keyEvent.getKeyCode) = (keyEvent.VK_CONTROL) then
             This.controlIdDown := True;
         end if;
    end keyPressed;
 
-   procedure keyReleased (This : in out SelectionTool; keyEvent_Param : access KeyEvent'Class) is
-      keyEvent : KeyEvent_Access := KeyEvent_Access (keyEvent_Param);
+   procedure keyReleased (This : in out SelectionTool; keyEvent_Param : access KeyEvent_Package.KeyEvent'Class) is
+      keyEvent : constant KeyEvent_Access := KeyEvent_Access (keyEvent_Param);
    begin
         if (keyEvent.getKeyCode) = (keyEvent.VK_CONTROL) then
             This.controlIdDown := False;
         end if;
    end keyReleased;
 
-   procedure keyTyped (This : in out SelectionTool; keyEvent_Param : access KeyEvent'Class) is
-      keyEvent : KeyEvent_Access := KeyEvent_Access (keyEvent_Param);
+   procedure keyTyped (This : in out SelectionTool; keyEvent_Param : access KeyEvent_Package.KeyEvent'Class) is
+      keyEvent : constant KeyEvent_Access := KeyEvent_Access (keyEvent_Param);
    begin
         null;
    end keyTyped;
@@ -297,7 +297,7 @@ package body org.allbinary.graphics.j2me.workarea.tools.SelectionTool_Package is
         return null;
    end duplicate;
 
-   procedure toDom (This : in out SelectionTool; canvasDom_Param : access CanvasDom'Class) is
+   procedure toDom (This : in out SelectionTool; canvasDom_Param : access CanvasDom_Package.CanvasDom'Class) is
       Java_Result : constant Node_Access := SelectionTool'Class (This).toDom (canvasDom_Param);
       pragma Unreferenced (Java_Result);
    begin

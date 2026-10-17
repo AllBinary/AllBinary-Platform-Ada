@@ -34,15 +34,15 @@ package body org.allbinary.media.audio.NullClip_Package is
 
 
    --  throws LineUnavailableException
-   procedure open (This : in out NullClip; format_Param : access AudioFormat'Class; data : Short_Short_Integer_Array_Access; offset : Integer; bufferSize : Integer) is
-      format : AudioFormat_Access := AudioFormat_Access (format_Param);
+   procedure open (This : in out NullClip; format_Param : access AudioFormat_Package.AudioFormat'Class; data : Short_Short_Integer_Array_Access; offset : Integer; bufferSize : Integer) is
+      format : constant AudioFormat_Access := AudioFormat_Access (format_Param);
    begin
         null;
    end open;
 
    --  throws LineUnavailableException, IOException
-   procedure open (This : in out NullClip; stream_Param : access AudioInputStream'Class) is
-      stream : AudioInputStream_Access := AudioInputStream_Access (stream_Param);
+   procedure open (This : in out NullClip; stream_Param : access AudioInputStream_Package.AudioInputStream'Class) is
+      stream : constant AudioInputStream_Access := AudioInputStream_Access (stream_Param);
    begin
         null;
    end open;
@@ -168,38 +168,38 @@ package body org.allbinary.media.audio.NullClip_Package is
         return new Control_Access_Array'(0 .. (0) - 1 => null);
    end getControls;
 
-   function isControlSupported (This : in out NullClip; control_Param : access Type'Class) return Boolean is
-      control : Type_Access := Type_Access (control_Param);
+   function isControlSupported (This : in out NullClip; control_Param : access Type_Package.Type'Class) return Boolean is
+      control : constant Type_Access := Type_Access (control_Param);
    begin
         return False;
    end isControlSupported;
 
-   function getControl (This : in out NullClip; control_Param : access Type'Class) return Control_Access is
-      control : Type_Access := Type_Access (control_Param);
+   function getControl (This : in out NullClip; control_Param : access Type_Package.Type'Class) return Control_Access is
+      control : constant Type_Access := Type_Access (control_Param);
    begin
         return NullClip_Package.NULL_CONTROL;
    end getControl;
 
-   procedure addLineListener (This : in out NullClip; listener_Param : access LineListener'Class) is
-      listener : LineListener_Access := LineListener_Access (listener_Param);
+   procedure addLineListener (This : in out NullClip; listener_Param : access LineListener_Package.LineListener'Class) is
+      listener : constant LineListener_Access := LineListener_Access (listener_Param);
    begin
         null;
    end addLineListener;
 
-   procedure removeLineListener (This : in out NullClip; listener_Param : access LineListener'Class) is
-      listener : LineListener_Access := LineListener_Access (listener_Param);
+   procedure removeLineListener (This : in out NullClip; listener_Param : access LineListener_Package.LineListener'Class) is
+      listener : constant LineListener_Access := LineListener_Access (listener_Param);
    begin
         null;
    end removeLineListener;
 
-   procedure isControlSupported (This : in out NullClip; control_Param : access Type'Class) is
+   procedure isControlSupported (This : in out NullClip; control_Param : access Type_Package.Type'Class) is
       Java_Result : constant Boolean := NullClip'Class (This).isControlSupported (control_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end isControlSupported;
 
-   procedure getControl (This : in out NullClip; control_Param : access Type'Class) is
+   procedure getControl (This : in out NullClip; control_Param : access Type_Package.Type'Class) is
       Java_Result : constant Control_Access := NullClip'Class (This).getControl (control_Param);
       pragma Unreferenced (Java_Result);
    begin

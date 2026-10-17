@@ -49,17 +49,17 @@ package org.allbinary.data.tree.dom.XslHelper_Package is
    procedure Initialize (This : in out XslHelper'Class);
    function Create return XslHelper_Access;
    function getInstance return XslHelper_Access;
-   function translate (This : in out XslHelper; xsltStreamSource_Param : access StreamSource'Class; xmlStreamSource_Param : access StreamSource'Class; streamResult_Param : access StreamResult'Class) return OutputStream_Access;
-   procedure translate (This : in out XslHelper; xsltStreamSource_Param : access StreamSource'Class; xmlStreamSource_Param : access StreamSource'Class; streamResult_Param : access StreamResult'Class);
-   function translate (This : in out XslHelper; resolver_Param : access URIResolver'Class; xsltStreamSource_Param : access StreamSource'Class; xmlStreamSource_Param : access StreamSource'Class; streamResult_Param : access StreamResult'Class) return OutputStream_Access;
-   procedure translate (This : in out XslHelper; resolver_Param : access URIResolver'Class; xsltStreamSource_Param : access StreamSource'Class; xmlStreamSource_Param : access StreamSource'Class; streamResult_Param : access StreamResult'Class);
-   function translate (This : in out XslHelper; xsltStreamSource_Param : access StreamSource'Class; xmlDocument_Param : access Document'Class) return Unbounded_String;
-   procedure translate (This : in out XslHelper; xsltStreamSource_Param : access StreamSource'Class; xmlDocument_Param : access Document'Class);
-   function translate (This : in out XslHelper; xsltStreamSource_Param : access StreamSource'Class; xmlStreamSource_Param : access StreamSource'Class) return Unbounded_String;
-   procedure translate (This : in out XslHelper; xsltStreamSource_Param : access StreamSource'Class; xmlStreamSource_Param : access StreamSource'Class);
-   function translate (This : in out XslHelper; resolver_Param : access URIResolver'Class; xsltStreamSource_Param : access StreamSource'Class; xmlStreamSource_Param : access StreamSource'Class) return Unbounded_String;
-   procedure translate (This : in out XslHelper; resolver_Param : access URIResolver'Class; xsltStreamSource_Param : access StreamSource'Class; xmlStreamSource_Param : access StreamSource'Class);
-   procedure export (This : in out XslHelper; outputFile_Param : access File'Class; xsltFilePath : Unbounded_String; xmlDocument_Param : access Document'Class);
+   function translate (This : in out XslHelper; xsltStreamSource_Param : access StreamSource_Package.StreamSource'Class; xmlStreamSource_Param : access StreamSource_Package.StreamSource'Class; streamResult_Param : access StreamResult_Package.StreamResult'Class) return OutputStream_Access;
+   procedure translate (This : in out XslHelper; xsltStreamSource_Param : access StreamSource_Package.StreamSource'Class; xmlStreamSource_Param : access StreamSource_Package.StreamSource'Class; streamResult_Param : access StreamResult_Package.StreamResult'Class);
+   function translate (This : in out XslHelper; resolver_Param : access URIResolver_Package.URIResolver'Class; xsltStreamSource_Param : access StreamSource_Package.StreamSource'Class; xmlStreamSource_Param : access StreamSource_Package.StreamSource'Class; streamResult_Param : access StreamResult_Package.StreamResult'Class) return OutputStream_Access;
+   procedure translate (This : in out XslHelper; resolver_Param : access URIResolver_Package.URIResolver'Class; xsltStreamSource_Param : access StreamSource_Package.StreamSource'Class; xmlStreamSource_Param : access StreamSource_Package.StreamSource'Class; streamResult_Param : access StreamResult_Package.StreamResult'Class);
+   function translate (This : in out XslHelper; xsltStreamSource_Param : access StreamSource_Package.StreamSource'Class; xmlDocument_Param : access Document_Package.Document'Class) return Unbounded_String;
+   procedure translate (This : in out XslHelper; xsltStreamSource_Param : access StreamSource_Package.StreamSource'Class; xmlDocument_Param : access Document_Package.Document'Class);
+   function translate (This : in out XslHelper; xsltStreamSource_Param : access StreamSource_Package.StreamSource'Class; xmlStreamSource_Param : access StreamSource_Package.StreamSource'Class) return Unbounded_String;
+   procedure translate (This : in out XslHelper; xsltStreamSource_Param : access StreamSource_Package.StreamSource'Class; xmlStreamSource_Param : access StreamSource_Package.StreamSource'Class);
+   function translate (This : in out XslHelper; resolver_Param : access URIResolver_Package.URIResolver'Class; xsltStreamSource_Param : access StreamSource_Package.StreamSource'Class; xmlStreamSource_Param : access StreamSource_Package.StreamSource'Class) return Unbounded_String;
+   procedure translate (This : in out XslHelper; resolver_Param : access URIResolver_Package.URIResolver'Class; xsltStreamSource_Param : access StreamSource_Package.StreamSource'Class; xmlStreamSource_Param : access StreamSource_Package.StreamSource'Class);
+   procedure export (This : in out XslHelper; outputFile_Param : access File_Package.File'Class; xsltFilePath : Unbounded_String; xmlDocument_Param : access Document_Package.Document'Class);
 
 end org.allbinary.data.tree.dom.XslHelper_Package;
 

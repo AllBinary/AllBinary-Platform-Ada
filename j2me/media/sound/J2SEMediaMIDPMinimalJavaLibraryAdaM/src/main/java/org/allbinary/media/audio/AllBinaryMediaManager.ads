@@ -67,12 +67,12 @@ package org.allbinary.media.audio.AllBinaryMediaManager_Package is
    function isMuted return Boolean;
    procedure setMuted (aMuted : Boolean);
    function update return Boolean;
-   procedure init (soundsFactoryInterface_Param : access SoundsFactoryInterface'Class);
-   procedure shutdown (soundsFactoryInterface_Param : access SoundsFactoryInterface'Class);
+   procedure init (soundsFactoryInterface_Param : access SoundsFactoryInterface_Package.SoundsFactoryInterface'Class);
+   procedure shutdown (soundsFactoryInterface_Param : access SoundsFactoryInterface_Package.SoundsFactoryInterface'Class);
    function createPlayer (resource : Unbounded_String) return Player_Access;
    procedure createPlayer (resource : Unbounded_String);
-   function createPlayerFromInputStream (stream_Param : access InputStream'Class; type_Id : Unbounded_String) return Player_Access;
-   procedure createPlayerFromInputStream (stream_Param : access InputStream'Class; type_Id : Unbounded_String);
+   function createPlayerFromInputStream (stream_Param : access InputStream_Package.InputStream'Class; type_Id : Unbounded_String) return Player_Access;
+   procedure createPlayerFromInputStream (stream_Param : access InputStream_Package.InputStream'Class; type_Id : Unbounded_String);
    procedure playTone (frequency : Integer; time : Integer; volume : Integer);
    function isInitialized return Boolean;
 

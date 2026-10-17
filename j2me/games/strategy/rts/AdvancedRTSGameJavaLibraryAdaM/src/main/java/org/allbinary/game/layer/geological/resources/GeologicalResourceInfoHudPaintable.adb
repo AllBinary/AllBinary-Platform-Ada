@@ -37,8 +37,8 @@ package body org.allbinary.game.layer.geological.resources.GeologicalResourceInf
       return This;
    end Create;
 
-   procedure updateMeasurement (This : in out GeologicalResourceInfoHudPaintable; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure updateMeasurement (This : in out GeologicalResourceInfoHudPaintable; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
    begin
         WaypointInfoHudPaintable (This).updateMeasurement (graphics);
@@ -65,8 +65,8 @@ package body org.allbinary.game.layer.geological.resources.GeologicalResourceInf
         This.keyvalueDrawString.update (This.getPrimitiveLongUtil.getCharArray (total), This.getPrimitiveLongUtil.getCurrentTotalDigits);
    end updateSelectionInfo;
 
-   procedure paint (This : in out GeologicalResourceInfoHudPaintable; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out GeologicalResourceInfoHudPaintable; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         WaypointInfoHudPaintable (This).paint (graphics);
         This.keyvalueDrawString.paint (graphics, ((This.y) + (This.fontHeight)));

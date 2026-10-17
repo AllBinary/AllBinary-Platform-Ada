@@ -23,27 +23,27 @@ package body org.allbinary.logic.control.crypt.file.CryptFileReader_Package is
    end Create;
 
    --  throws Exception
-   function get (This : in out CryptFileReader; fileAbPath_Param : access AbPath'Class) return Unbounded_String is
-      fileAbPath : AbPath_Access := AbPath_Access (fileAbPath_Param);
+   function get (This : in out CryptFileReader; fileAbPath_Param : access AbPath_Package.AbPath'Class) return Unbounded_String is
+      fileAbPath : constant AbPath_Access := AbPath_Access (fileAbPath_Param);
    begin
         return Null_Unbounded_String;
    end get;
 
    --  throws Exception
-   function getInputStream (This : in out CryptFileReader; fileAbPath_Param : access AbPath'Class) return InputStream_Access is
-      fileAbPath : AbPath_Access := AbPath_Access (fileAbPath_Param);
+   function getInputStream (This : in out CryptFileReader; fileAbPath_Param : access AbPath_Package.AbPath'Class) return InputStream_Access is
+      fileAbPath : constant AbPath_Access := AbPath_Access (fileAbPath_Param);
    begin
         return null;
    end getInputStream;
 
-   procedure get (This : in out CryptFileReader; fileAbPath_Param : access AbPath'Class) is
+   procedure get (This : in out CryptFileReader; fileAbPath_Param : access AbPath_Package.AbPath'Class) is
       Java_Result : constant Unbounded_String := CryptFileReader'Class (This).get (fileAbPath_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end get;
 
-   procedure getInputStream (This : in out CryptFileReader; fileAbPath_Param : access AbPath'Class) is
+   procedure getInputStream (This : in out CryptFileReader; fileAbPath_Param : access AbPath_Package.AbPath'Class) is
       Java_Result : constant InputStream_Access := CryptFileReader'Class (This).getInputStream (fileAbPath_Param);
       pragma Unreferenced (Java_Result);
    begin

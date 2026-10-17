@@ -38,7 +38,7 @@ package org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package is
 
    procedure Initialize (This : in out AllBinaryEventCircularPool'Class; max : Integer);
    function Create (max : Integer) return AllBinaryEventCircularPool_Access;
-   procedure initAllBinaryEventCircularPool (This : in out AllBinaryEventCircularPool; allBinaryEventObjectFactoryInterface_Param : access AllBinaryEventObjectFactoryInterface'Class);
+   procedure initAllBinaryEventCircularPool (This : in out AllBinaryEventCircularPool; allBinaryEventObjectFactoryInterface_Param : access AllBinaryEventObjectFactoryInterface_Package.AllBinaryEventObjectFactoryInterface'Class);
 
 end org.allbinary.logic.util.event.AllBinaryEventCircularPool_Package;
 

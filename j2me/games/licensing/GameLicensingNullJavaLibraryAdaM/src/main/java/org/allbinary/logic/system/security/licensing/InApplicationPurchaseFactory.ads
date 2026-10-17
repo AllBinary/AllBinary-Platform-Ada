@@ -45,10 +45,10 @@ package org.allbinary.logic.system.security.licensing.InApplicationPurchaseFacto
    procedure onSaveState (This : in out InApplicationPurchaseFactory; anyType_Param : access Java_Object'Class);
    procedure onStop (This : in out InApplicationPurchaseFactory);
    procedure onDestroy (This : in out InApplicationPurchaseFactory);
-   procedure purchase (This : in out InApplicationPurchaseFactory; lockableFeature_Param : access LockableFeature'Class);
-   function isPurchased (This : in out InApplicationPurchaseFactory; lockableFeature_Param : access LockableFeature'Class) return Boolean;
-   procedure isPurchased (This : in out InApplicationPurchaseFactory; lockableFeature_Param : access LockableFeature'Class);
-   procedure add (This : in out InApplicationPurchaseFactory; lockableFeature_Param : access LockableFeature'Class);
+   procedure purchase (This : in out InApplicationPurchaseFactory; lockableFeature_Param : access LockableFeature_Package.LockableFeature'Class);
+   function isPurchased (This : in out InApplicationPurchaseFactory; lockableFeature_Param : access LockableFeature_Package.LockableFeature'Class) return Boolean;
+   procedure isPurchased (This : in out InApplicationPurchaseFactory; lockableFeature_Param : access LockableFeature_Package.LockableFeature'Class);
+   procedure add (This : in out InApplicationPurchaseFactory; lockableFeature_Param : access LockableFeature_Package.LockableFeature'Class);
    function getUserName (This : in out InApplicationPurchaseFactory) return Unbounded_String;
    function isEnabled (This : in out InApplicationPurchaseFactory) return Boolean;
 

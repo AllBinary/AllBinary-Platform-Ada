@@ -27,8 +27,8 @@ package body org.allbinary.media.image.search.ImageComparisonSearchWorker_Packag
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ImageComparisonSearchWorker'Class; imageSearchConstraintsInterface_Param : access ImageComparisonSearchConstraintsInterface'Class) is
-      imageSearchConstraintsInterface : ImageComparisonSearchConstraintsInterface_Access := ImageComparisonSearchConstraintsInterface_Access (imageSearchConstraintsInterface_Param);
+   procedure Initialize (This : in out ImageComparisonSearchWorker'Class; imageSearchConstraintsInterface_Param : access ImageComparisonSearchConstraintsInterface_Package.ImageComparisonSearchConstraintsInterface'Class) is
+      imageSearchConstraintsInterface : constant ImageComparisonSearchConstraintsInterface_Access := ImageComparisonSearchConstraintsInterface_Access (imageSearchConstraintsInterface_Param);
    begin
       BasicEventHandler_Package.Initialize (This);
       Initialize_Fields (This);
@@ -36,22 +36,22 @@ package body org.allbinary.media.image.search.ImageComparisonSearchWorker_Packag
         This.imageSearchConstraintsInterface := imageSearchConstraintsInterface;
    end Initialize;
 
-   function Create (imageSearchConstraintsInterface_Param : access ImageComparisonSearchConstraintsInterface'Class) return ImageComparisonSearchWorker_Access is
+   function Create (imageSearchConstraintsInterface_Param : access ImageComparisonSearchConstraintsInterface_Package.ImageComparisonSearchConstraintsInterface'Class) return ImageComparisonSearchWorker_Access is
       This : constant ImageComparisonSearchWorker_Access := new ImageComparisonSearchWorker;
    begin
       ImageComparisonSearchWorker_Package.Initialize (This.all, imageSearchConstraintsInterface_Param);
       return This;
    end Create;
 
-   procedure onImageComparisonResultsEvent (This : in out ImageComparisonSearchWorker; imageComparisonResultsEvent_Param : access ImageComparisonResultsEvent'Class) is
-      imageComparisonResultsEvent : ImageComparisonResultsEvent_Access := ImageComparisonResultsEvent_Access (imageComparisonResultsEvent_Param);
+   procedure onImageComparisonResultsEvent (This : in out ImageComparisonSearchWorker; imageComparisonResultsEvent_Param : access ImageComparisonResultsEvent_Package.ImageComparisonResultsEvent'Class) is
+      imageComparisonResultsEvent : constant ImageComparisonResultsEvent_Access := ImageComparisonResultsEvent_Access (imageComparisonResultsEvent_Param);
    begin
         This.imageComparisonInfoVector.add (imageComparisonResultsEvent.getImageComparisonResult);
         This.run;
    end onImageComparisonResultsEvent;
 
-   procedure onEvent (This : in out ImageComparisonSearchWorker; allBinaryEventObject_Param : access AllBinaryEventObject'Class) is
-      allBinaryEventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (allBinaryEventObject_Param);
+   procedure onEvent (This : in out ImageComparisonSearchWorker; allBinaryEventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
+      allBinaryEventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (allBinaryEventObject_Param);
    begin
         This.onImageComparisonResultsEvent (ImageComparisonResultsEvent_Access (allBinaryEventObject));
    end onEvent;

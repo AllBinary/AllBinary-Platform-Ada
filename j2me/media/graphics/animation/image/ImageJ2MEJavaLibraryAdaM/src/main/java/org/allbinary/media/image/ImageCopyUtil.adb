@@ -47,15 +47,15 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
    end Create;
 
    --  throws Exception
-   function createImageForRotation (This : in out ImageCopyUtil; originalImage_Param : access Image'Class) return Image_Access is
-      originalImage : Image_Access := Image_Access (originalImage_Param);
+   function createImageForRotation (This : in out ImageCopyUtil; originalImage_Param : access Image_Package.Image'Class) return Image_Access is
+      originalImage : constant Image_Access := Image_Access (originalImage_Param);
    begin
         return This.createImage (originalImage);
    end createImageForRotation;
 
    --  throws Exception
-   function createImage (This : in out ImageCopyUtil; originalImage_Param : access Image'Class) return Image_Access is
-      originalImage : Image_Access := Image_Access (originalImage_Param);
+   function createImage (This : in out ImageCopyUtil; originalImage_Param : access Image_Package.Image'Class) return Image_Access is
+      originalImage : constant Image_Access := Image_Access (originalImage_Param);
       image : Image_Access;
    begin
         if not (This.features.isFeature (This.gameFeatureFactory.POST_IMAGE_LOADING_MODIFICATION)) then
@@ -72,8 +72,8 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
    end createImage;
 
    --  throws Exception
-   function createImageScale (This : in out ImageCopyUtil; originalImage_Param : access Image'Class; canvasScale : Float; resize : Boolean) return Image_Access is
-      originalImage : Image_Access := Image_Access (originalImage_Param);
+   function createImageScale (This : in out ImageCopyUtil; originalImage_Param : access Image_Package.Image'Class; canvasScale : Float; resize : Boolean) return Image_Access is
+      originalImage : constant Image_Access := Image_Access (originalImage_Param);
       newWidth : Integer;
       newHeight : Integer;
       image : Image_Access;
@@ -107,21 +107,21 @@ package body org.allbinary.media.image.ImageCopyUtil_Package is
         end if;
    end createImageScale;
 
-   procedure createImageForRotation (This : in out ImageCopyUtil; originalImage_Param : access Image'Class) is
+   procedure createImageForRotation (This : in out ImageCopyUtil; originalImage_Param : access Image_Package.Image'Class) is
       Java_Result : constant Image_Access := ImageCopyUtil'Class (This).createImageForRotation (originalImage_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createImageForRotation;
 
-   procedure createImage (This : in out ImageCopyUtil; originalImage_Param : access Image'Class) is
+   procedure createImage (This : in out ImageCopyUtil; originalImage_Param : access Image_Package.Image'Class) is
       Java_Result : constant Image_Access := ImageCopyUtil'Class (This).createImage (originalImage_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createImage;
 
-   procedure createImageScale (This : in out ImageCopyUtil; originalImage_Param : access Image'Class; canvasScale : Float; resize : Boolean) is
+   procedure createImageScale (This : in out ImageCopyUtil; originalImage_Param : access Image_Package.Image'Class; canvasScale : Float; resize : Boolean) is
       Java_Result : constant Image_Access := ImageCopyUtil'Class (This).createImageScale (originalImage_Param, canvasScale, resize);
       pragma Unreferenced (Java_Result);
    begin

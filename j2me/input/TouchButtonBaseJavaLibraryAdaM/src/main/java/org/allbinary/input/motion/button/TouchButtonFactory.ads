@@ -45,8 +45,8 @@ package org.allbinary.input.motion.button.TouchButtonFactory_Package is
    function Create return TouchButtonFactory_Access;
    function getInstance return TouchButtonFactory_Access;
    procedure defaultList (This : in out TouchButtonFactory);
-   procedure toggle (This : in out TouchButtonFactory; save : Boolean; list_Case_Param : access BasicArrayList'Class);
-   procedure setList (This : in out TouchButtonFactory; list_Case_Param : access BasicArrayList'Class);
+   procedure toggle (This : in out TouchButtonFactory; save : Boolean; list_Case_Param : access BasicArrayList_Package.BasicArrayList'Class);
+   procedure setList (This : in out TouchButtonFactory; list_Case_Param : access BasicArrayList_Package.BasicArrayList'Class);
    function getList (This : in out TouchButtonFactory) return BasicArrayList_Access;
 
 end org.allbinary.input.motion.button.TouchButtonFactory_Package;

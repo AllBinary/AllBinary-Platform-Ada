@@ -39,8 +39,8 @@ package org.allbinary.game.midlet.SpecialDemoGameMidlet_Package is
 
    type SpecialDemoGameMidlet is new DemoGameMidlet with null record;
 
-   procedure Initialize (This : in out SpecialDemoGameMidlet'Class; clientInformationFactory_Param : access ClientInformationFactory'Class; licenseLoadingType_Param : access LicenseLoadingType'Class; demoSetupFactory_Param : access LicensedDemoSetupFactory'Class; licenseCheckRunnableFactory_Param : access LicenseCheckRunnableFactory'Class);
-   function Create (clientInformationFactory_Param : access ClientInformationFactory'Class; licenseLoadingType_Param : access LicenseLoadingType'Class; demoSetupFactory_Param : access LicensedDemoSetupFactory'Class; licenseCheckRunnableFactory_Param : access LicenseCheckRunnableFactory'Class) return SpecialDemoGameMidlet_Access;
+   procedure Initialize (This : in out SpecialDemoGameMidlet'Class; clientInformationFactory_Param : access ClientInformationFactory_Package.ClientInformationFactory'Class; licenseLoadingType_Param : access LicenseLoadingType_Package.LicenseLoadingType'Class; demoSetupFactory_Param : access LicensedDemoSetupFactory_Package.LicensedDemoSetupFactory'Class; licenseCheckRunnableFactory_Param : access LicenseCheckRunnableFactory_Package.LicenseCheckRunnableFactory'Class);
+   function Create (clientInformationFactory_Param : access ClientInformationFactory_Package.ClientInformationFactory'Class; licenseLoadingType_Param : access LicenseLoadingType_Package.LicenseLoadingType'Class; demoSetupFactory_Param : access LicensedDemoSetupFactory_Package.LicensedDemoSetupFactory'Class; licenseCheckRunnableFactory_Param : access LicenseCheckRunnableFactory_Package.LicenseCheckRunnableFactory'Class) return SpecialDemoGameMidlet_Access;
    procedure initView (This : in out SpecialDemoGameMidlet);
    procedure preInit (This : in out SpecialDemoGameMidlet);
 

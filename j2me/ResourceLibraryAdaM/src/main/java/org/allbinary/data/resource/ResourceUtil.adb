@@ -45,8 +45,8 @@ package body org.allbinary.data.resource.ResourceUtil_Package is
         This.logUtil.putF (CommonStrings_Package.getInstance.NOT_IMPLEMENTED, ResourceUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("setLoadingPaths"));
    end setLoadingPaths;
 
-   procedure setClassLoader (This : in out ResourceUtil; classLoader_Param : access ClassLoader'Class) is
-      classLoader : ClassLoader_Access := ClassLoader_Access (classLoader_Param);
+   procedure setClassLoader (This : in out ResourceUtil; classLoader_Param : access ClassLoader_Package.ClassLoader'Class) is
+      classLoader : constant ClassLoader_Access := ClassLoader_Access (classLoader_Param);
    begin
         This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Resource Loader: ")).append (To_Unbounded_String (Ada.Tags.Expanded_Name (classLoader.all'Tag))).toString, ResourceUtil_Access'(This'Unchecked_Access), To_Unbounded_String ("setClassLoader"));
         ResourceUtil_Package.classLoader := classLoader;

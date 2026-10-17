@@ -75,7 +75,7 @@ package org.allbinary.game.layer.NullVehicleLayer_Package is
    function getSpeedBasicDecimal (This : in out NullVehicleLayer) return BasicDecimal_Access;
    function isReadyForExplosion (This : in out NullVehicleLayer) return Boolean;
    function getRotationAnimationInterface (This : in out NullVehicleLayer) return RotationAnimation_Access;
-   procedure setRotationAnimationInterface (This : in out NullVehicleLayer; animationInterface_Param : access RotationAnimation'Class);
+   procedure setRotationAnimationInterface (This : in out NullVehicleLayer; animationInterface_Param : access RotationAnimation_Package.RotationAnimation'Class);
    function isDestroyed (This : in out NullVehicleLayer) return Boolean;
    function isFinish (This : in out NullVehicleLayer) return Boolean;
    function getFinalPosition (This : in out NullVehicleLayer) return Integer;
@@ -83,8 +83,8 @@ package org.allbinary.game.layer.NullVehicleLayer_Package is
    function getGeographicMapCellPositionTracking (This : in out NullVehicleLayer) return GeographicMapCellPositionTracking_Access;
    function getGeographicMapCellHistoryArray (This : in out NullVehicleLayer) return GeographicMapCellHistory_Access_Array_Access;
    procedure setGeographicMapCellHistoryArray (This : in out NullVehicleLayer; geographicMapCellHistory : GeographicMapCellHistory_Access_Array_Access);
-   procedure paint (This : in out NullVehicleLayer; graphics_Param : access Graphics'Class);
-   procedure paintThreed (This : in out NullVehicleLayer; graphics_Param : access Graphics'Class);
+   procedure paint (This : in out NullVehicleLayer; graphics_Param : access Graphics_Package.Graphics'Class);
+   procedure paintThreed (This : in out NullVehicleLayer; graphics_Param : access Graphics_Package.Graphics'Class);
 
 end org.allbinary.game.layer.NullVehicleLayer_Package;
 

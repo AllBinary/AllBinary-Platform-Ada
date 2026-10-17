@@ -35,8 +35,8 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
    end Create;
 
    --  throws Exception
-   procedure process (mouseActionScriptInputInterface_Param : access MouseActionScriptInputInterface'Class) is
-      mouseActionScriptInputInterface : MouseActionScriptInputInterface_Access := MouseActionScriptInputInterface_Access (mouseActionScriptInputInterface_Param);
+   procedure process (mouseActionScriptInputInterface_Param : access MouseActionScriptInputInterface_Package.MouseActionScriptInputInterface'Class) is
+      mouseActionScriptInputInterface : constant MouseActionScriptInputInterface_Access := MouseActionScriptInputInterface_Access (mouseActionScriptInputInterface_Param);
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
       inputRobotInterface : InputRobotInterface_Access;

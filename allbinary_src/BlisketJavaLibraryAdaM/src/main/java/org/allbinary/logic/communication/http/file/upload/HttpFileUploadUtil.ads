@@ -51,8 +51,8 @@ package org.allbinary.logic.communication.http.file.upload.HttpFileUploadUtil_Pa
    function getInstance return HttpFileUploadUtil_Access;
    function isValid (This : in out HttpFileUploadUtil; anyType_Param : access Java_Object'Class) return Boolean;
    procedure isValid (This : in out HttpFileUploadUtil; anyType_Param : access Java_Object'Class);
-   procedure log (fileItem_Param : access FileItemStream'Class);
-   procedure log (fileItem_Param : access FileItem'Class);
+   procedure log (fileItem_Param : access FileItemStream_Package.FileItemStream'Class);
+   procedure log (fileItem_Param : access FileItem_Package.FileItem'Class);
 
 end org.allbinary.logic.communication.http.file.upload.HttpFileUploadUtil_Package;
 

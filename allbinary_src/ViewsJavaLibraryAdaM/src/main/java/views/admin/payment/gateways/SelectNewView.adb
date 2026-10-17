@@ -22,14 +22,14 @@ package body views.admin.payment.gateways.SelectNewView_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out SelectNewView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out SelectNewView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         PaymentGatewayViewAbstract_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return SelectNewView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return SelectNewView_Access is
       This : constant SelectNewView_Access := new SelectNewView;
    begin
       SelectNewView_Package.Initialize (This.all, transformInfoInterface_Param);

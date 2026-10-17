@@ -39,7 +39,7 @@ package org.allbinary.business.category.properties.CategoryPropertiesInterface_P
    procedure setValue (This : in out CategoryPropertiesInterface; value : Unbounded_String) is abstract;
    function getValue (This : in out CategoryPropertiesInterface) return Unbounded_String is abstract;
    function getWebAppPath (This : in out CategoryPropertiesInterface) return AbPath_Access is abstract;
-   function getPath (This : in out CategoryPropertiesInterface; categoryHierarchyInterface_Param : access CategoryHierarchyInterface'Class) return AbPath_Access is abstract;
+   function getPath (This : in out CategoryPropertiesInterface; categoryHierarchyInterface_Param : access CategoryHierarchyInterface_Package.CategoryHierarchyInterface'Class) return AbPath_Access is abstract;
    function getFileName (This : in out CategoryPropertiesInterface) return Unbounded_String is abstract;
    function isRoot (This : in out CategoryPropertiesInterface) return Boolean is abstract;
    function isRealRoot (This : in out CategoryPropertiesInterface) return Boolean is abstract;

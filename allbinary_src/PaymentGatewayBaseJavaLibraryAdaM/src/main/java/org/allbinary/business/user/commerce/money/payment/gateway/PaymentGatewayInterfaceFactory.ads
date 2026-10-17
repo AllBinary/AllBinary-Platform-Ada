@@ -52,12 +52,12 @@ package org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewa
 
    procedure Initialize (This : in out PaymentGatewayInterfaceFactory'Class);
    function Create return PaymentGatewayInterfaceFactory_Access;
-   function getInstance (This : in out PaymentGatewayInterfaceFactory; httpServletRequest_Param : access HttpServletRequest'Class) return PaymentGatewayInterface_Access;
-   procedure getInstance (This : in out PaymentGatewayInterfaceFactory; httpServletRequest_Param : access HttpServletRequest'Class);
-   function getInstance (This : in out PaymentGatewayInterfaceFactory; paymentType_Param : access BasicPaymentType'Class) return PaymentGatewayInterface_Access;
-   procedure getInstance (This : in out PaymentGatewayInterfaceFactory; paymentType_Param : access BasicPaymentType'Class);
-   function getInstance (This : in out PaymentGatewayInterfaceFactory; hashMap_Param : access HashMap'Class) return PaymentGatewayInterface_Access;
-   procedure getInstance (This : in out PaymentGatewayInterfaceFactory; hashMap_Param : access HashMap'Class);
+   function getInstance (This : in out PaymentGatewayInterfaceFactory; httpServletRequest_Param : access HttpServletRequest_Package.HttpServletRequest'Class) return PaymentGatewayInterface_Access;
+   procedure getInstance (This : in out PaymentGatewayInterfaceFactory; httpServletRequest_Param : access HttpServletRequest_Package.HttpServletRequest'Class);
+   function getInstance (This : in out PaymentGatewayInterfaceFactory; paymentType_Param : access BasicPaymentType_Package.BasicPaymentType'Class) return PaymentGatewayInterface_Access;
+   procedure getInstance (This : in out PaymentGatewayInterfaceFactory; paymentType_Param : access BasicPaymentType_Package.BasicPaymentType'Class);
+   function getInstance (This : in out PaymentGatewayInterfaceFactory; hashMap_Param : access HashMap_Package.HashMap'Class) return PaymentGatewayInterface_Access;
+   procedure getInstance (This : in out PaymentGatewayInterfaceFactory; hashMap_Param : access HashMap_Package.HashMap'Class);
 
 end org.allbinary.business.user.commerce.money.payment.gateway.PaymentGatewayInterfaceFactory_Package;
 

@@ -22,14 +22,14 @@ package body org.allbinary.animation.SingletonAnimationInterfaceFactory_Package 
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out SingletonAnimationInterfaceFactory'Class; animationInterface_Param : access Animation'Class) is
-      animationInterface : Animation_Access := Animation_Access (animationInterface_Param);
+   procedure Initialize (This : in out SingletonAnimationInterfaceFactory'Class; animationInterface_Param : access Animation_Package.Animation'Class) is
+      animationInterface : constant Animation_Access := Animation_Access (animationInterface_Param);
    begin
       Initialize_Fields (This);
         This.animationInterface := animationInterface;
    end Initialize;
 
-   function Create (animationInterface_Param : access Animation'Class) return SingletonAnimationInterfaceFactory_Access is
+   function Create (animationInterface_Param : access Animation_Package.Animation'Class) return SingletonAnimationInterfaceFactory_Access is
       This : constant SingletonAnimationInterfaceFactory_Access := new SingletonAnimationInterfaceFactory;
    begin
       SingletonAnimationInterfaceFactory_Package.Initialize (This.all, animationInterface_Param);
@@ -43,14 +43,14 @@ package body org.allbinary.animation.SingletonAnimationInterfaceFactory_Package 
    end getInstance;
 
    --  throws Exception
-   function getInstanceAnimation (This : in out SingletonAnimationInterfaceFactory; animationInterface_Param : access Animation'Class) return Animation_Access is
-      animationInterface : Animation_Access := Animation_Access (animationInterface_Param);
+   function getInstanceAnimation (This : in out SingletonAnimationInterfaceFactory; animationInterface_Param : access Animation_Package.Animation'Class) return Animation_Access is
+      animationInterface : constant Animation_Access := Animation_Access (animationInterface_Param);
    begin
         return This.animationInterface;
    end getInstanceAnimation;
 
-   procedure setInitialScale (This : in out SingletonAnimationInterfaceFactory; scaleProperties_Param : access ScaleProperties'Class) is
-      scaleProperties : ScaleProperties_Access := ScaleProperties_Access (scaleProperties_Param);
+   procedure setInitialScale (This : in out SingletonAnimationInterfaceFactory; scaleProperties_Param : access ScaleProperties_Package.ScaleProperties'Class) is
+      scaleProperties : constant ScaleProperties_Access := ScaleProperties_Access (scaleProperties_Param);
    begin
         null;
    end setInitialScale;
@@ -62,7 +62,7 @@ package body org.allbinary.animation.SingletonAnimationInterfaceFactory_Package 
       null;
    end getInstance;
 
-   procedure getInstanceAnimation (This : in out SingletonAnimationInterfaceFactory; animationInterface_Param : access Animation'Class) is
+   procedure getInstanceAnimation (This : in out SingletonAnimationInterfaceFactory; animationInterface_Param : access Animation_Package.Animation'Class) is
       Java_Result : constant Animation_Access := SingletonAnimationInterfaceFactory'Class (This).getInstanceAnimation (animationInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

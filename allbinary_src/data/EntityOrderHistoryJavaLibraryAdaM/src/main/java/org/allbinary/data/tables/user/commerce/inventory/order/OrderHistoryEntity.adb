@@ -37,8 +37,8 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
       return This;
    end Create;
 
-   procedure insert (This : in out OrderHistoryEntity; userName : Unbounded_String; order_Param : access Order'Class) is
-      order : Order_Access := Order_Access (order_Param);
+   procedure insert (This : in out OrderHistoryEntity; userName : Unbounded_String; order_Param : access Order_Package.Order'Class) is
+      order : constant Order_Access := Order_Access (order_Param);
       vector : BasicArrayList_Access;
       paymentInterface : PaymentInterface_Access;
       billingAddress : StreetAddress_Access;
@@ -161,8 +161,8 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
         end;
    end insert;
 
-   procedure insert (This : in out OrderHistoryEntity; values_Param : access BasicArrayList'Class) is
-      values : BasicArrayList_Access := BasicArrayList_Access (values_Param);
+   procedure insert (This : in out OrderHistoryEntity; values_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      values : constant BasicArrayList_Access := BasicArrayList_Access (values_Param);
    begin
         begin
             AbSqlBean (This).insert (values);
@@ -234,8 +234,8 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
    end setPaymentMethod;
 
    --  throws Exception
-   function getStoreOrders (This : in out OrderHistoryEntity; storeFrontInterface_Param : access StoreFrontInterface'Class) return BasicArrayList_Access is
-      storeFrontInterface : StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
+   function getStoreOrders (This : in out OrderHistoryEntity; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) return BasicArrayList_Access is
+      storeFrontInterface : constant StoreFrontInterface_Access := StoreFrontInterface_Access (storeFrontInterface_Param);
       orderReviewVector : BasicArrayList_Access;
       whereHashMap : HashMap_Access;
       orderHashMapVector : BasicArrayList_Access;
@@ -440,9 +440,9 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
    end dropTable;
 
    --  throws Exception
-   procedure update (This : in out OrderHistoryEntity; whereHashMap_Param : access HashMap'Class; orderHashMap_Param : access HashMap'Class) is
-      whereHashMap : HashMap_Access := HashMap_Access (whereHashMap_Param);
-      orderHashMap : HashMap_Access := HashMap_Access (orderHashMap_Param);
+   procedure update (This : in out OrderHistoryEntity; whereHashMap_Param : access HashMap_Package.HashMap'Class; orderHashMap_Param : access HashMap_Package.HashMap'Class) is
+      whereHashMap : constant HashMap_Access := HashMap_Access (whereHashMap_Param);
+      orderHashMap : constant HashMap_Access := HashMap_Access (orderHashMap_Param);
    begin
         begin
             This.updateWhere (whereHashMap, orderHashMap);
@@ -456,7 +456,7 @@ package body org.allbinary.data.tables.user.commerce.inventory.order.OrderHistor
         end;
    end update;
 
-   procedure getStoreOrders (This : in out OrderHistoryEntity; storeFrontInterface_Param : access StoreFrontInterface'Class) is
+   procedure getStoreOrders (This : in out OrderHistoryEntity; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) is
       Java_Result : constant BasicArrayList_Access := OrderHistoryEntity'Class (This).getStoreOrders (storeFrontInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

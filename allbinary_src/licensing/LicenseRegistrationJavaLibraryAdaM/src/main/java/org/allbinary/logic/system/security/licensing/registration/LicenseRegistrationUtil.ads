@@ -47,7 +47,7 @@ package org.allbinary.logic.system.security.licensing.registration.LicenseRegist
 
    procedure Initialize (This : in out LicenseRegistrationUtil'Class);
    function Create return LicenseRegistrationUtil_Access;
-   procedure process (abeClientInformation_Param : access AbeClientInformationInterface'Class; registrationId : Unbounded_String);
+   procedure process (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; registrationId : Unbounded_String);
 
 end org.allbinary.logic.system.security.licensing.registration.LicenseRegistrationUtil_Package;
 

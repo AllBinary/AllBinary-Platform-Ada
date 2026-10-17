@@ -35,7 +35,7 @@ package body org.allbinary.logic.java.anyType.clazz.ClassUtil_Package is
    end Create;
 
    function viewAll (anyType_Param : access Java_Object'Class; lineBreak : Unbounded_String) return Unbounded_String is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         if (anyType) /= (null) then
             return ClassUtil_Package.viewAll (anyType.all'Tag, lineBreak);

@@ -67,17 +67,17 @@ package org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntity_P
 
    procedure Initialize (This : in out InventoryEntity'Class);
    function Create return InventoryEntity_Access;
-   procedure insert (This : in out InventoryEntity; values_Param : access BasicArrayList'Class);
+   procedure insert (This : in out InventoryEntity; values_Param : access BasicArrayList_Package.BasicArrayList'Class);
    procedure delete (This : in out InventoryEntity; value : Unbounded_String);
-   function getItems (This : in out InventoryEntity; storeFrontInterface_Param : access StoreFrontInterface'Class) return BasicArrayList_Access;
-   procedure getItems (This : in out InventoryEntity; storeFrontInterface_Param : access StoreFrontInterface'Class);
+   function getItems (This : in out InventoryEntity; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) return BasicArrayList_Access;
+   procedure getItems (This : in out InventoryEntity; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class);
    function getItem (This : in out InventoryEntity; id : Unbounded_String) return ItemInterface_Access;
    procedure getItem (This : in out InventoryEntity; id : Unbounded_String);
    function getWeight (This : in out InventoryEntity; id : Unbounded_String) return Unbounded_String;
    procedure getWeight (This : in out InventoryEntity; id : Unbounded_String);
    function createTableStatement (This : in out InventoryEntity) return Unbounded_String;
    function createTable (This : in out InventoryEntity) return Unbounded_String;
-   procedure update (This : in out InventoryEntity; updatedValues_Param : access HashMap'Class);
+   procedure update (This : in out InventoryEntity; updatedValues_Param : access HashMap_Package.HashMap'Class);
    function dropTable (This : in out InventoryEntity) return Unbounded_String;
 
 end org.allbinary.data.tables.user.commerce.inventory.item.InventoryEntity_Package;

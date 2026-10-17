@@ -48,14 +48,14 @@ package org.allbinary.animation.image.ImageArraySpecialAnimation_Package is
       loopCountTotal : Integer;
    end record;
 
-   procedure Initialize (This : in out ImageArraySpecialAnimation'Class; imageArray : Image_Access_Array_Access; animationBehavior_Param : access AnimationBehavior'Class);
-   function Create (imageArray : Image_Access_Array_Access; animationBehavior_Param : access AnimationBehavior'Class) return ImageArraySpecialAnimation_Access;
+   procedure Initialize (This : in out ImageArraySpecialAnimation'Class; imageArray : Image_Access_Array_Access; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class);
+   function Create (imageArray : Image_Access_Array_Access; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return ImageArraySpecialAnimation_Access;
    function getLoopCount (This : in out ImageArraySpecialAnimation) return Integer;
    procedure setLastFrame (This : in out ImageArraySpecialAnimation);
    procedure reset (This : in out ImageArraySpecialAnimation);
    procedure nextFrame (This : in out ImageArraySpecialAnimation);
    function isComplete (This : in out ImageArraySpecialAnimation) return Boolean;
-   procedure paintXY (This : in out ImageArraySpecialAnimation; graphics_Param : access Graphics'Class; x_Param : Integer; y_Param : Integer);
+   procedure paintXY (This : in out ImageArraySpecialAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x_Param : Integer; y_Param : Integer);
 
 end org.allbinary.animation.image.ImageArraySpecialAnimation_Package;
 

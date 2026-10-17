@@ -39,13 +39,13 @@ package body org.allbinary.game.input.RTSGameLayerPositionFinder_Package is
       return This;
    end Create;
 
-   function getLayerInterface (This : in out RTSGameLayerPositionFinder; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return AllBinaryLayer_Access is
-      geographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
+   function getLayerInterface (This : in out RTSGameLayerPositionFinder; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) return AllBinaryLayer_Access is
+      geographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
    begin
         return DropCellPositionHistory_Package.getInstance.getLayerInterface (geographicMapCellPosition);
    end getLayerInterface;
 
-   procedure getLayerInterface (This : in out RTSGameLayerPositionFinder; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+   procedure getLayerInterface (This : in out RTSGameLayerPositionFinder; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
       Java_Result : constant AllBinaryLayer_Access := RTSGameLayerPositionFinder'Class (This).getLayerInterface (geographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin

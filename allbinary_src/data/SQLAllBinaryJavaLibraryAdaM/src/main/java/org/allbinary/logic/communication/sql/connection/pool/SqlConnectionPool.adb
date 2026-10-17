@@ -117,8 +117,8 @@ package body org.allbinary.logic.communication.sql.connection.pool.SqlConnection
    end get;
 
    --  throws SQLException
-   procedure add (This : in out SqlConnectionPool; url : Unbounded_String; sqlConnection_Param : access Connection'Class) is
-      sqlConnection : Connection_Access := Connection_Access (sqlConnection_Param);
+   procedure add (This : in out SqlConnectionPool; url : Unbounded_String; sqlConnection_Param : access Connection_Package.Connection'Class) is
+      sqlConnection : constant Connection_Access := Connection_Access (sqlConnection_Param);
       connectionVector : BasicArrayList_Access;
       stringBuffer : StringMaker_Access;
    begin

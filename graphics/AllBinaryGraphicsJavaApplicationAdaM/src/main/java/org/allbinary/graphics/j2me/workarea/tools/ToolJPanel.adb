@@ -78,8 +78,8 @@ package body org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
         This.lineJButton.setText (LinesGraphicItem_Package.getStaticName);
         This.lineJButton.addMouseListener (MouseAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure mouseClicked (This : in out ; evt_Param : access MouseEvent'Class) is
---        evt : MouseEvent_Access := MouseEvent_Access (evt_Param);
+--     procedure mouseClicked (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
+--        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
 --                  This.lineJButtonMouseClicked (evt);
 --     end mouseClicked;
@@ -89,8 +89,8 @@ package body org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
         This.rectJButton.setText (To_Unbounded_String ("Rect"));
         This.rectJButton.addMouseListener (MouseAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure mouseClicked (This : in out ; evt_Param : access MouseEvent'Class) is
---        evt : MouseEvent_Access := MouseEvent_Access (evt_Param);
+--     procedure mouseClicked (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
+--        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
 --                  This.rectJButtonMouseClicked (evt);
 --     end mouseClicked;
@@ -100,8 +100,8 @@ package body org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
         This.arcJButton.setText (To_Unbounded_String ("Arc"));
         This.arcJButton.addMouseListener (MouseAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure mousePressed (This : in out ; evt_Param : access MouseEvent'Class) is
---        evt : MouseEvent_Access := MouseEvent_Access (evt_Param);
+--     procedure mousePressed (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
+--        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
 --                  This.arcJButtonMousePressed (evt);
 --     end mousePressed;
@@ -111,8 +111,8 @@ package body org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
         This.stringJButton.setText (To_Unbounded_String ("String"));
         This.stringJButton.addMouseListener (MouseAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure mousePressed (This : in out ; evt_Param : access MouseEvent'Class) is
---        evt : MouseEvent_Access := MouseEvent_Access (evt_Param);
+--     procedure mousePressed (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
+--        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
 --                  This.stringJButtonMousePressed (evt);
 --     end mousePressed;
@@ -122,8 +122,8 @@ package body org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
         This.charJButton.setText (To_Unbounded_String ("Char"));
         This.charJButton.addMouseListener (MouseAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure mousePressed (This : in out ; evt_Param : access MouseEvent'Class) is
---        evt : MouseEvent_Access := MouseEvent_Access (evt_Param);
+--     procedure mousePressed (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
+--        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
 --                  This.charJButtonMousePressed (evt);
 --     end mousePressed;
@@ -133,8 +133,8 @@ package body org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
         This.roundRectJButton.setText (To_Unbounded_String ("Round Rect"));
         This.roundRectJButton.addMouseListener (MouseAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure mousePressed (This : in out ; evt_Param : access MouseEvent'Class) is
---        evt : MouseEvent_Access := MouseEvent_Access (evt_Param);
+--     procedure mousePressed (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
+--        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
 --                  This.roundRectJButtonMousePressed (evt);
 --     end mousePressed;
@@ -144,8 +144,8 @@ package body org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
         This.imageJButton.setText (To_Unbounded_String ("Image"));
         This.imageJButton.addMouseListener (MouseAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure mousePressed (This : in out ; evt_Param : access MouseEvent'Class) is
---        evt : MouseEvent_Access := MouseEvent_Access (evt_Param);
+--     procedure mousePressed (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
+--        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
 --                  This.imageJButtonMousePressed (evt);
 --     end mousePressed;
@@ -155,8 +155,8 @@ package body org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
         This.fillArcJButton.setText (To_Unbounded_String ("Fill Arc"));
         This.fillArcJButton.addMouseListener (MouseAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure mousePressed (This : in out ; evt_Param : access MouseEvent'Class) is
---        evt : MouseEvent_Access := MouseEvent_Access (evt_Param);
+--     procedure mousePressed (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
+--        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
 --                  This.fillArcJButtonMousePressed (evt);
 --     end mousePressed;
@@ -166,8 +166,8 @@ package body org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
         This.fillRectJButton.setText (To_Unbounded_String ("Fill Rect"));
         This.fillRectJButton.addMouseListener (MouseAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure mousePressed (This : in out ; evt_Param : access MouseEvent'Class) is
---        evt : MouseEvent_Access := MouseEvent_Access (evt_Param);
+--     procedure mousePressed (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
+--        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
 --                  This.fillRectJButtonMousePressed (evt);
 --     end mousePressed;
@@ -177,8 +177,8 @@ package body org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
         This.fillRoundRectJButton.setText (To_Unbounded_String ("Fill Rnd Rect"));
         This.fillRoundRectJButton.addMouseListener (MouseAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure mousePressed (This : in out ; evt_Param : access MouseEvent'Class) is
---        evt : MouseEvent_Access := MouseEvent_Access (evt_Param);
+--     procedure mousePressed (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
+--        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
 --                  This.fillRoundRectJButtonMousePressed (evt);
 --     end mousePressed;
@@ -188,8 +188,8 @@ package body org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
         This.dottedLineJButton.setText (To_Unbounded_String ("Dot Line"));
         This.dottedLineJButton.addMouseListener (MouseAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure mousePressed (This : in out ; evt_Param : access MouseEvent'Class) is
---        evt : MouseEvent_Access := MouseEvent_Access (evt_Param);
+--     procedure mousePressed (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
+--        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
 --                  This.dottedLineJButtonMousePressed (evt);
 --     end mousePressed;
@@ -199,8 +199,8 @@ package body org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
         This.dottedRectButton.setText (To_Unbounded_String ("Dot Rect"));
         This.dottedRectButton.addMouseListener (MouseAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure mousePressed (This : in out ; evt_Param : access MouseEvent'Class) is
---        evt : MouseEvent_Access := MouseEvent_Access (evt_Param);
+--     procedure mousePressed (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
+--        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
 --                  This.dottedRectButtonMousePressed (evt);
 --     end mousePressed;
@@ -210,8 +210,8 @@ package body org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
         This.dottedArcJButton.setText (To_Unbounded_String ("Dot Arc"));
         This.dottedArcJButton.addMouseListener (MouseAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure mousePressed (This : in out ; evt_Param : access MouseEvent'Class) is
---        evt : MouseEvent_Access := MouseEvent_Access (evt_Param);
+--     procedure mousePressed (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
+--        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
 --                  This.dottedArcJButtonMousePressed (evt);
 --     end mousePressed;
@@ -221,8 +221,8 @@ package body org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
         This.dottedFillRectJButton.setText (To_Unbounded_String ("Dot Fill Rect"));
         This.dottedFillRectJButton.addMouseListener (MouseAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure mousePressed (This : in out ; evt_Param : access MouseEvent'Class) is
---        evt : MouseEvent_Access := MouseEvent_Access (evt_Param);
+--     procedure mousePressed (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
+--        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
 --                  This.dottedFillRectJButtonMousePressed (evt);
 --     end mousePressed;
@@ -232,8 +232,8 @@ package body org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
         This.dottedFillArcJButton.setText (To_Unbounded_String ("Dot Fill Arc"));
         This.dottedFillArcJButton.addMouseListener (MouseAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure mousePressed (This : in out ; evt_Param : access MouseEvent'Class) is
---        evt : MouseEvent_Access := MouseEvent_Access (evt_Param);
+--     procedure mousePressed (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
+--        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
 --                  This.dottedFillArcJButtonMousePressed (evt);
 --     end mousePressed;
@@ -243,8 +243,8 @@ package body org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
         This.dottedFillRountRectJButton.setText (To_Unbounded_String ("Dot Fill Rnd Rect"));
         This.dottedFillRountRectJButton.addMouseListener (MouseAdapter_Package.Create  --  Java anonymous class body: implement it as a named type
 --              
---     procedure mousePressed (This : in out ; evt_Param : access MouseEvent'Class) is
---        evt : MouseEvent_Access := MouseEvent_Access (evt_Param);
+--     procedure mousePressed (This : in out ; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
+--        evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
 --     begin
 --                  This.dottedFillRountRectJButtonMousePressed (evt);
 --     end mousePressed;
@@ -255,98 +255,98 @@ package body org.allbinary.graphics.j2me.workarea.tools.ToolJPanel_Package is
         This.add (This.colorJPanel);
    end initComponents;
 
-   procedure dottedFillRountRectJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent'Class) is
-      evt : MouseEvent_Access := MouseEvent_Access (evt_Param);
+   procedure dottedFillRountRectJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
+      evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
    begin
         ToolFactory_Package.getInstance.setSelectedTool (This.dottedFillRountRectJButton.getText);
    end dottedFillRountRectJButtonMousePressed;
 
-   procedure dottedFillArcJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent'Class) is
-      evt : MouseEvent_Access := MouseEvent_Access (evt_Param);
+   procedure dottedFillArcJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
+      evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
    begin
         ToolFactory_Package.getInstance.setSelectedTool (This.dottedFillArcJButton.getText);
    end dottedFillArcJButtonMousePressed;
 
-   procedure dottedFillRectJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent'Class) is
-      evt : MouseEvent_Access := MouseEvent_Access (evt_Param);
+   procedure dottedFillRectJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
+      evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
    begin
         ToolFactory_Package.getInstance.setSelectedTool (This.dottedFillRectJButton.getText);
    end dottedFillRectJButtonMousePressed;
 
-   procedure dottedArcJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent'Class) is
-      evt : MouseEvent_Access := MouseEvent_Access (evt_Param);
+   procedure dottedArcJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
+      evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
    begin
         ToolFactory_Package.getInstance.setSelectedTool (This.dottedArcJButton.getText);
    end dottedArcJButtonMousePressed;
 
-   procedure dottedRectButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent'Class) is
-      evt : MouseEvent_Access := MouseEvent_Access (evt_Param);
+   procedure dottedRectButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
+      evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
    begin
         ToolFactory_Package.getInstance.setSelectedTool (This.dottedRectButton.getText);
    end dottedRectButtonMousePressed;
 
-   procedure dottedLineJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent'Class) is
-      evt : MouseEvent_Access := MouseEvent_Access (evt_Param);
+   procedure dottedLineJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
+      evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
    begin
         ToolFactory_Package.getInstance.setSelectedTool (This.dottedLineJButton.getText);
    end dottedLineJButtonMousePressed;
 
-   procedure fillRoundRectJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent'Class) is
-      evt : MouseEvent_Access := MouseEvent_Access (evt_Param);
+   procedure fillRoundRectJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
+      evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
    begin
         ToolFactory_Package.getInstance.setSelectedTool (This.fillRoundRectJButton.getText);
    end fillRoundRectJButtonMousePressed;
 
-   procedure fillRectJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent'Class) is
-      evt : MouseEvent_Access := MouseEvent_Access (evt_Param);
+   procedure fillRectJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
+      evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
    begin
         ToolFactory_Package.getInstance.setSelectedTool (This.fillRectJButton.getText);
    end fillRectJButtonMousePressed;
 
-   procedure fillArcJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent'Class) is
-      evt : MouseEvent_Access := MouseEvent_Access (evt_Param);
+   procedure fillArcJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
+      evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
    begin
         ToolFactory_Package.getInstance.setSelectedTool (This.fillArcJButton.getText);
    end fillArcJButtonMousePressed;
 
-   procedure imageJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent'Class) is
-      evt : MouseEvent_Access := MouseEvent_Access (evt_Param);
+   procedure imageJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
+      evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
    begin
         ToolFactory_Package.getInstance.setSelectedTool (This.imageJButton.getText);
    end imageJButtonMousePressed;
 
-   procedure roundRectJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent'Class) is
-      evt : MouseEvent_Access := MouseEvent_Access (evt_Param);
+   procedure roundRectJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
+      evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
    begin
         ToolFactory_Package.getInstance.setSelectedTool (This.roundRectJButton.getText);
    end roundRectJButtonMousePressed;
 
-   procedure charJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent'Class) is
-      evt : MouseEvent_Access := MouseEvent_Access (evt_Param);
+   procedure charJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
+      evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
    begin
         ToolFactory_Package.getInstance.setSelectedTool (This.charJButton.getText);
    end charJButtonMousePressed;
 
-   procedure stringJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent'Class) is
-      evt : MouseEvent_Access := MouseEvent_Access (evt_Param);
+   procedure stringJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
+      evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
    begin
         ToolFactory_Package.getInstance.setSelectedTool (This.stringJButton.getText);
    end stringJButtonMousePressed;
 
-   procedure arcJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent'Class) is
-      evt : MouseEvent_Access := MouseEvent_Access (evt_Param);
+   procedure arcJButtonMousePressed (This : in out ToolJPanel; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
+      evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
    begin
         ToolFactory_Package.getInstance.setSelectedTool (This.arcJButton.getText);
    end arcJButtonMousePressed;
 
-   procedure rectJButtonMouseClicked (This : in out ToolJPanel; evt_Param : access MouseEvent'Class) is
-      evt : MouseEvent_Access := MouseEvent_Access (evt_Param);
+   procedure rectJButtonMouseClicked (This : in out ToolJPanel; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
+      evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
    begin
         ToolFactory_Package.getInstance.setSelectedTool (This.rectJButton.getText);
    end rectJButtonMouseClicked;
 
-   procedure lineJButtonMouseClicked (This : in out ToolJPanel; evt_Param : access MouseEvent'Class) is
-      evt : MouseEvent_Access := MouseEvent_Access (evt_Param);
+   procedure lineJButtonMouseClicked (This : in out ToolJPanel; evt_Param : access MouseEvent_Package.MouseEvent'Class) is
+      evt : constant MouseEvent_Access := MouseEvent_Access (evt_Param);
    begin
         ToolFactory_Package.getInstance.setSelectedTool (This.lineJButton.getText);
    end lineJButtonMouseClicked;

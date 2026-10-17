@@ -40,8 +40,8 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderProcessor
    end getInstance;
 
    --  throws Exception
-   function process (This : in out OrderProcessorUtil; userName : Unbounded_String; order_Param : access Order'Class) return Unbounded_String is
-      order : Order_Access := Order_Access (order_Param);
+   function process (This : in out OrderProcessorUtil; userName : Unbounded_String; order_Param : access Order_Package.Order'Class) return Unbounded_String is
+      order : constant Order_Access := Order_Access (order_Param);
       orderItems : OrderItemsEntity_Access;
       orderHistory : OrderHistoryEntity_Access;
    begin
@@ -53,7 +53,7 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderProcessor
         return This.ORDER_PROCESSED;
    end process;
 
-   procedure process (This : in out OrderProcessorUtil; userName : Unbounded_String; order_Param : access Order'Class) is
+   procedure process (This : in out OrderProcessorUtil; userName : Unbounded_String; order_Param : access Order_Package.Order'Class) is
       Java_Result : constant Unbounded_String := OrderProcessorUtil'Class (This).process (userName, order_Param);
       pragma Unreferenced (Java_Result);
    begin

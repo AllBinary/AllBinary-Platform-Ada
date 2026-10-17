@@ -25,16 +25,16 @@ package body org.allbinary.data.tree.dom.StoreUriResolver_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out StoreUriResolver'Class; parentTransformInfoInterface_Param : access TransformInfoInterface'Class; basicURIResolver_Param : access BasicUriResolver'Class) is
-      parentTransformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (parentTransformInfoInterface_Param);
-      basicURIResolver : BasicUriResolver_Access := BasicUriResolver_Access (basicURIResolver_Param);
+   procedure Initialize (This : in out StoreUriResolver'Class; parentTransformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; basicURIResolver_Param : access BasicUriResolver_Package.BasicUriResolver'Class) is
+      parentTransformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (parentTransformInfoInterface_Param);
+      basicURIResolver : constant BasicUriResolver_Access := BasicUriResolver_Access (basicURIResolver_Param);
    begin
       Initialize_Fields (This);
         This.parentTransformInfoInterface := parentTransformInfoInterface;
         This.basicURIResolver := basicURIResolver;
    end Initialize;
 
-   function Create (parentTransformInfoInterface_Param : access TransformInfoInterface'Class; basicURIResolver_Param : access BasicUriResolver'Class) return StoreUriResolver_Access is
+   function Create (parentTransformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; basicURIResolver_Param : access BasicUriResolver_Package.BasicUriResolver'Class) return StoreUriResolver_Access is
       This : constant StoreUriResolver_Access := new StoreUriResolver;
    begin
       StoreUriResolver_Package.Initialize (This.all, parentTransformInfoInterface_Param, basicURIResolver_Param);

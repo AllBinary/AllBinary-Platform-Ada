@@ -33,15 +33,15 @@ package body org.allbinary.logic.system.security.licensing.ThirdPartyInApplicati
    end Create;
 
 
-   function isPurchased (This : in out ThirdPartyInApplicationPurchase; lockableFeature_Param : access LockableFeature'Class) return Boolean is
-      lockableFeature : LockableFeature_Access := LockableFeature_Access (lockableFeature_Param);
+   function isPurchased (This : in out ThirdPartyInApplicationPurchase; lockableFeature_Param : access LockableFeature_Package.LockableFeature'Class) return Boolean is
+      lockableFeature : constant LockableFeature_Access := LockableFeature_Access (lockableFeature_Param);
    begin
         return False;
    end isPurchased;
 
    procedure onCreate (This : in out ThirdPartyInApplicationPurchase; anyType_Param : access Java_Object'Class; stateObject_Param : access Java_Object'Class) is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
-      stateObject : Java_Object_Access := Java_Object_Access (stateObject_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
+      stateObject : constant Java_Object_Access := Java_Object_Access (stateObject_Param);
    begin
         null;
    end onCreate;
@@ -57,13 +57,13 @@ package body org.allbinary.logic.system.security.licensing.ThirdPartyInApplicati
    end onStart;
 
    procedure onActivityResult (This : in out ThirdPartyInApplicationPurchase; requestCode : Integer; resultCode : Integer; dataObject_Param : access Java_Object'Class) is
-      dataObject : Java_Object_Access := Java_Object_Access (dataObject_Param);
+      dataObject : constant Java_Object_Access := Java_Object_Access (dataObject_Param);
    begin
         null;
    end onActivityResult;
 
    procedure onSaveInstanceState (This : in out ThirdPartyInApplicationPurchase; anyType_Param : access Java_Object'Class) is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         null;
    end onSaveInstanceState;
@@ -73,8 +73,8 @@ package body org.allbinary.logic.system.security.licensing.ThirdPartyInApplicati
         null;
    end onStop;
 
-   procedure requestPurchase (This : in out ThirdPartyInApplicationPurchase; lockableFeature_Param : access LockableFeature'Class) is
-      lockableFeature : LockableFeature_Access := LockableFeature_Access (lockableFeature_Param);
+   procedure requestPurchase (This : in out ThirdPartyInApplicationPurchase; lockableFeature_Param : access LockableFeature_Package.LockableFeature'Class) is
+      lockableFeature : constant LockableFeature_Access := LockableFeature_Access (lockableFeature_Param);
    begin
         null;
    end requestPurchase;
@@ -84,8 +84,8 @@ package body org.allbinary.logic.system.security.licensing.ThirdPartyInApplicati
         null;
    end requestReceipts;
 
-   procedure add (This : in out ThirdPartyInApplicationPurchase; lockableFeature_Param : access LockableFeature'Class) is
-      lockableFeature : LockableFeature_Access := LockableFeature_Access (lockableFeature_Param);
+   procedure add (This : in out ThirdPartyInApplicationPurchase; lockableFeature_Param : access LockableFeature_Package.LockableFeature'Class) is
+      lockableFeature : constant LockableFeature_Access := LockableFeature_Access (lockableFeature_Param);
    begin
         null;
    end add;
@@ -105,7 +105,7 @@ package body org.allbinary.logic.system.security.licensing.ThirdPartyInApplicati
         null;
    end requestProducts;
 
-   procedure isPurchased (This : in out ThirdPartyInApplicationPurchase; lockableFeature_Param : access LockableFeature'Class) is
+   procedure isPurchased (This : in out ThirdPartyInApplicationPurchase; lockableFeature_Param : access LockableFeature_Package.LockableFeature'Class) is
       Java_Result : constant Boolean := ThirdPartyInApplicationPurchase'Class (This).isPurchased (lockableFeature_Param);
       pragma Unreferenced (Java_Result);
    begin

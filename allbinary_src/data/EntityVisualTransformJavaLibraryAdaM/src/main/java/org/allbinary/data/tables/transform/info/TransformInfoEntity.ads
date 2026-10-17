@@ -77,19 +77,19 @@ package org.allbinary.data.tables.transform.info.TransformInfoEntity_Package is
       transformInfoObjectConfigGeneratorFactoryInterface : TransformInfoObjectConfigGeneratorFactoryInterface_Access;
    end record;
 
-   procedure Initialize (This : in out TransformInfoEntity'Class; transformInfoObjectConfigGeneratorFactoryInterface_Param : access TransformInfoObjectConfigGeneratorFactoryInterface'Class; transformInfoObjectConfigAndManipulatorFactoryInterface_Param : access TransformInfoObjectConfigAndManipulatorFactoryBase'Class; transformInfoFactoryInterface_Param : access TransformInfoFactoryInterface'Class);
-   function Create (transformInfoObjectConfigGeneratorFactoryInterface_Param : access TransformInfoObjectConfigGeneratorFactoryInterface'Class; transformInfoObjectConfigAndManipulatorFactoryInterface_Param : access TransformInfoObjectConfigAndManipulatorFactoryBase'Class; transformInfoFactoryInterface_Param : access TransformInfoFactoryInterface'Class) return TransformInfoEntity_Access;
-   procedure insert (This : in out TransformInfoEntity; values_Param : access BasicArrayList'Class);
+   procedure Initialize (This : in out TransformInfoEntity'Class; transformInfoObjectConfigGeneratorFactoryInterface_Param : access TransformInfoObjectConfigGeneratorFactoryInterface_Package.TransformInfoObjectConfigGeneratorFactoryInterface'Class; transformInfoObjectConfigAndManipulatorFactoryInterface_Param : access TransformInfoObjectConfigAndManipulatorFactoryBase_Package.TransformInfoObjectConfigAndManipulatorFactoryBase'Class; transformInfoFactoryInterface_Param : access TransformInfoFactoryInterface_Package.TransformInfoFactoryInterface'Class);
+   function Create (transformInfoObjectConfigGeneratorFactoryInterface_Param : access TransformInfoObjectConfigGeneratorFactoryInterface_Package.TransformInfoObjectConfigGeneratorFactoryInterface'Class; transformInfoObjectConfigAndManipulatorFactoryInterface_Param : access TransformInfoObjectConfigAndManipulatorFactoryBase_Package.TransformInfoObjectConfigAndManipulatorFactoryBase'Class; transformInfoFactoryInterface_Param : access TransformInfoFactoryInterface_Package.TransformInfoFactoryInterface'Class) return TransformInfoEntity_Access;
+   procedure insert (This : in out TransformInfoEntity; values_Param : access BasicArrayList_Package.BasicArrayList'Class);
    procedure delete (This : in out TransformInfoEntity; value : Unbounded_String);
-   function get (This : in out TransformInfoEntity; name : Unbounded_String; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return TransformInfoInterface_Access;
-   procedure get (This : in out TransformInfoEntity; name : Unbounded_String; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function get (This : in out TransformInfoEntity; name : Unbounded_String; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return TransformInfoInterface_Access;
+   procedure get (This : in out TransformInfoEntity; name : Unbounded_String; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class);
    function getObjectConfigs (This : in out TransformInfoEntity; storeName : Unbounded_String) return BasicArrayList_Access;
    procedure getObjectConfigs (This : in out TransformInfoEntity; storeName : Unbounded_String);
    function getNames (This : in out TransformInfoEntity; storeName : Unbounded_String) return BasicArrayList_Access;
    procedure getNames (This : in out TransformInfoEntity; storeName : Unbounded_String);
    function createTableStatement (This : in out TransformInfoEntity) return Unbounded_String;
    function createTable (This : in out TransformInfoEntity) return Unbounded_String;
-   procedure update (This : in out TransformInfoEntity; updatedValues_Param : access HashMap'Class);
+   procedure update (This : in out TransformInfoEntity; updatedValues_Param : access HashMap_Package.HashMap'Class);
    function dropTable (This : in out TransformInfoEntity) return Unbounded_String;
 
 end org.allbinary.data.tables.transform.info.TransformInfoEntity_Package;

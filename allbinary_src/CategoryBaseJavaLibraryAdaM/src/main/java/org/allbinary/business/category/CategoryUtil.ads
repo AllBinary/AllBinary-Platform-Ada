@@ -52,10 +52,10 @@ package org.allbinary.business.category.CategoryUtil_Package is
 
    procedure Initialize (This : in out CategoryUtil'Class);
    function Create return CategoryUtil_Access;
-   function getPathLevel (categoryPath_Param : access AbPath'Class) return Integer;
-   procedure getPathLevel (categoryPath_Param : access AbPath'Class);
-   function getNameFromNode (node_Param : access Node'Class) return Unbounded_String;
-   procedure getNameFromNode (node_Param : access Node'Class);
+   function getPathLevel (categoryPath_Param : access AbPath_Package.AbPath'Class) return Integer;
+   procedure getPathLevel (categoryPath_Param : access AbPath_Package.AbPath'Class);
+   function getNameFromNode (node_Param : access Node_Package.Node'Class) return Unbounded_String;
+   procedure getNameFromNode (node_Param : access Node_Package.Node'Class);
 
 end org.allbinary.business.category.CategoryUtil_Package;
 

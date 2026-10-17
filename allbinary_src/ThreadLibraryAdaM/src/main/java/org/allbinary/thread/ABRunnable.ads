@@ -36,7 +36,7 @@ package org.allbinary.thread.ABRunnable_Package is
 
    procedure Initialize (This : in out ABRunnable'Class);
    function Create return ABRunnable_Access;
-   procedure setThread (This : in out ABRunnable; thread_Param : access Thread'Class);
+   procedure setThread (This : in out ABRunnable; thread_Param : access Thread_Package.Thread'Class);
    function isRunning (This : in out ABRunnable) return Boolean;
    procedure setRunning (This : in out ABRunnable; running : Boolean);
    procedure run (This : in out ABRunnable);

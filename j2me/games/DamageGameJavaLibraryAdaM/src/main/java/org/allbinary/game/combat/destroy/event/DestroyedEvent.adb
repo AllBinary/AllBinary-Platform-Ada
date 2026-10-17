@@ -23,15 +23,15 @@ package body org.allbinary.game.combat.destroy.event.DestroyedEvent_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out DestroyedEvent'Class; combatGameCanvas_Param : access AllBinaryGameCanvas'Class) is
-      combatGameCanvas : AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (combatGameCanvas_Param);
+   procedure Initialize (This : in out DestroyedEvent'Class; combatGameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class) is
+      combatGameCanvas : constant AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (combatGameCanvas_Param);
    begin
         AllBinaryEventObject_Package.Initialize (This, DestroyedEventHandler_Package.getInstance);
         Initialize_Fields (This);
         This.setAllBinaryGameCanvas (combatGameCanvas);
    end Initialize;
 
-   function Create (combatGameCanvas_Param : access AllBinaryGameCanvas'Class) return DestroyedEvent_Access is
+   function Create (combatGameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class) return DestroyedEvent_Access is
       This : constant DestroyedEvent_Access := new DestroyedEvent;
    begin
       DestroyedEvent_Package.Initialize (This.all, combatGameCanvas_Param);
@@ -48,14 +48,14 @@ package body org.allbinary.game.combat.destroy.event.DestroyedEvent_Package is
         return This.allBinaryLayerInterface;
    end getLayerInterface;
 
-   procedure setAllBinaryGameCanvas (This : in out DestroyedEvent; allBinaryGameCanvas_Param : access AllBinaryGameCanvas'Class) is
-      allBinaryGameCanvas : AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (allBinaryGameCanvas_Param);
+   procedure setAllBinaryGameCanvas (This : in out DestroyedEvent; allBinaryGameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class) is
+      allBinaryGameCanvas : constant AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (allBinaryGameCanvas_Param);
    begin
         This.allBinaryGameCanvas := allBinaryGameCanvas;
    end setAllBinaryGameCanvas;
 
-   procedure setLayerInterfaceForCircularStaticPool (This : in out DestroyedEvent; allBinaryLayerInterface_Param : access AllBinaryLayer'Class) is
-      allBinaryLayerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (allBinaryLayerInterface_Param);
+   procedure setLayerInterfaceForCircularStaticPool (This : in out DestroyedEvent; allBinaryLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
+      allBinaryLayerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (allBinaryLayerInterface_Param);
    begin
         This.allBinaryLayerInterface := allBinaryLayerInterface;
    end setLayerInterfaceForCircularStaticPool;

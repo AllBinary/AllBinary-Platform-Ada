@@ -26,8 +26,8 @@ package body views.HttpComponentView_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out HttpComponentView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out HttpComponentView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         TransformInfoHttpComposite_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
@@ -38,7 +38,7 @@ package body views.HttpComponentView_Package is
         This.setTransformDocumentInterface (TransformHttpRequestDocumentFactory_Package.getInstance (This.getPageContext, This.getWeblisketSession));
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return HttpComponentView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return HttpComponentView_Access is
       This : constant HttpComponentView_Access := new HttpComponentView;
    begin
       HttpComponentView_Package.Initialize (This.all, transformInfoInterface_Param);
@@ -55,14 +55,14 @@ package body views.HttpComponentView_Package is
         return This.transformDocumentInterface;
    end getTransformDocumentInterface;
 
-   procedure setTransformDocumentInterface (This : in out HttpComponentView; transformDocumentInterface_Param : access TransformDocumentInterface'Class) is
-      transformDocumentInterface : TransformDocumentInterface_Access := TransformDocumentInterface_Access (transformDocumentInterface_Param);
+   procedure setTransformDocumentInterface (This : in out HttpComponentView; transformDocumentInterface_Param : access TransformDocumentInterface_Package.TransformDocumentInterface'Class) is
+      transformDocumentInterface : constant TransformDocumentInterface_Access := TransformDocumentInterface_Access (transformDocumentInterface_Param);
    begin
         This.transformDocumentInterface := transformDocumentInterface;
    end setTransformDocumentInterface;
 
-   procedure addDomNodeInterface (This : in out HttpComponentView; domNodeInterface_Param : access DomNodeInterface'Class) is
-      domNodeInterface : DomNodeInterface_Access := DomNodeInterface_Access (domNodeInterface_Param);
+   procedure addDomNodeInterface (This : in out HttpComponentView; domNodeInterface_Param : access DomNodeInterface_Package.DomNodeInterface'Class) is
+      domNodeInterface : constant DomNodeInterface_Access := DomNodeInterface_Access (domNodeInterface_Param);
    begin
         This.domNodeInterfaceVector.add (domNodeInterface);
    end addDomNodeInterface;

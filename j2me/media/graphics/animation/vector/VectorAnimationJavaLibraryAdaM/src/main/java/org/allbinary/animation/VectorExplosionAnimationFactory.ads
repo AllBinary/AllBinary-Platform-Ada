@@ -45,11 +45,11 @@ package org.allbinary.animation.VectorExplosionAnimationFactory_Package is
       animationBehaviorFactory : AnimationBehaviorFactory_Access;
    end record;
 
-   procedure Initialize (This : in out VectorExplosionAnimationFactory'Class; basicColor_Param : access BasicColor'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class);
-   function Create (basicColor_Param : access BasicColor'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return VectorExplosionAnimationFactory_Access;
-   function getInstanceAnimation (This : in out VectorExplosionAnimationFactory; animationInterface_Param : access Animation'Class) return Animation_Access;
-   procedure getInstanceAnimation (This : in out VectorExplosionAnimationFactory; animationInterface_Param : access Animation'Class);
-   procedure setBasicColorP (This : in out VectorExplosionAnimationFactory; basicColor_Param : access BasicColor'Class);
+   procedure Initialize (This : in out VectorExplosionAnimationFactory'Class; basicColor_Param : access BasicColor_Package.BasicColor'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class);
+   function Create (basicColor_Param : access BasicColor_Package.BasicColor'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return VectorExplosionAnimationFactory_Access;
+   function getInstanceAnimation (This : in out VectorExplosionAnimationFactory; animationInterface_Param : access Animation_Package.Animation'Class) return Animation_Access;
+   procedure getInstanceAnimation (This : in out VectorExplosionAnimationFactory; animationInterface_Param : access Animation_Package.Animation'Class);
+   procedure setBasicColorP (This : in out VectorExplosionAnimationFactory; basicColor_Param : access BasicColor_Package.BasicColor'Class);
    function getBasicColorP (This : in out VectorExplosionAnimationFactory) return BasicColor_Access;
 
 end org.allbinary.animation.VectorExplosionAnimationFactory_Package;

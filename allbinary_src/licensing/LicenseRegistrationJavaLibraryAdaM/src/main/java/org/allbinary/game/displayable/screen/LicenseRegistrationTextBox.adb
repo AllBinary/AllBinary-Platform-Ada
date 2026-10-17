@@ -24,24 +24,24 @@ package body org.allbinary.game.displayable.screen.LicenseRegistrationTextBox_Pa
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out LicenseRegistrationTextBox'Class; cmdListener_Param : access CommandListener'Class; backgrounBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) is
-      cmdListener : CommandListener_Access := CommandListener_Access (cmdListener_Param);
-      backgrounBasicColor : BasicColor_Access := BasicColor_Access (backgrounBasicColor_Param);
-      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
+   procedure Initialize (This : in out LicenseRegistrationTextBox'Class; cmdListener_Param : access CommandListener_Package.CommandListener'Class; backgrounBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      cmdListener : constant CommandListener_Access := CommandListener_Access (cmdListener_Param);
+      backgrounBasicColor : constant BasicColor_Access := BasicColor_Access (backgrounBasicColor_Param);
+      foregroundBasicColor : constant BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
    begin
         CustomTextBox_Package.Initialize (This, cmdListener, To_Unbounded_String ("Enter Registration Code:"), StringUtil_Package.getInstance.EMPTY_STRING, 60, TextField_Package.ANY, Font_Package.getDefaultFont, backgrounBasicColor, foregroundBasicColor);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (cmdListener_Param : access CommandListener'Class; backgrounBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return LicenseRegistrationTextBox_Access is
+   function Create (cmdListener_Param : access CommandListener_Package.CommandListener'Class; backgrounBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return LicenseRegistrationTextBox_Access is
       This : constant LicenseRegistrationTextBox_Access := new LicenseRegistrationTextBox;
    begin
       LicenseRegistrationTextBox_Package.Initialize (This.all, cmdListener_Param, backgrounBasicColor_Param, foregroundBasicColor_Param);
       return This;
    end Create;
 
-   procedure initCommands (This : in out LicenseRegistrationTextBox; cmdListener_Param : access CommandListener'Class) is
-      cmdListener : CommandListener_Access := CommandListener_Access (cmdListener_Param);
+   procedure initCommands (This : in out LicenseRegistrationTextBox; cmdListener_Param : access CommandListener_Package.CommandListener'Class) is
+      cmdListener : constant CommandListener_Access := CommandListener_Access (cmdListener_Param);
    begin
         This.removeAllCommands;
         This.addCommand (GameCommandsFactory_Package.getInstance.CLOSE_AND_SHOW_GAME_CANVAS);
@@ -89,8 +89,8 @@ package body org.allbinary.game.displayable.screen.LicenseRegistrationTextBox_Pa
         CustomTextBox (This).close;
    end close;
 
-   procedure paint (This : in out LicenseRegistrationTextBox; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out LicenseRegistrationTextBox; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         CustomTextBox (This).paint (graphics);
         This.paintable.paint (graphics);

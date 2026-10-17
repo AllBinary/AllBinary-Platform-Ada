@@ -52,13 +52,13 @@ package body org.allbinary.input.motion.button.CancelTouchButtonInputFactory_Pac
       return This;
    end Create;
 
-   function getCancel (This : in out CancelTouchButtonInputFactory; touchButtonInput_Param : access TouchButtonInput'Class) return TouchButtonInput_Access is
-      touchButtonInput : TouchButtonInput_Access := TouchButtonInput_Access (touchButtonInput_Param);
+   function getCancel (This : in out CancelTouchButtonInputFactory; touchButtonInput_Param : access TouchButtonInput_Package.TouchButtonInput'Class) return TouchButtonInput_Access is
+      touchButtonInput : constant TouchButtonInput_Access := TouchButtonInput_Access (touchButtonInput_Param);
    begin
         return This.cancelInputArray (touchButtonInput.getId);
    end getCancel;
 
-   procedure getCancel (This : in out CancelTouchButtonInputFactory; touchButtonInput_Param : access TouchButtonInput'Class) is
+   procedure getCancel (This : in out CancelTouchButtonInputFactory; touchButtonInput_Param : access TouchButtonInput_Package.TouchButtonInput'Class) is
       Java_Result : constant TouchButtonInput_Access := CancelTouchButtonInputFactory'Class (This).getCancel (touchButtonInput_Param);
       pragma Unreferenced (Java_Result);
    begin

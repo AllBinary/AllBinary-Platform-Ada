@@ -50,8 +50,8 @@ package org.allbinary.media.image.ImagesRatioUtil_Package is
    procedure isEqual (This : in out ImagesRatioUtil; bufferedImageArray : BufferedImage_Access_Array_Access; totalImages : Integer);
    function getAverage (This : in out ImagesRatioUtil; bufferedImageArray : BufferedImage_Access_Array_Access; totalImages : Integer) return Long_Float;
    procedure getAverage (This : in out ImagesRatioUtil; bufferedImageArray : BufferedImage_Access_Array_Access; totalImages : Integer);
-   function fudge (This : in out ImagesRatioUtil; bufferedImage_Param : access BufferedImage'Class; ratio : Long_Float) return BufferedImage_Access;
-   procedure fudge (This : in out ImagesRatioUtil; bufferedImage_Param : access BufferedImage'Class; ratio : Long_Float);
+   function fudge (This : in out ImagesRatioUtil; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; ratio : Long_Float) return BufferedImage_Access;
+   procedure fudge (This : in out ImagesRatioUtil; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; ratio : Long_Float);
    function fudge (This : in out ImagesRatioUtil; bufferedImageArray : BufferedImage_Access_Array_Access; totalImages : Integer; ratio : Long_Float) return BufferedImage_Access_Array_Access;
    procedure fudge (This : in out ImagesRatioUtil; bufferedImageArray : BufferedImage_Access_Array_Access; totalImages : Integer; ratio : Long_Float);
 

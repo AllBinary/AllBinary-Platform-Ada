@@ -53,7 +53,7 @@ package body org.allbinary.logic.communication.log.LogFormatUtil_Package is
    end Create;
 
    function get (This : in out LogFormatUtil; className : Unbounded_String; functionName : Unbounded_String; specialMessage : Unbounded_String; exception_Id_Param : access Java_Object'Class) return Unbounded_String is
-      exception_Id : Java_Object_Access := Java_Object_Access (exception_Id_Param);
+      exception_Id : constant Java_Object_Access := Java_Object_Access (exception_Id_Param);
       stringBuffer : StringMaker_Access;
    begin
         stringBuffer := This.getF (className, functionName);
@@ -92,7 +92,7 @@ package body org.allbinary.logic.communication.log.LogFormatUtil_Package is
    end getF;
 
    function getO (This : in out LogFormatUtil; exception_Id_Param : access Java_Object'Class) return Unbounded_String is
-      exception_Id : Java_Object_Access := Java_Object_Access (exception_Id_Param);
+      exception_Id : constant Java_Object_Access := Java_Object_Access (exception_Id_Param);
       stringBuffer : StringMaker_Access;
       exceptionAsString : Unbounded_String;
    begin

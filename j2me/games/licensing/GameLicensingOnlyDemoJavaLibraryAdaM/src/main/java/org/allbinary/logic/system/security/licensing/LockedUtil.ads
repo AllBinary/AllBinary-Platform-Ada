@@ -38,8 +38,8 @@ package org.allbinary.logic.system.security.licensing.LockedUtil_Package is
    function Create return LockedUtil_Access;
    function getInstance return LockedUtil_Access;
    function isLocked (This : in out LockedUtil) return Boolean;
-   function isLockedFeature (This : in out LockedUtil; lockableFeatrue_Param : access LockableFeature'Class) return Boolean;
-   procedure isLockedFeature (This : in out LockedUtil; lockableFeatrue_Param : access LockableFeature'Class);
+   function isLockedFeature (This : in out LockedUtil; lockableFeatrue_Param : access LockableFeature_Package.LockableFeature'Class) return Boolean;
+   procedure isLockedFeature (This : in out LockedUtil; lockableFeatrue_Param : access LockableFeature_Package.LockableFeature'Class);
 
 end org.allbinary.logic.system.security.licensing.LockedUtil_Package;
 

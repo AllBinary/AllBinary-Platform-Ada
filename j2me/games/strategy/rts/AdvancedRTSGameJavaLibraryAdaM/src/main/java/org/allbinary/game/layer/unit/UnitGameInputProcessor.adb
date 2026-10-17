@@ -22,15 +22,15 @@ package body org.allbinary.game.layer.unit.UnitGameInputProcessor_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out UnitGameInputProcessor'Class; unitLayer_Param : access UnitLayer'Class) is
-      unitLayer : UnitLayer_Access := UnitLayer_Access (unitLayer_Param);
+   procedure Initialize (This : in out UnitGameInputProcessor'Class; unitLayer_Param : access UnitLayer_Package.UnitLayer'Class) is
+      unitLayer : constant UnitLayer_Access := UnitLayer_Access (unitLayer_Param);
    begin
       GameInputProcessor_Package.Initialize (This);
       Initialize_Fields (This);
         This.unitLayer := unitLayer;
    end Initialize;
 
-   function Create (unitLayer_Param : access UnitLayer'Class) return UnitGameInputProcessor_Access is
+   function Create (unitLayer_Param : access UnitLayer_Package.UnitLayer'Class) return UnitGameInputProcessor_Access is
       This : constant UnitGameInputProcessor_Access := new UnitGameInputProcessor;
    begin
       UnitGameInputProcessor_Package.Initialize (This.all, unitLayer_Param);

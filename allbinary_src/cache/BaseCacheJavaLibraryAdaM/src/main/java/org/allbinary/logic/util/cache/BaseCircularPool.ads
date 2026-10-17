@@ -48,7 +48,7 @@ package org.allbinary.logic.util.cache.BaseCircularPool_Package is
    procedure Initialize (This : in out BaseCircularPool'Class);
    function Create return BaseCircularPool_Access;
    function getNextInstance (This : in out BaseCircularPool) return Java_Object_Access;
-   procedure init (This : in out BaseCircularPool; allBinaryObjectFactoryInterface_Param : access AllBinaryObjectFactoryInterface'Class);
+   procedure init (This : in out BaseCircularPool; allBinaryObjectFactoryInterface_Param : access AllBinaryObjectFactoryInterface_Package.AllBinaryObjectFactoryInterface'Class);
    function getInstance (This : in out BaseCircularPool; index : Integer) return Java_Object_Access;
    procedure getInstance (This : in out BaseCircularPool; index : Integer);
 

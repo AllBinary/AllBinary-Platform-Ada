@@ -110,13 +110,13 @@ package views.admin.inventory.listings.ProductListing_Package is
       INVENTORY : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out ProductListing'Class; searchRequest_Param : access SearchRequest'Class);
-   function Create (searchRequest_Param : access SearchRequest'Class) return ProductListing_Access;
-   function getHashSet (This : in out ProductListing; storeFront_Param : access StoreFrontInterface'Class) return HashSet_Access;
-   procedure getHashSet (This : in out ProductListing; storeFront_Param : access StoreFrontInterface'Class);
+   procedure Initialize (This : in out ProductListing'Class; searchRequest_Param : access SearchRequest_Package.SearchRequest'Class);
+   function Create (searchRequest_Param : access SearchRequest_Package.SearchRequest'Class) return ProductListing_Access;
+   function getHashSet (This : in out ProductListing; storeFront_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) return HashSet_Access;
+   procedure getHashSet (This : in out ProductListing; storeFront_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class);
    procedure savePage (This : in out ProductListing; file : Unbounded_String; data : Unbounded_String);
-   procedure create (This : in out ProductListing; keywordData : Unbounded_String; keywordFilenameHashMap_Param : access HashMap'Class; vector_Param : access BasicArrayList'Class; staticPath_Param : access AbPath'Class);
-   procedure addStaticPageInfoToDatabase (This : in out ProductListing; storeFront_Param : access StoreFrontInterface'Class; keywordFilenameHashMap_Param : access HashMap'Class);
+   procedure create (This : in out ProductListing; keywordData : Unbounded_String; keywordFilenameHashMap_Param : access HashMap_Package.HashMap'Class; vector_Param : access BasicArrayList_Package.BasicArrayList'Class; staticPath_Param : access AbPath_Package.AbPath'Class);
+   procedure addStaticPageInfoToDatabase (This : in out ProductListing; storeFront_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class; keywordFilenameHashMap_Param : access HashMap_Package.HashMap'Class);
    function generateAll (This : in out ProductListing) return Unbounded_String;
    function generateAll (This : in out ProductListing; storeName_Param : Unbounded_String) return Unbounded_String;
    procedure generateAll (This : in out ProductListing; storeName_Param : Unbounded_String);

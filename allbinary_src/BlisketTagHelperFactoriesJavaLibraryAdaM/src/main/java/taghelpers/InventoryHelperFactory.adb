@@ -36,9 +36,9 @@ package body taghelpers.InventoryHelperFactory_Package is
    end Create;
 
    --  throws LicensingException
-   function getInstance (This : in out InventoryHelperFactory; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return Java_Object_Access is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
-      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
+   function getInstance (This : in out InventoryHelperFactory; hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return Java_Object_Access is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
       commonStrings : CommonStrings_Access;
    begin
         begin
@@ -57,7 +57,7 @@ package body taghelpers.InventoryHelperFactory_Package is
         end;
    end getInstance;
 
-   procedure getInstance (This : in out InventoryHelperFactory; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
+   procedure getInstance (This : in out InventoryHelperFactory; hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is
       Java_Result : constant Java_Object_Access := InventoryHelperFactory'Class (This).getInstance (hashMap_Param, pageContext_Param);
       pragma Unreferenced (Java_Result);
    begin

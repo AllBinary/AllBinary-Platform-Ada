@@ -32,7 +32,7 @@ package org.allbinary.ai.ArtificialIntelligenceInterface_Package is
    type ArtificialIntelligenceInterface_Access is access all ArtificialIntelligenceInterface'Class;
    type ArtificialIntelligenceInterface_Access_Array is array (Natural range <>) of ArtificialIntelligenceInterface_Access;
    type ArtificialIntelligenceInterface_Access_Array_Access is access all ArtificialIntelligenceInterface_Access_Array;
-   procedure processAI (This : in out ArtificialIntelligenceInterface; layerManager_Param : access AllBinaryLayerManager'Class) is abstract;
+   procedure processAI (This : in out ArtificialIntelligenceInterface; layerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class) is abstract;
 
 end org.allbinary.ai.ArtificialIntelligenceInterface_Package;
 

@@ -46,8 +46,8 @@ package body org.allbinary.input.motion.button.TouchButtonRecognizer_Package is
    end Create;
 
    --  throws Exception
-   procedure processRelease (This : in out TouchButtonRecognizer; touchButtonInput_Param : access TouchButtonInput'Class; deviceId : Integer) is
-      touchButtonInput : TouchButtonInput_Access := TouchButtonInput_Access (touchButtonInput_Param);
+   procedure processRelease (This : in out TouchButtonRecognizer; touchButtonInput_Param : access TouchButtonInput_Package.TouchButtonInput'Class; deviceId : Integer) is
+      touchButtonInput : constant TouchButtonInput_Access := TouchButtonInput_Access (touchButtonInput_Param);
       gameKeyEvent : GameKeyEvent_Access;
    begin
         This.releaseHelper.release (touchButtonInput, deviceId);
@@ -152,14 +152,14 @@ package body org.allbinary.input.motion.button.ReleaseHelper_Package is
    end Initialize_Fields;
 
     
-   procedure Initialize (This : in out ReleaseHelper'Class; touchButtonRecognizer_Param : access TouchButtonRecognizer'Class) is
-      touchButtonRecognizer : TouchButtonRecognizer_Access := TouchButtonRecognizer_Access (touchButtonRecognizer_Param);
+   procedure Initialize (This : in out ReleaseHelper'Class; touchButtonRecognizer_Param : access TouchButtonRecognizer_Package.TouchButtonRecognizer'Class) is
+      touchButtonRecognizer : constant TouchButtonRecognizer_Access := TouchButtonRecognizer_Access (touchButtonRecognizer_Param);
    begin
       Initialize_Fields (This);
             This.touchButtonRecognizer := touchButtonRecognizer;
    end Initialize;
 
-   function Create (touchButtonRecognizer_Param : access TouchButtonRecognizer'Class) return ReleaseHelper_Access is
+   function Create (touchButtonRecognizer_Param : access TouchButtonRecognizer_Package.TouchButtonRecognizer'Class) return ReleaseHelper_Access is
       This : constant ReleaseHelper_Access := new ReleaseHelper;
    begin
       ReleaseHelper_Package.Initialize (This.all, touchButtonRecognizer_Param);
@@ -167,8 +167,8 @@ package body org.allbinary.input.motion.button.ReleaseHelper_Package is
    end Create;
     
    --  throws Exception
-   procedure release (This : in out ReleaseHelper; touchButtonInput_Param : access TouchButtonInput'Class; deviceId : Integer) is
-      touchButtonInput : TouchButtonInput_Access := TouchButtonInput_Access (touchButtonInput_Param);
+   procedure release (This : in out ReleaseHelper; touchButtonInput_Param : access TouchButtonInput_Package.TouchButtonInput'Class; deviceId : Integer) is
+      touchButtonInput : constant TouchButtonInput_Access := TouchButtonInput_Access (touchButtonInput_Param);
       nextTouchButtonInput : TouchButtonInput_Access;
       gameKeyEvent : GameKeyEvent_Access;
       index : Integer;
@@ -195,13 +195,13 @@ package body org.allbinary.input.motion.button.MultitouchReleaseHelper_Package i
    end Initialize_Fields;
 
     
-   procedure Initialize (This : in out MultitouchReleaseHelper'Class; touchButtonRecognizer_Param : access TouchButtonRecognizer'Class) is
-      touchButtonRecognizer : TouchButtonRecognizer_Access := TouchButtonRecognizer_Access (touchButtonRecognizer_Param);
+   procedure Initialize (This : in out MultitouchReleaseHelper'Class; touchButtonRecognizer_Param : access TouchButtonRecognizer_Package.TouchButtonRecognizer'Class) is
+      touchButtonRecognizer : constant TouchButtonRecognizer_Access := TouchButtonRecognizer_Access (touchButtonRecognizer_Param);
    begin
             null;
    end Initialize;
 
-   function Create (touchButtonRecognizer_Param : access TouchButtonRecognizer'Class) return MultitouchReleaseHelper_Access is
+   function Create (touchButtonRecognizer_Param : access TouchButtonRecognizer_Package.TouchButtonRecognizer'Class) return MultitouchReleaseHelper_Access is
       This : constant MultitouchReleaseHelper_Access := new MultitouchReleaseHelper;
    begin
       MultitouchReleaseHelper_Package.Initialize (This.all, touchButtonRecognizer_Param);
@@ -209,8 +209,8 @@ package body org.allbinary.input.motion.button.MultitouchReleaseHelper_Package i
    end Create;
     
    --  throws Exception
-   procedure release (This : in out MultitouchReleaseHelper; touchButtonInput_Param : access TouchButtonInput'Class; deviceId : Integer) is
-      touchButtonInput : TouchButtonInput_Access := TouchButtonInput_Access (touchButtonInput_Param);
+   procedure release (This : in out MultitouchReleaseHelper; touchButtonInput_Param : access TouchButtonInput_Package.TouchButtonInput'Class; deviceId : Integer) is
+      touchButtonInput : constant TouchButtonInput_Access := TouchButtonInput_Access (touchButtonInput_Param);
       cancelTouchButtonInput : TouchButtonInput_Access;
       nextTouchButtonInput : TouchButtonInput_Access;
       gameKeyEvent : GameKeyEvent_Access;

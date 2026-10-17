@@ -45,9 +45,9 @@ package org.allbinary.game.displayable.canvas.PreGameLockablePaintable_Package i
       paintableForm : ScrollCurrentSelectionForm_Access;
    end record;
 
-   procedure Initialize (This : in out PreGameLockablePaintable'Class; paintableForm_Param : access ScrollCurrentSelectionForm'Class; lockedIndex : Integer);
-   function Create (paintableForm_Param : access ScrollCurrentSelectionForm'Class; lockedIndex : Integer) return PreGameLockablePaintable_Access;
-   procedure paint (This : in out PreGameLockablePaintable; graphics_Param : access Graphics'Class; currentIndex : Integer; x : Integer; y : Integer);
+   procedure Initialize (This : in out PreGameLockablePaintable'Class; paintableForm_Param : access ScrollCurrentSelectionForm_Package.ScrollCurrentSelectionForm'Class; lockedIndex : Integer);
+   function Create (paintableForm_Param : access ScrollCurrentSelectionForm_Package.ScrollCurrentSelectionForm'Class; lockedIndex : Integer) return PreGameLockablePaintable_Access;
+   procedure paint (This : in out PreGameLockablePaintable; graphics_Param : access Graphics_Package.Graphics'Class; currentIndex : Integer; x : Integer; y : Integer);
    function getPaintableForm (This : in out PreGameLockablePaintable) return ScrollCurrentSelectionForm_Access;
 
 end org.allbinary.game.displayable.canvas.PreGameLockablePaintable_Package;

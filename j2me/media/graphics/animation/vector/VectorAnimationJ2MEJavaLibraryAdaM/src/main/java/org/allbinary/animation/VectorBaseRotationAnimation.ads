@@ -47,8 +47,8 @@ package org.allbinary.animation.VectorBaseRotationAnimation_Package is
       currentPoints : Integer_Array_Access_Array_Access_Array_Access;
    end record;
 
-   procedure Initialize (This : in out VectorBaseRotationAnimation'Class; angleInfo_Param : access AngleInfo'Class; currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor'Class; animationBehavior_Param : access AnimationBehavior'Class);
-   function Create (angleInfo_Param : access AngleInfo'Class; currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor'Class; animationBehavior_Param : access AnimationBehavior'Class) return VectorBaseRotationAnimation_Access;
+   procedure Initialize (This : in out VectorBaseRotationAnimation'Class; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor_Package.BasicColor'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class);
+   function Create (angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor_Package.BasicColor'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return VectorBaseRotationAnimation_Access;
    function getAnimationSize (This : in out VectorBaseRotationAnimation) return Integer;
    function getFrame (This : in out VectorBaseRotationAnimation) return Integer;
    procedure setFrame (This : in out VectorBaseRotationAnimation; index : Integer);
@@ -57,7 +57,7 @@ package org.allbinary.animation.VectorBaseRotationAnimation_Package is
    function getSize (This : in out VectorBaseRotationAnimation) return Integer;
    procedure setSequence (This : in out VectorBaseRotationAnimation; sequence : Integer_Array_Access);
    function getSequence (This : in out VectorBaseRotationAnimation) return Integer_Array_Access;
-   procedure paintXY (This : in out VectorBaseRotationAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
+   procedure paintXY (This : in out VectorBaseRotationAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
    function getPoints (This : in out VectorBaseRotationAnimation; frame : Integer) return Integer_Array_Access_Array_Access;
    procedure getPoints (This : in out VectorBaseRotationAnimation; frame : Integer);
    procedure setPoints (This : in out VectorBaseRotationAnimation; currentPoints : Integer_Array_Access_Array_Access_Array_Access);

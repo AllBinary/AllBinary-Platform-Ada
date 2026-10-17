@@ -21,8 +21,8 @@ package body org.allbinary.animation.compound.SimultaneousCompoundRotationAnimat
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out SimultaneousCompoundRotationAnimationInterfaceFactory'Class; basicAnimationInterfaceFactoryInterfaceArray : AnimationInterfaceFactoryInterface_Access_Array_Access; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) is
-      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
+   procedure Initialize (This : in out SimultaneousCompoundRotationAnimationInterfaceFactory'Class; basicAnimationInterfaceFactoryInterfaceArray : AnimationInterfaceFactoryInterface_Access_Array_Access; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
+      animationBehaviorFactory : constant AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
    begin
         CompoundAnimationInterfaceFactory_Package.Initialize (This, basicAnimationInterfaceFactoryInterfaceArray, animationBehaviorFactory);
         if (animationBehaviorFactory) = (AnimationBehaviorFactory_Package.getInstance) then
@@ -30,7 +30,7 @@ package body org.allbinary.animation.compound.SimultaneousCompoundRotationAnimat
         end if;
    end Initialize;
 
-   function Create (basicAnimationInterfaceFactoryInterfaceArray : AnimationInterfaceFactoryInterface_Access_Array_Access; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return SimultaneousCompoundRotationAnimationInterfaceFactory_Access is
+   function Create (basicAnimationInterfaceFactoryInterfaceArray : AnimationInterfaceFactoryInterface_Access_Array_Access; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return SimultaneousCompoundRotationAnimationInterfaceFactory_Access is
       This : constant SimultaneousCompoundRotationAnimationInterfaceFactory_Access := new SimultaneousCompoundRotationAnimationInterfaceFactory;
    begin
       SimultaneousCompoundRotationAnimationInterfaceFactory_Package.Initialize (This.all, basicAnimationInterfaceFactoryInterfaceArray, animationBehaviorFactory_Param);

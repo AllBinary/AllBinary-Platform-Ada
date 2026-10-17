@@ -48,9 +48,9 @@ package org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudP
 
    procedure Initialize (This : in out GeologicalResourceInfoHudPaintable'Class);
    function Create return GeologicalResourceInfoHudPaintable_Access;
-   procedure updateMeasurement (This : in out GeologicalResourceInfoHudPaintable; graphics_Param : access Graphics'Class);
+   procedure updateMeasurement (This : in out GeologicalResourceInfoHudPaintable; graphics_Param : access Graphics_Package.Graphics'Class);
    procedure updateSelectionInfo (This : in out GeologicalResourceInfoHudPaintable);
-   procedure paint (This : in out GeologicalResourceInfoHudPaintable; graphics_Param : access Graphics'Class);
+   procedure paint (This : in out GeologicalResourceInfoHudPaintable; graphics_Param : access Graphics_Package.Graphics'Class);
 
 end org.allbinary.game.layer.geological.resources.GeologicalResourceInfoHudPaintable_Package;
 

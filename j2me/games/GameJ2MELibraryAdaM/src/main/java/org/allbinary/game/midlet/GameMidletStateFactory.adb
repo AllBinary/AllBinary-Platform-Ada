@@ -34,8 +34,8 @@ package body org.allbinary.game.midlet.GameMidletStateFactory_Package is
         return This.currentGameState;
    end getCurrentGameState;
 
-   procedure setCurrentGameState (This : in out GameMidletStateFactory; currentGameState_Param : access GameState'Class) is
-      currentGameState : GameState_Access := GameState_Access (currentGameState_Param);
+   procedure setCurrentGameState (This : in out GameMidletStateFactory; currentGameState_Param : access GameState_Package.GameState'Class) is
+      currentGameState : constant GameState_Access := GameState_Access (currentGameState_Param);
    begin
         This.logUtil.putF (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.CURRENT).append (To_Unbounded_String (" GameState: ")).append (StringUtil_Package.getInstance.toString (currentGameState)).toString, GameMidletStateFactory_Access'(This'Unchecked_Access), To_Unbounded_String ("setCurrentGameState"));
         This.currentGameState := currentGameState;

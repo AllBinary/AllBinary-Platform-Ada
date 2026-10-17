@@ -41,8 +41,8 @@ package org.allbinary.business.context.modules.storefront.statistics.advertiseme
 
    type StoreFrontAdvertisementsStatistics is new StoreFrontAdvertisementsStatisticsInterface with null record;
 
-   procedure Initialize (This : in out StoreFrontAdvertisementsStatistics'Class; storeFrontInterface_Param : access StoreFrontInterface'Class);
-   function Create (storeFrontInterface_Param : access StoreFrontInterface'Class) return StoreFrontAdvertisementsStatistics_Access;
+   procedure Initialize (This : in out StoreFrontAdvertisementsStatistics'Class; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class);
+   function Create (storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) return StoreFrontAdvertisementsStatistics_Access;
    function toHashMap (This : in out StoreFrontAdvertisementsStatistics) return HashMap_Access;
    function toVector (This : in out StoreFrontAdvertisementsStatistics) return BasicArrayList_Access;
    function getKey (This : in out StoreFrontAdvertisementsStatistics) return Java_Object_Access;

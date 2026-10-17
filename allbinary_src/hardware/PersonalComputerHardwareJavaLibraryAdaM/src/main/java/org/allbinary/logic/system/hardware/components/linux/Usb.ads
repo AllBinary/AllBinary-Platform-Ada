@@ -39,8 +39,8 @@ package org.allbinary.logic.system.hardware.components.linux.Usb_Package is
 
    procedure Initialize (This : in out Usb'Class; data : Unbounded_String);
    function Create (data : Unbounded_String) return Usb_Access;
-   function compareTo (This : in out Usb; componentInterface_Param : access HardwareComponentInterface'Class) return Boolean;
-   procedure compareTo (This : in out Usb; componentInterface_Param : access HardwareComponentInterface'Class);
+   function compareTo (This : in out Usb; componentInterface_Param : access HardwareComponentInterface_Package.HardwareComponentInterface'Class) return Boolean;
+   procedure compareTo (This : in out Usb; componentInterface_Param : access HardwareComponentInterface_Package.HardwareComponentInterface'Class);
    function toString (This : in out Usb) return Unbounded_String;
 
 end org.allbinary.logic.system.hardware.components.linux.Usb_Package;

@@ -29,8 +29,8 @@ package body views.admin.inventory.listings.ProductListing_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ProductListing'Class; searchRequest_Param : access SearchRequest'Class) is
-      searchRequest : SearchRequest_Access := SearchRequest_Access (searchRequest_Param);
+   procedure Initialize (This : in out ProductListing'Class; searchRequest_Param : access SearchRequest_Package.SearchRequest'Class) is
+      searchRequest : constant SearchRequest_Access := SearchRequest_Access (searchRequest_Param);
    begin
       Initialize_Fields (This);
         This.searchRequest := searchRequest;
@@ -39,7 +39,7 @@ package body views.admin.inventory.listings.ProductListing_Package is
         This.inventory_Case := InventoryEntity_Package.Create;
    end Initialize;
 
-   function Create (searchRequest_Param : access SearchRequest'Class) return ProductListing_Access is
+   function Create (searchRequest_Param : access SearchRequest_Package.SearchRequest'Class) return ProductListing_Access is
       This : constant ProductListing_Access := new ProductListing;
    begin
       ProductListing_Package.Initialize (This.all, searchRequest_Param);
@@ -47,8 +47,8 @@ package body views.admin.inventory.listings.ProductListing_Package is
    end Create;
 
    --  throws Exception
-   function getHashSet (This : in out ProductListing; storeFront_Param : access StoreFrontInterface'Class) return HashSet_Access is
-      storeFront : StoreFrontInterface_Access := StoreFrontInterface_Access (storeFront_Param);
+   function getHashSet (This : in out ProductListing; storeFront_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) return HashSet_Access is
+      storeFront : constant StoreFrontInterface_Access := StoreFrontInterface_Access (storeFront_Param);
       inventoryColumnUtil : InventoryColumnUtil_Access;
       keywords : BasicArrayList_Access;
       subStoreVector : BasicArrayList_Access;
@@ -100,10 +100,10 @@ package body views.admin.inventory.listings.ProductListing_Package is
    end savePage;
 
    --  throws Exception
-   procedure create (This : in out ProductListing; keywordData : Unbounded_String; keywordFilenameHashMap_Param : access HashMap'Class; vector_Param : access BasicArrayList'Class; staticPath_Param : access AbPath'Class) is
-      keywordFilenameHashMap : HashMap_Access := HashMap_Access (keywordFilenameHashMap_Param);
-      vector : BasicArrayList_Access := BasicArrayList_Access (vector_Param);
-      staticPath : AbPath_Access := AbPath_Access (staticPath_Param);
+   procedure create (This : in out ProductListing; keywordData : Unbounded_String; keywordFilenameHashMap_Param : access HashMap_Package.HashMap'Class; vector_Param : access BasicArrayList_Package.BasicArrayList'Class; staticPath_Param : access AbPath_Package.AbPath'Class) is
+      keywordFilenameHashMap : constant HashMap_Access := HashMap_Access (keywordFilenameHashMap_Param);
+      vector : constant BasicArrayList_Access := BasicArrayList_Access (vector_Param);
+      staticPath : constant AbPath_Access := AbPath_Access (staticPath_Param);
       stringBuffer : StringMaker_Access;
       hashMap : HashMap_Access;
       pageName : Unbounded_String;
@@ -153,9 +153,9 @@ package body views.admin.inventory.listings.ProductListing_Package is
         end loop;
    end create;
 
-   procedure addStaticPageInfoToDatabase (This : in out ProductListing; storeFront_Param : access StoreFrontInterface'Class; keywordFilenameHashMap_Param : access HashMap'Class) is
-      storeFront : StoreFrontInterface_Access := StoreFrontInterface_Access (storeFront_Param);
-      keywordFilenameHashMap : HashMap_Access := HashMap_Access (keywordFilenameHashMap_Param);
+   procedure addStaticPageInfoToDatabase (This : in out ProductListing; storeFront_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class; keywordFilenameHashMap_Param : access HashMap_Package.HashMap'Class) is
+      storeFront : constant StoreFrontInterface_Access := StoreFrontInterface_Access (storeFront_Param);
+      keywordFilenameHashMap : constant HashMap_Access := HashMap_Access (keywordFilenameHashMap_Param);
       keywordHashSet : Set_Access;
       keywordArray : Java_Object_Access_Array_Access;
       size : Integer;
@@ -280,7 +280,7 @@ package body views.admin.inventory.listings.ProductListing_Package is
         end;
    end generateAll;
 
-   procedure getHashSet (This : in out ProductListing; storeFront_Param : access StoreFrontInterface'Class) is
+   procedure getHashSet (This : in out ProductListing; storeFront_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) is
       Java_Result : constant HashSet_Access := ProductListing'Class (This).getHashSet (storeFront_Param);
       pragma Unreferenced (Java_Result);
    begin

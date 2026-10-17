@@ -31,8 +31,8 @@ package org.allbinary.layer.event.LayerManagerEventListenerInterface_Package is
    type LayerManagerEventListenerInterface_Access is access all LayerManagerEventListenerInterface'Class;
    type LayerManagerEventListenerInterface_Access_Array is array (Natural range <>) of LayerManagerEventListenerInterface_Access;
    type LayerManagerEventListenerInterface_Access_Array_Access is access all LayerManagerEventListenerInterface_Access_Array;
-   procedure onCreateLayerManagerEvent (This : in out LayerManagerEventListenerInterface; layerManagerEvent_Param : access LayerManagerEvent'Class) is abstract;
-   procedure onDeleteLayerManagerEvent (This : in out LayerManagerEventListenerInterface; layerManagerEvent_Param : access LayerManagerEvent'Class) is abstract;
+   procedure onCreateLayerManagerEvent (This : in out LayerManagerEventListenerInterface; layerManagerEvent_Param : access LayerManagerEvent_Package.LayerManagerEvent'Class) is abstract;
+   procedure onDeleteLayerManagerEvent (This : in out LayerManagerEventListenerInterface; layerManagerEvent_Param : access LayerManagerEvent_Package.LayerManagerEvent'Class) is abstract;
 
 end org.allbinary.layer.event.LayerManagerEventListenerInterface_Package;
 

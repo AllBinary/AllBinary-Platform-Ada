@@ -34,49 +34,49 @@ package body org.allbinary.graphics.opengles.OpenGLESStrings_Package is
 
 
    --  throws Exception
-   procedure set (This : in out OpenGLESStrings; gl_Param : access GL10'Class) is
-      gl : GL10_Access := GL10_Access (gl_Param);
+   procedure set (This : in out OpenGLESStrings; gl_Param : access GL10_Package.GL10'Class) is
+      gl : constant GL10_Access := GL10_Access (gl_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end set;
 
-   procedure initFont (This : in out OpenGLESStrings; gl_Param : access GL10'Class; width : Integer; height : Integer) is
-      gl : GL10_Access := GL10_Access (gl_Param);
+   procedure initFont (This : in out OpenGLESStrings; gl_Param : access GL10_Package.GL10'Class; width : Integer; height : Integer) is
+      gl : constant GL10_Access := GL10_Access (gl_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end initFont;
 
    --  throws Exception
-   procedure update (This : in out OpenGLESStrings; gl_Param : access GL10'Class; width : Integer; height : Integer) is
-      gl : GL10_Access := GL10_Access (gl_Param);
+   procedure update (This : in out OpenGLESStrings; gl_Param : access GL10_Package.GL10'Class; width : Integer; height : Integer) is
+      gl : constant GL10_Access := GL10_Access (gl_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end update;
 
-   procedure drawChar (This : in out OpenGLESStrings; gl_Param : access GL10'Class; graphics_Param : access Graphics'Class; character_Id : Character; x : Integer; y : Integer; anchor : Integer) is
-      gl : GL10_Access := GL10_Access (gl_Param);
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure drawChar (This : in out OpenGLESStrings; gl_Param : access GL10_Package.GL10'Class; graphics_Param : access Graphics_Package.Graphics'Class; character_Id : Character; x : Integer; y : Integer; anchor : Integer) is
+      gl : constant GL10_Access := GL10_Access (gl_Param);
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end drawChar;
 
-   procedure drawChars (This : in out OpenGLESStrings; gl_Param : access GL10'Class; graphics_Param : access Graphics'Class; data : Character_Array_Access; offset : Integer; length : Integer; x : Integer; y : Integer; anchor : Integer) is
-      gl : GL10_Access := GL10_Access (gl_Param);
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure drawChars (This : in out OpenGLESStrings; gl_Param : access GL10_Package.GL10'Class; graphics_Param : access Graphics_Package.Graphics'Class; data : Character_Array_Access; offset : Integer; length : Integer; x : Integer; y : Integer; anchor : Integer) is
+      gl : constant GL10_Access := GL10_Access (gl_Param);
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end drawChars;
 
-   procedure drawString (This : in out OpenGLESStrings; gl_Param : access GL10'Class; graphics_Param : access Graphics'Class; string_Id : Unbounded_String; x : Integer; y : Integer; anchor : Integer) is
-      gl : GL10_Access := GL10_Access (gl_Param);
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure drawString (This : in out OpenGLESStrings; gl_Param : access GL10_Package.GL10'Class; graphics_Param : access Graphics_Package.Graphics'Class; string_Id : Unbounded_String; x : Integer; y : Integer; anchor : Integer) is
+      gl : constant GL10_Access := GL10_Access (gl_Param);
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end drawString;
 
-   procedure drawSubstring (This : in out OpenGLESStrings; gl_Param : access GL10'Class; graphics_Param : access Graphics'Class; string_Id : Unbounded_String; offset : Integer; len : Integer; x : Integer; y : Integer; anchor : Integer) is
-      gl : GL10_Access := GL10_Access (gl_Param);
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure drawSubstring (This : in out OpenGLESStrings; gl_Param : access GL10_Package.GL10'Class; graphics_Param : access Graphics_Package.Graphics'Class; string_Id : Unbounded_String; offset : Integer; len : Integer; x : Integer; y : Integer; anchor : Integer) is
+      gl : constant GL10_Access := GL10_Access (gl_Param);
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end drawSubstring;

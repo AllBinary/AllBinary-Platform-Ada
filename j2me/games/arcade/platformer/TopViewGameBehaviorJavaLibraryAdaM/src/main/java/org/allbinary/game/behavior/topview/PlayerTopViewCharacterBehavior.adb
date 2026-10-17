@@ -36,35 +36,35 @@ package body org.allbinary.game.behavior.topview.PlayerTopViewCharacterBehavior_
 
 
    --  throws Exception
-   procedure terrainEvent (This : in out PlayerTopViewCharacterBehavior; layer_Param : access AllBinaryLayer'Class; direction_Param : access Direction'Class; x : Integer; y : Integer; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
-      layer : AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
-      direction : Direction_Access := Direction_Access (direction_Param);
-      geographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
+   procedure terrainEvent (This : in out PlayerTopViewCharacterBehavior; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; direction_Param : access Direction_Package.Direction'Class; x : Integer; y : Integer; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
+      layer : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
+      direction : constant Direction_Access := Direction_Access (direction_Param);
+      geographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
    begin
         TrackingEventHandler_Package.getInstance.fireEvent (TrackingEventCircularStaticPool_Package.getInstance.getNextInstance (layer));
    end terrainEvent;
 
-   procedure terrainMove (This : in out PlayerTopViewCharacterBehavior; layer_Param : access AllBinaryLayer'Class; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; x : Integer; y : Integer) is
-      layer : AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
+   procedure terrainMove (This : in out PlayerTopViewCharacterBehavior; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; geographicMapInterfaceArray : BasicGeographicMap_Access_Array_Access; x : Integer; y : Integer) is
+      layer : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
       basicGeographicMapUtil : BasicGeographicMapUtil_Access;
    begin
         basicGeographicMapUtil := BasicGeographicMapUtil_Package.getInstance;
         basicGeographicMapUtil.setPosition (geographicMapInterfaceArray, x, y);
    end terrainMove;
 
-   procedure moveIfOnScreen (This : in out PlayerTopViewCharacterBehavior; layer_Param : access AllBinaryLayer'Class; ax : Integer; ay : Integer) is
-      layer : AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
+   procedure moveIfOnScreen (This : in out PlayerTopViewCharacterBehavior; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; ax : Integer; ay : Integer) is
+      layer : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
    begin
         null;
    end moveIfOnScreen;
 
-   function isTiledLayerMoveable (This : in out PlayerTopViewCharacterBehavior; terrainTiledLayer_Param : access AllBinaryTiledLayer'Class; x : Integer; y : Integer) return Boolean is
-      terrainTiledLayer : AllBinaryTiledLayer_Access := AllBinaryTiledLayer_Access (terrainTiledLayer_Param);
+   function isTiledLayerMoveable (This : in out PlayerTopViewCharacterBehavior; terrainTiledLayer_Param : access AllBinaryTiledLayer_Package.AllBinaryTiledLayer'Class; x : Integer; y : Integer) return Boolean is
+      terrainTiledLayer : constant AllBinaryTiledLayer_Access := AllBinaryTiledLayer_Access (terrainTiledLayer_Param);
    begin
         return (((((terrainTiledLayer.getXP) + (DisplayInfoSingleton_Package.getInstance.getLastWidth)) < (terrainTiledLayer.getWidth)) or else ((x) < (0)))) and then ((((terrainTiledLayer.getXP) > (0)) or else ((x) > (0))));
    end isTiledLayerMoveable;
 
-   procedure isTiledLayerMoveable (This : in out PlayerTopViewCharacterBehavior; terrainTiledLayer_Param : access AllBinaryTiledLayer'Class; x : Integer; y : Integer) is
+   procedure isTiledLayerMoveable (This : in out PlayerTopViewCharacterBehavior; terrainTiledLayer_Param : access AllBinaryTiledLayer_Package.AllBinaryTiledLayer'Class; x : Integer; y : Integer) is
       Java_Result : constant Boolean := PlayerTopViewCharacterBehavior'Class (This).isTiledLayerMoveable (terrainTiledLayer_Param, x, y);
       pragma Unreferenced (Java_Result);
    begin

@@ -40,14 +40,14 @@ package body org.allbinary.android.api1.ActivityFractureUtilAPI1_Package is
    end getInstance;
 
    --  throws Exception
-   procedure process (This : in out ActivityFractureUtilAPI1; activity_Param : access Activity'Class) is
-      activity : Activity_Access := Activity_Access (activity_Param);
+   procedure process (This : in out ActivityFractureUtilAPI1; activity_Param : access Activity_Package.Activity'Class) is
+      activity : constant Activity_Access := Activity_Access (activity_Param);
    begin
         null;
    end process;
 
-   procedure setFullScreen (This : in out ActivityFractureUtilAPI1; activity_Param : access Activity'Class) is
-      activity : Activity_Access := Activity_Access (activity_Param);
+   procedure setFullScreen (This : in out ActivityFractureUtilAPI1; activity_Param : access Activity_Package.Activity'Class) is
+      activity : constant Activity_Access := Activity_Access (activity_Param);
    begin
         activity.getWindow.setFlags (WindowManager_Package.LayoutParams.FLAG_FULLSCREEN, WindowManager_Package.LayoutParams.FLAG_FULLSCREEN);
    end setFullScreen;

@@ -25,8 +25,8 @@ package body org.allbinary.logic.communication.http.file.upload.HttpFilePermissi
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out HttpFilePermissions'Class; fullPath_Param : access AbPath'Class) is
-      fullPath : AbPath_Access := AbPath_Access (fullPath_Param);
+   procedure Initialize (This : in out HttpFilePermissions'Class; fullPath_Param : access AbPath_Package.AbPath'Class) is
+      fullPath : constant AbPath_Access := AbPath_Access (fullPath_Param);
    begin
       Initialize_Fields (This);
         This.file := AbFile_Package.createAbFileFromAbPath (AbPath_Package.Create (fullPath.toFileSystemString, FileUploadData_Package.getInstance.FILE));
@@ -41,7 +41,7 @@ package body org.allbinary.logic.communication.http.file.upload.HttpFilePermissi
         end if;
    end Initialize;
 
-   function Create (fullPath_Param : access AbPath'Class) return HttpFilePermissions_Access is
+   function Create (fullPath_Param : access AbPath_Package.AbPath'Class) return HttpFilePermissions_Access is
       This : constant HttpFilePermissions_Access := new HttpFilePermissions;
    begin
       HttpFilePermissions_Package.Initialize (This.all, fullPath_Param);

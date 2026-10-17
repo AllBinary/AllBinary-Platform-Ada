@@ -43,9 +43,9 @@ package org.allbinary.physics.movement.OscillateVelocityMovement_Package is
       oscillatePositive : Boolean;
    end record;
 
-   procedure Initialize (This : in out OscillateVelocityMovement'Class; speedBasicDecimal_Param : access BasicDecimal'Class; oscillateMin : Integer; oscillateMax : Integer);
-   function Create (speedBasicDecimal_Param : access BasicDecimal'Class; oscillateMin : Integer; oscillateMax : Integer) return OscillateVelocityMovement_Access;
-   procedure process (This : in out OscillateVelocityMovement; layer_Param : access AllBinaryGameLayer'Class);
+   procedure Initialize (This : in out OscillateVelocityMovement'Class; speedBasicDecimal_Param : access BasicDecimal_Package.BasicDecimal'Class; oscillateMin : Integer; oscillateMax : Integer);
+   function Create (speedBasicDecimal_Param : access BasicDecimal_Package.BasicDecimal'Class; oscillateMin : Integer; oscillateMax : Integer) return OscillateVelocityMovement_Access;
+   procedure process (This : in out OscillateVelocityMovement; layer_Param : access AllBinaryGameLayer_Package.AllBinaryGameLayer'Class);
 
 end org.allbinary.physics.movement.OscillateVelocityMovement_Package;
 

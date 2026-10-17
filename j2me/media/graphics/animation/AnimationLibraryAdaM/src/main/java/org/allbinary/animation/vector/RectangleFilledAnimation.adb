@@ -23,8 +23,8 @@ package body org.allbinary.animation.vector.RectangleFilledAnimation_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out RectangleFilledAnimation'Class; width : Integer; height : Integer; basicColor_Param : access BasicColor'Class) is
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+   procedure Initialize (This : in out RectangleFilledAnimation'Class; width : Integer; height : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
       Animation_Package.Initialize (This);
       Initialize_Fields (This);
@@ -33,7 +33,7 @@ package body org.allbinary.animation.vector.RectangleFilledAnimation_Package is
         This.setBasicColorP (basicColor);
    end Initialize;
 
-   function Create (width : Integer; height : Integer; basicColor_Param : access BasicColor'Class) return RectangleFilledAnimation_Access is
+   function Create (width : Integer; height : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) return RectangleFilledAnimation_Access is
       This : constant RectangleFilledAnimation_Access := new RectangleFilledAnimation;
    begin
       RectangleFilledAnimation_Package.Initialize (This.all, width, height, basicColor_Param);
@@ -45,8 +45,8 @@ package body org.allbinary.animation.vector.RectangleFilledAnimation_Package is
         null;
    end nextFrame;
 
-   procedure paintXY (This : in out RectangleFilledAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintXY (This : in out RectangleFilledAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         This.basicSetColorUtil.setBasicColorP3 (graphics, This.getBasicColorP, This.getColor);
         graphics.fillRect (x, y, This.widthP, This.heightP);

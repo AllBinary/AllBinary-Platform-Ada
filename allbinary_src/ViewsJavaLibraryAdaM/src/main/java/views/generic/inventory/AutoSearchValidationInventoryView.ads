@@ -38,12 +38,12 @@ package views.generic_Id.inventory.AutoSearchValidationInventoryView_Package is
 
    type AutoSearchValidationInventoryView is new InventorySearch with null record;
 
-   procedure Initialize (This : in out AutoSearchValidationInventoryView'Class; searchRequest_Param : access SearchRequest'Class);
-   function Create (searchRequest_Param : access SearchRequest'Class) return AutoSearchValidationInventoryView_Access;
+   procedure Initialize (This : in out AutoSearchValidationInventoryView'Class; searchRequest_Param : access SearchRequest_Package.SearchRequest'Class);
+   function Create (searchRequest_Param : access SearchRequest_Package.SearchRequest'Class) return AutoSearchValidationInventoryView_Access;
    function isValid (This : in out AutoSearchValidationInventoryView) return Boolean;
    function toValidationInfoDoc (This : in out AutoSearchValidationInventoryView) return Document_Access;
-   function toValidationInfoNode (This : in out AutoSearchValidationInventoryView; document_Param : access Document'Class) return Node_Access;
-   procedure toValidationInfoNode (This : in out AutoSearchValidationInventoryView; document_Param : access Document'Class);
+   function toValidationInfoNode (This : in out AutoSearchValidationInventoryView; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out AutoSearchValidationInventoryView; document_Param : access Document_Package.Document'Class);
    function validationInfo (This : in out AutoSearchValidationInventoryView) return Unbounded_String;
 
 end views.generic_Id.inventory.AutoSearchValidationInventoryView_Package;

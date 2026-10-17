@@ -27,11 +27,11 @@ package body org.allbinary.input.automation.module.game.test.TestInputAutomation
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TestInputAutomationCaptureWorker'Class; inputAutomationActionInterface_Param : access InputAutomationActionInterface'Class; genericProfileActions_Param : access GenericProfileActions'Class; imageComparatorConstraintsInterface_Param : access ImageComparatorConstraintsInterface'Class; motionRectangleConstraintsInterface_Param : access MotionRectangleConstraintsInterface'Class) is
-      inputAutomationActionInterface : InputAutomationActionInterface_Access := InputAutomationActionInterface_Access (inputAutomationActionInterface_Param);
-      genericProfileActions : GenericProfileActions_Access := GenericProfileActions_Access (genericProfileActions_Param);
-      imageComparatorConstraintsInterface : ImageComparatorConstraintsInterface_Access := ImageComparatorConstraintsInterface_Access (imageComparatorConstraintsInterface_Param);
-      motionRectangleConstraintsInterface : MotionRectangleConstraintsInterface_Access := MotionRectangleConstraintsInterface_Access (motionRectangleConstraintsInterface_Param);
+   procedure Initialize (This : in out TestInputAutomationCaptureWorker'Class; inputAutomationActionInterface_Param : access InputAutomationActionInterface_Package.InputAutomationActionInterface'Class; genericProfileActions_Param : access GenericProfileActions_Package.GenericProfileActions'Class; imageComparatorConstraintsInterface_Param : access ImageComparatorConstraintsInterface_Package.ImageComparatorConstraintsInterface'Class; motionRectangleConstraintsInterface_Param : access MotionRectangleConstraintsInterface_Package.MotionRectangleConstraintsInterface'Class) is
+      inputAutomationActionInterface : constant InputAutomationActionInterface_Access := InputAutomationActionInterface_Access (inputAutomationActionInterface_Param);
+      genericProfileActions : constant GenericProfileActions_Access := GenericProfileActions_Access (genericProfileActions_Param);
+      imageComparatorConstraintsInterface : constant ImageComparatorConstraintsInterface_Access := ImageComparatorConstraintsInterface_Access (imageComparatorConstraintsInterface_Param);
+      motionRectangleConstraintsInterface : constant MotionRectangleConstraintsInterface_Access := MotionRectangleConstraintsInterface_Access (motionRectangleConstraintsInterface_Param);
    begin
         AbstractInputAutomationWorker_Package.Initialize (This, inputAutomationActionInterface);
         Initialize_Fields (This);
@@ -39,7 +39,7 @@ package body org.allbinary.input.automation.module.game.test.TestInputAutomation
         This.setGenericProfileActions (genericProfileActions);
    end Initialize;
 
-   function Create (inputAutomationActionInterface_Param : access InputAutomationActionInterface'Class; genericProfileActions_Param : access GenericProfileActions'Class; imageComparatorConstraintsInterface_Param : access ImageComparatorConstraintsInterface'Class; motionRectangleConstraintsInterface_Param : access MotionRectangleConstraintsInterface'Class) return TestInputAutomationCaptureWorker_Access is
+   function Create (inputAutomationActionInterface_Param : access InputAutomationActionInterface_Package.InputAutomationActionInterface'Class; genericProfileActions_Param : access GenericProfileActions_Package.GenericProfileActions'Class; imageComparatorConstraintsInterface_Param : access ImageComparatorConstraintsInterface_Package.ImageComparatorConstraintsInterface'Class; motionRectangleConstraintsInterface_Param : access MotionRectangleConstraintsInterface_Package.MotionRectangleConstraintsInterface'Class) return TestInputAutomationCaptureWorker_Access is
       This : constant TestInputAutomationCaptureWorker_Access := new TestInputAutomationCaptureWorker;
    begin
       TestInputAutomationCaptureWorker_Package.Initialize (This.all, inputAutomationActionInterface_Param, genericProfileActions_Param, imageComparatorConstraintsInterface_Param, motionRectangleConstraintsInterface_Param);
@@ -93,8 +93,8 @@ package body org.allbinary.input.automation.module.game.test.TestInputAutomation
         return This.genericProfileActions;
    end getGenericProfileActions;
 
-   procedure setGenericProfileActions (This : in out TestInputAutomationCaptureWorker; genericProfileActions_Param : access GenericProfileActions'Class) is
-      genericProfileActions : GenericProfileActions_Access := GenericProfileActions_Access (genericProfileActions_Param);
+   procedure setGenericProfileActions (This : in out TestInputAutomationCaptureWorker; genericProfileActions_Param : access GenericProfileActions_Package.GenericProfileActions'Class) is
+      genericProfileActions : constant GenericProfileActions_Access := GenericProfileActions_Access (genericProfileActions_Param);
    begin
         This.genericProfileActions := genericProfileActions;
    end setGenericProfileActions;

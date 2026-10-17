@@ -36,7 +36,7 @@ package org.allbinary.graphics.ResizableListenerHandler_Package is
    procedure Initialize (This : in out ResizableListenerHandler'Class);
    function Create return ResizableListenerHandler_Access;
    function getInstance return ResizableListenerHandler_Access;
-   procedure setListener (This : in out ResizableListenerHandler; resizableListenerInterface_Param : access ResizableListenerInterface'Class);
+   procedure setListener (This : in out ResizableListenerHandler; resizableListenerInterface_Param : access ResizableListenerInterface_Package.ResizableListenerInterface'Class);
    procedure fire (This : in out ResizableListenerHandler; isFullScreen : Boolean);
    procedure fireEvent (This : in out ResizableListenerHandler; value : Boolean);
 

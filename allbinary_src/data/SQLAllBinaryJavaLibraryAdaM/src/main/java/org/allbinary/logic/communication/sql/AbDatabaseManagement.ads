@@ -56,10 +56,10 @@ package org.allbinary.logic.communication.sql.AbDatabaseManagement_Package is
       ADD_TABLES_RESULTS_LABEL : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out AbDatabaseManagement'Class; databaseConnectionInfoInterface_Param : access DatabaseConnectionInfoInterface'Class);
-   function Create (databaseConnectionInfoInterface_Param : access DatabaseConnectionInfoInterface'Class) return AbDatabaseManagement_Access;
-   procedure Initialize (This : in out AbDatabaseManagement'Class; connectionInfo_Param : access DbConnectionInfo'Class);
-   function Create (connectionInfo_Param : access DbConnectionInfo'Class) return AbDatabaseManagement_Access;
+   procedure Initialize (This : in out AbDatabaseManagement'Class; databaseConnectionInfoInterface_Param : access DatabaseConnectionInfoInterface_Package.DatabaseConnectionInfoInterface'Class);
+   function Create (databaseConnectionInfoInterface_Param : access DatabaseConnectionInfoInterface_Package.DatabaseConnectionInfoInterface'Class) return AbDatabaseManagement_Access;
+   procedure Initialize (This : in out AbDatabaseManagement'Class; connectionInfo_Param : access DbConnectionInfo_Package.DbConnectionInfo'Class);
+   function Create (connectionInfo_Param : access DbConnectionInfo_Package.DbConnectionInfo'Class) return AbDatabaseManagement_Access;
    function getHostName (This : in out AbDatabaseManagement) return Unbounded_String;
    function addDbUser (This : in out AbDatabaseManagement; hostName : Unbounded_String; db : Unbounded_String; userName : Unbounded_String; password : Unbounded_String) return Boolean;
    procedure addDbUser (This : in out AbDatabaseManagement; hostName : Unbounded_String; db : Unbounded_String; userName : Unbounded_String; password : Unbounded_String);

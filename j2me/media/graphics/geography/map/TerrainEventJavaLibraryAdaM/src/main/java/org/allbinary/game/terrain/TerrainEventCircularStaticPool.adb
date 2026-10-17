@@ -45,8 +45,8 @@ package body org.allbinary.game.terrain.TerrainEventCircularStaticPool_Package i
    end init;
 
    --  throws Exception
-   function getNext (This : in out TerrainEventCircularStaticPool; basicTerrainInfo_Param : access BasicTerrainInfo'Class) return TerrainEvent_Access is
-      basicTerrainInfo : BasicTerrainInfo_Access := BasicTerrainInfo_Access (basicTerrainInfo_Param);
+   function getNext (This : in out TerrainEventCircularStaticPool; basicTerrainInfo_Param : access BasicTerrainInfo_Package.BasicTerrainInfo'Class) return TerrainEvent_Access is
+      basicTerrainInfo : constant BasicTerrainInfo_Access := BasicTerrainInfo_Access (basicTerrainInfo_Param);
       trackingEvent : TerrainEvent_Access;
    begin
         trackingEvent := TerrainEvent_Access (This.EVENT_POOL.getNextInstance);
@@ -54,7 +54,7 @@ package body org.allbinary.game.terrain.TerrainEventCircularStaticPool_Package i
         return trackingEvent;
    end getNext;
 
-   procedure getNext (This : in out TerrainEventCircularStaticPool; basicTerrainInfo_Param : access BasicTerrainInfo'Class) is
+   procedure getNext (This : in out TerrainEventCircularStaticPool; basicTerrainInfo_Param : access BasicTerrainInfo_Package.BasicTerrainInfo'Class) is
       Java_Result : constant TerrainEvent_Access := TerrainEventCircularStaticPool'Class (This).getNext (basicTerrainInfo_Param);
       pragma Unreferenced (Java_Result);
    begin

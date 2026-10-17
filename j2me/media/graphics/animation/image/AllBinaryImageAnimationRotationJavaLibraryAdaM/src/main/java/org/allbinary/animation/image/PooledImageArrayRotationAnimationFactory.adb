@@ -24,9 +24,9 @@ package body org.allbinary.animation.image.PooledImageArrayRotationAnimationFact
 
 
    --  throws Exception
-   function createFactory (image_Param : access Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return PooledImageArrayRotationAnimationFactory_Access is
-      image : Image_Access := Image_Access (image_Param);
-      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
+   function createFactory (image_Param : access Image_Package.Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return PooledImageArrayRotationAnimationFactory_Access is
+      image : constant Image_Access := Image_Access (image_Param);
+      animationBehaviorFactory : constant AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
       totalAngle : Integer;
       angleIncrement : Integer;
    begin
@@ -36,9 +36,9 @@ package body org.allbinary.animation.image.PooledImageArrayRotationAnimationFact
    end createFactory;
 
    --  throws Exception
-   function createDXY (image_Param : access Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return PooledImageArrayRotationAnimationFactory_Access is
-      image : Image_Access := Image_Access (image_Param);
-      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
+   function createDXY (image_Param : access Image_Package.Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return PooledImageArrayRotationAnimationFactory_Access is
+      image : constant Image_Access := Image_Access (image_Param);
+      animationBehaviorFactory : constant AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
       totalAngle : Integer;
       angleIncrement : Integer;
    begin
@@ -47,9 +47,9 @@ package body org.allbinary.animation.image.PooledImageArrayRotationAnimationFact
         return PooledImageArrayRotationAnimationFactory_Package.Create (image, image.getWidth, image.getHeight, dx, dy, angleIncrement, animationBehaviorFactory);
    end createDXY;
 
-   procedure Initialize (This : in out PooledImageArrayRotationAnimationFactory'Class; image_Param : access Image'Class; width : Integer; height : Integer; dx : Integer; dy : Integer; angleIncrement : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) is
-      image : Image_Access := Image_Access (image_Param);
-      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
+   procedure Initialize (This : in out PooledImageArrayRotationAnimationFactory'Class; image_Param : access Image_Package.Image'Class; width : Integer; height : Integer; dx : Integer; dy : Integer; angleIncrement : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
+      image : constant Image_Access := Image_Access (image_Param);
+      animationBehaviorFactory : constant AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
       totalAngle : Integer;
       imageArray : Image_Access_Array_Access;
    begin
@@ -60,7 +60,7 @@ package body org.allbinary.animation.image.PooledImageArrayRotationAnimationFact
         This.allBinaryImageRotationAnimationInfo := ImageArrayRotationAnimationInfo_Package.Create (imageArray, angleIncrement, totalAngle, dx, dy);
    end Initialize;
 
-   function Create (image_Param : access Image'Class; width : Integer; height : Integer; dx : Integer; dy : Integer; angleIncrement : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return PooledImageArrayRotationAnimationFactory_Access is
+   function Create (image_Param : access Image_Package.Image'Class; width : Integer; height : Integer; dx : Integer; dy : Integer; angleIncrement : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return PooledImageArrayRotationAnimationFactory_Access is
       This : constant PooledImageArrayRotationAnimationFactory_Access := new PooledImageArrayRotationAnimationFactory;
    begin
       PooledImageArrayRotationAnimationFactory_Package.Initialize (This.all, image_Param, width, height, dx, dy, angleIncrement, animationBehaviorFactory_Param);
@@ -73,20 +73,20 @@ package body org.allbinary.animation.image.PooledImageArrayRotationAnimationFact
         return AdjustedImageArrayRotationAnimation_Package.createAdjustedImageArrayRotationAnimationInfo (This.allBinaryImageRotationAnimationInfo, This.animationBehaviorFactory.getOrCreateInstance);
    end getInstance;
 
-   procedure setInitialScale (This : in out PooledImageArrayRotationAnimationFactory; scaleProperties_Param : access ScaleProperties'Class) is
-      scaleProperties : ScaleProperties_Access := ScaleProperties_Access (scaleProperties_Param);
+   procedure setInitialScale (This : in out PooledImageArrayRotationAnimationFactory; scaleProperties_Param : access ScaleProperties_Package.ScaleProperties'Class) is
+      scaleProperties : constant ScaleProperties_Access := ScaleProperties_Access (scaleProperties_Param);
    begin
         null;
    end setInitialScale;
 
-   procedure createFactory (image_Param : access Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) is
+   procedure createFactory (image_Param : access Image_Package.Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
       Java_Result : constant PooledImageArrayRotationAnimationFactory_Access := createFactory (image_Param, animationBehaviorFactory_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createFactory;
 
-   procedure createDXY (image_Param : access Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) is
+   procedure createDXY (image_Param : access Image_Package.Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
       Java_Result : constant PooledImageArrayRotationAnimationFactory_Access := createDXY (image_Param, dx, dy, animationBehaviorFactory_Param);
       pragma Unreferenced (Java_Result);
    begin

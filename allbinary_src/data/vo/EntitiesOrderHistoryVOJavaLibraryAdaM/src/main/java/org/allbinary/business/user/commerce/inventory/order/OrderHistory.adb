@@ -34,23 +34,23 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderHistory_P
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out OrderHistory'Class; basketInterface_Param : access BasketInterface'Class) is
-      basketInterface : BasketInterface_Access := BasketInterface_Access (basketInterface_Param);
+   procedure Initialize (This : in out OrderHistory'Class; basketInterface_Param : access BasketInterface_Package.BasketInterface'Class) is
+      basketInterface : constant BasketInterface_Access := BasketInterface_Access (basketInterface_Param);
    begin
         Order_Package.Initialize (This, basketInterface);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (basketInterface_Param : access BasketInterface'Class) return OrderHistory_Access is
+   function Create (basketInterface_Param : access BasketInterface_Package.BasketInterface'Class) return OrderHistory_Access is
       This : constant OrderHistory_Access := new OrderHistory;
    begin
       OrderHistory_Package.Initialize (This.all, basketInterface_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out OrderHistory'Class; basketInterface_Param : access BasketInterface'Class; orderHistory_Param : access OrderHistory'Class) is
-      basketInterface : BasketInterface_Access := BasketInterface_Access (basketInterface_Param);
-      orderHistory : OrderHistory_Access := OrderHistory_Access (orderHistory_Param);
+   procedure Initialize (This : in out OrderHistory'Class; basketInterface_Param : access BasketInterface_Package.BasketInterface'Class; orderHistory_Param : access OrderHistory_Package.OrderHistory'Class) is
+      basketInterface : constant BasketInterface_Access := BasketInterface_Access (basketInterface_Param);
+      orderHistory : constant OrderHistory_Access := OrderHistory_Access (orderHistory_Param);
    begin
         Order_Package.Initialize (This, orderHistory.getStoreName, basketInterface, orderHistory.getId, orderHistory.getShippingMethod, orderHistory.getSpecial, orderHistory.getPaymentMethod);
         Initialize_Fields (This);
@@ -73,16 +73,16 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderHistory_P
         Order (This).setStoreCancelComments (Unbounded_String (orderHistory.getStoreCancelComments));
    end Initialize;
 
-   function Create (basketInterface_Param : access BasketInterface'Class; orderHistory_Param : access OrderHistory'Class) return OrderHistory_Access is
+   function Create (basketInterface_Param : access BasketInterface_Package.BasketInterface'Class; orderHistory_Param : access OrderHistory_Package.OrderHistory'Class) return OrderHistory_Access is
       This : constant OrderHistory_Access := new OrderHistory;
    begin
       OrderHistory_Package.Initialize (This.all, basketInterface_Param, orderHistory_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out OrderHistory'Class; basketInterface_Param : access BasketInterface'Class; orderHistoryHashMap_Param : access HashMap'Class) is
-      basketInterface : BasketInterface_Access := BasketInterface_Access (basketInterface_Param);
-      orderHistoryHashMap : HashMap_Access := HashMap_Access (orderHistoryHashMap_Param);
+   procedure Initialize (This : in out OrderHistory'Class; basketInterface_Param : access BasketInterface_Package.BasketInterface'Class; orderHistoryHashMap_Param : access HashMap_Package.HashMap'Class) is
+      basketInterface : constant BasketInterface_Access := BasketInterface_Access (basketInterface_Param);
+      orderHistoryHashMap : constant HashMap_Access := HashMap_Access (orderHistoryHashMap_Param);
    begin
         Order_Package.Initialize (This, Unbounded_String (orderHistoryHashMap.get (StoreFrontData_Package.getInstance.NAME)), basketInterface, Unbounded_String (orderHistoryHashMap.get (OrderData_Package.ID)), Unbounded_String (orderHistoryHashMap.get (ShippingMethodData_Package.NAME)), Unbounded_String (orderHistoryHashMap.get (EntryData_Package.getInstance.SPECIAL)), Unbounded_String (orderHistoryHashMap.get (PaymentData_Package.METHOD)));
         Initialize_Fields (This);
@@ -105,7 +105,7 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderHistory_P
         Order (This).setStoreCancelComments (Unbounded_String (orderHistoryHashMap.get (OrderData_Package.STORECANCELCOMMENT)));
    end Initialize;
 
-   function Create (basketInterface_Param : access BasketInterface'Class; orderHistoryHashMap_Param : access HashMap'Class) return OrderHistory_Access is
+   function Create (basketInterface_Param : access BasketInterface_Package.BasketInterface'Class; orderHistoryHashMap_Param : access HashMap_Package.HashMap'Class) return OrderHistory_Access is
       This : constant OrderHistory_Access := new OrderHistory;
    begin
       OrderHistory_Package.Initialize (This.all, basketInterface_Param, orderHistoryHashMap_Param);
@@ -117,20 +117,20 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderHistory_P
         This.userName := value;
    end setUserName;
 
-   procedure setDefaultShippingAddress (This : in out OrderHistory; shippingAddress_Param : access StreetAddress'Class) is
-      shippingAddress : StreetAddress_Access := StreetAddress_Access (shippingAddress_Param);
+   procedure setDefaultShippingAddress (This : in out OrderHistory; shippingAddress_Param : access StreetAddress_Package.StreetAddress'Class) is
+      shippingAddress : constant StreetAddress_Access := StreetAddress_Access (shippingAddress_Param);
    begin
         This.shippingAddress := shippingAddress;
    end setDefaultShippingAddress;
 
-   procedure setBillingAddress (This : in out OrderHistory; billingAddress_Param : access StreetAddress'Class) is
-      billingAddress : StreetAddress_Access := StreetAddress_Access (billingAddress_Param);
+   procedure setBillingAddress (This : in out OrderHistory; billingAddress_Param : access StreetAddress_Package.StreetAddress'Class) is
+      billingAddress : constant StreetAddress_Access := StreetAddress_Access (billingAddress_Param);
    begin
         This.billingAddress := billingAddress;
    end setBillingAddress;
 
-   procedure setPaymentInfo (This : in out OrderHistory; payment_Param : access Payment'Class) is
-      payment : Payment_Access := Payment_Access (payment_Param);
+   procedure setPaymentInfo (This : in out OrderHistory; payment_Param : access Payment_Package.Payment'Class) is
+      payment : constant Payment_Access := Payment_Access (payment_Param);
    begin
         This.payment := payment;
    end setPaymentInfo;
@@ -160,26 +160,26 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderHistory_P
         This.status := value;
    end setStatus;
 
-   procedure setSubTotal (This : in out OrderHistory; value_Param : access Money'Class) is
-      value : Money_Access := Money_Access (value_Param);
+   procedure setSubTotal (This : in out OrderHistory; value_Param : access Money_Package.Money'Class) is
+      value : constant Money_Access := Money_Access (value_Param);
    begin
         This.subTotal := value;
    end setSubTotal;
 
-   procedure setShippingCost (This : in out OrderHistory; value_Param : access Money'Class) is
-      value : Money_Access := Money_Access (value_Param);
+   procedure setShippingCost (This : in out OrderHistory; value_Param : access Money_Package.Money'Class) is
+      value : constant Money_Access := Money_Access (value_Param);
    begin
         This.shippingCost := value;
    end setShippingCost;
 
-   procedure setTaxes (This : in out OrderHistory; value_Param : access Money'Class) is
-      value : Money_Access := Money_Access (value_Param);
+   procedure setTaxes (This : in out OrderHistory; value_Param : access Money_Package.Money'Class) is
+      value : constant Money_Access := Money_Access (value_Param);
    begin
         This.taxes := value;
    end setTaxes;
 
-   procedure setTotal (This : in out OrderHistory; value_Param : access Money'Class) is
-      value : Money_Access := Money_Access (value_Param);
+   procedure setTotal (This : in out OrderHistory; value_Param : access Money_Package.Money'Class) is
+      value : constant Money_Access := Money_Access (value_Param);
    begin
         This.total := value;
    end setTotal;
@@ -271,8 +271,8 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderHistory_P
    end toHashMap;
 
    --  throws Exception
-   function toXmlNode (This : in out OrderHistory; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out OrderHistory; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       hashMap : HashMap_Access;
       keySet : Set_Access;
       keyArray : Java_Object_Access_Array_Access;
@@ -306,7 +306,7 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderHistory_P
         return node;
    end toXmlNode;
 
-   procedure toXmlNode (This : in out OrderHistory; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out OrderHistory; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := OrderHistory'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

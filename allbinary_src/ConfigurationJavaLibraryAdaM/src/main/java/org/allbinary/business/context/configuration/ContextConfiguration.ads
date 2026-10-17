@@ -47,10 +47,10 @@ package org.allbinary.business.context.configuration.ContextConfiguration_Packag
 
    procedure Initialize (This : in out ContextConfiguration'Class);
    function Create return ContextConfiguration_Access;
-   procedure Initialize (This : in out ContextConfiguration'Class; hashMap_Param : access HashMap'Class);
-   function Create (hashMap_Param : access HashMap'Class) return ContextConfiguration_Access;
+   procedure Initialize (This : in out ContextConfiguration'Class; hashMap_Param : access HashMap_Package.HashMap'Class);
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return ContextConfiguration_Access;
    function getEmailServerConfigurationInterface (This : in out ContextConfiguration) return EmailServerConfigurationInterface_Access;
-   procedure setEmailServerConfigurationInterface (This : in out ContextConfiguration; emailServerConfigurationInterface_Param : access EmailServerConfigurationInterface'Class);
+   procedure setEmailServerConfigurationInterface (This : in out ContextConfiguration; emailServerConfigurationInterface_Param : access EmailServerConfigurationInterface_Package.EmailServerConfigurationInterface'Class);
 
 end org.allbinary.business.context.configuration.ContextConfiguration_Package;
 

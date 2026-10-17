@@ -23,14 +23,14 @@ package body org.allbinary.bounds.LayerBounds_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out LayerBounds'Class; rectangle_Param : access Rectangle'Class) is
-      rectangle : Rectangle_Access := Rectangle_Access (rectangle_Param);
+   procedure Initialize (This : in out LayerBounds'Class; rectangle_Param : access Rectangle_Package.Rectangle'Class) is
+      rectangle : constant Rectangle_Access := Rectangle_Access (rectangle_Param);
    begin
       Initialize_Fields (This);
         This.rectangle := rectangle;
    end Initialize;
 
-   function Create (rectangle_Param : access Rectangle'Class) return LayerBounds_Access is
+   function Create (rectangle_Param : access Rectangle_Package.Rectangle'Class) return LayerBounds_Access is
       This : constant LayerBounds_Access := new LayerBounds;
    begin
       LayerBounds_Package.Initialize (This.all, rectangle_Param);
@@ -42,20 +42,20 @@ package body org.allbinary.bounds.LayerBounds_Package is
         return This.rectangle;
    end getRectangleP;
 
-   procedure visit (This : in out LayerBounds; boundsVisitorInterface_Param : access BoundsVisitorInterface'Class) is
-      boundsVisitorInterface : BoundsVisitorInterface_Access := BoundsVisitorInterface_Access (boundsVisitorInterface_Param);
+   procedure visit (This : in out LayerBounds; boundsVisitorInterface_Param : access BoundsVisitorInterface_Package.BoundsVisitorInterface'Class) is
+      boundsVisitorInterface : constant BoundsVisitorInterface_Access := BoundsVisitorInterface_Access (boundsVisitorInterface_Param);
    begin
         null;
    end visit;
 
-   procedure onEvent (This : in out LayerBounds; eventObject_Param : access AllBinaryEventObject'Class) is
-      eventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
+   procedure onEvent (This : in out LayerBounds; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
+      eventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (eventObject_Param);
    begin
         ForcedLogUtil_Package.log (EventStrings_Package.getInstance.PERFORMANCE_MESSAGE, LayerBounds_Access'(This'Unchecked_Access));
    end onEvent;
 
-   procedure onBoundsChangeEvent (This : in out LayerBounds; boundsChangeEvent_Param : access BoundsChangeEvent'Class) is
-      boundsChangeEvent : BoundsChangeEvent_Access := BoundsChangeEvent_Access (boundsChangeEvent_Param);
+   procedure onBoundsChangeEvent (This : in out LayerBounds; boundsChangeEvent_Param : access BoundsChangeEvent_Package.BoundsChangeEvent'Class) is
+      boundsChangeEvent : constant BoundsChangeEvent_Access := BoundsChangeEvent_Access (boundsChangeEvent_Param);
    begin
         This.rectangle := boundsChangeEvent.getRectangle;
    end onBoundsChangeEvent;

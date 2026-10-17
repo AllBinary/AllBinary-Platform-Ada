@@ -23,15 +23,15 @@ package body org.allbinary.game.displayable.canvas.DemoGameStartupRunnable_Packa
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out DemoGameStartupRunnable'Class; demoCanvas_Param : access DemoCanvas'Class) is
-      demoCanvas : DemoCanvas_Access := DemoCanvas_Access (demoCanvas_Param);
+   procedure Initialize (This : in out DemoGameStartupRunnable'Class; demoCanvas_Param : access DemoCanvas_Package.DemoCanvas'Class) is
+      demoCanvas : constant DemoCanvas_Access := DemoCanvas_Access (demoCanvas_Param);
    begin
       ABRunnable_Package.Initialize (This);
       Initialize_Fields (This);
         This.demoCanvas := demoCanvas;
    end Initialize;
 
-   function Create (demoCanvas_Param : access DemoCanvas'Class) return DemoGameStartupRunnable_Access is
+   function Create (demoCanvas_Param : access DemoCanvas_Package.DemoCanvas'Class) return DemoGameStartupRunnable_Access is
       This : constant DemoGameStartupRunnable_Access := new DemoGameStartupRunnable;
    begin
       DemoGameStartupRunnable_Package.Initialize (This.all, demoCanvas_Param);

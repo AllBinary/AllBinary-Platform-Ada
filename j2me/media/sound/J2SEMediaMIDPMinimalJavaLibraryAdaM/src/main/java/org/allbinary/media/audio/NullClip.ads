@@ -46,8 +46,8 @@ package org.allbinary.media.audio.NullClip_Package is
 
    procedure Initialize (This : in out NullClip'Class);
    function Create return NullClip_Access;
-   procedure open (This : in out NullClip; format_Param : access AudioFormat'Class; data : Short_Short_Integer_Array_Access; offset : Integer; bufferSize : Integer);
-   procedure open (This : in out NullClip; stream_Param : access AudioInputStream'Class);
+   procedure open (This : in out NullClip; format_Param : access AudioFormat_Package.AudioFormat'Class; data : Short_Short_Integer_Array_Access; offset : Integer; bufferSize : Integer);
+   procedure open (This : in out NullClip; stream_Param : access AudioInputStream_Package.AudioInputStream'Class);
    function getFrameLength (This : in out NullClip) return Integer;
    function getMicrosecondLength (This : in out NullClip) return Long_Long_Integer;
    procedure setFramePosition (This : in out NullClip; frames : Integer);
@@ -72,12 +72,12 @@ package org.allbinary.media.audio.NullClip_Package is
    procedure close (This : in out NullClip);
    function isOpen (This : in out NullClip) return Boolean;
    function getControls (This : in out NullClip) return Control_Access_Array_Access;
-   function isControlSupported (This : in out NullClip; control_Param : access Type'Class) return Boolean;
-   procedure isControlSupported (This : in out NullClip; control_Param : access Type'Class);
-   function getControl (This : in out NullClip; control_Param : access Type'Class) return Control_Access;
-   procedure getControl (This : in out NullClip; control_Param : access Type'Class);
-   procedure addLineListener (This : in out NullClip; listener_Param : access LineListener'Class);
-   procedure removeLineListener (This : in out NullClip; listener_Param : access LineListener'Class);
+   function isControlSupported (This : in out NullClip; control_Param : access Type_Package.Type'Class) return Boolean;
+   procedure isControlSupported (This : in out NullClip; control_Param : access Type_Package.Type'Class);
+   function getControl (This : in out NullClip; control_Param : access Type_Package.Type'Class) return Control_Access;
+   procedure getControl (This : in out NullClip; control_Param : access Type_Package.Type'Class);
+   procedure addLineListener (This : in out NullClip; listener_Param : access LineListener_Package.LineListener'Class);
+   procedure removeLineListener (This : in out NullClip; listener_Param : access LineListener_Package.LineListener'Class);
 
 end org.allbinary.media.audio.NullClip_Package;
 

@@ -53,8 +53,8 @@ package org.allbinary.game.displayable.AlwaysRepaintBehavior_Package is
    procedure Initialize (This : in out AlwaysRepaintBehavior'Class);
    function Create return AlwaysRepaintBehavior_Access;
    function getInstance return AlwaysRepaintBehavior_Access;
-   procedure repaint (This : in out AlwaysRepaintBehavior; canvas_Param : access Canvas'Class);
-   procedure onChangeRepaint (This : in out AlwaysRepaintBehavior; canvas_Param : access Canvas'Class);
+   procedure repaint (This : in out AlwaysRepaintBehavior; canvas_Param : access Canvas_Package.Canvas'Class);
+   procedure onChangeRepaint (This : in out AlwaysRepaintBehavior; canvas_Param : access Canvas_Package.Canvas'Class);
 
 end org.allbinary.game.displayable.AlwaysRepaintBehavior_Package;
 

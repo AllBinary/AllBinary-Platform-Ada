@@ -21,16 +21,16 @@ package body org.allbinary.animation.image.sprite.AllBinarySpriteRotationAnimati
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AllBinarySpriteRotationAnimation'Class; sprite_Param : access Sprite'Class; image_Param : access Image'Class; animationBehavior_Param : access AnimationBehavior'Class) is
-      sprite : Sprite_Access := Sprite_Access (sprite_Param);
-      image : Image_Access := Image_Access (image_Param);
-      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
+   procedure Initialize (This : in out AllBinarySpriteRotationAnimation'Class; sprite_Param : access Sprite_Package.Sprite'Class; image_Param : access Image_Package.Image'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) is
+      sprite : constant Sprite_Access := Sprite_Access (sprite_Param);
+      image : constant Image_Access := Image_Access (image_Param);
+      animationBehavior : constant AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
         HackRotationSpriteIndexedAnimation_Package.Initialize (This, sprite, image, AngleInfo_Package.getInstance (Short_Integer (((AngleFactory_Package.getInstance.TOTAL_ANGLE) / (sprite.getRawFrameCount)))), animationBehavior);
         This.angleInfo.adjustAngle (This.sprite.getFrame);
    end Initialize;
 
-   function Create (sprite_Param : access Sprite'Class; image_Param : access Image'Class; animationBehavior_Param : access AnimationBehavior'Class) return AllBinarySpriteRotationAnimation_Access is
+   function Create (sprite_Param : access Sprite_Package.Sprite'Class; image_Param : access Image_Package.Image'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return AllBinarySpriteRotationAnimation_Access is
       This : constant AllBinarySpriteRotationAnimation_Access := new AllBinarySpriteRotationAnimation;
    begin
       AllBinarySpriteRotationAnimation_Package.Initialize (This.all, sprite_Param, image_Param, animationBehavior_Param);
@@ -49,16 +49,16 @@ package body org.allbinary.animation.image.sprite.AllBinarySpriteRotationAnimati
         This.angleInfo.adjustAngle (This.sprite.getFrame);
    end previousRotation;
 
-   procedure setFrameByDirection (This : in out AllBinarySpriteRotationAnimation; direction_Param : access Direction'Class) is
-      direction : Direction_Access := Direction_Access (direction_Param);
+   procedure setFrameByDirection (This : in out AllBinarySpriteRotationAnimation; direction_Param : access Direction_Package.Direction'Class) is
+      direction : constant Direction_Access := Direction_Access (direction_Param);
       angle : Angle_Access;
    begin
         angle := This.directionUtil.getFrameAngle (direction);
         This.adjustFrameToAngle (angle);
    end setFrameByDirection;
 
-   procedure setFrameToAngle (This : in out AllBinarySpriteRotationAnimation; angle_Param : access Angle'Class) is
-      angle : Angle_Access := Angle_Access (angle_Param);
+   procedure setFrameToAngle (This : in out AllBinarySpriteRotationAnimation; angle_Param : access Angle_Package.Angle'Class) is
+      angle : constant Angle_Access := Angle_Access (angle_Param);
    begin
         This.adjustFrameToAngle (angle);
    end setFrameToAngle;
@@ -69,8 +69,8 @@ package body org.allbinary.animation.image.sprite.AllBinarySpriteRotationAnimati
         This.angleInfo.adjustAngle (This.getFrame);
    end setFrame;
 
-   procedure adjustFrameToAngle (This : in out AllBinarySpriteRotationAnimation; angle_Param : access Angle'Class) is
-      angle : Angle_Access := Angle_Access (angle_Param);
+   procedure adjustFrameToAngle (This : in out AllBinarySpriteRotationAnimation; angle_Param : access Angle_Package.Angle'Class) is
+      angle : constant Angle_Access := Angle_Access (angle_Param);
    begin
         This.adjustFrame (angle.getValue);
    end adjustFrameToAngle;

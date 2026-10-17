@@ -22,14 +22,14 @@ package body org.allbinary.game.combat.destroy.event.DestroyEventFactory_Package
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out DestroyEventFactory'Class; combatGameCanvas_Param : access AllBinaryGameCanvas'Class) is
-      combatGameCanvas : AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (combatGameCanvas_Param);
+   procedure Initialize (This : in out DestroyEventFactory'Class; combatGameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class) is
+      combatGameCanvas : constant AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (combatGameCanvas_Param);
    begin
       Initialize_Fields (This);
         This.combatGameCanvas := combatGameCanvas;
    end Initialize;
 
-   function Create (combatGameCanvas_Param : access AllBinaryGameCanvas'Class) return DestroyEventFactory_Access is
+   function Create (combatGameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class) return DestroyEventFactory_Access is
       This : constant DestroyEventFactory_Access := new DestroyEventFactory;
    begin
       DestroyEventFactory_Package.Initialize (This.all, combatGameCanvas_Param);

@@ -36,8 +36,8 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValu
       return This;
    end Create;
 
-   procedure Initialize (This : in out CssPropertyValues'Class; node_Param : access Node'Class) is
-      node : Node_Access := Node_Access (node_Param);
+   procedure Initialize (This : in out CssPropertyValues'Class; node_Param : access Node_Package.Node'Class) is
+      node : constant Node_Access := Node_Access (node_Param);
       indexPropertyValueHashMap : HashMap_Access;
       cssPropertyNodeVector : BasicArrayList_Access;
       size : Integer;
@@ -77,7 +77,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValu
         end loop;
    end Initialize;
 
-   function Create (node_Param : access Node'Class) return CssPropertyValues_Access is
+   function Create (node_Param : access Node_Package.Node'Class) return CssPropertyValues_Access is
       This : constant CssPropertyValues_Access := new CssPropertyValues;
    begin
       CssPropertyValues_Package.Initialize (This.all, node_Param);
@@ -114,8 +114,8 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValu
    end toHashMap;
 
    --  throws Exception
-   function toXmlNode (This : in out CssPropertyValues; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out CssPropertyValues; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       hashMap : HashMap_Access;
    begin
         if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
@@ -125,7 +125,7 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValu
         return ModDomHelper_Package.createNameValueIndexNodes (document, CssPropertyData_Package.getInstance.VALUES, CssPropertyValueData_Package.getInstance.NAME, This.propertyValueVector);
    end toXmlNode;
 
-   procedure toXmlNode (This : in out CssPropertyValues; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out CssPropertyValues; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := CssPropertyValues'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

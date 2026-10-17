@@ -30,9 +30,9 @@ package body org.allbinary.game.score.BasicHighScoresFactory_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasicHighScoresFactory'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; softwareInformation_Param : access SoftwareInformation'Class) is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      softwareInformation : SoftwareInformation_Access := SoftwareInformation_Access (softwareInformation_Param);
+   procedure Initialize (This : in out BasicHighScoresFactory'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; softwareInformation_Param : access SoftwareInformation_Package.SoftwareInformation'Class) is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      softwareInformation : constant SoftwareInformation_Access := SoftwareInformation_Access (softwareInformation_Param);
    begin
       HighScoresBase_Package.Initialize (This);
       Initialize_Fields (This);
@@ -40,24 +40,24 @@ package body org.allbinary.game.score.BasicHighScoresFactory_Package is
         This.softwareInformation := softwareInformation;
    end Initialize;
 
-   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; softwareInformation_Param : access SoftwareInformation'Class) return BasicHighScoresFactory_Access is
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; softwareInformation_Param : access SoftwareInformation_Package.SoftwareInformation'Class) return BasicHighScoresFactory_Access is
       This : constant BasicHighScoresFactory_Access := new BasicHighScoresFactory;
    begin
       BasicHighScoresFactory_Package.Initialize (This.all, abeClientInformation_Param, softwareInformation_Param);
       return This;
    end Create;
 
-   procedure fetchHighScores (This : in out BasicHighScoresFactory; gameInfo_Param : access GameInfo'Class; highScoresResultsListener_Param : access HighScoresResultsListener'Class) is
-      gameInfo : GameInfo_Access := GameInfo_Access (gameInfo_Param);
-      highScoresResultsListener : HighScoresResultsListener_Access := HighScoresResultsListener_Access (highScoresResultsListener_Param);
+   procedure fetchHighScores (This : in out BasicHighScoresFactory; gameInfo_Param : access GameInfo_Package.GameInfo'Class; highScoresResultsListener_Param : access HighScoresResultsListener_Package.HighScoresResultsListener'Class) is
+      gameInfo : constant GameInfo_Access := GameInfo_Access (gameInfo_Param);
+      highScoresResultsListener : constant HighScoresResultsListener_Access := HighScoresResultsListener_Access (highScoresResultsListener_Param);
    begin
         This.logUtil.putF (To_Unbounded_String ("Getting Remote/Local HighScores"), BasicHighScoresFactory_Access'(This'Unchecked_Access), This.FETCH);
         This.fetchHighScoresPreload (gameInfo, highScoresResultsListener, True);
    end fetchHighScores;
 
-   procedure fetchHighScoresPreload (This : in out BasicHighScoresFactory; gameInfo_Param : access GameInfo'Class; highScoresResultsListener_Param : access HighScoresResultsListener'Class; preload : Boolean) is
-      gameInfo : GameInfo_Access := GameInfo_Access (gameInfo_Param);
-      highScoresResultsListener : HighScoresResultsListener_Access := HighScoresResultsListener_Access (highScoresResultsListener_Param);
+   procedure fetchHighScoresPreload (This : in out BasicHighScoresFactory; gameInfo_Param : access GameInfo_Package.GameInfo'Class; highScoresResultsListener_Param : access HighScoresResultsListener_Package.HighScoresResultsListener'Class; preload : Boolean) is
+      gameInfo : constant GameInfo_Access := GameInfo_Access (gameInfo_Param);
+      highScoresResultsListener : constant HighScoresResultsListener_Access := HighScoresResultsListener_Access (highScoresResultsListener_Param);
    begin
         SecondaryThreadPool_Package.getInstance.runTask (ARunnable_Package.Create  --  Java anonymous class body: implement it as a named type
 --              

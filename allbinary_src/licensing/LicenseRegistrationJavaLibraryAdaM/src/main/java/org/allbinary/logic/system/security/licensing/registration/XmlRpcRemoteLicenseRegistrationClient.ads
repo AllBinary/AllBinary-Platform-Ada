@@ -59,10 +59,10 @@ package org.allbinary.logic.system.security.licensing.registration.XmlRpcRemoteL
       PAGE : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out XmlRpcRemoteLicenseRegistrationClient'Class; clientInfo_Param : access AbeClientInformationInterface'Class);
-   function Create (clientInfo_Param : access AbeClientInformationInterface'Class) return XmlRpcRemoteLicenseRegistrationClient_Access;
-   function get (This : in out XmlRpcRemoteLicenseRegistrationClient; anyType_Param : access Java_Object'Class; cryptInterface_Param : access CryptInterface'Class) return Java_Object_Access;
-   procedure get (This : in out XmlRpcRemoteLicenseRegistrationClient; anyType_Param : access Java_Object'Class; cryptInterface_Param : access CryptInterface'Class);
+   procedure Initialize (This : in out XmlRpcRemoteLicenseRegistrationClient'Class; clientInfo_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class);
+   function Create (clientInfo_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) return XmlRpcRemoteLicenseRegistrationClient_Access;
+   function get (This : in out XmlRpcRemoteLicenseRegistrationClient; anyType_Param : access Java_Object'Class; cryptInterface_Param : access CryptInterface_Package.CryptInterface'Class) return Java_Object_Access;
+   procedure get (This : in out XmlRpcRemoteLicenseRegistrationClient; anyType_Param : access Java_Object'Class; cryptInterface_Param : access CryptInterface_Package.CryptInterface'Class);
 
 end org.allbinary.logic.system.security.licensing.registration.XmlRpcRemoteLicenseRegistrationClient_Package;
 

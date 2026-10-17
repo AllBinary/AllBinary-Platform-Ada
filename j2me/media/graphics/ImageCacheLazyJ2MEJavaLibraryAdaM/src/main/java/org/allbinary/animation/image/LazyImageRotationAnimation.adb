@@ -28,10 +28,10 @@ package body org.allbinary.animation.image.LazyImageRotationAnimation_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out LazyImageRotationAnimation'Class; layoutIndex : Integer; instanceId : Integer; scaleProperties_Param : access ScaleProperties'Class; animationInterfaceFactoryInterface_Param : access BaseImageAnimationFactory'Class; animationBehavior_Param : access AnimationBehavior'Class) is
-      scaleProperties : ScaleProperties_Access := ScaleProperties_Access (scaleProperties_Param);
-      animationInterfaceFactoryInterface : BaseImageAnimationFactory_Access := BaseImageAnimationFactory_Access (animationInterfaceFactoryInterface_Param);
-      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
+   procedure Initialize (This : in out LazyImageRotationAnimation'Class; layoutIndex : Integer; instanceId : Integer; scaleProperties_Param : access ScaleProperties_Package.ScaleProperties'Class; animationInterfaceFactoryInterface_Param : access BaseImageAnimationFactory_Package.BaseImageAnimationFactory'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) is
+      scaleProperties : constant ScaleProperties_Access := ScaleProperties_Access (scaleProperties_Param);
+      animationInterfaceFactoryInterface : constant BaseImageAnimationFactory_Access := BaseImageAnimationFactory_Access (animationInterfaceFactoryInterface_Param);
+      animationBehavior : constant AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
       imageCache : ImageCache_Access;
    begin
         RotationAnimation_Package.Initialize (This, AngleInfo_Package.getInstance (AngleFactory_Package.getInstance.QUARTER_TOTAL_ANGLE), CircularIndexUtil_Package.createInstance (4), animationBehavior);
@@ -47,7 +47,7 @@ package body org.allbinary.animation.image.LazyImageRotationAnimation_Package is
         This.animation := ActualRotationAnimation_Package.Create (LazyImageRotationAnimation_Access'(This'Unchecked_Access));
    end Initialize;
 
-   function Create (layoutIndex : Integer; instanceId : Integer; scaleProperties_Param : access ScaleProperties'Class; animationInterfaceFactoryInterface_Param : access BaseImageAnimationFactory'Class; animationBehavior_Param : access AnimationBehavior'Class) return LazyImageRotationAnimation_Access is
+   function Create (layoutIndex : Integer; instanceId : Integer; scaleProperties_Param : access ScaleProperties_Package.ScaleProperties'Class; animationInterfaceFactoryInterface_Param : access BaseImageAnimationFactory_Package.BaseImageAnimationFactory'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return LazyImageRotationAnimation_Access is
       This : constant LazyImageRotationAnimation_Access := new LazyImageRotationAnimation;
    begin
       LazyImageRotationAnimation_Package.Initialize (This.all, layoutIndex, instanceId, scaleProperties_Param, animationInterfaceFactoryInterface_Param, animationBehavior_Param);
@@ -83,8 +83,8 @@ package body org.allbinary.animation.image.LazyImageRotationAnimation_Package is
    end getAnimationBehavior;
 
    --  throws Exception
-   procedure set (This : in out LazyImageRotationAnimation; gl_Param : access GL'Class) is
-      gl : GL_Access := GL_Access (gl_Param);
+   procedure set (This : in out LazyImageRotationAnimation; gl_Param : access GL_Package.GL'Class) is
+      gl : constant GL_Access := GL_Access (gl_Param);
    begin
         This.animation.set (gl);
    end set;
@@ -151,8 +151,8 @@ package body org.allbinary.animation.image.LazyImageRotationAnimation_Package is
         rotationAnimation.previousRotationZ;
    end previousRotationZ;
 
-   procedure changeBasicColor (This : in out LazyImageRotationAnimation; basicColor_Param : access BasicColor'Class) is
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+   procedure changeBasicColor (This : in out LazyImageRotationAnimation; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         This.animation.changeBasicColor (basicColor);
    end changeBasicColor;
@@ -249,8 +249,8 @@ package body org.allbinary.animation.image.LazyImageRotationAnimation_Package is
         return This.animation.getWidth;
    end getWidth;
 
-   procedure paintXY (This : in out LazyImageRotationAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintXY (This : in out LazyImageRotationAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         begin
             This.animation.paintXY (graphics, x, y);
@@ -264,8 +264,8 @@ package body org.allbinary.animation.image.LazyImageRotationAnimation_Package is
         end;
    end paintXY;
 
-   procedure paintThreedXYZ (This : in out LazyImageRotationAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer; z : Integer) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintThreedXYZ (This : in out LazyImageRotationAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer; z : Integer) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         begin
             This.animation.paintThreedXYZ (graphics, x, y, z);

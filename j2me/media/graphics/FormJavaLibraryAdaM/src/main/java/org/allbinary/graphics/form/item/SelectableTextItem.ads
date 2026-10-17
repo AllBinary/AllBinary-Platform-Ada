@@ -36,10 +36,10 @@ package org.allbinary.graphics.form.item.SelectableTextItem_Package is
 
    type SelectableTextItem is new ABTextItem with null record;
 
-   procedure Initialize (This : in out SelectableTextItem'Class; label : Unbounded_String; layout : Integer; altText : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class);
-   function Create (label : Unbounded_String; layout : Integer; altText : Unbounded_String; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return SelectableTextItem_Access;
+   procedure Initialize (This : in out SelectableTextItem'Class; label : Unbounded_String; layout : Integer; altText : Unbounded_String; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class);
+   function Create (label : Unbounded_String; layout : Integer; altText : Unbounded_String; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return SelectableTextItem_Access;
    function isFocusable (This : in out SelectableTextItem) return Boolean;
-   procedure paintXY (This : in out SelectableTextItem; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
+   procedure paintXY (This : in out SelectableTextItem; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
 
 end org.allbinary.graphics.form.item.SelectableTextItem_Package;
 

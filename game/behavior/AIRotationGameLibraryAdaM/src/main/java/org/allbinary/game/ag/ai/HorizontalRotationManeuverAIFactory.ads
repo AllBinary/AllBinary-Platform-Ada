@@ -44,8 +44,8 @@ package org.allbinary.game.ag.ai.HorizontalRotationManeuverAIFactory_Package is
 
    procedure Initialize (This : in out HorizontalRotationManeuverAIFactory'Class);
    function Create return HorizontalRotationManeuverAIFactory_Access;
-   function getInstance (This : in out HorizontalRotationManeuverAIFactory; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return ArtificialIntelligenceInterface_Access;
-   procedure getInstance (This : in out HorizontalRotationManeuverAIFactory; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class);
+   function getInstance (This : in out HorizontalRotationManeuverAIFactory; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) return ArtificialIntelligenceInterface_Access;
+   procedure getInstance (This : in out HorizontalRotationManeuverAIFactory; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class);
 
 end org.allbinary.game.ag.ai.HorizontalRotationManeuverAIFactory_Package;
 

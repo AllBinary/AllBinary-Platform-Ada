@@ -54,8 +54,8 @@ package body org.allbinary.media.graphics.geography.map.racetrack.NullRaceTrackG
    end getAllBinaryTiledLayer;
 
    --  throws Exception
-   function getCellPositionsAt (This : in out NullRaceTrackGeographicMap; layer_Param : access Layer'Class; currentCellPositionArray : GeographicMapCellPosition_Access_Array_Access_Array_Access; cellPositionArray : GeographicMapCellPosition_Access_Array_Access_Array_Access) return Boolean is
-      layer : Layer_Access := Layer_Access (layer_Param);
+   function getCellPositionsAt (This : in out NullRaceTrackGeographicMap; layer_Param : access Layer_Package.Layer'Class; currentCellPositionArray : GeographicMapCellPosition_Access_Array_Access_Array_Access; cellPositionArray : GeographicMapCellPosition_Access_Array_Access_Array_Access) return Boolean is
+      layer : constant Layer_Access := Layer_Access (layer_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end getCellPositionsAt;
@@ -84,8 +84,8 @@ package body org.allbinary.media.graphics.geography.map.racetrack.NullRaceTrackG
    end getCellTypeAtXY;
 
    --  throws Exception
-   function getCellTypeAt (This : in out NullRaceTrackGeographicMap; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) return GeographicMapCellType_Access is
-      geographicMapCellPosition : GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
+   function getCellTypeAt (This : in out NullRaceTrackGeographicMap; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) return GeographicMapCellType_Access is
+      geographicMapCellPosition : constant GeographicMapCellPosition_Access := GeographicMapCellPosition_Access (geographicMapCellPosition_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end getCellTypeAt;
@@ -115,8 +115,8 @@ package body org.allbinary.media.graphics.geography.map.racetrack.NullRaceTrackG
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end getRaceTrackInfo;
 
-   procedure setRaceTrackInfo (This : in out NullRaceTrackGeographicMap; aRaceTrackInfo_Param : access RaceTrackInfo'Class) is
-      aRaceTrackInfo : RaceTrackInfo_Access := RaceTrackInfo_Access (aRaceTrackInfo_Param);
+   procedure setRaceTrackInfo (This : in out NullRaceTrackGeographicMap; aRaceTrackInfo_Param : access RaceTrackInfo_Package.RaceTrackInfo'Class) is
+      aRaceTrackInfo : constant RaceTrackInfo_Access := RaceTrackInfo_Access (aRaceTrackInfo_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end setRaceTrackInfo;
@@ -126,13 +126,13 @@ package body org.allbinary.media.graphics.geography.map.racetrack.NullRaceTrackG
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end getRaceTrackData;
 
-   procedure setRaceTrackData (This : in out NullRaceTrackGeographicMap; raceTrackData_Param : access RaceTrackData'Class) is
-      raceTrackData : RaceTrackData_Access := RaceTrackData_Access (raceTrackData_Param);
+   procedure setRaceTrackData (This : in out NullRaceTrackGeographicMap; raceTrackData_Param : access RaceTrackData_Package.RaceTrackData'Class) is
+      raceTrackData : constant RaceTrackData_Access := RaceTrackData_Access (raceTrackData_Param);
    begin
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end setRaceTrackData;
 
-   procedure getCellPositionsAt (This : in out NullRaceTrackGeographicMap; layer_Param : access Layer'Class; currentCellPositionArray : GeographicMapCellPosition_Access_Array_Access_Array_Access; cellPositionArray : GeographicMapCellPosition_Access_Array_Access_Array_Access) is
+   procedure getCellPositionsAt (This : in out NullRaceTrackGeographicMap; layer_Param : access Layer_Package.Layer'Class; currentCellPositionArray : GeographicMapCellPosition_Access_Array_Access_Array_Access; cellPositionArray : GeographicMapCellPosition_Access_Array_Access_Array_Access) is
       Java_Result : constant Boolean := NullRaceTrackGeographicMap'Class (This).getCellPositionsAt (layer_Param, currentCellPositionArray, cellPositionArray);
       pragma Unreferenced (Java_Result);
    begin
@@ -167,7 +167,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.NullRaceTrackG
       null;
    end getCellTypeAtXY;
 
-   procedure getCellTypeAt (This : in out NullRaceTrackGeographicMap; geographicMapCellPosition_Param : access GeographicMapCellPosition'Class) is
+   procedure getCellTypeAt (This : in out NullRaceTrackGeographicMap; geographicMapCellPosition_Param : access GeographicMapCellPosition_Package.GeographicMapCellPosition'Class) is
       Java_Result : constant GeographicMapCellType_Access := NullRaceTrackGeographicMap'Class (This).getCellTypeAt (geographicMapCellPosition_Param);
       pragma Unreferenced (Java_Result);
    begin

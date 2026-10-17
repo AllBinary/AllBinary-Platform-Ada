@@ -37,8 +37,8 @@ package body org.allbinary.business.user.commerce.shipping.modules.BasicWeightSh
       return This;
    end Create;
 
-   function getCost (This : in out BasicWeightShippingModule; order_Param : access OrderInterface'Class) return Money_Access is
-      order : OrderInterface_Access := OrderInterface_Access (order_Param);
+   function getCost (This : in out BasicWeightShippingModule; order_Param : access OrderInterface_Package.OrderInterface'Class) return Money_Access is
+      order : constant OrderInterface_Access := OrderInterface_Access (order_Param);
       basket : BasketInterface_Access;
       money : Money_Access;
    begin
@@ -60,7 +60,7 @@ package body org.allbinary.business.user.commerce.shipping.modules.BasicWeightSh
         return This.name;
    end getName;
 
-   procedure getCost (This : in out BasicWeightShippingModule; order_Param : access OrderInterface'Class) is
+   procedure getCost (This : in out BasicWeightShippingModule; order_Param : access OrderInterface_Package.OrderInterface'Class) is
       Java_Result : constant Money_Access := BasicWeightShippingModule'Class (This).getCost (order_Param);
       pragma Unreferenced (Java_Result);
    begin

@@ -24,16 +24,16 @@ package body org.allbinary.animation.VectorExplosionAnimationFactory_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out VectorExplosionAnimationFactory'Class; basicColor_Param : access BasicColor'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) is
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
-      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
+   procedure Initialize (This : in out VectorExplosionAnimationFactory'Class; basicColor_Param : access BasicColor_Package.BasicColor'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
+      animationBehaviorFactory : constant AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
    begin
       Initialize_Fields (This);
         This.animationBehaviorFactory := animationBehaviorFactory;
         This.setBasicColorP (basicColor);
    end Initialize;
 
-   function Create (basicColor_Param : access BasicColor'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return VectorExplosionAnimationFactory_Access is
+   function Create (basicColor_Param : access BasicColor_Package.BasicColor'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return VectorExplosionAnimationFactory_Access is
       This : constant VectorExplosionAnimationFactory_Access := new VectorExplosionAnimationFactory;
    begin
       VectorExplosionAnimationFactory_Package.Initialize (This.all, basicColor_Param, animationBehaviorFactory_Param);
@@ -41,8 +41,8 @@ package body org.allbinary.animation.VectorExplosionAnimationFactory_Package is
    end Create;
 
    --  throws Exception
-   function getInstanceAnimation (This : in out VectorExplosionAnimationFactory; animationInterface_Param : access Animation'Class) return Animation_Access is
-      animationInterface : Animation_Access := Animation_Access (animationInterface_Param);
+   function getInstanceAnimation (This : in out VectorExplosionAnimationFactory; animationInterface_Param : access Animation_Package.Animation'Class) return Animation_Access is
+      animationInterface : constant Animation_Access := Animation_Access (animationInterface_Param);
       vectorRotationAnimationInterface : VectorAnimationInterface_Access;
       frame : Integer;
       framePoints : Integer_Array_Access_Array_Access;
@@ -55,8 +55,8 @@ package body org.allbinary.animation.VectorExplosionAnimationFactory_Package is
         return VectorRotationAnimation_Package.Create (points, This.getBasicColorP, This.animationBehaviorFactory.getOrCreateInstance);
    end getInstanceAnimation;
 
-   procedure setBasicColorP (This : in out VectorExplosionAnimationFactory; basicColor_Param : access BasicColor'Class) is
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+   procedure setBasicColorP (This : in out VectorExplosionAnimationFactory; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         This.basicColor := basicColor;
    end setBasicColorP;
@@ -66,7 +66,7 @@ package body org.allbinary.animation.VectorExplosionAnimationFactory_Package is
         return This.basicColor;
    end getBasicColorP;
 
-   procedure getInstanceAnimation (This : in out VectorExplosionAnimationFactory; animationInterface_Param : access Animation'Class) is
+   procedure getInstanceAnimation (This : in out VectorExplosionAnimationFactory; animationInterface_Param : access Animation_Package.Animation'Class) is
       Java_Result : constant Animation_Access := VectorExplosionAnimationFactory'Class (This).getInstanceAnimation (animationInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

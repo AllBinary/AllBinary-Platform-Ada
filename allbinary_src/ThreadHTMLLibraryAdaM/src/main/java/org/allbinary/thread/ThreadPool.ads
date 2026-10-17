@@ -60,8 +60,8 @@ package org.allbinary.thread.ThreadPool_Package is
    procedure runAPriorityTask (This : in out ThreadPool);
    procedure runATask (This : in out ThreadPool);
    procedure init (This : in out ThreadPool);
-   procedure runTaskWithPriority (This : in out ThreadPool; task_Id_Param : access PriorityRunnable'Class);
-   procedure runTask (This : in out ThreadPool; task_Id_Param : access Runnable'Class);
+   procedure runTaskWithPriority (This : in out ThreadPool; task_Id_Param : access PriorityRunnable_Package.PriorityRunnable'Class);
+   procedure runTask (This : in out ThreadPool; task_Id_Param : access Runnable_Package.Runnable'Class);
    function getTask (This : in out ThreadPool) return Runnable_Access;
    procedure clear (This : in out ThreadPool);
    procedure close (This : in out ThreadPool);
@@ -69,8 +69,8 @@ package org.allbinary.thread.ThreadPool_Package is
    function isBusy (This : in out ThreadPool) return Boolean;
    procedure threadStarted (This : in out ThreadPool);
    procedure threadStopped (This : in out ThreadPool);
-   procedure startTask (This : in out ThreadPool; task_Id_Param : access Runnable'Class);
-   procedure completedTask (This : in out ThreadPool; task_Id_Param : access Runnable'Class);
+   procedure startTask (This : in out ThreadPool; task_Id_Param : access Runnable_Package.Runnable'Class);
+   procedure completedTask (This : in out ThreadPool; task_Id_Param : access Runnable_Package.Runnable'Class);
 
 end org.allbinary.thread.ThreadPool_Package;
 

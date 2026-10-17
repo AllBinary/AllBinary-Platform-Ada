@@ -24,7 +24,7 @@ package body org.allbinary.input.motion.gesture.observer.MotionEventFactory_Pack
 
 
    procedure Initialize (This : in out MotionEventFactory'Class; source_Param : access Java_Object'Class; id : Integer) is
-      source : Java_Object_Access := Java_Object_Access (source_Param);
+      source : constant Java_Object_Access := Java_Object_Access (source_Param);
    begin
       Initialize_Fields (This);
         This.source := source;

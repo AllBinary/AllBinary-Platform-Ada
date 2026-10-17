@@ -40,8 +40,8 @@ package tags.HelperTag_Package is
       anyType : Java_Object_Access;
    end record;
 
-   procedure Initialize (This : in out HelperTag'Class; tagHelperFactoryInterface_Param : access TagHelperFactoryInterface'Class);
-   function Create (tagHelperFactoryInterface_Param : access TagHelperFactoryInterface'Class) return HelperTag_Access;
+   procedure Initialize (This : in out HelperTag'Class; tagHelperFactoryInterface_Param : access TagHelperFactoryInterface_Package.TagHelperFactoryInterface'Class);
+   function Create (tagHelperFactoryInterface_Param : access TagHelperFactoryInterface_Package.TagHelperFactoryInterface'Class) return HelperTag_Access;
    procedure setHelper (This : in out HelperTag);
    function getHelper (This : in out HelperTag) return Java_Object_Access;
    function doEndTag (This : in out HelperTag) return Integer;

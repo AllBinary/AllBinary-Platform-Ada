@@ -41,13 +41,13 @@ package body org.allbinary.business.user.modules.admin.store.order.adjust.Adjust
    end getInstance;
 
    --  throws Exception
-   function getInstance (This : in out AdjustOrderStoreAdminUserFactory; hashMap_Param : access HashMap'Class) return UserInterface_Access is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+   function getInstance (This : in out AdjustOrderStoreAdminUserFactory; hashMap_Param : access HashMap_Package.HashMap'Class) return UserInterface_Access is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
         return AdjustOrderStoreAdminUser_Package.Create (hashMap);
    end getInstance;
 
-   procedure getInstance (This : in out AdjustOrderStoreAdminUserFactory; hashMap_Param : access HashMap'Class) is
+   procedure getInstance (This : in out AdjustOrderStoreAdminUserFactory; hashMap_Param : access HashMap_Package.HashMap'Class) is
       Java_Result : constant UserInterface_Access := AdjustOrderStoreAdminUserFactory'Class (This).getInstance (hashMap_Param);
       pragma Unreferenced (Java_Result);
    begin

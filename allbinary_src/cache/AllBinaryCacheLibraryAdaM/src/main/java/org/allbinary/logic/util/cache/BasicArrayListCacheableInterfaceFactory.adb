@@ -35,7 +35,7 @@ package body org.allbinary.logic.util.cache.BasicArrayListCacheableInterfaceFact
 
    --  throws Exception
    function getInstance (This : in out BasicArrayListCacheableInterfaceFactory; key_Param : access Java_Object'Class) return CacheableInterface_Access is
-      key : Java_Object_Access := Java_Object_Access (key_Param);
+      key : constant Java_Object_Access := Java_Object_Access (key_Param);
    begin
         return BasicArrayListCacheable_Package.Create;
    end getInstance;

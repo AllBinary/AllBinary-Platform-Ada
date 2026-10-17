@@ -22,14 +22,14 @@ package body org.allbinary.logic.util.cache.PoolType_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PoolType'Class; cacheType_Param : access CacheType'Class) is
-      cacheType : CacheType_Access := CacheType_Access (cacheType_Param);
+   procedure Initialize (This : in out PoolType'Class; cacheType_Param : access CacheType_Package.CacheType'Class) is
+      cacheType : constant CacheType_Access := CacheType_Access (cacheType_Param);
    begin
       Initialize_Fields (This);
         This.cacheType := cacheType;
    end Initialize;
 
-   function Create (cacheType_Param : access CacheType'Class) return PoolType_Access is
+   function Create (cacheType_Param : access CacheType_Package.CacheType'Class) return PoolType_Access is
       This : constant PoolType_Access := new PoolType;
    begin
       PoolType_Package.Initialize (This.all, cacheType_Param);

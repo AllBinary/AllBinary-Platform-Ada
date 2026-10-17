@@ -46,10 +46,10 @@ package org.allbinary.graphics.opengles.shader.ShaderManager_Package is
    procedure Initialize (This : in out ShaderManager'Class; GL_VERTEX_SHADER : Integer; GL_FRAGMENT_SHADER : Integer);
    function Create (GL_VERTEX_SHADER : Integer; GL_FRAGMENT_SHADER : Integer) return ShaderManager_Access;
    function getInstance return ShaderManager_Access;
-   function load (This : in out ShaderManager; gl_Param : access GL10'Class; resource : Unbounded_String; shaderAsStringArray : Unbounded_String_Array_Access; shaderType : Integer) return Integer;
-   procedure load (This : in out ShaderManager; gl_Param : access GL10'Class; resource : Unbounded_String; shaderAsStringArray : Unbounded_String_Array_Access; shaderType : Integer);
-   function loadShader (This : in out ShaderManager; gl_Param : access GL10'Class; resource : Unbounded_String; stringList_Param : access BasicArrayList'Class; shaderType : Integer) return Integer;
-   procedure loadShader (This : in out ShaderManager; gl_Param : access GL10'Class; resource : Unbounded_String; stringList_Param : access BasicArrayList'Class; shaderType : Integer);
+   function load (This : in out ShaderManager; gl_Param : access GL10_Package.GL10'Class; resource : Unbounded_String; shaderAsStringArray : Unbounded_String_Array_Access; shaderType : Integer) return Integer;
+   procedure load (This : in out ShaderManager; gl_Param : access GL10_Package.GL10'Class; resource : Unbounded_String; shaderAsStringArray : Unbounded_String_Array_Access; shaderType : Integer);
+   function loadShader (This : in out ShaderManager; gl_Param : access GL10_Package.GL10'Class; resource : Unbounded_String; stringList_Param : access BasicArrayList_Package.BasicArrayList'Class; shaderType : Integer) return Integer;
+   procedure loadShader (This : in out ShaderManager; gl_Param : access GL10_Package.GL10'Class; resource : Unbounded_String; stringList_Param : access BasicArrayList_Package.BasicArrayList'Class; shaderType : Integer);
 
 end org.allbinary.graphics.opengles.shader.ShaderManager_Package;
 

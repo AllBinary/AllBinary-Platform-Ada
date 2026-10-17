@@ -23,15 +23,15 @@ package body views.generic_Id.user.AddValidationUserView_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AddValidationUserView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out AddValidationUserView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
         This.user := NewUserFactory_Package.getInstance (transformInfoInterface);
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return AddValidationUserView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return AddValidationUserView_Access is
       This : constant AddValidationUserView_Access := new AddValidationUserView;
    begin
       AddValidationUserView_Package.Initialize (This.all, transformInfoInterface_Param);
@@ -97,8 +97,8 @@ package body views.generic_Id.user.AddValidationUserView_Package is
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out AddValidationUserView; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toValidationInfoNode (This : in out AddValidationUserView; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
@@ -109,7 +109,7 @@ package body views.generic_Id.user.AddValidationUserView_Package is
         return This.views.ValidationOnlyTempUtil.getInstance.view (AddValidationUserView_Access'(This'Unchecked_Access));
    end view;
 
-   procedure toValidationInfoNode (This : in out AddValidationUserView; document_Param : access Document'Class) is
+   procedure toValidationInfoNode (This : in out AddValidationUserView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := AddValidationUserView'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

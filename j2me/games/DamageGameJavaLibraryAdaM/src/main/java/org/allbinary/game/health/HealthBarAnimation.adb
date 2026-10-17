@@ -26,8 +26,8 @@ package body org.allbinary.game.health.HealthBarAnimation_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out HealthBarAnimation'Class; layerInterface_Param : access AllBinaryLayer'Class; location : Integer) is
-      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
+   procedure Initialize (This : in out HealthBarAnimation'Class; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; location : Integer) is
+      layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
       basicHudFactory : BasicHudFactory_Access;
    begin
       Animation_Package.Initialize (This);
@@ -47,7 +47,7 @@ package body org.allbinary.game.health.HealthBarAnimation_Package is
         end if;
    end Initialize;
 
-   function Create (layerInterface_Param : access AllBinaryLayer'Class; location : Integer) return HealthBarAnimation_Access is
+   function Create (layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; location : Integer) return HealthBarAnimation_Access is
       This : constant HealthBarAnimation_Access := new HealthBarAnimation;
    begin
       HealthBarAnimation_Package.Initialize (This.all, layerInterface_Param, location);

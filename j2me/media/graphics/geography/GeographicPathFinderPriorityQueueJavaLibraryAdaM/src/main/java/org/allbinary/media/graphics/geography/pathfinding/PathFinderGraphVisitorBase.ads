@@ -35,8 +35,8 @@ package org.allbinary.media.graphics.geography.pathfinding.PathFinderGraphVisito
 
    procedure Initialize (This : in out PathFinderGraphVisitorBase'Class);
    function Create return PathFinderGraphVisitorBase_Access;
-   procedure visit (This : in out PathFinderGraphVisitorBase; graph_Param : access Java_Object'Class; startPathFindingNodeList_Param : access BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList'Class);
-   procedure fixPath (This : in out PathFinderGraphVisitorBase; startPathFindingNodeList_Param : access BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList'Class; pathList_Param : access BasicArrayList'Class);
+   procedure visit (This : in out PathFinderGraphVisitorBase; graph_Param : access Java_Object'Class; startPathFindingNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class);
+   procedure fixPath (This : in out PathFinderGraphVisitorBase; startPathFindingNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class; endPathFindingNodeList_Param : access BasicArrayList_Package.BasicArrayList'Class; pathList_Param : access BasicArrayList_Package.BasicArrayList'Class);
    function isValid (This : in out PathFinderGraphVisitorBase; graphPath_Param : access Java_Object'Class) return Boolean;
    procedure isValid (This : in out PathFinderGraphVisitorBase; graphPath_Param : access Java_Object'Class);
    function getInvalidReason (This : in out PathFinderGraphVisitorBase; graphPath_Param : access Java_Object'Class) return Unbounded_String;

@@ -21,21 +21,21 @@ package body org.allbinary.bounds.TopULayerBounds_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out TopULayerBounds'Class; rectangle_Param : access Rectangle'Class) is
-      rectangle : Rectangle_Access := Rectangle_Access (rectangle_Param);
+   procedure Initialize (This : in out TopULayerBounds'Class; rectangle_Param : access Rectangle_Package.Rectangle'Class) is
+      rectangle : constant Rectangle_Access := Rectangle_Access (rectangle_Param);
    begin
         LayerBounds_Package.Initialize (This, rectangle);
    end Initialize;
 
-   function Create (rectangle_Param : access Rectangle'Class) return TopULayerBounds_Access is
+   function Create (rectangle_Param : access Rectangle_Package.Rectangle'Class) return TopULayerBounds_Access is
       This : constant TopULayerBounds_Access := new TopULayerBounds;
    begin
       TopULayerBounds_Package.Initialize (This.all, rectangle_Param);
       return This;
    end Create;
 
-   procedure visit (This : in out TopULayerBounds; boundsVisitorInterface_Param : access BoundsVisitorInterface'Class) is
-      boundsVisitorInterface : BoundsVisitorInterface_Access := BoundsVisitorInterface_Access (boundsVisitorInterface_Param);
+   procedure visit (This : in out TopULayerBounds; boundsVisitorInterface_Param : access BoundsVisitorInterface_Package.BoundsVisitorInterface'Class) is
+      boundsVisitorInterface : constant BoundsVisitorInterface_Access := BoundsVisitorInterface_Access (boundsVisitorInterface_Param);
    begin
         if (boundsVisitorInterface.getX) > (This.rectangle.getMaxX) then
             boundsVisitorInterface.maxX;

@@ -23,8 +23,8 @@ package body views.business.context.modules.storefront.HttpStoreComponentView_Pa
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out HttpStoreComponentView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out HttpStoreComponentView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         HttpComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
@@ -34,7 +34,7 @@ package body views.business.context.modules.storefront.HttpStoreComponentView_Pa
         This.setTransformDocumentInterface (TransformStoreDocumentFactory_Package.getInstance (This.getPageContext, This.getWeblisketSession));
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return HttpStoreComponentView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return HttpStoreComponentView_Access is
       This : constant HttpStoreComponentView_Access := new HttpStoreComponentView;
    begin
       HttpStoreComponentView_Package.Initialize (This.all, transformInfoInterface_Param);

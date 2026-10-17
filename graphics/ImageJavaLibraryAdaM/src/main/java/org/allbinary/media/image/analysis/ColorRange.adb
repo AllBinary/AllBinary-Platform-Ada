@@ -105,8 +105,8 @@ package body org.allbinary.media.image.analysis.ColorRange_Package is
         This.maxBlue := maxBlue;
    end setMaxBlue;
 
-   function isInRange (This : in out ColorRange; color_Param : access Color'Class) return Boolean is
-      color : Color_Access := Color_Access (color_Param);
+   function isInRange (This : in out ColorRange; color_Param : access Color_Package.Color'Class) return Boolean is
+      color : constant Color_Access := Color_Access (color_Param);
    begin
         if ((((((color.getRed) >= (This.getMinRed)) and then ((color.getRed) <= (This.getMaxRed))) and then ((color.getGreen) >= (This.getMinGreen))) and then ((color.getGreen) <= (This.getMaxGreen))) and then ((color.getBlue) >= (This.getMinBlue))) and then ((color.getBlue) <= (This.getMaxBlue)) then
             return True;
@@ -139,7 +139,7 @@ package body org.allbinary.media.image.analysis.ColorRange_Package is
         return stringBuffer.toString;
    end toString;
 
-   procedure isInRange (This : in out ColorRange; color_Param : access Color'Class) is
+   procedure isInRange (This : in out ColorRange; color_Param : access Color_Package.Color'Class) is
       Java_Result : constant Boolean := ColorRange'Class (This).isInRange (color_Param);
       pragma Unreferenced (Java_Result);
    begin

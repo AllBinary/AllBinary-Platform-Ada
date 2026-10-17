@@ -59,10 +59,10 @@ package org.allbinary.game.configuration.feature.GameFeatureItemStateListener_Pa
    end record;
    toggleList : BasicArrayList_Access;
 
-   procedure Initialize (This : in out GameFeatureItemStateListener'Class; gameOptionsForm_Param : access GameOptionsForm'Class);
-   function Create (gameOptionsForm_Param : access GameOptionsForm'Class) return GameFeatureItemStateListener_Access;
-   procedure add (gameFeature_Param : access GameFeature'Class);
-   procedure itemStateChanged (This : in out GameFeatureItemStateListener; item_Param : access Item'Class);
+   procedure Initialize (This : in out GameFeatureItemStateListener'Class; gameOptionsForm_Param : access GameOptionsForm_Package.GameOptionsForm'Class);
+   function Create (gameOptionsForm_Param : access GameOptionsForm_Package.GameOptionsForm'Class) return GameFeatureItemStateListener_Access;
+   procedure add (gameFeature_Param : access GameFeature_Package.GameFeature'Class);
+   procedure itemStateChanged (This : in out GameFeatureItemStateListener; item_Param : access Item_Package.Item'Class);
 
 end org.allbinary.game.configuration.feature.GameFeatureItemStateListener_Package;
 

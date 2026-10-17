@@ -33,7 +33,7 @@ package org.allbinary.game.part.PartFactoryInterface_Package is
    type PartFactoryInterface_Access is access all PartFactoryInterface'Class;
    type PartFactoryInterface_Access_Array is array (Natural range <>) of PartFactoryInterface_Access;
    type PartFactoryInterface_Access_Array_Access is access all PartFactoryInterface_Access_Array;
-   function getInstance (This : in out PartFactoryInterface; sourceLayerInterface_Param : access AllBinaryLayer'Class; relativeRelationship_Param : access RelativeRelationship'Class) return PartInterface_Access is abstract;
+   function getInstance (This : in out PartFactoryInterface; sourceLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; relativeRelationship_Param : access RelativeRelationship_Package.RelativeRelationship'Class) return PartInterface_Access is abstract;
 
 end org.allbinary.game.part.PartFactoryInterface_Package;
 

@@ -46,7 +46,7 @@ package org.allbinary.util.ABHashMap_Package is
    procedure containsKey (This : in out ABHashMap; key_Param : access Java_Object'Class);
    function put (This : in out ABHashMap; key_Param : access Java_Object'Class; value_Param : access Java_Object'Class) return Java_Object_Access;
    procedure put (This : in out ABHashMap; key_Param : access Java_Object'Class; value_Param : access Java_Object'Class);
-   procedure putAll (This : in out ABHashMap; map_Param : access Map'Class);
+   procedure putAll (This : in out ABHashMap; map_Param : access Map_Package.Map'Class);
    function remove (This : in out ABHashMap; key_Param : access Java_Object'Class) return Java_Object_Access;
    procedure remove (This : in out ABHashMap; key_Param : access Java_Object'Class);
    procedure clear (This : in out ABHashMap);

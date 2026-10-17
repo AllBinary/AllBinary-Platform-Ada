@@ -42,10 +42,10 @@ package org.allbinary.business.user.modules.customer.affiliate.AffiliateUser_Pac
 
    procedure Initialize (This : in out AffiliateUser'Class);
    function Create return AffiliateUser_Access;
-   procedure Initialize (This : in out AffiliateUser'Class; userHashMap_Param : access HashMap'Class);
-   function Create (userHashMap_Param : access HashMap'Class) return AffiliateUser_Access;
-   procedure validateSession (This : in out AffiliateUser; weblisketSession_Param : access WeblisketSessionInterface'Class);
-   procedure updateSession (This : in out AffiliateUser; weblisketSession_Param : access WeblisketSessionInterface'Class);
+   procedure Initialize (This : in out AffiliateUser'Class; userHashMap_Param : access HashMap_Package.HashMap'Class);
+   function Create (userHashMap_Param : access HashMap_Package.HashMap'Class) return AffiliateUser_Access;
+   procedure validateSession (This : in out AffiliateUser; weblisketSession_Param : access WeblisketSessionInterface_Package.WeblisketSessionInterface'Class);
+   procedure updateSession (This : in out AffiliateUser; weblisketSession_Param : access WeblisketSessionInterface_Package.WeblisketSessionInterface'Class);
    function isSessionValid (This : in out AffiliateUser) return Boolean;
 
 end org.allbinary.business.user.modules.customer.affiliate.AffiliateUser_Package;

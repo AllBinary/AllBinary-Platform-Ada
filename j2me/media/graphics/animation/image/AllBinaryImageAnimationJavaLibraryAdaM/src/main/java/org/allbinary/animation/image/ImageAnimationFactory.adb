@@ -22,20 +22,20 @@ package body org.allbinary.animation.image.ImageAnimationFactory_Package is
 
 
    --  throws Exception
-   function createFactory (image_Param : access Image'Class) return ImageAnimationFactory_Access is
-      image : Image_Access := Image_Access (image_Param);
+   function createFactory (image_Param : access Image_Package.Image'Class) return ImageAnimationFactory_Access is
+      image : constant Image_Access := Image_Access (image_Param);
    begin
         return ImageAnimationFactory_Package.Create (image, image.getWidth, image.getHeight, 0, 0, AnimationBehaviorFactory_Package.getInstance);
    end createFactory;
 
-   procedure Initialize (This : in out ImageAnimationFactory'Class; image_Param : access Image'Class; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) is
-      image : Image_Access := Image_Access (image_Param);
-      animationBehaviorFactory : AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
+   procedure Initialize (This : in out ImageAnimationFactory'Class; image_Param : access Image_Package.Image'Class; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) is
+      image : constant Image_Access := Image_Access (image_Param);
+      animationBehaviorFactory : constant AnimationBehaviorFactory_Access := AnimationBehaviorFactory_Access (animationBehaviorFactory_Param);
    begin
         BaseImageAnimationFactory_Package.Initialize (This, image, PrimitiveIntUtil_Package.getArrayInstance, width, height, dx, dy, animationBehaviorFactory);
    end Initialize;
 
-   function Create (image_Param : access Image'Class; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return ImageAnimationFactory_Access is
+   function Create (image_Param : access Image_Package.Image'Class; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return ImageAnimationFactory_Access is
       This : constant ImageAnimationFactory_Access := new ImageAnimationFactory;
    begin
       ImageAnimationFactory_Package.Initialize (This.all, image_Param, width, height, dx, dy, animationBehaviorFactory_Param);
@@ -58,7 +58,7 @@ package body org.allbinary.animation.image.ImageAnimationFactory_Package is
         end if;
    end getInstance;
 
-   procedure createFactory (image_Param : access Image'Class) is
+   procedure createFactory (image_Param : access Image_Package.Image'Class) is
       Java_Result : constant ImageAnimationFactory_Access := createFactory (image_Param);
       pragma Unreferenced (Java_Result);
    begin

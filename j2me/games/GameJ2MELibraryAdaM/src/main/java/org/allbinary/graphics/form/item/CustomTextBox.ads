@@ -60,8 +60,8 @@ package org.allbinary.graphics.form.item.CustomTextBox_Package is
       inputFactory : InputFactory_Access;
    end record;
 
-   procedure Initialize (This : in out CustomTextBox'Class; cmdListener_Param : access CommandListener'Class; label : Unbounded_String; text : Unbounded_String; maxSize : Integer; constraints : Integer; font_Param : access Font'Class; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class);
-   function Create (cmdListener_Param : access CommandListener'Class; label : Unbounded_String; text : Unbounded_String; maxSize : Integer; constraints : Integer; font_Param : access Font'Class; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return CustomTextBox_Access;
+   procedure Initialize (This : in out CustomTextBox'Class; cmdListener_Param : access CommandListener_Package.CommandListener'Class; label : Unbounded_String; text : Unbounded_String; maxSize : Integer; constraints : Integer; font_Param : access Font_Package.Font'Class; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class);
+   function Create (cmdListener_Param : access CommandListener_Package.CommandListener'Class; label : Unbounded_String; text : Unbounded_String; maxSize : Integer; constraints : Integer; font_Param : access Font_Package.Font'Class; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return CustomTextBox_Access;
    procedure submit (This : in out CustomTextBox);
    procedure onEventRaw (This : in out CustomTextBox; keyCode : Integer; deviceId : Integer; repeated : Boolean);
    procedure keyPressed (This : in out CustomTextBox; keyCode : Integer);
@@ -69,8 +69,8 @@ package org.allbinary.graphics.form.item.CustomTextBox_Package is
    procedure keyRepeated (This : in out CustomTextBox; keyCode : Integer);
    procedure keyPressedByDevice (This : in out CustomTextBox; keyCode : Integer; deviceId : Integer);
    procedure keyReleasedByDevice (This : in out CustomTextBox; keyCode : Integer; deviceId : Integer);
-   procedure paint (This : in out CustomTextBox; graphics_Param : access Graphics'Class);
-   procedure paintXY (This : in out CustomTextBox; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
+   procedure paint (This : in out CustomTextBox; graphics_Param : access Graphics_Package.Graphics'Class);
+   procedure paintXY (This : in out CustomTextBox; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
    function getTextFieldItem (This : in out CustomTextBox) return ABTextFieldItem_Access;
 
 end org.allbinary.graphics.form.item.CustomTextBox_Package;

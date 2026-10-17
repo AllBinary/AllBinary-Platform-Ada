@@ -10,19 +10,19 @@ package body org.allbinary.graphics.form.item.ABTextFieldItem_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ABTextFieldItem'Class; canvas_Param : access Canvas'Class; visitor_Param : access Visitor'Class; label : Unbounded_String; value : Unbounded_String; maxSize : Integer; layout : Integer; altText : Unbounded_String; font_Param : access Font'Class; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) is
-      canvas : Canvas_Access := Canvas_Access (canvas_Param);
-      visitor : Visitor_Access := Visitor_Access (visitor_Param);
-      font : Font_Access := Font_Access (font_Param);
-      backgroundBasicColor : BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
-      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
+   procedure Initialize (This : in out ABTextFieldItem'Class; canvas_Param : access Canvas_Package.Canvas'Class; visitor_Param : access Visitor_Package.Visitor'Class; label : Unbounded_String; value : Unbounded_String; maxSize : Integer; layout : Integer; altText : Unbounded_String; font_Param : access Font_Package.Font'Class; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      canvas : constant Canvas_Access := Canvas_Access (canvas_Param);
+      visitor : constant Visitor_Access := Visitor_Access (visitor_Param);
+      font : constant Font_Access := Font_Access (font_Param);
+      backgroundBasicColor : constant BasicColor_Access := BasicColor_Access (backgroundBasicColor_Param);
+      foregroundBasicColor : constant BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
    begin
         ABTextItem_Package.Initialize (This, label, layout, altText, backgroundBasicColor, foregroundBasicColor);
         Initialize_Fields (This);
         This.font := font;
    end Initialize;
 
-   function Create (canvas_Param : access Canvas'Class; visitor_Param : access Visitor'Class; label : Unbounded_String; value : Unbounded_String; maxSize : Integer; layout : Integer; altText : Unbounded_String; font_Param : access Font'Class; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return ABTextFieldItem_Access is
+   function Create (canvas_Param : access Canvas_Package.Canvas'Class; visitor_Param : access Visitor_Package.Visitor'Class; label : Unbounded_String; value : Unbounded_String; maxSize : Integer; layout : Integer; altText : Unbounded_String; font_Param : access Font_Package.Font'Class; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return ABTextFieldItem_Access is
       This : constant ABTextFieldItem_Access := new ABTextFieldItem;
    begin
       ABTextFieldItem_Package.Initialize (This.all, canvas_Param, visitor_Param, label, value, maxSize, layout, altText, font_Param, backgroundBasicColor_Param, foregroundBasicColor_Param);
@@ -59,14 +59,14 @@ package body org.allbinary.graphics.form.item.ABTextFieldItem_Package is
         return This.font.getHeight;
    end getFontHeight;
 
-   procedure setBackgroundBasicColorP (This : in out ABTextFieldItem; basicColor_Param : access BasicColor'Class) is
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+   procedure setBackgroundBasicColorP (This : in out ABTextFieldItem; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         null;
    end setBackgroundBasicColorP;
 
-   procedure setForegroundBasicColorP (This : in out ABTextFieldItem; basicColor_Param : access BasicColor'Class) is
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+   procedure setForegroundBasicColorP (This : in out ABTextFieldItem; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         null;
    end setForegroundBasicColorP;

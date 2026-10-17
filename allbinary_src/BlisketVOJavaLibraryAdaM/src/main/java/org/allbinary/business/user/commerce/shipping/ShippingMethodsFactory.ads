@@ -85,8 +85,8 @@ package org.allbinary.business.user.commerce.shipping.ShippingMethodsFactory_Pac
    SHIPPINGMETHODSFILEPATHSTRING : Unbounded_String;
    SHIPPINGMETHODSFILENAME : Unbounded_String;
 
-   procedure Initialize (This : in out ShippingMethodsFactory'Class; abeClientInformation_Param : access AbeClientInformationInterface'Class; storeFrontInterface_Param : access StoreFrontInterface'Class);
-   function Create (abeClientInformation_Param : access AbeClientInformationInterface'Class; storeFrontInterface_Param : access StoreFrontInterface'Class) return ShippingMethodsFactory_Access;
+   procedure Initialize (This : in out ShippingMethodsFactory'Class; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class);
+   function Create (abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) return ShippingMethodsFactory_Access;
    function getInstance (This : in out ShippingMethodsFactory) return BasicArrayList_Access;
    function getDefaultInstance (This : in out ShippingMethodsFactory) return ShippingInterface_Access;
 

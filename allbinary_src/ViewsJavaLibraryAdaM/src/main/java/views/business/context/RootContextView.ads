@@ -55,8 +55,8 @@ package views.business.context.RootContextView_Package is
       logUtil : LogUtil_Access;
    end record;
 
-   procedure Initialize (This : in out RootContextView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return RootContextView_Access;
+   procedure Initialize (This : in out RootContextView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return RootContextView_Access;
    function view (This : in out RootContextView) return Unbounded_String;
    function getName (This : in out RootContextView) return Unbounded_String;
 

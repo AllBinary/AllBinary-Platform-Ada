@@ -24,14 +24,14 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PaymentGatewayView'Class; paymentGatewayInterface_Param : access PaymentGatewayInterface'Class) is
-      paymentGatewayInterface : PaymentGatewayInterface_Access := PaymentGatewayInterface_Access (paymentGatewayInterface_Param);
+   procedure Initialize (This : in out PaymentGatewayView'Class; paymentGatewayInterface_Param : access PaymentGatewayInterface_Package.PaymentGatewayInterface'Class) is
+      paymentGatewayInterface : constant PaymentGatewayInterface_Access := PaymentGatewayInterface_Access (paymentGatewayInterface_Param);
    begin
       Initialize_Fields (This);
         This.paymentGatewayInterface := paymentGatewayInterface;
    end Initialize;
 
-   function Create (paymentGatewayInterface_Param : access PaymentGatewayInterface'Class) return PaymentGatewayView_Access is
+   function Create (paymentGatewayInterface_Param : access PaymentGatewayInterface_Package.PaymentGatewayInterface'Class) return PaymentGatewayView_Access is
       This : constant PaymentGatewayView_Access := new PaymentGatewayView;
    begin
       PaymentGatewayView_Package.Initialize (This.all, paymentGatewayInterface_Param);
@@ -52,8 +52,8 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
    end toHashMap;
 
    --  throws Exception
-   function toXmlNode (This : in out PaymentGatewayView; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out PaymentGatewayView; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       hashMap : HashMap_Access;
       paymentGatewayNode : Node_Access;
    begin
@@ -78,7 +78,7 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.PaymentG
         end;
    end toXmlNode;
 
-   procedure toXmlNode (This : in out PaymentGatewayView; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out PaymentGatewayView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := PaymentGatewayView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

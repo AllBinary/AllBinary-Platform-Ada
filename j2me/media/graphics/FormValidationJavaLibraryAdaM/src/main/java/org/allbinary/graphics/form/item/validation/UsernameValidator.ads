@@ -34,8 +34,8 @@ package org.allbinary.graphics.form.item.validation.UsernameValidator_Package is
 
    type UsernameValidator is new TextFieldItemValidator with null record;
 
-   procedure Initialize (This : in out UsernameValidator'Class; textFieldItem_Param : access ABTextFieldItem'Class; min : Integer; max : Integer; allowOnEmpty : Boolean);
-   function Create (textFieldItem_Param : access ABTextFieldItem'Class; min : Integer; max : Integer; allowOnEmpty : Boolean) return UsernameValidator_Access;
+   procedure Initialize (This : in out UsernameValidator'Class; textFieldItem_Param : access ABTextFieldItem_Package.ABTextFieldItem'Class; min : Integer; max : Integer; allowOnEmpty : Boolean);
+   function Create (textFieldItem_Param : access ABTextFieldItem_Package.ABTextFieldItem'Class; min : Integer; max : Integer; allowOnEmpty : Boolean) return UsernameValidator_Access;
 
 end org.allbinary.graphics.form.item.validation.UsernameValidator_Package;
 

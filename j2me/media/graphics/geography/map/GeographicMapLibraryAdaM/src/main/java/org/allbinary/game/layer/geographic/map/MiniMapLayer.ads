@@ -83,14 +83,14 @@ package org.allbinary.game.layer.geographic.map.MiniMapLayer_Package is
       animationInterface : CircleFilledAnimation_Access;
    end record;
 
-   procedure Initialize (This : in out MiniMapLayer'Class; geographicMapInterface_Param : access BasicGeographicMap'Class; viewPosition_Param : access ViewPositionBase'Class);
-   function Create (geographicMapInterface_Param : access BasicGeographicMap'Class; viewPosition_Param : access ViewPositionBase'Class) return MiniMapLayer_Access;
+   procedure Initialize (This : in out MiniMapLayer'Class; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; viewPosition_Param : access ViewPositionBase_Package.ViewPositionBase'Class);
+   function Create (geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; viewPosition_Param : access ViewPositionBase_Package.ViewPositionBase'Class) return MiniMapLayer_Access;
    procedure init (This : in out MiniMapLayer);
-   procedure onEvent (This : in out MiniMapLayer; eventObject_Param : access AllBinaryEventObject'Class);
-   procedure onRemoveGeographicMapCellPositionEvent (This : in out MiniMapLayer; geographicMapCellPositionEvent_Param : access GeographicMapCellPositionEvent'Class);
-   procedure onGeographicMapCellPositionEvent (This : in out MiniMapLayer; geographicMapCellPositionEvent_Param : access GeographicMapCellPositionEvent'Class);
-   procedure paintDots (This : in out MiniMapLayer; graphics_Param : access Graphics'Class);
-   procedure paint (This : in out MiniMapLayer; graphics_Param : access Graphics'Class);
+   procedure onEvent (This : in out MiniMapLayer; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class);
+   procedure onRemoveGeographicMapCellPositionEvent (This : in out MiniMapLayer; geographicMapCellPositionEvent_Param : access GeographicMapCellPositionEvent_Package.GeographicMapCellPositionEvent'Class);
+   procedure onGeographicMapCellPositionEvent (This : in out MiniMapLayer; geographicMapCellPositionEvent_Param : access GeographicMapCellPositionEvent_Package.GeographicMapCellPositionEvent'Class);
+   procedure paintDots (This : in out MiniMapLayer; graphics_Param : access Graphics_Package.Graphics'Class);
+   procedure paint (This : in out MiniMapLayer; graphics_Param : access Graphics_Package.Graphics'Class);
 
 end org.allbinary.game.layer.geographic.map.MiniMapLayer_Package;
 

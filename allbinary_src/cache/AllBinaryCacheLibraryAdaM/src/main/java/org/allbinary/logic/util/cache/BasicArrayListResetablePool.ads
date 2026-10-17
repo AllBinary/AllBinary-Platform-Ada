@@ -34,8 +34,8 @@ package org.allbinary.logic.util.cache.BasicArrayListResetablePool_Package is
 
    type BasicArrayListResetablePool is new AbstractArrayListPool with null record;
 
-   procedure Initialize (This : in out BasicArrayListResetablePool'Class; cacheableInterfaceFactoryInterface_Param : access CacheableInterfaceFactoryInterface'Class);
-   function Create (cacheableInterfaceFactoryInterface_Param : access CacheableInterfaceFactoryInterface'Class) return BasicArrayListResetablePool_Access;
+   procedure Initialize (This : in out BasicArrayListResetablePool'Class; cacheableInterfaceFactoryInterface_Param : access CacheableInterfaceFactoryInterface_Package.CacheableInterfaceFactoryInterface'Class);
+   function Create (cacheableInterfaceFactoryInterface_Param : access CacheableInterfaceFactoryInterface_Package.CacheableInterfaceFactoryInterface'Class) return BasicArrayListResetablePool_Access;
    procedure clear (This : in out BasicArrayListResetablePool);
    function remove (This : in out BasicArrayListResetablePool; key_Param : access Java_Object'Class) return CacheableInterface_Access;
    procedure remove (This : in out BasicArrayListResetablePool; key_Param : access Java_Object'Class);

@@ -43,7 +43,7 @@ package org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_P
    procedure Initialize (This : in out BasicMotionGesturesHandler'Class);
    function Create return BasicMotionGesturesHandler_Access;
    function getInstance return BasicMotionGesturesHandler_Access;
-   procedure process (This : in out BasicMotionGesturesHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class);
+   procedure process (This : in out BasicMotionGesturesHandler; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class);
 
 end org.allbinary.input.motion.gesture.observer.BasicMotionGesturesHandler_Package;
 

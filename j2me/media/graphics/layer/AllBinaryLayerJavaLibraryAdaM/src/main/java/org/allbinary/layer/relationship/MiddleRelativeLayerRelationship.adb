@@ -21,13 +21,13 @@ package body org.allbinary.layer.relationship.MiddleRelativeLayerRelationship_Pa
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out MiddleRelativeLayerRelationship'Class; layer_Param : access AllBinaryLayer'Class) is
-      layer : AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
+   procedure Initialize (This : in out MiddleRelativeLayerRelationship'Class; layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
+      layer : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layer_Param);
    begin
         RelativeLayerRelationship_Package.Initialize (This, layer, PointFactory_Package.getInstance.createXY (layer.getHalfWidth, layer.getHalfHeight), BasicArrayListUtil_Package.getInstance.getImmutableInstance);
    end Initialize;
 
-   function Create (layer_Param : access AllBinaryLayer'Class) return MiddleRelativeLayerRelationship_Access is
+   function Create (layer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) return MiddleRelativeLayerRelationship_Access is
       This : constant MiddleRelativeLayerRelationship_Access := new MiddleRelativeLayerRelationship;
    begin
       MiddleRelativeLayerRelationship_Package.Initialize (This.all, layer_Param);

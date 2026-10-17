@@ -38,14 +38,14 @@ package body org.allbinary.input.automation.module.generic_Id.constraints.NoMoti
       return This;
    end Create;
 
-   function isValid (This : in out NoMotionRectangleConstraints; frame : Long_Long_Integer; bufferedImage_Param : access BufferedImage'Class; rectangle_Param : access Rectangle'Class) return Boolean is
-      bufferedImage : BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
-      rectangle : Rectangle_Access := Rectangle_Access (rectangle_Param);
+   function isValid (This : in out NoMotionRectangleConstraints; frame : Long_Long_Integer; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; rectangle_Param : access Rectangle_Package.Rectangle'Class) return Boolean is
+      bufferedImage : constant BufferedImage_Access := BufferedImage_Access (bufferedImage_Param);
+      rectangle : constant Rectangle_Access := Rectangle_Access (rectangle_Param);
    begin
         return True;
    end isValid;
 
-   procedure isValid (This : in out NoMotionRectangleConstraints; frame : Long_Long_Integer; bufferedImage_Param : access BufferedImage'Class; rectangle_Param : access Rectangle'Class) is
+   procedure isValid (This : in out NoMotionRectangleConstraints; frame : Long_Long_Integer; bufferedImage_Param : access BufferedImage_Package.BufferedImage'Class; rectangle_Param : access Rectangle_Package.Rectangle'Class) is
       Java_Result : constant Boolean := NoMotionRectangleConstraints'Class (This).isValid (frame, bufferedImage_Param, rectangle_Param);
       pragma Unreferenced (Java_Result);
    begin

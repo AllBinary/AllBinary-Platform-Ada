@@ -50,12 +50,12 @@ package org.allbinary.animation.image.ImageBaseRotationAnimation_Package is
       anchor : Integer;
    end record;
 
-   procedure Initialize (This : in out ImageBaseRotationAnimation'Class; image_Param : access Image'Class; angleInfo_Param : access AngleInfo'Class; totalAngle : Short_Integer; animationBehavior_Param : access AnimationBehavior'Class);
-   function Create (image_Param : access Image'Class; angleInfo_Param : access AngleInfo'Class; totalAngle : Short_Integer; animationBehavior_Param : access AnimationBehavior'Class) return ImageBaseRotationAnimation_Access;
+   procedure Initialize (This : in out ImageBaseRotationAnimation'Class; image_Param : access Image_Package.Image'Class; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; totalAngle : Short_Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class);
+   function Create (image_Param : access Image_Package.Image'Class; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class; totalAngle : Short_Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return ImageBaseRotationAnimation_Access;
    function getAnimationSize (This : in out ImageBaseRotationAnimation) return Integer;
    procedure setSequence (This : in out ImageBaseRotationAnimation; sequence : Integer_Array_Access);
    function getSequence (This : in out ImageBaseRotationAnimation) return Integer_Array_Access;
-   procedure paintXY (This : in out ImageBaseRotationAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer);
+   procedure paintXY (This : in out ImageBaseRotationAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer);
    function getImage (This : in out ImageBaseRotationAnimation) return Image_Access;
    function getWidth (This : in out ImageBaseRotationAnimation) return Integer;
    function getHeight (This : in out ImageBaseRotationAnimation) return Integer;

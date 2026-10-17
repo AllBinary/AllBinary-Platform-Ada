@@ -88,8 +88,8 @@ package body org.allbinary.logic.math.permutations.OrderedObjectArrayPermutation
         return temp;
    end factorial;
 
-   procedure generate (This : in out OrderedObjectArrayPermutationUtil; data : Java_Object_Access_Array_Access; visitor_Param : access Visitor'Class) is
-      visitor : Visitor_Access := Visitor_Access (visitor_Param);
+   procedure generate (This : in out OrderedObjectArrayPermutationUtil; data : Java_Object_Access_Array_Access; visitor_Param : access Visitor_Package.Visitor'Class) is
+      visitor : constant Visitor_Access := Visitor_Access (visitor_Param);
       iterations : Long_Long_Integer;
       count : Long_Long_Integer;
    begin

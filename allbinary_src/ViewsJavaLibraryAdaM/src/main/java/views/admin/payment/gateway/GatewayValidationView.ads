@@ -42,16 +42,16 @@ package views.admin.payment.gateway.GatewayValidationView_Package is
 
    type GatewayValidationView is new HttpStoreComponentView and ValidationComponentInterface with null record;
 
-   procedure Initialize (This : in out GatewayValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return GatewayValidationView_Access;
+   procedure Initialize (This : in out GatewayValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return GatewayValidationView_Access;
    function isValid (This : in out GatewayValidationView) return Boolean;
    function toValidationInfoDoc (This : in out GatewayValidationView) return Document_Access;
-   function toValidationInfoNode (This : in out GatewayValidationView; document_Param : access Document'Class) return Node_Access;
-   procedure toValidationInfoNode (This : in out GatewayValidationView; document_Param : access Document'Class);
+   function toValidationInfoNode (This : in out GatewayValidationView; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out GatewayValidationView; document_Param : access Document_Package.Document'Class);
    function validationInfo (This : in out GatewayValidationView) return Unbounded_String;
    function toXmlDoc (This : in out GatewayValidationView) return Document_Access;
-   function toXmlNode (This : in out GatewayValidationView; document_Param : access Document'Class) return Node_Access;
-   procedure toXmlNode (This : in out GatewayValidationView; document_Param : access Document'Class);
+   function toXmlNode (This : in out GatewayValidationView; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out GatewayValidationView; document_Param : access Document_Package.Document'Class);
    function view (This : in out GatewayValidationView) return Unbounded_String;
 
 end views.admin.payment.gateway.GatewayValidationView_Package;

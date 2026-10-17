@@ -22,15 +22,15 @@ package body org.allbinary.game.displayable.canvas.EndLevelIntermissionProcessor
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out EndLevelIntermissionProcessor'Class; gameCanvas_Param : access AllBinaryGameCanvas'Class) is
-      gameCanvas : AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (gameCanvas_Param);
+   procedure Initialize (This : in out EndLevelIntermissionProcessor'Class; gameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class) is
+      gameCanvas : constant AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (gameCanvas_Param);
    begin
       Processor_Package.Initialize (This);
       Initialize_Fields (This);
         This.gameCanvas := gameCanvas;
    end Initialize;
 
-   function Create (gameCanvas_Param : access AllBinaryGameCanvas'Class) return EndLevelIntermissionProcessor_Access is
+   function Create (gameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class) return EndLevelIntermissionProcessor_Access is
       This : constant EndLevelIntermissionProcessor_Access := new EndLevelIntermissionProcessor;
    begin
       EndLevelIntermissionProcessor_Package.Initialize (This.all, gameCanvas_Param);

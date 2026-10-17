@@ -41,8 +41,8 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.PathFindi
    end Create;
 
    --  throws Exception
-   function getInstancePathFindingInfo (This : in out PathFindingInfoFactory; geographicMapInterface_Param : access BasicGeographicMap'Class; graphArray : Integer_Array_Access_Array_Access) return PathFindingInfo_Access is
-      geographicMapInterface : BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
+   function getInstancePathFindingInfo (This : in out PathFindingInfoFactory; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; graphArray : Integer_Array_Access_Array_Access) return PathFindingInfo_Access is
+      geographicMapInterface : constant BasicGeographicMap_Access := BasicGeographicMap_Access (geographicMapInterface_Param);
       commonStrings : CommonStrings_Access;
       pathFindingInfo : PathFindingInfo_Access;
    begin
@@ -54,7 +54,7 @@ package body org.allbinary.game.media.graphics.geography.map.racetrack.PathFindi
         return pathFindingInfo;
    end getInstancePathFindingInfo;
 
-   procedure getInstancePathFindingInfo (This : in out PathFindingInfoFactory; geographicMapInterface_Param : access BasicGeographicMap'Class; graphArray : Integer_Array_Access_Array_Access) is
+   procedure getInstancePathFindingInfo (This : in out PathFindingInfoFactory; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; graphArray : Integer_Array_Access_Array_Access) is
       Java_Result : constant PathFindingInfo_Access := PathFindingInfoFactory'Class (This).getInstancePathFindingInfo (geographicMapInterface_Param, graphArray);
       pragma Unreferenced (Java_Result);
    begin

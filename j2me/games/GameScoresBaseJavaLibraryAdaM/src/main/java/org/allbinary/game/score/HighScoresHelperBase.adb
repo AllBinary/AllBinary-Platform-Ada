@@ -58,8 +58,8 @@ package body org.allbinary.game.score.HighScoresHelperBase_Package is
         Java_Throw (Java_New_Exception ("RuntimeException"));
    end isAnyHighScores;
 
-   procedure setSelectedHighScores (This : in out HighScoresHelperBase; selectedHighScores_Param : access HighScores'Class) is
-      selectedHighScores : HighScores_Access := HighScores_Access (selectedHighScores_Param);
+   procedure setSelectedHighScores (This : in out HighScoresHelperBase; selectedHighScores_Param : access HighScores_Package.HighScores'Class) is
+      selectedHighScores : constant HighScores_Access := HighScores_Access (selectedHighScores_Param);
    begin
         null;
    end setSelectedHighScores;

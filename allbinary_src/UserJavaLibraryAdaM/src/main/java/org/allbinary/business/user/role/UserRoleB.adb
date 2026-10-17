@@ -21,15 +21,15 @@ package body org.allbinary.business.user.role.UserRoleB_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out UserRoleB'Class; aBasicUserRole_Param : access BasicUserRole'Class; aUserFactoryInterface_Param : access UserFactoryInterface'Class) is
-      aBasicUserRole : BasicUserRole_Access := BasicUserRole_Access (aBasicUserRole_Param);
-      aUserFactoryInterface : UserFactoryInterface_Access := UserFactoryInterface_Access (aUserFactoryInterface_Param);
+   procedure Initialize (This : in out UserRoleB'Class; aBasicUserRole_Param : access BasicUserRole_Package.BasicUserRole'Class; aUserFactoryInterface_Param : access UserFactoryInterface_Package.UserFactoryInterface'Class) is
+      aBasicUserRole : constant BasicUserRole_Access := BasicUserRole_Access (aBasicUserRole_Param);
+      aUserFactoryInterface : constant UserFactoryInterface_Access := UserFactoryInterface_Access (aUserFactoryInterface_Param);
    begin
         UserRole_Package.Initialize (This, aBasicUserRole, aUserFactoryInterface);
         UserRoleB_Package.roleVector.add (UserRoleB_Access'(This'Unchecked_Access));
    end Initialize;
 
-   function Create (aBasicUserRole_Param : access BasicUserRole'Class; aUserFactoryInterface_Param : access UserFactoryInterface'Class) return UserRoleB_Access is
+   function Create (aBasicUserRole_Param : access BasicUserRole_Package.BasicUserRole'Class; aUserFactoryInterface_Param : access UserFactoryInterface_Package.UserFactoryInterface'Class) return UserRoleB_Access is
       This : constant UserRoleB_Access := new UserRoleB;
    begin
       UserRoleB_Package.Initialize (This.all, aBasicUserRole_Param, aUserFactoryInterface_Param);

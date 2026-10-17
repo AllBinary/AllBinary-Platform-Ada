@@ -26,9 +26,9 @@ package body org.allbinary.game.input.motion.action.GameKeyCompleteMotionGesture
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GameKeyCompleteMotionGestureInputEvent'Class; name : Unbounded_String; motionGestureInput_Param : access MotionGestureInput'Class; inputToGameKeyMapping_Param : access InputToGameKeyMapping'Class) is
-      motionGestureInput : MotionGestureInput_Access := MotionGestureInput_Access (motionGestureInput_Param);
-      inputToGameKeyMapping : InputToGameKeyMapping_Access := InputToGameKeyMapping_Access (inputToGameKeyMapping_Param);
+   procedure Initialize (This : in out GameKeyCompleteMotionGestureInputEvent'Class; name : Unbounded_String; motionGestureInput_Param : access MotionGestureInput_Package.MotionGestureInput'Class; inputToGameKeyMapping_Param : access InputToGameKeyMapping_Package.InputToGameKeyMapping'Class) is
+      motionGestureInput : constant MotionGestureInput_Access := MotionGestureInput_Access (motionGestureInput_Param);
+      inputToGameKeyMapping : constant InputToGameKeyMapping_Access := InputToGameKeyMapping_Access (inputToGameKeyMapping_Param);
    begin
         CompleteMotionGestureInputEvent_Package.Initialize (This, name, motionGestureInput);
         Initialize_Fields (This);
@@ -37,7 +37,7 @@ package body org.allbinary.game.input.motion.action.GameKeyCompleteMotionGesture
         This.update;
    end Initialize;
 
-   function Create (name : Unbounded_String; motionGestureInput_Param : access MotionGestureInput'Class; inputToGameKeyMapping_Param : access InputToGameKeyMapping'Class) return GameKeyCompleteMotionGestureInputEvent_Access is
+   function Create (name : Unbounded_String; motionGestureInput_Param : access MotionGestureInput_Package.MotionGestureInput'Class; inputToGameKeyMapping_Param : access InputToGameKeyMapping_Package.InputToGameKeyMapping'Class) return GameKeyCompleteMotionGestureInputEvent_Access is
       This : constant GameKeyCompleteMotionGestureInputEvent_Access := new GameKeyCompleteMotionGestureInputEvent;
    begin
       GameKeyCompleteMotionGestureInputEvent_Package.Initialize (This.all, name, motionGestureInput_Param, inputToGameKeyMapping_Param);
@@ -66,8 +66,8 @@ package body org.allbinary.game.input.motion.action.GameKeyCompleteMotionGesture
         end;
    end update;
 
-   procedure setGameKeyEvent (This : in out GameKeyCompleteMotionGestureInputEvent; gameKeyEvent_Param : access GameKeyEvent'Class) is
-      gameKeyEvent : GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
+   procedure setGameKeyEvent (This : in out GameKeyCompleteMotionGestureInputEvent; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class) is
+      gameKeyEvent : constant GameKeyEvent_Access := GameKeyEvent_Access (gameKeyEvent_Param);
    begin
         This.gameKeyEvent := gameKeyEvent;
    end setGameKeyEvent;
@@ -77,8 +77,8 @@ package body org.allbinary.game.input.motion.action.GameKeyCompleteMotionGesture
         return This.gameKeyEvent;
    end getGameKeyEvent;
 
-   procedure setGameKey (This : in out GameKeyCompleteMotionGestureInputEvent; gameKey_Param : access GameKey'Class) is
-      gameKey : GameKey_Access := GameKey_Access (gameKey_Param);
+   procedure setGameKey (This : in out GameKeyCompleteMotionGestureInputEvent; gameKey_Param : access GameKey_Package.GameKey'Class) is
+      gameKey : constant GameKey_Access := GameKey_Access (gameKey_Param);
    begin
         This.gameKey := gameKey;
    end setGameKey;

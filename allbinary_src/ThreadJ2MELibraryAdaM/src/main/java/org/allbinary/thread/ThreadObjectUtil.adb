@@ -28,27 +28,27 @@ package body org.allbinary.thread.ThreadObjectUtil_Package is
    end getInstance;
 
    procedure notifyObject (This : in out ThreadObjectUtil; anyType_Param : access Java_Object'Class) is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         anyType.notify;
    end notifyObject;
 
    --  throws Exception
    procedure waitObject (This : in out ThreadObjectUtil; anyType_Param : access Java_Object'Class) is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         anyType.wait;
    end waitObject;
 
    --  throws Exception
    procedure waitObjectFor (This : in out ThreadObjectUtil; anyType_Param : access Java_Object'Class; delay_Id : Long_Long_Integer) is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
    begin
         TsUtil_Package.getInstance.waitFor (anyType, delay_Id);
    end waitObjectFor;
 
-   procedure processThread (This : in out ThreadObjectUtil; runnable_Param : access Runnable'Class) is
-      runnable : Runnable_Access := Runnable_Access (runnable_Param);
+   procedure processThread (This : in out ThreadObjectUtil; runnable_Param : access Runnable_Package.Runnable'Class) is
+      runnable : constant Runnable_Access := Runnable_Access (runnable_Param);
       thread : Thread_Access;
    begin
         thread := Thread_Package.Create (runnable);

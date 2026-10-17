@@ -41,10 +41,10 @@ package org.allbinary.input.automation.module.AbstractInputAutomationFactory_Pac
       helpSet : HelpSet_Access;
    end record;
 
-   procedure Initialize (This : in out AbstractInputAutomationFactory'Class; name : Unbounded_String; jPanel_Param : access JPanel'Class; helpSet_Param : access HelpSet'Class);
-   function Create (name : Unbounded_String; jPanel_Param : access JPanel'Class; helpSet_Param : access HelpSet'Class) return AbstractInputAutomationFactory_Access;
-   procedure Initialize (This : in out AbstractInputAutomationFactory'Class; name : Unbounded_String; jPanel_Param : access JPanel'Class);
-   function Create (name : Unbounded_String; jPanel_Param : access JPanel'Class) return AbstractInputAutomationFactory_Access;
+   procedure Initialize (This : in out AbstractInputAutomationFactory'Class; name : Unbounded_String; jPanel_Param : access JPanel_Package.JPanel'Class; helpSet_Param : access HelpSet_Package.HelpSet'Class);
+   function Create (name : Unbounded_String; jPanel_Param : access JPanel_Package.JPanel'Class; helpSet_Param : access HelpSet_Package.HelpSet'Class) return AbstractInputAutomationFactory_Access;
+   procedure Initialize (This : in out AbstractInputAutomationFactory'Class; name : Unbounded_String; jPanel_Param : access JPanel_Package.JPanel'Class);
+   function Create (name : Unbounded_String; jPanel_Param : access JPanel_Package.JPanel'Class) return AbstractInputAutomationFactory_Access;
    function getName (This : in out AbstractInputAutomationFactory) return Unbounded_String;
    function getConfigurationJPanel (This : in out AbstractInputAutomationFactory) return JPanel_Access;
    function getHelpSet (This : in out AbstractInputAutomationFactory) return HelpSet_Access;

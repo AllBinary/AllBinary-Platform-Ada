@@ -91,17 +91,17 @@ package views.admin.inventory.InventoryItemView_Package is
    end record;
    TYPE_ID : Integer;
 
-   procedure Initialize (This : in out InventoryItemView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return InventoryItemView_Access;
-   procedure Initialize (This : in out InventoryItemView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class; empty : Unbounded_String);
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class; empty : Unbounded_String) return InventoryItemView_Access;
+   procedure Initialize (This : in out InventoryItemView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return InventoryItemView_Access;
+   procedure Initialize (This : in out InventoryItemView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; empty : Unbounded_String);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class; empty : Unbounded_String) return InventoryItemView_Access;
    function getTypeId (This : in out InventoryItemView) return Integer;
    procedure getFormData (This : in out InventoryItemView);
    procedure addDomNodeInterfaces (This : in out InventoryItemView);
    function getItemInterface (This : in out InventoryItemView) return ItemInterface_Access;
    function view (This : in out InventoryItemView) return Unbounded_String;
    procedure processImageFiles (This : in out InventoryItemView);
-   procedure setRequestHashMap (This : in out InventoryItemView; requestHashMap_Param : access HashMap'Class);
+   procedure setRequestHashMap (This : in out InventoryItemView; requestHashMap_Param : access HashMap_Package.HashMap'Class);
    function getRequestHashMap (This : in out InventoryItemView) return HashMap_Access;
 
 end views.admin.inventory.InventoryItemView_Package;

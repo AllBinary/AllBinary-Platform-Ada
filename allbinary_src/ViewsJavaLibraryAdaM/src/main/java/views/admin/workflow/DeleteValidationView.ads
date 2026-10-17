@@ -51,13 +51,13 @@ package views.admin.workflow.DeleteValidationView_Package is
       workFlowName : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out DeleteValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class);
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return DeleteValidationView_Access;
+   procedure Initialize (This : in out DeleteValidationView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class);
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return DeleteValidationView_Access;
    function isValid (This : in out DeleteValidationView) return Boolean;
    function validationInfo (This : in out DeleteValidationView) return Unbounded_String;
    function toValidationInfoDoc (This : in out DeleteValidationView) return Document_Access;
-   function toValidationInfoNode (This : in out DeleteValidationView; document_Param : access Document'Class) return Node_Access;
-   procedure toValidationInfoNode (This : in out DeleteValidationView; document_Param : access Document'Class);
+   function toValidationInfoNode (This : in out DeleteValidationView; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toValidationInfoNode (This : in out DeleteValidationView; document_Param : access Document_Package.Document'Class);
 
 end views.admin.workflow.DeleteValidationView_Package;
 

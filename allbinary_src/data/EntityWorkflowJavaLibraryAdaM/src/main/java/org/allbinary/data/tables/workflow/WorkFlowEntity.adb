@@ -40,8 +40,8 @@ package body org.allbinary.data.tables.workflow.WorkFlowEntity_Package is
       return This;
    end Create;
 
-   procedure insert (This : in out WorkFlowEntity; values_Param : access BasicArrayList'Class) is
-      values : BasicArrayList_Access := BasicArrayList_Access (values_Param);
+   procedure insert (This : in out WorkFlowEntity; values_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      values : constant BasicArrayList_Access := BasicArrayList_Access (values_Param);
    begin
         begin
             AbSqlBean (This).insert (values);
@@ -141,8 +141,8 @@ package body org.allbinary.data.tables.workflow.WorkFlowEntity_Package is
         end;
    end get;
 
-   procedure update (This : in out WorkFlowEntity; updatedValues_Param : access HashMap'Class) is
-      updatedValues : HashMap_Access := HashMap_Access (updatedValues_Param);
+   procedure update (This : in out WorkFlowEntity; updatedValues_Param : access HashMap_Package.HashMap'Class) is
+      updatedValues : constant HashMap_Access := HashMap_Access (updatedValues_Param);
       wherekeysAndValues : HashMap_Access;
    begin
         begin

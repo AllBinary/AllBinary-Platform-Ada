@@ -53,11 +53,11 @@ package org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package is
    procedure Initialize (This : in out DestroyedEventHandler'Class);
    function Create return DestroyedEventHandler_Access;
    function getInstance return DestroyedEventHandler_Access;
-   procedure addListener (This : in out DestroyedEventHandler; collidableDestroyableDamageableLayer_Param : access CollidableDestroyableDamageableLayer'Class);
+   procedure addListener (This : in out DestroyedEventHandler; collidableDestroyableDamageableLayer_Param : access CollidableDestroyableDamageableLayer_Package.CollidableDestroyableDamageableLayer'Class);
    procedure removeAllListeners (This : in out DestroyedEventHandler);
-   procedure removeListener (This : in out DestroyedEventHandler; eventListenerInterface_Param : access EventListenerInterface'Class);
-   procedure fireEvent (This : in out DestroyedEventHandler; eventObject_Param : access AllBinaryEventObject'Class);
-   procedure process (This : in out DestroyedEventHandler; eventObject_Param : access AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface'Class);
+   procedure removeListener (This : in out DestroyedEventHandler; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class);
+   procedure fireEvent (This : in out DestroyedEventHandler; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class);
+   procedure process (This : in out DestroyedEventHandler; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class; eventListenerInterface_Param : access EventListenerInterface_Package.EventListenerInterface'Class);
 
 end org.allbinary.game.combat.destroy.event.DestroyedEventHandler_Package;
 

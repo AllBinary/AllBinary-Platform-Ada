@@ -22,14 +22,14 @@ package body org.allbinary.logic.system.security.licensing.client.XmlRpcAbeLicen
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out XmlRpcAbeLicenseRetrievalClient'Class; clientInfo_Param : access AbeClientInformationInterface'Class) is
-      clientInfo : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (clientInfo_Param);
+   procedure Initialize (This : in out XmlRpcAbeLicenseRetrievalClient'Class; clientInfo_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) is
+      clientInfo : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (clientInfo_Param);
    begin
         XmlRpcAbeClient_Package.Initialize (This, clientInfo, To_Unbounded_String ("LicServ.getLicense"));
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (clientInfo_Param : access AbeClientInformationInterface'Class) return XmlRpcAbeLicenseRetrievalClient_Access is
+   function Create (clientInfo_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class) return XmlRpcAbeLicenseRetrievalClient_Access is
       This : constant XmlRpcAbeLicenseRetrievalClient_Access := new XmlRpcAbeLicenseRetrievalClient;
    begin
       XmlRpcAbeLicenseRetrievalClient_Package.Initialize (This.all, clientInfo_Param);
@@ -37,9 +37,9 @@ package body org.allbinary.logic.system.security.licensing.client.XmlRpcAbeLicen
    end Create;
 
    --  throws Exception
-   function get (This : in out XmlRpcAbeLicenseRetrievalClient; anyType_Param : access Java_Object'Class; cryptInterface_Param : access CryptInterface'Class) return Java_Object_Access is
-      anyType : Java_Object_Access := Java_Object_Access (anyType_Param);
-      cryptInterface : CryptInterface_Access := CryptInterface_Access (cryptInterface_Param);
+   function get (This : in out XmlRpcAbeLicenseRetrievalClient; anyType_Param : access Java_Object'Class; cryptInterface_Param : access CryptInterface_Package.CryptInterface'Class) return Java_Object_Access is
+      anyType : constant Java_Object_Access := Java_Object_Access (anyType_Param);
+      cryptInterface : constant CryptInterface_Access := CryptInterface_Access (cryptInterface_Param);
       server : Unbounded_String;
       stringBuffer : StringMaker_Access;
       param : BasicArrayList_Access;
@@ -92,7 +92,7 @@ package body org.allbinary.logic.system.security.licensing.client.XmlRpcAbeLicen
         end;
    end get;
 
-   procedure get (This : in out XmlRpcAbeLicenseRetrievalClient; anyType_Param : access Java_Object'Class; cryptInterface_Param : access CryptInterface'Class) is
+   procedure get (This : in out XmlRpcAbeLicenseRetrievalClient; anyType_Param : access Java_Object'Class; cryptInterface_Param : access CryptInterface_Package.CryptInterface'Class) is
       Java_Result : constant Java_Object_Access := XmlRpcAbeLicenseRetrievalClient'Class (This).get (anyType_Param, cryptInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

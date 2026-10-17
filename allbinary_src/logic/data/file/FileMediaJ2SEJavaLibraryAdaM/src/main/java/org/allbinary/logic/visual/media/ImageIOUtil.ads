@@ -28,10 +28,10 @@ package org.allbinary.logic.visual.media.ImageIOUtil_Package is
 
    procedure Initialize (This : in out ImageIOUtil'Class);
    function Create return ImageIOUtil_Access;
-   function read (file_Param : access AbFile'Class) return BufferedImage_Access;
-   procedure read (file_Param : access AbFile'Class);
-   function write (renderedImage_Param : access RenderedImage'Class; name : Unbounded_String; file_Param : access AbFile'Class) return Boolean;
-   procedure write (renderedImage_Param : access RenderedImage'Class; name : Unbounded_String; file_Param : access AbFile'Class);
+   function read (file_Param : access AbFile_Package.AbFile'Class) return BufferedImage_Access;
+   procedure read (file_Param : access AbFile_Package.AbFile'Class);
+   function write (renderedImage_Param : access RenderedImage_Package.RenderedImage'Class; name : Unbounded_String; file_Param : access AbFile_Package.AbFile'Class) return Boolean;
+   procedure write (renderedImage_Param : access RenderedImage_Package.RenderedImage'Class; name : Unbounded_String; file_Param : access AbFile_Package.AbFile'Class);
 
 end org.allbinary.logic.visual.media.ImageIOUtil_Package;
 

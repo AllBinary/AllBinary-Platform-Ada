@@ -38,10 +38,10 @@ package org.allbinary.game.terrain.BasicTerrainInfo_Package is
    end record;
    NULL_BASIC_TERRAIN_INFO : BasicTerrainInfo_Access;
 
-   procedure Initialize (This : in out BasicTerrainInfo'Class; angle_Param : access Angle'Class);
-   function Create (angle_Param : access Angle'Class) return BasicTerrainInfo_Access;
+   procedure Initialize (This : in out BasicTerrainInfo'Class; angle_Param : access Angle_Package.Angle'Class);
+   function Create (angle_Param : access Angle_Package.Angle'Class) return BasicTerrainInfo_Access;
    function getAngle (This : in out BasicTerrainInfo) return Angle_Access;
-   procedure setAngle (This : in out BasicTerrainInfo; angle_Param : access Angle'Class);
+   procedure setAngle (This : in out BasicTerrainInfo; angle_Param : access Angle_Package.Angle'Class);
 
 end org.allbinary.game.terrain.BasicTerrainInfo_Package;
 

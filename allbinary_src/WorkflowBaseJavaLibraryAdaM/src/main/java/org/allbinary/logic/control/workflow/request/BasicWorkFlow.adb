@@ -43,9 +43,9 @@ package body org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package 
       return This;
    end Create;
 
-   procedure Initialize (This : in out BasicWorkFlow'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
-      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
+   procedure Initialize (This : in out BasicWorkFlow'Class; hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
       weblisketSession : WeblisketSession_Access;
       requestHashMap : HashMap_Access;
    begin
@@ -57,15 +57,15 @@ package body org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package 
         This.workFlowDoc := DomDocumentHelper_Package.create (Unbounded_String (requestHashMap.get (WorkFlowData_Package.getInstance.DATA)));
    end Initialize;
 
-   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return BasicWorkFlow_Access is
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return BasicWorkFlow_Access is
       This : constant BasicWorkFlow_Access := new BasicWorkFlow;
    begin
       BasicWorkFlow_Package.Initialize (This.all, hashMap_Param, pageContext_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out BasicWorkFlow'Class; hashMap_Param : access HashMap'Class) is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+   procedure Initialize (This : in out BasicWorkFlow'Class; hashMap_Param : access HashMap_Package.HashMap'Class) is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
       Initialize_Fields (This);
         This.workFlowName := Unbounded_String (hashMap.get (WorkFlowData_Package.getInstance.NAME));
@@ -73,7 +73,7 @@ package body org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package 
         This.workFlowDoc := DomDocumentHelper_Package.create (Unbounded_String (hashMap.get (WorkFlowData_Package.getInstance.DATA)));
    end Initialize;
 
-   function Create (hashMap_Param : access HashMap'Class) return BasicWorkFlow_Access is
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return BasicWorkFlow_Access is
       This : constant BasicWorkFlow_Access := new BasicWorkFlow;
    begin
       BasicWorkFlow_Package.Initialize (This.all, hashMap_Param);
@@ -128,8 +128,8 @@ package body org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package 
         return hashMap;
    end toHashMap;
 
-   function toXmlNode (This : in out BasicWorkFlow; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out BasicWorkFlow; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       hashMap : HashMap_Access;
       keySet : Set_Access;
       node : Node_Access;
@@ -230,20 +230,20 @@ package body org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package 
         return null;
    end toValidationInfoDoc;
 
-   function toValidationInfoNode (This : in out BasicWorkFlow; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toValidationInfoNode (This : in out BasicWorkFlow; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
    begin
         return null;
    end toValidationInfoNode;
 
-   procedure toXmlNode (This : in out BasicWorkFlow; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out BasicWorkFlow; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := BasicWorkFlow'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end toXmlNode;
 
-   procedure toValidationInfoNode (This : in out BasicWorkFlow; document_Param : access Document'Class) is
+   procedure toValidationInfoNode (This : in out BasicWorkFlow; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := BasicWorkFlow'Class (This).toValidationInfoNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

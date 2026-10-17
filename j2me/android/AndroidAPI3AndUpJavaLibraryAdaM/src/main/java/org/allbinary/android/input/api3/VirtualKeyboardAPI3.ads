@@ -56,10 +56,10 @@ package org.allbinary.android.input.api3.VirtualKeyboardAPI3_Package is
    MAX_API : Integer;
    MIN_API : Integer;
 
-   procedure Initialize (This : in out VirtualKeyboardAPI3'Class; activity_Param : access Activity'Class);
-   function Create (activity_Param : access Activity'Class) return VirtualKeyboardAPI3_Access;
-   procedure onEvent (This : in out VirtualKeyboardAPI3; eventObject_Param : access AllBinaryEventObject'Class);
-   procedure onVirtualKeyboardEvent (This : in out VirtualKeyboardAPI3; virtualKeyboardEvent_Param : access VirtualKeyboardEvent'Class);
+   procedure Initialize (This : in out VirtualKeyboardAPI3'Class; activity_Param : access Activity_Package.Activity'Class);
+   function Create (activity_Param : access Activity_Package.Activity'Class) return VirtualKeyboardAPI3_Access;
+   procedure onEvent (This : in out VirtualKeyboardAPI3; eventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class);
+   procedure onVirtualKeyboardEvent (This : in out VirtualKeyboardAPI3; virtualKeyboardEvent_Param : access VirtualKeyboardEvent_Package.VirtualKeyboardEvent'Class);
    procedure forceHide (This : in out VirtualKeyboardAPI3);
    procedure hide (This : in out VirtualKeyboardAPI3);
    procedure showVirtualKeyboard (This : in out VirtualKeyboardAPI3);

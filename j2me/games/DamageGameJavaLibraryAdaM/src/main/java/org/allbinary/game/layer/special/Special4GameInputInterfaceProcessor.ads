@@ -37,9 +37,9 @@ package org.allbinary.game.layer.special.Special4GameInputInterfaceProcessor_Pac
 
    type Special4GameInputInterfaceProcessor is new SpecialGameInputInterfaceProcessor with null record;
 
-   procedure Initialize (This : in out Special4GameInputInterfaceProcessor'Class; collidableDestroyableDamageableLayer_Param : access SpecialGameInputInterface'Class);
-   function Create (collidableDestroyableDamageableLayer_Param : access SpecialGameInputInterface'Class) return Special4GameInputInterfaceProcessor_Access;
-   procedure processEvent (This : in out Special4GameInputInterfaceProcessor; allbinaryLayerManager_Param : access AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent'Class);
+   procedure Initialize (This : in out Special4GameInputInterfaceProcessor'Class; collidableDestroyableDamageableLayer_Param : access SpecialGameInputInterface_Package.SpecialGameInputInterface'Class);
+   function Create (collidableDestroyableDamageableLayer_Param : access SpecialGameInputInterface_Package.SpecialGameInputInterface'Class) return Special4GameInputInterfaceProcessor_Access;
+   procedure processEvent (This : in out Special4GameInputInterfaceProcessor; allbinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class; gameKeyEvent_Param : access GameKeyEvent_Package.GameKeyEvent'Class);
 
 end org.allbinary.game.layer.special.Special4GameInputInterfaceProcessor_Package;
 

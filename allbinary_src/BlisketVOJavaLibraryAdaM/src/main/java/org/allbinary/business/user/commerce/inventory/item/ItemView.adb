@@ -23,16 +23,16 @@ package body org.allbinary.business.user.commerce.inventory.item.ItemView_Packag
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ItemView'Class; itemInterface_Param : access OrderItemInterface'Class; vector_Param : access BasicArrayList'Class) is
-      itemInterface : OrderItemInterface_Access := OrderItemInterface_Access (itemInterface_Param);
-      vector : BasicArrayList_Access := BasicArrayList_Access (vector_Param);
+   procedure Initialize (This : in out ItemView'Class; itemInterface_Param : access OrderItemInterface_Package.OrderItemInterface'Class; vector_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      itemInterface : constant OrderItemInterface_Access := OrderItemInterface_Access (itemInterface_Param);
+      vector : constant BasicArrayList_Access := BasicArrayList_Access (vector_Param);
    begin
       Initialize_Fields (This);
         This.itemInterface := itemInterface;
         This.vector := vector;
    end Initialize;
 
-   function Create (itemInterface_Param : access OrderItemInterface'Class; vector_Param : access BasicArrayList'Class) return ItemView_Access is
+   function Create (itemInterface_Param : access OrderItemInterface_Package.OrderItemInterface'Class; vector_Param : access BasicArrayList_Package.BasicArrayList'Class) return ItemView_Access is
       This : constant ItemView_Access := new ItemView;
    begin
       ItemView_Package.Initialize (This.all, itemInterface_Param, vector_Param);
@@ -40,8 +40,8 @@ package body org.allbinary.business.user.commerce.inventory.item.ItemView_Packag
    end Create;
 
    --  throws Exception
-   function toXmlNode (This : in out ItemView; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out ItemView; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       hashMap : HashMap_Access;
       keySet : Set_Access;
       node : Node_Access;
@@ -73,7 +73,7 @@ package body org.allbinary.business.user.commerce.inventory.item.ItemView_Packag
         return node;
    end toXmlNode;
 
-   procedure toXmlNode (This : in out ItemView; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out ItemView; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := ItemView'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

@@ -42,8 +42,8 @@ package org.allbinary.game.multiplayer.layer.MultiPlayerGameLayer_Package is
 
    type MultiPlayerGameLayer is new CollidableDestroyableDamageableLayer and MultiPlayerGameLayerInterface with null record;
 
-   procedure Initialize (This : in out MultiPlayerGameLayer'Class; remoteInfo_Param : access RemoteInfo'Class; groupInterface : Group_Access_Array_Access; name : Unbounded_String; layerInfo_Param : access Rectangle'Class; viewPosition_Param : access ViewPositionBase'Class);
-   function Create (remoteInfo_Param : access RemoteInfo'Class; groupInterface : Group_Access_Array_Access; name : Unbounded_String; layerInfo_Param : access Rectangle'Class; viewPosition_Param : access ViewPositionBase'Class) return MultiPlayerGameLayer_Access;
+   procedure Initialize (This : in out MultiPlayerGameLayer'Class; remoteInfo_Param : access RemoteInfo_Package.RemoteInfo'Class; groupInterface : Group_Access_Array_Access; name : Unbounded_String; layerInfo_Param : access Rectangle_Package.Rectangle'Class; viewPosition_Param : access ViewPositionBase_Package.ViewPositionBase'Class);
+   function Create (remoteInfo_Param : access RemoteInfo_Package.RemoteInfo'Class; groupInterface : Group_Access_Array_Access; name : Unbounded_String; layerInfo_Param : access Rectangle_Package.Rectangle'Class; viewPosition_Param : access ViewPositionBase_Package.ViewPositionBase'Class) return MultiPlayerGameLayer_Access;
    function getMultiplayerBehavior (This : in out MultiPlayerGameLayer) return MultiplayerBehavior_Access;
    procedure setPingInfo (This : in out MultiPlayerGameLayer; show : Boolean);
    procedure setFiring (This : in out MultiPlayerGameLayer; firing : Short_Integer);

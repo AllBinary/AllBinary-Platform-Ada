@@ -55,19 +55,19 @@ package body org.allbinary.util.ABVector_Package is
    end isEmpty;
 
    function contains (This : in out ABVector; obj_Param : access Java_Object'Class) return Boolean is
-      obj : Java_Object_Access := Java_Object_Access (obj_Param);
+      obj : constant Java_Object_Access := Java_Object_Access (obj_Param);
    begin
         return Vector (This).contains (obj);
    end contains;
 
    function indexOf (This : in out ABVector; obj_Param : access Java_Object'Class) return Integer is
-      obj : Java_Object_Access := Java_Object_Access (obj_Param);
+      obj : constant Java_Object_Access := Java_Object_Access (obj_Param);
    begin
         return Vector (This).indexOf (obj);
    end indexOf;
 
    function lastIndexOf (This : in out ABVector; obj_Param : access Java_Object'Class) return Integer is
-      obj : Java_Object_Access := Java_Object_Access (obj_Param);
+      obj : constant Java_Object_Access := Java_Object_Access (obj_Param);
    begin
         return Vector (This).lastIndexOf (obj);
    end lastIndexOf;
@@ -88,7 +88,7 @@ package body org.allbinary.util.ABVector_Package is
    end lastElement;
 
    procedure setElementAt (This : in out ABVector; obj_Param : access Java_Object'Class; index : Integer) is
-      obj : Java_Object_Access := Java_Object_Access (obj_Param);
+      obj : constant Java_Object_Access := Java_Object_Access (obj_Param);
    begin
         Vector (This).setElementAt (obj, index);
    end setElementAt;
@@ -99,19 +99,19 @@ package body org.allbinary.util.ABVector_Package is
    end removeElementAt;
 
    procedure addElement (This : in out ABVector; obj_Param : access Java_Object'Class) is
-      obj : Java_Object_Access := Java_Object_Access (obj_Param);
+      obj : constant Java_Object_Access := Java_Object_Access (obj_Param);
    begin
         Vector (This).addElement (obj);
    end addElement;
 
    procedure insertElementAt (This : in out ABVector; obj_Param : access Java_Object'Class; index : Integer) is
-      obj : Java_Object_Access := Java_Object_Access (obj_Param);
+      obj : constant Java_Object_Access := Java_Object_Access (obj_Param);
    begin
         Vector (This).insertElementAt (obj, index);
    end insertElementAt;
 
    function removeElement (This : in out ABVector; obj_Param : access Java_Object'Class) return Boolean is
-      obj : Java_Object_Access := Java_Object_Access (obj_Param);
+      obj : constant Java_Object_Access := Java_Object_Access (obj_Param);
    begin
         return Vector (This).removeElement (obj);
    end removeElement;
@@ -132,25 +132,25 @@ package body org.allbinary.util.ABVector_Package is
    end toArray;
 
    function set (This : in out ABVector; index : Integer; element_Param : access Java_Object'Class) return Java_Object_Access is
-      element : Java_Object_Access := Java_Object_Access (element_Param);
+      element : constant Java_Object_Access := Java_Object_Access (element_Param);
    begin
         return Vector (This).set (index, element);
    end set;
 
    function add (This : in out ABVector; element_Param : access Java_Object'Class) return Boolean is
-      element : Java_Object_Access := Java_Object_Access (element_Param);
+      element : constant Java_Object_Access := Java_Object_Access (element_Param);
    begin
         return Vector (This).add (element);
    end add;
 
    function remove (This : in out ABVector; obj_Param : access Java_Object'Class) return Boolean is
-      obj : Java_Object_Access := Java_Object_Access (obj_Param);
+      obj : constant Java_Object_Access := Java_Object_Access (obj_Param);
    begin
         return Vector (This).remove (obj);
    end remove;
 
    procedure add (This : in out ABVector; index : Integer; element_Param : access Java_Object'Class) is
-      element : Java_Object_Access := Java_Object_Access (element_Param);
+      element : constant Java_Object_Access := Java_Object_Access (element_Param);
    begin
         Vector (This).add (index, element);
    end add;
@@ -166,7 +166,7 @@ package body org.allbinary.util.ABVector_Package is
    end clear;
 
    function equals (This : in out ABVector; obj_Param : access Java_Object'Class) return Boolean is
-      obj : Java_Object_Access := Java_Object_Access (obj_Param);
+      obj : constant Java_Object_Access := Java_Object_Access (obj_Param);
    begin
         return Vector (This).equals (obj);
    end equals;

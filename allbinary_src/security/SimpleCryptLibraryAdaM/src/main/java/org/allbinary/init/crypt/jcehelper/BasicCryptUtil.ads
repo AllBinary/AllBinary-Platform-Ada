@@ -48,8 +48,8 @@ package org.allbinary.init.crypt.jcehelper.BasicCryptUtil_Package is
    procedure Initialize (This : in out BasicCryptUtil'Class);
    function Create return BasicCryptUtil_Access;
    function getInstance return BasicCryptUtil_Access;
-   function getDecryptedInputStream (This : in out BasicCryptUtil; inputStream_Param : access InputStream'Class; cryptInterface_Param : access CryptInterface'Class) return InputStream_Access;
-   procedure getDecryptedInputStream (This : in out BasicCryptUtil; inputStream_Param : access InputStream'Class; cryptInterface_Param : access CryptInterface'Class);
+   function getDecryptedInputStream (This : in out BasicCryptUtil; inputStream_Param : access InputStream_Package.InputStream'Class; cryptInterface_Param : access CryptInterface_Package.CryptInterface'Class) return InputStream_Access;
+   procedure getDecryptedInputStream (This : in out BasicCryptUtil; inputStream_Param : access InputStream_Package.InputStream'Class; cryptInterface_Param : access CryptInterface_Package.CryptInterface'Class);
 
 end org.allbinary.init.crypt.jcehelper.BasicCryptUtil_Package;
 

@@ -31,17 +31,17 @@ package body org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Pac
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CommandFormInputProcessor'Class; gameKeyEventList_Param : access BasicArrayList'Class; playerInputId : Integer; gameCanvas_Param : access MyCanvas'Class; form_Param : access ScrollSelectionForm'Class) is
-      gameKeyEventList : BasicArrayList_Access := BasicArrayList_Access (gameKeyEventList_Param);
-      gameCanvas : MyCanvas_Access := MyCanvas_Access (gameCanvas_Param);
-      form : ScrollSelectionForm_Access := ScrollSelectionForm_Access (form_Param);
+   procedure Initialize (This : in out CommandFormInputProcessor'Class; gameKeyEventList_Param : access BasicArrayList_Package.BasicArrayList'Class; playerInputId : Integer; gameCanvas_Param : access MyCanvas_Package.MyCanvas'Class; form_Param : access ScrollSelectionForm_Package.ScrollSelectionForm'Class) is
+      gameKeyEventList : constant BasicArrayList_Access := BasicArrayList_Access (gameKeyEventList_Param);
+      gameCanvas : constant MyCanvas_Access := MyCanvas_Access (gameCanvas_Param);
+      form : constant ScrollSelectionForm_Access := ScrollSelectionForm_Access (form_Param);
    begin
         BasicMenuInputProcessor_Package.Initialize (This, gameKeyEventList, playerInputId, gameCanvas);
         Initialize_Fields (This);
         This.form := form;
    end Initialize;
 
-   function Create (gameKeyEventList_Param : access BasicArrayList'Class; playerInputId : Integer; gameCanvas_Param : access MyCanvas'Class; form_Param : access ScrollSelectionForm'Class) return CommandFormInputProcessor_Access is
+   function Create (gameKeyEventList_Param : access BasicArrayList_Package.BasicArrayList'Class; playerInputId : Integer; gameCanvas_Param : access MyCanvas_Package.MyCanvas'Class; form_Param : access ScrollSelectionForm_Package.ScrollSelectionForm'Class) return CommandFormInputProcessor_Access is
       This : constant CommandFormInputProcessor_Access := new CommandFormInputProcessor;
    begin
       CommandFormInputProcessor_Package.Initialize (This.all, gameKeyEventList_Param, playerInputId, gameCanvas_Param, form_Param);
@@ -141,8 +141,8 @@ package body org.allbinary.game.displayable.canvas.CommandFormInputProcessor_Pac
    end processMotionInputs;
 
    --  throws Exception
-   procedure processMotionInput (This : in out CommandFormInputProcessor; motionGestureEvent_Param : access MotionGestureEvent'Class) is
-      motionGestureEvent : MotionGestureEvent_Access := MotionGestureEvent_Access (motionGestureEvent_Param);
+   procedure processMotionInput (This : in out CommandFormInputProcessor; motionGestureEvent_Param : access MotionGestureEvent_Package.MotionGestureEvent'Class) is
+      motionGestureEvent : constant MotionGestureEvent_Access := MotionGestureEvent_Access (motionGestureEvent_Param);
       touchMotionGestureFactory : TouchMotionGestureFactory_Access;
       motionGestureInput : MotionGestureInput_Access;
       point : GPoint_Access;

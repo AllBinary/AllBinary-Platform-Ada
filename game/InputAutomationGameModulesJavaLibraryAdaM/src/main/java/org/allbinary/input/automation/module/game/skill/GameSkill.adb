@@ -28,8 +28,8 @@ package body org.allbinary.input.automation.module.game.skill.GameSkill_Package 
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GameSkill'Class; gameSkillType_Param : access GameSkillType'Class; extra : Unbounded_String; time : Integer) is
-      gameSkillType : GameSkillType_Access := GameSkillType_Access (gameSkillType_Param);
+   procedure Initialize (This : in out GameSkill'Class; gameSkillType_Param : access GameSkillType_Package.GameSkillType'Class; extra : Unbounded_String; time : Integer) is
+      gameSkillType : constant GameSkillType_Access := GameSkillType_Access (gameSkillType_Param);
    begin
       Initialize_Fields (This);
         This.setGameSkillType (gameSkillType);
@@ -39,7 +39,7 @@ package body org.allbinary.input.automation.module.game.skill.GameSkill_Package 
         GameSkill_Package.hashMap.put (StringMaker_Package.Create.append (This.getGameSkillType.getName).append (CommonSeps_Package.getInstance.SPACE).append (extra).toString, GameSkill_Access'(This'Unchecked_Access));
    end Initialize;
 
-   function Create (gameSkillType_Param : access GameSkillType'Class; extra : Unbounded_String; time : Integer) return GameSkill_Access is
+   function Create (gameSkillType_Param : access GameSkillType_Package.GameSkillType'Class; extra : Unbounded_String; time : Integer) return GameSkill_Access is
       This : constant GameSkill_Access := new GameSkill;
    begin
       GameSkill_Package.Initialize (This.all, gameSkillType_Param, extra, time);
@@ -51,8 +51,8 @@ package body org.allbinary.input.automation.module.game.skill.GameSkill_Package 
         return This.gameSkillType;
    end getGameSkillType;
 
-   procedure setGameSkillType (This : in out GameSkill; gameSkillType_Param : access GameSkillType'Class) is
-      gameSkillType : GameSkillType_Access := GameSkillType_Access (gameSkillType_Param);
+   procedure setGameSkillType (This : in out GameSkill; gameSkillType_Param : access GameSkillType_Package.GameSkillType'Class) is
+      gameSkillType : constant GameSkillType_Access := GameSkillType_Access (gameSkillType_Param);
    begin
         This.gameSkillType := gameSkillType;
    end setGameSkillType;
@@ -77,8 +77,8 @@ package body org.allbinary.input.automation.module.game.skill.GameSkill_Package 
         This.time := time;
    end setTime;
 
-   procedure addProperty (This : in out GameSkill; gameSkillPropertyInterface_Param : access GameSkillPropertyInterface'Class) is
-      gameSkillPropertyInterface : GameSkillPropertyInterface_Access := GameSkillPropertyInterface_Access (gameSkillPropertyInterface_Param);
+   procedure addProperty (This : in out GameSkill; gameSkillPropertyInterface_Param : access GameSkillPropertyInterface_Package.GameSkillPropertyInterface'Class) is
+      gameSkillPropertyInterface : constant GameSkillPropertyInterface_Access := GameSkillPropertyInterface_Access (gameSkillPropertyInterface_Param);
    begin
         This.vector.add (gameSkillPropertyInterface);
    end addProperty;
@@ -88,8 +88,8 @@ package body org.allbinary.input.automation.module.game.skill.GameSkill_Package 
         return This.vector;
    end getProperties;
 
-   function getInstance (gameSkillType_Param : access GameSkillType'Class; extra : Unbounded_String) return GameSkill_Access is
-      gameSkillType : GameSkillType_Access := GameSkillType_Access (gameSkillType_Param);
+   function getInstance (gameSkillType_Param : access GameSkillType_Package.GameSkillType'Class; extra : Unbounded_String) return GameSkill_Access is
+      gameSkillType : constant GameSkillType_Access := GameSkillType_Access (gameSkillType_Param);
    begin
         return GameSkill_Access (GameSkill_Package.hashMap.get (StringMaker_Package.Create.append (gameSkillType.getName).append (CommonSeps_Package.getInstance.SPACE).append (extra).toString));
    end getInstance;
@@ -111,7 +111,7 @@ package body org.allbinary.input.automation.module.game.skill.GameSkill_Package 
         return stringBuffer.toString;
    end toString;
 
-   procedure getInstance (gameSkillType_Param : access GameSkillType'Class; extra : Unbounded_String) is
+   procedure getInstance (gameSkillType_Param : access GameSkillType_Package.GameSkillType'Class; extra : Unbounded_String) is
       Java_Result : constant GameSkill_Access := getInstance (gameSkillType_Param, extra);
       pragma Unreferenced (Java_Result);
    begin

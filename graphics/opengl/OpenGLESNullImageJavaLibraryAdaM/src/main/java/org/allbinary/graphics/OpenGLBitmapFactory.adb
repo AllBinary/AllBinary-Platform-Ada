@@ -28,40 +28,40 @@ package body org.allbinary.graphics.OpenGLBitmapFactory_Package is
         return OpenGLBitmapFactory_Package.instance;
    end getInstance;
 
-   function createBitmap (This : in out OpenGLBitmapFactory; width : Integer; height : Integer; config_Param : access Config'Class) return OpenGLBitmap_Access is
-      config : Config_Access := Config_Access (config_Param);
+   function createBitmap (This : in out OpenGLBitmapFactory; width : Integer; height : Integer; config_Param : access Config_Package.Config'Class) return OpenGLBitmap_Access is
+      config : constant Config_Access := Config_Access (config_Param);
    begin
         return OpenGLBitmap_Package.Create (NullUtil_Package.getInstance.NULL_OBJECT);
    end createBitmap;
 
    --  throws IOException
-   function decodeStream (This : in out OpenGLBitmapFactory; inputStream_Param : access InputStream'Class) return OpenGLBitmap_Access is
-      inputStream : InputStream_Access := InputStream_Access (inputStream_Param);
+   function decodeStream (This : in out OpenGLBitmapFactory; inputStream_Param : access InputStream_Package.InputStream'Class) return OpenGLBitmap_Access is
+      inputStream : constant InputStream_Access := InputStream_Access (inputStream_Param);
    begin
         return OpenGLBitmap_Package.Create (NullUtil_Package.getInstance.NULL_OBJECT);
    end decodeStream;
 
-   function createBitmap (This : in out OpenGLBitmapFactory; image_Param : access Image'Class) return PlatformBitmapBase_Access is
-      image : Image_Access := Image_Access (image_Param);
+   function createBitmap (This : in out OpenGLBitmapFactory; image_Param : access Image_Package.Image'Class) return PlatformBitmapBase_Access is
+      image : constant Image_Access := Image_Access (image_Param);
    begin
         return OpenGLBitmap_Package.Create (NullUtil_Package.getInstance.NULL_OBJECT);
    end createBitmap;
 
-   procedure createBitmap (This : in out OpenGLBitmapFactory; width : Integer; height : Integer; config_Param : access Config'Class) is
+   procedure createBitmap (This : in out OpenGLBitmapFactory; width : Integer; height : Integer; config_Param : access Config_Package.Config'Class) is
       Java_Result : constant OpenGLBitmap_Access := OpenGLBitmapFactory'Class (This).createBitmap (width, height, config_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end createBitmap;
 
-   procedure decodeStream (This : in out OpenGLBitmapFactory; inputStream_Param : access InputStream'Class) is
+   procedure decodeStream (This : in out OpenGLBitmapFactory; inputStream_Param : access InputStream_Package.InputStream'Class) is
       Java_Result : constant OpenGLBitmap_Access := OpenGLBitmapFactory'Class (This).decodeStream (inputStream_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end decodeStream;
 
-   procedure createBitmap (This : in out OpenGLBitmapFactory; image_Param : access Image'Class) is
+   procedure createBitmap (This : in out OpenGLBitmapFactory; image_Param : access Image_Package.Image'Class) is
       Java_Result : constant PlatformBitmapBase_Access := OpenGLBitmapFactory'Class (This).createBitmap (image_Param);
       pragma Unreferenced (Java_Result);
    begin
@@ -85,7 +85,7 @@ package body org.allbinary.graphics.Config_Package is
 
     
    procedure Initialize (This : in out Config'Class; bitmapConfig_Param : access Java_Object'Class) is
-      bitmapConfig : Java_Object_Access := Java_Object_Access (bitmapConfig_Param);
+      bitmapConfig : constant Java_Object_Access := Java_Object_Access (bitmapConfig_Param);
    begin
       Initialize_Fields (This);
             This.bitmapConfig := bitmapConfig;

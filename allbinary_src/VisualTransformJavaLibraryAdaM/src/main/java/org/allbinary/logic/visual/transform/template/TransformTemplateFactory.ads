@@ -52,8 +52,8 @@ package org.allbinary.logic.visual.transform.template.TransformTemplateFactory_P
    procedure Initialize (This : in out TransformTemplateFactory'Class);
    function Create return TransformTemplateFactory_Access;
    function getInstance return TransformTemplateFactory_Access;
-   function getInstance (This : in out TransformTemplateFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; templateName : Unbounded_String; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return TransformTemplateInterface_Access;
-   procedure getInstance (This : in out TransformTemplateFactory; abeClientInformation_Param : access AbeClientInformationInterface'Class; templateName : Unbounded_String; propertiesHashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class);
+   function getInstance (This : in out TransformTemplateFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; templateName : Unbounded_String; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return TransformTemplateInterface_Access;
+   procedure getInstance (This : in out TransformTemplateFactory; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; templateName : Unbounded_String; propertiesHashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class);
 
 end org.allbinary.logic.visual.transform.template.TransformTemplateFactory_Package;
 

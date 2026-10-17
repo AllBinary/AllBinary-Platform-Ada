@@ -33,13 +33,13 @@ package body org.allbinary.game.collision.CollidableAlwaysPickupNeverCollideBeha
       return This;
    end Create;
 
-   function getCollisionTypeWith (This : in out CollidableAlwaysPickupNeverCollideBehavior; layerInterface_Param : access AllBinaryLayer'Class) return CollisionType_Access is
-      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
+   function getCollisionTypeWith (This : in out CollidableAlwaysPickupNeverCollideBehavior; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) return CollisionType_Access is
+      layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
    begin
         return CollisionTypeFactory_Package.getInstance.PICKUP;
    end getCollisionTypeWith;
 
-   procedure getCollisionTypeWith (This : in out CollidableAlwaysPickupNeverCollideBehavior; layerInterface_Param : access AllBinaryLayer'Class) is
+   procedure getCollisionTypeWith (This : in out CollidableAlwaysPickupNeverCollideBehavior; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
       Java_Result : constant CollisionType_Access := CollidableAlwaysPickupNeverCollideBehavior'Class (This).getCollisionTypeWith (layerInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

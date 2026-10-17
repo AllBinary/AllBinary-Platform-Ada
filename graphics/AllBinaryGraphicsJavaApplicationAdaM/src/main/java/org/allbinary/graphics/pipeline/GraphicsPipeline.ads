@@ -40,8 +40,8 @@ package org.allbinary.graphics.pipeline.GraphicsPipeline_Package is
 
    type GraphicsPipeline is new BasicGraphicsPipeline with null record;
 
-   procedure Initialize (This : in out GraphicsPipeline'Class; points_Param : access BasicArrayList'Class);
-   function Create (points_Param : access BasicArrayList'Class) return GraphicsPipeline_Access;
+   procedure Initialize (This : in out GraphicsPipeline'Class; points_Param : access BasicArrayList_Package.BasicArrayList'Class);
+   function Create (points_Param : access BasicArrayList_Package.BasicArrayList'Class) return GraphicsPipeline_Access;
    procedure rotateTheta (This : in out GraphicsPipeline; aTheta : Long_Float);
 
 end org.allbinary.graphics.pipeline.GraphicsPipeline_Package;

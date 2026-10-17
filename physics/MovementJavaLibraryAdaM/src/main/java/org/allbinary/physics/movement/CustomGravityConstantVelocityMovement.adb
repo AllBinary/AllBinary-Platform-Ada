@@ -23,15 +23,15 @@ package body org.allbinary.physics.movement.CustomGravityConstantVelocityMovemen
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CustomGravityConstantVelocityMovement'Class; speedBasicDecimal_Param : access BasicDecimal'Class; customGravity : Integer) is
-      speedBasicDecimal : BasicDecimal_Access := BasicDecimal_Access (speedBasicDecimal_Param);
+   procedure Initialize (This : in out CustomGravityConstantVelocityMovement'Class; speedBasicDecimal_Param : access BasicDecimal_Package.BasicDecimal'Class; customGravity : Integer) is
+      speedBasicDecimal : constant BasicDecimal_Access := BasicDecimal_Access (speedBasicDecimal_Param);
    begin
         BasicConstantVelocityMovement_Package.Initialize (This, speedBasicDecimal, VelocityProperties_Package.Create (Integer (speedBasicDecimal.getUnscaled), Integer (speedBasicDecimal.getUnscaled)));
         Initialize_Fields (This);
         This.customGravity := customGravity;
    end Initialize;
 
-   function Create (speedBasicDecimal_Param : access BasicDecimal'Class; customGravity : Integer) return CustomGravityConstantVelocityMovement_Access is
+   function Create (speedBasicDecimal_Param : access BasicDecimal_Package.BasicDecimal'Class; customGravity : Integer) return CustomGravityConstantVelocityMovement_Access is
       This : constant CustomGravityConstantVelocityMovement_Access := new CustomGravityConstantVelocityMovement;
    begin
       CustomGravityConstantVelocityMovement_Package.Initialize (This.all, speedBasicDecimal_Param, customGravity);
@@ -39,8 +39,8 @@ package body org.allbinary.physics.movement.CustomGravityConstantVelocityMovemen
    end Create;
 
    --  throws Exception
-   procedure process (This : in out CustomGravityConstantVelocityMovement; layer_Param : access AllBinaryGameLayer'Class) is
-      layer : AllBinaryGameLayer_Access := AllBinaryGameLayer_Access (layer_Param);
+   procedure process (This : in out CustomGravityConstantVelocityMovement; layer_Param : access AllBinaryGameLayer_Package.AllBinaryGameLayer'Class) is
+      layer : constant AllBinaryGameLayer_Access := AllBinaryGameLayer_Access (layer_Param);
       velocityProperties : VelocityProperties_Access;
    begin
         BasicConstantVelocityMovement (This).process (layer);

@@ -57,9 +57,9 @@ package org.allbinary.input.automation.module.InputAutomationModuleFactoryFactor
       helpSetListenerInterface : HelpSetListener_Access;
    end record;
 
-   procedure Initialize (This : in out InputAutomationModuleFactoryFactory'Class; inputAutomationModuleConfigurations_Param : access InputAutomationModuleConfigurations'Class; helpSetListenerInterface_Param : access HelpSetListener'Class);
-   function Create (inputAutomationModuleConfigurations_Param : access InputAutomationModuleConfigurations'Class; helpSetListenerInterface_Param : access HelpSetListener'Class) return InputAutomationModuleFactoryFactory_Access;
-   procedure add (This : in out InputAutomationModuleFactoryFactory; inputAutomationModuleConfiguration_Param : access InputAutomationModuleConfiguration'Class);
+   procedure Initialize (This : in out InputAutomationModuleFactoryFactory'Class; inputAutomationModuleConfigurations_Param : access InputAutomationModuleConfigurations_Package.InputAutomationModuleConfigurations'Class; helpSetListenerInterface_Param : access HelpSetListener_Package.HelpSetListener'Class);
+   function Create (inputAutomationModuleConfigurations_Param : access InputAutomationModuleConfigurations_Package.InputAutomationModuleConfigurations'Class; helpSetListenerInterface_Param : access HelpSetListener_Package.HelpSetListener'Class) return InputAutomationModuleFactoryFactory_Access;
+   procedure add (This : in out InputAutomationModuleFactoryFactory; inputAutomationModuleConfiguration_Param : access InputAutomationModuleConfiguration_Package.InputAutomationModuleConfiguration'Class);
    function getListModel (This : in out InputAutomationModuleFactoryFactory) return ListModel_Access;
    function getInstance (This : in out InputAutomationModuleFactoryFactory; moduleName : Unbounded_String) return InputAutomationModuleFactoryInterface_Access;
    procedure getInstance (This : in out InputAutomationModuleFactoryFactory; moduleName : Unbounded_String);

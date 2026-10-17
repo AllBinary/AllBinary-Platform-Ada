@@ -30,14 +30,14 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out MusicManager'Class; musicServiceClass : Ada.Tags.Tag; songList_Param : access BasicArrayList'Class) is
-      songList : BasicArrayList_Access := BasicArrayList_Access (songList_Param);
+   procedure Initialize (This : in out MusicManager'Class; musicServiceClass : Ada.Tags.Tag; songList_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      songList : constant BasicArrayList_Access := BasicArrayList_Access (songList_Param);
    begin
       Initialize_Fields (This);
         This.songList := songList;
    end Initialize;
 
-   function Create (musicServiceClass : Ada.Tags.Tag; songList_Param : access BasicArrayList'Class) return MusicManager_Access is
+   function Create (musicServiceClass : Ada.Tags.Tag; songList_Param : access BasicArrayList_Package.BasicArrayList'Class) return MusicManager_Access is
       This : constant MusicManager_Access := new MusicManager;
    begin
       MusicManager_Package.Initialize (This.all, musicServiceClass, songList_Param);
@@ -54,8 +54,8 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
         This.process;
    end startNewSong;
 
-   procedure nextSong (This : in out MusicManager; nextSongSound_Param : access Sound'Class; leftVolume : Integer; rightVolume : Integer) is
-      nextSongSound : Sound_Access := Sound_Access (nextSongSound_Param);
+   procedure nextSong (This : in out MusicManager; nextSongSound_Param : access Sound_Package.Sound'Class; leftVolume : Integer; rightVolume : Integer) is
+      nextSongSound : constant Sound_Access := Sound_Access (nextSongSound_Param);
    begin
         PreLogUtil_Package.put (StringMaker_Package.Create.append (This.NEXT_SONG).append (nextSongSound.getResource).toString, MusicManager_Access'(This'Unchecked_Access), This.commonStrings.PROCESS);
         This.nextSongSound := nextSongSound;
@@ -143,9 +143,9 @@ package body org.allbinary.media.audio.music.MusicManager_Package is
    end process;
 
    --  throws Exception
-   procedure waitForStateChange (This : in out MusicManager; endingCurrentSongSound_Param : access Sound'Class; startingCurrentSongSound_Param : access Sound'Class) is
-      endingCurrentSongSound : Sound_Access := Sound_Access (endingCurrentSongSound_Param);
-      startingCurrentSongSound : Sound_Access := Sound_Access (startingCurrentSongSound_Param);
+   procedure waitForStateChange (This : in out MusicManager; endingCurrentSongSound_Param : access Sound_Package.Sound'Class; startingCurrentSongSound_Param : access Sound_Package.Sound'Class) is
+      endingCurrentSongSound : constant Sound_Access := Sound_Access (endingCurrentSongSound_Param);
+      startingCurrentSongSound : constant Sound_Access := Sound_Access (startingCurrentSongSound_Param);
    begin
         while (endingCurrentSongSound.getPlayerP.getState) = (Player_Package.STARTED) loop
             PreLogUtil_Package.put (This.WAITING_FOR_MEDIA_TO_END, MusicManager_Access'(This'Unchecked_Access), This.commonStrings.PROCESS);
@@ -206,9 +206,9 @@ package body org.allbinary.media.audio.music.MusicManagerPlayerListener_Package 
    end Create;
 
     
-   procedure playerUpdate (This : in out MusicManagerPlayerListener; player_Param : access Player'Class; event : Unbounded_String; eventData_Param : access Java_Object'Class) is
-      player : Player_Access := Player_Access (player_Param);
-      eventData : Java_Object_Access := Java_Object_Access (eventData_Param);
+   procedure playerUpdate (This : in out MusicManagerPlayerListener; player_Param : access Player_Package.Player'Class; event : Unbounded_String; eventData_Param : access Java_Object'Class) is
+      player : constant Player_Access := Player_Access (player_Param);
+      eventData : constant Java_Object_Access := Java_Object_Access (eventData_Param);
    begin
             PreLogUtil_Package.put (event, MusicManager_Access'(This'Unchecked_Access), This.commonStrings.PROCESS);
             if (((event) = (PlayerListener_Package.END_OF_MEDIA)) or else ((event) = (PlayerListener_Package.STOPPED))) or else ((event) = (PlayerListener_Package.CLOSED)) then

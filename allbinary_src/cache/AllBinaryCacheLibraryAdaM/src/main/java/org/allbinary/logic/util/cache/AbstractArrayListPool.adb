@@ -24,14 +24,14 @@ package body org.allbinary.logic.util.cache.AbstractArrayListPool_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AbstractArrayListPool'Class; cacheableInterfaceFactoryInterface_Param : access CacheableInterfaceFactoryInterface'Class) is
-      cacheableInterfaceFactoryInterface : CacheableInterfaceFactoryInterface_Access := CacheableInterfaceFactoryInterface_Access (cacheableInterfaceFactoryInterface_Param);
+   procedure Initialize (This : in out AbstractArrayListPool'Class; cacheableInterfaceFactoryInterface_Param : access CacheableInterfaceFactoryInterface_Package.CacheableInterfaceFactoryInterface'Class) is
+      cacheableInterfaceFactoryInterface : constant CacheableInterfaceFactoryInterface_Access := CacheableInterfaceFactoryInterface_Access (cacheableInterfaceFactoryInterface_Param);
    begin
       Initialize_Fields (This);
         This.cacheableInterfaceFactoryInterface := cacheableInterfaceFactoryInterface;
    end Initialize;
 
-   function Create (cacheableInterfaceFactoryInterface_Param : access CacheableInterfaceFactoryInterface'Class) return AbstractArrayListPool_Access is
+   function Create (cacheableInterfaceFactoryInterface_Param : access CacheableInterfaceFactoryInterface_Package.CacheableInterfaceFactoryInterface'Class) return AbstractArrayListPool_Access is
       This : constant AbstractArrayListPool_Access := new AbstractArrayListPool;
    begin
       AbstractArrayListPool_Package.Initialize (This.all, cacheableInterfaceFactoryInterface_Param);
@@ -46,14 +46,14 @@ package body org.allbinary.logic.util.cache.AbstractArrayListPool_Package is
 
    --  throws Exception
    function remove (This : in out AbstractArrayListPool; key_Param : access Java_Object'Class) return CacheableInterface_Access is
-      key : Java_Object_Access := Java_Object_Access (key_Param);
+      key : constant Java_Object_Access := Java_Object_Access (key_Param);
    begin
         Java_Throw (Java_New_Exception ("Exception", This.commonStrings.NOT_IMPLEMENTED));
    end remove;
 
    --  throws Exception
-   procedure add (This : in out AbstractArrayListPool; cacheableInterface_Param : access CacheableInterface'Class) is
-      cacheableInterface : CacheableInterface_Access := CacheableInterface_Access (cacheableInterface_Param);
+   procedure add (This : in out AbstractArrayListPool; cacheableInterface_Param : access CacheableInterface_Package.CacheableInterface'Class) is
+      cacheableInterface : constant CacheableInterface_Access := CacheableInterface_Access (cacheableInterface_Param);
    begin
         This.buffers.add (cacheableInterface);
    end add;

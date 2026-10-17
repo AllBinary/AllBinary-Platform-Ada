@@ -76,15 +76,15 @@ package org.allbinary.graphics.opengles.OpenGLUtil_Package is
    procedure Initialize (This : in out OpenGLUtil'Class);
    function Create return OpenGLUtil_Access;
    function getInstance return OpenGLUtil_Access;
-   procedure onSurfaceCreated (This : in out OpenGLUtil; gl_Param : access GL10'Class);
-   procedure onSurfaceCreated (This : in out OpenGLUtil; gl_Param : access GL10'Class; loadTextures_Param : access LoadTextures'Class);
-   procedure onSurfaceChanged (This : in out OpenGLUtil; gl_Param : access GL10'Class; graphics_Param : access OpenGLESGraphics'Class);
-   function addImage (This : in out OpenGLUtil; image_Param : access Image'Class) return Image_Access;
-   procedure addImage (This : in out OpenGLUtil; image_Param : access Image'Class);
+   procedure onSurfaceCreated (This : in out OpenGLUtil; gl_Param : access GL10_Package.GL10'Class);
+   procedure onSurfaceCreated (This : in out OpenGLUtil; gl_Param : access GL10_Package.GL10'Class; loadTextures_Param : access LoadTextures_Package.LoadTextures'Class);
+   procedure onSurfaceChanged (This : in out OpenGLUtil; gl_Param : access GL10_Package.GL10'Class; graphics_Param : access OpenGLESGraphics_Package.OpenGLESGraphics'Class);
+   function addImage (This : in out OpenGLUtil; image_Param : access Image_Package.Image'Class) return Image_Access;
+   procedure addImage (This : in out OpenGLUtil; image_Param : access Image_Package.Image'Class);
    procedure clear (This : in out OpenGLUtil);
-   procedure addRunnable (This : in out OpenGLUtil; runnable_Param : access Runnable'Class);
+   procedure addRunnable (This : in out OpenGLUtil; runnable_Param : access Runnable_Package.Runnable'Class);
    procedure processRunnables (This : in out OpenGLUtil);
-   procedure set (This : in out OpenGLUtil; gl_Param : access GL10'Class);
+   procedure set (This : in out OpenGLUtil; gl_Param : access GL10_Package.GL10'Class);
 
 end org.allbinary.graphics.opengles.OpenGLUtil_Package;
 

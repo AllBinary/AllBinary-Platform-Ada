@@ -47,10 +47,10 @@ package org.allbinary.graphics.form.PaintableForm_Package is
    end record;
    NULL_PAINTABLE_FORM : Java_Object_Access;
 
-   procedure Initialize (This : in out PaintableForm'Class; title : Unbounded_String; items : ABCustomItem_Access_Array_Access; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class);
-   function Create (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return PaintableForm_Access;
+   procedure Initialize (This : in out PaintableForm'Class; title : Unbounded_String; items : ABCustomItem_Access_Array_Access; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class);
+   function Create (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return PaintableForm_Access;
    function getNullPaintableForm return PaintableForm_Access;
-   procedure init (This : in out PaintableForm; rectangle_Param : access Rectangle'Class; formType_Param : access FormType'Class);
+   procedure init (This : in out PaintableForm; rectangle_Param : access Rectangle_Package.Rectangle'Class; formType_Param : access FormType_Package.FormType'Class);
    function getWidth (This : in out PaintableForm) return Integer;
 
 end org.allbinary.graphics.form.PaintableForm_Package;

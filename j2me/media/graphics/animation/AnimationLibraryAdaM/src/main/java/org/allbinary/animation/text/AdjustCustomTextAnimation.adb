@@ -23,8 +23,8 @@ package body org.allbinary.animation.text.AdjustCustomTextAnimation_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AdjustCustomTextAnimation'Class; text : Unbounded_String; fontSize : Integer; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior'Class) is
-      animationBehavior : AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
+   procedure Initialize (This : in out AdjustCustomTextAnimation'Class; text : Unbounded_String; fontSize : Integer; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) is
+      animationBehavior : constant AnimationBehavior_Access := AnimationBehavior_Access (animationBehavior_Param);
    begin
         CustomTextAnimation_Package.Initialize (This, text, fontSize, animationBehavior);
         Initialize_Fields (This);
@@ -32,7 +32,7 @@ package body org.allbinary.animation.text.AdjustCustomTextAnimation_Package is
         This.dy := dy;
    end Initialize;
 
-   function Create (text : Unbounded_String; fontSize : Integer; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior'Class) return AdjustCustomTextAnimation_Access is
+   function Create (text : Unbounded_String; fontSize : Integer; dx : Integer; dy : Integer; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return AdjustCustomTextAnimation_Access is
       This : constant AdjustCustomTextAnimation_Access := new AdjustCustomTextAnimation;
    begin
       AdjustCustomTextAnimation_Package.Initialize (This.all, text, fontSize, dx, dy, animationBehavior_Param);
@@ -59,8 +59,8 @@ package body org.allbinary.animation.text.AdjustCustomTextAnimation_Package is
         This.dy := dy;
    end setDy;
 
-   procedure paintXY (This : in out AdjustCustomTextAnimation; graphics_Param : access Graphics'Class; x : Integer; y : Integer) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintXY (This : in out AdjustCustomTextAnimation; graphics_Param : access Graphics_Package.Graphics'Class; x : Integer; y : Integer) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         CustomTextAnimation (This).paintXY (graphics, (x) + (This.dx), (y) + (This.dy));
    end paintXY;

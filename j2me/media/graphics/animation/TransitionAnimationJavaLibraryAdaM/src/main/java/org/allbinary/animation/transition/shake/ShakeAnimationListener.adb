@@ -48,8 +48,8 @@ package body org.allbinary.animation.transition.shake.ShakeAnimationListener_Pac
         null;
    end onLargeShakeEvent;
 
-   procedure onShakeEvent (This : in out ShakeAnimationListener; shakeEvent_Param : access ShakeEvent'Class) is
-      shakeEvent : ShakeEvent_Access := ShakeEvent_Access (shakeEvent_Param);
+   procedure onShakeEvent (This : in out ShakeAnimationListener; shakeEvent_Param : access ShakeEvent_Package.ShakeEvent'Class) is
+      shakeEvent : constant ShakeEvent_Access := ShakeEvent_Access (shakeEvent_Param);
    begin
         null;
    end onShakeEvent;

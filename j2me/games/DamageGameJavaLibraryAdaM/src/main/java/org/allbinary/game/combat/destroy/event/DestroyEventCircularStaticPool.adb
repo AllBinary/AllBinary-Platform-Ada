@@ -40,15 +40,15 @@ package body org.allbinary.game.combat.destroy.event.DestroyEventCircularStaticP
       return This;
    end Create;
 
-   procedure init (This : in out DestroyEventCircularStaticPool; combatGameCanvas_Param : access AllBinaryGameCanvas'Class) is
-      combatGameCanvas : AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (combatGameCanvas_Param);
+   procedure init (This : in out DestroyEventCircularStaticPool; combatGameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class) is
+      combatGameCanvas : constant AllBinaryGameCanvas_Access := AllBinaryGameCanvas_Access (combatGameCanvas_Param);
    begin
         This.EVENT_POOL.initAllBinaryEventCircularPool (DestroyEventFactory_Package.Create (combatGameCanvas));
    end init;
 
    --  throws Exception
-   function getInstanceForLayer (This : in out DestroyEventCircularStaticPool; layerInterface_Param : access AllBinaryLayer'Class) return DestroyedEvent_Access is
-      layerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
+   function getInstanceForLayer (This : in out DestroyEventCircularStaticPool; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) return DestroyedEvent_Access is
+      layerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (layerInterface_Param);
       destroyedEvent : DestroyedEvent_Access;
    begin
         destroyedEvent := DestroyedEvent_Access (This.EVENT_POOL.getNextInstance);
@@ -56,7 +56,7 @@ package body org.allbinary.game.combat.destroy.event.DestroyEventCircularStaticP
         return destroyedEvent;
    end getInstanceForLayer;
 
-   procedure getInstanceForLayer (This : in out DestroyEventCircularStaticPool; layerInterface_Param : access AllBinaryLayer'Class) is
+   procedure getInstanceForLayer (This : in out DestroyEventCircularStaticPool; layerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
       Java_Result : constant DestroyedEvent_Access := DestroyEventCircularStaticPool'Class (This).getInstanceForLayer (layerInterface_Param);
       pragma Unreferenced (Java_Result);
    begin

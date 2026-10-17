@@ -43,13 +43,13 @@ package org.allbinary.animation.VectorRotationAnimation_Package is
 
    type VectorRotationAnimation is new VectorBaseRotationAnimation with null record;
 
-   procedure Initialize (This : in out VectorRotationAnimation'Class; currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor'Class; animationBehavior_Param : access AnimationBehavior'Class);
-   function Create (currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor'Class; animationBehavior_Param : access AnimationBehavior'Class) return VectorRotationAnimation_Access;
-   procedure setFrameByDirection (This : in out VectorRotationAnimation; direction_Param : access Direction'Class);
-   procedure setFrameToAngle (This : in out VectorRotationAnimation; angle_Param : access Angle'Class);
+   procedure Initialize (This : in out VectorRotationAnimation'Class; currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor_Package.BasicColor'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class);
+   function Create (currentPoints : Integer_Array_Access_Array_Access_Array_Access; basicColor_Param : access BasicColor_Package.BasicColor'Class; animationBehavior_Param : access AnimationBehavior_Package.AnimationBehavior'Class) return VectorRotationAnimation_Access;
+   procedure setFrameByDirection (This : in out VectorRotationAnimation; direction_Param : access Direction_Package.Direction'Class);
+   procedure setFrameToAngle (This : in out VectorRotationAnimation; angle_Param : access Angle_Package.Angle'Class);
    procedure setFrame (This : in out VectorRotationAnimation; index : Integer);
    procedure adjustFrame (This : in out VectorRotationAnimation; newAngle : Short_Integer);
-   procedure adjustFrameToAngle (This : in out VectorRotationAnimation; newAngle_Param : access Angle'Class);
+   procedure adjustFrameToAngle (This : in out VectorRotationAnimation; newAngle_Param : access Angle_Package.Angle'Class);
 
 end org.allbinary.animation.VectorRotationAnimation_Package;
 

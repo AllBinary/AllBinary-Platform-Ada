@@ -26,29 +26,29 @@ package body org.allbinary.media.audio.PlayerComposite_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out PlayerComposite'Class; player_Param : access Player'Class; repeatTime : Integer) is
-      player : Player_Access := Player_Access (player_Param);
+   procedure Initialize (This : in out PlayerComposite'Class; player_Param : access Player_Package.Player'Class; repeatTime : Integer) is
+      player : constant Player_Access := Player_Access (player_Param);
    begin
       Initialize_Fields (This);
         This.player := player;
         This.timeElapsedHelper.delay_Id := repeatTime;
    end Initialize;
 
-   function Create (player_Param : access Player'Class; repeatTime : Integer) return PlayerComposite_Access is
+   function Create (player_Param : access Player_Package.Player'Class; repeatTime : Integer) return PlayerComposite_Access is
       This : constant PlayerComposite_Access := new PlayerComposite;
    begin
       PlayerComposite_Package.Initialize (This.all, player_Param, repeatTime);
       return This;
    end Create;
 
-   procedure addPlayerListener (This : in out PlayerComposite; playerListener_Param : access PlayerListener'Class) is
-      playerListener : PlayerListener_Access := PlayerListener_Access (playerListener_Param);
+   procedure addPlayerListener (This : in out PlayerComposite; playerListener_Param : access PlayerListener_Package.PlayerListener'Class) is
+      playerListener : constant PlayerListener_Access := PlayerListener_Access (playerListener_Param);
    begin
         This.player.addPlayerListener (playerListener);
    end addPlayerListener;
 
-   procedure removePlayerListener (This : in out PlayerComposite; playerListener_Param : access PlayerListener'Class) is
-      playerListener : PlayerListener_Access := PlayerListener_Access (playerListener_Param);
+   procedure removePlayerListener (This : in out PlayerComposite; playerListener_Param : access PlayerListener_Package.PlayerListener'Class) is
+      playerListener : constant PlayerListener_Access := PlayerListener_Access (playerListener_Param);
    begin
         This.player.removePlayerListener (playerListener);
    end removePlayerListener;

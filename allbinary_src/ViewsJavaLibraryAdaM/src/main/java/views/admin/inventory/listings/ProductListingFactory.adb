@@ -34,8 +34,8 @@ package body views.admin.inventory.listings.ProductListingFactory_Package is
       return This;
    end Create;
 
-   function getInstance (searchRequest_Param : access SearchRequest'Class) return ProductListingInterface_Access is
-      searchRequest : SearchRequest_Access := SearchRequest_Access (searchRequest_Param);
+   function getInstance (searchRequest_Param : access SearchRequest_Package.SearchRequest'Class) return ProductListingInterface_Access is
+      searchRequest : constant SearchRequest_Access := SearchRequest_Access (searchRequest_Param);
       logUtil : LogUtil_Access;
       commonStrings : CommonStrings_Access;
    begin
@@ -56,7 +56,7 @@ package body views.admin.inventory.listings.ProductListingFactory_Package is
         end;
    end getInstance;
 
-   procedure getInstance (searchRequest_Param : access SearchRequest'Class) is
+   procedure getInstance (searchRequest_Param : access SearchRequest_Package.SearchRequest'Class) is
       Java_Result : constant ProductListingInterface_Access := getInstance (searchRequest_Param);
       pragma Unreferenced (Java_Result);
    begin

@@ -55,7 +55,7 @@ package org.allbinary.game.media.graphics.geography.map.racetrack.DynamicRaceTra
 
    procedure Initialize (This : in out DynamicRaceTracksPathPrinter'Class);
    function Create return DynamicRaceTracksPathPrinter_Access;
-   procedure printAllPaths (This : in out DynamicRaceTracksPathPrinter; raceTrackGeographicMapInterfaceFactoryInterface_Param : access RaceTrackGeographicMapInterfaceFactoryInterface'Class; pathFindingInfo_Param : access PathFindingInfo'Class; size : Integer);
+   procedure printAllPaths (This : in out DynamicRaceTracksPathPrinter; raceTrackGeographicMapInterfaceFactoryInterface_Param : access RaceTrackGeographicMapInterfaceFactoryInterface_Package.RaceTrackGeographicMapInterfaceFactoryInterface'Class; pathFindingInfo_Param : access PathFindingInfo_Package.PathFindingInfo'Class; size : Integer);
 
 end org.allbinary.game.media.graphics.geography.map.racetrack.DynamicRaceTracksPathPrinter_Package;
 

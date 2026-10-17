@@ -55,11 +55,11 @@ package org.allbinary.game.ag.ai.scroller.FlockingAI_Package is
       allowedDistance : Integer;
    end record;
 
-   procedure Initialize (This : in out FlockingAI'Class; hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class);
-   function Create (hashtable_Param : access ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return FlockingAI_Access;
-   procedure processAI (This : in out FlockingAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class);
-   function getXYDistance (This : in out FlockingAI; allBinaryLayer_Param : access AllBinaryLayer'Class) return Integer;
-   procedure getXYDistance (This : in out FlockingAI; allBinaryLayer_Param : access AllBinaryLayer'Class);
+   procedure Initialize (This : in out FlockingAI'Class; hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class);
+   function Create (hashtable_Param : access ABHashtable_Package.ABHashtable'Class; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) return FlockingAI_Access;
+   procedure processAI (This : in out FlockingAI; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class);
+   function getXYDistance (This : in out FlockingAI; allBinaryLayer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) return Integer;
+   procedure getXYDistance (This : in out FlockingAI; allBinaryLayer_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class);
 
 end org.allbinary.game.ag.ai.scroller.FlockingAI_Package;
 

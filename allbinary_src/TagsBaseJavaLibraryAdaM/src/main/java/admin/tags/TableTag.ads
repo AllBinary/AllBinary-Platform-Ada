@@ -64,9 +64,9 @@ package admin.tags.TableTag_Package is
    function Create return TableTag_Access;
    procedure setIsSelected (This : in out TableTag; enabled : Unbounded_String);
    function isEnabled (This : in out TableTag) return Boolean;
-   procedure setTagHelperFactory (This : in out TableTag; tagHelperFactoryInterface_Param : access TagHelperFactoryInterface'Class);
+   procedure setTagHelperFactory (This : in out TableTag; tagHelperFactoryInterface_Param : access TagHelperFactoryInterface_Package.TagHelperFactoryInterface'Class);
    function getTagHelperFactoryInterface (This : in out TableTag) return TagHelperFactoryInterface_Access;
-   procedure setTagRequestHelperFactory (This : in out TableTag; tagHelperFactoryInterface_Param : access TagHelperFactoryInterface'Class);
+   procedure setTagRequestHelperFactory (This : in out TableTag; tagHelperFactoryInterface_Param : access TagHelperFactoryInterface_Package.TagHelperFactoryInterface'Class);
    function getTagRequestHelperFactoryInterface (This : in out TableTag) return TagHelperFactoryInterface_Access;
    procedure setCurrent (This : in out TableTag; current : Integer);
    function getCurrent (This : in out TableTag) return Integer;

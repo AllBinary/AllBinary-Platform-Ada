@@ -42,8 +42,8 @@ package body org.allbinary.animation.image.ScaleProcessor_Package is
         return ScaleProcessor_Package.instanceC;
    end getInstance;
 
-   procedure update (This : in out ScaleProcessor; originalImage_Param : access Image'Class; originalImageArray : Image_Access_Array_Access; ximageToShowArray : Image_Access_Array_Access; unused : Integer; scaleX : Float; scaleY : Float; maxScaleX : Float; maxScaleY : Float) is
-      originalImage : Image_Access := Image_Access (originalImage_Param);
+   procedure update (This : in out ScaleProcessor; originalImage_Param : access Image_Package.Image'Class; originalImageArray : Image_Access_Array_Access; ximageToShowArray : Image_Access_Array_Access; unused : Integer; scaleX : Float; scaleY : Float; maxScaleX : Float; maxScaleY : Float) is
+      originalImage : constant Image_Access := Image_Access (originalImage_Param);
    begin
         begin
             This.imageScaleUtil.scale2 (originalImage, originalImageArray, ximageToShowArray, unused, scaleX, scaleY, maxScaleX, maxScaleY);

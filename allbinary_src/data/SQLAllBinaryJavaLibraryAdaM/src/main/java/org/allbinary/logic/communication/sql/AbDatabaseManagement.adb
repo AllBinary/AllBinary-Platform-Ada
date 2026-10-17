@@ -33,28 +33,28 @@ package body org.allbinary.logic.communication.sql.AbDatabaseManagement_Package 
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AbDatabaseManagement'Class; databaseConnectionInfoInterface_Param : access DatabaseConnectionInfoInterface'Class) is
-      databaseConnectionInfoInterface : DatabaseConnectionInfoInterface_Access := DatabaseConnectionInfoInterface_Access (databaseConnectionInfoInterface_Param);
+   procedure Initialize (This : in out AbDatabaseManagement'Class; databaseConnectionInfoInterface_Param : access DatabaseConnectionInfoInterface_Package.DatabaseConnectionInfoInterface'Class) is
+      databaseConnectionInfoInterface : constant DatabaseConnectionInfoInterface_Access := DatabaseConnectionInfoInterface_Access (databaseConnectionInfoInterface_Param);
    begin
         AbSqlBean_Package.Initialize (This, DbConnectionInfo_Access (databaseConnectionInfoInterface));
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (databaseConnectionInfoInterface_Param : access DatabaseConnectionInfoInterface'Class) return AbDatabaseManagement_Access is
+   function Create (databaseConnectionInfoInterface_Param : access DatabaseConnectionInfoInterface_Package.DatabaseConnectionInfoInterface'Class) return AbDatabaseManagement_Access is
       This : constant AbDatabaseManagement_Access := new AbDatabaseManagement;
    begin
       AbDatabaseManagement_Package.Initialize (This.all, databaseConnectionInfoInterface_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out AbDatabaseManagement'Class; connectionInfo_Param : access DbConnectionInfo'Class) is
-      connectionInfo : DbConnectionInfo_Access := DbConnectionInfo_Access (connectionInfo_Param);
+   procedure Initialize (This : in out AbDatabaseManagement'Class; connectionInfo_Param : access DbConnectionInfo_Package.DbConnectionInfo'Class) is
+      connectionInfo : constant DbConnectionInfo_Access := DbConnectionInfo_Access (connectionInfo_Param);
    begin
         AbSqlBean_Package.Initialize (This, connectionInfo);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (connectionInfo_Param : access DbConnectionInfo'Class) return AbDatabaseManagement_Access is
+   function Create (connectionInfo_Param : access DbConnectionInfo_Package.DbConnectionInfo'Class) return AbDatabaseManagement_Access is
       This : constant AbDatabaseManagement_Access := new AbDatabaseManagement;
    begin
       AbDatabaseManagement_Package.Initialize (This.all, connectionInfo_Param);

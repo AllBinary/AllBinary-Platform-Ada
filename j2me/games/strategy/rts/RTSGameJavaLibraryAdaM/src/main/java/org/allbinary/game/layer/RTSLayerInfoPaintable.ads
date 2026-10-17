@@ -42,9 +42,9 @@ package org.allbinary.game.layer.RTSLayerInfoPaintable_Package is
    procedure Initialize (This : in out RTSLayerInfoPaintable'Class);
    function Create return RTSLayerInfoPaintable_Access;
    procedure update (This : in out RTSLayerInfoPaintable);
-   procedure paint (This : in out RTSLayerInfoPaintable; graphics_Param : access Graphics'Class);
-   procedure updateRTSLayerInfoInit (This : in out RTSLayerInfoPaintable; hudPaintable_Param : access InitUpdatePaintable'Class);
-   procedure updateRTSLayerInfoSelection (This : in out RTSLayerInfoPaintable; hudPaintable_Param : access SelectionHudPaintable'Class);
+   procedure paint (This : in out RTSLayerInfoPaintable; graphics_Param : access Graphics_Package.Graphics'Class);
+   procedure updateRTSLayerInfoInit (This : in out RTSLayerInfoPaintable; hudPaintable_Param : access InitUpdatePaintable_Package.InitUpdatePaintable'Class);
+   procedure updateRTSLayerInfoSelection (This : in out RTSLayerInfoPaintable; hudPaintable_Param : access SelectionHudPaintable_Package.SelectionHudPaintable'Class);
 
 end org.allbinary.game.layer.RTSLayerInfoPaintable_Package;
 

@@ -50,14 +50,14 @@ package body org.allbinary.game.layer.PlayerGameInputGameLayer_Package is
    end initInputProcessors;
 
    --  throws Exception
-   procedure processInput (This : in out PlayerGameInputGameLayer; myManager_Param : access AllBinaryLayerManager'Class) is
-      myManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (myManager_Param);
+   procedure processInput (This : in out PlayerGameInputGameLayer; myManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class) is
+      myManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (myManager_Param);
    begin
         null;
    end processInput;
 
-   procedure paint (This : in out PlayerGameInputGameLayer; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out PlayerGameInputGameLayer; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
    begin
         null;
    end paint;

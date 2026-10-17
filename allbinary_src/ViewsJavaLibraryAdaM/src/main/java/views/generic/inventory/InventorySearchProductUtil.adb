@@ -42,9 +42,9 @@ package body views.generic_Id.inventory.InventorySearchProductUtil_Package is
    end getInstance;
 
    --  throws Exception
-   function getProduct (This : in out InventorySearchProductUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; searchRequest_Param : access SearchRequest'Class; product : Unbounded_String) return Unbounded_String is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
-      searchRequest : SearchRequest_Access := SearchRequest_Access (searchRequest_Param);
+   function getProduct (This : in out InventorySearchProductUtil; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; searchRequest_Param : access SearchRequest_Package.SearchRequest'Class; product : Unbounded_String) return Unbounded_String is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+      searchRequest : constant SearchRequest_Access := SearchRequest_Access (searchRequest_Param);
       inventoryEntityInterface : InventoryEntity_Access;
       itemInterface : ItemInterface_Access;
       viewDocumentInterface : TransformDocumentInterface_Access;
@@ -76,7 +76,7 @@ package body views.generic_Id.inventory.InventorySearchProductUtil_Package is
         end;
    end getProduct;
 
-   procedure getProduct (This : in out InventorySearchProductUtil; abeClientInformation_Param : access AbeClientInformationInterface'Class; searchRequest_Param : access SearchRequest'Class; product : Unbounded_String) is
+   procedure getProduct (This : in out InventorySearchProductUtil; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; searchRequest_Param : access SearchRequest_Package.SearchRequest'Class; product : Unbounded_String) is
       Java_Result : constant Unbounded_String := InventorySearchProductUtil'Class (This).getProduct (abeClientInformation_Param, searchRequest_Param, product);
       pragma Unreferenced (Java_Result);
    begin

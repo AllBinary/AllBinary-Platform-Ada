@@ -46,8 +46,8 @@ package body org.allbinary.media.audio.Sound_Package is
         return This.player;
    end getPlayerP;
 
-   procedure setPlayerP (This : in out Sound; player_Param : access Player'Class) is
-      player : Player_Access := Player_Access (player_Param);
+   procedure setPlayerP (This : in out Sound; player_Param : access Player_Package.Player'Class) is
+      player : constant Player_Access := Player_Access (player_Param);
    begin
         This.player := player;
    end setPlayerP;

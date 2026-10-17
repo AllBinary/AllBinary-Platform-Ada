@@ -46,8 +46,8 @@ package org.allbinary.game.displayable.canvas.CommandRunnable_Package is
       command : Command_Access;
    end record;
 
-   procedure Initialize (This : in out CommandRunnable'Class; commandFormInputProcessor_Param : access CommandFormInputProcessor'Class; command_Param : access Command'Class);
-   function Create (commandFormInputProcessor_Param : access CommandFormInputProcessor'Class; command_Param : access Command'Class) return CommandRunnable_Access;
+   procedure Initialize (This : in out CommandRunnable'Class; commandFormInputProcessor_Param : access CommandFormInputProcessor_Package.CommandFormInputProcessor'Class; command_Param : access Command_Package.Command'Class);
+   function Create (commandFormInputProcessor_Param : access CommandFormInputProcessor_Package.CommandFormInputProcessor'Class; command_Param : access Command_Package.Command'Class) return CommandRunnable_Access;
    procedure run (This : in out CommandRunnable);
 
 end org.allbinary.game.displayable.canvas.CommandRunnable_Package;

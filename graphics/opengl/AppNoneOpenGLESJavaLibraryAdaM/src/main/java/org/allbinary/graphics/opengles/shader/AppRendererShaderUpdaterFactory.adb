@@ -48,7 +48,7 @@ package body org.allbinary.graphics.opengles.shader.AppRendererShaderUpdaterFact
    end getTestShaders;
 
    procedure setShaderComposite (This : in out AppRendererShaderUpdaterFactory; object3d_Param : access Java_Object'Class) is
-      object3d : Java_Object_Access := Java_Object_Access (object3d_Param);
+      object3d : constant Java_Object_Access := Java_Object_Access (object3d_Param);
    begin
         null;
    end setShaderComposite;

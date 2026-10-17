@@ -51,9 +51,9 @@ package org.allbinary.game.ag.ai.scroller.TimedFireAI_Package is
    end record;
    TIME : Integer;
 
-   procedure Initialize (This : in out TimedFireAI'Class; delay_Id : Integer; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class);
-   function Create (delay_Id : Integer; ownerLayerInterface_Param : access AllBinaryLayer'Class; gameInput_Param : access GameInput'Class) return TimedFireAI_Access;
-   procedure processAI (This : in out TimedFireAI; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class);
+   procedure Initialize (This : in out TimedFireAI'Class; delay_Id : Integer; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class);
+   function Create (delay_Id : Integer; ownerLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; gameInput_Param : access GameInput_Package.GameInput'Class) return TimedFireAI_Access;
+   procedure processAI (This : in out TimedFireAI; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class);
 
 end org.allbinary.game.ag.ai.scroller.TimedFireAI_Package;
 

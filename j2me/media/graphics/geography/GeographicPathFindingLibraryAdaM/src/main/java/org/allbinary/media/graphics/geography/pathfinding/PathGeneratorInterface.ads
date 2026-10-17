@@ -35,7 +35,7 @@ package org.allbinary.media.graphics.geography.pathfinding.PathGeneratorInterfac
    type PathGeneratorInterface_Access is access all PathGeneratorInterface'Class;
    type PathGeneratorInterface_Access_Array is array (Natural range <>) of PathGeneratorInterface_Access;
    type PathGeneratorInterface_Access_Array_Access is access all PathGeneratorInterface_Access_Array;
-   function createList (This : in out PathGeneratorInterface; geographicMapInterface_Param : access BasicGeographicMap'Class; geographicMapCellHistory_Param : access GeographicMapCellHistory'Class; pathFindingInfo_Param : access PathFindingInfo'Class; totalPaths : Integer) return BasicArrayList_Access is abstract;
+   function createList (This : in out PathGeneratorInterface; geographicMapInterface_Param : access BasicGeographicMap_Package.BasicGeographicMap'Class; geographicMapCellHistory_Param : access GeographicMapCellHistory_Package.GeographicMapCellHistory'Class; pathFindingInfo_Param : access PathFindingInfo_Package.PathFindingInfo'Class; totalPaths : Integer) return BasicArrayList_Access is abstract;
 
 end org.allbinary.media.graphics.geography.pathfinding.PathGeneratorInterface_Package;
 

@@ -41,8 +41,8 @@ package body org.allbinary.game.layer.drop.DropLayerProcessor_Package is
    end getInstance;
 
    --  throws Exception
-   procedure process (This : in out DropLayerProcessor; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class) is
-      allBinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
+   procedure process (This : in out DropLayerProcessor; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class) is
+      allBinaryLayerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
       list : BasicArrayList_Access;
       size : Integer;
       layerInterface : AllBinaryLayer_Access;

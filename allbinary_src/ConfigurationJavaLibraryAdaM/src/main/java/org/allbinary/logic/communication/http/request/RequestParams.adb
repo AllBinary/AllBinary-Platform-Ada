@@ -39,38 +39,38 @@ package body org.allbinary.logic.communication.http.request.RequestParams_Packag
       return This;
    end Create;
 
-   procedure Initialize (This : in out RequestParams'Class; request_Param : access HttpServletRequest'Class) is
-      request : HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
+   procedure Initialize (This : in out RequestParams'Class; request_Param : access HttpServletRequest_Package.HttpServletRequest'Class) is
+      request : constant HttpServletRequest_Access := HttpServletRequest_Access (request_Param);
    begin
       Initialize_Fields (This);
         This.map := request.getParameterMap;
         This.logUtil.putF (To_Unbounded_String ("RequestParams Size: ") & Java_Image (This.getMap.keySet.size), RequestParams_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
    end Initialize;
 
-   function Create (request_Param : access HttpServletRequest'Class) return RequestParams_Access is
+   function Create (request_Param : access HttpServletRequest_Package.HttpServletRequest'Class) return RequestParams_Access is
       This : constant RequestParams_Access := new RequestParams;
    begin
       RequestParams_Package.Initialize (This.all, request_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out RequestParams'Class; pageContext_Param : access PageContext'Class) is
-      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
+   procedure Initialize (This : in out RequestParams'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is
+      pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
    begin
       Initialize_Fields (This);
         This.map := pageContext.getRequest.getParameterMap;
         This.logUtil.putF (To_Unbounded_String ("Request Params Size: ") & Java_Image (This.getMap.keySet.size), RequestParams_Access'(This'Unchecked_Access), This.commonStrings.CONSTRUCTOR);
    end Initialize;
 
-   function Create (pageContext_Param : access PageContext'Class) return RequestParams_Access is
+   function Create (pageContext_Param : access PageContext_Package.PageContext'Class) return RequestParams_Access is
       This : constant RequestParams_Access := new RequestParams;
    begin
       RequestParams_Package.Initialize (This.all, pageContext_Param);
       return This;
    end Create;
 
-   procedure setMap (This : in out RequestParams; map_Param : access Map'Class) is
-      map : Map_Access := Map_Access (map_Param);
+   procedure setMap (This : in out RequestParams; map_Param : access Map_Package.Map'Class) is
+      map : constant Map_Access := Map_Access (map_Param);
    begin
         This.map := map;
    end setMap;
@@ -80,8 +80,8 @@ package body org.allbinary.logic.communication.http.request.RequestParams_Packag
         return This.map;
    end getMap;
 
-   function toXmlNode (This : in out RequestParams; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out RequestParams; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       node : Node_Access;
       stringBuffer : StringMaker_Access;
       keys : Set_Access;
@@ -150,7 +150,7 @@ package body org.allbinary.logic.communication.http.request.RequestParams_Packag
         return hashMap;
    end toHashMap;
 
-   procedure toXmlNode (This : in out RequestParams; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out RequestParams; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := RequestParams'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

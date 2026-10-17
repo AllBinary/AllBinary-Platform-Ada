@@ -43,14 +43,14 @@ package org.allbinary.game.ai.path.BasicDirectionAIHelper_Package is
       angleInfo : AngleInfo_Access;
    end record;
 
-   procedure Initialize (This : in out BasicDirectionAIHelper'Class; name : Unbounded_String; angleInfo_Param : access AngleInfo'Class);
-   function Create (name : Unbounded_String; angleInfo_Param : access AngleInfo'Class) return BasicDirectionAIHelper_Access;
+   procedure Initialize (This : in out BasicDirectionAIHelper'Class; name : Unbounded_String; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class);
+   function Create (name : Unbounded_String; angleInfo_Param : access AngleInfo_Package.AngleInfo'Class) return BasicDirectionAIHelper_Access;
    function turnAI (This : in out BasicDirectionAIHelper; frame : Integer) return Integer;
    procedure turnAI (This : in out BasicDirectionAIHelper; frame : Integer);
    function getAIKeyPressed (This : in out BasicDirectionAIHelper; frame : Integer) return Integer;
    procedure getAIKeyPressed (This : in out BasicDirectionAIHelper; frame : Integer);
-   function getAIKeyPressedFromDirection (This : in out BasicDirectionAIHelper; geographicMapDirectionData_Param : access Direction'Class) return Integer;
-   procedure getAIKeyPressedFromDirection (This : in out BasicDirectionAIHelper; geographicMapDirectionData_Param : access Direction'Class);
+   function getAIKeyPressedFromDirection (This : in out BasicDirectionAIHelper; geographicMapDirectionData_Param : access Direction_Package.Direction'Class) return Integer;
+   procedure getAIKeyPressedFromDirection (This : in out BasicDirectionAIHelper; geographicMapDirectionData_Param : access Direction_Package.Direction'Class);
    function getAngleInfoP (This : in out BasicDirectionAIHelper) return AngleInfo_Access;
    function getName (This : in out BasicDirectionAIHelper) return Unbounded_String;
 

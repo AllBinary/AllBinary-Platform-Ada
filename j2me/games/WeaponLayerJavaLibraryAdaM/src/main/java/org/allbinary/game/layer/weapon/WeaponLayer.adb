@@ -33,13 +33,13 @@ package body org.allbinary.game.layer.weapon.WeaponLayer_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out WeaponLayer'Class; name : Unbounded_String; remoteInfo_Param : access RemoteInfo'Class; multiPlayerType : Integer; movement_Param : access Movement'Class; animationInterface_Param : access Animation'Class; destroyedAnimationInterface_Param : access Animation'Class; rectangle_Param : access Rectangle'Class; viewPosition_Param : access ViewPositionBase'Class) is
-      remoteInfo : RemoteInfo_Access := RemoteInfo_Access (remoteInfo_Param);
-      movement : Movement_Access := Movement_Access (movement_Param);
-      animationInterface : Animation_Access := Animation_Access (animationInterface_Param);
-      destroyedAnimationInterface : Animation_Access := Animation_Access (destroyedAnimationInterface_Param);
-      rectangle : Rectangle_Access := Rectangle_Access (rectangle_Param);
-      viewPosition : ViewPositionBase_Access := ViewPositionBase_Access (viewPosition_Param);
+   procedure Initialize (This : in out WeaponLayer'Class; name : Unbounded_String; remoteInfo_Param : access RemoteInfo_Package.RemoteInfo'Class; multiPlayerType : Integer; movement_Param : access Movement_Package.Movement'Class; animationInterface_Param : access Animation_Package.Animation'Class; destroyedAnimationInterface_Param : access Animation_Package.Animation'Class; rectangle_Param : access Rectangle_Package.Rectangle'Class; viewPosition_Param : access ViewPositionBase_Package.ViewPositionBase'Class) is
+      remoteInfo : constant RemoteInfo_Access := RemoteInfo_Access (remoteInfo_Param);
+      movement : constant Movement_Access := Movement_Access (movement_Param);
+      animationInterface : constant Animation_Access := Animation_Access (animationInterface_Param);
+      destroyedAnimationInterface : constant Animation_Access := Animation_Access (destroyedAnimationInterface_Param);
+      rectangle : constant Rectangle_Access := Rectangle_Access (rectangle_Param);
+      viewPosition : constant ViewPositionBase_Access := ViewPositionBase_Access (viewPosition_Param);
    begin
         MultiPlayerGameLayer_Package.Initialize (This, remoteInfo, BasicGroupFactory_Package.getInstance.NONE_ARRAY, name, rectangle, viewPosition);
         Initialize_Fields (This);
@@ -50,15 +50,15 @@ package body org.allbinary.game.layer.weapon.WeaponLayer_Package is
         This.multiPlayerType := multiPlayerType;
    end Initialize;
 
-   function Create (name : Unbounded_String; remoteInfo_Param : access RemoteInfo'Class; multiPlayerType : Integer; movement_Param : access Movement'Class; animationInterface_Param : access Animation'Class; destroyedAnimationInterface_Param : access Animation'Class; rectangle_Param : access Rectangle'Class; viewPosition_Param : access ViewPositionBase'Class) return WeaponLayer_Access is
+   function Create (name : Unbounded_String; remoteInfo_Param : access RemoteInfo_Package.RemoteInfo'Class; multiPlayerType : Integer; movement_Param : access Movement_Package.Movement'Class; animationInterface_Param : access Animation_Package.Animation'Class; destroyedAnimationInterface_Param : access Animation_Package.Animation'Class; rectangle_Param : access Rectangle_Package.Rectangle'Class; viewPosition_Param : access ViewPositionBase_Package.ViewPositionBase'Class) return WeaponLayer_Access is
       This : constant WeaponLayer_Access := new WeaponLayer;
    begin
       WeaponLayer_Package.Initialize (This.all, name, remoteInfo_Param, multiPlayerType, movement_Param, animationInterface_Param, destroyedAnimationInterface_Param, rectangle_Param, viewPosition_Param);
       return This;
    end Create;
 
-   procedure setCollidableInferface (This : in out WeaponLayer; collidableInferface_Param : access CollidableBaseBehavior'Class) is
-      collidableInferface : CollidableBaseBehavior_Access := CollidableBaseBehavior_Access (collidableInferface_Param);
+   procedure setCollidableInferface (This : in out WeaponLayer; collidableInferface_Param : access CollidableBaseBehavior_Package.CollidableBaseBehavior'Class) is
+      collidableInferface : constant CollidableBaseBehavior_Access := CollidableBaseBehavior_Access (collidableInferface_Param);
    begin
         MultiPlayerGameLayer (This).setCollidableInferface (collidableInferface);
         This.collidableWeaponBehavior := CollidableWeaponBehavior_Access (This.getCollidableInferface);
@@ -73,10 +73,10 @@ package body org.allbinary.game.layer.weapon.WeaponLayer_Package is
    end initXYZ;
 
    --  throws Exception
-   procedure init (This : in out WeaponLayer; sourceLayerInterface_Param : access AllBinaryLayer'Class; angle : Integer; otherAngle : Integer; weaponProperties_Param : access WeaponProperties'Class; scoreable_Param : access ScoreableInterface'Class) is
-      sourceLayerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (sourceLayerInterface_Param);
-      weaponProperties : WeaponProperties_Access := WeaponProperties_Access (weaponProperties_Param);
-      scoreable : ScoreableInterface_Access := ScoreableInterface_Access (scoreable_Param);
+   procedure init (This : in out WeaponLayer; sourceLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class; angle : Integer; otherAngle : Integer; weaponProperties_Param : access WeaponProperties_Package.WeaponProperties'Class; scoreable_Param : access ScoreableInterface_Package.ScoreableInterface'Class) is
+      sourceLayerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (sourceLayerInterface_Param);
+      weaponProperties : constant WeaponProperties_Access := WeaponProperties_Access (weaponProperties_Param);
+      scoreable : constant ScoreableInterface_Access := ScoreableInterface_Access (scoreable_Param);
    begin
         This.setWeaponPropertiesP (weaponProperties);
         This.setReadyForExplosion (False);
@@ -105,8 +105,8 @@ package body org.allbinary.game.layer.weapon.WeaponLayer_Package is
    end setGroupInterfaces;
 
    --  throws Exception
-   procedure processTick (This : in out WeaponLayer; allBinaryLayerManager_Param : access AllBinaryLayerManager'Class) is
-      allBinaryLayerManager : AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
+   procedure processTick (This : in out WeaponLayer; allBinaryLayerManager_Param : access AllBinaryLayerManager_Package.AllBinaryLayerManager'Class) is
+      allBinaryLayerManager : constant AllBinaryLayerManager_Access := AllBinaryLayerManager_Access (allBinaryLayerManager_Param);
       collidableWeaponBehavior : CollidableWeaponBehavior_Access;
       indexedAnimationInterface : IndexedAnimation_Access;
       currentFrame : Integer;
@@ -184,8 +184,8 @@ package body org.allbinary.game.layer.weapon.WeaponLayer_Package is
         return This.initDamage;
    end getInitDamage;
 
-   procedure setAnimationInterface (This : in out WeaponLayer; animationInterface_Param : access Animation'Class) is
-      animationInterface : Animation_Access := Animation_Access (animationInterface_Param);
+   procedure setAnimationInterface (This : in out WeaponLayer; animationInterface_Param : access Animation_Package.Animation'Class) is
+      animationInterface : constant Animation_Access := Animation_Access (animationInterface_Param);
    begin
         This.animationInterface := animationInterface;
    end setAnimationInterface;
@@ -200,8 +200,8 @@ package body org.allbinary.game.layer.weapon.WeaponLayer_Package is
         return This.initAnimationInterface;
    end getInitAnimationInterfaceP;
 
-   procedure setInitAnimationInterfaceP (This : in out WeaponLayer; initAnimationInterface_Param : access Animation'Class) is
-      initAnimationInterface : Animation_Access := Animation_Access (initAnimationInterface_Param);
+   procedure setInitAnimationInterfaceP (This : in out WeaponLayer; initAnimationInterface_Param : access Animation_Package.Animation'Class) is
+      initAnimationInterface : constant Animation_Access := Animation_Access (initAnimationInterface_Param);
    begin
         This.initAnimationInterface := initAnimationInterface;
    end setInitAnimationInterfaceP;
@@ -216,22 +216,22 @@ package body org.allbinary.game.layer.weapon.WeaponLayer_Package is
         return This.sourceLayerInterface;
    end getOwnerLayerInterface;
 
-   procedure setOwnerLayerInterface (This : in out WeaponLayer; sourceLayerInterface_Param : access AllBinaryLayer'Class) is
-      sourceLayerInterface : AllBinaryLayer_Access := AllBinaryLayer_Access (sourceLayerInterface_Param);
+   procedure setOwnerLayerInterface (This : in out WeaponLayer; sourceLayerInterface_Param : access AllBinaryLayer_Package.AllBinaryLayer'Class) is
+      sourceLayerInterface : constant AllBinaryLayer_Access := AllBinaryLayer_Access (sourceLayerInterface_Param);
    begin
         This.sourceLayerInterface := sourceLayerInterface;
    end setOwnerLayerInterface;
 
-   procedure paint (This : in out WeaponLayer; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paint (This : in out WeaponLayer; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       viewPosition : ViewPositionBase_Access;
    begin
         viewPosition := This.getViewPosition;
         This.animationInterface.paintXY (graphics, (viewPosition.getX) - (This.getHalfWidth), (viewPosition.getY) - (This.getHalfHeight));
    end paint;
 
-   procedure paintThreed (This : in out WeaponLayer; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure paintThreed (This : in out WeaponLayer; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       viewPosition : ViewPositionBase_Access;
    begin
         viewPosition := This.getViewPosition;
@@ -243,8 +243,8 @@ package body org.allbinary.game.layer.weapon.WeaponLayer_Package is
         return This.movement;
    end getMovement;
 
-   procedure setMovement (This : in out WeaponLayer; movement_Param : access Movement'Class) is
-      movement : Movement_Access := Movement_Access (movement_Param);
+   procedure setMovement (This : in out WeaponLayer; movement_Param : access Movement_Package.Movement'Class) is
+      movement : constant Movement_Access := Movement_Access (movement_Param);
    begin
         This.movement := movement;
    end setMovement;
@@ -264,8 +264,8 @@ package body org.allbinary.game.layer.weapon.WeaponLayer_Package is
         return This.multiPlayerType;
    end getMultiPlayerType;
 
-   procedure setWeaponPropertiesP (This : in out WeaponLayer; weaponProperties_Param : access WeaponProperties'Class) is
-      weaponProperties : WeaponProperties_Access := WeaponProperties_Access (weaponProperties_Param);
+   procedure setWeaponPropertiesP (This : in out WeaponLayer; weaponProperties_Param : access WeaponProperties_Package.WeaponProperties'Class) is
+      weaponProperties : constant WeaponProperties_Access := WeaponProperties_Access (weaponProperties_Param);
    begin
         This.weaponProperties := weaponProperties;
    end setWeaponPropertiesP;
@@ -281,8 +281,8 @@ package body org.allbinary.game.layer.weapon.WeaponLayer_Package is
    end implmentsTickableInterface;
 
    --  throws Exception
-   procedure set (This : in out WeaponLayer; gl_Param : access GL'Class) is
-      gl : GL_Access := GL_Access (gl_Param);
+   procedure set (This : in out WeaponLayer; gl_Param : access GL_Package.GL'Class) is
+      gl : constant GL_Access := GL_Access (gl_Param);
    begin
         This.initAnimationInterface.set (gl);
    end set;

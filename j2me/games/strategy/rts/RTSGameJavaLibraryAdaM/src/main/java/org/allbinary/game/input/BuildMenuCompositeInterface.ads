@@ -31,7 +31,7 @@ package org.allbinary.game.input.BuildMenuCompositeInterface_Package is
    type BuildMenuCompositeInterface_Access_Array is array (Natural range <>) of BuildMenuCompositeInterface_Access;
    type BuildMenuCompositeInterface_Access_Array_Access is access all BuildMenuCompositeInterface_Access_Array;
    function getCurrentScrollSelectionForm (This : in out BuildMenuCompositeInterface) return ScrollSelectionForm_Access is abstract;
-   procedure setCurrentScrollSelectionForm (This : in out BuildMenuCompositeInterface; currentScrollSelectionForm_Param : access ScrollSelectionForm'Class) is abstract;
+   procedure setCurrentScrollSelectionForm (This : in out BuildMenuCompositeInterface; currentScrollSelectionForm_Param : access ScrollSelectionForm_Package.ScrollSelectionForm'Class) is abstract;
    function getBuildingScrollSelectionForm (This : in out BuildMenuCompositeInterface) return ScrollSelectionForm_Access is abstract;
 
 end org.allbinary.game.input.BuildMenuCompositeInterface_Package;

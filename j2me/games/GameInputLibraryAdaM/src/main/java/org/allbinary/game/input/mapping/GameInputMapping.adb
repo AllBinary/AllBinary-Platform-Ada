@@ -23,23 +23,23 @@ package body org.allbinary.game.input.mapping.GameInputMapping_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out GameInputMapping'Class; name : Unbounded_String; gameKey_Param : access GameKey'Class) is
-      gameKey : GameKey_Access := GameKey_Access (gameKey_Param);
+   procedure Initialize (This : in out GameInputMapping'Class; name : Unbounded_String; gameKey_Param : access GameKey_Package.GameKey'Class) is
+      gameKey : constant GameKey_Access := GameKey_Access (gameKey_Param);
    begin
       Initialize_Fields (This);
         This.setName (name);
         This.setGameKey (gameKey);
    end Initialize;
 
-   function Create (name : Unbounded_String; gameKey_Param : access GameKey'Class) return GameInputMapping_Access is
+   function Create (name : Unbounded_String; gameKey_Param : access GameKey_Package.GameKey'Class) return GameInputMapping_Access is
       This : constant GameInputMapping_Access := new GameInputMapping;
    begin
       GameInputMapping_Package.Initialize (This.all, name, gameKey_Param);
       return This;
    end Create;
 
-   procedure setGameKey (This : in out GameInputMapping; gameKey_Param : access GameKey'Class) is
-      gameKey : GameKey_Access := GameKey_Access (gameKey_Param);
+   procedure setGameKey (This : in out GameInputMapping; gameKey_Param : access GameKey_Package.GameKey'Class) is
+      gameKey : constant GameKey_Access := GameKey_Access (gameKey_Param);
    begin
         This.gameKey := gameKey;
    end setGameKey;

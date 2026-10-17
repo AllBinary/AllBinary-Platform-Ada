@@ -38,26 +38,26 @@ package body org.allbinary.thread.PathFindingThreadPool_Package is
       return This;
    end Create;
 
-   procedure runTaskWithPriority (This : in out PathFindingThreadPool; task_Id_Param : access PriorityRunnable'Class) is
-      task_Id : PriorityRunnable_Access := PriorityRunnable_Access (task_Id_Param);
+   procedure runTaskWithPriority (This : in out PathFindingThreadPool; task_Id_Param : access PriorityRunnable_Package.PriorityRunnable'Class) is
+      task_Id : constant PriorityRunnable_Access := PriorityRunnable_Access (task_Id_Param);
    begin
         ThreadPool (This).runTaskWithPriority (task_Id);
    end runTaskWithPriority;
 
-   procedure runTask (This : in out PathFindingThreadPool; task_Id_Param : access Runnable'Class) is
-      task_Id : Runnable_Access := Runnable_Access (task_Id_Param);
+   procedure runTask (This : in out PathFindingThreadPool; task_Id_Param : access Runnable_Package.Runnable'Class) is
+      task_Id : constant Runnable_Access := Runnable_Access (task_Id_Param);
    begin
         ThreadPool (This).runTask (task_Id);
    end runTask;
 
-   procedure startTask (This : in out PathFindingThreadPool; task_Id_Param : access Runnable'Class) is
-      task_Id : Runnable_Access := Runnable_Access (task_Id_Param);
+   procedure startTask (This : in out PathFindingThreadPool; task_Id_Param : access Runnable_Package.Runnable'Class) is
+      task_Id : constant Runnable_Access := Runnable_Access (task_Id_Param);
    begin
         null;
    end startTask;
 
-   procedure completedTask (This : in out PathFindingThreadPool; task_Id_Param : access Runnable'Class) is
-      task_Id : Runnable_Access := Runnable_Access (task_Id_Param);
+   procedure completedTask (This : in out PathFindingThreadPool; task_Id_Param : access Runnable_Package.Runnable'Class) is
+      task_Id : constant Runnable_Access := Runnable_Access (task_Id_Param);
    begin
         null;
    end completedTask;

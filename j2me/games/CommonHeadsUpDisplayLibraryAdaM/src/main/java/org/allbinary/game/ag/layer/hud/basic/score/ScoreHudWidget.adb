@@ -27,22 +27,22 @@ package body org.allbinary.game.ag.layer.hud.basic.score.ScoreHudWidget_Package 
         return ScoreHudWidget_Package.Create (maxscore, location, direction, 2, BasicColorFactory_Package.getInstance.GREY);
    end getInstance;
 
-   procedure Initialize (This : in out ScoreHudWidget'Class; maxscore : Integer; location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor'Class) is
-      basicColor : BasicColor_Access := BasicColor_Access (basicColor_Param);
+   procedure Initialize (This : in out ScoreHudWidget'Class; maxscore : Integer; location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      basicColor : constant BasicColor_Access := BasicColor_Access (basicColor_Param);
    begin
         NumberStringHud_Package.Initialize (This, To_Unbounded_String ("Pts "), maxscore, location, direction, bufferZone, basicColor);
         This.updateMaxHeight := 14;
    end Initialize;
 
-   function Create (maxscore : Integer; location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor'Class) return ScoreHudWidget_Access is
+   function Create (maxscore : Integer; location : Integer; direction : Integer; bufferZone : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) return ScoreHudWidget_Access is
       This : constant ScoreHudWidget_Access := new ScoreHudWidget;
    begin
       ScoreHudWidget_Package.Initialize (This.all, maxscore, location, direction, bufferZone, basicColor_Param);
       return This;
    end Create;
 
-   procedure updateMeasurement (This : in out ScoreHudWidget; graphics_Param : access Graphics'Class) is
-      graphics : Graphics_Access := Graphics_Access (graphics_Param);
+   procedure updateMeasurement (This : in out ScoreHudWidget; graphics_Param : access Graphics_Package.Graphics'Class) is
+      graphics : constant Graphics_Access := Graphics_Access (graphics_Param);
       font : Font_Access;
    begin
         font := graphics.getFont;

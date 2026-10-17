@@ -75,8 +75,8 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeogr
         return This.EMPTY_CELL_TYPE.getType;
    end getEmptyType;
 
-   function isPath (This : in out RaceTrackGeographicMapCellTypeFactory; cellType_Param : access GeographicMapCellType'Class) return Boolean is
-      cellType : GeographicMapCellType_Access := GeographicMapCellType_Access (cellType_Param);
+   function isPath (This : in out RaceTrackGeographicMapCellTypeFactory; cellType_Param : access GeographicMapCellType_Package.GeographicMapCellType'Class) return Boolean is
+      cellType : constant GeographicMapCellType_Access := GeographicMapCellType_Access (cellType_Param);
    begin
         if ((cellType) /= (This.EMPTY_CELL_TYPE)) and then ((cellType) /= (This.EASY_CELL_TYPE)) then
             return True;
@@ -84,7 +84,7 @@ package body org.allbinary.media.graphics.geography.map.racetrack.RaceTrackGeogr
         return False;
    end isPath;
 
-   procedure isPath (This : in out RaceTrackGeographicMapCellTypeFactory; cellType_Param : access GeographicMapCellType'Class) is
+   procedure isPath (This : in out RaceTrackGeographicMapCellTypeFactory; cellType_Param : access GeographicMapCellType_Package.GeographicMapCellType'Class) is
       Java_Result : constant Boolean := RaceTrackGeographicMapCellTypeFactory'Class (This).isPath (cellType_Param);
       pragma Unreferenced (Java_Result);
    begin

@@ -34,9 +34,9 @@ package org.allbinary.graphics.opengles.shader.UniformCameraPositionOpenGLProces
 
    type UniformCameraPositionOpenGLProcessor is new OpenGLObject3dProcessor with null record;
 
-   procedure Initialize (This : in out UniformCameraPositionOpenGLProcessor'Class; shaderComposite_Param : access ShaderComposite'Class; handleIndex : Integer);
-   function Create (shaderComposite_Param : access ShaderComposite'Class; handleIndex : Integer) return UniformCameraPositionOpenGLProcessor_Access;
-   procedure process (This : in out UniformCameraPositionOpenGLProcessor; gl_Param : access GL10'Class; anyType_Param : access Java_Object'Class);
+   procedure Initialize (This : in out UniformCameraPositionOpenGLProcessor'Class; shaderComposite_Param : access ShaderComposite_Package.ShaderComposite'Class; handleIndex : Integer);
+   function Create (shaderComposite_Param : access ShaderComposite_Package.ShaderComposite'Class; handleIndex : Integer) return UniformCameraPositionOpenGLProcessor_Access;
+   procedure process (This : in out UniformCameraPositionOpenGLProcessor; gl_Param : access GL10_Package.GL10'Class; anyType_Param : access Java_Object'Class);
 
 end org.allbinary.graphics.opengles.shader.UniformCameraPositionOpenGLProcessor_Package;
 

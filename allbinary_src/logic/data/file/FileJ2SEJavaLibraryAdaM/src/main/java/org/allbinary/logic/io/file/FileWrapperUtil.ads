@@ -39,8 +39,8 @@ package org.allbinary.logic.io.file.FileWrapperUtil_Package is
    function Create return FileWrapperUtil_Access;
    function wrapFiles (files : Java_Object_Access_Array_Access) return AbFile_Access_Array_Access;
    procedure wrapFiles (files : Java_Object_Access_Array_Access);
-   function wrapFile (file_Param : access File'Class) return AbFile_Access;
-   procedure wrapFile (file_Param : access File'Class);
+   function wrapFile (file_Param : access File_Package.File'Class) return AbFile_Access;
+   procedure wrapFile (file_Param : access File_Package.File'Class);
 
 end org.allbinary.logic.io.file.FileWrapperUtil_Package;
 

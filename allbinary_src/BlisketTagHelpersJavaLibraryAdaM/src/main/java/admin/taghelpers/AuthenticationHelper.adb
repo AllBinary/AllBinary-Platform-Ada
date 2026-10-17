@@ -28,23 +28,23 @@ package body admin.taghelpers.AuthenticationHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AuthenticationHelper'Class; hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
-      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
+   procedure Initialize (This : in out AuthenticationHelper'Class; hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
+      pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
    begin
         Initialize (This, hashMap, HttpServletRequest_Access (pageContext.getRequest));
    end Initialize;
 
-   function Create (hashMap_Param : access HashMap'Class; pageContext_Param : access PageContext'Class) return AuthenticationHelper_Access is
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return AuthenticationHelper_Access is
       This : constant AuthenticationHelper_Access := new AuthenticationHelper;
    begin
       AuthenticationHelper_Package.Initialize (This.all, hashMap_Param, pageContext_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out AuthenticationHelper'Class; hashMap_Param : access HashMap'Class; httpServletRequest_Param : access HttpServletRequest'Class) is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
-      httpServletRequest : HttpServletRequest_Access := HttpServletRequest_Access (httpServletRequest_Param);
+   procedure Initialize (This : in out AuthenticationHelper'Class; hashMap_Param : access HashMap_Package.HashMap'Class; httpServletRequest_Param : access HttpServletRequest_Package.HttpServletRequest'Class) is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
+      httpServletRequest : constant HttpServletRequest_Access := HttpServletRequest_Access (httpServletRequest_Param);
    begin
       TagHelper_Package.Initialize (This);
       Initialize_Fields (This);
@@ -55,7 +55,7 @@ package body admin.taghelpers.AuthenticationHelper_Package is
         end if;
    end Initialize;
 
-   function Create (hashMap_Param : access HashMap'Class; httpServletRequest_Param : access HttpServletRequest'Class) return AuthenticationHelper_Access is
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class; httpServletRequest_Param : access HttpServletRequest_Package.HttpServletRequest'Class) return AuthenticationHelper_Access is
       This : constant AuthenticationHelper_Access := new AuthenticationHelper;
    begin
       AuthenticationHelper_Package.Initialize (This.all, hashMap_Param, httpServletRequest_Param);
@@ -212,8 +212,8 @@ package body admin.taghelpers.AuthenticationHelper_Package is
         end if;
    end isAuthenticated;
 
-   function isAuthenticationSessionValid (This : in out AuthenticationHelper; roles_Param : access BasicArrayList'Class) return Boolean is
-      roles : BasicArrayList_Access := BasicArrayList_Access (roles_Param);
+   function isAuthenticationSessionValid (This : in out AuthenticationHelper; roles_Param : access BasicArrayList_Package.BasicArrayList'Class) return Boolean is
+      roles : constant BasicArrayList_Access := BasicArrayList_Access (roles_Param);
       basicUserRole : BasicUserRole_Access;
       basicUserRoleArray : Java_Object_Access_Array_Access;
       size : Integer;
@@ -383,7 +383,7 @@ package body admin.taghelpers.AuthenticationHelper_Package is
         return This.role;
    end getRole;
 
-   procedure isAuthenticationSessionValid (This : in out AuthenticationHelper; roles_Param : access BasicArrayList'Class) is
+   procedure isAuthenticationSessionValid (This : in out AuthenticationHelper; roles_Param : access BasicArrayList_Package.BasicArrayList'Class) is
       Java_Result : constant Boolean := AuthenticationHelper'Class (This).isAuthenticationSessionValid (roles_Param);
       pragma Unreferenced (Java_Result);
    begin

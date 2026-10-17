@@ -57,14 +57,14 @@ package org.allbinary.data.tree.dom.DirectoryDataModel_Package is
       NO_TYPE : Integer;
    end record;
 
-   procedure Initialize (This : in out DirectoryDataModel'Class; file_Param : access AbFile'Class);
-   function Create (file_Param : access AbFile'Class) return DirectoryDataModel_Access;
+   procedure Initialize (This : in out DirectoryDataModel'Class; file_Param : access AbFile_Package.AbFile'Class);
+   function Create (file_Param : access AbFile_Package.AbFile'Class) return DirectoryDataModel_Access;
    function getTypeId (This : in out DirectoryDataModel) return Integer;
    function getTransformInfoInterface (This : in out DirectoryDataModel) return TransformInfoInterface_Access;
-   procedure setTransformDocumentInterface (This : in out DirectoryDataModel; transformDocumentInterface_Param : access TransformDocumentInterface'Class);
+   procedure setTransformDocumentInterface (This : in out DirectoryDataModel; transformDocumentInterface_Param : access TransformDocumentInterface_Package.TransformDocumentInterface'Class);
    function getTransformDocumentInterface (This : in out DirectoryDataModel) return TransformDocumentInterface_Access;
-   function toXmlNode (This : in out DirectoryDataModel; document_Param : access Document'Class) return Node_Access;
-   procedure toXmlNode (This : in out DirectoryDataModel; document_Param : access Document'Class);
+   function toXmlNode (This : in out DirectoryDataModel; document_Param : access Document_Package.Document'Class) return Node_Access;
+   procedure toXmlNode (This : in out DirectoryDataModel; document_Param : access Document_Package.Document'Class);
    function toXmlDoc (This : in out DirectoryDataModel) return Document_Access;
    function view (This : in out DirectoryDataModel) return Unbounded_String;
 

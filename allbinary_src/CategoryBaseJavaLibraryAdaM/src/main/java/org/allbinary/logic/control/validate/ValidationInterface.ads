@@ -33,7 +33,7 @@ package org.allbinary.logic.control.validate.ValidationInterface_Package is
    type ValidationInterface_Access_Array is array (Natural range <>) of ValidationInterface_Access;
    type ValidationInterface_Access_Array_Access is access all ValidationInterface_Access_Array;
    function isValid (This : in out ValidationInterface) return Boolean is abstract;
-   function toValidationInfoNode (This : in out ValidationInterface; document_Param : access Document'Class) return Node_Access is abstract;
+   function toValidationInfoNode (This : in out ValidationInterface; document_Param : access Document_Package.Document'Class) return Node_Access is abstract;
    function toValidationInfoDoc (This : in out ValidationInterface) return Document_Access is abstract;
    function validationInfo (This : in out ValidationInterface) return Unbounded_String is abstract;
 

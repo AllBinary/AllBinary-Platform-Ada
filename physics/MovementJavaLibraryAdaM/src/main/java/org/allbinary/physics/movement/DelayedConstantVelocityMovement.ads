@@ -44,10 +44,10 @@ package org.allbinary.physics.movement.DelayedConstantVelocityMovement_Package i
       timeDelayHelper : TimeDelayHelper_Access;
    end record;
 
-   procedure Initialize (This : in out DelayedConstantVelocityMovement'Class; basicDecimal_Param : access BasicDecimal'Class; velocityProperties_Param : access BasicVelocityProperties'Class);
-   function Create (basicDecimal_Param : access BasicDecimal'Class; velocityProperties_Param : access BasicVelocityProperties'Class) return DelayedConstantVelocityMovement_Access;
-   procedure init (This : in out DelayedConstantVelocityMovement; speedBasicDecimal_Param : access BasicDecimal'Class; angle : Integer; otherAngle : Integer);
-   procedure process (This : in out DelayedConstantVelocityMovement; layer_Param : access AllBinaryGameLayer'Class);
+   procedure Initialize (This : in out DelayedConstantVelocityMovement'Class; basicDecimal_Param : access BasicDecimal_Package.BasicDecimal'Class; velocityProperties_Param : access BasicVelocityProperties_Package.BasicVelocityProperties'Class);
+   function Create (basicDecimal_Param : access BasicDecimal_Package.BasicDecimal'Class; velocityProperties_Param : access BasicVelocityProperties_Package.BasicVelocityProperties'Class) return DelayedConstantVelocityMovement_Access;
+   procedure init (This : in out DelayedConstantVelocityMovement; speedBasicDecimal_Param : access BasicDecimal_Package.BasicDecimal'Class; angle : Integer; otherAngle : Integer);
+   procedure process (This : in out DelayedConstantVelocityMovement; layer_Param : access AllBinaryGameLayer_Package.AllBinaryGameLayer'Class);
 
 end org.allbinary.physics.movement.DelayedConstantVelocityMovement_Package;
 

@@ -23,8 +23,8 @@ package body views.business.context.HttpContextView_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out HttpContextView'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out HttpContextView'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         HttpComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
@@ -34,7 +34,7 @@ package body views.business.context.HttpContextView_Package is
         This.setTransformDocumentInterface (TransformHttpRequestDocumentFactory_Package.getInstance (This.getPageContext, This.getWeblisketSession));
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return HttpContextView_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return HttpContextView_Access is
       This : constant HttpContextView_Access := new HttpContextView;
    begin
       HttpContextView_Package.Initialize (This.all, transformInfoInterface_Param);

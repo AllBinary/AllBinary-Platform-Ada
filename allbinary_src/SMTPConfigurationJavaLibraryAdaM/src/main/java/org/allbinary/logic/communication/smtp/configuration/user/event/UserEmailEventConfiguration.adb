@@ -41,8 +41,8 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
       return This;
    end Create;
 
-   procedure Initialize (This : in out UserEmailEventConfiguration'Class; hashMap_Param : access HashMap'Class) is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+   procedure Initialize (This : in out UserEmailEventConfiguration'Class; hashMap_Param : access HashMap_Package.HashMap'Class) is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
    begin
       Initialize_Fields (This);
         This.setName (Unbounded_String (hashMap.get (UserEmailEventConfigurationData_Package.NAME)));
@@ -52,7 +52,7 @@ package body org.allbinary.logic.communication.smtp.configuration.user.event.Use
         end if;
    end Initialize;
 
-   function Create (hashMap_Param : access HashMap'Class) return UserEmailEventConfiguration_Access is
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return UserEmailEventConfiguration_Access is
       This : constant UserEmailEventConfiguration_Access := new UserEmailEventConfiguration;
    begin
       UserEmailEventConfiguration_Package.Initialize (This.all, hashMap_Param);

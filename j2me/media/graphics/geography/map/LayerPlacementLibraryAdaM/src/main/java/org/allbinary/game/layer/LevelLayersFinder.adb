@@ -39,8 +39,8 @@ package body org.allbinary.game.layer.LevelLayersFinder_Package is
         return LevelLayersFinder_Package.instance;
    end getInstance;
 
-   function get (This : in out LevelLayersFinder; hashtable_Param : access ABHashtable'Class) return BasicArrayList_Access is
-      hashtable : ABHashtable_Access := ABHashtable_Access (hashtable_Param);
+   function get (This : in out LevelLayersFinder; hashtable_Param : access ABHashtable_Package.ABHashtable'Class) return BasicArrayList_Access is
+      hashtable : constant ABHashtable_Access := ABHashtable_Access (hashtable_Param);
       smallIntegerSingletonFactory : SmallIntegerSingletonFactory_Access;
       list : BasicArrayList_Access;
       enumeration : Enumeration_Access;
@@ -65,7 +65,7 @@ package body org.allbinary.game.layer.LevelLayersFinder_Package is
         return list;
    end get;
 
-   procedure get (This : in out LevelLayersFinder; hashtable_Param : access ABHashtable'Class) is
+   procedure get (This : in out LevelLayersFinder; hashtable_Param : access ABHashtable_Package.ABHashtable'Class) is
       Java_Result : constant BasicArrayList_Access := LevelLayersFinder'Class (This).get (hashtable_Param);
       pragma Unreferenced (Java_Result);
    begin

@@ -22,14 +22,14 @@ package body org.allbinary.game.terrain.BasicTerrainInfo_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasicTerrainInfo'Class; angle_Param : access Angle'Class) is
-      angle : Angle_Access := Angle_Access (angle_Param);
+   procedure Initialize (This : in out BasicTerrainInfo'Class; angle_Param : access Angle_Package.Angle'Class) is
+      angle : constant Angle_Access := Angle_Access (angle_Param);
    begin
       Initialize_Fields (This);
         This.angle := angle;
    end Initialize;
 
-   function Create (angle_Param : access Angle'Class) return BasicTerrainInfo_Access is
+   function Create (angle_Param : access Angle_Package.Angle'Class) return BasicTerrainInfo_Access is
       This : constant BasicTerrainInfo_Access := new BasicTerrainInfo;
    begin
       BasicTerrainInfo_Package.Initialize (This.all, angle_Param);
@@ -41,8 +41,8 @@ package body org.allbinary.game.terrain.BasicTerrainInfo_Package is
         return This.angle;
    end getAngle;
 
-   procedure setAngle (This : in out BasicTerrainInfo; angle_Param : access Angle'Class) is
-      angle : Angle_Access := Angle_Access (angle_Param);
+   procedure setAngle (This : in out BasicTerrainInfo; angle_Param : access Angle_Package.Angle'Class) is
+      angle : constant Angle_Access := Angle_Access (angle_Param);
    begin
         This.angle := angle;
    end setAngle;

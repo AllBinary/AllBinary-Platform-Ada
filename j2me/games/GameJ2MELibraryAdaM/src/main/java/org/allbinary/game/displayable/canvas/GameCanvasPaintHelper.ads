@@ -37,10 +37,10 @@ package org.allbinary.game.displayable.canvas.GameCanvasPaintHelper_Package is
       gameCanvas : AllBinaryGameCanvas_Access;
    end record;
 
-   procedure Initialize (This : in out GameCanvasPaintHelper'Class; gameCanvas_Param : access AllBinaryGameCanvas'Class);
-   function Create (gameCanvas_Param : access AllBinaryGameCanvas'Class) return GameCanvasPaintHelper_Access;
+   procedure Initialize (This : in out GameCanvasPaintHelper'Class; gameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class);
+   function Create (gameCanvas_Param : access AllBinaryGameCanvas_Package.AllBinaryGameCanvas'Class) return GameCanvasPaintHelper_Access;
    procedure process (This : in out GameCanvasPaintHelper);
-   procedure paint (This : in out GameCanvasPaintHelper; graphics_Param : access Graphics'Class);
+   procedure paint (This : in out GameCanvasPaintHelper; graphics_Param : access Graphics_Package.Graphics'Class);
 
 end org.allbinary.game.displayable.canvas.GameCanvasPaintHelper_Package;
 

@@ -26,14 +26,14 @@ package body org.allbinary.logic.visual.transform.AbTransformer_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AbTransformer'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out AbTransformer'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
       Initialize_Fields (This);
         This.transformInfoInterface := transformInfoInterface;
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return AbTransformer_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return AbTransformer_Access is
       This : constant AbTransformer_Access := new AbTransformer;
    begin
       AbTransformer_Package.Initialize (This.all, transformInfoInterface_Param);
@@ -45,14 +45,14 @@ package body org.allbinary.logic.visual.transform.AbTransformer_Package is
         return This.transformInfoInterface;
    end getTransformInfoInterface;
 
-   procedure setInputStream (This : in out AbTransformer; inputStream_Param : access InputStream'Class) is
-      inputStream : InputStream_Access := InputStream_Access (inputStream_Param);
+   procedure setInputStream (This : in out AbTransformer; inputStream_Param : access InputStream_Package.InputStream'Class) is
+      inputStream : constant InputStream_Access := InputStream_Access (inputStream_Param);
    begin
         This.inputStream := inputStream;
    end setInputStream;
 
-   procedure setURIResolver (This : in out AbTransformer; uriResolver_Param : access URIResolver'Class) is
-      uriResolver : URIResolver_Access := URIResolver_Access (uriResolver_Param);
+   procedure setURIResolver (This : in out AbTransformer; uriResolver_Param : access URIResolver_Package.URIResolver'Class) is
+      uriResolver : constant URIResolver_Access := URIResolver_Access (uriResolver_Param);
    begin
         This.uriResolver := uriResolver;
    end setURIResolver;

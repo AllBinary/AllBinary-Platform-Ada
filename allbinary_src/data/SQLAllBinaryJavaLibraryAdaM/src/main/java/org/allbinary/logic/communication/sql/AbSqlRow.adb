@@ -36,14 +36,14 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AbSqlRow'Class; databaseConnectionInfoInterface_Param : access DbConnectionInfo'Class) is
-      databaseConnectionInfoInterface : DbConnectionInfo_Access := DbConnectionInfo_Access (databaseConnectionInfoInterface_Param);
+   procedure Initialize (This : in out AbSqlRow'Class; databaseConnectionInfoInterface_Param : access DbConnectionInfo_Package.DbConnectionInfo'Class) is
+      databaseConnectionInfoInterface : constant DbConnectionInfo_Access := DbConnectionInfo_Access (databaseConnectionInfoInterface_Param);
    begin
         AbSqlColumn_Package.Initialize (This, databaseConnectionInfoInterface);
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (databaseConnectionInfoInterface_Param : access DbConnectionInfo'Class) return AbSqlRow_Access is
+   function Create (databaseConnectionInfoInterface_Param : access DbConnectionInfo_Package.DbConnectionInfo'Class) return AbSqlRow_Access is
       This : constant AbSqlRow_Access := new AbSqlRow;
    begin
       AbSqlRow_Package.Initialize (This.all, databaseConnectionInfoInterface_Param);
@@ -59,8 +59,8 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
         end if;
    end getValue;
 
-   procedure updateWhere (This : in out AbSqlRow; key : Unbounded_String; value : Unbounded_String; updatedKeyValuePairs_Param : access HashMap'Class) is
-      updatedKeyValuePairs : HashMap_Access := HashMap_Access (updatedKeyValuePairs_Param);
+   procedure updateWhere (This : in out AbSqlRow; key : Unbounded_String; value : Unbounded_String; updatedKeyValuePairs_Param : access HashMap_Package.HashMap'Class) is
+      updatedKeyValuePairs : constant HashMap_Access := HashMap_Access (updatedKeyValuePairs_Param);
       stringBuffer : StringMaker_Access;
       keyArray : Java_Object_Access_Array_Access;
       size : Integer;
@@ -116,9 +116,9 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
    end updateWhere;
 
    --  throws Exception
-   procedure updateWhere (This : in out AbSqlRow; whereKeyValuePairs_Param : access HashMap'Class; updatedKeyValuePairs_Param : access HashMap'Class) is
-      whereKeyValuePairs : HashMap_Access := HashMap_Access (whereKeyValuePairs_Param);
-      updatedKeyValuePairs : HashMap_Access := HashMap_Access (updatedKeyValuePairs_Param);
+   procedure updateWhere (This : in out AbSqlRow; whereKeyValuePairs_Param : access HashMap_Package.HashMap'Class; updatedKeyValuePairs_Param : access HashMap_Package.HashMap'Class) is
+      whereKeyValuePairs : constant HashMap_Access := HashMap_Access (whereKeyValuePairs_Param);
+      updatedKeyValuePairs : constant HashMap_Access := HashMap_Access (updatedKeyValuePairs_Param);
       stringBuffer : StringMaker_Access;
       keyArray : Java_Object_Access_Array_Access;
       size : Integer;
@@ -225,8 +225,8 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
         end;
    end deleteWhere;
 
-   procedure deleteWhere (This : in out AbSqlRow; keysAndValues_Param : access HashMap'Class) is
-      keysAndValues : HashMap_Access := HashMap_Access (keysAndValues_Param);
+   procedure deleteWhere (This : in out AbSqlRow; keysAndValues_Param : access HashMap_Package.HashMap'Class) is
+      keysAndValues : constant HashMap_Access := HashMap_Access (keysAndValues_Param);
       stringBuffer : StringMaker_Access;
       set : Set_Access;
       keyArray : Java_Object_Access_Array_Access;
@@ -273,8 +273,8 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
         end;
    end deleteWhere;
 
-   procedure insert (This : in out AbSqlRow; values_Param : access BasicArrayList'Class) is
-      values : BasicArrayList_Access := BasicArrayList_Access (values_Param);
+   procedure insert (This : in out AbSqlRow; values_Param : access BasicArrayList_Package.BasicArrayList'Class) is
+      values : constant BasicArrayList_Access := BasicArrayList_Access (values_Param);
       stringBuffer : StringMaker_Access;
       value : Unbounded_String;
       i : Integer;
@@ -312,8 +312,8 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
         end;
    end insert;
 
-   function getRow (This : in out AbSqlRow; keysAndValues_Param : access HashMap'Class) return HashMap_Access is
-      keysAndValues : HashMap_Access := HashMap_Access (keysAndValues_Param);
+   function getRow (This : in out AbSqlRow; keysAndValues_Param : access HashMap_Package.HashMap'Class) return HashMap_Access is
+      keysAndValues : constant HashMap_Access := HashMap_Access (keysAndValues_Param);
       stringBuffer : StringMaker_Access;
       result : HashMap_Access;
       set : Set_Access;
@@ -385,14 +385,14 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
         end;
    end getRow;
 
-   function getRows (This : in out AbSqlRow; keysAndValues_Param : access HashMap'Class) return BasicArrayList_Access is
-      keysAndValues : HashMap_Access := HashMap_Access (keysAndValues_Param);
+   function getRows (This : in out AbSqlRow; keysAndValues_Param : access HashMap_Package.HashMap'Class) return BasicArrayList_Access is
+      keysAndValues : constant HashMap_Access := HashMap_Access (keysAndValues_Param);
    begin
         return This.getRows (keysAndValues, StringUtil_Package.getInstance.EMPTY_STRING);
    end getRows;
 
-   function getRows (This : in out AbSqlRow; keysAndValues_Param : access HashMap'Class; more : Unbounded_String) return BasicArrayList_Access is
-      keysAndValues : HashMap_Access := HashMap_Access (keysAndValues_Param);
+   function getRows (This : in out AbSqlRow; keysAndValues_Param : access HashMap_Package.HashMap'Class; more : Unbounded_String) return BasicArrayList_Access is
+      keysAndValues : constant HashMap_Access := HashMap_Access (keysAndValues_Param);
       stringBuffer : StringMaker_Access;
       rows : BasicArrayList_Access;
       set : Set_Access;
@@ -515,8 +515,8 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
         end;
    end getAllRows;
 
-   function getRowsWhereBetween (This : in out AbSqlRow; whereKeyValuePairs_Param : access HashMap'Class; betweenColumn : Unbounded_String; smallest : Unbounded_String; largest : Unbounded_String) return BasicArrayList_Access is
-      whereKeyValuePairs : HashMap_Access := HashMap_Access (whereKeyValuePairs_Param);
+   function getRowsWhereBetween (This : in out AbSqlRow; whereKeyValuePairs_Param : access HashMap_Package.HashMap'Class; betweenColumn : Unbounded_String; smallest : Unbounded_String; largest : Unbounded_String) return BasicArrayList_Access is
+      whereKeyValuePairs : constant HashMap_Access := HashMap_Access (whereKeyValuePairs_Param);
       stringBuffer : StringMaker_Access;
       rows : BasicArrayList_Access;
       set : Set_Access;
@@ -676,28 +676,28 @@ package body org.allbinary.logic.communication.sql.AbSqlRow_Package is
       null;
    end getValue;
 
-   procedure getRow (This : in out AbSqlRow; keysAndValues_Param : access HashMap'Class) is
+   procedure getRow (This : in out AbSqlRow; keysAndValues_Param : access HashMap_Package.HashMap'Class) is
       Java_Result : constant HashMap_Access := AbSqlRow'Class (This).getRow (keysAndValues_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRow;
 
-   procedure getRows (This : in out AbSqlRow; keysAndValues_Param : access HashMap'Class) is
+   procedure getRows (This : in out AbSqlRow; keysAndValues_Param : access HashMap_Package.HashMap'Class) is
       Java_Result : constant BasicArrayList_Access := AbSqlRow'Class (This).getRows (keysAndValues_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRows;
 
-   procedure getRows (This : in out AbSqlRow; keysAndValues_Param : access HashMap'Class; more : Unbounded_String) is
+   procedure getRows (This : in out AbSqlRow; keysAndValues_Param : access HashMap_Package.HashMap'Class; more : Unbounded_String) is
       Java_Result : constant BasicArrayList_Access := AbSqlRow'Class (This).getRows (keysAndValues_Param, more);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getRows;
 
-   procedure getRowsWhereBetween (This : in out AbSqlRow; whereKeyValuePairs_Param : access HashMap'Class; betweenColumn : Unbounded_String; smallest : Unbounded_String; largest : Unbounded_String) is
+   procedure getRowsWhereBetween (This : in out AbSqlRow; whereKeyValuePairs_Param : access HashMap_Package.HashMap'Class; betweenColumn : Unbounded_String; smallest : Unbounded_String; largest : Unbounded_String) is
       Java_Result : constant BasicArrayList_Access := AbSqlRow'Class (This).getRowsWhereBetween (whereKeyValuePairs_Param, betweenColumn, smallest, largest);
       pragma Unreferenced (Java_Result);
    begin

@@ -30,7 +30,7 @@ package org.allbinary.game.layer.SpriteFactoryInterface_Package is
    type SpriteFactoryInterface_Access is access all SpriteFactoryInterface'Class;
    type SpriteFactoryInterface_Access_Array is array (Natural range <>) of SpriteFactoryInterface_Access;
    type SpriteFactoryInterface_Access_Array_Access is access all SpriteFactoryInterface_Access_Array;
-   function createSprite (This : in out SpriteFactoryInterface; image_Param : access Image'Class; frameWidth : Integer; frameHeight : Integer) return Sprite_Access is abstract;
+   function createSprite (This : in out SpriteFactoryInterface; image_Param : access Image_Package.Image'Class; frameWidth : Integer; frameHeight : Integer) return Sprite_Access is abstract;
 
 end org.allbinary.game.layer.SpriteFactoryInterface_Package;
 

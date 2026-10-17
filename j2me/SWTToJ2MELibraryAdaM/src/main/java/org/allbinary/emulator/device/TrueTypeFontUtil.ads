@@ -78,11 +78,11 @@ package org.allbinary.emulator.device.TrueTypeFontUtil_Package is
    procedure Initialize (This : in out TrueTypeFontUtil'Class);
    function Create return TrueTypeFontUtil_Access;
    function getInstance return TrueTypeFontUtil_Access;
-   function getFontBitmapGL (This : in out TrueTypeFontUtil; gl_Param : access GL10'Class; filename : Unbounded_String; cellSize : Integer; basicColor_Param : access BasicColor'Class) return Image_Access;
-   procedure getFontBitmapGL (This : in out TrueTypeFontUtil; gl_Param : access GL10'Class; filename : Unbounded_String; cellSize : Integer; basicColor_Param : access BasicColor'Class);
+   function getFontBitmapGL (This : in out TrueTypeFontUtil; gl_Param : access GL10_Package.GL10'Class; filename : Unbounded_String; cellSize : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) return Image_Access;
+   procedure getFontBitmapGL (This : in out TrueTypeFontUtil; gl_Param : access GL10_Package.GL10'Class; filename : Unbounded_String; cellSize : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class);
    procedure saveFontAtlasAsFile (This : in out TrueTypeFontUtil);
-   function getFontBitmap (This : in out TrueTypeFontUtil; filename : Unbounded_String; cellSize : Integer; basicColor_Param : access BasicColor'Class) return Image_Access;
-   procedure getFontBitmap (This : in out TrueTypeFontUtil; filename : Unbounded_String; cellSize : Integer; basicColor_Param : access BasicColor'Class);
+   function getFontBitmap (This : in out TrueTypeFontUtil; filename : Unbounded_String; cellSize : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class) return Image_Access;
+   procedure getFontBitmap (This : in out TrueTypeFontUtil; filename : Unbounded_String; cellSize : Integer; basicColor_Param : access BasicColor_Package.BasicColor'Class);
    function getFontWidths (This : in out TrueTypeFontUtil; filename : Unbounded_String; fontSize : Integer) return Integer_Array_Access;
    procedure getFontWidths (This : in out TrueTypeFontUtil; filename : Unbounded_String; fontSize : Integer);
 

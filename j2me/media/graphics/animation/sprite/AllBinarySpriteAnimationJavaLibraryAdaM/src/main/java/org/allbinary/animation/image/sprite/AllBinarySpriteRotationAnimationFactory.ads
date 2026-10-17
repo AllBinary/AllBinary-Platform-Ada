@@ -51,26 +51,26 @@ package org.allbinary.animation.image.sprite.AllBinarySpriteRotationAnimationFac
       animationFactorySpriteScaleUtil : AnimationFactorySpriteScaleUtil_Access;
    end record;
 
-   procedure Initialize (This : in out AllBinarySpriteRotationAnimationFactory'Class; image_Param : access Image'Class; sequenceArray : Integer_Array_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class);
-   function Create (image_Param : access Image'Class; sequenceArray : Integer_Array_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return AllBinarySpriteRotationAnimationFactory_Access;
-   function createWHDY (image_Param : access Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return AllBinarySpriteRotationAnimationFactory_Access;
-   procedure createWHDY (image_Param : access Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class);
-   function createWH (image_Param : access Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return AllBinarySpriteRotationAnimationFactory_Access;
-   procedure createWH (image_Param : access Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class);
-   function createDXY (image_Param : access Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return AllBinarySpriteRotationAnimationFactory_Access;
-   procedure createDXY (image_Param : access Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class);
-   function createDXYQ (image_Param : access Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return AllBinarySpriteRotationAnimationFactory_Access;
-   procedure createDXYQ (image_Param : access Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class);
-   function createQ (image_Param : access Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return AllBinarySpriteRotationAnimationFactory_Access;
-   procedure createQ (image_Param : access Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class);
-   function createWHF (image_Param : access Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class) return AllBinarySpriteRotationAnimationFactory_Access;
-   procedure createWHF (image_Param : access Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory'Class);
+   procedure Initialize (This : in out AllBinarySpriteRotationAnimationFactory'Class; image_Param : access Image_Package.Image'Class; sequenceArray : Integer_Array_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class);
+   function Create (image_Param : access Image_Package.Image'Class; sequenceArray : Integer_Array_Access; width : Integer; height : Integer; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return AllBinarySpriteRotationAnimationFactory_Access;
+   function createWHDY (image_Param : access Image_Package.Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return AllBinarySpriteRotationAnimationFactory_Access;
+   procedure createWHDY (image_Param : access Image_Package.Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class);
+   function createWH (image_Param : access Image_Package.Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return AllBinarySpriteRotationAnimationFactory_Access;
+   procedure createWH (image_Param : access Image_Package.Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class);
+   function createDXY (image_Param : access Image_Package.Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return AllBinarySpriteRotationAnimationFactory_Access;
+   procedure createDXY (image_Param : access Image_Package.Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class);
+   function createDXYQ (image_Param : access Image_Package.Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return AllBinarySpriteRotationAnimationFactory_Access;
+   procedure createDXYQ (image_Param : access Image_Package.Image'Class; dx : Integer; dy : Integer; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class);
+   function createQ (image_Param : access Image_Package.Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return AllBinarySpriteRotationAnimationFactory_Access;
+   procedure createQ (image_Param : access Image_Package.Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class);
+   function createWHF (image_Param : access Image_Package.Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class) return AllBinarySpriteRotationAnimationFactory_Access;
+   procedure createWHF (image_Param : access Image_Package.Image'Class; animationBehaviorFactory_Param : access AnimationBehaviorFactory_Package.AnimationBehaviorFactory'Class);
    procedure init (This : in out AllBinarySpriteRotationAnimationFactory; dx : Integer; dy : Integer);
    procedure initWH (This : in out AllBinarySpriteRotationAnimationFactory; dx : Integer; dy : Integer);
    function getInstance (This : in out AllBinarySpriteRotationAnimationFactory; instanceId : Integer) return Animation_Access;
    procedure getInstance (This : in out AllBinarySpriteRotationAnimationFactory; instanceId : Integer);
-   function getInstanceAnimation (This : in out AllBinarySpriteRotationAnimationFactory; animationInterface_Param : access Animation'Class) return Animation_Access;
-   procedure getInstanceAnimation (This : in out AllBinarySpriteRotationAnimationFactory; animationInterface_Param : access Animation'Class);
+   function getInstanceAnimation (This : in out AllBinarySpriteRotationAnimationFactory; animationInterface_Param : access Animation_Package.Animation'Class) return Animation_Access;
+   procedure getInstanceAnimation (This : in out AllBinarySpriteRotationAnimationFactory; animationInterface_Param : access Animation_Package.Animation'Class);
 
 end org.allbinary.animation.image.sprite.AllBinarySpriteRotationAnimationFactory_Package;
 

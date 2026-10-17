@@ -35,8 +35,8 @@ package org.allbinary.input.automation.actions.script.condition.ProfileActionScr
    type ProfileActionScriptConditionInterface_Access is access all ProfileActionScriptConditionInterface'Class;
    type ProfileActionScriptConditionInterface_Access_Array is array (Natural range <>) of ProfileActionScriptConditionInterface_Access;
    type ProfileActionScriptConditionInterface_Access_Array_Access is access all ProfileActionScriptConditionInterface_Access_Array;
-   procedure addProcessor (This : in out ProfileActionScriptConditionInterface; profileActionProcessorInterface_Param : access ProfileActionScriptProcessorInterface'Class) is abstract;
-   procedure removeProcessor (This : in out ProfileActionScriptConditionInterface; profileActionProcessorInterface_Param : access ProfileActionScriptProcessorInterface'Class) is abstract;
+   procedure addProcessor (This : in out ProfileActionScriptConditionInterface; profileActionProcessorInterface_Param : access ProfileActionScriptProcessorInterface_Package.ProfileActionScriptProcessorInterface'Class) is abstract;
+   procedure removeProcessor (This : in out ProfileActionScriptConditionInterface; profileActionProcessorInterface_Param : access ProfileActionScriptProcessorInterface_Package.ProfileActionScriptProcessorInterface'Class) is abstract;
    function shouldProcess (This : in out ProfileActionScriptConditionInterface; frame : Long_Long_Integer) return Boolean is abstract;
 
 end org.allbinary.input.automation.actions.script.condition.ProfileActionScriptConditionInterface_Package;

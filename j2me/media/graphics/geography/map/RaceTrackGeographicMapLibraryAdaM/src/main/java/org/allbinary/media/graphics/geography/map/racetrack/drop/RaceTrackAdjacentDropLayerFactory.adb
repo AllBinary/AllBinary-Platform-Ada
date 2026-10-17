@@ -56,8 +56,8 @@ package body org.allbinary.media.graphics.geography.map.racetrack.drop.RaceTrack
         return LayerInterfaceFactoryInterface_Access (This.basicArrayListUtil.getRandom (This.list));
    end getRandomInstance;
 
-   procedure add (This : in out RaceTrackAdjacentDropLayerFactory; layerInterfaceFactoryInterface_Param : access LayerInterfaceFactoryInterface'Class) is
-      layerInterfaceFactoryInterface : LayerInterfaceFactoryInterface_Access := LayerInterfaceFactoryInterface_Access (layerInterfaceFactoryInterface_Param);
+   procedure add (This : in out RaceTrackAdjacentDropLayerFactory; layerInterfaceFactoryInterface_Param : access LayerInterfaceFactoryInterface_Package.LayerInterfaceFactoryInterface'Class) is
+      layerInterfaceFactoryInterface : constant LayerInterfaceFactoryInterface_Access := LayerInterfaceFactoryInterface_Access (layerInterfaceFactoryInterface_Param);
    begin
         This.list.add (layerInterfaceFactoryInterface);
    end add;

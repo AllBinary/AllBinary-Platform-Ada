@@ -38,8 +38,8 @@ package org.allbinary.input.automation.module.osgi.InputAutomationModuleServiceC
 
    type InputAutomationModuleServiceConsumer is new InputAutomationServiceConsumer with null record;
 
-   procedure Initialize (This : in out InputAutomationModuleServiceConsumer'Class; bundleContext_Param : access BundleContext'Class);
-   function Create (bundleContext_Param : access BundleContext'Class) return InputAutomationModuleServiceConsumer_Access;
+   procedure Initialize (This : in out InputAutomationModuleServiceConsumer'Class; bundleContext_Param : access BundleContext_Package.BundleContext'Class);
+   function Create (bundleContext_Param : access BundleContext_Package.BundleContext'Class) return InputAutomationModuleServiceConsumer_Access;
 
 end org.allbinary.input.automation.module.osgi.InputAutomationModuleServiceConsumer_Package;
 

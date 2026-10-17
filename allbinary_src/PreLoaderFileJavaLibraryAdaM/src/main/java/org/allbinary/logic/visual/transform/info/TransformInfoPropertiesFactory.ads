@@ -55,8 +55,8 @@ package org.allbinary.logic.visual.transform.info.TransformInfoPropertiesFactory
    procedure Initialize (This : in out TransformInfoPropertiesFactory'Class);
    function Create return TransformInfoPropertiesFactory_Access;
    function getInstance return TransformInfoPropertiesFactory_Access;
-   function getInstance (This : in out TransformInfoPropertiesFactory; node_Param : access Node'Class) return TransformInfoProperties_Access;
-   procedure getInstance (This : in out TransformInfoPropertiesFactory; node_Param : access Node'Class);
+   function getInstance (This : in out TransformInfoPropertiesFactory; node_Param : access Node_Package.Node'Class) return TransformInfoProperties_Access;
+   procedure getInstance (This : in out TransformInfoPropertiesFactory; node_Param : access Node_Package.Node'Class);
 
 end org.allbinary.logic.visual.transform.info.TransformInfoPropertiesFactory_Package;
 

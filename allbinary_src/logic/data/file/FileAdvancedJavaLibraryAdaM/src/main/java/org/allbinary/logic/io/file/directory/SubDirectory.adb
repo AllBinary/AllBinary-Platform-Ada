@@ -40,33 +40,33 @@ package body org.allbinary.logic.io.file.directory.SubDirectory_Package is
       return This;
    end Create;
 
-   function search (This : in out SubDirectory; fileFilter_Param : access FileFilter'Class; file_Param : access AbFile'Class) return BasicArrayList_Access is
-      fileFilter : FileFilter_Access := FileFilter_Access (fileFilter_Param);
-      file : AbFile_Access := AbFile_Access (file_Param);
+   function search (This : in out SubDirectory; fileFilter_Param : access FileFilter_Package.FileFilter'Class; file_Param : access AbFile_Package.AbFile'Class) return BasicArrayList_Access is
+      fileFilter : constant FileFilter_Access := FileFilter_Access (fileFilter_Param);
+      file : constant AbFile_Access := AbFile_Access (file_Param);
    begin
         return This.directory.search (fileFilter, file, True);
    end search;
 
-   function search (This : in out SubDirectory; file_Param : access AbFile'Class) return BasicArrayList_Access is
-      file : AbFile_Access := AbFile_Access (file_Param);
+   function search (This : in out SubDirectory; file_Param : access AbFile_Package.AbFile'Class) return BasicArrayList_Access is
+      file : constant AbFile_Access := AbFile_Access (file_Param);
    begin
         return This.directory.search (file, True);
    end search;
 
-   function search (This : in out SubDirectory; searchValue : Unbounded_String; file_Param : access AbFile'Class) return BasicArrayList_Access is
-      file : AbFile_Access := AbFile_Access (file_Param);
+   function search (This : in out SubDirectory; searchValue : Unbounded_String; file_Param : access AbFile_Package.AbFile'Class) return BasicArrayList_Access is
+      file : constant AbFile_Access := AbFile_Access (file_Param);
    begin
         return This.directory.search (searchValue, file, True);
    end search;
 
-   function search (This : in out SubDirectory; level : Integer; file_Param : access AbFile'Class) return BasicArrayList_Access is
-      file : AbFile_Access := AbFile_Access (file_Param);
+   function search (This : in out SubDirectory; level : Integer; file_Param : access AbFile_Package.AbFile'Class) return BasicArrayList_Access is
+      file : constant AbFile_Access := AbFile_Access (file_Param);
    begin
         return This.directory.search (level, file, True);
    end search;
 
-   function toString (files_Param : access BasicArrayList'Class) return Unbounded_String is
-      files : BasicArrayList_Access := BasicArrayList_Access (files_Param);
+   function toString (files_Param : access BasicArrayList_Package.BasicArrayList'Class) return Unbounded_String is
+      files : constant BasicArrayList_Access := BasicArrayList_Access (files_Param);
       stringBuffer : StringMaker_Access;
       NEW_LINE : Unbounded_String;
       size : Integer;
@@ -84,35 +84,35 @@ package body org.allbinary.logic.io.file.directory.SubDirectory_Package is
         return stringBuffer.toString;
    end toString;
 
-   procedure search (This : in out SubDirectory; fileFilter_Param : access FileFilter'Class; file_Param : access AbFile'Class) is
+   procedure search (This : in out SubDirectory; fileFilter_Param : access FileFilter_Package.FileFilter'Class; file_Param : access AbFile_Package.AbFile'Class) is
       Java_Result : constant BasicArrayList_Access := SubDirectory'Class (This).search (fileFilter_Param, file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end search;
 
-   procedure search (This : in out SubDirectory; file_Param : access AbFile'Class) is
+   procedure search (This : in out SubDirectory; file_Param : access AbFile_Package.AbFile'Class) is
       Java_Result : constant BasicArrayList_Access := SubDirectory'Class (This).search (file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end search;
 
-   procedure search (This : in out SubDirectory; searchValue : Unbounded_String; file_Param : access AbFile'Class) is
+   procedure search (This : in out SubDirectory; searchValue : Unbounded_String; file_Param : access AbFile_Package.AbFile'Class) is
       Java_Result : constant BasicArrayList_Access := SubDirectory'Class (This).search (searchValue, file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end search;
 
-   procedure search (This : in out SubDirectory; level : Integer; file_Param : access AbFile'Class) is
+   procedure search (This : in out SubDirectory; level : Integer; file_Param : access AbFile_Package.AbFile'Class) is
       Java_Result : constant BasicArrayList_Access := SubDirectory'Class (This).search (level, file_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end search;
 
-   procedure toString (files_Param : access BasicArrayList'Class) is
+   procedure toString (files_Param : access BasicArrayList_Package.BasicArrayList'Class) is
       Java_Result : constant Unbounded_String := toString (files_Param);
       pragma Unreferenced (Java_Result);
    begin

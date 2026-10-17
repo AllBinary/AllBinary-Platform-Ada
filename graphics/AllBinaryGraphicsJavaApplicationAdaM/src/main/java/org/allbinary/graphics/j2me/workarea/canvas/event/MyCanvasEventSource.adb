@@ -24,23 +24,23 @@ package body org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSour
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out MyCanvasEventSource'Class; command : Unbounded_String; treeNode_Param : access MutableTreeNode'Class) is
-      treeNode : MutableTreeNode_Access := MutableTreeNode_Access (treeNode_Param);
+   procedure Initialize (This : in out MyCanvasEventSource'Class; command : Unbounded_String; treeNode_Param : access MutableTreeNode_Package.MutableTreeNode'Class) is
+      treeNode : constant MutableTreeNode_Access := MutableTreeNode_Access (treeNode_Param);
    begin
       Initialize_Fields (This);
         This.command := command;
         This.treeNode := treeNode;
    end Initialize;
 
-   function Create (command : Unbounded_String; treeNode_Param : access MutableTreeNode'Class) return MyCanvasEventSource_Access is
+   function Create (command : Unbounded_String; treeNode_Param : access MutableTreeNode_Package.MutableTreeNode'Class) return MyCanvasEventSource_Access is
       This : constant MyCanvasEventSource_Access := new MyCanvasEventSource;
    begin
       MyCanvasEventSource_Package.Initialize (This.all, command, treeNode_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out MyCanvasEventSource'Class; command : Unbounded_String; angle : Long_Float; treeNode_Param : access MutableTreeNode'Class) is
-      treeNode : MutableTreeNode_Access := MutableTreeNode_Access (treeNode_Param);
+   procedure Initialize (This : in out MyCanvasEventSource'Class; command : Unbounded_String; angle : Long_Float; treeNode_Param : access MutableTreeNode_Package.MutableTreeNode'Class) is
+      treeNode : constant MutableTreeNode_Access := MutableTreeNode_Access (treeNode_Param);
    begin
       Initialize_Fields (This);
         This.command := command;
@@ -48,7 +48,7 @@ package body org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEventSour
         This.setAngle (angle);
    end Initialize;
 
-   function Create (command : Unbounded_String; angle : Long_Float; treeNode_Param : access MutableTreeNode'Class) return MyCanvasEventSource_Access is
+   function Create (command : Unbounded_String; angle : Long_Float; treeNode_Param : access MutableTreeNode_Package.MutableTreeNode'Class) return MyCanvasEventSource_Access is
       This : constant MyCanvasEventSource_Access := new MyCanvasEventSource;
    begin
       MyCanvasEventSource_Package.Initialize (This.all, command, angle, treeNode_Param);

@@ -57,10 +57,10 @@ package org.allbinary.logic.communication.http.request.AbeHttpRequestInfo_Packag
       requestedFilePath : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out AbeHttpRequestInfo'Class; hashMap_Param : access HashMap'Class);
-   function Create (hashMap_Param : access HashMap'Class) return AbeHttpRequestInfo_Access;
-   procedure Initialize (This : in out AbeHttpRequestInfo'Class; httpServletRequest_Param : access HttpServletRequest'Class);
-   function Create (httpServletRequest_Param : access HttpServletRequest'Class) return AbeHttpRequestInfo_Access;
+   procedure Initialize (This : in out AbeHttpRequestInfo'Class; hashMap_Param : access HashMap_Package.HashMap'Class);
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return AbeHttpRequestInfo_Access;
+   procedure Initialize (This : in out AbeHttpRequestInfo'Class; httpServletRequest_Param : access HttpServletRequest_Package.HttpServletRequest'Class);
+   function Create (httpServletRequest_Param : access HttpServletRequest_Package.HttpServletRequest'Class) return AbeHttpRequestInfo_Access;
    function toHashMap (This : in out AbeHttpRequestInfo) return HashMap_Access;
    function toVector (This : in out AbeHttpRequestInfo) return BasicArrayList_Access;
    function toString (This : in out AbeHttpRequestInfo) return Unbounded_String;

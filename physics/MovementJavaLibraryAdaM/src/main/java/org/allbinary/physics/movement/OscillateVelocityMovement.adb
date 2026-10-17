@@ -25,8 +25,8 @@ package body org.allbinary.physics.movement.OscillateVelocityMovement_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out OscillateVelocityMovement'Class; speedBasicDecimal_Param : access BasicDecimal'Class; oscillateMin : Integer; oscillateMax : Integer) is
-      speedBasicDecimal : BasicDecimal_Access := BasicDecimal_Access (speedBasicDecimal_Param);
+   procedure Initialize (This : in out OscillateVelocityMovement'Class; speedBasicDecimal_Param : access BasicDecimal_Package.BasicDecimal'Class; oscillateMin : Integer; oscillateMax : Integer) is
+      speedBasicDecimal : constant BasicDecimal_Access := BasicDecimal_Access (speedBasicDecimal_Param);
    begin
         BasicConstantVelocityMovement_Package.Initialize (This, speedBasicDecimal, VelocityProperties_Package.Create (Integer (speedBasicDecimal.getUnscaled), Integer (speedBasicDecimal.getUnscaled)));
         Initialize_Fields (This);
@@ -34,7 +34,7 @@ package body org.allbinary.physics.movement.OscillateVelocityMovement_Package is
         This.oscillateMax := oscillateMax;
    end Initialize;
 
-   function Create (speedBasicDecimal_Param : access BasicDecimal'Class; oscillateMin : Integer; oscillateMax : Integer) return OscillateVelocityMovement_Access is
+   function Create (speedBasicDecimal_Param : access BasicDecimal_Package.BasicDecimal'Class; oscillateMin : Integer; oscillateMax : Integer) return OscillateVelocityMovement_Access is
       This : constant OscillateVelocityMovement_Access := new OscillateVelocityMovement;
    begin
       OscillateVelocityMovement_Package.Initialize (This.all, speedBasicDecimal_Param, oscillateMin, oscillateMax);
@@ -42,8 +42,8 @@ package body org.allbinary.physics.movement.OscillateVelocityMovement_Package is
    end Create;
 
    --  throws Exception
-   procedure process (This : in out OscillateVelocityMovement; layer_Param : access AllBinaryGameLayer'Class) is
-      layer : AllBinaryGameLayer_Access := AllBinaryGameLayer_Access (layer_Param);
+   procedure process (This : in out OscillateVelocityMovement; layer_Param : access AllBinaryGameLayer_Package.AllBinaryGameLayer'Class) is
+      layer : constant AllBinaryGameLayer_Access := AllBinaryGameLayer_Access (layer_Param);
    begin
         BasicConstantVelocityMovement (This).process (layer);
         if (This.oscillate) < (This.oscillateMin) then

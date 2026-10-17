@@ -32,8 +32,8 @@ package org.allbinary.game.score.HighScoresFactoryInterface_Package is
    type HighScoresFactoryInterface_Access is access all HighScoresFactoryInterface'Class;
    type HighScoresFactoryInterface_Access_Array is array (Natural range <>) of HighScoresFactoryInterface_Access;
    type HighScoresFactoryInterface_Access_Array_Access is access all HighScoresFactoryInterface_Access_Array;
-   procedure fetchHighScores (This : in out HighScoresFactoryInterface; gameInfo_Param : access GameInfo'Class; highScoresResultsListener_Param : access HighScoresResultsListener'Class) is abstract;
-   procedure fetchHighScoresPreload (This : in out HighScoresFactoryInterface; gameInfo_Param : access GameInfo'Class; highScoresResultsListener_Param : access HighScoresResultsListener'Class; preload : Boolean) is abstract;
+   procedure fetchHighScores (This : in out HighScoresFactoryInterface; gameInfo_Param : access GameInfo_Package.GameInfo'Class; highScoresResultsListener_Param : access HighScoresResultsListener_Package.HighScoresResultsListener'Class) is abstract;
+   procedure fetchHighScoresPreload (This : in out HighScoresFactoryInterface; gameInfo_Param : access GameInfo_Package.GameInfo'Class; highScoresResultsListener_Param : access HighScoresResultsListener_Package.HighScoresResultsListener'Class; preload : Boolean) is abstract;
    function createHighScoresHelper (This : in out HighScoresFactoryInterface) return HighScoresHelperBaseInterface_Access is abstract;
 
 end org.allbinary.game.score.HighScoresFactoryInterface_Package;

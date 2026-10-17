@@ -27,8 +27,8 @@ package org.allbinary.graphics.form.item.ABCustomGaugeItem_Package is
    type ABCustomGaugeItem is new ABCustomItem with null record;
    NULL_GAUGE_ITEM : ABCustomGaugeItem_Access;
 
-   procedure Initialize (This : in out ABCustomGaugeItem'Class; label : Unbounded_String; maxValue : Integer; initialValue : Integer; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class);
-   function Create (label : Unbounded_String; maxValue : Integer; initialValue : Integer; backgroundBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return ABCustomGaugeItem_Access;
+   procedure Initialize (This : in out ABCustomGaugeItem'Class; label : Unbounded_String; maxValue : Integer; initialValue : Integer; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class);
+   function Create (label : Unbounded_String; maxValue : Integer; initialValue : Integer; backgroundBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return ABCustomGaugeItem_Access;
 
 end org.allbinary.graphics.form.item.ABCustomGaugeItem_Package;
 

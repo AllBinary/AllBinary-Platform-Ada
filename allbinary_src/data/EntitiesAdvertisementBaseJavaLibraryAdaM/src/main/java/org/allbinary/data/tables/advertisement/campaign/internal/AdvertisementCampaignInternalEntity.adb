@@ -93,8 +93,8 @@ package body org.allbinary.data.tables.advertisement.campaign.internal.Advertise
         end if;
    end get;
 
-   procedure update (This : in out AdvertisementCampaignInternalEntity; updatedValues_Param : access HashMap'Class) is
-      updatedValues : HashMap_Access := HashMap_Access (updatedValues_Param);
+   procedure update (This : in out AdvertisementCampaignInternalEntity; updatedValues_Param : access HashMap_Package.HashMap'Class) is
+      updatedValues : constant HashMap_Access := HashMap_Access (updatedValues_Param);
    begin
         AbSqlBean (This).updateWhere (EntryData_Package.getInstance.getInstance.ID, Unbounded_String (updatedValues.get (EntryData_Package.getInstance.getInstance.ID)), updatedValues);
    end update;

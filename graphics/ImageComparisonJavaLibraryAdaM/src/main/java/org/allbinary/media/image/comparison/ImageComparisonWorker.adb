@@ -28,8 +28,8 @@ package body org.allbinary.media.image.comparison.ImageComparisonWorker_Package 
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out ImageComparisonWorker'Class; imageComparatorConstraintsInterface_Param : access ImageComparatorConstraintsInterface'Class) is
-      imageComparatorConstraintsInterface : ImageComparatorConstraintsInterface_Access := ImageComparatorConstraintsInterface_Access (imageComparatorConstraintsInterface_Param);
+   procedure Initialize (This : in out ImageComparisonWorker'Class; imageComparatorConstraintsInterface_Param : access ImageComparatorConstraintsInterface_Package.ImageComparatorConstraintsInterface'Class) is
+      imageComparatorConstraintsInterface : constant ImageComparatorConstraintsInterface_Access := ImageComparatorConstraintsInterface_Access (imageComparatorConstraintsInterface_Param);
    begin
       BasicEventHandler_Package.Initialize (This);
       Initialize_Fields (This);
@@ -37,7 +37,7 @@ package body org.allbinary.media.image.comparison.ImageComparisonWorker_Package 
         This.imageComparator := ImageComparator_Package.Create (imageComparatorConstraintsInterface);
    end Initialize;
 
-   function Create (imageComparatorConstraintsInterface_Param : access ImageComparatorConstraintsInterface'Class) return ImageComparisonWorker_Access is
+   function Create (imageComparatorConstraintsInterface_Param : access ImageComparatorConstraintsInterface_Package.ImageComparatorConstraintsInterface'Class) return ImageComparisonWorker_Access is
       This : constant ImageComparisonWorker_Access := new ImageComparisonWorker;
    begin
       ImageComparisonWorker_Package.Initialize (This.all, imageComparatorConstraintsInterface_Param);
@@ -54,8 +54,8 @@ package body org.allbinary.media.image.comparison.ImageComparisonWorker_Package 
         This.running := running;
    end setRunning;
 
-   procedure onCaptureEvent (This : in out ImageComparisonWorker; capturedImageWorkerResultsEvent_Param : access CapturedImageWorkerResultsEvent'Class) is
-      capturedImageWorkerResultsEvent : CapturedImageWorkerResultsEvent_Access := CapturedImageWorkerResultsEvent_Access (capturedImageWorkerResultsEvent_Param);
+   procedure onCaptureEvent (This : in out ImageComparisonWorker; capturedImageWorkerResultsEvent_Param : access CapturedImageWorkerResultsEvent_Package.CapturedImageWorkerResultsEvent'Class) is
+      capturedImageWorkerResultsEvent : constant CapturedImageWorkerResultsEvent_Access := CapturedImageWorkerResultsEvent_Access (capturedImageWorkerResultsEvent_Param);
    begin
         This.bufferedImageVector.add (capturedImageWorkerResultsEvent);
         if (This.bufferedImageVector.size) > (1) then
@@ -63,8 +63,8 @@ package body org.allbinary.media.image.comparison.ImageComparisonWorker_Package 
         end if;
    end onCaptureEvent;
 
-   procedure onEvent (This : in out ImageComparisonWorker; allBinaryEventObject_Param : access AllBinaryEventObject'Class) is
-      allBinaryEventObject : AllBinaryEventObject_Access := AllBinaryEventObject_Access (allBinaryEventObject_Param);
+   procedure onEvent (This : in out ImageComparisonWorker; allBinaryEventObject_Param : access AllBinaryEventObject_Package.AllBinaryEventObject'Class) is
+      allBinaryEventObject : constant AllBinaryEventObject_Access := AllBinaryEventObject_Access (allBinaryEventObject_Param);
    begin
         This.onCaptureEvent (CapturedImageWorkerResultsEvent_Access (allBinaryEventObject));
    end onEvent;

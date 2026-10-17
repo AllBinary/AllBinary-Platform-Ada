@@ -47,10 +47,10 @@ package org.allbinary.logic.system.hardware.NoHardware_Package is
    function getComponent (This : in out NoHardware; index : Integer) return HardwareComponentInterface_Access;
    procedure getComponent (This : in out NoHardware; index : Integer);
    function toString (This : in out NoHardware) return Unbounded_String;
-   function compareTo (This : in out NoHardware; hardwareInterface_Param : access HardwareInterface'Class) return Boolean;
-   procedure compareTo (This : in out NoHardware; hardwareInterface_Param : access HardwareInterface'Class);
-   function difference (This : in out NoHardware; hardwareInterface_Param : access HardwareInterface'Class) return ABHashtable_Access;
-   procedure difference (This : in out NoHardware; hardwareInterface_Param : access HardwareInterface'Class);
+   function compareTo (This : in out NoHardware; hardwareInterface_Param : access HardwareInterface_Package.HardwareInterface'Class) return Boolean;
+   procedure compareTo (This : in out NoHardware; hardwareInterface_Param : access HardwareInterface_Package.HardwareInterface'Class);
+   function difference (This : in out NoHardware; hardwareInterface_Param : access HardwareInterface_Package.HardwareInterface'Class) return ABHashtable_Access;
+   procedure difference (This : in out NoHardware; hardwareInterface_Param : access HardwareInterface_Package.HardwareInterface'Class);
 
 end org.allbinary.logic.system.hardware.NoHardware_Package;
 

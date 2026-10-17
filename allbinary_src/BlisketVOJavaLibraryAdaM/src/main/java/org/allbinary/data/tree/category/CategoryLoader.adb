@@ -22,8 +22,8 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out CategoryLoader'Class; categoryFactoryInterface_Param : access CategoryFactoryInterface'Class) is
-      categoryFactoryInterface : CategoryFactoryInterface_Access := CategoryFactoryInterface_Access (categoryFactoryInterface_Param);
+   procedure Initialize (This : in out CategoryLoader'Class; categoryFactoryInterface_Param : access CategoryFactoryInterface_Package.CategoryFactoryInterface'Class) is
+      categoryFactoryInterface : constant CategoryFactoryInterface_Access := CategoryFactoryInterface_Access (categoryFactoryInterface_Param);
    begin
         CategoryModifierTree_Package.Initialize (This, categoryFactoryInterface);
         Initialize_Fields (This);
@@ -32,15 +32,15 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
         end if;
    end Initialize;
 
-   function Create (categoryFactoryInterface_Param : access CategoryFactoryInterface'Class) return CategoryLoader_Access is
+   function Create (categoryFactoryInterface_Param : access CategoryFactoryInterface_Package.CategoryFactoryInterface'Class) return CategoryLoader_Access is
       This : constant CategoryLoader_Access := new CategoryLoader;
    begin
       CategoryLoader_Package.Initialize (This.all, categoryFactoryInterface_Param);
       return This;
    end Create;
 
-   function getDoc (This : in out CategoryLoader; categoryInterface_Param : access CategoryInterface'Class) return Document_Access is
-      categoryInterface : CategoryInterface_Access := CategoryInterface_Access (categoryInterface_Param);
+   function getDoc (This : in out CategoryLoader; categoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class) return Document_Access is
+      categoryInterface : constant CategoryInterface_Access := CategoryInterface_Access (categoryInterface_Param);
       rootAbFile : AbFile_Access;
       fileAbPath : AbPath_Access;
       cryptFileReader : CryptFileReader_Access;
@@ -88,8 +88,8 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
         end;
    end getDoc;
 
-   function get (This : in out CategoryLoader; categoryInterface_Param : access CategoryInterface'Class) return CategoryInterface_Access is
-      categoryInterface : CategoryInterface_Access := CategoryInterface_Access (categoryInterface_Param);
+   function get (This : in out CategoryLoader; categoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class) return CategoryInterface_Access is
+      categoryInterface : constant CategoryInterface_Access := CategoryInterface_Access (categoryInterface_Param);
       document : Document_Access;
       categoryNode : Node_Access;
    begin
@@ -110,8 +110,8 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
         end;
    end get;
 
-   function get (This : in out CategoryLoader; document_Param : access Document'Class) return CategoryInterface_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function get (This : in out CategoryLoader; document_Param : access Document_Package.Document'Class) return CategoryInterface_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       categoryNode : Node_Access;
       loadedCategoryInterface : CategoryInterface_Access;
    begin
@@ -132,8 +132,8 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
         end;
    end get;
 
-   function getAll (This : in out CategoryLoader; categoryInterface_Param : access CategoryInterface'Class) return CategoryInterface_Access is
-      categoryInterface : CategoryInterface_Access := CategoryInterface_Access (categoryInterface_Param);
+   function getAll (This : in out CategoryLoader; categoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class) return CategoryInterface_Access is
+      categoryInterface : constant CategoryInterface_Access := CategoryInterface_Access (categoryInterface_Param);
       document : Document_Access;
    begin
         begin
@@ -152,8 +152,8 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
         end;
    end getAll;
 
-   function getAll (This : in out CategoryLoader; document_Param : access Document'Class) return CategoryInterface_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function getAll (This : in out CategoryLoader; document_Param : access Document_Package.Document'Class) return CategoryInterface_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       categoryNode : Node_Access;
       loadedCategoryInterface : CategoryInterface_Access;
    begin
@@ -174,9 +174,9 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
         end;
    end getAll;
 
-   function getAll (This : in out CategoryLoader; parentCategoryInterface_Param : access CategoryInterface'Class; categoryNodeList_Param : access NodeList'Class) return CategoryInterface_Access is
-      parentCategoryInterface : CategoryInterface_Access := CategoryInterface_Access (parentCategoryInterface_Param);
-      categoryNodeList : NodeList_Access := NodeList_Access (categoryNodeList_Param);
+   function getAll (This : in out CategoryLoader; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; categoryNodeList_Param : access NodeList_Package.NodeList'Class) return CategoryInterface_Access is
+      parentCategoryInterface : constant CategoryInterface_Access := CategoryInterface_Access (parentCategoryInterface_Param);
+      categoryNodeList : constant NodeList_Access := NodeList_Access (categoryNodeList_Param);
       categoryNode : Node_Access;
       categoryInterface : CategoryInterface_Access;
       index : Integer;
@@ -205,9 +205,9 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
         end;
    end getAll;
 
-   function addProperties (This : in out CategoryLoader; loadedCategoryInterface_Param : access CategoryInterface'Class; categoryNodeList_Param : access NodeList'Class) return CategoryInterface_Access is
-      loadedCategoryInterface : CategoryInterface_Access := CategoryInterface_Access (loadedCategoryInterface_Param);
-      categoryNodeList : NodeList_Access := NodeList_Access (categoryNodeList_Param);
+   function addProperties (This : in out CategoryLoader; loadedCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; categoryNodeList_Param : access NodeList_Package.NodeList'Class) return CategoryInterface_Access is
+      loadedCategoryInterface : constant CategoryInterface_Access := CategoryInterface_Access (loadedCategoryInterface_Param);
+      categoryNodeList : constant NodeList_Access := NodeList_Access (categoryNodeList_Param);
       categoryNode : Node_Access;
       categoryPropertiesInterface : CategoryPropertiesInterface_Access;
       index : Integer;
@@ -236,49 +236,49 @@ package body org.allbinary.data.tree.category.CategoryLoader_Package is
         end;
    end addProperties;
 
-   procedure getDoc (This : in out CategoryLoader; categoryInterface_Param : access CategoryInterface'Class) is
+   procedure getDoc (This : in out CategoryLoader; categoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class) is
       Java_Result : constant Document_Access := CategoryLoader'Class (This).getDoc (categoryInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getDoc;
 
-   procedure get (This : in out CategoryLoader; categoryInterface_Param : access CategoryInterface'Class) is
+   procedure get (This : in out CategoryLoader; categoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class) is
       Java_Result : constant CategoryInterface_Access := CategoryLoader'Class (This).get (categoryInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end get;
 
-   procedure get (This : in out CategoryLoader; document_Param : access Document'Class) is
+   procedure get (This : in out CategoryLoader; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant CategoryInterface_Access := CategoryLoader'Class (This).get (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end get;
 
-   procedure getAll (This : in out CategoryLoader; categoryInterface_Param : access CategoryInterface'Class) is
+   procedure getAll (This : in out CategoryLoader; categoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class) is
       Java_Result : constant CategoryInterface_Access := CategoryLoader'Class (This).getAll (categoryInterface_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getAll;
 
-   procedure getAll (This : in out CategoryLoader; document_Param : access Document'Class) is
+   procedure getAll (This : in out CategoryLoader; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant CategoryInterface_Access := CategoryLoader'Class (This).getAll (document_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getAll;
 
-   procedure getAll (This : in out CategoryLoader; parentCategoryInterface_Param : access CategoryInterface'Class; categoryNodeList_Param : access NodeList'Class) is
+   procedure getAll (This : in out CategoryLoader; parentCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; categoryNodeList_Param : access NodeList_Package.NodeList'Class) is
       Java_Result : constant CategoryInterface_Access := CategoryLoader'Class (This).getAll (parentCategoryInterface_Param, categoryNodeList_Param);
       pragma Unreferenced (Java_Result);
    begin
       null;
    end getAll;
 
-   procedure addProperties (This : in out CategoryLoader; loadedCategoryInterface_Param : access CategoryInterface'Class; categoryNodeList_Param : access NodeList'Class) is
+   procedure addProperties (This : in out CategoryLoader; loadedCategoryInterface_Param : access CategoryInterface_Package.CategoryInterface'Class; categoryNodeList_Param : access NodeList_Package.NodeList'Class) is
       Java_Result : constant CategoryInterface_Access := CategoryLoader'Class (This).addProperties (loadedCategoryInterface_Param, categoryNodeList_Param);
       pragma Unreferenced (Java_Result);
    begin

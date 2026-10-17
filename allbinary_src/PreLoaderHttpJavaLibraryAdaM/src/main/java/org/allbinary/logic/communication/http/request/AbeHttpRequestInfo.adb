@@ -30,8 +30,8 @@ package body org.allbinary.logic.communication.http.request.AbeHttpRequestInfo_P
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out AbeHttpRequestInfo'Class; hashMap_Param : access HashMap'Class) is
-      hashMap : HashMap_Access := HashMap_Access (hashMap_Param);
+   procedure Initialize (This : in out AbeHttpRequestInfo'Class; hashMap_Param : access HashMap_Package.HashMap'Class) is
+      hashMap : constant HashMap_Access := HashMap_Access (hashMap_Param);
       stringUtil : StringUtil_Access;
    begin
       Initialize_Fields (This);
@@ -44,15 +44,15 @@ package body org.allbinary.logic.communication.http.request.AbeHttpRequestInfo_P
         This.requestedFilePath := stringUtil.getNonNull (Unbounded_String (hashMap.get (This.abeHttpRequestInfoData.REQUEST_FILE_PATH)));
    end Initialize;
 
-   function Create (hashMap_Param : access HashMap'Class) return AbeHttpRequestInfo_Access is
+   function Create (hashMap_Param : access HashMap_Package.HashMap'Class) return AbeHttpRequestInfo_Access is
       This : constant AbeHttpRequestInfo_Access := new AbeHttpRequestInfo;
    begin
       AbeHttpRequestInfo_Package.Initialize (This.all, hashMap_Param);
       return This;
    end Create;
 
-   procedure Initialize (This : in out AbeHttpRequestInfo'Class; httpServletRequest_Param : access HttpServletRequest'Class) is
-      httpServletRequest : HttpServletRequest_Access := HttpServletRequest_Access (httpServletRequest_Param);
+   procedure Initialize (This : in out AbeHttpRequestInfo'Class; httpServletRequest_Param : access HttpServletRequest_Package.HttpServletRequest'Class) is
+      httpServletRequest : constant HttpServletRequest_Access := HttpServletRequest_Access (httpServletRequest_Param);
       stringUtil : StringUtil_Access;
       enumuration : Enumeration_Access;
       key : Unbounded_String;
@@ -76,7 +76,7 @@ package body org.allbinary.logic.communication.http.request.AbeHttpRequestInfo_P
         This.remotePort := To_Unbounded_String (Java_Image (httpServletRequest.getRemotePort));
    end Initialize;
 
-   function Create (httpServletRequest_Param : access HttpServletRequest'Class) return AbeHttpRequestInfo_Access is
+   function Create (httpServletRequest_Param : access HttpServletRequest_Package.HttpServletRequest'Class) return AbeHttpRequestInfo_Access is
       This : constant AbeHttpRequestInfo_Access := new AbeHttpRequestInfo;
    begin
       AbeHttpRequestInfo_Package.Initialize (This.all, httpServletRequest_Param);

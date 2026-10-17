@@ -21,10 +21,10 @@ package body org.allbinary.game.configuration.InGameOptionsForm_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out InGameOptionsForm'Class; commandListener_Param : access CommandListener'Class; title : Unbounded_String; backgrounBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) is
-      commandListener : CommandListener_Access := CommandListener_Access (commandListener_Param);
-      backgrounBasicColor : BasicColor_Access := BasicColor_Access (backgrounBasicColor_Param);
-      foregroundBasicColor : BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
+   procedure Initialize (This : in out InGameOptionsForm'Class; commandListener_Param : access CommandListener_Package.CommandListener'Class; title : Unbounded_String; backgrounBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) is
+      commandListener : constant CommandListener_Access := CommandListener_Access (commandListener_Param);
+      backgrounBasicColor : constant BasicColor_Access := BasicColor_Access (backgrounBasicColor_Param);
+      foregroundBasicColor : constant BasicColor_Access := BasicColor_Access (foregroundBasicColor_Param);
       gameFeatureFormUtil : GameFeatureFormUtil_Access;
    begin
         CommandForm_Package.Initialize (This, commandListener, title, backgrounBasicColor, foregroundBasicColor);
@@ -35,15 +35,15 @@ package body org.allbinary.game.configuration.InGameOptionsForm_Package is
         This.initCommands (commandListener);
    end Initialize;
 
-   function Create (commandListener_Param : access CommandListener'Class; title : Unbounded_String; backgrounBasicColor_Param : access BasicColor'Class; foregroundBasicColor_Param : access BasicColor'Class) return InGameOptionsForm_Access is
+   function Create (commandListener_Param : access CommandListener_Package.CommandListener'Class; title : Unbounded_String; backgrounBasicColor_Param : access BasicColor_Package.BasicColor'Class; foregroundBasicColor_Param : access BasicColor_Package.BasicColor'Class) return InGameOptionsForm_Access is
       This : constant InGameOptionsForm_Access := new InGameOptionsForm;
    begin
       InGameOptionsForm_Package.Initialize (This.all, commandListener_Param, title, backgrounBasicColor_Param, foregroundBasicColor_Param);
       return This;
    end Create;
 
-   procedure initCommands (This : in out InGameOptionsForm; cmdListener_Param : access CommandListener'Class) is
-      cmdListener : CommandListener_Access := CommandListener_Access (cmdListener_Param);
+   procedure initCommands (This : in out InGameOptionsForm; cmdListener_Param : access CommandListener_Package.CommandListener'Class) is
+      cmdListener : constant CommandListener_Access := CommandListener_Access (cmdListener_Param);
    begin
         This.removeAllCommands;
         This.addCommand (GameCommandsFactory_Package.getInstance.CLOSE_AND_SHOW_GAME_CANVAS);

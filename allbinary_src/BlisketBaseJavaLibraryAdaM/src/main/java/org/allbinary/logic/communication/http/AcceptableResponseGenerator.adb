@@ -41,8 +41,8 @@ package body org.allbinary.logic.communication.http.AcceptableResponseGenerator_
    end Create;
 
    --  throws Exception
-   function get (This : in out AcceptableResponseGenerator; httpServletRequest_Param : access HttpServletRequest'Class) return Unbounded_String is
-      httpServletRequest : HttpServletRequest_Access := HttpServletRequest_Access (httpServletRequest_Param);
+   function get (This : in out AcceptableResponseGenerator; httpServletRequest_Param : access HttpServletRequest_Package.HttpServletRequest'Class) return Unbounded_String is
+      httpServletRequest : constant HttpServletRequest_Access := HttpServletRequest_Access (httpServletRequest_Param);
       commonStrings : CommonStrings_Access;
       acceptableResponseUtil : AcceptableResponseUtil_Access;
       acceptable : Unbounded_String;
@@ -83,7 +83,7 @@ package body org.allbinary.logic.communication.http.AcceptableResponseGenerator_
         end;
    end get;
 
-   procedure get (This : in out AcceptableResponseGenerator; httpServletRequest_Param : access HttpServletRequest'Class) is
+   procedure get (This : in out AcceptableResponseGenerator; httpServletRequest_Param : access HttpServletRequest_Package.HttpServletRequest'Class) is
       Java_Result : constant Unbounded_String := AcceptableResponseGenerator'Class (This).get (httpServletRequest_Param);
       pragma Unreferenced (Java_Result);
    begin

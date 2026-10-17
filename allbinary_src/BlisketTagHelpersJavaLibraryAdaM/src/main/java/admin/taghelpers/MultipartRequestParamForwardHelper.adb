@@ -27,10 +27,10 @@ package body admin.taghelpers.MultipartRequestParamForwardHelper_Package is
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out MultipartRequestParamForwardHelper'Class; parentHelperTag_Param : access HelperTag'Class; page : Unbounded_String; command : Unbounded_String; paramVector_Param : access BasicArrayList'Class; pageContext_Param : access PageContext'Class) is
-      parentHelperTag : HelperTag_Access := HelperTag_Access (parentHelperTag_Param);
-      paramVector : BasicArrayList_Access := BasicArrayList_Access (paramVector_Param);
-      pageContext : PageContext_Access := PageContext_Access (pageContext_Param);
+   procedure Initialize (This : in out MultipartRequestParamForwardHelper'Class; parentHelperTag_Param : access HelperTag_Package.HelperTag'Class; page : Unbounded_String; command : Unbounded_String; paramVector_Param : access BasicArrayList_Package.BasicArrayList'Class; pageContext_Param : access PageContext_Package.PageContext'Class) is
+      parentHelperTag : constant HelperTag_Access := HelperTag_Access (parentHelperTag_Param);
+      paramVector : constant BasicArrayList_Access := BasicArrayList_Access (paramVector_Param);
+      pageContext : constant PageContext_Access := PageContext_Access (pageContext_Param);
    begin
       Initialize_Fields (This);
         This.pageContext := pageContext;
@@ -40,7 +40,7 @@ package body admin.taghelpers.MultipartRequestParamForwardHelper_Package is
         This.requestMapInterface := InventoryItemViewParentTagHelper_Package.getInstance.getRequestMapInterface (parentHelperTag);
    end Initialize;
 
-   function Create (parentHelperTag_Param : access HelperTag'Class; page : Unbounded_String; command : Unbounded_String; paramVector_Param : access BasicArrayList'Class; pageContext_Param : access PageContext'Class) return MultipartRequestParamForwardHelper_Access is
+   function Create (parentHelperTag_Param : access HelperTag_Package.HelperTag'Class; page : Unbounded_String; command : Unbounded_String; paramVector_Param : access BasicArrayList_Package.BasicArrayList'Class; pageContext_Param : access PageContext_Package.PageContext'Class) return MultipartRequestParamForwardHelper_Access is
       This : constant MultipartRequestParamForwardHelper_Access := new MultipartRequestParamForwardHelper;
    begin
       MultipartRequestParamForwardHelper_Package.Initialize (This.all, parentHelperTag_Param, page, command, paramVector_Param, pageContext_Param);

@@ -34,7 +34,7 @@ package org.allbinary.game.tracking.Tracking_Package is
 
    procedure Initialize (This : in out Tracking'Class);
    function Create return Tracking_Access;
-   procedure paint (This : in out Tracking; graphics_Param : access Graphics'Class);
+   procedure paint (This : in out Tracking; graphics_Param : access Graphics_Package.Graphics'Class);
 
 end org.allbinary.game.tracking.Tracking_Package;
 

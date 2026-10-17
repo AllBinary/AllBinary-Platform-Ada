@@ -115,12 +115,12 @@ package org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEnti
 
    procedure Initialize (This : in out OrderHistoryEntity'Class);
    function Create return OrderHistoryEntity_Access;
-   procedure insert (This : in out OrderHistoryEntity; userName : Unbounded_String; order_Param : access Order'Class);
-   procedure insert (This : in out OrderHistoryEntity; values_Param : access BasicArrayList'Class);
+   procedure insert (This : in out OrderHistoryEntity; userName : Unbounded_String; order_Param : access Order_Package.Order'Class);
+   procedure insert (This : in out OrderHistoryEntity; values_Param : access BasicArrayList_Package.BasicArrayList'Class);
    procedure setStatus (This : in out OrderHistoryEntity; orderId : Unbounded_String; status : Unbounded_String);
    procedure setPaymentMethod (This : in out OrderHistoryEntity; orderId : Unbounded_String; paymentMethod : Unbounded_String);
-   function getStoreOrders (This : in out OrderHistoryEntity; storeFrontInterface_Param : access StoreFrontInterface'Class) return BasicArrayList_Access;
-   procedure getStoreOrders (This : in out OrderHistoryEntity; storeFrontInterface_Param : access StoreFrontInterface'Class);
+   function getStoreOrders (This : in out OrderHistoryEntity; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class) return BasicArrayList_Access;
+   procedure getStoreOrders (This : in out OrderHistoryEntity; storeFrontInterface_Param : access StoreFrontInterface_Package.StoreFrontInterface'Class);
    function getOrders (This : in out OrderHistoryEntity; userName : Unbounded_String) return BasicArrayList_Access;
    procedure getOrders (This : in out OrderHistoryEntity; userName : Unbounded_String);
    function getOrders (This : in out OrderHistoryEntity; status : Unbounded_String; fromDate : Unbounded_String; toDate : Unbounded_String) return BasicArrayList_Access;
@@ -132,7 +132,7 @@ package org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEnti
    function createTableStatement (This : in out OrderHistoryEntity) return Unbounded_String;
    function createTable (This : in out OrderHistoryEntity) return Unbounded_String;
    function dropTable (This : in out OrderHistoryEntity) return Unbounded_String;
-   procedure update (This : in out OrderHistoryEntity; whereHashMap_Param : access HashMap'Class; orderHashMap_Param : access HashMap'Class);
+   procedure update (This : in out OrderHistoryEntity; whereHashMap_Param : access HashMap_Package.HashMap'Class; orderHashMap_Param : access HashMap_Package.HashMap'Class);
 
 end org.allbinary.data.tables.user.commerce.inventory.order.OrderHistoryEntity_Package;
 

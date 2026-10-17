@@ -91,8 +91,8 @@ package body org.allbinary.logic.communication.smtp.Email_Package is
    end init;
 
    --  throws MessagingException
-   procedure init (This : in out Email; server : Unbounded_String; authenticator_Param : access Authenticator'Class; addresses_from : InternetAddress_Access_Array_Access; addresses_to : InternetAddress_Access_Array_Access; addresses_cc : InternetAddress_Access_Array_Access; addresses_bcc : InternetAddress_Access_Array_Access; subject : Unbounded_String; mimeBodyParts : MimeBodyPart_Access_Array_Access) is
-      authenticator : Authenticator_Access := Authenticator_Access (authenticator_Param);
+   procedure init (This : in out Email; server : Unbounded_String; authenticator_Param : access Authenticator_Package.Authenticator'Class; addresses_from : InternetAddress_Access_Array_Access; addresses_to : InternetAddress_Access_Array_Access; addresses_cc : InternetAddress_Access_Array_Access; addresses_bcc : InternetAddress_Access_Array_Access; subject : Unbounded_String; mimeBodyParts : MimeBodyPart_Access_Array_Access) is
+      authenticator : constant Authenticator_Access := Authenticator_Access (authenticator_Param);
       hostName : Unbounded_String;
       session : Session_Access;
       printStream : PrintStream_Access;
@@ -221,8 +221,8 @@ package body org.allbinary.logic.communication.smtp.Email_Package is
    end toHashMap;
 
    --  throws Exception
-   function toXmlNode (This : in out Email; document_Param : access Document'Class) return Node_Access is
-      document : Document_Access := Document_Access (document_Param);
+   function toXmlNode (This : in out Email; document_Param : access Document_Package.Document'Class) return Node_Access is
+      document : constant Document_Access := Document_Access (document_Param);
       node : Node_Access;
    begin
         node := ModDomHelper_Package.createNameValueNodes (document, EmailData_Package.NAME, This.toHashMap);
@@ -235,7 +235,7 @@ package body org.allbinary.logic.communication.smtp.Email_Package is
         Java_Throw (Java_New_Exception ("Exception", CommonStrings_Package.getInstance.NOT_IMPLEMENTED));
    end toXmlDoc;
 
-   procedure toXmlNode (This : in out Email; document_Param : access Document'Class) is
+   procedure toXmlNode (This : in out Email; document_Param : access Document_Package.Document'Class) is
       Java_Result : constant Node_Access := Email'Class (This).toXmlNode (document_Param);
       pragma Unreferenced (Java_Result);
    begin

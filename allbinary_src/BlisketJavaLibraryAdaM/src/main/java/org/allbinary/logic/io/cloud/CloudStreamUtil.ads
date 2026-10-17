@@ -44,12 +44,12 @@ package org.allbinary.logic.io.CloudStreamUtil_Package is
    procedure Initialize (This : in out CloudStreamUtil'Class);
    function Create return CloudStreamUtil_Access;
    function getInstance return CloudStreamUtil_Access;
-   function getFile (This : in out CloudStreamUtil; file_Param : access AbFile'Class) return InputStream_Access;
-   procedure getFile (This : in out CloudStreamUtil; file_Param : access AbFile'Class);
-   function getFileAnyWhere (This : in out CloudStreamUtil; file_Param : access AbFile'Class) return InputStream_Access;
-   procedure getFileAnyWhere (This : in out CloudStreamUtil; file_Param : access AbFile'Class);
-   function getFileLocal (This : in out CloudStreamUtil; file_Param : access AbFile'Class) return InputStream_Access;
-   procedure getFileLocal (This : in out CloudStreamUtil; file_Param : access AbFile'Class);
+   function getFile (This : in out CloudStreamUtil; file_Param : access AbFile_Package.AbFile'Class) return InputStream_Access;
+   procedure getFile (This : in out CloudStreamUtil; file_Param : access AbFile_Package.AbFile'Class);
+   function getFileAnyWhere (This : in out CloudStreamUtil; file_Param : access AbFile_Package.AbFile'Class) return InputStream_Access;
+   procedure getFileAnyWhere (This : in out CloudStreamUtil; file_Param : access AbFile_Package.AbFile'Class);
+   function getFileLocal (This : in out CloudStreamUtil; file_Param : access AbFile_Package.AbFile'Class) return InputStream_Access;
+   procedure getFileLocal (This : in out CloudStreamUtil; file_Param : access AbFile_Package.AbFile'Class);
 
 end org.allbinary.logic.io.CloudStreamUtil_Package;
 

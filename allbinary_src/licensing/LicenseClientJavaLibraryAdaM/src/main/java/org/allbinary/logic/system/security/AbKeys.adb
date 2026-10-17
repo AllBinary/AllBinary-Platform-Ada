@@ -41,8 +41,8 @@ package body org.allbinary.logic.system.security.AbKeys_Package is
    end Create;
 
    --  throws LicensingException
-   function getKey (This : in out AbKeys; abeClientInformation_Param : access AbeClientInformationInterface'Class; keyName : Unbounded_String) return Unbounded_String is
-      abeClientInformation : AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
+   function getKey (This : in out AbKeys; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; keyName : Unbounded_String) return Unbounded_String is
+      abeClientInformation : constant AbeClientInformationInterface_Access := AbeClientInformationInterface_Access (abeClientInformation_Param);
    begin
         begin
             This.logUtil.putF (To_Unbounded_String ("Getting Key: ") & keyName, AbKeys_Access'(This'Unchecked_Access), To_Unbounded_String ("getKey"));
@@ -60,7 +60,7 @@ package body org.allbinary.logic.system.security.AbKeys_Package is
         end;
    end getKey;
 
-   procedure getKey (This : in out AbKeys; abeClientInformation_Param : access AbeClientInformationInterface'Class; keyName : Unbounded_String) is
+   procedure getKey (This : in out AbKeys; abeClientInformation_Param : access AbeClientInformationInterface_Package.AbeClientInformationInterface'Class; keyName : Unbounded_String) is
       Java_Result : constant Unbounded_String := AbKeys'Class (This).getKey (abeClientInformation_Param, keyName);
       pragma Unreferenced (Java_Result);
    begin

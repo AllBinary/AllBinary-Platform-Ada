@@ -41,11 +41,11 @@ package org.allbinary.logic.communication.smtp.info.EmailInfo_Package is
       contentBase : Unbounded_String;
    end record;
 
-   procedure Initialize (This : in out EmailInfo'Class; basicEmailInfo_Param : access BasicEmailInfo'Class);
-   function Create (basicEmailInfo_Param : access BasicEmailInfo'Class) return EmailInfo_Access;
-   procedure Initialize (This : in out EmailInfo'Class; basicEmailInfo_Param : access BasicEmailInfo'Class; htmlAttachment : Unbounded_String; contentBase : Unbounded_String);
-   function Create (basicEmailInfo_Param : access BasicEmailInfo'Class; htmlAttachment : Unbounded_String; contentBase : Unbounded_String) return EmailInfo_Access;
-   procedure init (This : in out EmailInfo; basicEmailInfo_Param : access BasicEmailInfo'Class; htmlAttachment : Unbounded_String; contentBase : Unbounded_String);
+   procedure Initialize (This : in out EmailInfo'Class; basicEmailInfo_Param : access BasicEmailInfo_Package.BasicEmailInfo'Class);
+   function Create (basicEmailInfo_Param : access BasicEmailInfo_Package.BasicEmailInfo'Class) return EmailInfo_Access;
+   procedure Initialize (This : in out EmailInfo'Class; basicEmailInfo_Param : access BasicEmailInfo_Package.BasicEmailInfo'Class; htmlAttachment : Unbounded_String; contentBase : Unbounded_String);
+   function Create (basicEmailInfo_Param : access BasicEmailInfo_Package.BasicEmailInfo'Class; htmlAttachment : Unbounded_String; contentBase : Unbounded_String) return EmailInfo_Access;
+   procedure init (This : in out EmailInfo; basicEmailInfo_Param : access BasicEmailInfo_Package.BasicEmailInfo'Class; htmlAttachment : Unbounded_String; contentBase : Unbounded_String);
    function getBasicEmailInfo (This : in out EmailInfo) return BasicEmailInfo_Access;
    function getHtmlAttachment (This : in out EmailInfo) return Unbounded_String;
    function getContentBase (This : in out EmailInfo) return Unbounded_String;

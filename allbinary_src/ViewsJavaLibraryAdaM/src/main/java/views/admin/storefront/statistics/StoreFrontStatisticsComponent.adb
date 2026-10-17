@@ -24,8 +24,8 @@ package body views.admin.storefront.statistics.StoreFrontStatisticsComponent_Pac
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out StoreFrontStatisticsComponent'Class; transformInfoInterface_Param : access TransformInfoInterface'Class) is
-      transformInfoInterface : TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
+   procedure Initialize (This : in out StoreFrontStatisticsComponent'Class; transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) is
+      transformInfoInterface : constant TransformInfoInterface_Access := TransformInfoInterface_Access (transformInfoInterface_Param);
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
         Initialize_Fields (This);
@@ -33,7 +33,7 @@ package body views.admin.storefront.statistics.StoreFrontStatisticsComponent_Pac
         This.domNodeInterface := RealTimeStoreFrontStatisticsView_Package.Create (RealTimeStoreFrontStatistics_Package.Create (This.newStoreFrontInterface), This.getWeblisketSession.getRole);
    end Initialize;
 
-   function Create (transformInfoInterface_Param : access TransformInfoInterface'Class) return StoreFrontStatisticsComponent_Access is
+   function Create (transformInfoInterface_Param : access TransformInfoInterface_Package.TransformInfoInterface'Class) return StoreFrontStatisticsComponent_Access is
       This : constant StoreFrontStatisticsComponent_Access := new StoreFrontStatisticsComponent;
    begin
       StoreFrontStatisticsComponent_Package.Initialize (This.all, transformInfoInterface_Param);

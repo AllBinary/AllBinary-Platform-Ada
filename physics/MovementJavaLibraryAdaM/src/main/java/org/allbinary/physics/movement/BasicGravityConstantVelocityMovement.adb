@@ -22,14 +22,14 @@ package body org.allbinary.physics.movement.BasicGravityConstantVelocityMovement
    end Initialize_Fields;
 
 
-   procedure Initialize (This : in out BasicGravityConstantVelocityMovement'Class; speedBasicDecimal_Param : access BasicDecimal'Class) is
-      speedBasicDecimal : BasicDecimal_Access := BasicDecimal_Access (speedBasicDecimal_Param);
+   procedure Initialize (This : in out BasicGravityConstantVelocityMovement'Class; speedBasicDecimal_Param : access BasicDecimal_Package.BasicDecimal'Class) is
+      speedBasicDecimal : constant BasicDecimal_Access := BasicDecimal_Access (speedBasicDecimal_Param);
    begin
         BasicConstantVelocityMovement_Package.Initialize (This, speedBasicDecimal, VelocityProperties_Package.Create (Integer (speedBasicDecimal.getUnscaled), Integer (speedBasicDecimal.getUnscaled)));
         Initialize_Fields (This);
    end Initialize;
 
-   function Create (speedBasicDecimal_Param : access BasicDecimal'Class) return BasicGravityConstantVelocityMovement_Access is
+   function Create (speedBasicDecimal_Param : access BasicDecimal_Package.BasicDecimal'Class) return BasicGravityConstantVelocityMovement_Access is
       This : constant BasicGravityConstantVelocityMovement_Access := new BasicGravityConstantVelocityMovement;
    begin
       BasicGravityConstantVelocityMovement_Package.Initialize (This.all, speedBasicDecimal_Param);
@@ -37,8 +37,8 @@ package body org.allbinary.physics.movement.BasicGravityConstantVelocityMovement
    end Create;
 
    --  throws Exception
-   procedure process (This : in out BasicGravityConstantVelocityMovement; layer_Param : access AllBinaryGameLayer'Class) is
-      layer : AllBinaryGameLayer_Access := AllBinaryGameLayer_Access (layer_Param);
+   procedure process (This : in out BasicGravityConstantVelocityMovement; layer_Param : access AllBinaryGameLayer_Package.AllBinaryGameLayer'Class) is
+      layer : constant AllBinaryGameLayer_Access := AllBinaryGameLayer_Access (layer_Param);
    begin
         BasicConstantVelocityMovement (This).process (layer);
         This.gravityUtil.process (This.getVelocityProperties, This.gravityUtil.GAME_GRAVITY_VELOCITY);
