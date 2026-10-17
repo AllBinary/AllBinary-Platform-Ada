@@ -49,6 +49,10 @@ package org.allbinary.logic.visual.transform.template.customizer.includes.style.
 
    procedure Initialize (This : in out EditCssStyleValidation'Class);
    function Create return EditCssStyleValidation_Access;
+   procedure Initialize (This : in out EditCssStyleValidation'Class; document : Document_Access);
+   function Create (document : Document_Access) return EditCssStyleValidation_Access;
+   procedure Initialize (This : in out EditCssStyleValidation'Class; hashMap : HashMap_Access);
+   function Create (hashMap : HashMap_Access) return EditCssStyleValidation_Access;
    function isValid (This : in out EditCssStyleValidation) return Boolean;
    function validationInfo (This : in out EditCssStyleValidation) return Unbounded_String;
    function toValidationInfoDoc (This : in out EditCssStyleValidation) return Document_Access;

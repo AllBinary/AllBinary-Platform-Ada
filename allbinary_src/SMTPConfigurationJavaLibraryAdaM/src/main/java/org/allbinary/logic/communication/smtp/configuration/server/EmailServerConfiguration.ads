@@ -47,6 +47,10 @@ package org.allbinary.logic.communication.smtp.configuration.server.EmailServerC
 
    procedure Initialize (This : in out EmailServerConfiguration'Class);
    function Create return EmailServerConfiguration_Access;
+   procedure Initialize (This : in out EmailServerConfiguration'Class; hashMap : HashMap_Access);
+   function Create (hashMap : HashMap_Access) return EmailServerConfiguration_Access;
+   procedure Initialize (This : in out EmailServerConfiguration'Class; account : Unbounded_String; password : Unbounded_String; server : Unbounded_String);
+   function Create (account : Unbounded_String; password : Unbounded_String; server : Unbounded_String) return EmailServerConfiguration_Access;
    procedure setSmtpServer (This : in out EmailServerConfiguration; value : Unbounded_String);
    function getSmtpServer (This : in out EmailServerConfiguration) return Unbounded_String;
    function getAccountName (This : in out EmailServerConfiguration) return Unbounded_String;

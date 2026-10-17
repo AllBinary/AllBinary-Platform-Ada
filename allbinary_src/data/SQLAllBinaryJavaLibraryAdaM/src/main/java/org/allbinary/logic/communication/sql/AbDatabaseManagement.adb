@@ -46,7 +46,6 @@ package body org.allbinary.logic.communication.sql.AbDatabaseManagement_Package 
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out AbDatabaseManagement'Class; connectionInfo : DbConnectionInfo_Access) is
    begin
         AbSqlBean_Package.Initialize (This, connectionInfo);

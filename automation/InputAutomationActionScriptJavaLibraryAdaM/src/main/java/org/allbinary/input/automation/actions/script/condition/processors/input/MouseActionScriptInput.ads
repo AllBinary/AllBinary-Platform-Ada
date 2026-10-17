@@ -67,6 +67,8 @@ package org.allbinary.input.automation.actions.script.condition.processors.input
 
    procedure Initialize (This : in out MouseActionScriptInput'Class; node : Node_Access);
    function Create (node : Node_Access) return MouseActionScriptInput_Access;
+   procedure Initialize (This : in out MouseActionScriptInput'Class);
+   function Create return MouseActionScriptInput_Access;
    procedure setPoint (This : in out MouseActionScriptInput; point : Point_Access);
    function getPoint (This : in out MouseActionScriptInput) return Point_Access;
    function getButtonClicks (This : in out MouseActionScriptInput) return Integer;

@@ -35,6 +35,8 @@ package org.allbinary.business.init.db.HistoryDbInitInfo_Package is
 
    procedure Initialize (This : in out HistoryDbInitInfo'Class);
    function Create return HistoryDbInitInfo_Access;
+   procedure Initialize (This : in out HistoryDbInitInfo'Class; read : Boolean);
+   function Create (read : Boolean) return HistoryDbInitInfo_Access;
 
 end org.allbinary.business.init.db.HistoryDbInitInfo_Package;
 

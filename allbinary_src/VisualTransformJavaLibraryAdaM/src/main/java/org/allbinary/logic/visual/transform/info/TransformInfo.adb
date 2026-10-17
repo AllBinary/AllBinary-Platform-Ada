@@ -48,7 +48,6 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out TransformInfo'Class; name : Unbounded_String) is
    begin
       Initialize_Fields (This);
@@ -62,7 +61,6 @@ package body org.allbinary.logic.visual.transform.info.TransformInfo_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out TransformInfo'Class; name : Unbounded_String; objectFileName : Unbounded_String; objectConfigFileName : Unbounded_String; templateFileName : Unbounded_String; dataFileName : Unbounded_String) is
    begin
       Initialize_Fields (This);

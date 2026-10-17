@@ -33,7 +33,6 @@ package body org.allbinary.business.time.created.TimeCreated_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out TimeCreated'Class; time : Long_Long_Integer) is
    begin
         Time_Package.Initialize (This, time);

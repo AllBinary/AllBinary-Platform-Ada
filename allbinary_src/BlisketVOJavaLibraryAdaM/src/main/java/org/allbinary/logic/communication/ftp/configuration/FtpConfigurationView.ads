@@ -52,6 +52,8 @@ package org.allbinary.logic.communication.ftp.configuration.FtpConfigurationView
 
    procedure Initialize (This : in out FtpConfigurationView'Class; node : Node_Access);
    function Create (node : Node_Access) return FtpConfigurationView_Access;
+   procedure Initialize (This : in out FtpConfigurationView'Class; ftpConfigurationInterface : FtpConfigurationInterface_Access);
+   function Create (ftpConfigurationInterface : FtpConfigurationInterface_Access) return FtpConfigurationView_Access;
    function toXmlNode (This : in out FtpConfigurationView; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out FtpConfigurationView; document : Document_Access);
    function getFtpConfigurationInterface (This : in out FtpConfigurationView) return FtpConfigurationInterface_Access;

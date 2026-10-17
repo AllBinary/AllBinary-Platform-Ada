@@ -46,7 +46,6 @@ package body tags.transform.info.TransformInfoTag_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out TransformInfoTag'Class; tagHelperFactoryInterface : TagHelperFactoryInterface_Access) is
    begin
         ModifyTag_Package.Initialize (This, tagHelperFactoryInterface);

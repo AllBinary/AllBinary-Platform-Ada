@@ -37,7 +37,6 @@ package body org.allbinary.data.tables.category.CategoryEntity_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out CategoryEntity'Class) is
    begin
         AbSqlBean_Package.Initialize (This, InventoryDbInitInfo_Package.Create);

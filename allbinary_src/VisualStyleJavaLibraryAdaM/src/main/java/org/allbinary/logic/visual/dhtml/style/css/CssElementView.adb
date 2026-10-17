@@ -48,7 +48,6 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementView_Package i
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out CssElementView'Class; node : Node_Access) is
       valueNode : Node_Access;
       titleValueNode : Node_Access;

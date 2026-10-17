@@ -50,6 +50,10 @@ package org.allbinary.logic.visual.transform.template.customizer.widgets.title.T
 
    procedure Initialize (This : in out TitleValidation'Class);
    function Create return TitleValidation_Access;
+   procedure Initialize (This : in out TitleValidation'Class; node : Node_Access);
+   function Create (node : Node_Access) return TitleValidation_Access;
+   procedure Initialize (This : in out TitleValidation'Class; hashMap : HashMap_Access);
+   function Create (hashMap : HashMap_Access) return TitleValidation_Access;
    function isValid (This : in out TitleValidation) return Boolean;
    function validationInfo (This : in out TitleValidation) return Unbounded_String;
    function toValidationInfoDoc (This : in out TitleValidation) return Document_Access;

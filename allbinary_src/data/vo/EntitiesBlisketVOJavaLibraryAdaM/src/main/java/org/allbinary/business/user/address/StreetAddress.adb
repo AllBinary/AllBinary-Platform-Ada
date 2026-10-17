@@ -43,7 +43,6 @@ package body org.allbinary.business.user.address.StreetAddress_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out StreetAddress'Class; node : Node_Access) is
       nameNode : Node_Access;
       streetNode : Node_Access;
@@ -75,7 +74,6 @@ package body org.allbinary.business.user.address.StreetAddress_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out StreetAddress'Class; streetAddress : StreetAddress_Access) is
    begin
       Initialize_Fields (This);
@@ -97,7 +95,6 @@ package body org.allbinary.business.user.address.StreetAddress_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out StreetAddress'Class; request : HttpServletRequest_Access) is
    begin
       Initialize_Fields (This);
@@ -118,7 +115,6 @@ package body org.allbinary.business.user.address.StreetAddress_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out StreetAddress'Class; name : Unbounded_String; street : Unbounded_String; city : Unbounded_String; state : Unbounded_String; code : Unbounded_String; country : Unbounded_String) is
    begin
       Initialize_Fields (This);
@@ -138,7 +134,6 @@ package body org.allbinary.business.user.address.StreetAddress_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out StreetAddress'Class; address : HashMap_Access) is
       def : Unbounded_String;
    begin

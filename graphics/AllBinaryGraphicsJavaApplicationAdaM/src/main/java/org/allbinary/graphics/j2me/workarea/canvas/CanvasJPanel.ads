@@ -124,6 +124,8 @@ package org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
 
    procedure Initialize (This : in out CanvasJPanel'Class; workAreaJTreeJPanel : WorkAreaJTreeJPanel_Access; dimension : Dimension_Access; x : Integer; y : Integer);
    function Create (workAreaJTreeJPanel : WorkAreaJTreeJPanel_Access; dimension : Dimension_Access; x : Integer; y : Integer) return CanvasJPanel_Access;
+   procedure Initialize (This : in out CanvasJPanel'Class; workAreaJTreeJPanel : WorkAreaJTreeJPanel_Access; dimension : Dimension_Access; canvasDom : CanvasDom_Access);
+   function Create (workAreaJTreeJPanel : WorkAreaJTreeJPanel_Access; dimension : Dimension_Access; canvasDom : CanvasDom_Access) return CanvasJPanel_Access;
    procedure initMyComponents (This : in out CanvasJPanel);
    function getTreeNode (This : in out CanvasJPanel) return MutableTreeNode_Access;
    procedure initComponents (This : in out CanvasJPanel);

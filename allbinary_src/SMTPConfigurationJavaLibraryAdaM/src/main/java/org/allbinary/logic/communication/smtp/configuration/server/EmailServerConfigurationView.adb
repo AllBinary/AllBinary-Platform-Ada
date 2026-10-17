@@ -43,7 +43,6 @@ package body org.allbinary.logic.communication.smtp.configuration.server.EmailSe
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out EmailServerConfigurationView'Class; emailServerConfigurationInterface : EmailServerConfigurationInterface_Access) is
    begin
       Initialize_Fields (This);

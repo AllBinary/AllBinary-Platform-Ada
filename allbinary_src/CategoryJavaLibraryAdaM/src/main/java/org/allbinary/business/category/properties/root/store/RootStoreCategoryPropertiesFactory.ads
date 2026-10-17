@@ -52,6 +52,12 @@ package org.allbinary.business.category.properties.root.store.RootStoreCategoryP
 
    procedure Initialize (This : in out RootStoreCategoryPropertiesFactory'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return RootStoreCategoryPropertiesFactory_Access;
+   procedure Initialize (This : in out RootStoreCategoryPropertiesFactory'Class; transformInfoInterface : TransformInfoInterface_Access; abPath : AbPath_Access);
+   function Create (transformInfoInterface : TransformInfoInterface_Access; abPath : AbPath_Access) return RootStoreCategoryPropertiesFactory_Access;
+   procedure Initialize (This : in out RootStoreCategoryPropertiesFactory'Class; transformInfoInterface : TransformInfoInterface_Access; node : Node_Access);
+   function Create (transformInfoInterface : TransformInfoInterface_Access; node : Node_Access) return RootStoreCategoryPropertiesFactory_Access;
+   procedure Initialize (This : in out RootStoreCategoryPropertiesFactory'Class; transformInfoInterface : TransformInfoInterface_Access; categoryPropertiesHashMap : HashMap_Access);
+   function Create (transformInfoInterface : TransformInfoInterface_Access; categoryPropertiesHashMap : HashMap_Access) return RootStoreCategoryPropertiesFactory_Access;
    function getInstance (This : in out RootStoreCategoryPropertiesFactory) return CategoryPropertiesInterface_Access;
 
 end org.allbinary.business.category.properties.root.store.RootStoreCategoryPropertiesFactory_Package;

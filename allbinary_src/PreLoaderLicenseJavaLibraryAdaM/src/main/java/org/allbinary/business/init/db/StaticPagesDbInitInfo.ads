@@ -35,6 +35,8 @@ package org.allbinary.business.init.db.StaticPagesDbInitInfo_Package is
 
    procedure Initialize (This : in out StaticPagesDbInitInfo'Class);
    function Create return StaticPagesDbInitInfo_Access;
+   procedure Initialize (This : in out StaticPagesDbInitInfo'Class; read : Boolean);
+   function Create (read : Boolean) return StaticPagesDbInitInfo_Access;
 
 end org.allbinary.business.init.db.StaticPagesDbInitInfo_Package;
 

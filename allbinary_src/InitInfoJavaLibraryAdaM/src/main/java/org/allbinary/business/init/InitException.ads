@@ -34,6 +34,8 @@ package org.allbinary.business.init.InitException_Package is
 
    procedure Initialize (This : in out InitException'Class);
    function Create return InitException_Access;
+   procedure Initialize (This : in out InitException'Class; msg : Unbounded_String);
+   function Create (msg : Unbounded_String) return InitException_Access;
 
 end org.allbinary.business.init.InitException_Package;
 

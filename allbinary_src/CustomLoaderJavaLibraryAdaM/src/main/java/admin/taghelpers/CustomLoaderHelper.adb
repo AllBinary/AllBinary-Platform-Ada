@@ -36,7 +36,6 @@ package body admin.taghelpers.CustomLoaderHelper_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out CustomLoaderHelper'Class) is
    begin
       Initialize_Fields (This);

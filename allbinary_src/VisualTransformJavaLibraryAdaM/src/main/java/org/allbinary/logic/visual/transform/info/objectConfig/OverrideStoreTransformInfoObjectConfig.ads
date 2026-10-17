@@ -40,6 +40,10 @@ package org.allbinary.logic.visual.transform.info.objectConfig.OverrideStoreTran
 
    procedure Initialize (This : in out OverrideStoreTransformInfoObjectConfig'Class; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access);
    function Create (abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access) return OverrideStoreTransformInfoObjectConfig_Access;
+   procedure Initialize (This : in out OverrideStoreTransformInfoObjectConfig'Class; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access; document : Document_Access);
+   function Create (abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access; document : Document_Access) return OverrideStoreTransformInfoObjectConfig_Access;
+   procedure Initialize (This : in out OverrideStoreTransformInfoObjectConfig'Class; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access; name : Unbounded_String; type_Id : Unbounded_String);
+   function Create (abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access; name : Unbounded_String; type_Id : Unbounded_String) return OverrideStoreTransformInfoObjectConfig_Access;
    function generate (This : in out OverrideStoreTransformInfoObjectConfig; objectConfigDocument : Document_Access) return Document_Access;
    procedure generate (This : in out OverrideStoreTransformInfoObjectConfig; objectConfigDocument : Document_Access);
 

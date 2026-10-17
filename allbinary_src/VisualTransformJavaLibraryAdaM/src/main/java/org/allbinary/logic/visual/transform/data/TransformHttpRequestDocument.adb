@@ -65,7 +65,6 @@ package body org.allbinary.logic.visual.transform.data.TransformHttpRequestDocum
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out TransformHttpRequestDocument'Class; searchRequest : SearchRequest_Access) is
       contentType : Unbounded_String;
       contentTypeNode : Node_Access;

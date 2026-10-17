@@ -76,6 +76,8 @@ package org.allbinary.input.automation.actions.script.condition.processors.input
 
    procedure Initialize (This : in out KeyboardActionScriptInput'Class; node : Node_Access);
    function Create (node : Node_Access) return KeyboardActionScriptInput_Access;
+   procedure Initialize (This : in out KeyboardActionScriptInput'Class);
+   function Create return KeyboardActionScriptInput_Access;
    function getDelayBetweenKeys (This : in out KeyboardActionScriptInput) return Integer;
    procedure setDelayBetweenKeys (This : in out KeyboardActionScriptInput; delayBetweenKeys : Integer);
    function isPress (This : in out KeyboardActionScriptInput) return Boolean;

@@ -63,6 +63,8 @@ package org.allbinary.logic.visual.transform.data.TransformHttpRequestDocument_P
 
    procedure Initialize (This : in out TransformHttpRequestDocument'Class; pageContext : PageContext_Access; weblisketSession : WeblisketSession_Access);
    function Create (pageContext : PageContext_Access; weblisketSession : WeblisketSession_Access) return TransformHttpRequestDocument_Access;
+   procedure Initialize (This : in out TransformHttpRequestDocument'Class; searchRequest : SearchRequest_Access);
+   function Create (searchRequest : SearchRequest_Access) return TransformHttpRequestDocument_Access;
    function getBaseNode (This : in out TransformHttpRequestDocument) return Node_Access;
    function getDoc (This : in out TransformHttpRequestDocument) return Document_Access;
    function log (This : in out TransformHttpRequestDocument) return Unbounded_String;

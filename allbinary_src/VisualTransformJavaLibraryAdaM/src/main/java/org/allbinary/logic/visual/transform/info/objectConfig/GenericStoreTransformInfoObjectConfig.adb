@@ -37,7 +37,6 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.GenericStore
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out GenericStoreTransformInfoObjectConfig'Class; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access; document : Document_Access) is
    begin
         TransformInfoObjectConfig_Package.Initialize (This, transformInfoInterface, document);
@@ -53,7 +52,6 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.GenericStore
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out GenericStoreTransformInfoObjectConfig'Class; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access; name : Unbounded_String; type_Id : Unbounded_String) is
    begin
         TransformInfoObjectConfig_Package.Initialize (This, transformInfoInterface, name, type_Id);

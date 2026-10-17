@@ -78,6 +78,8 @@ package org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package is
 
    procedure Initialize (This : in out CanvasDom'Class; canvasNode : Node_Access);
    function Create (canvasNode : Node_Access) return CanvasDom_Access;
+   procedure Initialize (This : in out CanvasDom'Class; canvasJPanel : CanvasJPanel_Access);
+   function Create (canvasJPanel : CanvasJPanel_Access) return CanvasDom_Access;
    function getAngle (This : in out CanvasDom) return Long_Float;
    function getGraphicItemHashMap (This : in out CanvasDom) return HashMap_Access;
    procedure setAngle (This : in out CanvasDom; angle : Long_Float);

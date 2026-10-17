@@ -47,7 +47,6 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderHistory_P
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out OrderHistory'Class; basketInterface : BasketInterface_Access; orderHistory : OrderHistory_Access) is
    begin
         Order_Package.Initialize (This, orderHistory.getStoreName, basketInterface, orderHistory.getId, orderHistory.getShippingMethod, orderHistory.getSpecial, orderHistory.getPaymentMethod);
@@ -78,7 +77,6 @@ package body org.allbinary.business.user.commerce.inventory.order.OrderHistory_P
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out OrderHistory'Class; basketInterface : BasketInterface_Access; orderHistoryHashMap : HashMap_Access) is
    begin
         Order_Package.Initialize (This, Unbounded_String (orderHistoryHashMap.get (StoreFrontData_Package.getInstance.NAME)), basketInterface, Unbounded_String (orderHistoryHashMap.get (OrderData_Package.ID)), Unbounded_String (orderHistoryHashMap.get (ShippingMethodData_Package.NAME)), Unbounded_String (orderHistoryHashMap.get (EntryData_Package.getInstance.SPECIAL)), Unbounded_String (orderHistoryHashMap.get (PaymentData_Package.METHOD)));

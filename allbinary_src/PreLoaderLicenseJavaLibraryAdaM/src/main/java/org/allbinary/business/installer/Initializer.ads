@@ -98,6 +98,8 @@ package org.allbinary.business.installer.Initializer_Package is
 
    procedure Initialize (This : in out Initializer'Class; map : Map_Access);
    function Create (map : Map_Access) return Initializer_Access;
+   procedure Initialize (This : in out Initializer'Class; initHashMap : HashMap_Access);
+   function Create (initHashMap : HashMap_Access) return Initializer_Access;
    procedure getFormData (This : in out Initializer; hashMap : HashMap_Access);
    function isJdbcDriverValid (This : in out Initializer; jdbcDriverClassPathString : Unbounded_String) return Boolean;
    procedure isJdbcDriverValid (This : in out Initializer; jdbcDriverClassPathString : Unbounded_String);

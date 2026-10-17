@@ -66,6 +66,8 @@ package org.allbinary.data.tables.user.address.StreetAddressesEntity_Package is
 
    procedure Initialize (This : in out StreetAddressesEntity'Class);
    function Create return StreetAddressesEntity_Access;
+   procedure Initialize (This : in out StreetAddressesEntity'Class; userName : Unbounded_String);
+   function Create (userName : Unbounded_String) return StreetAddressesEntity_Access;
    procedure remove (This : in out StreetAddressesEntity; index : Integer);
    procedure add (This : in out StreetAddressesEntity; address : StreetAddress_Access);
    procedure add (This : in out StreetAddressesEntity; address : StreetAddress_Access; index : Unbounded_String);

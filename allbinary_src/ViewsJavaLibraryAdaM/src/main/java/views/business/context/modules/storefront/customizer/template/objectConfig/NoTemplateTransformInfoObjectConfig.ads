@@ -60,6 +60,10 @@ package views.business.context.modules.storefront.customizer.template.objectConf
 
    procedure Initialize (This : in out NoTemplateTransformInfoObjectConfig'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return NoTemplateTransformInfoObjectConfig_Access;
+   procedure Initialize (This : in out NoTemplateTransformInfoObjectConfig'Class; transformInfoInterface : TransformInfoInterface_Access; document : Document_Access);
+   function Create (transformInfoInterface : TransformInfoInterface_Access; document : Document_Access) return NoTemplateTransformInfoObjectConfig_Access;
+   procedure Initialize (This : in out NoTemplateTransformInfoObjectConfig'Class; transformInfoInterface : TransformInfoInterface_Access; name : Unbounded_String; type_Id : Unbounded_String);
+   function Create (transformInfoInterface : TransformInfoInterface_Access; name : Unbounded_String; type_Id : Unbounded_String) return NoTemplateTransformInfoObjectConfig_Access;
    function generate (This : in out NoTemplateTransformInfoObjectConfig; objectConfigDocument : Document_Access) return Document_Access;
    procedure generate (This : in out NoTemplateTransformInfoObjectConfig; objectConfigDocument : Document_Access);
 

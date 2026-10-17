@@ -63,6 +63,10 @@ package org.allbinary.logic.visual.transform.template.customizer.includes.style.
 
    procedure Initialize (This : in out CssStyleValidation'Class);
    function Create return CssStyleValidation_Access;
+   procedure Initialize (This : in out CssStyleValidation'Class; document : Document_Access);
+   function Create (document : Document_Access) return CssStyleValidation_Access;
+   procedure Initialize (This : in out CssStyleValidation'Class; hashMap : HashMap_Access);
+   function Create (hashMap : HashMap_Access) return CssStyleValidation_Access;
    function isValid (This : in out CssStyleValidation) return Boolean;
    function validationInfo (This : in out CssStyleValidation) return Unbounded_String;
    function toValidationInfoDoc (This : in out CssStyleValidation) return Document_Access;

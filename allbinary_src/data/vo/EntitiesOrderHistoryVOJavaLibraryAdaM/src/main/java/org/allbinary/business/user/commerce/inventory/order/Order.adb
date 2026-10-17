@@ -46,7 +46,6 @@ package body org.allbinary.business.user.commerce.inventory.order.Order_Package 
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out Order'Class; storeName : Unbounded_String; basket : BasketInterface_Access; id : Unbounded_String; shippingType : Unbounded_String; special : Unbounded_String; paymentMethod : Unbounded_String) is
    begin
       Initialize_Fields (This);

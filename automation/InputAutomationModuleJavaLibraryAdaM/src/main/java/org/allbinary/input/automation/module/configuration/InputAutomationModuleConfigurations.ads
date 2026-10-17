@@ -57,6 +57,12 @@ package org.allbinary.input.automation.module.configuration.InputAutomationModul
 
    procedure Initialize (This : in out InputAutomationModuleConfigurations'Class; abeClientInformation : AbeClientInformationInterface_Access; file : File_Access);
    function Create (abeClientInformation : AbeClientInformationInterface_Access; file : File_Access) return InputAutomationModuleConfigurations_Access;
+   procedure Initialize (This : in out InputAutomationModuleConfigurations'Class; abeClientInformation : AbeClientInformationInterface_Access; document : Document_Access);
+   function Create (abeClientInformation : AbeClientInformationInterface_Access; document : Document_Access) return InputAutomationModuleConfigurations_Access;
+   procedure Initialize (This : in out InputAutomationModuleConfigurations'Class; inputAutomationModuleConfigurationList : List_Access);
+   function Create (inputAutomationModuleConfigurationList : List_Access) return InputAutomationModuleConfigurations_Access;
+   procedure Initialize (This : in out InputAutomationModuleConfigurations'Class);
+   function Create return InputAutomationModuleConfigurations_Access;
    procedure add (This : in out InputAutomationModuleConfigurations; inputAutomationModuleConfiguration : InputAutomationModuleConfiguration_Access);
    procedure remove (This : in out InputAutomationModuleConfigurations; inputAutomationModuleConfiguration : InputAutomationModuleConfiguration_Access);
    function getHashMap (This : in out InputAutomationModuleConfigurations) return HashMap_Access;

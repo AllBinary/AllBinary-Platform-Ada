@@ -33,7 +33,6 @@ package body org.allbinary.business.category.properties.root.store.theme.RootSto
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out RootStoreThemeCategoryProperties'Class; transformInfoInterface : TransformInfoInterface_Access; abPath : AbPath_Access) is
    begin
         RootStoreCategoryProperties_Package.Initialize (This, transformInfoInterface, abPath);
@@ -46,7 +45,6 @@ package body org.allbinary.business.category.properties.root.store.theme.RootSto
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out RootStoreThemeCategoryProperties'Class; transformInfoInterface : TransformInfoInterface_Access; node : Node_Access) is
    begin
         RootStoreCategoryProperties_Package.Initialize (This, transformInfoInterface, node);
@@ -59,7 +57,6 @@ package body org.allbinary.business.category.properties.root.store.theme.RootSto
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out RootStoreThemeCategoryProperties'Class; transformInfoInterface : TransformInfoInterface_Access; categoryPropertiesHashMap : HashMap_Access) is
    begin
         RootStoreCategoryProperties_Package.Initialize (This, transformInfoInterface, categoryPropertiesHashMap);

@@ -53,6 +53,8 @@ package org.allbinary.logic.communication.http.request.MultipartRequestParams_Pa
 
    procedure Initialize (This : in out MultipartRequestParams'Class; request : HttpServletRequest_Access);
    function Create (request : HttpServletRequest_Access) return MultipartRequestParams_Access;
+   procedure Initialize (This : in out MultipartRequestParams'Class; pageContext : PageContext_Access);
+   function Create (pageContext : PageContext_Access) return MultipartRequestParams_Access;
    procedure setSpecial (This : in out MultipartRequestParams);
    procedure processMultipartRequest (This : in out MultipartRequestParams; request : HttpServletRequest_Access);
    function toHashMap (This : in out MultipartRequestParams) return HashMap_Access;

@@ -98,7 +98,6 @@ package body org.allbinary.business.user.commerce.inventory.item.BasicItem_Packa
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out BasicItem'Class) is
       EMPTY : Unbounded_String;
    begin

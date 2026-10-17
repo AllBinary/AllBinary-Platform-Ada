@@ -33,7 +33,6 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoDomNodeView_
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out TransformInfoDomNodeView'Class; transformInfoInterface : TransformInfoInterface_Access) is
    begin
         TransformInfoDomNode_Package.Initialize (This, transformInfoInterface);
@@ -46,7 +45,6 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoDomNodeView_
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out TransformInfoDomNodeView'Class; name : Unbounded_String; mappedName : Unbounded_String) is
    begin
         TransformInfoDomNode_Package.Initialize (This, name, mappedName);
@@ -59,7 +57,6 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoDomNodeView_
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out TransformInfoDomNodeView'Class; name : Unbounded_String) is
    begin
         TransformInfoDomNode_Package.Initialize (This, name, null);

@@ -75,6 +75,10 @@ package org.allbinary.logic.visual.transform.info.objectConfig.GenericStoreTrans
 
    procedure Initialize (This : in out GenericStoreTransformInfoObjectConfig'Class; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access);
    function Create (abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access) return GenericStoreTransformInfoObjectConfig_Access;
+   procedure Initialize (This : in out GenericStoreTransformInfoObjectConfig'Class; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access; document : Document_Access);
+   function Create (abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access; document : Document_Access) return GenericStoreTransformInfoObjectConfig_Access;
+   procedure Initialize (This : in out GenericStoreTransformInfoObjectConfig'Class; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access; name : Unbounded_String; type_Id : Unbounded_String);
+   function Create (abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access; name : Unbounded_String; type_Id : Unbounded_String) return GenericStoreTransformInfoObjectConfig_Access;
    function generate (This : in out GenericStoreTransformInfoObjectConfig; objectConfigDocument : Document_Access) return Document_Access;
    procedure generate (This : in out GenericStoreTransformInfoObjectConfig; objectConfigDocument : Document_Access);
    function createReplaceHashMap (This : in out GenericStoreTransformInfoObjectConfig; transformInfoHttpStoreInterface : TransformInfoHttp_Access; objectConfigDocumentString : Unbounded_String) return HashMap_Access;

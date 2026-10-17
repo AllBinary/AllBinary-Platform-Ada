@@ -37,7 +37,6 @@ package body org.allbinary.logic.visual.transform.template.customizer.page.PageV
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out PageValidation'Class; document : Document_Access) is
       node : Node_Access;
    begin
@@ -54,7 +53,6 @@ package body org.allbinary.logic.visual.transform.template.customizer.page.PageV
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out PageValidation'Class; hashMap : HashMap_Access) is
    begin
       Validation_Package.Initialize (This);

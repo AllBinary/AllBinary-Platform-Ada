@@ -43,7 +43,6 @@ package body org.allbinary.logic.communication.log.config.LogConfig_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out LogConfig'Class; node : Node_Access) is
       enabledValueNode : Node_Access;
       isEnabledString : Unbounded_String;

@@ -64,6 +64,14 @@ package org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package is
 
    procedure Initialize (This : in out TransformInfoHttp'Class; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access; crud : Boolean);
    function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access; crud : Boolean) return TransformInfoHttp_Access;
+   procedure Initialize (This : in out TransformInfoHttp'Class; request : HttpServletRequest_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access);
+   function Create (request : HttpServletRequest_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return TransformInfoHttp_Access;
+   procedure Initialize (This : in out TransformInfoHttp'Class; databaseHashMap : HashMap_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access);
+   function Create (databaseHashMap : HashMap_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return TransformInfoHttp_Access;
+   procedure Initialize (This : in out TransformInfoHttp'Class; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access);
+   function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return TransformInfoHttp_Access;
+   procedure Initialize (This : in out TransformInfoHttp'Class; parentViewOfThisTransformInfoInterface : TransformInfoHttp_Access);
+   function Create (parentViewOfThisTransformInfoInterface : TransformInfoHttp_Access) return TransformInfoHttp_Access;
    procedure set (This : in out TransformInfoHttp; hashMap : HashMap_Access);
    function getWeblisketSession (This : in out TransformInfoHttp) return WeblisketSessionInterface_Access;
    function getPageContext (This : in out TransformInfoHttp) return PageContext_Access;

@@ -41,6 +41,8 @@ package org.allbinary.opengles.JOGL11_Package is
 
    procedure Initialize (This : in out JOGL11'Class; gl : GL_Access);
    function Create (gl : GL_Access) return JOGL11_Access;
+   procedure Initialize (This : in out JOGL11'Class; gl : GL_Access; gl2 : GL2_Access);
+   function Create (gl : GL_Access; gl2 : GL2_Access) return JOGL11_Access;
    procedure glBindBuffer (This : in out JOGL11; target : Integer; buffer : Integer);
    procedure glBufferData (This : in out JOGL11; target : Integer; size : Integer; data : Buffer_Access; usage : Integer);
    procedure glBufferSubData (This : in out JOGL11; target : Integer; offset : Integer; size : Integer; data : Buffer_Access);

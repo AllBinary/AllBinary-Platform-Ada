@@ -108,6 +108,10 @@ package org.allbinary.logic.visual.theme.ThemeValidation_Package is
 
    procedure Initialize (This : in out ThemeValidation'Class; transformInfoInterface : TransformInfoInterface_Access; cssStyleValidation : CssStyleValidation_Access; categoryThemePath : Unbounded_String);
    function Create (transformInfoInterface : TransformInfoInterface_Access; cssStyleValidation : CssStyleValidation_Access; categoryThemePath : Unbounded_String) return ThemeValidation_Access;
+   procedure Initialize (This : in out ThemeValidation'Class; transformInfoInterface : TransformInfoInterface_Access; hashMap : HashMap_Access);
+   function Create (transformInfoInterface : TransformInfoInterface_Access; hashMap : HashMap_Access) return ThemeValidation_Access;
+   procedure Initialize (This : in out ThemeValidation'Class; storeThemeCategoryInterface : StoreThemeCategoryInterface_Access; node : Node_Access);
+   function Create (storeThemeCategoryInterface : StoreThemeCategoryInterface_Access; node : Node_Access) return ThemeValidation_Access;
    procedure init (This : in out ThemeValidation);
    procedure init (This : in out ThemeValidation; storeThemeCategoryInterface : StoreThemeCategoryInterface_Access);
    function getTransformInfoInterface (This : in out ThemeValidation) return TransformInfoInterface_Access;

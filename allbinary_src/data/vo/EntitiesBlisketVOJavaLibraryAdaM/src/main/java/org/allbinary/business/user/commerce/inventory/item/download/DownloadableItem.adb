@@ -61,7 +61,6 @@ package body org.allbinary.business.user.commerce.inventory.item.download.Downlo
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out DownloadableItem'Class; hashMap : HashMap_Access) is
       value : Unbounded_String;
       validTime : Unbounded_String;

@@ -42,7 +42,6 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out LogoValidation'Class; node : Node_Access) is
    begin
       Validation_Package.Initialize (This);
@@ -59,7 +58,6 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.lo
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out LogoValidation'Class; hashMap : HashMap_Access) is
    begin
       Validation_Package.Initialize (This);

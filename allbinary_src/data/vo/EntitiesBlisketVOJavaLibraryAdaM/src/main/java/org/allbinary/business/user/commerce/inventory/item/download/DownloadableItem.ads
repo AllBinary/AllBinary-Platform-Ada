@@ -69,6 +69,8 @@ package org.allbinary.business.user.commerce.inventory.item.download.Downloadabl
 
    procedure Initialize (This : in out DownloadableItem'Class; id : Unbounded_String);
    function Create (id : Unbounded_String) return DownloadableItem_Access;
+   procedure Initialize (This : in out DownloadableItem'Class; hashMap : HashMap_Access);
+   function Create (hashMap : HashMap_Access) return DownloadableItem_Access;
    function toVector (This : in out DownloadableItem) return BasicArrayList_Access;
    function toHashMap (This : in out DownloadableItem) return HashMap_Access;
    function getId (This : in out DownloadableItem) return Unbounded_String;

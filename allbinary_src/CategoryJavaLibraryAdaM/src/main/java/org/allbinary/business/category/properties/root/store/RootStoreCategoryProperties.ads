@@ -86,6 +86,12 @@ package org.allbinary.business.category.properties.root.store.RootStoreCategoryP
 
    procedure Initialize (This : in out RootStoreCategoryProperties'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return RootStoreCategoryProperties_Access;
+   procedure Initialize (This : in out RootStoreCategoryProperties'Class; transformInfoInterface : TransformInfoInterface_Access; categoryAbPath : AbPath_Access);
+   function Create (transformInfoInterface : TransformInfoInterface_Access; categoryAbPath : AbPath_Access) return RootStoreCategoryProperties_Access;
+   procedure Initialize (This : in out RootStoreCategoryProperties'Class; transformInfoInterface : TransformInfoInterface_Access; node : Node_Access);
+   function Create (transformInfoInterface : TransformInfoInterface_Access; node : Node_Access) return RootStoreCategoryProperties_Access;
+   procedure Initialize (This : in out RootStoreCategoryProperties'Class; transformInfoInterface : TransformInfoInterface_Access; categoryPropertiesHashMap : HashMap_Access);
+   function Create (transformInfoInterface : TransformInfoInterface_Access; categoryPropertiesHashMap : HashMap_Access) return RootStoreCategoryProperties_Access;
    procedure initPath (This : in out RootStoreCategoryProperties);
    function isRealRoot (This : in out RootStoreCategoryProperties) return Boolean;
    function isRoot (This : in out RootStoreCategoryProperties) return Boolean;

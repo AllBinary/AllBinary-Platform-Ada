@@ -67,6 +67,8 @@ package org.allbinary.logic.communication.http.request.session.WeblisketSession_
 
    procedure Initialize (This : in out WeblisketSession'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return WeblisketSession_Access;
+   procedure Initialize (This : in out WeblisketSession'Class; hashMap : HashMap_Access; httpServletRequest : HttpServletRequest_Access);
+   function Create (hashMap : HashMap_Access; httpServletRequest : HttpServletRequest_Access) return WeblisketSession_Access;
    function getId (This : in out WeblisketSession) return Unbounded_String;
    procedure setPassword (This : in out WeblisketSession; password : Unbounded_String);
    procedure setUserName (This : in out WeblisketSession; userName : Unbounded_String);

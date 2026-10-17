@@ -40,6 +40,10 @@ package org.allbinary.logic.io.AbFileInputStream_Package is
 
    procedure Initialize (This : in out AbFileInputStream'Class; name : Unbounded_String);
    function Create (name : Unbounded_String) return AbFileInputStream_Access;
+   procedure Initialize (This : in out AbFileInputStream'Class; file : AbFile_Access);
+   function Create (file : AbFile_Access) return AbFileInputStream_Access;
+   procedure Initialize (This : in out AbFileInputStream'Class; file : File_Access);
+   function Create (file : File_Access) return AbFileInputStream_Access;
 
 end org.allbinary.logic.io.AbFileInputStream_Package;
 

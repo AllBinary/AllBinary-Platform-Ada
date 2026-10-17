@@ -39,7 +39,6 @@ package body org.allbinary.graphics.j2me.workarea.canvas.Grid_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out Grid'Class; grid : Grid_Access) is
    begin
       Initialize_Fields (This);

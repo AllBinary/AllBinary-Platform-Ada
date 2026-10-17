@@ -66,6 +66,10 @@ package org.allbinary.logic.visual.transform.template.customizer.bodies.GenericB
 
    procedure Initialize (This : in out GenericBodyValidation'Class);
    function Create return GenericBodyValidation_Access;
+   procedure Initialize (This : in out GenericBodyValidation'Class; document : Document_Access);
+   function Create (document : Document_Access) return GenericBodyValidation_Access;
+   procedure Initialize (This : in out GenericBodyValidation'Class; hashMap : HashMap_Access);
+   function Create (hashMap : HashMap_Access) return GenericBodyValidation_Access;
    procedure getFormData (This : in out GenericBodyValidation; hashMap : HashMap_Access);
    function isValid (This : in out GenericBodyValidation) return Boolean;
    function validationInfo (This : in out GenericBodyValidation) return Unbounded_String;

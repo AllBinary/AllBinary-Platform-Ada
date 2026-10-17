@@ -81,6 +81,8 @@ package org.allbinary.input.automation.actions.script.condition.ColorAtActionScr
 
    procedure Initialize (This : in out ColorAtActionScriptCondition'Class; node : Node_Access);
    function Create (node : Node_Access) return ColorAtActionScriptCondition_Access;
+   procedure Initialize (This : in out ColorAtActionScriptCondition'Class);
+   function Create return ColorAtActionScriptCondition_Access;
    procedure init (This : in out ColorAtActionScriptCondition);
    function getPoint (This : in out ColorAtActionScriptCondition) return Point_Access;
    procedure setPoint (This : in out ColorAtActionScriptCondition; point : Point_Access);

@@ -54,7 +54,6 @@ package body org.allbinary.business.user.modules.configuration.UserConfiguration
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out UserConfigurationView'Class; userConfigurationInterface : UserConfigurationInterface_Access) is
    begin
       Initialize_Fields (This);

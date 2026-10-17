@@ -56,6 +56,8 @@ package org.allbinary.input.automation.module.actions.script.condition.processor
 
    procedure Initialize (This : in out ImageTypes'Class);
    function Create return ImageTypes_Access;
+   procedure Initialize (This : in out ImageTypes'Class; node : Node_Access);
+   function Create (node : Node_Access) return ImageTypes_Access;
    function valueOf (anyType : Java_Object_Access_Array_Access) return ImageTypes_Access;
    procedure valueOf (anyType : Java_Object_Access_Array_Access);
    function getVector (This : in out ImageTypes) return BasicArrayList_Access;

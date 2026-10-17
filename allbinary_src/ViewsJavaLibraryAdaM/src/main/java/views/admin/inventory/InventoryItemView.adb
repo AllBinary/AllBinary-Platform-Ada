@@ -44,7 +44,6 @@ package body views.admin.inventory.InventoryItemView_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out InventoryItemView'Class; transformInfoInterface : TransformInfoInterface_Access; empty : Unbounded_String) is
    begin
         HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);

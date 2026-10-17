@@ -39,7 +39,6 @@ package body org.allbinary.input.automation.actions.script.ProfileActionScriptIt
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out ProfileActionScriptItem'Class; label : Unbounded_String) is
    begin
         DefaultMutableTreeNode_Package.Initialize (This, label);

@@ -35,6 +35,8 @@ package org.allbinary.business.time.created.TimeCreated_Package is
 
    procedure Initialize (This : in out TimeCreated'Class; time : Unbounded_String);
    function Create (time : Unbounded_String) return TimeCreated_Access;
+   procedure Initialize (This : in out TimeCreated'Class; time : Long_Long_Integer);
+   function Create (time : Long_Long_Integer) return TimeCreated_Access;
 
 end org.allbinary.business.time.created.TimeCreated_Package;
 

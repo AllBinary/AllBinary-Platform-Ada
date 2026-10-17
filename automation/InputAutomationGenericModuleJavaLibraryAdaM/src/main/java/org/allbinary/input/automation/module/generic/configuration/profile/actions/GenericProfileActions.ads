@@ -77,6 +77,10 @@ package org.allbinary.input.automation.module.generic_Id.configuration.profile.a
 
    procedure Initialize (This : in out GenericProfileActions'Class; genericProfileActionsJPanel : GenericProfileActionsJPanel_Access; name : Unbounded_String);
    function Create (genericProfileActionsJPanel : GenericProfileActionsJPanel_Access; name : Unbounded_String) return GenericProfileActions_Access;
+   procedure Initialize (This : in out GenericProfileActions'Class; genericProfileActionsJPanel : GenericProfileActionsJPanel_Access; abPath : AbPath_Access; name : Unbounded_String);
+   function Create (genericProfileActionsJPanel : GenericProfileActionsJPanel_Access; abPath : AbPath_Access; name : Unbounded_String) return GenericProfileActions_Access;
+   procedure Initialize (This : in out GenericProfileActions'Class; genericProfileActionsJPanel : GenericProfileActionsJPanel_Access; fileInputStream : FileInputStream_Access; name : Unbounded_String);
+   function Create (genericProfileActionsJPanel : GenericProfileActionsJPanel_Access; fileInputStream : FileInputStream_Access; name : Unbounded_String) return GenericProfileActions_Access;
    procedure init (This : in out GenericProfileActions; genericProfileActionsJPanel : GenericProfileActionsJPanel_Access);
    procedure save (This : in out GenericProfileActions);
    function getFile (This : in out GenericProfileActions; name : Unbounded_String) return File_Access;

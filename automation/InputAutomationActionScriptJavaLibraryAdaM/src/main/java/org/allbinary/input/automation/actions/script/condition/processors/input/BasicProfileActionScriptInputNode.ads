@@ -40,6 +40,8 @@ package org.allbinary.input.automation.actions.script.condition.processors.input
 
    procedure Initialize (This : in out BasicProfileActionScriptInputNode'Class; node : Node_Access);
    function Create (node : Node_Access) return BasicProfileActionScriptInputNode_Access;
+   procedure Initialize (This : in out BasicProfileActionScriptInputNode'Class);
+   function Create return BasicProfileActionScriptInputNode_Access;
    function toXmlNode (This : in out BasicProfileActionScriptInputNode; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out BasicProfileActionScriptInputNode; document : Document_Access);
 

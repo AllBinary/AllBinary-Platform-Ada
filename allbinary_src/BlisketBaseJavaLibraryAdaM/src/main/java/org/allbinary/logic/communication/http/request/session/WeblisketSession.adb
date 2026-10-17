@@ -34,7 +34,6 @@ package body org.allbinary.logic.communication.http.request.session.WeblisketSes
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out WeblisketSession'Class; hashMap : HashMap_Access; httpServletRequest : HttpServletRequest_Access) is
       propertiesHashMap : HashMap_Access;
       request : HttpServletRequest_Access;

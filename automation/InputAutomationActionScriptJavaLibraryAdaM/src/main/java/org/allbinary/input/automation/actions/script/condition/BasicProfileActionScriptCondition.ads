@@ -83,6 +83,8 @@ package org.allbinary.input.automation.actions.script.condition.BasicProfileActi
 
    procedure Initialize (This : in out BasicProfileActionScriptCondition'Class; label : Unbounded_String; node : Node_Access);
    function Create (label : Unbounded_String; node : Node_Access) return BasicProfileActionScriptCondition_Access;
+   procedure Initialize (This : in out BasicProfileActionScriptCondition'Class; label : Unbounded_String);
+   function Create (label : Unbounded_String) return BasicProfileActionScriptCondition_Access;
    procedure addProcessorNodes (This : in out BasicProfileActionScriptCondition; node : Node_Access);
    procedure init (This : in out BasicProfileActionScriptCondition);
    function getConditionJPopupMenu (This : in out BasicProfileActionScriptCondition) return JMenu_Access;

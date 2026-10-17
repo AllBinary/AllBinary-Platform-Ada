@@ -72,6 +72,10 @@ package org.allbinary.logic.visual.transform.template.customizer.widgets.logo.Lo
 
    procedure Initialize (This : in out LogoValidation'Class);
    function Create return LogoValidation_Access;
+   procedure Initialize (This : in out LogoValidation'Class; node : Node_Access);
+   function Create (node : Node_Access) return LogoValidation_Access;
+   procedure Initialize (This : in out LogoValidation'Class; hashMap : HashMap_Access);
+   function Create (hashMap : HashMap_Access) return LogoValidation_Access;
    procedure getFormData (This : in out LogoValidation; hashMap : HashMap_Access);
    function isValid (This : in out LogoValidation) return Boolean;
    function validationInfo (This : in out LogoValidation) return Unbounded_String;

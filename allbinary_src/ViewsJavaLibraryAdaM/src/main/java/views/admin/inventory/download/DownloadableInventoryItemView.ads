@@ -89,6 +89,8 @@ package views.admin.inventory.download.DownloadableInventoryItemView_Package is
 
    procedure Initialize (This : in out DownloadableInventoryItemView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return DownloadableInventoryItemView_Access;
+   procedure Initialize (This : in out DownloadableInventoryItemView'Class; transformInfoInterface : TransformInfoInterface_Access; empty : Unbounded_String);
+   function Create (transformInfoInterface : TransformInfoInterface_Access; empty : Unbounded_String) return DownloadableInventoryItemView_Access;
    function getTypeId (This : in out DownloadableInventoryItemView) return Integer;
    procedure getFormData (This : in out DownloadableInventoryItemView);
    procedure addDomNodeInterfaces (This : in out DownloadableInventoryItemView);

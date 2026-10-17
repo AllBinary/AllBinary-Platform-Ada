@@ -41,6 +41,8 @@ package org.allbinary.graphics.j2me.GraphicsException_Package is
 
    procedure Initialize (This : in out GraphicsException'Class; msg : Unbounded_String; obj : Java_Object_Access; method : Unbounded_String);
    function Create (msg : Unbounded_String; obj : Java_Object_Access; method : Unbounded_String) return GraphicsException_Access;
+   procedure Initialize (This : in out GraphicsException'Class; msg : Unbounded_String; className : Unbounded_String; method : Unbounded_String);
+   function Create (msg : Unbounded_String; className : Unbounded_String; method : Unbounded_String) return GraphicsException_Access;
 
 end org.allbinary.graphics.j2me.GraphicsException_Package;
 

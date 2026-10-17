@@ -70,6 +70,8 @@ package org.allbinary.logic.system.hardware.components.linux.Cpu_Package is
 
    procedure Initialize (This : in out Cpu'Class; filePath : Unbounded_String);
    function Create (filePath : Unbounded_String) return Cpu_Access;
+   procedure Initialize (This : in out Cpu'Class);
+   function Create return Cpu_Access;
    procedure init (This : in out Cpu; filePath : Unbounded_String);
    procedure init (This : in out Cpu; lineNumberReader_Param : LineNumberReader_Access; filePath : Unbounded_String);
    function getProcessor (This : in out Cpu) return Unbounded_String;

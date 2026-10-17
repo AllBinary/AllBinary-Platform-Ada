@@ -42,6 +42,8 @@ package org.allbinary.business.user.modules.customer.subscriber.SubscriberUser_P
 
    procedure Initialize (This : in out SubscriberUser'Class);
    function Create return SubscriberUser_Access;
+   procedure Initialize (This : in out SubscriberUser'Class; userHashMap : HashMap_Access);
+   function Create (userHashMap : HashMap_Access) return SubscriberUser_Access;
    procedure validateSession (This : in out SubscriberUser; weblisketSession : WeblisketSessionInterface_Access);
    procedure updateSession (This : in out SubscriberUser; weblisketSession : WeblisketSessionInterface_Access);
    function isSessionValid (This : in out SubscriberUser) return Boolean;

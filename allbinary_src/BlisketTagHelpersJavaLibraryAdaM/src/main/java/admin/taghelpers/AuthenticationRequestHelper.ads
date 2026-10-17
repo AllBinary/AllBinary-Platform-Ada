@@ -76,6 +76,8 @@ package admin.taghelpers.AuthenticationRequestHelper_Package is
 
    procedure Initialize (This : in out AuthenticationRequestHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return AuthenticationRequestHelper_Access;
+   procedure Initialize (This : in out AuthenticationRequestHelper'Class; hashMap : HashMap_Access; httpServletRequest : HttpServletRequest_Access);
+   function Create (hashMap : HashMap_Access; httpServletRequest : HttpServletRequest_Access) return AuthenticationRequestHelper_Access;
    function generateNewPassword (This : in out AuthenticationRequestHelper) return Unbounded_String;
    function newPassword (This : in out AuthenticationRequestHelper) return Boolean;
    function changePassword (This : in out AuthenticationRequestHelper) return Boolean;

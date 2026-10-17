@@ -83,6 +83,10 @@ package org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObje
 
    procedure Initialize (This : in out TransformInfoObjectConfig'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return TransformInfoObjectConfig_Access;
+   procedure Initialize (This : in out TransformInfoObjectConfig'Class; transformInfoInterface : TransformInfoInterface_Access; document : Document_Access);
+   function Create (transformInfoInterface : TransformInfoInterface_Access; document : Document_Access) return TransformInfoObjectConfig_Access;
+   procedure Initialize (This : in out TransformInfoObjectConfig'Class; transformInfoInterface : TransformInfoInterface_Access; name : Unbounded_String; type_Id : Unbounded_String);
+   function Create (transformInfoInterface : TransformInfoInterface_Access; name : Unbounded_String; type_Id : Unbounded_String) return TransformInfoObjectConfig_Access;
    procedure createDocument (This : in out TransformInfoObjectConfig);
    function getTransformInfoInterface (This : in out TransformInfoObjectConfig) return TransformInfoInterface_Access;
    function toXmlDoc (This : in out TransformInfoObjectConfig) return Document_Access;

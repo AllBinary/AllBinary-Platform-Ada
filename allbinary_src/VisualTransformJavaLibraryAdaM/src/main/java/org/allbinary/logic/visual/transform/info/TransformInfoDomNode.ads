@@ -56,6 +56,12 @@ package org.allbinary.logic.visual.transform.info.TransformInfoDomNode_Package i
 
    procedure Initialize (This : in out TransformInfoDomNode'Class; node : Node_Access);
    function Create (node : Node_Access) return TransformInfoDomNode_Access;
+   procedure Initialize (This : in out TransformInfoDomNode'Class; transformInfoInterface : TransformInfoInterface_Access);
+   function Create (transformInfoInterface : TransformInfoInterface_Access) return TransformInfoDomNode_Access;
+   procedure Initialize (This : in out TransformInfoDomNode'Class; transformInfoInterface : TransformInfoInterface_Access; mappedName : Unbounded_String);
+   function Create (transformInfoInterface : TransformInfoInterface_Access; mappedName : Unbounded_String) return TransformInfoDomNode_Access;
+   procedure Initialize (This : in out TransformInfoDomNode'Class; name : Unbounded_String; mappedName : Unbounded_String);
+   function Create (name : Unbounded_String; mappedName : Unbounded_String) return TransformInfoDomNode_Access;
    function getTransformInfoInterface (This : in out TransformInfoDomNode) return TransformInfoInterface_Access;
    function getMappedName (This : in out TransformInfoDomNode) return Unbounded_String;
    function getReplaceKey (This : in out TransformInfoDomNode) return Unbounded_String;

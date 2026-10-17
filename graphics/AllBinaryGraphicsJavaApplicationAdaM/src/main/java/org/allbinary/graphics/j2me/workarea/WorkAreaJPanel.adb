@@ -62,7 +62,6 @@ package body org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out WorkAreaJPanel'Class; workAreaDom : WorkAreaDom_Access; dimension : Dimension_Access) is
       canvasNodeList : BasicArrayList_Access;
       numberOfFrames : Integer;

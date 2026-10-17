@@ -59,6 +59,8 @@ package org.allbinary.input.automation.actions.script.condition.AlwaysActionScri
 
    procedure Initialize (This : in out AlwaysActionScriptCondition'Class; node : Node_Access);
    function Create (node : Node_Access) return AlwaysActionScriptCondition_Access;
+   procedure Initialize (This : in out AlwaysActionScriptCondition'Class);
+   function Create return AlwaysActionScriptCondition_Access;
    procedure init (This : in out AlwaysActionScriptCondition);
    function isIsOn (This : in out AlwaysActionScriptCondition) return Boolean;
    procedure setIsOn (This : in out AlwaysActionScriptCondition; isOn : Boolean);

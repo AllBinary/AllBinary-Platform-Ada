@@ -88,6 +88,8 @@ package org.allbinary.graphics.j2me.workarea.WorkAreaJPanel_Package is
 
    procedure Initialize (This : in out WorkAreaJPanel'Class; name : Unbounded_String; dimension : Dimension_Access; x : Integer; y : Integer);
    function Create (name : Unbounded_String; dimension : Dimension_Access; x : Integer; y : Integer) return WorkAreaJPanel_Access;
+   procedure Initialize (This : in out WorkAreaJPanel'Class; workAreaDom : WorkAreaDom_Access; dimension : Dimension_Access);
+   function Create (workAreaDom : WorkAreaDom_Access; dimension : Dimension_Access) return WorkAreaJPanel_Access;
    procedure initMyComponents (This : in out WorkAreaJPanel; dimension : Dimension_Access);
    function getCanvasHashMap (This : in out WorkAreaJPanel) return HashMap_Access;
    procedure play (This : in out WorkAreaJPanel);

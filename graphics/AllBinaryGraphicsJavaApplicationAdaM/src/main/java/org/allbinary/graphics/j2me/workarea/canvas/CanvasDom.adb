@@ -107,7 +107,6 @@ package body org.allbinary.graphics.j2me.workarea.canvas.CanvasDom_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out CanvasDom'Class; canvasJPanel : CanvasJPanel_Access) is
    begin
       Initialize_Fields (This);

@@ -39,7 +39,6 @@ package body org.allbinary.business.category.hierarchy.CategoryHierarchy_Package
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out CategoryHierarchy'Class; rootCategoryInterface : CategoryInterface_Access; parentCategoryInterface : CategoryInterface_Access; level : Integer) is
    begin
       Initialize_Fields (This);
@@ -55,7 +54,6 @@ package body org.allbinary.business.category.hierarchy.CategoryHierarchy_Package
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out CategoryHierarchy'Class; rootCategoryInterface : CategoryInterface_Access; parentCategoryInterface : CategoryInterface_Access; categoryPropertiesHashMap : HashMap_Access) is
       levelString : Unbounded_String;
    begin

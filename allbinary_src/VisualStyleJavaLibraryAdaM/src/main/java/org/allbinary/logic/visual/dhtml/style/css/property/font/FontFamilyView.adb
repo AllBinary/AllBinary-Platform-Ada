@@ -33,7 +33,6 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.font.FontFamily
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out FontFamilyView'Class; node : Node_Access) is
    begin
         CssPropertyView_Package.Initialize (This, node);

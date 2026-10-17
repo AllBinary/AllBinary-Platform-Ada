@@ -38,7 +38,6 @@ package body org.allbinary.graphics.j2me.workarea.tools.event.MyGraphicItemEvent
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out MyGraphicItemEventSource'Class; command : Unbounded_String; angle : Long_Float; treeNode : MutableTreeNode_Access) is
    begin
       Initialize_Fields (This);

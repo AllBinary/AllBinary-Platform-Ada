@@ -72,6 +72,12 @@ package org.allbinary.input.automation.module.configuration.InputAutomationModul
 
    procedure Initialize (This : in out InputAutomationModuleConfiguration'Class);
    function Create return InputAutomationModuleConfiguration_Access;
+   procedure Initialize (This : in out InputAutomationModuleConfiguration'Class; abeClientInformation : AbeClientInformationInterface_Access; node : Node_Access);
+   function Create (abeClientInformation : AbeClientInformationInterface_Access; node : Node_Access) return InputAutomationModuleConfiguration_Access;
+   procedure Initialize (This : in out InputAutomationModuleConfiguration'Class; abeClientInformation : AbeClientInformationInterface_Access; name : Unbounded_String; className : Unbounded_String);
+   function Create (abeClientInformation : AbeClientInformationInterface_Access; name : Unbounded_String; className : Unbounded_String) return InputAutomationModuleConfiguration_Access;
+   procedure Initialize (This : in out InputAutomationModuleConfiguration'Class; inputAutomationModuleInterface : InputAutomationModuleFactoryInterface_Access);
+   function Create (inputAutomationModuleInterface : InputAutomationModuleFactoryInterface_Access) return InputAutomationModuleConfiguration_Access;
    procedure init (This : in out InputAutomationModuleConfiguration; abeClientInformation : AbeClientInformationInterface_Access; node : Node_Access);
    procedure init (This : in out InputAutomationModuleConfiguration; abeClientInformation : AbeClientInformationInterface_Access);
    function toDomNode (This : in out InputAutomationModuleConfiguration; document : Document_Access) return Node_Access;

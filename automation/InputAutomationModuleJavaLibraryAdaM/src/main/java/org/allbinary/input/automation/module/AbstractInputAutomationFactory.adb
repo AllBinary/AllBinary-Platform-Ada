@@ -40,7 +40,6 @@ package body org.allbinary.input.automation.module.AbstractInputAutomationFactor
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out AbstractInputAutomationFactory'Class; name : Unbounded_String; jPanel : JPanel_Access) is
       url : URL_Access;
    begin

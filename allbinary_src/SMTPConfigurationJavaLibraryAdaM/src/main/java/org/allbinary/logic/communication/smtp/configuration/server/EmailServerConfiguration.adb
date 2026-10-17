@@ -43,7 +43,6 @@ package body org.allbinary.logic.communication.smtp.configuration.server.EmailSe
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out EmailServerConfiguration'Class; hashMap : HashMap_Access) is
       commonStrings : CommonStrings_Access;
    begin
@@ -65,7 +64,6 @@ package body org.allbinary.logic.communication.smtp.configuration.server.EmailSe
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out EmailServerConfiguration'Class; account : Unbounded_String; password : Unbounded_String; server : Unbounded_String) is
       commonStrings : CommonStrings_Access;
    begin

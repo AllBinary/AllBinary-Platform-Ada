@@ -49,7 +49,6 @@ package body org.allbinary.gui.dialog.BasicTextJDialog_Package is
         This.closeListenerInterface := closeListenerInterface;
    end addCloseListener;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out BasicTextJDialog'Class; text : Unbounded_String) is
    begin
       JDialog_Package.Initialize (This);

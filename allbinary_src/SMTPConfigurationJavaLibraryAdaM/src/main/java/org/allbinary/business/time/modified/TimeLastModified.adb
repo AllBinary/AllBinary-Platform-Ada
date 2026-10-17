@@ -33,7 +33,6 @@ package body org.allbinary.business.time.modified.TimeLastModified_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out TimeLastModified'Class; time : Long_Long_Integer) is
    begin
         Time_Package.Initialize (This, time);

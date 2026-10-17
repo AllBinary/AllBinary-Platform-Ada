@@ -37,7 +37,6 @@ package body org.allbinary.logic.communication.http.request.MultipartRequestPara
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out MultipartRequestParams'Class; pageContext : PageContext_Access) is
    begin
         RequestParams_Package.Initialize (This);

@@ -50,6 +50,10 @@ package org.allbinary.logic.visual.transform.template.customizer.widgets.title.T
 
    procedure Initialize (This : in out TitleNotRequiredValidation'Class);
    function Create return TitleNotRequiredValidation_Access;
+   procedure Initialize (This : in out TitleNotRequiredValidation'Class; node : Node_Access);
+   function Create (node : Node_Access) return TitleNotRequiredValidation_Access;
+   procedure Initialize (This : in out TitleNotRequiredValidation'Class; hashMap : HashMap_Access);
+   function Create (hashMap : HashMap_Access) return TitleNotRequiredValidation_Access;
    function isValid (This : in out TitleNotRequiredValidation) return Boolean;
    function validationInfo (This : in out TitleNotRequiredValidation) return Unbounded_String;
    function toValidationInfoDoc (This : in out TitleNotRequiredValidation) return Document_Access;

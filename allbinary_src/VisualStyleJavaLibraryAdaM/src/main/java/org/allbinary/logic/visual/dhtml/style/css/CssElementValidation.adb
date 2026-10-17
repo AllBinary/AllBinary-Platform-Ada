@@ -35,7 +35,6 @@ package body org.allbinary.logic.visual.dhtml.style.css.CssElementValidation_Pac
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out CssElementValidation'Class; node : Node_Access) is
    begin
         CssElementView_Package.Initialize (This, node);

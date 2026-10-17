@@ -39,7 +39,6 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out InputAutomationModuleConfiguration'Class; abeClientInformation : AbeClientInformationInterface_Access; node : Node_Access) is
    begin
       Initialize_Fields (This);
@@ -53,7 +52,6 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out InputAutomationModuleConfiguration'Class; abeClientInformation : AbeClientInformationInterface_Access; name : Unbounded_String; className : Unbounded_String) is
    begin
       Initialize_Fields (This);
@@ -69,7 +67,6 @@ package body org.allbinary.input.automation.module.configuration.InputAutomation
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out InputAutomationModuleConfiguration'Class; inputAutomationModuleInterface : InputAutomationModuleFactoryInterface_Access) is
    begin
       Initialize_Fields (This);

@@ -64,6 +64,12 @@ package org.allbinary.business.category.store.theme.StoreThemeCategory_Package i
 
    procedure Initialize (This : in out StoreThemeCategory'Class; transformInfoInterface : TransformInfoInterface_Access; categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access; level : Integer);
    function Create (transformInfoInterface : TransformInfoInterface_Access; categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access; level : Integer) return StoreThemeCategory_Access;
+   procedure Initialize (This : in out StoreThemeCategory'Class; transformInfoInterface : TransformInfoInterface_Access; rootCategoryInterface : CategoryInterface_Access; parentCategoryInterface : CategoryInterface_Access; categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access);
+   function Create (transformInfoInterface : TransformInfoInterface_Access; rootCategoryInterface : CategoryInterface_Access; parentCategoryInterface : CategoryInterface_Access; categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access) return StoreThemeCategory_Access;
+   procedure Initialize (This : in out StoreThemeCategory'Class; transformInfoInterface : TransformInfoInterface_Access; node : Node_Access; categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access; level : Integer);
+   function Create (transformInfoInterface : TransformInfoInterface_Access; node : Node_Access; categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access; level : Integer) return StoreThemeCategory_Access;
+   procedure Initialize (This : in out StoreThemeCategory'Class; transformInfoInterface : TransformInfoInterface_Access; node : Node_Access; rootCategoryInterface : CategoryInterface_Access; parentCategoryInterface : CategoryInterface_Access; categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access);
+   function Create (transformInfoInterface : TransformInfoInterface_Access; node : Node_Access; rootCategoryInterface : CategoryInterface_Access; parentCategoryInterface : CategoryInterface_Access; categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access) return StoreThemeCategory_Access;
    function getTransformInfoInterface (This : in out StoreThemeCategory) return TransformInfoInterface_Access;
    procedure addThemes (This : in out StoreThemeCategory; node : Node_Access);
    procedure addTheme (This : in out StoreThemeCategory; themeValidation : ThemeValidation_Access);

@@ -41,7 +41,6 @@ package body org.allbinary.logic.string_Id.regex.replace.Replace_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out Replace'Class; keys : Unbounded_String_Array_Access; values : Unbounded_String_Array_Access) is
    begin
       Initialize_Fields (This);
@@ -56,7 +55,6 @@ package body org.allbinary.logic.string_Id.regex.replace.Replace_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out Replace'Class; hashMap : HashMap_Access) is
    begin
       Initialize_Fields (This);

@@ -36,7 +36,6 @@ package body org.allbinary.data.tables.user.address.StreetAddressesEntity_Packag
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out StreetAddressesEntity'Class; userName : Unbounded_String) is
    begin
         AbSqlBean_Package.Initialize (This, UserDbInitInfo_Package.Create);

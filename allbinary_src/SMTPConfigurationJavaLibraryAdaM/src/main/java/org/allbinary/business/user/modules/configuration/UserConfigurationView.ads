@@ -60,6 +60,8 @@ package org.allbinary.business.user.modules.configuration.UserConfigurationView_
 
    procedure Initialize (This : in out UserConfigurationView'Class; node : Node_Access);
    function Create (node : Node_Access) return UserConfigurationView_Access;
+   procedure Initialize (This : in out UserConfigurationView'Class; userConfigurationInterface : UserConfigurationInterface_Access);
+   function Create (userConfigurationInterface : UserConfigurationInterface_Access) return UserConfigurationView_Access;
    function getUserConfigurationInterface (This : in out UserConfigurationView) return UserConfigurationInterface_Access;
    function toXmlNode (This : in out UserConfigurationView; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out UserConfigurationView; document : Document_Access);

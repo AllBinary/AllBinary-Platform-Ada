@@ -71,6 +71,10 @@ package org.allbinary.business.user.commerce.money.payment.Payment_Package is
 
    procedure Initialize (This : in out Payment'Class; payment : HashMap_Access);
    function Create (payment : HashMap_Access) return Payment_Access;
+   procedure Initialize (This : in out Payment'Class; request : ServletRequest_Access);
+   function Create (request : ServletRequest_Access) return Payment_Access;
+   procedure Initialize (This : in out Payment'Class);
+   function Create return Payment_Access;
    function isValid (This : in out Payment) return Boolean;
    procedure setTenderType (This : in out Payment; value : Unbounded_String);
    procedure setTransactionType (This : in out Payment; value : Unbounded_String);

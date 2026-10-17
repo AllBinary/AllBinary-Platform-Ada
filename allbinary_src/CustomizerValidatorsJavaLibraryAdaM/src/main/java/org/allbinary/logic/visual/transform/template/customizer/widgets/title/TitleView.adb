@@ -37,7 +37,6 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.ti
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out TitleView'Class; node : Node_Access) is
       titleTextNode : Node_Access;
       valueNode : Node_Access;
@@ -61,7 +60,6 @@ package body org.allbinary.logic.visual.transform.template.customizer.widgets.ti
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out TitleView'Class; hashMap : HashMap_Access) is
    begin
       Initialize_Fields (This);

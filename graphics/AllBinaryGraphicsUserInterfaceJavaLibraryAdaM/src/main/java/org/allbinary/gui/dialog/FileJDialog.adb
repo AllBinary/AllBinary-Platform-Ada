@@ -39,7 +39,6 @@ package body org.allbinary.gui.dialog.FileJDialog_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out FileJDialog'Class; parent : Frame_Access; modal : Boolean) is
    begin
         JDialog_Package.Initialize (This, parent, modal);

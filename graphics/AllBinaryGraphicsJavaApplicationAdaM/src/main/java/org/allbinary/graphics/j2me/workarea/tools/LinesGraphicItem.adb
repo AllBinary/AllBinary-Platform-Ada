@@ -56,7 +56,6 @@ package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out LinesGraphicItem'Class; linesNode : Node_Access) is
       lineNodes : BasicArrayList_Access;
       numberOfLines : Integer;

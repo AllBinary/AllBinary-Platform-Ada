@@ -38,6 +38,8 @@ package org.allbinary.business.user.modules.customer.wholesale.WholesaleUser_Pac
 
    procedure Initialize (This : in out WholesaleUser'Class);
    function Create return WholesaleUser_Access;
+   procedure Initialize (This : in out WholesaleUser'Class; userHashMap : HashMap_Access);
+   function Create (userHashMap : HashMap_Access) return WholesaleUser_Access;
    procedure validateSession (This : in out WholesaleUser; weblisketSession : WeblisketSessionInterface_Access);
    procedure updateSession (This : in out WholesaleUser; weblisketSession : WeblisketSessionInterface_Access);
 

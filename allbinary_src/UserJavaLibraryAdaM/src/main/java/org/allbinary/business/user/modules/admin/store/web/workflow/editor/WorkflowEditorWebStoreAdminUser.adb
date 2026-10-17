@@ -33,7 +33,6 @@ package body org.allbinary.business.user.modules.admin.store.web.workflow.editor
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out WorkflowEditorWebStoreAdminUser'Class; userHashMap : HashMap_Access) is
    begin
         User_Package.Initialize (This, userHashMap);

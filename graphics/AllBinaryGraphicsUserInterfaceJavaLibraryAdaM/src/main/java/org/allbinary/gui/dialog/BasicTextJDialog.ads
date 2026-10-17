@@ -41,6 +41,8 @@ package org.allbinary.gui.dialog.BasicTextJDialog_Package is
 
    procedure Initialize (This : in out BasicTextJDialog'Class; parent : Frame_Access; modal : Boolean; text : Unbounded_String);
    function Create (parent : Frame_Access; modal : Boolean; text : Unbounded_String) return BasicTextJDialog_Access;
+   procedure Initialize (This : in out BasicTextJDialog'Class; text : Unbounded_String);
+   function Create (text : Unbounded_String) return BasicTextJDialog_Access;
    procedure setText (This : in out BasicTextJDialog; text : Unbounded_String);
    procedure addCloseListener (This : in out BasicTextJDialog; closeListenerInterface : CloseJDialogListenerInterface_Access);
    procedure initComponents (This : in out BasicTextJDialog);

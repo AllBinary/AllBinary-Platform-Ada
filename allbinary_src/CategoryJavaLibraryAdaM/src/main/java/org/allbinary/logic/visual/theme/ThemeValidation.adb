@@ -51,7 +51,6 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out ThemeValidation'Class; transformInfoInterface : TransformInfoInterface_Access; hashMap : HashMap_Access) is
       categoryThemeAbPath : AbPath_Access;
       pathData : AbPathData_Access;
@@ -85,7 +84,6 @@ package body org.allbinary.logic.visual.theme.ThemeValidation_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out ThemeValidation'Class; storeThemeCategoryInterface : StoreThemeCategoryInterface_Access; node : Node_Access) is
       themeNameNode : Node_Access;
       valueNode : Node_Access;

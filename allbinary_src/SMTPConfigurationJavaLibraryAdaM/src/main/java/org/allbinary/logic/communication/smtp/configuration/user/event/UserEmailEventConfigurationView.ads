@@ -54,6 +54,8 @@ package org.allbinary.logic.communication.smtp.configuration.user.event.UserEmai
 
    procedure Initialize (This : in out UserEmailEventConfigurationView'Class; node : Node_Access);
    function Create (node : Node_Access) return UserEmailEventConfigurationView_Access;
+   procedure Initialize (This : in out UserEmailEventConfigurationView'Class; userEmailEventConfigurationInterface : UserEmailEventConfigurationInterface_Access);
+   function Create (userEmailEventConfigurationInterface : UserEmailEventConfigurationInterface_Access) return UserEmailEventConfigurationView_Access;
    function toXmlNode (This : in out UserEmailEventConfigurationView; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out UserEmailEventConfigurationView; document : Document_Access);
    function getUserEmailEventConfigurationInterface (This : in out UserEmailEventConfigurationView) return UserEmailEventConfigurationInterface_Access;

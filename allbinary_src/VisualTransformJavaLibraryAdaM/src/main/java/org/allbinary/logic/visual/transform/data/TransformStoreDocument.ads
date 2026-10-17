@@ -48,6 +48,8 @@ package org.allbinary.logic.visual.transform.data.TransformStoreDocument_Package
 
    procedure Initialize (This : in out TransformStoreDocument'Class; pageContext : PageContext_Access; weblisketSession : WeblisketSession_Access);
    function Create (pageContext : PageContext_Access; weblisketSession : WeblisketSession_Access) return TransformStoreDocument_Access;
+   procedure Initialize (This : in out TransformStoreDocument'Class; searchRequest : SearchRequest_Access);
+   function Create (searchRequest : SearchRequest_Access) return TransformStoreDocument_Access;
 
 end org.allbinary.logic.visual.transform.data.TransformStoreDocument_Package;
 

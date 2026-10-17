@@ -108,6 +108,8 @@ package org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
 
    procedure Initialize (This : in out LinuxHardware'Class; path : Unbounded_String);
    function Create (path : Unbounded_String) return LinuxHardware_Access;
+   procedure Initialize (This : in out LinuxHardware'Class);
+   function Create return LinuxHardware_Access;
    procedure init (This : in out LinuxHardware; filePath : Unbounded_String);
    procedure init (This : in out LinuxHardware; lineNumberReader_Param : LineNumberReader_Access; filePath : Unbounded_String);
    function getMultimedia (This : in out LinuxHardware; index : Integer) return MediaInterface_Access;

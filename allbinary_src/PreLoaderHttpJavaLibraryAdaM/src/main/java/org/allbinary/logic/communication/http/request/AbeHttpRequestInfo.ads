@@ -59,6 +59,8 @@ package org.allbinary.logic.communication.http.request.AbeHttpRequestInfo_Packag
 
    procedure Initialize (This : in out AbeHttpRequestInfo'Class; hashMap : HashMap_Access);
    function Create (hashMap : HashMap_Access) return AbeHttpRequestInfo_Access;
+   procedure Initialize (This : in out AbeHttpRequestInfo'Class; httpServletRequest : HttpServletRequest_Access);
+   function Create (httpServletRequest : HttpServletRequest_Access) return AbeHttpRequestInfo_Access;
    function toHashMap (This : in out AbeHttpRequestInfo) return HashMap_Access;
    function toVector (This : in out AbeHttpRequestInfo) return BasicArrayList_Access;
    function toString (This : in out AbeHttpRequestInfo) return Unbounded_String;

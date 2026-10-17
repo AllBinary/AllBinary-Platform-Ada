@@ -73,7 +73,6 @@ package body org.allbinary.business.user.commerce.money.payment.Payment_Package 
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out Payment'Class; request : ServletRequest_Access) is
    begin
       Initialize_Fields (This);
@@ -100,7 +99,6 @@ package body org.allbinary.business.user.commerce.money.payment.Payment_Package 
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out Payment'Class) is
    begin
       Initialize_Fields (This);

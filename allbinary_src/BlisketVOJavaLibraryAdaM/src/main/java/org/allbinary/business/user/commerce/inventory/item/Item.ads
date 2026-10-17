@@ -60,6 +60,8 @@ package org.allbinary.business.user.commerce.inventory.item.Item_Package is
 
    procedure Initialize (This : in out Item'Class; itemHashMap : HashMap_Access);
    function Create (itemHashMap : HashMap_Access) return Item_Access;
+   procedure Initialize (This : in out Item'Class);
+   function Create return Item_Access;
    procedure setData (This : in out Item; itemHashMap : HashMap_Access);
    procedure setGroup (This : in out Item; value : Unbounded_String);
    procedure setTax (This : in out Item; value : Unbounded_String);

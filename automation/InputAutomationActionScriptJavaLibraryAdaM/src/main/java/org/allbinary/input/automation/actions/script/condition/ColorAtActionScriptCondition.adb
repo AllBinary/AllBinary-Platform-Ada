@@ -81,7 +81,6 @@ package body org.allbinary.input.automation.actions.script.condition.ColorAtActi
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out ColorAtActionScriptCondition'Class) is
    begin
         BasicProfileActionScriptCondition_Package.Initialize (This, ColorAtActionScriptCondition_Package.NAME);

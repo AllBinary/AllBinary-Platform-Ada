@@ -52,6 +52,8 @@ package org.allbinary.business.user.commerce.money.payment.types.PaymentType_Pac
 
    procedure Initialize (This : in out PaymentType'Class; basicPaymentType : BasicPaymentType_Access);
    function Create (basicPaymentType : BasicPaymentType_Access) return PaymentType_Access;
+   procedure Initialize (This : in out PaymentType'Class; basicPaymentType : BasicPaymentType_Access; paymentTransactionInterfaceFactoryInterface : PaymentTransactionInterfaceFactoryInterface_Access; paymentProcessorInterfaceFactoryInterface : PaymentProcessorInterfaceFactoryInterface_Access);
+   function Create (basicPaymentType : BasicPaymentType_Access; paymentTransactionInterfaceFactoryInterface : PaymentTransactionInterfaceFactoryInterface_Access; paymentProcessorInterfaceFactoryInterface : PaymentProcessorInterfaceFactoryInterface_Access) return PaymentType_Access;
    function getPaymentTransactionInterfaceFactoryInterface (This : in out PaymentType) return PaymentTransactionInterfaceFactoryInterface_Access;
    function getPaymentProcessorInterfaceFactoryInterface (This : in out PaymentType) return PaymentProcessorInterfaceFactoryInterface_Access;
    function toVector (This : in out PaymentType) return BasicArrayList_Access;

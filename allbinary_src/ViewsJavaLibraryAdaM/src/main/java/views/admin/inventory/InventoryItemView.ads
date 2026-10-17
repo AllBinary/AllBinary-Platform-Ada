@@ -93,6 +93,8 @@ package views.admin.inventory.InventoryItemView_Package is
 
    procedure Initialize (This : in out InventoryItemView'Class; transformInfoInterface : TransformInfoInterface_Access);
    function Create (transformInfoInterface : TransformInfoInterface_Access) return InventoryItemView_Access;
+   procedure Initialize (This : in out InventoryItemView'Class; transformInfoInterface : TransformInfoInterface_Access; empty : Unbounded_String);
+   function Create (transformInfoInterface : TransformInfoInterface_Access; empty : Unbounded_String) return InventoryItemView_Access;
    function getTypeId (This : in out InventoryItemView) return Integer;
    procedure getFormData (This : in out InventoryItemView);
    procedure addDomNodeInterfaces (This : in out InventoryItemView);

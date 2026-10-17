@@ -69,6 +69,8 @@ package org.allbinary.input.automation.module.generic_Id.configuration.profile.a
 
    procedure Initialize (This : in out GenericProfileActionScript'Class; genericProfileActionJPanel : GenericProfileActionJPanel_Access; node : Node_Access);
    function Create (genericProfileActionJPanel : GenericProfileActionJPanel_Access; node : Node_Access) return GenericProfileActionScript_Access;
+   procedure Initialize (This : in out GenericProfileActionScript'Class; genericProfileActionJPanel : GenericProfileActionJPanel_Access);
+   function Create (genericProfileActionJPanel : GenericProfileActionJPanel_Access) return GenericProfileActionScript_Access;
    procedure addCondition (This : in out GenericProfileActionScript; profileActionScriptNodeInterface : ProfileActionScriptNodeInterface_Access);
    procedure removeCondition (This : in out GenericProfileActionScript; profileActionScriptNodeInterface : ProfileActionScriptNodeInterface_Access);
    function toHashMap (This : in out GenericProfileActionScript) return HashMap_Access;

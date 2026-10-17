@@ -56,7 +56,6 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out GenericProfileActionScript'Class; genericProfileActionJPanel : GenericProfileActionJPanel_Access) is
    begin
       DefaultMutableTreeNode_Package.Initialize (This);

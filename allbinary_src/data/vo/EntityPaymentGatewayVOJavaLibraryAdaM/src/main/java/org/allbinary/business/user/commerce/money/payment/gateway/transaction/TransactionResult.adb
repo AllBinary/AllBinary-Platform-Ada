@@ -58,7 +58,6 @@ package body org.allbinary.business.user.commerce.money.payment.gateway.transact
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out TransactionResult'Class; keyValuePairs_Param : HashMap_Access) is
       keyValuePairs : HashMap_Access := keyValuePairs_Param;
    begin

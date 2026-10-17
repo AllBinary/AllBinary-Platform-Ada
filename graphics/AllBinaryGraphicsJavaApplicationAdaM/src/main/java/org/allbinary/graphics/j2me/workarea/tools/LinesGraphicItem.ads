@@ -98,6 +98,8 @@ package org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package is
 
    procedure Initialize (This : in out LinesGraphicItem'Class);
    function Create return LinesGraphicItem_Access;
+   procedure Initialize (This : in out LinesGraphicItem'Class; linesNode : Node_Access);
+   function Create (linesNode : Node_Access) return LinesGraphicItem_Access;
    procedure init (This : in out LinesGraphicItem);
    procedure translate (This : in out LinesGraphicItem; x : Integer; y : Integer);
    procedure setRotate (This : in out LinesGraphicItem; theta_Param : Long_Float);

@@ -96,6 +96,8 @@ package org.allbinary.business.user.commerce.inventory.item.BasicItem_Package is
 
    procedure Initialize (This : in out BasicItem'Class; itemHashMap : HashMap_Access);
    function Create (itemHashMap : HashMap_Access) return BasicItem_Access;
+   procedure Initialize (This : in out BasicItem'Class);
+   function Create return BasicItem_Access;
    procedure setId (This : in out BasicItem; itemId : Unbounded_String);
    procedure setNumber (This : in out BasicItem; number : Unbounded_String);
    procedure setInBaskets (This : in out BasicItem; value : Unbounded_String);

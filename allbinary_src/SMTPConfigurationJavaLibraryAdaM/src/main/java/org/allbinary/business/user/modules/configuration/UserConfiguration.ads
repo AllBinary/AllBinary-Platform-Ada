@@ -49,6 +49,8 @@ package org.allbinary.business.user.modules.configuration.UserConfiguration_Pack
 
    procedure Initialize (This : in out UserConfiguration'Class);
    function Create return UserConfiguration_Access;
+   procedure Initialize (This : in out UserConfiguration'Class; hashMap : HashMap_Access);
+   function Create (hashMap : HashMap_Access) return UserConfiguration_Access;
    function getUserEmailConfigurationInterface (This : in out UserConfiguration) return UserEmailConfigurationInterface_Access;
    procedure setUserEmailConfigurationInterface (This : in out UserConfiguration; userEmailConfigurationInterface : UserEmailConfigurationInterface_Access);
    function getTimeCreated (This : in out UserConfiguration) return TimeCreated_Access;

@@ -36,7 +36,6 @@ package body org.allbinary.business.user.modules.customer.affiliate.AffiliateUse
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out AffiliateUser'Class; userHashMap : HashMap_Access) is
    begin
         User_Package.Initialize (This, userHashMap);

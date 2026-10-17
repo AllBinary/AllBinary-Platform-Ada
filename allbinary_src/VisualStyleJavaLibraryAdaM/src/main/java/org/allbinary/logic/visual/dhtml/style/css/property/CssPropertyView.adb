@@ -36,7 +36,6 @@ package body org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyView
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out CssPropertyView'Class; node : Node_Access) is
    begin
       Initialize_Fields (This);

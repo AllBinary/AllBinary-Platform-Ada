@@ -35,6 +35,8 @@ package org.allbinary.business.init.db.InventoryDbInitInfo_Package is
 
    procedure Initialize (This : in out InventoryDbInitInfo'Class);
    function Create return InventoryDbInitInfo_Access;
+   procedure Initialize (This : in out InventoryDbInitInfo'Class; read : Boolean);
+   function Create (read : Boolean) return InventoryDbInitInfo_Access;
 
 end org.allbinary.business.init.db.InventoryDbInitInfo_Package;
 

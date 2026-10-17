@@ -54,6 +54,8 @@ package org.allbinary.business.context.configuration.ContextConfigurationView_Pa
 
    procedure Initialize (This : in out ContextConfigurationView'Class; node : Node_Access);
    function Create (node : Node_Access) return ContextConfigurationView_Access;
+   procedure Initialize (This : in out ContextConfigurationView'Class; contextConfigurationInterface : ContextConfigurationInterface_Access);
+   function Create (contextConfigurationInterface : ContextConfigurationInterface_Access) return ContextConfigurationView_Access;
    function getContextConfigurationInterface (This : in out ContextConfigurationView) return ContextConfigurationInterface_Access;
    function toXmlNode (This : in out ContextConfigurationView; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out ContextConfigurationView; document : Document_Access);

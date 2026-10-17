@@ -48,6 +48,8 @@ package org.allbinary.business.time.modified.TimeLastModifiedView_Package is
 
    procedure Initialize (This : in out TimeLastModifiedView'Class; timeLastModified : TimeLastModified_Access);
    function Create (timeLastModified : TimeLastModified_Access) return TimeLastModifiedView_Access;
+   procedure Initialize (This : in out TimeLastModifiedView'Class; node : Node_Access);
+   function Create (node : Node_Access) return TimeLastModifiedView_Access;
    function toXmlNode (This : in out TimeLastModifiedView; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out TimeLastModifiedView; document : Document_Access);
    function getTimeLastModified (This : in out TimeLastModifiedView) return TimeLastModified_Access;

@@ -35,7 +35,6 @@ package body views.business.context.modules.storefront.customizer.template.objec
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out InsertTemplateCustomizerTransformInfoObjectConfig'Class; transformInfoInterface : TransformInfoInterface_Access; document : Document_Access) is
    begin
         NoTemplateTransformInfoObjectConfig_Package.Initialize (This, transformInfoInterface, document);
@@ -50,7 +49,6 @@ package body views.business.context.modules.storefront.customizer.template.objec
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out InsertTemplateCustomizerTransformInfoObjectConfig'Class; transformInfoInterface : TransformInfoInterface_Access; name : Unbounded_String; type_Id : Unbounded_String) is
    begin
         NoTemplateTransformInfoObjectConfig_Package.Initialize (This, transformInfoInterface, name, type_Id);

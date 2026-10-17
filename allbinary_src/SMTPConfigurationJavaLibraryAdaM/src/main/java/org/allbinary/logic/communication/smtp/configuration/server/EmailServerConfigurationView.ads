@@ -52,6 +52,8 @@ package org.allbinary.logic.communication.smtp.configuration.server.EmailServerC
 
    procedure Initialize (This : in out EmailServerConfigurationView'Class; node : Node_Access);
    function Create (node : Node_Access) return EmailServerConfigurationView_Access;
+   procedure Initialize (This : in out EmailServerConfigurationView'Class; emailServerConfigurationInterface : EmailServerConfigurationInterface_Access);
+   function Create (emailServerConfigurationInterface : EmailServerConfigurationInterface_Access) return EmailServerConfigurationView_Access;
    function getEmailConfigurationInterface (This : in out EmailServerConfigurationView) return EmailServerConfigurationInterface_Access;
    function toXmlNode (This : in out EmailServerConfigurationView; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out EmailServerConfigurationView; document : Document_Access);

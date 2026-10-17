@@ -35,6 +35,8 @@ package org.allbinary.util.ABHashtable_Package is
 
    procedure Initialize (This : in out ABHashtable'Class; initialCapacity : Integer);
    function Create (initialCapacity : Integer) return ABHashtable_Access;
+   procedure Initialize (This : in out ABHashtable'Class);
+   function Create return ABHashtable_Access;
 
 end org.allbinary.util.ABHashtable_Package;
 

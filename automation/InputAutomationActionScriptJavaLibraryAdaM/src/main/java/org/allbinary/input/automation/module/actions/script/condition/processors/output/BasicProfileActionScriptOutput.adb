@@ -33,7 +33,6 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out BasicProfileActionScriptOutput'Class; label : Unbounded_String) is
    begin
         BasicProfileActionScriptProcessor_Package.Initialize (This, label);

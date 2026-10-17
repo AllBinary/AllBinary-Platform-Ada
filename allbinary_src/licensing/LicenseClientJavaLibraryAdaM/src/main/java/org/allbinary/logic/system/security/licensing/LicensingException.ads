@@ -35,6 +35,8 @@ package org.allbinary.logic.system.security.licensing.LicensingException_Package
 
    procedure Initialize (This : in out LicensingException'Class);
    function Create return LicensingException_Access;
+   procedure Initialize (This : in out LicensingException'Class; msg : Unbounded_String);
+   function Create (msg : Unbounded_String) return LicensingException_Access;
 
 end org.allbinary.logic.system.security.licensing.LicensingException_Package;
 

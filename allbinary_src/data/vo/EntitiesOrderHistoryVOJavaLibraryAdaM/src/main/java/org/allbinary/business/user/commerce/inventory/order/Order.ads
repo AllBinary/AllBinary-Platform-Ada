@@ -74,6 +74,8 @@ package org.allbinary.business.user.commerce.inventory.order.Order_Package is
 
    procedure Initialize (This : in out Order'Class; basket : BasketInterface_Access);
    function Create (basket : BasketInterface_Access) return Order_Access;
+   procedure Initialize (This : in out Order'Class; storeName : Unbounded_String; basket : BasketInterface_Access; id : Unbounded_String; shippingType : Unbounded_String; special : Unbounded_String; paymentMethod : Unbounded_String);
+   function Create (storeName : Unbounded_String; basket : BasketInterface_Access; id : Unbounded_String; shippingType : Unbounded_String; special : Unbounded_String; paymentMethod : Unbounded_String) return Order_Access;
    function isIdValid (This : in out Order) return Boolean;
    function isValid (This : in out Order) return Boolean;
    function getIdValidationInfo (This : in out Order) return Unbounded_String;

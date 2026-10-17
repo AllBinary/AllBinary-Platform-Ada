@@ -42,6 +42,8 @@ package org.allbinary.business.user.modules.customer.affiliate.AffiliateUser_Pac
 
    procedure Initialize (This : in out AffiliateUser'Class);
    function Create return AffiliateUser_Access;
+   procedure Initialize (This : in out AffiliateUser'Class; userHashMap : HashMap_Access);
+   function Create (userHashMap : HashMap_Access) return AffiliateUser_Access;
    procedure validateSession (This : in out AffiliateUser; weblisketSession : WeblisketSessionInterface_Access);
    procedure updateSession (This : in out AffiliateUser; weblisketSession : WeblisketSessionInterface_Access);
    function isSessionValid (This : in out AffiliateUser) return Boolean;

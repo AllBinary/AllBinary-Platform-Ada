@@ -69,6 +69,16 @@ package org.allbinary.business.user.address.StreetAddress_Package is
 
    procedure Initialize (This : in out StreetAddress'Class);
    function Create return StreetAddress_Access;
+   procedure Initialize (This : in out StreetAddress'Class; node : Node_Access);
+   function Create (node : Node_Access) return StreetAddress_Access;
+   procedure Initialize (This : in out StreetAddress'Class; streetAddress : StreetAddress_Access);
+   function Create (streetAddress : StreetAddress_Access) return StreetAddress_Access;
+   procedure Initialize (This : in out StreetAddress'Class; request : HttpServletRequest_Access);
+   function Create (request : HttpServletRequest_Access) return StreetAddress_Access;
+   procedure Initialize (This : in out StreetAddress'Class; name : Unbounded_String; street : Unbounded_String; city : Unbounded_String; state : Unbounded_String; code : Unbounded_String; country : Unbounded_String);
+   function Create (name : Unbounded_String; street : Unbounded_String; city : Unbounded_String; state : Unbounded_String; code : Unbounded_String; country : Unbounded_String) return StreetAddress_Access;
+   procedure Initialize (This : in out StreetAddress'Class; address : HashMap_Access);
+   function Create (address : HashMap_Access) return StreetAddress_Access;
    procedure log (This : in out StreetAddress);
    procedure setId (This : in out StreetAddress; id : Unbounded_String);
    procedure setName (This : in out StreetAddress; name : Unbounded_String);

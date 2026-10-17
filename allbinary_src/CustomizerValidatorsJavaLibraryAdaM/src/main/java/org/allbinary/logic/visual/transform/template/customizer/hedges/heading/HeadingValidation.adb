@@ -39,7 +39,6 @@ package body org.allbinary.logic.visual.transform.template.customizer.hedges.hea
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out HeadingValidation'Class; document : Document_Access) is
       headingNodeList : NodeList_Access;
       titleNode : Node_Access;
@@ -61,7 +60,6 @@ package body org.allbinary.logic.visual.transform.template.customizer.hedges.hea
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out HeadingValidation'Class; hashMap : HashMap_Access) is
    begin
       Validation_Package.Initialize (This);

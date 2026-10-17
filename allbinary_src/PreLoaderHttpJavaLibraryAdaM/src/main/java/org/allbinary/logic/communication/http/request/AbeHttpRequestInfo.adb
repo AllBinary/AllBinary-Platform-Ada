@@ -50,7 +50,6 @@ package body org.allbinary.logic.communication.http.request.AbeHttpRequestInfo_P
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out AbeHttpRequestInfo'Class; httpServletRequest : HttpServletRequest_Access) is
       stringUtil : StringUtil_Access;
       enumuration : Enumeration_Access;

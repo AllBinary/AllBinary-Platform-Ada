@@ -47,7 +47,6 @@ package body org.allbinary.business.category.Category_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out Category'Class; categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access; level : Integer) is
    begin
       Initialize_Fields (This);
@@ -63,7 +62,6 @@ package body org.allbinary.business.category.Category_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out Category'Class; rootCategoryInterface : CategoryInterface_Access; parentCategoryInterface : CategoryInterface_Access; categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access) is
    begin
       Initialize_Fields (This);

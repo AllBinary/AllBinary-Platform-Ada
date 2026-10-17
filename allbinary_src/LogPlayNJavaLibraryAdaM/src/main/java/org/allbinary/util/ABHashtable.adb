@@ -33,7 +33,6 @@ package body org.allbinary.util.ABHashtable_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out ABHashtable'Class) is
    begin
         Hashtable_Package.Initialize (This);

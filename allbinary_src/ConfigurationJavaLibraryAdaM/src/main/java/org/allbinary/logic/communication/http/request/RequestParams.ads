@@ -59,6 +59,10 @@ package org.allbinary.logic.communication.http.request.RequestParams_Package is
 
    procedure Initialize (This : in out RequestParams'Class);
    function Create return RequestParams_Access;
+   procedure Initialize (This : in out RequestParams'Class; request : HttpServletRequest_Access);
+   function Create (request : HttpServletRequest_Access) return RequestParams_Access;
+   procedure Initialize (This : in out RequestParams'Class; pageContext : PageContext_Access);
+   function Create (pageContext : PageContext_Access) return RequestParams_Access;
    procedure setMap (This : in out RequestParams; map : Map_Access);
    function getMap (This : in out RequestParams) return Map_Access;
    function toXmlNode (This : in out RequestParams; document : Document_Access) return Node_Access;

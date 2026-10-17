@@ -33,7 +33,6 @@ package body org.allbinary.logic.io.AbFileInputStream_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out AbFileInputStream'Class; file : AbFile_Access) is
    begin
         FileInputStream_Package.Initialize (This, AbFileNativeUtil_Package.get (file));
@@ -46,7 +45,6 @@ package body org.allbinary.logic.io.AbFileInputStream_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out AbFileInputStream'Class; file : File_Access) is
    begin
         FileInputStream_Package.Initialize (This, file);

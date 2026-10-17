@@ -43,7 +43,6 @@ package body org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package 
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out BasicWorkFlow'Class; hashMap : HashMap_Access; pageContext : PageContext_Access) is
       weblisketSession : WeblisketSession_Access;
       requestHashMap : HashMap_Access;
@@ -63,7 +62,6 @@ package body org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package 
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out BasicWorkFlow'Class; hashMap : HashMap_Access) is
    begin
       Initialize_Fields (This);

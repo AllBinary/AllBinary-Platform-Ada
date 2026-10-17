@@ -43,6 +43,8 @@ package org.allbinary.input.automation.module.AbstractInputAutomationFactory_Pac
 
    procedure Initialize (This : in out AbstractInputAutomationFactory'Class; name : Unbounded_String; jPanel : JPanel_Access; helpSet : HelpSet_Access);
    function Create (name : Unbounded_String; jPanel : JPanel_Access; helpSet : HelpSet_Access) return AbstractInputAutomationFactory_Access;
+   procedure Initialize (This : in out AbstractInputAutomationFactory'Class; name : Unbounded_String; jPanel : JPanel_Access);
+   function Create (name : Unbounded_String; jPanel : JPanel_Access) return AbstractInputAutomationFactory_Access;
    function getName (This : in out AbstractInputAutomationFactory) return Unbounded_String;
    function getConfigurationJPanel (This : in out AbstractInputAutomationFactory) return JPanel_Access;
    function getHelpSet (This : in out AbstractInputAutomationFactory) return HelpSet_Access;

@@ -64,6 +64,8 @@ package org.allbinary.logic.visual.transform.template.customizer.includes.meta.M
 
    procedure Initialize (This : in out MetaValidation'Class; htmlMetaAttributeData : HtmlMetaAttributeData_Access; label : Unbounded_String; attributeValue : Unbounded_String; contentValue : Unbounded_String);
    function Create (htmlMetaAttributeData : HtmlMetaAttributeData_Access; label : Unbounded_String; attributeValue : Unbounded_String; contentValue : Unbounded_String) return MetaValidation_Access;
+   procedure Initialize (This : in out MetaValidation'Class; document : Document_Access);
+   function Create (document : Document_Access) return MetaValidation_Access;
    function isValid (This : in out MetaValidation) return Boolean;
    function validationInfo (This : in out MetaValidation) return Unbounded_String;
    function toValidationInfoDoc (This : in out MetaValidation) return Document_Access;

@@ -57,6 +57,8 @@ package org.allbinary.logic.visual.transform.template.customizer.includes.global
 
    procedure Initialize (This : in out GlobalsValidation'Class; storeName : Unbounded_String);
    function Create (storeName : Unbounded_String) return GlobalsValidation_Access;
+   procedure Initialize (This : in out GlobalsValidation'Class; document : Document_Access);
+   function Create (document : Document_Access) return GlobalsValidation_Access;
    function isValid (This : in out GlobalsValidation) return Boolean;
    function validationInfo (This : in out GlobalsValidation) return Unbounded_String;
    function toValidationInfoDoc (This : in out GlobalsValidation) return Document_Access;

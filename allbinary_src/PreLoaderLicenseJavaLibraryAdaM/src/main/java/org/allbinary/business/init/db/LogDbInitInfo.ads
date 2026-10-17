@@ -35,6 +35,8 @@ package org.allbinary.business.init.db.LogDbInitInfo_Package is
 
    procedure Initialize (This : in out LogDbInitInfo'Class);
    function Create return LogDbInitInfo_Access;
+   procedure Initialize (This : in out LogDbInitInfo'Class; read : Boolean);
+   function Create (read : Boolean) return LogDbInitInfo_Access;
 
 end org.allbinary.business.init.db.LogDbInitInfo_Package;
 

@@ -47,7 +47,6 @@ package body org.allbinary.graphics.j2me.GraphicsException_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out GraphicsException'Class; msg : Unbounded_String; className : Unbounded_String; method : Unbounded_String) is
    begin
         Exception_Package.Initialize (This, msg);

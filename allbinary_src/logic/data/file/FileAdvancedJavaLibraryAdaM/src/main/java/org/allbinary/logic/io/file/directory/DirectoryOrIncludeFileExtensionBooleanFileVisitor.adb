@@ -36,7 +36,6 @@ package body org.allbinary.logic.io.file.directory.DirectoryOrIncludeFileExtensi
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out DirectoryOrIncludeFileExtensionBooleanFileVisitor'Class; filterStringBasicArrayList : BasicArrayList_Access; includesString : Unbounded_String) is
    begin
         IncludeFileExtensionsBooleanFileVisitor_Package.Initialize (This, filterStringBasicArrayList);

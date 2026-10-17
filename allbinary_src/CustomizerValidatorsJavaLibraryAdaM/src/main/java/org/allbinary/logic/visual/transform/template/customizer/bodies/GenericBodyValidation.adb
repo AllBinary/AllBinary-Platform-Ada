@@ -37,7 +37,6 @@ package body org.allbinary.logic.visual.transform.template.customizer.bodies.Gen
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out GenericBodyValidation'Class; document : Document_Access) is
       nodeList : NodeList_Access;
       aBodyNode : Node_Access;
@@ -61,7 +60,6 @@ package body org.allbinary.logic.visual.transform.template.customizer.bodies.Gen
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out GenericBodyValidation'Class; hashMap : HashMap_Access) is
    begin
       Validation_Package.Initialize (This);

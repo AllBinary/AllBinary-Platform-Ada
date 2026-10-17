@@ -50,7 +50,6 @@ package body org.allbinary.logic.visual.transform.template.customizer.includes.m
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out MetasValidation'Class; document : Document_Access) is
    begin
       Validation_Package.Initialize (This);

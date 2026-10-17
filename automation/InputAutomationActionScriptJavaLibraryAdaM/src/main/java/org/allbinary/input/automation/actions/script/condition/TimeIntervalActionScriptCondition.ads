@@ -61,6 +61,8 @@ package org.allbinary.input.automation.actions.script.condition.TimeIntervalActi
 
    procedure Initialize (This : in out TimeIntervalActionScriptCondition'Class; node : Node_Access);
    function Create (node : Node_Access) return TimeIntervalActionScriptCondition_Access;
+   procedure Initialize (This : in out TimeIntervalActionScriptCondition'Class);
+   function Create return TimeIntervalActionScriptCondition_Access;
    procedure init (This : in out TimeIntervalActionScriptCondition);
    procedure showDialog (This : in out TimeIntervalActionScriptCondition);
    function toHashMap (This : in out TimeIntervalActionScriptCondition) return HashMap_Access;

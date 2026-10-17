@@ -35,7 +35,6 @@ package body org.allbinary.logic.system.security.licensing.LicensingException_Pa
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out LicensingException'Class; msg : Unbounded_String) is
    begin
         Exception_Package.Initialize (This, msg);

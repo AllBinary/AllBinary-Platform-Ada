@@ -67,7 +67,6 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out ImageActionScriptOutput'Class) is
    begin
         BasicProfileActionScriptOutput_Package.Initialize (This, NAME);

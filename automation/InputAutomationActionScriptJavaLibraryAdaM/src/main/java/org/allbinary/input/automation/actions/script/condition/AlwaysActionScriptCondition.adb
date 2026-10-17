@@ -58,7 +58,6 @@ package body org.allbinary.input.automation.actions.script.condition.AlwaysActio
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out AlwaysActionScriptCondition'Class) is
    begin
         BasicProfileActionScriptCondition_Package.Initialize (This, AlwaysActionScriptCondition_Package.NAME);

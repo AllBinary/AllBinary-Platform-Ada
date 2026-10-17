@@ -63,6 +63,8 @@ package tags.transform.info.TransformInfoTag_Package is
 
    procedure Initialize (This : in out TransformInfoTag'Class);
    function Create return TransformInfoTag_Access;
+   procedure Initialize (This : in out TransformInfoTag'Class; tagHelperFactoryInterface : TagHelperFactoryInterface_Access);
+   function Create (tagHelperFactoryInterface : TagHelperFactoryInterface_Access) return TransformInfoTag_Access;
    procedure setName (This : in out TransformInfoTag; value : Unbounded_String);
    procedure setStoreName (This : in out TransformInfoTag; value : Unbounded_String);
    procedure setObjectFile (This : in out TransformInfoTag; value : Unbounded_String);

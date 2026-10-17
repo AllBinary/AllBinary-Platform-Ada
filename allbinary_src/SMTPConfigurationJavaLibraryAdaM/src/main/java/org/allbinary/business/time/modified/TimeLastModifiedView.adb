@@ -35,7 +35,6 @@ package body org.allbinary.business.time.modified.TimeLastModifiedView_Package i
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out TimeLastModifiedView'Class; node : Node_Access) is
    begin
       Initialize_Fields (This);

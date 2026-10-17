@@ -35,7 +35,6 @@ package body org.allbinary.business.init.InitException_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out InitException'Class; msg : Unbounded_String) is
    begin
         Exception_Package.Initialize (This, msg);

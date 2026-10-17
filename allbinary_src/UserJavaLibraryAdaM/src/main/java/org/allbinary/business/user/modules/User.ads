@@ -112,6 +112,10 @@ package org.allbinary.business.user.modules.User_Package is
 
    procedure Initialize (This : in out User'Class);
    function Create return User_Access;
+   procedure Initialize (This : in out User'Class; request : HttpServletRequest_Access);
+   function Create (request : HttpServletRequest_Access) return User_Access;
+   procedure Initialize (This : in out User'Class; userHashMap : HashMap_Access);
+   function Create (userHashMap : HashMap_Access) return User_Access;
    procedure getFormData (This : in out User; userHashMap : HashMap_Access);
    function isValid (This : in out User) return Boolean;
    function validationInfo (This : in out User) return Unbounded_String;

@@ -63,6 +63,10 @@ package org.allbinary.logic.visual.transform.template.customizer.hedges.heading.
 
    procedure Initialize (This : in out HeadingValidation'Class);
    function Create return HeadingValidation_Access;
+   procedure Initialize (This : in out HeadingValidation'Class; document : Document_Access);
+   function Create (document : Document_Access) return HeadingValidation_Access;
+   procedure Initialize (This : in out HeadingValidation'Class; hashMap : HashMap_Access);
+   function Create (hashMap : HashMap_Access) return HeadingValidation_Access;
    procedure getFormData (This : in out HeadingValidation; hashMap : HashMap_Access);
    function isValid (This : in out HeadingValidation) return Boolean;
    function validationInfo (This : in out HeadingValidation) return Unbounded_String;

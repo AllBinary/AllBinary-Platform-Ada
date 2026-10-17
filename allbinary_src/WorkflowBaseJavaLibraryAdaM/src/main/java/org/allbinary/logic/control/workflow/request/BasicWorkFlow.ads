@@ -78,6 +78,10 @@ package org.allbinary.logic.control.workflow.request.BasicWorkFlow_Package is
 
    procedure Initialize (This : in out BasicWorkFlow'Class);
    function Create return BasicWorkFlow_Access;
+   procedure Initialize (This : in out BasicWorkFlow'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
+   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return BasicWorkFlow_Access;
+   procedure Initialize (This : in out BasicWorkFlow'Class; hashMap : HashMap_Access);
+   function Create (hashMap : HashMap_Access) return BasicWorkFlow_Access;
    function getName (This : in out BasicWorkFlow) return Unbounded_String;
    function getStoreName (This : in out BasicWorkFlow) return Unbounded_String;
    function getKey (This : in out BasicWorkFlow) return Java_Object_Access;

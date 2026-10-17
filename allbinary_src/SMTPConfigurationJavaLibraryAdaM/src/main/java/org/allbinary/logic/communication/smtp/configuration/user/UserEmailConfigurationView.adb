@@ -47,7 +47,6 @@ package body org.allbinary.logic.communication.smtp.configuration.user.UserEmail
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out UserEmailConfigurationView'Class; userEmailConfigurationInterface : UserEmailConfigurationInterface_Access) is
    begin
       Initialize_Fields (This);

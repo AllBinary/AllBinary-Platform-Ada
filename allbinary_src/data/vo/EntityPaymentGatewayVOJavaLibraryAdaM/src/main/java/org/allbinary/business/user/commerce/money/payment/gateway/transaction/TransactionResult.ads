@@ -57,6 +57,8 @@ package org.allbinary.business.user.commerce.money.payment.gateway.transaction.T
 
    procedure Initialize (This : in out TransactionResult'Class; result : Unbounded_String);
    function Create (result : Unbounded_String) return TransactionResult_Access;
+   procedure Initialize (This : in out TransactionResult'Class; keyValuePairs_Param : HashMap_Access);
+   function Create (keyValuePairs_Param : HashMap_Access) return TransactionResult_Access;
    function toString (This : in out TransactionResult) return Unbounded_String;
    function toHashMap (This : in out TransactionResult) return HashMap_Access;
    function getAllPossibleKeys (This : in out TransactionResult) return BasicArrayList_Access;

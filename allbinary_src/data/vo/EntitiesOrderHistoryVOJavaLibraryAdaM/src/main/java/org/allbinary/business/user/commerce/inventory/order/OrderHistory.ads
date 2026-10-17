@@ -89,6 +89,10 @@ package org.allbinary.business.user.commerce.inventory.order.OrderHistory_Packag
 
    procedure Initialize (This : in out OrderHistory'Class; basketInterface : BasketInterface_Access);
    function Create (basketInterface : BasketInterface_Access) return OrderHistory_Access;
+   procedure Initialize (This : in out OrderHistory'Class; basketInterface : BasketInterface_Access; orderHistory : OrderHistory_Access);
+   function Create (basketInterface : BasketInterface_Access; orderHistory : OrderHistory_Access) return OrderHistory_Access;
+   procedure Initialize (This : in out OrderHistory'Class; basketInterface : BasketInterface_Access; orderHistoryHashMap : HashMap_Access);
+   function Create (basketInterface : BasketInterface_Access; orderHistoryHashMap : HashMap_Access) return OrderHistory_Access;
    procedure setUserName (This : in out OrderHistory; value : Unbounded_String);
    procedure setDefaultShippingAddress (This : in out OrderHistory; shippingAddress : StreetAddress_Access);
    procedure setBillingAddress (This : in out OrderHistory; billingAddress : StreetAddress_Access);

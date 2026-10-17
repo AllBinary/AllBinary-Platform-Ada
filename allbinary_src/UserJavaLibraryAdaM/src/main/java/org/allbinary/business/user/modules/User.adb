@@ -59,7 +59,6 @@ package body org.allbinary.business.user.modules.User_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out User'Class; request : HttpServletRequest_Access) is
    begin
       Initialize_Fields (This);
@@ -74,7 +73,6 @@ package body org.allbinary.business.user.modules.User_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out User'Class; userHashMap : HashMap_Access) is
    begin
       Initialize_Fields (This);

@@ -75,6 +75,10 @@ package org.allbinary.business.category.Category_Package is
 
    procedure Initialize (This : in out Category'Class; categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access);
    function Create (categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access) return Category_Access;
+   procedure Initialize (This : in out Category'Class; categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access; level : Integer);
+   function Create (categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access; level : Integer) return Category_Access;
+   procedure Initialize (This : in out Category'Class; rootCategoryInterface : CategoryInterface_Access; parentCategoryInterface : CategoryInterface_Access; categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access);
+   function Create (rootCategoryInterface : CategoryInterface_Access; parentCategoryInterface : CategoryInterface_Access; categoryPropertiesFactoryInterface : CategoryPropertiesFactoryInterface_Access) return Category_Access;
    function getKey (This : in out Category) return Java_Object_Access;
    function getRootFilePath (This : in out Category) return AbPath_Access;
    function getFilePath (This : in out Category) return AbPath_Access;

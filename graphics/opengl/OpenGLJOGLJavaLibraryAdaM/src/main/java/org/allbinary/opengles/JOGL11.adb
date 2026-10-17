@@ -34,7 +34,6 @@ package body org.allbinary.opengles.JOGL11_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out JOGL11'Class; gl : GL_Access; gl2 : GL2_Access) is
    begin
         JOGL10_Package.Initialize (This, gl, gl2);

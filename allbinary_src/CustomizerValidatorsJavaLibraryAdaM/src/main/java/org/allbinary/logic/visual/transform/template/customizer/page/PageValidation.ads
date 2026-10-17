@@ -57,6 +57,10 @@ package org.allbinary.logic.visual.transform.template.customizer.page.PageValida
 
    procedure Initialize (This : in out PageValidation'Class);
    function Create return PageValidation_Access;
+   procedure Initialize (This : in out PageValidation'Class; document : Document_Access);
+   function Create (document : Document_Access) return PageValidation_Access;
+   procedure Initialize (This : in out PageValidation'Class; hashMap : HashMap_Access);
+   function Create (hashMap : HashMap_Access) return PageValidation_Access;
    procedure getFormData (This : in out PageValidation; hashMap : HashMap_Access);
    function isValid (This : in out PageValidation) return Boolean;
    function validationInfo (This : in out PageValidation) return Unbounded_String;

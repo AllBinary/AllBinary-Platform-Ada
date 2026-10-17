@@ -38,7 +38,6 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpStore_Pa
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out TransformInfoHttpStore'Class; databaseHashMap : HashMap_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) is
       stringBuffer : StringMaker_Access;
    begin
@@ -62,7 +61,6 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpStore_Pa
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out TransformInfoHttpStore'Class; storeFrontInterface : StoreFrontInterface_Access; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) is
    begin
         TransformInfoHttp_Package.Initialize (This, propertiesHashMap, pageContext);

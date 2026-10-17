@@ -54,7 +54,6 @@ package body org.allbinary.business.user.quoterequest.QuoteRequest_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out QuoteRequest'Class; hashMap : HashMap_Access) is
       quoteRequestData : QuoteRequestData_Access;
    begin

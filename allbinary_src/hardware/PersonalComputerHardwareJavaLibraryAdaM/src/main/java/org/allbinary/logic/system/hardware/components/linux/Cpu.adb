@@ -38,7 +38,6 @@ package body org.allbinary.logic.system.hardware.components.linux.Cpu_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out Cpu'Class) is
    begin
       Initialize_Fields (This);

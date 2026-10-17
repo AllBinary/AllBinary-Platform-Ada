@@ -50,6 +50,8 @@ package org.allbinary.logic.io.file.directory.DirectoryOrIncludeFileExtensionAnd
 
    procedure Initialize (This : in out DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor'Class; filterStringBasicArrayList : BasicArrayList_Access);
    function Create (filterStringBasicArrayList : BasicArrayList_Access) return DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Access;
+   procedure Initialize (This : in out DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor'Class; filterStringBasicArrayList : BasicArrayList_Access; includesString : Unbounded_String);
+   function Create (filterStringBasicArrayList : BasicArrayList_Access; includesString : Unbounded_String) return DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor_Access;
    function visit (This : in out DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor; file : AbFile_Access) return Boolean;
    procedure visit (This : in out DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor; file : AbFile_Access);
    function visit (This : in out DirectoryOrIncludeFileExtensionAndTrackedBooleanFileVisitor; file : AbFile_Access; fileNameString : Unbounded_String) return Boolean;

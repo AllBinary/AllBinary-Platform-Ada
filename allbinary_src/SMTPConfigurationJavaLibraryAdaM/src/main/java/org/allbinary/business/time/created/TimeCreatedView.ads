@@ -48,6 +48,8 @@ package org.allbinary.business.time.created.TimeCreatedView_Package is
 
    procedure Initialize (This : in out TimeCreatedView'Class; timeCreated : TimeCreated_Access);
    function Create (timeCreated : TimeCreated_Access) return TimeCreatedView_Access;
+   procedure Initialize (This : in out TimeCreatedView'Class; node : Node_Access);
+   function Create (node : Node_Access) return TimeCreatedView_Access;
    function toXmlNode (This : in out TimeCreatedView; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out TimeCreatedView; document : Document_Access);
    function getTimeCreated (This : in out TimeCreatedView) return TimeCreated_Access;

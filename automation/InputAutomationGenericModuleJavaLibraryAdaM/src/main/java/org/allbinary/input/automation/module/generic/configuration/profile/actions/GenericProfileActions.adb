@@ -42,7 +42,6 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out GenericProfileActions'Class; genericProfileActionsJPanel : GenericProfileActionsJPanel_Access; abPath : AbPath_Access; name : Unbounded_String) is
    begin
       Initialize_Fields (This);
@@ -58,7 +57,6 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out GenericProfileActions'Class; genericProfileActionsJPanel : GenericProfileActionsJPanel_Access; fileInputStream : FileInputStream_Access; name : Unbounded_String) is
    begin
       Initialize_Fields (This);

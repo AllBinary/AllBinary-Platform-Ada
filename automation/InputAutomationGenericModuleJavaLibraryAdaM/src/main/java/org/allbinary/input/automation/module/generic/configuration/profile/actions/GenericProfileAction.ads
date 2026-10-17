@@ -59,6 +59,8 @@ package org.allbinary.input.automation.module.generic_Id.configuration.profile.a
 
    procedure Initialize (This : in out GenericProfileAction'Class; genericProfileActionJPanel : GenericProfileActionJPanel_Access; node : Node_Access);
    function Create (genericProfileActionJPanel : GenericProfileActionJPanel_Access; node : Node_Access) return GenericProfileAction_Access;
+   procedure Initialize (This : in out GenericProfileAction'Class; name : Unbounded_String);
+   function Create (name : Unbounded_String) return GenericProfileAction_Access;
    function getName (This : in out GenericProfileAction) return Unbounded_String;
    procedure setName (This : in out GenericProfileAction; name : Unbounded_String);
    function toHashMap (This : in out GenericProfileAction) return HashMap_Access;

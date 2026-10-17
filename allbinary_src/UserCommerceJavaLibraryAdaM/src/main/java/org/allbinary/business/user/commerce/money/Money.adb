@@ -36,7 +36,6 @@ package body org.allbinary.business.user.commerce.money.Money_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out Money'Class) is
    begin
       Initialize_Fields (This);
@@ -50,7 +49,6 @@ package body org.allbinary.business.user.commerce.money.Money_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out Money'Class; usDollarStr : Unbounded_String) is
    begin
       Initialize_Fields (This);
@@ -66,7 +64,6 @@ package body org.allbinary.business.user.commerce.money.Money_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out Money'Class; units : Long_Long_Integer) is
    begin
       Initialize_Fields (This);

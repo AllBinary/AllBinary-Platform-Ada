@@ -65,6 +65,8 @@ package org.allbinary.logic.visual.dhtml.style.css.property.CssPropertyValues_Pa
 
    procedure Initialize (This : in out CssPropertyValues'Class);
    function Create return CssPropertyValues_Access;
+   procedure Initialize (This : in out CssPropertyValues'Class; node : Node_Access);
+   function Create (node : Node_Access) return CssPropertyValues_Access;
    function toHashMap (This : in out CssPropertyValues) return HashMap_Access;
    function toXmlNode (This : in out CssPropertyValues; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out CssPropertyValues; document : Document_Access);

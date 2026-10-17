@@ -46,6 +46,8 @@ package org.allbinary.input.automation.actions.script.condition.processors.Basic
 
    procedure Initialize (This : in out BasicProfileActionScriptProcessor'Class; label : Unbounded_String; node : Node_Access);
    function Create (label : Unbounded_String; node : Node_Access) return BasicProfileActionScriptProcessor_Access;
+   procedure Initialize (This : in out BasicProfileActionScriptProcessor'Class; label : Unbounded_String);
+   function Create (label : Unbounded_String) return BasicProfileActionScriptProcessor_Access;
    procedure actionPerformed (This : in out BasicProfileActionScriptProcessor; actionEvent : ActionEvent_Access);
    function toXmlNode (This : in out BasicProfileActionScriptProcessor; document : Document_Access) return Node_Access;
    procedure toXmlNode (This : in out BasicProfileActionScriptProcessor; document : Document_Access);

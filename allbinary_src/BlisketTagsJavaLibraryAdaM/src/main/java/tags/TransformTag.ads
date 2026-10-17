@@ -50,6 +50,8 @@ package tags.TransformTag_Package is
 
    procedure Initialize (This : in out TransformTag'Class);
    function Create return TransformTag_Access;
+   procedure Initialize (This : in out TransformTag'Class; tagHelperFactoryInterface : TagHelperFactoryInterface_Access);
+   function Create (tagHelperFactoryInterface : TagHelperFactoryInterface_Access) return TransformTag_Access;
    function view (This : in out TransformTag) return Unbounded_String;
    function doStartTag (This : in out TransformTag) return Integer;
 

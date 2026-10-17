@@ -46,6 +46,10 @@ package org.allbinary.business.category.properties.CategoryPropertiesFactory_Pac
 
    procedure Initialize (This : in out CategoryPropertiesFactory'Class; name : Unbounded_String);
    function Create (name : Unbounded_String) return CategoryPropertiesFactory_Access;
+   procedure Initialize (This : in out CategoryPropertiesFactory'Class; node : Node_Access);
+   function Create (node : Node_Access) return CategoryPropertiesFactory_Access;
+   procedure Initialize (This : in out CategoryPropertiesFactory'Class; categoryPropertiesHashMap : HashMap_Access);
+   function Create (categoryPropertiesHashMap : HashMap_Access) return CategoryPropertiesFactory_Access;
    function getInstance (This : in out CategoryPropertiesFactory) return CategoryPropertiesInterface_Access;
 
 end org.allbinary.business.category.properties.CategoryPropertiesFactory_Package;

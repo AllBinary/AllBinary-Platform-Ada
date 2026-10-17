@@ -61,6 +61,8 @@ package org.allbinary.input.automation.module.generic_Id.configuration.profile.G
 
    procedure Initialize (This : in out GenericProfile'Class; node : Node_Access);
    function Create (node : Node_Access) return GenericProfile_Access;
+   procedure Initialize (This : in out GenericProfile'Class; name : Unbounded_String);
+   function Create (name : Unbounded_String) return GenericProfile_Access;
    function getGenericProfileDataWorkerTypeVector (This : in out GenericProfile) return BasicArrayList_Access;
    procedure add (This : in out GenericProfile; genericProfileDataWorkerType : GenericProfileDataWorkerType_Access);
    procedure remove (This : in out GenericProfile; genericProfileDataWorkerType : GenericProfileDataWorkerType_Access);

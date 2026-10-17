@@ -72,7 +72,6 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out StoreFront'Class; request : HttpServletRequest_Access) is
    begin
       Initialize_Fields (This);
@@ -90,7 +89,6 @@ package body org.allbinary.business.context.modules.storefront.StoreFront_Packag
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out StoreFront'Class; hashMap : HashMap_Access) is
       domDocumentString : Unbounded_String;
       document : Document_Access;

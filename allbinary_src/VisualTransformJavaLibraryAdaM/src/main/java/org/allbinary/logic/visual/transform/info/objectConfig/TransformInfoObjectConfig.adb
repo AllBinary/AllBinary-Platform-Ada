@@ -53,7 +53,6 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out TransformInfoObjectConfig'Class; transformInfoInterface : TransformInfoInterface_Access; document : Document_Access) is
       node : Node_Access;
       stringBuffer : StringMaker_Access;
@@ -86,7 +85,6 @@ package body org.allbinary.logic.visual.transform.info.objectConfig.TransformInf
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out TransformInfoObjectConfig'Class; transformInfoInterface : TransformInfoInterface_Access; name : Unbounded_String; type_Id : Unbounded_String) is
       configNameAttr : Attr_Access;
       objectConfigNode : Node_Access;

@@ -53,7 +53,6 @@ package body org.allbinary.input.automation.module.generic_Id.configuration.prof
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out GenericProfile'Class; name : Unbounded_String) is
    begin
       Initialize_Fields (This);

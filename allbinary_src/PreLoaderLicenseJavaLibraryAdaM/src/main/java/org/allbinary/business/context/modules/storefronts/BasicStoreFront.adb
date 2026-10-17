@@ -62,7 +62,6 @@ package body org.allbinary.business.context.modules.storefronts.BasicStoreFront_
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out BasicStoreFront'Class; storeHashMap : HashMap_Access) is
       storeFrontData : StoreFrontData_Access;
    begin

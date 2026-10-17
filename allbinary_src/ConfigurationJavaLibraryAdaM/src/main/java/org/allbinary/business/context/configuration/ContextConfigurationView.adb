@@ -42,7 +42,6 @@ package body org.allbinary.business.context.configuration.ContextConfigurationVi
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out ContextConfigurationView'Class; contextConfigurationInterface : ContextConfigurationInterface_Access) is
    begin
       Initialize_Fields (This);

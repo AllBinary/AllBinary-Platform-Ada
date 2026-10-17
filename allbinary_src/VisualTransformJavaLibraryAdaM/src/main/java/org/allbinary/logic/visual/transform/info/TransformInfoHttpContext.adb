@@ -45,7 +45,6 @@ package body org.allbinary.logic.visual.transform.info.TransformInfoHttpContext_
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out TransformInfoHttpContext'Class; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) is
    begin
         TransformInfoHttp_Package.Initialize (This, propertiesHashMap, pageContext);

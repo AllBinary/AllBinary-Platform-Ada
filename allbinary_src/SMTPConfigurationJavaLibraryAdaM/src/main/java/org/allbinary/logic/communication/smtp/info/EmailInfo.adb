@@ -43,7 +43,6 @@ package body org.allbinary.logic.communication.smtp.info.EmailInfo_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out EmailInfo'Class; basicEmailInfo : BasicEmailInfo_Access; htmlAttachment : Unbounded_String; contentBase : Unbounded_String) is
       commonStrings : CommonStrings_Access;
    begin

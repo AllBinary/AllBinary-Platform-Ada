@@ -62,6 +62,10 @@ package org.allbinary.logic.visual.transform.template.customizer.widgets.title.T
 
    procedure Initialize (This : in out TitleView'Class);
    function Create return TitleView_Access;
+   procedure Initialize (This : in out TitleView'Class; node : Node_Access);
+   function Create (node : Node_Access) return TitleView_Access;
+   procedure Initialize (This : in out TitleView'Class; hashMap : HashMap_Access);
+   function Create (hashMap : HashMap_Access) return TitleView_Access;
    function getTitle (This : in out TitleView) return Unbounded_String;
    procedure getFormData (This : in out TitleView; hashMap : HashMap_Access);
    function toHashMap (This : in out TitleView) return HashMap_Access;

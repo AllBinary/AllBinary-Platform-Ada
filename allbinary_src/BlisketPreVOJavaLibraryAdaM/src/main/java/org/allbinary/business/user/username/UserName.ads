@@ -50,6 +50,8 @@ package org.allbinary.business.user.username.UserName_Package is
 
    procedure Initialize (This : in out UserName'Class);
    function Create return UserName_Access;
+   procedure Initialize (This : in out UserName'Class; hashMap : HashMap_Access);
+   function Create (hashMap : HashMap_Access) return UserName_Access;
    function getInstance return UserName_Access;
    function isValid (This : in out UserName) return Boolean;
    function get (This : in out UserName) return Unbounded_String;

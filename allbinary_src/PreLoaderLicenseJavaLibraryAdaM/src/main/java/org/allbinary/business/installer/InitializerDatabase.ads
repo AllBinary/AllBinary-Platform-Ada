@@ -69,6 +69,8 @@ package org.allbinary.business.installer.InitializerDatabase_Package is
 
    procedure Initialize (This : in out InitializerDatabase'Class; abeClientInformation : AbeClientInformationInterface_Access; map : Map_Access);
    function Create (abeClientInformation : AbeClientInformationInterface_Access; map : Map_Access) return InitializerDatabase_Access;
+   procedure Initialize (This : in out InitializerDatabase'Class; abeClientInformation : AbeClientInformationInterface_Access; initHashMap : HashMap_Access);
+   function Create (abeClientInformation : AbeClientInformationInterface_Access; initHashMap : HashMap_Access) return InitializerDatabase_Access;
    procedure getFormData (This : in out InitializerDatabase; abeClientInformation : AbeClientInformationInterface_Access; hashMap : HashMap_Access);
    function isJdbcDriverValid (This : in out InitializerDatabase; jdbcDriverClassPathString : Unbounded_String) return Boolean;
    procedure isJdbcDriverValid (This : in out InitializerDatabase; jdbcDriverClassPathString : Unbounded_String);

@@ -71,6 +71,10 @@ package org.allbinary.business.category.properties.CategoryProperties_Package is
 
    procedure Initialize (This : in out CategoryProperties'Class; name : Unbounded_String);
    function Create (name : Unbounded_String) return CategoryProperties_Access;
+   procedure Initialize (This : in out CategoryProperties'Class; node : Node_Access);
+   function Create (node : Node_Access) return CategoryProperties_Access;
+   procedure Initialize (This : in out CategoryProperties'Class; categoryPropertiesHashMap : HashMap_Access);
+   function Create (categoryPropertiesHashMap : HashMap_Access) return CategoryProperties_Access;
    function isRealRoot (This : in out CategoryProperties) return Boolean;
    function isRoot (This : in out CategoryProperties) return Boolean;
    function getKey (This : in out CategoryProperties) return Java_Object_Access;

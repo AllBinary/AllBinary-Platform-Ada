@@ -65,6 +65,8 @@ package org.allbinary.input.automation.module.actions.script.condition.processor
 
    procedure Initialize (This : in out ImageActionScriptOutput'Class; node : Node_Access);
    function Create (node : Node_Access) return ImageActionScriptOutput_Access;
+   procedure Initialize (This : in out ImageActionScriptOutput'Class);
+   function Create return ImageActionScriptOutput_Access;
    function getActionScriptOutputJPanel (This : in out ImageActionScriptOutput) return ImageActionScriptOutputJPanel_Access;
    function toHashMap (This : in out ImageActionScriptOutput) return HashMap_Access;
    function toXmlNode (This : in out ImageActionScriptOutput; document : Document_Access) return Node_Access;

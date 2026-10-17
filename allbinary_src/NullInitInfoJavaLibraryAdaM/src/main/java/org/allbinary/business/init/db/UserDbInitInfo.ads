@@ -34,6 +34,8 @@ package org.allbinary.business.init.db.UserDbInitInfo_Package is
 
    procedure Initialize (This : in out UserDbInitInfo'Class);
    function Create return UserDbInitInfo_Access;
+   procedure Initialize (This : in out UserDbInitInfo'Class; read : Boolean);
+   function Create (read : Boolean) return UserDbInitInfo_Access;
 
 end org.allbinary.business.init.db.UserDbInitInfo_Package;
 

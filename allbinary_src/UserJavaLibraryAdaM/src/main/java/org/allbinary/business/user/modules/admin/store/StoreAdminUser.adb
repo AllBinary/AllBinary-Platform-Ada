@@ -33,7 +33,6 @@ package body org.allbinary.business.user.modules.admin.store.StoreAdminUser_Pack
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out StoreAdminUser'Class; userHashMap : HashMap_Access) is
    begin
         User_Package.Initialize (This, userHashMap);

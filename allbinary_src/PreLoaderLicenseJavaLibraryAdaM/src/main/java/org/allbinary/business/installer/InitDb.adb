@@ -41,7 +41,6 @@ package body org.allbinary.business.installer.InitDb_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out InitDb'Class; dbConnectionInfo : DbConnectionInfo_Access) is
    begin
       Initialize_Fields (This);

@@ -35,7 +35,6 @@ package body org.allbinary.input.automation.module.actions.script.condition.proc
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out ImageTypes'Class; node : Node_Access) is
       nodeList : NodeList_Access;
       childNode : Node_Access;

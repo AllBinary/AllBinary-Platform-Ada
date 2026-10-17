@@ -41,7 +41,6 @@ package body org.allbinary.business.user.username.UserName_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out UserName'Class; hashMap : HashMap_Access) is
    begin
       Initialize_Fields (This);

@@ -57,6 +57,10 @@ package org.allbinary.logic.string_Id.regex.replace.Replace_Package is
 
    procedure Initialize (This : in out Replace'Class; key : Unbounded_String; value : Unbounded_String);
    function Create (key : Unbounded_String; value : Unbounded_String) return Replace_Access;
+   procedure Initialize (This : in out Replace'Class; keys : Unbounded_String_Array_Access; values : Unbounded_String_Array_Access);
+   function Create (keys : Unbounded_String_Array_Access; values : Unbounded_String_Array_Access) return Replace_Access;
+   procedure Initialize (This : in out Replace'Class; hashMap : HashMap_Access);
+   function Create (hashMap : HashMap_Access) return Replace_Access;
    function all_Case_Id (This : in out Replace; replace : Unbounded_String) return Unbounded_String;
    procedure all_Case_Id (This : in out Replace; replace : Unbounded_String);
    function upTo (This : in out Replace; replace_Param : Unbounded_String; total : Integer) return Unbounded_String;

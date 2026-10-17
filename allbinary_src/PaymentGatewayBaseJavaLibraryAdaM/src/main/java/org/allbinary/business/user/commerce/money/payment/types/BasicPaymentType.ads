@@ -58,6 +58,8 @@ package org.allbinary.business.user.commerce.money.payment.types.BasicPaymentTyp
 
    procedure Initialize (This : in out BasicPaymentType'Class; paymentMethod : Unbounded_String);
    function Create (paymentMethod : Unbounded_String) return BasicPaymentType_Access;
+   procedure Initialize (This : in out BasicPaymentType'Class; paymentMethod : Unbounded_String; paymentGatewayInterfaceFactoryInterface : PaymentGatewayInterfaceFactoryInterface_Access; paymentGatewayDomNodeFactoryInterface : PaymentGatewayDomNodeFactoryInterface_Access);
+   function Create (paymentMethod : Unbounded_String; paymentGatewayInterfaceFactoryInterface : PaymentGatewayInterfaceFactoryInterface_Access; paymentGatewayDomNodeFactoryInterface : PaymentGatewayDomNodeFactoryInterface_Access) return BasicPaymentType_Access;
    procedure init (This : in out BasicPaymentType; paymentMethod : Unbounded_String);
    function getName (This : in out BasicPaymentType) return Unbounded_String;
    function getValue (This : in out BasicPaymentType) return Unbounded_String;

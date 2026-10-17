@@ -44,6 +44,8 @@ package org.allbinary.gui.dialog.FileJDialog_Package is
 
    procedure Initialize (This : in out FileJDialog'Class);
    function Create return FileJDialog_Access;
+   procedure Initialize (This : in out FileJDialog'Class; parent : Frame_Access; modal : Boolean);
+   function Create (parent : Frame_Access; modal : Boolean) return FileJDialog_Access;
    procedure addFinishedListener (This : in out FileJDialog; finishedListenerInterface : FileJDialogListenerInterface_Access);
    procedure initComponents (This : in out FileJDialog);
    procedure jFileChooser1ActionPerformed (This : in out FileJDialog; evt : ActionEvent_Access);

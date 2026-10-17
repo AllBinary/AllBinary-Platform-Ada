@@ -47,7 +47,6 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out RootStoreCategoryProperties'Class; transformInfoInterface : TransformInfoInterface_Access; categoryAbPath : AbPath_Access) is
    begin
       Initialize_Fields (This);
@@ -69,7 +68,6 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out RootStoreCategoryProperties'Class; transformInfoInterface : TransformInfoInterface_Access; node : Node_Access) is
       categoryPath : Unbounded_String;
    begin
@@ -93,7 +91,6 @@ package body org.allbinary.business.category.properties.root.store.RootStoreCate
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out RootStoreCategoryProperties'Class; transformInfoInterface : TransformInfoInterface_Access; categoryPropertiesHashMap : HashMap_Access) is
       categoryPath : Unbounded_String;
    begin

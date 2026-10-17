@@ -52,7 +52,6 @@ package body org.allbinary.input.automation.actions.script.condition.processors.
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out BasicProfileActionScriptInput'Class; label : Unbounded_String) is
       inputRobotFactory : InputRobotFactory_Access;
       hashtable : ABHashtable_Access;

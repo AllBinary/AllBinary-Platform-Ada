@@ -35,7 +35,6 @@ package body org.allbinary.business.installer.DynamicInitDb_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out DynamicInitDb'Class; abeClientInformation : AbeClientInformationInterface_Access; databaseConnectionInfoInterface : DatabaseConnectionInfoInterface_Access) is
    begin
       InitDb_Package.Initialize (This);

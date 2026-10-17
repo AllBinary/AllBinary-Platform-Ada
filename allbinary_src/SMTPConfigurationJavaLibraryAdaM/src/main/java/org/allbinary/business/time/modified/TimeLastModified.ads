@@ -35,6 +35,8 @@ package org.allbinary.business.time.modified.TimeLastModified_Package is
 
    procedure Initialize (This : in out TimeLastModified'Class; time : Unbounded_String);
    function Create (time : Unbounded_String) return TimeLastModified_Access;
+   procedure Initialize (This : in out TimeLastModified'Class; time : Long_Long_Integer);
+   function Create (time : Long_Long_Integer) return TimeLastModified_Access;
 
 end org.allbinary.business.time.modified.TimeLastModified_Package;
 

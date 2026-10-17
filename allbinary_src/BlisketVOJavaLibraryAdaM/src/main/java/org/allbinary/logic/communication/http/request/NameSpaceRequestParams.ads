@@ -72,6 +72,10 @@ package org.allbinary.logic.communication.http.request.NameSpaceRequestParams_Pa
 
    procedure Initialize (This : in out NameSpaceRequestParams'Class);
    function Create return NameSpaceRequestParams_Access;
+   procedure Initialize (This : in out NameSpaceRequestParams'Class; httpServletRequest : HttpServletRequest_Access);
+   function Create (httpServletRequest : HttpServletRequest_Access) return NameSpaceRequestParams_Access;
+   procedure Initialize (This : in out NameSpaceRequestParams'Class; pageContext : PageContext_Access);
+   function Create (pageContext : PageContext_Access) return NameSpaceRequestParams_Access;
    function createPackageNode (This : in out NameSpaceRequestParams; document : Document_Access; packageName : Unbounded_String; packagePropertiesHashMap : HashMap_Access) return Node_Access;
    procedure createPackageNode (This : in out NameSpaceRequestParams; document : Document_Access; packageName : Unbounded_String; packagePropertiesHashMap : HashMap_Access);
    function createPackageMultiNode (This : in out NameSpaceRequestParams; document : Document_Access; nameSpaceRequestParam : NameSpaceRequestParam_Access; packageName : Unbounded_String; packagePropertiesHashMap : HashMap_Access) return Node_Access;

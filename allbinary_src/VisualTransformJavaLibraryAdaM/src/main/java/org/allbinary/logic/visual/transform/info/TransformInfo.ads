@@ -113,6 +113,10 @@ package org.allbinary.logic.visual.transform.info.TransformInfo_Package is
 
    procedure Initialize (This : in out TransformInfo'Class);
    function Create return TransformInfo_Access;
+   procedure Initialize (This : in out TransformInfo'Class; name : Unbounded_String);
+   function Create (name : Unbounded_String) return TransformInfo_Access;
+   procedure Initialize (This : in out TransformInfo'Class; name : Unbounded_String; objectFileName : Unbounded_String; objectConfigFileName : Unbounded_String; templateFileName : Unbounded_String; dataFileName : Unbounded_String);
+   function Create (name : Unbounded_String; objectFileName : Unbounded_String; objectConfigFileName : Unbounded_String; templateFileName : Unbounded_String; dataFileName : Unbounded_String) return TransformInfo_Access;
    procedure override (This : in out TransformInfo; hashMap : HashMap_Access);
    function log (This : in out TransformInfo) return Unbounded_String;
    procedure setName (This : in out TransformInfo; value : Unbounded_String);

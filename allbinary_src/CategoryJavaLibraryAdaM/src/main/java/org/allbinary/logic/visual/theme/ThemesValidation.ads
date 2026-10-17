@@ -51,6 +51,10 @@ package org.allbinary.logic.visual.theme.ThemesValidation_Package is
 
    procedure Initialize (This : in out ThemesValidation'Class);
    function Create return ThemesValidation_Access;
+   procedure Initialize (This : in out ThemesValidation'Class; node : Node_Access);
+   function Create (node : Node_Access) return ThemesValidation_Access;
+   procedure Initialize (This : in out ThemesValidation'Class; hashMap : HashMap_Access);
+   function Create (hashMap : HashMap_Access) return ThemesValidation_Access;
    function isValid (This : in out ThemesValidation) return Boolean;
    function validationInfo (This : in out ThemesValidation) return Unbounded_String;
    function toValidationInfoDoc (This : in out ThemesValidation) return Document_Access;

@@ -71,6 +71,8 @@ package org.allbinary.business.user.quoterequest.QuoteRequest_Package is
 
    procedure Initialize (This : in out QuoteRequest'Class; userName : Unbounded_String; request : HttpServletRequest_Access);
    function Create (userName : Unbounded_String; request : HttpServletRequest_Access) return QuoteRequest_Access;
+   procedure Initialize (This : in out QuoteRequest'Class; hashMap : HashMap_Access);
+   function Create (hashMap : HashMap_Access) return QuoteRequest_Access;
    function isValid (This : in out QuoteRequest) return Boolean;
    function validationInfo (This : in out QuoteRequest) return Unbounded_String;
    function toVector (This : in out QuoteRequest) return BasicArrayList_Access;

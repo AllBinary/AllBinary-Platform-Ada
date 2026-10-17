@@ -40,7 +40,6 @@ package body admin.taghelpers.AuthenticationHelper_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out AuthenticationHelper'Class; hashMap : HashMap_Access; httpServletRequest : HttpServletRequest_Access) is
    begin
       TagHelper_Package.Initialize (This);

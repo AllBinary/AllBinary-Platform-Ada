@@ -143,6 +143,10 @@ package org.allbinary.business.context.modules.storefront.StoreFront_Package is
 
    procedure Initialize (This : in out StoreFront'Class);
    function Create return StoreFront_Access;
+   procedure Initialize (This : in out StoreFront'Class; request : HttpServletRequest_Access);
+   function Create (request : HttpServletRequest_Access) return StoreFront_Access;
+   procedure Initialize (This : in out StoreFront'Class; hashMap : HashMap_Access);
+   function Create (hashMap : HashMap_Access) return StoreFront_Access;
    function isColumn (This : in out StoreFront; columnName : Unbounded_String) return Boolean;
    procedure isColumn (This : in out StoreFront; columnName : Unbounded_String);
    function createPath (This : in out StoreFront; key : Unbounded_String; hashMap : HashMap_Access) return AbPath_Access;

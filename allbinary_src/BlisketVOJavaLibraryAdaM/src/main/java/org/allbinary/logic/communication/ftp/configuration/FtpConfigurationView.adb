@@ -49,7 +49,6 @@ package body org.allbinary.logic.communication.ftp.configuration.FtpConfiguratio
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out FtpConfigurationView'Class; ftpConfigurationInterface : FtpConfigurationInterface_Access) is
    begin
       Initialize_Fields (This);

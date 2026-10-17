@@ -58,6 +58,8 @@ package org.allbinary.data.tables.category.CategoryEntity_Package is
 
    procedure Initialize (This : in out CategoryEntity'Class; categoryFactoryInterface : CategoryFactoryInterface_Access);
    function Create (categoryFactoryInterface : CategoryFactoryInterface_Access) return CategoryEntity_Access;
+   procedure Initialize (This : in out CategoryEntity'Class);
+   function Create return CategoryEntity_Access;
    procedure insert (This : in out CategoryEntity; category : Category_Access);
    procedure delete (This : in out CategoryEntity; value : Unbounded_String);
    function createTableStatement (This : in out CategoryEntity) return Unbounded_String;

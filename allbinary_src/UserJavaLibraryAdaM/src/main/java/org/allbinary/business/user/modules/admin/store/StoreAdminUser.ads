@@ -38,6 +38,8 @@ package org.allbinary.business.user.modules.admin.store.StoreAdminUser_Package i
 
    procedure Initialize (This : in out StoreAdminUser'Class);
    function Create return StoreAdminUser_Access;
+   procedure Initialize (This : in out StoreAdminUser'Class; userHashMap : HashMap_Access);
+   function Create (userHashMap : HashMap_Access) return StoreAdminUser_Access;
    procedure validateSession (This : in out StoreAdminUser; weblisketSession : WeblisketSessionInterface_Access);
    procedure updateSession (This : in out StoreAdminUser; weblisketSession : WeblisketSessionInterface_Access);
 

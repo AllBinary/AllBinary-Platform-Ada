@@ -39,7 +39,6 @@ package body org.allbinary.logic.communication.http.request.RequestParams_Packag
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out RequestParams'Class; request : HttpServletRequest_Access) is
    begin
       Initialize_Fields (This);
@@ -54,7 +53,6 @@ package body org.allbinary.logic.communication.http.request.RequestParams_Packag
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out RequestParams'Class; pageContext : PageContext_Access) is
    begin
       Initialize_Fields (This);

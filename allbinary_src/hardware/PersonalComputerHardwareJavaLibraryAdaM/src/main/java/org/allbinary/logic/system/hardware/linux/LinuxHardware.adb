@@ -50,7 +50,6 @@ package body org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out LinuxHardware'Class) is
       cpu : Cpu_Access;
    begin

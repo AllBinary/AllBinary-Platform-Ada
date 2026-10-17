@@ -38,7 +38,6 @@ package body org.allbinary.business.user.commerce.money.payment.types.BasicPayme
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out BasicPaymentType'Class; paymentMethod : Unbounded_String; paymentGatewayInterfaceFactoryInterface : PaymentGatewayInterfaceFactoryInterface_Access; paymentGatewayDomNodeFactoryInterface : PaymentGatewayDomNodeFactoryInterface_Access) is
    begin
       Initialize_Fields (This);

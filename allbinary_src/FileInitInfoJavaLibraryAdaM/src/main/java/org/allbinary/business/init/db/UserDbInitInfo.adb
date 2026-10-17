@@ -33,7 +33,6 @@ package body org.allbinary.business.init.db.UserDbInitInfo_Package is
       return This;
    end Create;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out UserDbInitInfo'Class; read : Boolean) is
    begin
         DbInitInfo_Package.Initialize (This, INITFILE, read);

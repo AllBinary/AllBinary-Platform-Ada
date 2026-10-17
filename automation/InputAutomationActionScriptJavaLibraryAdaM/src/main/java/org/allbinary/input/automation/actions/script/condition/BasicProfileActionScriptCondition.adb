@@ -71,7 +71,6 @@ package body org.allbinary.input.automation.actions.script.condition.BasicProfil
         end loop;
    end addProcessorNodes;
 
-   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
    procedure Initialize (This : in out BasicProfileActionScriptCondition'Class; label : Unbounded_String) is
    begin
         ProfileActionScriptItem_Package.Initialize (This, label);

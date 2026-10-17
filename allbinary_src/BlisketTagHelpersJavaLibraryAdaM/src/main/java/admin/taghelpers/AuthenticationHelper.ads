@@ -78,6 +78,8 @@ package admin.taghelpers.AuthenticationHelper_Package is
 
    procedure Initialize (This : in out AuthenticationHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
    function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return AuthenticationHelper_Access;
+   procedure Initialize (This : in out AuthenticationHelper'Class; hashMap : HashMap_Access; httpServletRequest : HttpServletRequest_Access);
+   function Create (hashMap : HashMap_Access; httpServletRequest : HttpServletRequest_Access) return AuthenticationHelper_Access;
    procedure getFormData (This : in out AuthenticationHelper);
    function invalidateSession (This : in out AuthenticationHelper) return Integer;
    function isSessionOld (This : in out AuthenticationHelper) return Boolean;
