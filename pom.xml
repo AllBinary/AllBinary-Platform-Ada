@@ -30,11 +30,9 @@
 
     <modules>
 
-<!--
         <module>../working_thirdpartyada/embedded/j2me/microemulator/2_0_4/microemu-cldcAda</module>
         <module>../working_thirdpartyada/embedded/j2me/microemulator/2_0_4/microemu-midpAda</module>
-        <module>../working_thirdpartyada/embedded/j2me/microemulator/2_0_4/microemu-extensions/microemu-jsr-135</module>
--->
+        <module>../working_thirdpartyada/embedded/j2me/microemulator/2_0_4/microemu-extensions/microemu-jsr-135Ada</module>
 
         <!--
         -->
