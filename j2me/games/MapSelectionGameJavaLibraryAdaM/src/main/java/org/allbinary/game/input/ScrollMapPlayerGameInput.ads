@@ -1,0 +1,98 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Ada.Strings.Maps.Constants;
+with Ada.Characters.Handling;
+with Ada.Exceptions;
+with Ada.Numerics.Long_Elementary_Functions;
+with Ada.Tags;
+with Ada.Text_IO;
+with AllBinary_Java; use AllBinary_Java;
+--  with javax.microedition.lcdui.Canvas_Package; use javax.microedition.lcdui.Canvas_Package;
+--  with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.game.configuration.feature.Features_Package; use org.allbinary.game.configuration.feature.Features_Package;
+with org.allbinary.game.configuration.feature.InputFeatureFactory_Package; use org.allbinary.game.configuration.feature.InputFeatureFactory_Package;
+with org.allbinary.game.input.event.GameKeyEvent_Package; use org.allbinary.game.input.event.GameKeyEvent_Package;
+with org.allbinary.game.layer.AllBinaryGameLayerManager_Package; use org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+with org.allbinary.game.layer.AllBinaryTiledLayer_Package; use org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.layer.event.ScrollMapEvent_Package; use org.allbinary.layer.event.ScrollMapEvent_Package;
+with org.allbinary.layer.event.ScrollMapEventHandler_Package; use org.allbinary.layer.event.ScrollMapEventHandler_Package;
+with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.game.input.PlayerGameInput_Package; use org.allbinary.game.input.PlayerGameInput_Package;
+
+package org.allbinary.game.input.ScrollMapPlayerGameInput_Package is
+
+   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package Features_Package renames org.allbinary.game.configuration.feature.Features_Package;
+   package InputFeatureFactory_Package renames org.allbinary.game.configuration.feature.InputFeatureFactory_Package;
+   package GameKeyEvent_Package renames org.allbinary.game.input.event.GameKeyEvent_Package;
+   package AllBinaryGameLayerManager_Package renames org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+   package AllBinaryTiledLayer_Package renames org.allbinary.game.layer.AllBinaryTiledLayer_Package;
+   package DisplayInfoSingleton_Package renames org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
+   package ScrollMapEvent_Package renames org.allbinary.layer.event.ScrollMapEvent_Package;
+   package ScrollMapEventHandler_Package renames org.allbinary.layer.event.ScrollMapEventHandler_Package;
+   package BasicGeographicMap_Package renames org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+
+   type ScrollMapPlayerGameInput is tagged;
+   type ScrollMapPlayerGameInput_Access is access all ScrollMapPlayerGameInput'Class;
+   type ScrollMapPlayerGameInput_Access_Array is array (Natural range <>) of ScrollMapPlayerGameInput_Access;
+   type ScrollMapPlayerGameInput_Access_Array_Access is access all ScrollMapPlayerGameInput_Access_Array;
+
+   type ScrollMapPlayerGameInput is new PlayerGameInput with record
+      inputProcessorArray : GameInputProcessor_Access_Array_Access;
+      border : Integer;
+      inputList : BasicArrayList_Access;
+      isSingleKeyProcessing : Boolean;
+      geographicMapInterface : BasicGeographicMap_Access;
+      maxBottom : Integer;
+      maxRight : Integer;
+      scrollMapEvent : ScrollMapEvent_Access;
+   end record;
+
+   procedure Initialize (This : in out ScrollMapPlayerGameInput'Class; geographicMapInterface : BasicGeographicMap_Access; list : BasicArrayList_Access; playerInputId : Integer);
+   function Create (geographicMapInterface : BasicGeographicMap_Access; list : BasicArrayList_Access; playerInputId : Integer) return ScrollMapPlayerGameInput_Access;
+   procedure move (This : in out ScrollMapPlayerGameInput; dx : Integer; dy : Integer);
+   procedure init (This : in out ScrollMapPlayerGameInput);
+   procedure scrollMiddleX (This : in out ScrollMapPlayerGameInput);
+   procedure scrollY (This : in out ScrollMapPlayerGameInput; anchor : Integer);
+   procedure up (This : in out ScrollMapPlayerGameInput);
+   procedure down (This : in out ScrollMapPlayerGameInput);
+   procedure right (This : in out ScrollMapPlayerGameInput);
+   procedure left (This : in out ScrollMapPlayerGameInput);
+   procedure initInputProcessors (This : in out ScrollMapPlayerGameInput);
+   procedure processInputKey (This : in out ScrollMapPlayerGameInput; key : Integer);
+   procedure processInput (This : in out ScrollMapPlayerGameInput; layerManager : AllBinaryLayerManager_Access);
+   function getSpecialHeight (This : in out ScrollMapPlayerGameInput) return Integer;
+   procedure getSpecialHeight (This : in out ScrollMapPlayerGameInput);
+   function getSpecialWidth (This : in out ScrollMapPlayerGameInput) return Integer;
+   procedure getSpecialWidth (This : in out ScrollMapPlayerGameInput);
+   function keepOnMapMaxY (This : in out ScrollMapPlayerGameInput; newY : Integer) return Boolean;
+   procedure keepOnMapMaxY (This : in out ScrollMapPlayerGameInput; newY : Integer);
+   function keepOnMapMinY (This : in out ScrollMapPlayerGameInput; newY : Integer) return Boolean;
+   procedure keepOnMapMinY (This : in out ScrollMapPlayerGameInput; newY : Integer);
+   function keepOnMapMaxX (This : in out ScrollMapPlayerGameInput; newX : Integer) return Boolean;
+   procedure keepOnMapMaxX (This : in out ScrollMapPlayerGameInput; newX : Integer);
+   function keepOnMapMinX (This : in out ScrollMapPlayerGameInput; newX : Integer) return Boolean;
+   procedure keepOnMapMinX (This : in out ScrollMapPlayerGameInput; newX : Integer);
+
+end org.allbinary.game.input.ScrollMapPlayerGameInput_Package;
+
+

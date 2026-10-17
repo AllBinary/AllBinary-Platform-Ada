@@ -1,0 +1,139 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body views.generic_Id.user.UpdateValidationUserView_Package is
+
+   procedure Initialize_Fields (This : in out UpdateValidationUserView'Class) is
+   begin
+      null;
+      This.logUtil := LogUtil_Package.getInstance;
+      
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out UpdateValidationUserView'Class; transformInfoInterface : TransformInfoInterface_Access) is
+   begin
+        HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
+        Initialize_Fields (This);
+        This.user := NewUserFactory_Package.getInstance (transformInfoInterface);
+   end Initialize;
+
+   function Create (transformInfoInterface : TransformInfoInterface_Access) return UpdateValidationUserView_Access is
+      This : constant UpdateValidationUserView_Access := new UpdateValidationUserView;
+   begin
+      Initialize (This.all, transformInfoInterface);
+      return This;
+   end Create;
+
+   function isValid (This : in out UpdateValidationUserView) return Boolean is
+   begin
+        begin
+            if (UserEntityFactory_Package.getInstance.getUser (This.user.getUserName)) = (null) then
+                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+                    This.logUtil.putF (To_Unbounded_String ("User does not exist"), This'Unchecked_Access, This.commonStrings.IS_VALID);
+                end if;
+                return False;
+            end if;
+            if (This.user.isValid) = (False) then
+                return False;
+            end if;
+            return True;
+        exception
+            when e : others =>
+            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
+                This.logUtil.put (To_Unbounded_String ("Failed to validate"), This'Unchecked_Access, This.commonStrings.IS_VALID, e);
+            end if;
+            return False;
+        end;
+   end isValid;
+
+   function validationInfo (This : in out UpdateValidationUserView) return Unbounded_String is
+      stringBuffer : StringMaker_Access;
+   begin
+        begin
+            stringBuffer := StringMaker_Package.Create;
+            if (UserEntityFactory_Package.getInstance.getUser (This.user.getUserName)) = (null) then
+                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+                    This.logUtil.putF (To_Unbounded_String ("User does not exist"), This'Unchecked_Access, To_Unbounded_String ("validationInfo()"));
+                end if;
+                stringBuffer.append (To_Unbounded_String ("Unable to update user that does not exist.<br />"));
+            end if;
+            if (This.user.isValid) = (False) then
+                stringBuffer.append (This.user.validationInfo);
+            end if;
+            return stringBuffer.toString;
+        exception
+            when e : others =>
+            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
+                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), This'Unchecked_Access, To_Unbounded_String ("validationInfo()"), e);
+            end if;
+            return To_Unbounded_String ("Error Getting Validation Info");
+        end;
+   end validationInfo;
+
+   function toValidationInfoDoc (This : in out UpdateValidationUserView) return Document_Access is
+   begin
+        return null;
+   end toValidationInfoDoc;
+
+   function toValidationInfoNode (This : in out UpdateValidationUserView; document : Document_Access) return Node_Access is
+   begin
+        return null;
+   end toValidationInfoNode;
+
+   --  throws Exception
+   function view (This : in out UpdateValidationUserView) return Unbounded_String is
+   begin
+        return This.views.ValidationOnlyTempUtil.getInstance.view (This'Unchecked_Access);
+   end view;
+
+   procedure isValid (This : in out UpdateValidationUserView) is
+      Java_Result : constant Boolean := UpdateValidationUserView'Class (This).isValid;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end isValid;
+
+   procedure validationInfo (This : in out UpdateValidationUserView) is
+      Java_Result : constant Unbounded_String := UpdateValidationUserView'Class (This).validationInfo;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end validationInfo;
+
+   procedure toValidationInfoDoc (This : in out UpdateValidationUserView) is
+      Java_Result : constant Document_Access := UpdateValidationUserView'Class (This).toValidationInfoDoc;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end toValidationInfoDoc;
+
+   procedure toValidationInfoNode (This : in out UpdateValidationUserView; document : Document_Access) is
+      Java_Result : constant Node_Access := UpdateValidationUserView'Class (This).toValidationInfoNode (document);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end toValidationInfoNode;
+
+   procedure view (This : in out UpdateValidationUserView) is
+      Java_Result : constant Unbounded_String := UpdateValidationUserView'Class (This).view;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end view;
+
+end views.generic_Id.user.UpdateValidationUserView_Package;
+
+

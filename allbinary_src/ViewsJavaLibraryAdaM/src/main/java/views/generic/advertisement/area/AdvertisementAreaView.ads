@@ -1,0 +1,67 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Ada.Strings.Maps.Constants;
+with Ada.Characters.Handling;
+with Ada.Exceptions;
+with Ada.Numerics.Long_Elementary_Functions;
+with Ada.Tags;
+with Ada.Text_IO;
+with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.business.advertisement.area.AdvertisementAreaData_Package; use org.allbinary.business.advertisement.area.AdvertisementAreaData_Package;
+with org.allbinary.business.advertisement.area.AdvertisementAreaInterface_Package; use org.allbinary.business.advertisement.area.AdvertisementAreaInterface_Package;
+with org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntityFactory_Package; use org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntityFactory_Package;
+with org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntityInterface_Package; use org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntityInterface_Package;
+with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with views.business.context.modules.storefront.HttpStoreComponentView_Package; use views.business.context.modules.storefront.HttpStoreComponentView_Package;
+
+package views.generic_Id.advertisement.area.AdvertisementAreaView_Package is
+
+   package AdvertisementAreaData_Package renames org.allbinary.business.advertisement.area.AdvertisementAreaData_Package;
+   package AdvertisementAreaInterface_Package renames org.allbinary.business.advertisement.area.AdvertisementAreaInterface_Package;
+   package AdvertisementAreasEntityFactory_Package renames org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntityFactory_Package;
+   package AdvertisementAreasEntityInterface_Package renames org.allbinary.data.tables.advertisement.areas.AdvertisementAreasEntityInterface_Package;
+   package DomNodeInterface_Package renames org.allbinary.data.tree.dom.DomNodeInterface_Package;
+   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package Document_Package renames org.w3c.dom.Document_Package;
+   package Node_Package renames org.w3c.dom.Node_Package;
+   package HttpStoreComponentView_Package renames views.business.context.modules.storefront.HttpStoreComponentView_Package;
+
+   type AdvertisementAreaView is tagged;
+   type AdvertisementAreaView_Access is access all AdvertisementAreaView'Class;
+   type AdvertisementAreaView_Access_Array is array (Natural range <>) of AdvertisementAreaView_Access;
+   type AdvertisementAreaView_Access_Array_Access is access all AdvertisementAreaView_Access_Array;
+
+   type AdvertisementAreaView is new HttpStoreComponentView and DomNodeInterface with record
+      logUtil : LogUtil_Access;
+      advertisementAreaName : Unbounded_String;
+   end record;
+
+   procedure Initialize (This : in out AdvertisementAreaView'Class; transformInfoInterface : TransformInfoInterface_Access);
+   function Create (transformInfoInterface : TransformInfoInterface_Access) return AdvertisementAreaView_Access;
+   function toXmlNode (This : in out AdvertisementAreaView; document : Document_Access) return Node_Access;
+   procedure toXmlNode (This : in out AdvertisementAreaView; document : Document_Access);
+   procedure addDomNodeInterfaces (This : in out AdvertisementAreaView);
+   function view (This : in out AdvertisementAreaView) return Unbounded_String;
+   procedure view (This : in out AdvertisementAreaView);
+
+end views.generic_Id.advertisement.area.AdvertisementAreaView_Package;
+
+

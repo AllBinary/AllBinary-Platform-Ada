@@ -1,0 +1,110 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.game.layer.hud.LapInfo_Package is
+
+   procedure Initialize_Fields (This : in out LapInfo'Class) is
+   begin
+      null;
+      
+      
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out LapInfo'Class; totalLaps : Integer) is
+   begin
+      Initialize_Fields (This);
+        This.totalLaps := totalLaps;
+        This.numberOfLaps := 1;
+   end Initialize;
+
+   function Create (totalLaps : Integer) return LapInfo_Access is
+      This : constant LapInfo_Access := new LapInfo;
+   begin
+      Initialize (This.all, totalLaps);
+      return This;
+   end Create;
+
+   procedure add (This : in out LapInfo) is
+   begin
+        This.numberOfLaps := This.numberOfLaps + 1;
+   end add;
+
+   function getCurrentLap (This : in out LapInfo) return Integer is
+   begin
+        return This.numberOfLaps;
+   end getCurrentLap;
+
+   function getTotalLaps (This : in out LapInfo) return Integer is
+   begin
+        return This.totalLaps;
+   end getTotalLaps;
+
+   function isDone (This : in out LapInfo) return Boolean is
+   begin
+        if (This.numberOfLaps) >= (This.totalLaps) then
+            return True;
+        end if;
+        return False;
+   end isDone;
+
+   function toString (This : in out LapInfo) return Unbounded_String is
+      stringBuffer : StringMaker_Access;
+   begin
+        stringBuffer := StringMaker_Package.Create;
+        stringBuffer.append (To_Unbounded_String ("isDone: "));
+        stringBuffer.appendboolean (This.isDone);
+        stringBuffer.append (To_Unbounded_String (" CurrentLap: "));
+        stringBuffer.appendint (This.getCurrentLap);
+        stringBuffer.append (To_Unbounded_String (" Total Laps: "));
+        stringBuffer.appendint (This.getTotalLaps);
+        return stringBuffer.toString;
+   end toString;
+
+   procedure getCurrentLap (This : in out LapInfo) is
+      Java_Result : constant Integer := LapInfo'Class (This).getCurrentLap;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getCurrentLap;
+
+   procedure getTotalLaps (This : in out LapInfo) is
+      Java_Result : constant Integer := LapInfo'Class (This).getTotalLaps;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getTotalLaps;
+
+   procedure isDone (This : in out LapInfo) is
+      Java_Result : constant Boolean := LapInfo'Class (This).isDone;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end isDone;
+
+   procedure toString (This : in out LapInfo) is
+      Java_Result : constant Unbounded_String := LapInfo'Class (This).toString;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end toString;
+
+begin
+   null;
+   NULL_LAP_INFO := LapInfo_Package.Create (-(1));
+
+end org.allbinary.game.layer.hud.LapInfo_Package;
+
+

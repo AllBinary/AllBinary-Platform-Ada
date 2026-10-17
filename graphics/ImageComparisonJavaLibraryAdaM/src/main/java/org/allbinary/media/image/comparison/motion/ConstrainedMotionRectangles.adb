@@ -1,0 +1,111 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.media.image.comparison.motion.ConstrainedMotionRectangles_Package is
+
+   procedure Initialize_Fields (This : in out ConstrainedMotionRectangles'Class) is
+   begin
+      null;
+      This.logUtil := LogUtil_Package.getInstance;
+      This.motionRectangleConstraintsInterface := null;
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out ConstrainedMotionRectangles'Class; motionRectangleConstraintsInterface : MotionRectangleConstraintsInterface_Access; motionRectangles : MotionRectangles_Access) is
+   begin
+        MotionRectangles_Package.Initialize (This, NAME, motionRectangles.getImageComparisonResult);
+        Initialize_Fields (This);
+        This.setMotionRectangleConstraintsInterface (motionRectangleConstraintsInterface);
+   end Initialize;
+
+   function Create (motionRectangleConstraintsInterface : MotionRectangleConstraintsInterface_Access; motionRectangles : MotionRectangles_Access) return ConstrainedMotionRectangles_Access is
+      This : constant ConstrainedMotionRectangles_Access := new ConstrainedMotionRectangles;
+   begin
+      Initialize (This.all, motionRectangleConstraintsInterface, motionRectangles);
+      return This;
+   end Create;
+
+   --  throws Exception
+   procedure applyMotionRectangleConstraints (This : in out ConstrainedMotionRectangles; motionRectangles : MotionRectangles_Access) is
+      bufferedImageArray : BufferedImage_Access_Array_Access;
+      bufferedImage : BufferedImage_Access;
+      vector : BasicArrayList_Access;
+      vector2 : BasicArrayList_Access;
+      size : Integer;
+      motionRectangle : MotionRectangle_Access;
+      rectangle : Rectangle_Access;
+      isTooSmall : Boolean;
+      isAreaTooSmall : Boolean;
+      isTooBig : Boolean;
+      isValid : Boolean;
+      index : Integer;
+   begin
+        This.logUtil.putF (To_Unbounded_String ("Start - Size Before: ") & Java_Image (motionRectangles.getVector.size), This'Unchecked_Access, To_Unbounded_String ("applyMotionRectangleConstraints"));
+        bufferedImageArray := motionRectangles.getImageComparisonResult.getBufferedImages;
+        bufferedImage := bufferedImageArray (1);
+        vector := BasicArrayListD_Package.Create;
+        vector2 := motionRectangles.getVector;
+        size := vector2.size;
+        for index in 0 .. (size) - 1 loop
+            motionRectangle := MotionRectangle_Access (vector2.get (index));
+            rectangle := motionRectangle.getRectangle;
+            isTooSmall := This.getMotionRectangleConstraintsInterface.isTooSmall (rectangle);
+            if isTooSmall then
+                goto Continue_N66349;
+            end if;
+            isAreaTooSmall := This.getMotionRectangleConstraintsInterface.isAreaTooSmall (rectangle);
+            if isAreaTooSmall then
+                goto Continue_N66349;
+            end if;
+            isTooBig := This.getMotionRectangleConstraintsInterface.isTooBig (rectangle);
+            if isTooBig then
+                goto Continue_N66349;
+            end if;
+            isValid := This.getMotionRectangleConstraintsInterface.isValid (This.getImageComparisonResult.getFrameTwo, bufferedImage, motionRectangle.getRectangle);
+            if not (isValid) then
+                goto Continue_N66349;
+            end if;
+            if (((not (isTooSmall)) and then (not (isAreaTooSmall))) and then (not (isTooBig))) and then (isValid) then
+                vector.add (motionRectangle);
+            end if;
+            <<Continue_N66349>> null;
+        end loop;
+        This.setVector (vector);
+   end applyMotionRectangleConstraints;
+
+   function getMotionRectangleConstraintsInterface (This : in out ConstrainedMotionRectangles) return MotionRectangleConstraintsInterface_Access is
+   begin
+        return This.motionRectangleConstraintsInterface;
+   end getMotionRectangleConstraintsInterface;
+
+   procedure setMotionRectangleConstraintsInterface (This : in out ConstrainedMotionRectangles; motionRectangleConstraintsInterface : MotionRectangleConstraintsInterface_Access) is
+   begin
+        This.motionRectangleConstraintsInterface := motionRectangleConstraintsInterface;
+   end setMotionRectangleConstraintsInterface;
+
+   procedure getMotionRectangleConstraintsInterface (This : in out ConstrainedMotionRectangles) is
+      Java_Result : constant MotionRectangleConstraintsInterface_Access := ConstrainedMotionRectangles'Class (This).getMotionRectangleConstraintsInterface;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getMotionRectangleConstraintsInterface;
+
+begin
+   null;
+   NAME := To_Unbounded_String ("constrainedMotionRectangles_");
+
+end org.allbinary.media.image.comparison.motion.ConstrainedMotionRectangles_Package;
+
+

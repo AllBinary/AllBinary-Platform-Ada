@@ -1,0 +1,87 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.allbinary</groupId>
+    <artifactId>OtherGraphicsMediaLibraryPAda</artifactId>
+    <packaging>pom</packaging>
+    <!-- AllBinary Platform Version Start -->
+    <version>1.0.0-SNAPSHOT</version>
+    <!-- AllBinary Platform Version End -->
+
+    <name>OtherGraphicsMediaLibraryPAda</name>
+    <url>http://www.allbinary.com/</url>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <name>AllBinary Snapshots Nexus</name>
+            <url>https://nexus-allbinary.rhcloud.com/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>nexus-releases</id>
+            <name>AllBinary Releases Nexus</name>
+            <url>https://nexus-allbinary.rhcloud.com/nexus/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
+
+
+    <properties>
+        <buildLabel>${project.version}</buildLabel>
+        <assemblyPluginVersion>2.2-beta-1</assemblyPluginVersion>
+    </properties>
+
+    <modules>
+
+        <!--
+        -->
+        <module>../../graphics/animation/vector/VectorAnimationBaseJavaLibraryAdaM</module>
+
+        <module>../../graphics/animation/vector/VectorAnimationJ2MEJavaLibraryAdaM</module>
+        <module>../../graphics/animation/vector/VectorAnimationJavaLibraryAdaM</module>
+
+        <module>../../graphics/VectorJavaLibraryAdaM</module>
+
+        <module>../../graphics/BoundsJavaLibraryAdaM</module>
+
+        <module>../../../../graphics/opengl/OpenGLESNullImageJavaLibraryAdaM</module>
+        <module>../../../../graphics/opengl/OpenGLESNullImageJ2MEJavaLibraryAdaM</module>
+
+        <module>../../graphics/animation/image/AllBinaryImageAnimationJavaLibraryAdaM</module>
+        <module>../../graphics/animation/sprite/AllBinarySpriteAnimationJavaLibraryAdaM</module>
+
+        <!--
+        ../../
+        <module>../../../../../work/j2me/media/graphics/animation/sprite/AllBinaryQuarterSpriteAnimationJavaLibraryAdaM</module>
+        -->
+        <!--
+        ../../
+        <module>../../../../../work/j2me/media/graphics/animation/sprite/AllBinaryQuarterSpriteAnimation2JavaLibraryAdaM</module>
+        -->
+
+        <module>../../graphics/animation/image/ImageJ2MEJavaLibraryAdaM</module>
+        <!--
+        <module>../../graphics/animation/image/ImageHTMLJavaLibraryAdaM</module>
+        -->
+        <module>../../graphics/animation/image/ImageJ2SEJavaLibraryAdaM</module>
+        <!--
+        <module>../../graphics/animation/image/ImageAndroidJavaLibraryAdaM</module>
+        -->
+        <!--
+        <module>../../graphics/animation/image/ImageSwtJ2SEJavaLibraryAdaM</module>
+        -->
+        
+        <!--
+        ../../
+        <module>../../../../../work/j2me/media/graphics/layer/AllBinaryTiledLayerJavaLibraryAdaM</module>
+        <module>../../graphics/layer/AllBinaryTiledLayerJavaLibraryAdaM</module>
+        -->
+
+        <!-- Not used in Platform Libraries -->
+        <module>../../graphics/GraphicsBasicImageJavaLibraryAdaM</module>
+        <!--
+        -->
+        <module>../../graphics/animation/image/AllBinaryImageAnimationRotationJavaLibraryAdaM</module>
+
+    </modules>
+
+</project>
+

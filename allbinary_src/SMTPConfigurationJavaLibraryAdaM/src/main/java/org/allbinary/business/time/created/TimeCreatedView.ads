@@ -1,0 +1,58 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Ada.Strings.Maps.Constants;
+with Ada.Characters.Handling;
+with Ada.Exceptions;
+with Ada.Numerics.Long_Elementary_Functions;
+with Ada.Tags;
+with Ada.Text_IO;
+with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
+with org.allbinary.data.tree.dom.DomNodeHelper_Package; use org.allbinary.data.tree.dom.DomNodeHelper_Package;
+with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
+with org.allbinary.data.tree.dom.ModDomHelper_Package; use org.allbinary.data.tree.dom.ModDomHelper_Package;
+with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+
+package org.allbinary.business.time.created.TimeCreatedView_Package is
+
+   package EntryData_Package renames org.allbinary.business.entry_Id.EntryData_Package;
+   package DomNodeHelper_Package renames org.allbinary.data.tree.dom.DomNodeHelper_Package;
+   package DomNodeInterface_Package renames org.allbinary.data.tree.dom.DomNodeInterface_Package;
+   package ModDomHelper_Package renames org.allbinary.data.tree.dom.ModDomHelper_Package;
+   package Document_Package renames org.w3c.dom.Document_Package;
+   package Node_Package renames org.w3c.dom.Node_Package;
+
+   type TimeCreatedView is tagged;
+   type TimeCreatedView_Access is access all TimeCreatedView'Class;
+   type TimeCreatedView_Access_Array is array (Natural range <>) of TimeCreatedView_Access;
+   type TimeCreatedView_Access_Array_Access is access all TimeCreatedView_Access_Array;
+
+   type TimeCreatedView is new DomNodeInterface with record
+      timeCreated : TimeCreated_Access;
+   end record;
+
+   procedure Initialize (This : in out TimeCreatedView'Class; timeCreated : TimeCreated_Access);
+   function Create (timeCreated : TimeCreated_Access) return TimeCreatedView_Access;
+   function toXmlNode (This : in out TimeCreatedView; document : Document_Access) return Node_Access;
+   procedure toXmlNode (This : in out TimeCreatedView; document : Document_Access);
+   function getTimeCreated (This : in out TimeCreatedView) return TimeCreated_Access;
+   procedure getTimeCreated (This : in out TimeCreatedView);
+   procedure setTimeCreated (This : in out TimeCreatedView; timeCreated : TimeCreated_Access);
+
+end org.allbinary.business.time.created.TimeCreatedView_Package;
+
+

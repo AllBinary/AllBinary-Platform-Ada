@@ -1,0 +1,79 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.allbinary</groupId>
+  <artifactId>AllBinaryOnAllPlatformsJavaLibraryPOMAda</artifactId>
+  <packaging>pom</packaging>
+  <!-- AllBinary Platform Version Start -->
+  <version>1.0.0-SNAPSHOT</version>
+  <!-- AllBinary Platform Version End -->
+
+  <name>AllBinaryOnAllPlatformsJavaLibraryPOMAda</name>
+  <url>http://www.allbinary.com/</url>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <name>AllBinary Snapshots Nexus</name>
+            <url>https://nexus-allbinary.rhcloud.com/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>nexus-releases</id>
+            <name>AllBinary Releases Nexus</name>
+            <url>https://nexus-allbinary.rhcloud.com/nexus/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
+
+
+
+    <modules>
+
+        <!--
+        <module>../j2me/HTMLForJ2MEJavaLibraryAdaM</module>
+        -->
+        
+        <module>../../../games/PreGameJ2MEJavaLibraryP</module>
+        <module>../../GameJ2MELibraryP</module>
+        <module>../../CombatGameJavaLibraryPOAdaM</module>
+        <module>../../AdvancedCombatGameJavaLibraryP</module>
+        
+        <module>../j2me/AllBinaryOnJ2MEBasePlatformJavaLibraryAdaM</module>
+        
+<!--        <module>../j2me/AllBinaryOnJ2MEPlatformJavaLibraryAdaM</module>-->
+        
+        <module>../j2se/AllBinaryOnJ2SEBasePlatformJavaLibraryAdaM</module>
+        
+        <!--
+        <module>../j2se/AllBinaryOnJ2SEPlatformJavaLibraryAdaM</module>
+        
+        <module>../html/AllBinaryOnHTMLBasePlatformJavaLibraryAdaM</module>
+        <module>../html/AllBinaryOnHTMLPlatformJavaLibraryAdaM</module>
+
+        <module>../android/AllBinaryOnAndroidBasePlatformJavaLibraryAdaM</module>
+        <module>../android/AllBinaryOnAndroidBasePlatformDependenciesJavaLibraryAdaM</module>
+        <module>../android/AllBinaryOnAndroidPlatformJavaLibraryAdaM</module>
+        <module>../android/AllBinaryOnAndroidPlatformDependenciesJavaLibraryAdaM</module>
+        
+        -->
+        
+        <module>../AllBinaryOptionalBasePlatformJavaLibraryAdaM</module>
+
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib</artifactId>
+            <version>2.4.20</version><!-- kotlin -->
+            <scope>provided</scope>
+        </dependency>
+
+    </dependencies>
+
+</project>
+

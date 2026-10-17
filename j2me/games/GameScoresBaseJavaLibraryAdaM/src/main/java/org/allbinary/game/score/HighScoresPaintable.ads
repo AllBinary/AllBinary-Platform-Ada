@@ -1,0 +1,79 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Ada.Strings.Maps.Constants;
+with Ada.Characters.Handling;
+with Ada.Exceptions;
+with Ada.Numerics.Long_Elementary_Functions;
+with Ada.Tags;
+with Ada.Text_IO;
+with AllBinary_Java; use AllBinary_Java;
+--  with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+--  with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
+with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.graphics.color.ColorChangeEvent_Package; use org.allbinary.graphics.color.ColorChangeEvent_Package;
+with org.allbinary.graphics.color.ColorChangeListener_Package; use org.allbinary.graphics.color.ColorChangeListener_Package;
+with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+with org.allbinary.graphics.font.MyFontProcessor_Package; use org.allbinary.graphics.font.MyFontProcessor_Package;
+with org.allbinary.graphics.font.UpdateMyFontInterface_Package; use org.allbinary.graphics.font.UpdateMyFontInterface_Package;
+with org.allbinary.graphics.font.UpdateMyFontProcessor_Package; use org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+with org.allbinary.graphics.paint.Paintable_Package; use org.allbinary.graphics.paint.Paintable_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+
+package org.allbinary.game.score.HighScoresPaintable_Package is
+
+   package Anchor_Package renames org.allbinary.graphics.Anchor_Package;
+   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
+   package BasicColorFactory_Package renames org.allbinary.graphics.color.BasicColorFactory_Package;
+   package ColorChangeEvent_Package renames org.allbinary.graphics.color.ColorChangeEvent_Package;
+   package ColorChangeListener_Package renames org.allbinary.graphics.color.ColorChangeListener_Package;
+   package DisplayInfoSingleton_Package renames org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package MyFontProcessor_Package renames org.allbinary.graphics.font.MyFontProcessor_Package;
+   package UpdateMyFontInterface_Package renames org.allbinary.graphics.font.UpdateMyFontInterface_Package;
+   package UpdateMyFontProcessor_Package renames org.allbinary.graphics.font.UpdateMyFontProcessor_Package;
+   package Paintable_Package renames org.allbinary.graphics.paint.Paintable_Package;
+   package AllBinaryEventObject_Package renames org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+
+   type HighScoresPaintable is tagged;
+   type HighScoresPaintable_Access is access all HighScoresPaintable'Class;
+   type HighScoresPaintable_Access_Array is array (Natural range <>) of HighScoresPaintable_Access;
+   type HighScoresPaintable_Access_Array_Access is access all HighScoresPaintable_Access_Array;
+
+   type HighScoresPaintable is new Paintable and ColorChangeListener and UpdateMyFontInterface with record
+      displayInfoSingleton : DisplayInfoSingleton_Access;
+      myFontProcessor : MyFontProcessor_Access;
+      basicColor : BasicColor_Access;
+      highScores : HighScores_Access;
+      anchor : Integer;
+      charHeight : Integer;
+   end record;
+
+   procedure Initialize (This : in out HighScoresPaintable'Class);
+   function Create return HighScoresPaintable_Access;
+   procedure updateMeasurement (This : in out HighScoresPaintable; graphics : Graphics_Access);
+   procedure onEvent (This : in out HighScoresPaintable; eventObject : AllBinaryEventObject_Access);
+   procedure paint (This : in out HighScoresPaintable; graphics : Graphics_Access);
+   procedure setBasicColorP (This : in out HighScoresPaintable; basicColor : BasicColor_Access);
+   function getBasicColorP (This : in out HighScoresPaintable) return BasicColor_Access;
+   procedure getBasicColorP (This : in out HighScoresPaintable);
+   procedure setHighScores (This : in out HighScoresPaintable; highScores : HighScores_Access);
+
+end org.allbinary.game.score.HighScoresPaintable_Package;
+
+

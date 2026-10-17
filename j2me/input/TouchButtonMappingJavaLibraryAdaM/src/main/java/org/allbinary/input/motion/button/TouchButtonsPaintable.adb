@@ -1,0 +1,65 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.input.motion.button.TouchButtonsPaintable_Package is
+
+   procedure Initialize_Fields (This : in out TouchButtonsPaintable'Class) is
+   begin
+      null;
+      
+      
+      This.basicSetColorUtil := BasicColorSetUtil_Package.getInstance;
+      This.touchButtonFactory := TouchButtonFactory_Package.getInstance;
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out TouchButtonsPaintable'Class; basicColor : BasicColor_Access) is
+   begin
+      Paintable_Package.Initialize (This);
+      Initialize_Fields (This);
+        This.foregroundBasicColor := basicColor;
+        This.foregroundColor := basicColor.intValue;
+   end Initialize;
+
+   function Create (basicColor : BasicColor_Access) return TouchButtonsPaintable_Access is
+      This : constant TouchButtonsPaintable_Access := new TouchButtonsPaintable;
+   begin
+      Initialize (This.all, basicColor);
+      return This;
+   end Create;
+
+   procedure paint (This : in out TouchButtonsPaintable; graphics : Graphics_Access) is
+      list : BasicArrayList_Access;
+      touchButton : TouchButton_Access;
+      index : Integer;
+   begin
+        list := This.touchButtonFactory.getList;
+        This.basicSetColorUtil.setBasicColorP3 (graphics, This.foregroundBasicColor, This.foregroundColor);
+        touchButton := null;
+        index := list.size;
+        while (Java_Pre_Decrement (index)) >= (0) loop
+            touchButton := TouchButton_Access (list.objectArray (index));
+            touchButton.paint (graphics);
+        end loop;
+        index := list.size;
+        while (Java_Pre_Decrement (index)) >= (0) loop
+            touchButton := TouchButton_Access (list.objectArray (index));
+            touchButton.paintHint (graphics);
+        end loop;
+   end paint;
+
+end org.allbinary.input.motion.button.TouchButtonsPaintable_Package;
+
+

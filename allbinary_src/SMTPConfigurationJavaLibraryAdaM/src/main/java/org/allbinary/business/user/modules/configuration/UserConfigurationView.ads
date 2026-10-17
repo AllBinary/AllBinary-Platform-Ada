@@ -1,0 +1,67 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Ada.Strings.Maps.Constants;
+with Ada.Characters.Handling;
+with Ada.Exceptions;
+with Ada.Numerics.Long_Elementary_Functions;
+with Ada.Tags;
+with Ada.Text_IO;
+with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.business.entry_Id.EntryData_Package; use org.allbinary.business.entry_Id.EntryData_Package;
+with org.allbinary.business.time.created.TimeCreatedView_Package; use org.allbinary.business.time.created.TimeCreatedView_Package;
+with org.allbinary.business.time.modified.TimeLastModifiedView_Package; use org.allbinary.business.time.modified.TimeLastModifiedView_Package;
+with org.allbinary.data.tree.dom.DomNodeInterface_Package; use org.allbinary.data.tree.dom.DomNodeInterface_Package;
+with org.allbinary.data.tree.dom.DomSearchHelper_Package; use org.allbinary.data.tree.dom.DomSearchHelper_Package;
+with org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationData_Package; use org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationData_Package;
+with org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package; use org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package;
+with org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationView_Package; use org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationView_Package;
+with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with org.w3c.dom.NodeList_Package; use org.w3c.dom.NodeList_Package;
+
+package org.allbinary.business.user.modules.configuration.UserConfigurationView_Package is
+
+   package EntryData_Package renames org.allbinary.business.entry_Id.EntryData_Package;
+   package TimeCreatedView_Package renames org.allbinary.business.time.created.TimeCreatedView_Package;
+   package TimeLastModifiedView_Package renames org.allbinary.business.time.modified.TimeLastModifiedView_Package;
+   package DomNodeInterface_Package renames org.allbinary.data.tree.dom.DomNodeInterface_Package;
+   package DomSearchHelper_Package renames org.allbinary.data.tree.dom.DomSearchHelper_Package;
+   package UserEmailConfigurationData_Package renames org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationData_Package;
+   package UserEmailConfigurationInterface_Package renames org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationInterface_Package;
+   package UserEmailConfigurationView_Package renames org.allbinary.logic.communication.smtp.configuration.user.UserEmailConfigurationView_Package;
+   package Document_Package renames org.w3c.dom.Document_Package;
+   package Node_Package renames org.w3c.dom.Node_Package;
+   package NodeList_Package renames org.w3c.dom.NodeList_Package;
+
+   type UserConfigurationView is tagged;
+   type UserConfigurationView_Access is access all UserConfigurationView'Class;
+   type UserConfigurationView_Access_Array is array (Natural range <>) of UserConfigurationView_Access;
+   type UserConfigurationView_Access_Array_Access is access all UserConfigurationView_Access_Array;
+
+   type UserConfigurationView is new DomNodeInterface with record
+      userConfigurationInterface : UserConfigurationInterface_Access;
+   end record;
+
+   procedure Initialize (This : in out UserConfigurationView'Class; node : Node_Access);
+   function Create (node : Node_Access) return UserConfigurationView_Access;
+   function getUserConfigurationInterface (This : in out UserConfigurationView) return UserConfigurationInterface_Access;
+   procedure getUserConfigurationInterface (This : in out UserConfigurationView);
+   function toXmlNode (This : in out UserConfigurationView; document : Document_Access) return Node_Access;
+   procedure toXmlNode (This : in out UserConfigurationView; document : Document_Access);
+
+end org.allbinary.business.user.modules.configuration.UserConfigurationView_Package;
+
+

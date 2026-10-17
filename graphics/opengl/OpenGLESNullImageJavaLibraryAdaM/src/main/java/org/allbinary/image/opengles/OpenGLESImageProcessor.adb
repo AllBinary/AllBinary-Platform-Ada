@@ -1,0 +1,74 @@
+-- 
+-- AllBinary Open License Version 1 
+-- Copyright (c) 2022 AllBinary 
+--  
+-- By agreeing to this license you and any business entity you represent are 
+-- legally bound to the AllBinary Open License Version 1 legal agreement. 
+--  
+-- You may obtain the AllBinary Open License Version 1 legal agreement from 
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository. 
+--  
+-- Created By: Travis Berthelot 
+--   
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.image.opengles.OpenGLESImageProcessor_Package is
+
+   procedure Initialize_Fields (This : in out OpenGLESImageProcessor'Class) is
+   begin
+      null;
+   end Initialize_Fields;
+
+   procedure Initialize (This : in out OpenGLESImageProcessor'Class) is
+   begin
+      Initialize_Fields (This);
+   end Initialize;
+
+   function Create return OpenGLESImageProcessor_Access is
+      This : constant OpenGLESImageProcessor_Access := new OpenGLESImageProcessor;
+   begin
+      Initialize (This.all);
+      return This;
+   end Create;
+
+
+   function getInstance return OpenGLESImageProcessor_Access is
+   begin
+        return OpenGLESImageProcessor_Package.instance;
+   end getInstance;
+
+   procedure translate (This : in out OpenGLESImageProcessor; gl : GL10_Access; translateX : Float; translateY : Float) is
+   begin
+        null;
+   end translate;
+
+   procedure rotate (This : in out OpenGLESImageProcessor; gl : GL10_Access; angle : Float) is
+   begin
+        null;
+   end rotate;
+
+   procedure scale (This : in out OpenGLESImageProcessor; gl : GL10_Access; scaleX : Float; scaleY : Float) is
+   begin
+        null;
+   end scale;
+
+   procedure colorMask (This : in out OpenGLESImageProcessor; gl : GL10_Access; red : Float; green : Float; blue : Float; alpha : Float) is
+   begin
+        null;
+   end colorMask;
+
+   procedure getInstance is
+      Java_Result : constant OpenGLESImageProcessor_Access := getInstance;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getInstance;
+
+begin
+   null;
+   instance := OpenGLESImageProcessor_Package.Create;
+
+end org.allbinary.image.opengles.OpenGLESImageProcessor_Package;
+
+

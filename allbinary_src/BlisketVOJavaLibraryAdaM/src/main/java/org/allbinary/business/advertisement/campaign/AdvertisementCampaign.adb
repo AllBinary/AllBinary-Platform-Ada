@@ -1,0 +1,86 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.business.advertisement.campaign.AdvertisementCampaign_Package is
+
+   procedure Initialize_Fields (This : in out AdvertisementCampaign'Class) is
+   begin
+      null;
+      
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out AdvertisementCampaign'Class; hashMap : HashMap_Access) is
+   begin
+      Initialize_Fields (This);
+        This.hashMap := hashMap;
+   end Initialize;
+
+   function Create (hashMap : HashMap_Access) return AdvertisementCampaign_Access is
+      This : constant AdvertisementCampaign_Access := new AdvertisementCampaign;
+   begin
+      Initialize (This.all, hashMap);
+      return This;
+   end Create;
+
+   function getComponent (This : in out AdvertisementCampaign) return Java_Object_Access is
+   begin
+        return null;
+   end getComponent;
+
+   function getName (This : in out AdvertisementCampaign) return Unbounded_String is
+   begin
+        return Unbounded_String (This.hashMap.get (AdvertisementCampaignData_Package.getInstance.NAME));
+   end getName;
+
+   procedure setComponentName (This : in out AdvertisementCampaign; name : Unbounded_String) is
+   begin
+        This.hashMap.put (DynamicObjectData_Package.NAME, name);
+   end setComponentName;
+
+   procedure setName (This : in out AdvertisementCampaign; name : Unbounded_String) is
+   begin
+        This.hashMap.put (AdvertisementCampaignData_Package.getInstance.NAME, name);
+   end setName;
+
+   function search (This : in out AdvertisementCampaign; advertisementSearchInterface : AdvertisementSearchInterface_Access) return AdvertisementsInterface_Access is
+   begin
+        return null;
+   end search;
+
+   procedure getComponent (This : in out AdvertisementCampaign) is
+      Java_Result : constant Java_Object_Access := AdvertisementCampaign'Class (This).getComponent;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getComponent;
+
+   procedure getName (This : in out AdvertisementCampaign) is
+      Java_Result : constant Unbounded_String := AdvertisementCampaign'Class (This).getName;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getName;
+
+   procedure search (This : in out AdvertisementCampaign; advertisementSearchInterface : AdvertisementSearchInterface_Access) is
+      Java_Result : constant AdvertisementsInterface_Access := AdvertisementCampaign'Class (This).search (advertisementSearchInterface);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end search;
+
+end org.allbinary.business.advertisement.campaign.AdvertisementCampaign_Package;
+
+

@@ -1,0 +1,56 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Ada.Strings.Maps.Constants;
+with Ada.Characters.Handling;
+with Ada.Exceptions;
+with Ada.Numerics.Long_Elementary_Functions;
+with Ada.Tags;
+with Ada.Text_IO;
+with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.business.init.InitInfo_Package; use org.allbinary.business.init.InitInfo_Package;
+with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
+with org.allbinary.globals.UrlGlobalsInterface_Package; use org.allbinary.globals.UrlGlobalsInterface_Package;
+
+package org.allbinary.globals.WebAppUrlGlobals_Package is
+
+   package InitInfo_Package renames org.allbinary.business.init.InitInfo_Package;
+   package StringValidationUtil_Package renames org.allbinary.logic.string_Id.StringValidationUtil_Package;
+
+   type WebAppUrlGlobals is tagged;
+   type WebAppUrlGlobals_Access is access all WebAppUrlGlobals'Class;
+   type WebAppUrlGlobals_Access_Array is array (Natural range <>) of WebAppUrlGlobals_Access;
+   type WebAppUrlGlobals_Access_Array_Access is access all WebAppUrlGlobals_Access_Array;
+
+   type WebAppUrlGlobals is new UrlGlobalsInterface with record
+      path : Unbounded_String;
+      isWebappPathSet : Boolean;
+   end record;
+
+   procedure Initialize (This : in out WebAppUrlGlobals'Class);
+   function Create return WebAppUrlGlobals_Access;
+   function isTestingMode (This : in out WebAppUrlGlobals) return Boolean;
+   procedure isTestingMode (This : in out WebAppUrlGlobals);
+   function getWebappPath (This : in out WebAppUrlGlobals) return Unbounded_String;
+   procedure getWebappPath (This : in out WebAppUrlGlobals);
+   procedure setWebappPath (This : in out WebAppUrlGlobals; path : Unbounded_String);
+   function getTestHtmlPath (This : in out WebAppUrlGlobals) return Unbounded_String;
+   procedure getTestHtmlPath (This : in out WebAppUrlGlobals);
+   function getMainPath (This : in out WebAppUrlGlobals) return Unbounded_String;
+   procedure getMainPath (This : in out WebAppUrlGlobals);
+
+end org.allbinary.globals.WebAppUrlGlobals_Package;
+
+

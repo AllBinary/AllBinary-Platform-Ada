@@ -1,0 +1,62 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.game.displayable.canvas.PreGameLockablePaintable_Package is
+
+   procedure Initialize_Fields (This : in out PreGameLockablePaintable'Class) is
+   begin
+      null;
+      
+      
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out PreGameLockablePaintable'Class; paintableForm : ScrollCurrentSelectionForm_Access; lockedIndex : Integer) is
+   begin
+        LockablePaintable_Package.Initialize (This, lockedIndex);
+        Initialize_Fields (This);
+        This.paintableForm := paintableForm;
+        This.halfWidth := (GameFeatureImageCacheFactory_Package.getInstance.getWithKey (LockedResources_Package.getInstance.LOCKED_DEMO_GAME_FEATURE_RESOURCE).getWidth) / (2);
+   end Initialize;
+
+   function Create (paintableForm : ScrollCurrentSelectionForm_Access; lockedIndex : Integer) return PreGameLockablePaintable_Access is
+      This : constant PreGameLockablePaintable_Access := new PreGameLockablePaintable;
+   begin
+      Initialize (This.all, paintableForm, lockedIndex);
+      return This;
+   end Create;
+
+   procedure paint (This : in out PreGameLockablePaintable; graphics : Graphics_Access; currentIndex : Integer; x : Integer; y : Integer) is
+   begin
+        if (LockedUtil_Package.getInstance.isLocked) and then ((This.getPaintableForm.getSelectedIndex) >= (This.getLockedIndex)) then
+            This.getAnimation.paintXY (graphics, (This.getPaintableForm.getDx) - (This.halfWidth), (This.getPaintableForm.getDy) + (34));
+        end if;
+   end paint;
+
+   function getPaintableForm (This : in out PreGameLockablePaintable) return ScrollCurrentSelectionForm_Access is
+   begin
+        return This.paintableForm;
+   end getPaintableForm;
+
+   procedure getPaintableForm (This : in out PreGameLockablePaintable) is
+      Java_Result : constant ScrollCurrentSelectionForm_Access := PreGameLockablePaintable'Class (This).getPaintableForm;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getPaintableForm;
+
+end org.allbinary.game.displayable.canvas.PreGameLockablePaintable_Package;
+
+

@@ -1,0 +1,66 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.android.api1.ActivityFractureUtilAPI1_Package is
+
+   procedure Initialize_Fields (This : in out ActivityFractureUtilAPI1'Class) is
+   begin
+      null;
+   end Initialize_Fields;
+
+   procedure Initialize (This : in out ActivityFractureUtilAPI1'Class) is
+   begin
+      ActivityFractureUtil_Package.Initialize (This);
+      Initialize_Fields (This);
+   end Initialize;
+
+   function Create return ActivityFractureUtilAPI1_Access is
+      This : constant ActivityFractureUtilAPI1_Access := new ActivityFractureUtilAPI1;
+   begin
+      Initialize (This.all);
+      return This;
+   end Create;
+
+
+   function getInstance return ActivityFractureUtilAPI1_Access is
+   begin
+        return ActivityFractureUtilAPI1_Package.instance;
+   end getInstance;
+
+   --  throws Exception
+   procedure process (This : in out ActivityFractureUtilAPI1; activity : Activity_Access) is
+   begin
+        null;
+   end process;
+
+   procedure setFullScreen (This : in out ActivityFractureUtilAPI1; activity : Activity_Access) is
+   begin
+        activity.getWindow.setFlags (WindowManager_Package.LayoutParams.FLAG_FULLSCREEN, WindowManager_Package.LayoutParams.FLAG_FULLSCREEN);
+   end setFullScreen;
+
+   procedure getInstance is
+      Java_Result : constant ActivityFractureUtilAPI1_Access := getInstance;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getInstance;
+
+begin
+   null;
+   instance := ActivityFractureUtilAPI1_Package.Create;
+
+end org.allbinary.android.api1.ActivityFractureUtilAPI1_Package;
+
+

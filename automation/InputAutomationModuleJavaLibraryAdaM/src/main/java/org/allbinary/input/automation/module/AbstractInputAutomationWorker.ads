@@ -1,0 +1,88 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Ada.Strings.Maps.Constants;
+with Ada.Characters.Handling;
+with Ada.Exceptions;
+with Ada.Numerics.Long_Elementary_Functions;
+with Ada.Tags;
+with Ada.Text_IO;
+with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package; use org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.media.image.comparison.ImageComparisonWorker_Package; use org.allbinary.media.image.comparison.ImageComparisonWorker_Package;
+with org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package; use org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package;
+with org.allbinary.string_Id.CommonLabels_Package; use org.allbinary.string_Id.CommonLabels_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.thread.RunnableInterface_Package; use org.allbinary.thread.RunnableInterface_Package;
+with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
+
+package org.allbinary.input.automation.module.AbstractInputAutomationWorker_Package is
+
+   package CaptureWorkerInterface_Package renames org.allbinary.input.media.image.capture.CaptureWorkerInterface_Package;
+   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package ImageComparisonWorker_Package renames org.allbinary.media.image.comparison.ImageComparisonWorker_Package;
+   package MotionRectanglesWorker_Package renames org.allbinary.media.image.comparison.motion.MotionRectanglesWorker_Package;
+   package CommonLabels_Package renames org.allbinary.string_Id.CommonLabels_Package;
+   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package RunnableInterface_Package renames org.allbinary.thread.RunnableInterface_Package;
+   package TimeDelayHelper_Package renames org.allbinary.time.TimeDelayHelper_Package;
+
+   type AbstractInputAutomationWorker is tagged;
+   type AbstractInputAutomationWorker_Access is access all AbstractInputAutomationWorker'Class;
+   type AbstractInputAutomationWorker_Access_Array is array (Natural range <>) of AbstractInputAutomationWorker_Access;
+   type AbstractInputAutomationWorker_Access_Array_Access is access all AbstractInputAutomationWorker_Access_Array;
+
+   type AbstractInputAutomationWorker is new RunnableInterface with record
+      logUtil : LogUtil_Access;
+      commonStrings : CommonStrings_Access;
+      index : Long_Long_Integer;
+      running : Boolean;
+      inputAutomationActionInterface : InputAutomationActionInterface_Access;
+      captureWorkerInterface : CaptureWorkerInterface_Access;
+      imageComparisonWorker : ImageComparisonWorker_Access;
+      motionRectanglesWorker : MotionRectanglesWorker_Access;
+      captureThread : Thread_Access;
+   end record;
+
+   procedure Initialize (This : in out AbstractInputAutomationWorker'Class; inputAutomationActionInterface : InputAutomationActionInterface_Access);
+   function Create (inputAutomationActionInterface : InputAutomationActionInterface_Access) return AbstractInputAutomationWorker_Access;
+   procedure setThread (This : in out AbstractInputAutomationWorker; thread : Thread_Access);
+   function isRunning (This : in out AbstractInputAutomationWorker) return Boolean;
+   procedure isRunning (This : in out AbstractInputAutomationWorker);
+   procedure setRunning (This : in out AbstractInputAutomationWorker; running : Boolean);
+   function isAnyDataWorkerRunning (This : in out AbstractInputAutomationWorker) return Boolean;
+   procedure isAnyDataWorkerRunning (This : in out AbstractInputAutomationWorker);
+   procedure startDataWorkers (This : in out AbstractInputAutomationWorker);
+   procedure waitForDataWorkers (This : in out AbstractInputAutomationWorker);
+   procedure stopDataWorkers (This : in out AbstractInputAutomationWorker);
+   procedure process (This : in out AbstractInputAutomationWorker);
+   procedure run (This : in out AbstractInputAutomationWorker);
+   function getInputAutomationActionInterface (This : in out AbstractInputAutomationWorker) return InputAutomationActionInterface_Access;
+   procedure getInputAutomationActionInterface (This : in out AbstractInputAutomationWorker);
+   procedure setInputAutomationActionInterface (This : in out AbstractInputAutomationWorker; inputAutomationActionInterface : InputAutomationActionInterface_Access);
+   function getCaptureWorker (This : in out AbstractInputAutomationWorker) return CaptureWorkerInterface_Access;
+   procedure getCaptureWorker (This : in out AbstractInputAutomationWorker);
+   procedure setCaptureWorker (This : in out AbstractInputAutomationWorker; captureWorkerInterface : CaptureWorkerInterface_Access);
+   function getImageComparisonWorker (This : in out AbstractInputAutomationWorker) return ImageComparisonWorker_Access;
+   procedure getImageComparisonWorker (This : in out AbstractInputAutomationWorker);
+   procedure setImageComparisonWorker (This : in out AbstractInputAutomationWorker; imageComparisonWorker : ImageComparisonWorker_Access);
+   function getMotionRectanglesWorker (This : in out AbstractInputAutomationWorker) return MotionRectanglesWorker_Access;
+   procedure getMotionRectanglesWorker (This : in out AbstractInputAutomationWorker);
+   procedure setMotionRectanglesWorker (This : in out AbstractInputAutomationWorker; motionRectanglesWorker : MotionRectanglesWorker_Access);
+
+end org.allbinary.input.automation.module.AbstractInputAutomationWorker_Package;
+
+

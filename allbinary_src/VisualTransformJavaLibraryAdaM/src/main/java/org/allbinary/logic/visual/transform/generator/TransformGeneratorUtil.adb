@@ -1,0 +1,92 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--   
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.logic.visual.transform.generator.TransformGeneratorUtil_Package is
+
+   procedure Initialize_Fields (This : in out TransformGeneratorUtil'Class) is
+   begin
+      null;
+      This.logUtil := LogUtil_Package.getInstance;
+   end Initialize_Fields;
+
+
+   function getInstance return TransformGeneratorUtil_Access is
+   begin
+        return TransformGeneratorUtil_Package.instance;
+   end getInstance;
+
+   procedure Initialize (This : in out TransformGeneratorUtil'Class) is
+   begin
+      Initialize_Fields (This);
+        null;
+   end Initialize;
+
+   function Create return TransformGeneratorUtil_Access is
+      This : constant TransformGeneratorUtil_Access := new TransformGeneratorUtil;
+   begin
+      Initialize (This.all);
+      return This;
+   end Create;
+
+   --  throws Exception
+   procedure generate (This : in out TransformGeneratorUtil; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access; ownerTransformInfoInterface : TransformInfoInterface_Access) is
+      componentInterface : TransformInterface_Access;
+      result : Unbounded_String;
+      httpTransformInfoInterface : TransformInfoHttpInterface_Access;
+      inputOutputTypeData : InputOutputTypeData_Access;
+   begin
+        begin
+            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+                This.logUtil.putF (To_Unbounded_String ("Generating View: ") & transformInfoInterface.getName, This'Unchecked_Access, To_Unbounded_String ("generate()"));
+            end if;
+            componentInterface := TransformFactory_Package.getInstance.getInstance (abeClientInformation, transformInfoInterface.getName, ownerTransformInfoInterface);
+            result := componentInterface.view;
+            httpTransformInfoInterface := TransformInfoHttpInterface_Access (componentInterface.getTransformInfoInterface);
+            inputOutputTypeData := InputOutputTypeData_Package.getInstance;
+            if ((Index (result, To_String (To_Unbounded_String ("<HTML>"))) - 1)) >= (0) then
+                httpTransformInfoInterface.getPropertiesHashMap.put (inputOutputTypeData.NAME, inputOutputTypeData.DEFAULT);
+            else
+                httpTransformInfoInterface.getPropertiesHashMap.put (inputOutputTypeData.NAME, inputOutputTypeData.DEFAULT_FRAGMENT);
+            end if;
+            StoreFileGenerator_Package.Create (componentInterface.getTransformInfoInterface).process (result);
+        exception
+            when e : others =>
+            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+                This.logUtil.put (To_Unbounded_String ("Failed to generate a view"), This'Unchecked_Access, To_Unbounded_String ("generate()"), e);
+            end if;
+            Java_Throw (e);
+        end;
+   end generate;
+
+   --  throws Exception
+   procedure generate (This : in out TransformGeneratorUtil; abeClientInformation : AbeClientInformationInterface_Access; transformInfoDomNode : TransformInfoDomNode_Access; ownerTransformInfoInterface : TransformInfoInterface_Access) is
+   begin
+        This.generate (abeClientInformation, transformInfoDomNode.getTransformInfoInterface, ownerTransformInfoInterface);
+   end generate;
+
+   procedure getInstance is
+      Java_Result : constant TransformGeneratorUtil_Access := getInstance;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getInstance;
+
+begin
+   null;
+   instance := TransformGeneratorUtil_Package.Create;
+
+end org.allbinary.logic.visual.transform.generator.TransformGeneratorUtil_Package;
+
+

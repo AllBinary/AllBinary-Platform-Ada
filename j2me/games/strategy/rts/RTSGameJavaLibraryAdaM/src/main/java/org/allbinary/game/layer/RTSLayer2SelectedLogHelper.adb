@@ -1,0 +1,108 @@
+-- 
+-- AllBinary Open License Version 1 
+-- Copyright (c) 2022 AllBinary 
+--  
+-- By agreeing to this license you and any business entity you represent are 
+-- legally bound to the AllBinary Open License Version 1 legal agreement. 
+--  
+-- You may obtain the AllBinary Open License Version 1 legal agreement from 
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository. 
+--  
+-- Created By: Travis Berthelot 
+--   
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.game.layer.RTSLayer2SelectedLogHelper_Package is
+
+   procedure Initialize_Fields (This : in out RTSLayer2SelectedLogHelper'Class) is
+   begin
+      null;
+      This.logUtil := LogUtil_Package.getInstance;
+      This.TRACK_TO_FIRE_OR_MOVE := To_Unbounded_String ("trackTo:fireOrMove");
+      This.BUILDING_CHASE := To_Unbounded_String ("buildingChase");
+   end Initialize_Fields;
+
+   procedure Initialize (This : in out RTSLayer2SelectedLogHelper'Class) is
+   begin
+      RTSLayer2LogHelper_Package.Initialize (This);
+      Initialize_Fields (This);
+   end Initialize;
+
+   function Create return RTSLayer2SelectedLogHelper_Access is
+      This : constant RTSLayer2SelectedLogHelper_Access := new RTSLayer2SelectedLogHelper;
+   begin
+      Initialize (This.all);
+      return This;
+   end Create;
+
+
+   function getInstance return RTSLayer2SelectedLogHelper_Access is
+   begin
+        return RTSLayer2SelectedLogHelper_Package.instanceC;
+   end getInstance;
+
+   procedure steeringUp (This : in out RTSLayer2SelectedLogHelper; pathFindingLayerInterface : PathFindingLayerInterface_Access) is
+   begin
+        This.logUtil.putF (StringMaker_Package.Create.append (pathFindingLayerInterface.getName).append (To_Unbounded_String (" steering - Up")).toString, This'Unchecked_Access, This.TRACK_TO_FIRE_OR_MOVE);
+   end steeringUp;
+
+   procedure steeringFireOrStop (This : in out RTSLayer2SelectedLogHelper; pathFindingLayerInterface : PathFindingLayerInterface_Access) is
+   begin
+        This.logUtil.putF (StringMaker_Package.Create.append (pathFindingLayerInterface.getName).append (To_Unbounded_String (" steering - Fire/All Stop")).toString, This'Unchecked_Access, This.TRACK_TO_FIRE_OR_MOVE);
+   end steeringFireOrStop;
+
+   procedure buildingAbove (This : in out RTSLayer2SelectedLogHelper; pathFindingLayerInterface : PathFindingLayerInterface_Access) is
+   begin
+        This.logUtil.putF (StringMaker_Package.Create.append (pathFindingLayerInterface.getName).append (To_Unbounded_String (" Building Above")).toString, This'Unchecked_Access, This.BUILDING_CHASE);
+   end buildingAbove;
+
+   procedure buildingChaseLeft (This : in out RTSLayer2SelectedLogHelper; pathFindingLayerInterface : PathFindingLayerInterface_Access; angle : Integer) is
+   begin
+        This.logUtil.putF (StringMaker_Package.Create.append (pathFindingLayerInterface.getName).append (To_Unbounded_String (" steering - Going Left: ")).appendint (angle).toString, This'Unchecked_Access, This.BUILDING_CHASE);
+   end buildingChaseLeft;
+
+   procedure buildingChaseRight (This : in out RTSLayer2SelectedLogHelper; pathFindingLayerInterface : PathFindingLayerInterface_Access; angle : Integer) is
+   begin
+        This.logUtil.putF (StringMaker_Package.Create.append (pathFindingLayerInterface.getName).append (To_Unbounded_String (" steering - Going Right: ")).appendint (angle).toString, This'Unchecked_Access, This.BUILDING_CHASE);
+   end buildingChaseRight;
+
+   procedure buildingDown (This : in out RTSLayer2SelectedLogHelper; pathFindingLayerInterface : PathFindingLayerInterface_Access) is
+   begin
+        This.logUtil.putF (StringMaker_Package.Create.append (pathFindingLayerInterface.getName).append (To_Unbounded_String (" Building Below")).toString, This'Unchecked_Access, This.BUILDING_CHASE);
+   end buildingDown;
+
+   procedure buildingChaseDown (This : in out RTSLayer2SelectedLogHelper; pathFindingLayerInterface : PathFindingLayerInterface_Access; angle : Integer) is
+   begin
+        This.logUtil.putF (StringMaker_Package.Create.append (pathFindingLayerInterface.getName).append (To_Unbounded_String (" steering - Going Down: ")).appendint (angle).toString, This'Unchecked_Access, This.BUILDING_CHASE);
+   end buildingChaseDown;
+
+   procedure buildingChaseUp (This : in out RTSLayer2SelectedLogHelper; pathFindingLayerInterface : PathFindingLayerInterface_Access; angle : Integer) is
+   begin
+        This.logUtil.putF (StringMaker_Package.Create.append (pathFindingLayerInterface.getName).append (To_Unbounded_String (" steering - Going Up: ")).appendint (angle).toString, This'Unchecked_Access, This.BUILDING_CHASE);
+   end buildingChaseUp;
+
+   procedure buildingLeft (This : in out RTSLayer2SelectedLogHelper; pathFindingLayerInterface : PathFindingLayerInterface_Access) is
+   begin
+        This.logUtil.putF (StringMaker_Package.Create.append (pathFindingLayerInterface.getName).append (To_Unbounded_String (" Building Left")).toString, This'Unchecked_Access, This.BUILDING_CHASE);
+   end buildingLeft;
+
+   procedure buildingRight (This : in out RTSLayer2SelectedLogHelper; pathFindingLayerInterface : PathFindingLayerInterface_Access) is
+   begin
+        This.logUtil.putF (StringMaker_Package.Create.append (pathFindingLayerInterface.getName).append (To_Unbounded_String (" Building Right")).toString, This'Unchecked_Access, This.BUILDING_CHASE);
+   end buildingRight;
+
+   procedure getInstance is
+      Java_Result : constant RTSLayer2SelectedLogHelper_Access := getInstance;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getInstance;
+
+begin
+   null;
+   instanceC := RTSLayer2SelectedLogHelper_Package.Create;
+
+end org.allbinary.game.layer.RTSLayer2SelectedLogHelper_Package;
+
+

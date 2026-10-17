@@ -1,0 +1,131 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body views.generic_Id.user.DeleteValidationUserView_Package is
+
+   procedure Initialize_Fields (This : in out DeleteValidationUserView'Class) is
+   begin
+      null;
+      This.logUtil := LogUtil_Package.getInstance;
+      
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out DeleteValidationUserView'Class; transformInfoInterface : TransformInfoInterface_Access) is
+      httpServletRequest : HttpServletRequest_Access;
+      hashMap : HashMap_Access;
+   begin
+        UserView_Package.Initialize (This, transformInfoInterface);
+        Initialize_Fields (This);
+        httpServletRequest := HttpServletRequest_Access (This.getPageContext.getRequest);
+        hashMap := RequestParams_Package.Create (httpServletRequest).toHashMap;
+        This.userName := UserName_Package.Create (hashMap).get;
+        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+            This.logUtil.putF (To_Unbounded_String ("User Name: ") & This.userName, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+        end if;
+   end Initialize;
+
+   function Create (transformInfoInterface : TransformInfoInterface_Access) return DeleteValidationUserView_Access is
+      This : constant DeleteValidationUserView_Access := new DeleteValidationUserView;
+   begin
+      Initialize (This.all, transformInfoInterface);
+      return This;
+   end Create;
+
+   function isValid (This : in out DeleteValidationUserView) return Boolean is
+   begin
+        begin
+            if (UserName_Package.getInstance.isValid (This.userName)) = (True) then
+                This.user := UserEntityFactory_Package.getInstance.getUser (This.userName);
+                if (This.user) = (null) then
+                    return False;
+                end if;
+            else
+                return False;
+            end if;
+            return True;
+        exception
+            when e : others =>
+            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
+                This.logUtil.put (To_Unbounded_String ("Failed to validate form"), This'Unchecked_Access, This.commonStrings.IS_VALID, e);
+            end if;
+            return False;
+        end;
+   end isValid;
+
+   function validationInfo (This : in out DeleteValidationUserView) return Unbounded_String is
+      stringBuffer : StringMaker_Access;
+   begin
+        begin
+            stringBuffer := StringMaker_Package.Create;
+            if (UserName_Package.getInstance.isValid (This.userName)) = (True) then
+                This.user := UserEntityFactory_Package.getInstance.getUser (This.userName);
+                if (This.user) = (null) then
+                    stringBuffer.append (To_Unbounded_String ("User does not exist.<br />"));
+                end if;
+            else
+                stringBuffer.append (To_Unbounded_String ("User Name is not valid.<br />"));
+            end if;
+            return stringBuffer.toString;
+        exception
+            when e : others =>
+            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
+                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), This'Unchecked_Access, To_Unbounded_String ("validationInfo()"), e);
+            end if;
+            return To_Unbounded_String ("Error Validating Form");
+        end;
+   end validationInfo;
+
+   function toValidationInfoDoc (This : in out DeleteValidationUserView) return Document_Access is
+   begin
+        return null;
+   end toValidationInfoDoc;
+
+   function toValidationInfoNode (This : in out DeleteValidationUserView; document : Document_Access) return Node_Access is
+   begin
+        return null;
+   end toValidationInfoNode;
+
+   procedure isValid (This : in out DeleteValidationUserView) is
+      Java_Result : constant Boolean := DeleteValidationUserView'Class (This).isValid;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end isValid;
+
+   procedure validationInfo (This : in out DeleteValidationUserView) is
+      Java_Result : constant Unbounded_String := DeleteValidationUserView'Class (This).validationInfo;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end validationInfo;
+
+   procedure toValidationInfoDoc (This : in out DeleteValidationUserView) is
+      Java_Result : constant Document_Access := DeleteValidationUserView'Class (This).toValidationInfoDoc;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end toValidationInfoDoc;
+
+   procedure toValidationInfoNode (This : in out DeleteValidationUserView; document : Document_Access) is
+      Java_Result : constant Node_Access := DeleteValidationUserView'Class (This).toValidationInfoNode (document);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end toValidationInfoNode;
+
+end views.generic_Id.user.DeleteValidationUserView_Package;
+
+

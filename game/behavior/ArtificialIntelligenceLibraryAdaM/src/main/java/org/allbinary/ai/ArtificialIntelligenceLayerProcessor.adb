@@ -1,0 +1,63 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.ai.ArtificialIntelligenceLayerProcessor_Package is
+
+   procedure Initialize_Fields (This : in out ArtificialIntelligenceLayerProcessor'Class) is
+   begin
+      null;
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out ArtificialIntelligenceLayerProcessor'Class) is
+   begin
+        LayerProcessor_Package.Initialize (This, ArtificialIntelligenceLayerManager_Package.Create);
+   end Initialize;
+
+   function Create return ArtificialIntelligenceLayerProcessor_Access is
+      This : constant ArtificialIntelligenceLayerProcessor_Access := new ArtificialIntelligenceLayerProcessor;
+   begin
+      Initialize (This.all);
+      return This;
+   end Create;
+
+   --  throws Exception
+   procedure processAt (This : in out ArtificialIntelligenceLayerProcessor; allBinaryLayerManager : AllBinaryLayerManager_Access; layerInterface : AllBinaryLayer_Access; index : Integer) is
+      artificialIntelligenceCompositeInterface : ArtificialIntelligenceCompositeInterface_Access;
+   begin
+        artificialIntelligenceCompositeInterface := ArtificialIntelligenceCompositeInterface_Access (layerInterface);
+        artificialIntelligenceCompositeInterface.getArtificialIntelligenceInterface.processAI (allBinaryLayerManager);
+   end processAt;
+
+   --  throws Exception
+   function isProcessorLayer (This : in out ArtificialIntelligenceLayerProcessor; layerInterface : AllBinaryLayer_Access) return Boolean is
+   begin
+        if layerInterface.implmentsArtificialIntelligenceCompositeInterface then
+            return True;
+        else
+            return False;
+        end if;
+   end isProcessorLayer;
+
+   procedure isProcessorLayer (This : in out ArtificialIntelligenceLayerProcessor; layerInterface : AllBinaryLayer_Access) is
+      Java_Result : constant Boolean := ArtificialIntelligenceLayerProcessor'Class (This).isProcessorLayer (layerInterface);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end isProcessorLayer;
+
+end org.allbinary.ai.ArtificialIntelligenceLayerProcessor_Package;
+
+

@@ -1,0 +1,221 @@
+-- 
+-- AllBinary Open License Version 1 
+-- Copyright (c) 2011 AllBinary 
+--  
+-- By agreeing to this license you and any business entity you represent are 
+-- legally bound to the AllBinary Open License Version 1 legal agreement. 
+--  
+-- You may obtain the AllBinary Open License Version 1 legal agreement from 
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository. 
+--  
+-- Created By: Travis Berthelot 
+--   
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterfaceRequestFactory_Package is
+
+   procedure Initialize_Fields (This : in out PaymentTransactionInterfaceRequestFactory'Class) is
+   begin
+      null;
+      This.logUtil := LogUtil_Package.getInstance;
+      This.commonStrings := CommonStrings_Package.getInstance;
+   end Initialize_Fields;
+
+
+   function getInstance return PaymentTransactionInterfaceRequestFactory_Access is
+   begin
+        return PaymentTransactionInterfaceRequestFactory_Package.instance;
+   end getInstance;
+
+   procedure Initialize (This : in out PaymentTransactionInterfaceRequestFactory'Class) is
+   begin
+      Initialize_Fields (This);
+        null;
+   end Initialize;
+
+   function Create return PaymentTransactionInterfaceRequestFactory_Access is
+      This : constant PaymentTransactionInterfaceRequestFactory_Access := new PaymentTransactionInterfaceRequestFactory;
+   begin
+      Initialize (This.all);
+      return This;
+   end Create;
+
+   --  throws Exception
+   function getInstance (This : in out PaymentTransactionInterfaceRequestFactory; transformInfoInterface : TransformInfoInterface_Access) return PaymentTransactionInterface_Access is
+      httpTransformInfoInterface : TransformInfoHttpInterface_Access;
+      pageContext : PageContext_Access;
+      httpServletRequest : HttpServletRequest_Access;
+      command : Unbounded_String;
+      propertiesHashMap : HashMap_Access;
+      weblisketSession : WeblisketSession_Access;
+      storeFrontInterface : StoreFrontInterface_Access;
+      order : OrderInterface_Access;
+      orderId : Unbounded_String;
+      orderHistoryEntityInterface : OrderHistoryEntityInterface_Access;
+      orderReview : OrderHistory_Access;
+      orderPaymentInfo : Payment_Access;
+      paymentTransactionInterface : PaymentTransactionInterface_Access;
+   begin
+        begin
+            httpTransformInfoInterface := TransformInfoHttpInterface_Access (transformInfoInterface);
+            pageContext := httpTransformInfoInterface.getPageContext;
+            httpServletRequest := HttpServletRequest_Access (pageContext.getRequest);
+            command := httpServletRequest.getParameter (org_Package.allbinary.globals.GLOBALS2.ADMINCOMMAND);
+            if ((command) /= (Null_Unbounded_String)) and then ((command.compareTo (org_Package.allbinary.globals.GLOBALS2.AUTHORIZEFORMEVALBODYONERROR)) = (0)) then
+                return This.generateFromTestData (transformInfoInterface);
+            else
+                propertiesHashMap := httpTransformInfoInterface.getPropertiesHashMap;
+                weblisketSession := WeblisketSession_Package.Create (propertiesHashMap, pageContext);
+                storeFrontInterface := StoreFrontFactory_Package.getInstance (weblisketSession.getStoreName);
+                order := weblisketSession.getOrder;
+                orderId := order.getId;
+                orderHistoryEntityInterface := OrderHistoryEntityFactory_Package.getInstance;
+                orderReview := orderHistoryEntityInterface.getOrder (orderId);
+                orderPaymentInfo := orderReview.getPaymentInfo;
+                orderPaymentInfo.setTransactionType (TransactionTypeFactory_Package.getInstance.SALE.toString);
+                orderPaymentInfo.setTenderType (TenderTypeFactory_Package.getInstance.CREDITCARD.toString);
+                orderReview.setPaymentInfo (orderPaymentInfo);
+                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PAYMENT) then
+                    This.logUtil.putF (orderReview.getId, This'Unchecked_Access, To_Unbounded_String ("getPaymentTransactionInterface()"));
+                end if;
+                paymentTransactionInterface := PaymentTransactionInterfaceFactory_Package.getInstance.getInstance (orderReview);
+                return paymentTransactionInterface;
+            end if;
+        exception
+            when e : others =>
+            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PAYMENTERROR) then
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("getPaymentTransactionInterface()"), e);
+            end if;
+            Java_Throw (e);
+        end;
+   end getInstance;
+
+   --  throws Exception
+   function generateFromTestData (This : in out PaymentTransactionInterfaceRequestFactory; transformInfoInterface : TransformInfoInterface_Access) return PaymentTransactionInterface_Access is
+      httpTransformInfoInterface : TransformInfoHttpInterface_Access;
+      propertiesHashMap : HashMap_Access;
+      pageContext : PageContext_Access;
+      weblisketSession : WeblisketSession_Access;
+      storeFrontInterface : StoreFrontInterface_Access;
+      httpServletRequest : HttpServletRequest_Access;
+      gatewayName : Unbounded_String;
+      transactionType : Unbounded_String;
+      tenderType : Unbounded_String;
+      payment : Payment_Access;
+      orderReview : OrderHistory_Access;
+      orderId : Unbounded_String;
+      account : Unbounded_String;
+      expirationDate : Unbounded_String;
+      checkNumber : Unbounded_String;
+      driversLicense : Unbounded_String;
+      magneticInkCheckReader : Unbounded_String;
+      aba : Unbounded_String;
+      accountType : Unbounded_String;
+      name : Unbounded_String;
+      street : Unbounded_String;
+      city : Unbounded_String;
+      state : Unbounded_String;
+      zip : Unbounded_String;
+      streetAddress : StreetAddress_Access;
+      email : Unbounded_String;
+      amount : Unbounded_String;
+      paymentTransactionInterface : PaymentTransactionInterface_Access;
+   begin
+        begin
+            httpTransformInfoInterface := TransformInfoHttpInterface_Access (transformInfoInterface);
+            propertiesHashMap := httpTransformInfoInterface.getPropertiesHashMap;
+            pageContext := httpTransformInfoInterface.getPageContext;
+            weblisketSession := WeblisketSession_Package.Create (propertiesHashMap, pageContext);
+            storeFrontInterface := StoreFrontFactory_Package.getInstance (weblisketSession.getStoreName);
+            httpServletRequest := HttpServletRequest_Access (pageContext.getRequest);
+            gatewayName := Unbounded_String (weblisketSession.getPaymentMethod);
+            if StringValidationUtil_Package.getInstance.isEmpty (gatewayName) then
+                gatewayName := httpServletRequest.getParameter (PaymentGatewayData_Package.NAME.toString);
+            end if;
+            transactionType := httpServletRequest.getParameter (PaymentData_Package.TRANSACTIONTYPE);
+            tenderType := httpServletRequest.getParameter (PaymentData_Package.TENDERTYPE);
+            payment := Payment_Package.Create;
+            payment.setTransactionType (transactionType);
+            payment.setTenderType (tenderType);
+            orderReview := OrderHistory_Package.Create (Basket_Package.Create);
+            orderReview.setStoreName (storeFrontInterface.getName);
+            orderReview.setPaymentMethod (gatewayName);
+            orderReview.setUserName (To_Unbounded_String ("testing"));
+            orderId := httpServletRequest.getParameter (To_Unbounded_String ("orderNumber"));
+            if ((orderId) = (Null_Unbounded_String)) or else ((orderId.compareTo (StringUtil_Package.getInstance.EMPTY_STRING)) = (0)) then
+                orderId := OrderIdGenerator_Package.Create.getNext;
+                orderReview.setId (orderId);
+                account := httpServletRequest.getParameter (To_Unbounded_String ("account"));
+                expirationDate := httpServletRequest.getParameter (To_Unbounded_String ("expirationDate"));
+                checkNumber := httpServletRequest.getParameter (To_Unbounded_String ("checkNumber"));
+                driversLicense := httpServletRequest.getParameter (To_Unbounded_String ("driversLicense"));
+                magneticInkCheckReader := httpServletRequest.getParameter (To_Unbounded_String ("magneticInkCheckReader"));
+                aba := httpServletRequest.getParameter (To_Unbounded_String ("aba"));
+                accountType := httpServletRequest.getParameter (To_Unbounded_String ("accountType"));
+                name := httpServletRequest.getParameter (To_Unbounded_String ("name"));
+                payment.setName (name);
+                payment.setNumber (account);
+                payment.setExpiration (expirationDate);
+                payment.setCheckNumber (checkNumber);
+                payment.setDriversLicense (driversLicense);
+                payment.setMagneticInkCheckReader (magneticInkCheckReader);
+                payment.setAba (aba);
+                payment.setAccountType (accountType);
+                street := httpServletRequest.getParameter (To_Unbounded_String ("street"));
+                city := httpServletRequest.getParameter (To_Unbounded_String ("city"));
+                state := httpServletRequest.getParameter (To_Unbounded_String ("state"));
+                zip := httpServletRequest.getParameter (To_Unbounded_String ("zip"));
+                streetAddress := StreetAddress_Package.Create;
+                streetAddress.setName (name);
+                streetAddress.setStreet (street);
+                streetAddress.setCity (city);
+                streetAddress.setState (state);
+                streetAddress.setCode (zip);
+                email := httpServletRequest.getParameter (To_Unbounded_String ("email"));
+                amount := httpServletRequest.getParameter (To_Unbounded_String ("amount"));
+                orderReview.setTotal (Money_Package.Create (amount));
+                orderReview.setBillingAddress (streetAddress);
+            else
+                orderReview.setId (orderId);
+            end if;
+            orderReview.setPaymentInfo (payment);
+            paymentTransactionInterface := PaymentTransactionInterfaceFactory_Package.getInstance.getInstance (orderReview);
+            return paymentTransactionInterface;
+        exception
+            when e : others =>
+            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.PAYMENTERROR) then
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("generatePaymentTransactionInterfaceFromTestData()"), e);
+            end if;
+            Java_Throw (e);
+        end;
+   end generateFromTestData;
+
+   procedure getInstance is
+      Java_Result : constant PaymentTransactionInterfaceRequestFactory_Access := getInstance;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getInstance;
+
+   procedure getInstance (This : in out PaymentTransactionInterfaceRequestFactory; transformInfoInterface : TransformInfoInterface_Access) is
+      Java_Result : constant PaymentTransactionInterface_Access := PaymentTransactionInterfaceRequestFactory'Class (This).getInstance (transformInfoInterface);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getInstance;
+
+   procedure generateFromTestData (This : in out PaymentTransactionInterfaceRequestFactory; transformInfoInterface : TransformInfoInterface_Access) is
+      Java_Result : constant PaymentTransactionInterface_Access := PaymentTransactionInterfaceRequestFactory'Class (This).generateFromTestData (transformInfoInterface);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end generateFromTestData;
+
+begin
+   null;
+   instance := PaymentTransactionInterfaceRequestFactory_Package.Create;
+
+end org.allbinary.business.user.commerce.money.payment.gateway.transaction.PaymentTransactionInterfaceRequestFactory_Package;
+
+

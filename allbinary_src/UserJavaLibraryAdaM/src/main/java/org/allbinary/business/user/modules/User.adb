@@ -1,0 +1,765 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.business.user.modules.User_Package is
+
+   procedure Initialize_Fields (This : in out User'Class) is
+   begin
+      null;
+      This.logUtil := LogUtil_Package.getInstance;
+      This.userName := Null_Unbounded_String;
+      This.prefixName := Null_Unbounded_String;
+      This.firstName := Null_Unbounded_String;
+      This.lastName := Null_Unbounded_String;
+      This.middleName := Null_Unbounded_String;
+      This.suffixName := Null_Unbounded_String;
+      This.company := Null_Unbounded_String;
+      This.positionAtCompany := Null_Unbounded_String;
+      This.mainEmail := Null_Unbounded_String;
+      This.secondaryEmail := Null_Unbounded_String;
+      This.homePhone := Null_Unbounded_String;
+      This.cellPhone := Null_Unbounded_String;
+      This.workPhone := Null_Unbounded_String;
+      This.otherContact := Null_Unbounded_String;
+      This.electronicDevice := Null_Unbounded_String;
+      This.fax := Null_Unbounded_String;
+      This.role := null;
+      This.encryption := Null_Unbounded_String;
+      This.secret := Null_Unbounded_String;
+      
+      This.enable := Null_Unbounded_String;
+      This.permissions := Null_Unbounded_String;
+      
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out User'Class) is
+   begin
+      Initialize_Fields (This);
+        This.userConfigurationInterface := UserConfigurationInterfaceFactory_Package.getInstance;
+        This.password := Password_Package.Create (StringUtil_Package.getInstance.EMPTY_STRING);
+   end Initialize;
+
+   function Create return User_Access is
+      This : constant User_Access := new User;
+   begin
+      Initialize (This.all);
+      return This;
+   end Create;
+
+   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
+   procedure Initialize (This : in out User'Class; request : HttpServletRequest_Access) is
+   begin
+      Initialize_Fields (This);
+        This.getFormData (RequestParams_Package.Create (request).toHashMap);
+        This.userConfigurationInterface := UserConfigurationInterfaceFactory_Package.getInstance (This.getRole);
+   end Initialize;
+
+   function Create (request : HttpServletRequest_Access) return User_Access is
+      This : constant User_Access := new User;
+   begin
+      Initialize (This.all, request);
+      return This;
+   end Create;
+
+   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
+   procedure Initialize (This : in out User'Class; userHashMap : HashMap_Access) is
+   begin
+      Initialize_Fields (This);
+        This.getFormData (userHashMap);
+        This.userConfigurationInterface := UserConfigurationInterfaceFactory_Package.getInstance (This.getRole);
+   end Initialize;
+
+   function Create (userHashMap : HashMap_Access) return User_Access is
+      This : constant User_Access := new User;
+   begin
+      Initialize (This.all, userHashMap);
+      return This;
+   end Create;
+
+   --  throws Exception
+   procedure getFormData (This : in out User; userHashMap : HashMap_Access) is
+      stringUtil : StringUtil_Access;
+      passwordString : Unbounded_String;
+      stringValidationUtil : StringValidationUtil_Access;
+      encryption : Unbounded_String;
+      secret : Unbounded_String;
+   begin
+        This.userName := UserName_Package.Create (userHashMap).get;
+        stringUtil := StringUtil_Package.getInstance;
+        passwordString := stringUtil.getNonNull (Unbounded_String (userHashMap.get (UserData_Package.PASSWORD)));
+        stringValidationUtil := StringValidationUtil_Package.getInstance;
+        if (stringValidationUtil.isEmpty (This.userName)) and then (stringValidationUtil.isEmpty (passwordString)) then
+            This.userName := stringUtil.getNonNull (Unbounded_String (userHashMap.get (WeblisketSessionData_Package.REMOVABLEUSERNAME)));
+            passwordString := stringUtil.getNonNull (Unbounded_String (userHashMap.get (WeblisketSessionData_Package.REMOVABLEPASSWORD)));
+        end if;
+        encryption := stringUtil.getNonNull (Unbounded_String (userHashMap.get (EntryData_Package.getInstance.ENCRYPTION)));
+        secret := stringUtil.getNonNull (Unbounded_String (userHashMap.get (UserData_Package.SECRET)));
+        This.password := Password_Package.Create (passwordString);
+        This.prefixName := stringUtil.getNonNull (Unbounded_String (userHashMap.get (UserData_Package.PREFIXNAME)));
+        This.firstName := stringUtil.getNonNull (Unbounded_String (userHashMap.get (UserData_Package.FIRSTNAME)));
+        This.lastName := stringUtil.getNonNull (Unbounded_String (userHashMap.get (UserData_Package.LASTNAME)));
+        This.middleName := stringUtil.getNonNull (Unbounded_String (userHashMap.get (UserData_Package.MIDDLENAME)));
+        This.suffixName := stringUtil.getNonNull (Unbounded_String (userHashMap.get (UserData_Package.SUFFIXNAME)));
+        This.company := stringUtil.getNonNull (Unbounded_String (userHashMap.get (UserData_Package.COMPANY)));
+        This.positionAtCompany := stringUtil.getNonNull (Unbounded_String (userHashMap.get (UserData_Package.POSITIONATCOMPANY)));
+        This.mainEmail := stringUtil.getNonNull (Unbounded_String (userHashMap.get (UserData_Package.MAINEMAIL)));
+        This.secondaryEmail := stringUtil.getNonNull (Unbounded_String (userHashMap.get (UserData_Package.SECONDARYEMAIL)));
+        This.homePhone := stringUtil.getNonNull (Unbounded_String (userHashMap.get (UserData_Package.HOMEPHONE)));
+        This.cellPhone := stringUtil.getNonNull (Unbounded_String (userHashMap.get (UserData_Package.CELLPHONE)));
+        This.workPhone := stringUtil.getNonNull (Unbounded_String (userHashMap.get (UserData_Package.WORKPHONE)));
+        This.otherContact := stringUtil.getNonNull (Unbounded_String (userHashMap.get (UserData_Package.OTHERCONTACT)));
+        This.electronicDevice := stringUtil.getNonNull (Unbounded_String (userHashMap.get (UserData_Package.ELECTRONICDEVICE)));
+        This.fax := stringUtil.getNonNull (Unbounded_String (userHashMap.get (UserData_Package.FAX)));
+        This.role := UserRoleB_Package.getRole (Unbounded_String (userHashMap.get (UserRoleData_Package.NAME.toString)));
+        This.permissions := stringUtil.getNonNull (Unbounded_String (userHashMap.get (UserData_Package.PERMISSIONS)));
+        if (not (stringValidationUtil.isEmpty (This.permissions))) and then ((This.permissions.compareTo (StoreFrontData_Package.getInstance.NAME)) = (0)) then
+            This.permissions := stringUtil.getNonNull (Unbounded_String (userHashMap.get (StoreFrontData_Package.getInstance.NAME)));
+        elsif (This.permissions) = (Null_Unbounded_String) then
+            This.permissions := To_Unbounded_String ("No Permissions");
+        end if;
+        This.enable := stringUtil.getNonNull (Unbounded_String (userHashMap.get (EntryData_Package.getInstance.ENABLE)));
+   end getFormData;
+
+   function isValid (This : in out User) return Boolean is
+      valid : Boolean;
+      stringValidationUtil : StringValidationUtil_Access;
+      commonStrings : CommonStrings_Access;
+   begin
+        begin
+            valid := True;
+            if not (UserName_Package.getInstance.isValid (This.userName).booleanValue) then
+                valid := False;
+            end if;
+            if not (This.password.isValid.booleanValue) then
+                valid := False;
+            end if;
+            stringValidationUtil := StringValidationUtil_Package.getInstance;
+            if not (stringValidationUtil.isValidRequired (This.firstName, 1, UserData_Package.MAXLEN)) then
+                valid := False;
+            end if;
+            if not (stringValidationUtil.isValidRequired (This.lastName, 1, UserData_Package.MAXLEN)) then
+                valid := False;
+            end if;
+            if (not (stringValidationUtil.isValidRequired (This.mainEmail, 1, UserData_Package.MAXLEN))) or else (((Index (This.mainEmail, To_String (To_Unbounded_String ("@"))) - 1)) = (-(1))) then
+                valid := False;
+            end if;
+            return valid;
+        exception
+            when e : others =>
+            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VALIDATIONERROR) then
+                commonStrings := CommonStrings_Package.getInstance;
+                This.logUtil.put (To_Unbounded_String ("Failed to validate form"), This'Unchecked_Access, commonStrings.IS_VALID, e);
+            end if;
+            return False;
+        end;
+   end isValid;
+
+   function validationInfo (This : in out User) return Unbounded_String is
+      stringValidationUtil : StringValidationUtil_Access;
+      stringBuffer : StringMaker_Access;
+   begin
+        begin
+            stringValidationUtil := StringValidationUtil_Package.getInstance;
+            stringBuffer := StringMaker_Package.Create;
+            stringBuffer.append (UserName_Package.getValidationInfo (This.userName));
+            stringBuffer.append (This.password.getValidationInfo);
+            if not (stringValidationUtil.isValidRequired (This.firstName, 1, UserData_Package.MAXLEN)) then
+                stringBuffer.append (To_Unbounded_String ("Please enter a valid First Name.<br />"));
+            end if;
+            if not (stringValidationUtil.isValidRequired (This.lastName, 1, UserData_Package.MAXLEN)) then
+                stringBuffer.append (To_Unbounded_String ("Please enter a valid Last Name.<br />"));
+            end if;
+            if (not (stringValidationUtil.isValidRequired (This.mainEmail, 1, UserData_Package.MAXLEN))) or else (((Index (This.mainEmail, To_String (To_Unbounded_String ("@"))) - 1)) = (-(1))) then
+                stringBuffer.append (To_Unbounded_String ("Please enter a valid email address.<br />"));
+            end if;
+            return stringBuffer.toString;
+        exception
+            when e : others =>
+            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), This'Unchecked_Access, To_Unbounded_String ("validationInfo()"), e);
+            end if;
+            return To_Unbounded_String ("Error Validating Form");
+        end;
+   end validationInfo;
+
+   procedure setUserName (This : in out User; value : Unbounded_String) is
+   begin
+        This.userName := value;
+   end setUserName;
+
+   procedure setPrefixName (This : in out User; value : Unbounded_String) is
+   begin
+        This.prefixName := value;
+   end setPrefixName;
+
+   procedure setFirstName (This : in out User; value : Unbounded_String) is
+   begin
+        This.firstName := value;
+   end setFirstName;
+
+   procedure setLastName (This : in out User; value : Unbounded_String) is
+   begin
+        This.lastName := value;
+   end setLastName;
+
+   procedure setMiddleName (This : in out User; value : Unbounded_String) is
+   begin
+        This.middleName := value;
+   end setMiddleName;
+
+   procedure setSuffixName (This : in out User; value : Unbounded_String) is
+   begin
+        This.suffixName := value;
+   end setSuffixName;
+
+   procedure setCompany (This : in out User; value : Unbounded_String) is
+   begin
+        This.company := value;
+   end setCompany;
+
+   procedure setPositionAtCompany (This : in out User; value : Unbounded_String) is
+   begin
+        This.positionAtCompany := value;
+   end setPositionAtCompany;
+
+   procedure setMainEmail (This : in out User; value : Unbounded_String) is
+   begin
+        This.mainEmail := value;
+   end setMainEmail;
+
+   procedure setSecondaryEmail (This : in out User; value : Unbounded_String) is
+   begin
+        This.secondaryEmail := value;
+   end setSecondaryEmail;
+
+   procedure setHomePhone (This : in out User; value : Unbounded_String) is
+   begin
+        This.homePhone := value;
+   end setHomePhone;
+
+   procedure setCellPhone (This : in out User; value : Unbounded_String) is
+   begin
+        This.cellPhone := value;
+   end setCellPhone;
+
+   procedure setWorkPhone (This : in out User; value : Unbounded_String) is
+   begin
+        This.workPhone := value;
+   end setWorkPhone;
+
+   procedure setOtherContact (This : in out User; value : Unbounded_String) is
+   begin
+        This.otherContact := value;
+   end setOtherContact;
+
+   procedure setElectronicContact (This : in out User; value : Unbounded_String) is
+   begin
+        This.electronicDevice := value;
+   end setElectronicContact;
+
+   procedure setFax (This : in out User; value : Unbounded_String) is
+   begin
+        This.fax := value;
+   end setFax;
+
+   procedure setRole (This : in out User; role : UserRole_Access) is
+   begin
+        This.role := role;
+   end setRole;
+
+   procedure setPermissions (This : in out User; value : Unbounded_String) is
+   begin
+        This.permissions := value;
+   end setPermissions;
+
+   procedure setEncryption (This : in out User; value : Unbounded_String) is
+   begin
+        This.encryption := value;
+   end setEncryption;
+
+   procedure setSecret (This : in out User; value : Unbounded_String) is
+   begin
+        This.secret := value;
+   end setSecret;
+
+   procedure setPassword (This : in out User; value : Unbounded_String) is
+   begin
+        This.password.set (value);
+   end setPassword;
+
+   procedure enable (This : in out User) is
+   begin
+        This.setEnable (To_Unbounded_String ("Yes"));
+   end enable;
+
+   procedure disable (This : in out User) is
+   begin
+        This.setEnable (To_Unbounded_String ("No"));
+   end disable;
+
+   procedure setEnable (This : in out User; enable : Unbounded_String) is
+   begin
+        This.enable := enable;
+   end setEnable;
+
+   function getUserName (This : in out User) return Unbounded_String is
+   begin
+        return This.userName;
+   end getUserName;
+
+   function getPrefixName (This : in out User) return Unbounded_String is
+   begin
+        return This.prefixName;
+   end getPrefixName;
+
+   function getFirstName (This : in out User) return Unbounded_String is
+   begin
+        return This.firstName;
+   end getFirstName;
+
+   function getLastName (This : in out User) return Unbounded_String is
+   begin
+        return This.lastName;
+   end getLastName;
+
+   function getMiddleName (This : in out User) return Unbounded_String is
+   begin
+        return This.middleName;
+   end getMiddleName;
+
+   function getSuffixName (This : in out User) return Unbounded_String is
+   begin
+        return This.suffixName;
+   end getSuffixName;
+
+   function getCompany (This : in out User) return Unbounded_String is
+   begin
+        return This.company;
+   end getCompany;
+
+   function getPositionAtCompany (This : in out User) return Unbounded_String is
+   begin
+        return This.positionAtCompany;
+   end getPositionAtCompany;
+
+   function getMainEmail (This : in out User) return Unbounded_String is
+   begin
+        return This.mainEmail;
+   end getMainEmail;
+
+   function getSecondaryEmail (This : in out User) return Unbounded_String is
+   begin
+        return This.secondaryEmail;
+   end getSecondaryEmail;
+
+   function getHomePhone (This : in out User) return Unbounded_String is
+   begin
+        return This.homePhone;
+   end getHomePhone;
+
+   function getCellPhone (This : in out User) return Unbounded_String is
+   begin
+        return This.cellPhone;
+   end getCellPhone;
+
+   function getWorkPhone (This : in out User) return Unbounded_String is
+   begin
+        return This.workPhone;
+   end getWorkPhone;
+
+   function getOtherContact (This : in out User) return Unbounded_String is
+   begin
+        return This.otherContact;
+   end getOtherContact;
+
+   function getElectronicContact (This : in out User) return Unbounded_String is
+   begin
+        return This.electronicDevice;
+   end getElectronicContact;
+
+   function getFax (This : in out User) return Unbounded_String is
+   begin
+        return This.fax;
+   end getFax;
+
+   function getRole (This : in out User) return UserRole_Access is
+   begin
+        return This.role;
+   end getRole;
+
+   function getPermissions (This : in out User) return Unbounded_String is
+   begin
+        return This.permissions;
+   end getPermissions;
+
+   function getEncryption (This : in out User) return Unbounded_String is
+   begin
+        return This.encryption;
+   end getEncryption;
+
+   function getSecret (This : in out User) return Unbounded_String is
+   begin
+        return This.secret;
+   end getSecret;
+
+   function getPassword (This : in out User) return Unbounded_String is
+   begin
+        return This.password.get;
+   end getPassword;
+
+   --  throws Exception
+   function toVector (This : in out User) return BasicArrayList_Access is
+      values : BasicArrayList_Access;
+      userConfigurationDomDocumentMapping : UserConfigurationDomDocumentMapping_Access;
+      calendar : Calendar_Access;
+      time : Unbounded_String;
+   begin
+        values := BasicArrayListD_Package.Create;
+        values.add (This.userName);
+        values.add (This.prefixName);
+        values.add (This.firstName);
+        values.add (This.lastName);
+        values.add (This.middleName);
+        values.add (This.suffixName);
+        values.add (This.company);
+        values.add (This.positionAtCompany);
+        values.add (This.mainEmail);
+        values.add (This.secondaryEmail);
+        values.add (This.homePhone);
+        values.add (This.cellPhone);
+        values.add (This.workPhone);
+        values.add (This.otherContact);
+        values.add (This.electronicDevice);
+        values.add (This.fax);
+        values.add (This.getRole.toString);
+        userConfigurationDomDocumentMapping := UserConfigurationDomDocumentMapping_Package.Create (This.getUserConfigurationInterface);
+        values.add (userConfigurationDomDocumentMapping.toDomDocumentString);
+        values.add (This.permissions);
+        values.addAllList (This.password.toVector (This.secret));
+        values.add (This.enable);
+        calendar := Calendar_Package.getInstance;
+        time := Java_New_String (calendar.getTimeInMillis.toString);
+        values.add (time);
+        values.add (time);
+        return values;
+   end toVector;
+
+   --  throws Exception
+   function toHashMap (This : in out User) return HashMap_Access is
+      values : HashMap_Access;
+      userConfigurationDomDocumentMapping : UserConfigurationDomDocumentMapping_Access;
+      calendar : Calendar_Access;
+      time : Unbounded_String;
+   begin
+        values := StdUtil_Package.getInstance.createHashMap;
+        values.put (UserData_Package.USERNAME, This.userName);
+        values.put (UserData_Package.PREFIXNAME, This.prefixName);
+        values.put (UserData_Package.FIRSTNAME, This.firstName);
+        values.put (UserData_Package.LASTNAME, This.lastName);
+        values.put (UserData_Package.MIDDLENAME, This.middleName);
+        values.put (UserData_Package.SUFFIXNAME, This.suffixName);
+        values.put (UserData_Package.COMPANY, This.company);
+        values.put (UserData_Package.POSITIONATCOMPANY, This.positionAtCompany);
+        values.put (UserData_Package.MAINEMAIL, This.mainEmail);
+        values.put (UserData_Package.SECONDARYEMAIL, This.secondaryEmail);
+        values.put (UserData_Package.HOMEPHONE, This.homePhone);
+        values.put (UserData_Package.CELLPHONE, This.cellPhone);
+        values.put (UserData_Package.WORKPHONE, This.workPhone);
+        values.put (UserData_Package.OTHERCONTACT, This.otherContact);
+        values.put (UserData_Package.ELECTRONICDEVICE, This.electronicDevice);
+        values.put (UserData_Package.FAX, This.fax);
+        if (This.getRole) /= (null) then
+            values.put (UserRoleData_Package.NAME.toString, This.getRole.toString);
+        end if;
+        userConfigurationDomDocumentMapping := UserConfigurationDomDocumentMapping_Package.Create (This.getUserConfigurationInterface);
+        values.put (UserData_Package.CONFIGURATION, userConfigurationDomDocumentMapping.toDomDocumentString);
+        values.put (UserData_Package.PERMISSIONS, This.permissions);
+        values.putAll (This.password.toHashMap (This.secret));
+        values.put (EntryData_Package.getInstance.ENABLE, This.enable);
+        calendar := Calendar_Package.getInstance;
+        time := Java_New_String (calendar.getTimeInMillis.toString);
+        values.put (EntryData_Package.getInstance.LASTMODIFIED, time);
+        return values;
+   end toHashMap;
+
+   function toPasswordHashMap (This : in out User) return HashMap_Access is
+   begin
+        return This.password.toHashMap (This.secret);
+   end toPasswordHashMap;
+
+   procedure validateSession (This : in out User; weblisketSession : WeblisketSessionInterface_Access) is
+   begin
+        weblisketSession.setAuthenticated;
+        weblisketSession.setRole (This.getRole);
+        weblisketSession.setUserName (This.getUserName);
+   end validateSession;
+
+   procedure updateSession (This : in out User; weblisketSession : WeblisketSessionInterface_Access) is
+   begin
+        null;
+   end updateSession;
+
+   function isSessionValid (This : in out User) return Boolean is
+   begin
+        return True;
+   end isSessionValid;
+
+   --  throws Exception
+   function getKey (This : in out User) return Java_Object_Access is
+   begin
+        return Java_Object_Access (This.userName);
+   end getKey;
+
+   function toValidationInfoDoc (This : in out User) return Document_Access is
+   begin
+        return null;
+   end toValidationInfoDoc;
+
+   function toValidationInfoNode (This : in out User; document : Document_Access) return Node_Access is
+   begin
+        return null;
+   end toValidationInfoNode;
+
+   function getUserConfigurationInterface (This : in out User) return UserConfigurationInterface_Access is
+   begin
+        return This.userConfigurationInterface;
+   end getUserConfigurationInterface;
+
+   procedure setUserConfigurationInterface (This : in out User; userConfigurationInterface : UserConfigurationInterface_Access) is
+   begin
+        This.userConfigurationInterface := userConfigurationInterface;
+   end setUserConfigurationInterface;
+
+   procedure isValid (This : in out User) is
+      Java_Result : constant Boolean := User'Class (This).isValid;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end isValid;
+
+   procedure validationInfo (This : in out User) is
+      Java_Result : constant Unbounded_String := User'Class (This).validationInfo;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end validationInfo;
+
+   procedure getUserName (This : in out User) is
+      Java_Result : constant Unbounded_String := User'Class (This).getUserName;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getUserName;
+
+   procedure getPrefixName (This : in out User) is
+      Java_Result : constant Unbounded_String := User'Class (This).getPrefixName;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getPrefixName;
+
+   procedure getFirstName (This : in out User) is
+      Java_Result : constant Unbounded_String := User'Class (This).getFirstName;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getFirstName;
+
+   procedure getLastName (This : in out User) is
+      Java_Result : constant Unbounded_String := User'Class (This).getLastName;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getLastName;
+
+   procedure getMiddleName (This : in out User) is
+      Java_Result : constant Unbounded_String := User'Class (This).getMiddleName;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getMiddleName;
+
+   procedure getSuffixName (This : in out User) is
+      Java_Result : constant Unbounded_String := User'Class (This).getSuffixName;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getSuffixName;
+
+   procedure getCompany (This : in out User) is
+      Java_Result : constant Unbounded_String := User'Class (This).getCompany;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getCompany;
+
+   procedure getPositionAtCompany (This : in out User) is
+      Java_Result : constant Unbounded_String := User'Class (This).getPositionAtCompany;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getPositionAtCompany;
+
+   procedure getMainEmail (This : in out User) is
+      Java_Result : constant Unbounded_String := User'Class (This).getMainEmail;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getMainEmail;
+
+   procedure getSecondaryEmail (This : in out User) is
+      Java_Result : constant Unbounded_String := User'Class (This).getSecondaryEmail;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getSecondaryEmail;
+
+   procedure getHomePhone (This : in out User) is
+      Java_Result : constant Unbounded_String := User'Class (This).getHomePhone;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getHomePhone;
+
+   procedure getCellPhone (This : in out User) is
+      Java_Result : constant Unbounded_String := User'Class (This).getCellPhone;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getCellPhone;
+
+   procedure getWorkPhone (This : in out User) is
+      Java_Result : constant Unbounded_String := User'Class (This).getWorkPhone;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getWorkPhone;
+
+   procedure getOtherContact (This : in out User) is
+      Java_Result : constant Unbounded_String := User'Class (This).getOtherContact;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getOtherContact;
+
+   procedure getElectronicContact (This : in out User) is
+      Java_Result : constant Unbounded_String := User'Class (This).getElectronicContact;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getElectronicContact;
+
+   procedure getFax (This : in out User) is
+      Java_Result : constant Unbounded_String := User'Class (This).getFax;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getFax;
+
+   procedure getRole (This : in out User) is
+      Java_Result : constant UserRole_Access := User'Class (This).getRole;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getRole;
+
+   procedure getPermissions (This : in out User) is
+      Java_Result : constant Unbounded_String := User'Class (This).getPermissions;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getPermissions;
+
+   procedure getEncryption (This : in out User) is
+      Java_Result : constant Unbounded_String := User'Class (This).getEncryption;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getEncryption;
+
+   procedure getSecret (This : in out User) is
+      Java_Result : constant Unbounded_String := User'Class (This).getSecret;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getSecret;
+
+   procedure getPassword (This : in out User) is
+      Java_Result : constant Unbounded_String := User'Class (This).getPassword;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getPassword;
+
+   procedure toVector (This : in out User) is
+      Java_Result : constant BasicArrayList_Access := User'Class (This).toVector;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end toVector;
+
+   procedure toHashMap (This : in out User) is
+      Java_Result : constant HashMap_Access := User'Class (This).toHashMap;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end toHashMap;
+
+   procedure toPasswordHashMap (This : in out User) is
+      Java_Result : constant HashMap_Access := User'Class (This).toPasswordHashMap;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end toPasswordHashMap;
+
+   procedure isSessionValid (This : in out User) is
+      Java_Result : constant Boolean := User'Class (This).isSessionValid;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end isSessionValid;
+
+   procedure getKey (This : in out User) is
+      Java_Result : constant Java_Object_Access := User'Class (This).getKey;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getKey;
+
+   procedure toValidationInfoDoc (This : in out User) is
+      Java_Result : constant Document_Access := User'Class (This).toValidationInfoDoc;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end toValidationInfoDoc;
+
+   procedure toValidationInfoNode (This : in out User; document : Document_Access) is
+      Java_Result : constant Node_Access := User'Class (This).toValidationInfoNode (document);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end toValidationInfoNode;
+
+   procedure getUserConfigurationInterface (This : in out User) is
+      Java_Result : constant UserConfigurationInterface_Access := User'Class (This).getUserConfigurationInterface;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getUserConfigurationInterface;
+
+end org.allbinary.business.user.modules.User_Package;
+
+

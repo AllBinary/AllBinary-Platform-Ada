@@ -1,0 +1,67 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Ada.Strings.Maps.Constants;
+with Ada.Characters.Handling;
+with Ada.Exceptions;
+with Ada.Numerics.Long_Elementary_Functions;
+with Ada.Tags;
+with Ada.Text_IO;
+with AllBinary_Java; use AllBinary_Java;
+--  with java.util.HashMap_Package; use java.util.HashMap_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.string_Id.tokens.Tokenizer_Package; use org.allbinary.logic.string_Id.tokens.Tokenizer_Package;
+with org.allbinary.logic.visual.dhtml.html.name.HtmlNameMathData_Package; use org.allbinary.logic.visual.dhtml.html.name.HtmlNameMathData_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
+package org.allbinary.logic.communication.http.request.NameSpaceRequestParam_Package is
+
+   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
+   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package Tokenizer_Package renames org.allbinary.logic.string_Id.tokens.Tokenizer_Package;
+   package HtmlNameMathData_Package renames org.allbinary.logic.visual.dhtml.html.name.HtmlNameMathData_Package;
+   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+
+   type NameSpaceRequestParam is tagged;
+   type NameSpaceRequestParam_Access is access all NameSpaceRequestParam'Class;
+   type NameSpaceRequestParam_Access_Array is array (Natural range <>) of NameSpaceRequestParam_Access;
+   type NameSpaceRequestParam_Access_Array_Access is access all NameSpaceRequestParam_Access_Array;
+
+   type NameSpaceRequestParam is new Java_Object with record
+      logUtil : LogUtil_Access;
+      nameSpaceVector : BasicArrayList_Access;
+      nameSpacePropertiesHashMap : HashMap_Access;
+      value : Unbounded_String;
+   end record;
+
+   procedure Initialize (This : in out NameSpaceRequestParam'Class; nameSpace : Unbounded_String; value : Unbounded_String);
+   function Create (nameSpace : Unbounded_String; value : Unbounded_String) return NameSpaceRequestParam_Access;
+   function getPackages (This : in out NameSpaceRequestParam) return BasicArrayList_Access;
+   procedure getPackages (This : in out NameSpaceRequestParam);
+   function getPackageProperties (This : in out NameSpaceRequestParam; packageIndex : Integer) return HashMap_Access;
+   procedure getPackageProperties (This : in out NameSpaceRequestParam; packageIndex : Integer);
+   function getValue (This : in out NameSpaceRequestParam) return Unbounded_String;
+   procedure getValue (This : in out NameSpaceRequestParam);
+   function generatePackagePropertiesHashMap (This : in out NameSpaceRequestParam; properties : Unbounded_String) return HashMap_Access;
+   procedure generatePackagePropertiesHashMap (This : in out NameSpaceRequestParam; properties : Unbounded_String);
+
+end org.allbinary.logic.communication.http.request.NameSpaceRequestParam_Package;
+
+

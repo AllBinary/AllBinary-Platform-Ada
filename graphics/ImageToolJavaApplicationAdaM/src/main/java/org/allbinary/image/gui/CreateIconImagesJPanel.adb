@@ -1,0 +1,168 @@
+-- 
+-- AllBinary Open License Version 1 
+-- Copyright (c) 2022 AllBinary 
+--  
+-- By agreeing to this license you and any business entity you represent are 
+-- legally bound to the AllBinary Open License Version 1 legal agreement. 
+--  
+-- You may obtain the AllBinary Open License Version 1 legal agreement from 
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository. 
+--  
+-- Created By: Travis Berthelot 
+--   
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.image.gui.CreateIconImagesJPanel_Package is
+
+   procedure Initialize_Fields (This : in out CreateIconImagesJPanel'Class) is
+   begin
+      null;
+      This.logUtil := LogUtil_Package.getInstance;
+      This.commonStrings := CommonStrings_Package.getInstance;
+      
+      This.aboveJButton := null;
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out CreateIconImagesJPanel'Class; imageProcessorInput : ImageProcessorInput_Access) is
+      numberStringArray : Unbounded_String_Array_Access;
+      index : Integer;
+      araster : Raster_Access;
+   begin
+        JPanel_Package.Initialize (This);
+        Initialize_Fields (This);
+        This.initComponents;
+        This.imageProcessorInput := imageProcessorInput;
+        numberStringArray := new Unbounded_String_Array'(0 .. (101) - 1 => Null_Unbounded_String);
+        numberStringArray (0) := To_Unbounded_String (Java_Image (-(1)));
+        for index in 1 .. (100) - 1 loop
+            numberStringArray (index) := To_Unbounded_String (Java_Image (index));
+        end loop;
+        araster := This.imageProcessorInput.getBufferedImageArray (0).getAlphaRaster;
+        if (araster) = (null) then
+            Ada.Text_IO.Put_Line (Java_Image (To_Unbounded_String ("there is no Alpha channel!!!!!!!!!")));
+        else
+            Ada.Text_IO.Put_Line (Java_Image (To_Unbounded_String ("Alpha channel found !")));
+        end if;
+   end Initialize;
+
+   function Create (imageProcessorInput : ImageProcessorInput_Access) return CreateIconImagesJPanel_Access is
+      This : constant CreateIconImagesJPanel_Access := new CreateIconImagesJPanel;
+   begin
+      Initialize (This.all, imageProcessorInput);
+      return This;
+   end Create;
+
+   procedure process (This : in out CreateIconImagesJPanel) is
+   begin
+        Thread_Package.Create  --  Java anonymous class body: implement it as a named type
+--              
+--     procedure run (This : in out ) is
+--        logUtil : LogUtil_Access;
+--        imageUtil : ImageUtil_Access;
+--        stringMaker : StringMaker_Access;
+--        imageProcessorInput : ImageProcessorInput_Access;
+--        files : File_Access_Array_Access;
+--        iconWidthList : BasicArrayList_Access;
+--        iconHeightList : BasicArrayList_Access;
+--        ANDROID : Unbounded_String;
+--        IOS : Unbounded_String;
+--        size : Integer;
+--        width : Integer;
+--        height : Integer;
+--        generatedBufferedImageArray : BufferedImage_Access_Array_Access;
+--        imagePersistanceUtil : ImagePersistanceUtil_Access;
+--        filePath : Unbounded_String;
+--        endIndex : Integer;
+--        path : Unbounded_String;
+--        newFilePath : Unbounded_String;
+--        index : Integer;
+--        index2 : Integer;
+--     begin
+--                  logUtil := LogUtil_Package.getInstance;
+--                  begin
+--                      imageUtil := ImageUtil_Package.getInstance;
+--                      stringMaker := StringMaker_Package.Create;
+--                      imageProcessorInput := This.getImageProcessorInput;
+--                      files := imageProcessorInput.getFiles;
+--                      iconWidthList := BasicArrayListD_Package.Create;
+--                      iconHeightList := BasicArrayListD_Package.Create;
+--                      iconWidthList.add (864);
+--                      iconHeightList.add (864);
+--                      ANDROID := To_Unbounded_String ("android-icon-");
+--                      IOS := To_Unbounded_String ("ios-icon-");
+--                      size := iconWidthList.size;
+--                      width := 0;
+--                      height := 0;
+--                      for index2 in 0 .. (size) - 1 loop
+--                          width := (Integer (iconWidthList.get (index2))).intValue;
+--                          height := (Integer (iconHeightList.get (index2))).intValue;
+--                          generatedBufferedImageArray := imageUtil.createBufferedImage3 (imageProcessorInput.getBufferedImageArray, width, height, True);
+--                          imagePersistanceUtil := ImagePersistanceUtil_Package.getInstance;
+--                          for index in 0 .. (generatedBufferedImageArray'Length) - 1 loop
+--                              filePath := files (index).getAbsolutePath;
+--                              endIndex := filePath.lastIndexOf ('\');
+--                              path := Unbounded_Slice (filePath, (0) + 1, (endIndex) + (1));
+--                              stringMaker.delete (0, stringMaker.length);
+--                              stringMaker.append (path).append (ANDROID).appendint (width).append (CanvasStrings_Package.getInstance.U_PNG);
+--                              newFilePath := stringMaker.toString;
+--                              imagePersistanceUtil.saveWithBatik (AbFile_Package.createAbFile (newFilePath), generatedBufferedImageArray (index));
+--                              stringMaker.delete (0, stringMaker.length);
+--                              stringMaker.append (path).append (IOS).appendint (width).append (CanvasStrings_Package.getInstance.U_PNG);
+--                              newFilePath := stringMaker.toString;
+--                              imagePersistanceUtil.saveWithBatik (AbFile_Package.createAbFile (newFilePath), generatedBufferedImageArray (index));
+--                          end loop;
+--                      end loop;
+--                      This.getParent.repaint;
+--                  exception
+--                      when e : others =>
+--                      logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.RUN, e);
+--                  end;
+--     end run;
+.start;
+   end process;
+
+   function getImageProcessorInput (This : in out CreateIconImagesJPanel) return ImageProcessorInput_Access is
+   begin
+        return This.imageProcessorInput;
+   end getImageProcessorInput;
+
+   procedure setImageProcessorInput (This : in out CreateIconImagesJPanel; imageProcessorInput : ImageProcessorInput_Access) is
+   begin
+        This.imageProcessorInput := imageProcessorInput;
+   end setImageProcessorInput;
+
+   procedure initComponents (This : in out CreateIconImagesJPanel) is
+      layout : GroupLayout_Access;
+   begin
+        This.aboveJButton := JButton_Package.Create;
+        This.aboveJButton.setText (To_Unbounded_String ("Process"));
+        This.aboveJButton.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
+--              
+--     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     begin
+--                  This.aboveJButtonActionPerformed (evt);
+--     end actionPerformed;
+);
+        layout := GroupLayout_Package.Create (This'Unchecked_Access);
+        This.setLayout (layout);
+        layout.setHorizontalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addComponent (This.aboveJButton).addGap (0, 335, Short_Package.MAX_VALUE)));
+        layout.setVerticalGroup (layout.createParallelGroup (javax_Package.swing.GroupLayout.Alignment.LEADING).addGroup (layout.createSequentialGroup.addContainerGap.addComponent (This.aboveJButton).addContainerGap (286, Short_Package.MAX_VALUE)));
+   end initComponents;
+
+   procedure aboveJButtonActionPerformed (This : in out CreateIconImagesJPanel; evt : ActionEvent_Access) is
+   begin
+        This.process;
+   end aboveJButtonActionPerformed;
+
+   procedure getImageProcessorInput (This : in out CreateIconImagesJPanel) is
+      Java_Result : constant ImageProcessorInput_Access := CreateIconImagesJPanel'Class (This).getImageProcessorInput;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getImageProcessorInput;
+
+end org.allbinary.image.gui.CreateIconImagesJPanel_Package;
+
+

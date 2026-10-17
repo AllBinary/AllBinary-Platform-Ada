@@ -1,0 +1,484 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body admin.tags.AuthenticationTag_Package is
+
+   procedure Initialize_Fields (This : in out AuthenticationTag'Class) is
+   begin
+      null;
+      This.logUtil := LogUtil_Package.getInstance;
+      This.command := Null_Unbounded_String;
+      
+      
+      This.newPassword := Null_Unbounded_String;
+      This.roles := null;
+      This.propertiesHashMap := null;
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out AuthenticationTag'Class) is
+      stringUtil : StringUtil_Access;
+   begin
+      CustomTagSupport_Package.Initialize (This);
+      Initialize_Fields (This);
+        stringUtil := StringUtil_Package.getInstance;
+        This.userName := stringUtil.EMPTY_STRING;
+        This.password := stringUtil.EMPTY_STRING;
+   end Initialize;
+
+   function Create return AuthenticationTag_Access is
+      This : constant AuthenticationTag_Access := new AuthenticationTag;
+   begin
+      Initialize (This.all);
+      return This;
+   end Create;
+
+   procedure setCommand (This : in out AuthenticationTag; command : Unbounded_String) is
+   begin
+        This.command := command;
+   end setCommand;
+
+   procedure setUserName (This : in out AuthenticationTag; userName : Unbounded_String) is
+   begin
+        This.userName := userName;
+   end setUserName;
+
+   procedure setPassword (This : in out AuthenticationTag; value : Unbounded_String) is
+   begin
+        This.password := value;
+   end setPassword;
+
+   procedure setNewPassword (This : in out AuthenticationTag; value : Unbounded_String) is
+   begin
+        This.newPassword := value;
+   end setNewPassword;
+
+   procedure setRoles (This : in out AuthenticationTag; values : BasicArrayList_Access) is
+   begin
+        This.roles := values;
+   end setRoles;
+
+   --  throws LicensingException
+   function changePassword (This : in out AuthenticationTag) return Boolean is
+      anyType : Java_Object_Access;
+      addressHelperClass : Ada.Tags.Tag;
+      method : Method_Access;
+      result : Boolean;
+   begin
+        begin
+            anyType := AuthenticationRequestHelperFactory_Package.Create.getInstance (This.propertiesHashMap, This.pageContext);
+            addressHelperClass := anyType.all'Tag;
+            method := addressHelperClass.getMethod (To_Unbounded_String ("changePassword"), null);
+            result := Boolean (method.invoke (anyType, null));
+            return result.booleanValue;
+        exception
+            when e : others =>
+            Java_Throw (e);
+        end;
+   end changePassword;
+
+   --  throws LicensingException
+   function newPassword (This : in out AuthenticationTag) return Boolean is
+      anyType : Java_Object_Access;
+      addressHelperClass : Ada.Tags.Tag;
+      method : Method_Access;
+      result : Boolean;
+   begin
+        begin
+            anyType := AuthenticationRequestHelperFactory_Package.Create.getInstance (This.propertiesHashMap, This.pageContext);
+            addressHelperClass := anyType.all'Tag;
+            method := addressHelperClass.getMethod (To_Unbounded_String ("newPassword"), null);
+            result := Boolean (method.invoke (anyType, null));
+            return result.booleanValue;
+        exception
+            when e : others =>
+            Java_Throw (e);
+        end;
+   end newPassword;
+
+   --  throws LicensingException
+   function invalidateSession (This : in out AuthenticationTag) return Integer is
+      anyType : Java_Object_Access;
+      addressHelperClass : Ada.Tags.Tag;
+      method : Method_Access;
+      resultInteger : Integer;
+   begin
+        begin
+            anyType := AuthenticationHelperFactory_Package.Create.getInstance (This.propertiesHashMap, This.pageContext);
+            addressHelperClass := anyType.all'Tag;
+            method := addressHelperClass.getMethod (To_Unbounded_String ("invalidateSession"), null);
+            resultInteger := Integer (method.invoke (anyType, null));
+            return resultInteger.intValue;
+        exception
+            when e : others =>
+            Java_Throw (e);
+        end;
+   end invalidateSession;
+
+   --  throws LicensingException
+   function isSessionOld (This : in out AuthenticationTag) return Boolean is
+      anyType : Java_Object_Access;
+      helperClass : Ada.Tags.Tag;
+      method : Method_Access;
+      resultBoolean : Boolean;
+   begin
+        begin
+            anyType := AuthenticationHelperFactory_Package.Create.getInstance (This.propertiesHashMap, This.pageContext);
+            helperClass := anyType.all'Tag;
+            method := helperClass.getMethod (To_Unbounded_String ("isSessionOld"), null);
+            resultBoolean := Boolean (method.invoke (anyType, null));
+            return resultBoolean.booleanValue;
+        exception
+            when e : others =>
+            Java_Throw (e);
+        end;
+   end isSessionOld;
+
+   --  throws LicensingException
+   function isRoleValid (This : in out AuthenticationTag) return Boolean is
+      anyType : Java_Object_Access;
+      addressHelperClass : Ada.Tags.Tag;
+      methodParams : Ada_Tags_Tag_Array_Access;
+      method : Method_Access;
+      methodArgs : Java_Object_Access_Array_Access;
+      resultBoolean : Boolean;
+   begin
+        begin
+            anyType := AuthenticationRequestHelperFactory_Package.Create.getInstance (This.propertiesHashMap, This.pageContext);
+            addressHelperClass := anyType.all'Tag;
+            methodParams := new Ada_Tags_Tag_Array'(This.userName.all'Tag, This.password.all'Tag, This.roles.all'Tag);
+            method := addressHelperClass.getMethod (To_Unbounded_String ("isRoleValid"), methodParams);
+            methodArgs := new Java_Object_Access_Array'(This.userName, This.password, This.roles);
+            resultBoolean := Boolean (method.invoke (anyType, methodArgs));
+            return resultBoolean.booleanValue;
+        exception
+            when e : others =>
+            Java_Throw (e);
+        end;
+   end isRoleValid;
+
+   --  throws LicensingException
+   function validRole (This : in out AuthenticationTag) return Unbounded_String is
+      anyType : Java_Object_Access;
+      addressHelperClass : Ada.Tags.Tag;
+      method : Method_Access;
+      result : Unbounded_String;
+      error : Unbounded_String;
+   begin
+        begin
+            anyType := AuthenticationHelperFactory_Package.Create.getInstance (This.propertiesHashMap, This.pageContext);
+            addressHelperClass := anyType.all'Tag;
+            method := addressHelperClass.getMethod (To_Unbounded_String ("validRole"), null);
+            result := Unbounded_String (method.invoke (anyType, null));
+            return result;
+        exception
+            when e : others =>
+            Java_Throw (e);
+        end;
+   end validRole;
+
+   --  throws LicensingException
+   function invalidRole (This : in out AuthenticationTag) return Unbounded_String is
+      anyType : Java_Object_Access;
+      addressHelperClass : Ada.Tags.Tag;
+      method : Method_Access;
+      result : Unbounded_String;
+      error : Unbounded_String;
+   begin
+        begin
+            anyType := AuthenticationHelperFactory_Package.Create.getInstance (This.propertiesHashMap, This.pageContext);
+            addressHelperClass := anyType.all'Tag;
+            method := addressHelperClass.getMethod (To_Unbounded_String ("invalidRole"), null);
+            result := Unbounded_String (method.invoke (anyType, null));
+            return result;
+        exception
+            when e : others =>
+            Java_Throw (e);
+        end;
+   end invalidRole;
+
+   --  throws LicensingException
+   function isAuthenticationSessionValid (This : in out AuthenticationTag) return Boolean is
+      anyType : Java_Object_Access;
+      addressHelperClass : Ada.Tags.Tag;
+      methodParams : Ada_Tags_Tag_Array_Access;
+      method : Method_Access;
+      methodArgs : Java_Object_Access_Array_Access;
+      resultBoolean : Boolean;
+   begin
+        begin
+            anyType := AuthenticationHelperFactory_Package.Create.getInstance (This.propertiesHashMap, This.pageContext);
+            addressHelperClass := anyType.all'Tag;
+            methodParams := new Ada_Tags_Tag_Array'(0 => This.roles.all'Tag);
+            method := addressHelperClass.getMethod (To_Unbounded_String ("isAuthenticationSessionValid"), methodParams);
+            methodArgs := new Java_Object_Access_Array'(0 => This.roles);
+            resultBoolean := Boolean (method.invoke (anyType, methodArgs));
+            return resultBoolean.booleanValue;
+        exception
+            when e : others =>
+            Java_Throw (e);
+        end;
+   end isAuthenticationSessionValid;
+
+   --  throws LicensingException
+   function processIfNewLogin (This : in out AuthenticationTag) return Boolean is
+      anyType : Java_Object_Access;
+      helperClass : Ada.Tags.Tag;
+      methodParams : Ada_Tags_Tag_Array_Access;
+      method : Method_Access;
+      methodArgs : Java_Object_Access_Array_Access;
+      resultBoolean : Boolean;
+   begin
+        begin
+            anyType := AuthenticationHelperFactory_Package.Create.getInstance (This.propertiesHashMap, This.pageContext);
+            helperClass := anyType.all'Tag;
+            methodParams := new Ada_Tags_Tag_Array'(This.userName.all'Tag, This.password.all'Tag);
+            method := helperClass.getMethod (To_Unbounded_String ("processIfNewLogin"), methodParams);
+            methodArgs := new Java_Object_Access_Array'(This.userName, This.password);
+            resultBoolean := Boolean (method.invoke (anyType, methodArgs));
+            return resultBoolean.booleanValue;
+        exception
+            when e : others =>
+            Java_Throw (e);
+        end;
+   end processIfNewLogin;
+
+   --  throws LicensingException
+   function processInvalidation (This : in out AuthenticationTag) return Boolean is
+      anyType : Java_Object_Access;
+      addressHelperClass : Ada.Tags.Tag;
+      method : Method_Access;
+      resultBoolean : Boolean;
+   begin
+        begin
+            anyType := AuthenticationHelperFactory_Package.Create.getInstance (This.propertiesHashMap, This.pageContext);
+            addressHelperClass := anyType.all'Tag;
+            method := addressHelperClass.getMethod (To_Unbounded_String ("processInvalidation"), null);
+            resultBoolean := Boolean (method.invoke (anyType, null));
+            return resultBoolean.booleanValue;
+        exception
+            when e : others =>
+            Java_Throw (e);
+        end;
+   end processInvalidation;
+
+   --  throws JspTagException
+   function doStartTag (This : in out AuthenticationTag) return Integer is
+      stringUtil : StringUtil_Access;
+      request : HttpServletRequest_Access;
+      stringBuffer : StringMaker_Access;
+   begin
+        begin
+            stringUtil := StringUtil_Package.getInstance;
+            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
+                request := HttpServletRequest_Access (This.pageContext.getRequest);
+                stringBuffer := StringMaker_Package.Create;
+                stringBuffer.append (To_Unbounded_String (" Request URI: "));
+                stringBuffer.append (request.getRequestURI);
+                This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, This.tagStrings.DO_START_TAG);
+            end if;
+            if (This.command) /= (Null_Unbounded_String) then
+                This.propertiesHashMap := StdUtil_Package.getInstance.createHashMap;
+                if (This.command.compareTo (org_Package.allbinary.globals.GLOBALS2.NEWPASSWORD)) = (0) then
+                    if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
+                        This.logUtil.putF (To_Unbounded_String ("New Password"), This'Unchecked_Access, This.tagStrings.DO_START_TAG);
+                    end if;
+                    if not (This.newPassword) then
+                        This.pageContext.getOut.print (To_Unbounded_String ("New Password Request Failed.<p/>"));
+                        return EVAL_BODY_INCLUDE;
+                    else
+                        This.pageContext.getOut.print (To_Unbounded_String ("New Password Was Sent.<p/>"));
+                        return SKIP_BODY;
+                    end if;
+                elsif (This.command.compareTo (org_Package.allbinary.globals.GLOBALS2.CHANGEPASSWORD)) = (0) then
+                    if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
+                        This.logUtil.putF (To_Unbounded_String ("Change Password"), This'Unchecked_Access, This.tagStrings.DO_START_TAG);
+                    end if;
+                    if not (This.changePassword) then
+                        This.pageContext.getOut.print (To_Unbounded_String ("Password Change Attempt Failed.<p/>"));
+                        return EVAL_BODY_INCLUDE;
+                    else
+                        This.pageContext.getOut.print (To_Unbounded_String ("Password Changed Successfully.<p/>"));
+                        return SKIP_BODY;
+                    end if;
+                elsif (This.command.compareTo (WeblisketSessionData_Package.INVALIDATESESSION)) = (0) then
+                    if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
+                        This.logUtil.putF (To_Unbounded_String ("INVALIDATESESSION"), This'Unchecked_Access, This.tagStrings.DO_START_TAG);
+                    end if;
+                    return This.invalidateSession;
+                else
+                    if This.isSessionOld then
+                        if This.processInvalidation then
+                            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
+                                This.logUtil.putF (To_Unbounded_String ("Processing Invalidation"), This'Unchecked_Access, This.tagStrings.DO_START_TAG);
+                            end if;
+                            This.pageContext.getOut.print (To_Unbounded_String ("Please login again.<p>"));
+                            if (This.command.compareTo (org_Package.allbinary.globals.GLOBALS2.PROCESSBODYIFAUTHENTICATED)) = (0) then
+                                return TagSupport_Package.SKIP_BODY;
+                            else
+                                return TagSupport_Package.EVAL_BODY_INCLUDE;
+                            end if;
+                        else
+                            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
+                                This.logUtil.putF (To_Unbounded_String ("Preparing session for invalidation"), This'Unchecked_Access, This.tagStrings.DO_START_TAG);
+                            end if;
+                            if (This.command.compareTo (org_Package.allbinary.globals.GLOBALS2.PROCESSBODYIFAUTHENTICATED)) = (0) then
+                                return TagSupport_Package.SKIP_BODY;
+                            else
+                                return TagSupport_Package.EVAL_BODY_INCLUDE;
+                            end if;
+                        end if;
+                    end if;
+                    if ((((((This.userName) = (Null_Unbounded_String)) or else ((This.userName.compareTo (stringUtil.EMPTY_STRING)) = (0)))) and then ((((This.password) = (Null_Unbounded_String)) or else ((This.password.compareTo (stringUtil.EMPTY_STRING)) = (0))))) and then ((This.roles) /= (null))) and then (This.isAuthenticationSessionValid) then
+                        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
+                            This.logUtil.putF (To_Unbounded_String ("Authenticated session is valid"), This'Unchecked_Access, This.tagStrings.DO_START_TAG);
+                        end if;
+                        if (This.command.compareTo (org_Package.allbinary.globals.GLOBALS2.PROCESSBODYIFAUTHENTICATED)) = (0) then
+                            return TagSupport_Package.EVAL_BODY_INCLUDE;
+                        else
+                            return TagSupport_Package.SKIP_BODY;
+                        end if;
+                    end if;
+                    if (((This.userName) /= (Null_Unbounded_String)) and then ((This.password) /= (Null_Unbounded_String))) and then (This.processIfNewLogin) then
+                        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
+                            This.logUtil.putF (To_Unbounded_String ("Processing new login."), This'Unchecked_Access, This.tagStrings.DO_START_TAG);
+                        end if;
+                        if This.isRoleValid then
+                            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
+                                This.logUtil.putF (To_Unbounded_String ("Role is valid - Processing new login"), This'Unchecked_Access, This.tagStrings.DO_START_TAG);
+                            end if;
+                            This.pageContext.getOut.print (This.validRole);
+                            if (This.command.compareTo (org_Package.allbinary.globals.GLOBALS2.PROCESSBODYIFAUTHENTICATED)) = (0) then
+                                return EVAL_BODY_INCLUDE;
+                            else
+                                return SKIP_BODY;
+                            end if;
+                        else
+                            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
+                                This.logUtil.putF (To_Unbounded_String ("Role is not valid - Processing new login"), This'Unchecked_Access, This.tagStrings.DO_START_TAG);
+                            end if;
+                            This.pageContext.getOut.print (This.invalidRole);
+                            if (This.command.compareTo (org_Package.allbinary.globals.GLOBALS2.PROCESSBODYIFAUTHENTICATED)) = (0) then
+                                return SKIP_BODY;
+                            else
+                                return EVAL_BODY_INCLUDE;
+                            end if;
+                        end if;
+                    else
+                        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
+                            This.logUtil.putF (To_Unbounded_String ("Invalid Login"), This'Unchecked_Access, This.tagStrings.DO_START_TAG);
+                        end if;
+                        if ((((This.userName) /= (Null_Unbounded_String)) and then ((This.userName.compareTo (stringUtil.EMPTY_STRING)) /= (0))) and then ((This.password) /= (Null_Unbounded_String))) and then ((This.password.compareTo (stringUtil.EMPTY_STRING)) /= (0)) then
+                            This.pageContext.getOut.print (To_Unbounded_String ("Sorry your username and/or password is invalid.<p/>"));
+                        end if;
+                    end if;
+                    if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
+                        This.logUtil.putF (StringMaker_Package.Create.append (To_Unbounded_String ("Major authentication error - userName: ")).append (This.userName).append (To_Unbounded_String (" Password: ")).append (This.password).append (To_Unbounded_String (" Command: ")).append (This.command).toString, This'Unchecked_Access, This.tagStrings.DO_START_TAG);
+                    end if;
+                    if (This.command.compareTo (org_Package.allbinary.globals.GLOBALS2.PROCESSBODYIFAUTHENTICATED)) = (0) then
+                        return TagSupport_Package.SKIP_BODY;
+                    else
+                        return TagSupport_Package.EVAL_BODY_INCLUDE;
+                    end if;
+                end if;
+            end if;
+            return SKIP_BODY;
+        exception
+            when e : others =>
+            AbResponseHandler_Package.sendJspTagLicensingRedirect (This.pageContext, e);
+            return SKIP_BODY;
+        end;
+   end doStartTag;
+
+   procedure changePassword (This : in out AuthenticationTag) is
+      Java_Result : constant Boolean := AuthenticationTag'Class (This).changePassword;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end changePassword;
+
+   procedure newPassword (This : in out AuthenticationTag) is
+      Java_Result : constant Boolean := AuthenticationTag'Class (This).newPassword;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end newPassword;
+
+   procedure invalidateSession (This : in out AuthenticationTag) is
+      Java_Result : constant Integer := AuthenticationTag'Class (This).invalidateSession;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end invalidateSession;
+
+   procedure isSessionOld (This : in out AuthenticationTag) is
+      Java_Result : constant Boolean := AuthenticationTag'Class (This).isSessionOld;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end isSessionOld;
+
+   procedure isRoleValid (This : in out AuthenticationTag) is
+      Java_Result : constant Boolean := AuthenticationTag'Class (This).isRoleValid;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end isRoleValid;
+
+   procedure validRole (This : in out AuthenticationTag) is
+      Java_Result : constant Unbounded_String := AuthenticationTag'Class (This).validRole;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end validRole;
+
+   procedure invalidRole (This : in out AuthenticationTag) is
+      Java_Result : constant Unbounded_String := AuthenticationTag'Class (This).invalidRole;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end invalidRole;
+
+   procedure isAuthenticationSessionValid (This : in out AuthenticationTag) is
+      Java_Result : constant Boolean := AuthenticationTag'Class (This).isAuthenticationSessionValid;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end isAuthenticationSessionValid;
+
+   procedure processIfNewLogin (This : in out AuthenticationTag) is
+      Java_Result : constant Boolean := AuthenticationTag'Class (This).processIfNewLogin;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end processIfNewLogin;
+
+   procedure processInvalidation (This : in out AuthenticationTag) is
+      Java_Result : constant Boolean := AuthenticationTag'Class (This).processInvalidation;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end processInvalidation;
+
+   procedure doStartTag (This : in out AuthenticationTag) is
+      Java_Result : constant Integer := AuthenticationTag'Class (This).doStartTag;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end doStartTag;
+
+end admin.tags.AuthenticationTag_Package;
+
+

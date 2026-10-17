@@ -1,0 +1,82 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Ada.Strings.Maps.Constants;
+with Ada.Characters.Handling;
+with Ada.Exceptions;
+with Ada.Numerics.Long_Elementary_Functions;
+with Ada.Tags;
+with Ada.Text_IO;
+with AllBinary_Java; use AllBinary_Java;
+--  with java.util.HashMap_Package; use java.util.HashMap_Package;
+--  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
+--  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
+with org.allbinary.business.context.AbContext_Package; use org.allbinary.business.context.AbContext_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontData_Package; use org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+with org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package; use org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
+with org.allbinary.globals.URLGLOBALS_Package; use org.allbinary.globals.URLGLOBALS_Package;
+with org.allbinary.logic.communication.http.request.RequestParams_Package; use org.allbinary.logic.communication.http.request.RequestParams_Package;
+with org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package; use org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.sql.AbSqlData_Package; use org.allbinary.logic.communication.sql.AbSqlData_Package;
+with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
+with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
+with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfig_Package; use org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfig_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfo_Package; use org.allbinary.logic.visual.transform.info.TransformInfo_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoHttpInterface_Package;
+
+package org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package is
+
+   package AbContext_Package renames org.allbinary.business.context.AbContext_Package;
+   package StoreFrontData_Package renames org.allbinary.business.context.modules.storefront.StoreFrontData_Package;
+   package FREEBLISKET_PATH_GLOBALS_Package renames org.allbinary.globals.FREEBLISKET_PATH_GLOBALS_Package;
+   package URLGLOBALS_Package renames org.allbinary.globals.URLGLOBALS_Package;
+   package RequestParams_Package renames org.allbinary.logic.communication.http.request.RequestParams_Package;
+   package WeblisketSessionInterface_Package renames org.allbinary.logic.communication.http.request.session.WeblisketSessionInterface_Package;
+   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbSqlData_Package renames org.allbinary.logic.communication.sql.AbSqlData_Package;
+   package AbPath_Package renames org.allbinary.logic.io.path.AbPath_Package;
+   package StringValidationUtil_Package renames org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package TransformInfoObjectConfig_Package renames org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfig_Package;
+
+   type TransformInfoHttp is tagged;
+   type TransformInfoHttp_Access is access all TransformInfoHttp'Class;
+   type TransformInfoHttp_Access_Array is array (Natural range <>) of TransformInfoHttp_Access;
+   type TransformInfoHttp_Access_Array_Access is access all TransformInfoHttp_Access_Array;
+
+   type TransformInfoHttp is new TransformInfo and TransformInfoHttpInterface with record
+      logUtil : LogUtil_Access;
+      abContext : AbContext_Access;
+   end record;
+
+   procedure Initialize (This : in out TransformInfoHttp'Class; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access; crud : Boolean);
+   function Create (propertiesHashMap : HashMap_Access; pageContext : PageContext_Access; crud : Boolean) return TransformInfoHttp_Access;
+   procedure set (This : in out TransformInfoHttp; hashMap : HashMap_Access);
+   function getWeblisketSession (This : in out TransformInfoHttp) return WeblisketSessionInterface_Access;
+   procedure getWeblisketSession (This : in out TransformInfoHttp);
+   function getPageContext (This : in out TransformInfoHttp) return PageContext_Access;
+   procedure getPageContext (This : in out TransformInfoHttp);
+   function getPropertiesHashMap (This : in out TransformInfoHttp) return HashMap_Access;
+   procedure getPropertiesHashMap (This : in out TransformInfoHttp);
+   function getTemplateFilePath (This : in out TransformInfoHttp) return AbPath_Access;
+   procedure getTemplateFilePath (This : in out TransformInfoHttp);
+   function getObjectConfigFilePath (This : in out TransformInfoHttp) return AbPath_Access;
+   procedure getObjectConfigFilePath (This : in out TransformInfoHttp);
+   function getDataFilePath (This : in out TransformInfoHttp) return AbPath_Access;
+   procedure getDataFilePath (This : in out TransformInfoHttp);
+
+end org.allbinary.logic.visual.transform.info.TransformInfoHttp_Package;
+
+

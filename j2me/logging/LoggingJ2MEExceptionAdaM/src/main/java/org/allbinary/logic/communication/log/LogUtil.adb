@@ -1,0 +1,99 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--   
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.logic.communication.log.LogUtil_Package is
+
+   procedure Initialize_Fields (This : in out LogUtil'Class) is
+   begin
+      null;
+      This.logFormatUtil := LogFormatUtil_Package.getInstance;
+      This.LOG_SUCCESS := To_Unbounded_String ("org.allbinary: ");
+   end Initialize_Fields;
+
+
+   function getInstance return LogUtil_Access is
+   begin
+        return LogUtil_Package.instance;
+   end getInstance;
+
+   procedure Initialize (This : in out LogUtil'Class) is
+   begin
+      Initialize_Fields (This);
+        null;
+   end Initialize;
+
+   function Create return LogUtil_Access is
+      This : constant LogUtil_Access := new LogUtil;
+   begin
+      Initialize (This.all);
+      return This;
+   end Create;
+
+   procedure putL (This : in out LogUtil; log : Log_Access) is
+      exception_Id : Java_Object_Access;
+      specialMessage : Unbounded_String;
+      anyType : Java_Object_Access;
+      functionName : Unbounded_String;
+   begin
+        if (log) = (LogFactory_Package.LOG) then
+            return;
+        end if;
+        exception_Id := log.getThrowable;
+        if (exception_Id) = (null) then
+            return;
+        end if;
+        specialMessage := log.getSpecialMessage;
+        anyType := log.getObject;
+        functionName := log.getFunctionName;
+        This.put (specialMessage, anyType, functionName, exception_Id);
+   end putL;
+
+   procedure putF (This : in out LogUtil; specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String) is
+   begin
+        null;
+   end putF;
+
+   procedure putF (This : in out LogUtil; specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String) is
+   begin
+        null;
+   end putF;
+
+   procedure put (This : in out LogUtil; specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Java_Object_Access) is
+      className : Unbounded_String;
+      message : Unbounded_String;
+   begin
+        className := CommonStrings_Package.getInstance.EMPTY;
+        if (To_Unbounded_String (Ada.Tags.Expanded_Name (anyType.all'Tag))) /= (Null_Unbounded_String) then
+            className := Java_New_String (To_Unbounded_String (Ada.Tags.Expanded_Name (anyType.all'Tag)));
+        end if;
+        message := This.logFormatUtil.get (className, functionName, specialMessage, exception_Id);
+        Ada.Text_IO.Put (Java_Image (This.LOG_SUCCESS));
+        Ada.Text_IO.Put_Line (Java_Image (message));
+   end put;
+
+   procedure getInstance is
+      Java_Result : constant LogUtil_Access := getInstance;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getInstance;
+
+begin
+   null;
+   instance := LogUtil_Package.Create;
+
+end org.allbinary.logic.communication.log.LogUtil_Package;
+
+

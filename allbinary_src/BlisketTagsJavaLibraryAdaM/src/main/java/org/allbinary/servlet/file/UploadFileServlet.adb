@@ -1,0 +1,163 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.servlet.file.UploadFileServlet_Package is
+
+   procedure Initialize_Fields (This : in out UploadFileServlet'Class) is
+   begin
+      null;
+      This.logUtil := LogUtil_Package.getInstance;
+      This.commonStrings := CommonStrings_Package.getInstance;
+      This.requestHashMap := null;
+      This.fileName := Null_Unbounded_String;
+   end Initialize_Fields;
+
+   procedure Initialize (This : in out UploadFileServlet'Class) is
+   begin
+      HttpServlet_Package.Initialize (This);
+      Initialize_Fields (This);
+   end Initialize;
+
+   function Create return UploadFileServlet_Access is
+      This : constant UploadFileServlet_Access := new UploadFileServlet;
+   begin
+      Initialize (This.all);
+      return This;
+   end Create;
+
+
+   --  throws ServletException, IOException
+   procedure processRequest (This : in out UploadFileServlet; request : HttpServletRequest_Access; response : HttpServletResponse_Access) is
+      isError : Boolean;
+      inputStream : InputStream_Access;
+      filePath : Unbounded_String;
+      hashMap : HashMap_Access;
+      authenticationHelper : AuthenticationHelper_Access;
+   begin
+        isError := False;
+        inputStream := null;
+        begin
+            BlisketServletUtil_Package.getInstance.init (request);
+            This.requestHashMap := MultipartRequestParams_Package.Create (request).toHashMap;
+            filePath := Unbounded_String (This.requestHashMap.get (FileUploadData_Package.getInstance.UPLOAD_TO_FILE_PATH));
+            if (filePath) = (Null_Unbounded_String) then
+                isError := True;
+                response.sendError (HttpServletResponse_Package.SC_NOT_FOUND);
+                return;
+            end if;
+            hashMap := StdUtil_Package.getInstance.createHashMap;
+            authenticationHelper := AuthenticationHelper_Access (AuthenticationHelperFactory_Package.Create.getInstance (hashMap, request));
+            if authenticationHelper.isAuthenticated then
+                if AuthenticationHelperUtil_Package.getInstance.isAuthorized (authenticationHelper, filePath) then
+                    This.saveFile (filePath);
+                    response.setContentType (To_Unbounded_String ("text/plain"));
+                    response.getOutputStream.write (To_Unbounded_String ("OK!").getBytes);
+                else
+                    isError := True;
+                    response.sendError (HttpServletResponse_Package.SC_UNAUTHORIZED, To_Unbounded_String ("You are not Authorized"));
+                end if;
+            else
+                isError := True;
+                response.sendError (HttpServletResponse_Package.SC_UNAUTHORIZED, To_Unbounded_String ("Please Login"));
+            end if;
+        exception
+            when e : others =>
+            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("processRequest()"), e);
+            end if;
+            isError := True;
+            response.sendError (HttpServletResponse_Package.SC_NOT_FOUND);
+        end;
+        --  finally
+        begin
+            if not (isError) then
+                StreamUtil_Package.getInstance.close (response.getOutputStream);
+            end if;
+            if not (StreamUtil_Package.getInstance.close (inputStream)) then
+                null;
+            end if;
+        end;
+   end processRequest;
+
+   --  throws Exception
+   procedure saveFile (This : in out UploadFileServlet; filePath : Unbounded_String) is
+      fileOutputStream : AbFileOutputStream_Access;
+      fileItem : FileItem_Access;
+      file : AbFile_Access;
+      stringBuffer : StringMaker_Access;
+      byteArray : Short_Short_Integer_Array_Access;
+   begin
+        fileOutputStream := null;
+        begin
+            fileItem := FileItem_Access (This.requestHashMap.get (FileUploadData_Package.getInstance.FILE_DATA));
+            if ((fileItem) /= (null)) and then ((fileItem.getSize) > (1)) then
+                This.fileName := HttpRequestUtil_Package.getInstance.generateFileName (fileItem.getName);
+                if (filePath.endsWith (To_Unbounded_String ("/"))) or else (filePath.endsWith (To_Unbounded_String ("\"))) then
+                    filePath := filePath & This.fileName;
+                end if;
+                file := AbFile_Package.createAbFile (Java_Image (URLGLOBALS.getWebappPath) & filePath);
+                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
+                    stringBuffer := StringMaker_Package.Create;
+                    stringBuffer.append (To_Unbounded_String ("Uploaded File: "));
+                    stringBuffer.append (This.fileName);
+                    stringBuffer.append (To_Unbounded_String (" New File: "));
+                    stringBuffer.append (file.getPath);
+                    This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, To_Unbounded_String ("saveFile()"));
+                end if;
+                HttpFileUploadUtil_Package.log (fileItem);
+                byteArray := fileItem.get;
+                if file.isFile then
+                    file.delete;
+                    file.createNewFile;
+                end if;
+                fileOutputStream := AbFileOutputStream_Package.createFromAbFile (file);
+                fileOutputStream.write (byteArray);
+            end if;
+        end;
+        --  finally
+        begin
+            if (fileOutputStream) /= (null) then
+                fileOutputStream.close;
+            end if;
+        end;
+   end saveFile;
+
+   --  throws ServletException, IOException
+   procedure doGet (This : in out UploadFileServlet; request : HttpServletRequest_Access; response : HttpServletResponse_Access) is
+   begin
+        This.processRequest (request, response);
+   end doGet;
+
+   --  throws ServletException, IOException
+   procedure doPost (This : in out UploadFileServlet; request : HttpServletRequest_Access; response : HttpServletResponse_Access) is
+   begin
+        This.processRequest (request, response);
+   end doPost;
+
+   function getServletInfo (This : in out UploadFileServlet) return Unbounded_String is
+   begin
+        return To_Unbounded_String ("Upload Cloud Files");
+   end getServletInfo;
+
+   procedure getServletInfo (This : in out UploadFileServlet) is
+      Java_Result : constant Unbounded_String := UploadFileServlet'Class (This).getServletInfo;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getServletInfo;
+
+end org.allbinary.servlet.file.UploadFileServlet_Package;
+
+

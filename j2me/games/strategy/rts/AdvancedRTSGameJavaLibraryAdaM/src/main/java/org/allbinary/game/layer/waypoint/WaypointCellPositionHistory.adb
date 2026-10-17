@@ -1,0 +1,147 @@
+-- 
+-- AllBinary Open License Version 1 
+-- Copyright (c) 2006 AllBinary 
+--  
+-- By agreeing to this license you and any business entity you represent are 
+-- legally bound to the AllBinary Open License Version 1 legal agreement. 
+--  
+-- You may obtain the AllBinary Open License Version 1 legal agreement from 
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository. 
+--  
+-- Created By: Travis Berthelot 
+--   
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.game.layer.waypoint.WaypointCellPositionHistory_Package is
+
+   procedure Initialize_Fields (This : in out WaypointCellPositionHistory'Class) is
+   begin
+      null;
+      This.positionList := BasicArrayListD_Package.Create;
+      This.layerList := BasicArrayListD_Package.Create;
+   end Initialize_Fields;
+
+   procedure Initialize (This : in out WaypointCellPositionHistory'Class) is
+   begin
+      Initialize_Fields (This);
+   end Initialize;
+
+   function Create return WaypointCellPositionHistory_Access is
+      This : constant WaypointCellPositionHistory_Access := new WaypointCellPositionHistory;
+   begin
+      Initialize (This.all);
+      return This;
+   end Create;
+
+
+   function getInstance return WaypointCellPositionHistory_Access is
+   begin
+        return WaypointCellPositionHistory_Package.SINGLETON;
+   end getInstance;
+
+   procedure add (This : in out WaypointCellPositionHistory; cellPosition : CellPosition_Access; layerInterface : AllBinaryLayer_Access) is
+   begin
+        This.positionList.add (cellPosition);
+        This.layerList.add (layerInterface);
+   end add;
+
+   procedure addList (This : in out WaypointCellPositionHistory; list : BasicArrayList_Access; layerInterface : AllBinaryLayer_Access) is
+      index : Integer;
+   begin
+        for index in reverse 0 .. (list.size) - (1) loop
+            This.add (CellPosition_Access (list.get (index)), layerInterface);
+        end loop;
+   end addList;
+
+   procedure remove (This : in out WaypointCellPositionHistory; cellPosition : CellPosition_Access) is
+      index : Integer;
+   begin
+        index := This.positionList.indexOf (cellPosition);
+        if (index) >= (0) then
+            This.positionList.removeAt (index);
+            This.layerList.removeAt (index);
+        end if;
+   end remove;
+
+   procedure removeLayer (This : in out WaypointCellPositionHistory; layerInterface : AllBinaryLayer_Access) is
+      index : Integer;
+   begin
+        index := 0;
+        while (index) /= (-(1)) loop
+            index := This.layerList.indexOf (layerInterface);
+            if (index) >= (0) then
+                This.positionList.removeAt (index);
+                This.layerList.removeAt (index);
+            end if;
+        end loop;
+   end removeLayer;
+
+   procedure clear (This : in out WaypointCellPositionHistory) is
+   begin
+        This.positionList.clear;
+        This.layerList.clear;
+   end clear;
+
+   function isCellPositionWithDrop (This : in out WaypointCellPositionHistory; cellPosition : CellPosition_Access) return Boolean is
+   begin
+        return This.positionList.contains (cellPosition);
+   end isCellPositionWithDrop;
+
+   function anyCellPositionWithDrop (This : in out WaypointCellPositionHistory; list : BasicArrayList_Access) return Boolean is
+      index : Integer;
+   begin
+        for index in reverse 0 .. (list.size) - (1) loop
+            if This.isCellPositionWithDrop (CellPosition_Access (list.get (index))) then
+                return True;
+            end if;
+        end loop;
+        return False;
+   end anyCellPositionWithDrop;
+
+   function getLayerInterface (This : in out WaypointCellPositionHistory; cellPosition : CellPosition_Access) return AllBinaryLayer_Access is
+      index : Integer;
+   begin
+        index := This.positionList.indexOf (cellPosition);
+        if (index) >= (0) then
+            return AllBinaryLayer_Access (This.layerList.get (index));
+        else
+            return AllBinaryLayer_Package.NULL_ALLBINARY_LAYER;
+        end if;
+   end getLayerInterface;
+
+   procedure getInstance is
+      Java_Result : constant WaypointCellPositionHistory_Access := getInstance;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getInstance;
+
+   procedure isCellPositionWithDrop (This : in out WaypointCellPositionHistory; cellPosition : CellPosition_Access) is
+      Java_Result : constant Boolean := WaypointCellPositionHistory'Class (This).isCellPositionWithDrop (cellPosition);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end isCellPositionWithDrop;
+
+   procedure anyCellPositionWithDrop (This : in out WaypointCellPositionHistory; list : BasicArrayList_Access) is
+      Java_Result : constant Boolean := WaypointCellPositionHistory'Class (This).anyCellPositionWithDrop (list);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end anyCellPositionWithDrop;
+
+   procedure getLayerInterface (This : in out WaypointCellPositionHistory; cellPosition : CellPosition_Access) is
+      Java_Result : constant AllBinaryLayer_Access := WaypointCellPositionHistory'Class (This).getLayerInterface (cellPosition);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getLayerInterface;
+
+begin
+   null;
+   SINGLETON := WaypointCellPositionHistory_Package.Create;
+
+end org.allbinary.game.layer.waypoint.WaypointCellPositionHistory_Package;
+
+

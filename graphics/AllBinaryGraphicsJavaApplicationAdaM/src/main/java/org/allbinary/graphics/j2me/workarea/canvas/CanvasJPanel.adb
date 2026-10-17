@@ -1,0 +1,775 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package is
+
+   procedure Initialize_Fields (This : in out CanvasJPanel'Class) is
+   begin
+      null;
+      This.logUtil := LogUtil_Package.getInstance;
+      This.guiLog := GuiLog_Package.getInstance;
+      This.gameInputStrings := GameInputStrings_Package.getInstance;
+      This.selectedTool := null;
+      This.graphicItemHashMap := null;
+      This.canvasDimension := null;
+      This.angle := 0.0;
+      This.canvasTreeNode := null;
+      This.frameLabel := null;
+      This.workAreaJTreeJPanel := null;
+      
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out CanvasJPanel'Class; workAreaJTreeJPanel : WorkAreaJTreeJPanel_Access; dimension : Dimension_Access; x : Integer; y : Integer) is
+   begin
+      JPanel_Package.Initialize (This);
+      Initialize_Fields (This);
+        This.grid := Grid_Package.Create;
+        begin
+            This.workAreaJTreeJPanel := workAreaJTreeJPanel;
+            This.initComponents;
+            This.initMyComponents;
+            This.setSize (dimension);
+            This.setCanvasSize (x, y);
+        exception
+            when e : others =>
+            if LOGGING.contains (LOGGING.GRAPHICSCREATION) then
+                This.guiLog.put (To_Unbounded_String ("Constructor Error"), This'Unchecked_Access, To_Unbounded_String ("contructor"), e);
+            end if;
+        end;
+   end Initialize;
+
+   function Create (workAreaJTreeJPanel : WorkAreaJTreeJPanel_Access; dimension : Dimension_Access; x : Integer; y : Integer) return CanvasJPanel_Access is
+      This : constant CanvasJPanel_Access := new CanvasJPanel;
+   begin
+      Initialize (This.all, workAreaJTreeJPanel, dimension, x, y);
+      return This;
+   end Create;
+
+   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
+   procedure Initialize (This : in out CanvasJPanel'Class; workAreaJTreeJPanel : WorkAreaJTreeJPanel_Access; dimension : Dimension_Access; canvasDom : CanvasDom_Access) is
+      graphicItemArray : Java_Object_Access_Array_Access;
+      size : Integer;
+      graphicItemTreeNode : MutableTreeNode_Access;
+      index : Integer;
+   begin
+      JPanel_Package.Initialize (This);
+      Initialize_Fields (This);
+        This.grid := Grid_Package.Create (canvasDom.getGrid);
+        begin
+            This.workAreaJTreeJPanel := workAreaJTreeJPanel;
+            This.initComponents;
+            This.initMyComponents;
+            This.setSize (dimension);
+            This.setCanvasSize (canvasDom.getDimension.getWidth, canvasDom.getDimension.getHeight);
+            This.graphicItemHashMap := canvasDom.getGraphicItemHashMap;
+            graphicItemArray := This.graphicItemHashMap.keySet.toArray;
+            size := graphicItemArray'Length;
+            for index in 0 .. (size) - 1 loop
+                graphicItemTreeNode := MutableTreeNode_Access (graphicItemArray (index));
+                This.canvasTreeNode.add (graphicItemTreeNode);
+            end loop;
+            This.repaint;
+            This.setAngle (canvasDom.getAngle);
+            This.workAreaJTreeJPanel.updateTree;
+            This.workAreaJTreeJPanel.expand;
+            This.workAreaJTreeJPanel.repaint;
+        exception
+            when e : others =>
+            if LOGGING.contains (LOGGING.GRAPHICSCREATION) then
+                This.guiLog.put (To_Unbounded_String ("Constructor Error"), This'Unchecked_Access, To_Unbounded_String ("contructor"), e);
+            end if;
+        end;
+   end Initialize;
+
+   function Create (workAreaJTreeJPanel : WorkAreaJTreeJPanel_Access; dimension : Dimension_Access; canvasDom : CanvasDom_Access) return CanvasJPanel_Access is
+      This : constant CanvasJPanel_Access := new CanvasJPanel;
+   begin
+      Initialize (This.all, workAreaJTreeJPanel, dimension, canvasDom);
+      return This;
+   end Create;
+
+   --  throws Exception
+   procedure initMyComponents (This : in out CanvasJPanel) is
+   begin
+        This.frameLabel := CanvasTreeLabel_Package.Create (To_Unbounded_String ("FrameLabel") & CanvasJPanel_Package.frame.toString);
+        This.canvasTreeNode := DefaultMutableTreeNode_Package.Create (This.frameLabel);
+        CanvasJPanel_Package.frame := CanvasJPanel_Package.frame + 1;
+        This.workAreaJTreeJPanel.add (This.getTreeNode);
+        This.graphicItemHashMap := StdUtil_Package.getInstance.createHashMap;
+        This.grid.grid := PointFactory_Package.getInstance.createXY (0, 0);
+        This.setCanvasDimension (IntegerDimension_Package.Create (0, 0));
+        This.selectedTool := null;
+        This.addKeyListener (This'Unchecked_Access);
+        This.addMouseListener (This'Unchecked_Access);
+        This.addMouseMotionListener (This'Unchecked_Access);
+        MyGraphicItemEventService_Package.addListener (This'Unchecked_Access);
+   end initMyComponents;
+
+   function getTreeNode (This : in out CanvasJPanel) return MutableTreeNode_Access is
+   begin
+        return This.canvasTreeNode;
+   end getTreeNode;
+
+   procedure initComponents (This : in out CanvasJPanel) is
+   begin
+        This.setLayout (GridLayout_Package.Create (1, 1));
+   end initComponents;
+
+   --  throws Exception
+   procedure setCanvasSize (This : in out CanvasJPanel; x : Integer; y : Integer) is
+   begin
+        This.grid.isGridPossible := True;
+        if (x) <= (0) then
+            This.grid.isGridPossible := False;
+            Java_Throw (Java_New_Exception ("GraphicsException", To_Unbounded_String ("X Size Error: ") & Java_Image (x), This'Unchecked_Access, To_Unbounded_String ("setWorkAreaSize")));
+        end if;
+        if (y) <= (0) then
+            This.grid.isGridPossible := False;
+            Java_Throw (Java_New_Exception ("GraphicsException", To_Unbounded_String ("Y Size Error: ") & Java_Image (y), This'Unchecked_Access, To_Unbounded_String ("setWorkAreaSize")));
+        end if;
+        if (x) > (This.getWidth) then
+            This.grid.isGridPossible := False;
+        end if;
+        if (y) > (This.getHeight) then
+            This.grid.isGridPossible := False;
+        end if;
+        This.setCanvasDimension (IntegerDimension_Package.Create (x, y));
+        This.grid.isChanged := True;
+   end setCanvasSize;
+
+   procedure setGrid (This : in out CanvasJPanel; point : GPoint_Access) is
+   begin
+        This.setGrid (point.getX, point.getY);
+   end setGrid;
+
+   procedure setGrid (This : in out CanvasJPanel; xSize : Integer; ySize : Integer) is
+   begin
+        begin
+            if ((xSize) >= ((This.getCanvasDimension.getWidth) / (2))) or else ((xSize) < (1)) then
+                Java_Throw (Java_New_Exception ("GraphicsException", To_Unbounded_String ("X Size Error: ") & Java_Image (xSize) & To_Unbounded_String (" WorkArea X: ") & Java_Image (This.getCanvasDimension.getWidth), This'Unchecked_Access, To_Unbounded_String ("setGrid")));
+            end if;
+            if ((ySize) >= ((This.getCanvasDimension.getHeight) / (2))) or else ((ySize) < (1)) then
+                Java_Throw (Java_New_Exception ("GraphicsException", To_Unbounded_String ("Y Size Error") & Java_Image (ySize) & To_Unbounded_String (" WorkArea Y: ") & Java_Image (This.getCanvasDimension.getHeight), This'Unchecked_Access, To_Unbounded_String ("setGrid")));
+            end if;
+            This.grid.grid := PointFactory_Package.getInstance.createXY (xSize, ySize);
+            This.grid.isChanged := True;
+        exception
+            when e : others =>
+            null;
+        end;
+   end setGrid;
+
+   --  throws Exception
+   procedure setDefaultGrid (This : in out CanvasJPanel) is
+      xPixelsPerWorkAreaPixel : Integer;
+      yPixelsPerWorkAreaPixel : Integer;
+   begin
+        xPixelsPerWorkAreaPixel := (This.getWidth) / (This.getCanvasDimension.getWidth);
+        yPixelsPerWorkAreaPixel := (This.getHeight) / (This.getCanvasDimension.getHeight);
+        This.setGrid (1, 1);
+        This.grid.isChanged := True;
+   end setDefaultGrid;
+
+   function getAngle (This : in out CanvasJPanel) return Long_Float is
+   begin
+        return This.angle;
+   end getAngle;
+
+   procedure setAngle (This : in out CanvasJPanel; angle : Long_Float) is
+   begin
+        This.angle := angle;
+   end setAngle;
+
+   procedure addAngle (This : in out CanvasJPanel; angle : Long_Float) is
+   begin
+        This.setAngle ((This.angle) + (angle));
+   end addAngle;
+
+   procedure explodeAll (This : in out CanvasJPanel) is
+      newPoints : BasicArrayList_Access;
+      graphicItemArray : Java_Object_Access_Array_Access;
+      size : Integer;
+      graphicItemNode : MutableTreeNode_Access;
+      graphicItem : GraphicItemInterface_Access;
+      newGraphicItem : GraphicItemInterface_Access;
+      pointOne : GPoint_Access;
+      pointTwo : GPoint_Access;
+      index : Integer;
+      size2 : Integer;
+   begin
+        newPoints := BasicArrayListD_Package.Create;
+        graphicItemArray := This.getGraphicItemHashMap.keySet.toArray;
+        size := graphicItemArray'Length;
+        for index in 0 .. (size) - 1 loop
+            graphicItemNode := MutableTreeNode_Access (graphicItemArray (index));
+            graphicItem := GraphicItemInterface_Access (This.getGraphicItemHashMap.get (graphicItemNode));
+            if (graphicItem.getName) = (LinesGraphicItem_Package.getStaticName) then
+                while (graphicItem.getPointsInterface.getSize) > (2) loop
+                    newGraphicItem := GraphicItemFactory_Package.getInstance.getInstance (graphicItem.getName).getInstance (This'Unchecked_Access);
+                    pointOne := GPoint_Package.getInstance (graphicItem.removePoint);
+                    pointTwo := GPoint_Package.getInstance (graphicItem.removePoint);
+                    if ((pointOne) /= (null)) and then ((pointTwo) /= (null)) then
+                        newGraphicItem.addPoint (pointOne);
+                        newGraphicItem.addPoint (pointTwo);
+                    end if;
+                    newPoints.add (newGraphicItem);
+                end loop;
+            end if;
+        end loop;
+        size2 := newPoints.size;
+        for index in 0 .. (size2) - 1 loop
+            newGraphicItem := GraphicItemInterface_Access (newPoints.get (index));
+            This.canvasTreeNode.add (newGraphicItem.getTreeNode);
+            This.getGraphicItemHashMap.put (newGraphicItem.getTreeNode, newGraphicItem);
+        end loop;
+        This.workAreaJTreeJPanel.updateTree;
+        This.workAreaJTreeJPanel.expand;
+        This.workAreaJTreeJPanel.repaint;
+   end explodeAll;
+
+   --  throws Exception
+   procedure explode (This : in out CanvasJPanel; howMuch : Integer; explosionType : Integer) is
+      graphicItemArray : Java_Object_Access_Array_Access;
+      size : Integer;
+      item : GraphicItemInterface_Access;
+      basicArrayList : BasicArrayList_Access;
+      newPoints : Points_Access;
+      angleDelta : Integer;
+      index : Integer;
+   begin
+        graphicItemArray := This.getGraphicItemHashMap.keySet.toArray;
+        size := graphicItemArray'Length;
+        for index in 0 .. (size) - 1 loop
+            item := GraphicItemInterface_Access (This.getGraphicItemHashMap.get (graphicItemArray (index)));
+            basicArrayList := VectorExplosionGenerator_Package.getInstance.createList (item.getPointsInterface.getPoints, howMuch, VectorExplosionGenerator_Package.getInstance.RANDOM);
+            newPoints := Points_Package.Create;
+            newPoints.addPoints (basicArrayList);
+            item.setPointsInterface (newPoints);
+            angleDelta := RandomRotationFactory_Package.getInstance.getNextRandomAngle (howMuch);
+            item.setAngle (angleDelta);
+        end loop;
+        This.repaint;
+   end explode;
+
+   --  throws Exception
+   procedure mirror (This : in out CanvasJPanel) is
+      width : Integer;
+      graphicItemArray : Java_Object_Access_Array_Access;
+      size : Integer;
+      item : GraphicItemInterface_Access;
+      basicArrayList : BasicArrayList_Access;
+      newPoints : Points_Access;
+      index : Integer;
+   begin
+        width := This.getCanvasDimension.getWidth;
+        graphicItemArray := This.getGraphicItemHashMap.keySet.toArray;
+        size := graphicItemArray'Length;
+        for index in 0 .. (size) - 1 loop
+            item := GraphicItemInterface_Access (This.getGraphicItemHashMap.get (graphicItemArray (index)));
+            basicArrayList := VectorMirrorGenerator_Package.getInstance.getInstance (item.getPointsInterface.getPoints, width);
+            newPoints := Points_Package.Create;
+            newPoints.addPoints (basicArrayList);
+            item.setPointsInterface (newPoints);
+        end loop;
+        This.repaint;
+   end mirror;
+
+   --  throws Exception
+   procedure center (This : in out CanvasJPanel) is
+   begin
+        VectorCenterGenerator_Package.Create.transform (This.getGraphicItemHashMap);
+        This.repaint;
+   end center;
+
+   procedure setNewTool (This : in out CanvasJPanel) is
+      newNode : MutableTreeNode_Access;
+   begin
+        begin
+            StatusFactory_Package.getInstance.setStatus (To_Unbounded_String ("Tool Selected"));
+            This.selectedTool := ToolFactory_Package.getInstance.getSelectedToolFactory.getInstance (This'Unchecked_Access);
+            newNode := This.selectedTool.getTreeNode;
+            This.getGraphicItemHashMap.put (newNode, This.selectedTool);
+            This.canvasTreeNode.add (newNode);
+            if (This.getSelectedTool) = (null) then
+                Java_Throw (Java_New_Exception ("GraphicsException", To_Unbounded_String ("No Tool Selected"), This'Unchecked_Access, To_Unbounded_String ("setSelectedTool")));
+            end if;
+        exception
+            when e : others =>
+            null;
+        end;
+   end setNewTool;
+
+   --  throws Exception
+   procedure duplicateGraphicItem (This : in out CanvasJPanel; graphicItem : GraphicItemInterface_Access) is
+      graphicItemClone : GraphicItemInterface_Access;
+   begin
+        graphicItemClone := graphicItem.duplicate;
+        This.getGraphicItemHashMap.put (graphicItemClone.getTreeNode, graphicItemClone);
+        This.canvasTreeNode.add (graphicItemClone.getTreeNode);
+   end duplicateGraphicItem;
+
+   --  throws Exception
+   procedure duplicateGraphicItemHashMap (This : in out CanvasJPanel; hashMap : HashMap_Access) is
+      mutableTreeNodeArray : Java_Object_Access_Array_Access;
+      size : Integer;
+      treeNode : MutableTreeNode_Access;
+      graphicItem : GraphicItemInterface_Access;
+      index : Integer;
+   begin
+        mutableTreeNodeArray := hashMap.keySet.toArray;
+        size := mutableTreeNodeArray'Length;
+        for index in 0 .. (size) - 1 loop
+            treeNode := MutableTreeNode_Access (mutableTreeNodeArray (index));
+            graphicItem := GraphicItemInterface_Access (hashMap.get (treeNode));
+            This.duplicateGraphicItem (graphicItem);
+        end loop;
+   end duplicateGraphicItemHashMap;
+
+   function getGraphicItemHashMap (This : in out CanvasJPanel) return HashMap_Access is
+   begin
+        return This.graphicItemHashMap;
+   end getGraphicItemHashMap;
+
+   function getXPixelsPerWorkAreaPixel (This : in out CanvasJPanel) return Integer is
+      x : Integer;
+   begin
+        x := ((This.getGrid.grid.getX) * (((This.getWidth) - (10)))) / (This.getCanvasDimension.getWidth);
+        if (This.getGrid.getZoom) = (1) then
+            return 1;
+        else
+            return x;
+        end if;
+   end getXPixelsPerWorkAreaPixel;
+
+   function getYPixelsPerWorkAreaPixel (This : in out CanvasJPanel) return Integer is
+      y : Integer;
+   begin
+        y := ((This.getGrid.grid.getY) * (((This.getHeight) - (10)))) / (This.getCanvasDimension.getHeight);
+        if (This.getGrid.getZoom) = (1) then
+            return 1;
+        else
+            return y;
+        end if;
+   end getYPixelsPerWorkAreaPixel;
+
+   function getSelectedTool (This : in out CanvasJPanel) return GraphicItemInterface_Access is
+   begin
+        return This.selectedTool;
+   end getSelectedTool;
+
+   procedure drawItems (This : in out CanvasJPanel; graphics : Graphics_Access) is
+      angleDouble : Long_Float;
+      graphicItemArray : Java_Object_Access_Array_Access;
+      size : Integer;
+      item : GraphicItemInterface_Access;
+      index : Integer;
+   begin
+        angleDouble := This.angle;
+        graphicItemArray := This.getGraphicItemHashMap.keySet.toArray;
+        size := graphicItemArray'Length;
+        for index in 0 .. (size) - 1 loop
+            item := GraphicItemInterface_Access (This.getGraphicItemHashMap.get (graphicItemArray (index)));
+            item.paint (graphics, angleDouble, This.getCanvasDimension, This.getXPixelsPerWorkAreaPixel, This.getYPixelsPerWorkAreaPixel);
+        end loop;
+   end drawItems;
+
+   procedure drawGrid (This : in out CanvasJPanel; graphics : Graphics_Access) is
+      xAdjust : Integer;
+      yAdjust : Integer;
+      xLeft : Integer;
+      yUpper : Integer;
+      xRight : Integer;
+      yLower : Integer;
+      value : Integer;
+   begin
+        xAdjust := (((This.getWidth) rem (This.getXPixelsPerWorkAreaPixel))) / (2);
+        yAdjust := (((This.getHeight) rem (This.getYPixelsPerWorkAreaPixel))) / (2);
+        xLeft := xAdjust;
+        yUpper := yAdjust;
+        xRight := (This.getWidth) - (xAdjust);
+        yLower := (This.getHeight) - (yAdjust);
+        graphics.setColor (CanvasJPanel_Package.gridColor);
+        value := yAdjust;
+        while (value) <= ((This.getHeight) - (yAdjust)) loop
+            graphics.drawLine (xLeft, value, xRight, value);
+            value := (value) + (This.getYPixelsPerWorkAreaPixel);
+        end loop;
+        value := xAdjust;
+        while (value) <= ((This.getWidth) - (xAdjust)) loop
+            graphics.drawLine (value, yUpper, value, yLower);
+            value := (value) + (This.getYPixelsPerWorkAreaPixel);
+        end loop;
+   end drawGrid;
+
+   procedure paint (This : in out CanvasJPanel; graphics : Graphics_Access) is
+   begin
+        begin
+            if This.getGrid.isChanged then
+                graphics.setColor (CanvasJPanel_Package.backgroundColor);
+                graphics.fillRect (0, 0, This.getWidth, This.getHeight);
+                if (((This.getGrid.getZoom) > (2)) and then (This.getGrid.isGridOn)) and then (This.getGrid.isGridPossible) then
+                    This.setDefaultGrid;
+                    This.drawGrid (graphics);
+                end if;
+                This.drawItems (graphics);
+                graphics.drawString (This.getAngle.toString, (This.getWidth) - (75), (This.getHeight) - (15));
+                This.grid.isChanged := False;
+            end if;
+        exception
+            when e : others =>
+            null;
+        end;
+   end paint;
+
+   procedure repaint (This : in out CanvasJPanel) is
+   begin
+        if (This.grid) /= (null) then
+            This.grid.isChanged := True;
+        end if;
+        JPanel (This).repaint;
+   end repaint;
+
+   --  throws Exception
+   function toDom (This : in out CanvasJPanel) return Node_Access is
+   begin
+        return CanvasDom_Package.Create (This'Unchecked_Access).toDom;
+   end toDom;
+
+   procedure changed (This : in out CanvasJPanel) is
+   begin
+        This.grid.isChanged := True;
+   end changed;
+
+   procedure mouseClicked (This : in out CanvasJPanel; mouseEvent : MouseEvent_Access) is
+      graphicItem : GraphicItemInterface_Access;
+   begin
+        StatusFactory_Package.getInstance.setStatusNoLog ((MouseStrings_Package.getInstance.MOUSE_CLICKED_LABEL) + (This.logMouseEvent (mouseEvent)));
+        if ((This.getSelectedTool) /= (null)) and then (This.getSelectedTool.isActive) then
+            graphicItem := This.getSelectedTool;
+            graphicItem.mouseClicked (mouseEvent, This.getXPixelsPerWorkAreaPixel, This.getYPixelsPerWorkAreaPixel);
+        else
+            This.setNewTool;
+            graphicItem := This.getSelectedTool;
+            if (graphicItem) /= (null) then
+                graphicItem.mouseClicked (mouseEvent, This.getXPixelsPerWorkAreaPixel, This.getYPixelsPerWorkAreaPixel);
+            end if;
+        end if;
+        This.grid.isChanged := True;
+        This.repaint;
+        This.workAreaJTreeJPanel.updateTree;
+        This.workAreaJTreeJPanel.expand;
+        This.workAreaJTreeJPanel.repaint;
+   end mouseClicked;
+
+   procedure mouseEntered (This : in out CanvasJPanel; mouseEvent : MouseEvent_Access) is
+   begin
+        StatusFactory_Package.getInstance.setStatusNoLog (This.logMouseEvent (mouseEvent));
+   end mouseEntered;
+
+   procedure mouseExited (This : in out CanvasJPanel; mouseEvent : MouseEvent_Access) is
+   begin
+        StatusFactory_Package.getInstance.setStatusNoLog (This.logMouseEvent (mouseEvent));
+   end mouseExited;
+
+   procedure mousePressed (This : in out CanvasJPanel; mouseEvent : MouseEvent_Access) is
+      graphicItem : GraphicItemInterface_Access;
+   begin
+        StatusFactory_Package.getInstance.setStatusNoLog ((MouseStrings_Package.getInstance.MOUSE_PRESSED_LABEL) + (This.logMouseEvent (mouseEvent)));
+        if (This.getSelectedTool) /= (null) then
+            graphicItem := This.getSelectedTool;
+            graphicItem.mousePressed (mouseEvent, This.getXPixelsPerWorkAreaPixel, This.getYPixelsPerWorkAreaPixel);
+        end if;
+        This.requestFocus;
+        This.grid.isChanged := True;
+        This.repaint;
+   end mousePressed;
+
+   procedure mouseReleased (This : in out CanvasJPanel; mouseEvent : MouseEvent_Access) is
+      graphicItem : GraphicItemInterface_Access;
+   begin
+        StatusFactory_Package.getInstance.setStatusNoLog ((MouseStrings_Package.getInstance.MOUSE_RELEASED_LABEL) + (This.logMouseEvent (mouseEvent)));
+        graphicItem := This.getSelectedTool;
+        if (graphicItem) /= (null) then
+            graphicItem.mouseReleased (mouseEvent, This.getXPixelsPerWorkAreaPixel, This.getYPixelsPerWorkAreaPixel);
+        end if;
+        This.requestFocus;
+        This.grid.isChanged := True;
+        This.repaint;
+   end mouseReleased;
+
+   procedure mouseDragged (This : in out CanvasJPanel; mouseEvent : MouseEvent_Access) is
+      graphicItem : GraphicItemInterface_Access;
+   begin
+        StatusFactory_Package.getInstance.setStatusNoLog ((MouseStrings_Package.getInstance.MOUSE_DRAGGED_LABEL) + (This.logMouseEvent (mouseEvent)));
+        graphicItem := This.getSelectedTool;
+        if (graphicItem) /= (null) then
+            graphicItem.mouseDragged (mouseEvent, This.getXPixelsPerWorkAreaPixel, This.getYPixelsPerWorkAreaPixel);
+        end if;
+        This.requestFocus;
+        This.grid.isChanged := True;
+        This.repaint;
+   end mouseDragged;
+
+   procedure mouseMoved (This : in out CanvasJPanel; mouseEvent : MouseEvent_Access) is
+      graphicItem : GraphicItemInterface_Access;
+   begin
+        StatusFactory_Package.getInstance.setStatusNoLog ((MouseStrings_Package.getInstance.MOUSE_MOVED_LABEL) + (This.logMouseEvent (mouseEvent)));
+        if ((This.getSelectedTool) /= (null)) and then (This.getSelectedTool.isActive) then
+            graphicItem := This.getSelectedTool;
+            graphicItem.mouseMoved (mouseEvent, This.getXPixelsPerWorkAreaPixel, This.getYPixelsPerWorkAreaPixel);
+        end if;
+        This.requestFocus;
+        This.grid.isChanged := True;
+        This.repaint;
+   end mouseMoved;
+
+   function logMouseEvent (This : in out CanvasJPanel; mouseEvent : MouseEvent_Access) return Unbounded_String is
+      stringBuffer : StringMaker_Access;
+   begin
+        stringBuffer := StringMaker_Package.Create;
+        stringBuffer.append (PositionStrings_Package.getInstance.X_LABEL);
+        stringBuffer.appendint (Integer ((mouseEvent.getX) / (This.getXPixelsPerWorkAreaPixel)));
+        stringBuffer.append (CommonSeps_Package.getInstance.SPACE);
+        stringBuffer.append (PositionStrings_Package.getInstance.Y_LABEL);
+        stringBuffer.appendint (Integer ((mouseEvent.getY) / (This.getYPixelsPerWorkAreaPixel)));
+        return stringBuffer.toString;
+   end logMouseEvent;
+
+   procedure keyPressed (This : in out CanvasJPanel; keyEvent : KeyEvent_Access) is
+      graphicItemArray : Java_Object_Access_Array_Access;
+      size : Integer;
+      graphicItemInterface : GraphicItemInterface_Access;
+      keyCode : Integer;
+      index : Integer;
+      commonStrings : CommonStrings_Access;
+      graphicItem : GraphicItemInterface_Access;
+   begin
+        StatusFactory_Package.getInstance.setStatus (To_Unbounded_String ("Key Pressed"));
+        begin
+            graphicItemArray := This.graphicItemHashMap.keySet.toArray;
+            size := graphicItemArray'Length;
+            for index in 0 .. (size) - 1 loop
+                graphicItemInterface := GraphicItemInterface_Access (This.graphicItemHashMap.get (graphicItemArray (index)));
+                keyCode := keyEvent.getKeyCode;
+                if graphicItemInterface.isActive then
+                    if (keyCode) = (keyEvent.VK_UP) then
+                        graphicItemInterface.translate (0, -(1));
+                    elsif (keyCode) = (keyEvent.VK_DOWN) then
+                        graphicItemInterface.translate (0, 1);
+                    elsif (keyCode) = (keyEvent.VK_LEFT) then
+                        graphicItemInterface.translate (-(1), 0);
+                    elsif (keyCode) = (keyEvent.VK_RIGHT) then
+                        graphicItemInterface.translate (1, 0);
+                    end if;
+                end if;
+            end loop;
+        exception
+            when e : others =>
+            commonStrings := CommonStrings_Package.getInstance;
+            This.logUtil.put (commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.gameInputStrings.KEY_PRESSED, e);
+        end;
+        if ((This.getSelectedTool) /= (null)) and then (This.getSelectedTool.isActive) then
+            StatusFactory_Package.getInstance.setStatus (To_Unbounded_String ("Key Pressed for Tool"));
+            graphicItem := This.getSelectedTool;
+            graphicItem.keyPressed (keyEvent);
+        else
+            This.setNewTool;
+        end if;
+        This.grid.isChanged := True;
+        This.repaint;
+   end keyPressed;
+
+   procedure keyReleased (This : in out CanvasJPanel; keyEvent : KeyEvent_Access) is
+   begin
+        null;
+   end keyReleased;
+
+   procedure keyTyped (This : in out CanvasJPanel; keyEvent : KeyEvent_Access) is
+   begin
+        null;
+   end keyTyped;
+
+   procedure delete (This : in out CanvasJPanel; evt : MyGraphicItemEvent_Access) is
+   begin
+        This.getGraphicItemHashMap.remove (evt.getTreeNode);
+        This.workAreaJTreeJPanel.updateTree;
+        This.workAreaJTreeJPanel.expand;
+        This.workAreaJTreeJPanel.repaint;
+   end delete;
+
+   procedure deselect (This : in out CanvasJPanel; evt : MyGraphicItemEvent_Access) is
+      graphicItemInterface : GraphicItemInterface_Access;
+   begin
+        graphicItemInterface := GraphicItemInterface_Access (This.getGraphicItemHashMap.get (evt.getTreeNode));
+        if (graphicItemInterface) /= (null) then
+            graphicItemInterface.setColor (Color_Package.WHITE);
+            graphicItemInterface.deactivate;
+            This.workAreaJTreeJPanel.repaint;
+        end if;
+   end deselect;
+
+   procedure highlight (This : in out CanvasJPanel; evt : MyGraphicItemEvent_Access) is
+      graphicItemInterface : GraphicItemInterface_Access;
+   begin
+        graphicItemInterface := GraphicItemInterface_Access (This.getGraphicItemHashMap.get (evt.getTreeNode));
+        if (graphicItemInterface) /= (null) then
+            graphicItemInterface.setColor (Color_Package.YELLOW);
+            graphicItemInterface.activate;
+            This.workAreaJTreeJPanel.repaint;
+        end if;
+   end highlight;
+
+   --  throws Exception
+   function duplicate (This : in out CanvasJPanel) return CanvasJPanel_Access is
+      newCanvasJPanel : CanvasJPanel_Access;
+   begin
+        newCanvasJPanel := CanvasJPanel_Package.Create (This.workAreaJTreeJPanel, This.getSize, This.getCanvasDimension.getWidth, This.getCanvasDimension.getHeight);
+        newCanvasJPanel.setGrid (This.getGrid.getGrid);
+        newCanvasJPanel.setAngle (This.getAngle);
+        newCanvasJPanel.duplicateGraphicItemHashMap (This.getGraphicItemHashMap);
+        This.workAreaJTreeJPanel.updateTree;
+        This.workAreaJTreeJPanel.expand;
+        This.workAreaJTreeJPanel.repaint;
+        return newCanvasJPanel;
+   end duplicate;
+
+   --  throws Exception
+   procedure duplicate (This : in out CanvasJPanel; event : MyGraphicItemEvent_Access) is
+      treeNode : MutableTreeNode_Access;
+      graphicItem : GraphicItemInterface_Access;
+   begin
+        treeNode := event.getTreeNode;
+        graphicItem := GraphicItemInterface_Access (This.getGraphicItemHashMap.get (treeNode));
+        if (graphicItem) /= (null) then
+            This.duplicateGraphicItem (graphicItem);
+            This.workAreaJTreeJPanel.updateTree;
+            This.workAreaJTreeJPanel.expand;
+            This.workAreaJTreeJPanel.repaint;
+        end if;
+   end duplicate;
+
+   procedure rotate (This : in out CanvasJPanel; event : MyGraphicItemEvent_Access) is
+      treeNode : MutableTreeNode_Access;
+      graphicItem : GraphicItemInterface_Access;
+   begin
+        treeNode := event.getTreeNode;
+        graphicItem := GraphicItemInterface_Access (This.getGraphicItemHashMap.get (treeNode));
+        if (graphicItem) /= (null) then
+            graphicItem.addAngle (event.getAngle);
+        end if;
+   end rotate;
+
+   function getCanvasDimension (This : in out CanvasJPanel) return IntegerDimension_Access is
+   begin
+        return This.canvasDimension;
+   end getCanvasDimension;
+
+   procedure setCanvasDimension (This : in out CanvasJPanel; canvasDimension : IntegerDimension_Access) is
+   begin
+        This.canvasDimension := canvasDimension;
+   end setCanvasDimension;
+
+   function getGrid (This : in out CanvasJPanel) return Grid_Access is
+   begin
+        return This.grid;
+   end getGrid;
+
+   procedure getTreeNode (This : in out CanvasJPanel) is
+      Java_Result : constant MutableTreeNode_Access := CanvasJPanel'Class (This).getTreeNode;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getTreeNode;
+
+   procedure getAngle (This : in out CanvasJPanel) is
+      Java_Result : constant Long_Float := CanvasJPanel'Class (This).getAngle;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getAngle;
+
+   procedure getGraphicItemHashMap (This : in out CanvasJPanel) is
+      Java_Result : constant HashMap_Access := CanvasJPanel'Class (This).getGraphicItemHashMap;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getGraphicItemHashMap;
+
+   procedure getXPixelsPerWorkAreaPixel (This : in out CanvasJPanel) is
+      Java_Result : constant Integer := CanvasJPanel'Class (This).getXPixelsPerWorkAreaPixel;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getXPixelsPerWorkAreaPixel;
+
+   procedure getYPixelsPerWorkAreaPixel (This : in out CanvasJPanel) is
+      Java_Result : constant Integer := CanvasJPanel'Class (This).getYPixelsPerWorkAreaPixel;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getYPixelsPerWorkAreaPixel;
+
+   procedure getSelectedTool (This : in out CanvasJPanel) is
+      Java_Result : constant GraphicItemInterface_Access := CanvasJPanel'Class (This).getSelectedTool;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getSelectedTool;
+
+   procedure toDom (This : in out CanvasJPanel) is
+      Java_Result : constant Node_Access := CanvasJPanel'Class (This).toDom;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end toDom;
+
+   procedure logMouseEvent (This : in out CanvasJPanel; mouseEvent : MouseEvent_Access) is
+      Java_Result : constant Unbounded_String := CanvasJPanel'Class (This).logMouseEvent (mouseEvent);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end logMouseEvent;
+
+   procedure duplicate (This : in out CanvasJPanel) is
+      Java_Result : constant CanvasJPanel_Access := CanvasJPanel'Class (This).duplicate;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end duplicate;
+
+   procedure getCanvasDimension (This : in out CanvasJPanel) is
+      Java_Result : constant IntegerDimension_Access := CanvasJPanel'Class (This).getCanvasDimension;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getCanvasDimension;
+
+   procedure getGrid (This : in out CanvasJPanel) is
+      Java_Result : constant Grid_Access := CanvasJPanel'Class (This).getGrid;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getGrid;
+
+begin
+   null;
+   frame := 0;
+   gridColor := Color_Package.Create (BasicColorFactory_Package.getInstance.WHITE.intValue);
+   backgroundColor := Color_Package.Create (BasicColorFactory_Package.getInstance.CLEAR_COLOR.intValue);
+
+end org.allbinary.graphics.j2me.workarea.canvas.CanvasJPanel_Package;
+
+

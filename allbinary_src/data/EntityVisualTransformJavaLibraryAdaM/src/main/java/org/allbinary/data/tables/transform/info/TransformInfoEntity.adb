@@ -1,0 +1,241 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.data.tables.transform.info.TransformInfoEntity_Package is
+
+   procedure Initialize_Fields (This : in out TransformInfoEntity'Class) is
+   begin
+      null;
+      This.logUtil := LogUtil_Package.getInstance;
+      This.tableName := To_Unbounded_String ("transforminfo");
+      This.abeClientInformation := ServiceClientInformationInterfaceFactory_Package.getInstance;
+      
+      
+      
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out TransformInfoEntity'Class; transformInfoObjectConfigGeneratorFactoryInterface : TransformInfoObjectConfigGeneratorFactoryInterface_Access; transformInfoObjectConfigAndManipulatorFactoryInterface : TransformInfoObjectConfigAndManipulatorFactoryBase_Access; transformInfoFactoryInterface : TransformInfoFactoryInterface_Access) is
+   begin
+        AbSqlBean_Package.Initialize (This, UserDbInitInfo_Package.Create);
+        Initialize_Fields (This);
+        This.setTableName (This.tableName);
+        This.transformInfoObjectConfigGeneratorFactoryInterface := transformInfoObjectConfigGeneratorFactoryInterface;
+        This.transformInfoObjectConfigAndManipulatorFactoryInterface := transformInfoObjectConfigAndManipulatorFactoryInterface;
+        This.transformInfoFactoryInterface := transformInfoFactoryInterface;
+   end Initialize;
+
+   function Create (transformInfoObjectConfigGeneratorFactoryInterface : TransformInfoObjectConfigGeneratorFactoryInterface_Access; transformInfoObjectConfigAndManipulatorFactoryInterface : TransformInfoObjectConfigAndManipulatorFactoryBase_Access; transformInfoFactoryInterface : TransformInfoFactoryInterface_Access) return TransformInfoEntity_Access is
+      This : constant TransformInfoEntity_Access := new TransformInfoEntity;
+   begin
+      Initialize (This.all, transformInfoObjectConfigGeneratorFactoryInterface, transformInfoObjectConfigAndManipulatorFactoryInterface, transformInfoFactoryInterface);
+      return This;
+   end Create;
+
+   procedure insert (This : in out TransformInfoEntity; values : BasicArrayList_Access) is
+   begin
+        begin
+            AbSqlBean (This).insert (values);
+            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+                This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, INSERT);
+            end if;
+        exception
+            when e : others =>
+            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, INSERT, e);
+            end if;
+        end;
+   end insert;
+
+   procedure delete (This : in out TransformInfoEntity; value : Unbounded_String) is
+   begin
+        begin
+            AbSqlBean (This).deleteWhere (TransformInfoData_Package.getInstance.NAME, value);
+            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+                This.logUtil.putF (This.commonStrings.SUCCESS, This'Unchecked_Access, This.commonStrings.delete);
+            end if;
+        exception
+            when e : others =>
+            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, This.commonStrings.delete, e);
+            end if;
+        end;
+   end delete;
+
+   --  throws Exception
+   function get (This : in out TransformInfoEntity; name : Unbounded_String; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return TransformInfoInterface_Access is
+      transformInfoData : TransformInfoData_Access;
+      keysAndValues : HashMap_Access;
+      hashMap : HashMap_Access;
+      anyType : Java_Object_Access;
+      string_Id : Unbounded_String;
+      objectData : Java_Object_Access;
+   begin
+        transformInfoData := TransformInfoData_Package.getInstance;
+        keysAndValues := StdUtil_Package.getInstance.createHashMap;
+        keysAndValues.put (transformInfoData.NAME, name);
+        hashMap := AbSqlBean (This).getRow (keysAndValues);
+        if (hashMap) /= (null) then
+            anyType := hashMap.get (transformInfoData.OBJECTCONFIG);
+            if (anyType) /= (null) then
+                string_Id := Unbounded_String (anyType);
+                hashMap.put (transformInfoData.OBJECTCONFIG, Java_New_String (Encoder_Package.decode (string_Id)));
+            end if;
+            objectData := hashMap.get (transformInfoData.DATA);
+            if (objectData) /= (null) then
+                string_Id := Unbounded_String (objectData);
+                hashMap.put (transformInfoData.DATA, Java_New_String (Encoder_Package.decode (string_Id)));
+            end if;
+            return This.transformInfoFactoryInterface.getInstance (hashMap, propertiesHashMap, pageContext);
+        else
+            return null;
+        end if;
+   end get;
+
+   --  throws Exception
+   function getObjectConfigs (This : in out TransformInfoEntity; storeName : Unbounded_String) return BasicArrayList_Access is
+      objectConfigVector : BasicArrayList_Access;
+      objectConfigColumnVector : BasicArrayList_Access;
+      size : Integer;
+      objectConfigString : Unbounded_String;
+      i : Integer;
+   begin
+        objectConfigVector := BasicArrayListD_Package.Create;
+        objectConfigColumnVector := This.getColumnWhere (TransformInfoData_Package.getInstance.OBJECTCONFIG, StoreFrontData_Package.getInstance.NAME, storeName);
+        size := objectConfigColumnVector.size;
+        for i in 0 .. (size) - 1 loop
+            objectConfigString := Unbounded_String (objectConfigColumnVector.get (i));
+            objectConfigString := Java_New_String (Encoder_Package.decode (objectConfigString));
+            objectConfigVector.add (This.transformInfoObjectConfigAndManipulatorFactoryInterface.getInstance (This.abeClientInformation, TransformInfoInterface_Access (This'Unchecked_Access), DomDocumentHelper_Package.create (objectConfigString)));
+        end loop;
+        return objectConfigVector;
+   end getObjectConfigs;
+
+   --  throws Exception
+   function getNames (This : in out TransformInfoEntity; storeName : Unbounded_String) return BasicArrayList_Access is
+      viewNameVector : BasicArrayList_Access;
+      columnVector : BasicArrayList_Access;
+      size : Integer;
+      viewNameString : Unbounded_String;
+      i : Integer;
+   begin
+        viewNameVector := BasicArrayListD_Package.Create;
+        columnVector := This.getColumnWhere (TransformInfoData_Package.getInstance.NAME, StoreFrontData_Package.getInstance.NAME, storeName);
+        size := columnVector.size;
+        for i in 0 .. (size) - 1 loop
+            viewNameString := Unbounded_String (columnVector.get (i));
+            viewNameVector.add (viewNameString);
+        end loop;
+        return viewNameVector;
+   end getNames;
+
+   function createTableStatement (This : in out TransformInfoEntity) return Unbounded_String is
+      transformInfoData : TransformInfoData_Access;
+      stringBuffer : StringMaker_Access;
+   begin
+        transformInfoData := TransformInfoData_Package.getInstance;
+        stringBuffer := StringMaker_Package.Create;
+        stringBuffer.append (This.sqlStrings.CREATE_TABLE);
+        stringBuffer.append (This.tableName);
+        stringBuffer.append (This.sqlStrings.START);
+        stringBuffer.append (transformInfoData.NAME);
+        stringBuffer.append (This.sqlTypeStrings.MAX_CHAR_COLUMN_NOT_NULL);
+        stringBuffer.append (StoreFrontData_Package.getInstance.NAME);
+        stringBuffer.append (This.sqlTypeStrings.MAX_CHAR_COLUMN_NOT_NULL);
+        stringBuffer.append (transformInfoData.OBJECTFILENAME);
+        stringBuffer.append (This.sqlTypeStrings.MAX_CHAR_COLUMN_NOT_NULL);
+        stringBuffer.append (transformInfoData.OBJECT);
+        stringBuffer.append (This.sqlTypeStrings.BLOB_NOT_NULL);
+        stringBuffer.append (transformInfoData.OBJECTCONFIGFILENAME);
+        stringBuffer.append (This.sqlTypeStrings.MAX_CHAR_COLUMN_NOT_NULL);
+        stringBuffer.append (transformInfoData.OBJECTCONFIG);
+        stringBuffer.append (This.sqlTypeStrings.BLOB_NOT_NULL);
+        stringBuffer.append (transformInfoData.TEMPLATEFILENAME);
+        stringBuffer.append (This.sqlTypeStrings.MAX_CHAR_COLUMN_NOT_NULL);
+        stringBuffer.append (transformInfoData.TEMPLATE);
+        stringBuffer.append (This.sqlTypeStrings.BLOB_NOT_NULL);
+        stringBuffer.append (transformInfoData.DATAFILENAME);
+        stringBuffer.append (This.sqlTypeStrings.MAX_CHAR_COLUMN_NOT_NULL);
+        stringBuffer.append (transformInfoData.DATA);
+        stringBuffer.append (This.sqlTypeStrings.BLOB_NOT_NULL);
+        stringBuffer.append (EntryData_Package.getInstance.LASTMODIFIED);
+        stringBuffer.append (EntryData_Package.getInstance.TIMECREATED);
+        stringBuffer.append (This.sqlTypeStrings.MAX_BIG_INT_UNSIGNED_NOT_NULL);
+        stringBuffer.append (This.sqlStrings.PRIMARY_KEY);
+        stringBuffer.append (transformInfoData.NAME);
+        stringBuffer.append (This.sqlStrings.END_Id);
+        return stringBuffer.toString;
+   end createTableStatement;
+
+   function createTable (This : in out TransformInfoEntity) return Unbounded_String is
+   begin
+        return AbSqlBean (This).createTable (This.createTableStatement);
+   end createTable;
+
+   procedure update (This : in out TransformInfoEntity; updatedValues : HashMap_Access) is
+   begin
+        AbSqlBean (This).updateWhere (TransformInfoData_Package.getInstance.NAME, Unbounded_String (updatedValues.get (TransformInfoData_Package.getInstance.NAME)), updatedValues);
+   end update;
+
+   function dropTable (This : in out TransformInfoEntity) return Unbounded_String is
+   begin
+        return AbSqlBean (This).dropTable;
+   end dropTable;
+
+   procedure get (This : in out TransformInfoEntity; name : Unbounded_String; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) is
+      Java_Result : constant TransformInfoInterface_Access := TransformInfoEntity'Class (This).get (name, propertiesHashMap, pageContext);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end get;
+
+   procedure getObjectConfigs (This : in out TransformInfoEntity; storeName : Unbounded_String) is
+      Java_Result : constant BasicArrayList_Access := TransformInfoEntity'Class (This).getObjectConfigs (storeName);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getObjectConfigs;
+
+   procedure getNames (This : in out TransformInfoEntity; storeName : Unbounded_String) is
+      Java_Result : constant BasicArrayList_Access := TransformInfoEntity'Class (This).getNames (storeName);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getNames;
+
+   procedure createTableStatement (This : in out TransformInfoEntity) is
+      Java_Result : constant Unbounded_String := TransformInfoEntity'Class (This).createTableStatement;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end createTableStatement;
+
+   procedure createTable (This : in out TransformInfoEntity) is
+      Java_Result : constant Unbounded_String := TransformInfoEntity'Class (This).createTable;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end createTable;
+
+   procedure dropTable (This : in out TransformInfoEntity) is
+      Java_Result : constant Unbounded_String := TransformInfoEntity'Class (This).dropTable;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end dropTable;
+
+end org.allbinary.data.tables.transform.info.TransformInfoEntity_Package;
+
+

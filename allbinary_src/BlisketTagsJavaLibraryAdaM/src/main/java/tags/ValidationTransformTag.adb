@@ -1,0 +1,188 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body tags.ValidationTransformTag_Package is
+
+   procedure Initialize_Fields (This : in out ValidationTransformTag'Class) is
+   begin
+      null;
+      This.logUtil := LogUtil_Package.getInstance;
+      This.xslFile := Null_Unbounded_String;
+      
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out ValidationTransformTag'Class) is
+   begin
+        TransformTag_Package.Initialize (This, ValidatedViewHelperFactory_Package.Create);
+        Initialize_Fields (This);
+        This.logic := True;
+   end Initialize;
+
+   function Create return ValidationTransformTag_Access is
+      This : constant ValidationTransformTag_Access := new ValidationTransformTag;
+   begin
+      Initialize (This.all);
+      return This;
+   end Create;
+
+   procedure setXsl (This : in out ValidationTransformTag; value : Unbounded_String) is
+   begin
+        This.xslFile := value;
+        This.setTemplateFile (This.xslFile);
+   end setXsl;
+
+   procedure setLogic (This : in out ValidationTransformTag; logic : Boolean) is
+   begin
+        This.logic := logic;
+   end setLogic;
+
+   --  throws Exception
+   function isValid (This : in out ValidationTransformTag) return Boolean is
+      helperClass : Ada.Tags.Tag;
+      method : Method_Access;
+      result : Boolean;
+   begin
+        begin
+            helperClass := This.getHelper.all'Tag;
+            method := helperClass.getMethod (This.commonStrings.IS_VALID, null);
+            result := Boolean (method.invoke (This.getHelper, null));
+            return result.booleanValue;
+        exception
+            when e : others =>
+            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.IS_VALID, e);
+            end if;
+            Java_Throw (e);
+        end;
+   end isValid;
+
+   --  throws Exception
+   function validationInfo (This : in out ValidationTransformTag) return Unbounded_String is
+      addressHelperClass : Ada.Tags.Tag;
+      method : Method_Access;
+      result : Unbounded_String;
+   begin
+        begin
+            addressHelperClass := This.getHelper.all'Tag;
+            method := addressHelperClass.getMethod (To_Unbounded_String ("validationInfo"), null);
+            result := Unbounded_String (method.invoke (This.getHelper, null));
+            return result;
+        exception
+            when e : others =>
+            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("validationInfo()"), e);
+            end if;
+            Java_Throw (e);
+        end;
+   end validationInfo;
+
+   --  throws JspTagException
+   function doStartTag (This : in out ValidationTransformTag) return Integer is
+      stringBuffer : StringMaker_Access;
+      request : HttpServletRequest_Access;
+   begin
+        begin
+            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
+                stringBuffer := StringMaker_Package.Create;
+                request := HttpServletRequest_Access (This.pageContext.getRequest);
+                stringBuffer.append (To_Unbounded_String ("ValidationViewTag Start For: "));
+                stringBuffer.append (This.getName);
+                stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "View FIle: "));
+                stringBuffer.append (This.getObjectFile);
+                stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "Request URI: "));
+                stringBuffer.append (request.getRequestURI);
+                This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, This.tagStrings.DO_START_TAG);
+            end if;
+            This.setHelper;
+            if This.isValid then
+                TransformTag (This).doStartTag;
+                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
+                    stringBuffer := StringMaker_Package.Create;
+                    stringBuffer.append (To_Unbounded_String ("View File: "));
+                    stringBuffer.append (This.getObjectFile);
+                    stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "Logic includes body if true="));
+                    stringBuffer.appendboolean (This.logic);
+                    This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, This.tagStrings.DO_START_TAG);
+                end if;
+                if This.logic then
+                    return EVAL_BODY_INCLUDE;
+                else
+                    return SKIP_BODY;
+                end if;
+            else
+                This.pageContext.getOut.print (This.validationInfo);
+                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
+                    stringBuffer := StringMaker_Package.Create;
+                    stringBuffer.append (To_Unbounded_String ("View File: "));
+                    stringBuffer.append (This.getObjectFile);
+                    stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "isValid()=false"));
+                    stringBuffer.append (To_Unbounded_String ("" & ASCII.LF & "Logic skips body if true="));
+                    stringBuffer.appendboolean (This.logic);
+                    This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, This.tagStrings.DO_START_TAG);
+                end if;
+                if This.logic then
+                    return SKIP_BODY;
+                else
+                    return EVAL_BODY_INCLUDE;
+                end if;
+            end if;
+        exception
+            when e : others =>
+            AbResponseHandler_Package.sendJspTagLicensingRedirect (This.pageContext, e);
+            return SKIP_BODY;
+        end;
+   end doStartTag;
+
+   function doEndTag (This : in out ValidationTransformTag) return Integer is
+   begin
+        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.JSPTAG) then
+            This.logUtil.putF (To_Unbounded_String ("Tag Ended"), This'Unchecked_Access, To_Unbounded_String ("doEndTag"));
+        end if;
+        This.logic := True;
+        return TransformTag (This).doEndTag;
+   end doEndTag;
+
+   procedure isValid (This : in out ValidationTransformTag) is
+      Java_Result : constant Boolean := ValidationTransformTag'Class (This).isValid;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end isValid;
+
+   procedure validationInfo (This : in out ValidationTransformTag) is
+      Java_Result : constant Unbounded_String := ValidationTransformTag'Class (This).validationInfo;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end validationInfo;
+
+   procedure doStartTag (This : in out ValidationTransformTag) is
+      Java_Result : constant Integer := ValidationTransformTag'Class (This).doStartTag;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end doStartTag;
+
+   procedure doEndTag (This : in out ValidationTransformTag) is
+      Java_Result : constant Integer := ValidationTransformTag'Class (This).doEndTag;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end doEndTag;
+
+end tags.ValidationTransformTag_Package;
+
+

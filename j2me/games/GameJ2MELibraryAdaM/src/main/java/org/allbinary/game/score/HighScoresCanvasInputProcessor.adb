@@ -1,0 +1,86 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.game.score.HighScoresCanvasInputProcessor_Package is
+
+   procedure Initialize_Fields (This : in out HighScoresCanvasInputProcessor'Class) is
+   begin
+      null;
+      
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out HighScoresCanvasInputProcessor'Class; highScoresCanvas : HighScoresCanvas_Access) is
+   begin
+        PlayerGameInput_Package.Initialize (This, BasicArrayListD_Package.Create, BasicArrayListD_Package.Create, -(1));
+        Initialize_Fields (This);
+        This.highScoresCanvas := highScoresCanvas;
+   end Initialize;
+
+   function Create (highScoresCanvas : HighScoresCanvas_Access) return HighScoresCanvasInputProcessor_Access is
+      This : constant HighScoresCanvasInputProcessor_Access := new HighScoresCanvasInputProcessor;
+   begin
+      Initialize (This.all, highScoresCanvas);
+      return This;
+   end Create;
+
+   procedure open (This : in out HighScoresCanvasInputProcessor) is
+   begin
+        null;
+   end open;
+
+   procedure close (This : in out HighScoresCanvasInputProcessor) is
+   begin
+        null;
+   end close;
+
+   procedure onPressGameKeyEvent (This : in out HighScoresCanvasInputProcessor; gameKeyEvent : GameKeyEvent_Access) is
+   begin
+        PlayerGameInput (This).onPressGameKeyEvent (gameKeyEvent);
+        This.update;
+   end onPressGameKeyEvent;
+
+   procedure onDownGameKeyEvent (This : in out HighScoresCanvasInputProcessor; gameKeyEvent : GameKeyEvent_Access) is
+   begin
+        PlayerGameInput (This).onDownGameKeyEvent (gameKeyEvent);
+        This.update;
+   end onDownGameKeyEvent;
+
+   procedure onUpGameKeyEvent (This : in out HighScoresCanvasInputProcessor; gameKeyEvent : GameKeyEvent_Access) is
+   begin
+        PlayerGameInput (This).onUpGameKeyEvent (gameKeyEvent);
+        This.update;
+   end onUpGameKeyEvent;
+
+   procedure paint (This : in out HighScoresCanvasInputProcessor; graphics : Graphics_Access) is
+   begin
+        null;
+   end paint;
+
+   function getHighScoresCanvas (This : in out HighScoresCanvasInputProcessor) return HighScoresCanvas_Access is
+   begin
+        return This.highScoresCanvas;
+   end getHighScoresCanvas;
+
+   procedure getHighScoresCanvas (This : in out HighScoresCanvasInputProcessor) is
+      Java_Result : constant HighScoresCanvas_Access := HighScoresCanvasInputProcessor'Class (This).getHighScoresCanvas;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getHighScoresCanvas;
+
+end org.allbinary.game.score.HighScoresCanvasInputProcessor_Package;
+
+

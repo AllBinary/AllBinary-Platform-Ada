@@ -1,0 +1,117 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body admin.tags.OrderHistoryTag_Package is
+
+   procedure Initialize_Fields (This : in out OrderHistoryTag'Class) is
+   begin
+      null;
+      This.logUtil := LogUtil_Package.getInstance;
+      This.status := Null_Unbounded_String;
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out OrderHistoryTag'Class) is
+   begin
+      TableTag_Package.Initialize (This);
+      Initialize_Fields (This);
+        This.setTagHelperFactory (OrderHistoryHelperFactory_Package.Create);
+        This.setTagRequestHelperFactory (OrderHistoryRequestHelperFactory_Package.Create);
+   end Initialize;
+
+   function Create return OrderHistoryTag_Access is
+      This : constant OrderHistoryTag_Access := new OrderHistoryTag;
+   begin
+      Initialize (This.all);
+      return This;
+   end Create;
+
+   procedure setStatus (This : in out OrderHistoryTag; value : Unbounded_String) is
+   begin
+        This.status := value;
+   end setStatus;
+
+   --  throws LicensingException
+   function setOrderStatus (This : in out OrderHistoryTag) return Unbounded_String is
+      request : HttpServletRequest_Access;
+      anyType : Java_Object_Access;
+      helperClass : Ada.Tags.Tag;
+      methodParams : Ada_Tags_Tag_Array_Access;
+      method : Method_Access;
+      methodArgs : Java_Object_Access_Array_Access;
+      result : Unbounded_String;
+      error : Unbounded_String;
+   begin
+        begin
+            request := HttpServletRequest_Access (This.pageContext.getRequest);
+            anyType := OrderHistoryRequestHelperFactory_Package.Create.getInstance (This.getPropertiesHashMap, This.pageContext);
+            if (This.status) = (Null_Unbounded_String) then
+                helperClass := anyType.all'Tag;
+                method := helperClass.getMethod (To_Unbounded_String ("setOrderStatus"), null);
+                result := Unbounded_String (method.invoke (anyType, null));
+                return result;
+            else
+                helperClass := anyType.all'Tag;
+                methodParams := new Ada_Tags_Tag_Array'(0 => This.status.all'Tag);
+                method := helperClass.getMethod (To_Unbounded_String ("setOrderStatus"), methodParams);
+                methodArgs := new Java_Object_Access_Array'(0 => This.status);
+                result := Unbounded_String (method.invoke (anyType, methodArgs));
+                return result;
+            end if;
+        exception
+            when e : others =>
+            Java_Throw (e);
+        end;
+   end setOrderStatus;
+
+   --  throws JspTagException
+   function doStartTag (This : in out OrderHistoryTag) return Integer is
+   begin
+        begin
+            if This.isEnabled then
+                if (This.getCommand) /= (null) then
+                    This.getPropertiesHashMap.put (OrderHistoryData_Package.STATUS, This.status);
+                    if (This.getCommand.compareTo (OrderHistoryData_Package.SETSTATUS)) = (0) then
+                        This.setOrderStatus;
+                    else
+                        return TableTag (This).doStartTag;
+                    end if;
+                end if;
+            end if;
+            return SKIP_BODY;
+        exception
+            when e : others =>
+            AbResponseHandler_Package.sendJspTagLicensingRedirect (This.pageContext, e);
+            return SKIP_BODY;
+        end;
+   end doStartTag;
+
+   procedure setOrderStatus (This : in out OrderHistoryTag) is
+      Java_Result : constant Unbounded_String := OrderHistoryTag'Class (This).setOrderStatus;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end setOrderStatus;
+
+   procedure doStartTag (This : in out OrderHistoryTag) is
+      Java_Result : constant Integer := OrderHistoryTag'Class (This).doStartTag;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end doStartTag;
+
+end admin.tags.OrderHistoryTag_Package;
+
+

@@ -1,0 +1,160 @@
+-- 
+-- AllBinary Open License Version 1 
+-- Copyright (c) 2006 AllBinary 
+--  
+-- By agreeing to this license you and any business entity you represent are 
+-- legally bound to the AllBinary Open License Version 1 legal agreement. 
+--  
+-- You may obtain the AllBinary Open License Version 1 legal agreement from 
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository. 
+--  
+-- Created By: Travis Berthelot 
+--   
+--  Generated Code Do Not Modify
+
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Ada.Strings.Maps.Constants;
+with Ada.Characters.Handling;
+with Ada.Exceptions;
+with Ada.Numerics.Long_Elementary_Functions;
+with Ada.Tags;
+with Ada.Text_IO;
+with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.game.input.form.PrimaryWaypointHelper_Package; use org.allbinary.game.input.form.PrimaryWaypointHelper_Package;
+with org.allbinary.game.layer.AdvancedRTSGameLayer_Package; use org.allbinary.game.layer.AdvancedRTSGameLayer_Package;
+with org.allbinary.game.layer.RTSLayerEvent_Package; use org.allbinary.game.layer.RTSLayerEvent_Package;
+with org.allbinary.game.layer.SensorAction_Package; use org.allbinary.game.layer.SensorAction_Package;
+with org.allbinary.game.layer.SensorActionFactory_Package; use org.allbinary.game.layer.SensorActionFactory_Package;
+with org.allbinary.game.layer.WaypointBehaviorBase_Package; use org.allbinary.game.layer.WaypointBehaviorBase_Package;
+with org.allbinary.game.layer.building.BuildingLayer_Package; use org.allbinary.game.layer.building.BuildingLayer_Package;
+with org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package; use org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
+with org.allbinary.game.layer.waypoint.event.WaypointEventListenerInterface_Package; use org.allbinary.game.layer.waypoint.event.WaypointEventListenerInterface_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.logic.communication.log.ForcedLogUtil_Package; use org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.logic.util.event.AllBinaryEventObject_Package; use org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+with org.allbinary.logic.util.event.EventStrings_Package; use org.allbinary.logic.util.event.EventStrings_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+with org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package; use org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package;
+with org.allbinary.string_Id.CommonSeps_Package; use org.allbinary.string_Id.CommonSeps_Package;
+with org.allbinary.time.TimeDelayHelper_Package; use org.allbinary.time.TimeDelayHelper_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
+
+package org.allbinary.game.layer.unit.UnitWaypointBehavior_Package is
+
+   package PrimaryWaypointHelper_Package renames org.allbinary.game.input.form.PrimaryWaypointHelper_Package;
+   package AdvancedRTSGameLayer_Package renames org.allbinary.game.layer.AdvancedRTSGameLayer_Package;
+   package RTSLayerEvent_Package renames org.allbinary.game.layer.RTSLayerEvent_Package;
+   package SensorAction_Package renames org.allbinary.game.layer.SensorAction_Package;
+   package SensorActionFactory_Package renames org.allbinary.game.layer.SensorActionFactory_Package;
+   package WaypointBehaviorBase_Package renames org.allbinary.game.layer.WaypointBehaviorBase_Package;
+   package BuildingLayer_Package renames org.allbinary.game.layer.building.BuildingLayer_Package;
+   package CollidableDestroyableDamageableLayer_Package renames org.allbinary.game.layer.special.CollidableDestroyableDamageableLayer_Package;
+   package WaypointEventListenerInterface_Package renames org.allbinary.game.layer.waypoint.event.WaypointEventListenerInterface_Package;
+   package BasicColorFactory_Package renames org.allbinary.graphics.color.BasicColorFactory_Package;
+   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
+   package ForcedLogUtil_Package renames org.allbinary.logic.communication.log.ForcedLogUtil_Package;
+   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package AllBinaryEventObject_Package renames org.allbinary.logic.util.event.AllBinaryEventObject_Package;
+   package EventStrings_Package renames org.allbinary.logic.util.event.EventStrings_Package;
+   package GeographicMapCellHistory_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellHistory_Package;
+   package GeographicMapCellPosition_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+   package SimpleGeographicMapCellPositionFactory_Package renames org.allbinary.media.graphics.geography.map.SimpleGeographicMapCellPositionFactory_Package;
+   package CommonSeps_Package renames org.allbinary.string_Id.CommonSeps_Package;
+   package TimeDelayHelper_Package renames org.allbinary.time.TimeDelayHelper_Package;
+   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package BasicArrayListUtil_Package renames org.allbinary.util.BasicArrayListUtil_Package;
+
+   type UnitWaypointBehavior is tagged;
+   type UnitWaypointBehavior_Access is access all UnitWaypointBehavior'Class;
+   type UnitWaypointBehavior_Access_Array is array (Natural range <>) of UnitWaypointBehavior_Access;
+   type UnitWaypointBehavior_Access_Array_Access is access all UnitWaypointBehavior_Access_Array;
+
+   type UnitWaypointBehavior is new WaypointBehaviorBase and WaypointEventListenerInterface with record
+      commonSeps : CommonSeps_Access;
+      longWeaponRange : Integer;
+      sensorAction : SensorAction_Access;
+      completeTimeDelayHelper : TimeDelayHelper_Access;
+      currentGeographicMapCellHistoryP : GeographicMapCellHistory_Access;
+      lastPathGeographicMapCellPosition : GeographicMapCellPosition_Access;
+      currentPathGeographicMapCellPosition : GeographicMapCellPosition_Access;
+      FAKE_WAYPOINT_LAYER : CollidableDestroyableDamageableLayer_Access;
+      targetList : BasicArrayList_Access;
+      possibleTargetList : BasicArrayList_Access;
+      associatedAdvancedRTSGameLayer : UnitLayer_Access;
+      moving : Boolean;
+      movingFromStopped : Boolean;
+      waypointPathsListP : BasicArrayList_Access;
+      currentTargetDistance : Integer;
+      currentTargetLayerInterfaceP : CollidableDestroyableDamageableLayer_Access;
+      trackingWaypoint : Boolean;
+      repeatedToLong : TimeDelayHelper_Access;
+   end record;
+   PATHING : Unbounded_String;
+
+   procedure Initialize (This : in out UnitWaypointBehavior'Class; associatedAdvancedRTSGameLayer : UnitLayer_Access; fakeWaypoint : CollidableDestroyableDamageableLayer_Access);
+   function Create (associatedAdvancedRTSGameLayer : UnitLayer_Access; fakeWaypoint : CollidableDestroyableDamageableLayer_Access) return UnitWaypointBehavior_Access;
+   procedure initRange (This : in out UnitWaypointBehavior; weaponRange : Integer);
+   procedure onEvent (This : in out UnitWaypointBehavior; eventObject : AllBinaryEventObject_Access);
+   procedure onWaypointEvent (This : in out UnitWaypointBehavior; event : RTSLayerEvent_Access);
+   procedure addWaypointFromUser (This : in out UnitWaypointBehavior; advancedRTSGameLayer : AdvancedRTSGameLayer_Access);
+   procedure addWaypointFromBuilding (This : in out UnitWaypointBehavior; advancedRTSGameLayer : AdvancedRTSGameLayer_Access);
+   function isWaypointListEmptyOrOnlyTargets (This : in out UnitWaypointBehavior) return Boolean;
+   procedure isWaypointListEmptyOrOnlyTargets (This : in out UnitWaypointBehavior);
+   function insertWaypoint (This : in out UnitWaypointBehavior; index : Integer; rtsLayer : CollidableDestroyableDamageableLayer_Access) return Boolean;
+   procedure insertWaypoint (This : in out UnitWaypointBehavior; index : Integer; rtsLayer : CollidableDestroyableDamageableLayer_Access);
+   procedure move (This : in out UnitWaypointBehavior);
+   procedure setRandomGeographicMapCellHistory (This : in out UnitWaypointBehavior; pathsList : BasicArrayList_Access);
+   procedure setGeographicMapCellHistoryPath (This : in out UnitWaypointBehavior; geographicMapCellPositionBasicArrayList : BasicArrayList_Access);
+   function canInsertWaypoint (This : in out UnitWaypointBehavior; index : Integer; rtsLayer : CollidableDestroyableDamageableLayer_Access) return Boolean;
+   procedure canInsertWaypoint (This : in out UnitWaypointBehavior; index : Integer; rtsLayer : CollidableDestroyableDamageableLayer_Access);
+   procedure addBuildingChase (This : in out UnitWaypointBehavior; allbinaryLayer : AllBinaryLayer_Access; cellPosition : GeographicMapCellPosition_Access);
+   procedure moveAwayFromBuilding (This : in out UnitWaypointBehavior; buildingLayer : BuildingLayer_Access);
+   function needToMove (This : in out UnitWaypointBehavior) return Boolean;
+   procedure needToMove (This : in out UnitWaypointBehavior);
+   function getMovementLogicAsString (This : in out UnitWaypointBehavior) return Unbounded_String;
+   procedure getMovementLogicAsString (This : in out UnitWaypointBehavior);
+   function isMovingFromStopped (This : in out UnitWaypointBehavior) return Boolean;
+   procedure isMovingFromStopped (This : in out UnitWaypointBehavior);
+   procedure setMovingFromStopped (This : in out UnitWaypointBehavior; movingFromStopped : Boolean);
+   procedure setWaypointPathsList (This : in out UnitWaypointBehavior; waypointPathsList : BasicArrayList_Access);
+   function getWaypointPathsList (This : in out UnitWaypointBehavior) return BasicArrayList_Access;
+   procedure getWaypointPathsList (This : in out UnitWaypointBehavior);
+   function isMoving (This : in out UnitWaypointBehavior) return Boolean;
+   procedure isMoving (This : in out UnitWaypointBehavior);
+   procedure setMoving (This : in out UnitWaypointBehavior; moving : Boolean);
+   function isTrackingWaypoint (This : in out UnitWaypointBehavior) return Boolean;
+   procedure isTrackingWaypoint (This : in out UnitWaypointBehavior);
+   function getPossibleTargetList (This : in out UnitWaypointBehavior) return BasicArrayList_Access;
+   procedure getPossibleTargetList (This : in out UnitWaypointBehavior);
+   procedure setLastPathGeographicMapCellPosition (This : in out UnitWaypointBehavior; lastPathGeographicMapCellPosition : GeographicMapCellPosition_Access);
+   function getLastPathGeographicMapCellPosition (This : in out UnitWaypointBehavior) return GeographicMapCellPosition_Access;
+   procedure getLastPathGeographicMapCellPosition (This : in out UnitWaypointBehavior);
+   procedure setCurrentPathGeographicMapCellPosition (This : in out UnitWaypointBehavior; currentPathGeographicMapCellPosition : GeographicMapCellPosition_Access);
+   function getCurrentPathGeographicMapCellPosition (This : in out UnitWaypointBehavior) return GeographicMapCellPosition_Access;
+   procedure getCurrentPathGeographicMapCellPosition (This : in out UnitWaypointBehavior);
+   procedure setSensorAction (This : in out UnitWaypointBehavior; sensorAction : SensorAction_Access);
+   function getSensorAction (This : in out UnitWaypointBehavior) return SensorAction_Access;
+   procedure getSensorAction (This : in out UnitWaypointBehavior);
+   procedure setCurrentTargetLayerInterface (This : in out UnitWaypointBehavior; currentTargetLayerInterface : CollidableDestroyableDamageableLayer_Access);
+   function getCurrentTargetLayerInterface (This : in out UnitWaypointBehavior) return CollidableDestroyableDamageableLayer_Access;
+   procedure getCurrentTargetLayerInterface (This : in out UnitWaypointBehavior);
+   procedure setCurrentTargetDistance (This : in out UnitWaypointBehavior; currentTargetDistance : Integer);
+   function getCurrentTargetDistance (This : in out UnitWaypointBehavior) return Integer;
+   procedure getCurrentTargetDistance (This : in out UnitWaypointBehavior);
+   function getCompleteTimeDelayHelper (This : in out UnitWaypointBehavior) return TimeDelayHelper_Access;
+   procedure getCompleteTimeDelayHelper (This : in out UnitWaypointBehavior);
+   function getCurrentGeographicMapCellHistory (This : in out UnitWaypointBehavior) return GeographicMapCellHistory_Access;
+   procedure getCurrentGeographicMapCellHistory (This : in out UnitWaypointBehavior);
+   procedure setTrackingWaypoint (This : in out UnitWaypointBehavior; trackingWaypoint : Boolean);
+
+end org.allbinary.game.layer.unit.UnitWaypointBehavior_Package;
+
+

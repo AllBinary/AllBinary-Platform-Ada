@@ -1,0 +1,228 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.game.input.mapping.PersistentInputMapping_Package is
+
+   procedure Initialize_Fields (This : in out PersistentInputMapping'Class) is
+   begin
+      null;
+      This.logUtil := LogUtil_Package.getInstance;
+      This.commonStrings := CommonStrings_Package.getInstance;
+      This.enumerationUtil := EnumerationUtil_Package.getInstance;
+      This.inputMapping := InputToGameKeyMapping_Package.Create;
+      This.inputMappingEventListenerInterface := NullInputMappingEventListener_Package.NULL_INPUT_MAPPING_EVENT_LISTENER;
+      
+      This.inputMappingEvent := InputMappingEvent_Package.Create (This'Unchecked_Access);
+   end Initialize_Fields;
+
+
+   function getNullInstance return PersistentInputMapping_Access is
+   begin
+        if (PersistentInputMapping_Package.instance) = (NullUtil_Package.getInstance.NULL_OBJECT) then
+            PersistentInputMapping_Package.instance := PersistentInputMapping_Package.Create (GamePersistanceStrings_Package.getInstance.SAVED_INPUT_CONFIGURATION_RECORD_ID);
+        end if;
+        return PersistentInputMapping_Access (PersistentInputMapping_Package.instance);
+   end getNullInstance;
+
+   procedure Initialize (This : in out PersistentInputMapping'Class; name : Unbounded_String) is
+   begin
+      Initialize_Fields (This);
+        This.inputPersistance := InputPersistance_Package.Create (name);
+   end Initialize;
+
+   function Create (name : Unbounded_String) return PersistentInputMapping_Access is
+      This : constant PersistentInputMapping_Access := new PersistentInputMapping;
+   begin
+      Initialize (This.all, name);
+      return This;
+   end Create;
+
+   function getTotalMapped (This : in out PersistentInputMapping) return Integer is
+   begin
+        return This.getInputMapping.getHashtable.size;
+   end getTotalMapped;
+
+   function isDefaultNew (This : in out PersistentInputMapping) return Boolean is
+   begin
+        return False;
+   end isDefaultNew;
+
+   function getDefault (This : in out PersistentInputMapping) return InputToGameKeyMapping_Access is
+   begin
+        return InputToGameKeyMapping_Package.getNullInstance;
+   end getDefault;
+
+   --  throws Exception
+   procedure setDefault (This : in out PersistentInputMapping; abeClientInformation : AbeClientInformationInterface_Access) is
+   begin
+        This.getInputMapping.removeAll;
+        This.getInputMapping.addMapping (This.getDefault);
+        This.save (abeClientInformation);
+   end setDefault;
+
+   --  throws Exception
+   procedure update (This : in out PersistentInputMapping; abeClientInformation : AbeClientInformationInterface_Access) is
+   begin
+        This.inputPersistance.deleteAll (abeClientInformation);
+        This.save (abeClientInformation);
+   end update;
+
+   --  throws Exception
+   procedure save (This : in out PersistentInputMapping; abeClientInformation : AbeClientInformationInterface_Access) is
+   begin
+        This.inputPersistance.save (abeClientInformation, This.getInputMapping.getHashtable);
+        This.inputMappingEvent.setInputToGameKeyMapping (This.getInputMapping);
+        if (This.getInputMappingEventListenerInterface) /= (null) then
+            This.getInputMappingEventListenerInterface.onInputMappingEvent (This.inputMappingEvent);
+        end if;
+   end save;
+
+   --  throws Exception
+   procedure init (This : in out PersistentInputMapping; abeClientInformation : AbeClientInformationInterface_Access) is
+      list : BasicArrayList_Access;
+      totalMappedTo : Integer;
+      size : Integer;
+      hashtable : ABHashtable_Access;
+      enumeration : Enumeration_Access;
+      mappedToInput : Input_Access;
+      gameActionInput : Input_Access;
+      index : Integer;
+      stringBuffer : StringMaker_Access;
+   begin
+        This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.INIT);
+        begin
+            This.inputPersistance.loadAll (abeClientInformation);
+        exception
+            when e : others =>
+            PreLogUtil_Package.putOE (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.INIT, e);
+            This.inputPersistance.deleteRecoreStore (abeClientInformation);
+            This.setDefault (abeClientInformation);
+            This.inputPersistance.loadAll (abeClientInformation);
+        end;
+        list := This.inputPersistance.getList;
+        totalMappedTo := 0;
+        size := list.size;
+        hashtable := null;
+        enumeration := null;
+        mappedToInput := null;
+        gameActionInput := null;
+        for index in 0 .. (size) - 1 loop
+            hashtable := ABHashtable_Access (list.objectArray (index));
+            enumeration := hashtable.keys;
+            while This.enumerationUtil.hasMoreElements (enumeration) loop
+                mappedToInput := Input_Access (This.enumerationUtil.nextElement (enumeration));
+                gameActionInput := Input_Access (hashtable.get (mappedToInput));
+                totalMappedTo := totalMappedTo + 1;
+                This.getInputMapping.add (gameActionInput, mappedToInput);
+            end loop;
+        end loop;
+        stringBuffer := StringMaker_Package.Create;
+        stringBuffer.append (To_Unbounded_String ("End - Total Loaded Keys Mapped: "));
+        stringBuffer.appendint (This.getTotalMapped);
+        stringBuffer.append (To_Unbounded_String (" to: "));
+        stringBuffer.appendint (totalMappedTo);
+        This.logUtil.putF (stringBuffer.toString, This'Unchecked_Access, This.commonStrings.INIT);
+   end init;
+
+   procedure setInputMappingEventListenerInterface (This : in out PersistentInputMapping; inputMappingEventListenerInterface : InputMappingEventListenerInterface_Access) is
+   begin
+        This.inputMappingEventListenerInterface := inputMappingEventListenerInterface;
+   end setInputMappingEventListenerInterface;
+
+   function getInputMappingEventListenerInterface (This : in out PersistentInputMapping) return InputMappingEventListenerInterface_Access is
+   begin
+        return This.inputMappingEventListenerInterface;
+   end getInputMappingEventListenerInterface;
+
+   function getInputMapping (This : in out PersistentInputMapping) return InputToGameKeyMapping_Access is
+   begin
+        return This.inputMapping;
+   end getInputMapping;
+
+   --  throws Exception
+   function isDelete (This : in out PersistentInputMapping; input : Input_Access) return Boolean is
+   begin
+        Java_Throw (Java_New_Exception ("Exception", This.commonStrings.NOT_IMPLEMENTED));
+   end isDelete;
+
+   --  throws Exception
+   function isSystemInput (This : in out PersistentInputMapping; input : Input_Access) return Boolean is
+   begin
+        Java_Throw (Java_New_Exception ("Exception", This.commonStrings.NOT_IMPLEMENTED));
+   end isSystemInput;
+
+   procedure getNullInstance is
+      Java_Result : constant PersistentInputMapping_Access := getNullInstance;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getNullInstance;
+
+   procedure getTotalMapped (This : in out PersistentInputMapping) is
+      Java_Result : constant Integer := PersistentInputMapping'Class (This).getTotalMapped;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getTotalMapped;
+
+   procedure isDefaultNew (This : in out PersistentInputMapping) is
+      Java_Result : constant Boolean := PersistentInputMapping'Class (This).isDefaultNew;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end isDefaultNew;
+
+   procedure getDefault (This : in out PersistentInputMapping) is
+      Java_Result : constant InputToGameKeyMapping_Access := PersistentInputMapping'Class (This).getDefault;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getDefault;
+
+   procedure getInputMappingEventListenerInterface (This : in out PersistentInputMapping) is
+      Java_Result : constant InputMappingEventListenerInterface_Access := PersistentInputMapping'Class (This).getInputMappingEventListenerInterface;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getInputMappingEventListenerInterface;
+
+   procedure getInputMapping (This : in out PersistentInputMapping) is
+      Java_Result : constant InputToGameKeyMapping_Access := PersistentInputMapping'Class (This).getInputMapping;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getInputMapping;
+
+   procedure isDelete (This : in out PersistentInputMapping; input : Input_Access) is
+      Java_Result : constant Boolean := PersistentInputMapping'Class (This).isDelete (input);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end isDelete;
+
+   procedure isSystemInput (This : in out PersistentInputMapping; input : Input_Access) is
+      Java_Result : constant Boolean := PersistentInputMapping'Class (This).isSystemInput (input);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end isSystemInput;
+
+begin
+   null;
+   instance := NullUtil_Package.getInstance.NULL_OBJECT;
+
+end org.allbinary.game.input.mapping.PersistentInputMapping_Package;
+
+

@@ -1,0 +1,72 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Ada.Strings.Maps.Constants;
+with Ada.Characters.Handling;
+with Ada.Exceptions;
+with Ada.Numerics.Long_Elementary_Functions;
+with Ada.Tags;
+with Ada.Text_IO;
+with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package; use org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
+with org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package; use org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+with org.allbinary.business.user.address.ShippingAddressData_Package; use org.allbinary.business.user.address.ShippingAddressData_Package;
+with org.allbinary.business.user.address.StreetAddress_Package; use org.allbinary.business.user.address.StreetAddress_Package;
+with org.allbinary.business.user.commerce.money.tax.TaxFactory_Package; use org.allbinary.business.user.commerce.money.tax.TaxFactory_Package;
+with org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntity_Package; use org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntity_Package;
+with org.allbinary.logic.control.validate.ValidationComponentInterface_Package; use org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+with views.generic_Id.address.shipping.ShippingAddressView_Package; use views.generic_Id.address.shipping.ShippingAddressView_Package;
+
+package views.generic_Id.address.shipping.UpdateTaxValidationView_Package is
+
+   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package StoreFrontFactory_Package renames org.allbinary.business.context.modules.storefront.StoreFrontFactory_Package;
+   package StoreFrontInterface_Package renames org.allbinary.business.context.modules.storefront.StoreFrontInterface_Package;
+   package ShippingAddressData_Package renames org.allbinary.business.user.address.ShippingAddressData_Package;
+   package StreetAddress_Package renames org.allbinary.business.user.address.StreetAddress_Package;
+   package TaxFactory_Package renames org.allbinary.business.user.commerce.money.tax.TaxFactory_Package;
+   package ShippingAddressesEntity_Package renames org.allbinary.data.tables.user.address.shipping.ShippingAddressesEntity_Package;
+   package ValidationComponentInterface_Package renames org.allbinary.logic.control.validate.ValidationComponentInterface_Package;
+   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package Document_Package renames org.w3c.dom.Document_Package;
+   package Node_Package renames org.w3c.dom.Node_Package;
+
+   type UpdateTaxValidationView is tagged;
+   type UpdateTaxValidationView_Access is access all UpdateTaxValidationView'Class;
+   type UpdateTaxValidationView_Access_Array is array (Natural range <>) of UpdateTaxValidationView_Access;
+   type UpdateTaxValidationView_Access_Array_Access is access all UpdateTaxValidationView_Access_Array;
+
+   type UpdateTaxValidationView is new ShippingAddressView and ValidationComponentInterface with null record;
+
+   procedure Initialize (This : in out UpdateTaxValidationView'Class; transformInfoInterface : TransformInfoInterface_Access);
+   function Create (transformInfoInterface : TransformInfoInterface_Access) return UpdateTaxValidationView_Access;
+   function isValid (This : in out UpdateTaxValidationView) return Boolean;
+   procedure isValid (This : in out UpdateTaxValidationView);
+   function validationInfo (This : in out UpdateTaxValidationView) return Unbounded_String;
+   procedure validationInfo (This : in out UpdateTaxValidationView);
+   function toValidationInfoDoc (This : in out UpdateTaxValidationView) return Document_Access;
+   procedure toValidationInfoDoc (This : in out UpdateTaxValidationView);
+   function toValidationInfoNode (This : in out UpdateTaxValidationView; document : Document_Access) return Node_Access;
+   procedure toValidationInfoNode (This : in out UpdateTaxValidationView; document : Document_Access);
+
+end views.generic_Id.address.shipping.UpdateTaxValidationView_Package;
+
+

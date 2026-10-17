@@ -1,0 +1,58 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.graphics.j2me.workarea.tools.GraphicItemBuilder_Package is
+
+   procedure Initialize_Fields (This : in out GraphicItemBuilder'Class) is
+   begin
+      null;
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out GraphicItemBuilder'Class) is
+   begin
+      Initialize_Fields (This);
+        null;
+   end Initialize;
+
+   function Create return GraphicItemBuilder_Access is
+      This : constant GraphicItemBuilder_Access := new GraphicItemBuilder;
+   begin
+      Initialize (This.all);
+      return This;
+   end Create;
+
+   --  throws Exception
+   function getInstance (node : Node_Access) return GraphicItemInterface_Access is
+      graphicItemName : Unbounded_String;
+   begin
+        graphicItemName := node.getNodeName;
+        if (graphicItemName.compareTo (PointsDomUtil_Package.getInstance.LINES)) = (0) then
+            return LinesGraphicItem_Package.Create (node);
+        else
+            Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Graphic Item Does Not Exist: ") & graphicItemName));
+        end if;
+   end getInstance;
+
+   procedure getInstance (node : Node_Access) is
+      Java_Result : constant GraphicItemInterface_Access := getInstance (node);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getInstance;
+
+end org.allbinary.graphics.j2me.workarea.tools.GraphicItemBuilder_Package;
+
+

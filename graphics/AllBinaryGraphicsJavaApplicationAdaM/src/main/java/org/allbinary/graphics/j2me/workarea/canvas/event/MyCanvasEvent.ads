@@ -1,0 +1,51 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Ada.Strings.Maps.Constants;
+with Ada.Characters.Handling;
+with Ada.Exceptions;
+with Ada.Numerics.Long_Elementary_Functions;
+with Ada.Tags;
+with Ada.Text_IO;
+with AllBinary_Java; use AllBinary_Java;
+--  with javax.swing.tree.MutableTreeNode_Package; use javax.swing.tree.MutableTreeNode_Package;
+with org.allbinary.graphics.j2me.workarea.canvas.event.EventObject_Package; use org.allbinary.graphics.j2me.workarea.canvas.event.EventObject_Package;
+
+package org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package is
+
+
+   type MyCanvasEvent is tagged;
+   type MyCanvasEvent_Access is access all MyCanvasEvent'Class;
+   type MyCanvasEvent_Access_Array is array (Natural range <>) of MyCanvasEvent_Access;
+   type MyCanvasEvent_Access_Array_Access is access all MyCanvasEvent_Access_Array;
+
+   type MyCanvasEvent is new EventObject with null record;
+
+   procedure Initialize (This : in out MyCanvasEvent'Class; source : Java_Object_Access);
+   function Create (source : Java_Object_Access) return MyCanvasEvent_Access;
+   function getSource (This : in out MyCanvasEvent) return Java_Object_Access;
+   procedure getSource (This : in out MyCanvasEvent);
+   function toString (This : in out MyCanvasEvent) return Unbounded_String;
+   procedure toString (This : in out MyCanvasEvent);
+   function getCommand (This : in out MyCanvasEvent) return Unbounded_String;
+   procedure getCommand (This : in out MyCanvasEvent);
+   function getTreeNode (This : in out MyCanvasEvent) return MutableTreeNode_Access;
+   procedure getTreeNode (This : in out MyCanvasEvent);
+   function getAngle (This : in out MyCanvasEvent) return Long_Float;
+   procedure getAngle (This : in out MyCanvasEvent);
+
+end org.allbinary.graphics.j2me.workarea.canvas.event.MyCanvasEvent_Package;
+
+

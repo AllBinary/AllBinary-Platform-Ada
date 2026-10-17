@@ -1,0 +1,50 @@
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.KotlinUtil_Package is
+
+   procedure Initialize_Fields (This : in out KotlinUtil'Class) is
+   begin
+      null;
+   end Initialize_Fields;
+
+   procedure Initialize (This : in out KotlinUtil'Class) is
+   begin
+      Initialize_Fields (This);
+   end Initialize;
+
+   function Create return KotlinUtil_Access is
+      This : constant KotlinUtil_Access := new KotlinUtil;
+   begin
+      Initialize (This.all);
+      return This;
+   end Create;
+
+
+   function isKotlin return Boolean is
+   begin
+        return False;
+   end isKotlin;
+
+   function getShortName return Unbounded_String is
+   begin
+        return StringUtil_Package.getInstance.EMPTY_STRING;
+   end getShortName;
+
+   procedure isKotlin is
+      Java_Result : constant Boolean := isKotlin;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end isKotlin;
+
+   procedure getShortName is
+      Java_Result : constant Unbounded_String := getShortName;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getShortName;
+
+end org.allbinary.KotlinUtil_Package;
+
+

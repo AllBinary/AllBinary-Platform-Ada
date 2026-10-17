@@ -1,0 +1,62 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Ada.Strings.Maps.Constants;
+with Ada.Characters.Handling;
+with Ada.Exceptions;
+with Ada.Numerics.Long_Elementary_Functions;
+with Ada.Tags;
+with Ada.Text_IO;
+with AllBinary_Java; use AllBinary_Java;
+--  with java.util.HashMap_Package; use java.util.HashMap_Package;
+--  with javax.servlet.http.HttpServletRequest_Package; use javax.servlet.http.HttpServletRequest_Package;
+--  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.system.loader.AbeFactory_Package; use org.allbinary.logic.system.loader.AbeFactory_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+
+package admin.taghelpers.HelperFactory_Package is
+
+   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbeFactory_Package renames org.allbinary.logic.system.loader.AbeFactory_Package;
+   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package LicensingException_Package renames org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+
+   type HelperFactory is tagged;
+   type HelperFactory_Access is access all HelperFactory'Class;
+   type HelperFactory_Access_Array is array (Natural range <>) of HelperFactory_Access;
+   type HelperFactory_Access_Array_Access is access all HelperFactory_Access_Array;
+
+   type HelperFactory is new Java_Object with record
+      logUtil : LogUtil_Access;
+   end record;
+
+   procedure Initialize (This : in out HelperFactory'Class);
+   function Create return HelperFactory_Access;
+   function getInstance (abeClientInformation : AbeClientInformationInterface_Access; factoryName : Unbounded_String; className : Unbounded_String; hashMap : HashMap_Access; httpServletRequest : HttpServletRequest_Access) return Java_Object_Access;
+   procedure getInstance (abeClientInformation : AbeClientInformationInterface_Access; factoryName : Unbounded_String; className : Unbounded_String; hashMap : HashMap_Access; httpServletRequest : HttpServletRequest_Access);
+   function getInstance (abeClientInformation : AbeClientInformationInterface_Access; factoryName : Unbounded_String; className : Unbounded_String; hashMap : HashMap_Access; pageContext : PageContext_Access) return Java_Object_Access;
+   procedure getInstance (abeClientInformation : AbeClientInformationInterface_Access; factoryName : Unbounded_String; className : Unbounded_String; hashMap : HashMap_Access; pageContext : PageContext_Access);
+   function getInstance (abeClientInformation : AbeClientInformationInterface_Access; factoryName : Unbounded_String; className : Unbounded_String; hashMap : HashMap_Access; specialhashMap : HashMap_Access; pageContext : PageContext_Access) return Java_Object_Access;
+   procedure getInstance (abeClientInformation : AbeClientInformationInterface_Access; factoryName : Unbounded_String; className : Unbounded_String; hashMap : HashMap_Access; specialhashMap : HashMap_Access; pageContext : PageContext_Access);
+   function getInstance (abeClientInformation : AbeClientInformationInterface_Access; factoryName : Unbounded_String; className : Unbounded_String) return Java_Object_Access;
+   procedure getInstance (abeClientInformation : AbeClientInformationInterface_Access; factoryName : Unbounded_String; className : Unbounded_String);
+
+end admin.taghelpers.HelperFactory_Package;
+
+

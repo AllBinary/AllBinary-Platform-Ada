@@ -1,0 +1,48 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Ada.Strings.Maps.Constants;
+with Ada.Characters.Handling;
+with Ada.Exceptions;
+with Ada.Numerics.Long_Elementary_Functions;
+with Ada.Tags;
+with Ada.Text_IO;
+with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.graphics.CellPositionFactory_Package; use org.allbinary.graphics.CellPositionFactory_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTracking_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTracking_Package;
+
+package org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventUtil_Package is
+
+   package CellPositionFactory_Package renames org.allbinary.graphics.CellPositionFactory_Package;
+   package GeographicMapCellPositionTracking_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellPositionTracking_Package;
+
+   type GeographicMapCellPositionEventUtil is tagged;
+   type GeographicMapCellPositionEventUtil_Access is access all GeographicMapCellPositionEventUtil'Class;
+   type GeographicMapCellPositionEventUtil_Access_Array is array (Natural range <>) of GeographicMapCellPositionEventUtil_Access;
+   type GeographicMapCellPositionEventUtil_Access_Array_Access is access all GeographicMapCellPositionEventUtil_Access_Array;
+
+   type GeographicMapCellPositionEventUtil is new Java_Object with record
+      geographicMapCellPositionEvent : GeographicMapCellPositionEvent_Access;
+      geographicMapCellPositionEventHandler : GeographicMapCellPositionEventHandler_Access;
+   end record;
+
+   procedure Initialize (This : in out GeographicMapCellPositionEventUtil'Class; anyType : Java_Object_Access);
+   function Create (anyType : Java_Object_Access) return GeographicMapCellPositionEventUtil_Access;
+   procedure update (This : in out GeographicMapCellPositionEventUtil; geographicMapCellPositionTracking : GeographicMapCellPositionTracking_Access);
+   procedure remove (This : in out GeographicMapCellPositionEventUtil; geographicMapCellPositionTracking : GeographicMapCellPositionTracking_Access);
+
+end org.allbinary.media.graphics.geography.map.event.GeographicMapCellPositionEventUtil_Package;
+
+

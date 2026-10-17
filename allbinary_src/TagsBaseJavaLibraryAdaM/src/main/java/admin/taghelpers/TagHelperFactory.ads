@@ -1,0 +1,50 @@
+-- 
+-- AllBinary Open License Version 1 
+-- Copyright (c) 2025 AllBinary 
+--  
+-- By agreeing to this license you and any business entity you represent are 
+-- legally bound to the AllBinary Open License Version 1 legal agreement. 
+--  
+-- You may obtain the AllBinary Open License Version 1 legal agreement from 
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository. 
+--  
+-- Created By: Travis Berthelot 
+--   
+--  Generated Code Do Not Modify
+
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Ada.Strings.Maps.Constants;
+with Ada.Characters.Handling;
+with Ada.Exceptions;
+with Ada.Numerics.Long_Elementary_Functions;
+with Ada.Tags;
+with Ada.Text_IO;
+with AllBinary_Java; use AllBinary_Java;
+--  with java.util.HashMap_Package; use java.util.HashMap_Package;
+--  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
+with org.allbinary.logic.system.security.licensing.LicensingException_Package; use org.allbinary.logic.system.security.licensing.LicensingException_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with admin.taghelpers.TagHelperFactoryInterface_Package; use admin.taghelpers.TagHelperFactoryInterface_Package;
+
+package admin.taghelpers.TagHelperFactory_Package is
+
+   package LicensingException_Package renames org.allbinary.logic.system.security.licensing.LicensingException_Package;
+   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+
+   type TagHelperFactory is tagged;
+   type TagHelperFactory_Access is access all TagHelperFactory'Class;
+   type TagHelperFactory_Access_Array is array (Natural range <>) of TagHelperFactory_Access;
+   type TagHelperFactory_Access_Array_Access is access all TagHelperFactory_Access_Array;
+
+   type TagHelperFactory is new TagHelperFactoryInterface with record
+      commonStrings : CommonStrings_Access;
+   end record;
+
+   procedure Initialize (This : in out TagHelperFactory'Class);
+   function Create return TagHelperFactory_Access;
+   function getInstance (This : in out TagHelperFactory; hashMap : HashMap_Access; pageContext : PageContext_Access) return Java_Object_Access;
+   procedure getInstance (This : in out TagHelperFactory; hashMap : HashMap_Access; pageContext : PageContext_Access);
+
+end admin.taghelpers.TagHelperFactory_Package;
+
+

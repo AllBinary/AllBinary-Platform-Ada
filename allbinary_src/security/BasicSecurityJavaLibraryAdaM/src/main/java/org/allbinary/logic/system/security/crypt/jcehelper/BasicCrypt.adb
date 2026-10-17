@@ -1,0 +1,106 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.logic.system.security.crypt.jcehelper.BasicCrypt_Package is
+
+   procedure Initialize_Fields (This : in out BasicCrypt'Class) is
+   begin
+      null;
+      This.byteUtil := ByteUtil_Package.getInstance;
+      
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out BasicCrypt'Class; keyAsString : Unbounded_String) is
+      key : Short_Short_Integer_Array_Access;
+      commonStrings : CommonStrings_Access;
+   begin
+      Initialize_Fields (This);
+        key := NullUtil_Package.getInstance.NULL_BYTE_ARRAY;
+        begin
+            key := TsUtil_Package.getInstance.getByteArray (keyAsString);
+        exception
+            when e : others =>
+            commonStrings := CommonStrings_Package.getInstance;
+            PreLogUtil_Package.putOE (commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("AbCrypt(alg,key)"), e);
+        end;
+        This.key := key;
+   end Initialize;
+
+   function Create (keyAsString : Unbounded_String) return BasicCrypt_Access is
+      This : constant BasicCrypt_Access := new BasicCrypt;
+   begin
+      Initialize (This.all, keyAsString);
+      return This;
+   end Create;
+
+   function encrypt (This : in out BasicCrypt; array_Id : Short_Short_Integer_Array_Access) return Short_Short_Integer_Array_Access is
+   begin
+        begin
+            return This.mutilate (array_Id);
+        exception
+            when e : others =>
+            PreLogUtil_Package.putOE (To_Unbounded_String ("Encrypt Failed"), This'Unchecked_Access, To_Unbounded_String ("encrypt"), e);
+            return NullUtil_Package.getInstance.NULL_BYTE_ARRAY;
+        end;
+   end encrypt;
+
+   function decrypt (This : in out BasicCrypt; array_Id : Short_Short_Integer_Array_Access) return Short_Short_Integer_Array_Access is
+   begin
+        begin
+            return This.mutilate (array_Id);
+        exception
+            when e : others =>
+            PreLogUtil_Package.putOE (To_Unbounded_String ("decrypt Failed"), This'Unchecked_Access, To_Unbounded_String ("decrypt"), e);
+            return NullUtil_Package.getInstance.NULL_BYTE_ARRAY;
+        end;
+   end decrypt;
+
+   function mutilate (This : in out BasicCrypt; array_Id : Short_Short_Integer_Array_Access) return Short_Short_Integer_Array_Access is
+      value : Short_Short_Integer;
+      index : Integer;
+   begin
+        value := 0;
+        for index in 0 .. (This.key'Length) - 1 loop
+            value := This.key (index);
+            array_Id := This.byteUtil.xor_Id (array_Id, value);
+        end loop;
+        return array_Id;
+   end mutilate;
+
+   procedure encrypt (This : in out BasicCrypt; array_Id : Short_Short_Integer_Array_Access) is
+      Java_Result : constant Short_Short_Integer_Array_Access := BasicCrypt'Class (This).encrypt (array_Id);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end encrypt;
+
+   procedure decrypt (This : in out BasicCrypt; array_Id : Short_Short_Integer_Array_Access) is
+      Java_Result : constant Short_Short_Integer_Array_Access := BasicCrypt'Class (This).decrypt (array_Id);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end decrypt;
+
+   procedure mutilate (This : in out BasicCrypt; array_Id : Short_Short_Integer_Array_Access) is
+      Java_Result : constant Short_Short_Integer_Array_Access := BasicCrypt'Class (This).mutilate (array_Id);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end mutilate;
+
+end org.allbinary.logic.system.security.crypt.jcehelper.BasicCrypt_Package;
+
+

@@ -1,0 +1,69 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.animation.caption.CaptionAnimation_Package is
+
+   procedure Initialize_Fields (This : in out CaptionAnimation'Class) is
+   begin
+      null;
+      
+      
+      
+      
+      
+      
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out CaptionAnimation'Class; animationInterface : Animation_Access; overlayAnimationInterface : Animation_Access; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer) is
+   begin
+      Animation_Package.Initialize (This);
+      Initialize_Fields (This);
+        This.animationInterface := animationInterface;
+        This.overlayAnimationInterface := overlayAnimationInterface;
+        This.captionDx := captionDx;
+        This.captionDy := captionDy;
+        This.dx := dx;
+        This.dy := dy;
+   end Initialize;
+
+   function Create (animationInterface : Animation_Access; overlayAnimationInterface : Animation_Access; captionDx : Integer; captionDy : Integer; dx : Integer; dy : Integer) return CaptionAnimation_Access is
+      This : constant CaptionAnimation_Access := new CaptionAnimation;
+   begin
+      Initialize (This.all, animationInterface, overlayAnimationInterface, captionDx, captionDy, dx, dy);
+      return This;
+   end Create;
+
+   --  throws Exception
+   procedure nextFrame (This : in out CaptionAnimation) is
+   begin
+        null;
+   end nextFrame;
+
+   procedure paintXY (This : in out CaptionAnimation; graphics : Graphics_Access; x : Integer; y : Integer) is
+   begin
+        This.animationInterface.paintXY (graphics, (x) + (This.captionDx), (y) + (This.captionDy));
+        This.overlayAnimationInterface.paintXY (graphics, ((x) + (This.captionDx)) + (This.dx), ((y) + (This.captionDy)) + (This.dy));
+   end paintXY;
+
+   procedure paintThreedXYZ (This : in out CaptionAnimation; graphics : Graphics_Access; x : Integer; y : Integer; z : Integer) is
+   begin
+        This.animationInterface.paintThreedXYZ (graphics, (x) + (This.captionDx), (y) + (This.captionDy), z);
+        This.overlayAnimationInterface.paintThreedXYZ (graphics, ((x) + (This.captionDx)) + (This.dx), ((y) + (This.captionDy)) + (This.dy), z);
+   end paintThreedXYZ;
+
+end org.allbinary.animation.caption.CaptionAnimation_Package;
+
+

@@ -1,0 +1,98 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.servlet.MagicalImageServlet_Package is
+
+   procedure Initialize_Fields (This : in out MagicalImageServlet'Class) is
+   begin
+      null;
+      This.logUtil := LogUtil_Package.getInstance;
+      This.commonStrings := CommonStrings_Package.getInstance;
+   end Initialize_Fields;
+
+   procedure Initialize (This : in out MagicalImageServlet'Class) is
+   begin
+      HttpServlet_Package.Initialize (This);
+      Initialize_Fields (This);
+   end Initialize;
+
+   function Create return MagicalImageServlet_Access is
+      This : constant MagicalImageServlet_Access := new MagicalImageServlet;
+   begin
+      Initialize (This.all);
+      return This;
+   end Create;
+
+
+   --  throws ServletException, IOException
+   procedure processRequest (This : in out MagicalImageServlet; request : HttpServletRequest_Access; response : HttpServletResponse_Access) is
+      inputStream : InputStream_Access;
+      requestURI : Unbounded_String;
+      file : AbFile_Access;
+      outputStream : ByteArrayOutputStream_Access;
+      byteArray : Short_Short_Integer_Array_Access;
+   begin
+        inputStream := null;
+        begin
+            BlisketServletUtil_Package.getInstance.init (request);
+            requestURI := request.getRequestURI;
+            file := AbFile_Package.createAbFile (Java_Image (URLGLOBALS.getWebappPath) & requestURI);
+            inputStream := CloudStreamUtil_Package.getInstance.getFileAnyWhere (file);
+            outputStream := ByteArrayOutputStream_Package.Create (8000);
+            byteArray := StreamUtil_Package.getInstance.getByteArray (inputStream, outputStream, new Short_Short_Integer_Array'(0 .. (16384) - 1 => 0));
+            response.setContentType (To_Unbounded_String ("image/jpeg;charset=utf-8"));
+            response.getOutputStream.write (byteArray);
+        exception
+            when e : others =>
+            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("processRequest()"), e);
+            end if;
+        end;
+        --  finally
+        begin
+            StreamUtil_Package.getInstance.close (response.getOutputStream);
+            if not (StreamUtil_Package.getInstance.close (inputStream)) then
+                response.sendError (HttpServletResponse_Package.SC_NOT_FOUND);
+            end if;
+        end;
+   end processRequest;
+
+   --  throws ServletException, IOException
+   procedure doGet (This : in out MagicalImageServlet; request : HttpServletRequest_Access; response : HttpServletResponse_Access) is
+   begin
+        This.processRequest (request, response);
+   end doGet;
+
+   --  throws ServletException, IOException
+   procedure doPost (This : in out MagicalImageServlet; request : HttpServletRequest_Access; response : HttpServletResponse_Access) is
+   begin
+        This.processRequest (request, response);
+   end doPost;
+
+   function getServletInfo (This : in out MagicalImageServlet) return Unbounded_String is
+   begin
+        return To_Unbounded_String ("Serves Up Image From Local or Cloud");
+   end getServletInfo;
+
+   procedure getServletInfo (This : in out MagicalImageServlet) is
+      Java_Result : constant Unbounded_String := MagicalImageServlet'Class (This).getServletInfo;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getServletInfo;
+
+end org.allbinary.servlet.MagicalImageServlet_Package;
+
+

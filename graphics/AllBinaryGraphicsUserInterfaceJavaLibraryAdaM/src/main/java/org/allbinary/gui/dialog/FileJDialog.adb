@@ -1,0 +1,127 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.gui.dialog.FileJDialog_Package is
+
+   procedure Initialize_Fields (This : in out FileJDialog'Class) is
+   begin
+      null;
+      This.logUtil := LogUtil_Package.getInstance;
+      This.finishedListenerInterface := null;
+      This.jFileChooser1 := null;
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out FileJDialog'Class) is
+   begin
+        JDialog_Package.Initialize (This);
+        Initialize_Fields (This);
+        This.initComponents;
+        This.getJFileChooser1.setMultiSelectionEnabled (True);
+   end Initialize;
+
+   function Create return FileJDialog_Access is
+      This : constant FileJDialog_Access := new FileJDialog;
+   begin
+      Initialize (This.all);
+      return This;
+   end Create;
+
+   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
+   procedure Initialize (This : in out FileJDialog'Class; parent : Frame_Access; modal : Boolean) is
+   begin
+        JDialog_Package.Initialize (This, parent, modal);
+        Initialize_Fields (This);
+        This.initComponents;
+        This.getJFileChooser1.setMultiSelectionEnabled (True);
+   end Initialize;
+
+   function Create (parent : Frame_Access; modal : Boolean) return FileJDialog_Access is
+      This : constant FileJDialog_Access := new FileJDialog;
+   begin
+      Initialize (This.all, parent, modal);
+      return This;
+   end Create;
+
+   procedure addFinishedListener (This : in out FileJDialog; finishedListenerInterface : FileJDialogListenerInterface_Access) is
+   begin
+        This.finishedListenerInterface := finishedListenerInterface;
+   end addFinishedListener;
+
+   procedure initComponents (This : in out FileJDialog) is
+      layout : GroupLayout_Access;
+   begin
+        This.jFileChooser1 := JFileChooser_Package.Create;
+        This.setDefaultCloseOperation (javax_Package.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        This.jFileChooser1.addActionListener (ActionListener_Package.Create  --  Java anonymous class body: implement it as a named type
+--              
+--     procedure actionPerformed (This : in out ; evt : ActionEvent_Access) is
+--     begin
+--                  This.jFileChooser1ActionPerformed (evt);
+--     end actionPerformed;
+);
+        layout := GroupLayout_Package.Create (This.getContentPane);
+        This.getContentPane.setLayout (layout);
+        layout.setHorizontalGroup (layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (org_Package.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup.addContainerGap (org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE).add (This.jFileChooser1, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE).addContainerGap));
+        layout.setVerticalGroup (layout.createParallelGroup (org_Package.jdesktop.layout.GroupLayout.LEADING).add (layout.createSequentialGroup.addContainerGap.add (This.jFileChooser1, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 357, org_Package.jdesktop.layout.GroupLayout.PREFERRED_SIZE).addContainerGap (org_Package.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short_Package.MAX_VALUE)));
+        This.pack;
+   end initComponents;
+
+   procedure jFileChooser1ActionPerformed (This : in out FileJDialog; evt : ActionEvent_Access) is
+      files : File_Access_Array_Access;
+   begin
+        This.logUtil.putF (To_Unbounded_String ("Starting Action Command: ") & Java_Image (evt.getActionCommand), This'Unchecked_Access, To_Unbounded_String ("ActionPerformed"));
+        files := This.getJFileChooser1.getSelectedFiles;
+        if (evt.getActionCommand) = (This.getJFileChooser1.CANCEL_SELECTION) then
+            This.setVisible (False);
+        end if;
+        if (evt.getActionCommand) = (This.getJFileChooser1.APPROVE_SELECTION) then
+            if ((files) /= (null)) and then ((files'Length) > (0)) then
+                This.finishedListenerInterface.onFiles (files);
+            end if;
+        end if;
+   end jFileChooser1ActionPerformed;
+
+   procedure main (args : Unbounded_String_Array_Access) is
+   begin
+        java_Package.awt.EventQueue.invokeLater (ARunnable_Package.Create  --  Java anonymous class body: implement it as a named type
+--              
+--     procedure run (This : in out ) is
+--     begin
+--                  FileJDialog_Package.Create (JFrame_Package.Create, True).setVisible (True);
+--     end run;
+);
+   end main;
+
+   function getJFileChooser1 (This : in out FileJDialog) return JFileChooser_Access is
+   begin
+        return This.jFileChooser1;
+   end getJFileChooser1;
+
+   procedure setJFileChooser1 (This : in out FileJDialog; jFileChooser1 : JFileChooser_Access) is
+   begin
+        This.jFileChooser1 := jFileChooser1;
+   end setJFileChooser1;
+
+   procedure getJFileChooser1 (This : in out FileJDialog) is
+      Java_Result : constant JFileChooser_Access := FileJDialog'Class (This).getJFileChooser1;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getJFileChooser1;
+
+end org.allbinary.gui.dialog.FileJDialog_Package;
+
+

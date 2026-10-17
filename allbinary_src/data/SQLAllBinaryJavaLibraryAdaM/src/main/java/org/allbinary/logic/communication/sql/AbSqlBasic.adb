@@ -1,0 +1,191 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.logic.communication.sql.AbSqlBasic_Package is
+
+   procedure Initialize_Fields (This : in out AbSqlBasic'Class) is
+   begin
+      null;
+      This.logUtil := LogUtil_Package.getInstance;
+      This.sqlConnectionPool := SqlConnectionPool_Package.getInstance;
+      
+      
+      
+      This.stringUtil := StringUtil_Package.getInstance;
+      This.commonStrings := CommonStrings_Package.getInstance;
+      This.commonSeps := CommonSeps_Package.getInstance;
+      This.stdUtil := StdUtil_Package.getInstance;
+      This.sqlTypeStrings := SqlTypeStrings_Package.getInstance;
+      This.sqlStrings := SqlStrings_Package.getInstance;
+      This.INSERT := To_Unbounded_String ("insert");
+      This.UPDATE := To_Unbounded_String ("update");
+      This.FAILED_SQL_STATEMENT := To_Unbounded_String ("Failed" & ASCII.LF & "SQL Statement: ");
+      This.SUCCESS_SQL_STATEMENT := To_Unbounded_String ("Success" & ASCII.LF & "SQL Statement: ");
+      This.METHOD_EXECUTED_SQL_STATEMENT := To_Unbounded_String ("executedSQLStatement");
+      This.METHOD_CREATE := To_Unbounded_String ("create");
+      This.DATABASE_CREATED_LABEL := To_Unbounded_String ("Database Created: ");
+      This.DATABASE_CREATION_FAILED_LABEL := To_Unbounded_String ("Database Creation Failed: ");
+      This.SQL_CONNECTION_FAILED := To_Unbounded_String ("SQL Connection Failed");
+      This.SQL_CONNECTION_RETRYING := To_Unbounded_String ("SQL Connection Retrying");
+      This.SQL_CONNECTION_RETRY := To_Unbounded_String ("SQL Connection Retry");
+      This.METHOD_CREATE_CONNECTION := To_Unbounded_String ("createConnection()");
+      This.METHOD_INITIALIZE := To_Unbounded_String ("initialize");
+      This.LOAD_JDBC_DRIVER_FAILED_LABEL := To_Unbounded_String ("Load JDBC Driver Failed: ");
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out AbSqlBasic'Class; databaseConnectionInfoInterface : DbConnectionInfo_Access) is
+   begin
+      Initialize_Fields (This);
+        This.databaseConnectionInfoInterface := databaseConnectionInfoInterface;
+        This.connectAttemptCounter := 0;
+        This.conn := null;
+   end Initialize;
+
+   function Create (databaseConnectionInfoInterface : DbConnectionInfo_Access) return AbSqlBasic_Access is
+      This : constant AbSqlBasic_Access := new AbSqlBasic;
+   begin
+      Initialize (This.all, databaseConnectionInfoInterface);
+      return This;
+   end Create;
+
+   --  throws SQLException
+   function executeSQLStatement (This : in out AbSqlBasic; statement : Unbounded_String) return ResultSet_Access is
+      stmt : Statement_Access;
+      rset : ResultSet_Access;
+      tempConnection : Connection_Access;
+   begin
+        begin
+            This.initialize;
+            stmt := This.conn.createStatement;
+            stmt.execute (statement);
+            rset := stmt.getResultSet;
+            stmt.close;
+            tempConnection := This.conn;
+            This.conn := null;
+            This.sqlConnectionPool.add (This.getDatabaseConnectionInfoInterface.getUrl, tempConnection);
+            return rset;
+        exception
+            when e : others =>
+            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
+                This.logUtil.put (This.FAILED_SQL_STATEMENT & statement, This'Unchecked_Access, This.METHOD_EXECUTED_SQL_STATEMENT, e);
+            end if;
+            This.conn.close;
+            This.conn := null;
+            Java_Throw (e);
+        end;
+   end executeSQLStatement;
+
+   function create (This : in out AbSqlBasic; databaseName : Unbounded_String) return Unbounded_String is
+   begin
+        begin
+            This.executeSQLStatement (Java_Image (This.sqlStrings.CREATE_DATABASE) & databaseName);
+            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGING) then
+                This.logUtil.putF (This.DATABASE_CREATED_LABEL & databaseName, This'Unchecked_Access, This.METHOD_CREATE);
+            end if;
+            return databaseName & Java_Image (This.sqlStrings.CREATE_RETURN);
+        exception
+            when e : others =>
+            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
+                This.logUtil.put (This.DATABASE_CREATION_FAILED_LABEL & databaseName, This'Unchecked_Access, This.METHOD_CREATE, e);
+            end if;
+            return This.DATABASE_CREATION_FAILED_LABEL & databaseName;
+        end;
+   end create;
+
+   procedure createConnection (This : in out AbSqlBasic) is
+   begin
+        begin
+            This.conn := This.sqlConnectionPool.get (This.getDatabaseConnectionInfoInterface.getUrl);
+        exception
+            when se : others =>
+            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
+                This.logUtil.put (This.SQL_CONNECTION_RETRYING, This'Unchecked_Access, This.METHOD_CREATE_CONNECTION, se);
+            end if;
+            begin
+                Thread_Package.currentThread.sleep (2000);
+                if (This.connectAttemptCounter) < (10) then
+                    This.connectAttemptCounter := This.connectAttemptCounter + 1;
+                    This.initialize;
+                end if;
+            exception
+                when e : others =>
+                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
+                    This.logUtil.put (This.SQL_CONNECTION_RETRY & To_Unbounded_String (Ada.Exceptions.Exception_Message (se)), This'Unchecked_Access, This.METHOD_CREATE_CONNECTION, e);
+                end if;
+            end;
+        end;
+   end createConnection;
+
+   procedure initialize (This : in out AbSqlBasic) is
+      loader : ClassLoader_Access;
+      jdbcDriverClass : Ada.Tags.Tag;
+   begin
+        begin
+            begin
+                begin
+                    loader := Thread_Package.currentThread.getContextClassLoader;
+                    jdbcDriverClass := loader.loadClass (This.getDatabaseConnectionInfoInterface.getJdbcDriver);
+                    jdbcDriverClass.newInstance;
+                exception
+                    when e : others =>
+                    if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
+                        This.logUtil.put (This.LOAD_JDBC_DRIVER_FAILED_LABEL & Java_Image (This.getDatabaseConnectionInfoInterface.getJdbcDriver), This'Unchecked_Access, This.METHOD_INITIALIZE, e);
+                    end if;
+                end;
+            end;
+            This.createConnection;
+        exception
+            when se : others =>
+            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLLOGGINGERROR) then
+                This.logUtil.put (This.SQL_CONNECTION_FAILED, This'Unchecked_Access, This.METHOD_INITIALIZE, se);
+            end if;
+        end;
+   end initialize;
+
+   function getDatabaseConnectionInfoInterface (This : in out AbSqlBasic) return DatabaseConnectionInfoInterface_Access is
+   begin
+        return This.databaseConnectionInfoInterface;
+   end getDatabaseConnectionInfoInterface;
+
+   procedure setDatabaseConnectionInfoInterface (This : in out AbSqlBasic; databaseConnectionInfoInterface : DbConnectionInfo_Access) is
+   begin
+        This.databaseConnectionInfoInterface := databaseConnectionInfoInterface;
+   end setDatabaseConnectionInfoInterface;
+
+   procedure executeSQLStatement (This : in out AbSqlBasic; statement : Unbounded_String) is
+      Java_Result : constant ResultSet_Access := AbSqlBasic'Class (This).executeSQLStatement (statement);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end executeSQLStatement;
+
+   procedure create (This : in out AbSqlBasic; databaseName : Unbounded_String) is
+      Java_Result : constant Unbounded_String := AbSqlBasic'Class (This).create (databaseName);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end create;
+
+   procedure getDatabaseConnectionInfoInterface (This : in out AbSqlBasic) is
+      Java_Result : constant DatabaseConnectionInfoInterface_Access := AbSqlBasic'Class (This).getDatabaseConnectionInfoInterface;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getDatabaseConnectionInfoInterface;
+
+end org.allbinary.logic.communication.sql.AbSqlBasic_Package;
+
+

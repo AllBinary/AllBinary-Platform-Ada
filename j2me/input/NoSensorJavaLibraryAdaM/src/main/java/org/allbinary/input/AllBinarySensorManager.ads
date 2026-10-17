@@ -1,0 +1,66 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Ada.Strings.Maps.Constants;
+with Ada.Characters.Handling;
+with Ada.Exceptions;
+with Ada.Numerics.Long_Elementary_Functions;
+with Ada.Tags;
+with Ada.Text_IO;
+with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.input.accelerometer.AccelerometerSensorFactory_Package; use org.allbinary.input.accelerometer.AccelerometerSensorFactory_Package;
+with org.allbinary.input.gyro.GyroSensorFactory_Package; use org.allbinary.input.gyro.GyroSensorFactory_Package;
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+
+package org.allbinary.input.AllBinarySensorManager_Package is
+
+   package AccelerometerSensorFactory_Package renames org.allbinary.input.accelerometer.AccelerometerSensorFactory_Package;
+   package GyroSensorFactory_Package renames org.allbinary.input.gyro.GyroSensorFactory_Package;
+   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
+   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+
+   type AllBinarySensorManager is tagged;
+   type AllBinarySensorManager_Access is access all AllBinarySensorManager'Class;
+   type AllBinarySensorManager_Access_Array is array (Natural range <>) of AllBinarySensorManager_Access;
+   type AllBinarySensorManager_Access_Array_Access is access all AllBinarySensorManager_Access_Array;
+
+   type AllBinarySensorManager is new Java_Object with record
+      logUtil : LogUtil_Access;
+      commonStrings : CommonStrings_Access;
+      ORIENTATION_SENSOR_INPUT : Unbounded_String;
+      ORIENTATION_TYPE : Unbounded_String;
+      list : BasicArrayList_Access;
+   end record;
+   instance : Java_Object_Access;
+
+   procedure Initialize (This : in out AllBinarySensorManager'Class);
+   function Create return AllBinarySensorManager_Access;
+   function getInstance return AllBinarySensorManager_Access;
+   procedure getInstance;
+   procedure init (This : in out AllBinarySensorManager);
+   function getSensorNamesList (This : in out AllBinarySensorManager) return BasicArrayList_Access;
+   procedure getSensorNamesList (This : in out AllBinarySensorManager);
+   procedure shutdown (This : in out AllBinarySensorManager);
+
+end org.allbinary.input.AllBinarySensorManager_Package;
+
+

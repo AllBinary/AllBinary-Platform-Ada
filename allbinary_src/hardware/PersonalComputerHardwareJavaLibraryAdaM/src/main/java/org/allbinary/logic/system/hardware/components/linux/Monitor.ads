@@ -1,0 +1,49 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Ada.Strings.Maps.Constants;
+with Ada.Characters.Handling;
+with Ada.Exceptions;
+with Ada.Numerics.Long_Elementary_Functions;
+with Ada.Tags;
+with Ada.Text_IO;
+with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package; use org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
+with org.allbinary.logic.system.hardware.components.interfaces.MonitorInterface_Package; use org.allbinary.logic.system.hardware.components.interfaces.MonitorInterface_Package;
+
+package org.allbinary.logic.system.hardware.components.linux.Monitor_Package is
+
+   package HardwareComponentInterface_Package renames org.allbinary.logic.system.hardware.components.interfaces.HardwareComponentInterface_Package;
+   package MonitorInterface_Package renames org.allbinary.logic.system.hardware.components.interfaces.MonitorInterface_Package;
+
+   type Monitor is tagged;
+   type Monitor_Access is access all Monitor'Class;
+   type Monitor_Access_Array is array (Natural range <>) of Monitor_Access;
+   type Monitor_Access_Array_Access is access all Monitor_Access_Array;
+
+   type Monitor is new HardwareComponentInterface and MonitorInterface with record
+      data : Unbounded_String;
+   end record;
+
+   procedure Initialize (This : in out Monitor'Class; data : Unbounded_String);
+   function Create (data : Unbounded_String) return Monitor_Access;
+   function compareTo (This : in out Monitor; componentInterface : HardwareComponentInterface_Access) return Boolean;
+   procedure compareTo (This : in out Monitor; componentInterface : HardwareComponentInterface_Access);
+   function toString (This : in out Monitor) return Unbounded_String;
+   procedure toString (This : in out Monitor);
+
+end org.allbinary.logic.system.hardware.components.linux.Monitor_Package;
+
+

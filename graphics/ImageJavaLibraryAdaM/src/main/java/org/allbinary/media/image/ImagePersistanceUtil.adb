@@ -1,0 +1,122 @@
+-- 
+-- To change this license header, choose License Headers in Project Properties. 
+-- To change this template file, choose Tools | Templates 
+-- and open the template in the editor.  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.media.image.ImagePersistanceUtil_Package is
+
+   procedure Initialize_Fields (This : in out ImagePersistanceUtil'Class) is
+   begin
+      null;
+      This.logUtil := LogUtil_Package.getInstance;
+      This.commonStrings := CommonStrings_Package.getInstance;
+   end Initialize_Fields;
+
+   procedure Initialize (This : in out ImagePersistanceUtil'Class) is
+   begin
+      Initialize_Fields (This);
+   end Initialize;
+
+   function Create return ImagePersistanceUtil_Access is
+      This : constant ImagePersistanceUtil_Access := new ImagePersistanceUtil;
+   begin
+      Initialize (This.all);
+      return This;
+   end Create;
+
+
+   function getInstance return ImagePersistanceUtil_Access is
+   begin
+        return ImagePersistanceUtil_Package.instance;
+   end getInstance;
+
+   --  throws Exception
+   procedure saveWithBatik (This : in out ImagePersistanceUtil; file : AbFile_Access; bufferedImage : BufferedImage_Access) is
+      batikPNGImageWriter : PNGImageWriter_Access;
+      fileOutputStream : AbFileOutputStream_Access;
+   begin
+        batikPNGImageWriter := PNGImageWriter_Package.Create;
+        fileOutputStream := AbFileOutputStream_Package.createFromAbFile (file);
+        begin
+            batikPNGImageWriter.writeImage (bufferedImage, fileOutputStream);
+        end;
+        --  finally
+        begin
+            fileOutputStream.flush;
+            StreamUtil_Package.getInstance.close (fileOutputStream);
+        end;
+        This.logUtil.putF (To_Unbounded_String ("Wrote Image: ") & Java_Image (file.getAbsolutePath), This'Unchecked_Access, This.commonStrings.SAVE);
+   end saveWithBatik;
+
+   procedure saveWithImageIO (This : in out ImagePersistanceUtil; filePath : Unbounded_String; bufferedImage : BufferedImage_Access) is
+   begin
+        This.saveWithImageIO (File_Package.Create (filePath), bufferedImage);
+   end saveWithImageIO;
+
+   procedure saveWithImageIO (This : in out ImagePersistanceUtil; file : File_Access; bufferedImage : BufferedImage_Access) is
+      writer : ImageWriter_Access;
+      ios : ImageOutputStream_Access;
+      iter : Iterator_Access;
+      iwp : ImageWriteParam_Access;
+   begin
+        writer := null;
+        ios := null;
+        begin
+            iter := ImageIO_Package.getImageWritersByFormatName (To_Unbounded_String ("jpeg"));
+            if not (iter.hasNext) then
+                This.logUtil.putF (To_Unbounded_String ("Unable to save image to jpeg file type."), This'Unchecked_Access, This.commonStrings.SAVE);
+                return;
+            end if;
+            writer := ImageWriter_Access (iter.next);
+            ios := ImageIO_Package.createImageOutputStream (file);
+            writer.setOutput (ios);
+            iwp := writer.getDefaultWriteParam;
+            iwp.setCompressionMode (ImageWriteParam_Package.MODE_EXPLICIT);
+            iwp.setCompressionQuality (0.95);
+            writer.write (null, IIOImage_Package.Create (bufferedImage, null, null), iwp);
+            This.logUtil.putF (To_Unbounded_String ("Wrote Image: ") & Java_Image (file.getAbsolutePath), This'Unchecked_Access, This.commonStrings.SAVE);
+        exception
+            when e : others =>
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.SAVE, e);
+        end;
+        --  finally
+        begin
+            begin
+                if (ios) /= (null) then
+                    ios.flush;
+                    begin
+                        if (ios) /= (null) then
+                            This.logUtil.putF (ios.toString, ios, This.commonStrings.CLOSE);
+                            ios.close;
+                        end if;
+                    exception
+                        when e : others =>
+                        This.logUtil.put (This.commonStrings.EXCEPTION_Id, ios, This.commonStrings.CLOSE, e);
+                    end;
+                end if;
+                if (writer) /= (null) then
+                    writer.dispose;
+                end if;
+            exception
+                when e2 : others =>
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.SAVE, e2);
+            end;
+        end;
+   end saveWithImageIO;
+
+   procedure getInstance is
+      Java_Result : constant ImagePersistanceUtil_Access := getInstance;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getInstance;
+
+begin
+   null;
+   instance := ImagePersistanceUtil_Package.Create;
+
+end org.allbinary.media.image.ImagePersistanceUtil_Package;
+
+

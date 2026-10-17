@@ -1,0 +1,231 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.logic.system.hardware.linux.LinuxHardware_Package is
+
+   procedure Initialize_Fields (This : in out LinuxHardware'Class) is
+   begin
+      null;
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out LinuxHardware'Class) is
+   begin
+      Initialize_Fields (This);
+        null;
+   end Initialize;
+
+   function Create return LinuxHardware_Access is
+      This : constant LinuxHardware_Access := new LinuxHardware;
+   begin
+      Initialize (This.all);
+      return This;
+   end Create;
+
+   function getMultimedia (This : in out LinuxHardware; index : Integer) return MediaInterface_Access is
+   begin
+        Java_Throw (Java_New_Exception ("RuntimeException"));
+   end getMultimedia;
+
+   function getBridge (This : in out LinuxHardware; index : Integer) return BridgeInterface_Access is
+   begin
+        Java_Throw (Java_New_Exception ("RuntimeException"));
+   end getBridge;
+
+   function getCpu (This : in out LinuxHardware; index : Integer) return CpuInterface_Access is
+   begin
+        Java_Throw (Java_New_Exception ("RuntimeException"));
+   end getCpu;
+
+   function getEthernet (This : in out LinuxHardware; index : Integer) return EthernetInterface_Access is
+   begin
+        Java_Throw (Java_New_Exception ("RuntimeException"));
+   end getEthernet;
+
+   function getFireWire (This : in out LinuxHardware; index : Integer) return FireWireInterface_Access is
+   begin
+        Java_Throw (Java_New_Exception ("RuntimeException"));
+   end getFireWire;
+
+   function getHardDriveController (This : in out LinuxHardware; index : Integer) return HardDriveControllerInterface_Access is
+   begin
+        Java_Throw (Java_New_Exception ("RuntimeException"));
+   end getHardDriveController;
+
+   function getHardDrive (This : in out LinuxHardware; index : Integer) return HardDriveInterface_Access is
+   begin
+        Java_Throw (Java_New_Exception ("RuntimeException"));
+   end getHardDrive;
+
+   function getMachineAccessControlAddress (This : in out LinuxHardware; index : Integer) return MachineAccessControlAddressInterface_Access is
+   begin
+        Java_Throw (Java_New_Exception ("RuntimeException"));
+   end getMachineAccessControlAddress;
+
+   function getMonitor (This : in out LinuxHardware; index : Integer) return MonitorInterface_Access is
+   begin
+        Java_Throw (Java_New_Exception ("RuntimeException"));
+   end getMonitor;
+
+   function getUsb (This : in out LinuxHardware; index : Integer) return UsbInterface_Access is
+   begin
+        Java_Throw (Java_New_Exception ("RuntimeException"));
+   end getUsb;
+
+   function getVideo (This : in out LinuxHardware; index : Integer) return VideoInterface_Access is
+   begin
+        Java_Throw (Java_New_Exception ("RuntimeException"));
+   end getVideo;
+
+   function getComponent (This : in out LinuxHardware; index : Integer) return HardwareComponentInterface_Access is
+   begin
+        Java_Throw (Java_New_Exception ("RuntimeException"));
+   end getComponent;
+
+   function toString (This : in out LinuxHardware) return Unbounded_String is
+   begin
+        return StringUtil_Package.getInstance.EMPTY_STRING;
+   end toString;
+
+   function compareTo (This : in out LinuxHardware; hardwareInterface : HardwareInterface_Access) return Boolean is
+   begin
+        return True;
+   end compareTo;
+
+   function difference (This : in out LinuxHardware; hardwareInterface : HardwareInterface_Access) return ABHashtable_Access is
+   begin
+        return StdUtil_Package.getInstance.NULL_TABLE;
+   end difference;
+
+   function isNextHardware (This : in out LinuxHardware; nextLine : Unbounded_String) return Boolean is
+   begin
+        return False;
+   end isNextHardware;
+
+   procedure getMultimedia (This : in out LinuxHardware; index : Integer) is
+      Java_Result : constant MediaInterface_Access := LinuxHardware'Class (This).getMultimedia (index);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getMultimedia;
+
+   procedure getBridge (This : in out LinuxHardware; index : Integer) is
+      Java_Result : constant BridgeInterface_Access := LinuxHardware'Class (This).getBridge (index);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getBridge;
+
+   procedure getCpu (This : in out LinuxHardware; index : Integer) is
+      Java_Result : constant CpuInterface_Access := LinuxHardware'Class (This).getCpu (index);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getCpu;
+
+   procedure getEthernet (This : in out LinuxHardware; index : Integer) is
+      Java_Result : constant EthernetInterface_Access := LinuxHardware'Class (This).getEthernet (index);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getEthernet;
+
+   procedure getFireWire (This : in out LinuxHardware; index : Integer) is
+      Java_Result : constant FireWireInterface_Access := LinuxHardware'Class (This).getFireWire (index);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getFireWire;
+
+   procedure getHardDriveController (This : in out LinuxHardware; index : Integer) is
+      Java_Result : constant HardDriveControllerInterface_Access := LinuxHardware'Class (This).getHardDriveController (index);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getHardDriveController;
+
+   procedure getHardDrive (This : in out LinuxHardware; index : Integer) is
+      Java_Result : constant HardDriveInterface_Access := LinuxHardware'Class (This).getHardDrive (index);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getHardDrive;
+
+   procedure getMachineAccessControlAddress (This : in out LinuxHardware; index : Integer) is
+      Java_Result : constant MachineAccessControlAddressInterface_Access := LinuxHardware'Class (This).getMachineAccessControlAddress (index);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getMachineAccessControlAddress;
+
+   procedure getMonitor (This : in out LinuxHardware; index : Integer) is
+      Java_Result : constant MonitorInterface_Access := LinuxHardware'Class (This).getMonitor (index);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getMonitor;
+
+   procedure getUsb (This : in out LinuxHardware; index : Integer) is
+      Java_Result : constant UsbInterface_Access := LinuxHardware'Class (This).getUsb (index);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getUsb;
+
+   procedure getVideo (This : in out LinuxHardware; index : Integer) is
+      Java_Result : constant VideoInterface_Access := LinuxHardware'Class (This).getVideo (index);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getVideo;
+
+   procedure getComponent (This : in out LinuxHardware; index : Integer) is
+      Java_Result : constant HardwareComponentInterface_Access := LinuxHardware'Class (This).getComponent (index);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getComponent;
+
+   procedure toString (This : in out LinuxHardware) is
+      Java_Result : constant Unbounded_String := LinuxHardware'Class (This).toString;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end toString;
+
+   procedure compareTo (This : in out LinuxHardware; hardwareInterface : HardwareInterface_Access) is
+      Java_Result : constant Boolean := LinuxHardware'Class (This).compareTo (hardwareInterface);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end compareTo;
+
+   procedure difference (This : in out LinuxHardware; hardwareInterface : HardwareInterface_Access) is
+      Java_Result : constant ABHashtable_Access := LinuxHardware'Class (This).difference (hardwareInterface);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end difference;
+
+   procedure isNextHardware (This : in out LinuxHardware; nextLine : Unbounded_String) is
+      Java_Result : constant Boolean := LinuxHardware'Class (This).isNextHardware (nextLine);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end isNextHardware;
+
+end org.allbinary.logic.system.hardware.linux.LinuxHardware_Package;
+
+

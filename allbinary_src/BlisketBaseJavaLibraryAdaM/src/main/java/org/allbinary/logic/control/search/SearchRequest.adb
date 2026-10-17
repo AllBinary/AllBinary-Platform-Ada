@@ -1,0 +1,147 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.logic.control.search.SearchRequest_Package is
+
+   procedure Initialize_Fields (This : in out SearchRequest'Class) is
+   begin
+      null;
+      
+      
+      
+      
+      
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out SearchRequest'Class; storeFront : StoreFrontInterface_Access; searchParams : SearchParams_Access; xslFile : Unbounded_String; contentType : Unbounded_String; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) is
+   begin
+        AbContext_Package.Initialize (This, propertiesHashMap, pageContext);
+        Initialize_Fields (This);
+        This.storeFront := storeFront;
+        This.searchParams := searchParams;
+        This.xslFile := xslFile;
+        This.pageName := This.pageName;
+        This.contentType := contentType;
+   end Initialize;
+
+   function Create (storeFront : StoreFrontInterface_Access; searchParams : SearchParams_Access; xslFile : Unbounded_String; contentType : Unbounded_String; propertiesHashMap : HashMap_Access; pageContext : PageContext_Access) return SearchRequest_Access is
+      This : constant SearchRequest_Access := new SearchRequest;
+   begin
+      Initialize (This.all, storeFront, searchParams, xslFile, contentType, propertiesHashMap, pageContext);
+      return This;
+   end Create;
+
+   procedure setStoreFront (This : in out SearchRequest; storeFront : StoreFrontInterface_Access) is
+   begin
+        This.storeFront := storeFront;
+   end setStoreFront;
+
+   procedure setParams (This : in out SearchRequest; searchParams : SearchParams_Access) is
+   begin
+        This.searchParams := searchParams;
+   end setParams;
+
+   procedure setXslFile (This : in out SearchRequest; value : Unbounded_String) is
+   begin
+        This.xslFile := value;
+   end setXslFile;
+
+   procedure setFileBaseName (This : in out SearchRequest; value : Unbounded_String) is
+   begin
+        This.pageName := value;
+   end setFileBaseName;
+
+   procedure setContentType (This : in out SearchRequest; value : Unbounded_String) is
+   begin
+        This.contentType := value;
+   end setContentType;
+
+   function getStoreFront (This : in out SearchRequest) return StoreFrontInterface_Access is
+   begin
+        return This.storeFront;
+   end getStoreFront;
+
+   function getParams (This : in out SearchRequest) return SearchParams_Access is
+   begin
+        return This.searchParams;
+   end getParams;
+
+   function getXslFile (This : in out SearchRequest) return Unbounded_String is
+   begin
+        return This.xslFile;
+   end getXslFile;
+
+   function getFileBaseName (This : in out SearchRequest) return Unbounded_String is
+   begin
+        return This.pageName;
+   end getFileBaseName;
+
+   function getContentType (This : in out SearchRequest) return Unbounded_String is
+   begin
+        return This.contentType;
+   end getContentType;
+
+   --  throws Exception
+   function getFileBaseNameNode (This : in out SearchRequest; document : Document_Access) return Node_Access is
+   begin
+        return ModDomHelper_Package.createNameValueNodes (document, SearchData_Package.FILENAME, This.getFileBaseName);
+   end getFileBaseNameNode;
+
+   procedure getStoreFront (This : in out SearchRequest) is
+      Java_Result : constant StoreFrontInterface_Access := SearchRequest'Class (This).getStoreFront;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getStoreFront;
+
+   procedure getParams (This : in out SearchRequest) is
+      Java_Result : constant SearchParams_Access := SearchRequest'Class (This).getParams;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getParams;
+
+   procedure getXslFile (This : in out SearchRequest) is
+      Java_Result : constant Unbounded_String := SearchRequest'Class (This).getXslFile;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getXslFile;
+
+   procedure getFileBaseName (This : in out SearchRequest) is
+      Java_Result : constant Unbounded_String := SearchRequest'Class (This).getFileBaseName;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getFileBaseName;
+
+   procedure getContentType (This : in out SearchRequest) is
+      Java_Result : constant Unbounded_String := SearchRequest'Class (This).getContentType;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getContentType;
+
+   procedure getFileBaseNameNode (This : in out SearchRequest; document : Document_Access) is
+      Java_Result : constant Node_Access := SearchRequest'Class (This).getFileBaseNameNode (document);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getFileBaseNameNode;
+
+end org.allbinary.logic.control.search.SearchRequest_Package;
+
+

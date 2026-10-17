@@ -1,0 +1,503 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package is
+
+   procedure Initialize_Fields (This : in out LinesGraphicItem'Class) is
+   begin
+      null;
+      This.logUtil := LogUtil_Package.getInstance;
+      This.commonStrings := CommonStrings_Package.getInstance;
+      This.gameInputStrings := GameInputStrings_Package.getInstance;
+      This.treeNode := null;
+      This.pointTreeNodeVector := null;
+      This.currentMousePoint := null;
+      This.fulcrumPoint := null;
+      This.active := False;
+      This.theta := 0.0;
+      This.color := Color_Package.Create (BasicColorFactory_Package.getInstance.WHITE.intValue);
+      
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out LinesGraphicItem'Class) is
+   begin
+      Initialize_Fields (This);
+        This.points := Points_Package.Create;
+        begin
+            This.init;
+            This.active := True;
+        exception
+            when e : others =>
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR, e);
+        end;
+   end Initialize;
+
+   function Create return LinesGraphicItem_Access is
+      This : constant LinesGraphicItem_Access := new LinesGraphicItem;
+   begin
+      Initialize (This.all);
+      return This;
+   end Create;
+
+   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
+   procedure Initialize (This : in out LinesGraphicItem'Class; linesNode : Node_Access) is
+      lineNodes : BasicArrayList_Access;
+      numberOfLines : Integer;
+      lineNode : Node_Access;
+      pointNodes : BasicArrayList_Access;
+      pointOneNode : Node_Access;
+      pointTwoNode : Node_Access;
+      index : Integer;
+   begin
+      Initialize_Fields (This);
+        This.points := Points_Package.Create;
+        This.init;
+        This.active := False;
+        lineNodes := DomHelper_Package.getInstance.getWithoutTextNodes (linesNode.getChildNodes);
+        numberOfLines := lineNodes.size;
+        for index in 0 .. (numberOfLines) - 1 loop
+            lineNode := Node_Access (lineNodes.get (index));
+            pointNodes := DomHelper_Package.getInstance.getWithoutTextNodes (lineNode.getChildNodes);
+            pointOneNode := DomHelper_Package.getInstance.searchNodeList (PointsDomUtil_Package.getInstance.POINTONE, pointNodes);
+            This.addPoint (pointOneNode.getChildNodes);
+            if (index) = ((numberOfLines) - (1)) then
+                pointTwoNode := DomHelper_Package.getInstance.searchNodeList (PointsDomUtil_Package.getInstance.POINTTWO, pointNodes);
+                This.addPoint (pointTwoNode.getChildNodes);
+            end if;
+        end loop;
+        if (numberOfLines) = (0) then
+            Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Lines node does not contain a line")));
+        end if;
+   end Initialize;
+
+   function Create (linesNode : Node_Access) return LinesGraphicItem_Access is
+      This : constant LinesGraphicItem_Access := new LinesGraphicItem;
+   begin
+      Initialize (This.all, linesNode);
+      return This;
+   end Create;
+
+   --  throws Exception
+   procedure init (This : in out LinesGraphicItem) is
+   begin
+        This.treeNode := DefaultMutableTreeNode_Package.Create ((PointsDomUtil_Package.getInstance.LINES) + (LinesGraphicItem_Package.item));
+        LinesGraphicItem_Package.item := LinesGraphicItem_Package.item + 1;
+        This.points.init;
+        This.pointTreeNodeVector := BasicArrayListD_Package.Create;
+        This.fulcrumPoint := PointFactory_Package.getInstance.createXY (0, 0);
+   end init;
+
+   --  throws Exception
+   procedure translate (This : in out LinesGraphicItem; x : Integer; y : Integer) is
+      basicGraphicsPipeline : BasicGraphicsPipeline_Access;
+   begin
+        StatusFactory_Package.getInstance.setStatus (To_Unbounded_String ("Translating: ") & Java_Image (This.points.getPoints));
+        basicGraphicsPipeline := BasicGraphicsPipeline_Package.Create (This.points.getPoints);
+        basicGraphicsPipeline.translate (x, y);
+        This.points := Points_Package.Create;
+        This.points.addPoints (basicGraphicsPipeline.getMatrix);
+   end translate;
+
+   procedure setRotate (This : in out LinesGraphicItem; theta : Long_Float) is
+   begin
+        while (theta) > ((2) * (Math_Package.PI)) loop
+            theta := (theta) - ((2) * (Math_Package.PI));
+        end loop;
+        while (theta) < (0.0) loop
+            theta := (theta) + ((2) * (Math_Package.PI));
+        end loop;
+        This.theta := theta;
+   end setRotate;
+
+   procedure addRotate (This : in out LinesGraphicItem; theta : Long_Float) is
+   begin
+        This.setRotate ((This.theta) + (theta));
+   end addRotate;
+
+   procedure setAngle (This : in out LinesGraphicItem; angle : Long_Float) is
+   begin
+        This.setRotate (Ada.Numerics.Long_Elementary_Functions.ToRadians (angle));
+   end setAngle;
+
+   procedure addAngle (This : in out LinesGraphicItem; angle : Long_Float) is
+   begin
+        This.setRotate ((This.theta) + (Ada.Numerics.Long_Elementary_Functions.ToRadians (angle)));
+   end addAngle;
+
+   function getTreeNode (This : in out LinesGraphicItem) return MutableTreeNode_Access is
+   begin
+        return MutableTreeNode_Access (This.treeNode);
+   end getTreeNode;
+
+   function getName (This : in out LinesGraphicItem) return Unbounded_String is
+   begin
+        return LinesGraphicItem_Package.NAME;
+   end getName;
+
+   function getStaticName return Unbounded_String is
+   begin
+        return LinesGraphicItem_Package.NAME;
+   end getStaticName;
+
+   --  throws Exception
+   procedure addPoint (This : in out LinesGraphicItem; pointNodes : NodeList_Access) is
+      list : BasicArrayList_Access;
+      xNode : Node_Access;
+      xTextNode : Node_Access;
+      xInteger : Integer;
+      yNode : Node_Access;
+      yTextNode : Node_Access;
+      yInteger : Integer;
+      point : GPoint_Access;
+   begin
+        list := DomHelper_Package.getInstance.getWithoutTextNodes (pointNodes);
+        xNode := DomHelper_Package.getInstance.searchNodeList (PositionStrings_Package.getInstance.X, list);
+        xTextNode := xNode.getFirstChild;
+        xInteger := xTextNode.getNodeValue;
+        yNode := DomHelper_Package.getInstance.searchNodeList (PositionStrings_Package.getInstance.Y, list);
+        yTextNode := yNode.getFirstChild;
+        yInteger := yTextNode.getNodeValue;
+        point := PointFactory_Package.getInstance.createXY (xInteger.intValue, yInteger.intValue);
+        This.addPoint (point);
+   end addPoint;
+
+   procedure addPoint (This : in out LinesGraphicItem; point : GPoint_Access) is
+   begin
+        This.points.getPoints.add (point);
+        This.logUtil.putF (point.toString, This'Unchecked_Access, To_Unbounded_String ("addPoint"));
+        This.pointTreeNodeVector.add (DefaultMutableTreeNode_Package.Create (point.toString));
+        This.treeNode.add (DefaultMutableTreeNode_Access (This.pointTreeNodeVector.get ((This.pointTreeNodeVector.size) - (1))));
+   end addPoint;
+
+   function removePoint (This : in out LinesGraphicItem) return GPoint_Access is
+      point : GPoint_Access;
+      lastPoint : Integer;
+      index : Integer;
+   begin
+        point := null;
+        if (This.points.getSize) > (0) then
+            lastPoint := (This.points.getSize) - (1);
+            point := GPoint_Access (This.points.getPoints.removeAt (lastPoint));
+            index := (This.pointTreeNodeVector.size) - (1);
+            if (index) > (0) then
+                This.treeNode.remove (DefaultMutableTreeNode_Access (This.pointTreeNodeVector.get (index)));
+                This.pointTreeNodeVector.remove (index);
+            end if;
+        end if;
+        return point;
+   end removePoint;
+
+   function isActive (This : in out LinesGraphicItem) return Boolean is
+   begin
+        return This.active;
+   end isActive;
+
+   procedure deactivate (This : in out LinesGraphicItem) is
+   begin
+        This.active := False;
+   end deactivate;
+
+   procedure activate (This : in out LinesGraphicItem) is
+   begin
+        This.active := True;
+   end activate;
+
+   --  throws Exception
+   procedure duplicatePoints (This : in out LinesGraphicItem; list : BasicArrayList_Access) is
+      size : Integer;
+      point : GPoint_Access;
+      index : Integer;
+   begin
+        size := list.size;
+        for index in 0 .. (size) - 1 loop
+            point := GPoint_Access (list.get (index));
+            if (point) /= (null) then
+                This.points.getPoints.add (PointFactory_Package.getInstance.createXY (point.getX, point.getY));
+                This.pointTreeNodeVector.add (DefaultMutableTreeNode_Package.Create (point.toString));
+                This.treeNode.add (DefaultMutableTreeNode_Access (This.pointTreeNodeVector.get ((This.pointTreeNodeVector.size) - (1))));
+            end if;
+        end loop;
+   end duplicatePoints;
+
+   --  throws Exception
+   function duplicate (This : in out LinesGraphicItem) return GraphicItemInterface_Access is
+      linesGraphicItem : LinesGraphicItem_Access;
+   begin
+        linesGraphicItem := LinesGraphicItem_Package.Create;
+        linesGraphicItem.duplicatePoints (This.points.getPoints);
+        linesGraphicItem.deactivate;
+        return linesGraphicItem;
+   end duplicate;
+
+   function getAngle (This : in out LinesGraphicItem) return Long_Float is
+   begin
+        return Ada.Numerics.Long_Elementary_Functions.ToDegrees (This.theta);
+   end getAngle;
+
+   procedure setFulcrumPoint (This : in out LinesGraphicItem; point : GPoint_Access) is
+   begin
+        This.fulcrumPoint := point;
+   end setFulcrumPoint;
+
+   procedure paint (This : in out LinesGraphicItem; g : Graphics_Access; canvasAngle : Long_Float; dimension : IntegerDimension_Access; x : Integer; y : Integer) is
+      graphics : Graphics2D_Access;
+      tempPointVector : BasicArrayList_Access;
+      size : Integer;
+      firstPoint : GPoint_Access;
+      secondPoint : GPoint_Access;
+      index : Integer;
+   begin
+        begin
+            graphics := Graphics2D_Access (g);
+            graphics.setColor (This.getColor);
+            graphics.setStroke (BasicStroke_Package.Create (x));
+            if (This.isActive) and then ((This.currentMousePoint) /= (null)) then
+                This.points.getPoints.add (This.currentMousePoint);
+            end if;
+            tempPointVector := PointsUtil_Package.getInstance.doTransforms (This.points.getPoints, canvasAngle, PointFactory_Package.getInstance.createXY (dimension.getWidth, dimension.getHeight));
+            if (This.isActive) and then ((This.currentMousePoint) /= (null)) then
+                This.currentMousePoint := GPoint_Access (This.points.getPoints.removeAt ((This.points.getSize) - (1)));
+            end if;
+            size := tempPointVector.size;
+            firstPoint := null;
+            if (size) > (0) then
+                firstPoint := GPoint_Access (tempPointVector.get (0));
+            end if;
+            for index in 1 .. (size) - 1 loop
+                secondPoint := GPoint_Access (tempPointVector.get (index));
+                graphics.drawLine ((((firstPoint.getX) * (x))) - (((x) / (4))), (((firstPoint.getY) * (y))) - (((y) / (4))), (((secondPoint.getX) * (x))) - (((x) / (4))), (((secondPoint.getY) * (y))) - (((y) / (4))));
+                firstPoint := secondPoint;
+            end loop;
+        exception
+            when e : others =>
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("mouseMoved"), e);
+        end;
+   end paint;
+
+   --  throws Exception
+   function toDom (This : in out LinesGraphicItem; canvasDom : CanvasDom_Access) return Node_Access is
+   begin
+        return PointsDomUtil_Package.getInstance.toDom (canvasDom, This.points.getPoints);
+   end toDom;
+
+   function isValid (This : in out LinesGraphicItem) return Boolean is
+   begin
+        return This.points.isValid;
+   end isValid;
+
+   function getPointsInterface (This : in out LinesGraphicItem) return Points_Access is
+   begin
+        return This.points;
+   end getPointsInterface;
+
+   procedure setPointsInterface (This : in out LinesGraphicItem; points : Points_Access) is
+   begin
+        This.points := points;
+   end setPointsInterface;
+
+   function getColor (This : in out LinesGraphicItem) return Color_Access is
+   begin
+        return This.color;
+   end getColor;
+
+   procedure setColor (This : in out LinesGraphicItem; color : Color_Access) is
+   begin
+        This.color := color;
+   end setColor;
+
+   procedure mouseClicked (This : in out LinesGraphicItem; mouseEvent : MouseEvent_Access; x : Integer; y : Integer) is
+      mousePoint : GPoint_Access;
+      point : GPoint_Access;
+   begin
+        begin
+            mousePoint := PointFactory_Package.getInstance.createXY (mouseEvent.getPoint.x, mouseEvent.getPoint.y);
+            if ((Java_And (mouseEvent.getModifiers, mouseEvent.BUTTON1_MASK))) = (mouseEvent.BUTTON1_MASK) then
+                point := PointFactory_Package.getInstance.createXY ((mousePoint.getX) / (x), (mousePoint.getY) / (y));
+                StatusFactory_Package.getInstance.setStatus (To_Unbounded_String ("Line Point Added: ") & point.toString);
+                This.addPoint (point);
+            elsif ((Java_And (mouseEvent.getModifiers, mouseEvent.BUTTON3_MASK))) = (mouseEvent.BUTTON3_MASK) then
+                StatusFactory_Package.getInstance.setStatus (To_Unbounded_String ("Line Point Removed"));
+                This.removePoint;
+            end if;
+            This.currentMousePoint := mousePoint;
+        exception
+            when e : others =>
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("mouseMoved"), e);
+        end;
+   end mouseClicked;
+
+   procedure mouseEntered (This : in out LinesGraphicItem; mouseEvent : MouseEvent_Access) is
+   begin
+        null;
+   end mouseEntered;
+
+   procedure mouseExited (This : in out LinesGraphicItem; mouseEvent : MouseEvent_Access) is
+   begin
+        null;
+   end mouseExited;
+
+   procedure mousePressed (This : in out LinesGraphicItem; mouseEvent : MouseEvent_Access; xPixelsPerCell : Integer; yPixelsPerCell : Integer) is
+   begin
+        null;
+   end mousePressed;
+
+   procedure mouseReleased (This : in out LinesGraphicItem; mouseEvent : MouseEvent_Access; xPixelsPerCell : Integer; yPixelsPerCell : Integer) is
+   begin
+        null;
+   end mouseReleased;
+
+   procedure mouseDragged (This : in out LinesGraphicItem; mouseEvent : MouseEvent_Access; xPixelsPerCell : Integer; yPixelsPerCell : Integer) is
+   begin
+        null;
+   end mouseDragged;
+
+   procedure mouseMoved (This : in out LinesGraphicItem; mouseEvent : MouseEvent_Access; x : Integer; y : Integer) is
+      mousePoint : GPoint_Access;
+      point : GPoint_Access;
+   begin
+        begin
+            mousePoint := PointFactory_Package.getInstance.createXY (mouseEvent.getPoint.x, mouseEvent.getPoint.y);
+            point := PointFactory_Package.getInstance.createXY ((mousePoint.getX) / (x), (mousePoint.getY) / (y));
+            This.currentMousePoint := point;
+        exception
+            when e : others =>
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("mouseMoved"), e);
+        end;
+   end mouseMoved;
+
+   procedure keyPressed (This : in out LinesGraphicItem; keyEvent : KeyEvent_Access) is
+      keyCode : Integer;
+   begin
+        begin
+            keyCode := keyEvent.getKeyCode;
+            if (keyCode) = (keyEvent.VK_ESCAPE) then
+                StatusFactory_Package.getInstance.setStatus (To_Unbounded_String ("Deactivated"));
+                This.deactivate;
+            elsif (keyCode) = (keyEvent.VK_UP) then
+                This.translate (0, -(1));
+            elsif (keyCode) = (keyEvent.VK_DOWN) then
+                This.translate (0, 1);
+            elsif (keyCode) = (keyEvent.VK_LEFT) then
+                This.translate (-(1), 0);
+            elsif (keyCode) = (keyEvent.VK_RIGHT) then
+                This.translate (1, 0);
+            end if;
+        exception
+            when e : others =>
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.gameInputStrings.KEY_PRESSED, e);
+        end;
+   end keyPressed;
+
+   procedure keyReleased (This : in out LinesGraphicItem; keyEvent : KeyEvent_Access) is
+   begin
+        null;
+   end keyReleased;
+
+   procedure keyTyped (This : in out LinesGraphicItem; keyEvent : KeyEvent_Access) is
+   begin
+        null;
+   end keyTyped;
+
+   procedure getTreeNode (This : in out LinesGraphicItem) is
+      Java_Result : constant MutableTreeNode_Access := LinesGraphicItem'Class (This).getTreeNode;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getTreeNode;
+
+   procedure getName (This : in out LinesGraphicItem) is
+      Java_Result : constant Unbounded_String := LinesGraphicItem'Class (This).getName;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getName;
+
+   procedure getStaticName is
+      Java_Result : constant Unbounded_String := getStaticName;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getStaticName;
+
+   procedure removePoint (This : in out LinesGraphicItem) is
+      Java_Result : constant GPoint_Access := LinesGraphicItem'Class (This).removePoint;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end removePoint;
+
+   procedure isActive (This : in out LinesGraphicItem) is
+      Java_Result : constant Boolean := LinesGraphicItem'Class (This).isActive;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end isActive;
+
+   procedure duplicate (This : in out LinesGraphicItem) is
+      Java_Result : constant GraphicItemInterface_Access := LinesGraphicItem'Class (This).duplicate;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end duplicate;
+
+   procedure getAngle (This : in out LinesGraphicItem) is
+      Java_Result : constant Long_Float := LinesGraphicItem'Class (This).getAngle;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getAngle;
+
+   procedure toDom (This : in out LinesGraphicItem; canvasDom : CanvasDom_Access) is
+      Java_Result : constant Node_Access := LinesGraphicItem'Class (This).toDom (canvasDom);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end toDom;
+
+   procedure isValid (This : in out LinesGraphicItem) is
+      Java_Result : constant Boolean := LinesGraphicItem'Class (This).isValid;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end isValid;
+
+   procedure getPointsInterface (This : in out LinesGraphicItem) is
+      Java_Result : constant Points_Access := LinesGraphicItem'Class (This).getPointsInterface;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getPointsInterface;
+
+   procedure getColor (This : in out LinesGraphicItem) is
+      Java_Result : constant Color_Access := LinesGraphicItem'Class (This).getColor;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getColor;
+
+begin
+   null;
+   RECT := To_Unbounded_String ("rect");
+   ARC := To_Unbounded_String ("arc");
+   STRING_Id := To_Unbounded_String ("string");
+   CHAR := To_Unbounded_String ("char");
+   IMAGE := To_Unbounded_String ("image");
+   item := 0;
+   NAME := To_Unbounded_String ("Line Tool");
+
+end org.allbinary.graphics.j2me.workarea.tools.LinesGraphicItem_Package;
+
+

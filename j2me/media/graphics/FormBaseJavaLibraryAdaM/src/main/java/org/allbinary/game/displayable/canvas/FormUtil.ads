@@ -1,0 +1,52 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Ada.Strings.Maps.Constants;
+with Ada.Characters.Handling;
+with Ada.Exceptions;
+with Ada.Numerics.Long_Elementary_Functions;
+with Ada.Tags;
+with Ada.Text_IO;
+with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.graphics.PointFactory_Package; use org.allbinary.graphics.PointFactory_Package;
+with org.allbinary.graphics.Rectangle_Package; use org.allbinary.graphics.Rectangle_Package;
+with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+
+package org.allbinary.game.displayable.canvas.FormUtil_Package is
+
+   package PointFactory_Package renames org.allbinary.graphics.PointFactory_Package;
+   package Rectangle_Package renames org.allbinary.graphics.Rectangle_Package;
+   package DisplayInfoSingleton_Package renames org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+
+   type FormUtil is tagged;
+   type FormUtil_Access is access all FormUtil'Class;
+   type FormUtil_Access_Array is array (Natural range <>) of FormUtil_Access;
+   type FormUtil_Access_Array_Access is access all FormUtil_Access_Array;
+
+   type FormUtil is new Java_Object with null record;
+   instance : FormUtil_Access;
+
+   procedure Initialize (This : in out FormUtil'Class);
+   function Create return FormUtil_Access;
+   function getInstance return FormUtil_Access;
+   procedure getInstance;
+   function createFormRectangle (This : in out FormUtil) return Rectangle_Access;
+   procedure createFormRectangle (This : in out FormUtil);
+
+end org.allbinary.game.displayable.canvas.FormUtil_Package;
+
+

@@ -1,0 +1,75 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.animation.BaseAnimationInterfaceFactoryInterfaceComposite_Package is
+
+   procedure Initialize_Fields (This : in out BaseAnimationInterfaceFactoryInterfaceComposite'Class) is
+   begin
+      null;
+      
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out BaseAnimationInterfaceFactoryInterfaceComposite'Class; basicAnimationInterfaceFactoryInterfaceArray : BasicAnimationInterfaceFactoryInterface_Access_Array_Access) is
+   begin
+      Initialize_Fields (This);
+        This.basicAnimationInterfaceFactoryInterfaceArray := basicAnimationInterfaceFactoryInterfaceArray;
+   end Initialize;
+
+   function Create (basicAnimationInterfaceFactoryInterfaceArray : BasicAnimationInterfaceFactoryInterface_Access_Array_Access) return BaseAnimationInterfaceFactoryInterfaceComposite_Access is
+      This : constant BaseAnimationInterfaceFactoryInterfaceComposite_Access := new BaseAnimationInterfaceFactoryInterfaceComposite;
+   begin
+      Initialize (This.all, basicAnimationInterfaceFactoryInterfaceArray);
+      return This;
+   end Create;
+
+   --  throws Exception
+   function getInstance (This : in out BaseAnimationInterfaceFactoryInterfaceComposite; instanceId : Integer) return Animation_Access is
+   begin
+        return NullAnimationFactory_Package.getFactoryInstance.getInstance (0);
+   end getInstance;
+
+   function getBasicAnimationInterfaceFactoryInterfaceArray (This : in out BaseAnimationInterfaceFactoryInterfaceComposite) return BasicAnimationInterfaceFactoryInterface_Access_Array_Access is
+   begin
+        return This.basicAnimationInterfaceFactoryInterfaceArray;
+   end getBasicAnimationInterfaceFactoryInterfaceArray;
+
+   procedure setBasicAnimationInterfaceFactoryInterfaceArray (This : in out BaseAnimationInterfaceFactoryInterfaceComposite; basicAnimationInterfaceFactoryInterfaceArray : BasicAnimationInterfaceFactoryInterface_Access_Array_Access) is
+   begin
+        This.basicAnimationInterfaceFactoryInterfaceArray := basicAnimationInterfaceFactoryInterfaceArray;
+   end setBasicAnimationInterfaceFactoryInterfaceArray;
+
+   procedure setInitialScale (This : in out BaseAnimationInterfaceFactoryInterfaceComposite; scaleProperties : ScaleProperties_Access) is
+   begin
+        null;
+   end setInitialScale;
+
+   procedure getInstance (This : in out BaseAnimationInterfaceFactoryInterfaceComposite; instanceId : Integer) is
+      Java_Result : constant Animation_Access := BaseAnimationInterfaceFactoryInterfaceComposite'Class (This).getInstance (instanceId);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getInstance;
+
+   procedure getBasicAnimationInterfaceFactoryInterfaceArray (This : in out BaseAnimationInterfaceFactoryInterfaceComposite) is
+      Java_Result : constant BasicAnimationInterfaceFactoryInterface_Access_Array_Access := BaseAnimationInterfaceFactoryInterfaceComposite'Class (This).getBasicAnimationInterfaceFactoryInterfaceArray;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getBasicAnimationInterfaceFactoryInterfaceArray;
+
+end org.allbinary.animation.BaseAnimationInterfaceFactoryInterfaceComposite_Package;
+
+

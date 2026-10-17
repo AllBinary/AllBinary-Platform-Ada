@@ -1,0 +1,99 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.game.configuration.GameConfigurationSingleton_Package is
+
+   procedure Initialize_Fields (This : in out GameConfigurationSingleton'Class) is
+   begin
+      null;
+      
+      
+   end Initialize_Fields;
+
+
+   function getInstance return GameConfigurationSingleton_Access is
+   begin
+        return GameConfigurationSingleton_Package.SINGLETON;
+   end getInstance;
+
+   procedure Initialize (This : in out GameConfigurationSingleton'Class) is
+   begin
+      Initialize_Fields (This);
+        This.list := BasicArrayListD_Package.Create;
+        This.hashtable := StdUtil_Package.getInstance.createHashtable;
+   end Initialize;
+
+   function Create return GameConfigurationSingleton_Access is
+      This : constant GameConfigurationSingleton_Access := new GameConfigurationSingleton;
+   begin
+      Initialize (This.all);
+      return This;
+   end Create;
+
+   function getInstanceByName (This : in out GameConfigurationSingleton; name : Unbounded_String) return GameConfiguration_Access is
+   begin
+        return GameConfiguration_Access (This.hashtable.get (name));
+   end getInstanceByName;
+
+   function getOptionsBasicArrayList (This : in out GameConfigurationSingleton) return BasicArrayList_Access is
+   begin
+        return This.list;
+   end getOptionsBasicArrayList;
+
+   procedure add (This : in out GameConfigurationSingleton; gameConfiguration : GameConfiguration_Access) is
+   begin
+        This.list.add (gameConfiguration);
+   end add;
+
+   function getHashtable (This : in out GameConfigurationSingleton) return ABHashtable_Access is
+   begin
+        return This.hashtable;
+   end getHashtable;
+
+   procedure getInstance is
+      Java_Result : constant GameConfigurationSingleton_Access := getInstance;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getInstance;
+
+   procedure getInstanceByName (This : in out GameConfigurationSingleton; name : Unbounded_String) is
+      Java_Result : constant GameConfiguration_Access := GameConfigurationSingleton'Class (This).getInstanceByName (name);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getInstanceByName;
+
+   procedure getOptionsBasicArrayList (This : in out GameConfigurationSingleton) is
+      Java_Result : constant BasicArrayList_Access := GameConfigurationSingleton'Class (This).getOptionsBasicArrayList;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getOptionsBasicArrayList;
+
+   procedure getHashtable (This : in out GameConfigurationSingleton) is
+      Java_Result : constant ABHashtable_Access := GameConfigurationSingleton'Class (This).getHashtable;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getHashtable;
+
+begin
+   null;
+   SINGLETON := GameConfigurationSingleton_Package.Create;
+
+end org.allbinary.game.configuration.GameConfigurationSingleton_Package;
+
+

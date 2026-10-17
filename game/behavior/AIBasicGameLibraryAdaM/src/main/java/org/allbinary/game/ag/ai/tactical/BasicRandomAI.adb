@@ -1,0 +1,83 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.game.ag.ai.tactical.BasicRandomAI_Package is
+
+   procedure Initialize_Fields (This : in out BasicRandomAI'Class) is
+   begin
+      null;
+      This.i_random := 0;
+      
+      
+      This.keyArray := new Integer_Array'(Canvas_Package.UP, Canvas_Package.DOWN, Canvas_Package.LEFT, Canvas_Package.RIGHT, Canvas_Package.KEY_NUM1, Canvas_Package.KEY_NUM7, Canvas_Package.KEY_NUM9);
+      This.myRandomFactory := MyRandomFactory_Package.getInstance;
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out BasicRandomAI'Class; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access; inputProbability : InputProbability_Access; visitor : Visitor_Access) is
+   begin
+        BasicAI_Package.Initialize (This, ownerLayerInterface, gameInput);
+        Initialize_Fields (This);
+        This.inputProbability := inputProbability;
+        This.visitor := visitor;
+   end Initialize;
+
+   function Create (ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access; inputProbability : InputProbability_Access; visitor : Visitor_Access) return BasicRandomAI_Access is
+      This : constant BasicRandomAI_Access := new BasicRandomAI;
+   begin
+      Initialize (This.all, ownerLayerInterface, gameInput, inputProbability, visitor);
+      return This;
+   end Create;
+
+   --  throws Exception
+   procedure processAI (This : in out BasicRandomAI; allBinaryLayerManager : AllBinaryLayerManager_Access) is
+      repeat : Boolean;
+      repeatLikelyhoodIntegerArray : Integer_Array_Access;
+      likelyhoodIntegerArray : Integer_Array_Access_Array_Access;
+      size : Integer;
+      likelyhoodIntegerKeyArray : Integer_Array_Access;
+      key : Integer;
+      index : Integer;
+   begin
+        if This.inputProbability.getTimeDelayHelper.isTime (GameTickTimeDelayHelperFactory_Package.getInstance.startTime) then
+            This.i_random := This.myRandomFactory.getAbsoluteNextInt (This.inputProbability.getMax);
+            repeat := False;
+            repeatLikelyhoodIntegerArray := This.inputProbability.getRepeatLikelyhoodIntegerArray;
+            if ((This.getLastKey) /= (-(1))) and then ((repeatLikelyhoodIntegerArray (This.getLastKey).intValue) >= (This.i_random)) then
+                repeat := True;
+            end if;
+            if not (repeat) then
+                likelyhoodIntegerArray := This.inputProbability.getLikelyhoodIntegerArray;
+                This.i_random := This.myRandomFactory.getAbsoluteNextInt (This.inputProbability.getMax);
+                size := This.keyArray'Length;
+                likelyhoodIntegerKeyArray := null;
+                for index in 0 .. (size) - 1 loop
+                    key := This.keyArray (index);
+                    likelyhoodIntegerKeyArray := likelyhoodIntegerArray (key);
+                    if ((likelyhoodIntegerArray'Length) >= (key)) and then ((likelyhoodIntegerKeyArray (0)) /= (null)) then
+                        if ((This.i_random) >= (likelyhoodIntegerKeyArray (0).intValue)) and then ((This.i_random) < (likelyhoodIntegerKeyArray (1).intValue)) then
+                            This.setLastKey (key);
+                            exit;
+                        end if;
+                    end if;
+                end loop;
+            end if;
+            This.visitor.visit (This'Unchecked_Access);
+        end if;
+   end processAI;
+
+end org.allbinary.game.ag.ai.tactical.BasicRandomAI_Package;
+
+

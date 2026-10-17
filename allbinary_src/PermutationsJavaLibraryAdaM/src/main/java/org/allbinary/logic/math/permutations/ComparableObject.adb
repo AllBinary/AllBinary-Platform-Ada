@@ -1,0 +1,55 @@
+-- 
+-- AllBinary Open License Version 1 
+-- Copyright (c) 2011 AllBinary 
+--  
+-- By agreeing to this license you and any business entity you represent are 
+-- legally bound to the AllBinary Open License Version 1 legal agreement. 
+--  
+-- You may obtain the AllBinary Open License Version 1 legal agreement from 
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository. 
+--  
+-- Created By: Travis Berthelot 
+--   
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.logic.math.permutations.ComparableObject_Package is
+
+   procedure Initialize_Fields (This : in out ComparableObject'Class) is
+   begin
+      null;
+   end Initialize_Fields;
+
+   procedure Initialize (This : in out ComparableObject'Class) is
+   begin
+      Initialize_Fields (This);
+   end Initialize;
+
+   function Create return ComparableObject_Access is
+      This : constant ComparableObject_Access := new ComparableObject;
+   begin
+      Initialize (This.all);
+      return This;
+   end Create;
+
+
+   function compareTo (This : in out ComparableObject; anyType : Java_Object_Access) return Integer is
+   begin
+        if (TsUtil_Package.getInstance.hashCode (This'Unchecked_Access)) < (TsUtil_Package.getInstance.hashCode (anyType)) then
+            return -(1);
+        elsif (TsUtil_Package.getInstance.hashCode (This'Unchecked_Access)) > (TsUtil_Package.getInstance.hashCode (anyType)) then
+            return 1;
+        end if;
+        return 0;
+   end compareTo;
+
+   procedure compareTo (This : in out ComparableObject; anyType : Java_Object_Access) is
+      Java_Result : constant Integer := ComparableObject'Class (This).compareTo (anyType);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end compareTo;
+
+end org.allbinary.logic.math.permutations.ComparableObject_Package;
+
+

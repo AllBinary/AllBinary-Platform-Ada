@@ -1,0 +1,155 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.media.image.analysis.ImageAnalysis_Package is
+
+   procedure Initialize_Fields (This : in out ImageAnalysis'Class) is
+   begin
+      null;
+      This.logUtil := LogUtil_Package.getInstance;
+   end Initialize_Fields;
+
+
+   function getInstance return ImageAnalysis_Access is
+   begin
+        return ImageAnalysis_Package.instance;
+   end getInstance;
+
+   procedure Initialize (This : in out ImageAnalysis'Class) is
+   begin
+      Initialize_Fields (This);
+        null;
+   end Initialize;
+
+   function Create return ImageAnalysis_Access is
+      This : constant ImageAnalysis_Access := new ImageAnalysis;
+   begin
+      Initialize (This.all);
+      return This;
+   end Create;
+
+   --  throws Exception
+   function process (This : in out ImageAnalysis; bufferedImageArray : BufferedImage_Access_Array_Access; colorRangeInterface : ColorRangeInterface_Access) return ImageAnalysisResults_Access_Array_Access is
+      commonStrings : CommonStrings_Access;
+      imageAnalysisResultsArray : ImageAnalysisResults_Access_Array_Access;
+      index : Integer;
+   begin
+        commonStrings := CommonStrings_Package.getInstance;
+        This.logUtil.putF (Java_Image (CommonLabels_Package.getInstance.START) & colorRangeInterface.toString, This'Unchecked_Access, commonStrings.PROCESS);
+        imageAnalysisResultsArray := new ImageAnalysisResults_Access_Array'(0 .. (bufferedImageArray'Length) - 1 => null);
+        for index in 0 .. (bufferedImageArray'Length) - 1 loop
+            imageAnalysisResultsArray (index) := ImageAnalysis_Package.process (bufferedImageArray (index), colorRangeInterface);
+        end loop;
+        return imageAnalysisResultsArray;
+   end process;
+
+   --  throws Exception
+   function process (bufferedImage : BufferedImage_Access; colorRangeInterface : ColorRangeInterface_Access) return ImageAnalysisResults_Access is
+      imageAnalysisResults : ImageAnalysisResults_Access;
+      redTotal : Long_Long_Integer;
+      greenTotal : Long_Long_Integer;
+      blueTotal : Long_Long_Integer;
+      keyInteger : Integer;
+      colorCacheable : ColorCacheable_Access;
+      color : Color_Access;
+      indexX : Integer;
+      indexY : Integer;
+      totalPixels : Long_Long_Integer;
+      colorAverage : ColorAverage_Access;
+   begin
+        imageAnalysisResults := ImageAnalysisResults_Package.Create;
+        redTotal := 0;
+        greenTotal := 0;
+        blueTotal := 0;
+        for indexY in 0 .. (bufferedImage.getHeight) - 1 loop
+            for indexX in 0 .. (bufferedImage.getWidth) - 1 loop
+                keyInteger := To_Unbounded_String (Java_Image (bufferedImage.getRGB (indexX, indexY)));
+                colorCacheable := ColorCacheable_Access (ColorCacheFactory_Package.getInstance.get (keyInteger));
+                color := colorCacheable.getColor;
+                ImageAnalysis_Package.processColorRangeResults (imageAnalysisResults, colorRangeInterface, color);
+                ImageAnalysis_Package.processImageColorResults (imageAnalysisResults.getImageColorResults, colorRangeInterface, color);
+                redTotal := (redTotal) + (color.getRed);
+                greenTotal := (greenTotal) + (color.getGreen);
+                blueTotal := (blueTotal) + (color.getBlue);
+            end loop;
+        end loop;
+        totalPixels := imageAnalysisResults.getImageColorRangeResults.getTotalPixelsChecked;
+        colorAverage := imageAnalysisResults.getImageColorResults.getColorAverage;
+        colorAverage.setAvgRed ((Float (redTotal)) / (Float (totalPixels)));
+        colorAverage.setAvgGreen ((Float (greenTotal)) / (Float (totalPixels)));
+        colorAverage.setAvgBlue ((Float (blueTotal)) / (Float (totalPixels)));
+        return imageAnalysisResults;
+   end process;
+
+   procedure processColorRangeResults (imageAnalysisResults : ImageAnalysisResults_Access; colorRangeInterface : ColorRangeInterface_Access; color : Color_Access) is
+   begin
+        if colorRangeInterface.isInRange (color) then
+            imageAnalysisResults.getImageColorRangeResults.addMatchingPixelsChecked;
+        else
+            null;
+        end if;
+        imageAnalysisResults.getImageColorRangeResults.addTotalPixelsChecked;
+   end processColorRangeResults;
+
+   procedure processImageColorResults (imageColorResults : ImageColorResults_Access; colorRangeInterface : ColorRangeInterface_Access; color : Color_Access) is
+   begin
+        if (color.getRed) < (imageColorResults.getColorRange.getMinRed) then
+            imageColorResults.getColorRange.setMinRed (color.getRed);
+        end if;
+        if (color.getGreen) < (imageColorResults.getColorRange.getMinGreen) then
+            imageColorResults.getColorRange.setMinGreen (color.getGreen);
+        end if;
+        if (color.getBlue) < (imageColorResults.getColorRange.getMinBlue) then
+            imageColorResults.getColorRange.setMinBlue (color.getBlue);
+        end if;
+        if (color.getRed) > (imageColorResults.getColorRange.getMaxRed) then
+            imageColorResults.getColorRange.setMaxRed (color.getRed);
+        end if;
+        if (color.getGreen) > (imageColorResults.getColorRange.getMaxGreen) then
+            imageColorResults.getColorRange.setMaxGreen (color.getGreen);
+        end if;
+        if (color.getBlue) > (imageColorResults.getColorRange.getMaxBlue) then
+            imageColorResults.getColorRange.setMaxBlue (color.getBlue);
+        end if;
+   end processImageColorResults;
+
+   procedure getInstance is
+      Java_Result : constant ImageAnalysis_Access := getInstance;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getInstance;
+
+   procedure process (This : in out ImageAnalysis; bufferedImageArray : BufferedImage_Access_Array_Access; colorRangeInterface : ColorRangeInterface_Access) is
+      Java_Result : constant ImageAnalysisResults_Access_Array_Access := ImageAnalysis'Class (This).process (bufferedImageArray, colorRangeInterface);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end process;
+
+   procedure process (bufferedImage : BufferedImage_Access; colorRangeInterface : ColorRangeInterface_Access) is
+      Java_Result : constant ImageAnalysisResults_Access := process (bufferedImage, colorRangeInterface);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end process;
+
+begin
+   null;
+   instance := ImageAnalysis_Package.Create;
+
+end org.allbinary.media.image.analysis.ImageAnalysis_Package;
+
+

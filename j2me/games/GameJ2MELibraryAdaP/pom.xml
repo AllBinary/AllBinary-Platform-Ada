@@ -1,0 +1,193 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.allbinary</groupId>
+  <artifactId>GameJ2MELibraryPOMAda</artifactId>
+  <packaging>pom</packaging>
+  <!-- AllBinary Platform Version Start -->
+  <version>1.0.0-SNAPSHOT</version>
+  <!-- AllBinary Platform Version End -->
+
+  <name>GameJ2MELibraryPOMAda</name>
+  <url>http://www.allbinary.com/</url>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <name>AllBinary Snapshots Nexus</name>
+            <url>https://nexus-allbinary.rhcloud.com/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>nexus-releases</id>
+            <name>AllBinary Releases Nexus</name>
+            <url>https://nexus-allbinary.rhcloud.com/nexus/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
+
+
+
+    <modules>
+
+        <!--
+        NoGyroSensorLibrary
+
+        -->
+        <module>../../android/AndroidUtilJavaLibraryAdaM</module>
+
+        <module>../../../allbinary_src/security/SimpleCryptLibraryAdaM</module>
+        <!--
+        <module>../../../../working_thirdparty/security/BouncyCastleDESJavaLibraryAdaM</module>
+        <module>../../../../working_thirdparty/communication/XmlRpc/XmlRpcJavaLibraryAdaM</module>
+        -->
+        <module>../../../allbinary_src/TokenizerJavaLibraryAdaM</module>
+        <module>../../../allbinary_src/security/BasicSecurityJavaLibraryAdaM</module>
+        <module>../../../replace_these_stub_projects/security/YourCryptFileJavaLibraryAdaM</module>
+        <module>../../../replace_these_stub_projects/security/YourSecurityJavaLibraryAdaM</module>
+        <module>../../../replace_these_stub_projects/communication/YourXmlRpcJavaLibraryAdaM</module>
+        <module>../../../replace_these_stub_projects/allbinary_src/NoneOnlyJavaLibraryAdaM</module>
+        <module>../../../replace_these_stub_projects/allbinary_src/J2MEOnlyJavaLibraryAdaM</module>
+        <module>../../../replace_these_stub_projects/allbinary_src/J2MECompatibilityJavaLibraryAdaM</module>
+        <module>../../../replace_these_stub_projects/allbinary_src/J2MEJsInteropCompatibilityJavaLibraryAdaM</module>
+
+        <module>../../DebugJavaLibraryAdaM</module>             
+        <module>../../ResourceLibraryAdaM</module>
+        <module>../../ResourceJ2MEJavaLibraryAdaM</module>
+        <module>../../AndroidResourceLibraryAdaM</module>
+        <module>../../../allbinary_src/hardware/AndroidSystemJavaLibraryAdaM</module>
+
+        <module>../../../game/behavior/ArtificialIntelligenceLibraryAdaM</module>
+
+        <module>../../media/graphics/PlatformNullImageJavaLibraryAdaM</module>
+        <module>../../media/graphics/ImageCacheBaseJ2MEJavaLibraryAdaM</module>
+        <module>../../media/graphics/ImageCacheJ2MEJavaLibraryAdaM</module>
+        <module>../../../graphics/opengl/OpenGLJ2MENoneJavaLibraryAdaM</module>
+        <module>../../../graphics/opengl/OpenGLNoneJavaLibraryAdaM</module>
+        <module>../../../graphics/opengl/OpenGLNoneOtherJavaLibraryAdaM</module>
+        <module>../../../graphics/opengl/OpenGLNoneOther2JavaLibraryAdaM</module>
+        <module>../../../graphics/opengl/OpenGLESBaseJ2MEJavaLibraryAdaM</module>
+
+        <module>../../media/graphics/animation/AnimationLibraryAdaM</module>
+        <module>../../media/graphics/animation/RotationAnimationJavaLibraryAdaM</module>
+
+        <module>../../games/GameInputLibraryAdaM</module>
+
+        <module>../../games/GameScoresBaseJavaLibraryAdaM</module>
+        <module>../../games/GameScoresBaseJ2MELibraryAdaM</module>
+
+        <module>../../statistics/ApplicationStatisticsHTMLLibraryAdaM</module>
+        <!--
+        <module>../../games/GameConfigurationHTMLJavaLibraryAdaM</module>
+        -->
+        <module>../../games/GameConfigurationJ2MEJavaLibraryAdaM</module>   
+        <module>../../games/GameConfigurationJavaLibraryAdaM</module>
+
+        <module>../../games/GameIntermissionLibraryAdaM</module>
+
+        <module>../../GroupLibraryAdaM</module>
+
+        <module>../../input/NoSensorJavaLibraryAdaM</module>
+
+        <module>../../input/AllBinarySensorJavaLibraryAdaM</module>
+
+        <module>../../input/platform/me/GameInputMEJavaLibraryAdaM</module>
+        <module>../../input/platform/me/GameInputMEKeyOnlyJavaLibraryAdaM</module>
+        <module>../../input/platform/me/GameInputMEMotionJavaLibraryAdaM</module>
+        <module>../../input/platform/pc/GameInputPCBaseJavaLibraryAdaM</module>
+        <module>../../input/platform/pc/GameInputPCJavaLibraryAdaM</module>
+        <module>../../input/platform/pc/GameInputPCKeyOnlyJavaLibraryAdaM</module>
+        <module>../../input/platform/pc/GameInputPCMotionJavaLibraryAdaM</module>
+        <module>../../input/platform/pc/GameInputSwtJavaLibraryAdaM</module>
+
+        <module>../../input/AllBinaryGyroSensorJavaLibraryAdaM</module>
+        <module>../../input/MotionGestureJavaLibraryAdaM</module>
+        
+        <module>../../input/MotionGestureBaseJavaLibraryAdaM</module>
+
+        <module>../../games/GameInputPersistanceLibraryAdaM</module>
+        <module>../../games/GameInputNoPersistanceLibraryAdaM</module>
+        
+        <module>../../lib/VectorThreeDimensionalLibraryAdaM</module>
+        <module>../../input/AllBinaryAccelerometerSensorJavaLibraryAdaM</module>
+        <module>../../input/NoGyroSensorJavaLibraryAdaM</module>
+        <module>../../input/JSEGyroSensorJavaLibraryAdaM</module>
+        <!--
+        <module>../../input/android/</module>
+        <module>../../input/platform/android/GameInputAndroidBaseJavaLibraryAdaM</module>
+        -->
+
+        <module>../../media/sound/BasicPlayerJavaLibraryAdaM</module>
+        <module>../../media/sound/BasicPlayerMIDP2JavaLibraryAdaM</module>
+        <module>../../media/sound/NoPlayerJavaLibraryAdaM</module>
+        <module>../../media/sound/SoundJ2MELibraryAdaM</module>
+
+        <module>../../media/motion/AllBinaryVibrationJavaLibraryAdaM</module>
+        <module>../../media/motion/NoVibrateJavaLibraryAdaM</module>
+        <module>../../media/motion/VibrateAndroidJavaLibraryAdaM</module>
+
+        <module>../../media/graphics/NullCustomUIJavaLibraryAdaM</module>
+        <module>../../media/graphics/NullCustomUIBaseJavaLibraryAdaM</module>
+
+        <module>../../media/graphics/FormValidationJavaLibraryAdaM</module>
+        
+        <module>../../media/graphics/FormJavaLibraryAdaM</module>
+        <module>../../media/graphics/FormBaseJavaLibraryAdaM</module>
+        <!--
+        <module>../../media/graphics/FormJMEJavaLibraryAdaM</module>
+        -->
+        <module>../../../j2me/media/graphics/FormJMEJavaLibraryAdaM</module>
+
+        <module>../../media/graphics/animation/AnimationResourceJavaLibraryAdaM</module>
+        <module>../../media/graphics/animation/TransitionAnimationJavaLibraryAdaM</module>
+        <module>../../media/graphics/animation/NoTransitionAnimationJavaLibraryAdaM</module>
+        <!--
+        AndroidTransitionAnimationJavaLibraryM
+        -->
+        <module>../../media/graphics/animation/GameAnimationJavaLibraryAdaM</module>
+        <module>../../games/GameResourceJavaLibraryAdaM</module>
+        <module>../../games/GameSoundsJavaLibraryAdaM</module>
+
+        <module>../../input/TouchInputLibraryP</module>
+
+        <module>../../media/MediaDataAdaM</module>
+        <module>../../media/sound/NotDeviceSpecificNoMediaMIDP1LibraryAdaM</module>
+
+        <module>../../../allbinary_src/content/ContentNoneJavaLibraryAdaM</module>
+        <module>../../../allbinary_src/content/ContentAndroidJavaLibraryAdaM</module>
+
+        <module>../../games/GameConfigurationFormJavaLibraryAdaM</module>
+
+        <module>../../FullScreenNoneJavaLibraryAdaM</module>
+        <!--
+        <module>../../FullScreenJavaLibraryAdaM</module>
+        -->
+
+        <module>../../../physics/VelocityLibraryAdaM</module>
+
+        <module>../../games/weapon/SoundsBasicWeaponsJavaLibraryAdaM</module>
+
+        <module>../../lib/TrigJ2MELibraryAdaM</module>
+
+        <module>../../media/graphics/geography/map/LayerPlacementLibraryAdaM</module>
+        <module>../../media/graphics/layer/AllBinaryLayerJavaLibraryAdaM</module>
+
+        <module>../../ScreenCaptureNoneJavaLibraryAdaM</module>
+        
+        <module>../licensing/GameLicensingNullJavaLibraryAdaM</module>
+        
+        <module>../../business/advertisement/AllBinaryAdvertisementClientJavaLibraryAdaM</module>
+        <module>../../business/advertisement/AdvertisementClientNoneJavaLibraryAdaM</module>
+
+        <module>../GameNotificationJavaLibraryAdaM</module>
+
+        <module>../../../graphics/opengl/NoSWTJavaLibraryAdaM</module>
+        <module>../../../graphics/opengl/SWTWithoutJOGLJavaLibraryAdaM</module>
+        <module>../SWTJavaLibraryAdaM</module>
+        <module>../GameJ2MELibraryAdaM</module>
+        
+        <!--
+        <module>../GameJ2MEOptionalLibraryPOAdaM</module>
+        -->
+    
+    </modules>
+
+</project>
+

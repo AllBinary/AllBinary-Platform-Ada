@@ -1,0 +1,58 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Ada.Strings.Maps.Constants;
+with Ada.Characters.Handling;
+with Ada.Exceptions;
+with Ada.Numerics.Long_Elementary_Functions;
+with Ada.Tags;
+with Ada.Text_IO;
+with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package; use org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+with org.allbinary.media.graphics.geography.map.CellPositionsUtil_Package; use org.allbinary.media.graphics.geography.map.CellPositionsUtil_Package;
+with org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package; use org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+
+package org.allbinary.game.layer.geographic.map.LayerCoveringCellPositionsUtil_Package is
+
+   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
+   package BasicGeographicMap_Package renames org.allbinary.media.graphics.geography.map.BasicGeographicMap_Package;
+   package CellPositionsUtil_Package renames org.allbinary.media.graphics.geography.map.CellPositionsUtil_Package;
+   package GeographicMapCellPosition_Package renames org.allbinary.media.graphics.geography.map.GeographicMapCellPosition_Package;
+
+   type LayerCoveringCellPositionsUtil is tagged;
+   type LayerCoveringCellPositionsUtil_Access is access all LayerCoveringCellPositionsUtil'Class;
+   type LayerCoveringCellPositionsUtil_Access_Array is array (Natural range <>) of LayerCoveringCellPositionsUtil_Access;
+   type LayerCoveringCellPositionsUtil_Access_Array_Access is access all LayerCoveringCellPositionsUtil_Access_Array;
+
+   type LayerCoveringCellPositionsUtil is new Java_Object with record
+      cellPositionsUtil : CellPositionsUtil_Access;
+   end record;
+   instance : LayerCoveringCellPositionsUtil_Access;
+
+   procedure Initialize (This : in out LayerCoveringCellPositionsUtil'Class);
+   function Create return LayerCoveringCellPositionsUtil_Access;
+   function getInstance return LayerCoveringCellPositionsUtil_Access;
+   procedure getInstance;
+   function getAllXY (This : in out LayerCoveringCellPositionsUtil; geographicMapInterface : BasicGeographicMap_Access; layerInterface : AllBinaryLayer_Access; x : Integer; y : Integer; reusableList : BasicArrayList_Access) return BasicArrayList_Access;
+   procedure getAllXY (This : in out LayerCoveringCellPositionsUtil; geographicMapInterface : BasicGeographicMap_Access; layerInterface : AllBinaryLayer_Access; x : Integer; y : Integer; reusableList : BasicArrayList_Access);
+   function getAll (This : in out LayerCoveringCellPositionsUtil; geographicMapInterface : BasicGeographicMap_Access; topLeftGeographicMapCellPosition : GeographicMapCellPosition_Access; layerInterface : AllBinaryLayer_Access; reusableList : BasicArrayList_Access) return BasicArrayList_Access;
+   procedure getAll (This : in out LayerCoveringCellPositionsUtil; geographicMapInterface : BasicGeographicMap_Access; topLeftGeographicMapCellPosition : GeographicMapCellPosition_Access; layerInterface : AllBinaryLayer_Access; reusableList : BasicArrayList_Access);
+
+end org.allbinary.game.layer.geographic.map.LayerCoveringCellPositionsUtil_Package;
+
+

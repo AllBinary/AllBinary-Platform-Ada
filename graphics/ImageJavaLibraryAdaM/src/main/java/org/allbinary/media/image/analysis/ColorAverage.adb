@@ -1,0 +1,118 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.media.image.analysis.ColorAverage_Package is
+
+   procedure Initialize_Fields (This : in out ColorAverage'Class) is
+   begin
+      null;
+      This.avgRed := 0.0;
+      This.avgGreen := 0.0;
+      This.avgBlue := 0.0;
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out ColorAverage'Class) is
+   begin
+      Initialize_Fields (This);
+        This.setAvgRed (0);
+        This.setAvgGreen (0);
+        This.setAvgBlue (0);
+   end Initialize;
+
+   function Create return ColorAverage_Access is
+      This : constant ColorAverage_Access := new ColorAverage;
+   begin
+      Initialize (This.all);
+      return This;
+   end Create;
+
+   function toString (This : in out ColorAverage) return Unbounded_String is
+      stringBuffer : StringMaker_Access;
+   begin
+        stringBuffer := StringMaker_Package.Create;
+        stringBuffer.append (To_Unbounded_String ("getAvgRed(): "));
+        stringBuffer.appendfloat (This.getAvgRed);
+        stringBuffer.append (CommonSeps_Package.getInstance.NEW_LINE);
+        stringBuffer.append (To_Unbounded_String ("getAvgRed(): "));
+        stringBuffer.appendfloat (This.getAvgRed);
+        stringBuffer.append (CommonSeps_Package.getInstance.NEW_LINE);
+        stringBuffer.append (To_Unbounded_String ("getAvgGreen(): "));
+        stringBuffer.appendfloat (This.getAvgGreen);
+        stringBuffer.append (CommonSeps_Package.getInstance.NEW_LINE);
+        return stringBuffer.toString;
+   end toString;
+
+   function getAvgRed (This : in out ColorAverage) return Float is
+   begin
+        return This.avgRed;
+   end getAvgRed;
+
+   procedure setAvgRed (This : in out ColorAverage; avgRed : Float) is
+   begin
+        This.avgRed := avgRed;
+   end setAvgRed;
+
+   function getAvgGreen (This : in out ColorAverage) return Float is
+   begin
+        return This.avgGreen;
+   end getAvgGreen;
+
+   procedure setAvgGreen (This : in out ColorAverage; avgGreen : Float) is
+   begin
+        This.avgGreen := avgGreen;
+   end setAvgGreen;
+
+   function getAvgBlue (This : in out ColorAverage) return Float is
+   begin
+        return This.avgBlue;
+   end getAvgBlue;
+
+   procedure setAvgBlue (This : in out ColorAverage; avgBlue : Float) is
+   begin
+        This.avgBlue := avgBlue;
+   end setAvgBlue;
+
+   procedure toString (This : in out ColorAverage) is
+      Java_Result : constant Unbounded_String := ColorAverage'Class (This).toString;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end toString;
+
+   procedure getAvgRed (This : in out ColorAverage) is
+      Java_Result : constant Float := ColorAverage'Class (This).getAvgRed;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getAvgRed;
+
+   procedure getAvgGreen (This : in out ColorAverage) is
+      Java_Result : constant Float := ColorAverage'Class (This).getAvgGreen;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getAvgGreen;
+
+   procedure getAvgBlue (This : in out ColorAverage) is
+      Java_Result : constant Float := ColorAverage'Class (This).getAvgBlue;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getAvgBlue;
+
+end org.allbinary.media.image.analysis.ColorAverage_Package;
+
+

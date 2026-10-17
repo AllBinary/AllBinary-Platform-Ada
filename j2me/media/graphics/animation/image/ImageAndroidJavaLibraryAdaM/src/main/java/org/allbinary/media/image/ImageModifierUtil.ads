@@ -1,0 +1,59 @@
+-- 
+-- AllBinary Open License Version 1 
+-- Copyright (c) 2022 AllBinary 
+--  
+-- By agreeing to this license you and any business entity you represent are 
+-- legally bound to the AllBinary Open License Version 1 legal agreement. 
+--  
+-- You may obtain the AllBinary Open License Version 1 legal agreement from 
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository. 
+--  
+-- Created By: Travis Berthelot 
+--   
+--  Generated Code Do Not Modify
+
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Ada.Strings.Maps.Constants;
+with Ada.Characters.Handling;
+with Ada.Exceptions;
+with Ada.Numerics.Long_Elementary_Functions;
+with Ada.Tags;
+with Ada.Text_IO;
+with AllBinary_Java; use AllBinary_Java;
+with android.graphics.Paint_Package; use android.graphics.Paint_Package;
+with android.graphics.PorterDuff_Package; use android.graphics.PorterDuff_Package;
+with android.graphics.PorterDuffColorFilter_Package; use android.graphics.PorterDuffColorFilter_Package;
+--  with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+
+package org.allbinary.media.image.ImageModifierUtil_Package is
+
+   package Paint_Package renames android.graphics.Paint_Package;
+   package PorterDuff_Package renames android.graphics.PorterDuff_Package;
+   package PorterDuffColorFilter_Package renames android.graphics.PorterDuffColorFilter_Package;
+   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
+
+   type ImageModifierUtil is tagged;
+   type ImageModifierUtil_Access is access all ImageModifierUtil'Class;
+   type ImageModifierUtil_Access_Array is array (Natural range <>) of ImageModifierUtil_Access;
+   type ImageModifierUtil_Access_Array_Access is access all ImageModifierUtil_Access_Array;
+
+   type ImageModifierUtil is new Java_Object with record
+      paint : Paint_Access;
+   end record;
+
+   procedure Initialize (This : in out ImageModifierUtil'Class);
+   function Create return ImageModifierUtil_Access;
+   function getInstanceOrCreate return ImageModifierUtil_Access;
+   procedure getInstanceOrCreate;
+   procedure setColor (This : in out ImageModifierUtil; unusedOriginalImage : Image_Access; image : Image_Access; imageIndex : Integer; basicColor : BasicColor_Access);
+   procedure changeColor (This : in out ImageModifierUtil; unusedOriginalImage : Image_Access; image : Image_Access; imageIndex : Integer; basicColor : BasicColor_Access);
+   procedure setAlpha (This : in out ImageModifierUtil; originalImage : Image_Access; image : Image_Access; imageIndex : Integer; alphaInt : Integer);
+   function getImageArray (This : in out ImageModifierUtil; originalImageArray : Image_Access_Array_Access) return Image_Access_Array_Access;
+   procedure getImageArray (This : in out ImageModifierUtil; originalImageArray : Image_Access_Array_Access);
+   procedure handleImage (This : in out ImageModifierUtil; imageArray : Image_Access_Array_Access; index : Integer; image : Image_Access);
+   procedure reset (This : in out ImageModifierUtil);
+
+end org.allbinary.media.image.ImageModifierUtil_Package;
+
+

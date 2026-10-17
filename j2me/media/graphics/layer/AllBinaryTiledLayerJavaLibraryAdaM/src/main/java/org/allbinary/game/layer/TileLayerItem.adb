@@ -1,0 +1,129 @@
+-- 
+-- AllBinary Open License Version 1 
+-- Copyright (c) 2006 AllBinary 
+--  
+-- By agreeing to this license you and any business entity you represent are 
+-- legally bound to the AllBinary Open License Version 1 legal agreement. 
+--  
+-- You may obtain the AllBinary Open License Version 1 legal agreement from 
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository. 
+--  
+-- Created By: Travis Berthelot 
+--   
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.game.layer.TileLayerItem_Package is
+
+   procedure Initialize_Fields (This : in out TileLayerItem'Class) is
+   begin
+      null;
+      
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out TileLayerItem'Class; label : Unbounded_String; tiledLayer : AllBinaryTiledLayer_Access; layout : Integer; altText : Unbounded_String; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) is
+   begin
+        ABCustomItem_Package.Initialize (This, label, backgroundBasicColor, foregroundBasicColor);
+        Initialize_Fields (This);
+        This.tiledLayer := tiledLayer;
+   end Initialize;
+
+   function Create (label : Unbounded_String; tiledLayer : AllBinaryTiledLayer_Access; layout : Integer; altText : Unbounded_String; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return TileLayerItem_Access is
+      This : constant TileLayerItem_Access := new TileLayerItem;
+   begin
+      Initialize (This.all, label, tiledLayer, layout, altText, backgroundBasicColor, foregroundBasicColor);
+      return This;
+   end Create;
+
+   procedure setOwner (This : in out TileLayerItem; owner : Screen_Access) is
+   begin
+        null;
+   end setOwner;
+
+   function getMinimumWidth (This : in out TileLayerItem) return Integer is
+   begin
+        return This.tiledLayer.getWidth;
+   end getMinimumWidth;
+
+   function getMinimumHeight (This : in out TileLayerItem) return Integer is
+   begin
+        return This.tiledLayer.getHeight;
+   end getMinimumHeight;
+
+   function getMinContentHeight (This : in out TileLayerItem) return Integer is
+   begin
+        return This.tiledLayer.getHeight;
+   end getMinContentHeight;
+
+   function getMinContentWidth (This : in out TileLayerItem) return Integer is
+   begin
+        return This.tiledLayer.getWidth;
+   end getMinContentWidth;
+
+   function getPrefContentHeight (This : in out TileLayerItem; width : Integer) return Integer is
+   begin
+        return This.tiledLayer.getHeight;
+   end getPrefContentHeight;
+
+   function getPrefContentWidth (This : in out TileLayerItem; height : Integer) return Integer is
+   begin
+        return This.tiledLayer.getWidth;
+   end getPrefContentWidth;
+
+   procedure paintXY (This : in out TileLayerItem; graphics : Graphics_Access; x : Integer; y : Integer) is
+   begin
+        This.tiledLayer.setPosition (x, y, This.tiledLayer.getZP);
+        This.tiledLayer.paint (graphics);
+   end paintXY;
+
+   procedure paintUnselected (This : in out TileLayerItem; graphics : Graphics_Access; x : Integer; y : Integer) is
+   begin
+        null;
+   end paintUnselected;
+
+   procedure getMinimumWidth (This : in out TileLayerItem) is
+      Java_Result : constant Integer := TileLayerItem'Class (This).getMinimumWidth;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getMinimumWidth;
+
+   procedure getMinimumHeight (This : in out TileLayerItem) is
+      Java_Result : constant Integer := TileLayerItem'Class (This).getMinimumHeight;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getMinimumHeight;
+
+   procedure getMinContentHeight (This : in out TileLayerItem) is
+      Java_Result : constant Integer := TileLayerItem'Class (This).getMinContentHeight;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getMinContentHeight;
+
+   procedure getMinContentWidth (This : in out TileLayerItem) is
+      Java_Result : constant Integer := TileLayerItem'Class (This).getMinContentWidth;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getMinContentWidth;
+
+   procedure getPrefContentHeight (This : in out TileLayerItem; width : Integer) is
+      Java_Result : constant Integer := TileLayerItem'Class (This).getPrefContentHeight (width);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getPrefContentHeight;
+
+   procedure getPrefContentWidth (This : in out TileLayerItem; height : Integer) is
+      Java_Result : constant Integer := TileLayerItem'Class (This).getPrefContentWidth (height);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getPrefContentWidth;
+
+end org.allbinary.game.layer.TileLayerItem_Package;
+
+

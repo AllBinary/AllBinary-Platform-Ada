@@ -1,0 +1,91 @@
+-- 
+-- AllBinary Open License Version 1 
+-- Copyright (c) 2025 AllBinary 
+--  
+-- By agreeing to this license you and any business entity you represent are 
+-- legally bound to the AllBinary Open License Version 1 legal agreement. 
+--  
+-- You may obtain the AllBinary Open License Version 1 legal agreement from 
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository. 
+--  
+-- Created By: Travis Berthelot 
+--   
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.logic.control.validate.Validation_Package is
+
+   procedure Initialize_Fields (This : in out Validation'Class) is
+   begin
+      null;
+      This.commonStrings := CommonStrings_Package.getInstance;
+   end Initialize_Fields;
+
+   procedure Initialize (This : in out Validation'Class) is
+   begin
+      Initialize_Fields (This);
+   end Initialize;
+
+   function Create return Validation_Access is
+      This : constant Validation_Access := new Validation;
+   begin
+      Initialize (This.all);
+      return This;
+   end Create;
+
+
+   --  throws Exception
+   function isValid (This : in out Validation) return Boolean is
+   begin
+        Java_Throw (Java_New_Exception ("RuntimeException"));
+   end isValid;
+
+   --  throws Exception
+   function toValidationInfoNode (This : in out Validation; document : Document_Access) return Node_Access is
+   begin
+        Java_Throw (Java_New_Exception ("RuntimeException"));
+   end toValidationInfoNode;
+
+   --  throws Exception
+   function toValidationInfoDoc (This : in out Validation) return Document_Access is
+   begin
+        Java_Throw (Java_New_Exception ("RuntimeException"));
+   end toValidationInfoDoc;
+
+   --  throws Exception
+   function validationInfo (This : in out Validation) return Unbounded_String is
+   begin
+        Java_Throw (Java_New_Exception ("RuntimeException"));
+   end validationInfo;
+
+   procedure isValid (This : in out Validation) is
+      Java_Result : constant Boolean := Validation'Class (This).isValid;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end isValid;
+
+   procedure toValidationInfoNode (This : in out Validation; document : Document_Access) is
+      Java_Result : constant Node_Access := Validation'Class (This).toValidationInfoNode (document);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end toValidationInfoNode;
+
+   procedure toValidationInfoDoc (This : in out Validation) is
+      Java_Result : constant Document_Access := Validation'Class (This).toValidationInfoDoc;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end toValidationInfoDoc;
+
+   procedure validationInfo (This : in out Validation) is
+      Java_Result : constant Unbounded_String := Validation'Class (This).validationInfo;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end validationInfo;
+
+end org.allbinary.logic.control.validate.Validation_Package;
+
+

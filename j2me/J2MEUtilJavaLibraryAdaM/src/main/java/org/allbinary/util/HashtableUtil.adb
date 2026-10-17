@@ -1,0 +1,114 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.util.HashtableUtil_Package is
+
+   procedure Initialize_Fields (This : in out HashtableUtil'Class) is
+   begin
+      null;
+      This.enumerationUtil := EnumerationUtil_Package.getInstance;
+   end Initialize_Fields;
+
+   procedure Initialize (This : in out HashtableUtil'Class) is
+   begin
+      Initialize_Fields (This);
+   end Initialize;
+
+   function Create return HashtableUtil_Access is
+      This : constant HashtableUtil_Access := new HashtableUtil;
+   begin
+      Initialize (This.all);
+      return This;
+   end Create;
+
+
+   function getInstance return HashtableUtil_Access is
+   begin
+        return HashtableUtil_Package.instance;
+   end getInstance;
+
+   procedure putAll (This : in out HashtableUtil; fromHashtable : ABHashtable_Access; hashtable : ABHashtable_Access) is
+      enumeration : Enumeration_Access;
+      keyCanBeNull : Java_Object_Access;
+      valueCanBeNull : Java_Object_Access;
+   begin
+        enumeration := fromHashtable.keys;
+        keyCanBeNull := null;
+        valueCanBeNull := null;
+        while This.enumerationUtil.hasMoreElements (enumeration) loop
+            keyCanBeNull := This.enumerationUtil.nextElement (enumeration);
+            valueCanBeNull := hashtable.get (keyCanBeNull);
+            if (valueCanBeNull) = (null) then
+                null;
+            else
+                hashtable.put (keyCanBeNull, valueCanBeNull);
+            end if;
+        end loop;
+   end putAll;
+
+   function getKeysAsArray (This : in out HashtableUtil; hashtable : ABHashtable_Access) return Java_Object_Access_Array_Access is
+      objectArray : Java_Object_Access_Array_Access;
+      index : Integer;
+      enumeration : Enumeration_Access;
+   begin
+        objectArray := new Java_Object_Access_Array'(0 .. (hashtable.size) - 1 => null);
+        index := 0;
+        enumeration := hashtable.keys;
+        while This.enumerationUtil.hasMoreElements (enumeration) loop
+            objectArray (Java_Post_Increment (index)) := This.enumerationUtil.nextElement (enumeration);
+        end loop;
+        return objectArray;
+   end getKeysAsArray;
+
+   function getKeysAsList (This : in out HashtableUtil; hashtable : ABHashtable_Access) return BasicArrayList_Access is
+      list : BasicArrayList_Access;
+      enumeration : Enumeration_Access;
+   begin
+        list := BasicArrayListS_Package.Create (hashtable.size);
+        enumeration := hashtable.keys;
+        while This.enumerationUtil.hasMoreElements (enumeration) loop
+            list.add (This.enumerationUtil.nextElement (enumeration));
+        end loop;
+        return list;
+   end getKeysAsList;
+
+   procedure getInstance is
+      Java_Result : constant HashtableUtil_Access := getInstance;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getInstance;
+
+   procedure getKeysAsArray (This : in out HashtableUtil; hashtable : ABHashtable_Access) is
+      Java_Result : constant Java_Object_Access_Array_Access := HashtableUtil'Class (This).getKeysAsArray (hashtable);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getKeysAsArray;
+
+   procedure getKeysAsList (This : in out HashtableUtil; hashtable : ABHashtable_Access) is
+      Java_Result : constant BasicArrayList_Access := HashtableUtil'Class (This).getKeysAsList (hashtable);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getKeysAsList;
+
+begin
+   null;
+   instance := HashtableUtil_Package.Create;
+
+end org.allbinary.util.HashtableUtil_Package;
+
+

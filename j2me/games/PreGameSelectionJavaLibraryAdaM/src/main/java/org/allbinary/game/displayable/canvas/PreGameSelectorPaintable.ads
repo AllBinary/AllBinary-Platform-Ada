@@ -1,0 +1,56 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Ada.Strings.Maps.Constants;
+with Ada.Characters.Handling;
+with Ada.Exceptions;
+with Ada.Numerics.Long_Elementary_Functions;
+with Ada.Tags;
+with Ada.Text_IO;
+with AllBinary_Java; use AllBinary_Java;
+--  with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with org.allbinary.graphics.color.BasicColorFactory_Package; use org.allbinary.graphics.color.BasicColorFactory_Package;
+with org.allbinary.graphics.displayable.DisplayInfoSingleton_Package; use org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+with org.allbinary.graphics.draw.CanvasDrawLineString_Package; use org.allbinary.graphics.draw.CanvasDrawLineString_Package;
+with org.allbinary.graphics.paint.InitUpdatePaintable_Package; use org.allbinary.graphics.paint.InitUpdatePaintable_Package;
+
+package org.allbinary.game.displayable.canvas.PreGameSelectorPaintable_Package is
+
+   package BasicColorFactory_Package renames org.allbinary.graphics.color.BasicColorFactory_Package;
+   package DisplayInfoSingleton_Package renames org.allbinary.graphics.displayable.DisplayInfoSingleton_Package;
+   package CanvasDrawLineString_Package renames org.allbinary.graphics.draw.CanvasDrawLineString_Package;
+   package InitUpdatePaintable_Package renames org.allbinary.graphics.paint.InitUpdatePaintable_Package;
+
+   type PreGameSelectorPaintable is tagged;
+   type PreGameSelectorPaintable_Access is access all PreGameSelectorPaintable'Class;
+   type PreGameSelectorPaintable_Access_Array is array (Natural range <>) of PreGameSelectorPaintable_Access;
+   type PreGameSelectorPaintable_Access_Array_Access is access all PreGameSelectorPaintable_Access_Array;
+
+   type PreGameSelectorPaintable is new InitUpdatePaintable with record
+      title : Unbounded_String;
+      canvasDrawLineString : CanvasDrawLineString_Access;
+      preGameScrollSelectionForm : PreGameScrollSelectionForm_Access;
+   end record;
+
+   procedure Initialize (This : in out PreGameSelectorPaintable'Class; title : Unbounded_String; preGameScrollSelectionForm : PreGameScrollSelectionForm_Access);
+   function Create (title : Unbounded_String; preGameScrollSelectionForm : PreGameScrollSelectionForm_Access) return PreGameSelectorPaintable_Access;
+   procedure update (This : in out PreGameSelectorPaintable);
+   procedure paint (This : in out PreGameSelectorPaintable; graphics : Graphics_Access);
+   function getPreGameSelectionForm (This : in out PreGameSelectorPaintable) return PreGameScrollSelectionForm_Access;
+   procedure getPreGameSelectionForm (This : in out PreGameSelectorPaintable);
+
+end org.allbinary.game.displayable.canvas.PreGameSelectorPaintable_Package;
+
+

@@ -1,0 +1,89 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.input.event.VirtualKeyboardEventHandler_Package is
+
+   procedure Initialize_Fields (This : in out VirtualKeyboardEventHandler'Class) is
+   begin
+      null;
+      This.SHOW_EVENT := VirtualKeyboardEvent_Package.Create (BooleanFactory_Package.getInstance.TRUE);
+      This.HIDE_EVENT := VirtualKeyboardEvent_Package.Create (BooleanFactory_Package.getInstance.FALSE);
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out VirtualKeyboardEventHandler'Class) is
+   begin
+      BasicEventHandler_Package.Initialize (This);
+      Initialize_Fields (This);
+        null;
+   end Initialize;
+
+   function Create return VirtualKeyboardEventHandler_Access is
+      This : constant VirtualKeyboardEventHandler_Access := new VirtualKeyboardEventHandler;
+   begin
+      Initialize (This.all);
+      return This;
+   end Create;
+
+   function getInstance return VirtualKeyboardEventHandler_Access is
+   begin
+        return VirtualKeyboardEventHandler_Package.gameKeyEventHandler;
+   end getInstance;
+
+   --  throws Exception
+   procedure process (This : in out VirtualKeyboardEventHandler; eventObject : AllBinaryEventObject_Access; eventListenerInterface : EventListenerInterface_Access) is
+      virtualKeyboardEventListenerInterface : VirtualKeyboardEventListenerInterface_Access;
+   begin
+        virtualKeyboardEventListenerInterface := VirtualKeyboardEventListenerInterface_Access (eventListenerInterface);
+        virtualKeyboardEventListenerInterface.onVirtualKeyboardEvent (VirtualKeyboardEvent_Access (eventObject));
+   end process;
+
+   procedure open (This : in out VirtualKeyboardEventHandler) is
+   begin
+        begin
+            Java_Sleep (120);
+            This.fireEvent (This.SHOW_EVENT);
+        exception
+            when e : others =>
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("open"), e);
+        end;
+   end open;
+
+   --  throws Exception
+   procedure close (This : in out VirtualKeyboardEventHandler) is
+   begin
+        begin
+            Java_Sleep (120);
+            This.fireEvent (This.HIDE_EVENT);
+        exception
+            when e : others =>
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.CLOSE, e);
+        end;
+   end close;
+
+   procedure getInstance is
+      Java_Result : constant VirtualKeyboardEventHandler_Access := getInstance;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getInstance;
+
+begin
+   null;
+   gameKeyEventHandler := VirtualKeyboardEventHandler_Package.Create;
+
+end org.allbinary.input.event.VirtualKeyboardEventHandler_Package;
+
+

@@ -1,0 +1,268 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.business.advertisement.Advertisement_Package is
+
+   procedure Initialize_Fields (This : in out Advertisement'Class) is
+   begin
+      null;
+      This.artist := Null_Unbounded_String;
+      This.artistLink := Null_Unbounded_String;
+      This.title := Null_Unbounded_String;
+      This.dateAdded := Null_Unbounded_String;
+      This.directory := Null_Unbounded_String;
+      This.framedLink := Null_Unbounded_String;
+      This.rank := 0;
+      This.listPrice := null;
+      This.ourPrice := null;
+      This.image := null;
+      This.product := null;
+      This.thumbnail := null;
+      
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out Advertisement'Class) is
+   begin
+      Initialize_Fields (This);
+        This.displayInBrowserContraintsInterface := null;
+   end Initialize;
+
+   function Create return Advertisement_Access is
+      This : constant Advertisement_Access := new Advertisement;
+   begin
+      Initialize (This.all);
+      return This;
+   end Create;
+
+   function getArtist (This : in out Advertisement) return Unbounded_String is
+   begin
+        return This.artist;
+   end getArtist;
+
+   procedure setArtist (This : in out Advertisement; artist : Unbounded_String) is
+   begin
+        This.artist := artist;
+   end setArtist;
+
+   function getArtistLink (This : in out Advertisement) return Unbounded_String is
+   begin
+        return This.artistLink;
+   end getArtistLink;
+
+   procedure setArtistLink (This : in out Advertisement; artistLink : Unbounded_String) is
+   begin
+        This.artistLink := artistLink;
+   end setArtistLink;
+
+   function getTitle (This : in out Advertisement) return Unbounded_String is
+   begin
+        return This.title;
+   end getTitle;
+
+   procedure setTitle (This : in out Advertisement; title : Unbounded_String) is
+   begin
+        This.title := title;
+   end setTitle;
+
+   function getDateAdded (This : in out Advertisement) return Unbounded_String is
+   begin
+        return This.dateAdded;
+   end getDateAdded;
+
+   procedure setDateAdded (This : in out Advertisement; dateAdded : Unbounded_String) is
+   begin
+        This.dateAdded := dateAdded;
+   end setDateAdded;
+
+   function getDirectory (This : in out Advertisement) return Unbounded_String is
+   begin
+        return This.directory;
+   end getDirectory;
+
+   procedure setDirectory (This : in out Advertisement; directory : Unbounded_String) is
+   begin
+        This.directory := directory;
+   end setDirectory;
+
+   function getFramedLink (This : in out Advertisement) return Unbounded_String is
+   begin
+        return This.framedLink;
+   end getFramedLink;
+
+   procedure setFramedLink (This : in out Advertisement; framedLink : Unbounded_String) is
+   begin
+        This.framedLink := framedLink;
+   end setFramedLink;
+
+   function getListPrice (This : in out Advertisement) return Money_Access is
+   begin
+        return This.listPrice;
+   end getListPrice;
+
+   procedure setListPrice (This : in out Advertisement; listPrice : Money_Access) is
+   begin
+        This.listPrice := listPrice;
+   end setListPrice;
+
+   function getOurPrice (This : in out Advertisement) return Money_Access is
+   begin
+        return This.ourPrice;
+   end getOurPrice;
+
+   procedure setOurPrice (This : in out Advertisement; ourPrice : Money_Access) is
+   begin
+        This.ourPrice := ourPrice;
+   end setOurPrice;
+
+   function getRank (This : in out Advertisement) return Integer is
+   begin
+        return This.rank;
+   end getRank;
+
+   procedure setRank (This : in out Advertisement; rank : Integer) is
+   begin
+        This.rank := rank;
+   end setRank;
+
+   function getImage (This : in out Advertisement) return AdvertisementImageInterface_Access is
+   begin
+        return This.image;
+   end getImage;
+
+   procedure setImage (This : in out Advertisement; image : AdvertisementImageInterface_Access) is
+   begin
+        This.image := image;
+   end setImage;
+
+   function getProduct (This : in out Advertisement) return AdvertisementProductInterface_Access is
+   begin
+        return This.product;
+   end getProduct;
+
+   procedure setProduct (This : in out Advertisement; product : AdvertisementProductInterface_Access) is
+   begin
+        This.product := product;
+   end setProduct;
+
+   function getThumbnail (This : in out Advertisement) return AdvertisementThumbnailInterface_Access is
+   begin
+        return This.thumbnail;
+   end getThumbnail;
+
+   procedure setThumbnail (This : in out Advertisement; thumbnail : AdvertisementThumbnailInterface_Access) is
+   begin
+        This.thumbnail := thumbnail;
+   end setThumbnail;
+
+   function getDisplayInBrowserContraintsInterface (This : in out Advertisement) return DisplayInBrowserContraintsInterface_Access is
+   begin
+        return This.displayInBrowserContraintsInterface;
+   end getDisplayInBrowserContraintsInterface;
+
+   procedure getArtist (This : in out Advertisement) is
+      Java_Result : constant Unbounded_String := Advertisement'Class (This).getArtist;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getArtist;
+
+   procedure getArtistLink (This : in out Advertisement) is
+      Java_Result : constant Unbounded_String := Advertisement'Class (This).getArtistLink;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getArtistLink;
+
+   procedure getTitle (This : in out Advertisement) is
+      Java_Result : constant Unbounded_String := Advertisement'Class (This).getTitle;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getTitle;
+
+   procedure getDateAdded (This : in out Advertisement) is
+      Java_Result : constant Unbounded_String := Advertisement'Class (This).getDateAdded;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getDateAdded;
+
+   procedure getDirectory (This : in out Advertisement) is
+      Java_Result : constant Unbounded_String := Advertisement'Class (This).getDirectory;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getDirectory;
+
+   procedure getFramedLink (This : in out Advertisement) is
+      Java_Result : constant Unbounded_String := Advertisement'Class (This).getFramedLink;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getFramedLink;
+
+   procedure getListPrice (This : in out Advertisement) is
+      Java_Result : constant Money_Access := Advertisement'Class (This).getListPrice;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getListPrice;
+
+   procedure getOurPrice (This : in out Advertisement) is
+      Java_Result : constant Money_Access := Advertisement'Class (This).getOurPrice;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getOurPrice;
+
+   procedure getRank (This : in out Advertisement) is
+      Java_Result : constant Integer := Advertisement'Class (This).getRank;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getRank;
+
+   procedure getImage (This : in out Advertisement) is
+      Java_Result : constant AdvertisementImageInterface_Access := Advertisement'Class (This).getImage;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getImage;
+
+   procedure getProduct (This : in out Advertisement) is
+      Java_Result : constant AdvertisementProductInterface_Access := Advertisement'Class (This).getProduct;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getProduct;
+
+   procedure getThumbnail (This : in out Advertisement) is
+      Java_Result : constant AdvertisementThumbnailInterface_Access := Advertisement'Class (This).getThumbnail;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getThumbnail;
+
+   procedure getDisplayInBrowserContraintsInterface (This : in out Advertisement) is
+      Java_Result : constant DisplayInBrowserContraintsInterface_Access := Advertisement'Class (This).getDisplayInBrowserContraintsInterface;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getDisplayInBrowserContraintsInterface;
+
+end org.allbinary.business.advertisement.Advertisement_Package;
+
+

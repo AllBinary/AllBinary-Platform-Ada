@@ -1,0 +1,179 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.game.combat.weapon.WeaponProperties_Package is
+
+   procedure Initialize_Fields (This : in out WeaponProperties'Class) is
+   begin
+      null;
+      This.reloadTime := 0;
+      This.targetingTime := 0;
+      This.speed := BasicDecimal_Package.ZERO_BIGDECIMAL;
+      This.MAX := 10240;
+      This.ZERO := 0;
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out WeaponProperties'Class; reloadTime : Long_Long_Integer; targetingTime : Long_Long_Integer; speed : Long_Long_Integer; damage_Case : Integer; dissipation : Short_Integer) is
+      MESSAGE : Unbounded_String;
+      commonStrings : CommonStrings_Access;
+      unscaledDamage : Long_Long_Integer;
+      scaledDissipation : Integer;
+      value : Long_Long_Integer;
+   begin
+      SimpleWeaponProperties_Package.Initialize (This);
+      Initialize_Fields (This);
+        if (((speed) < (This.MAX)) and then ((speed) /= (0))) and then (not (WeaponProperties_Package.messageSent)) then
+            MESSAGE := To_Unbounded_String ("Danger Danger Danger: Speed probably to slow if using 1 degree calculations as velocity for a single axis could be below 1024: ");
+            commonStrings := CommonStrings_Package.getInstance;
+            PreLogUtil_Package.put (StringMaker_Package.Create.append (MESSAGE).appendlong (speed).toString, This'Unchecked_Access, commonStrings.CONSTRUCTOR);
+            WeaponProperties_Package.messageSent := True;
+        end if;
+        This.setReloadTime (reloadTime);
+        This.setTargetingTime (targetingTime);
+        This.setDamage (damage_Case);
+        This.setDissipation (dissipation);
+        This.setSpeed (BasicDecimal_Package.Create (speed));
+        if (dissipation) /= (This.ZERO) then
+            unscaledDamage := (This.speed.getUnscaled) * (damage_Case);
+            scaledDissipation := (dissipation) * (This.speed.getScaledFactorValue);
+            value := ((unscaledDamage) / (Long_Long_Integer (scaledDissipation)));
+            This.setRange ((Integer (((value) * (9)))) / (10));
+        end if;
+   end Initialize;
+
+   function Create (reloadTime : Long_Long_Integer; targetingTime : Long_Long_Integer; speed : Long_Long_Integer; damage_Case : Integer; dissipation : Short_Integer) return WeaponProperties_Access is
+      This : constant WeaponProperties_Access := new WeaponProperties;
+   begin
+      Initialize (This.all, reloadTime, targetingTime, speed, damage_Case, dissipation);
+      return This;
+   end Create;
+
+   procedure setReloadTime (This : in out WeaponProperties; reloadTime : Long_Long_Integer) is
+   begin
+        This.reloadTime := reloadTime;
+   end setReloadTime;
+
+   function getReloadTime (This : in out WeaponProperties) return Long_Long_Integer is
+   begin
+        return This.reloadTime;
+   end getReloadTime;
+
+   procedure setTargetingTime (This : in out WeaponProperties; targetingTime : Long_Long_Integer) is
+   begin
+        This.targetingTime := targetingTime;
+   end setTargetingTime;
+
+   function getTargetingTime (This : in out WeaponProperties) return Long_Long_Integer is
+   begin
+        return This.targetingTime;
+   end getTargetingTime;
+
+   function getSpeed (This : in out WeaponProperties) return BasicDecimal_Access is
+   begin
+        return This.speed;
+   end getSpeed;
+
+   procedure setSpeed (This : in out WeaponProperties; speed : BasicDecimal_Access) is
+   begin
+        This.speed := speed;
+   end setSpeed;
+
+   function getDamageI (This : in out WeaponProperties; range_Case_Id : Integer) return Integer is
+   begin
+        return (This.getDamage) - (((((This.getDissipation) * (range_Case_Id))) / (This.speed.getScaled)));
+   end getDamageI;
+
+   function toStringArray (This : in out WeaponProperties) return Unbounded_String_Array_Access is
+      index : Integer;
+      stringArray : Unbounded_String_Array_Access;
+      stringBuffer : StringMaker_Access;
+   begin
+        index := 0;
+        stringArray := new Unbounded_String_Array'(0 .. (3) - 1 => Null_Unbounded_String);
+        stringBuffer := StringMaker_Package.Create;
+        stringArray (Java_Post_Increment (index)) := stringBuffer.append (WeaponProperties_Package.DAMAGE).appendint (Integer (This.getDamage)).toString;
+        stringBuffer.delete (0, stringBuffer.length);
+        stringArray (Java_Post_Increment (index)) := stringBuffer.append (WeaponProperties_Package.RANGE_Id).appendint (Integer (This.getRange)).toString;
+        stringBuffer.delete (0, stringBuffer.length);
+        stringArray (Java_Post_Increment (index)) := stringBuffer.append (WeaponProperties_Package.RELOAD).appendlong (This.getReloadTime).toString;
+        return stringArray;
+   end toStringArray;
+
+   function toString (This : in out WeaponProperties) return Unbounded_String is
+      stringBuffer : StringMaker_Access;
+   begin
+        stringBuffer := StringMaker_Package.Create;
+        stringBuffer.append (WeaponProperties_Package.DAMAGE).appendint (Integer (This.getDamage));
+        stringBuffer.append (CommonSeps_Package.getInstance.SPACE);
+        stringBuffer.append (WeaponProperties_Package.RANGE_Id).appendint (Integer (This.getRange));
+        stringBuffer.append (CommonSeps_Package.getInstance.SPACE);
+        stringBuffer.append (WeaponProperties_Package.RELOAD).appendlong (This.getReloadTime);
+        return stringBuffer.toString;
+   end toString;
+
+   procedure getReloadTime (This : in out WeaponProperties) is
+      Java_Result : constant Long_Long_Integer := WeaponProperties'Class (This).getReloadTime;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getReloadTime;
+
+   procedure getTargetingTime (This : in out WeaponProperties) is
+      Java_Result : constant Long_Long_Integer := WeaponProperties'Class (This).getTargetingTime;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getTargetingTime;
+
+   procedure getSpeed (This : in out WeaponProperties) is
+      Java_Result : constant BasicDecimal_Access := WeaponProperties'Class (This).getSpeed;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getSpeed;
+
+   procedure getDamageI (This : in out WeaponProperties; range_Case_Id : Integer) is
+      Java_Result : constant Integer := WeaponProperties'Class (This).getDamageI (range_Case_Id);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getDamageI;
+
+   procedure toStringArray (This : in out WeaponProperties) is
+      Java_Result : constant Unbounded_String_Array_Access := WeaponProperties'Class (This).toStringArray;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end toStringArray;
+
+   procedure toString (This : in out WeaponProperties) is
+      Java_Result : constant Unbounded_String := WeaponProperties'Class (This).toString;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end toString;
+
+begin
+   null;
+   NULL_WEAPON_PROPERTIES := WeaponProperties_Package.Create (0, 0, 0, 0, Short_Integer (0));
+   messageSent := False;
+   DAMAGE := To_Unbounded_String ("Damage: ");
+   RANGE_Id := To_Unbounded_String ("Range: ");
+   RELOAD := To_Unbounded_String ("Reload: ");
+
+end org.allbinary.game.combat.weapon.WeaponProperties_Package;
+
+

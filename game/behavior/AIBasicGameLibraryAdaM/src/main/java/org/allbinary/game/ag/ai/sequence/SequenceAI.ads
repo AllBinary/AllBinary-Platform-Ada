@@ -1,0 +1,71 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Ada.Strings.Maps.Constants;
+with Ada.Characters.Handling;
+with Ada.Exceptions;
+with Ada.Numerics.Long_Elementary_Functions;
+with Ada.Tags;
+with Ada.Text_IO;
+with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.ai.ArtificialIntelligence_Package; use org.allbinary.ai.ArtificialIntelligence_Package;
+with org.allbinary.ai.ArtificialIntelligenceInterface_Package; use org.allbinary.ai.ArtificialIntelligenceInterface_Package;
+with org.allbinary.ai.ArtificialIntelligenceTransitionInterface_Package; use org.allbinary.ai.ArtificialIntelligenceTransitionInterface_Package;
+with org.allbinary.game.ag.ai.ArrayAI_Package; use org.allbinary.game.ag.ai.ArrayAI_Package;
+with org.allbinary.game.input.GameInput_Package; use org.allbinary.game.input.GameInput_Package;
+with org.allbinary.layer.AllBinaryLayer_Package; use org.allbinary.layer.AllBinaryLayer_Package;
+with org.allbinary.layer.AllBinaryLayerManager_Package; use org.allbinary.layer.AllBinaryLayerManager_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+
+package org.allbinary.game.ag.ai.sequence.SequenceAI_Package is
+
+   package ArtificialIntelligence_Package renames org.allbinary.ai.ArtificialIntelligence_Package;
+   package ArtificialIntelligenceInterface_Package renames org.allbinary.ai.ArtificialIntelligenceInterface_Package;
+   package ArtificialIntelligenceTransitionInterface_Package renames org.allbinary.ai.ArtificialIntelligenceTransitionInterface_Package;
+   package ArrayAI_Package renames org.allbinary.game.ag.ai.ArrayAI_Package;
+   package GameInput_Package renames org.allbinary.game.input.GameInput_Package;
+   package AllBinaryLayer_Package renames org.allbinary.layer.AllBinaryLayer_Package;
+   package AllBinaryLayerManager_Package renames org.allbinary.layer.AllBinaryLayerManager_Package;
+   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+
+   type SequenceAI is tagged;
+   type SequenceAI_Access is access all SequenceAI'Class;
+   type SequenceAI_Access_Array is array (Natural range <>) of SequenceAI_Access;
+   type SequenceAI_Access_Array_Access is access all SequenceAI_Access_Array;
+
+   type SequenceAI is new ArrayAI with record
+      index : Integer;
+   end record;
+   SEQUENCE_AI : Unbounded_String;
+
+   procedure Initialize (This : in out SequenceAI'Class; artificialIntelligenceInterfaceArray : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access);
+   function Create (artificialIntelligenceInterfaceArray : ArtificialIntelligenceInterface_Access_Array_Access; ownerLayerInterface : AllBinaryLayer_Access; gameInput : GameInput_Access) return SequenceAI_Access;
+   procedure processAI (This : in out SequenceAI; allBinaryLayerManager : AllBinaryLayerManager_Access);
+   procedure next (This : in out SequenceAI);
+   function getIndex (This : in out SequenceAI) return Integer;
+   procedure getIndex (This : in out SequenceAI);
+   procedure setIndex (This : in out SequenceAI; index : Integer);
+   function getSelectedArtificialIntelligenceInterface (This : in out SequenceAI) return ArtificialIntelligenceInterface_Access;
+   procedure getSelectedArtificialIntelligenceInterface (This : in out SequenceAI);
+   function getName (This : in out SequenceAI) return Unbounded_String;
+   procedure getName (This : in out SequenceAI);
+   function toString (This : in out SequenceAI) return Unbounded_String;
+   procedure toString (This : in out SequenceAI);
+
+end org.allbinary.game.ag.ai.sequence.SequenceAI_Package;
+
+

@@ -1,0 +1,65 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Ada.Strings.Maps.Constants;
+with Ada.Characters.Handling;
+with Ada.Exceptions;
+with Ada.Numerics.Long_Elementary_Functions;
+with Ada.Tags;
+with Ada.Text_IO;
+with AllBinary_Java; use AllBinary_Java;
+--  with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+with org.allbinary.graphics.Anchor_Package; use org.allbinary.graphics.Anchor_Package;
+with org.allbinary.image.ImageCache_Package; use org.allbinary.image.ImageCache_Package;
+with org.allbinary.logic.communication.log.PreLogUtil_Package; use org.allbinary.logic.communication.log.PreLogUtil_Package;
+with org.microemu.device.playn.PlaynImmutableImage_Package; use org.microemu.device.playn.PlaynImmutableImage_Package;
+with org.microemu.device.playn.PlaynMutableImage_Package; use org.microemu.device.playn.PlaynMutableImage_Package;
+with playn.core.CanvasImage_Package; use playn.core.CanvasImage_Package;
+with playn.core.CanvasSurface_Package; use playn.core.CanvasSurface_Package;
+
+package org.allbinary.media.image.ImageScaleUtil_Package is
+
+   package Anchor_Package renames org.allbinary.graphics.Anchor_Package;
+   package ImageCache_Package renames org.allbinary.image.ImageCache_Package;
+   package PreLogUtil_Package renames org.allbinary.logic.communication.log.PreLogUtil_Package;
+   package PlaynImmutableImage_Package renames org.microemu.device.playn.PlaynImmutableImage_Package;
+   package PlaynMutableImage_Package renames org.microemu.device.playn.PlaynMutableImage_Package;
+   package CanvasImage_Package renames playn.core.CanvasImage_Package;
+   package CanvasSurface_Package renames playn.core.CanvasSurface_Package;
+
+   type ImageScaleUtil is tagged;
+   type ImageScaleUtil_Access is access all ImageScaleUtil'Class;
+   type ImageScaleUtil_Access_Array is array (Natural range <>) of ImageScaleUtil_Access;
+   type ImageScaleUtil_Access_Array_Access is access all ImageScaleUtil_Access_Array;
+
+   type ImageScaleUtil is new Java_Object with null record;
+   instance : ImageScaleUtil_Access;
+
+   procedure Initialize (This : in out ImageScaleUtil'Class);
+   function Create return ImageScaleUtil_Access;
+   function getInstance return ImageScaleUtil_Access;
+   procedure getInstance;
+   function createImage2 (This : in out ImageScaleUtil; imageCache : ImageCache_Access; originalImage : Image_Access; scaleNominatorX : Float; scaleDenominatorX : Float; scaleNominatorY : Float; scaleDenominatorY : Float; cached : Boolean) return Image_Access;
+   procedure createImage2 (This : in out ImageScaleUtil; imageCache : ImageCache_Access; originalImage : Image_Access; scaleNominatorX : Float; scaleDenominatorX : Float; scaleNominatorY : Float; scaleDenominatorY : Float; cached : Boolean);
+   function createImage3 (This : in out ImageScaleUtil; imageCache : ImageCache_Access; originalImage : Image_Access; scaleNominatorX : Float; scaleDenominatorX : Float; scaleNominatorY : Float; scaleDenominatorY : Float; cached : Boolean; mutable : Boolean) return Image_Access;
+   procedure createImage3 (This : in out ImageScaleUtil; imageCache : ImageCache_Access; originalImage : Image_Access; scaleNominatorX : Float; scaleDenominatorX : Float; scaleNominatorY : Float; scaleDenominatorY : Float; cached : Boolean; mutable : Boolean);
+   function createImage (This : in out ImageScaleUtil; imageCache : ImageCache_Access; originalImage : Image_Access; scaleX : Float; scaleY : Float; cached : Boolean) return Image_Access;
+   procedure createImage (This : in out ImageScaleUtil; imageCache : ImageCache_Access; originalImage : Image_Access; scaleX : Float; scaleY : Float; cached : Boolean);
+   function createImageInternal (This : in out ImageScaleUtil; originalImage : Image_Access; scaleX : Float; scaleY : Float) return Image_Access;
+   procedure createImageInternal (This : in out ImageScaleUtil; originalImage : Image_Access; scaleX : Float; scaleY : Float);
+
+end org.allbinary.media.image.ImageScaleUtil_Package;
+
+

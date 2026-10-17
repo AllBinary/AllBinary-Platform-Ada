@@ -1,0 +1,87 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.allbinary</groupId>
+    <artifactId>AllBinaryBaseLibraryPOMAda</artifactId>
+    <packaging>pom</packaging>
+    <!-- AllBinary Platform Version Start -->
+    <version>1.0.0-SNAPSHOT</version>
+    <!-- AllBinary Platform Version End -->
+
+    <name>AllBinaryBaseLibraryPOMAda</name>
+    <url>http://www.allbinary.com/</url>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <name>AllBinary Snapshots Nexus</name>
+            <url>https://nexus-allbinary.rhcloud.com/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>nexus-releases</id>
+            <name>AllBinary Releases Nexus</name>
+            <url>https://nexus-allbinary.rhcloud.com/nexus/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
+    
+    <properties>
+        <buildLabel>${project.version}</buildLabel>
+        <assemblyPluginVersion>2.2-beta-1</assemblyPluginVersion>
+    </properties>
+
+    <modules>
+        <module>../CommonJavaLibraryAdaM</module>
+        <module>../TempBaseJavaLibraryAdaM</module>
+        
+        <module>../../allbinary_src/LogAdaM</module>
+        <module>../../allbinary_src/allbinary_src_designpatterns_srcAdaM</module>
+        <module>../../allbinary_src/data/BaseDataJavaLibraryAdaM</module>
+        <module>../../allbinary_src/cache/BaseCacheJavaLibraryAdaM</module>
+        <module>../../allbinary_src/logic/BasePreloaderJavaLibraryAdaM</module>
+        <module>../../allbinary_src/logic/BasePreloaderJ2MEJavaLibraryAdaM</module>
+
+        <module>../ExceptionHTMLJavaLibraryAdaM</module>
+        <module>../J2MEExceptionLibraryAdaM</module>
+        <module>../../allbinary_src/J2SEExceptionLibraryAdaM</module>
+        <module>../J2MEUtilJavaLibraryAdaM</module>
+        <module>../J2MEColorJavaLibraryAdaM</module>
+        <module>../EventJ2MELibraryAdaM</module>
+
+        <!--<module>../../allbinary_src/LogNoPlatformJavaLibraryAdaM</module>-->
+        <module>../../allbinary_src/LogJ2MEJavaLibraryAdaM</module>
+        <module>../../allbinary_src/LogJ2SEJavaLibraryAdaM</module>
+        <module>../../allbinary_src/LogAndroidJavaLibraryAdaM</module>
+        <module>../logging/LoggingNoneAdaM</module>
+        <module>../logging/LoggingJ2MEAllAdaM</module>
+        <module>../logging/LoggingJ2MEExceptionAdaM</module>
+        <module>../logging/LoggingAndroidAllAdaM</module>
+        <!--
+        //While it is a possible dependency option it really does not fit here
+        //as such it is actually build in the final POM builds instead
+        <module>../logging/LoggingRemoteExceptionAdaM</module>  
+        -->
+        
+        <module>../J2MEWindowingJavaLibraryAdaM</module>
+        
+        <module>../lib/BaseMathLibraryAdaM</module>
+        <module>../lib/BasicMathLibraryAdaM</module>
+        
+        <module>../../allbinary_src/ThreadLibraryAdaM</module>
+        <!--<module>../../allbinary_src/ThreadHTMLLibraryAdaM</module>-->
+        <module>../../allbinary_src/ThreadJ2MELibraryAdaM</module>
+        <module>../time/TimeJavaLibraryAdaM</module>
+
+        <module>../statistics/ApplicationStatisticsJ2SELibraryAdaM</module>
+        <module>../statistics/ApplicationStatisticsJ2MELibraryAdaM</module>
+        <module>../statistics/ApplicationStatisticsJavaLibraryAdaM</module>
+
+        <module>../../allbinary_src/logging/BasicLogConfigTypeJavaLibraryAdaM</module>
+        <module>../../allbinary_src/logging/LogConfigTypeGameClientJavaLibraryAdaM</module>
+
+        <module>../../allbinary_src/hardware/HardwareLibraryPOAdaM</module>
+
+        <module>../lib/TrigBaseLibraryAdaM</module>
+
+    </modules>
+
+</project>
+

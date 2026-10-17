@@ -1,0 +1,45 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Ada.Strings.Maps.Constants;
+with Ada.Characters.Handling;
+with Ada.Exceptions;
+with Ada.Numerics.Long_Elementary_Functions;
+with Ada.Tags;
+with Ada.Text_IO;
+with AllBinary_Java; use AllBinary_Java;
+
+package org.allbinary.logic.communication.log.LogFactory_Package is
+
+
+   type LogFactory is tagged;
+   type LogFactory_Access is access all LogFactory'Class;
+   type LogFactory_Access_Array is array (Natural range <>) of LogFactory_Access;
+   type LogFactory_Access_Array_Access is access all LogFactory_Access_Array;
+
+   type LogFactory is new Java_Object with null record;
+
+   procedure Initialize (This : in out LogFactory'Class);
+   function Create return LogFactory_Access;
+   function getInstance (specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Java_Object_Access) return Log_Access;
+   procedure getInstance (specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Java_Object_Access);
+   function getInstanceF (specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String) return Log_Access;
+   procedure getInstanceF (specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String);
+   function getInstanceSE (specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String; exception_Id : Java_Object_Access) return Log_Access;
+   procedure getInstanceSE (specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String; exception_Id : Java_Object_Access);
+
+end org.allbinary.logic.communication.log.LogFactory_Package;
+
+

@@ -1,0 +1,61 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.game.midlet.DemoRunnable_Package is
+
+   procedure Initialize_Fields (This : in out DemoRunnable'Class) is
+   begin
+      null;
+      This.logUtil := LogUtil_Package.getInstance;
+      This.commonStrings := CommonStrings_Package.getInstance;
+      
+      
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out DemoRunnable'Class; demoGameMidlet : DemoGameMidlet_Access) is
+   begin
+      Initialize_Fields (This);
+        This.demoGameMidlet := demoGameMidlet;
+        This.startDemoGameMidletEvent := DemoGameMidletEvent_Package.Create (This.demoGameMidlet, DemoGameMidletStateFactory_Package.getInstance.START_DEMO);
+   end Initialize;
+
+   function Create (demoGameMidlet : DemoGameMidlet_Access) return DemoRunnable_Access is
+      This : constant DemoRunnable_Access := new DemoRunnable;
+   begin
+      Initialize (This.all, demoGameMidlet);
+      return This;
+   end Create;
+
+   procedure run (This : in out DemoRunnable) is
+   begin
+        begin
+            This.logUtil.putF (StringMaker_Package.Create.append (CommonLabels_Package.getInstance.START_LABEL).append (To_Unbounded_String ("GameCanvasRunnableInterface")).toString, This'Unchecked_Access, This.commonStrings.RUN);
+            This.demoGameMidlet.commandAction (MyCommandsFactory_Package.getInstance.SET_DISPLAYABLE, ProgressCanvasFactory_Package.getInstance);
+            This.demoGameMidlet.setGameCanvasRunnableInterface (This.demoGameMidlet.createDemoGameCanvasRunnableInterface);
+            This.demoGameMidlet.demoSetup;
+            DemoGameMidletEventHandler_Package.getInstance.fireEvent (This.startDemoGameMidletEvent);
+            This.demoGameMidlet.startGameCanvasRunnableInterface;
+            This.demoGameMidlet.postDemoSetup;
+            This.logUtil.putF (This.commonStrings.END_RUNNABLE, This'Unchecked_Access, This.commonStrings.RUN);
+        exception
+            when e : others =>
+            This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, This.commonStrings.RUN, e);
+        end;
+   end run;
+
+end org.allbinary.game.midlet.DemoRunnable_Package;
+
+

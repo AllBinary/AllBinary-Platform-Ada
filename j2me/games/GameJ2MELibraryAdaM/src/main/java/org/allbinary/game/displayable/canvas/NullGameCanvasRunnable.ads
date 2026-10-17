@@ -1,0 +1,89 @@
+-- 
+-- AllBinary Open License Version 1 
+-- Copyright (c) 2025 AllBinary 
+--  
+-- By agreeing to this license you and any business entity you represent are 
+-- legally bound to the AllBinary Open License Version 1 legal agreement. 
+--  
+-- You may obtain the AllBinary Open License Version 1 legal agreement from 
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository. 
+--  
+-- Created By: Travis Berthelot 
+--   
+--  Generated Code Do Not Modify
+
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Ada.Strings.Maps.Constants;
+with Ada.Characters.Handling;
+with Ada.Exceptions;
+with Ada.Numerics.Long_Elementary_Functions;
+with Ada.Tags;
+with Ada.Text_IO;
+with AllBinary_Java; use AllBinary_Java;
+--  with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
+--  with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+--  with javax.microedition.lcdui.Item_Package; use javax.microedition.lcdui.Item_Package;
+with org.allbinary.game.state.GameState_Package; use org.allbinary.game.state.GameState_Package;
+with org.allbinary.game.state.GameStateFactory_Package; use org.allbinary.game.state.GameStateFactory_Package;
+with org.allbinary.logic.StdUtil_Package; use org.allbinary.logic.StdUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.util.ABHashtable_Package; use org.allbinary.util.ABHashtable_Package;
+with org.allbinary.game.displayable.canvas.GameCanvasRunnableInterface_Package; use org.allbinary.game.displayable.canvas.GameCanvasRunnableInterface_Package;
+
+package org.allbinary.game.displayable.canvas.NullGameCanvasRunnable_Package is
+
+   package GameState_Package renames org.allbinary.game.state.GameState_Package;
+   package GameStateFactory_Package renames org.allbinary.game.state.GameStateFactory_Package;
+   package StdUtil_Package renames org.allbinary.logic.StdUtil_Package;
+   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+   package ABHashtable_Package renames org.allbinary.util.ABHashtable_Package;
+
+   type NullGameCanvasRunnable is tagged;
+   type NullGameCanvasRunnable_Access is access all NullGameCanvasRunnable'Class;
+   type NullGameCanvasRunnable_Access_Array is array (Natural range <>) of NullGameCanvasRunnable_Access;
+   type NullGameCanvasRunnable_Access_Array_Access is access all NullGameCanvasRunnable_Access_Array;
+
+   type NullGameCanvasRunnable is new GameCanvasRunnableInterface with record
+      gameStateFactory : GameStateFactory_Access;
+   end record;
+   NULL_GAME_CANVAS_RUNNABLE : NullGameCanvasRunnable_Access;
+
+   procedure Initialize (This : in out NullGameCanvasRunnable'Class);
+   function Create return NullGameCanvasRunnable_Access;
+   function getTitle (This : in out NullGameCanvasRunnable) return Unbounded_String;
+   procedure getTitle (This : in out NullGameCanvasRunnable);
+   function isInitialized (This : in out NullGameCanvasRunnable) return Boolean;
+   procedure isInitialized (This : in out NullGameCanvasRunnable);
+   function isPaused (This : in out NullGameCanvasRunnable) return Boolean;
+   procedure isPaused (This : in out NullGameCanvasRunnable);
+   procedure unPause (This : in out NullGameCanvasRunnable);
+   procedure pause (This : in out NullGameCanvasRunnable);
+   function isHighScoreSubmitted (This : in out NullGameCanvasRunnable) return Boolean;
+   procedure isHighScoreSubmitted (This : in out NullGameCanvasRunnable);
+   procedure setHighScoreSubmitted (This : in out NullGameCanvasRunnable; highScoreSubmitted : Boolean);
+   procedure processGameOver (This : in out NullGameCanvasRunnable);
+   function isGameOver (This : in out NullGameCanvasRunnable) return Boolean;
+   procedure isGameOver (This : in out NullGameCanvasRunnable);
+   procedure initCommands (This : in out NullGameCanvasRunnable; cmdListener : CommandListener_Access);
+   function getCurrentStateHashtable (This : in out NullGameCanvasRunnable) return ABHashtable_Access;
+   procedure getCurrentStateHashtable (This : in out NullGameCanvasRunnable);
+   function getLoadStateHashtable (This : in out NullGameCanvasRunnable) return ABHashtable_Access;
+   procedure getLoadStateHashtable (This : in out NullGameCanvasRunnable);
+   procedure setLoadStateHashtable (This : in out NullGameCanvasRunnable; hashtable : ABHashtable_Access);
+   function getType (This : in out NullGameCanvasRunnable) return Integer;
+   procedure getType (This : in out NullGameCanvasRunnable);
+   procedure setGameState (This : in out NullGameCanvasRunnable; gameState : GameState_Access);
+   function getGameState (This : in out NullGameCanvasRunnable) return GameState_Access;
+   procedure getGameState (This : in out NullGameCanvasRunnable);
+   procedure itemStateChanged (This : in out NullGameCanvasRunnable; item : Item_Access);
+   procedure paint (This : in out NullGameCanvasRunnable; graphics : Graphics_Access);
+   procedure paintThreed (This : in out NullGameCanvasRunnable; graphics : Graphics_Access);
+   function isRunning (This : in out NullGameCanvasRunnable) return Boolean;
+   procedure isRunning (This : in out NullGameCanvasRunnable);
+   procedure setRunning (This : in out NullGameCanvasRunnable; isRunning : Boolean);
+   procedure setThread (This : in out NullGameCanvasRunnable; thread : Thread_Access);
+   procedure run (This : in out NullGameCanvasRunnable);
+
+end org.allbinary.game.displayable.canvas.NullGameCanvasRunnable_Package;
+
+

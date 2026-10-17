@@ -1,0 +1,88 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.animation.image.AllBinaryAdjustedHTMLImageRotationAnimation_Package is
+
+   procedure Initialize_Fields (This : in out AllBinaryAdjustedHTMLImageRotationAnimation'Class) is
+   begin
+      null;
+      This.dx := 0;
+      This.dy := 0;
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out AllBinaryAdjustedHTMLImageRotationAnimation'Class; originalImage : Image_Access; image : Image_Access; angleInfo : AngleInfo_Access; totalAngle : Short_Integer; dx : Integer; dy : Integer; animationBehavior : AnimationBehavior_Access) is
+   begin
+        AllBinaryHTMLImageRotationAnimation_Package.Initialize (This, originalImage, image, angleInfo, totalAngle, animationBehavior);
+        Initialize_Fields (This);
+        This.init (dx, dy);
+   end Initialize;
+
+   function Create (originalImage : Image_Access; image : Image_Access; angleInfo : AngleInfo_Access; totalAngle : Short_Integer; dx : Integer; dy : Integer; animationBehavior : AnimationBehavior_Access) return AllBinaryAdjustedHTMLImageRotationAnimation_Access is
+      This : constant AllBinaryAdjustedHTMLImageRotationAnimation_Access := new AllBinaryAdjustedHTMLImageRotationAnimation;
+   begin
+      Initialize (This.all, originalImage, image, angleInfo, totalAngle, dx, dy, animationBehavior);
+      return This;
+   end Create;
+
+   --  throws Exception
+   procedure init (This : in out AllBinaryAdjustedHTMLImageRotationAnimation; dx : Integer; dy : Integer) is
+   begin
+        This.dx := dx;
+        This.dy := dy;
+   end init;
+
+   procedure setDx (This : in out AllBinaryAdjustedHTMLImageRotationAnimation; dx : Integer) is
+   begin
+        This.dx := dx;
+   end setDx;
+
+   function getDx (This : in out AllBinaryAdjustedHTMLImageRotationAnimation) return Integer is
+   begin
+        return This.dx;
+   end getDx;
+
+   procedure setDy (This : in out AllBinaryAdjustedHTMLImageRotationAnimation; dy : Integer) is
+   begin
+        This.dy := dy;
+   end setDy;
+
+   function getDy (This : in out AllBinaryAdjustedHTMLImageRotationAnimation) return Integer is
+   begin
+        return This.dy;
+   end getDy;
+
+   procedure paintXY (This : in out AllBinaryAdjustedHTMLImageRotationAnimation; graphics : Graphics_Access; x : Integer; y : Integer) is
+   begin
+        AllBinaryHTMLImageRotationAnimation (This).paintXY (graphics, (x) + (This.dx), (y) + (This.dy));
+   end paintXY;
+
+   procedure getDx (This : in out AllBinaryAdjustedHTMLImageRotationAnimation) is
+      Java_Result : constant Integer := AllBinaryAdjustedHTMLImageRotationAnimation'Class (This).getDx;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getDx;
+
+   procedure getDy (This : in out AllBinaryAdjustedHTMLImageRotationAnimation) is
+      Java_Result : constant Integer := AllBinaryAdjustedHTMLImageRotationAnimation'Class (This).getDy;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getDy;
+
+end org.allbinary.animation.image.AllBinaryAdjustedHTMLImageRotationAnimation_Package;
+
+

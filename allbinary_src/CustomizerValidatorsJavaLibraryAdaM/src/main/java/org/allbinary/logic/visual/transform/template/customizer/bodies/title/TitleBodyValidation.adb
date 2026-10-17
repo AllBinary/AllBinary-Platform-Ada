@@ -1,0 +1,214 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 leIIgal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.logic.visual.transform.template.customizer.bodies.title.TitleBodyValidation_Package is
+
+   procedure Initialize_Fields (This : in out TitleBodyValidation'Class) is
+   begin
+      null;
+      This.logUtil := LogUtil_Package.getInstance;
+      
+      
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out TitleBodyValidation'Class) is
+      stringUtil : StringUtil_Access;
+   begin
+      Validation_Package.Initialize (This);
+      Initialize_Fields (This);
+        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+        end if;
+        stringUtil := StringUtil_Package.getInstance;
+        This.body_Id := stringUtil.EMPTY_STRING;
+        This.titleValidation := TitleNotRequiredValidation_Package.Create;
+   end Initialize;
+
+   function Create return TitleBodyValidation_Access is
+      This : constant TitleBodyValidation_Access := new TitleBodyValidation;
+   begin
+      Initialize (This.all);
+      return This;
+   end Create;
+
+   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
+   procedure Initialize (This : in out TitleBodyValidation'Class; document : Document_Access) is
+      nodeList : NodeList_Access;
+      aBodyNode : Node_Access;
+      aBodyValueNode : Node_Access;
+      titleNode : Node_Access;
+      index : Integer;
+   begin
+      Validation_Package.Initialize (This);
+      Initialize_Fields (This);
+        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+            This.logUtil.putF (This.commonStrings.CONSTRUCTOR, This'Unchecked_Access, To_Unbounded_String ("Constructor(document)"));
+        end if;
+        nodeList := document.getElementsByTagName (BodyData_Package.getInstance.NAME);
+        for index in 0 .. (nodeList.getLength) - 1 loop
+            aBodyNode := nodeList.item (index);
+            aBodyValueNode := DomSearchHelper_Package.getNode (DomData_Package.VALUE, aBodyNode.getChildNodes);
+            This.body_Id := DomNodeHelper_Package.getTextNodeValue (aBodyValueNode);
+            titleNode := DomSearchHelper_Package.getNode (TitleData_Package.getInstance.NAME, aBodyNode.getChildNodes);
+            This.titleValidation := TitleNotRequiredValidation_Package.Create (titleNode);
+            if (index) > (1) then
+                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+                    This.logUtil.putF (To_Unbounded_String ("To Many Body Nodes"), This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+                end if;
+            end if;
+        end loop;
+   end Initialize;
+
+   function Create (document : Document_Access) return TitleBodyValidation_Access is
+      This : constant TitleBodyValidation_Access := new TitleBodyValidation;
+   begin
+      Initialize (This.all, document);
+      return This;
+   end Create;
+
+   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
+   procedure Initialize (This : in out TitleBodyValidation'Class; hashMap : HashMap_Access) is
+   begin
+      Validation_Package.Initialize (This);
+      Initialize_Fields (This);
+        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+            This.logUtil.putF (This.commonStrings.START, This'Unchecked_Access, To_Unbounded_String ("Constructor(hashmap)"));
+        end if;
+        This.getFormData (hashMap);
+   end Initialize;
+
+   function Create (hashMap : HashMap_Access) return TitleBodyValidation_Access is
+      This : constant TitleBodyValidation_Access := new TitleBodyValidation;
+   begin
+      Initialize (This.all, hashMap);
+      return This;
+   end Create;
+
+   --  throws Exception
+   procedure getFormData (This : in out TitleBodyValidation; hashMap : HashMap_Access) is
+   begin
+        This.body_Id := Unbounded_String (hashMap.get (BodyData_Package.getInstance.NAME));
+        This.titleValidation := TitleNotRequiredValidation_Package.Create (hashMap);
+   end getFormData;
+
+   function isValid (This : in out TitleBodyValidation) return Boolean is
+      isValid : Boolean;
+   begin
+        begin
+            isValid := True;
+            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+                This.logUtil.putF (To_Unbounded_String ("TitleBodyValidation"), This'Unchecked_Access, This.commonStrings.IS_VALID);
+            end if;
+            if not (StringValidationUtil_Package.getInstance.isValidNotRequired (This.body_Id, BodyData_Package.getInstance.MIN, AbSqlData_Package.MAXBLOB)) then
+                isValid := False;
+            end if;
+            if not (This.titleValidation.isValid.booleanValue) then
+                isValid := False;
+            end if;
+            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+                This.logUtil.putF (To_Unbounded_String ("TitleBodyValidation: ") & Java_Image (isValid), This'Unchecked_Access, This.commonStrings.IS_VALID);
+            end if;
+            return isValid;
+        exception
+            when e : others =>
+            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.SQLTAGSERROR) then
+                This.logUtil.put (To_Unbounded_String ("Failed to validate form"), This'Unchecked_Access, This.commonStrings.IS_VALID, e);
+            end if;
+            return False;
+        end;
+   end isValid;
+
+   function validationInfo (This : in out TitleBodyValidation) return Unbounded_String is
+      stringBuffer : StringMaker_Access;
+   begin
+        begin
+            stringBuffer := StringMaker_Package.Create;
+            begin
+                stringBuffer.append (To_Unbounded_String ("Error: Data submitted is < "));
+                stringBuffer.appendint (Integer (BodyData_Package.getInstance.MIN));
+                stringBuffer.append (To_Unbounded_String (" or > "));
+                stringBuffer.appendint (Integer (AbSqlData_Package.MAXBLOB));
+            end;
+            return stringBuffer.toString;
+        exception
+            when e : others =>
+            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
+                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), This'Unchecked_Access, To_Unbounded_String ("validationInfo()"), e);
+            end if;
+            return To_Unbounded_String ("Error Validating Form");
+        end;
+   end validationInfo;
+
+   function toValidationInfoDoc (This : in out TitleBodyValidation) return Document_Access is
+   begin
+        return null;
+   end toValidationInfoDoc;
+
+   function toValidationInfoNode (This : in out TitleBodyValidation; document : Document_Access) return Node_Access is
+   begin
+        return null;
+   end toValidationInfoNode;
+
+   --  throws Exception
+   function toXmlNode (This : in out TitleBodyValidation; document : Document_Access) return Node_Access is
+      node : Node_Access;
+   begin
+        if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEW) then
+            This.logUtil.putF (To_Unbounded_String ("Title Body: ") & This.body_Id, This'Unchecked_Access, To_Unbounded_String ("toXmlNode(document)"));
+        end if;
+        node := ModDomHelper_Package.createNameValueNodes (document, BodyData_Package.getInstance.NAME, This.body_Id);
+        node.appendChild (This.titleValidation.toXmlNode (document));
+        return node;
+   end toXmlNode;
+
+   procedure isValid (This : in out TitleBodyValidation) is
+      Java_Result : constant Boolean := TitleBodyValidation'Class (This).isValid;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end isValid;
+
+   procedure validationInfo (This : in out TitleBodyValidation) is
+      Java_Result : constant Unbounded_String := TitleBodyValidation'Class (This).validationInfo;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end validationInfo;
+
+   procedure toValidationInfoDoc (This : in out TitleBodyValidation) is
+      Java_Result : constant Document_Access := TitleBodyValidation'Class (This).toValidationInfoDoc;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end toValidationInfoDoc;
+
+   procedure toValidationInfoNode (This : in out TitleBodyValidation; document : Document_Access) is
+      Java_Result : constant Node_Access := TitleBodyValidation'Class (This).toValidationInfoNode (document);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end toValidationInfoNode;
+
+   procedure toXmlNode (This : in out TitleBodyValidation; document : Document_Access) is
+      Java_Result : constant Node_Access := TitleBodyValidation'Class (This).toXmlNode (document);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end toXmlNode;
+
+end org.allbinary.logic.visual.transform.template.customizer.bodies.title.TitleBodyValidation_Package;
+
+

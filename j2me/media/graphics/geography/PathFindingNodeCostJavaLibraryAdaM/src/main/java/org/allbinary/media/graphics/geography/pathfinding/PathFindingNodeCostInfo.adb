@@ -1,0 +1,108 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2006 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package is
+
+   procedure Initialize_Fields (This : in out PathFindingNodeCostInfo'Class) is
+   begin
+      null;
+      This.pathFindingNodeCostInfoData := PathFindingNodeCostInfoData_Package.getInstance;
+      
+      
+      This.totalCostP := 0;
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out PathFindingNodeCostInfo'Class; costFromStart : Long_Long_Integer; costToGoal : Long_Long_Integer) is
+   begin
+      Initialize_Fields (This);
+        This.costFromStartP := costFromStart;
+        This.costToEndP := costToGoal;
+        This.setCalculatedTotalCost;
+   end Initialize;
+
+   function Create (costFromStart : Long_Long_Integer; costToGoal : Long_Long_Integer) return PathFindingNodeCostInfo_Access is
+      This : constant PathFindingNodeCostInfo_Access := new PathFindingNodeCostInfo;
+   begin
+      Initialize (This.all, costFromStart, costToGoal);
+      return This;
+   end Create;
+
+   procedure setCostToEnd (This : in out PathFindingNodeCostInfo; costToEnd : Long_Long_Integer) is
+   begin
+        This.costToEndP := costToEnd;
+   end setCostToEnd;
+
+   procedure setTotalCost (This : in out PathFindingNodeCostInfo; totalCost : Long_Long_Integer) is
+   begin
+        This.totalCostP := totalCost;
+   end setTotalCost;
+
+   --  throws Exception
+   procedure setCalculatedTotalCost (This : in out PathFindingNodeCostInfo) is
+   begin
+        This.totalCostP := (This.costFromStartP) + (This.costToEndP);
+        if (This.totalCostP) > (This.pathFindingNodeCostInfoData.MAX_NODE_COST) then
+            Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Max Cost Exceeded")));
+        end if;
+   end setCalculatedTotalCost;
+
+   procedure setCostFromStart (This : in out PathFindingNodeCostInfo; cost : Long_Long_Integer) is
+   begin
+        This.costFromStartP := cost;
+   end setCostFromStart;
+
+   procedure addCostFromStart (This : in out PathFindingNodeCostInfo; cost : Long_Long_Integer) is
+   begin
+        This.costFromStartP := (This.costFromStartP) + (cost);
+   end addCostFromStart;
+
+   function compareTo (This : in out PathFindingNodeCostInfo; pathFindingNodeCostInfo : PathFindingNodeCostInfo_Access) return Integer is
+   begin
+        return java_Package.lang.Long.compare (This.totalCostP, pathFindingNodeCostInfo.totalCostP);
+   end compareTo;
+
+   function toString (This : in out PathFindingNodeCostInfo) return Unbounded_String is
+      stringBuffer : StringMaker_Access;
+   begin
+        stringBuffer := StringMaker_Package.Create;
+        stringBuffer.append (To_Unbounded_String (Ada.Tags.Expanded_Name (This.all'Tag)));
+        stringBuffer.append (CommonLabels_Package.getInstance.COLON_SEP);
+        stringBuffer.append (To_Unbounded_String ("CostFromStart: "));
+        stringBuffer.appendlong (This.costFromStartP);
+        stringBuffer.append (To_Unbounded_String (" CostToEnd: "));
+        stringBuffer.appendlong (This.costToEndP);
+        stringBuffer.append (To_Unbounded_String (" TotalCost: "));
+        stringBuffer.appendlong (This.totalCostP);
+        return stringBuffer.toString;
+   end toString;
+
+   procedure compareTo (This : in out PathFindingNodeCostInfo; pathFindingNodeCostInfo : PathFindingNodeCostInfo_Access) is
+      Java_Result : constant Integer := PathFindingNodeCostInfo'Class (This).compareTo (pathFindingNodeCostInfo);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end compareTo;
+
+   procedure toString (This : in out PathFindingNodeCostInfo) is
+      Java_Result : constant Unbounded_String := PathFindingNodeCostInfo'Class (This).toString;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end toString;
+
+end org.allbinary.media.graphics.geography.pathfinding.PathFindingNodeCostInfo_Package;
+
+

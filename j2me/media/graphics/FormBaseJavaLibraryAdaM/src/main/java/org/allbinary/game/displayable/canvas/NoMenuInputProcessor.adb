@@ -1,0 +1,69 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.game.displayable.canvas.NoMenuInputProcessor_Package is
+
+   procedure Initialize_Fields (This : in out NoMenuInputProcessor'Class) is
+   begin
+      null;
+   end Initialize_Fields;
+
+
+   function getInstance return NoMenuInputProcessor_Access is
+   begin
+        return NoMenuInputProcessor_Package.SINGLETON;
+   end getInstance;
+
+   procedure Initialize (This : in out NoMenuInputProcessor'Class) is
+   begin
+        BasicMenuInputProcessor_Package.Initialize (This, BasicArrayListUtil_Package.getInstance.getImmutableInstance, -(1), NullCanvas_Package.NULL_CANVAS);
+   end Initialize;
+
+   function Create return NoMenuInputProcessor_Access is
+      This : constant NoMenuInputProcessor_Access := new NoMenuInputProcessor;
+   begin
+      Initialize (This.all);
+      return This;
+   end Create;
+
+   procedure onDownGameKeyEvent (This : in out NoMenuInputProcessor; gameKeyEvent : GameKeyEvent_Access) is
+   begin
+        null;
+   end onDownGameKeyEvent;
+
+   procedure onUpGameKeyEvent (This : in out NoMenuInputProcessor; gameKeyEvent : GameKeyEvent_Access) is
+   begin
+        null;
+   end onUpGameKeyEvent;
+
+   procedure onMotionGestureEvent (This : in out NoMenuInputProcessor; motionGestureEvent : MotionGestureEvent_Access) is
+   begin
+        null;
+   end onMotionGestureEvent;
+
+   procedure getInstance is
+      Java_Result : constant NoMenuInputProcessor_Access := getInstance;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getInstance;
+
+begin
+   null;
+   SINGLETON := NoMenuInputProcessor_Package.Create;
+
+end org.allbinary.game.displayable.canvas.NoMenuInputProcessor_Package;
+
+

@@ -1,0 +1,73 @@
+-- 
+-- AllBinary Open License Version 1 
+-- Copyright (c) 2002 AllBinary 
+--  
+-- By agreeing to this license you and any business entity you represent are 
+-- legally bound to the AllBinary Open License Version 1 legal agreement. 
+--  
+-- You may obtain the AllBinary Open License Version 1 legal agreement from 
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository. 
+--  
+-- Created By: Travis Berthelot  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.game.layer.RTSLayerEvent_Package is
+
+   procedure Initialize_Fields (This : in out RTSLayerEvent'Class) is
+   begin
+      null;
+      This.rtsLayer := NullPathFindingLayer_Package.NULL_PATH_FINDING_LAYER;
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out RTSLayerEvent'Class; rtsLayer : PathFindingLayerInterface_Access) is
+   begin
+        AllBinaryEventObject_Package.Initialize (This, rtsLayer);
+        Initialize_Fields (This);
+   end Initialize;
+
+   function Create (rtsLayer : PathFindingLayerInterface_Access) return RTSLayerEvent_Access is
+      This : constant RTSLayerEvent_Access := new RTSLayerEvent;
+   begin
+      Initialize (This.all, rtsLayer);
+      return This;
+   end Create;
+
+   function toString (This : in out RTSLayerEvent) return Unbounded_String is
+      stringBuffer : StringMaker_Access;
+   begin
+        stringBuffer := StringMaker_Package.Create;
+        stringBuffer.append (To_Unbounded_String ("RTSLayerEvent: " & ASCII.LF & ""));
+        stringBuffer.append (To_Unbounded_String ("RTSLayer: "));
+        stringBuffer.append (This.getRtsLayer.toString);
+        return stringBuffer.toString;
+   end toString;
+
+   function getRtsLayer (This : in out RTSLayerEvent) return PathFindingLayerInterface_Access is
+   begin
+        return This.rtsLayer;
+   end getRtsLayer;
+
+   procedure setRtsLayer (This : in out RTSLayerEvent; rtsLayer : PathFindingLayerInterface_Access) is
+   begin
+        This.rtsLayer := rtsLayer;
+   end setRtsLayer;
+
+   procedure toString (This : in out RTSLayerEvent) is
+      Java_Result : constant Unbounded_String := RTSLayerEvent'Class (This).toString;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end toString;
+
+   procedure getRtsLayer (This : in out RTSLayerEvent) is
+      Java_Result : constant PathFindingLayerInterface_Access := RTSLayerEvent'Class (This).getRtsLayer;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getRtsLayer;
+
+end org.allbinary.game.layer.RTSLayerEvent_Package;
+
+

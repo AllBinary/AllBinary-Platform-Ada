@@ -1,0 +1,61 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Ada.Strings.Maps.Constants;
+with Ada.Characters.Handling;
+with Ada.Exceptions;
+with Ada.Numerics.Long_Elementary_Functions;
+with Ada.Tags;
+with Ada.Text_IO;
+with AllBinary_Java; use AllBinary_Java;
+--  with java.util.HashMap_Package; use java.util.HashMap_Package;
+--  with javax.servlet.jsp.PageContext_Package; use javax.servlet.jsp.PageContext_Package;
+with org.allbinary.business.installer.Portion_Package; use org.allbinary.business.installer.Portion_Package;
+with org.allbinary.data.tables.user.commerce.inventory.item.permissions.PermissionItemsEntityFactory_Package; use org.allbinary.data.tables.user.commerce.inventory.item.permissions.PermissionItemsEntityFactory_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.sql.AbSqlTableUtil_Package; use org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
+with admin.taghelpers.BasicTable_Package; use admin.taghelpers.BasicTable_Package;
+
+package admin.taghelpers.PermissionItemsHelper_Package is
+
+   package Portion_Package renames org.allbinary.business.installer.Portion_Package;
+   package PermissionItemsEntityFactory_Package renames org.allbinary.data.tables.user.commerce.inventory.item.permissions.PermissionItemsEntityFactory_Package;
+   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbSqlTableUtil_Package renames org.allbinary.logic.communication.sql.AbSqlTableUtil_Package;
+
+   type PermissionItemsHelper is tagged;
+   type PermissionItemsHelper_Access is access all PermissionItemsHelper'Class;
+   type PermissionItemsHelper_Access_Array is array (Natural range <>) of PermissionItemsHelper_Access;
+   type PermissionItemsHelper_Access_Array_Access is access all PermissionItemsHelper_Access_Array;
+
+   type PermissionItemsHelper is new BasicTable with record
+      logUtil : LogUtil_Access;
+      portion : Portion_Access;
+   end record;
+
+   procedure Initialize (This : in out PermissionItemsHelper'Class; hashMap : HashMap_Access; pageContext : PageContext_Access);
+   function Create (hashMap : HashMap_Access; pageContext : PageContext_Access) return PermissionItemsHelper_Access;
+   function create (This : in out PermissionItemsHelper) return Unbounded_String;
+   procedure create (This : in out PermissionItemsHelper);
+   function drop (This : in out PermissionItemsHelper) return Unbounded_String;
+   procedure drop (This : in out PermissionItemsHelper);
+   function restore (This : in out PermissionItemsHelper) return Unbounded_String;
+   procedure restore (This : in out PermissionItemsHelper);
+   function backup (This : in out PermissionItemsHelper) return Unbounded_String;
+   procedure backup (This : in out PermissionItemsHelper);
+
+end admin.taghelpers.PermissionItemsHelper_Package;
+
+

@@ -1,0 +1,75 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body tags.generic_Id.payment.PaymentTag_Package is
+
+   procedure Initialize_Fields (This : in out PaymentTag'Class) is
+   begin
+      null;
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out PaymentTag'Class) is
+   begin
+      StoreValidationTransformTag_Package.Initialize (This);
+      Initialize_Fields (This);
+        null;
+   end Initialize;
+
+   function Create return PaymentTag_Access is
+      This : constant PaymentTag_Access := new PaymentTag;
+   begin
+      Initialize (This.all);
+      return This;
+   end Create;
+
+   --  throws JspTagException
+   function doStartTag (This : in out PaymentTag) return Integer is
+   begin
+        begin
+            This.setName (To_Unbounded_String ("Basic Payment View"));
+            This.setObjectFile (To_Unbounded_String ("views.generic.payment.ValidationView"));
+            if (This.getCommand) /= (null) then
+                if (((This.getCommand.compareTo (PaymentData_Package.VIEW)) = (0)) or else ((This.getCommand.compareTo (PaymentData_Package.CHANGE)) = (0))) or else ((This.getCommand.compareTo (PaymentData_Package.ADDNEW)) = (0)) then
+                    null;
+                elsif (This.getCommand.compareTo (This.commonStrings.INSERT)) = (0) then
+                    null;
+                elsif (This.getCommand.compareTo (This.commonStrings.DELETE)) = (0) then
+                    return This.EVAL_BODY_INCLUDE;
+                elsif (This.getCommand.compareTo (PaymentData_Package.SELECT_Id)) = (0) then
+                    return This.EVAL_BODY_INCLUDE;
+                else
+                    Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("No Such View Command: ") & Java_Image (This.getCommand)));
+                end if;
+                return StoreValidationTransformTag (This).doStartTag;
+            end if;
+            Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Command Null")));
+        exception
+            when e : others =>
+            AbResponseHandler_Package.sendJspTagLicensingRedirect (This.pageContext, e);
+            return SKIP_BODY;
+        end;
+   end doStartTag;
+
+   procedure doStartTag (This : in out PaymentTag) is
+      Java_Result : constant Integer := PaymentTag'Class (This).doStartTag;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end doStartTag;
+
+end tags.generic_Id.payment.PaymentTag_Package;
+
+

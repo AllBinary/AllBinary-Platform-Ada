@@ -1,0 +1,219 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.logic.system.hardware.windows.WindowsHardware_Package is
+
+   procedure Initialize_Fields (This : in out WindowsHardware'Class) is
+   begin
+      null;
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out WindowsHardware'Class) is
+   begin
+      Initialize_Fields (This);
+        null;
+   end Initialize;
+
+   function Create return WindowsHardware_Access is
+      This : constant WindowsHardware_Access := new WindowsHardware;
+   begin
+      Initialize (This.all);
+      return This;
+   end Create;
+
+   function getMultimedia (This : in out WindowsHardware; index : Integer) return MediaInterface_Access is
+   begin
+        Java_Throw (Java_New_Exception ("RuntimeException"));
+   end getMultimedia;
+
+   function getBridge (This : in out WindowsHardware; index : Integer) return BridgeInterface_Access is
+   begin
+        Java_Throw (Java_New_Exception ("RuntimeException"));
+   end getBridge;
+
+   function getCpu (This : in out WindowsHardware; index : Integer) return CpuInterface_Access is
+   begin
+        Java_Throw (Java_New_Exception ("RuntimeException"));
+   end getCpu;
+
+   function getEthernet (This : in out WindowsHardware; index : Integer) return EthernetInterface_Access is
+   begin
+        Java_Throw (Java_New_Exception ("RuntimeException"));
+   end getEthernet;
+
+   function getFireWire (This : in out WindowsHardware; index : Integer) return FireWireInterface_Access is
+   begin
+        Java_Throw (Java_New_Exception ("RuntimeException"));
+   end getFireWire;
+
+   function getHardDriveController (This : in out WindowsHardware; index : Integer) return HardDriveControllerInterface_Access is
+   begin
+        Java_Throw (Java_New_Exception ("RuntimeException"));
+   end getHardDriveController;
+
+   function getHardDrive (This : in out WindowsHardware; index : Integer) return HardDriveInterface_Access is
+   begin
+        Java_Throw (Java_New_Exception ("RuntimeException"));
+   end getHardDrive;
+
+   function getMachineAccessControlAddress (This : in out WindowsHardware; index : Integer) return MachineAccessControlAddressInterface_Access is
+   begin
+        Java_Throw (Java_New_Exception ("RuntimeException"));
+   end getMachineAccessControlAddress;
+
+   function getMonitor (This : in out WindowsHardware; index : Integer) return MonitorInterface_Access is
+   begin
+        Java_Throw (Java_New_Exception ("RuntimeException"));
+   end getMonitor;
+
+   function getUsb (This : in out WindowsHardware; index : Integer) return UsbInterface_Access is
+   begin
+        Java_Throw (Java_New_Exception ("RuntimeException"));
+   end getUsb;
+
+   function getVideo (This : in out WindowsHardware; index : Integer) return VideoInterface_Access is
+   begin
+        Java_Throw (Java_New_Exception ("RuntimeException"));
+   end getVideo;
+
+   function getComponent (This : in out WindowsHardware; index : Integer) return HardwareComponentInterface_Access is
+   begin
+        Java_Throw (Java_New_Exception ("RuntimeException"));
+   end getComponent;
+
+   function toString (This : in out WindowsHardware) return Unbounded_String is
+   begin
+        return StringUtil_Package.getInstance.EMPTY_STRING;
+   end toString;
+
+   function compareTo (This : in out WindowsHardware; hardwareInterface : HardwareInterface_Access) return Boolean is
+   begin
+        return True;
+   end compareTo;
+
+   function difference (This : in out WindowsHardware; hardwareInterface : HardwareInterface_Access) return ABHashtable_Access is
+   begin
+        return StdUtil_Package.getInstance.NULL_TABLE;
+   end difference;
+
+   procedure getMultimedia (This : in out WindowsHardware; index : Integer) is
+      Java_Result : constant MediaInterface_Access := WindowsHardware'Class (This).getMultimedia (index);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getMultimedia;
+
+   procedure getBridge (This : in out WindowsHardware; index : Integer) is
+      Java_Result : constant BridgeInterface_Access := WindowsHardware'Class (This).getBridge (index);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getBridge;
+
+   procedure getCpu (This : in out WindowsHardware; index : Integer) is
+      Java_Result : constant CpuInterface_Access := WindowsHardware'Class (This).getCpu (index);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getCpu;
+
+   procedure getEthernet (This : in out WindowsHardware; index : Integer) is
+      Java_Result : constant EthernetInterface_Access := WindowsHardware'Class (This).getEthernet (index);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getEthernet;
+
+   procedure getFireWire (This : in out WindowsHardware; index : Integer) is
+      Java_Result : constant FireWireInterface_Access := WindowsHardware'Class (This).getFireWire (index);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getFireWire;
+
+   procedure getHardDriveController (This : in out WindowsHardware; index : Integer) is
+      Java_Result : constant HardDriveControllerInterface_Access := WindowsHardware'Class (This).getHardDriveController (index);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getHardDriveController;
+
+   procedure getHardDrive (This : in out WindowsHardware; index : Integer) is
+      Java_Result : constant HardDriveInterface_Access := WindowsHardware'Class (This).getHardDrive (index);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getHardDrive;
+
+   procedure getMachineAccessControlAddress (This : in out WindowsHardware; index : Integer) is
+      Java_Result : constant MachineAccessControlAddressInterface_Access := WindowsHardware'Class (This).getMachineAccessControlAddress (index);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getMachineAccessControlAddress;
+
+   procedure getMonitor (This : in out WindowsHardware; index : Integer) is
+      Java_Result : constant MonitorInterface_Access := WindowsHardware'Class (This).getMonitor (index);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getMonitor;
+
+   procedure getUsb (This : in out WindowsHardware; index : Integer) is
+      Java_Result : constant UsbInterface_Access := WindowsHardware'Class (This).getUsb (index);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getUsb;
+
+   procedure getVideo (This : in out WindowsHardware; index : Integer) is
+      Java_Result : constant VideoInterface_Access := WindowsHardware'Class (This).getVideo (index);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getVideo;
+
+   procedure getComponent (This : in out WindowsHardware; index : Integer) is
+      Java_Result : constant HardwareComponentInterface_Access := WindowsHardware'Class (This).getComponent (index);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getComponent;
+
+   procedure toString (This : in out WindowsHardware) is
+      Java_Result : constant Unbounded_String := WindowsHardware'Class (This).toString;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end toString;
+
+   procedure compareTo (This : in out WindowsHardware; hardwareInterface : HardwareInterface_Access) is
+      Java_Result : constant Boolean := WindowsHardware'Class (This).compareTo (hardwareInterface);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end compareTo;
+
+   procedure difference (This : in out WindowsHardware; hardwareInterface : HardwareInterface_Access) is
+      Java_Result : constant ABHashtable_Access := WindowsHardware'Class (This).difference (hardwareInterface);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end difference;
+
+end org.allbinary.logic.system.hardware.windows.WindowsHardware_Package;
+
+

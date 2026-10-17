@@ -1,0 +1,80 @@
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.media.graphics.geography.pathfinding.BasicGeographicMapExtractedPathCacheFactory_Package is
+
+   procedure Initialize_Fields (This : in out BasicGeographicMapExtractedPathCacheFactory'Class) is
+   begin
+      null;
+      This.maxConcurrentPaths := 0;
+      This.maxPaths := 0;
+   end Initialize_Fields;
+
+
+   function getInstance return BasicGeographicMapExtractedPathCacheFactory_Access is
+   begin
+        return BasicGeographicMapExtractedPathCacheFactory_Package.instance;
+   end getInstance;
+
+   procedure Initialize (This : in out BasicGeographicMapExtractedPathCacheFactory'Class) is
+   begin
+      BaseBasicArrayListCache_Package.Initialize (This);
+      Initialize_Fields (This);
+        null;
+   end Initialize;
+
+   function Create return BasicGeographicMapExtractedPathCacheFactory_Access is
+      This : constant BasicGeographicMapExtractedPathCacheFactory_Access := new BasicGeographicMapExtractedPathCacheFactory;
+   begin
+      Initialize (This.all);
+      return This;
+   end Create;
+
+   procedure init (This : in out BasicGeographicMapExtractedPathCacheFactory; maxConcurrentPaths : Integer; maxPaths : Integer) is
+      index : Integer;
+   begin
+        if (maxConcurrentPaths) /= (This.maxConcurrentPaths) then
+            for index in reverse This.maxConcurrentPaths .. maxConcurrentPaths loop
+                This.list.add (BasicArrayListS_Package.Create (maxPaths));
+            end loop;
+            This.maxConcurrentPaths := maxConcurrentPaths;
+        end if;
+        This.maxPaths := maxPaths;
+   end init;
+
+   function getPath (This : in out BasicGeographicMapExtractedPathCacheFactory) return BasicArrayList_Access is
+   begin
+        if (This.list.size) > (0) then
+            return BasicArrayList_Access (This.list.removeAt (0));
+        else
+            return BasicArrayListS_Package.Create (This.maxPaths);
+        end if;
+   end getPath;
+
+   procedure release (This : in out BasicGeographicMapExtractedPathCacheFactory; list : BasicArrayList_Access) is
+   begin
+        list.clear;
+        This.list.add (list);
+   end release;
+
+   procedure getInstance is
+      Java_Result : constant BasicGeographicMapExtractedPathCacheFactory_Access := getInstance;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getInstance;
+
+   procedure getPath (This : in out BasicGeographicMapExtractedPathCacheFactory) is
+      Java_Result : constant BasicArrayList_Access := BasicGeographicMapExtractedPathCacheFactory'Class (This).getPath;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getPath;
+
+begin
+   null;
+   instance := BasicGeographicMapExtractedPathCacheFactory_Package.Create;
+
+end org.allbinary.media.graphics.geography.pathfinding.BasicGeographicMapExtractedPathCacheFactory_Package;
+
+

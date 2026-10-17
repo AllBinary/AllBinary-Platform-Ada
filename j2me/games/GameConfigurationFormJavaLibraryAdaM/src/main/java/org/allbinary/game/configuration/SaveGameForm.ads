@@ -1,0 +1,59 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Ada.Strings.Maps.Constants;
+with Ada.Characters.Handling;
+with Ada.Exceptions;
+with Ada.Numerics.Long_Elementary_Functions;
+with Ada.Tags;
+with Ada.Text_IO;
+with AllBinary_Java; use AllBinary_Java;
+--  with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
+--  with javax.microedition.lcdui.TextField_Package; use javax.microedition.lcdui.TextField_Package;
+with org.allbinary.game.commands.GameCommandsFactory_Package; use org.allbinary.game.commands.GameCommandsFactory_Package;
+with org.allbinary.graphics.color.BasicColor_Package; use org.allbinary.graphics.color.BasicColor_Package;
+with org.allbinary.graphics.displayable.screen.CommandForm_Package; use org.allbinary.graphics.displayable.screen.CommandForm_Package;
+with org.allbinary.logic.ABSystemWrapper_Package; use org.allbinary.logic.ABSystemWrapper_Package;
+with org.allbinary.logic.MEUtil_Package; use org.allbinary.logic.MEUtil_Package;
+
+package org.allbinary.game.configuration.SaveGameForm_Package is
+
+   package GameCommandsFactory_Package renames org.allbinary.game.commands.GameCommandsFactory_Package;
+   package BasicColor_Package renames org.allbinary.graphics.color.BasicColor_Package;
+   package CommandForm_Package renames org.allbinary.graphics.displayable.screen.CommandForm_Package;
+   package ABSystemWrapper_Package renames org.allbinary.logic.ABSystemWrapper_Package;
+   package MEUtil_Package renames org.allbinary.logic.MEUtil_Package;
+
+   type SaveGameForm is tagged;
+   type SaveGameForm_Access is access all SaveGameForm'Class;
+   type SaveGameForm_Access_Array is array (Natural range <>) of SaveGameForm_Access;
+   type SaveGameForm_Access_Array_Access is access all SaveGameForm_Access_Array;
+
+   type SaveGameForm is new CommandForm with record
+      meUtil : MEUtil_Access;
+   end record;
+   FORM : CommandForm_Access;
+
+   procedure Initialize (This : in out SaveGameForm'Class; commandListener : CommandListener_Access; title : Unbounded_String; backgrounBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access);
+   function Create (commandListener : CommandListener_Access; title : Unbounded_String; backgrounBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return SaveGameForm_Access;
+   function createForm (commandListener : CommandListener_Access; title : Unbounded_String; backgrounBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return CommandForm_Access;
+   procedure createForm (commandListener : CommandListener_Access; title : Unbounded_String; backgrounBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access);
+   function getInstance return CommandForm_Access;
+   procedure getInstance;
+   procedure initCommands (This : in out SaveGameForm; cmdListener : CommandListener_Access);
+
+end org.allbinary.game.configuration.SaveGameForm_Package;
+
+

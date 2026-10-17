@@ -1,0 +1,121 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.logic.communication.http.request.MultipartRequestParams_Package is
+
+   procedure Initialize_Fields (This : in out MultipartRequestParams'Class) is
+   begin
+      null;
+      This.logUtil := LogUtil_Package.getInstance;
+      This.special := False;
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out MultipartRequestParams'Class; request : HttpServletRequest_Access) is
+   begin
+        RequestParams_Package.Initialize (This);
+        Initialize_Fields (This);
+        This.processMultipartRequest (request);
+   end Initialize;
+
+   function Create (request : HttpServletRequest_Access) return MultipartRequestParams_Access is
+      This : constant MultipartRequestParams_Access := new MultipartRequestParams;
+   begin
+      Initialize (This.all, request);
+      return This;
+   end Create;
+
+   --  Java overloaded constructor: Ada needs the specification of this overload in the package spec
+   procedure Initialize (This : in out MultipartRequestParams'Class; pageContext : PageContext_Access) is
+   begin
+        RequestParams_Package.Initialize (This);
+        Initialize_Fields (This);
+        This.processMultipartRequest (HttpServletRequest_Access (pageContext.getRequest));
+   end Initialize;
+
+   function Create (pageContext : PageContext_Access) return MultipartRequestParams_Access is
+      This : constant MultipartRequestParams_Access := new MultipartRequestParams;
+   begin
+      Initialize (This.all, pageContext);
+      return This;
+   end Create;
+
+   procedure setSpecial (This : in out MultipartRequestParams) is
+   begin
+        This.special := True;
+   end setSpecial;
+
+   procedure processMultipartRequest (This : in out MultipartRequestParams; request : HttpServletRequest_Access) is
+      specialRequest : HashMap_Access;
+      multipartRequestList : List_Access;
+      fileItemArray : Java_Object_Access_Array_Access;
+      size : Integer;
+      fileItem : FileItem_Access;
+      name : Unbounded_String;
+      index : Integer;
+   begin
+        begin
+            specialRequest := StdUtil_Package.getInstance.createHashMap;
+            multipartRequestList := AbFileUploadFactory_Package.getInstance.getFileItemStreamList (request);
+            if (multipartRequestList) /= (null) then
+                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
+                    This.logUtil.putF (To_Unbounded_String ("FileItem List Size: ") & Java_Image (multipartRequestList.size), This'Unchecked_Access, To_Unbounded_String ("processMultipartRequest()"));
+                end if;
+                fileItemArray := multipartRequestList.toArray;
+                size := fileItemArray'Length;
+                for index in 0 .. (size) - 1 loop
+                    fileItem := FileItem_Access (fileItemArray (index));
+                    name := fileItem.getName;
+                    if StringValidationUtil_Package.getInstance.isEmpty (name) then
+                        specialRequest.put (fileItem.getFieldName, fileItem.getString);
+                    else
+                        specialRequest.put (fileItem.getFieldName, fileItem);
+                    end if;
+                end loop;
+                if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
+                    This.logUtil.putF (To_Unbounded_String ("Special Request Data: ") & specialRequest.toString, This'Unchecked_Access, To_Unbounded_String ("processMultipartRequest()"));
+                end if;
+                This.setSpecial;
+                This.setMap (specialRequest);
+            end if;
+        exception
+            when e : others =>
+            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.HTTPREQUEST) then
+                This.logUtil.putF (To_Unbounded_String ("Using Normal RequestParams"), This'Unchecked_Access, To_Unbounded_String ("processMultipartRequest()"));
+            end if;
+            RequestParams (This).setMap (request.getParameterMap);
+        end;
+   end processMultipartRequest;
+
+   --  throws Exception
+   function toHashMap (This : in out MultipartRequestParams) return HashMap_Access is
+   begin
+        if This.special then
+            return HashMap_Access (This.getMap);
+        else
+            return RequestParams (This).toHashMap;
+        end if;
+   end toHashMap;
+
+   procedure toHashMap (This : in out MultipartRequestParams) is
+      Java_Result : constant HashMap_Access := MultipartRequestParams'Class (This).toHashMap;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end toHashMap;
+
+end org.allbinary.logic.communication.http.request.MultipartRequestParams_Package;
+
+

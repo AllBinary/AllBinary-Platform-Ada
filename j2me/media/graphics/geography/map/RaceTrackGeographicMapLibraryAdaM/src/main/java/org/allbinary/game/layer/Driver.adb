@@ -1,0 +1,99 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.game.layer.Driver_Package is
+
+   procedure Initialize_Fields (This : in out Driver'Class) is
+   begin
+      null;
+      This.turnSpeed := SmallIntegerSingletonFactory_Package.getInstance.getAt (0);
+      This.trackPathSelectionSkill := SmallIntegerSingletonFactory_Package.getInstance.getAt (0);
+      
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out Driver'Class; turnSpeed : Integer; trackPathSelectionSkill : Integer; aggression : Aggression_Access) is
+   begin
+      Initialize_Fields (This);
+        This.setTurnSpeed (turnSpeed);
+        This.setTrackPathSelectionSkill (trackPathSelectionSkill);
+        This.aggression := aggression;
+   end Initialize;
+
+   function Create (turnSpeed : Integer; trackPathSelectionSkill : Integer; aggression : Aggression_Access) return Driver_Access is
+      This : constant Driver_Access := new Driver;
+   begin
+      Initialize (This.all, turnSpeed, trackPathSelectionSkill, aggression);
+      return This;
+   end Create;
+
+   function getTurnSpeed (This : in out Driver) return Integer is
+   begin
+        return This.turnSpeed;
+   end getTurnSpeed;
+
+   procedure setTurnSpeed (This : in out Driver; turnSpeed : Integer) is
+   begin
+        This.turnSpeed := turnSpeed;
+   end setTurnSpeed;
+
+   function getTrackPathSelectionSkill (This : in out Driver) return Integer is
+   begin
+        return This.trackPathSelectionSkill;
+   end getTrackPathSelectionSkill;
+
+   procedure setTrackPathSelectionSkill (This : in out Driver; trackPathSelectionSkill : Integer) is
+   begin
+        This.trackPathSelectionSkill := trackPathSelectionSkill;
+   end setTrackPathSelectionSkill;
+
+   function getAggression (This : in out Driver) return Aggression_Access is
+   begin
+        return This.aggression;
+   end getAggression;
+
+   procedure setAggression (This : in out Driver; aggression : Aggression_Access) is
+   begin
+        This.aggression := aggression;
+   end setAggression;
+
+   procedure getTurnSpeed (This : in out Driver) is
+      Java_Result : constant Integer := Driver'Class (This).getTurnSpeed;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getTurnSpeed;
+
+   procedure getTrackPathSelectionSkill (This : in out Driver) is
+      Java_Result : constant Integer := Driver'Class (This).getTrackPathSelectionSkill;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getTrackPathSelectionSkill;
+
+   procedure getAggression (This : in out Driver) is
+      Java_Result : constant Aggression_Access := Driver'Class (This).getAggression;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getAggression;
+
+begin
+   null;
+   NULL_DRIVER := Driver_Package.Create (SmallIntegerSingletonFactory_Package.getInstance.getAt (0), SmallIntegerSingletonFactory_Package.getInstance.getAt (0), Aggression_Package.Create (SmallIntegerSingletonFactory_Package.getInstance.getAt (0), SmallIntegerSingletonFactory_Package.getInstance.getAt (0), SmallIntegerSingletonFactory_Package.getInstance.getAt (0)));
+
+end org.allbinary.game.layer.Driver_Package;
+
+

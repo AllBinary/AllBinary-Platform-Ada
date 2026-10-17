@@ -1,0 +1,199 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.allbinary</groupId>
+    <artifactId>PreLoaderHttpJavaLibraryAda</artifactId>
+    <packaging>jar</packaging>
+    <!-- AllBinary Platform Version Start -->
+    <version>1.0.0-SNAPSHOT</version>
+    <!-- AllBinary Platform Version End -->
+
+    <name>PreLoaderHttpJavaLibraryAda</name>
+    <url>http://www.allbinary.com/</url>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <name>AllBinary Snapshots Nexus</name>
+            <url>https://nexus-allbinary.rhcloud.com/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>nexus-releases</id>
+            <name>AllBinary Releases Nexus</name>
+            <url>https://nexus-allbinary.rhcloud.com/nexus/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
+
+    <properties>
+        <cygwin.home>G:/cygwin64</cygwin.home>
+        <ada.runtime.source.path>G:/mnt/bc/mydev/workada/j2me/J2SEForAdaLibraryAdaM/src/main/java</ada.runtime.source.path>
+        <ada.jsinterop.source.path>G:/mnt/bc/mydev/workingada/replace_these_stub_projects/allbinary_src/J2MEJsInteropCompatibilityJavaLibraryAdaM/src/main/java</ada.jsinterop.source.path>
+        <ada.standard>-gnat2022</ada.standard>
+        <ada.compiler.flags>-O2 -gnatwa -gnatf</ada.compiler.flags>
+        <ada.fail.on.error>true</ada.fail.on.error>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>LoggingJ2MEAllAda</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>LogJ2SEJavaLibraryAda</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary.logging</groupId>
+            <artifactId>BasicLogConfigTypeJavaLibraryAda</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary.logging</groupId>
+            <artifactId>LogConfigTypeFreeblisketJavaLibraryAda</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary.data</groupId>
+            <artifactId>DataJavaLibraryAda</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+        </dependency>
+
+        <dependency>
+            <groupId>org.allbinary</groupId>
+            <artifactId>BasePreloaderJavaLibraryAda</artifactId>
+            <!-- AllBinary Platform Version Start -->
+            <version>1.0.0-SNAPSHOT</version>
+            <!-- AllBinary Platform Version End -->
+
+        </dependency>
+
+        <!-- java 1.8 -->
+        <!--
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-apiAda</artifactId>
+            <version>2.5</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>jsp-apiAda</artifactId>
+            <version>2.1</version>
+            <scope>provided</scope>
+        </dependency>
+        -->
+
+        <!-- java 11 and jetty 9.4 -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-apiAda</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>apache-jspAda</artifactId>
+            <version>10.0.26</version><!--            <version>9.4.58.v20250814</version>-->
+            <scope>provided</scope>
+        </dependency>
+                
+        <!-- java 11-20 -->
+        <!--
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-apiAda</artifactId>
+            <version>6.0.0</version>
+            <scope>provided</scope>
+        </dependency>        
+        <dependency>
+            <groupId>jakarta.servlet.jsp</groupId>
+            <artifactId>jakarta.servlet.jsp-apiAda</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+        -->
+    </dependencies>
+
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.5.0</version>
+                <executions>
+                    <execution>
+                        <id>compile-cygwin-ada-sources</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>${cygwin.home}/bin/bash.exe</executable>
+                            <arguments>
+                                <argument>${project.basedir}/build-cygwin.sh</argument>
+                                <argument>${project.basedir}/src/main/java</argument>
+                                <argument>${project.build.directory}/ada</argument>
+                                <argument>${project.build.outputDirectory}/META-INF/native</argument>
+                                <argument>${project.build.outputDirectory}/META-INF/ada</argument>
+                                <argument>${project.artifactId}</argument>
+                                <argument>${ada.standard}</argument>
+                                <argument>${ada.compiler.flags}</argument>
+                                <argument>${ada.fail.on.error}</argument>
+                                <argument>${ada.runtime.source.path}</argument>
+                                <argument>${ada.jsinterop.source.path}</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.3.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+
+    </build>
+
+</project>
+

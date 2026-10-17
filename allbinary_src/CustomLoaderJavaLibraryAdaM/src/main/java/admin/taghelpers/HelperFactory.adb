@@ -1,0 +1,182 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body admin.taghelpers.HelperFactory_Package is
+
+   procedure Initialize_Fields (This : in out HelperFactory'Class) is
+   begin
+      null;
+      This.logUtil := LogUtil_Package.getInstance;
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out HelperFactory'Class) is
+   begin
+      Initialize_Fields (This);
+        null;
+   end Initialize;
+
+   function Create return HelperFactory_Access is
+      This : constant HelperFactory_Access := new HelperFactory;
+   begin
+      Initialize (This.all);
+      return This;
+   end Create;
+
+   --  throws LicensingException
+   function getInstance (abeClientInformation : AbeClientInformationInterface_Access; factoryName : Unbounded_String; className : Unbounded_String; hashMap : HashMap_Access; httpServletRequest : HttpServletRequest_Access) return Java_Object_Access is
+      logUtil : LogUtil_Access;
+      params : Java_Object_Access_Array_Access;
+      classes : Ada_Tags_Tag_Array_Access;
+      abeFactory : AbeFactory_Access;
+      anyType : Java_Object_Access;
+      error : Unbounded_String;
+   begin
+        logUtil := LogUtil_Package.getInstance;
+        begin
+            params := new Java_Object_Access_Array'(0 .. (2) - 1 => null);
+            classes := new Ada_Tags_Tag_Array'(0 .. (2) - 1 => null);
+            abeFactory := AbeFactory_Package.getInstance;
+            classes (0) := hashMap.all'Tag;
+            classes (1) := abeFactory.getClass (abeClientInformation, To_Unbounded_String ("javax.servlet.http.HttpServletRequest"));
+            params (0) := Java_Object_Access (hashMap);
+            params (1) := Java_Object_Access (httpServletRequest);
+            anyType := abeFactory.getInstance (abeClientInformation, className, classes, params);
+            return anyType;
+        exception
+            when e : others =>
+            error := To_Unbounded_String ("Failed To Get Instance Args: HashMap=") & hashMap.toString & To_Unbounded_String (" HttpServletRequest=") & Java_Image (httpServletRequest);
+            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORYERROR) then
+                logUtil.put (error, factoryName & To_Unbounded_String ("->HelperFactory"), To_Unbounded_String ("getInstance(String, String, HashMap, PageContext)"), e);
+            end if;
+            Java_Throw (e);
+        end;
+   end getInstance;
+
+   --  throws LicensingException
+   function getInstance (abeClientInformation : AbeClientInformationInterface_Access; factoryName : Unbounded_String; className : Unbounded_String; hashMap : HashMap_Access; pageContext : PageContext_Access) return Java_Object_Access is
+      logUtil : LogUtil_Access;
+      params : Java_Object_Access_Array_Access;
+      classes : Ada_Tags_Tag_Array_Access;
+      abeFactory : AbeFactory_Access;
+      anyType : Java_Object_Access;
+      error : Unbounded_String;
+      commonStrings : CommonStrings_Access;
+   begin
+        logUtil := LogUtil_Package.getInstance;
+        begin
+            params := new Java_Object_Access_Array'(0 .. (2) - 1 => null);
+            classes := new Ada_Tags_Tag_Array'(0 .. (2) - 1 => null);
+            abeFactory := AbeFactory_Package.getInstance;
+            classes (0) := hashMap.all'Tag;
+            classes (1) := abeFactory.getClass (abeClientInformation, To_Unbounded_String ("javax.servlet.jsp.PageContext"));
+            params (0) := Java_Object_Access (hashMap);
+            params (1) := Java_Object_Access (pageContext);
+            anyType := abeFactory.getInstance (abeClientInformation, className, classes, params);
+            return anyType;
+        exception
+            when e : others =>
+            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORYERROR) then
+                error := To_Unbounded_String ("Failed To Get Instance Args: HashMap=") & hashMap.toString & To_Unbounded_String (" PageContext=") & Java_Image (pageContext);
+                logUtil.put (error, factoryName & To_Unbounded_String ("->HelperFactory"), To_Unbounded_String ("getInstance(String, String, HashMap, PageContext)"), e);
+            end if;
+            Java_Throw (e);
+        end;
+   end getInstance;
+
+   --  throws LicensingException
+   function getInstance (abeClientInformation : AbeClientInformationInterface_Access; factoryName : Unbounded_String; className : Unbounded_String; hashMap : HashMap_Access; specialhashMap : HashMap_Access; pageContext : PageContext_Access) return Java_Object_Access is
+      logUtil : LogUtil_Access;
+      params : Java_Object_Access_Array_Access;
+      classes : Ada_Tags_Tag_Array_Access;
+      abeFactory : AbeFactory_Access;
+      anyType : Java_Object_Access;
+      error : Unbounded_String;
+      commonStrings : CommonStrings_Access;
+   begin
+        logUtil := LogUtil_Package.getInstance;
+        begin
+            params := new Java_Object_Access_Array'(0 .. (3) - 1 => null);
+            classes := new Ada_Tags_Tag_Array'(0 .. (3) - 1 => null);
+            abeFactory := AbeFactory_Package.getInstance;
+            classes (0) := hashMap.all'Tag;
+            classes (1) := specialhashMap.all'Tag;
+            classes (2) := abeFactory.getClass (abeClientInformation, To_Unbounded_String ("javax.servlet.jsp.PageContext"));
+            params (0) := Java_Object_Access (hashMap);
+            params (1) := Java_Object_Access (specialhashMap);
+            params (2) := Java_Object_Access (pageContext);
+            anyType := abeFactory.getInstance (abeClientInformation, className, classes, params);
+            return anyType;
+        exception
+            when e : others =>
+            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORYERROR) then
+                error := To_Unbounded_String ("Failed To Get Instance Args: HashMap=") & hashMap.toString & To_Unbounded_String (" PageContext=") & Java_Image (pageContext);
+                logUtil.put (error, factoryName & To_Unbounded_String ("->HelperFactory"), To_Unbounded_String ("getInstance(String, String, HashMap, PageContext)"), e);
+            end if;
+            Java_Throw (e);
+        end;
+   end getInstance;
+
+   --  throws LicensingException
+   function getInstance (abeClientInformation : AbeClientInformationInterface_Access; factoryName : Unbounded_String; className : Unbounded_String) return Java_Object_Access is
+      logUtil : LogUtil_Access;
+      anyType : Java_Object_Access;
+      commonStrings : CommonStrings_Access;
+   begin
+        logUtil := LogUtil_Package.getInstance;
+        begin
+            anyType := AbeFactory_Package.getInstance.getInstance (abeClientInformation, className);
+            return anyType;
+        exception
+            when e : others =>
+            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERFACTORYERROR) then
+                commonStrings := CommonStrings_Package.getInstance;
+                logUtil.put (commonStrings.EXCEPTION_Id, factoryName & To_Unbounded_String ("->HelperFactory"), To_Unbounded_String ("getInstance(String, String, HashMap, PageContext)"), e);
+            end if;
+            Java_Throw (e);
+        end;
+   end getInstance;
+
+   procedure getInstance (abeClientInformation : AbeClientInformationInterface_Access; factoryName : Unbounded_String; className : Unbounded_String; hashMap : HashMap_Access; httpServletRequest : HttpServletRequest_Access) is
+      Java_Result : constant Java_Object_Access := getInstance (abeClientInformation, factoryName, className, hashMap, httpServletRequest);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getInstance;
+
+   procedure getInstance (abeClientInformation : AbeClientInformationInterface_Access; factoryName : Unbounded_String; className : Unbounded_String; hashMap : HashMap_Access; pageContext : PageContext_Access) is
+      Java_Result : constant Java_Object_Access := getInstance (abeClientInformation, factoryName, className, hashMap, pageContext);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getInstance;
+
+   procedure getInstance (abeClientInformation : AbeClientInformationInterface_Access; factoryName : Unbounded_String; className : Unbounded_String; hashMap : HashMap_Access; specialhashMap : HashMap_Access; pageContext : PageContext_Access) is
+      Java_Result : constant Java_Object_Access := getInstance (abeClientInformation, factoryName, className, hashMap, specialhashMap, pageContext);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getInstance;
+
+   procedure getInstance (abeClientInformation : AbeClientInformationInterface_Access; factoryName : Unbounded_String; className : Unbounded_String) is
+      Java_Result : constant Java_Object_Access := getInstance (abeClientInformation, factoryName, className);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getInstance;
+
+end admin.taghelpers.HelperFactory_Package;
+
+

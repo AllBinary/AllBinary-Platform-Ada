@@ -1,0 +1,66 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Ada.Strings.Maps.Constants;
+with Ada.Characters.Handling;
+with Ada.Exceptions;
+with Ada.Numerics.Long_Elementary_Functions;
+with Ada.Tags;
+with Ada.Text_IO;
+with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.communication.sql.AbSqlData_Package; use org.allbinary.logic.communication.sql.AbSqlData_Package;
+with org.allbinary.logic.control.validate.Validation_Package; use org.allbinary.logic.control.validate.Validation_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.logic.string_Id.StringValidationUtil_Package; use org.allbinary.logic.string_Id.StringValidationUtil_Package;
+with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.w3c.dom.Node_Package; use org.w3c.dom.Node_Package;
+
+package org.allbinary.business.user.commerce.inventory.item.BasicItemValidation_Package is
+
+   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package AbSqlData_Package renames org.allbinary.logic.communication.sql.AbSqlData_Package;
+   package Validation_Package renames org.allbinary.logic.control.validate.Validation_Package;
+   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
+   package StringValidationUtil_Package renames org.allbinary.logic.string_Id.StringValidationUtil_Package;
+   package Document_Package renames org.w3c.dom.Document_Package;
+   package Node_Package renames org.w3c.dom.Node_Package;
+
+   type BasicItemValidation is tagged;
+   type BasicItemValidation_Access is access all BasicItemValidation'Class;
+   type BasicItemValidation_Access_Array is array (Natural range <>) of BasicItemValidation_Access;
+   type BasicItemValidation_Access_Array_Access is access all BasicItemValidation_Access_Array;
+
+   type BasicItemValidation is new Validation with record
+      logUtil : LogUtil_Access;
+      MAXWEIGHT : Integer;
+      MAXPRICE : Integer;
+      itemInterface : ItemInterface_Access;
+   end record;
+
+   procedure Initialize (This : in out BasicItemValidation'Class; itemInterface : ItemInterface_Access);
+   function Create (itemInterface : ItemInterface_Access) return BasicItemValidation_Access;
+   function isValid (This : in out BasicItemValidation) return Boolean;
+   procedure isValid (This : in out BasicItemValidation);
+   function validationInfo (This : in out BasicItemValidation) return Unbounded_String;
+   procedure validationInfo (This : in out BasicItemValidation);
+   function toValidationInfoDoc (This : in out BasicItemValidation) return Document_Access;
+   procedure toValidationInfoDoc (This : in out BasicItemValidation);
+   function toValidationInfoNode (This : in out BasicItemValidation; document : Document_Access) return Node_Access;
+   procedure toValidationInfoNode (This : in out BasicItemValidation; document : Document_Access);
+
+end org.allbinary.business.user.commerce.inventory.item.BasicItemValidation_Package;
+
+

@@ -1,0 +1,79 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Ada.Strings.Maps.Constants;
+with Ada.Characters.Handling;
+with Ada.Exceptions;
+with Ada.Numerics.Long_Elementary_Functions;
+with Ada.Tags;
+with Ada.Text_IO;
+with AllBinary_Java; use AllBinary_Java;
+--  with javax.microedition.lcdui.CommandListener_Package; use javax.microedition.lcdui.CommandListener_Package;
+--  with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+--  with javax.microedition.lcdui.NullCommandListener_Package; use javax.microedition.lcdui.NullCommandListener_Package;
+with org.allbinary.game.init.BasicBuildGameInitializerFactory_Package; use org.allbinary.game.init.BasicBuildGameInitializerFactory_Package;
+with org.allbinary.game.layer.AllBinaryGameLayerManager_Package; use org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+with org.allbinary.game.score.NoHighScoresFactory_Package; use org.allbinary.game.score.NoHighScoresFactory_Package;
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package; use org.allbinary.game.displayable.canvas.AllBinaryGameCanvas_Package;
+
+package org.allbinary.game.displayable.canvas.NullGameCanvas_Package is
+
+   package BasicBuildGameInitializerFactory_Package renames org.allbinary.game.init.BasicBuildGameInitializerFactory_Package;
+   package AllBinaryGameLayerManager_Package renames org.allbinary.game.layer.AllBinaryGameLayerManager_Package;
+   package NoHighScoresFactory_Package renames org.allbinary.game.score.NoHighScoresFactory_Package;
+   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
+   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+
+   type NullGameCanvas is tagged;
+   type NullGameCanvas_Access is access all NullGameCanvas'Class;
+   type NullGameCanvas_Access_Array is array (Natural range <>) of NullGameCanvas_Access;
+   type NullGameCanvas_Access_Array_Access is access all NullGameCanvas_Access_Array;
+
+   type NullGameCanvas is new AllBinaryGameCanvas with record
+      runningNull : Boolean;
+   end record;
+   instance : Java_Object_Access;
+   NO_GAME : Unbounded_String;
+   TYPE_Id : Integer;
+
+   procedure Initialize (This : in out NullGameCanvas'Class; gameLayerManager : AllBinaryGameLayerManager_Access);
+   function Create (gameLayerManager : AllBinaryGameLayerManager_Access) return NullGameCanvas_Access;
+   function createNull return NullGameCanvas_Access;
+   procedure createNull;
+   function getInstance return NullGameCanvas_Access;
+   procedure getInstance;
+   function createCanvas (gameLayerManager : AllBinaryGameLayerManager_Access) return NullGameCanvas_Access;
+   procedure createCanvas (gameLayerManager : AllBinaryGameLayerManager_Access);
+   function isGameOver (This : in out NullGameCanvas) return Boolean;
+   procedure isGameOver (This : in out NullGameCanvas);
+   procedure setRunning (This : in out NullGameCanvas; running : Boolean);
+   function isRunning (This : in out NullGameCanvas) return Boolean;
+   procedure isRunning (This : in out NullGameCanvas);
+   procedure pause (This : in out NullGameCanvas);
+   procedure unPause (This : in out NullGameCanvas);
+   procedure initCommands (This : in out NullGameCanvas; cmdListener : CommandListener_Access);
+   procedure buildGameInit (This : in out NullGameCanvas; isProgress : Boolean);
+   procedure draw (This : in out NullGameCanvas; graphics : Graphics_Access);
+   procedure run (This : in out NullGameCanvas);
+   function getType (This : in out NullGameCanvas) return Integer;
+   procedure getType (This : in out NullGameCanvas);
+
+end org.allbinary.game.displayable.canvas.NullGameCanvas_Package;
+
+

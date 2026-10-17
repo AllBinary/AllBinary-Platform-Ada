@@ -1,0 +1,79 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.animation.vector.RectangleAdjustedAnimation_Package is
+
+   procedure Initialize_Fields (This : in out RectangleAdjustedAnimation'Class) is
+   begin
+      null;
+      
+      
+      
+      
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out RectangleAdjustedAnimation'Class; width : Integer; height : Integer; offsetX : Integer; offsetY : Integer; basicColor : BasicColor_Access) is
+   begin
+      Animation_Package.Initialize (This);
+      Initialize_Fields (This);
+        This.width := width;
+        This.height := height;
+        This.offsetX := offsetX;
+        This.offsetY := offsetY;
+        This.setBasicColorP (basicColor);
+   end Initialize;
+
+   function Create (width : Integer; height : Integer; offsetX : Integer; offsetY : Integer; basicColor : BasicColor_Access) return RectangleAdjustedAnimation_Access is
+      This : constant RectangleAdjustedAnimation_Access := new RectangleAdjustedAnimation;
+   begin
+      Initialize (This.all, width, height, offsetX, offsetY, basicColor);
+      return This;
+   end Create;
+
+   procedure nextFrame (This : in out RectangleAdjustedAnimation) is
+   begin
+        null;
+   end nextFrame;
+
+   procedure paintXY (This : in out RectangleAdjustedAnimation; graphics : Graphics_Access; x : Integer; y : Integer) is
+   begin
+        This.basicSetColorUtil.setBasicColorP3 (graphics, This.getBasicColorP, This.getColor);
+        graphics.drawRect ((x) + (This.offsetX), (y) + (This.offsetY), This.width, This.height);
+   end paintXY;
+
+   procedure setWidth (This : in out RectangleAdjustedAnimation; width : Integer) is
+   begin
+        This.width := width;
+   end setWidth;
+
+   procedure setHeight (This : in out RectangleAdjustedAnimation; height : Integer) is
+   begin
+        This.height := height;
+   end setHeight;
+
+   procedure setOffsetX (This : in out RectangleAdjustedAnimation; offsetX : Integer) is
+   begin
+        This.offsetX := offsetX;
+   end setOffsetX;
+
+   procedure setOffsetY (This : in out RectangleAdjustedAnimation; offsetY : Integer) is
+   begin
+        This.offsetY := offsetY;
+   end setOffsetY;
+
+end org.allbinary.animation.vector.RectangleAdjustedAnimation_Package;
+
+

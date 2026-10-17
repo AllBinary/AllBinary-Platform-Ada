@@ -1,0 +1,65 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--   
+--  Generated Code Do Not Modify
+
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Ada.Strings.Maps.Constants;
+with Ada.Characters.Handling;
+with Ada.Exceptions;
+with Ada.Numerics.Long_Elementary_Functions;
+with Ada.Tags;
+with Ada.Text_IO;
+with AllBinary_Java; use AllBinary_Java;
+--  with javax.microedition.lcdui.Font_Package; use javax.microedition.lcdui.Font_Package;
+--  with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with org.allbinary.animation.AnimationBehavior_Package; use org.allbinary.animation.AnimationBehavior_Package;
+with org.allbinary.graphics.font.FontDebugFactory_Package; use org.allbinary.graphics.font.FontDebugFactory_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+with org.allbinary.animation.text.TextAnimation_Package; use org.allbinary.animation.text.TextAnimation_Package;
+with org.allbinary.animation.text.TextInterface_Package; use org.allbinary.animation.text.TextInterface_Package;
+
+package org.allbinary.animation.text.CustomTextAnimation_Package is
+
+   package AnimationBehavior_Package renames org.allbinary.animation.AnimationBehavior_Package;
+   package FontDebugFactory_Package renames org.allbinary.graphics.font.FontDebugFactory_Package;
+   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+
+   type CustomTextAnimation is tagged;
+   type CustomTextAnimation_Access is access all CustomTextAnimation'Class;
+   type CustomTextAnimation_Access_Array is array (Natural range <>) of CustomTextAnimation_Access;
+   type CustomTextAnimation_Access_Array_Access is access all CustomTextAnimation_Access_Array;
+
+   type CustomTextAnimation is new TextAnimation and TextInterface with record
+      fontDebugFactory : FontDebugFactory_Access;
+      fontSize : Integer;
+      font : Font_Access;
+      lastText : Unbounded_String;
+      hasChanged : Boolean;
+      textWidth : Integer;
+   end record;
+
+   procedure Initialize (This : in out CustomTextAnimation'Class; text : Unbounded_String; fontSize : Integer; animationBehavior : AnimationBehavior_Access);
+   function Create (text : Unbounded_String; fontSize : Integer; animationBehavior : AnimationBehavior_Access) return CustomTextAnimation_Access;
+   procedure paintXY (This : in out CustomTextAnimation; graphics : Graphics_Access; x : Integer; y : Integer);
+   procedure setScale (This : in out CustomTextAnimation; scaleX : Float; scaleY : Float);
+   procedure setText (This : in out CustomTextAnimation; text : Unbounded_String);
+   function getText (This : in out CustomTextAnimation) return Unbounded_String;
+   procedure getText (This : in out CustomTextAnimation);
+   function getWidth (This : in out CustomTextAnimation) return Integer;
+   procedure getWidth (This : in out CustomTextAnimation);
+   function getFontHeight (This : in out CustomTextAnimation) return Integer;
+   procedure getFontHeight (This : in out CustomTextAnimation);
+
+end org.allbinary.animation.text.CustomTextAnimation_Package;
+
+

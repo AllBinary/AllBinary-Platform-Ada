@@ -1,0 +1,256 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.graphics.form.CommandCurrentSelectionForm_Package is
+
+   procedure Initialize_Fields (This : in out CommandCurrentSelectionForm'Class) is
+   begin
+      null;
+      This.selectedAnimationArray := new Animation_Access_Array'(0 .. (16) - 1 => null);
+      This.unSelectedAnimationArray := new Animation_Access_Array'(0 .. (16) - 1 => null);
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out CommandCurrentSelectionForm'Class; title : Unbounded_String; items : ABCustomItem_Access_Array_Access; border : Integer; moveForSmallScreen : Boolean; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) is
+   begin
+        ScrollCurrentSelectionForm_Package.Initialize (This, title, items, ItemPaintableFactory_Package.getInstance, border, -(3), moveForSmallScreen, backgroundBasicColor, foregroundBasicColor);
+        Initialize_Fields (This);
+        This.initAnimations;
+        This.addAll (items);
+   end Initialize;
+
+   function Create (title : Unbounded_String; items : ABCustomItem_Access_Array_Access; border : Integer; moveForSmallScreen : Boolean; backgroundBasicColor : BasicColor_Access; foregroundBasicColor : BasicColor_Access) return CommandCurrentSelectionForm_Access is
+      This : constant CommandCurrentSelectionForm_Access := new CommandCurrentSelectionForm;
+   begin
+      Initialize (This.all, title, items, border, moveForSmallScreen, backgroundBasicColor, foregroundBasicColor);
+      return This;
+   end Create;
+
+   procedure updateMeasurement (This : in out CommandCurrentSelectionForm; graphics : Graphics_Access) is
+   begin
+        This.updateAll (graphics, This.getAllitems);
+        ScrollCurrentSelectionForm (This).updateMeasurement (graphics);
+   end updateMeasurement;
+
+   procedure initAnimations (This : in out CommandCurrentSelectionForm) is
+      nullAnimation : Animation_Access;
+      index : Integer;
+   begin
+        nullAnimation := NullAnimationFactory_Package.getFactoryInstance.getInstance (0);
+        index := This.selectedAnimationArray'Length;
+        while (Java_Pre_Decrement (index)) >= (0) loop
+            This.selectedAnimationArray (index) := nullAnimation;
+        end loop;
+        index := This.unSelectedAnimationArray'Length;
+        while (Java_Pre_Decrement (index)) >= (0) loop
+            This.unSelectedAnimationArray (index) := nullAnimation;
+        end loop;
+   end initAnimations;
+
+   procedure addAll (This : in out CommandCurrentSelectionForm; items : ABCustomItem_Access_Array_Access) is
+      index : Integer;
+   begin
+        index := items'Length;
+        while (Java_Pre_Decrement (index)) >= (0) loop
+            This.addAt (index, items (index));
+        end loop;
+   end addAll;
+
+   procedure addAt (This : in out CommandCurrentSelectionForm; index : Integer; item : ABCustomItem_Access) is
+      basicColorFactory : BasicColorFactory_Access;
+      buttonColor : BasicColor_Access;
+      selectedButtonColor : BasicColor_Access;
+      width : Integer;
+      height : Integer;
+      adjustedBorder : Integer;
+      offset : Integer;
+      rectWidth : Integer;
+      rectHeight : Integer;
+   begin
+        basicColorFactory := BasicColorFactory_Package.getInstance;
+        buttonColor := basicColorFactory.TRANSPARENT_GREY;
+        selectedButtonColor := basicColorFactory.TRANSPARENT_RED;
+        width := item.getMinimumWidth;
+        height := item.getMinimumHeight;
+        adjustedBorder := 3;
+        offset := -(((This.halfBorder) + (adjustedBorder)));
+        rectWidth := ((width) + (This.border)) - (adjustedBorder);
+        rectHeight := ((height) + (This.border)) - (adjustedBorder);
+        if (J2MEUtil_Package.isJ2ME) or else (J2MEUtil_Package.isHTML) then
+            This.selectedAnimationArray (index) := RectangleAdjustedAnimation_Package.Create (rectWidth, rectHeight, offset, offset, selectedButtonColor);
+        else
+            This.selectedAnimationArray (index) := RectangleFilledAdjustedAnimation_Package.Create (rectWidth, rectHeight, offset, offset, selectedButtonColor);
+        end if;
+        adjustedBorder := 4;
+        if (J2MEUtil_Package.isJ2ME) or else (J2MEUtil_Package.isHTML) then
+            This.unSelectedAnimationArray (index) := RectangleAdjustedAnimation_Package.Create (rectWidth, rectHeight, offset, offset, buttonColor);
+        else
+            This.unSelectedAnimationArray (index) := RectangleFilledAdjustedAnimation_Package.Create (rectWidth, rectHeight, offset, offset, buttonColor);
+        end if;
+   end addAt;
+
+   procedure updateAll (This : in out CommandCurrentSelectionForm; graphics : Graphics_Access; items : ABCustomItem_Access_Array_Access) is
+      index : Integer;
+   begin
+        index := items'Length;
+        while (Java_Pre_Decrement (index)) >= (0) loop
+            items (index).preMeasurement (graphics);
+            This.updateAt (index, items (index));
+        end loop;
+   end updateAll;
+
+   procedure updateAt (This : in out CommandCurrentSelectionForm; index : Integer; item : ABCustomItem_Access) is
+      basicColorFactory : BasicColorFactory_Access;
+      buttonColor : BasicColor_Access;
+      selectedButtonColor : BasicColor_Access;
+      width : Integer;
+      height : Integer;
+      adjustedBorder : Integer;
+      offset : Integer;
+      rectWidth : Integer;
+      rectHeight : Integer;
+      rectangleAdjustedAnimation : RectangleFilledAdjustedAnimation_Access;
+   begin
+        basicColorFactory := BasicColorFactory_Package.getInstance;
+        buttonColor := basicColorFactory.TRANSPARENT_GREY;
+        selectedButtonColor := basicColorFactory.TRANSPARENT_RED;
+        width := item.getMinimumWidth;
+        height := item.getMinimumHeight;
+        adjustedBorder := 3;
+        offset := -(((This.halfBorder) + (adjustedBorder)));
+        rectWidth := ((width) + (This.border)) - (adjustedBorder);
+        rectHeight := ((height) + (This.border)) - (adjustedBorder);
+        if (J2MEUtil_Package.isJ2ME) or else (J2MEUtil_Package.isHTML) then
+            rectangleAdjustedAnimation := RectangleAdjustedAnimation_Access (This.selectedAnimationArray (index));
+            rectangleAdjustedAnimation.setWidth (rectWidth);
+            rectangleAdjustedAnimation.setHeight (rectHeight);
+            rectangleAdjustedAnimation.setOffsetX (offset);
+            rectangleAdjustedAnimation.setOffsetY (offset);
+            rectangleAdjustedAnimation.setBasicColorP (selectedButtonColor);
+        else
+            rectangleAdjustedAnimation := RectangleFilledAdjustedAnimation_Access (This.selectedAnimationArray (index));
+            rectangleAdjustedAnimation.setWidth (rectWidth);
+            rectangleAdjustedAnimation.setHeight (rectHeight);
+            rectangleAdjustedAnimation.setOffsetX (offset);
+            rectangleAdjustedAnimation.setOffsetY (offset);
+            rectangleAdjustedAnimation.setBasicColorP (selectedButtonColor);
+        end if;
+        adjustedBorder := 4;
+        if (J2MEUtil_Package.isJ2ME) or else (J2MEUtil_Package.isHTML) then
+            rectangleAdjustedAnimation := RectangleAdjustedAnimation_Access (This.unSelectedAnimationArray (index));
+            rectangleAdjustedAnimation.setWidth (rectWidth);
+            rectangleAdjustedAnimation.setHeight (rectHeight);
+            rectangleAdjustedAnimation.setOffsetX (offset);
+            rectangleAdjustedAnimation.setOffsetY (offset);
+            rectangleAdjustedAnimation.setBasicColorP (buttonColor);
+        else
+            rectangleAdjustedAnimation := RectangleFilledAdjustedAnimation_Access (This.unSelectedAnimationArray (index));
+            rectangleAdjustedAnimation.setWidth (rectWidth);
+            rectangleAdjustedAnimation.setHeight (rectHeight);
+            rectangleAdjustedAnimation.setOffsetX (offset);
+            rectangleAdjustedAnimation.setOffsetY (offset);
+            rectangleAdjustedAnimation.setBasicColorP (buttonColor);
+        end if;
+   end updateAt;
+
+   function getSelectedCommand (This : in out CommandCurrentSelectionForm) return Command_Access is
+      index : Integer;
+      commandTextItem : CommandTextItem_Access;
+   begin
+        index := ScrollCurrentSelectionForm (This).getSelectedIndex;
+        commandTextItem := CommandTextItem_Access (This.get (index));
+        return commandTextItem.getCommand;
+   end getSelectedCommand;
+
+   function append (This : in out CommandCurrentSelectionForm; item : ABCustomItem_Access) return Integer is
+      result : Integer;
+   begin
+        result := ScrollCurrentSelectionForm (This).append (item);
+        This.addAt (result, item);
+        return result;
+   end append;
+
+   procedure delete (This : in out CommandCurrentSelectionForm; itemNum : Integer) is
+   begin
+        ScrollCurrentSelectionForm (This).delete (itemNum);
+   end delete;
+
+   procedure deleteAll (This : in out CommandCurrentSelectionForm) is
+   begin
+        This.initAnimations;
+        ScrollCurrentSelectionForm (This).deleteAll;
+   end deleteAll;
+
+   procedure insert (This : in out CommandCurrentSelectionForm; itemNum : Integer; item : ABCustomItem_Access) is
+   begin
+        ScrollCurrentSelectionForm (This).insert (itemNum, item);
+   end insert;
+
+   procedure set (This : in out CommandCurrentSelectionForm; itemNum : Integer; item : ABCustomItem_Access) is
+   begin
+        ScrollCurrentSelectionForm (This).set (itemNum, item);
+   end set;
+
+   procedure paint (This : in out CommandCurrentSelectionForm; graphics : Graphics_Access) is
+   begin
+        This.myFontProcessor.process (graphics);
+        ScrollCurrentSelectionForm (This).paint (graphics);
+   end paint;
+
+   --  throws Exception
+   function paintItem (This : in out CommandCurrentSelectionForm; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; x : Integer; y : Integer) return Integer is
+   begin
+        This.selectedAnimationArray (index).paintXY (graphics, x, y);
+        return ScrollCurrentSelectionForm (This).paintItem (graphics, index, item, x, y);
+   end paintItem;
+
+   --  throws Exception
+   function paintUnselectedItem (This : in out CommandCurrentSelectionForm; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; x : Integer; y : Integer) return Integer is
+   begin
+        This.unSelectedAnimationArray (index).paintXY (graphics, x, y);
+        return ScrollCurrentSelectionForm (This).paintUnselectedItem (graphics, index, item, x, y);
+   end paintUnselectedItem;
+
+   procedure getSelectedCommand (This : in out CommandCurrentSelectionForm) is
+      Java_Result : constant Command_Access := CommandCurrentSelectionForm'Class (This).getSelectedCommand;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getSelectedCommand;
+
+   procedure append (This : in out CommandCurrentSelectionForm; item : ABCustomItem_Access) is
+      Java_Result : constant Integer := CommandCurrentSelectionForm'Class (This).append (item);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end append;
+
+   procedure paintItem (This : in out CommandCurrentSelectionForm; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; x : Integer; y : Integer) is
+      Java_Result : constant Integer := CommandCurrentSelectionForm'Class (This).paintItem (graphics, index, item, x, y);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end paintItem;
+
+   procedure paintUnselectedItem (This : in out CommandCurrentSelectionForm; graphics : Graphics_Access; index : Integer; item : ABCustomItem_Access; x : Integer; y : Integer) is
+      Java_Result : constant Integer := CommandCurrentSelectionForm'Class (This).paintUnselectedItem (graphics, index, item, x, y);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end paintUnselectedItem;
+
+end org.allbinary.graphics.form.CommandCurrentSelectionForm_Package;
+
+

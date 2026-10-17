@@ -1,0 +1,79 @@
+-- 
+-- AllBinary Open License Version 1 
+-- Copyright (c) 2025 AllBinary 
+--  
+-- By agreeing to this license you and any business entity you represent are 
+-- legally bound to the AllBinary Open License Version 1 legal agreement. 
+--  
+-- You may obtain the AllBinary Open License Version 1 legal agreement from 
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository. 
+--  
+-- Created By: Travis Berthelot 
+--   
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.thread.PooledThread_Package is
+
+   procedure Initialize_Fields (This : in out PooledThread'Class) is
+   begin
+      null;
+      This.logUtil := LogUtil_Package.getInstance;
+      This.commonStrings := CommonStrings_Package.getInstance;
+      This.threadObjectUtil := ThreadObjectUtil_Package.getInstance;
+      
+      This.INTERRUPT_EXCEPTION := To_Unbounded_String ("Exit InterruptedException");
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out PooledThread'Class; threadPool : ThreadPool_Access) is
+   begin
+        Thread_Package.Initialize (This, threadPool.createName);
+        Initialize_Fields (This);
+        This.logUtil.putF (This.commonStrings.CONSTRUCTOR, This'Unchecked_Access, This.commonStrings.CONSTRUCTOR);
+        This.threadPool := threadPool;
+   end Initialize;
+
+   function Create (threadPool : ThreadPool_Access) return PooledThread_Access is
+      This : constant PooledThread_Access := new PooledThread;
+   begin
+      Initialize (This.all, threadPool);
+      return This;
+   end Create;
+
+   procedure run (This : in out PooledThread) is
+      task2 : Runnable_Access;
+      logUtil : LogUtil_Access;
+   begin
+        This.threadPool.threadStarted;
+        while True loop
+            task2 := This.threadObjectUtil.NULL_PRIORITY_RUNNABLE;
+            begin
+                task2 := This.threadPool.getTask;
+                This.threadPool.runningTask := True;
+                This.threadPool.startTask (task2);
+            exception
+                when ex : others =>
+                logUtil := LogUtil_Package.getInstance;
+                logUtil.putF (This.INTERRUPT_EXCEPTION, This'Unchecked_Access, This.commonStrings.RUN);
+                exit;
+            end;
+            if (task2) = (This.threadObjectUtil.NULL_PRIORITY_RUNNABLE) then
+                exit;
+            end if;
+            begin
+                task2.run;
+                This.threadPool.completedTask (task2);
+                This.threadPool.runningTask := False;
+            exception
+                when e : others =>
+                logUtil := LogUtil_Package.getInstance;
+                logUtil.put (StringMaker_Package.Create.append (This.commonStrings.EXCEPTION_LABEL).append (StringUtil_Package.getInstance.toString (task2)).toString, This'Unchecked_Access, This.commonStrings.RUN, e);
+            end;
+        end loop;
+        This.threadPool.threadStopped;
+   end run;
+
+end org.allbinary.thread.PooledThread_Package;
+
+

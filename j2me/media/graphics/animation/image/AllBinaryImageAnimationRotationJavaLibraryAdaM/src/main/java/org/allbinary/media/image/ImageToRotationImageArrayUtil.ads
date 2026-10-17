@@ -1,0 +1,45 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Ada.Strings.Maps.Constants;
+with Ada.Characters.Handling;
+with Ada.Exceptions;
+with Ada.Numerics.Long_Elementary_Functions;
+with Ada.Tags;
+with Ada.Text_IO;
+with AllBinary_Java; use AllBinary_Java;
+--  with javax.microedition.lcdui.Image_Package; use javax.microedition.lcdui.Image_Package;
+
+package org.allbinary.media.image.ImageToRotationImageArrayUtil_Package is
+
+
+   type ImageToRotationImageArrayUtil is tagged;
+   type ImageToRotationImageArrayUtil_Access is access all ImageToRotationImageArrayUtil'Class;
+   type ImageToRotationImageArrayUtil_Access_Array is array (Natural range <>) of ImageToRotationImageArrayUtil_Access;
+   type ImageToRotationImageArrayUtil_Access_Array_Access is access all ImageToRotationImageArrayUtil_Access_Array;
+
+   type ImageToRotationImageArrayUtil is new Java_Object with null record;
+   instance : ImageToRotationImageArrayUtil_Access;
+
+   procedure Initialize (This : in out ImageToRotationImageArrayUtil'Class);
+   function Create return ImageToRotationImageArrayUtil_Access;
+   function getInstance return ImageToRotationImageArrayUtil_Access;
+   procedure getInstance;
+   function generate (This : in out ImageToRotationImageArrayUtil; image : Image_Access; angleIncrement : Integer; totalAngle : Integer) return Image_Access_Array_Access;
+   procedure generate (This : in out ImageToRotationImageArrayUtil; image : Image_Access; angleIncrement : Integer; totalAngle : Integer);
+
+end org.allbinary.media.image.ImageToRotationImageArrayUtil_Package;
+
+

@@ -1,0 +1,116 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body views.generic_Id.address.shipping.ShippingAddressesView_Package is
+
+   procedure Initialize_Fields (This : in out ShippingAddressesView'Class) is
+   begin
+      null;
+      This.logUtil := LogUtil_Package.getInstance;
+      
+      This.streetAddressList := null;
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out ShippingAddressesView'Class; transformInfoInterface : TransformInfoInterface_Access) is
+      httpTransformInfoInterface : TransformInfoHttpInterface_Access;
+   begin
+        HttpStoreComponentView_Package.Initialize (This, transformInfoInterface);
+        Initialize_Fields (This);
+        httpTransformInfoInterface := TransformInfoHttpInterface_Access (This.getTransformInfoInterface);
+        This.request := HttpServletRequest_Access (httpTransformInfoInterface.getPageContext.getRequest);
+   end Initialize;
+
+   function Create (transformInfoInterface : TransformInfoInterface_Access) return ShippingAddressesView_Access is
+      This : constant ShippingAddressesView_Access := new ShippingAddressesView;
+   begin
+      Initialize (This.all, transformInfoInterface);
+      return This;
+   end Create;
+
+   function getRequest (This : in out ShippingAddressesView) return HttpServletRequest_Access is
+   begin
+        return This.request;
+   end getRequest;
+
+   --  throws Exception
+   function toXmlNode (This : in out ShippingAddressesView; document : Document_Access) return Node_Access is
+      billingAddressesNode : Node_Access;
+      size : Integer;
+      streetAddress : StreetAddress_Access;
+      index : Integer;
+   begin
+        begin
+            billingAddressesNode := document.createElement (ShippingAddressData_Package.MULTIPLE);
+            size := This.streetAddressList.size;
+            for index in 0 .. (size) - 1 loop
+                streetAddress := StreetAddress_Access (This.streetAddressList.get (index));
+                billingAddressesNode.appendChild (streetAddress.toXmlNode (document));
+            end loop;
+            billingAddressesNode.appendChild (ModDomHelper_Package.createNameValueNodes (document, StreetAddressData_Package.NUMBEROFADDRESSES, This.streetAddressList.size.toString));
+            return billingAddressesNode;
+        exception
+            when e : others =>
+            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.XSLLOGGINGERROR) then
+                This.logUtil.put (This.commonStrings.FAILURE, This'Unchecked_Access, To_Unbounded_String ("toXmlNode"), e);
+            end if;
+            Java_Throw (e);
+        end;
+   end toXmlNode;
+
+   procedure addDomNodeInterfaces (This : in out ShippingAddressesView) is
+   begin
+        This.addDomNodeInterface (DomNodeInterface_Access (This'Unchecked_Access));
+   end addDomNodeInterfaces;
+
+   --  throws Exception
+   function view (This : in out ShippingAddressesView) return Unbounded_String is
+   begin
+        begin
+            This.addDomNodeInterfaces;
+            return HttpStoreComponentView (This).view;
+        exception
+            when e : others =>
+            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.TAGHELPERERROR) then
+                This.logUtil.put (This.commonStrings.EXCEPTION_Id, This'Unchecked_Access, To_Unbounded_String ("view()"), e);
+            end if;
+            Java_Throw (e);
+        end;
+   end view;
+
+   procedure getRequest (This : in out ShippingAddressesView) is
+      Java_Result : constant HttpServletRequest_Access := ShippingAddressesView'Class (This).getRequest;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getRequest;
+
+   procedure toXmlNode (This : in out ShippingAddressesView; document : Document_Access) is
+      Java_Result : constant Node_Access := ShippingAddressesView'Class (This).toXmlNode (document);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end toXmlNode;
+
+   procedure view (This : in out ShippingAddressesView) is
+      Java_Result : constant Unbounded_String := ShippingAddressesView'Class (This).view;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end view;
+
+end views.generic_Id.address.shipping.ShippingAddressesView_Package;
+
+

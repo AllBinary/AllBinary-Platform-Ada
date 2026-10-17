@@ -1,0 +1,153 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.animation.RotationAnimation_Package is
+
+   procedure Initialize_Fields (This : in out RotationAnimation'Class) is
+   begin
+      null;
+      This.frameUtil := FrameUtil_Package.getInstance;
+      This.directionUtil := DirectionUtil_Package.getInstance;
+      
+      
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out RotationAnimation'Class; angleInfo : AngleInfo_Access; circularIndexUtil : CircularIndexUtil_Access; animationBehavior : AnimationBehavior_Access) is
+   begin
+        IndexedAnimation_Package.Initialize (This, animationBehavior);
+        Initialize_Fields (This);
+        This.angleInfo := angleInfo;
+        This.circularIndexUtil := circularIndexUtil;
+   end Initialize;
+
+   function Create (angleInfo : AngleInfo_Access; circularIndexUtil : CircularIndexUtil_Access; animationBehavior : AnimationBehavior_Access) return RotationAnimation_Access is
+      This : constant RotationAnimation_Access := new RotationAnimation;
+   begin
+      Initialize (This.all, angleInfo, circularIndexUtil, animationBehavior);
+      return This;
+   end Create;
+
+   procedure nextRotationX (This : in out RotationAnimation) is
+   begin
+        null;
+   end nextRotationX;
+
+   procedure previousRotationX (This : in out RotationAnimation) is
+   begin
+        null;
+   end previousRotationX;
+
+   procedure nextRotation (This : in out RotationAnimation) is
+   begin
+        This.angleInfo.adjustAngle (This.circularIndexUtil.next);
+   end nextRotation;
+
+   procedure previousRotation (This : in out RotationAnimation) is
+   begin
+        This.angleInfo.adjustAngle (This.circularIndexUtil.previous);
+   end previousRotation;
+
+   procedure nextRotationZ (This : in out RotationAnimation) is
+   begin
+        null;
+   end nextRotationZ;
+
+   procedure previousRotationZ (This : in out RotationAnimation) is
+   begin
+        null;
+   end previousRotationZ;
+
+   procedure setFrame (This : in out RotationAnimation; index : Integer) is
+      newFrame : Integer;
+   begin
+        This.circularIndexUtil.setIndex (index);
+        newFrame := This.circularIndexUtil.getIndex;
+        This.angleInfo.adjustAngle (newFrame);
+   end setFrame;
+
+   procedure setFrameByDirection (This : in out RotationAnimation; direction : Direction_Access) is
+      angle : Angle_Access;
+   begin
+        angle := This.directionUtil.getFrameAngle (direction);
+        This.adjustFrameToAngle (angle);
+   end setFrameByDirection;
+
+   procedure setFrameToAngle (This : in out RotationAnimation; angle : Angle_Access) is
+   begin
+        This.adjustFrameToAngle (angle);
+   end setFrameToAngle;
+
+   procedure adjustFrameToAngle (This : in out RotationAnimation; angle : Angle_Access) is
+   begin
+        This.adjustFrame (angle.getValue);
+   end adjustFrameToAngle;
+
+   procedure adjustFrame (This : in out RotationAnimation; angle : Short_Integer) is
+   begin
+        This.setFrame (This.frameUtil.getFrameForAngle (angle, Integer (This.angleInfo.getAngleIncrementInfo.getAngleIncrement)));
+   end adjustFrame;
+
+   function getFrame (This : in out RotationAnimation) return Integer is
+   begin
+        return This.circularIndexUtil.getIndex;
+   end getFrame;
+
+   function getSize (This : in out RotationAnimation) return Integer is
+   begin
+        return This.circularIndexUtil.getSize;
+   end getSize;
+
+   function getAngleInfoP (This : in out RotationAnimation) return AngleInfo_Access is
+   begin
+        return This.angleInfo;
+   end getAngleInfoP;
+
+   function toString (This : in out RotationAnimation) return Unbounded_String is
+   begin
+        return StringMaker_Package.Create.append (IndexedAnimation (This).toString).append (To_Unbounded_String ("circularIndexUtil: ")).append (This.circularIndexUtil.toString).append (To_Unbounded_String ("angleInfo: ")).append (This.angleInfo.toString).toString;
+   end toString;
+
+   procedure getFrame (This : in out RotationAnimation) is
+      Java_Result : constant Integer := RotationAnimation'Class (This).getFrame;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getFrame;
+
+   procedure getSize (This : in out RotationAnimation) is
+      Java_Result : constant Integer := RotationAnimation'Class (This).getSize;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getSize;
+
+   procedure getAngleInfoP (This : in out RotationAnimation) is
+      Java_Result : constant AngleInfo_Access := RotationAnimation'Class (This).getAngleInfoP;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getAngleInfoP;
+
+   procedure toString (This : in out RotationAnimation) is
+      Java_Result : constant Unbounded_String := RotationAnimation'Class (This).toString;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end toString;
+
+end org.allbinary.animation.RotationAnimation_Package;
+
+

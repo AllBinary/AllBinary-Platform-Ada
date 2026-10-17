@@ -1,0 +1,87 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.layer.LayerInterfaceFactory_Package is
+
+   procedure Initialize_Fields (This : in out LayerInterfaceFactory'Class) is
+   begin
+      null;
+      This.logUtil := LogUtil_Package.getInstance;
+      This.list := BasicArrayListUtil_Package.getInstance.getImmutableInstance;
+      This.HASHTABLE_LABEL := To_Unbounded_String ("Hashtable: ");
+   end Initialize_Fields;
+
+   procedure Initialize (This : in out LayerInterfaceFactory'Class) is
+   begin
+      Initialize_Fields (This);
+   end Initialize;
+
+   function Create return LayerInterfaceFactory_Access is
+      This : constant LayerInterfaceFactory_Access := new LayerInterfaceFactory;
+   begin
+      Initialize (This.all);
+      return This;
+   end Create;
+
+
+   function getInstance return LayerInterfaceFactory_Access is
+   begin
+        return LayerInterfaceFactory_Package.SINGLETON;
+   end getInstance;
+
+   procedure init (This : in out LayerInterfaceFactory) is
+   begin
+        This.list := BasicArrayListD_Package.Create;
+   end init;
+
+   --  throws Exception
+   function getNexInstance (This : in out LayerInterfaceFactory; hashtable : ABHashtable_Access; x : Integer; y : Integer; z : Integer) return AllBinaryLayer_Access is
+      commonStrings : CommonStrings_Access;
+      typeInteger : Integer;
+      layerInterfaceFactoryInterface : LayerInterfaceFactoryInterface_Access;
+   begin
+        commonStrings := CommonStrings_Package.getInstance;
+        This.logUtil.putF (StringMaker_Package.Create.append (This.HASHTABLE_LABEL).append (StringUtil_Package.getInstance.toString (hashtable)).toString, This'Unchecked_Access, commonStrings.GET_INSTANCE);
+        typeInteger := Integer (hashtable.get (Java_Object_Access (Layer_Package.ID)));
+        layerInterfaceFactoryInterface := LayerInterfaceFactoryInterface_Access (This.list.objectArray ((typeInteger.intValue) - (1)));
+        return layerInterfaceFactoryInterface.getNextInstance (hashtable, x, y, z);
+   end getNexInstance;
+
+   procedure add (This : in out LayerInterfaceFactory; layerInterfaceFactoryInterface : LayerInterfaceFactoryInterface_Access) is
+   begin
+        This.list.add (layerInterfaceFactoryInterface);
+   end add;
+
+   procedure getInstance is
+      Java_Result : constant LayerInterfaceFactory_Access := getInstance;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getInstance;
+
+   procedure getNexInstance (This : in out LayerInterfaceFactory; hashtable : ABHashtable_Access; x : Integer; y : Integer; z : Integer) is
+      Java_Result : constant AllBinaryLayer_Access := LayerInterfaceFactory'Class (This).getNexInstance (hashtable, x, y, z);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getNexInstance;
+
+begin
+   null;
+   SINGLETON := LayerInterfaceFactory_Package.Create;
+
+end org.allbinary.layer.LayerInterfaceFactory_Package;
+
+

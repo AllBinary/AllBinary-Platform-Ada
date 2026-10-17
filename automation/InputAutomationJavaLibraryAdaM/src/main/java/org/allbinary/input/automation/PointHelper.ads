@@ -1,0 +1,42 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Ada.Strings.Maps.Constants;
+with Ada.Characters.Handling;
+with Ada.Exceptions;
+with Ada.Numerics.Long_Elementary_Functions;
+with Ada.Tags;
+with Ada.Text_IO;
+with AllBinary_Java; use AllBinary_Java;
+
+package org.allbinary.input.automation.PointHelper_Package is
+
+
+   type PointHelper is tagged;
+   type PointHelper_Access is access all PointHelper'Class;
+   type PointHelper_Access_Array is array (Natural range <>) of PointHelper_Access;
+   type PointHelper_Access_Array_Access is access all PointHelper_Access_Array;
+
+   type PointHelper is new Java_Object with null record;
+   two : Long_Float;
+
+   procedure Initialize (This : in out PointHelper'Class);
+   function Create return PointHelper_Access;
+   function getCenterPoint (rectangle : Rectangle_Access) return Point_Access;
+   procedure getCenterPoint (rectangle : Rectangle_Access);
+
+end org.allbinary.input.automation.PointHelper_Package;
+
+

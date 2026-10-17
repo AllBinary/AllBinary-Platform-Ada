@@ -1,0 +1,83 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Ada.Strings.Maps.Constants;
+with Ada.Characters.Handling;
+with Ada.Exceptions;
+with Ada.Numerics.Long_Elementary_Functions;
+with Ada.Tags;
+with Ada.Text_IO;
+with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.logic.communication.log.LogUtil_Package; use org.allbinary.logic.communication.log.LogUtil_Package;
+with org.allbinary.logic.string_Id.StringMaker_Package; use org.allbinary.logic.string_Id.StringMaker_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.allbinary.util.BasicArrayList_Package; use org.allbinary.util.BasicArrayList_Package;
+with org.allbinary.util.BasicArrayListD_Package; use org.allbinary.util.BasicArrayListD_Package;
+with org.allbinary.util.BasicArrayListUtil_Package; use org.allbinary.util.BasicArrayListUtil_Package;
+
+package org.allbinary.thread.ThreadPool_Package is
+
+   package LogUtil_Package renames org.allbinary.logic.communication.log.LogUtil_Package;
+   package StringMaker_Package renames org.allbinary.logic.string_Id.StringMaker_Package;
+   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package BasicArrayList_Package renames org.allbinary.util.BasicArrayList_Package;
+   package BasicArrayListD_Package renames org.allbinary.util.BasicArrayListD_Package;
+   package BasicArrayListUtil_Package renames org.allbinary.util.BasicArrayListUtil_Package;
+
+   type ThreadPool is tagged;
+   type ThreadPool_Access is access all ThreadPool'Class;
+   type ThreadPool_Access_Array is array (Natural range <>) of ThreadPool_Access;
+   type ThreadPool_Access_Array_Access is access all ThreadPool_Access_Array;
+
+   type ThreadPool is new Java_Object with record
+      logUtil : LogUtil_Access;
+      commonStrings : CommonStrings_Access;
+      NULL_RUNNABLE : NullRunnable_Access;
+      threadPoolStrings : ThreadPoolStrings_Access;
+      threadObjectUtil : ThreadObjectUtil_Access;
+      poolName : Unbounded_String;
+      priority : Integer;
+      isAlive : Boolean;
+      taskQueue : BasicArrayList_Access;
+      threadID : Integer;
+      numThreads : Integer;
+      runningTask : Boolean;
+   end record;
+   ROOT_NAME : Unbounded_String;
+   NORMAL_PRIORITY : Integer;
+
+   procedure Initialize (This : in out ThreadPool'Class; poolName : Unbounded_String; numThreads : Integer; priority : Integer);
+   function Create (poolName : Unbounded_String; numThreads : Integer; priority : Integer) return ThreadPool_Access;
+   procedure init (This : in out ThreadPool);
+   procedure runAPriorityTask (This : in out ThreadPool);
+   procedure runTaskWithPriority (This : in out ThreadPool; task_Id : PriorityRunnable_Access);
+   procedure runTask (This : in out ThreadPool; task_Id : Runnable_Access);
+   function getTask (This : in out ThreadPool) return Runnable_Access;
+   procedure getTask (This : in out ThreadPool);
+   procedure clear (This : in out ThreadPool);
+   procedure close (This : in out ThreadPool);
+   procedure join (This : in out ThreadPool);
+   function isBusy (This : in out ThreadPool) return Boolean;
+   procedure isBusy (This : in out ThreadPool);
+   procedure threadStarted (This : in out ThreadPool);
+   procedure threadStopped (This : in out ThreadPool);
+   procedure startTask (This : in out ThreadPool; task_Id : Runnable_Access);
+   procedure completedTask (This : in out ThreadPool; task_Id : Runnable_Access);
+   function createName (This : in out ThreadPool) return Unbounded_String;
+   procedure createName (This : in out ThreadPool);
+
+end org.allbinary.thread.ThreadPool_Package;
+
+

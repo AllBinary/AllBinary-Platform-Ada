@@ -1,0 +1,59 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.allbinary</groupId>
+    <artifactId>AllBinaryPersistenceLibraryPAda</artifactId>
+    <packaging>pom</packaging>
+    <!-- AllBinary Platform Version Start -->
+    <version>1.0.0-SNAPSHOT</version>
+    <!-- AllBinary Platform Version End -->
+
+    <name>AllBinaryPersistenceLibraryPAda</name>
+    <url>http://www.allbinary.com/</url>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <name>AllBinary Snapshots Nexus</name>
+            <url>https://nexus-allbinary.rhcloud.com/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>nexus-releases</id>
+            <name>AllBinary Releases Nexus</name>
+            <url>https://nexus-allbinary.rhcloud.com/nexus/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
+    
+    <properties>
+        <buildLabel>${project.version}</buildLabel>
+        <assemblyPluginVersion>2.2-beta-1</assemblyPluginVersion>
+    </properties>
+
+    <modules>
+        
+        <!--
+        -->
+        <module>../allbinary_src/cache/AllBinaryCacheLibraryAdaM</module>
+        <module>../allbinary_src/PermutationsJavaLibraryAdaM</module>
+        <module>../allbinary_src/logic/BasePreloaderFileJavaLibraryAdaM</module>
+        <module>../allbinary_src/logic/data/file/FileJavaLibraryAdaM</module>
+        <module>../allbinary_src/logic/data/file/FileJ2SEJavaLibraryAdaM</module>
+        <module>../allbinary_src/data/DataJavaLibraryAdaM</module>
+        <module>../allbinary_src/logic/data/file/FileUnamedJavaLibraryAdaM</module>
+        <module>../allbinary_src/logic/data/file/FileAdvancedJavaLibraryAdaM</module>
+        <module>../allbinary_src/PreLoaderJavaLibraryAdaM</module>
+        <module>../allbinary_src/FileInitInfoJavaLibraryAdaM</module>
+        <module>../allbinary_src/PreLoaderFileJavaLibraryAdaM</module>
+        <module>../allbinary_src/PreLoaderLicenseJavaLibraryAdaM</module>
+        <module>../j2me/PCResourceLibraryAdaM</module>
+        <module>../j2me/ProgressJ2MEJavaLibraryAdaM</module>
+        <module>../allbinary_src/licensing/ClientInfoBaseJavaLibraryAdaM</module>
+        <module>../allbinary_src/licensing/RemoteXmlRpcJavaLibraryAdaM</module>
+        <module>../allbinary_src/licensing/LicenseClientJavaLibraryAdaM</module>
+
+        <!--
+        <module>../allbinary_src/PreLoaderLicenseJavaLibraryAdaM</module>
+        -->
+    </modules>
+
+</project>
+

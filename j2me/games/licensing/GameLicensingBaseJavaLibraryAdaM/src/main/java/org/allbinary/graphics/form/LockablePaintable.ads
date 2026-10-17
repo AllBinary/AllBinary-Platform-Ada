@@ -1,0 +1,57 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Ada.Strings.Maps.Constants;
+with Ada.Characters.Handling;
+with Ada.Exceptions;
+with Ada.Numerics.Long_Elementary_Functions;
+with Ada.Tags;
+with Ada.Text_IO;
+with AllBinary_Java; use AllBinary_Java;
+--  with javax.microedition.lcdui.Graphics_Package; use javax.microedition.lcdui.Graphics_Package;
+with org.allbinary.animation.Animation_Package; use org.allbinary.animation.Animation_Package;
+with org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package; use org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
+with org.allbinary.logic.system.security.licensing.LockedResources_Package; use org.allbinary.logic.system.security.licensing.LockedResources_Package;
+with org.allbinary.logic.system.security.licensing.LockedUtil_Package; use org.allbinary.logic.system.security.licensing.LockedUtil_Package;
+with org.allbinary.graphics.form.ItemPaintable_Package; use org.allbinary.graphics.form.ItemPaintable_Package;
+
+package org.allbinary.graphics.form.LockablePaintable_Package is
+
+   package Animation_Package renames org.allbinary.animation.Animation_Package;
+   package FeaturedAnimationInterfaceFactoryInterfaceFactory_Package renames org.allbinary.animation.FeaturedAnimationInterfaceFactoryInterfaceFactory_Package;
+   package LockedResources_Package renames org.allbinary.logic.system.security.licensing.LockedResources_Package;
+   package LockedUtil_Package renames org.allbinary.logic.system.security.licensing.LockedUtil_Package;
+
+   type LockablePaintable is tagged;
+   type LockablePaintable_Access is access all LockablePaintable'Class;
+   type LockablePaintable_Access_Array is array (Natural range <>) of LockablePaintable_Access;
+   type LockablePaintable_Access_Array_Access is access all LockablePaintable_Access_Array;
+
+   type LockablePaintable is new ItemPaintable with record
+      animation : Animation_Access;
+      lockedIndex : Integer;
+   end record;
+
+   procedure Initialize (This : in out LockablePaintable'Class; lockedIndex : Integer);
+   function Create (lockedIndex : Integer) return LockablePaintable_Access;
+   procedure paint (This : in out LockablePaintable; graphics : Graphics_Access; currentIndex : Integer; x : Integer; y : Integer);
+   function getLockedIndex (This : in out LockablePaintable) return Integer;
+   procedure getLockedIndex (This : in out LockablePaintable);
+   function getAnimation (This : in out LockablePaintable) return Animation_Access;
+   procedure getAnimation (This : in out LockablePaintable);
+
+end org.allbinary.graphics.form.LockablePaintable_Package;
+
+

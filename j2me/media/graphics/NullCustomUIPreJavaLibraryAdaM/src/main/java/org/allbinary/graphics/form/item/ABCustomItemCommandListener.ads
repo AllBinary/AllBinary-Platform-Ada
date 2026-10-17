@@ -1,0 +1,22 @@
+--  Generated Code Do Not Modify
+
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Ada.Strings.Maps.Constants;
+with Ada.Characters.Handling;
+with Ada.Exceptions;
+with Ada.Numerics.Long_Elementary_Functions;
+with Ada.Tags;
+with Ada.Text_IO;
+with AllBinary_Java; use AllBinary_Java;
+
+package org.allbinary.graphics.form.item.ABCustomItemCommandListener_Package is
+
+
+   type ABCustomItemCommandListener is interface;
+   type ABCustomItemCommandListener_Access is access all ABCustomItemCommandListener'Class;
+   type ABCustomItemCommandListener_Access_Array is array (Natural range <>) of ABCustomItemCommandListener_Access;
+   type ABCustomItemCommandListener_Access_Array_Access is access all ABCustomItemCommandListener_Access_Array;
+
+end org.allbinary.graphics.form.item.ABCustomItemCommandListener_Package;
+
+

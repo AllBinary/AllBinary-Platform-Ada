@@ -1,0 +1,65 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.game.configuration.event.GameFeatureEvent_Package is
+
+   procedure Initialize_Fields (This : in out GameFeatureEvent'Class) is
+   begin
+      null;
+      
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out GameFeatureEvent'Class; anyType : Java_Object_Access; whatChanged : Unbounded_String) is
+   begin
+        AllBinaryEventObject_Package.Initialize (This, anyType);
+        Initialize_Fields (This);
+        This.whatChanged := whatChanged;
+   end Initialize;
+
+   function Create (anyType : Java_Object_Access; whatChanged : Unbounded_String) return GameFeatureEvent_Access is
+      This : constant GameFeatureEvent_Access := new GameFeatureEvent;
+   begin
+      Initialize (This.all, anyType, whatChanged);
+      return This;
+   end Create;
+
+   function getWhatChanged (This : in out GameFeatureEvent) return Unbounded_String is
+   begin
+        return This.whatChanged;
+   end getWhatChanged;
+
+   function getGameOption (This : in out GameFeatureEvent) return Java_Object_Access is
+   begin
+        return This.getSource;
+   end getGameOption;
+
+   procedure getWhatChanged (This : in out GameFeatureEvent) is
+      Java_Result : constant Unbounded_String := GameFeatureEvent'Class (This).getWhatChanged;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getWhatChanged;
+
+   procedure getGameOption (This : in out GameFeatureEvent) is
+      Java_Result : constant Java_Object_Access := GameFeatureEvent'Class (This).getGameOption;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getGameOption;
+
+end org.allbinary.game.configuration.event.GameFeatureEvent_Package;
+
+

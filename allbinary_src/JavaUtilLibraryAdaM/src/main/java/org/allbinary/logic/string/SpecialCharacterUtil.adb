@@ -1,0 +1,82 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.logic.string_Id.SpecialCharacterUtil_Package is
+
+   procedure Initialize_Fields (This : in out SpecialCharacterUtil'Class) is
+   begin
+      null;
+   end Initialize_Fields;
+
+   procedure Initialize (This : in out SpecialCharacterUtil'Class) is
+   begin
+      Initialize_Fields (This);
+   end Initialize;
+
+   function Create return SpecialCharacterUtil_Access is
+      This : constant SpecialCharacterUtil_Access := new SpecialCharacterUtil;
+   begin
+      Initialize (This.all);
+      return This;
+   end Create;
+
+
+   function getHashMap return HashMap_Access is
+      commonSeps : CommonSeps_Access;
+      commonPhoneStrings : CommonPhoneStrings_Access;
+      stringUtil : StringUtil_Access;
+      hashMap : HashMap_Access;
+   begin
+        commonSeps := CommonSeps_Package.getInstance;
+        commonPhoneStrings := CommonPhoneStrings_Package.getInstance;
+        stringUtil := StringUtil_Package.getInstance;
+        hashMap := StdUtil_Package.getInstance.createHashMap;
+        hashMap.put (To_Unbounded_String ("!"), stringUtil.EMPTY_STRING);
+        hashMap.put (To_Unbounded_String ("@"), stringUtil.EMPTY_STRING);
+        hashMap.put (commonPhoneStrings.POUND, stringUtil.EMPTY_STRING);
+        hashMap.put (To_Unbounded_String ("$"), stringUtil.EMPTY_STRING);
+        hashMap.put (To_Unbounded_String ("%"), stringUtil.EMPTY_STRING);
+        hashMap.put (To_Unbounded_String ("^"), stringUtil.EMPTY_STRING);
+        hashMap.put (commonSeps.AMPERSAND, stringUtil.EMPTY_STRING);
+        hashMap.put (commonPhoneStrings.STAR, stringUtil.EMPTY_STRING);
+        hashMap.put (commonSeps.PARENTHESIS_OPEN, stringUtil.EMPTY_STRING);
+        hashMap.put (commonSeps.PARENTHESIS_CLOSE, stringUtil.EMPTY_STRING);
+        hashMap.put (commonSeps.DASH, stringUtil.EMPTY_STRING);
+        hashMap.put (commonSeps.UNDERSCORE, stringUtil.EMPTY_STRING);
+        hashMap.put (MathData_Package.getInstance.PLUS, stringUtil.EMPTY_STRING);
+        hashMap.put (commonSeps.EQUALS, stringUtil.EMPTY_STRING);
+        hashMap.put (To_Unbounded_String ("\"), stringUtil.EMPTY_STRING);
+        hashMap.put (To_Unbounded_String ("|"), stringUtil.EMPTY_STRING);
+        hashMap.put (AbPathData_Package.getInstance.EXTENSION_SEP, stringUtil.EMPTY_STRING);
+        hashMap.put (To_Unbounded_String (","), stringUtil.EMPTY_STRING);
+        hashMap.put (To_Unbounded_String ("<"), stringUtil.EMPTY_STRING);
+        hashMap.put (To_Unbounded_String (">"), stringUtil.EMPTY_STRING);
+        hashMap.put (To_Unbounded_String ("?"), stringUtil.EMPTY_STRING);
+        hashMap.put (AbPathData_Package.getInstance.SEPARATOR, stringUtil.EMPTY_STRING);
+        hashMap.put (To_Unbounded_String ("~"), stringUtil.EMPTY_STRING);
+        hashMap.put (To_Unbounded_String ("`"), stringUtil.EMPTY_STRING);
+        return hashMap;
+   end getHashMap;
+
+   procedure getHashMap is
+      Java_Result : constant HashMap_Access := getHashMap;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getHashMap;
+
+end org.allbinary.logic.string_Id.SpecialCharacterUtil_Package;
+
+

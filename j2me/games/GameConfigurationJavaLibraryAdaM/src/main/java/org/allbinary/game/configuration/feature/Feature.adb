@@ -1,0 +1,87 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.game.configuration.feature.Feature_Package is
+
+   procedure Initialize_Fields (This : in out Feature'Class) is
+   begin
+      null;
+      
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out Feature'Class; name : Unbounded_String) is
+   begin
+      Initialize_Fields (This);
+        This.name := name;
+        Feature_Package.add (name, This'Unchecked_Access);
+        ChangedGameFeatureListener_Package.getInstance.add (This'Unchecked_Access);
+   end Initialize;
+
+   function Create (name : Unbounded_String) return Feature_Access is
+      This : constant Feature_Access := new Feature;
+   begin
+      Initialize (This.all, name);
+      return This;
+   end Create;
+
+   function getInstance (name : Unbounded_String) return Feature_Access is
+   begin
+        return Feature_Access (Feature_Package.hashtable.get (name));
+   end getInstance;
+
+   procedure add (name : Unbounded_String; gameFeature : Feature_Access) is
+   begin
+        Feature_Package.hashtable.put (name, gameFeature);
+   end add;
+
+   function toString (This : in out Feature) return Unbounded_String is
+   begin
+        return This.getName;
+   end toString;
+
+   function getName (This : in out Feature) return Unbounded_String is
+   begin
+        return This.name;
+   end getName;
+
+   procedure getInstance (name : Unbounded_String) is
+      Java_Result : constant Feature_Access := getInstance (name);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getInstance;
+
+   procedure toString (This : in out Feature) is
+      Java_Result : constant Unbounded_String := Feature'Class (This).toString;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end toString;
+
+   procedure getName (This : in out Feature) is
+      Java_Result : constant Unbounded_String := Feature'Class (This).getName;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getName;
+
+begin
+   null;
+   hashtable := StdUtil_Package.getInstance.createHashtable;
+
+end org.allbinary.game.configuration.feature.Feature_Package;
+
+

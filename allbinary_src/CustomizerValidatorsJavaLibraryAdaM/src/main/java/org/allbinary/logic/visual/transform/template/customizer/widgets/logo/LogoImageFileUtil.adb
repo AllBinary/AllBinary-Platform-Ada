@@ -1,0 +1,58 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoImageFileUtil_Package is
+
+   procedure Initialize_Fields (This : in out LogoImageFileUtil'Class) is
+   begin
+      null;
+      This.directory := Directory_Package.getInstance;
+      
+      
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out LogoImageFileUtil'Class; imageAbPath : AbPath_Access; imageFile : Unbounded_String) is
+   begin
+      Initialize_Fields (This);
+        This.fileName := imageFile;
+        This.imageFileAbPath := imageAbPath;
+   end Initialize;
+
+   function Create (imageAbPath : AbPath_Access; imageFile : Unbounded_String) return LogoImageFileUtil_Access is
+      This : constant LogoImageFileUtil_Access := new LogoImageFileUtil;
+   begin
+      Initialize (This.all, imageAbPath, imageFile);
+      return This;
+   end Create;
+
+   --  throws Exception
+   procedure saveFiles (This : in out LogoImageFileUtil; fileItem : FileItem_Access) is
+      originalImageFile : AbFile_Access;
+   begin
+        if (This.fileName) = (Null_Unbounded_String) then
+            Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Image File Name Was Null")));
+        end if;
+        if not (This.directory.create (This.imageFileAbPath)) then
+            Java_Throw (Java_New_Exception ("Exception", To_Unbounded_String ("Unable to save file to non creatable directory")));
+        end if;
+        originalImageFile := AbFile_Package.createAbFile (This.imageFileAbPath.toString & This.fileName);
+        originalImageFile.createNewFile;
+        FileUtil_Package.getInstance.write (ByteArrayInputStream_Package.Create (fileItem.get), originalImageFile);
+   end saveFiles;
+
+end org.allbinary.logic.visual.transform.template.customizer.widgets.logo.LogoImageFileUtil_Package;
+
+

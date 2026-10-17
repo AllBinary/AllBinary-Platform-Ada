@@ -1,0 +1,115 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+
+package body views.admin.user.UsersValidationView_Package is
+
+   procedure Initialize_Fields (This : in out UsersValidationView'Class) is
+   begin
+      null;
+      This.logUtil := LogUtil_Package.getInstance;
+   end Initialize_Fields;
+
+
+   procedure Initialize (This : in out UsersValidationView'Class; transformInfoInterface : TransformInfoInterface_Access) is
+      httpTransformInfoInterface : TransformInfoHttpInterface_Access;
+      role : Unbounded_String;
+      userRole : UserRole_Access;
+   begin
+        UsersView_Package.Initialize (This, transformInfoInterface);
+        Initialize_Fields (This);
+        httpTransformInfoInterface := TransformInfoHttpInterface_Access (This.getTransformInfoInterface);
+        role := Unbounded_String (httpTransformInfoInterface.getPropertiesHashMap.get (UserRoleData_Package.NAME.toString));
+        userRole := UserRoleB_Package.getRole (role);
+        This.userVector := UserEntityFactory_Package.getInstance.getUsersWithRole (userRole);
+   end Initialize;
+
+   function Create (transformInfoInterface : TransformInfoInterface_Access) return UsersValidationView_Access is
+      This : constant UsersValidationView_Access := new UsersValidationView;
+   begin
+      Initialize (This.all, transformInfoInterface);
+      return This;
+   end Create;
+
+   function isValid (This : in out UsersValidationView) return Boolean is
+   begin
+        begin
+            if (This.userVector.size) > (0) then
+                return True;
+            else
+                return False;
+            end if;
+        exception
+            when e : others =>
+            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
+                This.logUtil.put (To_Unbounded_String ("Failed to validate"), This'Unchecked_Access, This.commonStrings.IS_VALID, e);
+            end if;
+            return False;
+        end;
+   end isValid;
+
+   function validationInfo (This : in out UsersValidationView) return Unbounded_String is
+   begin
+        begin
+            return To_Unbounded_String ("No Users");
+        exception
+            when e : others =>
+            if org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypes.LOGGING.contains (org_Package.allbinary.logic.communication.log.config.type_Id.LogConfigTypeFactory.getInstance.VIEWERROR) then
+                This.logUtil.put (To_Unbounded_String ("Failed to generate validation error info"), This'Unchecked_Access, To_Unbounded_String ("validationInfo()"), e);
+            end if;
+            return To_Unbounded_String ("Error Getting Validation Info");
+        end;
+   end validationInfo;
+
+   function toValidationInfoDoc (This : in out UsersValidationView) return Document_Access is
+   begin
+        return null;
+   end toValidationInfoDoc;
+
+   function toValidationInfoNode (This : in out UsersValidationView; document : Document_Access) return Node_Access is
+   begin
+        return null;
+   end toValidationInfoNode;
+
+   procedure isValid (This : in out UsersValidationView) is
+      Java_Result : constant Boolean := UsersValidationView'Class (This).isValid;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end isValid;
+
+   procedure validationInfo (This : in out UsersValidationView) is
+      Java_Result : constant Unbounded_String := UsersValidationView'Class (This).validationInfo;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end validationInfo;
+
+   procedure toValidationInfoDoc (This : in out UsersValidationView) is
+      Java_Result : constant Document_Access := UsersValidationView'Class (This).toValidationInfoDoc;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end toValidationInfoDoc;
+
+   procedure toValidationInfoNode (This : in out UsersValidationView; document : Document_Access) is
+      Java_Result : constant Node_Access := UsersValidationView'Class (This).toValidationInfoNode (document);
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end toValidationInfoNode;
+
+end views.admin.user.UsersValidationView_Package;
+
+

@@ -1,0 +1,126 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--   
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.logic.communication.log.LogUtil_Package is
+
+   procedure Initialize_Fields (This : in out LogUtil'Class) is
+   begin
+      null;
+      This.MESSAGE := To_Unbounded_String ("message");
+      This.isFirstException := True;
+      This.timeDelayHelper := TimeDelayHelper_Package.Create (200000);
+      This.abeClientInformation := null;
+      This.stringBuffer := StringMaker_Package.Create;
+   end Initialize_Fields;
+
+
+   function getInstance return LogUtil_Access is
+   begin
+        return LogUtil_Package.instance;
+   end getInstance;
+
+   procedure Initialize (This : in out LogUtil'Class) is
+   begin
+      Initialize_Fields (This);
+        null;
+   end Initialize;
+
+   function Create return LogUtil_Access is
+      This : constant LogUtil_Access := new LogUtil;
+   begin
+      Initialize (This.all);
+      return This;
+   end Create;
+
+   procedure putL (This : in out LogUtil; log : Log_Access) is
+      specialMessage : Unbounded_String;
+      anyType : Java_Object_Access;
+      functionName : Unbounded_String;
+      exception_Id : Java_Object_Access;
+   begin
+        if (log) = (null) then
+            return;
+        end if;
+        specialMessage := log.getSpecialMessage;
+        anyType := log.getObject;
+        functionName := log.getFunctionName;
+        exception_Id := log.getThrowable;
+        This.put (specialMessage, anyType, functionName, exception_Id);
+   end putL;
+
+   procedure putF (This : in out LogUtil; specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String) is
+   begin
+        null;
+   end putF;
+
+   procedure putF (This : in out LogUtil; specialMessage : Unbounded_String; className : Unbounded_String; functionName : Unbounded_String) is
+   begin
+        null;
+   end putF;
+
+   procedure put (This : in out LogUtil; specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Java_Object_Access) is
+      className : Unbounded_String;
+      message_Case : Unbounded_String;
+      hashtable : ABHashtable_Access;
+   begin
+        if (exception_Id) /= (null) then
+            if (To_Unbounded_String (Ada.Tags.Expanded_Name (exception_Id.all'Tag)).compareTo (XmlRpcException_Package.XmlRpcException'Tag.getName)) = (0) then
+                return;
+            end if;
+            if (To_Unbounded_String (Ada.Tags.Expanded_Name (exception_Id.all'Tag)).compareTo (IOException_Package.IOException'Tag.getName)) = (0) then
+                return;
+            end if;
+            if (This.isFirstException) or else (This.timeDelayHelper.isTimeTNT) then
+                className := CommonStrings_Package.getInstance.EMPTY;
+                This.isFirstException := False;
+                if ((anyType) /= (null)) and then ((To_Unbounded_String (Ada.Tags.Expanded_Name (anyType.all'Tag))) /= (Null_Unbounded_String)) then
+                    className := Java_New_String (To_Unbounded_String (Ada.Tags.Expanded_Name (anyType.all'Tag)));
+                end if;
+                message_Case := LogFormatUtil_Package.getInstance.get (className, functionName, specialMessage, exception_Id);
+                begin
+                    Ada.Text_IO.Put_Line (Java_Image (To_Unbounded_String ("Eeeek")));
+                    if (This.abeClientInformation) = (null) then
+                        Java_Throw (Java_New_Exception ("RuntimeException"));
+                    end if;
+                    hashtable := This.abeClientInformation.toHashtable;
+                    This.stringBuffer.delete (0, This.stringBuffer.length);
+                    This.stringBuffer.append (message_Case);
+                    This.stringBuffer.append (CommonSeps_Package.getInstance.SPACE);
+                    This.stringBuffer.append (SpecialMessageUtil_Package.getInstance.get);
+                    hashtable.put (This.MESSAGE, This.stringBuffer.toString);
+                    XmlRpcRemoteLogClient_Package.Create (This.abeClientInformation).get (hashtable);
+                exception
+                    when e : others =>
+                    Ada.Text_IO.Put_Line (Java_Image (To_Unbounded_String ("Exception")));
+                    Ada.Text_IO.Put_Line (Ada.Exceptions.Exception_Information (e));
+                end;
+            end if;
+        end if;
+   end put;
+
+   procedure getInstance is
+      Java_Result : constant LogUtil_Access := getInstance;
+      pragma Unreferenced (Java_Result);
+   begin
+      null;
+   end getInstance;
+
+begin
+   null;
+   instance := LogUtil_Package.Create;
+
+end org.allbinary.logic.communication.log.LogUtil_Package;
+
+

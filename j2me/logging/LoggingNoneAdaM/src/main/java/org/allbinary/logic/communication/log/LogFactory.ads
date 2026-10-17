@@ -1,0 +1,50 @@
+--
+-- AllBinary Open License Version 1
+-- Copyright (c) 2011 AllBinary
+-- 
+-- By agreeing to this license you and any business entity you represent are
+-- legally bound to the AllBinary Open License Version 1 legal agreement.
+-- 
+-- You may obtain the AllBinary Open License Version 1 legal agreement from
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository.
+-- 
+-- Created By: Travis Berthelot
+--  
+--  Generated Code Do Not Modify
+
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Ada.Strings.Maps.Constants;
+with Ada.Characters.Handling;
+with Ada.Exceptions;
+with Ada.Numerics.Long_Elementary_Functions;
+with Ada.Tags;
+with Ada.Text_IO;
+with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.logic.NullUtil_Package; use org.allbinary.logic.NullUtil_Package;
+with org.allbinary.logic.string_Id.StringUtil_Package; use org.allbinary.logic.string_Id.StringUtil_Package;
+
+package org.allbinary.logic.communication.log_Case.LogFactory_Package is
+
+   package NullUtil_Package renames org.allbinary.logic.NullUtil_Package;
+   package StringUtil_Package renames org.allbinary.logic.string_Id.StringUtil_Package;
+
+   type LogFactory is tagged;
+   type LogFactory_Access is access all LogFactory'Class;
+   type LogFactory_Access_Array is array (Natural range <>) of LogFactory_Access;
+   type LogFactory_Access_Array_Access is access all LogFactory_Access_Array;
+
+   type LogFactory is new Java_Object with null record;
+   LOG : Log_Access;
+
+   procedure Initialize (This : in out LogFactory'Class);
+   function Create return LogFactory_Access;
+   function getInstanceD return Log_Access;
+   procedure getInstanceD;
+   function getInstance (specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Java_Object_Access) return Log_Access;
+   procedure getInstance (specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String; exception_Id : Java_Object_Access);
+   function getInstanceF (specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String) return Log_Access;
+   procedure getInstanceF (specialMessage : Unbounded_String; anyType : Java_Object_Access; functionName : Unbounded_String);
+
+end org.allbinary.logic.communication.log_Case.LogFactory_Package;
+
+

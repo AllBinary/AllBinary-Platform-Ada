@@ -1,0 +1,58 @@
+-- 
+-- AllBinary Open License Version 1 
+-- Copyright (c) 2025 AllBinary 
+--  
+-- By agreeing to this license you and any business entity you represent are 
+-- legally bound to the AllBinary Open License Version 1 legal agreement. 
+--  
+-- You may obtain the AllBinary Open License Version 1 legal agreement from 
+-- AllBinary or the root directory of AllBinary's AllBinary Platform repository. 
+--  
+-- Created By: Travis Berthelot 
+--   
+--  Generated Code Do Not Modify
+
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Ada.Strings.Maps.Constants;
+with Ada.Characters.Handling;
+with Ada.Exceptions;
+with Ada.Numerics.Long_Elementary_Functions;
+with Ada.Tags;
+with Ada.Text_IO;
+with AllBinary_Java; use AllBinary_Java;
+with org.allbinary.logic.io.path.AbPath_Package; use org.allbinary.logic.io.path.AbPath_Package;
+with org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package; use org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+with org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package; use org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+with org.allbinary.string_Id.CommonStrings_Package; use org.allbinary.string_Id.CommonStrings_Package;
+with org.w3c.dom.Document_Package; use org.w3c.dom.Document_Package;
+with org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigAndManipulatorFactoryInterface_Package; use org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigAndManipulatorFactoryInterface_Package;
+
+package org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigAndManipulatorFactoryBase_Package is
+
+   package AbPath_Package renames org.allbinary.logic.io.path.AbPath_Package;
+   package AbeClientInformationInterface_Package renames org.allbinary.logic.system.security.licensing.AbeClientInformationInterface_Package;
+   package TransformInfoInterface_Package renames org.allbinary.logic.visual.transform.info.TransformInfoInterface_Package;
+   package CommonStrings_Package renames org.allbinary.string_Id.CommonStrings_Package;
+   package Document_Package renames org.w3c.dom.Document_Package;
+
+   type TransformInfoObjectConfigAndManipulatorFactoryBase is tagged;
+   type TransformInfoObjectConfigAndManipulatorFactoryBase_Access is access all TransformInfoObjectConfigAndManipulatorFactoryBase'Class;
+   type TransformInfoObjectConfigAndManipulatorFactoryBase_Access_Array is array (Natural range <>) of TransformInfoObjectConfigAndManipulatorFactoryBase_Access;
+   type TransformInfoObjectConfigAndManipulatorFactoryBase_Access_Array_Access is access all TransformInfoObjectConfigAndManipulatorFactoryBase_Access_Array;
+
+   type TransformInfoObjectConfigAndManipulatorFactoryBase is new TransformInfoObjectConfigAndManipulatorFactoryInterface with record
+      commonStrings : CommonStrings_Access;
+   end record;
+
+   procedure Initialize (This : in out TransformInfoObjectConfigAndManipulatorFactoryBase'Class);
+   function Create return TransformInfoObjectConfigAndManipulatorFactoryBase_Access;
+   function getInstance (This : in out TransformInfoObjectConfigAndManipulatorFactoryBase; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access; objectConfigFileAbPath : AbPath_Access) return TransformInfoObjectConfigInterface_Access;
+   procedure getInstance (This : in out TransformInfoObjectConfigAndManipulatorFactoryBase; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access; objectConfigFileAbPath : AbPath_Access);
+   function getInstance (This : in out TransformInfoObjectConfigAndManipulatorFactoryBase; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access) return TransformInfoObjectConfigInterface_Access;
+   procedure getInstance (This : in out TransformInfoObjectConfigAndManipulatorFactoryBase; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access);
+   function getInstance (This : in out TransformInfoObjectConfigAndManipulatorFactoryBase; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access; document : Document_Access) return TransformInfoObjectConfigInterface_Access;
+   procedure getInstance (This : in out TransformInfoObjectConfigAndManipulatorFactoryBase; abeClientInformation : AbeClientInformationInterface_Access; transformInfoInterface : TransformInfoInterface_Access; document : Document_Access);
+
+end org.allbinary.logic.visual.transform.info.objectConfig.TransformInfoObjectConfigAndManipulatorFactoryBase_Package;
+
+

@@ -1,0 +1,36 @@
+--  Generated Code Do Not Modify
+
+
+package body org.allbinary.game.input.CompleteMotionGestureInputEventListener_Package is
+
+   procedure Initialize_Fields (This : in out CompleteMotionGestureInputEventListener'Class) is
+   begin
+      null;
+   end Initialize_Fields;
+
+   procedure Initialize (This : in out CompleteMotionGestureInputEventListener'Class) is
+   begin
+      Initialize_Fields (This);
+   end Initialize;
+
+   function Create return CompleteMotionGestureInputEventListener_Access is
+      This : constant CompleteMotionGestureInputEventListener_Access := new CompleteMotionGestureInputEventListener;
+   begin
+      Initialize (This.all);
+      return This;
+   end Create;
+
+
+   procedure onEvent (This : in out CompleteMotionGestureInputEventListener; eventObject : AllBinaryEventObject_Access) is
+   begin
+        null;
+   end onEvent;
+
+   procedure onCompleteMotionGestureInputEvent (This : in out CompleteMotionGestureInputEventListener; completeMotionGestureInputEvent : CompleteMotionGestureInputEvent_Access) is
+   begin
+        null;
+   end onCompleteMotionGestureInputEvent;
+
+end org.allbinary.game.input.CompleteMotionGestureInputEventListener_Package;
+
+
